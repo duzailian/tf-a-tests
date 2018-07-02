@@ -41,6 +41,8 @@ const char *test_result_to_string(test_result_t result);
 #define TEST_RESULT_IS_VALID(result) \
 	((result >= TEST_RESULT_MIN) && (result < TEST_RESULT_MAX))
 
+test_result_t get_core_test_result(unsigned int linear_id);
+
 /*
  * PSCI Function Wrappers
  *

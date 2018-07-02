@@ -159,6 +159,13 @@ static void prepare_next_test(void)
 	tftf_set_test_progress(TEST_IN_PROGRESS);
 }
 
+/* Returns the last test result known for this core */
+test_result_t get_core_test_result(unsigned int linear_id)
+{
+	assert(linear_id < PLATFORM_CORE_COUNT);
+	return test_results[linear_id];
+}
+
 /*
  * Go through individual CPUs' test results and determine the overall
  * test result from that.
