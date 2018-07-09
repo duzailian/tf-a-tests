@@ -18,6 +18,8 @@
               function="psci_hotplug_single_core_stress_test" />
     <testcase name="Hotplug a cluster in a large iteration to stress cluster on and off functionality"
               function="psci_cluster_hotplug_stress_test" />
+    <testcase name="Test cache coherency while powering on CPU inside peer cluster"
+              function="psci_trigger_peer_cluster_cache_coh" />
   </testsuite>
 
 </testsuites>
