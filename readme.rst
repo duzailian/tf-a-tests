@@ -1,6 +1,8 @@
 Trusted Firmware-A Tests - version 2.0
 ======================================
 
+hello
+
 The Trusted Firmware-A Tests (TF-A-Tests) is a suite of baremetal tests to
 exercise the `Trusted Firmware-A (TF-A)`_ features from the Normal World. It
 enables strong TF-A functional testing without dependency on a Rich OS. It
