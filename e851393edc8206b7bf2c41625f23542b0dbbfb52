@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad3bbe49_0fbb14bc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-10-12T13:21:24Z",
+      "side": 1,
+      "message": "nit: typo",
+      "range": {
+        "startLine": 10,
+        "startChar": 48,
+        "endLine": 10,
+        "endChar": 53
+      },
+      "revId": "e851393edc8206b7bf2c41625f23542b0dbbfb52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "57cb869d_bcea0336",
+        "filename": "plat/arm/board/fvp/aarch32/plat_helpers.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-10-12T13:21:24Z",
+      "side": 1,
+      "message": "Removing the weak implementation of platform_get_core_pos() makes sense to me because I think its implementation varies too much from one platform port to another.\n\nBut does it make sense for the console functions? I would have assumed that the weak implementations in this file would be quite invariant. We might want to use some PLAT_UART_BASE macro instead of the Arm-specific version but perhaps that\u0027s all we need to make it more generic.\n\nThese weak functions call the console_core_init/putc/flush() functions, which are currently implemented only by the PL011 driver and obviously not all platforms use a PL011 UART so I guess that\u0027s your argument for moving them to the platform layer.\n\nBut console_core_init/putc/flush() seem like generic UART callbacks that any UART driver could potentially implement. In this context, I think this makes these weak functions a sane, default implementation.",
+      "revId": "e851393edc8206b7bf2c41625f23542b0dbbfb52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
