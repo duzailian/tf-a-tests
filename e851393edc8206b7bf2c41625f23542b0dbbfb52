@@ -96,6 +96,23 @@
       "revId": "e851393edc8206b7bf2c41625f23542b0dbbfb52",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3c79a77a_3eded253",
+        "filename": "plat/arm/board/fvp/aarch32/plat_helpers.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-10-12T15:19:17Z",
+      "side": 1,
+      "message": "\u003e But as I said, console_core_init/putc/flush() don\u0027t have to\n\u003e be PL011-specific, it could be the generic interface that\n\u003e any UART driver has to implement. So then it would not be a\n\u003e problem to call them from common code.\n\nSure, and that\u0027s the case now, but that\u0027s not the problem.\n\nThe problem is that there are consoles that may not need baudrate and clock to work. There may be platforms that don\u0027t even want to use our console driver because they want to do something different. By keeping the weak definitions we are forcing them to add the #defines to their platform_def.h even though they don\u0027t need them. Just so that this common file can compile.",
+      "revId": "e851393edc8206b7bf2c41625f23542b0dbbfb52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
