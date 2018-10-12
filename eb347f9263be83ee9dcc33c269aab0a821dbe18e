@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ebb1dc9_e7469024",
+        "filename": "tftf/framework/main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-10-12T13:32:05Z",
+      "side": 1,
+      "message": "tftf_lib.h is the place where all exported functions are documented at the moment so I\u0027d prefer it if you moved this comment there.",
+      "range": {
+        "startLine": 162,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 54
+      },
+      "revId": "eb347f9263be83ee9dcc33c269aab0a821dbe18e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "405ef11c_3d828ef5",
+        "filename": "tftf/framework/main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-10-12T13:32:05Z",
+      "side": 1,
+      "message": "ARRAY_SIZE(test_results) would be better than PLATFORM_CORE_COUNT here. If we ever change the size of the test_results[] array, this code will still work that way.",
+      "range": {
+        "startLine": 165,
+        "startChar": 20,
+        "endLine": 165,
+        "endChar": 39
+      },
+      "revId": "eb347f9263be83ee9dcc33c269aab0a821dbe18e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
