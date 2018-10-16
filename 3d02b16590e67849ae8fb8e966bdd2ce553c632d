@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "878e73bf_8569d68e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-10-16T15:35:47Z",
+      "side": 1,
+      "message": "The commit title is too long, you should aim to 50 characters or less. Something like this would be better:\n\n\"el3_payload: Remove CROSS_COMPILE default value\"\n\nIf you want to explain why, do it after the commit title.",
+      "revId": "3d02b16590e67849ae8fb8e966bdd2ce553c632d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
