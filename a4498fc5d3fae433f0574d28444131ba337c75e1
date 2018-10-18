@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df6179af_7fbcd7df",
+        "filename": "docs/design.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-10-18T14:26:44Z",
+      "side": 1,
+      "message": "These changes have not been completely reverted. This text is more indented that it was before.\n\nBefore: http://rst.ninjs.org/#LSAgKipMaWJyYXJ5IGNvZGUuKioKCiAgIC0gIGBgaW9fc3RvcmFnZS5oYGAKCiAgICAgIExvdy1sZXZlbCBJTyBvcGVyYXRpb25zLiBUZXN0cyBhcmUgbm90IGV4cGVjdGVkIHRvIHVzZSB0aGVzZSBBUElzCiAgICAgIGRpcmVjdGx5LiBUaGV5IHNob3VsZCB1c2UgaGlnaGVyLWxldmVsIEFQSXMgbGlrZSBgYHRmdGZfbnZtX3JlYWQoKWBgCiAgICAgIGFuZCBgYHRmdGZfbnZtX3dyaXRlKClgYC4KCiAgYGBpbmNsdWRlL3N0ZGxpYi9gYCBwcm92aWRlcyBzdGFuZGFyZCBDIGxpYnJhcnkKICBmdW5jdGlvbnMgKGBgbWVtY3B5KClgYCwgYGBwcmludGYoKWBgLCBhbmQgc28gb24pLg\u003d\u003d\n\nAfter: http://rst.ninjs.org/#LSAgKipMaWJyYXJ5IGNvZGUuKioKCiAgIC0gIGBgaW9fc3RvcmFnZS5oYGAKCiAgICAgIExvdy1sZXZlbCBJTyBvcGVyYXRpb25zLiBUZXN0cyBhcmUgbm90IGV4cGVjdGVkIHRvIHVzZSB0aGVzZSBBUElzCiAgICAgIGRpcmVjdGx5LiBUaGV5IHNob3VsZCB1c2UgaGlnaGVyLWxldmVsIEFQSXMgbGlrZSBgYHRmdGZfbnZtX3JlYWQoKWBgCiAgICAgIGFuZCBgYHRmdGZfbnZtX3dyaXRlKClgYC4KCiAgICAgIGBgaW5jbHVkZS9zdGRsaWIvYGAgcHJvdmlkZXMgc3RhbmRhcmQgQyBsaWJyYXJ5CiAgICAgIGZ1bmN0aW9ucyAoYGBtZW1jcHkoKWBgLCBgYHByaW50ZigpYGAsIGFuZCBzbyBvbiku\n\nIs that on purpose?",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 133,
+        "endChar": 56
+      },
+      "revId": "a4498fc5d3fae433f0574d28444131ba337c75e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
