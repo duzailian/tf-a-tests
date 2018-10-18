@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "d558777e_90b498f6",
+        "filename": "docs/design.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000051
+      },
+      "writtenOn": "2018-10-18T13:13:18Z",
+      "side": 1,
+      "message": "I had doubts about this point, indeed. The only reason was that it wasn\u0027t rendered properly on my machine so I misunderstood the structure. I will revert it.",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 135,
+        "endChar": 13
+      },
+      "revId": "ac88e94bb72a92425560bfb8ef6d86bd97c1f6b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d2f0cb64_4b102ba3",
         "filename": "docs/porting-guide.rst",
         "patchSetId": 1
@@ -36,6 +59,23 @@
       "writtenOn": "2018-10-18T11:22:41Z",
       "side": 1,
       "message": "I think we need to revert these changes. The list of criteria here is meant to be under the PLAT_TESTS_SKIP_LIST bullet point. With these changes, you\u0027ve turned them into new bullet points at the same level as PLAT_TESTS_SKIP_LIST. This is how it renders: http://rst.ninjs.org/#LSAgKipQTEFUX1RFU1RTX1NLSVBfTElTVCoqCgpUaGlzIGJ1aWxkIGZsYWcgY2FuIGJlIGRlZmluZWQgYnkgdGhlIHBsYXRmb3JtIHRvIGNvbnRyb2wgZXhjbHVzaW9uIG9mIHNvbWUKdGVzdGNhc2VzIGZyb20gdGhlIGRlZmF1bHQgdGVzdCBwbGFuIGZvciBhIHBsYXRmb3JtLiBJZiB1c2VkLCBpdCBtdXN0CnBvaW50IHRvIGEgdGV4dCBmaWxlIHdoaWNoIGZvbGxvd3MgdGhlIGZvbGxvd2luZyBjcml0ZXJpYToKCi0gIENvbnRhaW4gYSBsaXN0IG9mIHRlc3RzIHRvIHNraXAgZm9yIHRoaXMgcGxhdGZvcm0uCgotICBTcGVjaWZ5IDEgdGVzdCBwZXIgbGluZSwgdXNpbmcgdGhlIGZvbGxvd2luZyBmb3JtYXQ6CgogICA6OgoKICAgICAgIHRlc3RzdWl0ZV9uYW1lL3Rlc3RjYXNlX25hbWUKCiAgIHdoZXJlIGBgdGVzdHN1aXRlX25hbWVgYCBhbmQgYGB0ZXN0Y2FzZV9uYW1lYGAgYXJlIHRoZSBuYW1lcyB0aGF0IGFwcGVhciBpbgogICB0aGUgWE1MIHRlc3RzIGZpbGUuCgotICBBbHRlcm5hdGl2ZWx5LCBpdCBpcyBwb3NzaWJsZSB0byBkaXNhYmxlIGEgdGVzdCBzdWl0ZSBlbnRpcmVseSwgd2hpY2ggd2lsbAogICBkaXNhYmxlIGFsbCB0ZXN0IGNhc2VzIHBhcnQgb2YgdGhpcyB0ZXN0IHN1aXRlLiBUbyBkbyBzbywgb25seSBzcGVjaWZ5IHRoZQogICB0ZXN0IHN1aXRlIG5hbWUsIG9taXR0aW5nIHRoZSBgYC90ZXN0Y2FzZV9uYW1lYGAgcGFydC4K",
+      "revId": "ac88e94bb72a92425560bfb8ef6d86bd97c1f6b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3500db6b_cfd526a2",
+        "filename": "docs/porting-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000051
+      },
+      "writtenOn": "2018-10-18T13:13:18Z",
+      "side": 1,
+      "message": "Yes, you are absolutely right.",
       "revId": "ac88e94bb72a92425560bfb8ef6d86bd97c1f6b1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
