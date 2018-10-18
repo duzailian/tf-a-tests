@@ -129,8 +129,10 @@ the top level or under the ``tftf/`` directory):
       directly. They should use higher-level APIs like ``tftf_nvm_read()``
       and ``tftf_nvm_write()``.
 
-  ``include/stdlib/`` provides standard C library functions (``memcpy()``,
-  ``printf()``, and so on).
+   -  ``include/stdlib/``
+
+      Provides standard C library functions (``memcpy()``, ``printf()``, and
+      so on).
 
 -  **Platform specific.**
 
@@ -262,5 +264,5 @@ state.
 
 *Copyright (c) 2018, Arm Limited. All rights reserved.*
 
-.. _Summary of build options: user-guide.html#summary-of-build-options
+.. _Summary of build options: user-guide.rst#summary-of-build-options
 .. _Firmware Update: https://github.com/ARM-software/arm-trusted-firmware/blob/master/docs/firmware-update.rst

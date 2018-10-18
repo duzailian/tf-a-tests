@@ -413,23 +413,23 @@ Build Flags
 -  **PLAT_TESTS_SKIP_LIST**
 
 This build flag can be defined by the platform to control exclusion of some
-testcases from the default test plan for a platform. If used this needs to
+testcases from the default test plan for a platform. If used, it must
 point to a text file which follows the following criteria:
 
-  -  Contain a list of tests to skip for this platform.
+-  Contain a list of tests to skip for this platform.
 
-  -  Specify 1 test per line, using the following format:
+-  Specify 1 test per line, using the following format:
 
-     ::
+   ::
 
        testsuite_name/testcase_name
 
-     where ``testsuite_name`` and ``testcase_name`` are the names that appear in
-     the XML tests file.
+   where ``testsuite_name`` and ``testcase_name`` are the names that appear in
+   the XML tests file.
 
-  -  Alternatively, it is possible to disable a test suite entirely, which will
-     disable all test cases part of this test suite. To do so, only specify the
-     test suite name, omitting the ``/testcase_name`` part.
+-  Alternatively, it is possible to disable a test suite entirely, which will
+   disable all test cases part of this test suite. To do so, only specify the
+   test suite name, omitting the ``/testcase_name`` part.
 
 --------------
 
