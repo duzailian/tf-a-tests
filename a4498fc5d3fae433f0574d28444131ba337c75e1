@@ -45,6 +45,29 @@
       "revId": "a4498fc5d3fae433f0574d28444131ba337c75e1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2945498d_10b7d20f",
+        "filename": "docs/design.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-10-18T15:49:27Z",
+      "side": 1,
+      "message": "\u003e Indeed, but I thought that the sentence about \"include/stdlib\" is\n \u003e part of the \"io_storage.h\" bullet.\n\nNo, it\u0027s not.\n- The I/O storage layer is dealing with abstract I/O operations (io_open/close/read/write).\n- include/stdlib provides declaration of C library functions.\n\nThey are not related.\n\n \u003e If it\u0027s not I can of course put it back as it was but, in that\n \u003e case, I would suggest either to make it a separate bullet or put it\n \u003e in the beginning of all bullets, so as to be more clear what we\n \u003e mean.\n\nI agree, it might be better to move this paragraph about the libc header files at the beginning of the \"Library code\" bullet point.",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 133,
+        "endChar": 56
+      },
+      "revId": "a4498fc5d3fae433f0574d28444131ba337c75e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
