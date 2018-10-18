@@ -22,6 +22,29 @@
       "revId": "a4498fc5d3fae433f0574d28444131ba337c75e1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bdf6b6ce_8337c7ac",
+        "filename": "docs/design.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1000051
+      },
+      "writtenOn": "2018-10-18T15:24:54Z",
+      "side": 1,
+      "message": "Indeed, but I thought that the sentence about \"include/stdlib\" is part of the \"io_storage.h\" bullet. That\u0027s why I indented them more.\n\nIf it\u0027s not I can of course put it back as it was but, in that case, I would suggest either to make it a separate bullet or put it in the beginning of all bullets, so as to be more clear what we mean.",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 133,
+        "endChar": 56
+      },
+      "revId": "a4498fc5d3fae433f0574d28444131ba337c75e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
