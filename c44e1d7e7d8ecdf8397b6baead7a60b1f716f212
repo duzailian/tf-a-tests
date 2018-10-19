@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b0cb6b91_05934d3f",
+        "filename": "el3_payload/README",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-10-19T11:03:55Z",
+      "side": 1,
+      "message": "nit: Add an empty line between title and paragraph for consistency with the rest of the document.",
+      "revId": "c44e1d7e7d8ecdf8397b6baead7a60b1f716f212",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "19878a33_f681ddc9",
+        "filename": "el3_payload/README",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-10-19T11:03:55Z",
+      "side": 1,
+      "message": "A link to section 4 of the user guide would be good IMO.",
+      "range": {
+        "startLine": 13,
+        "startChar": 7,
+        "endLine": 13,
+        "endChar": 17
+      },
+      "revId": "c44e1d7e7d8ecdf8397b6baead7a60b1f716f212",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
