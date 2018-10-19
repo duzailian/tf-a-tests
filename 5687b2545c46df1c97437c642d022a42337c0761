@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f9e718e_c3c8c4bd",
+        "filename": "el3_payload/README",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-10-19T06:57:02Z",
+      "side": 1,
+      "message": "I suggest just adding a sentence here along these lines:\n\nThe environment variable CROSS_COMPILE must point to the Linaro cross compiler. Refer to the User Guide for the exact version to use.",
+      "revId": "5687b2545c46df1c97437c642d022a42337c0761",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
