@@ -33,6 +33,23 @@
       "revId": "5687b2545c46df1c97437c642d022a42337c0761",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ebc94348_d21c0c4c",
+        "filename": "el3_payload/README",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-10-19T08:22:52Z",
+      "side": 1,
+      "message": "Fine by me. So we could say:\n\nThe environment variable CROSS_COMPILE must point to the cross compiler. Refer to the User Guide for the exact version this software has been tested with.",
+      "revId": "5687b2545c46df1c97437c642d022a42337c0761",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
