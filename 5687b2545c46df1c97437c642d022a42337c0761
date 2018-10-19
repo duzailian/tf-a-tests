@@ -16,6 +16,23 @@
       "revId": "5687b2545c46df1c97437c642d022a42337c0761",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c65cd05_89316d47",
+        "filename": "el3_payload/README",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-10-19T08:19:30Z",
+      "side": 1,
+      "message": "I don\u0027t think we should mention the Linaro cross compiler that way, other people may be using other toolchains and there is no reason not to do it. We should just say \"cross compiler\" and then make it explicit that the compiler we test is the Linaro cross compiler version x.y.",
+      "revId": "5687b2545c46df1c97437c642d022a42337c0761",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
