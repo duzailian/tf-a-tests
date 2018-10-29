@@ -45,6 +45,29 @@
       "revId": "5ae1ee64771264b74287d6aa221c3911a9699989",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9043d93f_14fa82d5",
+        "filename": "tftf/tests/runtime_services/standard_service/pmf/api_tests/runtime_instr/test_pmf_rt_instr.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-10-29T14:00:28Z",
+      "side": 1,
+      "message": "Yes I agree, the rework for the macros should be done in a separate patch, I\u0027ll create a JIRA ticket to address that. I just wanted to know on what platforms this patch was known to work, thanks.",
+      "range": {
+        "startLine": 163,
+        "startChar": 0,
+        "endLine": 164,
+        "endChar": 52
+      },
+      "revId": "5ae1ee64771264b74287d6aa221c3911a9699989",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
