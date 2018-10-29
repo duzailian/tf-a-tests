@@ -69,9 +69,16 @@
 #define GIC_SIZE			0x8000
 #define SP805_WDOG_BASE			0xE8A06000
 #define SP805_WDOG_SIZE			0x1000
-#define SYS_CNT_BASE1			0xfff14000
-#define SYS_CNT_SIZE			0x1000
 
+/* SP804 timer related constants */
+#define TIMER0_BASE			0xfff14000
+#define TIMER0_SIZE			0x1000
+#define TIMER0_FREQ			32000
+#define TIMER0_IRQ			80 /* Datasheet: TIME00 event*/
+#define SYS_CNT_BASE1			TIMER0_BASE
+#define SYS_CNT_SIZE			TIMER0_SIZE
+/* Current value register */
+#define TIMER_VALREG_OFFSET		0x4
 
 /* ARM PL011 UART */
 #define PL011_UART6_BASE		0xFFF32000
@@ -94,8 +101,6 @@
 
 /* Per-CPU Hypervisor Timer Interrupt ID */
 #define IRQ_PCPU_HP_TIMER		26
-/* Datasheet: TIME00 event*/
-#define IRQ_CNTPSIRQ1			80
 
 #define PLAT_MAX_SPI_OFFSET_ID		343
 

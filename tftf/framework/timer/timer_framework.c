@@ -49,19 +49,12 @@ static spinlock_t timer_lock;
 /*
  * Number of system ticks per millisec
  */
-static unsigned int systicks_per_ms;
+unsigned int systicks_per_ms;
 
 /*
  * Stores per CPU timer handler invoked on expiration of the requested timeout.
  */
 static irq_handler_t timer_handler[PLATFORM_CORE_COUNT];
-
-/* Helper function */
-static inline unsigned long long get_current_time_ms(void)
-{
-	assert(systicks_per_ms);
-	return mmio_read_64(SYS_CNT_BASE1 + CNTPCT_LO) / systicks_per_ms;
-}
 
 static inline unsigned long long get_current_prog_time(void)
 {
@@ -160,7 +153,7 @@ int tftf_program_timer(unsigned long time_out_ms)
 	 * Read time after acquiring timer_lock to account for any time taken
 	 * by lock contention.
 	 */
-	current_time = get_current_time_ms();
+	current_time = plat_get_current_time_ms();
 
 	/* Update the requested time */
 	interrupt_req_time[core_pos] = current_time + time_out_ms;
@@ -168,7 +161,7 @@ int tftf_program_timer(unsigned long time_out_ms)
 	VERBOSE("Need timer interrupt at: %lld current_prog_time:%lld\n"
 			" current time: %lld\n", interrupt_req_time[core_pos],
 					get_current_prog_time(),
-					get_current_time_ms());
+					plat_get_current_time_ms());
 
 	/*
 	 * If the interrupt request time is less than the current programmed
@@ -370,7 +363,7 @@ int tftf_cancel_timer(void)
 			arm_gic_set_intr_target(TIMER_IRQ, next_timer_req_core_pos);
 			current_prog_core = next_timer_req_core_pos;
 
-			current_time = get_current_time_ms();
+			current_time = plat_get_current_time_ms();
 
 			/*
 			 * If the next timer request is lesser than or in a
@@ -414,7 +407,7 @@ int tftf_timer_framework_handler(void *data)
 	assert(interrupt_req_time[handler_core_pos] != INVALID_TIME);
 	spin_lock(&timer_lock);
 
-	current_time = get_current_time_ms();
+	current_time = plat_get_current_time_ms();
 	/* Check if we interrupt is targeted correctly */
 	assert(handler_core_pos == current_prog_core);
 
