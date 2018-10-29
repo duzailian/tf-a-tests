@@ -7,18 +7,17 @@
 #include <assert.h>
 #include <mmio.h>
 #include <platform.h>
+#include <platform_def.h>
+#include <sp804.h>
 #include <stddef.h>
-#include <system_timer.h>
 #include <timer.h>
 
-#pragma weak plat_initialise_timer_ops
-
 static const plat_timer_t plat_timers = {
-	.program = program_systimer,
-	.cancel = cancel_systimer,
-	.handler = handler_systimer,
+	.program = sp804_timer_program,
+	.cancel = sp804_timer_cancel,
+	.handler = sp804_timer_handler,
 	.timer_step_value = 2,
-	.timer_irq = IRQ_CNTPSIRQ1
+	.timer_irq = TIMER0_IRQ /* SP804 IRQ */
 };
 
 int plat_initialise_timer_ops(const plat_timer_t **timer_ops)
@@ -27,7 +26,7 @@ int plat_initialise_timer_ops(const plat_timer_t **timer_ops)
 	*timer_ops = &plat_timers;
 
 	/* Initialise the system timer */
-	init_systimer(SYS_CNT_BASE1);
+	sp804_timer_init(TIMER0_BASE, TIMER0_FREQ);
 
 	return 0;
 }
@@ -35,5 +34,6 @@ int plat_initialise_timer_ops(const plat_timer_t **timer_ops)
 unsigned long long plat_get_current_time_ms(void)
 {
 	assert(systicks_per_ms);
-	return mmio_read_64(SYS_CNT_BASE1 + CNTPCT_LO) / systicks_per_ms;
+	return mmio_read_32(TIMER0_BASE + TIMER_VALREG_OFFSET) /
+		systicks_per_ms;
 }

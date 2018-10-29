@@ -10,6 +10,7 @@ PLAT_INCLUDES	:=	-I${HIKEY960_PATH}/include/
 
 PLAT_SOURCES	:=	${HIKEY960_PATH}/hikey960_setup.c		\
 			${HIKEY960_PATH}/hikey960_pwr_state.c		\
+			${HIKEY960_PATH}/hikey960_timers.c		\
 			${HIKEY960_PATH}/aarch64/plat_helpers.S		\
 			drivers/arm/pl011/${ARCH}/pl011_console.S	\
 			drivers/arm/gic/gic_common.c			\
@@ -17,7 +18,7 @@ PLAT_SOURCES	:=	${HIKEY960_PATH}/hikey960_setup.c		\
 			drivers/arm/gic/arm_gic_v2.c			\
 			drivers/arm/timer/system_timer.c		\
 			drivers/arm/timer/private_timer.c		\
-			plat/arm/common/arm_timers.c
+			drivers/arm/timer/sp804.c
 
 TFTF_CFLAGS		+= -Wno-maybe-uninitialized
 
