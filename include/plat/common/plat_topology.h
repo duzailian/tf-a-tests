@@ -129,9 +129,9 @@ unsigned int tftf_topology_next_cpu(unsigned int cpu_node);
  * the topology array. After the loop, cpu is equal to PWR_DOMAIN_INIT.
  */
 #define for_each_cpu(cpu)				\
-	for ((cpu) = PWR_DOMAIN_INIT;			\
-		(cpu) = tftf_topology_next_cpu(cpu),	\
-		(cpu) != PWR_DOMAIN_INIT;)
+	for ((cpu) = tftf_topology_next_cpu(PWR_DOMAIN_INIT);			\
+		(cpu) != PWR_DOMAIN_INIT;	\
+		(cpu) = tftf_topology_next_cpu(cpu))
 
 /*
  * Iterate over every power domain idx for a given level.
