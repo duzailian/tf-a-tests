@@ -130,4 +130,6 @@ unsigned int tftf_get_timer_step_value(void);
  */
 void tftf_timer_gic_state_restore(void);
 
+extern unsigned int systicks_per_ms;
+
 #endif /* __TIMER_H__ */
