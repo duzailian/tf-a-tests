@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "8089d25c_81712ece",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000052
+      },
+      "writtenOn": "2018-10-31T10:42:45Z",
+      "side": 1,
+      "message": "Done",
+      "revId": "4fd45e6e59b03c0633a4b053113b9ba43e371c87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c37e5800_2048bce4",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -30,6 +47,29 @@
       "writtenOn": "2018-10-30T13:22:08Z",
       "side": 1,
       "message": "nit: s/one/on/ ?",
+      "range": {
+        "startLine": 9,
+        "startChar": 32,
+        "endLine": 9,
+        "endChar": 35
+      },
+      "revId": "4fd45e6e59b03c0633a4b053113b9ba43e371c87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7da0bd79_7f8bb55f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000052
+      },
+      "writtenOn": "2018-10-31T10:42:45Z",
+      "side": 1,
+      "message": "Done",
       "range": {
         "startLine": 9,
         "startChar": 32,
@@ -65,6 +105,29 @@
     },
     {
       "key": {
+        "uuid": "b0c7a001_b35c3d7f",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 1000052
+      },
+      "writtenOn": "2018-10-31T10:42:45Z",
+      "side": 1,
+      "message": "That\u0027s indeed official name of the register.",
+      "range": {
+        "startLine": 643,
+        "startChar": 8,
+        "endLine": 643,
+        "endChar": 21
+      },
+      "revId": "4fd45e6e59b03c0633a4b053113b9ba43e371c87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c235be6c_802e7779",
         "filename": "tftf/tests/misc_tests/test_ptrauth_access.c",
         "patchSetId": 2
@@ -76,6 +139,23 @@
       "writtenOn": "2018-10-30T13:22:08Z",
       "side": 1,
       "message": "Perhaps this test file would be better placed under the tftf/tests/extensions/ directory along with the AMU test cases?",
+      "revId": "4fd45e6e59b03c0633a4b053113b9ba43e371c87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "029c56c8_b8d371fc",
+        "filename": "tftf/tests/misc_tests/test_ptrauth_access.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000052
+      },
+      "writtenOn": "2018-10-31T10:42:45Z",
+      "side": 1,
+      "message": "Done",
       "revId": "4fd45e6e59b03c0633a4b053113b9ba43e371c87",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
