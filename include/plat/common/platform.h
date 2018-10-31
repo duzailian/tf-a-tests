@@ -67,6 +67,9 @@ int plat_crash_console_flush(void);
 /* Gets a handle for the initialised IO entity */
 void plat_get_nvm_handle(uintptr_t *handle);
 
+/* Helper function for timer framework */
+unsigned long long plat_get_current_time_ms(void);
+
 /*
  * Returns the platform topology description array. The size of this
  * array should be PLATFORM_NUM_AFFS - PLATFORM_CORE_COUNT + 1.
