@@ -5,6 +5,7 @@
  */
 
 #include <assert.h>
+#include <mmio.h>
 #include <platform.h>
 #include <stddef.h>
 #include <system_timer.h>
@@ -29,4 +30,10 @@ int plat_initialise_timer_ops(const plat_timer_t **timer_ops)
 	init_systimer(SYS_CNT_BASE1);
 
 	return 0;
+}
+
+unsigned long long plat_get_current_time_ms(void)
+{
+	assert(systicks_per_ms);
+	return mmio_read_64(SYS_CNT_BASE1 + CNTPCT_LO) / systicks_per_ms;
 }
