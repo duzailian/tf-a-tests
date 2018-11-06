@@ -16,6 +16,23 @@
       "revId": "9034d9922fa7a4659ae0dc3e62904056cdd356c8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b1a8184_9a26cf9d",
+        "filename": "include/plat/common/plat_topology.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-11-06T12:41:07Z",
+      "side": 1,
+      "message": "I think we should go one step further and do the same change for similar macros: for_each_power_domain_idx and for_each_cpu_in_power_domain.",
+      "revId": "9034d9922fa7a4659ae0dc3e62904056cdd356c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
