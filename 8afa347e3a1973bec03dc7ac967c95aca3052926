@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2a8e1a0d_fad8ded4",
+        "filename": "tftf/framework/timer/timer_framework.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-11-06T13:38:22Z",
+      "side": 0,
+      "message": "I might have missed the rationale for this patch...\n\nAs far as I understand, the only piece of platform-specific information here is the base address of the timer frame.  And as a matter of fact, SYS_CNT_BASE1 is a platform macro at the moment (and for that reason it should probably be renamed into PLAT_SYS_CNT_BASE or similar).\n\nApart from that, this piece of code just reads the Generic Timer memory-mapped registers, which are architecturally defined (see section I2.3 in the Arm Arm, rev D.a) so this does not look specific to Arm platforms to me.\n\nCould you please explain what was the exact problem you faced?",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 1
+      },
+      "revId": "8afa347e3a1973bec03dc7ac967c95aca3052926",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
