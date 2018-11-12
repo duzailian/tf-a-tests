@@ -46,6 +46,30 @@
       "revId": "8afa347e3a1973bec03dc7ac967c95aca3052926",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ccbb41a_d170e538",
+        "filename": "tftf/framework/timer/timer_framework.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-11-12T14:29:28Z",
+      "side": 0,
+      "message": "The Arm ARM indeed says that the *memory-mapped timers* are optional but the *memory-mapped counter module* is required and as far as I understand, that\u0027s all we need to measure time here.\n\nIt seems to me that we could simply read the CNTCV (Counter Count Value) memory-mapped register to implement this function in a generic manner. Alternatively we could use the system register interface (MSR/MRS) and read the CNTPCT_EL0 (Counter-timer Physical Count) register, which I think is equivalent (TBC).\n\nThen I think we should move this function to the drivers/ layer.\n\nThe system *timer* is another matter and as John pointed out, some platforms might use a timer IP that does not expose a Generic Timer interface, like Juno (which uses SP804) or Hikey960 as it seems. But as far as I can see, platform ports can already override the system timer callbacks through the plat_initialise_timer_ops() function so I think we\u0027re good on this front.",
+      "parentUuid": "d5eae33f_71811a61",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 1
+      },
+      "revId": "8afa347e3a1973bec03dc7ac967c95aca3052926",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
