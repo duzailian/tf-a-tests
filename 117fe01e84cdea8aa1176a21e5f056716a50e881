@@ -22,6 +22,30 @@
       "revId": "117fe01e84cdea8aa1176a21e5f056716a50e881",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d72eaf0a_4984cb97",
+        "filename": "include/lib/xlat_tables/xlat_mmu_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-11-20T14:05:30Z",
+      "side": 1,
+      "message": "Even if it isn\u0027t needed, removing it can break platform code that includes only xlat_mmu_helpers.h and not string.h. If they use memset (or any other function of string.h) in the same file, removing this header will break it. I\u0027d rather keep it.",
+      "parentUuid": "caa9f4b4_0a740a1a",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 19
+      },
+      "revId": "117fe01e84cdea8aa1176a21e5f056716a50e881",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
