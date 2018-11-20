@@ -33,6 +33,29 @@
       "revId": "9034d9922fa7a4659ae0dc3e62904056cdd356c8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "988ee153_daf0d738",
+        "filename": "include/plat/common/plat_topology.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-11-20T10:54:47Z",
+      "side": 1,
+      "message": "nit: While you do the changes to the other 2 macros as Sandrine has said, fix the indentation of the backslashes",
+      "range": {
+        "startLine": 132,
+        "startChar": 54,
+        "endLine": 132,
+        "endChar": 55
+      },
+      "revId": "9034d9922fa7a4659ae0dc3e62904056cdd356c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
