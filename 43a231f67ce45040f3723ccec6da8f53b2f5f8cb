@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "67a77296_13323217",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-11-20T13:33:04Z",
+      "side": 1,
+      "message": "Could you please explain in more details what problem this patch is fixing? What are the expectations on the stdlib header files that the 1st paragraph is referring to? What are the effects of this patch?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 19
+      },
+      "revId": "43a231f67ce45040f3723ccec6da8f53b2f5f8cb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
