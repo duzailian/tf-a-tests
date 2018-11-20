@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "caa9f4b4_0a740a1a",
+        "filename": "include/lib/xlat_tables/xlat_mmu_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-11-20T13:54:32Z",
+      "side": 1,
+      "message": "Looking at the content of xlat_mmu_helpers.h, I can\u0027t see what requires to pull string.h in. Neither can I see the reason in TF-A. In fact, if I remove the header inclusion in TF-A it still builds properly.\n\nAm I missing something? What definition from string.h do we need here?",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 19
+      },
+      "revId": "117fe01e84cdea8aa1176a21e5f056716a50e881",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
