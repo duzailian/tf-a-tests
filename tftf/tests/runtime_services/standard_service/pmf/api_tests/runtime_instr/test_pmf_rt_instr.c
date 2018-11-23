@@ -25,6 +25,9 @@
 #define ENTER_CFLUSH		4
 #define EXIT_CFLUSH		5
 
+#define MPIDR_CLUSTER_ID(mpid)	MPIDR_AFF_ID(mpid, 1)
+#define MPIDR_CPU_ID(mpid)	MPIDR_AFF_ID(mpid, 0)
+
 static spinlock_t cpu_count_lock;
 static volatile int cpu_count;
 static volatile int participating_cpu_count;

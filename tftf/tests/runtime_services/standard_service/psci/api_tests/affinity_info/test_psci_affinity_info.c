@@ -20,6 +20,10 @@
 
 /* Special value used to terminate the array of expected return values */
 #define END_OF_EXPECTED_VALUE	0xDEADBEEF
+
+#define MPIDR_CLUSTER_ID(mpid)	MPIDR_AFF_ID(mpid, 1)
+#define MPIDR_CPU_ID(mpid)	MPIDR_AFF_ID(mpid, 0)
+
 /*
  * Event used by test test_affinity_info_level0_powerdown() to synchronise
  * CPUs
