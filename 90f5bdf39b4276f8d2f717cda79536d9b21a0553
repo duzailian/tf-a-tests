@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "798624b4_521794e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-11-26T12:47:51Z",
+      "side": 1,
+      "message": "Why? It would help to provide the rationale for this patch in the commit message.",
+      "revId": "90f5bdf39b4276f8d2f717cda79536d9b21a0553",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
