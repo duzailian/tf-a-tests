@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ed3992ec_22721b59",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-11-26T08:38:38Z",
+      "side": 1,
+      "message": "TCR_EL2 and TCR_EL3 are both 64-bit registers so it seems weird to me to use ULL literal constants for the former and UL for the latter.\n\nNow, looking at these registers definitions in the Arm ARM, I suppose the reason is, TCR_EL3[63:32] are always 0 so the register can be safely truncated to 32-bits, whereas TCR_EL2[63:32] bits might be different from 0 (depending on the value of the HCR_EL2.E2H bit).\n\nStill, even if it might be safe for now, this seems like too much built-in assumption to me. What if a future version of the Arm architecture uses some of the 32 most significant bits of TCR_EL3?\n\nI think it might be better to use ULL literal constants for both registers, unless there\u0027s a good reason not to do so.",
+      "range": {
+        "startLine": 408,
+        "startChar": 0,
+        "endLine": 409,
+        "endChar": 55
+      },
+      "revId": "77f1ae31004ba9ad506dd05ac35c5cae3f8df9d5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
