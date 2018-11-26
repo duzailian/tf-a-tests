@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "daea94f6_af3d3a41",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-11-26T12:36:20Z",
+      "side": 1,
+      "message": "I don\u0027t quite see how this patch helps us. I agree that the MPIDR_{CLUSTER,CPU}_ID macros are buggy at the moment (BTW, see https://developer.trustedfirmware.org/T127 if you were not aware of the existence of this ticket) and needs fixing. But I don\u0027t think removing them from arch.h and copying them into each test file that uses them is the right thing to do.\n\nIf we merge this patch, we will have to fix all instances of the macros instead of a single one. There is a risk we might forget some. Also, as you say in the commit message, this does not solve any problem, as the tests will still misbehave if they are run on a multi-threaded CPU.\n\nBesides, I think that ultimately these macros belong to arch.h - or perhaps arch_helpers.h, but I mean, an architectural header file in any case.\n\nI see 2 options: either we just make it more obvious that these macros do not work properly on MT cores (which is I believe is the motivation for this patch) by adding a comment above the macro definitions in arch.h ; or we fix the macros the proper way.",
+      "revId": "063b738c95042ef51b62c053441376f4786ea63b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
