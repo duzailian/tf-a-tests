@@ -10,6 +10,7 @@
 #include <fwu_nvm.h>
 #include <platform.h>
 #include <platform_def.h>
+#include <tfa_bl1.h>
 
 extern const char version_string[];
 

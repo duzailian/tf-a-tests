@@ -18,6 +18,7 @@
 #include <smccc.h>
 #include <status.h>
 #include <string.h>
+#include <tfa_bl1.h>
 #include <tftf.h>
 #include <tftf_lib.h>
 
