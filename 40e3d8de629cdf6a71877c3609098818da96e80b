@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baf06249_9b2e43ed",
+        "filename": "include/runtime_services/tfa_bl1.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-11-26T13:43:58Z",
+      "side": 1,
+      "message": "BL1\u0027s SMC interface is not exactly a runtime service per se so I had doubts whether this was the right location for this new header file. That said, I could not find an existing directory that would quite fit so include/runtime_services/ seemed like the best option to me.\n\nI\u0027d be interested to know whether anyone\u0027s got a different opinion on this.",
+      "revId": "40e3d8de629cdf6a71877c3609098818da96e80b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
