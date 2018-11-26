@@ -16,6 +16,24 @@
       "revId": "063b738c95042ef51b62c053441376f4786ea63b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a4c51495_53cbfd10",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-11-26T13:51:36Z",
+      "side": 1,
+      "message": "I agree it\u0027s not ideal, but in my mind the problem is in the tests, not in arch.h. The problem I see is that by keeping the macros in arch.h it may make people think they can be used, as you say.\n\nHowever, there is another problem. The tests assume that there is nothing more than CPU and cluster (they are referenced all the time during the tests code). It\u0027s not just the macros, the tests don\u0027t seem to be able to deal with more affinity levels.",
+      "parentUuid": "daea94f6_af3d3a41",
+      "revId": "063b738c95042ef51b62c053441376f4786ea63b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
