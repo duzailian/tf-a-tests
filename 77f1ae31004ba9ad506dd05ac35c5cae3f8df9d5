@@ -22,6 +22,30 @@
       "revId": "77f1ae31004ba9ad506dd05ac35c5cae3f8df9d5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ee4904a_8fadd97a",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-11-26T09:12:03Z",
+      "side": 1,
+      "message": "You are right. Done.",
+      "parentUuid": "ed3992ec_22721b59",
+      "range": {
+        "startLine": 408,
+        "startChar": 0,
+        "endLine": 409,
+        "endChar": 55
+      },
+      "revId": "77f1ae31004ba9ad506dd05ac35c5cae3f8df9d5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
