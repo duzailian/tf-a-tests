@@ -34,6 +34,24 @@
       "revId": "063b738c95042ef51b62c053441376f4786ea63b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "918d5318_3ab2c628",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-11-27T09:43:12Z",
+      "side": 1,
+      "message": "\u003e in my mind the problem is in the tests, not in arch.h. \n\nHow is the problem in the tests? I think it\u0027s legitimate for tests to query the CPU and cluster IDs corresponding to a given MPID. A test might need to do different things depending on what CPU/cluster it is running on. The way I see it, the problem we have with these macros right now is not so much their existence but rather their implementation: MPIDR_CPU_ID does not always return the CPU ID, depending on what affinity level 0 is.\n\n \u003e However, there is another problem. The tests assume that there is\n \u003e nothing more than CPU and cluster (they are referenced all the time\n \u003e during the tests code). It\u0027s not just the macros, the tests don\u0027t\n \u003e seem to be able to deal with more affinity levels.\n\nCould you please point us to the code that makes the assumption that there is only CPU and cluster affinity levels?\n\nI\u0027m not sure you\u0027re right on this point. We have tests that exercise PSCI CPU_SUSPEND API at affinity level 2, see [1] for example.\n\nHowever, I think affinity level 3 is not supported. I believe that\u0027s what the TODO comment at [2] refers to.\n\n[1] https://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/tftf/tests/runtime_services/standard_service/psci/api_tests/cpu_suspend/test_suspend.c#n294\n\n[2] https://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/include/lib/aarch64/arch.h#n57",
+      "parentUuid": "a4c51495_53cbfd10",
+      "revId": "063b738c95042ef51b62c053441376f4786ea63b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
