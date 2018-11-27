@@ -126,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "061498c0_b693db19",
+        "filename": "include/plat/common/plat_topology.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-11-27T12:32:10Z",
+      "side": 1,
+      "message": "I don\u0027t have a strong opinion on this. Regarding that task, it is not even close to being a priority, so I think it is unlikely we\u0027ll need them. But well, we can always delete the macros in the future if we change our minds.",
+      "parentUuid": "ae5c104a_6e520f02",
+      "revId": "9034d9922fa7a4659ae0dc3e62904056cdd356c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "988ee153_daf0d738",
         "filename": "include/plat/common/plat_topology.h",
         "patchSetId": 1
