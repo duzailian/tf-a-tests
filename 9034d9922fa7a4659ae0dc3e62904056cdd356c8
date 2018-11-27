@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "03362835_8a8b6de5",
+        "filename": "include/plat/common/plat_topology.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-11-27T11:03:12Z",
+      "side": 1,
+      "message": "Hmmm... I don\u0027t think we should keep them. Sure, they might be useful, but they might be broken when we need them. I\u0027ve already removed a few assembly helpers for this reason: https://review.trustedfirmware.org/#/c/TF-A/tf-a-tests/+/387/",
+      "parentUuid": "29eeb578_01f30648",
+      "revId": "9034d9922fa7a4659ae0dc3e62904056cdd356c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "988ee153_daf0d738",
         "filename": "include/plat/common/plat_topology.h",
         "patchSetId": 1
