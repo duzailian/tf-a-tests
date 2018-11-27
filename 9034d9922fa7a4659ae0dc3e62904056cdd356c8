@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e52fadcb_7e02aad8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000051
+      },
+      "writtenOn": "2018-11-27T10:52:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c90adb0f_da27442f",
+      "revId": "9034d9922fa7a4659ae0dc3e62904056cdd356c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7b1a8184_9a26cf9d",
         "filename": "include/plat/common/plat_topology.h",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "29eeb578_01f30648",
+        "filename": "include/plat/common/plat_topology.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000051
+      },
+      "writtenOn": "2018-11-27T10:52:36Z",
+      "side": 1,
+      "message": "Done - but, if I\u0027m not mistaken, those macros are not used anywhere inside the codebase. However they seem useful helpers to be there for future use.",
+      "parentUuid": "7b1a8184_9a26cf9d",
+      "revId": "9034d9922fa7a4659ae0dc3e62904056cdd356c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "988ee153_daf0d738",
         "filename": "include/plat/common/plat_topology.h",
         "patchSetId": 1
@@ -47,6 +83,30 @@
       "writtenOn": "2018-11-20T10:54:47Z",
       "side": 1,
       "message": "nit: While you do the changes to the other 2 macros as Sandrine has said, fix the indentation of the backslashes",
+      "range": {
+        "startLine": 132,
+        "startChar": 54,
+        "endLine": 132,
+        "endChar": 55
+      },
+      "revId": "9034d9922fa7a4659ae0dc3e62904056cdd356c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0f546560_195a77ee",
+        "filename": "include/plat/common/plat_topology.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000051
+      },
+      "writtenOn": "2018-11-27T10:52:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "988ee153_daf0d738",
       "range": {
         "startLine": 132,
         "startChar": 54,
