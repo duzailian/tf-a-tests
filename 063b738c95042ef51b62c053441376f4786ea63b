@@ -52,6 +52,24 @@
       "revId": "063b738c95042ef51b62c053441376f4786ea63b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dcfe29c0_3f788b62",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-11-28T13:40:29Z",
+      "side": 1,
+      "message": "\u003e How is the problem in the tests? I think it\u0027s legitimate for tests to query\n\u003e the CPU and cluster IDs corresponding to a given MPID.\n\nIs it? In a multithreaded CPU you can\u0027t just iterate CPUs and clusters, you need\nto iterate all affinity levels from 0 to the desired one. If you use PSCI_CPU_ON\non a multithreaded CPU with only cluster and CPU IDs you may not be testing\neverything you need to test.\n\n\u003e A test might need to do different things depending on what CPU/cluster it is\n\u003e running on. The way I see it, the problem we have with these macros right now\n\u003e is not so much their existence but rather their implementation: MPIDR_CPU_ID\n\u003e does not always return the CPU ID, depending on what affinity level 0 is.\n\nI think that hardcoding CPU in a test is a bad idea in general, even if the\nmacros were correct. We tend to use CPU instead of processing element, which is\nincorrect. We also assume that the levels are cpu/cluster or thread/cpu/cluster\nbut that is just what happens to be the case right now. In general PSCI doesn\u0027t\ntalk about CPUs or clusters but about power domains. Any test that refers to CPU\nor cluster is platform-specific, and we should aim to make them generic. The\nnames of the PSCI interfaces are misleading in that way.\n\nThe only thing that we know is that level 0 corresponds to a thread of execution\n(which may be a thread or a CPU depending on the system) and levels 1-3 to\ngroups of threads.\n\n\u003e Could you please point us to the code that makes the assumption that there is\n\u003e only CPU and cluster affinity levels?\n\nWell, for example, there is this: psci_cluster_hotplug_stress_test() in\ntftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_hotplug_stress.c\n\nThat test assumes that there are only CPUs and clusters.\n\nBut not only that test. As I\u0027ve said, having the PSCI tests rely on the concept\nof CPU and cluster is wrong because PSCI doesn\u0027t define anything based on CPU\nor cluster. Any test that is using the concept of CPU should be adapted to\n\"affinity level 0\". Any test that tests clusters should be adapted to \"from\naffinity level 0 to affinity level max\".\n\nThe words CPU and cluster shouldn\u0027t appear in any non-platform-specific test.",
+      "parentUuid": "918d5318_3ab2c628",
+      "revId": "063b738c95042ef51b62c053441376f4786ea63b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
