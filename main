@@ -6,6 +6,9 @@
 [section "Open Published Patches"]
   query = is:open -is:draft
 
+[section "Open Draft Patches"]
+  query = is:open is:draft
+
 [section "Recently Abandoned"]
   query = is:abandoned -age:1w
 
