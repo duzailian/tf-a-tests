@@ -52,23 +52,21 @@
 #define SMC_TYPE_STD			0
 
 /*******************************************************************************
- * Owning entity number definitions inside the function id as per the SMC
+ * Owning entity number definitions inside the function ID as per the SMC
  * calling convention
  ******************************************************************************/
-#define OEN_ARM_START			0
-#define OEN_ARM_END			0
-#define OEN_CPU_START			1
-#define OEN_CPU_END			1
-#define OEN_SIP_START			2
-#define OEN_SIP_END			2
-#define OEN_OEM_START			3
-#define OEN_OEM_END			3
-#define OEN_STD_START			4	/* Standard Calls */
-#define OEN_STD_END			4
-#define OEN_TAP_START			48	/* Trusted Applications */
-#define OEN_TAP_END			49
-#define OEN_TOS_START			50	/* Trusted OS */
-#define OEN_TOS_END			63
-#define OEN_LIMIT			64
+#define OEN_ARM		0
+#define OEN_CPU		1
+#define OEN_SIP		2
+#define OEN_OEM		3
+#define OEN_STD		4  /* Standard secure service. */
+#define OEN_STD_HYP	5  /* Standard hypervisor service. */
+#define OEN_VENDOR_HYP	6  /* Vendor specific hypervisor service. */
+
+#define OEN_TAP_START	48 /* Trusted Applications */
+#define OEN_TAP_END	49
+
+#define OEN_TOS_START	50 /* Trusted OS */
+#define OEN_TOS_END	63
 
 #endif /* __SMCCC_H__ */
