@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "86711b5b_80b29545",
+        "filename": "include/runtime_services/smccc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-11-30T11:24:03Z",
+      "side": 1,
+      "message": "To be honest, I\u0027m not sure if this is a good idea. Ideally this header would be the same in both repositories, and we aren\u0027t even using the defines here, so I don\u0027t see why we should make them diverge. Regarding SMCCCv1 and SMCCCv2, I guess we have to fix it in this repository.",
+      "revId": "82c21d66186e7e573143d363a7f803ff2153cb8b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
