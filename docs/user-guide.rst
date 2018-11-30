@@ -40,6 +40,8 @@ been tested with version 6.2-2016.11 (gcc 6.2):
 In addition, the following optional packages and tools may be needed:
 
 -   For debugging, Arm `Development Studio 5 (DS-5)`_.
+-   In order to build the resource description blobs of the test Secure
+    Partitions (Cactus and Ivy), the device tree compiler.
 
 Getting the TF-A Tests source code
 ----------------------------------
