@@ -116,6 +116,7 @@ include fwu/ns_bl1u/ns_bl1u.mk
 include fwu/ns_bl2u/ns_bl2u.mk
 include spm/cactus/cactus.mk
 include spm/ivy/ivy.mk
+include spm/sp_package.mk
 
 # Include platform specific makefile last because:
 # - the platform makefile may use all previous definitions in this file.
@@ -462,6 +463,7 @@ help:
 	@echo "  cactus         Build the Cactus image (Test S-EL0 payload)."
 	@echo "  ivy            Build the Ivy image (Test S-EL0 payload)."
 	@echo "  el3_payload    Build the EL3 test payload"
+	@echo "  sp_package     Build SP package with Cactus and Ivy."
 	@echo "  checkcodebase  Check the coding style of the entire source tree"
 	@echo "  checkpatch     Check the coding style on changes in the current"
 	@echo "                 branch against BASE_COMMIT (default origin/master)"
