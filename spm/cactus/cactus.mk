@@ -6,6 +6,8 @@
 
 include lib/sprt/sprt_client.mk
 
+CACTUS_DTB	:= $(BUILD_PLAT)/cactus/cactus.dtb
+
 CACTUS_INCLUDES :=					\
 	-Iinclude					\
 	-Iinclude/common				\
@@ -72,5 +74,16 @@ ifeq (${ARCH},aarch32)
 else
         $(eval $(call add_define,CACTUS_DEFINES,AARCH64))
 endif
+
+$(CACTUS_DTB) : cactus
+	@echo "  DTBGEN  spm/cactus/cactus.dts"
+	${Q}bash tools/generate_dtb/generate_dtb.sh \
+		cactus spm/cactus/cactus.dts $(BUILD_PLAT)
+	@echo
+	@echo "Built $@ successfully"
+	@echo
+
+.PHONY: cactus_dtb
+cactus_dtb: $(CACTUS_DTB)
 
 cactus: ${AUTOGEN_DIR}/tests_list.h
