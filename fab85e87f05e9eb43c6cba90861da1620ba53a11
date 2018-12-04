@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a496663_8fec2636",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T11:56:47Z",
+      "side": 1,
+      "message": "I believe that the exact name is: SGI-575 (looking at https://developer.arm.com/products/system-design/system-guidance/system-guidance-for-infrastructure).",
+      "range": {
+        "startLine": 7,
+        "startChar": 38,
+        "endLine": 7,
+        "endChar": 44
+      },
+      "revId": "fab85e87f05e9eb43c6cba90861da1620ba53a11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4bf7b5f4_d2eb84e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T11:56:47Z",
+      "side": 1,
+      "message": "I would drop this line, as it essentially paraphrases the commit title.\n\nExplaining what level of support is provided at the moment would be more useful IMO.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 56
+      },
+      "revId": "fab85e87f05e9eb43c6cba90861da1620ba53a11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d1f044d8_cdeb24cb",
+        "filename": "plat/arm/board/sgi575/platform.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T11:56:47Z",
+      "side": 1,
+      "message": "Change into: Arm Limited",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 50
+      },
+      "revId": "fab85e87f05e9eb43c6cba90861da1620ba53a11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8c00e429_0f7b4032",
+        "filename": "plat/arm/board/sgi575/tests_to_skip.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T11:56:47Z",
+      "side": 1,
+      "message": "Why is it not supported? Is it that the SGI-575 FVP does not support system suspend? Or is it because the platform port in TF-A Tests does not implement this support yet?\n\nI think it would be valuable information to add in this comment.",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 33
+      },
+      "revId": "fab85e87f05e9eb43c6cba90861da1620ba53a11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dc68353e_bb8979dc",
+        "filename": "plat/arm/board/sgi575/tests_to_skip.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T11:56:47Z",
+      "side": 1,
+      "message": "SGI-575",
+      "range": {
+        "startLine": 7,
+        "startChar": 37,
+        "endLine": 7,
+        "endChar": 43
+      },
+      "revId": "fab85e87f05e9eb43c6cba90861da1620ba53a11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
