@@ -2,6 +2,316 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a0b6ae1_4cb5b855",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "I would drop this line, as it\u0027s identical to the commit title.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 46
+      },
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c68bda92_c1f609f5",
+        "filename": "plat/arm/sgi/include/sgi_base_platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "BL33",
+      "range": {
+        "startLine": 18,
+        "startChar": 69,
+        "endLine": 18,
+        "endChar": 74
+      },
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "477307ef_e51e04f7",
+        "filename": "plat/arm/sgi/include/sgi_base_platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "Trusted Firmware-A",
+      "range": {
+        "startLine": 18,
+        "startChar": 42,
+        "endLine": 18,
+        "endChar": 58
+      },
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "561c566b_5082f6f0",
+        "filename": "plat/arm/sgi/include/sgi_base_platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "TF-A",
+      "range": {
+        "startLine": 27,
+        "startChar": 3,
+        "endLine": 27,
+        "endChar": 5
+      },
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f6423b5e_a9c1af65",
+        "filename": "plat/arm/sgi/include/sgi_base_platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "I think this is a slightly misleading statement, as it might lead the reader to think that TFTF always uses DRAM for \"non-volatile storage\". This might be true on the SGI-575 platform at the moment but it does not have to be that way.\n\nIn the FVP platform port, we have the USE_NVM build flag that controls whether actual non-volatile storage (flash memory in this case) is used or whether we fall back to some region of DRAM. Please have a look at the comments in [1] for more details.\n\nUsing DRAM is usually more straight-forward, as it is of course very simple to read \u0026 write. It is also a lot faster to access. However, for tests that involve power resets - for example, firmware update tests - DRAM is not suitable because it loses its state over a reset. That means that, if no true NVM storage solution is provided, these tests cannot be executed on the platform.\n\nPerhaps consider rephrasing this comment to make this clearer.\n\n[1] https://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/plat/arm/board/fvp/include/platform_def.h#n151",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 54
+      },
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d33367da_5a39515a",
+        "filename": "plat/arm/sgi/include/sgi_base_platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "I would drop this comment. Other defines above are also memory map related constants.",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 41
+      },
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6f31c427_b4bef623",
+        "filename": "plat/arm/sgi/include/sgi_base_platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "I am confused by this line because if I look at the SGI-575 AP memory map (on page 72 of the Arm® CoreLink™ SGI-575 System Guidance for Infrastructure, version 2.0), address 0x20000000 is marked as reserved. Am I missing something?",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 36
+      },
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8c118954_fcd6d207",
+        "filename": "plat/arm/sgi/include/sgi_base_platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "This line too seems suspicious to me. AFAICS, the memory region from 0x32000000 to 0x44100000 is reserved in the AP memory map.",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 36
+      },
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ec69bd27_923285f8",
+        "filename": "plat/arm/sgi/include/sgi_base_platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "Perhaps mention in the comment that we are using the SoC\u0027s UART0 (assuming I read the SGI-575 programmer\u0027s guide correctly).",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 40
+      },
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5b5b97fe_d9721432",
+        "filename": "plat/arm/sgi/include/sgi_base_platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "Consider adding a comment to clarify what IO device this accounts for.",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 26
+      },
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "264c063a_3b2b72bc",
+        "filename": "plat/arm/sgi/include/sgi_base_platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "Out of curiosity, why choose a 40-bit address space?\n\nAlthough the Cortex-A75 supports up to 44 bits of physical address space, I do not see any peripheral address defined in this header file that would go past 0xFFFF_FFFF. I think we only use the low addresses of DRAM (the 2GB region starting at 0x8000_0000) and do not need the upper regions starting at 0x80_8000_0000. I doubt the Coresight and expansion AXI peripheral regions are used, are they?\n\nIf I am not mistaken, using a 40-bit address range (with a 4KB granule size) will require 4 levels of translation tables and I don\u0027t remember whether the translation table library in lib/xlat_tables_v2/ supports it...",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 46
+      },
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d4e820f8_f11d20f6",
+        "filename": "plat/arm/sgi/include/sgi_base_platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "SPI #96 is interrupt ID #128 (i.e. 96 + first SPI). Looking at the AP interrupt map in the SGI-575 PG, it looks like interrupts 97 to 127 are reserved so it seems a bit odd to me to include them in this macro. Should that value be changed into 64 to map up to the AP UART1 interrupt?",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 34
+      },
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "24a73ce9_d5b098d6",
+        "filename": "plat/arm/sgi/include/sgi_base_platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "Consider adding a comment like:\n\n /* AP_REFCLK Generic Timer, Non-secure. */",
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d908497b_5c427246",
+        "filename": "plat/arm/sgi/sgi-common.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-04T13:15:24Z",
+      "side": 1,
+      "message": "I would prefer this file to be called sgi_common.mk (with an underscore) for consistency with plat/arm/common/arm_common.mk.",
+      "revId": "d6ca9e6aa0fce4e64d0ba3cc68c4f898245d9e92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d537342a_b3d585f2",
         "filename": "plat/arm/sgi/sgi-common.mk",
         "patchSetId": 1
