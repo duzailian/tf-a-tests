@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ebc59a21_8ca02f4c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-05T14:08:36Z",
+      "side": 1,
+      "message": "As far as I know, the reason for this change is more that we originally wanted Cactus to be a PIE so we had to link it at address 0 and express all addresses relatively. Later on, we gave up on this idea and so Cactus became a static binary that had to be linked at address \"CACTUS_IMAGE_BASE\".\n\nAssuming I got this right, I think it would be clearer to rephrase the commit message in this way.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 72
+      },
+      "revId": "abad406332c6ffa479a4b0b2c5bdc14f9a8b61ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
