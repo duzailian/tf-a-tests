@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a84a51a5_56ca9eb9",
+        "filename": "include/plat/arm/common/arm_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-05T14:14:47Z",
+      "side": 1,
+      "message": "Consider removing the file completely. I think it was a bad idea (my bad...) to introduce a new header file for a couple of definitions in the first place. I don\u0027t think we should keep an empty header file like that. If we need to reintroduce this file in the future, it should be motivated by a real need this time.",
+      "revId": "545cd38d0ba2c4eadfebc1d40ae0049a69c0d9dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
