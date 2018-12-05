@@ -52,6 +52,24 @@
       "revId": "82c21d66186e7e573143d363a7f803ff2153cb8b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "31b18762_41a9004a",
+        "filename": "include/runtime_services/smccc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-05T15:41:55Z",
+      "side": 1,
+      "message": "\u003e As far as I see, there is nothing TF-specific or TFTF-specific here.\n\nAs I\u0027ve said, I think that enforcing the *_START/END naming convention for all OENs *is* TF-specific, as it is tied to the way of declaring a runtime service in TF. In other words, I think it is a bit odd to do it already in TF-A but there is a good reason for it behind it, which we don\u0027t have in TF-A Tests.",
+      "parentUuid": "718f3c81_c6875332",
+      "revId": "82c21d66186e7e573143d363a7f803ff2153cb8b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
