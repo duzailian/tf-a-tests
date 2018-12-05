@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39451622_f4cb8fb9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-05T16:27:12Z",
+      "side": 1,
+      "message": "Ah I see, thanks.",
+      "range": {
+        "startLine": 9,
+        "startChar": 28,
+        "endLine": 12,
+        "endChar": 14
+      },
+      "revId": "5bf366e189c8b85c6d77105016270a49c2aa6a6d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
