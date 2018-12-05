@@ -70,6 +70,24 @@
       "revId": "82c21d66186e7e573143d363a7f803ff2153cb8b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b8483348_89a3cbca",
+        "filename": "include/runtime_services/smccc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-05T16:25:00Z",
+      "side": 1,
+      "message": "I think that we should stick to just one system in both repositories, whatever that system is. I don\u0027t think that having slightly different defines in both repositories is a good idea.\n\nWe\u0027ve already seen that in general having different versions of the same thing is a problem (xlat tables code, arch.h headers), so I don\u0027t think we should create more problems just because they are more manageable.",
+      "parentUuid": "31b18762_41a9004a",
+      "revId": "82c21d66186e7e573143d363a7f803ff2153cb8b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
