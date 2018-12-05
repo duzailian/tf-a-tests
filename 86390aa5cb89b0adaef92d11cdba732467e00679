@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1293cd84_a4c32415",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-05T14:04:05Z",
+      "side": 1,
+      "message": "Add a line to explain why this is done.",
+      "revId": "86390aa5cb89b0adaef92d11cdba732467e00679",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
