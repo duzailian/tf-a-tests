@@ -33,20 +33,27 @@ SECTIONS
         __RODATA_END__ = .;
     }
 
-
     .data : {
         . = ALIGN(PAGE_SIZE);
-        __RWDATA_START__ = .;
+        __DATA_START__ = .;
         *(.data*)
+        . = NEXT(PAGE_SIZE);
+        __DATA_END__ = .;
     }
 
-    .bss : {
-        . = ALIGN(16);
+    .stacks (NOLOAD) : {
+        . = ALIGN(PAGE_SIZE);
         __BSS_START__ = .;
+        __STACKS_START__ = .;
+        . += 4 * PAGE_SIZE;
+        __STACKS_END__ = .;
+    }
+
+    .bss (NOLOAD) : {
+        . = ALIGN(16);
         *(SORT_BY_ALIGNMENT(.bss*))
         *(COMMON)
         . = NEXT(PAGE_SIZE);
         __BSS_END__ = .;
-        __RWDATA_END__ = .;
     }
 }
