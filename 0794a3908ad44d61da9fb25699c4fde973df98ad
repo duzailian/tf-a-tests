@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8ccf174f_937ccb72",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-05T15:45:38Z",
+      "side": 1,
+      "message": "This is more like a reorganization, I\u0027ve changed the title.",
+      "parentUuid": "3a8484d3_672993d1",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e8b6fa0_7b556c11",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-12-05T14:01:06Z",
       "side": 1,
       "message": "nit: Assuming it got this right, perhaps this would be clearer as:\n\n When SPM loads a secure partition, it zeroes the memory\n corresponding to its NOBITS sections for security reasons\n so ...",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 28
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "803fde3f_2c9ead00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-05T15:45:38Z",
+      "side": 1,
+      "message": "SPM doesn\u0027t know about nobits or progbits, it knows about text, rodata, data and bss because that\u0027s what SPRT defines. I think that the right way to express it is this one.",
+      "parentUuid": "4e8b6fa0_7b556c11",
       "range": {
         "startLine": 9,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "82b02c80_67640e0b",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-05T15:45:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f76c358_44e10c91",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 28
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1104f0c2_60cb0760",
         "filename": "spm/cactus/cactus.ld.S",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2018-12-05T14:01:06Z",
       "side": 1,
       "message": "Could we mark the .stacks section as NOLOAD to avoid storing unnecessary zero bytes in the binary? Just like we do in TF-A BL31:\nhttps://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/bl31/bl31.ld.S#n182",
+      "range": {
+        "startLine": 44,
+        "startChar": 4,
+        "endLine": 44,
+        "endChar": 15
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5045bd1c_25558fc4",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-05T15:45:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1104f0c2_60cb0760",
       "range": {
         "startLine": 44,
         "startChar": 4,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "0adbe51b_f63f96e4",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-05T15:45:38Z",
+      "side": 1,
+      "message": "Well, I consider the stacks to be part of BSS. I didn\u0027t want to create yet another region in the DTS just for that.",
+      "parentUuid": "9fab5db2_f438fc8d",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 26
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "118d3674_04a15f96",
         "filename": "spm/cactus/cactus.ld.S",
         "patchSetId": 1
@@ -128,6 +248,30 @@
       "writtenOn": "2018-12-05T14:01:06Z",
       "side": 1,
       "message": "AFAIU, the stack is now always 4 pages. What was its size before? Where was it defined? I don\u0027t see any modification in this patch that removes the former size, wherever it is.",
+      "range": {
+        "startLine": 48,
+        "startChar": 8,
+        "endLine": 48,
+        "endChar": 27
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "22f0534b_1ba5fc66",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-05T15:45:38Z",
+      "side": 1,
+      "message": "I think that the former size was passed from the TF and Cactus used whatever it got (from the boot struct).",
+      "parentUuid": "118d3674_04a15f96",
       "range": {
         "startLine": 48,
         "startChar": 8,
