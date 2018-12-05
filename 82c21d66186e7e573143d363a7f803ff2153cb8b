@@ -16,6 +16,24 @@
       "revId": "82c21d66186e7e573143d363a7f803ff2153cb8b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5c5b82b4_7f530c23",
+        "filename": "include/runtime_services/smccc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-05T15:09:19Z",
+      "side": 1,
+      "message": "I am proposing this change because I think it is confusing to name these macros *_START/END when in fact they have the same value. If one looks at the SMC calling convention specification, one can clearly see in table 2-1 that there is a single owning entity number for most of the service calls. Only the calls related to the Trusted OS and Trusted applications cover a range. In my mind, this is the exception rather than the general rule.\n\nI believe TF-A introduced this convention because it fit well in the context of the DECLARE_RT_SVC() macro, which allows to attach an SMC handler for a range of SMCs.  This is not relevant in the context of TF-A Tests and I don\u0027t see any value in doing that.\n\nI don\u0027t think we should necessarily aim at sharing this header file between TF-A and TF-A Tests. The SMCCC specification doesn\u0027t get updated that often so I think it is reasonable to edit both the TF-A and TF-A Tests versions of these definitions whenever there is a new version.\n\n \u003e we aren\u0027t even using the defines here, so I don\u0027t see why we should make them diverge.\n\nI am currently preparing a patch that will use them.\n\n\u003e Regarding SMCCCv1 and SMCCCv2, I guess we have to fix it in this repository.\n\nYes, we do but I believe this can be done in another patch.",
+      "parentUuid": "86711b5b_80b29545",
+      "revId": "82c21d66186e7e573143d363a7f803ff2153cb8b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
