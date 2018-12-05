@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a51c98ef_214d11fc",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-05T16:33:02Z",
+      "side": 1,
+      "message": "I think the BSS section is implicitly NOLOAD as it is a standard one in an ELF file. That said, I see that the TF-A BL31 linker script does explicitly mark it as NOLOAD so I wonder whether I\u0027m wrong or whether TF is just being pedantic here.\n\nIs the BSS taking actual space in the binary if you remove this (NOLOAD)?",
+      "range": {
+        "startLine": 52,
+        "startChar": 9,
+        "endLine": 52,
+        "endChar": 17
+      },
+      "revId": "be481c2af8e6b1c091e0963d8fd99f7cbf4fc442",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
