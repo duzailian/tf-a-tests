@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d4d97228_a3cfb660",
+        "filename": "spm/cactus/cactus.dts",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-05T15:45:31Z",
+      "side": 1,
+      "message": "Yes, that\u0027s right. However, there is the fundamental problem that this resource description file depends on platform definitions. This is something that we need to fix, so I\u0027ve added a note. It\u0027s a bit tricky as a reasonably big chunk of the dts is platform-specific.",
+      "parentUuid": "5f242cad_87fb615e",
+      "revId": "77b962e5c2b22f65033e5c64b13bbe3f0035616e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7edf81f0_74476979",
         "filename": "spm/cactus/cactus.dts",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2018-12-05T13:21:28Z",
       "side": 1,
       "message": "Should that be replaced with CACTUS_IMAGE_SIZE?",
+      "range": {
+        "startLine": 37,
+        "startChar": 17,
+        "endLine": 37,
+        "endChar": 25
+      },
+      "revId": "77b962e5c2b22f65033e5c64b13bbe3f0035616e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e6a823c_c552af76",
+        "filename": "spm/cactus/cactus.dts",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-05T15:45:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7edf81f0_74476979",
       "range": {
         "startLine": 37,
         "startChar": 17,
