@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a8484d3_672993d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-05T14:01:06Z",
+      "side": 1,
+      "message": "The commit title looks incorrect to me. AFAIU, this patch creates an explicit section for the stacks, which is distinct from the BSS section.\n\nDid I miss something? Could you please clarify?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e8b6fa0_7b556c11",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-05T14:01:06Z",
+      "side": 1,
+      "message": "nit: Assuming it got this right, perhaps this would be clearer as:\n\n When SPM loads a secure partition, it zeroes the memory\n corresponding to its NOBITS sections for security reasons\n so ...",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 28
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f76c358_44e10c91",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-05T14:01:06Z",
+      "side": 1,
+      "message": "AFAICS, this change is not called out in the commit message and I think it would be nice to explain why it is now needed and what the consequences are.",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 28
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1104f0c2_60cb0760",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-05T14:01:06Z",
+      "side": 1,
+      "message": "Could we mark the .stacks section as NOLOAD to avoid storing unnecessary zero bytes in the binary? Just like we do in TF-A BL31:\nhttps://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/bl31/bl31.ld.S#n182",
+      "range": {
+        "startLine": 44,
+        "startChar": 4,
+        "endLine": 44,
+        "endChar": 15
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fab5db2_f438fc8d",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-05T14:01:06Z",
+      "side": 1,
+      "message": "Defining a linker symbol named like that here is quite confusing. This is not the start of the BSS section.\n\nWhy do we need this symbol in the 1st place? With the BSS section no longer being zeroed out by Cactus entrypoint code, I assumed it would not be required anymore...",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 26
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "118d3674_04a15f96",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-05T14:01:06Z",
+      "side": 1,
+      "message": "AFAIU, the stack is now always 4 pages. What was its size before? Where was it defined? I don\u0027t see any modification in this patch that removes the former size, wherever it is.",
+      "range": {
+        "startLine": 48,
+        "startChar": 8,
+        "endLine": 48,
+        "endChar": 27
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
