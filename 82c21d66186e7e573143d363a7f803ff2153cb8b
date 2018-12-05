@@ -34,6 +34,24 @@
       "revId": "82c21d66186e7e573143d363a7f803ff2153cb8b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "718f3c81_c6875332",
+        "filename": "include/runtime_services/smccc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-05T15:26:59Z",
+      "side": 1,
+      "message": "Why not sharing this file as well? As far as I see, there is nothing TF-specific or TFTF-specific here. Sure, this file doesn\u0027t change a lot, but I still think that sharing the files makes more sense. This file is included by other ones that have defines for services (like SPCI and SPRT), so I\u0027d rather know that the file is always going to be the same on both sides (or that updating it is going to be trivial).",
+      "parentUuid": "5c5b82b4_7f530c23",
+      "revId": "82c21d66186e7e573143d363a7f803ff2153cb8b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
