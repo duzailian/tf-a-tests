@@ -237,6 +237,30 @@
     },
     {
       "key": {
+        "uuid": "ba0a9441_ed6bec32",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T08:55:36Z",
+      "side": 1,
+      "message": "OK I understand the use case. I agree we can encompass both stacks and the BSS in the same section. This is all uninitialized data from the point of view of the secure partition loader in SPM. If a secure partition uses dynamic memory allocation and thus needs a heap, I guess we would put it in the same section again.\n\nThat said, I am not keen on using the BSS_START/END names. BSS has a special meaning and I am afraid it will confuse people. Can we use another name, perhaps UNINIT_DATA_START/END?\n\nAlso, I think defining these symbols outside of the sections definitions would be clearer. Let\u0027s say, this linker script puts the sections in this order: 1. stacks 2. bss 3.heap, then I suggest we add the following 2 lines at the end of the linker script:\n\n __UNINIT_DATA_START__ \u003d ADDR(.stacks);\n __UNINIT_DATA_END__ \u003d ADDR(.heap) + SIZEOF(.heap);",
+      "parentUuid": "0adbe51b_f63f96e4",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 26
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "118d3674_04a15f96",
         "filename": "spm/cactus/cactus.ld.S",
         "patchSetId": 1
@@ -272,6 +296,30 @@
       "side": 1,
       "message": "I think that the former size was passed from the TF and Cactus used whatever it got (from the boot struct).",
       "parentUuid": "118d3674_04a15f96",
+      "range": {
+        "startLine": 48,
+        "startChar": 8,
+        "endLine": 48,
+        "endChar": 27
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f20b3de8_8883249c",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T08:55:36Z",
+      "side": 1,
+      "message": "OK that makes sense to me.\n\nDon\u0027t we want to be able to change the stack size more easily by defining e.g. a CACTUS_STACKS_SIZE macro in cactus_def.h rather than burying it in the linker script?",
+      "parentUuid": "22f0534b_1ba5fc66",
       "range": {
         "startLine": 48,
         "startChar": 8,
