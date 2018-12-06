@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e85bb5a9_b483b8c8",
+        "filename": "plat/arm/sgi/common/include/sgi_base_platform_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T11:53:59Z",
+      "side": 1,
+      "message": "Encouraging people to toggle USE_NVM to 1 to use flash memory (without any other code changes) does not seem like a good idea to me. If the platform header file does not provide an alternative value of TFTF_NVM_OFFSET when USE_NVM\u003d1 (like the FVP platform port does) then that means that TFTF will write to the beginning of the flash and probably overwrite some of the firmware images. Or do the firmware images get stored to a different location on SGI platforms?",
+      "range": {
+        "startLine": 45,
+        "startChar": 42,
+        "endLine": 46,
+        "endChar": 62
+      },
+      "revId": "a9029c0a9ca6419151387ad8681319bb4e9bb260",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ac48017b_8ca505b1",
+        "filename": "plat/arm/sgi/common/include/sgi_base_platform_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T11:53:59Z",
+      "side": 1,
+      "message": "Suggest adding a comment like:\n\n /* Sub-system Peripherals. */",
+      "revId": "a9029c0a9ca6419151387ad8681319bb4e9bb260",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
