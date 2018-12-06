@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff6af432_793ad86f",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T09:44:27Z",
+      "side": 1,
+      "message": "I think we need to include spci_svc.h to get the definition of SPCI_VERSION used by the SKIP_TEST_IF_SPCI_VERSION_LESS_THAN() macro introduced in this patch.",
+      "revId": "e1ae94727f912c6a81f59c957c8d94188d22be9b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "432cb29e_e3aba80d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_handle_open.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T09:44:27Z",
+      "side": 1,
+      "message": "SPCI error code are small negative values like -1, -2 and so on. Therefore, I don\u0027t think it\u0027s a good idea to cast the return value into an unsigned int. Also, I\u0027m not convinced printing the value in hexadecimal format will help. I much prefer reading \"SPM should have returned SPCI_NOT_PRESENT. Returned: -1\" than \"... Returned: 0xFFFFFFFF\"",
+      "range": {
+        "startLine": 43,
+        "startChar": 19,
+        "endLine": 43,
+        "endChar": 29
+      },
+      "revId": "e1ae94727f912c6a81f59c957c8d94188d22be9b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
