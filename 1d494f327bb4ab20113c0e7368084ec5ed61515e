@@ -22,6 +22,30 @@
       "revId": "1d494f327bb4ab20113c0e7368084ec5ed61515e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8f21ba95_536a4bb6",
+        "filename": "spm/cactus/cactus_tests_memory_attributes.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-06T11:17:45Z",
+      "side": 1,
+      "message": "Previously the individual defines used to represent individual fields inside the final value. Right now it is actually more like an enum, so I think it\u0027s not clear to OR the values.",
+      "parentUuid": "0281cb05_afb36935",
+      "range": {
+        "startLine": 146,
+        "startChar": 14,
+        "endLine": 146,
+        "endChar": 19
+      },
+      "revId": "1d494f327bb4ab20113c0e7368084ec5ed61515e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
