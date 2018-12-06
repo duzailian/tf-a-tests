@@ -1,0 +1,176 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "65adec29_dd0ba799",
+        "filename": "include/lib/sprt/sprt_client.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T10:15:39Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 34,
+        "startChar": 65,
+        "endLine": 34,
+        "endChar": 73
+      },
+      "revId": "e5e39f8df35f7ced9e11b7b74aa25e7ed3b3b536",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dd58c2fb_535e3e9d",
+        "filename": "include/lib/sprt/sprt_client.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T10:15:39Z",
+      "side": 1,
+      "message": "Document queue_num as well.",
+      "revId": "e5e39f8df35f7ced9e11b7b74aa25e7ed3b3b536",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0278baa8_17d39e69",
+        "filename": "lib/sprt/sprt_client.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T10:15:39Z",
+      "side": 1,
+      "message": "I suspect we might not actually need to initialize arguments #1 to #7 of the SVC call, as the SPRT_VERSION SVC handler in TF-A should ignore arguments other than the SVC FID in x0, right?\n\nSame comment for other similar SVC calls below.",
+      "range": {
+        "startLine": 19,
+        "startChar": 24,
+        "endLine": 19,
+        "endChar": 30
+      },
+      "revId": "e5e39f8df35f7ced9e11b7b74aa25e7ed3b3b536",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3227701b_48cce5cb",
+        "filename": "lib/sprt/sprt_client.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T10:15:39Z",
+      "side": 1,
+      "message": "Drop this?",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 8
+      },
+      "revId": "e5e39f8df35f7ced9e11b7b74aa25e7ed3b3b536",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "03005f21_b20c1ba8",
+        "filename": "lib/sprt/sprt_client.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T10:15:39Z",
+      "side": 1,
+      "message": "Consider documenting that variable.",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 28
+      },
+      "revId": "e5e39f8df35f7ced9e11b7b74aa25e7ed3b3b536",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "31c6ad31_6397d713",
+        "filename": "lib/sprt/sprt_client.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T10:15:39Z",
+      "side": 1,
+      "message": "Drop this line?",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 8
+      },
+      "revId": "e5e39f8df35f7ced9e11b7b74aa25e7ed3b3b536",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0c9b02f8_dfa1950f",
+        "filename": "lib/sprt/sprt_client_private.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T10:15:39Z",
+      "side": 1,
+      "message": "We should look into moving this file to a generic location that is not specific to SPRT. I guess this can be done in a separate patch but could we anticipate this move by renaming sprt_client_svc() into just svc()?",
+      "revId": "e5e39f8df35f7ced9e11b7b74aa25e7ed3b3b536",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be026bde_090d857f",
+        "filename": "lib/sprt/sprt_queue.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T10:15:39Z",
+      "side": 1,
+      "message": "Could you please explain the reason for these barriers? In general, I think that *every* barrier should be documented because it\u0027s quite a complex subject.\n\nIn this specific case, I would have expected that a single DMB to enforce the ordering between the message payload being written and the queue index being updated would be enough. Is there more we\u0027re trying to guarantee here?",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 28
+      },
+      "revId": "e5e39f8df35f7ced9e11b7b74aa25e7ed3b3b536",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
