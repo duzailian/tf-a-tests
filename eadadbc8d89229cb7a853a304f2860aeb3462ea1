@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e670fa05_791e540e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T12:00:31Z",
+      "side": 1,
+      "message": "Cortex-A75",
+      "range": {
+        "startLine": 9,
+        "startChar": 41,
+        "endLine": 9,
+        "endChar": 44
+      },
+      "revId": "eadadbc8d89229cb7a853a304f2860aeb3462ea1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "91b27d47_e56c3899",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T12:00:31Z",
+      "side": 1,
+      "message": "I think we should say \"fixed virtual platform\" or FVP instead. Fastmodel may refer to the framework tool FVPs are built from:\nhttps://developer.arm.com/products/system-design/fast-models",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 9
+      },
+      "revId": "eadadbc8d89229cb7a853a304f2860aeb3462ea1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "abd4df8d_8c6bd7e9",
+        "filename": "plat/arm/board/sgi/sgi575/tests_to_skip.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T12:00:31Z",
+      "side": 1,
+      "message": "Out of curiosity, can the SCP not wake up the AP cores? Or is the SCP not modeled on the FVP?",
+      "range": {
+        "startLine": 7,
+        "startChar": 37,
+        "endLine": 7,
+        "endChar": 79
+      },
+      "revId": "eadadbc8d89229cb7a853a304f2860aeb3462ea1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
