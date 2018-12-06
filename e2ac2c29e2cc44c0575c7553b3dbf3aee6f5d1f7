@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "010d6304_ef1ba18e",
+        "filename": "readme.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T12:04:03Z",
+      "side": 1,
+      "message": "I think we don\u0027t need a new title, I would have put this paragraph under the existing \"Arm Fixed Virtual Platforms\" because SGI-575 is essentially an FVP.",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 58
+      },
+      "revId": "e2ac2c29e2cc44c0575c7553b3dbf3aee6f5d1f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0881a008_8d2bdd61",
+        "filename": "readme.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-06T12:04:03Z",
+      "side": 1,
+      "message": "Consider enclosing this in back quotes, it will make this text appear better in the rendered version of this document.",
+      "range": {
+        "startLine": 101,
+        "startChar": 10,
+        "endLine": 101,
+        "endChar": 25
+      },
+      "revId": "e2ac2c29e2cc44c0575c7553b3dbf3aee6f5d1f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
