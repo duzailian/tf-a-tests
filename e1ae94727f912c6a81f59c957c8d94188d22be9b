@@ -81,6 +81,30 @@
       "revId": "e1ae94727f912c6a81f59c957c8d94188d22be9b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8cd28f53_4acc1255",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_handle_open.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-10T16:29:39Z",
+      "side": 1,
+      "message": "The scenario where it returns a valid error code seems more likely to me. The other one you mentioned, where things really go wrong and the return value is complete garbage is less probable. Moreover, the error value in this latter case would probably not help the user debugging the issue anyway. I think that if he reads something like, \"SPM should have returned SPCI_NOT_PRESENT. Returned: -1745596\", this will be enough to tell him that something unexpected happened. What more would he gain by seeing the equivalent hexadecimal value in this case?\n\nThus, I still think we should go for the most likely case and print a signed value.",
+      "parentUuid": "f8a79d67_5aa67842",
+      "range": {
+        "startLine": 43,
+        "startChar": 19,
+        "endLine": 43,
+        "endChar": 29
+      },
+      "revId": "e1ae94727f912c6a81f59c957c8d94188d22be9b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
