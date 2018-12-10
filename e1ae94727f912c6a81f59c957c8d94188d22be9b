@@ -105,6 +105,30 @@
       "revId": "e1ae94727f912c6a81f59c957c8d94188d22be9b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e16880fc_ef3b62e6",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_handle_open.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-10T17:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8cd28f53_4acc1255",
+      "range": {
+        "startLine": 43,
+        "startChar": 19,
+        "endLine": 43,
+        "endChar": 29
+      },
+      "revId": "e1ae94727f912c6a81f59c957c8d94188d22be9b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
