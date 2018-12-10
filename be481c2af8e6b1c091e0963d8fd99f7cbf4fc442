@@ -22,6 +22,30 @@
       "revId": "be481c2af8e6b1c091e0963d8fd99f7cbf4fc442",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e03513b5_46984acf",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-10T16:04:31Z",
+      "side": 1,
+      "message": "I haven\u0027t found any information related to this. All I can find is this regarding LD, and there doesn\u0027t seem to be a list of special/reserved names.\n\nhttps://sourceware.org/binutils/docs/ld/Output-Section-Type.html#index-NOLOAD",
+      "parentUuid": "a51c98ef_214d11fc",
+      "range": {
+        "startLine": 52,
+        "startChar": 9,
+        "endLine": 52,
+        "endChar": 17
+      },
+      "revId": "be481c2af8e6b1c091e0963d8fd99f7cbf4fc442",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
