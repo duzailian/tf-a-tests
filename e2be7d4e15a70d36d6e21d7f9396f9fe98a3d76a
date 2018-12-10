@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b86b67cb_32716e9e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_blocking_request.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-10T08:29:35Z",
+      "side": 1,
+      "message": "The test should clean up before exiting. For example, the handle should be closed, AFAICS.",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 75,
+        "endChar": 28
+      },
+      "revId": "e2be7d4e15a70d36d6e21d7f9396f9fe98a3d76a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffd46ac8_480c5e6b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_blocking_request.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-10T08:29:35Z",
+      "side": 1,
+      "message": "Perhaps consider moving this at line 160, in the scope that uses this variable.",
+      "range": {
+        "startLine": 155,
+        "startChar": 2,
+        "endLine": 155,
+        "endChar": 45
+      },
+      "revId": "e2be7d4e15a70d36d6e21d7f9396f9fe98a3d76a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "afba650f_b4f2604f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_non_blocking_request.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-10T08:29:35Z",
+      "side": 1,
+      "message": "The test should clean up here (and in a few instances below) as well, for example closing the handle with Cactus.",
+      "range": {
+        "startLine": 45,
+        "startChar": 2,
+        "endLine": 45,
+        "endChar": 26
+      },
+      "revId": "e2be7d4e15a70d36d6e21d7f9396f9fe98a3d76a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4468eb7f_96d11898",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_non_blocking_request.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-10T08:29:35Z",
+      "side": 1,
+      "message": "It looks like this function should be static.",
+      "range": {
+        "startLine": 145,
+        "startChar": 1,
+        "endLine": 145,
+        "endChar": 55
+      },
+      "revId": "e2be7d4e15a70d36d6e21d7f9396f9fe98a3d76a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
