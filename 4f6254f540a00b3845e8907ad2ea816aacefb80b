@@ -16,6 +16,24 @@
       "revId": "4f6254f540a00b3845e8907ad2ea816aacefb80b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f7c981c7_e3ad139c",
+        "filename": "lib/irq/irq.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-10T13:10:01Z",
+      "side": 1,
+      "message": "I\u0027m not sure this is the correct fix. The spi_desc_table[] is used in lib/irq/irq.c in line 46. In there it is accessed as \"spi_desc_table[irq_num - MIN_SPI_ID]\" because the code is expected to skip the first MIN_SPI_ID handlers.\n\nI think that this change will make the code not complain about the array being too small, but the resulting code will use the wrong handlers for the SPI handling.",
+      "parentUuid": "4a00f398_52cb04e5",
+      "revId": "4f6254f540a00b3845e8907ad2ea816aacefb80b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
