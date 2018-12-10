@@ -261,6 +261,30 @@
     },
     {
       "key": {
+        "uuid": "8318840c_e1bb1eca",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-10T16:04:31Z",
+      "side": 1,
+      "message": "Actually, Roberto has suggested moving the stack out of the linkerscript, and I agree that it is cleaner, we don\u0027t want the linkerscripts to be any longer than they strictly have to.",
+      "parentUuid": "ba0a9441_ed6bec32",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 26
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "118d3674_04a15f96",
         "filename": "spm/cactus/cactus.ld.S",
         "patchSetId": 1
@@ -320,6 +344,30 @@
       "side": 1,
       "message": "OK that makes sense to me.\n\nDon\u0027t we want to be able to change the stack size more easily by defining e.g. a CACTUS_STACKS_SIZE macro in cactus_def.h rather than burying it in the linker script?",
       "parentUuid": "22f0534b_1ba5fc66",
+      "range": {
+        "startLine": 48,
+        "startChar": 8,
+        "endLine": 48,
+        "endChar": 27
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6f1e56b6_1f359416",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-10T16:04:31Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "f20b3de8_8883249c",
       "range": {
         "startLine": 48,
         "startChar": 8,
