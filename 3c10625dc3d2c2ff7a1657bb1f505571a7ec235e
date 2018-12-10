@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "718c056b_86e096b2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-10T17:21:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea6338dc_e1a36c3a",
+      "revId": "3c10625dc3d2c2ff7a1657bb1f505571a7ec235e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "24083f95_a34e5f4d",
         "filename": "spm/ivy/ivy.mk",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2018-12-06T11:20:11Z",
       "side": 1,
       "message": "Perhaps we should introduce a new sp.mk that would gather e.g. common include paths for Ivy and Cactus and include it from cactus.mk and ivy.mk.",
+      "revId": "3c10625dc3d2c2ff7a1657bb1f505571a7ec235e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f82cb197_d8585e02",
+        "filename": "spm/ivy/ivy.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-10T17:21:40Z",
+      "side": 1,
+      "message": "It\u0027s not clear yet what kind of things will be common between them so I\u0027d rather keep it like this for now.",
+      "parentUuid": "24083f95_a34e5f4d",
       "revId": "3c10625dc3d2c2ff7a1657bb1f505571a7ec235e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
