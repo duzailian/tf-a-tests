@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f954aa44_74be5514",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2018-12-11T06:20:45Z",
+      "side": 1,
+      "message": "okay",
+      "parentUuid": "e670fa05_791e540e",
+      "range": {
+        "startLine": 9,
+        "startChar": 41,
+        "endLine": 9,
+        "endChar": 44
+      },
+      "revId": "eadadbc8d89229cb7a853a304f2860aeb3462ea1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "91b27d47_e56c3899",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "9e45056b_0bea6377",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2018-12-11T06:20:45Z",
+      "side": 1,
+      "message": "okay. will not use fastmodel term.",
+      "parentUuid": "91b27d47_e56c3899",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 9
+      },
+      "revId": "eadadbc8d89229cb7a853a304f2860aeb3462ea1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "abd4df8d_8c6bd7e9",
         "filename": "plat/arm/board/sgi/sgi575/tests_to_skip.txt",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2018-12-06T12:00:31Z",
       "side": 1,
       "message": "Out of curiosity, can the SCP not wake up the AP cores? Or is the SCP not modeled on the FVP?",
+      "range": {
+        "startLine": 7,
+        "startChar": 37,
+        "endLine": 7,
+        "endChar": 79
+      },
+      "revId": "eadadbc8d89229cb7a853a304f2860aeb3462ea1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "474359e8_a13a2971",
+        "filename": "plat/arm/board/sgi/sgi575/tests_to_skip.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2018-12-11T06:20:45Z",
+      "side": 1,
+      "message": "SCP is modeled on the FVP and SCP can wake up the AP cores but there is no way as of now to inform the SCP to wake up the cores.",
+      "parentUuid": "abd4df8d_8c6bd7e9",
       "range": {
         "startLine": 7,
         "startChar": 37,
