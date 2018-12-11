@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "d1e7017f_27d8fdf6",
+        "filename": "Makefile",
+        "patchSetId": 7
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-11T16:12:15Z",
+      "side": 1,
+      "message": "No longer needed.\n\nBut yeah, I agree that this should be automatic.",
+      "parentUuid": "5155954d_7b01a3bc",
+      "range": {
+        "startLine": 451,
+        "startChar": 44,
+        "endLine": 451,
+        "endChar": 132
+      },
+      "revId": "b4a8e24982b18fd6b8eab636a1488c739982b5a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b830054e_ca1e41d1",
         "filename": "spm/cactus/cactus.mk",
         "patchSetId": 7
@@ -59,6 +83,30 @@
       "writtenOn": "2018-12-11T15:54:21Z",
       "side": 1,
       "message": "Is it not the other way around? I would have expected the cactus rule to depend on the DTB one (as well as the rule generating cactus.bin). In other words, you can only say that cactus as a whole has been built if you\u0027ve built cactus.bin and cactus.dtb.\n\nYou surely need a dependency on the dts itself as well, in order for the build system to rebuild the dtb if the dts changed.",
+      "range": {
+        "startLine": 78,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 22
+      },
+      "revId": "b4a8e24982b18fd6b8eab636a1488c739982b5a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5493f038_bb7fb331",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-11T16:12:15Z",
+      "side": 1,
+      "message": "I made it depend on the binary because that meant that the elf file would have been built by then. I\u0027ve made it depend only on the elf file now.",
+      "parentUuid": "b830054e_ca1e41d1",
       "range": {
         "startLine": 78,
         "startChar": 0,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "09f6957e_f19f0417",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-11T16:12:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0b41d9f2_882fbae2",
+      "range": {
+        "startLine": 80,
+        "startChar": 5,
+        "endLine": 80,
+        "endChar": 9
+      },
+      "revId": "b4a8e24982b18fd6b8eab636a1488c739982b5a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "89d75868_717e32cb",
         "filename": "tools/generate_dtb/generate_dtb.sh",
         "patchSetId": 7
@@ -111,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "9c7bae5e_f2189e20",
+        "filename": "tools/generate_dtb/generate_dtb.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-11T16:12:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89d75868_717e32cb",
+      "revId": "b4a8e24982b18fd6b8eab636a1488c739982b5a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d86cf464_4f730d18",
         "filename": "tools/generate_dtb/generate_dtb.sh",
         "patchSetId": 7
@@ -122,6 +212,30 @@
       "writtenOn": "2018-12-11T15:54:21Z",
       "side": 1,
       "message": "This line creates a dependency on the dtc tool. It would be good to mention it in the user guide:\nhttps://git.trustedfirmware.org/TF-A/tf-a-tests.git/about/docs/user-guide.rst#tools",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 56
+      },
+      "revId": "b4a8e24982b18fd6b8eab636a1488c739982b5a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67aa1b7a_c8a0df9b",
+        "filename": "tools/generate_dtb/generate_dtb.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-11T16:12:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d86cf464_4f730d18",
       "range": {
         "startLine": 73,
         "startChar": 0,
