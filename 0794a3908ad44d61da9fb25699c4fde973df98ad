@@ -285,6 +285,30 @@
     },
     {
       "key": {
+        "uuid": "498878fd_171d1881",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-11T09:30:30Z",
+      "side": 1,
+      "message": "That makes sense to me. I think we only need a separate stacks section if we want to have precise control on its location in the binary. For example, if we wanted to keep an unmapped, guard page below the stacks to help in detecting stack overflows. I don\u0027t think we need that for secure partitions right now.",
+      "parentUuid": "8318840c_e1bb1eca",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 26
+      },
+      "revId": "0794a3908ad44d61da9fb25699c4fde973df98ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "118d3674_04a15f96",
         "filename": "spm/cactus/cactus.ld.S",
         "patchSetId": 1
