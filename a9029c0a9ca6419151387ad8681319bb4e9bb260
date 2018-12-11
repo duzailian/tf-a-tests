@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "5ab75ab7_b9197519",
+        "filename": "plat/arm/sgi/common/include/sgi_base_platform_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2018-12-11T06:16:33Z",
+      "side": 1,
+      "message": "SGI platforms do not intend to provide true NVM support. Will modify the code to print error message if user sets USE_NVM\u003d1",
+      "parentUuid": "8dad509f_3324477b",
+      "range": {
+        "startLine": 45,
+        "startChar": 42,
+        "endLine": 46,
+        "endChar": 62
+      },
+      "revId": "a9029c0a9ca6419151387ad8681319bb4e9bb260",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ac48017b_8ca505b1",
         "filename": "plat/arm/sgi/common/include/sgi_base_platform_def.h",
         "patchSetId": 2
@@ -60,6 +84,24 @@
       "writtenOn": "2018-12-06T11:53:59Z",
       "side": 1,
       "message": "Suggest adding a comment like:\n\n /* Sub-system Peripherals. */",
+      "revId": "a9029c0a9ca6419151387ad8681319bb4e9bb260",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27d54147_71f4f99d",
+        "filename": "plat/arm/sgi/common/include/sgi_base_platform_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2018-12-11T06:16:33Z",
+      "side": 1,
+      "message": "okay. added the comment",
+      "parentUuid": "ac48017b_8ca505b1",
       "revId": "a9029c0a9ca6419151387ad8681319bb4e9bb260",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
