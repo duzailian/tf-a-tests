@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9a29463_d57cf6a5",
+        "filename": "lib/sprt/sprt_client.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-11T14:43:09Z",
+      "side": 1,
+      "message": "Remove as well.",
+      "range": {
+        "startLine": 64,
+        "startChar": 24,
+        "endLine": 64,
+        "endChar": 30
+      },
+      "revId": "4a16cad90a082f1f2b139fa1a6c26a9bfc6bace3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "25832131_553e1983",
+        "filename": "lib/sprt/sprt_queue.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-11T14:43:09Z",
+      "side": 1,
+      "message": "As I said in a previous version of this patch, I still don\u0027t understand why a DMB would not be enough. AFAIK, DMB provides memory ordering requirements and would guarantee that the updates are visible to observers in the intended order.\n\nI might be missing something, could you please explain why a DSB is needed instead?",
+      "range": {
+        "startLine": 66,
+        "startChar": 39,
+        "endLine": 66,
+        "endChar": 46
+      },
+      "revId": "4a16cad90a082f1f2b139fa1a6c26a9bfc6bace3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
