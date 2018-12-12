@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "19cb26b9_bece7621",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-12T10:20:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "85b11fca_2e1b9c94",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 58
+      },
+      "revId": "2f2d362634107880a1106ecc83e8f719cbf1ea16",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4fb247ba_62280fd7",
         "filename": "spm/cactus/cactus.mk",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2018-12-12T08:08:13Z",
       "side": 1,
       "message": "As far as I can see, this is not exactly the location of the dtb file produced by the script, it should be: $(BUILD_PLAT)/cactus.dtb",
+      "range": {
+        "startLine": 9,
+        "startChar": 14,
+        "endLine": 9,
+        "endChar": 45
+      },
+      "revId": "2f2d362634107880a1106ecc83e8f719cbf1ea16",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ef81684_1d43fcdb",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-12T10:20:26Z",
+      "side": 1,
+      "message": "Oh, right, I\u0027ve changed this recently and forgot to update this.",
+      "parentUuid": "4fb247ba_62280fd7",
       "range": {
         "startLine": 9,
         "startChar": 14,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "41adf7ce_9e77a43c",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 11
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-12T10:20:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "229f98d5_dc1d40c8",
+      "range": {
+        "startLine": 78,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 68
+      },
+      "revId": "2f2d362634107880a1106ecc83e8f719cbf1ea16",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a345921b_474ed8b6",
         "filename": "tools/generate_dtb/generate_dtb.sh",
         "patchSetId": 11
@@ -82,6 +154,30 @@
       "writtenOn": "2018-12-12T08:08:13Z",
       "side": 1,
       "message": "Did you mean $BUILD_TYPE?",
+      "range": {
+        "startLine": 14,
+        "startChar": 19,
+        "endLine": 14,
+        "endChar": 25
+      },
+      "revId": "2f2d362634107880a1106ecc83e8f719cbf1ea16",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e0e523f5_739a684d",
+        "filename": "tools/generate_dtb/generate_dtb.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-12T10:20:26Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "a345921b_474ed8b6",
       "range": {
         "startLine": 14,
         "startChar": 19,
