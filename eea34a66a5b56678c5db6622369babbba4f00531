@@ -84,6 +84,30 @@
     },
     {
       "key": {
+        "uuid": "b367de15_23754d6a",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-12T12:58:45Z",
+      "side": 1,
+      "message": "Have you cleaned your build tree before trying to run \u0027make all\u0027? It seems to me that the issue is related to the build directory itself. In the output of make -d, I read the following lines the second time I try to build:\n\n Prerequisite \u0027build/fvp/debug/cactus\u0027 is newer than target \u0027build/fvp/debug/cactus.dtb\u0027. \n \u003csnip\u003e\n Must remake target \u0027build/fvp/debug/cactus.dtb\u0027.",
+      "parentUuid": "59bb3c6c_a15c80a5",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 37
+      },
+      "revId": "eea34a66a5b56678c5db6622369babbba4f00531",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "af3596de_becf57d5",
         "filename": "spm/cactus/cactus.mk",
         "patchSetId": 12
