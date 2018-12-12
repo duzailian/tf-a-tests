@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "21da675f_33bc5721",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-12T10:42:00Z",
+      "side": 1,
+      "message": "I didn\u0027t want to go over 80 characters.",
+      "parentUuid": "dda37713_e7c79430",
+      "revId": "eea34a66a5b56678c5db6622369babbba4f00531",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cd64fa59_8ef159b9",
         "filename": "spm/cactus/cactus.mk",
         "patchSetId": 12
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "59bb3c6c_a15c80a5",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-12T10:42:00Z",
+      "side": 1,
+      "message": "I can\u0027t reproduce this problem. In my setup the only thing that is rebuilt every time with ``make all`` is the el3_payload target.",
+      "parentUuid": "cd64fa59_8ef159b9",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 37
+      },
+      "revId": "eea34a66a5b56678c5db6622369babbba4f00531",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "af3596de_becf57d5",
         "filename": "spm/cactus/cactus.mk",
         "patchSetId": 12
@@ -53,6 +95,24 @@
       "writtenOn": "2018-12-12T10:36:21Z",
       "side": 1,
       "message": "Why not put the DTB dependency on this line?",
+      "revId": "eea34a66a5b56678c5db6622369babbba4f00531",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae1eaaf_8310fd0f",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-12T10:42:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af3596de_becf57d5",
       "revId": "eea34a66a5b56678c5db6622369babbba4f00531",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
