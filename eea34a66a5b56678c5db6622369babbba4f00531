@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dda37713_e7c79430",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-12T10:36:21Z",
+      "side": 1,
+      "message": "Why not put the dependency on the DTS on the same line?",
+      "revId": "eea34a66a5b56678c5db6622369babbba4f00531",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cd64fa59_8ef159b9",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-12T10:36:21Z",
+      "side": 1,
+      "message": "There still seems to be a dependency issue because the DTB file is sometimes re-generated when it shouldn\u0027t. This could perhaps hide an issue.\n\nFor example, if I:\n1. clean (make distclean) my tree\n2. build cactus (make cactus), the DTB is generated, as expected.\n3. make cactus again, no source file is recompiled but the DTB is. This behaviour seems incorrect to me.\n4. make cactus one last time, nothing to be done, as expected.\n\nOff the top of my head, I can\u0027t see what\u0027s causing this spurious generation of the DTB at step 3...",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 37
+      },
+      "revId": "eea34a66a5b56678c5db6622369babbba4f00531",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "af3596de_becf57d5",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-12T10:36:21Z",
+      "side": 1,
+      "message": "Why not put the DTB dependency on this line?",
+      "revId": "eea34a66a5b56678c5db6622369babbba4f00531",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
