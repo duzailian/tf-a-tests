@@ -180,6 +180,30 @@
     },
     {
       "key": {
+        "uuid": "a0fc01ef_652c0215",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-13T11:27:08Z",
+      "side": 1,
+      "message": "I\u0027ve tried:\n\n```\n$(CACTUS_DTB) : | $(BUILD_PLAT)/cactus\n$(CACTUS_DTB) : $(BUILD_PLAT)/cactus/cactus.elf spm/cactus/cactus.dts\n```\n\nIt doesn\u0027t fix it, and it creates problems (missing dependencies). Any idea? We could always fix this in a following patch, this is not a big problem like a missing dependency.",
+      "parentUuid": "4e42c398_8ddf8d52",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 37
+      },
+      "revId": "eea34a66a5b56678c5db6622369babbba4f00531",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "af3596de_becf57d5",
         "filename": "spm/cactus/cactus.mk",
         "patchSetId": 12
