@@ -204,6 +204,30 @@
     },
     {
       "key": {
+        "uuid": "30689c60_16839a64",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-13T13:31:46Z",
+      "side": 1,
+      "message": "\u003e We could always fix this in a following patch, this is\n \u003e not a big problem like a missing dependency.\n\nOK let\u0027s do that. I\u0027ve created the following ticket to track the bug:\nhttps://developer.trustedfirmware.org/T159",
+      "parentUuid": "a0fc01ef_652c0215",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 37
+      },
+      "revId": "eea34a66a5b56678c5db6622369babbba4f00531",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "af3596de_becf57d5",
         "filename": "spm/cactus/cactus.mk",
         "patchSetId": 12
