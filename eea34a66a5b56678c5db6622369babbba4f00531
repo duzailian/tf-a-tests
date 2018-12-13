@@ -132,6 +132,30 @@
     },
     {
       "key": {
+        "uuid": "68586679_d626452f",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-13T08:52:58Z",
+      "side": 1,
+      "message": "So the problem is that the files inside the folder are modified after the elf file is created, so the DTB is created before the last file created in the folder. This makes \"make\" think that the folder has changed and so the DTB target is old. I don\u0027t think this can be fixed without more changes to the build system.",
+      "parentUuid": "02e2f985_52219fae",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 37
+      },
+      "revId": "eea34a66a5b56678c5db6622369babbba4f00531",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "af3596de_becf57d5",
         "filename": "spm/cactus/cactus.mk",
         "patchSetId": 12
