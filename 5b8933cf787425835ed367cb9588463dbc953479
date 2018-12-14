@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22a75e39_8f466dd6",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_blocking_interrupt.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-14T09:34:38Z",
+      "side": 1,
+      "message": "We need better error handling here and below, just like you did in https://review.trustedfirmware.org/#/c/TF-A/tf-a-tests/+/413/",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 26
+      },
+      "revId": "5b8933cf787425835ed367cb9588463dbc953479",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "72dfa4ab_2ff2c8a0",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_blocking_interrupt.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-14T09:34:38Z",
+      "side": 1,
+      "message": "In practice, if you remove this delay, does the test misbehave?\n\nSince the timer is supposed to fire while the CPU is executing in Cactus at S-EL0, I would have expected the IRQ to be pending so when EL3 hands control back to TFTF in EL2, I thought the IRQ would be immediately handled. Is that not the case?\n\nIf the delay is absolutely required, how can we be sure that 1ms is enough for all platforms? I\u0027m not so worried about hardware platforms because 1ms is a long time from their point of view. However, it might a different story on the FVPs or other software emulators. If the Armv8-A architecture does not give any timing guarantee here, then there is some freedom around how this is implemented in the emulator. Can we not come up with a more robust approach in this test?",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 11
+      },
+      "revId": "5b8933cf787425835ed367cb9588463dbc953479",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "52231fde_19fd8cac",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_non_blocking_interrupt.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2018-12-14T09:34:38Z",
+      "side": 1,
+      "message": "As we agreed in the other file, change to %d and remove cast on ret.\n\nSame comment for other occurences below.",
+      "range": {
+        "startLine": 64,
+        "startChar": 75,
+        "endLine": 64,
+        "endChar": 79
+      },
+      "revId": "5b8933cf787425835ed367cb9588463dbc953479",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
