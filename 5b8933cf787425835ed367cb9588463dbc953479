@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cb2c93d8_a2bace1e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_blocking_interrupt.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-18T11:00:31Z",
+      "side": 1,
+      "message": "TODO",
+      "parentUuid": "22a75e39_8f466dd6",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 26
+      },
+      "revId": "5b8933cf787425835ed367cb9588463dbc953479",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "72dfa4ab_2ff2c8a0",
         "filename": "tftf/tests/runtime_services/secure_service/test_spci_blocking_interrupt.c",
         "patchSetId": 6
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "ec9f6237_0948fe2b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_blocking_interrupt.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-18T11:00:31Z",
+      "side": 1,
+      "message": "TODO",
+      "parentUuid": "72dfa4ab_2ff2c8a0",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 11
+      },
+      "revId": "5b8933cf787425835ed367cb9588463dbc953479",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "52231fde_19fd8cac",
         "filename": "tftf/tests/runtime_services/secure_service/test_spci_non_blocking_interrupt.c",
         "patchSetId": 6
@@ -59,6 +107,30 @@
       "writtenOn": "2018-12-14T09:34:38Z",
       "side": 1,
       "message": "As we agreed in the other file, change to %d and remove cast on ret.\n\nSame comment for other occurences below.",
+      "range": {
+        "startLine": 64,
+        "startChar": 75,
+        "endLine": 64,
+        "endChar": 79
+      },
+      "revId": "5b8933cf787425835ed367cb9588463dbc953479",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2b3ad75d_771fd1c2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_non_blocking_interrupt.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-18T11:00:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52231fde_19fd8cac",
       "range": {
         "startLine": 64,
         "startChar": 75,
