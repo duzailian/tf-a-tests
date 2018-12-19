@@ -49,6 +49,54 @@
     },
     {
       "key": {
+        "uuid": "476e7087_8cc45cfe",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_blocking_interrupt.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-19T14:26:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb2c93d8_a2bace1e",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 26
+      },
+      "revId": "5b8933cf787425835ed367cb9588463dbc953479",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7458984_462d3452",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_blocking_interrupt.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-19T14:26:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb2c93d8_a2bace1e",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 26
+      },
+      "revId": "5b8933cf787425835ed367cb9588463dbc953479",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "72dfa4ab_2ff2c8a0",
         "filename": "tftf/tests/runtime_services/secure_service/test_spci_blocking_interrupt.c",
         "patchSetId": 6
@@ -84,6 +132,30 @@
       "side": 1,
       "message": "TODO",
       "parentUuid": "72dfa4ab_2ff2c8a0",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 11
+      },
+      "revId": "5b8933cf787425835ed367cb9588463dbc953479",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bdeef02d_670258d7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_blocking_interrupt.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2018-12-19T14:26:55Z",
+      "side": 1,
+      "message": "It is not needed. Removed.",
+      "parentUuid": "ec9f6237_0948fe2b",
       "range": {
         "startLine": 97,
         "startChar": 0,
