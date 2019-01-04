@@ -1,0 +1,9 @@
+Allow-CI+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Verified+1: Anonymous Coward #1000012
+Code-Review+2: Antonio Niño Díaz <antonio.ninodiaz@arm.com>
+IP-Review+1: Antonio Niño Díaz <antonio.ninodiaz@arm.com>
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Fri, 04 Jan 2019 11:50:37 +0000
+Reviewed-on: https://review.trustedfirmware.org/476
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
