@@ -16,6 +16,24 @@
       "revId": "cab5e3693738743255bd9a8a8f36dccdd74ca495",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d2ca4bd_806a45bb",
+        "filename": "lib/trusted_os/trusted_os.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-01-07T15:23:34Z",
+      "side": 1,
+      "message": "I am not sure I got your concerns right. The function now behaves like that:\n\n* If no Trusted OS is detected, return 0. It doesn\u0027t matter whether the caller provided a tos_uuid buffer, in either case we don\u0027t have a UUID to return.\n\n* If there\u0027s one, return 1. Either the caller provides a valid buffer to store the UUID in, or he doesn\u0027t.\n\nI don\u0027t see how the caller could get a return value of 1 along with an invalid UUID, could you please clarify?",
+      "parentUuid": "8b611db6_ffa7243c",
+      "revId": "cab5e3693738743255bd9a8a8f36dccdd74ca495",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
