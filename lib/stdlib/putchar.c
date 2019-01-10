@@ -4,8 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <console.h>
 #include <stdio.h>
+
+#include <drivers/console.h>
 
 /* Putchar() should either return the character printed or EOF in case of error.
  * Our current console_putc() function assumes success and returns the
