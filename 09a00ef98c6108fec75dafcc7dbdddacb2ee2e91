@@ -1,0 +1,9 @@
+Allow-CI+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Verified+1: Anonymous Coward #1000012
+Code-Review+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+IP-Review+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Fri, 25 Jan 2019 09:30:10 +0000
+Reviewed-on: https://review.trustedfirmware.org/497
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
