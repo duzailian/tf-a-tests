@@ -170,11 +170,6 @@ Tests
 
    The root cause is unknown.
 
--  The manual tests in AArch32 mode do not work properly. They save some state
-   information into non-volatile memory in order to detect the reset reason but
-   this state does not appear to be retained. As a result, these tests keep
-   resetting infinitely.
-
 -  The FWU tests take a long time to complete. This is because they wait for the
    watchdog to reset the system. On FVP, TF-A configures the watchdog period to
    about 4 min. This is way too long in an automated testing context. Besides,
