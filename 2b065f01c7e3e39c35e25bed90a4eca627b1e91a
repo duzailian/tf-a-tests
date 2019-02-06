@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e8c123f4_904432ff",
+        "filename": "tftf/tests/tests-manual.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-02-06T13:02:06Z",
+      "side": 1,
+      "message": "I think we also need to force USE_NVM to 1 in this makefile, as it defaults to 0 (see defaults.mk). When USE_NVM is 1, some memory region in DRAM is used in place of non-volatile memory (see https://git.trustedfirmware.org/TF-A/tf-a-tests.git/about/docs/user-guide.rst#tftf-build-options), which obviously does not retain its state across a platform reset.",
+      "revId": "2b065f01c7e3e39c35e25bed90a4eca627b1e91a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
