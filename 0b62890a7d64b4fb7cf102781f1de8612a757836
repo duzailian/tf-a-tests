@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aaaaf489_27e220b0",
+        "filename": "tftf/tests/tests-fwu.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-02-07T13:22:49Z",
+      "side": 1,
+      "message": "Actually I don\u0027t think we can address the problem in this way. Unfortunately, build flags set in this specific makefile will not only impact these tests but all of them. In other words, build flags are global.\n\nI think the best we can do right now is to rely on the user to set NEW_TEST_SESSION to 0 and USE_NVM to 1 on the build command line when they want to compile these tests, check their values in this tests makefile and print an error message if they do not match what we expect.",
+      "revId": "0b62890a7d64b4fb7cf102781f1de8612a757836",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
