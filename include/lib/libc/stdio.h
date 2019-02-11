@@ -25,6 +25,7 @@ int snprintf(char *s, size_t n, const char *fmt, ...) __printflike(3, 4);
 
 #ifdef STDARG_H
 int vprintf(const char *fmt, va_list args);
+int vsnprintf(char *str, size_t size, const char *format, va_list ap) __printflike(3, 0);
 #endif
 
 int putchar(int c);

@@ -6,6 +6,7 @@
 
 #include <assert.h>
 #include <stdarg.h>
+#include <stdlib.h>
 
 #include <common/debug.h>
 #include <plat/common/platform.h>
@@ -48,26 +49,14 @@ static void unsigned_dec_print(char **s, size_t n, size_t *chars_printed,
 	}
 }
 
-/*******************************************************************
- * Reduced snprintf to be used for Trusted firmware.
- * The following type specifiers are supported:
- *
- * %d or %i - signed decimal format
- * %s - string format
- * %u - unsigned decimal format
- *
- * The function panics on all other formats specifiers.
- *
- * It returns the number of characters that would be written if the
- * buffer was big enough. If it returns a value lower than n, the
- * whole string has been written.
- *******************************************************************/
-int snprintf(char *s, size_t n, const char *fmt, ...)
+/*
+ * Scaled down version of vsnprintf(3).
+ */
+int vsnprintf(char *s, size_t n, const char *fmt, va_list args)
 {
-	va_list args;
+	char *str;
 	int num;
 	unsigned int unum;
-	char *str;
 	size_t chars_printed = 0U;
 
 	if (n == 0U) {
@@ -81,7 +70,6 @@ int snprintf(char *s, size_t n, const char *fmt, ...)
 		n--;
 	}
 
-	va_start(args, fmt);
 	while (*fmt != '\0') {
 
 		if (*fmt == '%') {
@@ -118,7 +106,7 @@ int snprintf(char *s, size_t n, const char *fmt, ...)
 				/* Panic on any other format specifier. */
 				ERROR("snprintf: specifier with ASCII code '%d' not supported.",
 				      *fmt);
-				plat_panic_handler();
+				panic();
 				assert(0); /* Unreachable */
 			}
 			fmt++;
@@ -134,10 +122,34 @@ int snprintf(char *s, size_t n, const char *fmt, ...)
 		chars_printed++;
 	}
 
-	va_end(args);
-
 	if (n > 0U)
 		*s = '\0';
 
 	return (int)chars_printed;
+}
+
+/*******************************************************************
+ * Reduced snprintf to be used for Trusted firmware.
+ * The following type specifiers are supported:
+ *
+ * %d or %i - signed decimal format
+ * %s - string format
+ * %u - unsigned decimal format
+ *
+ * The function panics on all other formats specifiers.
+ *
+ * It returns the number of characters that would be written if the
+ * buffer was big enough. If it returns a value lower than n, the
+ * whole string has been written.
+ *******************************************************************/
+int snprintf(char *s, size_t n, const char *fmt, ...)
+{
+	va_list args;
+	int chars_printed;
+
+	va_start(args, fmt);
+	chars_printed = vsnprintf(s, n, fmt, args);
+	va_end(args);
+
+	return chars_printed;
 }
