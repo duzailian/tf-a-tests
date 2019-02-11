@@ -5,13 +5,13 @@
  */
 
 #include <arch_helpers.h>
+#include <stdarg.h>
 #include <assert.h>
 #include <debug.h>
 #include <nvm.h>
 #include <platform.h>
 #include <spinlock.h>
-#include <stdarg.h>
-#include <string.h>
+#include <stdio.h>
 
 /*
  * Temporary buffer to store 1 test output.
