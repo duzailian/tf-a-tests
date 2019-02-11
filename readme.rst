@@ -41,8 +41,9 @@ described in the `Contributing Guidelines`_.
 This project contains code from other projects as listed below. The original
 license text is included in those source files.
 
--  The libc source code is derived from `FreeBSD`_ code, which uses various BSD
-   licenses, including BSD-3-Clause and BSD-2-Clause.
+-  The libc source code is derived from `FreeBSD`_ and `SCC`_. FreeBSD uses
+   various BSD licenses, including BSD-3-Clause and BSD-2-Clause. The SCC code
+   is used under the BSD-3-Clause license with the author's permission.
 
 -  The `LLVM compiler-rt`_ source code is disjunctively dual licensed
    (NCSA OR MIT). It is used by this project under the terms of the NCSA
