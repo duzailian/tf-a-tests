@@ -42,3 +42,6 @@ USE_NVM			:= 0
 
 # Build verbosity
 V			:= 0
+
+# Include lib/libc in the final image
+OVERRIDE_LIBC		:= 0
