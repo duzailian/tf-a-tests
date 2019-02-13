@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "873ac881_938a8cd9",
+        "filename": "include/lib/libc/assert.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-02-13T14:11:15Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 6
+      },
+      "revId": "92038eab2b7e484661280d54e0d70fb8eba09a9a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "96826f7e_9b32adab",
+        "filename": "include/lib/libc/assert.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-02-13T14:11:15Z",
+      "side": 1,
+      "message": "remove spaces",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 19,
+        "endChar": 3
+      },
+      "revId": "92038eab2b7e484661280d54e0d70fb8eba09a9a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8b3c29fc_854dd161",
+        "filename": "lib/libc/printf.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-02-13T14:11:15Z",
+      "side": 1,
+      "message": "If we don\u0027t actually support the \u0027-\u0027 modifier we should remove all the usages of it across the TFTF. There are only two cases, so it\u0027s better to fix it there than to give the false idea that it is supported.",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 14
+      },
+      "revId": "92038eab2b7e484661280d54e0d70fb8eba09a9a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
