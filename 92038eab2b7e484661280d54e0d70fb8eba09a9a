@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6aa8768e_a1077268",
+        "filename": "include/lib/libc/assert.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-02-15T14:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "873ac881_938a8cd9",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 6
+      },
+      "revId": "92038eab2b7e484661280d54e0d70fb8eba09a9a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "96826f7e_9b32adab",
         "filename": "include/lib/libc/assert.h",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-02-13T14:11:15Z",
       "side": 1,
       "message": "remove spaces",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 19,
+        "endChar": 3
+      },
+      "revId": "92038eab2b7e484661280d54e0d70fb8eba09a9a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6bf1a6_db0ff0c1",
+        "filename": "include/lib/libc/assert.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-02-15T14:10:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96826f7e_9b32adab",
       "range": {
         "startLine": 19,
         "startChar": 1,
