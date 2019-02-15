@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f5aa9acb_e59b3ad5",
+        "filename": "include/lib/libc/cdefs.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-02-15T15:43:27Z",
+      "side": 1,
+      "message": "I do not foresee us using this feature in TF-A Tests (because we\u0027re not concerned about memory consumption) so I would prefer we remove it.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 6
+      },
+      "revId": "47daf87188515ded2c35f276226f741ff4234493",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
