@@ -22,6 +22,29 @@
       "revId": "47daf87188515ded2c35f276226f741ff4234493",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1b351925_7044e2c1",
+        "filename": "lib/libc/assert.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-02-15T15:52:45Z",
+      "side": 1,
+      "message": "panic() already calls console_flush() so you can get rid of it here (along with the associated #include \u003cdrivers/console.h\u003e at the top of the file, I guess).",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 23
+      },
+      "revId": "47daf87188515ded2c35f276226f741ff4234493",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
