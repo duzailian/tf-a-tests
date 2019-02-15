@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ca187aef_53f65a06",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-02-15T14:43:28Z",
+      "side": 1,
+      "message": "For reference, it would be useful to indicate what version (i.e. commit SHA1) of the TF-A was used for the import.",
+      "revId": "6516d9eb78b4b4d8cb89d9954f441c40ec4f9238",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
