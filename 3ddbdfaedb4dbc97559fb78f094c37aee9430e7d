@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "85e9793b_22bf7883",
+        "filename": "Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-02-15T14:45:30Z",
+      "side": 1,
+      "message": "This comment says that the platform makefile is included last but this is no longer the case with this commit. If there is a good reason why libc.mk must be included last, could you please explain it in a comment? If there\u0027s no reason then consider moving above the inclusion of the platform makefile.",
+      "range": {
+        "startLine": 120,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 50
+      },
+      "revId": "3ddbdfaedb4dbc97559fb78f094c37aee9430e7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bb30f798_a7db45a7",
+        "filename": "readme.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-02-15T14:45:30Z",
+      "side": 1,
+      "message": "Need to update this paragraph to mention SCC.",
+      "range": {
+        "startLine": 44,
+        "startChar": 3,
+        "endLine": 45,
+        "endChar": 53
+      },
+      "revId": "3ddbdfaedb4dbc97559fb78f094c37aee9430e7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
