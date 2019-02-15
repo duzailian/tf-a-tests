@@ -4,10 +4,10 @@
   foreach = project:TF-A/tf-a-tests
 
 [section "Open Published Patches"]
-  query = is:open -is:draft
+  query = is:open -is:wip
 
-[section "Open Draft Patches"]
-  query = is:open is:draft
+[section "Open WIP Patches"]
+  query = is:open is:wip
 
 [section "Recently Abandoned"]
   query = is:abandoned -age:1w
