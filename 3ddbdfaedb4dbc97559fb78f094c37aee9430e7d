@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9ef5f094_7acc3c08",
+        "filename": "Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-02-18T12:04:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "85e9793b_22bf7883",
+      "range": {
+        "startLine": 120,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 50
+      },
+      "revId": "3ddbdfaedb4dbc97559fb78f094c37aee9430e7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bb30f798_a7db45a7",
         "filename": "readme.rst",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-02-15T14:45:30Z",
       "side": 1,
       "message": "Need to update this paragraph to mention SCC.",
+      "range": {
+        "startLine": 44,
+        "startChar": 3,
+        "endLine": 45,
+        "endChar": 53
+      },
+      "revId": "3ddbdfaedb4dbc97559fb78f094c37aee9430e7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e4ef8f5f_55110c58",
+        "filename": "readme.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-02-18T12:04:14Z",
+      "side": 1,
+      "message": "In Patch Set 4 I copied and pasted the corresponding paragraph currently in TF-A.",
+      "parentUuid": "bb30f798_a7db45a7",
       "range": {
         "startLine": 44,
         "startChar": 3,
