@@ -336,6 +336,11 @@ payload, whose simplistic build system is mostly independent.
    hide any auxiliary code that is only required for the assertion and does not
    fit in the assertion itself.
 
+-  ``ENABLE_PAUTH``: Boolean option to enable ARMv8.3 Pointer Authentication
+   (``ARMv8.3-PAuth``) support in the Trusted Firmware-A Test Framework itself.
+   If enabled, it is needed to use a compiler that supports the option
+   ``-msign-return-address``. It defaults to 0.
+
 -  ``LOG_LEVEL``: Chooses the log level, which controls the amount of console log
    output compiled into the build. This should be one of the following:
 
