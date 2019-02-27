@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adfd32b_84c36176",
+        "filename": "el3_payload/plat/rdn1edge/platform.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-02-27T10:24:44Z",
+      "side": 1,
+      "message": "use \u003c\u003e",
+      "range": {
+        "startLine": 7,
+        "startChar": 16,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "3ddff339574682c1f6727e2fc0d130ad66d717d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
