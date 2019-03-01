@@ -174,6 +174,30 @@
     },
     {
       "key": {
+        "uuid": "9b30f3ca_3ae6207b",
+        "filename": "lib/libc/printf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-03-01T15:04:53Z",
+      "side": 1,
+      "message": "I saw it as the side on which the text ends up being.\nThis is also the way it was perceived in the stdlib with \"ladjust \u003d 1;\".",
+      "parentUuid": "fa425760_6d971e41",
+      "range": {
+        "startLine": 162,
+        "startChar": 4,
+        "endLine": 162,
+        "endChar": 13
+      },
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d755fd6f_5a9caddc",
         "filename": "lib/libc/printf.c",
         "patchSetId": 5
@@ -185,6 +209,30 @@
       "writtenOn": "2019-03-01T12:24:39Z",
       "side": 1,
       "message": "Why do we need this test? Could you please give an example where this is needed?",
+      "range": {
+        "startLine": 213,
+        "startChar": 4,
+        "endLine": 213,
+        "endChar": 21
+      },
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "08589d8d_c991fa53",
+        "filename": "lib/libc/printf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-03-01T15:04:53Z",
+      "side": 1,
+      "message": "From printf man page: \"A - overrides a 0 if both are given\", which is the goal of the test. But this test only makes the override work with \"-0\" and \"0-\" combinations and not with \"0-0\" for example, so it is not a good implementation.\nFurthermore in our case a warning is issued during compilation if we try to give both \u0027-\u0027 and \u00270\u0027, which in turn generates an error with the current build configuration.\nSo I guess I could just get rid of the test.",
+      "parentUuid": "d755fd6f_5a9caddc",
       "range": {
         "startLine": 213,
         "startChar": 4,
