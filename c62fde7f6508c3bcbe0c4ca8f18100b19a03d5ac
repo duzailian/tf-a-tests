@@ -1,0 +1,262 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e31eb690_fc2f53c6",
+        "filename": "lib/libc/printf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-01T12:24:39Z",
+      "side": 1,
+      "message": "Some of my comments in this file apply to snprintf.c as well.",
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d504dfbf_9a5a7d02",
+        "filename": "lib/libc/printf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-01T12:24:39Z",
+      "side": 1,
+      "message": "Not sure you need this, do you?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 25
+      },
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eabf4757_da7317f1",
+        "filename": "lib/libc/printf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-01T12:24:39Z",
+      "side": 1,
+      "message": "Suggest adding a comment, something like:\n\n /*\n  * Print a padded string.\n  *\n  * The string will be padded with character padc until it is padn bytes long.\n  * The sign of padn indicates whether the string should be left-padded\n  * (padn \u003e 0) or right-padded (padn \u003c 0).\n  */",
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "781af020_51810ff9",
+        "filename": "lib/libc/printf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-01T12:24:39Z",
+      "side": 1,
+      "message": "AFAICS, this test is not needed, it\u0027s redundant with the while condition on the next line.",
+      "range": {
+        "startLine": 33,
+        "startChar": 1,
+        "endLine": 33,
+        "endChar": 16
+      },
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "edee757d_eb6568db",
+        "filename": "lib/libc/printf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-01T12:24:39Z",
+      "side": 1,
+      "message": "putchar() might fail and return EOF. Should we not check its return value and avoid incrementing count if it fails? Or even branch out of the function with a negative error code?",
+      "range": {
+        "startLine": 35,
+        "startChar": 3,
+        "endLine": 35,
+        "endChar": 23
+      },
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eab49d74_b53abd89",
+        "filename": "lib/libc/printf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-01T12:24:39Z",
+      "side": 1,
+      "message": "Not needed either, I think.",
+      "range": {
+        "startLine": 46,
+        "startChar": 1,
+        "endLine": 46,
+        "endChar": 16
+      },
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cb0006bf_3d6bcd4d",
+        "filename": "lib/libc/printf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-01T12:24:39Z",
+      "side": 1,
+      "message": "This is almost what print_string() does, except that it\u0027s reverse-printing. Do you think it\u0027d be worth to tweak print_string() to support reverse-printing as well and call it from there? We could add an extra argument to the function to indicate which direction (normal/reverse) we want.",
+      "range": {
+        "startLine": 78,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 2
+      },
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa425760_6d971e41",
+        "filename": "lib/libc/printf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-01T12:24:39Z",
+      "side": 1,
+      "message": "This is confusing. IIUC, (left \u003d\u003d 1) means that we should right-pad, whereas (left \u003d\u003d 0) means we should left-pad. Should it not be the other way around?",
+      "range": {
+        "startLine": 162,
+        "startChar": 4,
+        "endLine": 162,
+        "endChar": 13
+      },
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d755fd6f_5a9caddc",
+        "filename": "lib/libc/printf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-01T12:24:39Z",
+      "side": 1,
+      "message": "Why do we need this test? Could you please give an example where this is needed?",
+      "range": {
+        "startLine": 213,
+        "startChar": 4,
+        "endLine": 213,
+        "endChar": 21
+      },
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "43bc1865_76b046fa",
+        "filename": "lib/libc/snprintf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-01T12:24:39Z",
+      "side": 1,
+      "message": "This function looks quite similar to the one in printf.c. The only different I can see is that it saved the string in a buffer rather than printing on the serial console. Could we refactor it in order to share some code across the 2 files?",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 29
+      },
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bd4073b5_4cb772aa",
+        "filename": "lib/libc/snprintf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-01T12:24:39Z",
+      "side": 1,
+      "message": "Again, most of this code is similar to vprintf(), the main difference being the destination for the output (serial console/buffer). There must be a way to redesign with code sharing in mind.",
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "053981ad_fdbfec9f",
+        "filename": "lib/libc/snprintf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-01T12:24:39Z",
+      "side": 1,
+      "message": "Panicking seems overkill to me here. An incorrectly formatted string does seem like a reason to kill the system to me. What is the the worst that could happen? We could just ignore this format specifier and continue printing the rest of the string. I think we can keep a debug assertion to help catch this up during development but we don\u0027t need more.",
+      "range": {
+        "startLine": 199,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 32
+      },
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
