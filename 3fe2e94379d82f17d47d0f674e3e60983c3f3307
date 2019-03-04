@@ -343,6 +343,30 @@
     },
     {
       "key": {
+        "uuid": "75119a97_d4aa1fc2",
+        "filename": "tftf/framework/main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-04T13:41:11Z",
+      "side": 1,
+      "message": "\u003e That\u0027s why I was suggesting an *inline* function. AFAICS,\n\u003e that\u0027s what they are proposing to do in the Linux kernel:\n\nIn practice, using an always_inline function would work. In theory, that obscures the problem and someone may move that call somewhere else in the future, inside another non-inline function, for example. After all, it will just be a function call.",
+      "parentUuid": "3199be27_558fb6b6",
+      "range": {
+        "startLine": 523,
+        "startChar": 0,
+        "endLine": 527,
+        "endChar": 4
+      },
+      "revId": "3fe2e94379d82f17d47d0f674e3e60983c3f3307",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "211d2c45_6a14376e",
         "filename": "tftf/framework/main.c",
         "patchSetId": 3
