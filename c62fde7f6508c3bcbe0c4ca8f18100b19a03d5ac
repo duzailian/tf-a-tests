@@ -269,6 +269,30 @@
     },
     {
       "key": {
+        "uuid": "4f49b0ba_cf9266c2",
+        "filename": "lib/libc/printf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-03-04T11:21:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08589d8d_c991fa53",
+      "range": {
+        "startLine": 213,
+        "startChar": 4,
+        "endLine": 213,
+        "endChar": 21
+      },
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "43bc1865_76b046fa",
         "filename": "lib/libc/snprintf.c",
         "patchSetId": 5
@@ -320,6 +344,30 @@
       "writtenOn": "2019-03-01T12:24:39Z",
       "side": 1,
       "message": "Panicking seems overkill to me here. An incorrectly formatted string does seem like a reason to kill the system to me. What is the the worst that could happen? We could just ignore this format specifier and continue printing the rest of the string. I think we can keep a debug assertion to help catch this up during development but we don\u0027t need more.",
+      "range": {
+        "startLine": 199,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 32
+      },
+      "revId": "c62fde7f6508c3bcbe0c4ca8f18100b19a03d5ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8d68e2_4c2573f5",
+        "filename": "lib/libc/snprintf.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-03-04T11:21:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "053981ad_fdbfec9f",
       "range": {
         "startLine": 199,
         "startChar": 0,
