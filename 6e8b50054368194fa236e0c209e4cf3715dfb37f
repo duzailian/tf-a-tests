@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e693432_62648142",
+        "filename": "lib/libc/snprintf.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-04T11:51:23Z",
+      "side": 1,
+      "message": "nit: Add a final \\n.",
+      "revId": "6e8b50054368194fa236e0c209e4cf3715dfb37f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
