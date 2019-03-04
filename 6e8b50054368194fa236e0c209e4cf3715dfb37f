@@ -16,6 +16,24 @@
       "revId": "6e8b50054368194fa236e0c209e4cf3715dfb37f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f241da07_9658a500",
+        "filename": "lib/libc/snprintf.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-04T12:20:28Z",
+      "side": 1,
+      "message": "I\u0027ve done it myself in the Gerrit UI to not bother you for such a minor change.",
+      "parentUuid": "9e693432_62648142",
+      "revId": "6e8b50054368194fa236e0c209e4cf3715dfb37f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
