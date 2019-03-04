@@ -367,6 +367,30 @@
     },
     {
       "key": {
+        "uuid": "fe5d58e1_bb16c16a",
+        "filename": "tftf/framework/main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-04T13:47:12Z",
+      "side": 1,
+      "message": "\u003e In practice, using an always_inline function would work. In theory,\n \u003e that obscures the problem and someone may move that call somewhere\n \u003e else in the future, inside another non-inline function, for\n \u003e example. After all, it will just be a function call.\n\nI disagree, I don\u0027t think an always-inline function is more obscure than the solution proposed in this patch. Someone might equally move the code from tftf_cold_boot_main() somewhere else, inside a non-inline function. The way we ensure this does not happen is through code documentation, like you\u0027ve done in this patch.",
+      "parentUuid": "75119a97_d4aa1fc2",
+      "range": {
+        "startLine": 523,
+        "startChar": 0,
+        "endLine": 527,
+        "endChar": 4
+      },
+      "revId": "3fe2e94379d82f17d47d0f674e3e60983c3f3307",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "211d2c45_6a14376e",
         "filename": "tftf/framework/main.c",
         "patchSetId": 3
