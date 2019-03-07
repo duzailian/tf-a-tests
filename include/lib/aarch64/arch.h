@@ -368,8 +368,8 @@
 #define CPTR_EL2_TCPAC_BIT	(U(1) << 31)
 #define CPTR_EL2_TAM_BIT	(U(1) << 30)
 #define CPTR_EL2_TTA_BIT	(U(1) << 20)
-#define CPTR_EL2_TFP_BIT	(U(1) << 10)
-#define CPTR_EL2_TZ_BIT		(U(1) << 8)
+#define CPTR_EL2_TFP_BIT	(ULL(1) << 10)
+#define CPTR_EL2_TZ_BIT		(ULL(1) << 8)
 #define CPTR_EL2_RESET_VAL	CPTR_EL2_RES1
 
 /* CPSR/SPSR definitions */
