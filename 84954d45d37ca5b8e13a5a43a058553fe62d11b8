@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "06702396_fccce5ee",
+        "filename": "tftf/tests/extensions/sve/sve_operations.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-13T13:31:07Z",
+      "side": 1,
+      "message": "No, the file that is being included is in ``include/common/aarch64/asm_macros.S`` in this case. And yes, it is a very bad thing that we have headers with the same name in different folders... and we don\u0027t even specify the folder in the include path. However, in this case, for testcases, it\u0027s the file I\u0027ve mentioned above.",
+      "parentUuid": "f34e6f21_77d513f4",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 28
+      },
+      "revId": "84954d45d37ca5b8e13a5a43a058553fe62d11b8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "791857c5_3688b954",
         "filename": "tftf/tests/extensions/sve/sve_operations.S",
         "patchSetId": 1
