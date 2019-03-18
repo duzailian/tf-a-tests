@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c4158660_90bfa105",
+        "filename": "lib/aarch64/misc_helpers.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-18T13:12:32Z",
+      "side": 0,
+      "message": "Why is this code being removed?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 6
+      },
+      "revId": "d606e7485b57f2e2dac769e3dfcb651840e4024b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}

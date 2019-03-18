@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f1b8899c_47238a46",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-18T13:12:32Z",
+      "side": 1,
+      "message": "Given that this patch reintroduces code from a previous commit that had been reviewed, I\u0027ve mainly just compared both versions and did not have a detailed look again. I hope we did not make any change in the meantime that would break some assumptions.",
+      "revId": "b3c83418d8e333ba5717bc00480fd8510a5f7527",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f981d483_3a4707b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-18T13:12:32Z",
+      "side": 1,
+      "message": "Could you please mention what commit this code is restored from? As far as I can see, this is from 99f4fd283b6ff75cfe4726495a46f8dccb057138 \"cactus: Use UART2 instead of UART0\", right?",
+      "revId": "b3c83418d8e333ba5717bc00480fd8510a5f7527",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5de56af5_96990bb1",
+        "filename": "Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-18T13:12:32Z",
+      "side": 1,
+      "message": "Add a line for cactus_mm target.",
+      "range": {
+        "startLine": 480,
+        "startChar": 0,
+        "endLine": 480,
+        "endChar": 95
+      },
+      "revId": "b3c83418d8e333ba5717bc00480fd8510a5f7527",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "718a7bdc_8381fe5d",
+        "filename": "include/common/debug.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-18T13:12:32Z",
+      "side": 1,
+      "message": "I\u0027m not fond of this, I think it\u0027s too intrusive. Ideally, debug.h should not care about what image includes it. That said, I agree it is the easiest way to fix the issue right now so I\u0027ll let it go for now.\n\nAFAIU, the problem lies in INFO() and friends using mp_printf() behind the scenes, which means any code that uses these macros (even a uni-processor image) needs to provide the spinlock primitives. This is the dependency we should try to break.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 5
+      },
+      "revId": "b3c83418d8e333ba5717bc00480fd8510a5f7527",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7b46485e_7f1bcd65",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-18T13:12:32Z",
+      "side": 1,
+      "message": "As far as I know, this is specific to MM. The way data is passed between normal world software and secure partitions using SCPI/SPRT is different. Now that we have both types of partitions in the repo, there is some possible confusion, as this is not a MM-specific header file. It would be good to clarify it in this comment.",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 230,
+        "endChar": 11
+      },
+      "revId": "b3c83418d8e333ba5717bc00480fd8510a5f7527",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
