@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f7a5488_2310b353",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-03-19T13:47:48Z",
+      "side": 1,
+      "message": "I suppose it also applies to the TZ bit of that same register.\nShould this be done at the beginning of the test or somewhere else?",
+      "parentUuid": "1c3f5128_db82134c",
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ebfa87ab_8b39819e",
         "filename": "tftf/tests/extensions/sve/test_sve.c",
         "patchSetId": 4
@@ -62,6 +80,30 @@
       "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8741996c_ec314cb6",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-03-19T13:47:48Z",
+      "side": 1,
+      "message": "That\u0027s the actual name of the operands of a subtraction. I understand that it is not commonly used, but I can\u0027t think of a better naming scheme.",
+      "parentUuid": "62a27cb1_dd16b07e",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 37
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     },
     {
       "key": {
@@ -180,6 +222,30 @@
     },
     {
       "key": {
+        "uuid": "46920076_24cd0df0",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-03-19T13:47:48Z",
+      "side": 1,
+      "message": "Concerning the code checking the results, it also checks that the instructions in the assembly file are correct. It is obviously the case now since I compiled it from C, but won\u0027t necessarily stay that way if it is manually updated in the future (which is the plan, if I understood Antonio\u0027s comments correctly).",
+      "parentUuid": "e4612bf8_602ae0d8",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 28
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6548adb2_3b5c39f8",
         "filename": "tftf/tests/extensions/sve/test_sve.c",
         "patchSetId": 4
@@ -200,6 +266,30 @@
       "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "66956a80_a633dec2",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-03-19T13:47:48Z",
+      "side": 1,
+      "message": "Right now the CI uses GCC 6.2, which won\u0027t compile the SVE instructions. It is easier to flag the problem at run time than to change the compiler.\nThis is what I saw as being the best solution to have the test behave nicely both on Jenkins and locally.",
+      "parentUuid": "6548adb2_3b5c39f8",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 28
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     },
     {
       "key": {
