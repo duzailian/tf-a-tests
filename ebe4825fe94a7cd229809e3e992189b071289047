@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "41b9da98_58a31f5b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T14:49:03Z",
+      "side": 1,
+      "message": "\u003e I suppose it also applies to the TZ bit of that same register.\n\nMost likely, yes.\n\n \u003e Should this be done at the beginning of the test or somewhere else?\n\nI think it should be done in the architectural initialization code, i.e. tftf_arch_setup(). Unless you can foresee a reason why we would not want to do that across all tests.\n\nBeware that tftf_arch_setup() is also used by NS_BL2U code at the moment, this is part of the things we need to refactor to avoid sharing code between TFTF and FWU images.",
+      "parentUuid": "3f7a5488_2310b353",
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ebfa87ab_8b39819e",
         "filename": "tftf/tests/extensions/sve/test_sve.c",
         "patchSetId": 4
@@ -95,6 +113,30 @@
       "side": 1,
       "message": "That\u0027s the actual name of the operands of a subtraction. I understand that it is not commonly used, but I can\u0027t think of a better naming scheme.",
       "parentUuid": "62a27cb1_dd16b07e",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 37
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28491179_b6f78204",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T14:49:03Z",
+      "side": 1,
+      "message": "How about simply sve_op_1 and sve_op_2? Or even something as vague as array1/array2 would work better for me. Unless I am missing something, I just see this as 2 vectors to perform batch processing on.",
+      "parentUuid": "8741996c_ec314cb6",
       "range": {
         "startLine": 20,
         "startChar": 0,
@@ -246,6 +288,30 @@
     },
     {
       "key": {
+        "uuid": "2030b32f_1d39aabe",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T14:49:03Z",
+      "side": 1,
+      "message": "Even if we do manually update the code in sve_operations.S in the future, I don\u0027t think we need to check that the instructions there are correct. OK, we\u0027ve used the compiler to generate the first draft of sve_instuctions.S and we\u0027ve adapted it slightly. But now it\u0027s source code that we\u0027ve reviewed and that we will maintain, it does not matter where it\u0027s coming from originally.\n\nWe\u0027ve got assembly code to perform other tasks, like zeroing the BSS section for example. Do you feel like we should not trust ourselves for writing this asm code correctly and check again in C code that it did the job properly ;) ?\n\nIf we update sve_instructions.S in the future, we just have to be cautious about making the right changes. It applies not only to asm code.",
+      "parentUuid": "46920076_24cd0df0",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 28
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6548adb2_3b5c39f8",
         "filename": "tftf/tests/extensions/sve/test_sve.c",
         "patchSetId": 4
@@ -281,6 +347,30 @@
       "side": 1,
       "message": "Right now the CI uses GCC 6.2, which won\u0027t compile the SVE instructions. It is easier to flag the problem at run time than to change the compiler.\nThis is what I saw as being the best solution to have the test behave nicely both on Jenkins and locally.",
       "parentUuid": "6548adb2_3b5c39f8",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 28
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e6e1635_0025b79a",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T14:49:03Z",
+      "side": 1,
+      "message": "\u003e Right now the CI uses GCC 6.2, which won\u0027t compile the SVE\n \u003e instructions. It is easier to flag the problem at run time than to\n \u003e change the compiler.\n\nI\u0027m not proposing we change the compiler in the CI. Even if we did, it would still be an issue for anyone that tries to build TF-A Tests with an older toolchain. Any solution we come up with has to be self-contained in this repository, I think.\n\nCan we not detect the version of the compiler in the build system? And if we detect that the toolchain is not recent enough to have SVE support then we just don\u0027t compile these tests.",
+      "parentUuid": "66956a80_a633dec2",
       "range": {
         "startLine": 57,
         "startChar": 0,
