@@ -383,6 +383,30 @@
     },
     {
       "key": {
+        "uuid": "27a957cf_133a229e",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-03-19T16:57:47Z",
+      "side": 1,
+      "message": "I don\u0027t think so. At least not easily, given the fact that I added the SVE test to the \"extensions\" group. Which means that the test will need to be alone in a new group for it to work.\nAnd then the actual detection of the version of the compiler in the build system seems to not be super clean to me: https://stackoverflow.com/questions/5188267/checking-the-gcc-version-in-a-makefile\n\nNote that I took this behavior from test_smccc_arch_workaround_1 and 2 (where it is used to test the target architecture).",
+      "parentUuid": "1e6e1635_0025b79a",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 28
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ebf82887_6ee32b10",
         "filename": "tftf/tests/extensions/sve/test_sve.c",
         "patchSetId": 4
