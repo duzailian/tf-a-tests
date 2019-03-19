@@ -1,0 +1,228 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1c3f5128_db82134c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T09:38:41Z",
+      "side": 1,
+      "message": "AFAICS, we do not configure CPTR_EL2 in TF-A Tests. I think we might need to now, as the TFP bit controls trapping of SVE functionality into EL2. Its reset value is unknown according to the ARM ARM so it might be that we\u0027ve been lucky and it happened to reset to 0 on FVP. If it was 1 then my understanding is that the test implemented in this patch would make TF-A Tests crash.",
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ebfa87ab_8b39819e",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T09:38:41Z",
+      "side": 1,
+      "message": "I believe these 2 arguments could be const int *.",
+      "range": {
+        "startLine": 17,
+        "startChar": 49,
+        "endLine": 17,
+        "endChar": 78
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "62a27cb1_dd16b07e",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T09:38:41Z",
+      "side": 1,
+      "message": "I could not make sense of what these names stand for, even though I understood what they are used for in the code. What does minuend and subtrahend mean?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 37
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2faf1a7c_982b75b8",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T09:38:41Z",
+      "side": 1,
+      "message": "This is error-prone, one can easily read the wrong ID register or use the wrong bitmask. I\u0027d rather have this as a helper function in arch_features.h, e.g. is_armv8_2_sve_present().",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 30,
+        "endChar": 79
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "47dee03f_888cadc7",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T09:38:41Z",
+      "side": 1,
+      "message": "Could you please add a message in the test report to explain to the user why the test is skipped?",
+      "range": {
+        "startLine": 31,
+        "startChar": 2,
+        "endLine": 31,
+        "endChar": 29
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bafff8fa_6fa25c1c",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T09:38:41Z",
+      "side": 1,
+      "message": "Strictly speaking, I believe the computation below gives a number between 200 and 299.",
+      "range": {
+        "startLine": 34,
+        "startChar": 38,
+        "endLine": 34,
+        "endChar": 49
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5bfb0b45_ed77834b",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T09:38:41Z",
+      "side": 1,
+      "message": "0 and 99",
+      "range": {
+        "startLine": 36,
+        "startChar": 38,
+        "endLine": 36,
+        "endChar": 47
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e4612bf8_602ae0d8",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T09:38:41Z",
+      "side": 1,
+      "message": "This testing approach does not sound appropriate to me. By checking that the results of the SVE instructions are correct, this code is effectively testing that the hardware behaves as expected. This is not the purpose of TF-A Tests. They are not meant to be a compliance test suite for validating the implementation of Arm CPUs. There are other tools for that.\n\nInstead, the purpose of TF-A Tests are to check the behaviour of TF-A. When SVE support is enabled in TF-A, there are a number of things that TF-A is supposed to do to enable Normal world to use SVE instructions. TF-A responsibilities are outlined in the following commit message:\n\nhttps://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/commit/?id\u003d1a853370ff8e9ff3b147297d1fc7942e7db43dd9\n\nThis is what we should test. A first basic test is to ensure that TF-A has correctly configured CPTR_EL3.EZ, such that EL2 software can execute SVE instructions without them getting trapped to EL3. \n\nThe code in this patch does exercise that but it goes way beyond that, with no actual increase in test coverage. AFAIU, any access to SVE functionality and registers will exercise that. Arguably, a single SVE instruction or a single access to an SVE register would fulfill this purpose.\n\nNow, if TF-A properly does its job, then the test code will just be executed. If SVE enablement in TF-A is broken, accesses to SVE functionality would get trapped to EL3. Unfortunately, this is beyond TF-A Tests control and we won\u0027t be able to properly report an error message and continue the test session. So basically this test should either always pass (unless SVE extensions are not available on the target, in which case it should be skipped but you\u0027ve already implemented that) or crash into EL3.\n\nGiven that you\u0027ve now implemented it, I think we might as well keep the sve_subtract_arrays() function as it is, even though it goes beyond what we needed to test. However, I\u0027d like to see the code checking the results getting removed, as I think it confuses the test purpose.\n\nWhat would be interesting, though, is to add some more tests for the other responsibilities of TF-A for SVE support. For example, TF-A is supposed to disable SVE when exiting normal world. So I think it would be worth implementing a test that:\n1. programs some values into the SVE registers\n2. call into secure world. TF-A should disable SVE at this point.\n3. On return, check that TF-A has correctly re-enabled SVE support (by accessing an SVE register for example, that should not trap into EL3) and check that the SVE registers values got preserved across the call.\n\nThat\u0027s for a separate patch, though.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 28
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6548adb2_3b5c39f8",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T09:38:41Z",
+      "side": 1,
+      "message": "This behaviour does not sound right to me. This is flagging a compilation problem at run time.",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 28
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ebf82887_6ee32b10",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T09:38:41Z",
+      "side": 1,
+      "message": "We could avoid making a special case of AArch32 by providing an implementation of the is_armv8_2_sve_present() function, which would always return false. Then the same test code could be used regardless of the execution state.",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 1
+      },
+      "revId": "ebe4825fe94a7cd229809e3e992189b071289047",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
