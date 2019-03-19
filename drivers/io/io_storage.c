@@ -28,7 +28,7 @@ static const io_dev_info_t *devices[MAX_IO_DEVICES];
 static unsigned int dev_count;
 
 
-#if DEBUG	/* Extra validation functions only used in debug builds */
+#if ENABLE_ASSERTIONS /* Extra validation functions only used in debug builds */
 
 /* Return a boolean value indicating whether a device connector is valid */
 static int is_valid_dev_connector(const io_dev_connector_t *dev_con)
