@@ -28,10 +28,6 @@ endfunc smc
  * -----------------------------------------------------------------------
  */
 func zeromem16
-#if ENABLE_ASSERTIONS
-	tst	x0, #0xf
-	ASM_ASSERT(eq)
-#endif
 	add	x2, x0, x1
 /* zero 16 bytes at a time */
 z_loop16:
