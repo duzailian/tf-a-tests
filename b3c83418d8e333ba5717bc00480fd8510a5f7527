@@ -148,6 +148,30 @@
     },
     {
       "key": {
+        "uuid": "4f4cfa66_9eac8781",
+        "filename": "include/common/debug.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T09:55:32Z",
+      "side": 1,
+      "message": "Yes, I\u0027ve also been banging my head on this in the past, I still haven\u0027t found an acceptable solution as of now. It might be that we need to provide an MP_INFO() variant (that calls mp_printf()) and have MP images use the right variant depending on the use case. Then UP images like Cactus-MM could continue using INFO (that would call printf()).\n\nAnyway, let\u0027s revisit later :)",
+      "parentUuid": "b4855981_9426e3b9",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 5
+      },
+      "revId": "b3c83418d8e333ba5717bc00480fd8510a5f7527",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b46485e_7f1bcd65",
         "filename": "plat/arm/fvp/include/platform_def.h",
         "patchSetId": 2

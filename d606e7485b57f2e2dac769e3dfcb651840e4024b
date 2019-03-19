@@ -46,6 +46,30 @@
       "revId": "d606e7485b57f2e2dac769e3dfcb651840e4024b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d2c045b_88b92c08",
+        "filename": "lib/aarch64/misc_helpers.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-19T09:55:32Z",
+      "side": 0,
+      "message": "\u003e Unfortunately, ASM_ASSERT adds a lot of dependencies to Cactus-MM that I couldn\u0027t resolve without adding a lot of TFTF-specific files.\n\nIn this case, can\u0027t we disable ENABLE_ASSERTIONS for Cactus-MM to avoid pulling the dependency on ASM_ASSERT? I\u0027d rather not remove this code if we can find another solution, as it is valuable for other test images and could help us catch issues.\n\n\u003e We should really create a task to isolate all images of the tf-a-tests repository correctly.\n\nThere\u0027s already one, see GENFW-2491.",
+      "parentUuid": "27f56135_5d58d5f8",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 6
+      },
+      "revId": "d606e7485b57f2e2dac769e3dfcb651840e4024b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
