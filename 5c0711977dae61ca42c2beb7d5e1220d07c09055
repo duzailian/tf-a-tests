@@ -1,0 +1,176 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ea62b749_751c4542",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-20T16:07:56Z",
+      "side": 1,
+      "message": "cactus_mm.bin and ivy.bin should be listed here.",
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "42ddaff5_a38275a3",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-20T16:07:56Z",
+      "side": 1,
+      "message": "The paragraph starting at line 280 (and the build instructions further down) clarify that not all 3 partitions can be used at the same time but I think it would be worth already calling out that it\u0027s either Cactus-MM, or Cactus and/or Ivy here.",
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "586109e3_41a38064",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-20T16:07:56Z",
+      "side": 1,
+      "message": "From a quick look at ivy_main(), it does not seem to apply to Ivy.",
+      "range": {
+        "startLine": 263,
+        "startChar": 3,
+        "endLine": 265,
+        "endChar": 24
+      },
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "77154307_d4178eca",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-20T16:07:56Z",
+      "side": 1,
+      "message": "Again, this seems to be specific to Cactus. I think Ivy doesn\u0027t do it and the code is disabled in Cactus-MM.",
+      "range": {
+        "startLine": 267,
+        "startChar": 0,
+        "endLine": 268,
+        "endChar": 70
+      },
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "860b7a90_c4ae9a2a",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-20T16:07:56Z",
+      "side": 1,
+      "message": "Perhaps move this at the first occurrence of MM in the document (i.e. line 258) and use MM everywhere else.",
+      "range": {
+        "startLine": 270,
+        "startChar": 50,
+        "endLine": 271,
+        "endChar": 13
+      },
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ed28b52_d663fc6f",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-20T16:07:56Z",
+      "side": 1,
+      "message": "I can\u0027t remember off the top of my head... If only 1 SP is used (Cactus or Ivy), is it still required to package them? Or can we use the single SP as the BL32 image, just like in the MM case? In case it is, I think it\u0027s worth clarifying.",
+      "range": {
+        "startLine": 282,
+        "startChar": 33,
+        "endLine": 284,
+        "endChar": 14
+      },
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d4d63e1a_3878fecf",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-20T16:07:56Z",
+      "side": 1,
+      "message": "nit: It\u0027s not really testing anything, it\u0027s just building. Suggest instead:\n\n to build the tests",
+      "range": {
+        "startLine": 289,
+        "startChar": 47,
+        "endLine": 289,
+        "endChar": 63
+      },
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "54200b79_0cdf7e29",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-20T16:07:56Z",
+      "side": 1,
+      "message": "This should be more generic, now that we have several secure partitions in the repo. Suggest:\n\n for any of the test secure partitions to work.",
+      "range": {
+        "startLine": 560,
+        "startChar": 71,
+        "endLine": 561,
+        "endChar": 21
+      },
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
