@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a45f93c1_bd4c9e15",
+        "filename": "tftf/tests/runtime_services/mm_service/test_secure_service_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-21T15:43:54Z",
+      "side": 1,
+      "message": "I see that Cactus and Ivy expect a timer sleep value in ms. I suppose it\u0027s because it\u0027s different in Cactus-MM that we got this bug in the first place. Should we align Cactus-MM to expect a value in milliseconds as well to avoid any potential copy \u0026 paste issue in the future?",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 41
+      },
+      "revId": "81d507ef3c46760d1a67460eaeaac20cb50ee48c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
