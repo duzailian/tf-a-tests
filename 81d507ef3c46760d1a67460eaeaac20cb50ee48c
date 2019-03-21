@@ -1,0 +1,9 @@
+Allow-CI+2: Antonio Niño Díaz <antonio.ninodiaz@arm.com>
+Verified+1: Name of user not set #1000012
+Code-Review+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+IP-Review+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Thu, 21 Mar 2019 15:54:38 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/732
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
