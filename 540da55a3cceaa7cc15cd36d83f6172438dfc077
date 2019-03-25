@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a69b2236_293d84bd",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000048
+      },
+      "writtenOn": "2019-03-25T16:23:36Z",
+      "side": 1,
+      "message": "#define LENGTH_KEYS 10\n\nand replace 10 in all cases with LENGTH_KEYS",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 15
+      },
+      "revId": "540da55a3cceaa7cc15cd36d83f6172438dfc077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
