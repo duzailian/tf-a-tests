@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e4d4b4c7_40047c36",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-25T13:14:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea62b749_751c4542",
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "42ddaff5_a38275a3",
         "filename": "docs/user-guide.rst",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "11afc932_ec6d05d8",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-25T13:14:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "42ddaff5_a38275a3",
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "586109e3_41a38064",
         "filename": "docs/user-guide.rst",
         "patchSetId": 1
@@ -47,6 +83,30 @@
       "writtenOn": "2019-03-20T16:07:56Z",
       "side": 1,
       "message": "From a quick look at ivy_main(), it does not seem to apply to Ivy.",
+      "range": {
+        "startLine": 263,
+        "startChar": 3,
+        "endLine": 265,
+        "endChar": 24
+      },
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ddf2e10_b9963a41",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-25T13:14:16Z",
+      "side": 1,
+      "message": "I think we can leave this as something a bit more generic rather than specify what each partition does, specially considering that any change in a partition would require documentation changes. I think it makes the system fragile, so I\u0027d rather be less accurate about what each partition does.",
+      "parentUuid": "586109e3_41a38064",
       "range": {
         "startLine": 263,
         "startChar": 3,
@@ -82,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "75a5eec5_8ed4e9f1",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-25T13:14:16Z",
+      "side": 1,
+      "message": "Cactus-MM now does it as well. Also, Same as the previous comment, I\u0027d rather be more generic. The test partitions are going to change and I\u0027d rather not make every little change appear in the user guide.",
+      "parentUuid": "77154307_d4178eca",
+      "range": {
+        "startLine": 267,
+        "startChar": 0,
+        "endLine": 268,
+        "endChar": 70
+      },
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "860b7a90_c4ae9a2a",
         "filename": "docs/user-guide.rst",
         "patchSetId": 1
@@ -93,6 +177,30 @@
       "writtenOn": "2019-03-20T16:07:56Z",
       "side": 1,
       "message": "Perhaps move this at the first occurrence of MM in the document (i.e. line 258) and use MM everywhere else.",
+      "range": {
+        "startLine": 270,
+        "startChar": 50,
+        "endLine": 271,
+        "endChar": 13
+      },
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99a868d2_dd43c8c5",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-25T13:14:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "860b7a90_c4ae9a2a",
       "range": {
         "startLine": 270,
         "startChar": 50,
@@ -128,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "b8a20cde_3283cbf3",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-25T13:14:16Z",
+      "side": 1,
+      "message": "You always need a package.",
+      "parentUuid": "2ed28b52_d663fc6f",
+      "range": {
+        "startLine": 282,
+        "startChar": 33,
+        "endLine": 284,
+        "endChar": 14
+      },
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4d63e1a_3878fecf",
         "filename": "docs/user-guide.rst",
         "patchSetId": 1
@@ -151,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "4279d274_e1434bc2",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-25T13:14:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4d63e1a_3878fecf",
+      "range": {
+        "startLine": 289,
+        "startChar": 47,
+        "endLine": 289,
+        "endChar": 63
+      },
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "54200b79_0cdf7e29",
         "filename": "docs/user-guide.rst",
         "patchSetId": 1
@@ -162,6 +318,30 @@
       "writtenOn": "2019-03-20T16:07:56Z",
       "side": 1,
       "message": "This should be more generic, now that we have several secure partitions in the repo. Suggest:\n\n for any of the test secure partitions to work.",
+      "range": {
+        "startLine": 560,
+        "startChar": 71,
+        "endLine": 561,
+        "endChar": 21
+      },
+      "revId": "5c0711977dae61ca42c2beb7d5e1220d07c09055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "705e6c45_c5376885",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-25T13:14:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54200b79_0cdf7e29",
       "range": {
         "startLine": 560,
         "startChar": 71,
