@@ -22,6 +22,29 @@
       "revId": "540da55a3cceaa7cc15cd36d83f6172438dfc077",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "855c6b7d_e3c9054d",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-25T16:24:52Z",
+      "side": 1,
+      "message": "\u003c\u003d",
+      "range": {
+        "startLine": 19,
+        "startChar": 12,
+        "endLine": 19,
+        "endChar": 14
+      },
+      "revId": "540da55a3cceaa7cc15cd36d83f6172438dfc077",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
