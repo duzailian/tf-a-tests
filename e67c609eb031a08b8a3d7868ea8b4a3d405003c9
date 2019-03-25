@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c1c4445c_21840922",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-25T11:14:26Z",
+      "side": 1,
+      "message": "CPTR_EL2 is a 32-bit register, right? This should still be U()",
+      "range": {
+        "startLine": 371,
+        "startChar": 26,
+        "endLine": 371,
+        "endChar": 29
+      },
+      "revId": "e67c609eb031a08b8a3d7868ea8b4a3d405003c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
