@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1e47a6c9_f66e58b2",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-03-28T15:18:48Z",
+      "side": 1,
+      "message": "I would have thought that would be implied, it is the same way we have done it previously in TF, with no particular explanation. It is needed to compile with our current toolchain, not older ones.\n\nfor example in asm_macros we introduce the esb instruction:\nhttps://github.com/ARM-software/arm-trusted-firmware/blob/master/include/arch/aarch64/asm_macros.S",
+      "parentUuid": "dbed3785_37b98ff8",
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2f38949c_c6e04f2f",
         "filename": "tftf/tests/misc_tests/test_pauth.c",
         "patchSetId": 6
@@ -30,6 +48,30 @@
       "writtenOn": "2019-03-28T13:47:34Z",
       "side": 1,
       "message": "nit: Move this line to enforce alphabetical order.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 25
+      },
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa88a4d8_eb4bc993",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-03-28T15:18:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f38949c_c6e04f2f",
       "range": {
         "startLine": 12,
         "startChar": 0,
@@ -88,6 +130,54 @@
     },
     {
       "key": {
+        "uuid": "dc54cb58_add7268e",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-03-28T15:18:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "82c45c9e_9ab0fcf8",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 59
+      },
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "872ef638_1b8732ba",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-03-28T15:18:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2f546cc_3fcc14e7",
+      "range": {
+        "startLine": 17,
+        "startChar": 42,
+        "endLine": 17,
+        "endChar": 58
+      },
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "79b818c6_abb35579",
         "filename": "tftf/tests/misc_tests/test_pauth.c",
         "patchSetId": 6
@@ -99,6 +189,30 @@
       "writtenOn": "2019-03-28T13:47:34Z",
       "side": 1,
       "message": "As far as I understand, it is possible for a CPU to implement either address authentication (indicated by ID_AA64ISAR1_EL1.API/APA bits) or generic code authentication (indicated by ID_AA64ISAR1_EL1.GPI/GPA bits), or both. Therefore, I think this code ought to check the right bits before accessing the key registers:\n\n if (is_armv8_3_pauth_apa_api_present()) {\n   pauth_keys[0] \u003d read_apiakeylo_el1();\n   pauth_keys[1] \u003d read_apiakeyhi_el1();\n   /* snip */\n }\n\n if (is_armv8_3_pauth_gpa_gpi_present()) {\n   pauth_keys[8] \u003d read_apgakeylo_el1();\n   pauth_keys[9] \u003d read_apgakeyhi_el1();\n }\n\nis_armv8_3_pauth_gpa_gpi_present() here does not exist yet and would need to be added inside arch_features.h.\n\nAFAICS, this will have some consequences in the test functions below, as they should now cope with the array potentially containing holes for keys that could not be read.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 38
+      },
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "13799dba_9c76bb92",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-03-28T15:18:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79b818c6_abb35579",
       "range": {
         "startLine": 21,
         "startChar": 0,
@@ -134,6 +248,30 @@
     },
     {
       "key": {
+        "uuid": "cc04c074_d6f16147",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-03-28T15:18:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c2045ba_b61b846e",
+      "range": {
+        "startLine": 39,
+        "startChar": 1,
+        "endLine": 39,
+        "endChar": 10
+      },
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2b610c8f_e3978963",
         "filename": "tftf/tests/misc_tests/test_pauth.c",
         "patchSetId": 6
@@ -151,6 +289,24 @@
     },
     {
       "key": {
+        "uuid": "aa146668_e7df8a85",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-03-28T15:18:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b610c8f_e3978963",
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "63d2534e_96ce36ec",
         "filename": "tftf/tests/misc_tests/test_pauth.c",
         "patchSetId": 6
@@ -162,6 +318,24 @@
       "writtenOn": "2019-03-28T13:47:34Z",
       "side": 1,
       "message": "Consider checking the return value in x0. I don\u0027t think we need to go as far as checking the result of the addition but at least we should make sure the call succeeded. If it failed then it might not have exercised the code path we wanted, we want to make sure it got all the way from TFTF into TSP through TF-A.",
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "68dccf3c_97e1d786",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-03-28T15:18:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63d2534e_96ce36ec",
       "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
