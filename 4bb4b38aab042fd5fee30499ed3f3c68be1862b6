@@ -1,0 +1,216 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dbed3785_37b98ff8",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-28T13:47:34Z",
+      "side": 1,
+      "message": "Presumably this code is introduced so that the tests can be compiled using an older toolchain that does not support pointer authentication? If so, it would be worth explaining that in the comment.",
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2f38949c_c6e04f2f",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-28T13:47:34Z",
+      "side": 1,
+      "message": "nit: Move this line to enforce alphabetical order.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 25
+      },
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "82c45c9e_9ab0fcf8",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-28T13:47:34Z",
+      "side": 1,
+      "message": "This function should be static.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 59
+      },
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d2f546cc_3fcc14e7",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-28T13:47:34Z",
+      "side": 1,
+      "message": "This function argument is not used at the moment (apart from the debug assertion on entry) so it doesn\u0027t look like it\u0027s serving any purpose, consider dropping it.",
+      "range": {
+        "startLine": 17,
+        "startChar": 42,
+        "endLine": 17,
+        "endChar": 58
+      },
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79b818c6_abb35579",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-28T13:47:34Z",
+      "side": 1,
+      "message": "As far as I understand, it is possible for a CPU to implement either address authentication (indicated by ID_AA64ISAR1_EL1.API/APA bits) or generic code authentication (indicated by ID_AA64ISAR1_EL1.GPI/GPA bits), or both. Therefore, I think this code ought to check the right bits before accessing the key registers:\n\n if (is_armv8_3_pauth_apa_api_present()) {\n   pauth_keys[0] \u003d read_apiakeylo_el1();\n   pauth_keys[1] \u003d read_apiakeyhi_el1();\n   /* snip */\n }\n\n if (is_armv8_3_pauth_gpa_gpi_present()) {\n   pauth_keys[8] \u003d read_apgakeylo_el1();\n   pauth_keys[9] \u003d read_apgakeyhi_el1();\n }\n\nis_armv8_3_pauth_gpa_gpi_present() here does not exist yet and would need to be added inside arch_features.h.\n\nAFAICS, this will have some consequences in the test functions below, as they should now cope with the array potentially containing holes for keys that could not be read.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 38
+      },
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9c2045ba_b61b846e",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-28T13:47:34Z",
+      "side": 1,
+      "message": "If the function always returns 0 then it might as well return nothing. Consider changing the return type into void. If we later identify some reasons for the function to fail, we can easily change the return type back into an int, as it\u0027s a static function so changes will be local to this file.",
+      "range": {
+        "startLine": 39,
+        "startChar": 1,
+        "endLine": 39,
+        "endChar": 10
+      },
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2b610c8f_e3978963",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-28T13:47:34Z",
+      "side": 1,
+      "message": "It would be worth explaining a bit about how this test works: that TF-A is expected to have configured access to key registers from lower ELs ; reading the keys exercises this ; on failure this will just crash (trapped to EL3), that sort of things.\n\nSimilarly, the other test functions could do with a short comment as well.",
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "63d2534e_96ce36ec",
+        "filename": "tftf/tests/misc_tests/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-28T13:47:34Z",
+      "side": 1,
+      "message": "Consider checking the return value in x0. I don\u0027t think we need to go as far as checking the result of the addition but at least we should make sure the call succeeded. If it failed then it might not have exercised the code path we wanted, we want to make sure it got all the way from TFTF into TSP through TF-A.",
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "646e547f_82af16f6",
+        "filename": "tftf/tests/tests-cpu-extensions.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-28T13:47:34Z",
+      "side": 1,
+      "message": "I think it would be more appropriate to move the pointer authentication tests code into extensions/ptrauth/. Is there a specific reason why you\u0027ve put them into misc_tests/ instead?",
+      "range": {
+        "startLine": 11,
+        "startChar": 1,
+        "endLine": 11,
+        "endChar": 11
+      },
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "97dd101c_6a549b4d",
+        "filename": "tftf/tests/tests-cpu-extensions.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-28T13:47:34Z",
+      "side": 1,
+      "message": "Remove?",
+      "range": {
+        "startLine": 13,
+        "startChar": 80,
+        "endLine": 13,
+        "endChar": 83
+      },
+      "revId": "4bb4b38aab042fd5fee30499ed3f3c68be1862b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
