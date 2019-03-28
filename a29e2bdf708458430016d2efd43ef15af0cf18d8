@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d8470c92_44ccba5f",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-28T09:30:06Z",
+      "side": 1,
+      "message": "I am a bit confused about this patch... The commit message seems to say that the bp.ve_sysregs.exit_on_shutdown model parameter is *required* in order to run the manual tests. My expectation was that they would still work without it, it\u0027s just that the model would not automatically shut down, instead it would wait forever at the end of the test session (after printing the test report).\n\nIs that not the case? If you don\u0027t pass this parameter while running the manual tests, what happens?",
+      "revId": "a29e2bdf708458430016d2efd43ef15af0cf18d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
