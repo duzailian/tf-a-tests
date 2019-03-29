@@ -168,6 +168,30 @@
     },
     {
       "key": {
+        "uuid": "8f90af98_74c06512",
+        "filename": "tftf/framework/aarch64/arch.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-29T10:06:28Z",
+      "side": 1,
+      "message": "\u003e Sure, but there are lots of EL2 registers we never touch that also\n \u003e reset to architecturally UNKNOWN values, so why do we specifically\n \u003e care about this one and not the rest?\n\nIt\u0027s not what we do not care about the rest of them, I think we should also initialize them (in a subsequent patch) but we happened to pick the issue for CPTR_EL2 in this review.",
+      "parentUuid": "eca14fa6_e372899e",
+      "range": {
+        "startLine": 27,
+        "startChar": 2,
+        "endLine": 27,
+        "endChar": 42
+      },
+      "revId": "73769c1529d533d7a3ce80b9e11f28ec0fc78621",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b471d726_0314564e",
         "filename": "tftf/tests/extensions/sve/test_sve.c",
         "patchSetId": 6
