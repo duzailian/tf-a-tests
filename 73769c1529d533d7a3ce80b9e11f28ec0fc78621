@@ -216,6 +216,30 @@
     },
     {
       "key": {
+        "uuid": "8d610b2c_2e8d8f6c",
+        "filename": "tftf/framework/aarch64/arch.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-29T10:17:17Z",
+      "side": 1,
+      "message": "What I mean is that if we only care about SVE, we should only be touching the SVE fields. The others, as far as I know, shouldn\u0027t matter. As far as I am aware all fields that reset to UNKNOWN values do it because it is safe to do it. There is always an enable bit somewhere else that architecturally resets to \"disabled\"",
+      "parentUuid": "0d6102bd_e34a7a92",
+      "range": {
+        "startLine": 27,
+        "startChar": 2,
+        "endLine": 27,
+        "endChar": 42
+      },
+      "revId": "73769c1529d533d7a3ce80b9e11f28ec0fc78621",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b471d726_0314564e",
         "filename": "tftf/tests/extensions/sve/test_sve.c",
         "patchSetId": 6
