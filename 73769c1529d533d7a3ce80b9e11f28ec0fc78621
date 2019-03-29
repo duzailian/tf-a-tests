@@ -240,6 +240,30 @@
     },
     {
       "key": {
+        "uuid": "d74beaee_810f9e03",
+        "filename": "tftf/framework/aarch64/arch.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-03-29T10:24:21Z",
+      "side": 1,
+      "message": "Right, I see, thanks.\n\nThat means we\u0027re safe regarding the bits controlling post-Armv8.0 architectural features but I think the issue remains for other bits that were there from the beginning and reset to an architecturally unknown value (e.g. TCPAC bit).\n\n \u003e As far as I am aware all fields that reset to UNKNOWN values \n \u003e do it because it is safe to do it. There is always an enable \n \u003e bit somewhere else that architecturally resets to \"disabled\"\n\nBut then (reiterating my question), why were the TF-A patches I linked required? I still don\u0027t get it...",
+      "parentUuid": "8d610b2c_2e8d8f6c",
+      "range": {
+        "startLine": 27,
+        "startChar": 2,
+        "endLine": 27,
+        "endChar": 42
+      },
+      "revId": "73769c1529d533d7a3ce80b9e11f28ec0fc78621",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b471d726_0314564e",
         "filename": "tftf/tests/extensions/sve/test_sve.c",
         "patchSetId": 6
