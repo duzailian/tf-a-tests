@@ -192,6 +192,30 @@
     },
     {
       "key": {
+        "uuid": "0d6102bd_e34a7a92",
+        "filename": "tftf/framework/aarch64/arch.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-29T10:10:41Z",
+      "side": 1,
+      "message": "SVE was added as part of ARMv8.2. If you have a binary that was built for 8.0, before 8.2 was designed, it shouldn\u0027t be affected by additions of 8.2. Logically all 8.2 features are disabled by default and all important fields of the newly added registers reset to safe values. If not, running an old binary in a new CPU would cause problems.",
+      "parentUuid": "8f90af98_74c06512",
+      "range": {
+        "startLine": 27,
+        "startChar": 2,
+        "endLine": 27,
+        "endChar": 42
+      },
+      "revId": "73769c1529d533d7a3ce80b9e11f28ec0fc78621",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b471d726_0314564e",
         "filename": "tftf/tests/extensions/sve/test_sve.c",
         "patchSetId": 6
