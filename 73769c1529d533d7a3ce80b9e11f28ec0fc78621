@@ -288,6 +288,30 @@
     },
     {
       "key": {
+        "uuid": "5b834c1a_13062e8d",
+        "filename": "tftf/framework/aarch64/arch.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-03-29T10:45:17Z",
+      "side": 1,
+      "message": "Actually, sorry, I didn\u0027t notice it was being initialized somewhere else.",
+      "parentUuid": "24895930_57efdee0",
+      "range": {
+        "startLine": 27,
+        "startChar": 2,
+        "endLine": 27,
+        "endChar": 42
+      },
+      "revId": "73769c1529d533d7a3ce80b9e11f28ec0fc78621",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b471d726_0314564e",
         "filename": "tftf/tests/extensions/sve/test_sve.c",
         "patchSetId": 6
