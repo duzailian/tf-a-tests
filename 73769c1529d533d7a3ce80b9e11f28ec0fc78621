@@ -336,6 +336,30 @@
     },
     {
       "key": {
+        "uuid": "7bdc277c_721bc490",
+        "filename": "tftf/framework/aarch64/arch.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-01T07:12:43Z",
+      "side": 1,
+      "message": "Revisiting the initialization of all other EL2 registers is obviously outside of the scope of this patch (there is no harm discussing it now, though). However, this is new code and AFAIU we have to configure CPTR_EL2 for SVE support.\n\nThere are 2 ways to do it:\n1) either using a read/modify/write pattern like it is in this patch right now;\n2) or we fully initialize the value.\n\nRegardless of whether the 1st approach would be a bug or not, I would prefer we go with the 2nd option because it is more deterministic, unless we can foresee a good reason for not doing so.\n\nThis means doing something like the following:\n\n write_cptr_el2(CPTR_EL2_RES1);\n\nor if we want to make the TZ and TFP bits programming explicit:\n\n  write_cptr_el2(CPTR_EL2_RES1 \u0026 ~CPTR_EL2_TFP_BIT \u0026 ~CPTR_EL2_TZ_BIT);",
+      "parentUuid": "73ddec53_4d06c9ac",
+      "range": {
+        "startLine": 27,
+        "startChar": 2,
+        "endLine": 27,
+        "endChar": 42
+      },
+      "revId": "73769c1529d533d7a3ce80b9e11f28ec0fc78621",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b471d726_0314564e",
         "filename": "tftf/tests/extensions/sve/test_sve.c",
         "patchSetId": 6
