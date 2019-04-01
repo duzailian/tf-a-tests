@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "32463273_e02b3560",
+        "filename": "tftf/framework/aarch64/arch.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-04-01T10:11:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0625209_8814b72a",
+      "range": {
+        "startLine": 20,
+        "startChar": 2,
+        "endLine": 20,
+        "endChar": 8
+      },
+      "revId": "73769c1529d533d7a3ce80b9e11f28ec0fc78621",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae7da4c_c24a757d",
         "filename": "tftf/framework/aarch64/arch.c",
         "patchSetId": 6
@@ -360,6 +384,30 @@
     },
     {
       "key": {
+        "uuid": "6744081c_cbfdd544",
+        "filename": "tftf/framework/aarch64/arch.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-04-01T10:11:35Z",
+      "side": 1,
+      "message": "Done.\nThe CPTR_EL2_RES1 value was wrong, I updated it from https://developer.arm.com/docs/ddi0595/b/aarch64-system-registers/cptr_el2",
+      "parentUuid": "7bdc277c_721bc490",
+      "range": {
+        "startLine": 27,
+        "startChar": 2,
+        "endLine": 27,
+        "endChar": 42
+      },
+      "revId": "73769c1529d533d7a3ce80b9e11f28ec0fc78621",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b471d726_0314564e",
         "filename": "tftf/tests/extensions/sve/test_sve.c",
         "patchSetId": 6
@@ -383,6 +431,30 @@
     },
     {
       "key": {
+        "uuid": "f8d906b1_06c8df2e",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-04-01T10:11:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b471d726_0314564e",
+      "range": {
+        "startLine": 25,
+        "startChar": 14,
+        "endLine": 25,
+        "endChar": 61
+      },
+      "revId": "73769c1529d533d7a3ce80b9e11f28ec0fc78621",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "117520c4_32b42f95",
         "filename": "tftf/tests/extensions/sve/test_sve.c",
         "patchSetId": 6
@@ -394,6 +466,30 @@
       "writtenOn": "2019-03-29T09:38:41Z",
       "side": 1,
       "message": "It\u0027s better to use tftf_testcase_printf() for this kind of messages. INFO() messages are printed as the test goes on so it can be easily missed out in the flow of other UART output messages if the log level is high. As such, it\u0027s better suited for debugging information.\n\nOn the other hand, tftf_testcase_printf() stores the message into the test report so it gets displayed at the end of test session. Both the test status (skipped) and the reason why it was skipped are then displayed at the same place.\n\n(Note that then you can get rid of the function naming printing here, as well as the \"skipped because\" part, because the message will be printed just below the test result and test name so this would become redundant information).",
+      "range": {
+        "startLine": 31,
+        "startChar": 2,
+        "endLine": 31,
+        "endChar": 6
+      },
+      "revId": "73769c1529d533d7a3ce80b9e11f28ec0fc78621",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7663c27c_c86a3c9b",
+        "filename": "tftf/tests/extensions/sve/test_sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-04-01T10:11:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "117520c4_32b42f95",
       "range": {
         "startLine": 31,
         "startChar": 2,
