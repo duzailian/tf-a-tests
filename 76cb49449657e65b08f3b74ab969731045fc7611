@@ -1,0 +1,343 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "25fcc885_61ac5917",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "nit: Add final \\n.",
+      "range": {
+        "startLine": 32,
+        "startChar": 46,
+        "endLine": 32,
+        "endChar": 55
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e49c8f74_71f8af49",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "nit: Remove 1 level of indentation.",
+      "range": {
+        "startLine": 32,
+        "startChar": 2,
+        "endLine": 32,
+        "endChar": 3
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba9a53fa_49314219",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "nit: Remove empty line.",
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2492f21_fc45280e",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "nit: This is a user-facing message so I think we should be more explicit and print \"Pointer Authentication\" instead of \"Pauth\".",
+      "range": {
+        "startLine": 95,
+        "startChar": 25,
+        "endLine": 95,
+        "endChar": 30
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "beaca114_25a3ac77",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "As far as I am aware, compiler support for pointer authentication is not through intrinsics. Intrinsics would be if developers had to call a function from their code to do some PAuth-specific operation at specific locations (see https://en.wikipedia.org/wiki/Intrinsic_function). In the case of PAuth, we just pass an additional build flag to GCC and it emits extra instructions on its own, without us modifying the code.\n\nI think this should be reworded, perhaps as:\n\n (explicit encoding for compilers that do not recognize these instructions)",
+      "range": {
+        "startLine": 198,
+        "startChar": 27,
+        "endLine": 198,
+        "endChar": 37
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "993457aa_39270574",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "These probably have to be macros, not functions. Otherwise, this could cause problems in the unlikely event where these functions are not inlined and TF-A Tests are compiled with -msign-return-address. In this case, the compiler may emit extra PACIASP and AUTIASP instructions and these would not necessarily play nice with the ones in the tests.",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 211,
+        "endChar": 1
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c882b193_881f9f9a",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "It might be simpler to memset() the structure to 0 at the start of the function and only patch it as needed.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 20
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59dc6268_0b65a2a4",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "As far as I understand, these lines also have to be under the if (is_armv8_3_pauth_apa_api_present()) branch. See the documentation for the ID_AA64ISAR1_EL1.API bit in https://developer.arm.com/docs/ddi0595/latest/aarch64-system-registers/id_aa64isar1_el1:\n\n This involves all Pointer Authentication instructions other than\n the PACGA instruction.",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 0
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f1558b0_d1a0ebb8",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "nit: TF-A",
+      "range": {
+        "startLine": 57,
+        "startChar": 3,
+        "endLine": 57,
+        "endChar": 5
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d81a04c_37cb3ef5",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "We could be a bit more explicit here and say:\n\n checks that the EL3 pauth keys are not leaked",
+      "range": {
+        "startLine": 73,
+        "startChar": 53,
+        "endLine": 73,
+        "endChar": 63
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "772b71f0_6e5445bd",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "nit: Truncate this line to make it fit under 80 columns.",
+      "range": {
+        "startLine": 93,
+        "startChar": 1,
+        "endLine": 93,
+        "endChar": 86
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "845831fc_84e20602",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "Suggest:\n\n checks that the S-EL1 or EL3 pauth keys are not leaked\n\nor\n\n checks that the Secure World pauth keys are not leaked",
+      "range": {
+        "startLine": 114,
+        "startChar": 32,
+        "endLine": 114,
+        "endChar": 58
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a60cc0f_4bc63e06",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "I am not sure what \u0027SMC resume\u0027 refers to here (I suspect this might a copy \u0026 paste mistake from another test where we issue yielding SMCs into the TSP, interrupt them and resume them later). Consider rewording.",
+      "range": {
+        "startLine": 146,
+        "startChar": 24,
+        "endLine": 146,
+        "endChar": 56
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ba2fec4_75800187",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "nit: Truncate this line to make it fit under 80 columns.",
+      "range": {
+        "startLine": 156,
+        "startChar": 1,
+        "endLine": 156,
+        "endChar": 86
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b68bc3cf_58deb8a0",
+        "filename": "tftf/tests/tests-cpu-extensions.mk",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T07:52:06Z",
+      "side": 1,
+      "message": "If the directory name is ptrauth/, we might as well keep the naming consistent and call this file test_ptrauth.c.",
+      "range": {
+        "startLine": 11,
+        "startChar": 25,
+        "endLine": 11,
+        "endChar": 30
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
