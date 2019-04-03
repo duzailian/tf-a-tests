@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0be197e1_e1d38342",
+        "filename": "drivers/console/aarch64/dummy_console.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T11:54:55Z",
+      "side": 1,
+      "message": "Do these functions need to be implemented in assembly? Can\u0027t they be in C instead?\n\nAFAICS, console_init() is called from tftf_early_platform_setup() and at this time we\u0027ve already got a stack set up (although it is the temporary one). For secure partitions, it\u0027s even called later, in their main function.",
+      "revId": "c8d36de44d746d86146e23e87f1fa8292a933067",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "226fd7c9_06bcf53c",
+        "filename": "drivers/console/aarch64/dummy_console.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T11:54:55Z",
+      "side": 1,
+      "message": "Does it make sense to keep all this information for this empty implementation? I realize that this describes what a real implementation would do but things like \"It saves the console base to the data section\" or \"Clobber list : x1 - x3\" might sound confusing here.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 26
+      },
+      "revId": "c8d36de44d746d86146e23e87f1fa8292a933067",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e26cf5df_5992c177",
+        "filename": "drivers/console/aarch64/dummy_console.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-03T11:54:55Z",
+      "side": 1,
+      "message": "I read the following lines in include/drivers/console.h:\n\n /* Returned by console_xxx() if the registered console doesn\u0027t implement xxx. */\n #define ERROR_NO_VALID_CONSOLE\t\t(-128)\n\nShould console_init() here return ERROR_NO_VALID_CONSOLE?\n\nSame question for console_putc() and console_flush().",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 4
+      },
+      "revId": "c8d36de44d746d86146e23e87f1fa8292a933067",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
