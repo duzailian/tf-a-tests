@@ -134,6 +134,30 @@
     },
     {
       "key": {
+        "uuid": "0a82a20b_ef558e34",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-03T10:27:41Z",
+      "side": 1,
+      "message": "I think that, given that the functions are only going to be used in one test, we could just inline them by hand and have only one asm volatile block in the function (with comments after each line to say the instruction).",
+      "parentUuid": "993457aa_39270574",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 211,
+        "endChar": 1
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c882b193_881f9f9a",
         "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
         "patchSetId": 15
@@ -329,6 +353,30 @@
       "writtenOn": "2019-04-03T07:52:06Z",
       "side": 1,
       "message": "If the directory name is ptrauth/, we might as well keep the naming consistent and call this file test_ptrauth.c.",
+      "range": {
+        "startLine": 11,
+        "startChar": 25,
+        "endLine": 11,
+        "endChar": 30
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b677721d_18a2a477",
+        "filename": "tftf/tests/tests-cpu-extensions.mk",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-03T10:27:41Z",
+      "side": 1,
+      "message": "I\u0027d rather use pauth, as that is the official name used in the ARM ARM.",
+      "parentUuid": "b68bc3cf_58deb8a0",
       "range": {
         "startLine": 11,
         "startChar": 25,
