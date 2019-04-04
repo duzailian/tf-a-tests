@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "b502113f_f83c7b8f",
+        "filename": "drivers/console/aarch64/dummy_console.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-04T15:09:23Z",
+      "side": 1,
+      "message": "Are you saying that there is no technical reason for implementing this console driver in C from the point of view of TF-A Tests (i.e. that these are indeed called after the stack has been setup), but in the case of TF-A this console driver is used much earlier (i.e. before the stacks are setup) so it is required to implement them in assembly language there?",
+      "parentUuid": "ceb49ab9_6aeea368",
+      "revId": "c8d36de44d746d86146e23e87f1fa8292a933067",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "226fd7c9_06bcf53c",
         "filename": "drivers/console/aarch64/dummy_console.S",
         "patchSetId": 1
