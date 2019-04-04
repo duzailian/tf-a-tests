@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ceb49ab9_6aeea368",
+        "filename": "drivers/console/aarch64/dummy_console.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-04T13:43:37Z",
+      "side": 1,
+      "message": "Same as the comment below. I think that, because this could be used as skeleton for new consoles, it is better to have it in assembly. I can imagine some people will simply copy code from TF into this repository and this way it is easier for them to do it.",
+      "parentUuid": "0be197e1_e1d38342",
+      "revId": "c8d36de44d746d86146e23e87f1fa8292a933067",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "226fd7c9_06bcf53c",
         "filename": "drivers/console/aarch64/dummy_console.S",
         "patchSetId": 1
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "9838d1b6_c4860f6d",
+        "filename": "drivers/console/aarch64/dummy_console.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-04T13:43:37Z",
+      "side": 1,
+      "message": "Well, the problem is that people could use this as a template for new consoles. Leaving the comment can be helpful in that case, they would get the documentation for free.",
+      "parentUuid": "226fd7c9_06bcf53c",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 26
+      },
+      "revId": "c8d36de44d746d86146e23e87f1fa8292a933067",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e26cf5df_5992c177",
         "filename": "drivers/console/aarch64/dummy_console.S",
         "patchSetId": 1
@@ -53,6 +95,30 @@
       "writtenOn": "2019-04-03T11:54:55Z",
       "side": 1,
       "message": "I read the following lines in include/drivers/console.h:\n\n /* Returned by console_xxx() if the registered console doesn\u0027t implement xxx. */\n #define ERROR_NO_VALID_CONSOLE\t\t(-128)\n\nShould console_init() here return ERROR_NO_VALID_CONSOLE?\n\nSame question for console_putc() and console_flush().",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 4
+      },
+      "revId": "c8d36de44d746d86146e23e87f1fa8292a933067",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95a69007_432a08d8",
+        "filename": "drivers/console/aarch64/dummy_console.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-04T13:43:37Z",
+      "side": 1,
+      "message": "For console_init and flush I forgot to add the return value.\n\nFor putc it should return the same character that has been printed. In that case, I can simply return x0, as it is the character to be printed.",
+      "parentUuid": "e26cf5df_5992c177",
       "range": {
         "startLine": 30,
         "startChar": 0,
