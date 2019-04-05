@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "33641b12_65cc0cba",
+        "filename": "drivers/console/aarch64/dummy_console.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-05T09:29:56Z",
+      "side": 1,
+      "message": "I\u0027m saying that in the TF someone may write a driver in assembly, and then that someone may want to reuse it here because they have already tested it. If they take this driver as base, they could just copy paste code from the TF.",
+      "parentUuid": "b502113f_f83c7b8f",
+      "revId": "c8d36de44d746d86146e23e87f1fa8292a933067",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "226fd7c9_06bcf53c",
         "filename": "drivers/console/aarch64/dummy_console.S",
         "patchSetId": 1
