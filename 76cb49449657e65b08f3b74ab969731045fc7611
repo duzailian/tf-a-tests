@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "2c575bf9_6c2e5d01",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-08T12:40:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25fcc885_61ac5917",
+      "range": {
+        "startLine": 32,
+        "startChar": 46,
+        "endLine": 32,
+        "endChar": 55
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8bf2906_7e6093f5",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-08T12:40:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e49c8f74_71f8af49",
+      "range": {
+        "startLine": 32,
+        "startChar": 2,
+        "endLine": 32,
+        "endChar": 3
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ba9a53fa_49314219",
         "filename": "include/common/test_helpers.h",
         "patchSetId": 15
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "9bcdd078_3990ac7c",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-08T12:40:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba9a53fa_49314219",
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b2492f21_fc45280e",
         "filename": "include/common/test_helpers.h",
         "patchSetId": 15
@@ -76,6 +142,30 @@
       "writtenOn": "2019-04-03T07:52:06Z",
       "side": 1,
       "message": "nit: This is a user-facing message so I think we should be more explicit and print \"Pointer Authentication\" instead of \"Pauth\".",
+      "range": {
+        "startLine": 95,
+        "startChar": 25,
+        "endLine": 95,
+        "endChar": 30
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8214ad4_87eb249a",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-08T12:40:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2492f21_fc45280e",
       "range": {
         "startLine": 95,
         "startChar": 25,
@@ -158,6 +248,30 @@
     },
     {
       "key": {
+        "uuid": "a55758af_fffd63ad",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-08T12:40:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a82a20b_ef558e34",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 211,
+        "endChar": 1
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c882b193_881f9f9a",
         "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
         "patchSetId": 15
@@ -169,6 +283,30 @@
       "writtenOn": "2019-04-03T07:52:06Z",
       "side": 1,
       "message": "It might be simpler to memset() the structure to 0 at the start of the function and only patch it as needed.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 20
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "242a22f7_148022d1",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-08T12:40:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c882b193_881f9f9a",
       "range": {
         "startLine": 31,
         "startChar": 0,
@@ -204,6 +342,30 @@
     },
     {
       "key": {
+        "uuid": "59a22c37_80a595d1",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-08T12:40:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59dc6268_0b65a2a4",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 0
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0f1558b0_d1a0ebb8",
         "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
         "patchSetId": 15
@@ -215,6 +377,30 @@
       "writtenOn": "2019-04-03T07:52:06Z",
       "side": 1,
       "message": "nit: TF-A",
+      "range": {
+        "startLine": 57,
+        "startChar": 3,
+        "endLine": 57,
+        "endChar": 5
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17848f8f_e600f275",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-08T12:40:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f1558b0_d1a0ebb8",
       "range": {
         "startLine": 57,
         "startChar": 3,
@@ -250,6 +436,30 @@
     },
     {
       "key": {
+        "uuid": "395e94da_252cb091",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-08T12:40:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d81a04c_37cb3ef5",
+      "range": {
+        "startLine": 73,
+        "startChar": 53,
+        "endLine": 73,
+        "endChar": 63
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "772b71f0_6e5445bd",
         "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
         "patchSetId": 15
@@ -261,6 +471,30 @@
       "writtenOn": "2019-04-03T07:52:06Z",
       "side": 1,
       "message": "nit: Truncate this line to make it fit under 80 columns.",
+      "range": {
+        "startLine": 93,
+        "startChar": 1,
+        "endLine": 93,
+        "endChar": 86
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "38c2396d_32bfac70",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-08T12:40:23Z",
+      "side": 1,
+      "message": "imo this makes it less readable.",
+      "parentUuid": "772b71f0_6e5445bd",
       "range": {
         "startLine": 93,
         "startChar": 1,
@@ -296,6 +530,30 @@
     },
     {
       "key": {
+        "uuid": "6e4a9a6e_e9b02a96",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-08T12:40:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "845831fc_84e20602",
+      "range": {
+        "startLine": 114,
+        "startChar": 32,
+        "endLine": 114,
+        "endChar": 58
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1a60cc0f_4bc63e06",
         "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
         "patchSetId": 15
@@ -319,6 +577,30 @@
     },
     {
       "key": {
+        "uuid": "441f3257_9485aa7a",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-08T12:40:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a60cc0f_4bc63e06",
+      "range": {
+        "startLine": 146,
+        "startChar": 24,
+        "endLine": 146,
+        "endChar": 56
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6ba2fec4_75800187",
         "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
         "patchSetId": 15
@@ -330,6 +612,30 @@
       "writtenOn": "2019-04-03T07:52:06Z",
       "side": 1,
       "message": "nit: Truncate this line to make it fit under 80 columns.",
+      "range": {
+        "startLine": 156,
+        "startChar": 1,
+        "endLine": 156,
+        "endChar": 86
+      },
+      "revId": "76cb49449657e65b08f3b74ab969731045fc7611",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b68d3d10_5d18d59c",
+        "filename": "tftf/tests/extensions/ptrauth/test_pauth.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-08T12:40:23Z",
+      "side": 1,
+      "message": "imo this makes it less readable.",
+      "parentUuid": "6ba2fec4_75800187",
       "range": {
         "startLine": 156,
         "startChar": 1,
