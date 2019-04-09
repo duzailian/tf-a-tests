@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eb0c7a4c_4d786413",
+        "filename": "tftf/tests/extensions/ptrauth/test_ptrauth.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-04-09T09:22:50Z",
+      "side": 1,
+      "message": "This tests the leakage of PAuth keys, but actually the keys are not set by the test itself (except in case of ENABLE_PAUTH passed, which sets only APIAKey). All the keys are reset to unknown value (0 in the ARMAEMv8-A model).",
+      "revId": "8790f025e12065ccccfe4d19fdcc672c80aa784b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
