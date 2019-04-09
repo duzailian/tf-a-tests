@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "131a72f3_c20d4819",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-09T14:46:27Z",
+      "side": 1,
+      "message": "The commit message does not explain why we want to prevent the compiler from generating unaligned accesses, despite the SCTLR.A bit being cleared (which means the CPU allows them).",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 24
+      },
+      "revId": "6ca5bff1a3e90d71c84b5d974967e2aa9f0c715f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e16a5ba_032310ef",
+        "filename": "Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-09T14:46:27Z",
+      "side": 1,
+      "message": "I think the AArch32 equivalent of -mstrict-align is: -mno-unaligned-access. Should we add it to the AArch32 C/ASFLAGS as well? Or is there already some other flag that prevents the AArch32 compiler from generating unaligned accesses?",
+      "range": {
+        "startLine": 189,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 45
+      },
+      "revId": "6ca5bff1a3e90d71c84b5d974967e2aa9f0c715f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
