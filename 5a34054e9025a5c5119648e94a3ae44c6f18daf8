@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0e26433b_7929ca22",
+        "filename": "Makefile",
+        "patchSetId": 3
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-09T09:10:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "90e25204_e540cb1e",
+      "range": {
+        "startLine": 502,
+        "startChar": 15,
+        "endLine": 502,
+        "endChar": 24
+      },
+      "revId": "5a34054e9025a5c5119648e94a3ae44c6f18daf8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7fe09e53_ec1374b8",
         "filename": "spm/quark/quark.mk",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2019-04-09T08:54:02Z",
       "side": 1,
       "message": "Is this needed?",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 19,
+        "endChar": 26
+      },
+      "revId": "5a34054e9025a5c5119648e94a3ae44c6f18daf8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ddb892cb_aed70024",
+        "filename": "spm/quark/quark.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-09T09:10:47Z",
+      "side": 1,
+      "message": "Yes, because of PAGE_SIZE.",
+      "parentUuid": "7fe09e53_ec1374b8",
       "range": {
         "startLine": 19,
         "startChar": 1,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "dbfe1fba_5abf8e61",
+        "filename": "spm/quark/quark.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-09T09:10:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0d22057_97bdf0ab",
+      "range": {
+        "startLine": 27,
+        "startChar": 27,
+        "endLine": 27,
+        "endChar": 28
+      },
+      "revId": "5a34054e9025a5c5119648e94a3ae44c6f18daf8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "46eb7a3f_1cf3d2c2",
         "filename": "spm/quark/quark.mk",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2019-04-09T08:54:02Z",
       "side": 1,
       "message": "Are these files needed, given that Quark doesn\u0027t have print capabilities?",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 35
+      },
+      "revId": "5a34054e9025a5c5119648e94a3ae44c6f18daf8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc53e20b_3f20e7b2",
+        "filename": "spm/quark/quark.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-09T09:10:47Z",
+      "side": 1,
+      "message": "Even though it doesn\u0027t print, it still depends on some of the functions there.",
+      "parentUuid": "46eb7a3f_1cf3d2c2",
       "range": {
         "startLine": 36,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "4ea778d2_be8378cd",
+        "filename": "spm/quark/quark.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-09T09:10:47Z",
+      "side": 1,
+      "message": "I created the dummy console because I can\u0027t get rid of them. Having assert() forces you to have all of this.",
+      "parentUuid": "9d313cf3_81171f97",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 22
+      },
+      "revId": "5a34054e9025a5c5119648e94a3ae44c6f18daf8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "df6db1f7_da555b4e",
         "filename": "spm/quark/quark.mk",
         "patchSetId": 3
@@ -128,6 +248,30 @@
       "writtenOn": "2019-04-09T08:54:02Z",
       "side": 1,
       "message": "Is LOG_LEVEL relevant, given that there\u0027s no print capabilities?",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 50
+      },
+      "revId": "5a34054e9025a5c5119648e94a3ae44c6f18daf8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "091a2faf_564a55d5",
+        "filename": "spm/quark/quark.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-09T09:10:47Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "df6db1f7_da555b4e",
       "range": {
         "startLine": 54,
         "startChar": 0,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "de764881_15b5766c",
+        "filename": "spm/quark/quark.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-09T09:10:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "498c79d2_50a3ccc0",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 4
+      },
+      "revId": "5a34054e9025a5c5119648e94a3ae44c6f18daf8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "42ee0b05_bfba0448",
         "filename": "spm/quark/quark_def.h",
         "patchSetId": 3
@@ -180,6 +348,24 @@
     },
     {
       "key": {
+        "uuid": "03217479_6521a023",
+        "filename": "spm/quark/quark_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-09T09:10:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "42ee0b05_bfba0448",
+      "revId": "5a34054e9025a5c5119648e94a3ae44c6f18daf8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8c2245e8_220a2098",
         "filename": "spm/quark/quark_def.h",
         "patchSetId": 3
@@ -191,6 +377,30 @@
       "writtenOn": "2019-04-09T08:54:02Z",
       "side": 1,
       "message": "How come the base address is 0 here?",
+      "range": {
+        "startLine": 15,
+        "startChar": 30,
+        "endLine": 15,
+        "endChar": 40
+      },
+      "revId": "5a34054e9025a5c5119648e94a3ae44c6f18daf8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27c8d0d4_715408c3",
+        "filename": "spm/quark/quark_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-09T09:10:47Z",
+      "side": 1,
+      "message": "I\u0027ve modified the comment for clarity.",
+      "parentUuid": "8c2245e8_220a2098",
       "range": {
         "startLine": 15,
         "startChar": 30,
@@ -226,6 +436,30 @@
     },
     {
       "key": {
+        "uuid": "630e931b_bc320201",
+        "filename": "spm/quark/quark_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-09T09:10:47Z",
+      "side": 1,
+      "message": "The buffer is outside the image, same as any other memory area that isn\u0027t bss, rodata, etc.",
+      "parentUuid": "87a4b90e_e1244240",
+      "range": {
+        "startLine": 16,
+        "startChar": 30,
+        "endLine": 16,
+        "endChar": 37
+      },
+      "revId": "5a34054e9025a5c5119648e94a3ae44c6f18daf8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f384a321_7abe6dce",
         "filename": "spm/quark/quark_main.c",
         "patchSetId": 3
@@ -237,6 +471,30 @@
       "writtenOn": "2019-04-09T08:54:02Z",
       "side": 1,
       "message": "Could this function be made static?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 68
+      },
+      "revId": "5a34054e9025a5c5119648e94a3ae44c6f18daf8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "045fa036_0665eb99",
+        "filename": "spm/quark/quark_main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-09T09:10:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f384a321_7abe6dce",
       "range": {
         "startLine": 20,
         "startChar": 0,
