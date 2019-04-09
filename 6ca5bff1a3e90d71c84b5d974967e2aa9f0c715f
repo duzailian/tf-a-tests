@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "c2060bf3_f7ed4a99",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-09T15:06:46Z",
+      "side": 1,
+      "message": "I see, thanks for the background information, Alexei. Now I understand, as we indeed clear the SCTLR.A bit but we set the SCTLR.SA bit, which is the one forbidding unaligned stack accesses here. Do you reckon clearing the SCTLR.SA bit would be another, valid way to fix this issue then, rather than using the -mstrict-align flag?\n\nIf we go with the -mstrict-align, I still feel like the rationale should be called out in the commit message.\n\nAlso, I think we should be consistent: either we clear both the A and SA bits in SCTLR (and we use no additional build flags) or we set both bits and use -mstrict-align/-mno-unaligned-access.",
+      "parentUuid": "cc64a2f5_c59132b0",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 24
+      },
+      "revId": "6ca5bff1a3e90d71c84b5d974967e2aa9f0c715f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0e16a5ba_032310ef",
         "filename": "Makefile",
         "patchSetId": 2
