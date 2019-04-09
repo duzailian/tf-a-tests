@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "d2b3b60d_75d96e18",
+        "filename": "drivers/console/aarch64/dummy_console.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-09T08:54:26Z",
+      "side": 1,
+      "message": "It\u0027s safe to assume that whoever creates a driver here has already created it for the TF. Console drivers are different in TF and TFTF. If you want to reuse code from the TF here you can\u0027t just copy the file, you can copy the body of the functions and having a file with placeholders makes it easier.\n\nAlso, given that the TF needs the drivers to be in assembly, and that the current drivers in the TFTF are also in assembly, it makes sense to keep it in assembly.\n\nQuark doesn\u0027t directly print anything, but it depends on the SPRT library, which depends on assert, which depends on the console.",
+      "parentUuid": "5f664801_fb5cb16a",
+      "revId": "c8d36de44d746d86146e23e87f1fa8292a933067",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "226fd7c9_06bcf53c",
         "filename": "drivers/console/aarch64/dummy_console.S",
         "patchSetId": 1
