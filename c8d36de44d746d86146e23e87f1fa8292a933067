@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "5f664801_fb5cb16a",
+        "filename": "drivers/console/aarch64/dummy_console.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-09T07:41:23Z",
+      "side": 1,
+      "message": "You\u0027ve mentioned 2 scenarios here, as far as I can see.\n\n1) One wants to implement a new console driver from scratch.\n\nIIUC, you\u0027re claiming that providing this driver skeleton will help them. First of all, I am not too convinced. I think that the console driver interface is clearly exposed in include/drivers/console.h and gives a clear view of what functions people need to implement. I don\u0027t feel like we need to provide them with placeholders to fill in.\n\nSecondly, if we do want to provide a skeleton, I\u0027d rather provide one in C if that\u0027s possible. We should always try to limit the amount of assembly language. Encouraging people to write more asm code does not sound right to me.\n\n2) One already has a console driver for their platform in TF-A and wants to import this code in TF-A Tests.\n\nIn this case, the code already exists so how would this file help them in this context? I would imagine that it\u0027s just a matter of copying the driver file as is (perhaps tweaking a few things), and just add a line in the right makefile to use it. Also, what if the existing console driver is implemented in C? Going by your logic, we should also provide a C skeleton.\n\n\nI don\u0027t understand what this patch buys us. Also I do not see dummy_console.S being used in subsequent patches. It is included in quark.mk [1] but none of the console_* functions seem to be called.\n\n[1] https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/777/3/spm/quark/quark.mk#41",
+      "parentUuid": "33641b12_65cc0cba",
+      "revId": "c8d36de44d746d86146e23e87f1fa8292a933067",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "226fd7c9_06bcf53c",
         "filename": "drivers/console/aarch64/dummy_console.S",
         "patchSetId": 1
