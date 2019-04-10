@@ -248,4 +248,4 @@ state.
 *Copyright (c) 2018, Arm Limited. All rights reserved.*
 
 .. _Summary of build options: user-guide.rst#summary-of-build-options
-.. _Firmware Update: https://github.com/ARM-software/arm-trusted-firmware/blob/master/docs/firmware-update.rst
+.. _Firmware Update: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/about/docs/firmware-update.rst
