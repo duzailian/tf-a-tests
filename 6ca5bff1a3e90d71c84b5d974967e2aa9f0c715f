@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "16a1e642_1513e0c4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000054
+      },
+      "writtenOn": "2019-04-10T15:32:09Z",
+      "side": 1,
+      "message": "do we need unaligned accesses? \n\nI don\u0027t have a strong opinion on this, but doing it with flags would be consistent with the TF-A codebase. As we don\u0027t really care about the size of tf-a-tests, I don\u0027t see a disadvantage to using strict alignment.",
+      "parentUuid": "c2060bf3_f7ed4a99",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 24
+      },
+      "revId": "6ca5bff1a3e90d71c84b5d974967e2aa9f0c715f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0e16a5ba_032310ef",
         "filename": "Makefile",
         "patchSetId": 2
