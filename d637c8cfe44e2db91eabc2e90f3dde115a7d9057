@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "34d033f3_ba0bf34e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-11T12:28:31Z",
+      "side": 1,
+      "message": "(minor) I don\u0027t think this is specific to newer compilers, is it? I thought it just happened that we hit an alignment issue when we tried with a different compiler version but AFAIU, this is out of luck and could have happened at any time.",
+      "range": {
+        "startLine": 10,
+        "startChar": 8,
+        "endLine": 10,
+        "endChar": 13
+      },
+      "revId": "d637c8cfe44e2db91eabc2e90f3dde115a7d9057",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8520f7d5_d57087d7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-11T12:28:31Z",
+      "side": 1,
+      "message": "How does the state of the instruction cache matter here?",
+      "range": {
+        "startLine": 13,
+        "startChar": 40,
+        "endLine": 13,
+        "endChar": 68
+      },
+      "revId": "d637c8cfe44e2db91eabc2e90f3dde115a7d9057",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f36afdf_4b18f19c",
+        "filename": "tftf/framework/aarch64/entrypoint.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-11T12:28:31Z",
+      "side": 1,
+      "message": "As said in a previous comment, if we go with the -mstrict-align build flag approach, I still think this patch should also enable hardware alignment checks (SCTLR.A bit) as well, here and in all other places where it applies (EL1 setup below, AArch32 TFTF, probably FWU images?).",
+      "range": {
+        "startLine": 160,
+        "startChar": 1,
+        "endLine": 160,
+        "endChar": 58
+      },
+      "revId": "d637c8cfe44e2db91eabc2e90f3dde115a7d9057",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
