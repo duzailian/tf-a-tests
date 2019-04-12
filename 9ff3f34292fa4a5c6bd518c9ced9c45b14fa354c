@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "00e32f1e_71b1218c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-12T11:00:14Z",
+      "side": 1,
+      "message": "The commit message does not mention that it enables alignment checking in all test images. I think this change is significant enough to be called out here. We should also provide the rationale for doing so.",
+      "revId": "9ff3f34292fa4a5c6bd518c9ced9c45b14fa354c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1cda62f3_edb89095",
+        "filename": "Makefile",
+        "patchSetId": 5
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-12T11:00:14Z",
+      "side": 1,
+      "message": "I don\u0027t think -mstrict-align is needed to assemble code, is it?",
+      "range": {
+        "startLine": 186,
+        "startChar": 46,
+        "endLine": 186,
+        "endChar": 60
+      },
+      "revId": "9ff3f34292fa4a5c6bd518c9ced9c45b14fa354c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4691ff64_34b47c15",
+        "filename": "fwu/ns_bl1u/aarch32/ns_bl1u_entrypoint.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-12T11:00:14Z",
+      "side": 1,
+      "message": "Is there a reason why HSCTLR.A is not set here?",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 26,
+        "endChar": 22
+      },
+      "revId": "9ff3f34292fa4a5c6bd518c9ced9c45b14fa354c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7be59a39_22ae2e4c",
+        "filename": "fwu/ns_bl2u/aarch32/ns_bl2u_entrypoint.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-12T11:00:14Z",
+      "side": 1,
+      "message": "Is there a reason why HSCTLR.A is not set here?",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 26,
+        "endChar": 22
+      },
+      "revId": "9ff3f34292fa4a5c6bd518c9ced9c45b14fa354c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9bafcf7b_dc4cf4c3",
+        "filename": "fwu/ns_bl2u/aarch64/ns_bl2u_entrypoint.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-12T11:00:14Z",
+      "side": 1,
+      "message": "(minor) Remove.",
+      "range": {
+        "startLine": 22,
+        "startChar": 37,
+        "endLine": 22,
+        "endChar": 50
+      },
+      "revId": "9ff3f34292fa4a5c6bd518c9ced9c45b14fa354c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8abfc4b4_b0025a6c",
+        "filename": "tftf/framework/aarch64/entrypoint.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-12T11:00:14Z",
+      "side": 1,
+      "message": "(minor) Remove.",
+      "range": {
+        "startLine": 159,
+        "startChar": 37,
+        "endLine": 159,
+        "endChar": 50
+      },
+      "revId": "9ff3f34292fa4a5c6bd518c9ced9c45b14fa354c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
