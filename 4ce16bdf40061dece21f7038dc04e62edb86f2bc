@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d1890c38_d66eebb0",
+        "filename": "fwu/ns_bl1u/aarch64/ns_bl1u_entrypoint.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-04-12T15:18:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d823c290_adbf99cd",
+      "revId": "4ce16bdf40061dece21f7038dc04e62edb86f2bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "97508f00_7e969a49",
         "filename": "fwu/ns_bl1u/aarch64/ns_bl1u_entrypoint.S",
         "patchSetId": 6
@@ -33,6 +51,24 @@
       "revId": "4ce16bdf40061dece21f7038dc04e62edb86f2bc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94dbcdfa_5f5ad235",
+        "filename": "fwu/ns_bl1u/aarch64/ns_bl1u_entrypoint.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-04-12T15:18:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97508f00_7e969a49",
+      "revId": "4ce16bdf40061dece21f7038dc04e62edb86f2bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "bf5ef2a7_a8ba1d28",
+        "filename": "fwu/ns_bl1u/aarch64/ns_bl1u_entrypoint.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-04-12T15:18:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "acd0bc8d_9bec155e",
+      "revId": "4ce16bdf40061dece21f7038dc04e62edb86f2bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5c8c9842_b7ffff59",
         "filename": "fwu/ns_bl1u/aarch64/ns_bl1u_entrypoint.S",
         "patchSetId": 6
@@ -67,6 +121,24 @@
       "revId": "4ce16bdf40061dece21f7038dc04e62edb86f2bc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "795feeaa_65d19bc4",
+        "filename": "fwu/ns_bl1u/aarch64/ns_bl1u_entrypoint.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-04-12T15:18:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c8c9842_b7ffff59",
+      "revId": "4ce16bdf40061dece21f7038dc04e62edb86f2bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
