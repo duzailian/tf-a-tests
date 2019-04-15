@@ -1,0 +1,10 @@
+Allow-CI+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Allow-CI+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Verified+1: Name of user not set #1000012
+Code-Review+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+IP-Review+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Mon, 15 Apr 2019 07:25:08 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/828
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
