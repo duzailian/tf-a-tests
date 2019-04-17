@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "823ad401_178ee7fe",
+        "filename": "tftf/tests/misc_tests/armv8_4_ttst.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-17T11:34:47Z",
+      "side": 1,
+      "message": "The code per se looks fine to me but I wonder whether this is the right place in the directory layout. Would tftf/tests/runtime_services/secure_service/ not be a better fit?\n\nAlso, I think the file itself might be misnamed. It is indeed one of the building blocks to test TTST in the bigger picture but if one just have a look at what the code in this file does, there is nothing specific to TTST there so this sounds confusing to me.",
+      "revId": "5bd0300e683346902da1d6d5a30f0acc48374800",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
