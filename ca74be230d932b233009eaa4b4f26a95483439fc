@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "a214f5c6_b41197f0",
+        "filename": "spm/quark/quark.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-18T13:37:11Z",
+      "side": 1,
+      "message": "It looks like you might have forgotten to push this change.",
+      "parentUuid": "3599baf6_d0279e32",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 33
+      },
+      "revId": "ca74be230d932b233009eaa4b4f26a95483439fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f38a0085_5a729248",
         "filename": "spm/quark/quark_def.h",
         "patchSetId": 4
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "All addresses are VAs because the SPRT specifications never talk about PAs. The resource description specifies \"load_address\". That\u0027s where the VA where the binary is loaded. Then, the RD specifies the memory regions based on that load address. SPM offsets the addresses accordingly (for the text, rodata and data section).",
       "parentUuid": "f38a0085_5a729248",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 41
+      },
+      "revId": "ca74be230d932b233009eaa4b4f26a95483439fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "802818ef_53327cd5",
+        "filename": "spm/quark/quark_def.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-18T13:37:11Z",
+      "side": 1,
+      "message": "I see, thanks.",
+      "parentUuid": "7890469e_40093f64",
       "range": {
         "startLine": 16,
         "startChar": 0,
