@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5d30a898_93c821f4",
+        "filename": "drivers/arm/pl011/aarch32/pl011_console.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-04-19T08:29:33Z",
+      "side": 1,
+      "message": "I think this is redundant information. Either we keep the prototype, or we keep the registers description, but not both. I\u0027d prefer keeping the prototype. I don\u0027t think we need to explain the Arm calling convention here (I think it\u0027s safe to assume that people writing assembly code know this) so the prototype already says it all.\n\nAlso, the \"Return 1 on success, 0 on error\" part of the comment is already documented into the header file so I think it can be removed from the asm file.\n\nThis can be done in a separate patch if you prefer.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 3
+      },
+      "revId": "327b3e02f74fd986610a86b82d011ee41f449f3c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
