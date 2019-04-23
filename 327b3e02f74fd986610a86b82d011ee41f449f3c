@@ -70,6 +70,30 @@
       "revId": "327b3e02f74fd986610a86b82d011ee41f449f3c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f0d8a39_fde73559",
+        "filename": "drivers/arm/pl011/aarch32/pl011_console.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-23T09:54:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e5b15a1_c5b4847a",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 3
+      },
+      "revId": "327b3e02f74fd986610a86b82d011ee41f449f3c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
