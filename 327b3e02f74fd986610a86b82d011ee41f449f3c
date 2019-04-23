@@ -22,6 +22,30 @@
       "revId": "327b3e02f74fd986610a86b82d011ee41f449f3c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f954f3d_150f60e8",
+        "filename": "drivers/arm/pl011/aarch32/pl011_console.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000050
+      },
+      "writtenOn": "2019-04-23T09:32:56Z",
+      "side": 1,
+      "message": "My only concern is that the console_core_* functions aren\u0027t documented in the header (they are private) so they still need all the information. I don\u0027t know what to do, I agree that this is not strictly needed, but removing it makes it inconsistent with the other comments.",
+      "parentUuid": "5d30a898_93c821f4",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 3
+      },
+      "revId": "327b3e02f74fd986610a86b82d011ee41f449f3c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
