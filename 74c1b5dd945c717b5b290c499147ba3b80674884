@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ea5762a2_605d2a3e",
+        "filename": "include/lib/timer.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-05-07T13:35:57Z",
+      "side": 1,
+      "message": "2019",
+      "revId": "74c1b5dd945c717b5b290c499147ba3b80674884",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0dc64a81_093c25a7",
+        "filename": "include/plat/common/platform.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-05-07T13:35:57Z",
+      "side": 1,
+      "message": "2019",
+      "revId": "74c1b5dd945c717b5b290c499147ba3b80674884",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f069ef6_13dd0dcb",
+        "filename": "plat/arm/common/arm_timers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-05-07T13:35:57Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 18
+      },
+      "revId": "74c1b5dd945c717b5b290c499147ba3b80674884",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "975199a7_9b752b46",
+        "filename": "plat/hisilicon/hikey960/hikey960_timers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-05-07T13:35:57Z",
+      "side": 1,
+      "message": "2019",
+      "revId": "74c1b5dd945c717b5b290c499147ba3b80674884",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e069f89a_d2b843ab",
+        "filename": "plat/hisilicon/hikey960/include/platform_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-05-07T13:35:57Z",
+      "side": 1,
+      "message": "2019",
+      "revId": "74c1b5dd945c717b5b290c499147ba3b80674884",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
