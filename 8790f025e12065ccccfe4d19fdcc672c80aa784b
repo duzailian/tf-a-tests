@@ -16,6 +16,24 @@
       "revId": "8790f025e12065ccccfe4d19fdcc672c80aa784b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e9c7a77_093d92e8",
+        "filename": "tftf/tests/extensions/ptrauth/test_ptrauth.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-05-07T12:03:03Z",
+      "side": 1,
+      "message": "Thanks for spotting this issue, Alexei. I\u0027ve created a ticket to look into this: https://developer.trustedfirmware.org/T338",
+      "parentUuid": "eb0c7a4c_4d786413",
+      "revId": "8790f025e12065ccccfe4d19fdcc672c80aa784b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
