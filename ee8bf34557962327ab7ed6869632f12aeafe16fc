@@ -114,6 +114,29 @@
       "revId": "ee8bf34557962327ab7ed6869632f12aeafe16fc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90511f75_77f4622a",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-05-07T08:07:35Z",
+      "side": 1,
+      "message": "IIUC, when this test detects a potential issue, it still succeeds but simply prints this message in the test report. I think this message will just be ignored, buried into the console output and it will be as if this test was never run. I think we need to make this test fail if if it detects too big of a variance.\n\nNow, I\u0027ve seen the comment at line 656 saying that this test is not reliable on models and I suppose this is the reason why this approach was chosen. But I think there are better ways to do it. Perhaps we should isolate this test into its own file/testsuite, which would make it easier to exclude from the FVP runs in the CI loop, while keeping it running on Juno for example.",
+      "range": {
+        "startLine": 737,
+        "startChar": 0,
+        "endLine": 743,
+        "endChar": 28
+      },
+      "revId": "ee8bf34557962327ab7ed6869632f12aeafe16fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
