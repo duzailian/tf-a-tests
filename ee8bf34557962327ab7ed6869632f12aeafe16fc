@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "78e17a49_cdeb0b7e",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2019-05-08T10:45:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "18cb277a_546b0a0c",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "ee8bf34557962327ab7ed6869632f12aeafe16fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e99c8a5_2512e117",
         "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-05-07T07:28:48Z",
       "side": 1,
       "message": "Should we use syscounter_read() instead? Don\u0027t we need the ISB barrier there to ensure we get exact timing information? IIUC, the test relies on accurate timing to collect data for the right duration.",
+      "range": {
+        "startLine": 626,
+        "startChar": 41,
+        "endLine": 626,
+        "endChar": 58
+      },
+      "revId": "ee8bf34557962327ab7ed6869632f12aeafe16fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a54bc78_58c5640a",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 626,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2019-05-08T10:45:32Z",
+      "side": 1,
+      "message": "The reads of counter registers are self-synchronizing (see D12.1.3 section in ARM_ARM D.a). But it is good to use the given helper. The helper itself can remove the isb() since it is not required.",
+      "parentUuid": "6e99c8a5_2512e117",
       "range": {
         "startLine": 626,
         "startChar": 41,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "a35b4f0e_6fc0e9ab",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2019-05-08T10:45:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1fb890a_035b07fc",
+      "range": {
+        "startLine": 676,
+        "startChar": 21,
+        "endLine": 676,
+        "endChar": 33
+      },
+      "revId": "ee8bf34557962327ab7ed6869632f12aeafe16fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f9122acb_a55f4df9",
         "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2019-05-07T07:28:48Z",
       "side": 1,
       "message": "Should it be\n\n assert(target_idx !\u003d PWR_DOMAIN_INIT)\n\n? Or are you trying to check whether the target_idx is the primary core? If so, I would prefer to make it more explicit, like:\n\n assert(target_idx !\u003d platform_get_core_pos(lead_cpu_mpid));",
+      "range": {
+        "startLine": 691,
+        "startChar": 1,
+        "endLine": 691,
+        "endChar": 20
+      },
+      "revId": "ee8bf34557962327ab7ed6869632f12aeafe16fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a47991cc_c60fe035",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2019-05-08T10:45:32Z",
+      "side": 1,
+      "message": "It is the former actually. Fixed.",
+      "parentUuid": "f9122acb_a55f4df9",
       "range": {
         "startLine": 691,
         "startChar": 1,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "32565722_3752dd29",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2019-05-08T10:45:32Z",
+      "side": 1,
+      "message": "I prefer per-cent. `%%` doesn\u0027t seem to work in TFTF.",
+      "parentUuid": "aed2fffa_712aed1d",
+      "range": {
+        "startLine": 738,
+        "startChar": 39,
+        "endLine": 738,
+        "endChar": 47
+      },
+      "revId": "ee8bf34557962327ab7ed6869632f12aeafe16fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "90511f75_77f4622a",
         "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
         "patchSetId": 1
@@ -128,6 +248,30 @@
       "writtenOn": "2019-05-07T08:07:35Z",
       "side": 1,
       "message": "IIUC, when this test detects a potential issue, it still succeeds but simply prints this message in the test report. I think this message will just be ignored, buried into the console output and it will be as if this test was never run. I think we need to make this test fail if if it detects too big of a variance.\n\nNow, I\u0027ve seen the comment at line 656 saying that this test is not reliable on models and I suppose this is the reason why this approach was chosen. But I think there are better ways to do it. Perhaps we should isolate this test into its own file/testsuite, which would make it easier to exclude from the FVP runs in the CI loop, while keeping it running on Juno for example.",
+      "range": {
+        "startLine": 737,
+        "startChar": 0,
+        "endLine": 743,
+        "endChar": 28
+      },
+      "revId": "ee8bf34557962327ab7ed6869632f12aeafe16fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "787373eb_13c2d4f1",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2019-05-08T10:45:32Z",
+      "side": 1,
+      "message": "I have re-rerun this test on Juno and FVP.  This test didn\u0027t actually catch any issue on the ARM platforms. The case was more theoretical and the test was an attempt to trigger the issue but it failed in triggering the issue on ARM platforms.\n\nBut the test itself is useful in giving an indication regarding the difference in delay detected betwween the Last CPU in cluster powering down and the non Last CPU powering down. On Juno and FVP the delay is usually 3 times higher for last CPU powering down.\n\nThe result of the test is not conclusive I am afraid. It gives an indication in the delay. Perhaps there is a platform where this issue will trigger and will give a huge difference in the delays detected but I am not sure how those numbers look like.\n\nHence I would like to keep the test as FYI rather than pass or fail. I have modified the way the test results are displayed for the test.",
+      "parentUuid": "90511f75_77f4622a",
       "range": {
         "startLine": 737,
         "startChar": 0,
