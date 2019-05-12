@@ -118,16 +118,6 @@ test_result_t test_amu_nonzero_ctr(void)
 		}
 	}
 
-	for (i = 0; i < AMU_GROUP1_NR_COUNTERS; i++) {
-		uint64_t v;
-
-		v = amu_group1_cnt_read(i);
-		if (v == 0) {
-			tftf_testcase_printf("Group1 counter cannot be 0\n");
-			return TEST_RESULT_FAIL;
-		}
-	}
-
 	return TEST_RESULT_SUCCESS;
 }
 
@@ -170,18 +160,6 @@ test_result_t test_amu_suspend_resume(void)
 		if (v < group0_ctrs[i]) {
 			tftf_testcase_printf("Invalid counter value: before: %llx, after: %llx\n",
 				(unsigned long long)group0_ctrs[i],
-				(unsigned long long)v);
-			return TEST_RESULT_FAIL;
-		}
-	}
-
-	for (i = 0; i < AMU_GROUP1_NR_COUNTERS; i++) {
-		uint64_t v;
-
-		v = amu_group1_cnt_read(i);
-		if (v < group1_ctrs[i]) {
-			tftf_testcase_printf("Invalid counter value: before: %llx, after: %llx\n",
-				(unsigned long long)group1_ctrs[i],
 				(unsigned long long)v);
 			return TEST_RESULT_FAIL;
 		}
