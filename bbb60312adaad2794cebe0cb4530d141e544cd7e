@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "13edfeb5_7fcd6c26",
+        "filename": "include/lib/timer.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-05-13T09:05:20Z",
+      "side": 1,
+      "message": "2019",
+      "revId": "bbb60312adaad2794cebe0cb4530d141e544cd7e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8079723f_bc19f808",
+        "filename": "include/plat/common/platform.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-05-13T09:05:20Z",
+      "side": 1,
+      "message": "2019",
+      "revId": "bbb60312adaad2794cebe0cb4530d141e544cd7e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea97c288_ccf4fd25",
+        "filename": "plat/arm/common/arm_timers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-05-13T09:05:20Z",
+      "side": 1,
+      "message": "2019",
+      "revId": "bbb60312adaad2794cebe0cb4530d141e544cd7e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ea2a521_e7af186a",
+        "filename": "tftf/framework/timer/timer_framework.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-05-13T09:05:20Z",
+      "side": 1,
+      "message": "2019",
+      "revId": "bbb60312adaad2794cebe0cb4530d141e544cd7e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
