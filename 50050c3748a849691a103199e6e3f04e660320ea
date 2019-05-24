@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9eb33a65_7ac92f97",
+        "filename": "tftf/tests/extensions/amu/test_amu.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-05-24T12:44:52Z",
+      "side": 1,
+      "message": "(minor) unsigned int idx would be more consistent with the rest of the code base.",
+      "range": {
+        "startLine": 103,
+        "startChar": 32,
+        "endLine": 103,
+        "endChar": 44
+      },
+      "revId": "50050c3748a849691a103199e6e3f04e660320ea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
