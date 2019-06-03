@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "869e42cf_a968312f",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 626,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-06-03T11:57:48Z",
+      "side": 1,
+      "message": "My understanding of section D12.1.3 in the Arm ARM is that, 2 successive reads of the system counter register are guaranteed to occur in program order relative to each other. That said, without explicit synchronization, the first read could occur out of order with respect to earlier instructions. If the program is as follows:\n\n ins1\n ins2\n read cnt value\n ins3\n ins4\n read cnt value\n ins5\n\nI believe the PE could end up executing them in the following order for example:\n\n read cnt value\n ins1\n ins2\n ins3\n ins4\n ins5\n read cnt value\n\nIn that case, the first read would occur sooner than expected, the second read would occur later than expected and the resulting delta would be greater than expected.\n\nIf my understanding is correct then I think there is value in keeping the syscounter_read() helper with the ISB instruction. It would be required for the rare cases where the read of the system counter value has to occur exactly where it is in program order, and also if this read has to occur after some other memory access prior to that in program order.\n\nIn this specific test, I suppose you\u0027re right and it\u0027s not needed. tftf_try_cpu_on() serves as an explicit synchronization barrier (exception entry \u0026 exit) in each iteration of the loop so there is very little possible variance in the elapsed time computation. The worst that could happen is that the very first read of CNTPCT is slightly earlier and last one is slightly later but this should not drastically impact the test code here.\n\nDo you agree?",
+      "parentUuid": "2a54bc78_58c5640a",
+      "range": {
+        "startLine": 626,
+        "startChar": 41,
+        "endLine": 626,
+        "endChar": 58
+      },
+      "revId": "ee8bf34557962327ab7ed6869632f12aeafe16fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a1fb890a_035b07fc",
         "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
         "patchSetId": 1
@@ -272,6 +296,30 @@
       "side": 1,
       "message": "I have re-rerun this test on Juno and FVP.  This test didn\u0027t actually catch any issue on the ARM platforms. The case was more theoretical and the test was an attempt to trigger the issue but it failed in triggering the issue on ARM platforms.\n\nBut the test itself is useful in giving an indication regarding the difference in delay detected betwween the Last CPU in cluster powering down and the non Last CPU powering down. On Juno and FVP the delay is usually 3 times higher for last CPU powering down.\n\nThe result of the test is not conclusive I am afraid. It gives an indication in the delay. Perhaps there is a platform where this issue will trigger and will give a huge difference in the delays detected but I am not sure how those numbers look like.\n\nHence I would like to keep the test as FYI rather than pass or fail. I have modified the way the test results are displayed for the test.",
       "parentUuid": "90511f75_77f4622a",
+      "range": {
+        "startLine": 737,
+        "startChar": 0,
+        "endLine": 743,
+        "endChar": 28
+      },
+      "revId": "ee8bf34557962327ab7ed6869632f12aeafe16fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "29006cd1_974132f2",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-06-03T11:57:48Z",
+      "side": 1,
+      "message": "OK fair enough. Do you think it would make sense to move this test file to tftf/tests/performance_tests/ instead? From what you\u0027ve explained above, this looks like a better fit to me.",
+      "parentUuid": "787373eb_13c2d4f1",
       "range": {
         "startLine": 737,
         "startChar": 0,
