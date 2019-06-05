@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "478fdb70_7fb9f53f",
+        "filename": "lib/power_management/suspend/suspend_private.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2019-06-05T22:12:14Z",
+      "side": 1,
+      "message": "Please correct me if wrong. I think \nPADDING_BYTES \u003d 16 + 4 - ((SUSPEND_CTX_SAVE_SYSTEM_CTX_OFFSET + 4)%16).\n\nThe value \"4\" is to account for \"save_system_context\" member of the tftf_suspend_ctx structure.\n\nIf NR_CTX_REGS is 6, then padding is 8 bytes.\nIf NR_CTX_REGS is 7, then padding is 16 bytes.",
+      "parentUuid": "bfe96f73_93b19fcb",
+      "range": {
+        "startLine": 24,
+        "startChar": 23,
+        "endLine": 24,
+        "endChar": 63
+      },
+      "revId": "b8e7b64bfe862d44a228988a99b2d4747b072bc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0a697526_5cab8613",
         "filename": "lib/power_management/suspend/suspend_private.h",
         "patchSetId": 1
