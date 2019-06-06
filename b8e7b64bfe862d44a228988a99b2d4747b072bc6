@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "0be820c1_d48c52e4",
+        "filename": "lib/power_management/suspend/suspend_private.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-06-06T11:13:46Z",
+      "side": 1,
+      "message": "The padding can\u0027t be 16 since the structure is 16 bytes aligned.\nPADDING_BYTES \u003d 16 - ((SUSPEND_CTX_SAVE_SYSTEM_CTX_OFFSET + 4)%16)\nSUSPEND_CTX_SZ \u003d (SUSPEND_CTX_SAVE_SYSTEM_CTX_OFFSET + 4 + PADDING_BYTES)",
+      "parentUuid": "478fdb70_7fb9f53f",
+      "range": {
+        "startLine": 24,
+        "startChar": 23,
+        "endLine": 24,
+        "endChar": 63
+      },
+      "revId": "b8e7b64bfe862d44a228988a99b2d4747b072bc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0a697526_5cab8613",
         "filename": "lib/power_management/suspend/suspend_private.h",
         "patchSetId": 1
