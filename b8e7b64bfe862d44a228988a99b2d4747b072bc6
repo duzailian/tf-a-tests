@@ -224,6 +224,24 @@
       "revId": "b8e7b64bfe862d44a228988a99b2d4747b072bc6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c0c68c9c_a7ac79ea",
+        "filename": "lib/power_management/suspend/suspend_private.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000051
+      },
+      "writtenOn": "2019-06-06T11:57:50Z",
+      "side": 1,
+      "message": "You didn\u0027t have to change it if you prefer it with the space, besides that\u0027s why I put the question mark :)",
+      "parentUuid": "67f5376d_d8869761",
+      "revId": "b8e7b64bfe862d44a228988a99b2d4747b072bc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
