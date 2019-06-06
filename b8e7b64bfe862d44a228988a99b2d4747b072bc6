@@ -144,6 +144,30 @@
     },
     {
       "key": {
+        "uuid": "2c2240c1_d75df384",
+        "filename": "lib/power_management/suspend/suspend_private.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-06-06T11:28:56Z",
+      "side": 1,
+      "message": "Yes, that is right.\n\nNote that I did not modify the values of theses macros in this patch, I only changed the way they are expressed.",
+      "parentUuid": "0be820c1_d48c52e4",
+      "range": {
+        "startLine": 24,
+        "startChar": 23,
+        "endLine": 24,
+        "endChar": 63
+      },
+      "revId": "b8e7b64bfe862d44a228988a99b2d4747b072bc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0a697526_5cab8613",
         "filename": "lib/power_management/suspend/suspend_private.h",
         "patchSetId": 1
