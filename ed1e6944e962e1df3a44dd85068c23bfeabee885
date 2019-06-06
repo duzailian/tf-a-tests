@@ -22,6 +22,23 @@
       "revId": "ed1e6944e962e1df3a44dd85068c23bfeabee885",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2085707a_6ab81233",
+        "filename": "plat/arm/fvp/fvp_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-06-06T08:53:43Z",
+      "side": 1,
+      "message": "2019",
+      "revId": "ed1e6944e962e1df3a44dd85068c23bfeabee885",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
