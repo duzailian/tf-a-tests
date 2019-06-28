@@ -1,0 +1,10 @@
+Allow-CI+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Code-Review+2: John Tsichritzis <john.tsichritzis@arm.com>
+IP-Review+1: John Tsichritzis <john.tsichritzis@arm.com>
+Verified+2: John Tsichritzis <john.tsichritzis@arm.com>
+Code-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Fri, 28 Jun 2019 06:24:56 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/1415
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
