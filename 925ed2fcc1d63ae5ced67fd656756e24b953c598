@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8b10fb5e_749b843d",
+        "filename": "fwu/ns_bl1u/ns_bl1u.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-07-09T14:48:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79b34cfe_2d28dc26",
+      "revId": "925ed2fcc1d63ae5ced67fd656756e24b953c598",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3d171939_582b7e89",
         "filename": "fwu/ns_bl2u/ns_bl2u.ld.S",
         "patchSetId": 1
@@ -53,6 +71,54 @@
       "writtenOn": "2019-07-09T14:03:16Z",
       "side": 1,
       "message": "Do you know why NS_BL2U linker script explicitly includes the .vectors section here, but NS_BL1U linker script doesn\u0027t? This looks suspicious to me. AFAICS, the linker is free to put the vectors sections wherever it wants for NS_BL1U...",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 28,
+        "endChar": 12
+      },
+      "revId": "925ed2fcc1d63ae5ced67fd656756e24b953c598",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05067227_8a324a7f",
+        "filename": "fwu/ns_bl2u/ns_bl2u.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-07-09T14:48:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d171939_582b7e89",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 1
+      },
+      "revId": "925ed2fcc1d63ae5ced67fd656756e24b953c598",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a0bbd11_59d8fdd8",
+        "filename": "fwu/ns_bl2u/ns_bl2u.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000080
+      },
+      "writtenOn": "2019-07-09T14:48:33Z",
+      "side": 1,
+      "message": "I don\u0027t know.",
+      "parentUuid": "b679f01d_2f7be9cb",
       "range": {
         "startLine": 28,
         "startChar": 1,
