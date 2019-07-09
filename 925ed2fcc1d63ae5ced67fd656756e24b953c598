@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "79b34cfe_2d28dc26",
+        "filename": "fwu/ns_bl1u/ns_bl1u.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-07-09T14:03:16Z",
+      "side": 1,
+      "message": "Don\u0027t you need some alignment constraint somewhere? AFAIK, we need the code and RO data to be on different memory pages such that we can map the former as read-only executable memory and the latter as read-only execute-never memory. How is this ensured right now?\n\nBL1 linker script for example pads the end of the code section on a page boundary.\n\n(Same comment for NS_BL2U linker script)",
+      "revId": "925ed2fcc1d63ae5ced67fd656756e24b953c598",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d171939_582b7e89",
+        "filename": "fwu/ns_bl2u/ns_bl2u.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-07-09T14:03:16Z",
+      "side": 1,
+      "message": "(minor) Replace tab with spaces for consistency with the rest of the file.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 1
+      },
+      "revId": "925ed2fcc1d63ae5ced67fd656756e24b953c598",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b679f01d_2f7be9cb",
+        "filename": "fwu/ns_bl2u/ns_bl2u.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-07-09T14:03:16Z",
+      "side": 1,
+      "message": "Do you know why NS_BL2U linker script explicitly includes the .vectors section here, but NS_BL1U linker script doesn\u0027t? This looks suspicious to me. AFAICS, the linker is free to put the vectors sections wherever it wants for NS_BL1U...",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 28,
+        "endChar": 12
+      },
+      "revId": "925ed2fcc1d63ae5ced67fd656756e24b953c598",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94a4eb57_b7601f81",
+        "filename": "fwu/ns_bl2u/ns_bl2u.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-07-09T14:03:16Z",
+      "side": 1,
+      "message": "That\u0027s no longer true.",
+      "range": {
+        "startLine": 37,
+        "startChar": 22,
+        "endLine": 37,
+        "endChar": 32
+      },
+      "revId": "925ed2fcc1d63ae5ced67fd656756e24b953c598",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57226061_4d72a0d7",
+        "filename": "plat/common/plat_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-07-09T14:03:16Z",
+      "side": 1,
+      "message": "I was initially confused by this macro name, how about IMAGE_RODATA_BASE instead?",
+      "range": {
+        "startLine": 33,
+        "startChar": 8,
+        "endLine": 33,
+        "endChar": 21
+      },
+      "revId": "925ed2fcc1d63ae5ced67fd656756e24b953c598",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
