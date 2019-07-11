@@ -102,6 +102,10 @@ void tftf_plat_configure_mmu(void)
 	mmap_add_region(COHERENT_RAM_START, COHERENT_RAM_START,
 			COHERENT_RAM_END - COHERENT_RAM_START,
 			MT_DEVICE | MT_RW | MT_NS);
+
+	/* Shared environment */
+	mmap_add_region(PLAT_ARM_DEBUGFS_BASE, PLAT_ARM_DEBUGFS_BASE,
+			PLAT_ARM_DEBUGFS_SIZE, MT_RW_DATA);
 #endif
 
 	mmap_add(tftf_platform_get_mmap());
