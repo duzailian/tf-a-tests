@@ -241,4 +241,10 @@
 #define ARM_SECURE_SERVICE_BUFFER_BASE	0xff600000ull
 #define ARM_SECURE_SERVICE_BUFFER_SIZE	0x10000ull
 
+/*
+ * DebugFS shared buffer area
+ */
+#define PLAT_ARM_DEBUGFS_BASE		(0x81000000)
+#define PLAT_ARM_DEBUGFS_SIZE		(0x1000)
+
 #endif /* __PLATFORM_DEF_H__ */
