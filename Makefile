@@ -224,7 +224,10 @@ TFTF_ASFLAGS		+= ${COMMON_ASFLAGS}
 TFTF_LDFLAGS		+= ${COMMON_LDFLAGS}
 
 ifeq (${ENABLE_PAUTH},1)
-TFTF_CFLAGS		+=	-msign-return-address=non-leaf
+# For GCC 7 and 8
+TFTF_CFLAGS		+= -msign-return-address=non-leaf
+# For GCC 9 and later
+#TFTF_CFLAGS		+= -mbranch-protection=pac-ret
 endif
 
 NS_BL1U_SOURCES		+= ${PLAT_SOURCES} ${LIBC_SRCS}
