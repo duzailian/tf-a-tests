@@ -11,4 +11,5 @@ TESTS_SOURCES	+=	$(addprefix tftf/tests/,			\
 	runtime_services/arm_arch_svc/smccc_arch_workaround_1.c		\
 	runtime_services/arm_arch_svc/smccc_arch_workaround_2.c		\
 	extensions/ptrauth/test_ptrauth.c				\
+	extensions/mte/test_mte.c					\
 )
