@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "380ca2b1_75beeae7",
+        "filename": "tftf/tests/extensions/mte/test_mte.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000194
+      },
+      "writtenOn": "2019-07-23T08:52:21Z",
+      "side": 1,
+      "message": "I was mimicking the PAUTH tests which do this. It also keeps consistency with the above SKIP_TEST_IF_AARCH32. I\u0027m not sure whether I should change this or not.",
+      "parentUuid": "51714181_c2492adc",
+      "revId": "4fd87c1734a6a378bb1607cd5278e930c3ea7b81",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0d0aba42_e03730da",
         "filename": "tftf/tests/extensions/mte/test_mte.c",
         "patchSetId": 4
