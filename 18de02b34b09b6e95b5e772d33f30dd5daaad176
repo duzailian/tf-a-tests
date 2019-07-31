@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "73a89fa8_31c7e6fb",
+        "filename": "plat/common/plat_common.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-07-31T13:08:57Z",
+      "side": 1,
+      "message": "This address needs to be aligned on a page boundary because that\u0027s the address used for the MMU configuration. Notice it was aligned in the original code:\n\n #define IMAGE_RO_END\tround_up(IMAGE_RO_END_UNALIGNED, PAGE_SIZE)\n\nRight now, if you test your patch (for example with test_groups\u003dfvp-tbb-mbedtls,fvp-fwu:fvp-tftf.fwu-aemv8a-debug), you\u0027ll see that it crashes in NS_BL1U with the following error messages:\n\n ERROR:   mmap_add_region_check() failed. error -22\n ASSERT: lib/xlat_tables_v2/xlat_tables_core.c:765:false\n PANIC in file: lib/libc/assert.c line: 16\n\nAs far as I can tell, the CI loop failed to pick this issue because we have no debug run exercising the FWU code right now. The closest config we have at the moment is `fvp-tspd-tbb-mbedtls,fvp-fwu:fvp-tftf.fwu-aemv8a` but that\u0027s using a release build. Therefore, the code checking the correctness of the mmap regions [1] is simply printing an error message, which remains buried in the job\u0027s console output. In a debug build, we have an extra assertion so the failure is properly flagged.\n\nIt would be worth adding a debug config for that in the CI scripts IMO.\n\n[1] https://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/lib/xlat_tables_v2/xlat_tables_core.c#n762",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 58
+      },
+      "revId": "18de02b34b09b6e95b5e772d33f30dd5daaad176",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
