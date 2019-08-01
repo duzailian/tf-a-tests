@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "55509ad4_4a12bdf1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-08-01T10:34:15Z",
+      "side": 1,
+      "message": "Done. Please review\nhttps://gerrit.oss.arm.com/#/c/140196/",
+      "parentUuid": "12f79075_493a15f3",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 18
+      },
+      "revId": "3ababa03bad6f0a6964486e125d17df032ba3a3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bb30bea2_5d457fcf",
         "filename": "Makefile",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-07-25T13:31:27Z",
       "side": 1,
       "message": "It seems that the user is expected to edit the Makefile if they want to use GCC 9... Can we not use the same mechanism as in TF-A instead? i.e. using a BRANCH_PROTECTION build flag and derive the right compiler flag from that?",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 231,
+        "endChar": 5
+      },
+      "revId": "3ababa03bad6f0a6964486e125d17df032ba3a3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1dad3a4a_2d0ead26",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-08-01T10:34:15Z",
+      "side": 1,
+      "message": "BRANCH_PROTECTION build flag is only supported from GCC 9+",
+      "parentUuid": "bb30bea2_5d457fcf",
       "range": {
         "startLine": 226,
         "startChar": 0,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "1e51414e_bf2737b9",
+        "filename": "include/plat/common/platform.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-08-01T10:34:15Z",
+      "side": 1,
+      "message": "Yes, this type will cause error for AArch32.\nNo.  ENABLE_PAUTH\u003d1 is used to build test suite with PAuth enabled, but this function is also used to generate keys regardless of ENABLE_PAUTH value.",
+      "parentUuid": "acdc54f6_b212c40d",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 14
+      },
+      "revId": "3ababa03bad6f0a6964486e125d17df032ba3a3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "da1a688a_6012f6ac",
         "filename": "lib/extensions/pauth/pauth.c",
         "patchSetId": 1
@@ -105,6 +177,30 @@
       "writtenOn": "2019-07-25T13:31:27Z",
       "side": 1,
       "message": "This is a platform-specific function but it lives in a generic layer file. This does not sound right to me. Code in lib/ should be platform-agnostic.\n\nIs the intent to provide a generic implementation of this function and stop relying on platform ports to provide it? If yes, it should not be called plat_*, its prototype should not be in platform.h and it should not be part of the porting guide.\n\nI am not sure lib/extensions is the right place for this code, though. There\u0027s actually nothing specific to PAuth in this code. It is just generating a variable 128-bit piece of data. There is no access to the hardware, as programming the key registers themselves is not done here. If you have a look at other code we have in lib/extensions, namely AMU code, they do access the hardware.",
+      "range": {
+        "startLine": 15,
+        "startChar": 10,
+        "endLine": 15,
+        "endChar": 25
+      },
+      "revId": "3ababa03bad6f0a6964486e125d17df032ba3a3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2a7c643_cf35d97c",
+        "filename": "lib/extensions/pauth/pauth.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-08-01T10:34:15Z",
+      "side": 1,
+      "message": "In TF-A this function is in \\plat\\arm\\common\\aarch64\\arm_pauth.c\nDo you want me to rename the file and place it in \\plat\\arm\\common\\arm_pauth.c for TF-TF?",
+      "parentUuid": "da1a688a_6012f6ac",
       "range": {
         "startLine": 15,
         "startChar": 10,
@@ -140,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "88184850_fbe5452c",
+        "filename": "lib/extensions/pauth/pauth_helpers.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-08-01T10:34:15Z",
+      "side": 1,
+      "message": "Thanks. I\u0027ll fix that.",
+      "parentUuid": "9bf78a3d_39e0ab66",
+      "range": {
+        "startLine": 24,
+        "startChar": 42,
+        "endLine": 24,
+        "endChar": 58
+      },
+      "revId": "3ababa03bad6f0a6964486e125d17df032ba3a3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "03564f1e_c6c7ff54",
         "filename": "lib/power_management/hotplug/hotplug.c",
         "patchSetId": 1
@@ -163,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "be046978_682573ed",
+        "filename": "lib/power_management/hotplug/hotplug.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-08-01T10:34:15Z",
+      "side": 1,
+      "message": "I\u0027ll move this code after tftf_arch_setup() call as it is done in tftf_cold_boot_main() and test if it works.",
+      "parentUuid": "03564f1e_c6c7ff54",
+      "range": {
+        "startLine": 308,
+        "startChar": 1,
+        "endLine": 308,
+        "endChar": 18
+      },
+      "revId": "3ababa03bad6f0a6964486e125d17df032ba3a3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "590d1752_83f86e92",
         "filename": "lib/power_management/suspend/suspend_private.h",
         "patchSetId": 1
@@ -174,6 +318,30 @@
       "writtenOn": "2019-07-25T13:31:27Z",
       "side": 1,
       "message": "I would prefer we avoid #if ENABLE_PAUTH as much as possible, as this hurts readability and maintainability. Could we always allocate space for key registers, regardless of whether PAuth is supported or not, and simply not using them when it is disabled? Memory consumption is not a big concern for TF-A Tests so I think it\u0027s OK to waste this space here.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 6
+      },
+      "revId": "3ababa03bad6f0a6964486e125d17df032ba3a3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c979eefc_cd1f8d16",
+        "filename": "lib/power_management/suspend/suspend_private.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-08-01T10:34:15Z",
+      "side": 1,
+      "message": "Please take a look at your original patch https://gerrit.oss.arm.com/#/c/128101/2/lib/power_management/suspend/suspend_private.h which has 2 #if ENABLE_PAUTH/#endif compared to just 1 here. In my opinion memory consumption is always a matter of concern for embedded systems.",
+      "parentUuid": "590d1752_83f86e92",
       "range": {
         "startLine": 15,
         "startChar": 0,
