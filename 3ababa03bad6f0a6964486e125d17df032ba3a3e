@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9f91a3ac_f5d3d6b5",
+        "filename": "docs/porting-guide.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-08-01T12:49:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a4a7270_8f61e892",
+      "range": {
+        "startLine": 365,
+        "startChar": 26,
+        "endLine": 365,
+        "endChar": 28
+      },
+      "revId": "3ababa03bad6f0a6964486e125d17df032ba3a3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "acdc54f6_b212c40d",
         "filename": "include/plat/common/platform.h",
         "patchSetId": 1
@@ -247,6 +271,30 @@
       "writtenOn": "2019-08-01T10:34:15Z",
       "side": 1,
       "message": "Thanks. I\u0027ll fix that.",
+      "parentUuid": "9bf78a3d_39e0ab66",
+      "range": {
+        "startLine": 24,
+        "startChar": 42,
+        "endLine": 24,
+        "endChar": 58
+      },
+      "revId": "3ababa03bad6f0a6964486e125d17df032ba3a3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0483511e_63be3c3c",
+        "filename": "lib/extensions/pauth/pauth_helpers.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-08-01T12:49:24Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "9bf78a3d_39e0ab66",
       "range": {
         "startLine": 24,
