@@ -1,0 +1,10 @@
+Allow-CI+2: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Verified+2: TrustedFirmware Code Review
+Code-Review+2: Paul Beesley <paul.beesley@arm.com>
+IP-Review+1: Paul Beesley <paul.beesley@arm.com>
+Submitted-by: Paul Beesley <paul.beesley@arm.com>
+Submitted-at: Fri, 16 Aug 2019 15:27:53 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/1743
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
