@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "8c77422f_31af810a",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000208
+      },
+      "writtenOn": "2019-09-10T22:10:49Z",
+      "side": 1,
+      "message": "typos sorry\n\nIf test fails to turn on secondary CPU, should we turn off lead CPU? We should rather stop and return failure. \nIf we turn off only CPU which is ON, the test will continue and re-enter the function where it will first verify of reboot occurred and as a result will report success instead of failure.",
+      "parentUuid": "4c10bf3c_2fe1db38",
+      "revId": "2c267b140c254a1b3dc1c9f7a1416f67b8aff8db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2f88609c_dc45d268",
         "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
         "patchSetId": 1
