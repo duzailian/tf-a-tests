@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "23fc2f35_a4ea1db0",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000208
+      },
+      "writtenOn": "2019-09-10T22:07:47Z",
+      "side": 1,
+      "message": "Yes, I did run it on fvp and results of fvp are attached in linked jira ticket.",
+      "parentUuid": "00e51687_f1a2fd69",
+      "revId": "2c267b140c254a1b3dc1c9f7a1416f67b8aff8db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4a871164_cff10bab",
         "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "4c10bf3c_2fe1db38",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000208
+      },
+      "writtenOn": "2019-09-10T22:07:47Z",
+      "side": 1,
+      "message": "I test is fails to turn on secondary CPU, is there a need to turn off lead CPU? that will result into reset/reboot and as result the test will continue and give success instead of failure",
+      "parentUuid": "4a871164_cff10bab",
+      "revId": "2c267b140c254a1b3dc1c9f7a1416f67b8aff8db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2f88609c_dc45d268",
         "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2019-09-10T21:57:27Z",
       "side": 1,
       "message": "Why does the lead cpu need to be turned off ?",
+      "revId": "2c267b140c254a1b3dc1c9f7a1416f67b8aff8db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0c8c033b_f45d74f6",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000208
+      },
+      "writtenOn": "2019-09-10T22:07:47Z",
+      "side": 1,
+      "message": "The typical way to use SYSTEM_OFF is to use calls to CPU_OFF on\nall online cores except for the last one, which instead uses SYSTEM_OFF.",
+      "parentUuid": "2f88609c_dc45d268",
       "revId": "2c267b140c254a1b3dc1c9f7a1416f67b8aff8db",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
