@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "8b51814a_bcbf7ab9",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000208
+      },
+      "writtenOn": "2019-09-11T20:51:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c77422f_31af810a",
+      "revId": "2c267b140c254a1b3dc1c9f7a1416f67b8aff8db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2f88609c_dc45d268",
         "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
         "patchSetId": 1
