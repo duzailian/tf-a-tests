@@ -1,11 +1,12 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2019, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
 #include <arch_helpers.h>
 #include <arm_arch_svc.h>
+#include <assert.h>
 #include <debug.h>
 #include <plat_topology.h>
 #include <power_management.h>
@@ -15,7 +16,12 @@
 #include <tftf_lib.h>
 
 #ifdef AARCH64
-#define CORTEX_A76_MIDR 0x410fd0b0
+#define NOT_REQUIRED_DONOT_INVOKE	-2
+#define NOT_SUPPORTED			-1
+#define IS_REQUIRED			 0
+#define NOT_REQUIRED			 1
+
+#define CORTEX_A76_MIDR	0x410fd0b0
 
 static int cortex_a76_test(void);
 
@@ -56,16 +62,46 @@ static test_result_t test_smccc_entrypoint(void)
 	args.fid = SMCCC_ARCH_FEATURES;
 	args.arg1 = SMCCC_ARCH_WORKAROUND_2;
 	ret = tftf_smc(&args);
-	if ((int)ret.ret0 == -1) {
-		tftf_testcase_printf("SMCCC_ARCH_WORKAROUND_2 is not implemented\n");
+
+	switch ((int)ret.ret0) {
+
+	case NOT_REQUIRED_DONOT_INVOKE:
+		/*
+		 * This workaround is not required and must not be invoked on
+		 * any PE in this system
+		 */
+		tftf_testcase_printf("SMCCC_ARCH_WORKAROUND_2 is not required\n");
 		return TEST_RESULT_SKIPPED;
+
+	case NOT_SUPPORTED:
+		/*
+		 * This workaround is not supported and must not be invoked on
+		 * any PE in this system
+		 */
+		tftf_testcase_printf("SMCCC_ARCH_WORKAROUND_2 is not supported\n");
+		return TEST_RESULT_SKIPPED;
+
+	case IS_REQUIRED:
+		/* This workaround is required */
+		wa_required = 1;
+		break;
+
+	case NOT_REQUIRED:
+		/*
+		 * This PE does not require dynamic firmware mitigation using
+		 * SMCCC_ARCH_WORKAROUND_2
+		 */
+		tftf_testcase_printf("SMCCC_ARCH_WORKAROUND_2 is not required\n");
+		return TEST_RESULT_SKIPPED;
+
+	default:
+		tftf_testcase_printf("Illegal value %d returned by "
+				"SMCCC_ARCH_WORKAROUND_2 function\n", (int)ret.ret0);
+		return TEST_RESULT_FAIL;
+
 	}
 
-	/* If the call returns 0, it means the workaround is required */
-	if ((int)ret.ret0 == 0)
-		wa_required = 1;
-	else
-		wa_required = 0;
+	assert(wa_required == 1);
 
 	/* Check if the SMC return value matches our expectations */
 	my_midr = (unsigned int)read_midr_el1();
@@ -128,4 +164,4 @@ test_result_t test_smccc_arch_workaround_2(void)
 	INFO("%s skipped on AArch32\n", __func__);
 	return TEST_RESULT_SKIPPED;
 }
-#endif
+#endif /* AARCH64 */
