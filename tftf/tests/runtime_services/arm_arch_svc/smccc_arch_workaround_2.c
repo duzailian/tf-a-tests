@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2019, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -15,7 +15,12 @@
 #include <tftf_lib.h>
 
 #ifdef AARCH64
-#define CORTEX_A76_MIDR 0x410fd0b0
+#define NOT_REQUIRED_DONOT_INVOKE	-2
+#define NOT_SUPPORTED			-1
+#define IS_REQUIRED			 0
+#define NOT_REQUIRED			 1
+
+#define CORTEX_A76_MIDR	0x410fd0b0
 
 static int cortex_a76_test(void);
 
@@ -56,8 +61,14 @@ static test_result_t test_smccc_entrypoint(void)
 	args.fid = SMCCC_ARCH_FEATURES;
 	args.arg1 = SMCCC_ARCH_WORKAROUND_2;
 	ret = tftf_smc(&args);
-	if ((int)ret.ret0 == -1) {
+	if ((int)ret.ret0 == NOT_SUPPORTED) {
 		tftf_testcase_printf("SMCCC_ARCH_WORKAROUND_2 is not implemented\n");
+		return TEST_RESULT_SKIPPED;
+	}
+	if ((int)ret.ret0 == NOT_REQUIRED) {
+		/* This PE does not require dynamic firmware mitigation using
+		   SMCCC_ARCH_WORKAROUND_2 */
+		tftf_testcase_printf("SMCCC_ARCH_WORKAROUND_2 is not required\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
