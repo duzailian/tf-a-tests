@@ -59,6 +59,11 @@ static test_result_t test_smccc_entrypoint(void)
 	if ((int)ret.ret0 == -1) {
 		tftf_testcase_printf("SMCCC_ARCH_WORKAROUND_2 is not implemented\n");
 		return TEST_RESULT_SKIPPED;
+	} else if ((int)ret.ret0 == 1) {
+		/* This PE does not require dynamic firmware mitigation using
+		   SMCCC_ARCH_WORKAROUND_2 */
+		tftf_testcase_printf("SMCCC_ARCH_WORKAROUND_2 is not required\n");
+		return TEST_RESULT_SKIPPED;
 	}
 
 	/* If the call returns 0, it means the workaround is required */
