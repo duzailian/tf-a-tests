@@ -27,4 +27,17 @@ ifeq (${ARCH},aarch64)
 PLAT_SOURCES	+=	plat/common/aarch64/pauth.c
 endif
 
+# On some configurations of the FVP, we want to skip the PMU tests.
+# One such example is when the model is configured with 0xffffffff as the
+# reset value for registers and that causes some of the PMU security features to
+# be temporarily disabled when the CPU wakes up from suspended state. This makes
+# the counters increment until execution at EL3 reaches the code which
+# initializes the MDCR and PMCR registers. Thus the tests fail, despite
+# everything working as expected.
+PLAT_SKIP_PMU_TESTS	:=	0
+
+# Process PLAT_SKIP_PMU_TESTS flag
+$(eval $(call assert_boolean,PLAT_SKIP_PMU_TESTS))
+$(eval $(call add_define,TFTF_DEFINES,PLAT_SKIP_PMU_TESTS))
+
 include plat/arm/common/arm_common.mk
