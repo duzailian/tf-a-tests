@@ -102,6 +102,24 @@
     },
     {
       "key": {
+        "uuid": "e6bdc9c9_8ce0c983",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_2.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2019-09-19T16:30:03Z",
+      "side": 1,
+      "message": "I have made the necessary changes to refactor the code.",
+      "parentUuid": "fc6fc5d5_bb3c0f02",
+      "revId": "6b5e343485cf14abbd654c647238b9461611712f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3f8c66f4_917b73b4",
         "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_2.c",
         "patchSetId": 1
