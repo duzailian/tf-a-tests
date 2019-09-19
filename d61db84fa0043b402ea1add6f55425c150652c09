@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "12216b1b_d54a47c2",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_2.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-09-19T16:12:06Z",
+      "side": 1,
+      "message": "#ifdef __aarch64__",
+      "revId": "d61db84fa0043b402ea1add6f55425c150652c09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "40858598_4ac11e41",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_2.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-09-19T16:12:06Z",
+      "side": 1,
+      "message": "add spaces before \u0026 after \u003d",
+      "revId": "d61db84fa0043b402ea1add6f55425c150652c09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "680cea81_629116e4",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_2.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-09-19T16:12:06Z",
+      "side": 1,
+      "message": "add space after switch \u0026 before {",
+      "revId": "d61db84fa0043b402ea1add6f55425c150652c09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04714e1a_d85d0480",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_2.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-09-19T16:12:06Z",
+      "side": 1,
+      "message": "remove spaces before :",
+      "revId": "d61db84fa0043b402ea1add6f55425c150652c09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "efe1cfc2_303e0cef",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_2.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-09-19T16:12:06Z",
+      "side": 1,
+      "message": "/* __aarch64__ */",
+      "revId": "d61db84fa0043b402ea1add6f55425c150652c09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
