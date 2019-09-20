@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "80408ee3_7c09e3ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-09-20T09:57:57Z",
+      "side": 1,
+      "message": "Could you please explain why we\u0027re doing this in this commit message?",
+      "revId": "1043adc050c831b07f83dad3d6b819c228f53040",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
