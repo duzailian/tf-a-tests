@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "64e5a8de_af52c4c8",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_2.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-09-24T07:35:47Z",
+      "side": 1,
+      "message": "I think Alexei was suggesting to completely remove this variable. All case statements below exit the test or they set wa_required to 1. Thus, if we reach line 104 then wa_required necessarily equals 1.",
+      "range": {
+        "startLine": 45,
+        "startChar": 1,
+        "endLine": 45,
+        "endChar": 17
+      },
+      "revId": "d1cd162698df357d77b5363906918b3e024bae6c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81747ce8_b01619fe",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_2.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-09-24T07:35:47Z",
+      "side": 1,
+      "message": "So then this would become\n\n if (entp-\u003ewa_required() !\u003d 1)",
+      "range": {
+        "startLine": 111,
+        "startChar": 3,
+        "endLine": 111,
+        "endChar": 42
+      },
+      "revId": "d1cd162698df357d77b5363906918b3e024bae6c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d4798a1_4777231d",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_2.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-09-24T07:35:47Z",
+      "side": 1,
+      "message": "And this would simply become:\n\n  if (i \u003d\u003d ARRAY_SIZE(entries)) {\n\nYou get the idea...",
+      "range": {
+        "startLine": 116,
+        "startChar": 1,
+        "endLine": 116,
+        "endChar": 47
+      },
+      "revId": "d1cd162698df357d77b5363906918b3e024bae6c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
