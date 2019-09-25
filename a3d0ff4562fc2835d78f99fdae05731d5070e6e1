@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5732beb0_815526e4",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-09-25T15:31:36Z",
+      "side": 1,
+      "message": "(minor) I know all strings are 28 bytes so it does not matter whether we take the size of the 1st one or the 2nd one. Still, that stroke me at first, I expected sizeof(expect_str[0]) then sizeof(expect_str[1]) and so on, it looked off to me. Don\u0027t you think it would be better to increase the index at each line?",
+      "range": {
+        "startLine": 116,
+        "startChar": 45,
+        "endLine": 116,
+        "endChar": 46
+      },
+      "revId": "a3d0ff4562fc2835d78f99fdae05731d5070e6e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
