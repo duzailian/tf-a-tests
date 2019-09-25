@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f42f31be_7696d9d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-09-25T07:58:52Z",
+      "side": 1,
+      "message": "(minor) \"Across an SMC call\" would sound better to me here.",
+      "range": {
+        "startLine": 10,
+        "startChar": 10,
+        "endLine": 10,
+        "endChar": 27
+      },
+      "revId": "cd367a81c2a73c43abbe29dfb4daa0de82ec1497",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "73194c36_f49e397e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-09-25T07:58:52Z",
+      "side": 1,
+      "message": "(minor) Perhaps mention in the commit message the version of OP-TEE that changed this behaviour?",
+      "range": {
+        "startLine": 14,
+        "startChar": 26,
+        "endLine": 15,
+        "endChar": 0
+      },
+      "revId": "cd367a81c2a73c43abbe29dfb4daa0de82ec1497",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13c3482a_4c9aef3b",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-09-25T07:58:52Z",
+      "side": 1,
+      "message": "Should that be 28?",
+      "range": {
+        "startLine": 97,
+        "startChar": 19,
+        "endLine": 97,
+        "endChar": 21
+      },
+      "revId": "cd367a81c2a73c43abbe29dfb4daa0de82ec1497",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
