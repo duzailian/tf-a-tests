@@ -46,6 +46,30 @@
       "revId": "a3d0ff4562fc2835d78f99fdae05731d5070e6e1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0fcaf54_2fa5edfe",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-09-26T07:37:36Z",
+      "side": 1,
+      "message": "\u003e It\u0027s a bit odd having ret0, ret1, etc. as members of the smc_ret_values structure because we can\u0027t just iterate thought them in a loop and this leads to copy-paste mistakes like this.\n\nI agree, we should change that, it would seem a lot more natural to have an array of values. Same goes for smc_args structure.",
+      "parentUuid": "c25721b9_5aa4a490",
+      "range": {
+        "startLine": 116,
+        "startChar": 45,
+        "endLine": 116,
+        "endChar": 46
+      },
+      "revId": "a3d0ff4562fc2835d78f99fdae05731d5070e6e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
