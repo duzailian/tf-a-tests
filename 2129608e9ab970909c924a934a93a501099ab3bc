@@ -16,6 +16,24 @@
       "revId": "2129608e9ab970909c924a934a93a501099ab3bc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90fc2beb_d05b2258",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2019-09-27T16:24:55Z",
+      "side": 1,
+      "message": "tests-manual.xml is still being used by FVP so it shouldn\u0027t be removed at this time.",
+      "parentUuid": "08bc6901_ef2b0775",
+      "revId": "2129608e9ab970909c924a934a93a501099ab3bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
