@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "a2cef817_a58d3e19",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000208
+      },
+      "writtenOn": "2019-09-30T19:27:15Z",
+      "side": 1,
+      "message": "I like to perform explicit comparison (personal choice), but current way is consistent with the code base, should we change everywhere?\n\ngrep -wnr tftf_is_rebooted * | grep -v dump | grep -v build\ntftf/tests/runtime_services/sip_service/test_exec_state_switch.c:107:\tif (tftf_is_rebooted())\ntftf/tests/runtime_services/standard_service/psci/api_tests/mem_protect/test_mem_protect.c:35:\tif (tftf_is_rebooted()) {\ntftf/tests/runtime_services/standard_service/psci/api_tests/reset2/reset2.c:35:\tif (tftf_is_rebooted()) {\ntftf/tests/runtime_services/standard_service/psci/api_tests/reset2/reset2.c:133:\tif (tftf_is_rebooted()) {\ntftf/tests/runtime_services/standard_service/psci/api_tests/psci_stat/test_psci_stat.c:963:\tif (tftf_is_rebooted()) {\ntftf/tests/runtime_services/standard_service/psci/api_tests/psci_stat/test_psci_stat.c:990:\tif (tftf_is_rebooted()) {\ntftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c:52:        if (tftf_is_rebooted()) {\ntftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c:73:        if (tftf_is_rebooted()) {\ntftf/tests/fwu_tests/test_fwu_auth.c:32:\tif (tftf_is_rebooted()) {\ntftf/tests/fwu_tests/test_fwu_toc.c:31:\tif (tftf_is_rebooted()) {",
+      "parentUuid": "7e810f18_cc5a6bbc",
+      "revId": "8f905e02b3f99cd1f69c58ab186023324d396874",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "120af0e8_d1324b08",
         "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
         "patchSetId": 2
@@ -64,6 +82,24 @@
       "writtenOn": "2019-09-30T16:15:42Z",
       "side": 1,
       "message": "SYSTEM OFF",
+      "revId": "8f905e02b3f99cd1f69c58ab186023324d396874",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d5013536_7cd6e597",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000208
+      },
+      "writtenOn": "2019-09-30T19:27:15Z",
+      "side": 1,
+      "message": "Done. SYSTEM_OFF",
+      "parentUuid": "120af0e8_d1324b08",
       "revId": "8f905e02b3f99cd1f69c58ab186023324d396874",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
@@ -115,6 +151,24 @@
       "writtenOn": "2019-09-30T16:15:42Z",
       "side": 1,
       "message": "SYSTEM OFF",
+      "revId": "8f905e02b3f99cd1f69c58ab186023324d396874",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ecd6d450_69c8abc8",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000208
+      },
+      "writtenOn": "2019-09-30T19:27:15Z",
+      "side": 1,
+      "message": "Done. SYSTEM_OFF",
+      "parentUuid": "58a2bc79_2d900dcd",
       "revId": "8f905e02b3f99cd1f69c58ab186023324d396874",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
