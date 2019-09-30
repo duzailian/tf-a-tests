@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2019, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -288,6 +288,16 @@ void __dead2 tftf_warm_boot_main(void)
 {
 	/* Initialise the CPU */
 	tftf_arch_setup();
+
+#if ENABLE_PAUTH
+	/*
+	 * Program APIAKey_EL1 key and enable ARMv8.3-PAuth here as this
+	 * function doesn't return, and RETAA instuction won't be executed,
+	 * what would cause translation fault otherwise.
+	 */
+	pauth_init_enable();
+#endif /* ENABLE_PAUTH */
+
 	arm_gic_setup_local();
 
 	/* Enable the SGI used by the timer management framework */

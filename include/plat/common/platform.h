@@ -67,8 +67,13 @@ int plat_crash_console_flush(void);
 /* Gets a handle for the initialised IO entity */
 void plat_get_nvm_handle(uintptr_t *handle);
 
-/* Initialize and get a pointer to a uint64_t[2] array with a 128-key */
-uint64_t *plat_init_apiakey(void);
+#ifdef __aarch64__
+/* Initialize 128-bit ARMv8.3-PAuth key */
+uint128_t init_apkey(void);
+
+/* Program APIAKey_EL1 key and enable ARMv8.3-PAuth */
+void pauth_init_enable(void);
+#endif	/* __aarch64__ */
 
 /*
  * Returns the platform topology description array. The size of this
