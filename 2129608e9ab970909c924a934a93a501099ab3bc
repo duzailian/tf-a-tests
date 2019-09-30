@@ -34,6 +34,24 @@
       "revId": "2129608e9ab970909c924a934a93a501099ab3bc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0a80dabe_31fbdb96",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-09-30T06:46:56Z",
+      "side": 1,
+      "message": "In this case, could we at least make tests-manual.xml include all other relevant sub-makefiles? Just like tests-standard.xml does? My concern is that there\u0027s duplication of tests descriptions right now and I find it confusing...\n\nIn any case, this would be something for another patch, I think this one is good to go.",
+      "parentUuid": "90fc2beb_d05b2258",
+      "revId": "2129608e9ab970909c924a934a93a501099ab3bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
