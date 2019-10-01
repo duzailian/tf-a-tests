@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "ed6fde29_1dc449c0",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-10-01T16:42:31Z",
+      "side": 1,
+      "message": "As this is new code, please make it MISRA compliant.",
+      "parentUuid": "a2cef817_a58d3e19",
+      "revId": "8f905e02b3f99cd1f69c58ab186023324d396874",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "120af0e8_d1324b08",
         "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
         "patchSetId": 2
