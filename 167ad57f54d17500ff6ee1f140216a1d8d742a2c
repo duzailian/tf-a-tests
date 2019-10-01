@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "85045c1e_10207a84",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2019-10-01T14:14:21Z",
+      "side": 1,
+      "message": "Suggest SKIP_TEST_IF_ARCH_DEBUG_VERSION_LESS_THAN",
+      "range": {
+        "startLine": 158,
+        "startChar": 8,
+        "endLine": 158,
+        "endChar": 44
+      },
+      "revId": "167ad57f54d17500ff6ee1f140216a1d8d742a2c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c88da266_69ef9efc",
+        "filename": "tftf/tests/misc_tests/test_pmu_leakage.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2019-10-01T14:14:21Z",
+      "side": 1,
+      "message": "Isnt the standby meant to be a simple wfi without warm reset ? I mention this because you told that you were hitting the warm reset vector with the test.",
+      "range": {
+        "startLine": 141,
+        "startChar": 9,
+        "endLine": 141,
+        "endChar": 28
+      },
+      "revId": "167ad57f54d17500ff6ee1f140216a1d8d742a2c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
