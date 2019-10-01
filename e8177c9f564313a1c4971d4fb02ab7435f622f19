@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eead933f_f667d20b",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_reset/test_system_reset.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-10-01T08:47:00Z",
+      "side": 1,
+      "message": "\u003d\u003d 1",
+      "revId": "e8177c9f564313a1c4971d4fb02ab7435f622f19",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4fd51c63_0756cc1b",
+        "filename": "tftf/tests/tests-manual.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-10-01T08:47:00Z",
+      "side": 1,
+      "message": "-2019",
+      "revId": "e8177c9f564313a1c4971d4fb02ab7435f622f19",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "81405115_b54e7e42",
+        "filename": "tftf/tests/tests-manual.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-10-01T08:47:00Z",
+      "side": 1,
+      "message": "-2019",
+      "revId": "e8177c9f564313a1c4971d4fb02ab7435f622f19",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
