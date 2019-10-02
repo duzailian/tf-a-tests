@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ed4594f_8d2b3a42",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-02T11:46:54Z",
+      "side": 1,
+      "message": "It looks like this sentence needs to be updated. In this patch, the Makefile now always uses -mbranch-protection\u003dpac-ret option, which is only supported by GCC 9, right? So this should mandate using GCC 9?",
+      "range": {
+        "startLine": 403,
+        "startChar": 3,
+        "endLine": 405,
+        "endChar": 21
+      },
+      "revId": "5a767c4e2f91ef26b007c61cbae00df58a71daac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0fda098d_144d8a5c",
+        "filename": "lib/extensions/pauth/pauth_helpers.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-02T11:46:54Z",
+      "side": 1,
+      "message": "(cosmetic) This could be fit on a single line?",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 4
+      },
+      "revId": "5a767c4e2f91ef26b007c61cbae00df58a71daac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
