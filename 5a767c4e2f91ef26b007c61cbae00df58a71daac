@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "654dbcba_3922d311",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-10-02T12:41:51Z",
+      "side": 1,
+      "message": "I updated Makefile to use -mbranch-protection option because of the other CI patch which uses GCC 9.2.1.\nI\u0027ll change the user-guide.rst, thanks for pointing out.",
+      "parentUuid": "9ed4594f_8d2b3a42",
+      "range": {
+        "startLine": 403,
+        "startChar": 3,
+        "endLine": 405,
+        "endChar": 21
+      },
+      "revId": "5a767c4e2f91ef26b007c61cbae00df58a71daac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0fda098d_144d8a5c",
         "filename": "lib/extensions/pauth/pauth_helpers.S",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2019-10-02T11:46:54Z",
       "side": 1,
       "message": "(cosmetic) This could be fit on a single line?",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 4
+      },
+      "revId": "5a767c4e2f91ef26b007c61cbae00df58a71daac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b8fd2522_d3cae348",
+        "filename": "lib/extensions/pauth/pauth_helpers.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-10-02T12:41:51Z",
+      "side": 1,
+      "message": "Single line comment will occupy 80 chars without trailing \" */\", and when added will make line length 80 + 3 \u003d 83.",
+      "parentUuid": "0fda098d_144d8a5c",
       "range": {
         "startLine": 24,
         "startChar": 0,
