@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4841de05_2e248287",
+        "filename": "tftf/tests/extensions/pauth/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-03T12:05:16Z",
+      "side": 1,
+      "message": "Should be static.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 56
+      },
+      "revId": "fda0c004e0b4bdd16060a870bfdf379d215efbf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aca6fe2a_7182631e",
+        "filename": "tftf/tests/extensions/pauth/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-03T12:05:16Z",
+      "side": 1,
+      "message": "Why is the loop variable a uint32_t rather than plain int? The size does not seem to matter here.",
+      "range": {
+        "startLine": 38,
+        "startChar": 6,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "fda0c004e0b4bdd16060a870bfdf379d215efbf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
