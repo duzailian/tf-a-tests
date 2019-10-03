@@ -141,6 +141,30 @@
       "revId": "fda0c004e0b4bdd16060a870bfdf379d215efbf9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25a78aac_248d89d8",
+        "filename": "tftf/tests/extensions/pauth/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-03T14:14:03Z",
+      "side": 1,
+      "message": "Yes, uint32_t and unsigned int are exactly the same types underneath. But they have different *semantics* from a code design perspective.",
+      "parentUuid": "fbf2de33_4dcba995",
+      "range": {
+        "startLine": 38,
+        "startChar": 6,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "fda0c004e0b4bdd16060a870bfdf379d215efbf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
