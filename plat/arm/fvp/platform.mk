@@ -24,7 +24,9 @@ CACTUS_SOURCES	+=	plat/arm/fvp/${ARCH}/plat_helpers.S
 FIRMWARE_UPDATE := 1
 
 ifeq (${ARCH},aarch64)
-PLAT_SOURCES	+=	plat/common/aarch64/pauth.c
+# ARMv8.3 Pointer Authentication support files
+PLAT_SOURCES	+=	lib/extensions/pauth/pauth.c			\
+			lib/extensions/pauth/pauth_helpers.S
 endif
 
 include plat/arm/common/arm_common.mk
