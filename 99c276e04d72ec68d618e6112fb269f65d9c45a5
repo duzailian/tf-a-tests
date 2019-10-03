@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf0fb90a_5af7273c",
+        "filename": "docs/porting-guide.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-03T11:33:43Z",
+      "side": 1,
+      "message": "Remove this. The porting guide is for documenting the platform interfaces. init_apkey() is not one of them, it is a generic function now.",
+      "range": {
+        "startLine": 364,
+        "startChar": 0,
+        "endLine": 376,
+        "endChar": 33
+      },
+      "revId": "99c276e04d72ec68d618e6112fb269f65d9c45a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a1cc0b1_2c48b0a0",
+        "filename": "include/plat/common/platform.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-03T11:33:43Z",
+      "side": 1,
+      "message": "Again, this is not the right place for these prototypes. platform.h is for platform interfaces. These need to go into some header file inside include/lib/ instead.",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 29
+      },
+      "revId": "99c276e04d72ec68d618e6112fb269f65d9c45a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8149178_6e941e40",
+        "filename": "lib/extensions/pauth/pauth_helpers.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-03T11:33:43Z",
+      "side": 1,
+      "message": "Usually we place assembly files under an aarch32/ or aarch64/ directory. I wonder whether we should follow this convention here for consistency, even if PAuth is an AArch64-only feature. What do you think?",
+      "revId": "99c276e04d72ec68d618e6112fb269f65d9c45a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b99d1fda_0ffa080f",
+        "filename": "lib/extensions/pauth/pauth_helpers.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-03T11:33:43Z",
+      "side": 1,
+      "message": "Remove the word \"platform\", init_apkey() is not a platform-specific interface.",
+      "range": {
+        "startLine": 21,
+        "startChar": 15,
+        "endLine": 21,
+        "endChar": 23
+      },
+      "revId": "99c276e04d72ec68d618e6112fb269f65d9c45a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
