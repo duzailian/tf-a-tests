@@ -69,6 +69,30 @@
       "revId": "fda0c004e0b4bdd16060a870bfdf379d215efbf9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d83790a_289f194f",
+        "filename": "tftf/tests/extensions/pauth/test_pauth.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-03T13:51:45Z",
+      "side": 1,
+      "message": "My comment was more about the explicit width rather than the sign. In my mind, uint32_t/int32_t should be reserved for the cases where we want a variable that is exactly 32-bit, not less, not more. Like for storing a 32-bit register value.\n\nHere I am suggesting to change the type to \"unsigned int\".",
+      "parentUuid": "64fe71b6_7271465d",
+      "range": {
+        "startLine": 38,
+        "startChar": 6,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "fda0c004e0b4bdd16060a870bfdf379d215efbf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
