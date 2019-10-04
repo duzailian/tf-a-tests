@@ -1,0 +1,9 @@
+Allow-CI+2: Petre-Ionut Tudor <petre-ionut.tudor@arm.com>
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+IP-Review+1: Soby Mathew <soby.mathew@arm.com>
+Verified+2: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Fri, 04 Oct 2019 10:21:36 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/2128
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
