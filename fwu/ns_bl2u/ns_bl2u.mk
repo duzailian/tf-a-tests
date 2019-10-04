@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2019, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -47,6 +47,14 @@ NS_BL2U_SOURCES	+=	fwu/ns_bl2u/${ARCH}/ns_bl2u_entrypoint.S	\
 
 NS_BL2U_SOURCES	+=	${COMPILER_RT_SRCS}
 
+ifeq (${ENABLE_PAUTH},1)
+# ARMv8.3 Pointer Authentication support files
+NS_BL2U_SOURCES	+=	lib/extensions/pauth/aarch64/pauth.c		\
+			lib/extensions/pauth/aarch64/pauth_helpers.S
+
+NS_BL2U_CFLAGS	+=	-mbranch-protection=pac-ret
+endif
+
 NS_BL2U_LINKERFILE	:=	fwu/ns_bl2u/ns_bl2u.ld.S
 
 # NS_BL2U requires accessing the flash. Force-enable it.
@@ -63,6 +71,7 @@ ifeq (${ARCH},aarch32)
         $(eval $(call add_define,NS_BL2U_DEFINES,AARCH32))
 else
         $(eval $(call add_define,NS_BL2U_DEFINES,AARCH64))
+        $(eval $(call add_define,NS_BL2U_DEFINES,ENABLE_PAUTH))
 endif
 
 ns_bl2u: ${AUTOGEN_DIR}/tests_list.h
