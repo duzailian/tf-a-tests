@@ -217,7 +217,15 @@ PP			:=	${CROSS_COMPILE}gcc
 
 ################################################################################
 
-TFTF_SOURCES		:= ${FRAMEWORK_SOURCES}	${TESTS_SOURCES} ${PLAT_SOURCES} ${LIBC_SRCS}
+ifeq (${ARCH},aarch64)
+# ARMv8.3 Pointer Authentication support files
+PAUTH_SOURCES		:=	lib/extensions/pauth/aarch64/pauth.c		\
+				lib/extensions/pauth/aarch64/pauth_helpers.S
+else
+PAUTH_SOURCES		:=
+endif
+
+TFTF_SOURCES		:= ${FRAMEWORK_SOURCES}	${TESTS_SOURCES} ${PLAT_SOURCES} ${LIBC_SRCS} ${PAUTH_SOURCES}
 TFTF_INCLUDES		+= ${PLAT_INCLUDES}
 TFTF_CFLAGS		+= ${COMMON_CFLAGS}
 TFTF_ASFLAGS		+= ${COMMON_ASFLAGS}
