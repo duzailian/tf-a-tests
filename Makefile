@@ -217,7 +217,15 @@ PP			:=	${CROSS_COMPILE}gcc
 
 ################################################################################
 
-TFTF_SOURCES		:= ${FRAMEWORK_SOURCES}	${TESTS_SOURCES} ${PLAT_SOURCES} ${LIBC_SRCS}
+ifeq (${ARCH},aarch64)
+# ARMv8.3 Pointer Authentication support files
+PAUTH_SOURCES		:=	lib/extensions/pauth/aarch64/pauth.c		\
+				lib/extensions/pauth/aarch64/pauth_helpers.S
+else
+PAUTH_SOURCES		:=
+endif
+
+TFTF_SOURCES		:= ${FRAMEWORK_SOURCES}	${TESTS_SOURCES} ${PLAT_SOURCES} ${LIBC_SRCS} ${PAUTH_SOURCES}
 TFTF_INCLUDES		+= ${PLAT_INCLUDES}
 TFTF_CFLAGS		+= ${COMMON_CFLAGS}
 TFTF_ASFLAGS		+= ${COMMON_ASFLAGS}
@@ -227,15 +235,25 @@ ifeq (${ENABLE_PAUTH},1)
 TFTF_CFLAGS		+= -mbranch-protection=pac-ret
 endif
 
-NS_BL1U_SOURCES		+= ${PLAT_SOURCES} ${LIBC_SRCS}
+NS_BL1U_SOURCES		+= ${PLAT_SOURCES} ${LIBC_SRCS} ${PAUTH_SOURCES}
 NS_BL1U_INCLUDES	+= ${PLAT_INCLUDES}
 NS_BL1U_CFLAGS		+= ${COMMON_CFLAGS}
+
+ifeq (${ENABLE_PAUTH},1)
+NS_BL1U_CFLAGS		+= -mbranch-protection=pac-ret
+endif
+
 NS_BL1U_ASFLAGS		+= ${COMMON_ASFLAGS}
 NS_BL1U_LDFLAGS		+= ${COMMON_LDFLAGS}
 
-NS_BL2U_SOURCES		+= ${PLAT_SOURCES} ${LIBC_SRCS}
+NS_BL2U_SOURCES		+= ${PLAT_SOURCES} ${LIBC_SRCS} ${PAUTH_SOURCES}
 NS_BL2U_INCLUDES	+= ${PLAT_INCLUDES}
 NS_BL2U_CFLAGS		+= ${COMMON_CFLAGS}
+
+ifeq (${ENABLE_PAUTH},1)
+NS_BL2U_CFLAGS		+= -mbranch-protection=pac-ret
+endif
+
 NS_BL2U_ASFLAGS		+= ${COMMON_ASFLAGS}
 NS_BL2U_LDFLAGS		+= ${COMMON_LDFLAGS}
 
