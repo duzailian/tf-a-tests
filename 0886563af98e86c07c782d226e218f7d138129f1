@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c3dee43a_663a2b83",
+        "filename": "docs/porting-guide.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2019-10-04T10:34:33Z",
+      "side": 1,
+      "message": "Needs to be removed.",
+      "range": {
+        "startLine": 364,
+        "startChar": 0,
+        "endLine": 373,
+        "endChar": 28
+      },
+      "revId": "0886563af98e86c07c782d226e218f7d138129f1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
