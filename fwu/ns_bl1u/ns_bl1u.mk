@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2019, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -15,6 +15,7 @@ NS_BL1U_INCLUDES := 					\
 	-Iinclude/common/${ARCH}			\
 	-Iinclude/lib					\
 	-Iinclude/lib/${ARCH}				\
+	-Iinclude/lib/extensions				\
 	-Iinclude/lib/utils				\
 	-Iinclude/lib/xlat_tables			\
 	-Iinclude/plat/common				\
@@ -67,6 +68,7 @@ ifeq (${ARCH},aarch32)
         $(eval $(call add_define,NS_BL1U_DEFINES,AARCH32))
 else
         $(eval $(call add_define,NS_BL1U_DEFINES,AARCH64))
+        $(eval $(call add_define,NS_BL1U_DEFINES,ENABLE_PAUTH))
 endif
 
 ns_bl1u: ${AUTOGEN_DIR}/tests_list.h
