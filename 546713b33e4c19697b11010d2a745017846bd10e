@@ -22,6 +22,30 @@
       "revId": "546713b33e4c19697b11010d2a745017846bd10e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "03ef6e70_e9d0167d",
+        "filename": "Makefile",
+        "patchSetId": 3
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2019-10-04T13:57:58Z",
+      "side": 1,
+      "message": "ifeq (${ENABLE_PAUTH},1)\nNS_BL1U_CFLAGS          +\u003d -mbranch-protection\u003dpac-ret\nendif",
+      "parentUuid": "01b52a42_db1d762b",
+      "range": {
+        "startLine": 232,
+        "startChar": 21,
+        "endLine": 232,
+        "endChar": 32
+      },
+      "revId": "546713b33e4c19697b11010d2a745017846bd10e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
