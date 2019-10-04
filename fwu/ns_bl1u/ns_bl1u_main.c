@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2019, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -14,6 +14,7 @@
 #include <io_storage.h>
 #include <mmio.h>
 #include <nvm.h>
+#include <pauth.h>
 #include <platform.h>
 #include <platform_def.h>
 #include <smccc.h>
@@ -118,6 +119,15 @@ void ns_bl1u_main(void)
 	NOTICE("NS_BL1U: %s\n", build_message);
 
 	tftf_arch_setup();
+
+#if ENABLE_PAUTH
+	/*
+	 * Program APIAKey_EL1 key and enable ARMv8.3-PAuth here as this
+	 * function doesn't return, and RETAA instuction won't be executed,
+	 * what would cause translation fault otherwise.
+	 */
+	pauth_init_enable();
+#endif /* ENABLE_PAUTH */
 
 	plat_fwu_io_setup();
 
