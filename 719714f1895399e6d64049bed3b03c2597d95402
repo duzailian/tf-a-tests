@@ -1,0 +1,9 @@
+Allow-CI+2: Soby Mathew <soby.mathew@arm.com>
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+IP-Review+1: Soby Mathew <soby.mathew@arm.com>
+Verified+2: TrustedFirmware Code Review
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Fri, 04 Oct 2019 14:15:59 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/1652
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
