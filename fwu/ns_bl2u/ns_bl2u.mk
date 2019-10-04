@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2019, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -63,6 +63,7 @@ ifeq (${ARCH},aarch32)
         $(eval $(call add_define,NS_BL2U_DEFINES,AARCH32))
 else
         $(eval $(call add_define,NS_BL2U_DEFINES,AARCH64))
+        $(eval $(call add_define,NS_BL2U_DEFINES,ENABLE_PAUTH))
 endif
 
 ns_bl2u: ${AUTOGEN_DIR}/tests_list.h
