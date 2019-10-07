@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0a00b46c_aa495a16",
+        "filename": "Makefile",
+        "patchSetId": 3
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-07T16:10:46Z",
+      "side": 1,
+      "message": "I would prefer you move these source files into each image\u0027s Makefile and leave the list of files in this Makefile as is. This would be more consistent with what we\u0027ve done so far. It helps keeping the top Makefile as clean as possible, as well as reducing the dependency of test images on each other, if we ever need to add some extra PAuth file for some specific test image some day.\n\nSo for example, for TFTF I suggest we add these 2 PAuth source files in the FRAMEWORK_SOURCES variable inside the TFTF makefile and then line 228 does not need any changes.",
+      "range": {
+        "startLine": 222,
+        "startChar": 18,
+        "endLine": 223,
+        "endChar": 48
+      },
+      "revId": "7432559558a9a2569892b1e7c05f6ff9812ff6fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
