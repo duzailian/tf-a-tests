@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a95fcda4_8beb0ee1",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-08T10:43:55Z",
+      "side": 1,
+      "message": "I am surprised this works... There is a limitation in the test framework, see https://git.trustedfirmware.org/TF-A/tf-a-tests.git/about/docs/change-log.rst#test-framework:\n\n\"Every CPU that participates in a test must return from the test function. If it does not - e.g. because it powered itself off for testing purposes - then the test framework will wait forever for this CPU. This limitation is too restrictive for some tests.\"\n\nBecause the primary CPU is entering this test function here, the test framework will expect it to return with some test result. If it powers itself off here, then this won\u0027t happen. I think the code needs to be changed such that the primary CPU waits for the secondary CPU to enter the test (using the synchronization API) then exit the test function. As a side effect, the framework should power it off, after it has captured its return value (this happens in run_tests() function). This pattern is used in many tests right now, please have a look at test_template_multi_core() for reference code.\n\nDoes this code behave correctly at the moment? Does the TFTF successfully complete the test and print its result?",
+      "range": {
+        "startLine": 92,
+        "startChar": 1,
+        "endLine": 92,
+        "endChar": 13
+      },
+      "revId": "1ddc98a8e38727dc4e1cb40d786ab64c6890b060",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
