@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "319ee8e5_06a0ffc1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-08T09:40:45Z",
+      "side": 1,
+      "message": "(minor) TF-A",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 3
+      },
+      "revId": "3712da64c74260634f0ba2b3b3aa002947126a3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b22b50dd_5643fecf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-08T09:40:45Z",
+      "side": 1,
+      "message": "A reference to the specific SHA1 of the TF-A commit introducing this feature would be useful IMO.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 68
+      },
+      "revId": "3712da64c74260634f0ba2b3b3aa002947126a3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "478673cd_20d1ff24",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-08T09:40:45Z",
+      "side": 1,
+      "message": "Enclose macro parameter in parentheses (to avoid any unexpected operator pairing).",
+      "range": {
+        "startLine": 114,
+        "startChar": 34,
+        "endLine": 114,
+        "endChar": 35
+      },
+      "revId": "3712da64c74260634f0ba2b3b3aa002947126a3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f50b8e88_ecab4423",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-08T09:40:45Z",
+      "side": 1,
+      "message": "(minor) Remove 1 tab to align with other lines.",
+      "range": {
+        "startLine": 277,
+        "startChar": 21,
+        "endLine": 277,
+        "endChar": 22
+      },
+      "revId": "3712da64c74260634f0ba2b3b3aa002947126a3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
