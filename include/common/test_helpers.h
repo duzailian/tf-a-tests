@@ -164,10 +164,10 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 		}								\
 	} while (0)
 
+#ifdef AARCH64
 #define SKIP_TEST_IF_ARCH_DEBUG_VERSION_LESS_THAN(version)			\
 	do {									\
-		uint32_t debug_ver = read_id_aa64dfr0_el1() &			\
-			(ID_AA64DFR0_DEBUG_MASK << ID_AA64DFR0_DEBUG_SHIFT);	\
+		uint32_t debug_ver = read_id_aa64dfr0_el1() & ID_AA64DFR0_DEBUG_BITS;\
 										\
 		if ((debug_ver >> ID_AA64DFR0_DEBUG_SHIFT) < version) {		\
 			tftf_testcase_printf("Debug version returned %d\n"	\
@@ -177,6 +177,20 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 			return TEST_RESULT_SKIPPED;				\
 		}								\
 	} while (0)
+#else
+#define SKIP_TEST_IF_ARCH_DEBUG_VERSION_LESS_THAN(version)			\
+	do {									\
+		uint32_t debug_ver = read_dbgdidr() & DBGDIDR_VERSION_BITS;	\
+										\
+		if ((debug_ver >> DBGDIDR_VERSION_SHIFT) < version) {		\
+			tftf_testcase_printf("Debug version returned %d\n"	\
+					     "The required version is %d\n",	\
+					     debug_ver >> DBGDIDR_VERSION_SHIFT,\
+					     version);				\
+			return TEST_RESULT_SKIPPED;				\
+		}								\
+	} while (0)
+#endif
 
 /* Helper macro to verify if system suspend API is supported */
 #define is_psci_sys_susp_supported()	\
