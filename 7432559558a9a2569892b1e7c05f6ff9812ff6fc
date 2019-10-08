@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "8776cb42_fc1023ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-08T08:38:00Z",
+      "side": 1,
+      "message": "Could you please split this patch in 3 pieces? AFAICS, the 3 changes described here are rather independent and touch different files so I am not expecting this to cause too much churn. I suggest the following order:\n\n1. Fixes for build errors\n2. PAuth test cases\n3. FWU images changes",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 44
+      },
+      "revId": "7432559558a9a2569892b1e7c05f6ff9812ff6fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0a00b46c_aa495a16",
         "filename": "Makefile",
         "patchSetId": 3
