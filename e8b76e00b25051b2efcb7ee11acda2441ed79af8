@@ -74,6 +74,24 @@
       "revId": "e8b76e00b25051b2efcb7ee11acda2441ed79af8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df16682c_bee3dee2",
+        "filename": "tftf/tests/misc_tests/test_pmu_leakage.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1000251
+      },
+      "writtenOn": "2019-10-10T16:02:44Z",
+      "side": 1,
+      "message": "It is not overflow that is causing trouble because event counts are never greater than 10,000 and the iteration count is 1,000. Therefore, the `sum` variable in `measure_event()` should never exceed 10,000,000 with the SMC calls used here (even when counters are being leaked).\n\nThe problem is caused by an underflow which happened when `cpu_suspend.avg` \u003c `baseline.avg`. For example, if `cpu_suspend.avg` \u003d\u003d N and `baseline.avg` \u003d\u003d N + 1, then `cpu_suspend.avg` - `baseline.avg` \u003d\u003d 0xffffffffffffffff. In this case, the difference would be considered greater than `baseline.avg` / ALLOWED_DEVIATION because these are unsigned types. The root cause is the `read_pmevcntr0_el0()` and `read_pmccntr_el0` functions returning an unsigned type (u_register_t).\n\nI contemplated using signed types for this when I became aware of the problem but I thought it might look suspicious using a long long variable to store the result of a function which returns u_register_t and that it would require more explanation in the code (in more than one place).",
+      "parentUuid": "3faf5b7a_9865765a",
+      "revId": "e8b76e00b25051b2efcb7ee11acda2441ed79af8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
