@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9830b15c_0d33eb94",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000018
+      },
+      "writtenOn": "2019-10-10T13:53:51Z",
+      "side": 1,
+      "message": "Suggestion: give a false positive.",
+      "range": {
+        "startLine": 10,
+        "startChar": 3,
+        "endLine": 10,
+        "endChar": 15
+      },
+      "revId": "e8b76e00b25051b2efcb7ee11acda2441ed79af8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2dc26bd7_3104eae2",
         "filename": "tftf/tests/misc_tests/test_pmu_leakage.c",
         "patchSetId": 1
@@ -34,6 +57,23 @@
       "revId": "e8b76e00b25051b2efcb7ee11acda2441ed79af8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3faf5b7a_9865765a",
+        "filename": "tftf/tests/misc_tests/test_pmu_leakage.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1000018
+      },
+      "writtenOn": "2019-10-10T13:53:51Z",
+      "side": 1,
+      "message": "While the overflow is causing bad behavior here, I am not sure if this is the right place to address the issue. If there is an overflow, that is a measurement error, and it might be better to fix it part of the measurement.\nThis fix has to be applied to all places where measure_event() is called. Would it be possible to move it inside measure_event()?",
+      "revId": "e8b76e00b25051b2efcb7ee11acda2441ed79af8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
