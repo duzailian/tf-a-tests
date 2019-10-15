@@ -1,5 +1,5 @@
-Trusted Firmware-A Tests - version 2.1
-======================================
+Trusted Firmware-A Tests
+========================
 
 The Trusted Firmware-A Tests (TF-A-Tests) is a suite of baremetal tests to
 exercise the `Trusted Firmware-A (TF-A)`_ features from the Normal World. It
@@ -51,10 +51,24 @@ license text is included in those source files.
    which is a permissive license compatible with BSD-3-Clause. Any
    contributions to this code must be made under the terms of both licenses.
 
-This release
-------------
 
-This release provides a starting point for exercising some of the TF-A features
+Releases
+--------
+
+Trusted Firmware-A Tests - version 2.2
+``````````````````````````````````````
+
+This release makes a wide range of tests available for validating the functionality
+of TF-A as well as several improvements to test framework and test suite.
+
+Please refer to the `change log`_ for more details of the features, known issues and
+limitations in the current release.
+
+
+Trusted Firmware-A Tests - version 2.1
+``````````````````````````````````````
+
+Release 2.1 provides a starting point for exercising some of the TF-A features
 on the Arm FVP and Juno platforms, porting the tests to new platforms, enhancing
 existing tests or implementing new ones.
 
@@ -68,7 +82,7 @@ Platforms
 Juno Arm Development Platform
 '''''''''''''''''''''''''''''
 
-The AArch64 build of this release has been tested on variants r0, r1 and r2 of
+The AArch64 build of the 2.2 release has been tested on variants r0, r1 and r2 of
 the `Juno Arm Development Platform`_. The AArch32 build has only been tested on
 variant r0.
 
@@ -89,7 +103,7 @@ The AArch32 build has been tested on the following `FVP`_\ s:
 -  ``FVP_Base_Cortex-A32x4``
 -  ``FVP_Base_RevC-2xAEMv8A``
 
-NOTE: Unless otherwise stated, the model version is version 11.5, build 33.
+NOTE: Unless otherwise stated, the model version is version 11.6, build 45.
 
 System Guidance for Infrastructure Fixed Virtual Platforms
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -102,8 +116,8 @@ The AArch64 build has been tested on the following Fixed Virtual Platforms
 
 NOTE:
 
--  For ``FVP_CSS_SGI-575``, the model version is 11.4, build 40
--  For ``FVP_RD_N1Edge``, the model version is 11.6, build 29
+-  For ``FVP_CSS_SGI-575``, the model version is 11.3, build 42
+-  For ``FVP_RD_N1Edge``, the model version is 11.3, build 42
 
 Still to come
 `````````````
