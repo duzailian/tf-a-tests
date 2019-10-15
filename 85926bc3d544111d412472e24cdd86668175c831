@@ -1,0 +1,10 @@
+Allow-CI+2: Petre-Ionut Tudor <petre-ionut.tudor@arm.com>
+Verified+2: TrustedFirmware Code Review
+Code-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Review+2: György Szing <gyorgy.szing@arm.com>
+IP-Review+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Tue, 15 Oct 2019 13:56:00 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/2203
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
