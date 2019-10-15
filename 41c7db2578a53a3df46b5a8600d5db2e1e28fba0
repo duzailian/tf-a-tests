@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c067d84c_a465b701",
+        "filename": "readme.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000221
+      },
+      "writtenOn": "2019-10-15T22:08:27Z",
+      "side": 1,
+      "message": "Hi Madhukar, I think it may be more clear to see only one (current) release in readme. If someone wants to see history he can check change log, or readme git history.",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 38
+      },
+      "revId": "41c7db2578a53a3df46b5a8600d5db2e1e28fba0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
