@@ -22,6 +22,76 @@
       "revId": "41c7db2578a53a3df46b5a8600d5db2e1e28fba0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07fe2244_e2cfe528",
+        "filename": "readme.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-16T06:59:43Z",
+      "side": 1,
+      "message": "I agree with Artsem, it was the original intent to keep the README file agnostic of any specific revision information or specific changes.",
+      "parentUuid": "c067d84c_a465b701",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 38
+      },
+      "revId": "41c7db2578a53a3df46b5a8600d5db2e1e28fba0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d7bea2b_a07a6eb5",
+        "filename": "readme.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-16T06:59:43Z",
+      "side": 1,
+      "message": "If I am not mistaken, the latest version of the SGI-575 FVP available on developer.arm.com is 11.1.31. Could you please double-check? If I am right, then I suppose we have 2 solutions here:\n* either we state here that 11.3.42 is an internal version\n* or we downgrade our CI to match what\u0027s publicly available.",
+      "range": {
+        "startLine": 119,
+        "startChar": 3,
+        "endLine": 119,
+        "endChar": 63
+      },
+      "revId": "41c7db2578a53a3df46b5a8600d5db2e1e28fba0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d3122b4_1dbee419",
+        "filename": "readme.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-16T06:59:43Z",
+      "side": 1,
+      "message": "Again, I can only see one version of the FVP_RD_N1Edge FVP on developer.arm.com or silver.arm.com and it is 11.6.38 instead. Could you please double-check whether 11.3.42 is still publicly available somewhere and then we\u0027ll have to make the same kind of call as for SGI-575 above.",
+      "range": {
+        "startLine": 120,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 61
+      },
+      "revId": "41c7db2578a53a3df46b5a8600d5db2e1e28fba0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
