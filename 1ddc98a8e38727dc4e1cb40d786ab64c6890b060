@@ -2,6 +2,167 @@
   "comments": [
     {
       "key": {
+        "uuid": "dc7263cd_da713374",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-18T10:56:02Z",
+      "side": 1,
+      "message": "Should be\n\n #include \u003ctest_helpers.h\u003e\n\nfor consistency with the rest of the codebase.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "1ddc98a8e38727dc4e1cb40d786ab64c6890b060",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01bd70d0_722af7ab",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-18T10:56:02Z",
+      "side": 1,
+      "message": "Similarly, this should be:\n\n #include \u003cpower_management.h\u003e",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 33
+      },
+      "revId": "1ddc98a8e38727dc4e1cb40d786ab64c6890b060",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "851577d2_b725e05b",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-18T10:56:02Z",
+      "side": 1,
+      "message": "Should be u_register_t, as MPIDR is a 32-bit register on AArch32 and 64-bit on AArch64. Also see the return type of read_mpidr_el1().",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 16,
+        "endChar": 13
+      },
+      "revId": "1ddc98a8e38727dc4e1cb40d786ab64c6890b060",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbdeac93_26d60693",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-18T10:56:02Z",
+      "side": 1,
+      "message": "mpid should be u_register_t for the same reason.",
+      "range": {
+        "startLine": 17,
+        "startChar": 24,
+        "endLine": 17,
+        "endChar": 28
+      },
+      "revId": "1ddc98a8e38727dc4e1cb40d786ab64c6890b060",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "302078a6_5dcedbb3",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-18T10:56:02Z",
+      "side": 1,
+      "message": "I find this comment misleading, as this code per se does not know about lead CPU. How about the following instead?\n\n Wait for all other CPUs to turn off.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 4
+      },
+      "revId": "1ddc98a8e38727dc4e1cb40d786ab64c6890b060",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "734918de_65250285",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-18T10:56:02Z",
+      "side": 1,
+      "message": "Should be u_register_t.",
+      "range": {
+        "startLine": 66,
+        "startChar": 1,
+        "endLine": 66,
+        "endChar": 13
+      },
+      "revId": "1ddc98a8e38727dc4e1cb40d786ab64c6890b060",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b8af458_be150699",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-18T10:56:02Z",
+      "side": 1,
+      "message": "Should be u_register_t.",
+      "range": {
+        "startLine": 67,
+        "startChar": 1,
+        "endLine": 67,
+        "endChar": 13
+      },
+      "revId": "1ddc98a8e38727dc4e1cb40d786ab64c6890b060",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a95fcda4_8beb0ee1",
         "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
         "patchSetId": 6
@@ -18,6 +179,53 @@
         "startChar": 1,
         "endLine": 92,
         "endChar": 13
+      },
+      "revId": "1ddc98a8e38727dc4e1cb40d786ab64c6890b060",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64f53990_65d3b0ad",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_off/test_system_off.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-18T10:56:02Z",
+      "side": 1,
+      "message": "\u003e The system on reset, reboots as default with Primary CPU as on and secondary CPU\u0027s as off. On restart\n\u003e `test_system_off_cpu_other_than_lead` is executed again and `tftf_is_rebooted` on line 72 return true.\n\u003e TEST_RESULT_SUCCESS on line 74 is the result from Primary CPU.\n\nOK thanks for the explanation. I still think the framework sees 2 CPUs entering the test and expects both of them to return to the framework. I guess it appears to be working fine here because the system gets turned off so the state of the RAM is lost, which includes the CPU reference counter. When the system reboots, it re-initialises the CPU reference counter to 0 and then only the primary CPU takes part in the second half of the test.\n\nI suppose we can leave the code like that, even if it doesn\u0027t follow the same synchronization pattern as most of the multicore CPUs tests.",
+      "parentUuid": "a95fcda4_8beb0ee1",
+      "range": {
+        "startLine": 92,
+        "startChar": 1,
+        "endLine": 92,
+        "endChar": 13
+      },
+      "revId": "1ddc98a8e38727dc4e1cb40d786ab64c6890b060",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2897720a_f3edd7e1",
+        "filename": "tftf/tests/tests-manual.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-10-18T10:56:02Z",
+      "side": 1,
+      "message": "I think we might as well put this new test in the existing \"System off test\" testsuite above. It\u0027s exercising the same SMC interface (SYSTEM_OFF), just in a different setup.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 14
       },
       "revId": "1ddc98a8e38727dc4e1cb40d786ab64c6890b060",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
