@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4d710419_2a598f74",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000251
+      },
+      "writtenOn": "2019-10-30T15:13:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "faa56574_37cdb57a",
+      "range": {
+        "startLine": 12,
+        "startChar": 21,
+        "endLine": 12,
+        "endChar": 25
+      },
+      "revId": "b6aed6dc712361353d82893afcf9994f62377817",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "de9a2424_e0fd8fcc",
         "filename": "include/common/test_helpers.h",
         "patchSetId": 3
@@ -36,6 +60,24 @@
       "writtenOn": "2019-10-30T08:59:44Z",
       "side": 1,
       "message": "Would this be cleaner to define an \"arch_get_debug_version\" helper returning the shifted value?\nThis may sit e.g. in include/lib/aarch[32|64]/arch_features.h?\nThis would avoid duplicating below macro.",
+      "revId": "b6aed6dc712361353d82893afcf9994f62377817",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d66618d3_4c344094",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000251
+      },
+      "writtenOn": "2019-10-30T15:13:57Z",
+      "side": 1,
+      "message": "Thank you! Looks much better now.",
+      "parentUuid": "de9a2424_e0fd8fcc",
       "revId": "b6aed6dc712361353d82893afcf9994f62377817",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
