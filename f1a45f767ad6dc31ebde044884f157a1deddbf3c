@@ -1,0 +1,11 @@
+Allow-CI+2: Deepika Bhavnani <deepika.bhavnani@arm.com>
+Code-Review+1: Deepika Bhavnani <deepika.bhavnani@arm.com>
+Allow-CI+2: Petre-Ionut Tudor <petre-ionut.tudor@arm.com>
+Verified+2: TrustedFirmware Code Review
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+IP-Review+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Tue, 05 Nov 2019 14:08:38 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/2265
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
