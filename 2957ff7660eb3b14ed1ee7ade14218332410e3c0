@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "52602429_068c304d",
+        "filename": "el3_payload/plat/fvp/platform.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000208
+      },
+      "writtenOn": "2019-11-06T22:27:50Z",
+      "side": 0,
+      "message": "Instead of removing the define, will it be better to add a guard \n#ifndef - #define - #endif?",
+      "revId": "2957ff7660eb3b14ed1ee7ade14218332410e3c0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
