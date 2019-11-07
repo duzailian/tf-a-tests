@@ -16,6 +16,24 @@
       "revId": "2957ff7660eb3b14ed1ee7ade14218332410e3c0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "73c12934_852e2714",
+        "filename": "el3_payload/plat/fvp/platform.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-11-07T10:16:55Z",
+      "side": 0,
+      "message": "No. If #ifndef is hit, then FVP_MAX_PE_PER_CPU build option was not passed from Makefile, which is an error, and it is possible that FVP_MAX_PE_PER_CPU will be defined twice with different values.",
+      "parentUuid": "52602429_068c304d",
+      "revId": "2957ff7660eb3b14ed1ee7ade14218332410e3c0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }

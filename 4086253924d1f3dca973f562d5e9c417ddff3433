@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "57f88b4e_a7fa3491",
+        "filename": "include/lib/tftf_lib.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-11-07T10:16:55Z",
+      "side": 1,
+      "message": "I was thinking about this option, but didn\u0027t like unaligned parameter with \",\" in front of it.",
+      "parentUuid": "7c4c93a6_7c0bc30c",
+      "revId": "4086253924d1f3dca973f562d5e9c417ddff3433",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e2fd745_20a71d26",
         "filename": "include/lib/tftf_lib.h",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5643546d_3ed7922c",
+        "filename": "include/lib/tftf_lib.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-11-07T10:16:55Z",
+      "side": 1,
+      "message": "AFFx_SHIFT order 2,1,0 was kept for consistency, but I can make it reversed.",
+      "parentUuid": "0e2fd745_20a71d26",
+      "revId": "4086253924d1f3dca973f562d5e9c417ddff3433",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a90b523_53a918b2",
         "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/affinity_info/test_psci_affinity_info.c",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2019-11-06T22:27:50Z",
       "side": 1,
       "message": "make_mpid - 2nd argument is core_id. Is core_id suppose to be 0 here?",
+      "revId": "4086253924d1f3dca973f562d5e9c417ddff3433",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "31b66f5f_446f2fbc",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/affinity_info/test_psci_affinity_info.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2019-11-07T10:16:55Z",
+      "side": 1,
+      "message": "The comment reads: \"Set the affinity level0 bits to some arbitrary value...\" This is the 3-rd argument. core_id  \u003d 0 will always present, so affinity 0 field should be ignored.",
+      "parentUuid": "3a90b523_53a918b2",
       "revId": "4086253924d1f3dca973f562d5e9c417ddff3433",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
