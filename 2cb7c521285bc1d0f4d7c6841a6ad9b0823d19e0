@@ -1,0 +1,14 @@
+Allow-CI+1: Lauren Wehrmeister <lauren.wehrmeister@arm.com>
+Code-Review+1: Lauren Wehrmeister <lauren.wehrmeister@arm.com>
+IP-Review+1: Lauren Wehrmeister <lauren.wehrmeister@arm.com>
+Code-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Review+1: Mark Dykes
+IP-Review+1: Mark Dykes
+Allow-CI+2: Soby Mathew <soby.mathew@arm.com>
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+Verified+2: TrustedFirmware Code Review
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Wed, 13 Nov 2019 07:53:48 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/2252
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
