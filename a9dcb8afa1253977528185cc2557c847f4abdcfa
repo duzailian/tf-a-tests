@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bdddcbb9_9edab08e",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1000274
+      },
+      "writtenOn": "2019-11-22T14:06:39Z",
+      "side": 1,
+      "message": "Missing space after comma",
+      "revId": "a9dcb8afa1253977528185cc2557c847f4abdcfa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f043bfd8_45c97659",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 1000274
+      },
+      "writtenOn": "2019-11-22T14:06:39Z",
+      "side": 1,
+      "message": "Missing space after comma",
+      "revId": "a9dcb8afa1253977528185cc2557c847f4abdcfa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e89ae5d6_28f07159",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1000274
+      },
+      "writtenOn": "2019-11-22T14:06:39Z",
+      "side": 1,
+      "message": "Missing space after comma",
+      "revId": "a9dcb8afa1253977528185cc2557c847f4abdcfa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
