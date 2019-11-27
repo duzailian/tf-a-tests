@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "03014d1b_311c5434",
+        "filename": "docs/conf.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2019-11-27T11:02:52Z",
+      "side": 1,
+      "message": "I would say leave it as there are really no negative effects (performance) on having the extension enabled. ReadTheDocs will set up the environment based on the requirements.txt file that is also added in this patch.\n\nAnyone building the docs locally is likely to have plantuml installed as they would need it to build the main TF-A docs and I imagine that a developer would want those too if they\u0027re reading the test docs locally.\n\nI think that if there are really no UML files to process then there will be no warnings emitted from Sphinx even if the plantuml package is missing.",
+      "parentUuid": "f74f2ee4_2de84af7",
+      "range": {
+        "startLine": 23,
+        "startChar": 43,
+        "endLine": 23,
+        "endChar": 69
+      },
+      "revId": "717bac4dca0bf204329a8cb19f52c8e30bb58502",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6a67e7d3_5d39a547",
         "filename": "docs/conf.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-11-27T10:24:36Z",
       "side": 1,
       "message": "not so important comment:\nthis bring me back my confusion with the \"index.rst\" files name inside the platform directory. As we know that this file is a table of content, would it make sense to call it \"toc\" ?",
+      "range": {
+        "startLine": 32,
+        "startChar": 14,
+        "endLine": 32,
+        "endChar": 19
+      },
+      "revId": "717bac4dca0bf204329a8cb19f52c8e30bb58502",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d521f404_79e568e6",
+        "filename": "docs/conf.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000079
+      },
+      "writtenOn": "2019-11-27T11:02:52Z",
+      "side": 1,
+      "message": "It contains a table of contents, at least, but it can also contain other content besides that.\n\nMy only other argument at this point is a simple appeal to authority: Sphinx itself says that index.rst is the master document for a directory. If you run sphinx-quickstart* to generate a new, clean set of documentation then index.rst is the first file it creates and it contains a table of contents! I think it\u0027s pretty clear that\u0027s what they expect it to be used for.\n\nsphinx-quickstart generated the exact line that you\u0027ve highlighted here.\n\n* https://www.sphinx-doc.org/en/master/usage/quickstart.html",
+      "parentUuid": "6a67e7d3_5d39a547",
       "range": {
         "startLine": 32,
         "startChar": 14,
