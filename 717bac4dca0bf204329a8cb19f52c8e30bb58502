@@ -93,6 +93,30 @@
       "revId": "717bac4dca0bf204329a8cb19f52c8e30bb58502",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b494b67_136e8226",
+        "filename": "docs/conf.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2019-11-27T11:15:19Z",
+      "side": 1,
+      "message": "I\u0027m being picky here, index.rst is clearly fine ! Especially if Sphinx itself says so ;)",
+      "parentUuid": "d521f404_79e568e6",
+      "range": {
+        "startLine": 32,
+        "startChar": 14,
+        "endLine": 32,
+        "endChar": 19
+      },
+      "revId": "717bac4dca0bf204329a8cb19f52c8e30bb58502",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
