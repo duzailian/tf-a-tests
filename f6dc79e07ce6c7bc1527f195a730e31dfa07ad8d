@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e1eb9d8c_f9aea8c2",
+        "filename": "docs/getting_started/requirements.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-11-28T09:42:22Z",
+      "side": 1,
+      "message": "Suggest removing the minimum config info and replace with something similar to TF-A in https://trustedfirmware-a.readthedocs.io/en/latest/getting_started/prerequisites.html#prerequisites",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 10
+      },
+      "revId": "f6dc79e07ce6c7bc1527f195a730e31dfa07ad8d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ac42116_455942ec",
+        "filename": "docs/getting_started/requirements.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-11-28T09:42:22Z",
+      "side": 1,
+      "message": "Actually we\u0027ve upgraded to 8.3. It looks like we forgot to update the TF-A Tests documentation at the time. Could we align this with TF-A (https://trustedfirmware-a.readthedocs.io/en/latest/getting_started/prerequisites.html#toolchain), i.e. something like:\n\n  TF-A Tests can be built with GCC \u003e\u003d 8.3-2019.03 (from the Arm Developer website).\n\nWe can do that in a subsequent patch, if that\u0027s more convenient.",
+      "range": {
+        "startLine": 25,
+        "startChar": 58,
+        "endLine": 26,
+        "endChar": 47
+      },
+      "revId": "f6dc79e07ce6c7bc1527f195a730e31dfa07ad8d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
