@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d76b16f5_9b4bf29b",
+        "filename": "docs/getting_started/build.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-11-28T10:07:46Z",
+      "side": 1,
+      "message": "Something else that we forgot to update in TF-A Tests doc... When we upgraded to GCC 8.3, we also switched to the baremetal toolchain for AArch32. So here, the instructions should mention arm-eabi- rather than arm-linux-gnueabihf-, just like in https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/commit/?id\u003d57b37e3717edc54194b73febfbb619d4747a9cf7\n\nAgain, this can be fixed in a subsequent patch if that\u0027s more convenient.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 74
+      },
+      "revId": "e01e8fe0714aa7b91d66a376fe806b0638c9a3f6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a716e80_a2bf34ff",
+        "filename": "docs/getting_started/build.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-11-28T10:07:46Z",
+      "side": 1,
+      "message": "Looks like we\u0027ll need to update this line when your patch (https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/2636) gets merged. Or perhaps we should refrain on providing a specific build command here and just point users to the TF-A documentation + mention that the FIP should include tftf.bin as the BL33 image and the SP package as the BL32 image...\n\nSimilarly at line 251.",
+      "range": {
+        "startLine": 269,
+        "startChar": 0,
+        "endLine": 270,
+        "endChar": 61
+      },
+      "revId": "e01e8fe0714aa7b91d66a376fe806b0638c9a3f6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
