@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d05ae073_7ace7081",
+        "filename": "docs/porting/build-flags.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-11-28T12:02:06Z",
+      "side": 1,
+      "message": "I like the introductory paragraph that\u0027s in the TF-A version of this file [1]. Could we add something along these lines here as well?\n\n There are some build flags which can be defined by the platform to control inclusion\n or exclusion of certain tests. These flags need to be defined in the platform makefile\n which will get included by the build system.\n\n[1] https://trustedfirmware-a.readthedocs.io/en/latest/getting_started/porting-guide.html#build-flags",
+      "revId": "5c9c54f52f2d863a65356c2bcf3c8caef545f9f2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
