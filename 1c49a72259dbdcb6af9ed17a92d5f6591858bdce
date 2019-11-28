@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dd993d15_d72bcf1c",
+        "filename": "docs/about/maintainers.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2019-11-28T12:09:55Z",
+      "side": 1,
+      "message": "Some people are missing from this list. The complete list corresponds to this Gerrit group: https://review.trustedfirmware.org/admin/groups/4,members\n\nI wonder whether we should just provide this link here. This would avoid the need to maintain this list in sync with Gerrit permissions.",
+      "revId": "1c49a72259dbdcb6af9ed17a92d5f6591858bdce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
