@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b7d1ca7d_727ee68c",
+        "filename": "include/lib/tftf_lib.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2019-11-29T11:59:09Z",
+      "side": 1,
+      "message": "Would prefer to a single signature, but it is not too bad as this is an internal function",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 6
+      },
+      "revId": "0f305470237c19a73979d558e740fb90f8449a59",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
