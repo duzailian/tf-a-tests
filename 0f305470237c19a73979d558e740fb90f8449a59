@@ -1,0 +1,11 @@
+Code-Review+1: Deepika Bhavnani <deepika.bhavnani@arm.com>
+Code-Review+1: Kis Imre
+Allow-CI+2: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Verified+2: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Code-Review+2: Soby Mathew <soby.mathew@arm.com>
+IP-Review+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Fri, 29 Nov 2019 11:59:13 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/2407
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
