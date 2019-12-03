@@ -16,6 +16,24 @@
       "revId": "c783c0b82c4803fd666c3e02c1250d8aeca9e378",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e1292d51_0ac9c808",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2019-12-03T17:38:03Z",
+      "side": 1,
+      "message": "You are right. In tftf_lib.h header file, the return values are of type \"uregister_t\" which is unsigned long. So I used %lx. Should I do something like this? \n#ifdef AARCH64\n   %llx\n#else\n   %lx\n#endif",
+      "parentUuid": "108b1093_32bab3e6",
+      "revId": "c783c0b82c4803fd666c3e02c1250d8aeca9e378",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
