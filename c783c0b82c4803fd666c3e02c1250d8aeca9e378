@@ -34,6 +34,24 @@
       "revId": "c783c0b82c4803fd666c3e02c1250d8aeca9e378",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b442d82f_9ad453d6",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000274
+      },
+      "writtenOn": "2019-12-04T14:12:51Z",
+      "side": 1,
+      "message": "I think it is fine as it is.\n\nThe libc headers were refactored to define \"uregister_t\" as \"unsigned long\" on both architectures precisely to allow us to print such values as %lx, without having to litter the code with ifdefs.",
+      "parentUuid": "e1292d51_0ac9c808",
+      "revId": "c783c0b82c4803fd666c3e02c1250d8aeca9e378",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
