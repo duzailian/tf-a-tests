@@ -1,0 +1,10 @@
+Allow-CI+2: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Verified+2: TrustedFirmware Code Review
+Code-Review+1: Bence Szépkúti <bence.szepkuti@arm.com>
+Code-Review+2: Mark Dykes
+IP-Review+1: Mark Dykes
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Thu, 05 Dec 2019 15:29:15 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/2585
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
