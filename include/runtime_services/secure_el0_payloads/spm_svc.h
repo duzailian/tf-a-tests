@@ -9,10 +9,10 @@
 
 #include <utils_def.h>
 
-#define SPM_VERSION_MAJOR	U(0)
+#define SPM_VERSION_MAJOR	U(1)
 #define SPM_VERSION_MAJOR_SHIFT	16
 #define SPM_VERSION_MAJOR_MASK	U(0x7FFF)
-#define SPM_VERSION_MINOR	U(1)
+#define SPM_VERSION_MINOR	U(0)
 #define SPM_VERSION_MINOR_SHIFT	0
 #define SPM_VERSION_MINOR_MASK	U(0xFFFF)
 #define SPM_VERSION_FORM(major, minor)	((major << SPM_VERSION_MAJOR_SHIFT) | (minor))
