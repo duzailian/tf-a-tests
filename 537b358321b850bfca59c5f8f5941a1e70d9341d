@@ -1,0 +1,10 @@
+Allow-CI+2: Bence Szépkúti <bence.szepkuti@arm.com>
+Code-Review+1: Petre-Ionut Tudor <petre-ionut.tudor@arm.com>
+IP-Review+1: Petre-Ionut Tudor <petre-ionut.tudor@arm.com>
+Verified+2: Bence Szépkúti <bence.szepkuti@arm.com>
+Code-Review+2: György Szing <gyorgy.szing@arm.com>
+Submitted-by: György Szing <gyorgy.szing@arm.com>
+Submitted-at: Fri, 13 Dec 2019 12:26:03 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/2682
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
