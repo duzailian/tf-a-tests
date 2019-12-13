@@ -22,6 +22,30 @@
       "revId": "537b358321b850bfca59c5f8f5941a1e70d9341d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b747e2f_7c3692ed",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000274
+      },
+      "writtenOn": "2019-12-13T12:23:03Z",
+      "side": 1,
+      "message": "From GNU make 3.80 (released in 2002).\nI think it\u0027s old enough that this limit is irrelevant in practice.",
+      "parentUuid": "fd257f75_94ff58df",
+      "range": {
+        "startLine": 14,
+        "startChar": 41,
+        "endLine": 14,
+        "endChar": 62
+      },
+      "revId": "537b358321b850bfca59c5f8f5941a1e70d9341d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
