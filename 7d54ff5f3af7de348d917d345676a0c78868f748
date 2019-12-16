@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "01d4a6c6_33290ca3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2019-12-16T11:56:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e346976_af930875",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 33
+      },
+      "revId": "7d54ff5f3af7de348d917d345676a0c78868f748",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2161034a_30770df0",
         "filename": "drivers/io/vexpress_nor/io_vexpress_nor_hw.c",
         "patchSetId": 1
