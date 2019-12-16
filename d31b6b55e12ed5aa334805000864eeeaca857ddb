@@ -1,0 +1,10 @@
+Code-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+IP-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Allow-CI+2: Javier Almansa Sobrino <javier.almansasobrino@arm.com>
+Verified+2: TrustedFirmware Code Review
+Code-Review+2: Mark Dykes
+Submitted-by: Mark Dykes
+Submitted-at: Mon, 16 Dec 2019 16:30:12 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/2820
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
