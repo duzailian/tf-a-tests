@@ -22,6 +22,29 @@
       "revId": "7d54ff5f3af7de348d917d345676a0c78868f748",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2161034a_30770df0",
+        "filename": "drivers/io/vexpress_nor/io_vexpress_nor_hw.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2019-12-16T11:46:06Z",
+      "side": 1,
+      "message": "Shall this use the __aligned macro from cdefs.h?",
+      "range": {
+        "startLine": 408,
+        "startChar": 47,
+        "endLine": 408,
+        "endChar": 70
+      },
+      "revId": "7d54ff5f3af7de348d917d345676a0c78868f748",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
