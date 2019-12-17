@@ -25,6 +25,52 @@
     },
     {
       "key": {
+        "uuid": "20cf266e_bd61897f",
+        "filename": "docs/getting_started/build.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1000159
+      },
+      "writtenOn": "2019-12-17T14:29:11Z",
+      "side": 1,
+      "message": "Missing empty line after this line.",
+      "range": {
+        "startLine": 244,
+        "startChar": 0,
+        "endLine": 244,
+        "endChar": 2
+      },
+      "revId": "e01e8fe0714aa7b91d66a376fe806b0638c9a3f6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70d89cff_5b730aaf",
+        "filename": "docs/getting_started/build.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1000159
+      },
+      "writtenOn": "2019-12-17T14:29:11Z",
+      "side": 1,
+      "message": "Missing empty line after this line.",
+      "range": {
+        "startLine": 256,
+        "startChar": 0,
+        "endLine": 256,
+        "endChar": 2
+      },
+      "revId": "e01e8fe0714aa7b91d66a376fe806b0638c9a3f6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4a716e80_a2bf34ff",
         "filename": "docs/getting_started/build.rst",
         "patchSetId": 1
@@ -41,6 +87,52 @@
         "startChar": 0,
         "endLine": 270,
         "endChar": 61
+      },
+      "revId": "e01e8fe0714aa7b91d66a376fe806b0638c9a3f6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "19d24b43_aec5fe90",
+        "filename": "docs/getting_started/run.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000159
+      },
+      "writtenOn": "2019-12-17T14:29:11Z",
+      "side": 1,
+      "message": "Missing empty line after this line.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 2
+      },
+      "revId": "e01e8fe0714aa7b91d66a376fe806b0638c9a3f6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c28f4db4_1ab3a7a9",
+        "filename": "docs/getting_started/run.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000159
+      },
+      "writtenOn": "2019-12-17T14:29:11Z",
+      "side": 1,
+      "message": "Missing empty line after this line.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 2
       },
       "revId": "e01e8fe0714aa7b91d66a376fe806b0638c9a3f6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
