@@ -1,0 +1,11 @@
+Verified+2: Bence Szépkúti <bence.szepkuti@arm.com>
+Code-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+IP-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Allow-CI+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Code-Review+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Verified+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Fri, 20 Dec 2019 09:11:55 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/2864
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
