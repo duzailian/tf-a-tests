@@ -1,0 +1,10 @@
+Code-Review+1: Louis Mayencourt <louis.mayencourt@arm.com>
+IP-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Allow-CI+2: Olivier Deprez <olivier.deprez@arm.com>
+Verified+2: TrustedFirmware Code Review
+Code-Review+2: <joanna.farley@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Mon, 23 Dec 2019 14:42:49 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/2433
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
