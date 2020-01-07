@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1915602c_f62bfffc",
+        "filename": "fwu/ns_bl2u/ns_bl2u.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-01-07T14:46:02Z",
+      "side": 1,
+      "message": "Will do.",
+      "parentUuid": "c298087e_ee80b36b",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 45
+      },
+      "revId": "c2539b587e2532a74a2197ada3a929c069a90b2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c486461b_9f351365",
         "filename": "fwu/ns_bl2u/ns_bl2u.mk",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2019-12-17T09:29:35Z",
       "side": 1,
       "message": "Similarly, this is defined in the top Makefile (at line 154) for TFTF so let\u0027s move it there for NS_BL1U/NS_BL2U for consistency.",
+      "range": {
+        "startLine": 74,
+        "startChar": 8,
+        "endLine": 74,
+        "endChar": 63
+      },
+      "revId": "c2539b587e2532a74a2197ada3a929c069a90b2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a4c5ced_2f4847de",
+        "filename": "fwu/ns_bl2u/ns_bl2u.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-01-07T14:46:02Z",
+      "side": 1,
+      "message": "All definitions at lines #63-73, except FWU_BL_TEST are also defined in the top Makefile (see starting from line #150).\nWhy do you want to move only line #74?",
+      "parentUuid": "c486461b_9f351365",
       "range": {
         "startLine": 74,
         "startChar": 8,
