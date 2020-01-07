@@ -93,6 +93,30 @@
       "revId": "c2539b587e2532a74a2197ada3a929c069a90b2d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9dc561d1_36e471f6",
+        "filename": "fwu/ns_bl2u/ns_bl2u.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2020-01-07T16:32:13Z",
+      "side": 1,
+      "message": "Thanks for pointing it out. Let\u0027s leave line 74 here then.",
+      "parentUuid": "2a4c5ced_2f4847de",
+      "range": {
+        "startLine": 74,
+        "startChar": 8,
+        "endLine": 74,
+        "endChar": 63
+      },
+      "revId": "c2539b587e2532a74a2197ada3a929c069a90b2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
