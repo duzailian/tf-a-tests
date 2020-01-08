@@ -1,0 +1,9 @@
+Code-Review+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+IP-Review+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Allow-CI+2: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Verified+2: TrustedFirmware Code Review
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Wed, 08 Jan 2020 15:51:35 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/2177
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
