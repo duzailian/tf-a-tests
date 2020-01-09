@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38b50c24_05b778dd",
+        "filename": "include/lib/libc/uuid.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000262
+      },
+      "writtenOn": "2020-01-09T17:24:03Z",
+      "side": 1,
+      "message": "Static analysis may be failing due to missing license at this location",
+      "range": {
+        "startLine": 3,
+        "startChar": 22,
+        "endLine": 3,
+        "endChar": 23
+      },
+      "revId": "0e920a441914e6b0cb22a22ac4837b6a76095b5e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    }
+  ]
+}
