@@ -22,6 +22,29 @@
       "revId": "0e920a441914e6b0cb22a22ac4837b6a76095b5e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "41b6901e_1e5f06f1",
+        "filename": "include/lib/libc/uuid.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000262
+      },
+      "writtenOn": "2020-01-10T10:46:07Z",
+      "side": 1,
+      "message": "Is this still valid after these changes?",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 55
+      },
+      "revId": "0e920a441914e6b0cb22a22ac4837b6a76095b5e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
