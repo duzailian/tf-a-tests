@@ -1,0 +1,10 @@
+Allow-CI+2: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Verified+2: TrustedFirmware Code Review
+Code-Review+1: Petre-Ionut Tudor <petre-ionut.tudor@arm.com>
+Code-Review+2: Olivier Deprez <olivier.deprez@arm.com>
+IP-Review+1: Petre-Ionut Tudor <petre-ionut.tudor@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Thu, 30 Jan 2020 17:27:28 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/3327
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
