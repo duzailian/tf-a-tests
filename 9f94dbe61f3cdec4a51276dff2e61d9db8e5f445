@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9c7aa7c7_c062cf00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2020-02-10T08:17:06Z",
+      "side": 1,
+      "message": "I would add a note saying that this patch is based on patch 402b3cf8766fe2cb4ae462f7ee7761d08a1ba56c in TF-A from Julius Werner. I think it\u0027s useful information and also gives credit to the original patch author.",
+      "revId": "9f94dbe61f3cdec4a51276dff2e61d9db8e5f445",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
