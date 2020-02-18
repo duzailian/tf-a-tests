@@ -1,0 +1,13 @@
+Code-Review+1: Kis Imre
+Code-Review+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Code-Review+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Verified+2: Kis Imre
+Verified+2: TrustedFirmware Code Review
+IP-Review+1: Kis Imre
+IP-Review+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Allow-CI+2: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Tue, 18 Feb 2020 08:23:38 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/3218
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
