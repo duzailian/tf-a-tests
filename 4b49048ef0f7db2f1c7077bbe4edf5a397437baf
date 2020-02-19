@@ -1,0 +1,11 @@
+Allow-CI+1: Kis Imre
+IP-Review+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Verified+1: TrustedFirmware Code Review
+Verified+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Code-Review+1: Louis Mayencourt <louis.mayencourt@arm.com>
+Code-Review+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Wed, 19 Feb 2020 15:14:58 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/3459
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
