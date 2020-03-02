@@ -1,0 +1,10 @@
+Allow-CI+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Code-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Review+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+IP-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Verified+2: TrustedFirmware Code Review
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Mon, 02 Mar 2020 11:25:42 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/3582
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
