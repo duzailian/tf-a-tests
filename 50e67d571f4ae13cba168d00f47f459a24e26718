@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f95a8b7d_0bc28272",
+        "filename": "lib/aarch64/misc_helpers.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-03-16T23:25:51Z",
+      "side": 1,
+      "message": "nit. there is no Global Descriptor table as far as i know. It should be Global Offset Table.",
+      "revId": "50e67d571f4ae13cba168d00f47f459a24e26718",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
