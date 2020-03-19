@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8080b9b3_a7bb1b75",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-03-19T17:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8841f161_de25ebd7",
+      "range": {
+        "startLine": 157,
+        "startChar": 18,
+        "endLine": 157,
+        "endChar": 25
+      },
+      "revId": "b0d264c081014ca27cc7a8e0426c1cc056900d60",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ea42bea9_f439ffa6",
         "filename": "tftf/tests/runtime_services/secure_service/test_spci_direct_messaging.c",
         "patchSetId": 1
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "ba6ebb2c_d58a4b5f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_direct_messaging.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-03-19T17:13:18Z",
+      "side": 1,
+      "message": "It\u0027s non standard test pattern. But ok to change it to a define.",
+      "parentUuid": "ea42bea9_f439ffa6",
+      "range": {
+        "startLine": 35,
+        "startChar": 57,
+        "endLine": 35,
+        "endChar": 67
+      },
+      "revId": "b0d264c081014ca27cc7a8e0426c1cc056900d60",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c04efed0_283c5567",
         "filename": "tftf/tests/runtime_services/secure_service/test_spci_direct_messaging.c",
         "patchSetId": 1
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "6f3473f3_6e4cced1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_direct_messaging.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-03-19T17:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c04efed0_283c5567",
+      "range": {
+        "startLine": 60,
+        "startChar": 21,
+        "endLine": 60,
+        "endChar": 33
+      },
+      "revId": "b0d264c081014ca27cc7a8e0426c1cc056900d60",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8fd48e2a_71bcd558",
         "filename": "tftf/tests/runtime_services/secure_service/test_spci_direct_messaging.c",
         "patchSetId": 1
@@ -105,6 +177,30 @@
       "writtenOn": "2020-03-19T14:34:07Z",
       "side": 1,
       "message": "Can this result be changed to indicate what kind of error it is?",
+      "range": {
+        "startLine": 82,
+        "startChar": 9,
+        "endLine": 82,
+        "endChar": 25
+      },
+      "revId": "b0d264c081014ca27cc7a8e0426c1cc056900d60",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4dce7dd9_f904735b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spci_direct_messaging.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-03-19T17:13:18Z",
+      "side": 1,
+      "message": "Can you pls clarify? This error code is standard TFTF framework code (from tftf_lib.h) to indicate test failure. I\u0027m not sure we can change this.",
+      "parentUuid": "8fd48e2a_71bcd558",
       "range": {
         "startLine": 82,
         "startChar": 9,
