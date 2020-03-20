@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "b2f1069f_6e987f8e",
+        "filename": "spm/cactus/cactus-secondary.dts",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-03-20T10:29:43Z",
+      "side": 1,
+      "message": "That might be to distinguish instances of secure partitions sharing same uuid.",
+      "parentUuid": "b3e3ca7b_70004234",
+      "range": {
+        "startLine": 20,
+        "startChar": 1,
+        "endLine": 20,
+        "endChar": 9
+      },
+      "revId": "8fbd700a95acd72d14d56c39ed271cf4e353ccc0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1fee21b5_b616b1d6",
         "filename": "tools/generate_json/generate_json.sh",
         "patchSetId": 2
