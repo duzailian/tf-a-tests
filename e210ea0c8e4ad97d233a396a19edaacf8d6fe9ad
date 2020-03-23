@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "26050f91_881a0908",
+        "filename": "spm/cactus/cactus.dts",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2020-03-23T11:08:12Z",
+      "side": 1,
+      "message": "I don\u0027t think we need this anymore.\nThis property was used when rx_tx info where defined as memory-regions. We now have a specific property+compatible string to identify the rx_tx buffers.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 18
+      },
+      "revId": "e210ea0c8e4ad97d233a396a19edaacf8d6fe9ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae6d77b2_1aa61d37",
+        "filename": "spm/cactus/cactus.dts",
+        "patchSetId": 8
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2020-03-23T11:08:12Z",
+      "side": 1,
+      "message": "this is defined as \"memory-regions\" in the binding document. However, we are not consistent as we define \"dev-regions\" instead of \"device-regions\".\nI will prefer to use the full name. If you agree I will update the binding document.",
+      "range": {
+        "startLine": 48,
+        "startChar": 1,
+        "endLine": 48,
+        "endChar": 4
+      },
+      "revId": "e210ea0c8e4ad97d233a396a19edaacf8d6fe9ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "109a1d45_a7330d4b",
+        "filename": "spm/cactus/cactus.dts",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2020-03-23T11:08:12Z",
+      "side": 1,
+      "message": "pages-count",
+      "range": {
+        "startLine": 52,
+        "startChar": 3,
+        "endLine": 52,
+        "endChar": 12
+      },
+      "revId": "e210ea0c8e4ad97d233a396a19edaacf8d6fe9ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c3beddc_c762ea9e",
+        "filename": "spm/cactus/cactus.dts",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2020-03-23T11:08:12Z",
+      "side": 1,
+      "message": "you are missing the \"attributes\" property, which is mandatory",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 12
+      },
+      "revId": "e210ea0c8e4ad97d233a396a19edaacf8d6fe9ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d240783_573eb071",
+        "filename": "spm/cactus/cactus.dts",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2020-03-23T11:08:12Z",
+      "side": 1,
+      "message": "I don\u0027t think this is still specify",
+      "range": {
+        "startLine": 66,
+        "startChar": 3,
+        "endLine": 66,
+        "endChar": 42
+      },
+      "revId": "e210ea0c8e4ad97d233a396a19edaacf8d6fe9ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
