@@ -22,6 +22,30 @@
       "revId": "26551ae8d999cfdb6b8d9f4c8311383cfbfc5aaf",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8fe527d4_67807a56",
+        "filename": "spm/cactus/cactus.ld.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-03-23T09:29:29Z",
+      "side": 1,
+      "message": "I think \u0027so\u0027 is the right wording (copy pasted from https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/bl31/bl31.ld.S#n83 actually).\nIt may be rephrased: \"GOT is an array of 64 bits pointers. We must preserve natural 8-bytes alignment for the start address of this array\"",
+      "parentUuid": "cf0a98c7_5114c12c",
+      "range": {
+        "startLine": 39,
+        "startChar": 49,
+        "endLine": 39,
+        "endChar": 51
+      },
+      "revId": "26551ae8d999cfdb6b8d9f4c8311383cfbfc5aaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
