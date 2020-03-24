@@ -96,6 +96,23 @@
     },
     {
       "key": {
+        "uuid": "fae3e09e_5da9942f",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-03-24T16:03:42Z",
+      "side": 1,
+      "message": "-2019",
+      "revId": "cd367a81c2a73c43abbe29dfb4daa0de82ec1497",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "13c3482a_4c9aef3b",
         "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
         "patchSetId": 1
