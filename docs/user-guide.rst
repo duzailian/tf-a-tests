@@ -1,12 +1,7 @@
 User Guide
 ==========
 
-This document describes how to build the Trusted Firmware-A Tests (TF-A Tests)
-and run them on a set of platforms. It assumes that the reader has previous
-experience building and running the `Trusted Firmware-A (TF-A)`_.
 
-Host machine requirements
--------------------------
 
 The minimum recommended machine specification for building the software and
 running the `FVP models`_ is a dual-core processor running at 2GHz with 12GB of
