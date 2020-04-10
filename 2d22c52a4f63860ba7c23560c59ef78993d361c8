@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1c7931fd_902e1bf9",
+        "filename": "docs/porting/build-flags.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2020-04-10T08:32:10Z",
+      "side": 1,
+      "message": "I had left a suggestion in patch set 1. How about adding the introductory paragraph I\u0027ve mentioned there?",
+      "revId": "2d22c52a4f63860ba7c23560c59ef78993d361c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
