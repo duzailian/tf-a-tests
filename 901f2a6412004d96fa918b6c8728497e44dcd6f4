@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "24fd992c_e71db760",
+        "filename": "docs/getting_started/requirements.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2020-04-14T13:49:51Z",
+      "side": 1,
+      "message": "Fixing",
+      "parentUuid": "134aa41a_2202df10",
+      "range": {
+        "startLine": 4,
+        "startChar": 50,
+        "endLine": 4,
+        "endChar": 60
+      },
+      "revId": "901f2a6412004d96fa918b6c8728497e44dcd6f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2afc4513_fb98ad3f",
         "filename": "docs/getting_started/requirements.rst",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2020-04-10T08:11:05Z",
       "side": 1,
       "message": "Could you please truncate these lines to 80 columns?",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 204
+      },
+      "revId": "901f2a6412004d96fa918b6c8728497e44dcd6f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88a23cff_08b0fbfc",
+        "filename": "docs/getting_started/requirements.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2020-04-14T13:49:51Z",
+      "side": 1,
+      "message": "Fixing throughout this file",
+      "parentUuid": "2afc4513_fb98ad3f",
       "range": {
         "startLine": 4,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "d5397d8d_90fc26aa",
+        "filename": "docs/getting_started/requirements.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2020-04-14T13:49:51Z",
+      "side": 1,
+      "message": "Fixing",
+      "parentUuid": "936e6752_1e72eaf4",
+      "range": {
+        "startLine": 9,
+        "startChar": 10,
+        "endLine": 9,
+        "endChar": 25
+      },
+      "revId": "901f2a6412004d96fa918b6c8728497e44dcd6f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d6e46bd3_9f2427f7",
         "filename": "docs/getting_started/requirements.rst",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2020-04-10T08:11:05Z",
       "side": 1,
       "message": "Have we verified that it can be built on a Windows machine?",
+      "range": {
+        "startLine": 11,
+        "startChar": 50,
+        "endLine": 11,
+        "endChar": 76
+      },
+      "revId": "901f2a6412004d96fa918b6c8728497e44dcd6f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bacd835a_ba612aaf",
+        "filename": "docs/getting_started/requirements.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2020-04-14T13:49:51Z",
+      "side": 1,
+      "message": "Copied from TF-A docs. Removing as I can\u0027t test this",
+      "parentUuid": "d6e46bd3_9f2427f7",
       "range": {
         "startLine": 11,
         "startChar": 50,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "d5e13041_8749463d",
+        "filename": "docs/getting_started/requirements.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2020-04-14T13:49:51Z",
+      "side": 1,
+      "message": "Rewording to match TF-A",
+      "parentUuid": "418d1fd8_c4d4ecbb",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 10
+      },
+      "revId": "901f2a6412004d96fa918b6c8728497e44dcd6f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "842f69fd_3a8bcb2d",
         "filename": "docs/getting_started/requirements.rst",
         "patchSetId": 2
@@ -128,6 +248,30 @@
       "writtenOn": "2020-04-10T08:11:05Z",
       "side": 1,
       "message": "These links provide the Windows (mingw-w64-i686) hosted cross compilers, which might not necessarily be what the user wants. Suggest pointing to the downloads page (https://developer.arm.com/open-source/gnu-toolchain/gnu-a/downloads) instead and let the user choose its version. That\u0027s what we\u0027ve done in the TF-A doc, see https://trustedfirmware-a.readthedocs.io/en/latest/getting_started/prerequisites.html#toolchain .",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 264
+      },
+      "revId": "901f2a6412004d96fa918b6c8728497e44dcd6f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae63af6a_9dfebd4e",
+        "filename": "docs/getting_started/requirements.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2020-04-14T13:49:51Z",
+      "side": 1,
+      "message": "Simplifying and fixing links",
+      "parentUuid": "842f69fd_3a8bcb2d",
       "range": {
         "startLine": 42,
         "startChar": 0,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "004df7bb_9245d9ba",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2020-04-14T13:49:51Z",
+      "side": 1,
+      "message": "Re-removing",
+      "parentUuid": "1ad22879_8eaee3e7",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 54
+      },
+      "revId": "901f2a6412004d96fa918b6c8728497e44dcd6f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2eeec634_68a01216",
         "filename": "docs/user-guide.rst",
         "patchSetId": 2
@@ -174,6 +342,30 @@
       "writtenOn": "2020-04-10T08:11:05Z",
       "side": 1,
       "message": "It looks like these links got mistakenly reintroduced between patch sets 1 and 2.",
+      "range": {
+        "startLine": 578,
+        "startChar": 0,
+        "endLine": 583,
+        "endChar": 158
+      },
+      "revId": "901f2a6412004d96fa918b6c8728497e44dcd6f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9da3422d_bf0f5c25",
+        "filename": "docs/user-guide.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2020-04-14T13:49:51Z",
+      "side": 1,
+      "message": "Re-removing",
+      "parentUuid": "2eeec634_68a01216",
       "range": {
         "startLine": 578,
         "startChar": 0,
