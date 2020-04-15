@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "eeee84b8_852f1fa4",
+        "filename": "docs/getting_started/build.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2020-04-15T07:44:00Z",
+      "side": 1,
+      "message": "\u003e Is there a specific doc you want linked?\n\nI was thinking about https://trustedfirmware-a.readthedocs.io/en/latest/components/secure-partition-manager-design.html#building-tf-a-with-secure-partition-support .",
+      "parentUuid": "c5fcc2b1_04b9669e",
+      "range": {
+        "startLine": 251,
+        "startChar": 0,
+        "endLine": 253,
+        "endChar": 58
+      },
+      "revId": "a4b7c7c21ee4a906c946407605e7e956117495bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3fa10b23_b4bc4b60",
         "filename": "docs/getting_started/build.rst",
         "patchSetId": 2
