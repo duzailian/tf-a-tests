@@ -194,6 +194,11 @@
 #define PARANGE_0101	U(48)
 #define PARANGE_0110	U(52)
 
+#define ID_AA64MMFR0_EL1_FGT_SHIFT		U(56)
+#define ID_AA64MMFR0_EL1_FGT_MASK		ULL(0xf)
+#define ID_AA64MMFR0_EL1_FGT_NOT_SUPPORTED 	ULL(0x0)
+#define ID_AA64MMFR0_EL1_FGT_SUPPORTED 	ULL(0x1)
+
 #define ID_AA64MMFR0_EL1_TGRAN4_SHIFT		U(28)
 #define ID_AA64MMFR0_EL1_TGRAN4_MASK		ULL(0xf)
 #define ID_AA64MMFR0_EL1_TGRAN4_SUPPORTED	ULL(0x0)
@@ -920,5 +925,16 @@
 #define TFSR_EL1		S3_0_C5_C6_0
 #define RGSR_EL1		S3_0_C1_C0_5
 #define GCR_EL1			S3_0_C1_C0_6
+
+/*******************************************************************************
+ * Armv8.6 - Fine Grained Virtualization Traps Registers
+ ******************************************************************************/
+#define HFGRTR_EL2  S3_4_C1_C1_4
+#define HFGWTR_EL2  S3_4_C1_C1_5
+#define HFGITR_EL2  S3_4_C1_C1_6
+#define HDFGRTR_EL2 S3_4_C3_C1_4
+#define HDFGWTR_EL2 S3_4_C3_C1_5
+#define HAFGRTR_EL2 S3_4_C3_C1_6
+
 
 #endif /* ARCH_H */
