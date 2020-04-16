@@ -483,6 +483,9 @@ DEFINE_RENAME_SYSREG_RW_FUNCS(hdfgrtr_el2, HDFGRTR_EL2)
 DEFINE_RENAME_SYSREG_RW_FUNCS(hdfgwtr_el2, HDFGWTR_EL2)
 DEFINE_RENAME_SYSREG_RW_FUNCS(hafgrtr_el2, HAFGRTR_EL2)
 
+/* Armv8.6 Enhanced Counter Virtualization Registers */
+DEFINE_RENAME_SYSREG_RW_FUNCS(cntpoff_el2,  CNTPOFF_EL2)
+
 #define IS_IN_EL(x) \
 	(GET_EL(read_CurrentEl()) == MODE_EL##x)
 
