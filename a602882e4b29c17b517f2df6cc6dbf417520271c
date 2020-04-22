@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "65bef821_eb4575c0",
+        "filename": "spm/cactus/spci_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000340
+      },
+      "writtenOn": "2020-04-22T21:29:38Z",
+      "side": 1,
+      "message": "Value x in the macro expansion should be surrounded by parenthesis.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 39
+      },
+      "revId": "a602882e4b29c17b517f2df6cc6dbf417520271c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
