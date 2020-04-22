@@ -1,0 +1,10 @@
+IP-Review+1: <joanna.farley@arm.com>
+IP-Review+1: Jimmy Brisson <jimmy.brisson@arm.com>
+Code-Review+1: Jimmy Brisson <jimmy.brisson@arm.com>
+Code-Review+2: <joanna.farley@arm.com>
+Verified+2: <joanna.farley@arm.com>
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Wed, 22 Apr 2020 17:42:09 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/3963
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
