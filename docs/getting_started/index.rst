@@ -5,6 +5,7 @@ Getting Started
    :maxdepth: 1
 
    requirements
+   docs-build
    obtain
    build
    build-options
