@@ -209,6 +209,12 @@
 #define ID_AA64MMFR0_EL1_TGRAN16_SUPPORTED	ULL(0x1)
 #define ID_AA64MMFR0_EL1_TGRAN16_NOT_SUPPORTED	ULL(0x0)
 
+/* ID_AA64MMFR1_EL1 definitions */
+#define ID_AA64MMFR1_EL1_TWEDE_SHIFT		U(32)
+#define ID_AA64MMFR1_EL1_TWEDE_MASK		ULL(0xf)
+#define ID_AA64MMFR1_EL1_TWEDE_SUPPORTED	ULL(0x1)
+#define ID_AA64MMFR1_EL1_TWEDE_NOT_SUPPORTED	ULL(0x0)
+
 /* ID_AA64MMFR2_EL1 definitions */
 #define ID_AA64MMFR2_EL1		S3_0_C0_C7_2
 
@@ -277,6 +283,9 @@
 #define SCTLR_EnIB_BIT		(ULL(1) << 30)
 #define SCTLR_EnIA_BIT		(ULL(1) << 31)
 #define SCTLR_DSSBS_BIT		(ULL(1) << 44)
+#define SCTLR_TWEDEn_BIT	(ULL(1) << 45)
+#define SCTLR_TWEDEL_MASK	ULL(0xf)
+#define SCTLR_TWEDEL_SHIFT	U(46)
 #define SCTLR_RESET_VAL		SCTLR_EL3_RES1
 
 /* CPACR_El1 definitions */
@@ -287,6 +296,9 @@
 
 /* SCR definitions */
 #define SCR_RES1_BITS		((U(1) << 4) | (U(1) << 5))
+#define SCR_TWEDEL_SHIFT	U(30)
+#define SCR_TWEDEL_MASK		ULL(0xf)
+#define SCR_TWEDEn_BIT		(UL(1) << 29)
 #define SCR_ATA_BIT		(U(1) << 26)
 #define SCR_FIEN_BIT		(U(1) << 21)
 #define SCR_API_BIT		(U(1) << 17)
@@ -348,6 +360,9 @@
 #define VTTBR_BADDR_SHIFT	U(0)
 
 /* HCR definitions */
+#define HCR_TWEDEL_MASK		ULL(0xf)
+#define HCR_TWEDEL_SHIFT	U(60)
+#define HCR_TWEDEn_BIT		(ULL(1) << 59)
 #define HCR_API_BIT		(ULL(1) << 41)
 #define HCR_APK_BIT		(ULL(1) << 40)
 #define HCR_TGE_BIT		(ULL(1) << 27)

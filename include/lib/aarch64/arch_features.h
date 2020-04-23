@@ -74,4 +74,10 @@ static inline uint32_t arch_get_debug_version(void)
 		ID_AA64DFR0_DEBUG_SHIFT);
 }
 
+static inline unsigned int get_armv8_6_twede_support(void)
+{
+	return ((read_id_aa64mmfr1_el1() >> ID_AA64MMFR1_EL1_TWEDE_SHIFT) &
+		ID_AA64MMFR1_EL1_TWEDE_MASK);
+}
+
 #endif /* ARCH_FEATURES_H */
