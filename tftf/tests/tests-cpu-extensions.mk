@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018-2019, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2020, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -12,4 +12,5 @@ TESTS_SOURCES	+=	$(addprefix tftf/tests/,			\
 	runtime_services/arm_arch_svc/smccc_arch_workaround_1.c		\
 	runtime_services/arm_arch_svc/smccc_arch_workaround_2.c		\
 	extensions/pauth/test_pauth.c					\
+	extensions/twed/test_twed.c \
 )
