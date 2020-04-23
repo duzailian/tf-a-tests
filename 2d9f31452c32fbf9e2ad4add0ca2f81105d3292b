@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e9094ed0_fb391f37",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-04-23T17:06:15Z",
+      "side": 1,
+      "message": "nit typo!",
+      "range": {
+        "startLine": 15,
+        "startChar": 27,
+        "endLine": 15,
+        "endChar": 37
+      },
+      "revId": "2d9f31452c32fbf9e2ad4add0ca2f81105d3292b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
