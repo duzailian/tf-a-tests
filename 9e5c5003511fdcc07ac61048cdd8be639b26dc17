@@ -1,0 +1,316 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "51f2225f_fcb923dd",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "-2020",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9302a3e_6d3b6c64",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "change to is_armv8_6_twede_present()",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fda46fc_7cca5081",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "2020",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d1b72e0_0449e20a",
+        "filename": "tftf/tests/extensions/twede/test_twede.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "2020",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65d0ee62_5d8bd619",
+        "filename": "tftf/tests/extensions/twede/test_twede.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "remove \"\u003d TEST_RESULT_SUCCESS\"",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3348cc6a_742221e1",
+        "filename": "tftf/tests/extensions/twede/test_twede.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "{ must be on the same line",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "542465af_d38f051b",
+        "filename": "tftf/tests/extensions/twede/test_twede.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "0U",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4316fb89_0c95f25b",
+        "filename": "tftf/tests/extensions/twede/test_twede.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "0U here and for all other cases",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ecdcf5cf_b1ec4595",
+        "filename": "tftf/tests/extensions/twede/test_twede.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "add empty line before if here and for all other cases.",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e265b839_a7ed04b8",
+        "filename": "tftf/tests/extensions/twede/test_twede.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "+ empty line",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb25931f_b58b4db8",
+        "filename": "tftf/tests/extensions/twede/test_twede.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "you already have reg_original",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe443792_8ad77b44",
+        "filename": "tftf/tests/extensions/twede/test_twede.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "+ new line",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "244b6620_2527adfd",
+        "filename": "tftf/tests/extensions/twede/test_twede.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "this line is longer than 80 characters",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0cd6521_c74e2f40",
+        "filename": "tftf/tests/extensions/twede/test_twede.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "use reg_original you already have",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a2eb3e5_bdd6dfe7",
+        "filename": "tftf/tests/extensions/twede/test_twede.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "\u003e 80",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "373f1688_a7a59c2a",
+        "filename": "tftf/tests/extensions/twede/test_twede.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "return TEST_RESULT_SUCCESS;",
+      "range": {
+        "startLine": 122,
+        "startChar": 1,
+        "endLine": 122,
+        "endChar": 8
+      },
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35274d93_5d7d67bc",
+        "filename": "tftf/tests/tests-cpu-extensions.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "2020",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb67440c_ab64c71f",
+        "filename": "tftf/tests/tests-cpu-extensions.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-24T12:01:07Z",
+      "side": 1,
+      "message": "2020",
+      "revId": "9e5c5003511fdcc07ac61048cdd8be639b26dc17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
