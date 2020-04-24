@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "62891607_e5e3c0a3",
+        "filename": ".editorconfig",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-04-24T22:52:44Z",
+      "side": 1,
+      "message": "nit: It should be TF-A tests",
+      "revId": "e94778a378de2f0181ca6896a14c1f8b9ddc41d6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
