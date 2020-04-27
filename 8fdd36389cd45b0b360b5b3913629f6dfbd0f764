@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "670027e7_d654f398",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-04-27T10:12:06Z",
+      "side": 1,
+      "message": "can we not use space to align?",
+      "parentUuid": "58c36161_66ba2b45",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 19
+      },
+      "revId": "8fdd36389cd45b0b360b5b3913629f6dfbd0f764",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d9858dda_be04e1d7",
         "filename": "spm/cactus/spci_helpers.h",
         "patchSetId": 5
@@ -119,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "4133d79e_3501b4f0",
+        "filename": "spm/cactus/spci_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-04-27T10:12:06Z",
+      "side": 1,
+      "message": "Yes, looks like its smaller operation so can be handled inside same function.\nI thought of moving it to function  because it seems like repeated operation in every function",
+      "parentUuid": "09005ed4_5ddcbfba",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 3
+      },
+      "revId": "8fdd36389cd45b0b360b5b3913629f6dfbd0f764",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4785eb4e_f6c19889",
         "filename": "spm/cactus/spci_helpers.h",
         "patchSetId": 5
@@ -154,6 +202,30 @@
       "side": 1,
       "message": "can\u0027t be aligned fully.",
       "parentUuid": "4785eb4e_f6c19889",
+      "range": {
+        "startLine": 85,
+        "startChar": 5,
+        "endLine": 87,
+        "endChar": 1
+      },
+      "revId": "8fdd36389cd45b0b360b5b3913629f6dfbd0f764",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf6e2e0d_54183b64",
+        "filename": "spm/cactus/spci_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-04-27T10:12:06Z",
+      "side": 1,
+      "message": "Can we not use space here to do alignment?",
+      "parentUuid": "a31ea97d_c39df3d0",
       "range": {
         "startLine": 85,
         "startChar": 5,
