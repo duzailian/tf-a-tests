@@ -1,0 +1,9 @@
+Code-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Code-Review+2: Olivier Deprez <olivier.deprez@arm.com>
+IP-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Verified+2: Manish Pandey <manish.pandey2@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Mon, 27 Apr 2020 11:58:07 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/3925
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
