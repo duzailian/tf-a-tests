@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "5a87a81f_bd77f648",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-04-27T10:14:57Z",
+      "side": 1,
+      "message": "Coding guidelines: No spaces before.",
+      "parentUuid": "670027e7_d654f398",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 19
+      },
+      "revId": "8fdd36389cd45b0b360b5b3913629f6dfbd0f764",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d9858dda_be04e1d7",
         "filename": "spm/cactus/spci_helpers.h",
         "patchSetId": 5
@@ -167,6 +191,30 @@
     },
     {
       "key": {
+        "uuid": "c30670e0_7103582c",
+        "filename": "spm/cactus/spci_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-04-27T10:14:57Z",
+      "side": 1,
+      "message": "Actully all are not same in following functions.",
+      "parentUuid": "4133d79e_3501b4f0",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 3
+      },
+      "revId": "8fdd36389cd45b0b360b5b3913629f6dfbd0f764",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4785eb4e_f6c19889",
         "filename": "spm/cactus/spci_helpers.h",
         "patchSetId": 5
@@ -226,6 +274,30 @@
       "side": 1,
       "message": "Can we not use space here to do alignment?",
       "parentUuid": "a31ea97d_c39df3d0",
+      "range": {
+        "startLine": 85,
+        "startChar": 5,
+        "endLine": 87,
+        "endChar": 1
+      },
+      "revId": "8fdd36389cd45b0b360b5b3913629f6dfbd0f764",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2fcfeb7f_407098bf",
+        "filename": "spm/cactus/spci_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-04-27T10:14:57Z",
+      "side": 1,
+      "message": "ditto.",
+      "parentUuid": "cf6e2e0d_54183b64",
       "range": {
         "startLine": 85,
         "startChar": 5,
