@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "adf118e1_c5d488f4",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-04-28T10:37:43Z",
+      "side": 1,
+      "message": "neat: put !\u003d on the previous line\nreplace spaces with tab",
+      "revId": "f66c5e4df1e10fe65d143ec6c9002e18b7e2486c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
