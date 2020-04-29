@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "beeb6bcd_b8046199",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-04-29T17:03:04Z",
+      "side": 1,
+      "message": "Yes, IMO both(either fail or skip) can be valid case. \nThere will be no execution of SMCCC_ARCH_SOC_ID if it returns here itself hence actual SOC_ID SMC call never get executed and hence skipped.\n\nYes as per specification it is failure so I can change it to failure here.",
+      "parentUuid": "69a14b2e_8e44bb7b",
+      "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0ad3c12f_535b7453",
         "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
         "patchSetId": 1
@@ -149,6 +167,24 @@
       "side": 1,
       "message": "These two are 2 different smc calls since get_soc_id_param() is a wrapper around smc call. Even though the FID is same for the two calls, they have different values in arg1 parameter. I also believe this will simplify the test. If you insist the test is good this way, I am okay with that as well.",
       "parentUuid": "a5e0e6c8_1c5f6df2",
+      "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88d2fecb_5e58343c",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-04-29T17:03:04Z",
+      "side": 1,
+      "message": "Yes agree but test case check for both valid parameters(arg1) and also proceed further even after failure. \nI mean, even after get_soc_id_param(SMC_GET_SOC_REVISION) returns fails, test proceed further and call get_soc_id_param(SMC_GET_SOC_VERSION) to grab version.",
+      "parentUuid": "525f9782_14b95962",
       "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
