@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "95b48c07_23161a56",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-04-29T16:13:02Z",
+      "side": 1,
+      "message": "If the execution reached here, the SMCCC version is at least 1.2 and it is mandatory that SMCCC_ARCH_SOC_ID must be implemented on version \u003e\u003d1.2. Hence , this must be considered as FAIL rather than SKIP.",
+      "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0ad3c12f_535b7453",
         "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
         "patchSetId": 1
@@ -19,6 +36,23 @@
         "endLine": 61,
         "endChar": 25
       },
+      "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af34189a_d26839b4",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-04-29T16:13:02Z",
+      "side": 1,
+      "message": "Please split the test into 2 parts: 1) get_soc_id_param(SMC_GET_SOC_REVISION) and 2) get_soc_id_param(SMC_GET_SOC_VERSION) \nAs soon as ret0 \u003d\u003d SMC_ARCH_CALL_INVAL_PARAM in each case, you can return the test as FAIL.",
       "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
