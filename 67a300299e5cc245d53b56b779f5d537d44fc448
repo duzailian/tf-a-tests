@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5fd0c4f7_e4d44c2d",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-04-29T16:30:38Z",
+      "side": 1,
+      "message": "I didn\u0027t get why it should be reported as failure when we know that SMCCC_ARCH_SOC_ID is implemented on SMCCC version \u003e 1.2 only. Skip this test with message still helps right.",
+      "parentUuid": "95b48c07_23161a56",
+      "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0ad3c12f_535b7453",
         "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
         "patchSetId": 1
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "564759c5_a61c24dc",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-04-29T16:30:38Z",
+      "side": 1,
+      "message": "I will update it with SMC_OK response",
+      "parentUuid": "0ad3c12f_535b7453",
+      "range": {
+        "startLine": 61,
+        "startChar": 24,
+        "endLine": 61,
+        "endChar": 25
+      },
+      "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "af34189a_d26839b4",
         "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
         "patchSetId": 1
@@ -53,6 +95,24 @@
       "writtenOn": "2020-04-29T16:13:02Z",
       "side": 1,
       "message": "Please split the test into 2 parts: 1) get_soc_id_param(SMC_GET_SOC_REVISION) and 2) get_soc_id_param(SMC_GET_SOC_VERSION) \nAs soon as ret0 \u003d\u003d SMC_ARCH_CALL_INVAL_PARAM in each case, you can return the test as FAIL.",
+      "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5e0e6c8_1c5f6df2",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-04-29T16:30:38Z",
+      "side": 1,
+      "message": "As this is single SMC call, I didn\u0027t split this test. \nAlso failure check is performed at the end to report the failure. Failure can be easily identified using the messages to user.",
+      "parentUuid": "af34189a_d26839b4",
       "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
