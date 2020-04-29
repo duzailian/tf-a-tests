@@ -223,6 +223,24 @@
       "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27475421_d2178880",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-04-29T17:16:01Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "88d2fecb_5e58343c",
+      "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
