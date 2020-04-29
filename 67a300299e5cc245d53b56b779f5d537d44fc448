@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "69a14b2e_8e44bb7b",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-04-29T16:47:23Z",
+      "side": 1,
+      "message": "the return value must be SMC_OK. Any other value should be reported as fail right?",
+      "parentUuid": "5fd0c4f7_e4d44c2d",
+      "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0ad3c12f_535b7453",
         "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
         "patchSetId": 1
@@ -113,6 +131,24 @@
       "side": 1,
       "message": "As this is single SMC call, I didn\u0027t split this test. \nAlso failure check is performed at the end to report the failure. Failure can be easily identified using the messages to user.",
       "parentUuid": "af34189a_d26839b4",
+      "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "525f9782_14b95962",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-04-29T16:47:23Z",
+      "side": 1,
+      "message": "These two are 2 different smc calls since get_soc_id_param() is a wrapper around smc call. Even though the FID is same for the two calls, they have different values in arg1 parameter. I also believe this will simplify the test. If you insist the test is good this way, I am okay with that as well.",
+      "parentUuid": "a5e0e6c8_1c5f6df2",
       "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
