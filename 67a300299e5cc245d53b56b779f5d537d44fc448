@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "713b0781_72361a69",
+        "filename": "include/runtime_services/smccc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-04-29T17:10:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "469b2424_39bf865b",
+      "revId": "67a300299e5cc245d53b56b779f5d537d44fc448",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "95b48c07_23161a56",
         "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
         "patchSetId": 1
