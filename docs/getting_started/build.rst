@@ -209,9 +209,9 @@ SPM test images
 This repository contains 3 Secure Partitions that exercise the Secure Partition
 Manager (SPM) in TF-A [#]_. Cactus-MM is designed to test the SPM
 implementation based on the `ARM Management Mode Interface`_ (MM), while Cactus
-and Ivy can test the SPM implementation based on the SPCI and SPRT draft
-specifications. Note that it isn't possible to use both communication mechanisms
-at once: If Cactus-MM is used Cactus and Ivy can't be used.
+and Ivy can test the SPM implementation based on the PSA FF-A v1.0. Ivy can test
+SPRT draft specifications. Note that it isn't possible to use both communication
+mechanisms at once: If Cactus-MM is used Cactus and Ivy can't be used.
 
 They run in Secure-EL0 and perform the following tasks:
 
@@ -223,7 +223,7 @@ They run in Secure-EL0 and perform the following tasks:
    permissions on behalf of the Secure Partitions for memory regions the latter
    owns.
 
--  Test communication with SPM through either MM, or both SPCI and SPRT.
+-  Test communication with SPM through either MM, or both PSA FF-A and SPRT.
 
 They are only supported on AArch64 FVP. They can be built independently of the
 other test images using the following command:
@@ -234,7 +234,7 @@ other test images using the following command:
 
 In the TF-A boot flow, the partitions replace the ``BL32`` image and should be
 injected in the FIP image. To test SPM-MM with Cactus-MM, it is enough to use
-``cactus_mm.bin`` as BL32 image. To test the SPM based on SPCI and SPRT, it is
+``cactus_mm.bin`` as BL32 image. To test the SPM based on PSA FFA and SPRT, it is
 needed to use ``sp_tool`` to build a Secure Partition package that can be used
 as BL32 image.
 
@@ -250,7 +250,7 @@ commands can be used to build the tests:
 
     make PLAT=fvp TESTS=spm-mm tftf cactus_mm
 
-For SPM based on SPCI and SPRT, build TF-A following the `TF-A SPM User Guide`_
+For SPM based on PSA FFA and SPRT, build TF-A following the `TF-A SPM User Guide`_
 and the following commands can be used to build the tests:
 
 ::
