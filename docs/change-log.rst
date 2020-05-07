@@ -47,7 +47,7 @@ TFTF
 
    -  Add new debug filesystem (debugfs) test.
 
-   -  Add a SPCI direct messaging test targeting bare-metal cactus SP.
+   -  Add a FFA direct messaging test targeting bare-metal cactus SP.
 
 
 Secure partitions
@@ -59,7 +59,7 @@ Cactus
 -  Several build improvements and symbol relocation fixup to make it position
    independent executable.
 
--  Update of sample manifest to SPCI Beta1 format.
+-  Update of sample manifest to FFA Beta1 format.
 
 -  Support for generating JSON file as required by TF-A.
 
@@ -198,7 +198,7 @@ Version 2.1
 New features
 ^^^^^^^^^^^^
 
--  Add initial support for testing Secure Partition Client Interface (SPCI)
+-  Add initial support for testing Secure Partition Client Interface (FFA)
    and Secure Partition Run-Time (SPRT) standards.
 
    Exercise the full communication flow throughout the software stack, involving:
@@ -230,7 +230,7 @@ TFTF
 
 -  New tests:
 
-   -  SPM tests for exercising communication through either the MM or SPCI/SPRT
+   -  SPM tests for exercising communication through either the MM or FFA/SPRT
       interfaces.
 
    -  SMC calling convention tests.
@@ -263,7 +263,7 @@ Cactus
 This is a new test secure partition (as the former "*Cactus*" has been renamed
 into "*Cactus-MM*", see above).
 
-Unlike *Cactus-MM*, this image tests the SPM implementation based on the SPCI
+Unlike *Cactus-MM*, this image tests the SPM implementation based on the FFA
 and SPRT draft specifications.
 
 It runs in Secure-EL0 and performs the following tasks:
@@ -274,7 +274,7 @@ It runs in Secure-EL0 and performs the following tasks:
 -  Test that TF-A accepts to change data access permissions and instruction
    permissions on behalf of Cactus for memory regions the latter owns.
 
--  Test communication with SPM through SPCI/SPRT interfaces.
+-  Test communication with SPM through FFA/SPRT interfaces.
 
 Ivy
 '''
