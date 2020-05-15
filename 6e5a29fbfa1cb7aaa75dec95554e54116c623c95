@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b103bb38_167fb24c",
+        "filename": "spm/cactus/cactus.dts",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-05-15T15:05:41Z",
+      "side": 1,
+      "message": "nit: remove space",
+      "range": {
+        "startLine": 52,
+        "startChar": 12,
+        "endLine": 52,
+        "endChar": 13
+      },
+      "revId": "6e5a29fbfa1cb7aaa75dec95554e54116c623c95",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
