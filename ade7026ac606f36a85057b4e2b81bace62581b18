@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "21f67599_fa1746dc",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-05-15T15:13:38Z",
+      "side": 1,
+      "message": "Would you want to use vm_id - 1 (and vm_id below), such that there is no trick around not using the first RX/TX pair?",
+      "range": {
+        "startLine": 104,
+        "startChar": 32,
+        "endLine": 104,
+        "endChar": 38
+      },
+      "revId": "ade7026ac606f36a85057b4e2b81bace62581b18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
