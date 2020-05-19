@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "31185c9a_05d380d5",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-05-19T16:01:35Z",
+      "side": 1,
+      "message": "can be moved after if statement ? same as cactus_print_memory_layout",
+      "range": {
+        "startLine": 175,
+        "startChar": 2,
+        "endLine": 175,
+        "endChar": 33
+      },
+      "revId": "aae9ce819d478f26fb38146b7cae41398281c4a8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
