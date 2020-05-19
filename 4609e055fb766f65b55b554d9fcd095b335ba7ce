@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a62fa3e6_005abfcf",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-05-19T11:57:58Z",
+      "side": 1,
+      "message": "Shall we better separate the two regions with RX buffer mapped as RO (of size PAGE_SIZE), and TX buffer mapped as RW (of size PAGE_SIZE)?",
+      "revId": "4609e055fb766f65b55b554d9fcd095b335ba7ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de678712_2c2a93f2",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-05-19T11:57:58Z",
+      "side": 1,
+      "message": "You may move this after the if statement and remove from line 181",
+      "range": {
+        "startLine": 167,
+        "startChar": 2,
+        "endLine": 167,
+        "endChar": 37
+      },
+      "revId": "4609e055fb766f65b55b554d9fcd095b335ba7ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08ab1276_c10cacb3",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-05-19T11:57:58Z",
+      "side": 1,
+      "message": "blank",
+      "revId": "4609e055fb766f65b55b554d9fcd095b335ba7ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
