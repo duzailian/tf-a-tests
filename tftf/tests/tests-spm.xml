@@ -19,6 +19,7 @@
               function="test_ffa_version_bigger" />
     <testcase name="Smaller FFA version than SPM"
               function="test_ffa_version_smaller" />
+
   </testsuite>
 
   <testsuite name="Secure Partition Manager"

@@ -17,7 +17,6 @@
 /*
  * Calls FFA Version ABI, and checks if the result as expected.
  */
-
 test_result_t test_ffa_version(uint32_t input_version, uint32_t expected_return)
 {
     smc_ret_values ret = ffa_version(input_version);
@@ -26,9 +25,9 @@ test_result_t test_ffa_version(uint32_t input_version, uint32_t expected_return)
 
     bool success = (spm_version == expected_return);
 
-    tftf_testcase_printf("Input Version: %x\n" \
-                         "Return: %x\n" \
-                         "Expected: %x\n",
+    tftf_testcase_printf("Input Version: 0x%x\n" \
+                         "Return: 0x%x\n" \
+                         "Expected: 0x%x\n",
                          input_version,
                          spm_version,
                          expected_return);
@@ -45,7 +44,7 @@ test_result_t test_ffa_version_equal(void)
 }
 
 /*
-* @Test_Aim@ Validate what happens when setting bit 31 in 
+* @Test_Aim@ Validate what happens when setting bit 31 in
 * 'input_version'.
 */
 test_result_t test_ffa_version_bit31(void)
