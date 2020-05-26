@@ -8,9 +8,10 @@
 #define __TEST_HELPERS_H__
 
 #include <arch_features.h>
+#include <ffa_helpers.h>
+#include <ffa_svc.h>
 #include <plat_topology.h>
 #include <psci.h>
-#include <ffa_svc.h>
 #include <tftf_lib.h>
 #include <trusted_os.h>
 #include <tsp.h>
@@ -149,10 +150,10 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 										\
 		if (version < MM_VERSION_FORM(major, minor)) {			\
 			tftf_testcase_printf("MM_VERSION returned %d.%d\n"	\
-					     "The required version is %d.%d\n",	\
-					     version >> MM_VERSION_MAJOR_SHIFT,	\
-					     version & MM_VERSION_MINOR_MASK,	\
-					     major, minor);			\
+					"The required version is %d.%d\n",	\
+					version >> MM_VERSION_MAJOR_SHIFT,	\
+					version & MM_VERSION_MINOR_MASK,	\
+					major, minor);			\
 			return TEST_RESULT_SKIPPED;				\
 		}								\
 										\
@@ -163,28 +164,27 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 
 #define SKIP_TEST_IF_FFA_VERSION_LESS_THAN(major, minor)			\
 	do {									\
-		smc_args version_smc = { FFA_VERSION };			\
-		smc_ret_values smc_ret = tftf_smc(&version_smc);		\
-		uint32_t version = smc_ret.ret2;				\
+		smc_ret_values smc_ret = ffa_version(MAKE_FFA_VERSION(major, minor));	\
+		uint32_t version = smc_ret.ret0;	\
 										\
-		if (smc_ret.ret0 != FFA_SUCCESS_SMC32) {			\
-			tftf_testcase_printf("SPM not detected.\n");		\
-			return TEST_RESULT_SKIPPED;				\
+		if (version == FFA_ERROR_NOT_SUPPORTED) {			\
+			tftf_testcase_printf("FFA_VERSION not supported.\n");	\
+			return TEST_RESULT_SKIPPED;			\
 		}								\
-                                                                                \
-		if ((version & FFA_VERSION_BIT31_MASK) != 0) {                 \
-			tftf_testcase_printf("FFA_VERSION bad response.\n");	\
-			return TEST_RESULT_SKIPPED;                             \
-		}                                                               \
+										\
+		if ((version & 0x80000000) != 0) {			\
+			tftf_testcase_printf("FFA_VERSION bad response: %x\n", version);\
+			return TEST_RESULT_FAIL;				\
+		}								\
 										\
 		if (version < MAKE_FFA_VERSION(major, minor)) {		\
 			tftf_testcase_printf("FFA_VERSION returned %d.%d\n"	\
-					     "The required version is %d.%d\n",	\
-					     version >> FFA_VERSION_MAJOR_SHIFT,\
-					     version & FFA_VERSION_MINOR_MASK,	\
-					     major, minor);			\
+					"The required version is %d.%d\n",	\
+					version >> FFA_VERSION_MAJOR_SHIFT,\
+					version & FFA_VERSION_MINOR_MASK,	\
+					major, minor);			\
 			return TEST_RESULT_SKIPPED;				\
-		}								\
+		}							\
 	} while (0)
 
 #define SKIP_TEST_IF_ARCH_DEBUG_VERSION_LESS_THAN(version)			\
