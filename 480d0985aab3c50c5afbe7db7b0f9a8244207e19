@@ -1,0 +1,10 @@
+Allow-CI+2: Manish Pandey <manish.pandey2@arm.com>
+Verified+2: Manish Pandey <manish.pandey2@arm.com>
+Code-Review+1: Mark Dykes
+Code-Review+2: Manish Pandey <manish.pandey2@arm.com>
+IP-Review+1: Mark Dykes
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Tue, 02 Jun 2020 10:07:04 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/4188
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
