@@ -1,0 +1,10 @@
+Code-Review+2: Manish Pandey <manish.pandey2@arm.com>
+Code-Review+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+IP-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Allow-CI+2: Jimmy Brisson <jimmy.brisson@arm.com>
+Verified+2: TrustedFirmware Code Review
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Wed, 03 Jun 2020 20:46:29 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/3965
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
