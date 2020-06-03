@@ -16,6 +16,24 @@
       "revId": "f66c5e4df1e10fe65d143ec6c9002e18b7e2486c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c0e0c22_2079b83d",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2020-06-03T18:34:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "adf118e1_c5d488f4",
+      "revId": "f66c5e4df1e10fe65d143ec6c9002e18b7e2486c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
