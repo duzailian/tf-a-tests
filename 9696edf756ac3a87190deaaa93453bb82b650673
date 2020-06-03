@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c4b18102_d6ee1270",
+        "filename": "plat/nvidia/tegra194/helpers.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-06-03T21:52:24Z",
+      "side": 1,
+      "message": "Is it intentional (to keep aligned with nvidia TF-A implementation) you have used more instructions, if not then you can use same implementation as fvp.\n\nubfx    x1, x0, #MPIDR_AFF0_SHIFT, #MPIDR_AFFINITY_BITS\nubfx    x2, x0, #MPIDR_AFF1_SHIFT, #MPIDR_AFFINITY_BITS\n ...\n/* CorePos \u003d CoreId + (ClusterId * cpus per cluster) */\nmov\tx3, #PLATFORM_CORES_PER_CLUSTER\nmadd    x3, x2, x3, x1",
+      "range": {
+        "startLine": 21,
+        "startChar": 1,
+        "endLine": 38,
+        "endChar": 15
+      },
+      "revId": "9696edf756ac3a87190deaaa93453bb82b650673",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
