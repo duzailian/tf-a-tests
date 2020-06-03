@@ -218,11 +218,16 @@ TFTF_INCLUDES		+= ${PLAT_INCLUDES}
 TFTF_CFLAGS		+= ${COMMON_CFLAGS}
 TFTF_ASFLAGS		+= ${COMMON_ASFLAGS}
 TFTF_LDFLAGS		+= ${COMMON_LDFLAGS}
+TFTF_EXTRA_OBJS 	:=
 
 ifeq (${ENABLE_PAUTH},1)
 TFTF_CFLAGS		+= -mbranch-protection=pac-ret
 NS_BL1U_CFLAGS		+= -mbranch-protection=pac-ret
 NS_BL2U_CFLAGS		+= -mbranch-protection=pac-ret
+endif
+
+ifeq ($(SMC_FUZZING), 1)
+TFTF_EXTRA_OBJS += ${BUILD_PLAT}/smcf/dtb.o
 endif
 
 #####################################################################################
@@ -422,6 +427,7 @@ define MAKE_IMG
 	$(eval BUILD_DIR  := ${BUILD_PLAT}/$(1))
 	$(eval SOURCES    := $(${IMG_PREFIX}_SOURCES))
 	$(eval OBJS       := $(addprefix $(BUILD_DIR)/,$(call SOURCES_TO_OBJS,$(SOURCES))))
+	$(eval OBJS       += $(${IMG_PREFIX}_EXTRA_OBJS))
 	$(eval LINKERFILE := $(BUILD_DIR)/$(1).ld)
 	$(eval MAPFILE    := $(BUILD_DIR)/$(1).map)
 	$(eval ELF        := $(BUILD_DIR)/$(1).elf)
@@ -466,6 +472,11 @@ $(AUTOGEN_DIR):
 $(AUTOGEN_DIR)/tests_list.c $(AUTOGEN_DIR)/tests_list.h: $(AUTOGEN_DIR) ${TESTS_FILE} ${PLAT_TESTS_SKIP_LIST}
 	@echo "  AUTOGEN $@"
 	tools/generate_test_list/generate_test_list.pl $(AUTOGEN_DIR)/tests_list.c $(AUTOGEN_DIR)/tests_list.h  ${TESTS_FILE} $(PLAT_TESTS_SKIP_LIST)
+ifeq ($(SMC_FUZZING), 1)
+	mkdir ${BUILD_PLAT}/smcf
+	dtc ${SMC_FUZZ_DTS} >> ${BUILD_PLAT}/smcf/dtb
+	$(OC) -I binary -O elf64-littleaarch64 -B aarch64 ${BUILD_PLAT}/smcf/dtb ${BUILD_PLAT}/smcf/dtb.o
+endif
 
 $(eval $(call MAKE_IMG,tftf))
 
