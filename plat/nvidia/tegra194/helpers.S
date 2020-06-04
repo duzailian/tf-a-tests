@@ -49,9 +49,9 @@ endfunc platform_get_core_pos
 	 * ---------------------------------------------
 	 */
 func plat_crash_console_init
-	mov_imm	x0, TEGRA194_UARTC_BASE
-	mov_imm	x1, TEGRA194_CONSOLE_CLKRATE
-	mov_imm	x2, TEGRA194_CONSOLE_BAUDRATE
+	mov_imm	x0, TEGRA_UARTC_BASE
+	mov_imm	x1, TEGRA_CONSOLE_CLKRATE
+	mov_imm	x2, TEGRA_CONSOLE_BAUDRATE
 	b	console_init
 endfunc plat_crash_console_init
 
@@ -63,7 +63,7 @@ endfunc plat_crash_console_init
 	 * ---------------------------------------------
 	 */
 func plat_crash_console_putc
-	mov_imm	x1, TEGRA194_UARTC_BASE
+	mov_imm	x1, TEGRA_UARTC_BASE
 	b	console_putc
 endfunc plat_crash_console_putc
 
@@ -76,6 +76,6 @@ endfunc plat_crash_console_putc
 	 * ---------------------------------------------
 	 */
 func plat_crash_console_flush
-	mov_imm	x1, TEGRA194_UARTC_BASE
+	mov_imm	x1, TEGRA_UARTC_BASE
 	b	console_flush
 endfunc plat_crash_console_flush
