@@ -22,6 +22,30 @@
       "revId": "0ce07b121497281cc45c3a8a0cec13f50702bd5f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2306d6d_7c90087a",
+        "filename": "plat/arm/fvp/fvp_topology.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-06-04T10:56:57Z",
+      "side": 1,
+      "message": "Will remove. Thanks for spotting!",
+      "parentUuid": "afbc9a27_e6d83cb0",
+      "range": {
+        "startLine": 77,
+        "startChar": 20,
+        "endLine": 77,
+        "endChar": 21
+      },
+      "revId": "0ce07b121497281cc45c3a8a0cec13f50702bd5f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
