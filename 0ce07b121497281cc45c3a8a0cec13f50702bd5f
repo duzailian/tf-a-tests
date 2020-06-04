@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "afbc9a27_e6d83cb0",
+        "filename": "plat/arm/fvp/fvp_topology.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2020-06-04T10:48:47Z",
+      "side": 1,
+      "message": "I think this comma is not necessary here",
+      "range": {
+        "startLine": 77,
+        "startChar": 20,
+        "endLine": 77,
+        "endChar": 21
+      },
+      "revId": "0ce07b121497281cc45c3a8a0cec13f50702bd5f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
