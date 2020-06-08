@@ -47,7 +47,8 @@ static int test_handler(void *data)
 /* Dummy handler that increases a variable to check if it has been called. */
 static int test_spurious_handler(void *data)
 {
-	unsigned int core_pos = platform_get_core_pos(read_mpidr_el1());
+	u_register_t core_mpid = read_mpidr_el1() & MPID_MASK;
+	unsigned int core_pos = platform_get_core_pos(core_mpid);
 
 	spurious_count[core_pos]++;
 
@@ -194,6 +195,7 @@ test_result_t test_multicore_spurious_interrupt(void)
 			test_finished_flag = 1;
 			return TEST_RESULT_SKIPPED;
 		}
+		mp_printf("CPU 0x%x powered on\n", (unsigned int)cpu_mpid);
 	}
 
 	/* Wait for non-lead CPUs to enter the test */
@@ -227,6 +229,9 @@ test_result_t test_multicore_spurious_interrupt(void)
 
 	/* Route interrupts to all CPUs */
 	gicv2_set_itargetsr_value(TEST_SPI_ID, 0xFF);
+
+	/* A finite time is required for the change to GICD_ITARGET to take effect */
+	waitms(5000);
 
 	for (j = 0; j < TEST_SPURIOUS_ITERATIONS_COUNT; j++) {
 
