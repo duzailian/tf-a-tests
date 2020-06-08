@@ -13,6 +13,63 @@
 #define FFA_MAJOR 1U
 #define FFA_MINOR 0U
 
+struct feature_test {
+	const char *test_name;
+	unsigned int feature;
+	unsigned int expected_ret;
+};
+
+static const struct feature_test test_target[] = {
+	{"FFA_ERROR_32 check", FFA_ERROR, FFA_SUCCESS_SMC32},
+	{"FFA_SUCCESS_32 check", FFA_SUCCESS_SMC32, FFA_SUCCESS_SMC32},
+	{"FFA_INTERRUPT_32 check", FFA_INTERRUPT, FFA_SUCCESS_SMC32},
+	{"FFA_VERSION_32 check", FFA_VERSION, FFA_SUCCESS_SMC32},
+	{"FFA_FEATURES_32 check", FFA_FEATURES, FFA_SUCCESS_SMC32},
+	{"FFA_RX_RELEASE_32 check", FFA_RX_RELEASE, FFA_SUCCESS_SMC32},
+	{"FFA_RXTX_MAP_32 check", FFA_RXTX_MAP_SMC32, FFA_ERROR},
+	{"FFA_RXTX_UNMAP_32 check", FFA_RXTX_UNMAP, FFA_ERROR},
+	{"FFA_PARTITION_INFO_GET_32 check", FFA_PARTITION_INFO_GET, FFA_SUCCESS_SMC32},
+	{"FFA_ID_GET_32 check", FFA_ID_GET, FFA_SUCCESS_SMC32},
+	{"FFA_MSG_POLL_32 check", FFA_MSG_POLL, FFA_SUCCESS_SMC32},
+	{"FFA_MSG_WAIT_32 check", FFA_MSG_WAIT, FFA_SUCCESS_SMC32},
+	{"FFA_YIELD_32 check", FFA_MSG_YIELD, FFA_SUCCESS_SMC32},
+	{"FFA_RUN_32 check", FFA_MSG_RUN, FFA_SUCCESS_SMC32},
+	{"FFA_MSG_SEND_32 check", FFA_MSG_SEND, FFA_SUCCESS_SMC32},
+	{"FFA_MEM_DONATE_32 check", FFA_MEM_DONATE_SMC32, FFA_SUCCESS_SMC32},
+	{"FFA_MEM_LEND_32 check", FFA_MEM_LEND_SMC32, FFA_SUCCESS_SMC32},
+	{"FFA_MEM_SHARE_32 check", FFA_MEM_SHARE_SMC32, FFA_SUCCESS_SMC32},
+	{"FFA_MEM_RETRIEVE_REQ_32 check", FFA_MEM_RETRIEVE_REQ_SMC32, FFA_SUCCESS_SMC32},
+	{"FFA_MEM_RETRIEVE_RESP_32 check", FFA_MEM_RETRIEVE_RESP, FFA_SUCCESS_SMC32},
+	{"FFA_MEM_RELINQUISH_32 check", FFA_MEM_RELINQUISH, FFA_SUCCESS_SMC32},
+	{"FFA_MEM_RECLAIM_32 check", FFA_MEM_RECLAIM, FFA_SUCCESS_SMC32}
+};
+
+/*
+ * Test FFA_FEATURES interface.
+ */
+static void ffa_features_test(void)
+{
+	const char *test_features = "FFA Features interface";
+	smc_ret_values ffa_ret;
+	uint16_t i, test_target_size = sizeof(test_target) / sizeof(struct feature_test);
+
+	announce_test_section_start(test_features);
+
+	for (i = 0; i < test_target_size; i++) {
+		announce_test_start(test_target[i].test_name);
+
+		ffa_ret = ffa_features(test_target[i].feature);
+		expect(ffa_ret.ret0, test_target[i].expected_ret);
+		if (test_target[i].expected_ret == FFA_ERROR) {
+			expect(ffa_ret.ret2, FFA_ERROR_NOT_SUPPORTED);
+		}
+
+		announce_test_end(test_target[i].test_name);
+	}
+
+	announce_test_section_end(test_features);
+}
+
 void ffa_tests(void)
 {
 	const char *test_ffa = "FFA Interfaces";
@@ -36,6 +93,8 @@ void ffa_tests(void)
 	expect((int)ffa_version_compatible, (int)true);
 
 	announce_test_end(test_ffa_version);
+
+	ffa_features_test();
 
 	announce_test_section_end(test_ffa);
 }
