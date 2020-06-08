@@ -265,6 +265,7 @@ void gicv2_set_itargetsr(unsigned int num, unsigned int core_pos);
  * Set the target of interrupt ID `num` to the desired core mask.
  */
 void gicv2_set_itargetsr_value(unsigned int num, unsigned int val);
+uint8_t gicv2_read_itargetsr_value(unsigned int num);
 
 /*
  * Send SGI with ID `sgi_id` to core with index `core_pos`.
