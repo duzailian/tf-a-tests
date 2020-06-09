@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "a60ebb8d_665fa9f0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-06-09T15:37:31Z",
+      "side": 1,
+      "message": "TFTF too generic, may be SPM",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "875c6eff_f4138b09",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
