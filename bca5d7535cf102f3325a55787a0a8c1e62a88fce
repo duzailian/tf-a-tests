@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "591692b7_cc33bdde",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-09T10:19:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b450f62f_17a3a81e",
+      "range": {
+        "startLine": 172,
+        "startChar": 10,
+        "endLine": 172,
+        "endChar": 29
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cfe610f1_2b567093",
         "filename": "include/common/test_helpers.h",
         "patchSetId": 1
@@ -59,6 +83,30 @@
       "writtenOn": "2020-06-09T07:49:12Z",
       "side": 1,
       "message": "This return code is not defined by the spec.\nIs this to handle the case where version returned by SPMC is not compatible?",
+      "range": {
+        "startLine": 175,
+        "startChar": 5,
+        "endLine": 175,
+        "endChar": 45
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "980d9812_36485395",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-09T10:19:51Z",
+      "side": 1,
+      "message": "Compatibility should be inferred by the caller, comparing its version against the returned version (line 185).\nThis error code referred to a wrong input value, which only regards to bit 31 being set in the input version.\nI will change all the instances of \"FFA_ERROR_INVALID_PARAMETER\" to \"FFA_ERROR_NOT_SUPPORTED\" as per spec.",
+      "parentUuid": "cfe610f1_2b567093",
       "range": {
         "startLine": 175,
         "startChar": 5,
@@ -91,6 +139,30 @@
       "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc4ce160_8edee237",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-09T10:19:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "01233521_3fd359e5",
+      "range": {
+        "startLine": 180,
+        "startChar": 15,
+        "endLine": 180,
+        "endChar": 16
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -141,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "32696359_decbc3cc",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-09T10:19:51Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8bcdfa03_0393be50",
+      "range": {
+        "startLine": 111,
+        "startChar": 27,
+        "endLine": 111,
+        "endChar": 50
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e7787e0e_5f84ee2a",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
         "patchSetId": 1
@@ -161,6 +257,30 @@
       "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4eaa41ce_e4647969",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-09T10:19:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7787e0e_5f84ee2a",
+      "range": {
+        "startLine": 29,
+        "startChar": 25,
+        "endLine": 31,
+        "endChar": 42
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -187,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "cad576b4_c59570a3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-09T10:19:51Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d93c5697_b9b4c434",
+      "range": {
+        "startLine": 36,
+        "startChar": 60,
+        "endLine": 36,
+        "endChar": 61
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1004989a_45975e35",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
         "patchSetId": 1
@@ -207,6 +351,30 @@
       "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28f43280_ade596cf",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-09T10:19:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1004989a_45975e35",
+      "range": {
+        "startLine": 40,
+        "startChar": 62,
+        "endLine": 40,
+        "endChar": 65
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -233,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "bb028bb5_9c8c04d5",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-09T10:19:51Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7a1ea888_fc7a40b3",
+      "range": {
+        "startLine": 48,
+        "startChar": 57,
+        "endLine": 48,
+        "endChar": 58
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "26bbd5f8_bd01694e",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
         "patchSetId": 1
@@ -253,6 +445,30 @@
       "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1128c32_a3400ff0",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-09T10:19:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26bbd5f8_bd01694e",
+      "range": {
+        "startLine": 61,
+        "startChar": 45,
+        "endLine": 61,
+        "endChar": 46
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -279,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "168c91a3_73adb884",
+        "filename": "tftf/tests/tests-spm.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-09T10:19:51Z",
+      "side": 1,
+      "message": "Done\nA lot of this alignment things, don\u0027t show up on my editor. \nWill have to look up for a solution for this, sorry about these issues.",
+      "parentUuid": "629d7133_8bc31b2d",
+      "range": {
+        "startLine": 11,
+        "startChar": 24,
+        "endLine": 11,
+        "endChar": 25
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e3729331_84c67c05",
         "filename": "tftf/tests/tests-spm.xml",
         "patchSetId": 1
@@ -302,6 +542,30 @@
     },
     {
       "key": {
+        "uuid": "d62b53e5_fd4021ab",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-09T10:19:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e3729331_84c67c05",
+      "range": {
+        "startLine": 12,
+        "startChar": 31,
+        "endLine": 12,
+        "endChar": 34
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bd086af4_b6152199",
         "filename": "tftf/tests/tests-spm.xml",
         "patchSetId": 1
@@ -322,6 +586,30 @@
       "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0a8e43f_a8e4d211",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-09T10:19:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd086af4_b6152199",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 42
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
