@@ -1,0 +1,303 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "875c6eff_f4138b09",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-09T07:49:12Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 10,
+        "startChar": 23,
+        "endLine": 10,
+        "endChar": 30
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b450f62f_17a3a81e",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-09T07:49:12Z",
+      "side": 1,
+      "message": "maybe prefer TEST_RESULT_FAILED\nand lines 177, 182, 191",
+      "range": {
+        "startLine": 172,
+        "startChar": 10,
+        "endLine": 172,
+        "endChar": 29
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cfe610f1_2b567093",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-09T07:49:12Z",
+      "side": 1,
+      "message": "This return code is not defined by the spec.\nIs this to handle the case where version returned by SPMC is not compatible?",
+      "range": {
+        "startLine": 175,
+        "startChar": 5,
+        "endLine": 175,
+        "endChar": 45
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01233521_3fd359e5",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-09T07:49:12Z",
+      "side": 1,
+      "message": "ampersand",
+      "range": {
+        "startLine": 180,
+        "startChar": 15,
+        "endLine": 180,
+        "endChar": 16
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e690db65_a3161ce9",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-09T07:49:12Z",
+      "side": 1,
+      "message": "For this helper would it be better passing major and minor as individual parameters?",
+      "range": {
+        "startLine": 111,
+        "startChar": 27,
+        "endLine": 111,
+        "endChar": 50
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7787e0e_5f84ee2a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-09T07:49:12Z",
+      "side": 1,
+      "message": "nit: would you prefer the string passed on a single line?",
+      "range": {
+        "startLine": 29,
+        "startChar": 25,
+        "endLine": 31,
+        "endChar": 42
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d93c5697_b9b4c434",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-09T07:49:12Z",
+      "side": 1,
+      "message": "extra semicolon",
+      "range": {
+        "startLine": 36,
+        "startChar": 60,
+        "endLine": 36,
+        "endChar": 61
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1004989a_45975e35",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-09T07:49:12Z",
+      "side": 1,
+      "message": "nit: capitals for acronym",
+      "range": {
+        "startLine": 40,
+        "startChar": 62,
+        "endLine": 40,
+        "endChar": 65
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a1ea888_fc7a40b3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-09T07:49:12Z",
+      "side": 1,
+      "message": "extra space",
+      "range": {
+        "startLine": 48,
+        "startChar": 57,
+        "endLine": 48,
+        "endChar": 58
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26bbd5f8_bd01694e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-09T07:49:12Z",
+      "side": 1,
+      "message": "Maybe use FFA_VERSION_MAJOR+1\nThis will avoid updating the test when the major version increases in the future",
+      "range": {
+        "startLine": 61,
+        "startChar": 45,
+        "endLine": 61,
+        "endChar": 46
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "629d7133_8bc31b2d",
+        "filename": "tftf/tests/tests-spm.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-09T07:49:12Z",
+      "side": 1,
+      "message": "nit: align with above",
+      "range": {
+        "startLine": 11,
+        "startChar": 24,
+        "endLine": 11,
+        "endChar": 25
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3729331_84c67c05",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-09T07:49:12Z",
+      "side": 1,
+      "message": "To be a bit more descriptive:\nPSA FF-A?",
+      "range": {
+        "startLine": 12,
+        "startChar": 31,
+        "endLine": 12,
+        "endChar": 34
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd086af4_b6152199",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-09T07:49:12Z",
+      "side": 1,
+      "message": "while we\u0027re at that I think you can change this to:\ntest suite name: PSA FF-A Direct messaging\ndescription: Test PSA FF-A Direct messaging ABI",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 42
+      },
+      "revId": "bca5d7535cf102f3325a55787a0a8c1e62a88fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
