@@ -19,6 +19,7 @@
 
 #include "cactus.h"
 #include "cactus_def.h"
+#include "cactus_tests.h"
 #include "ffa_helpers.h"
 
 /* Host machine information injected by the build system in the ELF file. */
@@ -186,6 +187,9 @@ void __dead2 cactus_main(void)
 
 	NOTICE("FFA id: %u\n", ffa_id);
 	cactus_print_memory_layout(ffa_id);
+
+	/* Invoking Tests */
+	ffa_tests();
 
 	/* End up to message loop */
 	message_loop(ffa_id);
