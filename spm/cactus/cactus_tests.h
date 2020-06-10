@@ -12,6 +12,11 @@
  */
 
 /*
+ * Test to FFA interfaces.
+ */
+void ffa_tests(void);
+
+/*
  * Test other things like the version number returned by SPM.
  */
 void misc_tests(void);
