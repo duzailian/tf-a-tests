@@ -6,7 +6,7 @@
 #include <assert.h>
 #include <errno.h>
 #include <debug.h>
-#include "ffa_helpers.h"
+#include <ffa_helpers.h>
 #include <sp_helpers.h>
 
 /* FFA version test helpers */
