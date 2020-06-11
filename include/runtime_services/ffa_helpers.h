@@ -42,6 +42,7 @@ smc_ret_values ffa_msg_wait(void);
 smc_ret_values ffa_msg_send_direct_resp(ffa_vm_id_t source_id,
 					ffa_vm_id_t dest_id, uint32_t message);
 smc_ret_values ffa_error(int32_t error_code);
+smc_ret_values ffa_features(uint32_t feature);
 
 #endif /* __ASSEMBLY__ */
 
