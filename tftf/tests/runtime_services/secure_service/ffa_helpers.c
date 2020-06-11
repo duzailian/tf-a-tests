@@ -164,3 +164,14 @@ smc_ret_values ffa_error(int32_t error_code)
 
 	return tftf_smc(&args);
 }
+
+/* Query the higher EL if the requested FF-A feature is implemented. */
+smc_ret_values ffa_features(uint32_t feature)
+{
+	smc_args args = {
+		.fid = FFA_FEATURES,
+		.arg1 = feature
+	};
+
+	return tftf_smc(&args);
+}
