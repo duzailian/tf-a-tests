@@ -6,6 +6,7 @@
 
 #include <arch_helpers.h>
 #include <debug.h>
+#include <smccc.h>
 #include <tftf_lib.h>
 #include <xlat_tables_v2.h>
 
@@ -14,7 +15,8 @@
 /*******************************************************************************
  * Common Tegra SiP SMCs
  ******************************************************************************/
-#define TEGRA_SIP_NEW_VIDEOMEM_REGION		0x82000003
+#define TEGRA_SIP_NEW_VIDEOMEM_REGION		0x82000003ULL
+#define TEGRA_SIP_GET_SMMU_PER			0xC200FF00ULL
 
 /*
  * @Test_Aim@ Test to issue VideoMem SiP SMC function IDs.
@@ -191,6 +193,32 @@ test_result_t test_sip_videomem_incorrect_inputs(void)
 			__func__, ret.ret0);
 		return TEST_RESULT_FAIL;
 	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/**
+ * @Test_Aim@ Test to read the SMMU_PER register contents and print the
+ * values.
+ */
+test_result_t test_get_smmu_per(void)
+{
+	smc_args tegra_sip_smc = { TEGRA_SIP_GET_SMMU_PER, 0ULL, 0ULL, 0ULL, 0ULL };
+	smc_ret_values ret;
+
+	tftf_testcase_printf("Tegra SIP GET SMMU PER test\n");
+
+	ret = tftf_smc(&tegra_sip_smc);
+
+	if (ret.ret0 != SMC_OK) {
+		tftf_testcase_printf("get smmu per test Fail, got %ld\n",
+				(long int) ret.ret0);
+		return TEST_RESULT_FAIL;
+	}
+
+	tftf_testcase_printf("GET_SMMU_PER per[0] = 0x%lx\n", ret.ret1);
+	tftf_testcase_printf("GET_SMMU_PER per[1] = 0x%lx\n", ret.ret2);
+	tftf_testcase_printf("GET_SMMU_PER per[2] = 0x%lx\n", ret.ret3);
 
 	return TEST_RESULT_SUCCESS;
 }
