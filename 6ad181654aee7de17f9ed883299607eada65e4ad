@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4362324_ddf9408d",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-06-17T11:05:12Z",
+      "side": 1,
+      "message": "In this logic should we also take care of scenarios mentioned in spec, to do that we need to exract Major/Minro versions from returned version.\nlets say version is a struct containing major and minor.\nif (version.major !\u003d major)\n   Error(\"Not compatible)\nelse if (version.major \u003d\u003d major \u0026\u0026 version.minor \u003c minor) {\n   Error(\"Not compatible\")\n   Function can be called to downgrade its FFA version (can be kept empty now)\n}\n\nTo achieve this we might need mechanism to change version number at run time.",
+      "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f7633cf9_0ef897f7",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-06-17T11:05:12Z",
+      "side": 1,
+      "message": "Use FFA_VERSION_BIT31_MASK",
+      "range": {
+        "startLine": 175,
+        "startChar": 17,
+        "endLine": 175,
+        "endChar": 27
+      },
+      "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
