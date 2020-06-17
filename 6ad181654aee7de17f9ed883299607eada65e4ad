@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "8cdaeeb4_8caf8f69",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-06-17T15:03:47Z",
+      "side": 1,
+      "message": "TFTF",
+      "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb4d4fd2_e5552063",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-06-17T15:03:47Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#header-guards",
+      "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f493e9d8_23a157ff",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-06-17T15:03:47Z",
+      "side": 1,
+      "message": "version is unsigned, use %u",
+      "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f4362324_ddf9408d",
         "filename": "include/common/test_helpers.h",
         "patchSetId": 5
@@ -149,6 +200,57 @@
     },
     {
       "key": {
+        "uuid": "97ac5cd4_098902c2",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-06-17T15:03:47Z",
+      "side": 1,
+      "message": "!\u003d 0U",
+      "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d0d0101b_d46dd040",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-06-17T15:03:47Z",
+      "side": 1,
+      "message": "No newline at end of revision file.",
+      "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cfe4183d_a085c867",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-06-17T15:03:47Z",
+      "side": 1,
+      "message": "\u003d (uint32_t)ret_values.ret0;",
+      "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "77f4562c_599dcca8",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
         "patchSetId": 5
@@ -193,6 +295,23 @@
       "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b3fb3190_31546a61",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-06-17T15:03:47Z",
+      "side": 1,
+      "message": "remove extra tabs",
+      "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
