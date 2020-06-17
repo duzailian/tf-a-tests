@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "85835013_dac86ebd",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-17T14:05:49Z",
+      "side": 1,
+      "message": "That is taken care of below on the last if-clause of the macro. \nThe intent of the macro (if I understood correctly) is to skip a test whenever the versions are incompatible.",
+      "parentUuid": "a3f77018_bbdf5399",
+      "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e7b2e5aa_cf15f83e",
         "filename": "include/common/test_helpers.h",
         "patchSetId": 5
@@ -60,6 +78,30 @@
     },
     {
       "key": {
+        "uuid": "194a9a59_30f82edf",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-17T14:05:49Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e7b2e5aa_cf15f83e",
+      "range": {
+        "startLine": 172,
+        "startChar": 10,
+        "endLine": 172,
+        "endChar": 27
+      },
+      "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f7633cf9_0ef897f7",
         "filename": "include/common/test_helpers.h",
         "patchSetId": 5
@@ -80,6 +122,30 @@
       "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d3b984f_0ae6e1b2",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-17T14:05:49Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f7633cf9_0ef897f7",
+      "range": {
+        "startLine": 175,
+        "startChar": 17,
+        "endLine": 175,
+        "endChar": 27
+      },
+      "revId": "6ad181654aee7de17f9ed883299607eada65e4ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
