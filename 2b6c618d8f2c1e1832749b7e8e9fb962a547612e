@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2d8958ad_4321c0f0",
+        "filename": "include/common/aarch64/asm_macros.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-06-18T22:04:37Z",
+      "side": 1,
+      "message": "why do you need a ret? This is a macro, so cannot be called from C files and if it is to be used in assembly, it can only be used at the end of a function. Seems like it is coded to be used only in the amu file... might want to leave out the ret here and keep the ret instruction in the amu assembly.",
+      "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
