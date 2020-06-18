@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2018 - 2020, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -14,6 +14,7 @@
 #include <platform_def.h>
 
 #pragma weak tftf_platform_setup
+#pragma weak tftf_plat_arch_setup
 
 void arm_platform_setup(void)
 {

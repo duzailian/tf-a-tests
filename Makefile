@@ -508,11 +508,14 @@ endif
 # system.
 .PHONY: el3_payload
 ifneq (${ARCH},aarch32)
+# test payload not used on ARM_FPGA platform
+ifneq (${PLAT},arm_fpga)
 el3_payload: $(BUILD_DIR)
 	${Q}${MAKE} -C el3_payload PLAT=${PLAT}
 	${Q}find "el3_payload/build/${PLAT}" -name '*.bin' -exec cp {} "${BUILD_PLAT}" \;
 
 all: el3_payload
+endif # arm_fpga
 endif
 
 doc:
