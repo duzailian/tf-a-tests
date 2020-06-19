@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2bbf59ad_5aa5aab9",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-19T08:19:31Z",
+      "side": 1,
+      "message": "Would static checker complain includes aren\u0027t alphabetically ordered?",
+      "revId": "6febc69b0a6a8c4a1022c765378df268891b467b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79cf5e23_42f262ce",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-19T08:19:31Z",
+      "side": 1,
+      "message": "check that SPM?",
+      "range": {
+        "startLine": 48,
+        "startChar": 37,
+        "endLine": 48,
+        "endChar": 52
+      },
+      "revId": "6febc69b0a6a8c4a1022c765378df268891b467b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c55dce2d_f2803e66",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-19T08:19:31Z",
+      "side": 1,
+      "message": "I would re-phrase this a bit like:\n\nOn FFA_VERSION invocation from TFTF, the SPMD returns either NOT_SUPPORTED or the SPMC version value provided in the SPMC manifest. The variable should_skip_test is set to true when the SPMD returns NOT_SUPPORTED or a mismatched version (aka TFTF physical FF-A endpoint version (SPM_VERSION) does not match SPMC physical FF-A endpoint version). This prevents running the subsequent FF-A version tests (and break the test flow) as they\u0027re not relevant when the SPMD is not present within BL31 (FFA_VERSION returns NOT_SUPPORTED).",
+      "range": {
+        "startLine": 49,
+        "startChar": 4,
+        "endLine": 51,
+        "endChar": 40
+      },
+      "revId": "6febc69b0a6a8c4a1022c765378df268891b467b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
