@@ -52,6 +52,24 @@
       "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71fcad01_247f92df",
+        "filename": "include/common/aarch64/asm_macros.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-06-19T16:16:14Z",
+      "side": 1,
+      "message": "What\u0027s about these macros here:\n\nhttps://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/lib/cpus/aarch64/wa_cve_2017_5715_bpiall.S#n18\n.macro\tapply_cve_2017_5715_wa _from_vector\n\t/*\n\t * Save register state to enable a call to AArch32 S-EL1 and return\n\t * Identify the original calling vector in w2 (\u003d\u003d_from_vector)\n\t * Use w3-w6 for additional register state preservation while in S-EL1\n\t */\n\n\t/* Save GP regs */\n\tstp\tx0, x1, [sp, #CTX_GPREGS_OFFSET + CTX_GPREG_X0]\n....\nmsr\tscr_el3, xzr\n\tmsr\tspsr_el3, x8\n\tmsr\tvbar_el3, x9\n\tmsr\tsctlr_el1, x10\n\tmsr\telr_el3, x11\n\n\teret\n\t.endm\n\nand here\n\nhttps://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/lib/aarch64/cache_helpers.S#n22\nhttps://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/lib/aarch64/cache_helpers.S#n22\n\n/*\n * This macro can be used for implementing various data cache operations `op`\n */\n.macro do_dcache_maintenance_by_mva op\n\t/* Exit early if size is zero */\n\tcbz\tx1, exit_loop_\\op\n\tdcache_line_size x2, x3\n\tadd\tx1, x0, x1\n\tsub\tx3, x2, #1\n\tbic\tx0, x0, x3\nloop_\\op:\n\tdc\t\\op, x0\n\tadd\tx0, x0, x2\n\tcmp\tx0, x1\n\tb.lo    loop_\\op\n\tdsb\tsy\nexit_loop_\\op:\n\tret\n.endm\n\nAre you suggesting that (e)ret instructions should be removed or macros replaced with functions?\n\nShow me in that definition of macro:\n\nhttp://www.keil.com/support/man/docs/armasm/armasm_dom1359731154916.htm\n\"A macro definition is a block of code enclosed between MACRO and MEND directives. It defines a name that you can use as a convenient alternative to repeating the block of code.\nThe main uses for a macro are:\n    To make it easier to follow the logic of the source code by replacing a block of code with a single meaningful name.\n    To avoid repeating a block of code several times.\"\n\nwhere it is said that it is not allowed to have a (e)ret instruction.\n\nThis change matches the similar TF-A code (except that there is no write macro) and commit message clearly states that. This macro can be used not only in amy_helper.S but in any other driver which needs the same sort of calling method (blr x, br x).\n\nYou wrote:\n\"Would you consider func read reg:req instead?\"\n\nLook at\nhttps://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/include/common/asm_macros_common.S#n17\n\nAre you aware that \"func\" is a macro itself?\n.macro func _name\n\nand would you explain how \"func\" can get system register as a parameter to use in \"mrs\" instruction?",
+      "parentUuid": "c8d0c540_b0f4c2fd",
+      "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
