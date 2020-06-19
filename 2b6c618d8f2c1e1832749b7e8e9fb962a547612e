@@ -106,6 +106,24 @@
       "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "782829de_ddfec2de",
+        "filename": "include/common/aarch64/asm_macros.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-06-19T17:45:49Z",
+      "side": 1,
+      "message": "Please feel free to raise a defect for using \"(e)ret\" instructions in TF-A and TFTF source trees and to provide a solution for fixing that issue.\nWould you give a working example of a single function which will accept system register name as a parameter for \"mrs\" and can be used for 20 places in TFTF and TF-A code where it is called?",
+      "parentUuid": "c1c08abb_530c7467",
+      "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
