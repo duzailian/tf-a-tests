@@ -124,6 +124,24 @@
       "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "caaf6579_994a6c66",
+        "filename": "include/common/aarch64/asm_macros.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-06-19T18:27:16Z",
+      "side": 1,
+      "message": "i already conceded that you cannot use a function, obviously, so the macro is fine. I recommend changing the name to something like read_sys_reg_ret/write_sys_reg_ret, adding a comment that says this is expected to be invoked only by a br instruction when BTI is enabled. The _ret post-fix should hopefully be clear enough that the macro includes a ret. amu_helpers.S otherwise looks like it is a sequence of reads and completely misses the hidden ret.",
+      "parentUuid": "782829de_ddfec2de",
+      "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
