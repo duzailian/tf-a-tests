@@ -34,6 +34,24 @@
       "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8d0c540_b0f4c2fd",
+        "filename": "include/common/aarch64/asm_macros.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-06-19T15:13:04Z",
+      "side": 1,
+      "message": "\"this is MACRO which defines a FUCNTION\" - The statement itself is confusing. Would you consider func read reg:req instead? It is confusing to a reader(at least me) if it is a macro and ends with a ret. If it is a func, it\u0027ll be clear that this can be called using a branch instruction. The macro seems not useful anywhere else except in the amu_helper.S the way it is written and your links suggest that too. This can be a generic macro/func that can be used in other places too if the ret is removed.\n\nMoreover, i question the usefulness of the bti instruction in this case. This is a perfect gadget to read system registers for ROP/JOP attacks by the very fact that bti has been added followed by one instruction followed by a ret. I wonder if the same function from amu_helpers.S was written in C, what code the compiler would generate. If it ends up spraying a bunch of BTI\u0027s like we are doing here, then i guess it is okay.",
+      "parentUuid": "82b1ef16_a59fc707",
+      "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
