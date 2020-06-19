@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8f740b7f_7aaba008",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-19T08:33:43Z",
+      "side": 1,
+      "message": "Group ordering (according to https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#headers-and-inclusion) is higher priority than alphabetical order. \nAlphabetical order should be applied within each group. \nI locally the static checks. I hope I got it right. Can reverse it if you prefer.",
+      "parentUuid": "2bbf59ad_5aa5aab9",
+      "revId": "6febc69b0a6a8c4a1022c765378df268891b467b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "79cf5e23_42f262ce",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
         "patchSetId": 9
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "eeac1a98_1fcc2087",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-19T08:33:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79cf5e23_42f262ce",
+      "range": {
+        "startLine": 48,
+        "startChar": 37,
+        "endLine": 48,
+        "endChar": 52
+      },
+      "revId": "6febc69b0a6a8c4a1022c765378df268891b467b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c55dce2d_f2803e66",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
         "patchSetId": 9
@@ -62,6 +104,30 @@
       "revId": "6febc69b0a6a8c4a1022c765378df268891b467b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bdf6db0f_85e8738a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_version.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-06-19T08:33:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c55dce2d_f2803e66",
+      "range": {
+        "startLine": 49,
+        "startChar": 4,
+        "endLine": 51,
+        "endChar": 40
+      },
+      "revId": "6febc69b0a6a8c4a1022c765378df268891b467b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
