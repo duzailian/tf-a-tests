@@ -88,6 +88,24 @@
       "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1c08abb_530c7467",
+        "filename": "include/common/aarch64/asm_macros.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-06-19T17:03:11Z",
+      "side": 1,
+      "message": "\u003e\u003eThis change matches the similar TF-A code\n\nThanks for the explanation. Firstly, \"what about\u0027s\" are not an answer to everything. Just because something has been done in the past does not mean we have to follow it in the future. I urge you to consider the possibility that we can always improve and not blindly follow what has been done in the past. Not everything is perfect in TF-A:)\n\nHave you considered that the examples you showed may have been doing it incorrectly? Have you noticed the macros are in their own files and not in the generic asm_macros.S file? Can you think of why that may be the case? And if you look at the rest of the macros in this file, do you see anything ending with ret? Does that not seem odd and worth questioning? Using your own logic, if you consider macro patterns(not func, which is a special macro which indicates usage of ret) in TF-A, would you not consider having RET\u0027s in the macro an outlier rather than the norm?\n\nSince you pointed out func is a macro(which i forgot and missed the parameter aspect of it), have you considered that maybe you need a better name than simply \"read\" or \"write\" that provides no context about it being called by br x1. Other than you, the code author, nobody knows these hidden details and assumptions, which can be missed while reviewing code. Have you considered that i may have missed that because of the way the code is written? Instead of \"what about\u0027s\" can you consider discussing how you can help make it clearer to a reader? Perhaps a nice long comment on top of the macro? Maybe the macro can live in amu_helpers.S?\n\n\u003e\u003eAre you suggesting that (e)ret instructions should be removed or macros replaced with \u003e\u003efunctions ? where it is said that it is not allowed to have a (e)ret instruction.\n\nJust because something is unsaid, does not mean it is not worth thinking about. See above. How many macros in TF-A end with an ERET or RET? It just seems odd for THIS macro to end with RET which is why i posted a comment. i can see it happening with function epilogues for example but that would give you an indication about it being a function epilogue, perhaps by its name.",
+      "parentUuid": "71fcad01_247f92df",
+      "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
