@@ -1,8 +1,10 @@
 #
-# Copyright (c) 2018-2019, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2020, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
+
+include branch_protection.mk
 
 CACTUS_MM_INCLUDES :=					\
 	-Iinclude					\
@@ -52,6 +54,10 @@ CACTUS_MM_DEFINES	:=
 # that is done.
 CACTUS_MM_DEFINES	+= -DENABLE_ASSERTIONS=0
 
+$(eval $(call add_define,CACTUS_MM_DEFINES,ARM_ARCH_MAJOR))
+$(eval $(call add_define,CACTUS_MM_DEFINES,ARM_ARCH_MINOR))
+$(eval $(call add_define,CACTUS_MM_DEFINES,ENABLE_BTI))
+$(eval $(call add_define,CACTUS_MM_DEFINES,ENABLE_PAUTH))
 $(eval $(call add_define,CACTUS_MM_DEFINES,DEBUG))
 $(eval $(call add_define,CACTUS_MM_DEFINES,LOG_LEVEL))
 $(eval $(call add_define,CACTUS_MM_DEFINES,PLAT_${PLAT}))
