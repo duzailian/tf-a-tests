@@ -22,6 +22,30 @@
       "revId": "3ae894826bf68a0773264e90dd892b5ea26e02a4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd80d536_53b107b8",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-19T08:39:26Z",
+      "side": 1,
+      "message": "maybe that\u0027s where a command/response state machine might be beneficial (in the future)\ne.g. TFTF can break the test flow if the response from cactus indicates test failure.",
+      "parentUuid": "09c3a760_dc0a46fc",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 28,
+        "endChar": 46
+      },
+      "revId": "3ae894826bf68a0773264e90dd892b5ea26e02a4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
