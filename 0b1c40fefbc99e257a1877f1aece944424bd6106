@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "124ce1f2_25c1c73f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-06-20T01:41:55Z",
+      "side": 1,
+      "message": "I would have liked a better commit description. Unfortunately, this does not help me as an implementer. Perhaps, something on the lines of\n\n\"This patch adds the following BTI_related definitions\n\n1. ...: this bit resides in the XYZ register and is used for ...\n2. ...: this bit signifies that the page table entry does ....\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 1,
+        "endLine": 10,
+        "endChar": 53
+      },
+      "revId": "0b1c40fefbc99e257a1877f1aece944424bd6106",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
