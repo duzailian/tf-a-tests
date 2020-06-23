@@ -160,6 +160,24 @@
       "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "251745d8_0e62853e",
+        "filename": "include/common/aarch64/asm_macros.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-06-23T19:31:11Z",
+      "side": 1,
+      "message": "There is no complaint. There is a comment and a question with a suggestion. I realized what i missed, conceded i missed it and suggested what i would like the code to look like, ie change the name to make it crystal clear what it does. it is a suggestion. Code matching something already existing does not mean we need not or cannot improve. Since nobody has complained does not mean it is correct. It may have been right for that time but when you make changes the same discussions may surface again. Also note the community is larger and broader so you will likely have more opinions. This is a pointless conversation. Feel free to ignore my comments, since they are suggestions, as you can see in my comment above.\n\n\u003e\u003eThis \"bti j\" instruction is not just \"useful\" but is required to make this code work with GP\u003d1.\nI know and understand this very well. Think about it this way, what good would BTI be if you put it in front of every instruction? Think about if there is an alternate way to write this code. You can most likely write the function modified in amu_helpers.S in C and perhaps you can avoid creating this BTI gadget. The fragment, BTI, MRS, RET is a read system register gadget for ROP/JOP. Can you avoid manually creating obvious gadgets? is there a different way to write/rewrite the code? Open your mind, think of code review comments as suggestions as opposed to a complaint. I\u0027ve resolved the comments.",
+      "parentUuid": "4c9c0ed9_6c047692",
+      "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
