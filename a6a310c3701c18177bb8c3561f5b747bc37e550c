@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "1154fdb6_2c143df4",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-06-24T22:29:00Z",
+      "side": 1,
+      "message": "Interesting. Might be interesting to get more data points on other platforms if possible. No intent to block this patch, this is idle curiosity as mentioned in the below comment as well.",
+      "parentUuid": "8f6a5af3_f788f980",
+      "revId": "a6a310c3701c18177bb8c3561f5b747bc37e550c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1e7b81e8_67723bfa",
         "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
         "patchSetId": 1
@@ -138,6 +156,24 @@
       "side": 1,
       "message": "Thanks for the feedback. You could be right that it is masking some other issue. The delay might still be needed but not as large as 5000 ms. \nOn a side note, I looked at the events library APIs and was wondering if it is completely MP-safe.",
       "parentUuid": "8106efdf_22934666",
+      "revId": "a6a310c3701c18177bb8c3561f5b747bc37e550c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3173e061_cf148bf9",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-06-24T22:29:00Z",
+      "side": 1,
+      "message": "event api\u0027s looked safe to me(first thing i checked when you said there was a hang). Did some code in particular not look right to you? Might be worth asking other platforms to try this and see if they see hangs as well. Anyway, i don\u0027t want to block this patch. This is more idle curiosity for me than anything else.",
+      "parentUuid": "afd6161e_51becc40",
       "revId": "a6a310c3701c18177bb8c3561f5b747bc37e550c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
