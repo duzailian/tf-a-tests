@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7fe86d5d_844ad363",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-24T13:24:39Z",
+      "side": 1,
+      "message": "You may add\nFF-A call is serviced by the SPMC",
+      "revId": "33a05cd62bcff37104b7359522105cb7f2c8aa67",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fdaf7f5_9836cdd2",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-06-24T13:24:39Z",
+      "side": 1,
+      "message": "static void?",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 4
+      },
+      "revId": "33a05cd62bcff37104b7359522105cb7f2c8aa67",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
