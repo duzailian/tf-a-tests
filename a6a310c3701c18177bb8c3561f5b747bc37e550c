@@ -177,6 +177,24 @@
       "revId": "a6a310c3701c18177bb8c3561f5b747bc37e550c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba69373f_97a8b41b",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-06-24T22:56:19Z",
+      "side": 1,
+      "message": "Since adding a barrier helped to resolve the test hang, my natural instinct was to question if the events library is mp-safe though I have no strong proof of it. I could be completely wrong but I was wondering if a dsbishst is required between spin_unlock() and sev() in the send_event_common() function.",
+      "parentUuid": "3173e061_cf148bf9",
+      "revId": "a6a310c3701c18177bb8c3561f5b747bc37e550c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
