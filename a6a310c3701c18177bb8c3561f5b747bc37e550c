@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bab008e4_6d524e64",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-06-24T21:52:53Z",
+      "side": 1,
+      "message": "alright thanks. This is common code so the barrier may mask issues on other platforms. Is this on a particular CPU or is this on FVP?",
+      "parentUuid": "108b19f2_c4a4e10e",
+      "revId": "a6a310c3701c18177bb8c3561f5b747bc37e550c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1e7b81e8_67723bfa",
         "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Yes, my understanding of the GICv2 spec is that any change to CPU target field values takes a small but finite amount of time to take affect. Please note that the choice of 5000 ms was arbitrary based on trial and error.",
       "parentUuid": "1e7b81e8_67723bfa",
+      "revId": "a6a310c3701c18177bb8c3561f5b747bc37e550c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8106efdf_22934666",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-06-24T21:52:53Z",
+      "side": 1,
+      "message": "same here. I fear this is masking some other issue. This was working until now right ?",
+      "parentUuid": "62f01c45_8be21c83",
       "revId": "a6a310c3701c18177bb8c3561f5b747bc37e550c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
