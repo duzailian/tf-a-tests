@@ -231,6 +231,24 @@
       "revId": "a6a310c3701c18177bb8c3561f5b747bc37e550c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d84edabf_c02a4ddf",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-06-25T00:13:24Z",
+      "side": 1,
+      "message": "i may be seeing the problem here. If sev() gets reordered above the event-\u003ecnt+\u003dinc statement in send_event_common() on say core 0, and lets say core 1 is in wfe in tftf_wait_for_event, it gets the event before the write to event-\u003ecnt from core 0 propagates to the other core, wakes up, reads event-\u003ecnt, sees that it is 0 and goes back to wfe. You may be right that you need a barrier to ensure the sev is not reordered before the spin_unlock(). I\u0027m not able to find the ordering requirements for sev in the arm arm.. do you know off the top of your head? i think that might be the issue.",
+      "parentUuid": "ea63bc70_198ebc01",
+      "revId": "a6a310c3701c18177bb8c3561f5b747bc37e550c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
