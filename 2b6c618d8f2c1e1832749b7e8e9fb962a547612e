@@ -178,6 +178,24 @@
       "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b55d406f_9c632922",
+        "filename": "include/common/aarch64/asm_macros.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-06-25T15:43:04Z",
+      "side": 1,
+      "message": "1. \"...comment and a question with a suggestion...Since nobody has complained does not mean it is correct.\"\n- Why wouldn\u0027t you share your concerns on TF-A mailing list, raise a defect and submit your own  patch to fix the things which are not properly designed/coded/implemented from your point of view?\n2. \"what good would BTI be if you put it in front of every instruction?\"\n- Nobody suggested to put it \"in front of every instruction\". BTI instruction is designed to be put at the start of a function/procedure, and that is what this patch does.\n3. \"You can most likely write the function modified in amu_helpers.S in C...\"\n- The purpose of this patch is to make the existing code work with BTI support, and this task was achieved.\n- I\u0027m desperately looking forward to see your C-implementation of this code. Please provide your own variant of function(s) written in C which read(s) AMEVCNTR0\u003cn\u003e_EL0 registers using \"MRS\" instruction ASAP. Please enlighten me how you do it without assembler.\n4. \"...avoid creating this BTI gadget\"\n- As you \"know and understand this very well\", BTI instruction is designed and used to prevent usage of such gadgets which DO NOT have this instruction. \"BTI gadget\" is a pointless oxymoron without any sense.\n5. \"The fragment, BTI, MRS, RET is a read system register gadget for ROP/JOP. Can you avoid manually creating obvious gadgets?\"\n- See above about this \"gadget\". These functions read AMEVCNTR0\u003cn\u003e_EL0 registers which are as their names imply are accessible from EL0 (and in this TFTF code from NS EL2), so there is no any value in creating a \"gadget\" which would read these registers anyway. As I mentioned previously,the only purpose of this BTI instruction is to make this code work with GP\u003d1, but you already \"know and understand this very well\".\n6. \"This is a pointless conversation\"\n- Exactly.",
+      "parentUuid": "251745d8_0e62853e",
+      "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
