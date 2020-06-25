@@ -196,6 +196,24 @@
       "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "478d3b4d_18b3ed97",
+        "filename": "include/common/aarch64/asm_macros.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-06-25T16:51:05Z",
+      "side": 1,
+      "message": "DEFINE_SYSREG_READ_FUNC(AMEVCNTR10_EL0) and so on until AMEVCNTR1F_EL0 in arch_helpers.h. And in amu.c:\nstatic uint64_t amu_group1_cnt_read_internal(int idx)\n{\n   assert(idx \u003c 0x10);\n   switch(idx) {\n     case 1:\n         return read_amevcntr10_el0();\n     case 2:\n         return read_amevcntr11_el0();\n     ... and so on\n   }\n}\nThis is ONE implementation. you can do it any other way you\u0027d like. Why would this not work and why does it have to be in assembly? I may be missing something, so feel free to educate me without feeling the need to get defensive or lash out.\n\nThis is very clear to a reader(me) who is not the author(you), that you read ONE register and return. In amu_helpers.S, the continuous lines of read looks there are multiple reads at first glance. The macro is named \"read\", which gives no indication to the reader that there is a return after a read. amu_helpers.S looks like a function that reads 15 registers, as opposed to one.\n\n\u003e\u003eThe purpose of this patch is to make the existing code work with BTI support, and this task \u003e\u003e was achieved.\n\nYes, it achieved YOUR purpose. But did it do so in a way that is acceptable to the community? Maybe you can make a few changes without too much extra effort and it does more than merely work with BTI? Maybe it can improve the code\u0027s readability? I\u0027m part of the community and i  gave you suggestions that could potentially improve the code\u0027s readability, which you failed to even consider and one that you took as a complaint, instead responding with a bunch of \"what about\u0027s\".\n\n\u003e\u003eWhy wouldn\u0027t you share your concerns on TF-A mailing list, raise a defect and submit your own  \u003e\u003epatch to fix the things which are not properly designed/coded/implemented from your point of \u003e\u003e view?\n\nI can and i will. I\u0027ve done that previously too with fconf, barriers and many other topics including measured boot. The whole point of code review is so that developers don\u0027t put whatever code they feel like, that makes it hard for everybody else to use it. This is not an ARM only project anymore, and even if it was, it is in our best interest to serve the community\u0027s need and not only yourself and engage in a constructive way. That is the whole point of having maintainers, reviewers etc, to voice their opinion and concerns and see if we can write code that improves the project and serves a larger audience. Don\u0027t take it personally.\n\n\u003e\"BTI gadget\" is a pointless oxymoron without any sense\n\nExactly my point with your usage of BTI. You have made the BTI instruction COMPLETELY useless in these marcro\u0027s by inserting it before an mrs and a ret. All you are doing is that is that you found that you cannot execute the code with BTI enabled, so you added a BTI blindly \"just to make it work\". I\u0027m asking you to see if there is way to remove the whole read and write macro instead, since it is a gadget, with or without the BTI instruction. There is plenty of other assembly code too and blindly spraying the code with BTI instructions to \"make it work\" defeats the whole purpose of BTI. If you write it as a C function like i suggested above, it MAY be possible that the compiler generates code that may avoid these macros and hence the gadget. I say MAY, because i recognize it may not be possible and we may have to live with this implementation.",
+      "parentUuid": "b55d406f_9c632922",
+      "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
