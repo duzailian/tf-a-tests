@@ -214,6 +214,24 @@
       "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "231dba4f_6d33ec55",
+        "filename": "include/common/aarch64/asm_macros.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-06-25T20:41:40Z",
+      "side": 1,
+      "message": "1. \"read_amevcntr10_el0\" name is definitely much better than \"read AMEVCNTR10_EL0\" because \"is very clear to a reader\" having an extra \"_\" symbol. Why don\u0027t name as you \"recommend changing the name to something like read_sys_reg_ret/write_sys_reg_ret\"?\n2. \"DEFINE_SYSREG_READ_FUNC(AMEVCNTR10_EL0) and so on until AMEVCNTR1F_EL0 in arch_helpers.h.\"\nI asked you to provide C-implementation of these \"read\" functions, but DEFINE_SYSREG_READ_FUNC is a macro which defines assembler instructions.\n3. Can you guarantee that compiler won\u0027t optimise 16 switch cases for\nreturn read_amevcntr10_el0(); \nand generate code with \"br x\" or \"blr x\" instructions? Or we will hope with crossed fingers that \"it MAY be possible that the compiler generates code that may avoid these macros and hence the gadget\"?\n4. \"...you added a BTI blindly \"just to make it work\"... blindly spraying the code with BTI instructions to \"make it work\" defeats the whole purpose of BTI.\"\n- Are you aware that compiler itself \"blindly\" inserts \"bti c\" as the first instruction in EVERY C-function it compiles? Look at TF-A dump files and you will find \u003e 1100 of such cases.\n5. \"I can and i will. I\u0027ve done that previously too with fconf, barriers and many other topics including measured boot.\"\n- Unfortunately I somehow managed to miss all of your TF-A/TFTF patches you submitted, could you provide the link for them?",
+      "parentUuid": "478d3b4d_18b3ed97",
+      "revId": "2b6c618d8f2c1e1832749b7e8e9fb962a547612e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
