@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4d66d91d_523b0a18",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-06-26T11:28:27Z",
+      "side": 1,
+      "message": "I think coverity will nag about this. Break to 2 lines.",
+      "range": {
+        "startLine": 42,
+        "startChar": 84,
+        "endLine": 42,
+        "endChar": 102
+      },
+      "revId": "3684bc1e18bf245c7e7e1772d557f1fc539d09eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
