@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7d0bff80_6b7a90c8",
+        "filename": "include/common/fwu_nvm.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2020-06-26T07:36:28Z",
+      "side": 1,
+      "message": "Looks like these addresses should be moved to some platform header file...",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 50
+      },
+      "revId": "24a4a7c5b3158804c866d3c7b43b9e1314b474f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
