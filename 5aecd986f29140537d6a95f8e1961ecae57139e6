@@ -1,0 +1,9 @@
+Allow-CI+1: Joao Alves <joao.alves@arm.com>
+Code-Review+1: Maksims Svecovs <maksims.svecovs@arm.com>
+Code-Review+2: Manish Pandey <manish.pandey2@arm.com>
+Verified+1: Manish Pandey <manish.pandey2@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Fri, 26 Jun 2020 12:37:36 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/4618
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
