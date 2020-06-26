@@ -1,0 +1,9 @@
+Code-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Review+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Allow-CI+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Verified+1: TrustedFirmware Code Review
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Fri, 26 Jun 2020 08:36:27 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/4524
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
