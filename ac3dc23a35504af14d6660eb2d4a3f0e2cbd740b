@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c5ffb02c_650ba17e",
+        "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_corrected.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-06-30T21:38:59Z",
+      "side": 1,
+      "message": "nit: Can it be changed to some meaningful macros?",
+      "range": {
+        "startLine": 283,
+        "startChar": 14,
+        "endLine": 283,
+        "endChar": 36
+      },
+      "revId": "ac3dc23a35504af14d6660eb2d4a3f0e2cbd740b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
