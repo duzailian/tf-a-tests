@@ -25,6 +25,9 @@ if [ "$1" == "cactus" ]; then
 	\t\"pm\": \"../../../spm/$1/$1.dts\"\n\t},\n\n\t\"$1-secondary\" : {\n \
 	\t\"image\": \"$1.bin\",\n \
 	\t\"pm\": \"../../../spm/$1/$1-secondary.dts\" \n \
+	},\n\n\t\"$1-tertiary\" : {\n \
+	\t\"image\": \"$1.bin\",\n \
+	\t\"pm\": \"../../../spm/$1/$1-tertiary.dts\" \n \
 	}\n}" \
 	> "$GENERATED_JSON"
 else
