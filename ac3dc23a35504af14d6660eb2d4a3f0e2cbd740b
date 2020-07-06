@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "48606b09_1caca84c",
+        "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_corrected.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2020-07-06T12:43:32Z",
+      "side": 1,
+      "message": "As a general rule, I think it\u0027s a good practice to document every cache maintenance operation and memory barrier. Would you mind adding comments to explain what these ensure? (Same comment across the file.)\n\nIn particular, I struggle to understand the cache maintenance operation here. These should be rarely needed in test code, except in cases where some CPUs are powered off/on in MP tests for example... But perhaps I am missing something here. Why is it needed here?",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 122,
+        "endChar": 10
+      },
+      "revId": "ac3dc23a35504af14d6660eb2d4a3f0e2cbd740b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06d07712_0bfd20e8",
+        "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_corrected.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2020-07-06T12:43:32Z",
+      "side": 1,
+      "message": "Is there a risk the compiler might optimize this out and generate a single access to irq_received before the loop (turning it into an infinite loop)?",
+      "range": {
+        "startLine": 138,
+        "startChar": 3,
+        "endLine": 138,
+        "endChar": 29
+      },
+      "revId": "ac3dc23a35504af14d6660eb2d4a3f0e2cbd740b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96b97d6a_300fe815",
+        "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_corrected.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2020-07-06T12:43:32Z",
+      "side": 1,
+      "message": "Avoid printing messages in IRQ handlers. mp_printf() takes a lock on the console so you could have a deadlock if you get interrupted while printing another message.",
+      "range": {
+        "startLine": 225,
+        "startChar": 1,
+        "endLine": 225,
+        "endChar": 47
+      },
+      "revId": "ac3dc23a35504af14d6660eb2d4a3f0e2cbd740b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c5ffb02c_650ba17e",
         "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_corrected.c",
         "patchSetId": 4
