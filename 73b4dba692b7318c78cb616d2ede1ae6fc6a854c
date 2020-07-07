@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "80225f12_0e1c31f8",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-07-07T22:06:32Z",
+      "side": 1,
+      "message": "How about reading GICD_ITARGET back until the expected value is read, instead of adding a delay?",
+      "range": {
+        "startLine": 234,
+        "startChar": 1,
+        "endLine": 234,
+        "endChar": 14
+      },
+      "revId": "73b4dba692b7318c78cb616d2ede1ae6fc6a854c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
