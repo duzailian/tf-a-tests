@@ -22,6 +22,30 @@
       "revId": "bddf606f3c5923d54d23578a7a3cafaf2fa6665a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "238fe6a7_4c72b649",
+        "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_uncorrectable.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-07-07T04:35:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2370cf5c_249e4f9d",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 21
+      },
+      "revId": "bddf606f3c5923d54d23578a7a3cafaf2fa6665a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
