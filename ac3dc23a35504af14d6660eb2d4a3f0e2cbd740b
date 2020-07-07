@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "caea61fa_5b8418f1",
+        "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_corrected.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2020-07-07T07:49:38Z",
+      "side": 1,
+      "message": "I meant to declare irq_received as a volatile variable so that the compiler does not optimize accesses to it.",
+      "parentUuid": "6a110d8b_74de691b",
+      "range": {
+        "startLine": 138,
+        "startChar": 3,
+        "endLine": 138,
+        "endChar": 29
+      },
+      "revId": "ac3dc23a35504af14d6660eb2d4a3f0e2cbd740b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "96b97d6a_300fe815",
         "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_corrected.c",
         "patchSetId": 4
