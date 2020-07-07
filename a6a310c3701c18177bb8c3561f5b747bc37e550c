@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "1f37384d_b1a6ded9",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-07-07T18:03:52Z",
+      "side": 1,
+      "message": "Hi,\nFew other developers in my team also agreed with the need for barrier as we discussed. I have pushed a patch here: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/4877",
+      "parentUuid": "1154fdb6_2c143df4",
+      "revId": "a6a310c3701c18177bb8c3561f5b747bc37e550c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1e7b81e8_67723bfa",
         "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
         "patchSetId": 1
