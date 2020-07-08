@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "34df9f0b_6169e869",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-07-08T11:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "994d8fe8_d3193392",
+      "range": {
+        "startLine": 9,
+        "startChar": 9,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "278533ce312ba8ed63d963921747718ff0860b46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "82cadae5_8bb7c745",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "278533ce312ba8ed63d963921747718ff0860b46",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c9b0985_b433532a",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-07-08T11:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "82cadae5_8bb7c745",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 194,
+        "endChar": 1
+      },
+      "revId": "278533ce312ba8ed63d963921747718ff0860b46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
