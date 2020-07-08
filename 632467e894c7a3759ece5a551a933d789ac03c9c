@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ceece0cc_df3d45f2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-07-08T07:50:40Z",
+      "side": 1,
+      "message": "SKIP_TEST_IF_FFA_VERSION_LESS_THAN(1, 0);",
+      "revId": "632467e894c7a3759ece5a551a933d789ac03c9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
