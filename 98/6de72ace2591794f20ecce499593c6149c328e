@@ -1,0 +1,11 @@
+Maintainer-Review+1: Raghu K <raghu.ncstate@icloud.com>
+Maintainer-Review+1: varunw-nvidia <vwadekar@nvidia.com>
+Code-Review+1: varunw-nvidia <vwadekar@nvidia.com>
+Code-Owner-Review+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Allow-CI+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Verified+1: TrustedFirmware Code Review
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Wed, 08 Jul 2020 08:55:18 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/4877
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
