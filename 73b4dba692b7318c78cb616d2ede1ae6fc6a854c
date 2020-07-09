@@ -22,6 +22,30 @@
       "revId": "73b4dba692b7318c78cb616d2ede1ae6fc6a854c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09205bb2_33b87ea3",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-07-09T22:29:29Z",
+      "side": 1,
+      "message": "I have tried removing the delay and putting a while loop until the expected value is read. However, the test hanged. I believe the delay is necessary for the effect of write to propagate micro-architecturally.",
+      "parentUuid": "80225f12_0e1c31f8",
+      "range": {
+        "startLine": 234,
+        "startChar": 1,
+        "endLine": 234,
+        "endChar": 14
+      },
+      "revId": "73b4dba692b7318c78cb616d2ede1ae6fc6a854c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
