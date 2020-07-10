@@ -10,6 +10,9 @@ void tftf_arch_setup(void)
 {
 	/* Do not try to configure EL2 if TFTF is running at NS-EL1 */
 	if (IS_IN_EL2()) {
+		/* Enable Synchronous aborts to EL2 */
+		enable_serror();
+
 		/*
 		 * Route physical interrupts to EL2 regardless of the value of
 		 * the IMO/FMO bits. Without this, interrupts would not be taken
