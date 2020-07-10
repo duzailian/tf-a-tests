@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "271a351d_b3c5679b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-07-10T10:10:39Z",
+      "side": 1,
+      "message": "secure virtual FF-A instance.",
+      "range": {
+        "startLine": 9,
+        "startChar": 38,
+        "endLine": 9,
+        "endChar": 55
+      },
+      "revId": "4620b5ca49829f486d95cfa18baeb34a15561d53",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f1f0470_6dc6dc74",
+        "filename": "spm/cactus/cactus_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-07-10T10:10:39Z",
+      "side": 1,
+      "message": "Should this be CACTUS_RX_TX_SIZE/2 or PAGE_SIZE?",
+      "range": {
+        "startLine": 35,
+        "startChar": 56,
+        "endLine": 35,
+        "endChar": 73
+      },
+      "revId": "4620b5ca49829f486d95cfa18baeb34a15561d53",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db8f331e_4de44379",
+        "filename": "spm/cactus/cactus_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-07-10T10:10:39Z",
+      "side": 1,
+      "message": "PAGE_SIZE?",
+      "range": {
+        "startLine": 37,
+        "startChar": 56,
+        "endLine": 37,
+        "endChar": 73
+      },
+      "revId": "4620b5ca49829f486d95cfa18baeb34a15561d53",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f238a208_286bf199",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-07-10T10:10:39Z",
+      "side": 1,
+      "message": "I think we should update this for consistency with PSA FF-A:\nAn SP can strictly have 1 (UP SP) or #physical PE\u003d8 (MP SP) execution contexts\nOther configurations are not allowed by the spec.\nWe should update the cactus-secondary manifest to reflect this.\nFor our tests, we can think of having 3rd partition with a single EC to test all combinations.",
+      "range": {
+        "startLine": 121,
+        "startChar": 28,
+        "endLine": 121,
+        "endChar": 29
+      },
+      "revId": "4620b5ca49829f486d95cfa18baeb34a15561d53",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f14fa32f_6cb0c47d",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-07-10T10:10:39Z",
+      "side": 1,
+      "message": "Can you pls add a single line function header?",
+      "revId": "4620b5ca49829f486d95cfa18baeb34a15561d53",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
