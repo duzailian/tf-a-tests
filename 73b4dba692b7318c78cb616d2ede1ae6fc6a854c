@@ -70,6 +70,30 @@
       "revId": "73b4dba692b7318c78cb616d2ede1ae6fc6a854c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eee36c9c_df9f904b",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-07-13T17:45:41Z",
+      "side": 1,
+      "message": "Hi Varun,\nthe read-back loop doesnt help because the first read itself returns the expected value, thereby leading to no delay. my understanding of the GICv2 spec is that any change to CPU target field values takes a small but finite amount of time to take affect. Since adding a delay explicitly has a significant effect on the test, to me it looks like, the action of writing to GICD_ITARGET register(memory mapped) is immediate but the intended effect of changing the behaviour of GIC itself is not immediate.\nI have run out of concrete ideas to debug it. Note that this test is still disabled for Juno due to other fails. can you merge the patch?",
+      "parentUuid": "f3095188_93ec077c",
+      "range": {
+        "startLine": 234,
+        "startChar": 1,
+        "endLine": 234,
+        "endChar": 14
+      },
+      "revId": "73b4dba692b7318c78cb616d2ede1ae6fc6a854c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
