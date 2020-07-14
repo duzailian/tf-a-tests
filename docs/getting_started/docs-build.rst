@@ -76,6 +76,31 @@ top-level Makefile for TF-A Tests themselves.
 
    make help
 
+Building rendered documentation from a container
+------------------------------------------------
+
+There may be cases where you can not either install or upgrade required
+dependencies to generate the documents, so in this case, one way to
+create the documention is through a docker container. The first step is
+to check if `docker`_ is installed in your host, otherwise check main docker
+page for installation instructions. Once installed, run the following script
+from project root directory
+
+.. code:: shell
+
+   docker run --rm -v $PWD:/TF sphinxdoc/sphinx \
+          bash -c 'cd /TF && \
+                   pip3 install plantuml -r ./docs/requirements.txt && make doc'
+
+The above command fetches the ``sphinxdoc/sphinx`` container from `docker
+hub`_, launches the container, installs documentation requirements and finally
+creates the documentation. Once done, exit the container and output from the
+build process will be placed in:
+
+::
+
+   docs/build/html/
+
 --------------
 
 *Copyright (c) 2020, Arm Limited. All rights reserved.*
