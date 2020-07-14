@@ -156,6 +156,11 @@
 #define TEGRA_SCRATCH_BASE		U(0x0C390000)
 #define TEGRA_SMMU0_BASE		U(0x12000000)
 
+/*******************************************************************************
+ * IRQ value for Tegra Timer0
+ ******************************************************************************/
+#define TEGRA_PLAT_RTC_IRQ		U(42)
+
 #ifndef __ASSEMBLY__
 
 /*
