@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c541d1a3_6baf28ec",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-07-16T17:16:20Z",
+      "side": 1,
+      "message": "Personally, I think \"test_list\" or something similar conveys the real intention of this option.",
+      "range": {
+        "startLine": 541,
+        "startChar": 10,
+        "endLine": 541,
+        "endChar": 20
+      },
+      "revId": "3a7cf39e0cd8bf068aaa142364c38724e082e09a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
