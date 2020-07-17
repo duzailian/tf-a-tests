@@ -22,6 +22,7 @@
 #include <plat/common/platform.h>
 #include <plat_arm.h>
 #include <platform_def.h>
+#include <ffa_helpers.h>
 
 /* Host machine information injected by the build system in the ELF file. */
 extern const char build_message[];
@@ -187,6 +188,30 @@ void __dead2 cactus_main(void)
 
 		NOTICE("Booting Secondary Cactus Secure Partition\n%s\n%s\n",
 			build_message, version_string);
+
+		if (ffa_id == SPM_VM_ID_THIRD) {
+			NOTICE("Mapping RXTX Region\n");
+
+			/* Declare RX/TX buffers at virtual FF-A instance */
+			static struct {
+					uint8_t rx[PAGE_SIZE];
+					uint8_t tx[PAGE_SIZE];
+			} __aligned(PAGE_SIZE) ffa_buffers;
+
+			/* Map RX/TX buffers */
+			smc_ret_values ret = ffa_rxtx_map((uintptr_t) &ffa_buffers.tx,
+				(uintptr_t) &ffa_buffers.rx,
+				sizeof(ffa_buffers.rx) / PAGE_SIZE);
+
+			if (ret.ret0 != FFA_SUCCESS_SMC32) {
+				ERROR("ffa_rxtx_map error (%lu)\n", ret.ret2);
+				panic();
+			}
+
+			/* Update mailbox with RX/TX buffer */
+			mb.send = (void *) &ffa_buffers.tx;
+			mb.recv = (void *) &ffa_buffers.rx;
+		}
 	}
 
 	NOTICE("FFA id: %u\n", ffa_id);
