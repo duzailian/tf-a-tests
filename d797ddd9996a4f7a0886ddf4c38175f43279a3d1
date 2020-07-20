@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7418a604_47ac7673",
+        "filename": "include/common/fwu_nvm.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-20T16:12:47Z",
+      "side": 1,
+      "message": "-2020",
+      "revId": "d797ddd9996a4f7a0886ddf4c38175f43279a3d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db750d5d_86fac24e",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-20T16:12:47Z",
+      "side": 1,
+      "message": "DDR",
+      "revId": "d797ddd9996a4f7a0886ddf4c38175f43279a3d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b6b36c6_c762e7a5",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-20T16:12:47Z",
+      "side": 1,
+      "message": "remove 1 tab to align",
+      "revId": "d797ddd9996a4f7a0886ddf4c38175f43279a3d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "33cbace8_8c5769e7",
+        "filename": "plat/arm/juno/include/platform_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-20T16:12:47Z",
+      "side": 1,
+      "message": "remove 1 tab to align",
+      "revId": "d797ddd9996a4f7a0886ddf4c38175f43279a3d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
