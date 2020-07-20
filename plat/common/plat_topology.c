@@ -11,6 +11,8 @@
 #include <platform.h>
 #include <stdlib.h>
 
+#include <tftf_lib.h>
+
 #define CPU_INDEX_IS_VALID(_cpu_idx)	\
 	(((_cpu_idx) - tftf_pwr_domain_start_idx[0]) < PLATFORM_CORE_COUNT)
 
@@ -259,14 +261,20 @@ static void populate_power_domain_tree(void)
 
 				/* Additional initializations for CPU power domains */
 				if (num_level == 0) {
+					int mpidr;
+
 					/* Calculate the cpu id from node index */
 					int cpu_id =  j - tftf_pwr_domain_start_idx[0];
 
 					assert(cpu_id < PLATFORM_CORE_COUNT);
 
 					/* Set the mpidr of cpu node */
-					tftf_pd_nodes[j].mpidr =
-						tftf_plat_get_mpidr(cpu_id);
+					mpidr = tftf_plat_get_mpidr(cpu_id);
+					if (tftf_psci_affinity_info(mpidr,
+					    MPIDR_AFFLVL0) < 0) {
+						mpidr = INVALID_MPID;
+					}
+					tftf_pd_nodes[j].mpidr = mpidr;
 					if (tftf_pd_nodes[j].mpidr != INVALID_MPID)
 						tftf_pd_nodes[j].is_present = 1;
 
