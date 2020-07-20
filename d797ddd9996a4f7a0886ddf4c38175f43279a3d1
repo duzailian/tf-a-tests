@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "137c1698_6084cfb9",
+        "filename": "include/common/fwu_nvm.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-07-20T16:53:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7418a604_47ac7673",
+      "revId": "d797ddd9996a4f7a0886ddf4c38175f43279a3d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "db750d5d_86fac24e",
         "filename": "plat/arm/fvp/include/platform_def.h",
         "patchSetId": 2
@@ -33,6 +51,24 @@
       "revId": "d797ddd9996a4f7a0886ddf4c38175f43279a3d1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "091b963d_c6d35a68",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-07-20T16:53:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db750d5d_86fac24e",
+      "revId": "d797ddd9996a4f7a0886ddf4c38175f43279a3d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "29eeec33_8cf8c3fc",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-07-20T16:53:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5b6b36c6_c762e7a5",
+      "revId": "d797ddd9996a4f7a0886ddf4c38175f43279a3d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "33cbace8_8c5769e7",
         "filename": "plat/arm/juno/include/platform_def.h",
         "patchSetId": 2
@@ -67,6 +121,24 @@
       "revId": "d797ddd9996a4f7a0886ddf4c38175f43279a3d1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6bc80ebc_280bde4c",
+        "filename": "plat/arm/juno/include/platform_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-07-20T16:53:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33cbace8_8c5769e7",
+      "revId": "d797ddd9996a4f7a0886ddf4c38175f43279a3d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
