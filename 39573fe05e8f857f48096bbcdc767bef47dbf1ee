@@ -57,6 +57,30 @@
       "revId": "39573fe05e8f857f48096bbcdc767bef47dbf1ee",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5bf0da2_45630b54",
+        "filename": "lib/aarch32/misc_helpers.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-23T12:09:04Z",
+      "side": 1,
+      "message": "TF-A memcpy4() implementation is not optimised, but should be. We could ask Yatharth Kochar (if we find him) who implemented this code in 2016-09-28 why it wasn\u0027t optimised in the first place and how it passed review before merging.\nDo you want me to provide a patch for the similar change?",
+      "parentUuid": "bfe1f4e9_737e22d8",
+      "range": {
+        "startLine": 61,
+        "startChar": 1,
+        "endLine": 67,
+        "endChar": 6
+      },
+      "revId": "39573fe05e8f857f48096bbcdc767bef47dbf1ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
