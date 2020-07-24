@@ -1,0 +1,152 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a9a0a95a_21d3fd74",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-24T12:18:08Z",
+      "side": 1,
+      "message": "TFTF",
+      "revId": "45ca439395bd719df203323caea8853d94d6b395",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ce0736e8_d57c20c6",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-24T12:18:08Z",
+      "side": 1,
+      "message": "0U",
+      "revId": "45ca439395bd719df203323caea8853d94d6b395",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "23773d70_0508b9c1",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-24T12:18:08Z",
+      "side": 1,
+      "message": "2U",
+      "revId": "45ca439395bd719df203323caea8853d94d6b395",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93094347_b9a96929",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_features.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-24T12:18:08Z",
+      "side": 1,
+      "message": "unsigned int i, test_target_size",
+      "revId": "45ca439395bd719df203323caea8853d94d6b395",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5bb57004_f07009bb",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_features.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-24T12:18:08Z",
+      "side": 1,
+      "message": "0U",
+      "revId": "45ca439395bd719df203323caea8853d94d6b395",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ad51da1_3ea549fb",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_features.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-24T12:18:08Z",
+      "side": 1,
+      "message": "Do you need cast here? These variables have %lx and %x print format.",
+      "revId": "45ca439395bd719df203323caea8853d94d6b395",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a3dc0ee_0cfb10d4",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_features.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-24T12:18:08Z",
+      "side": 1,
+      "message": "the same here",
+      "range": {
+        "startLine": 64,
+        "startChar": 5,
+        "endLine": 64,
+        "endChar": 7
+      },
+      "revId": "45ca439395bd719df203323caea8853d94d6b395",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c72e785e_c0da0c31",
+        "filename": "tftf/tests/tests-spm.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-24T12:18:08Z",
+      "side": 1,
+      "message": "add tab to align",
+      "range": {
+        "startLine": 12,
+        "startChar": 20,
+        "endLine": 12,
+        "endChar": 22
+      },
+      "revId": "45ca439395bd719df203323caea8853d94d6b395",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
