@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2442fd01_2f16f164",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-24T12:21:34Z",
+      "side": 1,
+      "message": "uint32_t spm_version \u003d (uint32_t)ret.ret0;",
+      "revId": "2aef83b03509f26761eb8c0aa24ebd8a2976a287",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
