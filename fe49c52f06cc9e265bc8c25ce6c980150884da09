@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2d56099a_9166a296",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-24T12:11:30Z",
+      "side": 1,
+      "message": "Remove \".\" from comments. See line #41",
+      "revId": "fe49c52f06cc9e265bc8c25ce6c980150884da09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "792d7b41_aef2607e",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-24T12:11:30Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "fe49c52f06cc9e265bc8c25ce6c980150884da09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "383f914c_004533a4",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-07-24T12:11:30Z",
+      "side": 1,
+      "message": "0U",
+      "revId": "fe49c52f06cc9e265bc8c25ce6c980150884da09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
