@@ -72,7 +72,10 @@ PLAT_SOURCES	:=	drivers/arm/gic/arm_gic_v2v3.c			\
 			plat/arm/fvp/fvp_mem_prot.c			\
 			plat/arm/fvp/plat_setup.c
 
-CACTUS_SOURCES	+=	plat/arm/fvp/${ARCH}/plat_helpers.S
+CACTUS_SOURCES	+=	drivers/arm/pl011/${ARCH}/pl011_console.S	\
+			plat/arm/fvp/${ARCH}/plat_helpers.S
+
+IVY_SOURCES	+=	drivers/arm/pl011/${ARCH}/pl011_console.S
 
 # Firmware update is implemented on FVP.
 FIRMWARE_UPDATE := 1

@@ -80,7 +80,7 @@
 
 /* Functions */
 
-int console_pl011_putc(int);
+int console_uart_putc(int);
 
 #endif /* __ASSEMBLER__ */
 

@@ -27,7 +27,7 @@ extern uintptr_t __BSS_START__, __BSS_END__;
 #define CACTUS_BSS_END		((uintptr_t)&__BSS_END__)
 
 enum stdout_route {
-	PL011_AS_STDOUT = 0,
+	UART_AS_STDOUT = 0,
 	HVC_CALL_AS_STDOUT,
 };
 
