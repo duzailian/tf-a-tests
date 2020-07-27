@@ -1,9 +1,11 @@
 /*
  * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2020, NVIDIA Corporation. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <arch_helpers.h>
 #include <debug.h>
 #include <mmio.h>
 #include <platform_def.h>
@@ -60,15 +62,11 @@ void announce_test_end(const char *test_desc)
 
 void sp_sleep(uint32_t ms)
 {
-	uint64_t timer_freq = mmio_read_32(SYS_CNT_CONTROL_BASE + CNTFID_OFF);
-	VERBOSE("%s: Timer frequency = %llu\n", __func__, timer_freq);
+	uint64_t start_count_val = syscounter_read();
+	uint64_t wait_cycles = (ms * read_cntfrq_el0()) / 1000;
 
-	VERBOSE("%s: Sleeping for %u milliseconds...\n", __func__, ms);
-	uint64_t time1 = mmio_read_64(SYS_CNT_READ_BASE);
-	volatile uint64_t time2 = time1;
-	while ((time2 - time1) < ((ms * timer_freq) / 1000U)) {
-		time2 = mmio_read_64(SYS_CNT_READ_BASE);
-	}
+	while ((syscounter_read() - start_count_val) < wait_cycles)
+		; /* Busy wait... */
 }
 
 /*******************************************************************************
