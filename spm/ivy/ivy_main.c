@@ -10,7 +10,6 @@
 #include <drivers/arm/pl011.h>
 #include <errno.h>
 #include <ivy_def.h>
-#include <plat_arm.h>
 #include <platform_def.h>
 #include <sp_helpers.h>
 #include <sprt_client.h>
@@ -88,9 +87,9 @@ void ivy_message_handler(struct sprt_queue_entry_message *message)
 
 void __dead2 ivy_main(void)
 {
-	console_init(PL011_UART3_BASE,
-		     PL011_UART3_CLK_IN_HZ,
-		     PL011_BAUDRATE);
+	console_init(PLAT_CONSOLE_BASE,
+		     PLAT_CONSOLE_CLK_IN_HZ,
+		     PLAT_CONSOLE_BAUDRATE);
 
 	NOTICE("Booting test Secure Partition Ivy\n");
 	NOTICE("%s\n", build_message);
