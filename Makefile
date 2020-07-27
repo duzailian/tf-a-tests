@@ -354,6 +354,7 @@ ns_bl1u ns_bl2u:
 endif
 
 ifneq (${ARCH}-${PLAT},aarch64-fvp)
+ifneq (${ARCH}-${PLAT},aarch64-tegra194)
 .PHONY: cactus_mm
 cactus_mm:
 	@echo "ERROR: $@ is supported only on AArch64 FVP."
@@ -373,6 +374,7 @@ ivy:
 quark:
 	@echo "ERROR: $@ is supported only on AArch64 FVP."
 	@exit 1
+endif
 endif
 
 MAKE_DEP = -Wp,-MD,$(DEP) -MT $$@
@@ -497,11 +499,13 @@ ifeq ($(FIRMWARE_UPDATE), 1)
   $(eval $(call MAKE_IMG,ns_bl2u))
 endif
 
-ifeq (${ARCH}-${PLAT},aarch64-fvp)
+ifeq (${ARCH},aarch64)
+ifneq (,$(filter ${PLAT},fvp tegra194))
   $(eval $(call MAKE_IMG,cactus_mm))
   $(eval $(call MAKE_IMG,cactus))
   $(eval $(call MAKE_IMG,ivy))
   $(eval $(call MAKE_IMG,quark))
+endif
 endif
 
 # The EL3 test payload is only supported in AArch64. It has an independent build
