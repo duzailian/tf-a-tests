@@ -6,6 +6,7 @@
 
 #include <asm_macros.S>
 #include <drivers/console.h>
+#include <platform_def.h>
 
 #define CONSOLE_NUM_BYTES_SHIFT		24
 #define CONSOLE_FLUSH_DATA_TO_PORT	(1 << 26)
@@ -23,7 +24,6 @@
 	 */
 
 	.globl	console_init
-	.globl	console_putc
 	.globl	console_getc
 	.globl	console_try_getc
 	.globl	console_flush
@@ -114,17 +114,29 @@ putc_error:
 	ret
 endfunc console_spe_core_putc
 
+#if defined(IMAGE_CACTUS) || defined(IMAGE_IVY)
+	.globl console_uart_putc
+func console_uart_putc
+	adr	x1, console_base
+	ldr	x1, [x1]
+	b	console_spe_core_putc
+endfunc console_uart_putc
+#endif
+
+#if defined(IMAGE_TFTF)
 	/* ---------------------------------------------
 	 * int console_putc(int c)
 	 *
 	 * Clobber list : x1, x2
 	 * ---------------------------------------------
 	 */
+	.globl console_putc
 func console_putc
 	adr	x1, console_base
 	ldr	x1, [x1]
 	b	console_spe_core_putc
 endfunc console_putc
+#endif
 
 	/* ---------------------------------------------
 	 * int console_getc(void)

@@ -8,5 +8,5 @@
 
 int console_putc(int c)
 {
-	return console_pl011_putc(c);
+	return console_uart_putc(c);
 }

@@ -39,8 +39,7 @@ IVY_SOURCES	+=					\
 	tftf/framework/debug.c				\
 	tftf/framework/${ARCH}/asm_debug.S
 
-IVY_SOURCES	+= 	drivers/arm/pl011/${ARCH}/pl011_console.S	\
-			drivers/console/console.c			\
+IVY_SOURCES	+= 	drivers/console/console.c			\
 			lib/${ARCH}/cache_helpers.S			\
 			lib/${ARCH}/misc_helpers.S			\
 			lib/locks/${ARCH}/spinlock.S			\
