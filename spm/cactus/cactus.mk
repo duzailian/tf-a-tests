@@ -43,8 +43,7 @@ CACTUS_SOURCES	+=					\
 	tftf/framework/${ARCH}/exceptions.S		\
 	tftf/framework/${ARCH}/exception_report.c
 
-CACTUS_SOURCES	+= 	drivers/arm/pl011/${ARCH}/pl011_console.S	\
-			lib/${ARCH}/cache_helpers.S			\
+CACTUS_SOURCES	+= 	lib/${ARCH}/cache_helpers.S			\
 			lib/${ARCH}/misc_helpers.S			\
 			lib/smc/${ARCH}/asm_smc.S			\
 			lib/smc/${ARCH}/smc.c				\

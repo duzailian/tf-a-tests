@@ -267,4 +267,12 @@
 #define ARM_SECURE_SERVICE_BUFFER_BASE	0xff600000ull
 #define ARM_SECURE_SERVICE_BUFFER_SIZE	0x10000ull
 
+/*******************************************************************************
+ * Console constants
+ ******************************************************************************/
+#define PLAT_CONSOLE_BASE		PL011_UART2_BASE
+#define PLAT_CONSOLE_SIZE		U(0x1000)
+#define PLAT_CONSOLE_CLK_IN_HZ		PL011_UART2_CLK_IN_HZ
+#define PLAT_CONSOLE_BAUDRATE		PL011_BAUDRATE
+
 #endif /* __PLATFORM_DEF_H__ */

@@ -10,7 +10,7 @@
 #include <drivers/console.h>
 
 	.globl	console_init
-	.globl	console_pl011_putc
+	.globl	console_uart_putc
 	.globl	console_getc
 	.globl	console_try_getc
 	.globl	console_flush
@@ -102,11 +102,11 @@ endfunc console_core_init
 	 * Clobber list : x1, x2
 	 * -------------------------------------------------
 	 */
-func console_pl011_putc
+func console_uart_putc
 	adrp	x1, console_base
 	ldr	x1, [x1, :lo12:console_base]
 	b	console_core_putc
-endfunc console_pl011_putc
+endfunc console_uart_putc
 
 	/* ---------------------------------------------
 	 * int console_core_putc(int c, uintptr_t base_addr)
