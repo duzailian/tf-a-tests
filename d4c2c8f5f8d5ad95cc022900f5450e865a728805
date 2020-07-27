@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4bec6489_768d5f4f",
+        "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_corrected.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-07-27T08:00:28Z",
+      "side": 1,
+      "message": "Why is this necessary?\nAre there cores that do not benefit cache snoop?",
+      "revId": "d4c2c8f5f8d5ad95cc022900f5450e865a728805",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
