@@ -40,8 +40,7 @@ CACTUS_SOURCES	+=					\
 	tftf/framework/${ARCH}/asm_debug.S		\
 	tftf/tests/runtime_services/secure_service/ffa_helpers.c
 
-CACTUS_SOURCES	+= 	drivers/arm/pl011/${ARCH}/pl011_console.S	\
-			lib/${ARCH}/cache_helpers.S			\
+CACTUS_SOURCES	+= 	lib/${ARCH}/cache_helpers.S			\
 			lib/${ARCH}/misc_helpers.S			\
 			lib/smc/${ARCH}/asm_smc.S			\
 			lib/smc/${ARCH}/smc.c				\

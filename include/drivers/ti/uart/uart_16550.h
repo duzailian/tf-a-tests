@@ -69,4 +69,13 @@
 #define UARTLSR_RDR_BIT		(0)		/* Rx Data Ready Bit */
 #define UARTLSR_RDR		(1 << UARTLSR_RDR_BIT)	/* Rx Data Ready */
 
+#ifndef __ASSEMBLER__
+#include <stdint.h>
+
+/* Functions */
+
+int console_uart_putc(int);
+
+#endif /* __ASSEMBLER__ */
+
 #endif /* UART_16550_H */
