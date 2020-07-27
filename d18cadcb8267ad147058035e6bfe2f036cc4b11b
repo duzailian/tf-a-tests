@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ed4fbd14_5acd248f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-07-27T12:05:00Z",
+      "side": 1,
+      "message": "nit: It\u0027s good to put additional comment on removal of cactus_tests_misc.c file?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 24
+      },
+      "revId": "d18cadcb8267ad147058035e6bfe2f036cc4b11b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1cab76fc_7ed97ee9",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-07-27T12:05:00Z",
+      "side": 1,
+      "message": "nit: crossed \u003e 80 chars limit.",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 86
+      },
+      "revId": "d18cadcb8267ad147058035e6bfe2f036cc4b11b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
