@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c47a79a6_87225d5d",
+        "filename": "tftf/tests/plat/nvidia/tegra194/include/tegra194_ras.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-07-27T16:52:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "56a7d6fc_f4bafed4",
+      "range": {
+        "startLine": 40,
+        "startChar": 23,
+        "endLine": 40,
+        "endChar": 25
+      },
+      "revId": "30df47d822f638a6ebc96aff52a0b66bc64b9995",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "72aad0ef_11fc8ec5",
         "filename": "tftf/tests/plat/nvidia/tegra194/serror_handler.S",
         "patchSetId": 6
@@ -36,6 +60,24 @@
       "writtenOn": "2020-07-27T07:36:23Z",
       "side": 1,
       "message": "Shall this follow the pattern for asm stub from https://trustedfirmware-a.readthedocs.io/en/latest/components/sdei.html#note-on-writing-sdei-event-handlers ?",
+      "revId": "30df47d822f638a6ebc96aff52a0b66bc64b9995",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eec73034_81993191",
+        "filename": "tftf/tests/plat/nvidia/tegra194/serror_handler.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-07-27T16:52:14Z",
+      "side": 1,
+      "message": "This handler is actually is same as the current sdei handler from standard_service/sdei/system_tests/sdei_entrypoint.S. So it follows the rules documented at https://trustedfirmware-a.readthedocs.io/en/latest/components/sdei.html#note-on-writing-sdei-event-handlers",
+      "parentUuid": "72aad0ef_11fc8ec5",
       "revId": "30df47d822f638a6ebc96aff52a0b66bc64b9995",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
@@ -56,6 +98,24 @@
       "revId": "30df47d822f638a6ebc96aff52a0b66bc64b9995",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c131420_11c9f6a1",
+        "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_uncorrectable.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-07-27T16:52:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ef1c769d_a8226a13",
+      "revId": "30df47d822f638a6ebc96aff52a0b66bc64b9995",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -82,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "2086184b_205aeebf",
+        "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_uncorrectable.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-07-27T16:52:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d53237a1_eac86785",
+      "range": {
+        "startLine": 71,
+        "startChar": 13,
+        "endLine": 71,
+        "endChar": 16
+      },
+      "revId": "30df47d822f638a6ebc96aff52a0b66bc64b9995",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2aa0c839_2b94a070",
         "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_uncorrectable.c",
         "patchSetId": 6
@@ -105,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "b1a87b4e_02185890",
+        "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_uncorrectable.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-07-27T16:52:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2aa0c839_2b94a070",
+      "range": {
+        "startLine": 120,
+        "startChar": 20,
+        "endLine": 120,
+        "endChar": 28
+      },
+      "revId": "30df47d822f638a6ebc96aff52a0b66bc64b9995",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7c9ebef7_3b519021",
         "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_uncorrectable.c",
         "patchSetId": 6
@@ -119,6 +227,24 @@
       "revId": "30df47d822f638a6ebc96aff52a0b66bc64b9995",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e04aa0b_532c9749",
+        "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_uncorrectable.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-07-27T16:52:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7c9ebef7_3b519021",
+      "revId": "30df47d822f638a6ebc96aff52a0b66bc64b9995",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
