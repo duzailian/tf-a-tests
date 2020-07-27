@@ -149,7 +149,9 @@
 #define TEGRA194_WDT0_BASE		U(0x030c0000)
 #define TEGRA194_GICD_BASE		U(0x03881000)
 #define TEGRA194_GICC_BASE		U(0x03882000)
+#if IMAGE_CACTUS
 #define TEGRA194_SPE_BASE		U(0x0C168000)
+#endif
 #define TEGRA194_UARTC_BASE		U(0x0C280000)
 #define TEGRA194_RTC_BASE		U(0x0C2A0000)
 #define TEGRA194_TMRUS_BASE		U(0x0C2E0000)
@@ -162,6 +164,14 @@
  * DRAM carveout to save the SMMU context
  ******************************************************************************/
 #define TEGRA194_SMMU_CTX_BASE		(DRAM_END - 0x1000)
+
+/*******************************************************************************
+ * Console constants
+ ******************************************************************************/
+#define PLAT_CONSOLE_BASE		TEGRA194_SPE_BASE
+#define PLAT_CONSOLE_SIZE		U(0x1000)
+#define PLAT_CONSOLE_CLK_IN_HZ		TEGRA194_CONSOLE_CLKRATE
+#define PLAT_CONSOLE_BAUDRATE		TEGRA194_CONSOLE_BAUDRATE
 
 #ifndef __ASSEMBLY__
 

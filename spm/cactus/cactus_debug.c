@@ -21,7 +21,7 @@ static int putc_hypcall(int c)
 
 static int putc_uart(int c)
 {
-	console_pl011_putc(c);
+	console_uart_putc(c);
 
 	return c;
 }
@@ -34,7 +34,7 @@ void set_putc_impl(enum stdout_route route)
 		putc_impl = putc_hypcall;
 		return;
 
-	case PL011_AS_STDOUT:
+	case UART_AS_STDOUT:
 	default:
 		break;
 	}

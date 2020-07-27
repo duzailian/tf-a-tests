@@ -9,12 +9,13 @@
 #include <drivers/console.h>
 #include <drivers/ti/uart/uart_16550.h>
 
+#include <platform_def.h>
+
 	/*
 	 * "core" functions are low-level implementations that don't require
 	 * writable memory and are thus safe to call in BL1 crash context.
 	 */
 	.globl console_init
-	.globl console_putc
 	.globl console_getc
 	.globl console_flush
 
@@ -86,12 +87,27 @@ func console_init
 	/* DTR + RTS */
 	mov	w3, #3
 	str	w3, [x0, #UARTMCR]
+
 	mov	w0, #1
 	ret
 init_fail:
 	mov	w0, #0
 	ret
 endfunc console_init
+
+#if defined(IMAGE_CACTUS) || defined(IMAGE_IVY)
+	.globl console_uart_putc
+func console_uart_putc
+	b	console_core_putc
+endfunc console_uart_putc
+#endif
+
+#if defined(IMAGE_TFTF)
+	.globl console_putc
+func console_putc
+	b	console_core_putc
+endfunc console_putc
+#endif
 
 	/* --------------------------------------------------------
 	 * int console_putc(int c)
@@ -102,9 +118,10 @@ endfunc console_init
 	 * Clobber list : x1, x2
 	 * --------------------------------------------------------
 	 */
-func console_putc
+func console_core_putc
 	adr	x1, console_base
 	ldr	x1, [x1]
+	cbz	x1, 3f
 
 	/* Prepend '\r' to '\n' */
 	cmp	w0, #0xA
@@ -123,8 +140,8 @@ func console_putc
 	cmp	w2, #(UARTLSR_TEMT | UARTLSR_THRE)
 	b.ne	2b
 	str	w0, [x1, #UARTTX]
-	ret
-endfunc console_putc
+3:	ret
+endfunc console_core_putc
 
 	/* ---------------------------------------------
 	 * int console_getc(void)
@@ -138,6 +155,7 @@ endfunc console_putc
 func console_getc
 	adr	x0, console_base
 	ldr	x0, [x0]
+	cbz	x0, no_char
 
 	/* Check if the receive FIFO is empty */
 1:	ldr	w1, [x0, #UARTLSR]
@@ -160,6 +178,7 @@ endfunc console_getc
 func console_flush
 	adr	x0, console_base
 	ldr	x0, [x0]
+	cbz	x0, 2f
 
 	/* Loop until the transmit FIFO is empty */
 1:	ldr	w1, [x0, #UARTLSR]
@@ -167,6 +186,6 @@ func console_flush
 	cmp	w1, #(UARTLSR_TEMT | UARTLSR_THRE)
 	b.ne	1b
 
-	mov	w0, #0
+2:	mov	w0, #0
 	ret
 endfunc console_flush

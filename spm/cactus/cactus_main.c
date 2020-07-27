@@ -20,7 +20,6 @@
 #include <sp_helpers.h>
 #include <std_svc.h>
 #include <plat/common/platform.h>
-#include <plat_arm.h>
 #include <platform_def.h>
 
 /* Host machine information injected by the build system in the ELF file. */
@@ -80,8 +79,7 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id)
 }
 
 static const mmap_region_t cactus_mmap[] __attribute__((used)) = {
-	/* DEVICE0 area includes UART2 necessary to console */
-	MAP_REGION_FLAT(DEVICE0_BASE, DEVICE0_SIZE, MT_DEVICE | MT_RW),
+	MAP_REGION_FLAT(PLAT_CONSOLE_BASE, PLAT_CONSOLE_SIZE, MT_DEVICE | MT_RW),
 	{0}
 };
 
@@ -168,11 +166,11 @@ void __dead2 cactus_main(void)
 	enable_mmu_el1(0);
 
 	if (ffa_id == SPM_VM_ID_FIRST) {
-		console_init(PL011_UART2_BASE,
-			PL011_UART2_CLK_IN_HZ,
-			PL011_BAUDRATE);
+		console_init((uintptr_t)PLAT_CONSOLE_BASE,
+			(unsigned int)PLAT_CONSOLE_CLK_IN_HZ,
+			(unsigned int)PLAT_CONSOLE_BAUDRATE);
 
-		set_putc_impl(PL011_AS_STDOUT);
+		set_putc_impl(UART_AS_STDOUT);
 
 		NOTICE("Booting Primary Cactus Secure Partition\n%s\n%s\n",
 			build_message, version_string);
