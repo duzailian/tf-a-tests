@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "2e78dad6_625c20f1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2020-07-28T11:54:12Z",
+      "side": 1,
+      "message": "(minor) I think this commit message is misleading, it sounds like it\u0027s introducing a new target in the Makefile, whereas it is simply fixing the help message to show it.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 42
+      },
+      "revId": "3a7cf39e0cd8bf068aaa142364c38724e082e09a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c541d1a3_6baf28ec",
         "filename": "Makefile",
         "patchSetId": 1
@@ -66,6 +89,53 @@
         "startChar": 10,
         "endLine": 541,
         "endChar": 20
+      },
+      "revId": "3a7cf39e0cd8bf068aaa142364c38724e082e09a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "539283d6_308c8287",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2020-07-28T11:54:12Z",
+      "side": 1,
+      "message": "I personally like \u0027help_tests\u0027 better. I would instinctively try something that starts with \u0027make help...\u0027 to get this kind of information and would rely on shell completion to suggest it. But I realise this is personal choice. Your call, Leonardo ;) !",
+      "parentUuid": "91aed84b_a9ae4b3e",
+      "range": {
+        "startLine": 541,
+        "startChar": 10,
+        "endLine": 541,
+        "endChar": 20
+      },
+      "revId": "3a7cf39e0cd8bf068aaa142364c38724e082e09a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3593c6d2_650df68e",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2020-07-28T11:54:12Z",
+      "side": 1,
+      "message": "(minor) sets?",
+      "range": {
+        "startLine": 541,
+        "startChar": 43,
+        "endLine": 541,
+        "endChar": 46
       },
       "revId": "3a7cf39e0cd8bf068aaa142364c38724e082e09a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
