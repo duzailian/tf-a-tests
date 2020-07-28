@@ -34,6 +34,24 @@
       "revId": "d4c2c8f5f8d5ad95cc022900f5450e865a728805",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae6191d1_afffd158",
+        "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_corrected.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-07-28T15:12:44Z",
+      "side": 1,
+      "message": "Ok, it may be good to add an appropriate comment to say it\u0027s an HW SoC integration aspect (more than something required by the Arm architecture...).",
+      "parentUuid": "a2b0447a_9aea57ff",
+      "revId": "d4c2c8f5f8d5ad95cc022900f5450e865a728805",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
