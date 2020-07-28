@@ -84,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "7ded2a85_4922d0e3",
+        "filename": "tftf/tests/plat/nvidia/tegra194/serror_handler.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-07-28T14:06:51Z",
+      "side": 1,
+      "message": "It may be details but I see this in the recommended sequence as well as sdei_entrypoint.S\n\tstp\txzr, x30, [sp, #-16]!\n\tbl\tsdei_event_handler\n\tldp\txzr, x30, [sp],#16\n\nx29 is not saved/restored as part of the sequence.",
+      "parentUuid": "eec73034_81993191",
+      "revId": "30df47d822f638a6ebc96aff52a0b66bc64b9995",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ef1c769d_a8226a13",
         "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_uncorrectable.c",
         "patchSetId": 6
