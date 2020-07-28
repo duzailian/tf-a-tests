@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0a34917a_07deb3fc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-07-28T12:38:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9de616b_13336060",
+      "revId": "26d69b77d4232c34b1032a47bfdffb3a94d120f5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c9033b38_c38846f0",
         "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "742967e6_548d53d4",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-07-28T12:38:05Z",
+      "side": 1,
+      "message": "Done. Though this else didn\u0027t harm while testing.",
+      "parentUuid": "c9033b38_c38846f0",
+      "revId": "26d69b77d4232c34b1032a47bfdffb3a94d120f5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f9d3bc12_3c85ba5d",
         "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
         "patchSetId": 1
@@ -50,6 +86,24 @@
       "revId": "26d69b77d4232c34b1032a47bfdffb3a94d120f5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35bb654e_9d583c8f",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-07-28T12:38:05Z",
+      "side": 1,
+      "message": "Done. Though this else didn\u0027t harm while testing.",
+      "parentUuid": "f9d3bc12_3c85ba5d",
+      "revId": "26d69b77d4232c34b1032a47bfdffb3a94d120f5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
