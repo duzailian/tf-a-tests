@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "034666c4_80182744",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-07-29T11:12:23Z",
+      "side": 1,
+      "message": "Duplicate",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 24
+      },
+      "revId": "d41b7b6ca02d205495ccb42c0faeffec2544a3db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe72c1f2_9b31c007",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-07-29T11:12:23Z",
+      "side": 1,
+      "message": "Maybe you want to add partition ID here, since now we have more than one secondary partition.",
+      "range": {
+        "startLine": 189,
+        "startChar": 10,
+        "endLine": 189,
+        "endChar": 61
+      },
+      "revId": "d41b7b6ca02d205495ccb42c0faeffec2544a3db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
