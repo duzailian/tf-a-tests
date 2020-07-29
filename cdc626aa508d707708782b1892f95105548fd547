@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "32dea667_7bba6ba6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-07-29T10:56:45Z",
+      "side": 1,
+      "message": "In order",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 7
+      },
+      "revId": "cdc626aa508d707708782b1892f95105548fd547",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ffe6f968_d6114b6b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-07-29T10:56:45Z",
+      "side": 1,
+      "message": "Probably RXTX_MAP if you want resemblance with a function in the code",
+      "range": {
+        "startLine": 9,
+        "startChar": 20,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "cdc626aa508d707708782b1892f95105548fd547",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
