@@ -11,9 +11,7 @@
 #include <tftf_lib.h>
 #include <ffa_helpers.h>
 
-#define SPM_VM_ID_FIRST                 (1)
-#define SPM_VM_ID_SECOND                (2)
-#define SPM_VM_ID_THIRD                 (3)
+#define SPM_VM_ID_FIRST                 SP_ID(1)
 
 #define SPM_VM_GET_COUNT                (0xFF01)
 #define SPM_VCPU_GET_COUNT              (0xFF02)
