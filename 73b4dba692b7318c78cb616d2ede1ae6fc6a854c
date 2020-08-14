@@ -166,6 +166,30 @@
       "revId": "73b4dba692b7318c78cb616d2ede1ae6fc6a854c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "002a8c52_ec4333b4",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-14T16:23:48Z",
+      "side": 1,
+      "message": "Hi Olivier,\nI did not get response from the person who works in the Partner Enablement Group. I will try to contact some other person and see if he can help.",
+      "parentUuid": "0e21965f_4cbd3dce",
+      "range": {
+        "startLine": 234,
+        "startChar": 1,
+        "endLine": 234,
+        "endChar": 14
+      },
+      "revId": "73b4dba692b7318c78cb616d2ede1ae6fc6a854c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
