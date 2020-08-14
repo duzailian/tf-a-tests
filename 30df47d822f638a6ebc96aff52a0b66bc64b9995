@@ -156,6 +156,24 @@
     },
     {
       "key": {
+        "uuid": "69924da5_91415dc8",
+        "filename": "tftf/tests/plat/nvidia/tegra194/serror_handler.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-08-14T08:54:57Z",
+      "side": 1,
+      "message": "Great, thanks!",
+      "parentUuid": "b11b0708_3d0c3a32",
+      "revId": "30df47d822f638a6ebc96aff52a0b66bc64b9995",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ef1c769d_a8226a13",
         "filename": "tftf/tests/plat/nvidia/tegra194/test_ras_uncorrectable.c",
         "patchSetId": 6
