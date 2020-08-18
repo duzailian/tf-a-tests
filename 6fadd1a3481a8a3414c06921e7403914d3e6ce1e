@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "21b20f80_f2002b47",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-08-18T18:41:46Z",
+      "side": 1,
+      "message": "I like to see a detailed description of the patch in the commit message. In this case it can be:\n\n\"The Makefile contains a \u0027help_tests\u0027 option to display the list of supported tests. But the option is not available to users, yet.\n\nThis patch adds this missing option to the list of the make rules available to users.\"",
+      "revId": "6fadd1a3481a8a3414c06921e7403914d3e6ce1e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
