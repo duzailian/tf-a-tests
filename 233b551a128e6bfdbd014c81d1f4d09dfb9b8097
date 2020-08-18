@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "628c4b2a_22c1e6cb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-08-18T14:48:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ece2ae5_07332204",
+      "range": {
+        "startLine": 10,
+        "startChar": 40,
+        "endLine": 10,
+        "endChar": 41
+      },
+      "revId": "233b551a128e6bfdbd014c81d1f4d09dfb9b8097",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9cc313d1_1dfa7220",
         "filename": "lib/xlat_tables_v2/xlat_tables_core.c",
         "patchSetId": 7
