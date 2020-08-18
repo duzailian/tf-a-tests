@@ -117,6 +117,30 @@
       "revId": "233b551a128e6bfdbd014c81d1f4d09dfb9b8097",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86ea1386_56c4bfa3",
+        "filename": "lib/xlat_tables_v2/xlat_tables_core.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-08-18T14:54:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "29b4f1df_9334f527",
+      "range": {
+        "startLine": 200,
+        "startChar": 14,
+        "endLine": 201,
+        "endChar": 21
+      },
+      "revId": "233b551a128e6bfdbd014c81d1f4d09dfb9b8097",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
