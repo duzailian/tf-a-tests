@@ -16,6 +16,24 @@
       "revId": "6fadd1a3481a8a3414c06921e7403914d3e6ce1e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f87e7be_6fe13194",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000396
+      },
+      "writtenOn": "2020-08-18T21:36:13Z",
+      "side": 1,
+      "message": "You are right Varun, it needs a commit description. Thanks for the description, please check latest version.",
+      "parentUuid": "21b20f80_f2002b47",
+      "revId": "6fadd1a3481a8a3414c06921e7403914d3e6ce1e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
