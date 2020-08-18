@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "83e8c037_fb72db40",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-08-18T14:53:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dbdb3017_2c1325b0",
+      "range": {
+        "startLine": 10,
+        "startChar": 40,
+        "endLine": 10,
+        "endChar": 41
+      },
+      "revId": "4f3259650eeb4ebcd372204d41cdda6f344a2989",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a0af27e7_55792b32",
         "filename": "include/lib/xlat_tables/xlat_tables_defs.h",
         "patchSetId": 4
@@ -36,6 +60,24 @@
       "writtenOn": "2020-07-29T07:21:15Z",
       "side": 1,
       "message": "Would this better go to include/lib/xlat_tables/aarch64/xlat_tables_aarch64.h?",
+      "revId": "4f3259650eeb4ebcd372204d41cdda6f344a2989",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b22aac22_9ac614a9",
+        "filename": "include/lib/xlat_tables/xlat_tables_defs.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-08-18T14:53:03Z",
+      "side": 1,
+      "message": "This code matches TF-A definition and I would like to keep them similar.",
+      "parentUuid": "a0af27e7_55792b32",
       "revId": "4f3259650eeb4ebcd372204d41cdda6f344a2989",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
