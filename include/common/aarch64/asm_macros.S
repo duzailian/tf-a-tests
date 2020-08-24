@@ -79,6 +79,15 @@
 	.endm
 
 	/*
+	 * Create a vector entry that just spins making the exception unrecoverable.
+	 */
+	.macro vector_entry_spin name
+	vector_entry \name
+	b \name
+	end_vector_entry \name
+	.endm
+
+	/*
 	 * This macro calculates the base address of an MP stack using the
 	 * platform_get_core_pos() index, the name of the stack storage and
 	 * the size of each stack

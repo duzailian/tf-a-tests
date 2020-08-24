@@ -12,11 +12,6 @@
  * Simplistic exceptions vector table.
  * All entries spin, which means all types of exceptions are unrecoverable.
  */
-	.macro vector_entry_spin name
-	vector_entry \name
-	b \name
-	end_vector_entry \name
-	.endm
 
 vector_base exception_stubs
 vector_entry_spin sync_exception_sp_el0
