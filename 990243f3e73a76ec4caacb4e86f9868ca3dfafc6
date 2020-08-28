@@ -1,0 +1,384 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "28d19189_68228654",
+        "filename": "lib/libfdt/libfdt.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "These source files are not used by smc fuzzing tool. I was wondering why add them to LIBFDT_SRCS?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 0
+      },
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1bf1dfcf_91fc2408",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "nit: Remove extra space before #ifndef",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ec40fd9_8bc61b9f",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "nit: space between include and \u003c",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b12e4b97_39df90c4",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "nit: please use current_col or curr_col for better readability",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aebd38a2_e601f151",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "nit: please use push3d_fifo_fname for better readability",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5be772a3_1c346305",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "nit: please use push3d_fifo_bias for better readability",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ab63815_8f6b5abe",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b26be3f_1d1aeaa8",
+        "filename": "smc_fuzz/include/smcmalloc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "nit: please use 0x10000 for better readability",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5192d727_4ed8f425",
+        "filename": "smc_fuzz/include/smcmalloc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "nit: please use underscores in the names of functions, structures, member variables for better readability.",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f3ccf0f_812a38b2",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "I was wondering if a print statement would be helpful here to identify issues if error is encountered.",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4022aa43_23057e35",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "please use a generic name independent of type of platform and build configuration.",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3384bcde_07f35e74",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "I see there are several helper APIs defined in libfdt_env.h to perform endianess conversion such as fdt32_to_cpu etc. Can you leverage them?",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76fe13dc_de31984d",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "I was wondering why existing libfdt APIs to retrieve properties(such as fdt_getprop, fdt_get_name etc) are not used in place of this new function?",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7635a694_30ffedfc",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "Please provide a brief inline description as comments describing each member of this structure.",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15b17f2a_0ab3c300",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "I think it is customary to use the name dtb and helpful for other developers to understand it better. Upto you 😊",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c306e321_2d6c3b48",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "Instead of 50, please use a macro.\n#define MAX_NAME_CHARS 50",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b747ed6a_3e18904f",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "bias_count?",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09b99dcb_d2f577de",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "why not:\nfdt_check_header((void *)fhdptr) !\u003d 0",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32499885_817bcdca",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "I see that a value of 1, 3, 2, 9 returned by lendconv(rval) seems to indicate about the device tree node if its either a root node or intermediate node or leaf node. Can you provide a brief description about it?",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eb06e3c5_4f4d5ce8",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "What does 100 indicate here? Can you use a macro instead of hardcoded number?",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92519ba2_38e9c871",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "Can you provide a brief description of the algorithm you chose for picking an entry from a bias list? Such as rolling a dice and using it as an index into an array whose entries indicate a type of smc node.",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "952ac180_25691b47",
+        "filename": "tftf/framework/tftf.ld.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-08-28T21:54:15Z",
+      "side": 1,
+      "message": "I was hoping you would use ALIGN directive to enforce the alignment requirements.",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
