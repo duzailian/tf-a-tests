@@ -166,10 +166,10 @@
 /*******************************************************************************
  * Console constants
  ******************************************************************************/
-#define PLAT_CONSOLE_BASE		TEGRA_UARTC_BASE
+#define PLAT_CONSOLE_BASE		TEGRA194_SPE_BASE
 #define PLAT_CONSOLE_SIZE		U(0x1000)
-#define PLAT_CONSOLE_CLK_IN_HZ		TEGRA_CONSOLE_CLKRATE
-#define PLAT_CONSOLE_BAUDRATE		TEGRA_CONSOLE_BAUDRATE
+#define PLAT_CONSOLE_CLK_IN_HZ		TEGRA194_CONSOLE_CLKRATE
+#define PLAT_CONSOLE_BAUDRATE		TEGRA194_CONSOLE_BAUDRATE
 
 #ifndef __ASSEMBLY__
 

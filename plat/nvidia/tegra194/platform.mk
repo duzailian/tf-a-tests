@@ -10,7 +10,7 @@ PLAT_SOURCES		:=	drivers/arm/gic/arm_gic_v2.c			\
 				drivers/arm/gic/gic_common.c			\
 				drivers/arm/gic/gic_v2.c			\
 				drivers/arm/timer/private_timer.c		\
-				drivers/ti/uart/aarch64/16550_console.S		\
+				plat/nvidia/drivers/spe/shared_console.S	\
 				plat/nvidia/tegra194/helpers.S			\
 				plat/nvidia/tegra194/pwr_state.c		\
 				plat/nvidia/tegra194/pwr_mgmt.c			\
@@ -21,10 +21,10 @@ PLAT_SOURCES		:=	drivers/arm/gic/arm_gic_v2.c			\
 				plat/nvidia/tegra194/wake.c			\
 				plat/nvidia/tegra194/watchdog.c
 
-CACTUS_SOURCES		+=	drivers/ti/uart/aarch64/16550_console.S		\
+CACTUS_SOURCES		+=	plat/nvidia/drivers/spe/shared_console.S	\
 				plat/nvidia/tegra194/helpers.S
 
-IVY_SOURCES		+=	drivers/ti/uart/aarch64/16550_console.S
+IVY_SOURCES		+=	plat/nvidia/drivers/spe/shared_console.S
 
 PLAT_TESTS_SKIP_LIST	:=	plat/nvidia/tegra194/tests_to_skip.txt
 
