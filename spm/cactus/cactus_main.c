@@ -166,6 +166,9 @@ void __dead2 cactus_main(void)
 	enable_mmu_el1(0);
 
 	if (ffa_id == SPM_VM_ID_FIRST) {
+		/* enable platform UART as the console */
+		set_putc_impl(UART_AS_STDOUT);
+
 		console_init((uintptr_t)PLAT_CONSOLE_BASE,
 			(unsigned int)PLAT_CONSOLE_CLK_IN_HZ,
 			(unsigned int)PLAT_CONSOLE_BAUDRATE);
