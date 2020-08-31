@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <arch.h>
+#include <arch_features.h>
 #include <arch_helpers.h>
 #include <debug.h>
 #include <mmio.h>
@@ -75,6 +77,9 @@ void sp_sleep(uint32_t ms)
 
 ffa_vcpu_count_t spm_vcpu_get_count(ffa_vm_id_t vm_id)
 {
+	if (!is_armv8_4_sel2_present())
+		return 1;
+
 	hvc_args args = {
 		.fid = SPM_VCPU_GET_COUNT,
 		.arg1 = vm_id
@@ -87,6 +92,9 @@ ffa_vcpu_count_t spm_vcpu_get_count(ffa_vm_id_t vm_id)
 
 ffa_vm_count_t spm_vm_get_count(void)
 {
+	if (!is_armv8_4_sel2_present())
+		return 1;
+
 	hvc_args args = {
 		.fid = SPM_VM_GET_COUNT
 	};
@@ -98,10 +106,12 @@ ffa_vm_count_t spm_vm_get_count(void)
 
 void spm_debug_log(char c)
 {
-	hvc_args args = {
-		.fid = SPM_DEBUG_LOG,
-		.arg1 = c
-	};
+	if (is_armv8_4_sel2_present()) {
+		hvc_args args = {
+			.fid = SPM_DEBUG_LOG,
+			.arg1 = c
+		};
 
-	(void)tftf_hvc(&args);
+		(void)tftf_hvc(&args);
+	}
 }

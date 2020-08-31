@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2013-2020, ARM Limited and Contributors. All rights reserved.
+ * Copyright (c) 2020, NVIDIA Corporation. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -132,6 +133,8 @@
 #define ID_AA64PFR0_ELX_MASK	ULL(0xf)
 #define ID_AA64PFR0_SVE_SHIFT	U(32)
 #define ID_AA64PFR0_SVE_MASK	ULL(0xf)
+#define ID_AA64PFR0_SEL2_SHIFT	U(36)
+#define ID_AA64PFR0_SEL2_MASK	ULL(0xf)
 #define ID_AA64PFR0_SVE_LENGTH	U(4)
 #define ID_AA64PFR0_MPAM_SHIFT	U(40)
 #define ID_AA64PFR0_MPAM_MASK	ULL(0xf)
