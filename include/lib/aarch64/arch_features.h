@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2020, NVIDIA Corporation. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -60,6 +61,12 @@ static inline bool is_armv8_4_ttst_present(void)
 {
 	return ((read_id_aa64mmfr2_el1() >> ID_AA64MMFR2_EL1_ST_SHIFT) &
 		ID_AA64MMFR2_EL1_ST_MASK) == 1U;
+}
+
+static inline bool is_armv8_4_sel2_present(void)
+{
+	return ((read_id_aa64pfr0_el1() >> ID_AA64PFR0_SEL2_SHIFT) &
+		ID_AA64PFR0_SEL2_MASK) == 1ULL;
 }
 
 static inline bool is_armv8_5_bti_present(void)
