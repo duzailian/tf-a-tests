@@ -30,6 +30,8 @@ PLAT_TESTS_SKIP_LIST	:=	plat/nvidia/tegra194/tests_to_skip.txt
 
 TFTF_CFLAGS		+=	-Wno-maybe-uninitialized
 
+CACTUS_SEL1_SPMC	:=	1
+
 ENABLE_ASSERTIONS	:=	1
 
 PLAT_SUPPORTS_NS_RESET	:=	1
