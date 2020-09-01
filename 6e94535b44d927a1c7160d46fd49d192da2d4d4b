@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d2708e2a_c30fac42",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-01T21:49:29Z",
+      "side": 1,
+      "message": "Can we move this check inside gicv2_set_itargetsr_value() so that it benefits all users of the function?",
+      "range": {
+        "startLine": 235,
+        "startChar": 1,
+        "endLine": 236,
+        "endChar": 3
+      },
+      "revId": "6e94535b44d927a1c7160d46fd49d192da2d4d4b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3f3ebd2_52d12c59",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-01T21:49:29Z",
+      "side": 1,
+      "message": "Are you planning to keep this print in the final change?",
+      "range": {
+        "startLine": 237,
+        "startChar": 1,
+        "endLine": 237,
+        "endChar": 31
+      },
+      "revId": "6e94535b44d927a1c7160d46fd49d192da2d4d4b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
