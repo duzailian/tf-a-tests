@@ -15,10 +15,6 @@
 #define SPM_VM_ID_SECOND                (2)
 #define SPM_VM_ID_THIRD                 (3)
 
-#define SPM_VM_GET_COUNT                (0xFF01)
-#define SPM_VCPU_GET_COUNT              (0xFF02)
-#define SPM_DEBUG_LOG                   (0xBD000000)
-
 typedef struct {
 	u_register_t fid;
 	u_register_t arg1;
@@ -66,15 +62,5 @@ void announce_test_end(const char *test_desc);
 
 /* Sleep for at least 'ms' milliseconds. */
 void sp_sleep(uint32_t ms);
-
-/*
- * Hypervisor Calls Wrappers
- */
-
-ffa_vcpu_count_t spm_vcpu_get_count(ffa_vm_id_t vm_id);
-
-ffa_vm_count_t spm_vm_get_count(void);
-
-void spm_debug_log(char c);
 
 #endif /* SP_HELPERS_H */

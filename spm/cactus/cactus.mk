@@ -27,6 +27,7 @@ CACTUS_SOURCES	:=					\
 		aarch64/cactus_entrypoint.S		\
 		cactus_debug.c				\
 		cactus_ffa_tests.c 			\
+		cactus_helpers.c			\
 		cactus_main.c				\
 	)						\
 	$(addprefix spm/common/,			\
@@ -55,6 +56,7 @@ CACTUS_DEFINES	:=
 
 $(eval $(call add_define,CACTUS_DEFINES,ARM_ARCH_MAJOR))
 $(eval $(call add_define,CACTUS_DEFINES,ARM_ARCH_MINOR))
+$(eval $(call add_define,CACTUS_DEFINES,CACTUS_SEL1_SPMC))
 $(eval $(call add_define,CACTUS_DEFINES,DEBUG))
 $(eval $(call add_define,CACTUS_DEFINES,ENABLE_ASSERTIONS))
 $(eval $(call add_define,CACTUS_DEFINES,ENABLE_BTI))

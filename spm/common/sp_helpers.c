@@ -1,6 +1,5 @@
 /*
  * Copyright (c) 2018, Arm Limited. All rights reserved.
- * Copyright (c) 2020, NVIDIA Corporation. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -67,41 +66,4 @@ void sp_sleep(uint32_t ms)
 
 	while ((syscounter_read() - start_count_val) < wait_cycles)
 		; /* Busy wait... */
-}
-
-/*******************************************************************************
- * Hypervisor Calls Wrappers
- ******************************************************************************/
-
-ffa_vcpu_count_t spm_vcpu_get_count(ffa_vm_id_t vm_id)
-{
-	hvc_args args = {
-		.fid = SPM_VCPU_GET_COUNT,
-		.arg1 = vm_id
-	};
-
-	hvc_ret_values ret = tftf_hvc(&args);
-
-	return ret.ret0;
-}
-
-ffa_vm_count_t spm_vm_get_count(void)
-{
-	hvc_args args = {
-		.fid = SPM_VM_GET_COUNT
-	};
-
-	hvc_ret_values ret = tftf_hvc(&args);
-
-	return ret.ret0;
-}
-
-void spm_debug_log(char c)
-{
-	hvc_args args = {
-		.fid = SPM_DEBUG_LOG,
-		.arg1 = c
-	};
-
-	(void)tftf_hvc(&args);
 }
