@@ -8,6 +8,7 @@
 #include <arch.h>
 #include <arch_features.h>
 #include <arch_helpers.h>
+#include <cactus_def.h>
 #include <debug.h>
 #include <mmio.h>
 #include <platform_def.h>
@@ -77,9 +78,9 @@ void sp_sleep(uint32_t ms)
 
 ffa_vcpu_count_t spm_vcpu_get_count(ffa_vm_id_t vm_id)
 {
-	if (!is_armv8_4_sel2_present())
-		return 0;
-
+#if CACTUS_SEL1_SPMC
+	return CACTUS_SEL1_SPMC_VCPU_COUNT;
+#else
 	hvc_args args = {
 		.fid = SPM_VCPU_GET_COUNT,
 		.arg1 = vm_id
@@ -88,13 +89,14 @@ ffa_vcpu_count_t spm_vcpu_get_count(ffa_vm_id_t vm_id)
 	hvc_ret_values ret = tftf_hvc(&args);
 
 	return ret.ret0;
+#endif
 }
 
 ffa_vm_count_t spm_vm_get_count(void)
 {
-	if (!is_armv8_4_sel2_present())
-		return 0;
-
+#if CACTUS_SEL1_SPMC
+	return CACTUS_SEL1_SPMC_VM_COUNT;
+#else
 	hvc_args args = {
 		.fid = SPM_VM_GET_COUNT
 	};
@@ -102,6 +104,7 @@ ffa_vm_count_t spm_vm_get_count(void)
 	hvc_ret_values ret = tftf_hvc(&args);
 
 	return ret.ret0;
+#endif
 }
 
 void spm_debug_log(char c)

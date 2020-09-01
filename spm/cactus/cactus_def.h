@@ -43,5 +43,10 @@
 #define SECONDARY_UUID {0xd1582309, 0xf02347b9, 0x827c4464, 0xf5578fc8}
 #define TERTIARY_UUID {0x79b55c73, 0x1d8c44b9, 0x859361e1, 0x770ad8d2}
 
+/*
+ * Configuration settings when Cactus is the SPMC on pre-8.4 CPUs
+ */
+#define CACTUS_SEL1_SPMC_VM_COUNT	U(0)
+#define CACTUS_SEL1_SPMC_VCPU_COUNT	U(0)
 
 #endif /* CACTUS_DEF_H */
