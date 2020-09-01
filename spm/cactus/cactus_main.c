@@ -15,6 +15,7 @@
 #include <drivers/console.h>
 #include <ffa_helpers.h>
 #include <lib/aarch64/arch_helpers.h>
+#include <lib/aarch64/arch_features.h>
 #include <lib/xlat_tables/xlat_mmu_helpers.h>
 #include <lib/xlat_tables/xlat_tables_v2.h>
 #include <sp_helpers.h>
@@ -150,6 +151,13 @@ void __dead2 cactus_main(void)
 	memset((void *)CACTUS_BSS_START,
 	       0, CACTUS_BSS_END - CACTUS_BSS_START);
 
+#if CACTUS_SEL1_SPMC
+	ffa_vm_id_t ffa_id = SPM_VM_ID_FIRST;
+	if (is_armv8_4_sel2_present()) {
+		ERROR("Cactus as SPMC is supported on pre-8.4 CPUs only\n");
+		panic();
+	}
+#else
 	/* Get current FFA id */
 	smc_ret_values ffa_id_ret = ffa_id_get();
 	if (ffa_id_ret.ret0 != FFA_SUCCESS_SMC32) {
@@ -158,6 +166,8 @@ void __dead2 cactus_main(void)
 	}
 
 	ffa_vm_id_t ffa_id = ffa_id_ret.ret2 & 0xffff;
+#endif
+
 	mb.send = (void *) get_sp_tx_start(ffa_id);
 	mb.recv = (void *) get_sp_rx_start(ffa_id);
 

@@ -14,11 +14,6 @@
 #define FFA_MAJOR 1U
 #define FFA_MINOR 0U
 
-static const uint32_t primary_uuid[4] = PRIMARY_UUID;
-static const uint32_t secondary_uuid[4] = SECONDARY_UUID;
-static const uint32_t tertiary_uuid[4] = TERTIARY_UUID;
-static const uint32_t null_uuid[4] = {0};
-
 struct feature_test {
 	const char *test_name;
 	unsigned int feature;
@@ -78,6 +73,12 @@ static void ffa_features_test(void)
 
 	announce_test_section_end(test_features);
 }
+
+#if !CACTUS_SEL1_SPMC
+static const uint32_t primary_uuid[4] = PRIMARY_UUID;
+static const uint32_t secondary_uuid[4] = SECONDARY_UUID;
+static const uint32_t tertiary_uuid[4] = TERTIARY_UUID;
+static const uint32_t null_uuid[4] = {0};
 
 static void ffa_partition_info_helper(struct mailbox_buffers *mb, const uint32_t uuid[4],
 			       const struct ffa_partition_info *expected,
@@ -148,6 +149,7 @@ static void ffa_partition_info_get_test(struct mailbox_buffers *mb)
 
 	announce_test_section_end(test_partition_info);
 }
+#endif
 
 void ffa_version_test(void)
 {
@@ -180,7 +182,9 @@ void ffa_tests(struct mailbox_buffers *mb)
 
 	ffa_features_test();
 	ffa_version_test();
+#if !CACTUS_SEL1_SPMC
 	ffa_partition_info_get_test(mb);
+#endif
 
 	announce_test_section_end(test_ffa);
 }
