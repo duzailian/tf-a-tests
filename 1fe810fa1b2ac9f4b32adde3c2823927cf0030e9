@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2a5a8089_dfb52382",
+        "filename": "spm/common/sp_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-09-02T22:54:17Z",
+      "side": 1,
+      "message": "1000U",
+      "range": {
+        "startLine": 66,
+        "startChar": 51,
+        "endLine": 66,
+        "endChar": 56
+      },
+      "revId": "1fe810fa1b2ac9f4b32adde3c2823927cf0030e9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
