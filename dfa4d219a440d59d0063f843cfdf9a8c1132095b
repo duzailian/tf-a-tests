@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "61097f48_34358e53",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-02T15:57:09Z",
+      "side": 1,
+      "message": "Why aren\u0027t you adjusting the spmc_id field in the SPMC manifest to the desired value?\nThis would remove necessity for this change.",
+      "revId": "dfa4d219a440d59d0063f843cfdf9a8c1132095b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
