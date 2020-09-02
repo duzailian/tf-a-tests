@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b3fb1448_09a4eb2c",
+        "filename": "spm/common/sp_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-09-02T22:52:33Z",
+      "side": 1,
+      "message": "if you are not running S-EL2, vcpu count is 0 and vm count is 0 as well. The concept of VM\u0027s don\u0027t apply in that case.. i feel like that will be source of confusion..",
+      "range": {
+        "startLine": 81,
+        "startChar": 9,
+        "endLine": 81,
+        "endChar": 11
+      },
+      "revId": "6a89dc26100c8d1ac1c1032fa62497d3e3f4c21c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
