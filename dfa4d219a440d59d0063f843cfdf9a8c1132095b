@@ -16,6 +16,24 @@
       "revId": "dfa4d219a440d59d0063f843cfdf9a8c1132095b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09d614d0_e226c318",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-02T18:54:45Z",
+      "side": 1,
+      "message": "spmc_id is expected to be 0x8000 at other places in the stack. Plus, it is not really clear that spmc_id and VM_id are the same (?)",
+      "parentUuid": "61097f48_34358e53",
+      "revId": "dfa4d219a440d59d0063f843cfdf9a8c1132095b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
