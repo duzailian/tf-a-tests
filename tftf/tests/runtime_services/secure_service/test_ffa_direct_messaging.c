@@ -1,10 +1,12 @@
 /*
  * Copyright (c) 2018-2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2020, NVIDIA Corporation. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
 #include <arch_helpers.h>
+#include <arch_features.h>
 #include <cactus_def.h>
 #include <platform.h>
 #include <smccc.h>
@@ -61,24 +63,10 @@ test_result_t test_ffa_direct_messaging(void)
 		return TEST_RESULT_SUCCESS;
 	}
 
-	/*
-	 * From this point assume SPMC runs at S-EL2 and two Cactus instances
-	 * are loaded at S-EL1.
-	 *
-	 */
-
 	/**********************************************************************
 	 * Send a message to SP1 through direct messaging
 	 **********************************************************************/
 	result = send_receive_direct_msg(1, DIRECT_MSG_TEST_PATTERN1);
-	if (result != TEST_RESULT_SUCCESS) {
-		return result;
-	}
-
-	/**********************************************************************
-	 * Send a message to SP2 through direct messaging
-	 **********************************************************************/
-	result = send_receive_direct_msg(2, DIRECT_MSG_TEST_PATTERN2);
 	if (result != TEST_RESULT_SUCCESS) {
 		return result;
 	}
@@ -89,6 +77,21 @@ test_result_t test_ffa_direct_messaging(void)
 	result = send_receive_direct_msg(1, DIRECT_MSG_TEST_PATTERN3);
 	if (result != TEST_RESULT_SUCCESS) {
 		return result;
+	}
+
+	/*
+	 * Assume two Cactus instances are loaded at S-EL1 for systems where SEL2
+	 * is present.
+	 */
+	if (is_armv8_4_sel2_present()) {
+
+		/***************************************************************
+		 * Send a message to SP2 through direct messaging
+		 **************************************************************/
+		result = send_receive_direct_msg(2, DIRECT_MSG_TEST_PATTERN2);
+		if (result != TEST_RESULT_SUCCESS) {
+			return result;
+		}
 	}
 
 	/**********************************************************************
