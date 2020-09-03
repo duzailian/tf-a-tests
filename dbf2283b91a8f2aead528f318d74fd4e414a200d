@@ -121,6 +121,30 @@
     },
     {
       "key": {
+        "uuid": "40b391b7_491963fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-03T19:39:54Z",
+      "side": 1,
+      "message": "These are still early days. We never know how Cactus will evolve. By  forking now, we run the risk of not getting the changes from other developers that use Cactus for FF-A. Once we reach a point where things stabilize, it might make sense to fork. I dont think we are there yet.",
+      "parentUuid": "41ae2442_020bf5ad",
+      "range": {
+        "startLine": 7,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 41
+      },
+      "revId": "dbf2283b91a8f2aead528f318d74fd4e414a200d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8b828f7f_b3ccf7a1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
