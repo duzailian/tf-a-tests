@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6472a06b_404a8407",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-07T15:08:44Z",
+      "side": 0,
+      "message": "DEVICE0_BASE/DEVICE_SIZE spans the whole FVP peripherals regions where only restricting to UART here. This does not seem to hurt as only UART peripheral seems to be accessed in cactus for now. If this turns to become a problem accessing other peripheral devices we may have to think it a bit more scalable.",
+      "revId": "12d7eff8445a1aaa8360edf82165f3a02757caa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
