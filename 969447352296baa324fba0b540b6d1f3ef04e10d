@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b0c1d2cb_8dd91eb7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-07T11:34:59Z",
+      "side": 1,
+      "message": "This breaks the intent for this test to send direct messages to SP1, SP2, SP1 in this order.",
+      "revId": "969447352296baa324fba0b540b6d1f3ef04e10d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
