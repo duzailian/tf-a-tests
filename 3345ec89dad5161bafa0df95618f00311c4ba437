@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "88456f9f_a9206804",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-07T14:55:35Z",
+      "side": 1,
+      "message": "Not sure this works. This is defining CACTUS_SEL1_SPMC but at this stage, it is neither defined to 1 or 0.\n\ne.g. on the C files command line I see -DCACTUS_SEL1_SPMC but the value is not defined when building eventually.",
+      "revId": "3345ec89dad5161bafa0df95618f00311c4ba437",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5dec7eea_0e370d59",
         "filename": "spm/common/sp_helpers.c",
         "patchSetId": 5
