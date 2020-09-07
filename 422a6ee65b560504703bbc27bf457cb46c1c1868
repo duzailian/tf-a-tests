@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6d8955a2_e3c4b6b4",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-07T11:59:26Z",
+      "side": 1,
+      "message": "Not sure that\u0027s the right trigger.... S-EL2 may be implemented in HW, but no component loaded at this exception layer (aka v8.4 hw without sw support for secure virtualization).\nMoreover, this leads to the debate: is a VM (or SP) meant to be aware that it runs in a virtual machine? Adding those conditional code makes it harder for the code to scale (e.g. use the same service code from an SP directly into a VM).",
+      "revId": "422a6ee65b560504703bbc27bf457cb46c1c1868",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
