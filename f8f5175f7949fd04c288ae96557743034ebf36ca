@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e2c0f515_ed4b4dd1",
+        "filename": "drivers/ti/uart/aarch64/16550_console.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-07T17:25:05Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f5ce9ac7_80801da9",
+      "revId": "f8f5175f7949fd04c288ae96557743034ebf36ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "56d3c43a_b75920da",
         "filename": "plat/nvidia/drivers/spe/shared_console.S",
         "patchSetId": 3
