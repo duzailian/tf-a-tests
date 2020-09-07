@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "adc09453_572e83fc",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-07T11:50:58Z",
+      "side": 1,
+      "message": "What is the component proceeding with RXTX map emitted from Cactus (as SPMC)?\n\nI don\u0027t think it\u0027s allowed to call RXTX MAP from secure physical FF-A instance by the spec.",
+      "revId": "8b9510397d53eb06c671a5cfb2bc7e62bf6a6ca4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
