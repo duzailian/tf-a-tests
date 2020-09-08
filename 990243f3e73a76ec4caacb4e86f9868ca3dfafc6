@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bfd9bf61_b4b819f8",
+        "filename": "lib/libfdt/libfdt.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "To support device trees in tfa tests I simply copied the lib directory from tfa without pruning the bits not used in the fuzzer.  This way other modules can utilize the device trees without issue in tfa tests.  Let me know if we still need to manage the process of cutting out ununsed portions.",
+      "parentUuid": "28d19189_68228654",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 0
+      },
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1bf1dfcf_91fc2408",
         "filename": "smc_fuzz/include/fifo3d.h",
         "patchSetId": 4
@@ -39,6 +63,24 @@
       "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f91622d_b07d86d8",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1bf1dfcf_91fc2408",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "ea007b45_85ba3023",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ec40fd9_8bc61b9f",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b12e4b97_39df90c4",
         "filename": "smc_fuzz/include/fifo3d.h",
         "patchSetId": 4
@@ -73,6 +133,24 @@
       "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "addb1efc_dea4b588",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b12e4b97_39df90c4",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "f5332049_fe306917",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aebd38a2_e601f151",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5be772a3_1c346305",
         "filename": "smc_fuzz/include/fifo3d.h",
         "patchSetId": 4
@@ -107,6 +203,24 @@
       "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb2d099e_72adebef",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5be772a3_1c346305",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -127,6 +241,24 @@
     },
     {
       "key": {
+        "uuid": "31330ed2_3d6b2720",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ab63815_8f6b5abe",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0b26be3f_1d1aeaa8",
         "filename": "smc_fuzz/include/smcmalloc.h",
         "patchSetId": 4
@@ -144,6 +276,24 @@
     },
     {
       "key": {
+        "uuid": "73107fde_74f2e4fb",
+        "filename": "smc_fuzz/include/smcmalloc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0b26be3f_1d1aeaa8",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5192d727_4ed8f425",
         "filename": "smc_fuzz/include/smcmalloc.h",
         "patchSetId": 4
@@ -155,6 +305,24 @@
       "writtenOn": "2020-08-28T21:54:15Z",
       "side": 1,
       "message": "nit: please use underscores in the names of functions, structures, member variables for better readability.",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40cfba89_3901942c",
+        "filename": "smc_fuzz/include/smcmalloc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Changed some of the variable names to better enhance readability",
+      "parentUuid": "5192d727_4ed8f425",
       "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
@@ -178,6 +346,24 @@
     },
     {
       "key": {
+        "uuid": "c24b68e4_cf79ed8f",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "This is an error condition in the malloc block.  The malloc function already has built in error returns that will manifest to the user.  This just forces the push function to return immediately if we encounter a malloc error that has already been addressed.",
+      "parentUuid": "4f3ccf0f_812a38b2",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4022aa43_23057e35",
         "filename": "smc_fuzz/src/randsmcmod.c",
         "patchSetId": 4
@@ -192,6 +378,24 @@
       "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e40ab307_c068a7b2",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4022aa43_23057e35",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -212,6 +416,24 @@
     },
     {
       "key": {
+        "uuid": "1c7166b4_d7521d0a",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3384bcde_07f35e74",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "76fe13dc_de31984d",
         "filename": "smc_fuzz/src/randsmcmod.c",
         "patchSetId": 4
@@ -223,6 +445,24 @@
       "writtenOn": "2020-08-28T21:54:15Z",
       "side": 1,
       "message": "I was wondering why existing libfdt APIs to retrieve properties(such as fdt_getprop, fdt_get_name etc) are not used in place of this new function?",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42214d5a_bbb549cd",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "The problem is that the libfdt API\u0027s require knowledge of the node names to pull the string data.  The node names here can only be found by reading the device tree so these functions \nwould not work in this context.",
+      "parentUuid": "76fe13dc_de31984d",
       "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
@@ -246,6 +486,24 @@
     },
     {
       "key": {
+        "uuid": "387585c9_97643191",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7635a694_30ffedfc",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "15b17f2a_0ab3c300",
         "filename": "smc_fuzz/src/randsmcmod.c",
         "patchSetId": 4
@@ -260,6 +518,24 @@
       "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84cf284e_175d79f2",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15b17f2a_0ab3c300",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -280,6 +556,24 @@
     },
     {
       "key": {
+        "uuid": "f584eccd_7726058f",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c306e321_2d6c3b48",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b747ed6a_3e18904f",
         "filename": "smc_fuzz/src/randsmcmod.c",
         "patchSetId": 4
@@ -294,6 +588,24 @@
       "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0c3a7af_39e845af",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b747ed6a_3e18904f",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -314,6 +626,24 @@
     },
     {
       "key": {
+        "uuid": "0da35c78_83c8f946",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "09b99dcb_d2f577de",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "32499885_817bcdca",
         "filename": "smc_fuzz/src/randsmcmod.c",
         "patchSetId": 4
@@ -331,6 +661,24 @@
     },
     {
       "key": {
+        "uuid": "7341bd41_6de590ec",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32499885_817bcdca",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eb06e3c5_4f4d5ce8",
         "filename": "smc_fuzz/src/randsmcmod.c",
         "patchSetId": 4
@@ -342,6 +690,24 @@
       "writtenOn": "2020-08-28T21:54:15Z",
       "side": 1,
       "message": "What does 100 indicate here? Can you use a macro instead of hardcoded number?",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97b98a9e_18bd66f6",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Yes, that is coming up on the agenda to update the fuzzer.  This will probably not be a hardocded number but will instead be set based on other parameters.  Right now this is a placeholder for future enhancements.",
+      "parentUuid": "eb06e3c5_4f4d5ce8",
       "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
@@ -365,6 +731,24 @@
     },
     {
       "key": {
+        "uuid": "75c4da2a_34cbabcf",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92519ba2_38e9c871",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "952ac180_25691b47",
         "filename": "tftf/framework/tftf.ld.S",
         "patchSetId": 4
@@ -376,6 +760,24 @@
       "writtenOn": "2020-08-28T21:54:15Z",
       "side": 1,
       "message": "I was hoping you would use ALIGN directive to enforce the alignment requirements.",
+      "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b9e7284_2402261e",
+        "filename": "tftf/framework/tftf.ld.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2020-09-08T20:02:46Z",
+      "side": 1,
+      "message": "The alignment is specified in the randsmcmod.c file.",
+      "parentUuid": "952ac180_25691b47",
       "revId": "990243f3e73a76ec4caacb4e86f9868ca3dfafc6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
