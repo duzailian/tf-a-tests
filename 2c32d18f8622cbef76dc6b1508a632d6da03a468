@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d3757b69_7f337714",
+        "filename": "spm/common/sp_helpers.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-09-08T18:34:11Z",
+      "side": 0,
+      "message": "think these should be left as is. If there is another partition that wants to use this as is, it would be useful.",
+      "range": {
+        "startLine": 76,
+        "startChar": 19,
+        "endLine": 76,
+        "endChar": 24
+      },
+      "revId": "2c32d18f8622cbef76dc6b1508a632d6da03a468",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
