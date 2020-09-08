@@ -47,6 +47,10 @@ static inline int32_t ffa_error_code(smc_ret_values val) {
 	return (int32_t) val.ret2;
 }
 
+static inline ffa_vm_id_t ffa_endpoint_id(smc_ret_values val) {
+	return (ffa_vm_id_t) val.ret2 & 0xffff;
+}
+
 enum ffa_data_access {
 	FFA_DATA_ACCESS_NOT_SPECIFIED,
 	FFA_DATA_ACCESS_RO,

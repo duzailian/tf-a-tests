@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2021, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -25,5 +25,12 @@ extern uintptr_t __DATA_START__, __DATA_END__;
 extern uintptr_t __BSS_START__, __BSS_END__;
 #define IVY_BSS_START		((uintptr_t)&__BSS_START__)
 #define IVY_BSS_END		((uintptr_t)&__BSS_END__)
+
+enum stdout_route {
+	PL011_AS_STDOUT = 0,
+	HVC_CALL_AS_STDOUT,
+};
+
+void set_putc_impl(enum stdout_route);
 
 #endif /* __IVY_H__ */
