@@ -6,15 +6,19 @@
 
 #include <assert.h>
 #include <debug.h>
-#include <drivers/console.h>
 #include <drivers/arm/pl011.h>
+#include <drivers/console.h>
 #include <errno.h>
-#include <ivy_def.h>
+#include <ffa_helpers.h>
+#include <lib/aarch64/arch_helpers.h>
+#include <lib/xlat_tables/xlat_mmu_helpers.h>
+#include <lib/xlat_tables/xlat_tables_v2.h>
 #include <plat_arm.h>
+#include <plat/common/platform.h>
 #include <platform_def.h>
 #include <sp_helpers.h>
-#include <sprt_client.h>
-#include <sprt_svc.h>
+#include <spm_common.h>
+#include <std_svc.h>
 
 #include "ivy.h"
 #include "ivy_def.h"
@@ -22,6 +26,12 @@
 /* Host machine information injected by the build system in the ELF file. */
 extern const char build_message[];
 extern const char version_string[];
+
+static const mmap_region_t ivy_mmap[] __attribute__((used)) = {
+	/* DEVICE0 area includes UART2 necessary to console */
+	MAP_REGION_FLAT(DEVICE0_BASE, DEVICE0_SIZE, MT_DEVICE | MT_RW),
+	{0}
+};
 
 static void ivy_print_memory_layout(void)
 {
@@ -48,88 +58,71 @@ static void ivy_print_memory_layout(void)
 		(void *)(IVY_NS_BUF_BASE + IVY_NS_BUF_SIZE));
 }
 
-void ivy_message_handler(struct sprt_queue_entry_message *message)
+static void ivy_plat_configure_mmu(void)
 {
-	u_register_t ret0 = 0U, ret1 = 0U, ret2 = 0U, ret3 = 0U;
+	mmap_add_region(IVY_TEXT_START,
+			IVY_TEXT_START,
+			IVY_TEXT_END - IVY_TEXT_START,
+			MT_CODE);
+	mmap_add_region(IVY_RODATA_START,
+			IVY_RODATA_START,
+			IVY_RODATA_END - IVY_RODATA_START,
+			MT_RO_DATA);
+	mmap_add_region(IVY_DATA_START,
+			IVY_DATA_START,
+			IVY_DATA_END - IVY_DATA_START,
+			MT_RW_DATA);
+	mmap_add_region(IVY_BSS_START,
+			IVY_BSS_START,
+			IVY_BSS_END - IVY_BSS_START,
+			MT_RW_DATA);
 
-	if (message->type == SPRT_MSG_TYPE_SERVICE_REQUEST) {
-		switch (message->args[1]) {
-
-		case IVY_PRINT_MAGIC:
-			INFO("IVY: Magic: 0x%x\n", IVY_MAGIC_NUMBER);
-			ret0 = SPRT_SUCCESS;
-			break;
-
-		case IVY_GET_MAGIC:
-			ret1 = IVY_MAGIC_NUMBER;
-			ret0 = SPRT_SUCCESS;
-			break;
-
-		case IVY_SLEEP_MS:
-			sp_sleep(message->args[2]);
-			ret0 = SPRT_SUCCESS;
-			break;
-
-		default:
-			NOTICE("IVY: Unhandled Service ID 0x%x\n",
-			       (unsigned int)message->args[1]);
-			ret0 = SPRT_NOT_SUPPORTED;
-			break;
-		}
-	} else {
-		NOTICE("Ivy: Unhandled Service type 0x%x\n",
-		       (unsigned int)message->type);
-		ret0 = SPRT_NOT_SUPPORTED;
-	}
-
-
-	sprt_message_end(message, ret0, ret1, ret2, ret3);
+	mmap_add(ivy_mmap);
+	init_xlat_tables();
 }
+
 
 void __dead2 ivy_main(void)
 {
-	console_init(PL011_UART3_BASE,
-		     PL011_UART3_CLK_IN_HZ,
-		     PL011_BAUDRATE);
+	assert(IS_IN_EL1() != 0);
 
-	NOTICE("Booting test Secure Partition Ivy\n");
+	/* Clear BSS */
+	memset((void *)IVY_BSS_START,
+	       0, IVY_BSS_END - IVY_BSS_START);
+
+	/* Get current FFA id */
+	smc_ret_values ffa_id_ret = ffa_id_get();
+
+	if (ffa_func_id(ffa_id_ret) != FFA_SUCCESS_SMC32) {
+		ERROR("FFA_ID_GET failed.\n");
+		panic();
+	}
+
+	ffa_vm_id_t ffa_id = ffa_endpoint_id(ffa_id_ret);
+
+	/* Configure and enable Stage-1 MMU, enable D-Cache */
+	ivy_plat_configure_mmu();
+	enable_mmu_el1(0);
+
+	/* Initialise console */
+	if (ffa_id == SPM_VM_ID_FIRST) {
+		console_init(PL011_UART2_BASE,
+			PL011_UART2_CLK_IN_HZ,
+			PL011_BAUDRATE);
+
+		set_putc_impl(PL011_AS_STDOUT);
+	} else {
+		set_putc_impl(HVC_CALL_AS_STDOUT);
+	}
+
+	NOTICE("Booting test Secure Partition Ivy (ID: %u)\n", ffa_id);
 	NOTICE("%s\n", build_message);
 	NOTICE("%s\n", version_string);
 	NOTICE("Running at S-EL0\n");
 
 	ivy_print_memory_layout();
 
-	/*
-	 * Handle secure service requests.
-	 */
-	sprt_initialize_queues((void *)IVY_SPM_BUF_BASE);
-
-	while (1) {
-		struct sprt_queue_entry_message message;
-
-		/*
-		 * Try to fetch a message from the blocking requests queue. If
-		 * it is empty, try to fetch from the non-blocking requests
-		 * queue. Repeat until both of them are empty.
-		 */
-		while (1) {
-			int err = sprt_get_next_message(&message,
-					SPRT_QUEUE_NUM_BLOCKING);
-			if (err == -ENOENT) {
-				err = sprt_get_next_message(&message,
-						SPRT_QUEUE_NUM_NON_BLOCKING);
-				if (err == -ENOENT) {
-					break;
-				} else {
-					assert(err == 0);
-					ivy_message_handler(&message);
-				}
-			} else {
-				assert(err == 0);
-				ivy_message_handler(&message);
-			}
-		}
-
-		sprt_wait_for_messages();
-	}
+	ffa_msg_wait();
+	for (;;)
+		;
 }
