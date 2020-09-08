@@ -29,6 +29,7 @@ IVY_SOURCES	:=					\
 	$(addprefix spm/ivy/,			\
 		aarch64/ivy_entrypoint.S		\
 		aarch64/spm_shim_exceptions.S		\
+		ivy_debug.c				\
 		ivy_main.c				\
 	)						\
 	$(addprefix spm/common/,			\
@@ -43,9 +44,11 @@ IVY_SOURCES	+=					\
 	tftf/tests/runtime_services/secure_service/ffa_helpers.c
 
 IVY_SOURCES	+= 	drivers/arm/pl011/${ARCH}/pl011_console.S	\
-			drivers/console/console.c			\
 			lib/${ARCH}/cache_helpers.S			\
 			lib/${ARCH}/misc_helpers.S			\
+			lib/smc/${ARCH}/asm_smc.S			\
+			lib/smc/${ARCH}/smc.c				\
+			lib/smc/${ARCH}/hvc.c				\
 			lib/locks/${ARCH}/spinlock.S			\
 			lib/utils/mp_printf.c				\
 			plat/arm/fvp/aarch64/plat_helpers.S		\
