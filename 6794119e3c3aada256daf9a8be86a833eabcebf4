@@ -94,6 +94,30 @@
       "revId": "6794119e3c3aada256daf9a8be86a833eabcebf4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "066abeed_c76a7d6a",
+        "filename": "spm/cactus/cactus_helpers.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-09-09T16:55:14Z",
+      "side": 1,
+      "message": "sp_helpers.c is under spm/common. My understanding is that sp_helpers.c is meant to be used and linked into cactus, ivy or any other partition that may come along and runs on hafnium. It is not meant only for cactus. If you bring in OPTEE, it could be used sp_helpers.c and not meant to be cactus specific. The HVC\u0027s in sp_helpers.c are an interface specific to hafnium SPMC. So i\u0027m not sure why you are deleting sp_helpers.c in this patch and removing common code that could be used by other partitions.",
+      "parentUuid": "31083b1f_bdff3239",
+      "range": {
+        "startLine": 29,
+        "startChar": 1,
+        "endLine": 34,
+        "endChar": 17
+      },
+      "revId": "6794119e3c3aada256daf9a8be86a833eabcebf4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
