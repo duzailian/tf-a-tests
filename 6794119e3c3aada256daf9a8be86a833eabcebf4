@@ -46,6 +46,30 @@
       "revId": "6794119e3c3aada256daf9a8be86a833eabcebf4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a021dcc3_64e6258d",
+        "filename": "spm/cactus/cactus_helpers.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-09-09T16:45:23Z",
+      "side": 1,
+      "message": "Sorry, i meant sp_helpers.c will be used by even non-cactus partitions. Lets say i write a new S-EL1 partition \"foo\", i would like to use sp_helpers.c to talk to the spm through spm_vcpu_get_count and not through cactus_vcpu_get_count. I\u0027m trying to say leave sp_helpers.c as is for other partitions to use.\n\nI also meant that cactus_helpers.c can call spm_vcpu_get_count for ex, in the #else case.\nDoes that make sense?",
+      "parentUuid": "5edf89de_8da26282",
+      "range": {
+        "startLine": 29,
+        "startChar": 1,
+        "endLine": 34,
+        "endChar": 17
+      },
+      "revId": "6794119e3c3aada256daf9a8be86a833eabcebf4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
