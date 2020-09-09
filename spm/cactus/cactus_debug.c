@@ -14,7 +14,7 @@ static int (*putc_impl)(int);
 
 static int putc_hypcall(int c)
 {
-	spm_debug_log((char)c);
+	cactus_debug_log((char)c);
 
 	return c;
 }

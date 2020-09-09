@@ -9,6 +9,8 @@
 
 #include <stdint.h>
 
+#include <ffa_helpers.h>
+
 /* Linker symbols used to figure out the memory layout of Cactus. */
 extern uintptr_t __TEXT_START__, __TEXT_END__;
 #define CACTUS_TEXT_START	((uintptr_t)&__TEXT_START__)
@@ -30,6 +32,10 @@ enum stdout_route {
 	UART_AS_STDOUT = 0,
 	HVC_CALL_AS_STDOUT,
 };
+
+ffa_vcpu_count_t cactus_vcpu_get_count(ffa_vm_id_t vm_id);
+ffa_vm_count_t cactus_vm_get_count(void);
+void cactus_debug_log(char c);
 
 void set_putc_impl(enum stdout_route);
 
