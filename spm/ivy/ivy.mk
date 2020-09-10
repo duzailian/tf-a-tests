@@ -24,9 +24,11 @@ IVY_INCLUDES :=					\
 	-Ispm/common
 
 IVY_SOURCES	:=					\
-	$(addprefix spm/ivy/,			\
+	$(addprefix spm/ivy/,				\
 		aarch64/ivy_entrypoint.S		\
+		aarch64/spm_shim_entrypoint.S		\
 		aarch64/spm_shim_exceptions.S		\
+		shim_main.c				\
 		ivy_main.c				\
 	)						\
 	$(addprefix spm/common/,			\
