@@ -1,20 +1,22 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2021, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
 #include <assert.h>
 #include <debug.h>
-#include <drivers/console.h>
 #include <drivers/arm/pl011.h>
+#include <drivers/console.h>
 #include <errno.h>
-#include <ivy_def.h>
 #include <plat_arm.h>
 #include <platform_def.h>
+#include <sp_debug.h>
 #include <sp_helpers.h>
 #include <sprt_client.h>
 #include <sprt_svc.h>
+#include <spm_common.h>
+#include <std_svc.h>
 
 #include "ivy.h"
 #include "ivy_def.h"
@@ -88,11 +90,28 @@ void ivy_message_handler(struct sprt_queue_entry_message *message)
 
 void __dead2 ivy_main(void)
 {
-	console_init(PL011_UART3_BASE,
-		     PL011_UART3_CLK_IN_HZ,
-		     PL011_BAUDRATE);
+	/* Get current FF-A id */
+	smc_ret_values ffa_id_ret = ffa_id_get();
 
-	NOTICE("Booting test Secure Partition Ivy\n");
+	if (ffa_func_id(ffa_id_ret) != FFA_SUCCESS_SMC32) {
+		ERROR("FFA_ID_GET failed.\n");
+		panic();
+	}
+
+	ffa_vm_id_t ffa_id = ffa_endpoint_id(ffa_id_ret);
+
+	/* Initialise console */
+	if (ffa_id == SPM_VM_ID_FIRST) {
+		console_init(PL011_UART2_BASE,
+			PL011_UART2_CLK_IN_HZ,
+			PL011_BAUDRATE);
+
+		set_putc_impl(PL011_AS_STDOUT);
+	} else {
+		set_putc_impl(HVC_CALL_AS_STDOUT);
+	}
+
+	NOTICE("Booting test Secure Partition Ivy (ID: %u)\n", ffa_id);
 	NOTICE("%s\n", build_message);
 	NOTICE("%s\n", version_string);
 	NOTICE("Running at S-EL0\n");
