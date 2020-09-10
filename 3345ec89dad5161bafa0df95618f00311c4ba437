@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "675bf9a7_5e23b12d",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-10T08:28:26Z",
+      "side": 1,
+      "message": "It might work on your side for cactus-SPMC but it breaks the original cactus SP.\n-DCACTUS_SEL1_SPMC defines CACTUS_SEL1_SPMC for all variants.\nEverywhere #if CACTUS_SEL1_SPMC is used the conditional code gets compiled in.",
+      "parentUuid": "32f72e45_7ade0b8d",
+      "revId": "3345ec89dad5161bafa0df95618f00311c4ba437",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5dec7eea_0e370d59",
         "filename": "spm/common/sp_helpers.c",
         "patchSetId": 5
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "This should be fixed with the latest patchset",
       "parentUuid": "87449231_8ce4abe1",
+      "revId": "3345ec89dad5161bafa0df95618f00311c4ba437",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eb3578aa_5be53c15",
+        "filename": "spm/common/sp_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-10T08:28:26Z",
+      "side": 1,
+      "message": "Back to this there was a rationale to make those wrappers common to all SPs (https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/4618)\nIn any case as said in another comment spm_vcpu_get_count, spm_vm_get_count are no longer relevant.",
+      "parentUuid": "15b3c170_ee30a399",
       "revId": "3345ec89dad5161bafa0df95618f00311c4ba437",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false

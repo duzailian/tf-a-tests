@@ -34,6 +34,24 @@
       "revId": "dfa4d219a440d59d0063f843cfdf9a8c1132095b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a9dfa96_8fe3a629",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-10T08:28:26Z",
+      "side": 1,
+      "message": "No that\u0027s not the same.\nspmc_id refers to the FF-A ID of the entity running at secure physical FF-A instance e.g. Hafnium or cactus_spmc. It\u0027s meant to be configurable in the platform spmc manifest (or hardcoded in Tegra\u0027s case: plat/nvidia/tegra/common/plat_spmd_manifest.c). In our usages we fix it to 0x8000 but obviously it could theoretically be another value. If can be requested by the SPMC to the SPMD using FFA_ID_GET.\nA VM or SP FF-A id only exists when virtualization is enabled (aka S-EL2 / Hafnium is present), and is the id value of the SP at secure virtual FF-A instance. It can be requested from the SP and returned to the SPMC through FFA_ID_GET. It has no rationale/meaning in the cactus_spmc case because virtual machines do not exist. In Hafnium/SPMC case, SP FF-A ids are counted from 0x8001 to 0xFFFE.\nGenerally, an FF-A component SPMC / VM / SP shall get its FF-A ID using FFA_ID_GET and not assume its own ID statically in the code.",
+      "parentUuid": "09d614d0_e226c318",
+      "revId": "dfa4d219a440d59d0063f843cfdf9a8c1132095b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }

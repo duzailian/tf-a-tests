@@ -70,6 +70,30 @@
       "revId": "2c32d18f8622cbef76dc6b1508a632d6da03a468",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aff44dcb_d406ad44",
+        "filename": "spm/common/sp_helpers.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-10T08:28:26Z",
+      "side": 0,
+      "message": "Please keep spm_debug_log in this file. It\u0027s generic Hafnium calls used by any SP not specifically cactus.",
+      "parentUuid": "e8194f97_1c38bd98",
+      "range": {
+        "startLine": 76,
+        "startChar": 19,
+        "endLine": 76,
+        "endChar": 24
+      },
+      "revId": "2c32d18f8622cbef76dc6b1508a632d6da03a468",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }

@@ -166,6 +166,30 @@
       "revId": "6794119e3c3aada256daf9a8be86a833eabcebf4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d066d8a3_11be7426",
+        "filename": "spm/cactus/cactus_helpers.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-10T08:28:26Z",
+      "side": 1,
+      "message": "Those specific wrappers (cactus_vm_get_count and cactus_vcpu_get_count) will be stripped out as support has been removed from Hafnium (https://git.trustedfirmware.org/hafnium/hafnium.git/commit/?id\u003dae3840dbc9372fd407893f32a5d624828c8933ae).\n\nSo CACTUS_SEL1_SPMC_VM_COUNT and CACTUS_SEL1_SPMC_VCPU_COUNT definitions are not required.\n\nIt only remains spm_debug_log and I agree with Raghu this must be a common wrapper to all SPs.\n\nNotice Ivy will be re-purposed soon to implement S-EL0 partitions on top of Hafnium (using the non-VHE / S-EL1 shim model).",
+      "parentUuid": "e3d44cf1_1de56da7",
+      "range": {
+        "startLine": 29,
+        "startChar": 1,
+        "endLine": 34,
+        "endChar": 17
+      },
+      "revId": "6794119e3c3aada256daf9a8be86a833eabcebf4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
