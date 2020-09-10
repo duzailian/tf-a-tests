@@ -9,7 +9,7 @@
 
 #include <stdint.h>
 #include <tftf_lib.h>
-#include <ffa_helpers.h>
+#include <spm_common.h>
 
 #define SPM_VM_ID_FIRST                 SP_ID(1)
 
