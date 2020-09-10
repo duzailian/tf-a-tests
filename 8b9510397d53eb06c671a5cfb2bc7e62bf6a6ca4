@@ -70,6 +70,24 @@
       "revId": "8b9510397d53eb06c671a5cfb2bc7e62bf6a6ca4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0934a0ce_8b66419d",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-10T08:32:49Z",
+      "side": 1,
+      "message": "What you observe is the consequence of:\nhttps://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/services/std_svc/spmd/spmd_main.c#n503\nIn cactus SPMC case caller is cactus-SPMC, callee is SPMD.\n\nIn the case of cactus secure partition caller is SP, callee is Hafnium. So the response is from  Hafnium letting the SP know about the implemented FF-A features. \n\nThe return values will then be different whether cactus SP or cactus SPMC is used. So please keep original values for !CACTUS_SEL1_SPMC and use FFA_SUCCESS if you like when CACTUS_SEL1_SPMC is enabled.",
+      "parentUuid": "e0346810_25e2557e",
+      "revId": "8b9510397d53eb06c671a5cfb2bc7e62bf6a6ca4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
