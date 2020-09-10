@@ -28,6 +28,8 @@ IVY_SOURCES	:=					\
 	$(addprefix spm/ivy/,			\
 		aarch64/ivy_entrypoint.S		\
 		aarch64/spm_shim_exceptions.S		\
+		aarch64/spm_shim_entrypoint.S		\
+		shim_main.c				\
 		ivy_main.c				\
 	)						\
 	$(addprefix spm/common/,			\
