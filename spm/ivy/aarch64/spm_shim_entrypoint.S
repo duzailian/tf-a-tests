@@ -1,0 +1,83 @@
+/*
+ * Copyright (c) 2020, Arm Limited. All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+#include <asm_macros.S>
+#include <ivy_def.h>
+#include <platform_def.h>
+
+	.globl	shim_entrypoint
+
+.section .bss.shim_stacks
+	.balign CACHE_WRITEBACK_GRANULE
+	.fill	IVY_STACKS_SIZE
+shim_stacks_end:
+
+func shim_entrypoint
+
+	/* Setup the stack pointer. */
+	adr	x0, shim_stacks_end
+	mov	sp, x0
+
+	/* Setup vector base address */
+	adr x0, spm_shim_exceptions_ptr
+	msr vbar_el1, x0
+	isb
+
+	/* Enable I-Cache */
+	mrs	x0, sctlr_el1
+	orr	x0, x0, #SCTLR_I_BIT
+	msr	sctlr_el1, x0
+	isb
+
+	/* Relocate symbols */
+shim_pie_fixup:
+	ldr	x0, =shim_pie_fixup
+	and	x0, x0, #~(0x1000 - 1)
+	mov	x1, #IVY_IMAGE_SIZE
+	add	x1, x1, x0
+	bl	fixup_gdt_reloc
+
+	/* Clear S-EL1 shim BSS */
+	adrp	x0, __SHIM_BSS_START__
+	adrp	x2, __SHIM_BSS_END__
+	sub	x2, x2, x0
+	mov	x1, xzr
+	bl	memset
+
+	/* Clear S-EL0 partition BSS */
+	adrp	x0, __BSS_START__
+	adrp	x2, __BSS_END__
+	sub	x2, x2, x0
+	mov	x1, xzr
+	bl	memset
+
+	/* And jump to the C entrypoint. */
+	bl	shim_main
+
+	cbz	x0, 1f
+
+0:	mov	x0, #0x60
+	movk	x0, #0x8400, lsl #16
+	mov	x1, xzr
+	mov	x2, xzr
+	mov	x3, xzr
+	smc	#0
+	b	0b
+
+	/* Exception return to S-EL0 Ivy application code */
+1:	adrp	x0, ivy_entrypoint
+	msr	elr_el1, x0
+
+	/* AArch64 EL0t */
+	mov	x0, xzr
+	msr	spsr_el1, x0
+
+	/* TODO: clear GP/SIMD registers */
+	/* TODO: tune EL0 system registers */
+
+	eret
+
+endfunc shim_entrypoint
