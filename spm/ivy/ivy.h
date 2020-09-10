@@ -26,11 +26,4 @@ extern uintptr_t __BSS_START__, __BSS_END__;
 #define IVY_BSS_START		((uintptr_t)&__BSS_START__)
 #define IVY_BSS_END		((uintptr_t)&__BSS_END__)
 
-enum stdout_route {
-	PL011_AS_STDOUT = 0,
-	HVC_CALL_AS_STDOUT,
-};
-
-void set_putc_impl(enum stdout_route);
-
 #endif /* __IVY_H__ */

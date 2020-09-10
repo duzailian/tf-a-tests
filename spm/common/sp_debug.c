@@ -6,9 +6,8 @@
 
 #include <drivers/arm/pl011.h>
 #include <drivers/console.h>
+#include <sp_debug.h>
 #include <spm_helpers.h>
-
-#include "cactus.h"
 
 static int (*putc_impl)(int);
 

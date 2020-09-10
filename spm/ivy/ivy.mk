@@ -29,12 +29,13 @@ IVY_SOURCES	:=					\
 	$(addprefix spm/ivy/,			\
 		aarch64/ivy_entrypoint.S		\
 		aarch64/spm_shim_exceptions.S		\
-		ivy_debug.c				\
 		ivy_main.c				\
 	)						\
 	$(addprefix spm/common/,			\
 		aarch64/sp_arch_helpers.S		\
+		sp_debug.c				\
 		sp_helpers.c				\
+		spm_helpers.c				\
 	)						\
 
 # TODO: Remove dependency on TFTF files.

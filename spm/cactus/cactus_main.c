@@ -16,6 +16,9 @@
 #include <lib/tftf_lib.h>
 #include <lib/xlat_tables/xlat_mmu_helpers.h>
 #include <lib/xlat_tables/xlat_tables_v2.h>
+
+#include <sp_debug.h>
+
 #include <plat_arm.h>
 #include <plat/common/platform.h>
 #include <platform_def.h>
