@@ -95,6 +95,10 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 			 */
 			ffa_ret = CACTUS_SUCCESS_RESP(vm_id, source);
 			break;
+		case SP_BLOCKING_REQ:
+			sp_sleep(200);
+			ffa_ret = CACTUS_SUCCESS_RESP(vm_id, source);
+			break;
 		default:
 			/*
 			 * Currently direct message test is handled here.
