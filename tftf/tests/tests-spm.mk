@@ -14,4 +14,5 @@ TESTS_SOURCES	+=							\
 		test_ffa_rxtx_map.c					\
 		test_ffa_version.c					\
 		test_spm_cpu_features.c					\
-	)
+		test_ffa_blocking_interrupt.c				\
+          )

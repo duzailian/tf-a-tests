@@ -87,6 +87,13 @@ enum ffa_memory_shareability {
 
 typedef uint8_t ffa_memory_access_permissions_t;
 
+/* State machine for an Interrupt */
+enum interrupt_state {
+	INTERRUPT_NOT_OCCURED,
+	INTERRUPT_OCCURED,
+	INTERRUPT_HANDLED,
+};
+
 /**
  * This corresponds to table "Memory region attributes descriptor" of the FF-A
  * 1.0 specification.

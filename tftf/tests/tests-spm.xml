@@ -60,6 +60,12 @@
                function="test_req_mem_donate_sp_to_sp" />
   </testsuite>
 
+   <testsuite name="FF-A Interrupt"
+             description="Test non-secure Interrupts" >
+     <testcase name="Test NS interrupts"
+               function="test_ffa_blocking_interrupt" />
+  </testsuite>
+
   <testsuite name="FF-A features"
              description="Test FFA_FEATURES ABI" >
      <testcase name="Test FFA_FEATURES"

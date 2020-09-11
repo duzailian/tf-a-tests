@@ -7,6 +7,7 @@
 #include "cactus_test_cmds.h"
 #include <debug.h>
 #include <ffa_helpers.h>
+#include <sp_helpers.h>
 
 CACTUS_CMD_HANDLER(dir_msg_test, CACTUS_DIR_MSG_TEST_CMD)
 {
@@ -130,4 +131,24 @@ CACTUS_CMD_HANDLER(req_deadlock_cmd, CACTUS_REQ_DEADLOCK_CMD)
 		ffa_dir_msg_source(*args), deadlock_dest, deadlock_next_dest);
 
 	return base_deadlock_handler(vm_id, source, deadlock_dest, deadlock_next_dest);
+}
+
+extern uint32_t irq_status;
+
+CACTUS_CMD_HANDLER(sleep_cmd, CACTUS_SLEEP_CMD)
+{
+	uint32_t sleep_time = cactus_get_sleep_time(*args);
+
+	VERBOSE("Request to sleep %x for %ums.\n", ffa_dir_msg_dest(*args),
+						      sleep_time);
+	irq_status = INTERRUPT_NOT_OCCURED;
+	sp_sleep(sleep_time);
+
+	if (irq_status == INTERRUPT_OCCURED) {
+		irq_status = INTERRUPT_HANDLED;
+	}
+
+	return cactus_success_resp(ffa_dir_msg_dest(*args),
+				   ffa_dir_msg_source(*args),
+				   irq_status);
 }
