@@ -32,6 +32,9 @@ extern const char version_string[];
 /* Global ffa_id */
 static ffa_vm_id_t ffa_id;
 
+/* irq status */
+uint32_t irq_status;
+
 /*
  *
  * Message loop function
@@ -159,7 +162,8 @@ int tftf_irq_handler_dispatcher(void)
 	irq_num = spm_interrupt_get();
 	if (irq_num == MANAGED_EXIT_INTERRUPT_ID) {
 		/* Real Partition would save its context here */
-		cactus_success_resp(ffa_id, HYP_ID, irq_num);
+		irq_status = INTERRUPT_OCCURED;
+		cactus_success_resp(ffa_id, HYP_ID, irq_status);
 	} else {
 		panic();
 	}
