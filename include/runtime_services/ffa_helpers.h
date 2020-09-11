@@ -20,6 +20,9 @@
 /* By convention, SP IDs (as opposed to VM IDs) have bit 15 set */
 #define SP_ID(x)        ((x) | (1 << 15))
 
+/* Message pattern sent from TFTF to SP */
+#define SP_SLEEP_REQ	U(0xFF)
+
 typedef unsigned short ffa_vm_id_t;
 typedef unsigned short ffa_vm_count_t;
 typedef unsigned short ffa_vcpu_count_t;
@@ -110,6 +113,13 @@ enum ffa_memory_shareability {
 };
 
 typedef uint8_t ffa_memory_access_permissions_t;
+
+/* State machine for an Interrupt */
+enum interrupt_state {
+	INTERRUPT_NOT_OCCURED,
+	INTERRUPT_OCCURED,
+	INTERRUPT_HANDLED,
+};
 
 /**
  * This corresponds to table "Memory region attributes descriptor" of the FF-A

@@ -33,6 +33,9 @@ extern const char version_string[];
 /* Global ffa_id */
 static ffa_vm_id_t ffa_id;
 
+/* irq status */
+static uint32_t irq_status;
+
 /*
  *
  * Message loop function
@@ -98,6 +101,20 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 			 * with memory retrieval went well, as such replying
 			 */
 			ffa_ret = CACTUS_SUCCESS_RESP(vm_id, source);
+			break;
+		case SP_SLEEP_REQ:
+			/*
+			 * Initialize irq_status for tests which expect an interrupt to occur
+			 * during sleep. Will be don't care for normal sleep requests.
+			 */
+			irq_status = INTERRUPT_NOT_OCCURED;
+			sp_sleep(payload);
+
+			if (irq_status == INTERRUPT_OCCURED) {
+				irq_status = INTERRUPT_HANDLED;
+			}
+
+			ffa_ret = CACTUS_RESPONSE(vm_id, source, irq_status);
 			break;
 		default:
 			/*
@@ -191,6 +208,7 @@ int tftf_irq_handler_dispatcher(void)
 	irq_num = spm_interrupt_get();
 	if (irq_num == MANAGED_EXIT_INTERRUPT_ID) {
 		/* Real Partition would save its context here */
+		irq_status = INTERRUPT_OCCURED;
 		ffa_msg_send_direct_resp(ffa_id, HYP_ID, irq_num);
 	} else {
 		panic();
