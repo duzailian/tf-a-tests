@@ -67,6 +67,9 @@ void announce_test_end(const char *test_desc);
 /* Sleep for at least 'ms' milliseconds. */
 void sp_sleep(uint32_t ms);
 
+/* Busy loop for SPs */
+void run_busy_loop();
+
 /* Save SP context */
 void sp_save_context();
 
