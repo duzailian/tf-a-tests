@@ -32,6 +32,7 @@ extern const char version_string[];
 
 /* Global ffa_id */
 ffa_vm_id_t ffa_id;
+
 /*
  *
  * Message loop function
@@ -92,6 +93,10 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 			 * If execution gets to this point means all operations
 			 * with memory retrieval went well, as such replying
 			 */
+			ffa_ret = CACTUS_SUCCESS_RESP(vm_id, source);
+			break;
+		case SP_BLOCKING_REQ:
+			run_busy_loop();
 			ffa_ret = CACTUS_SUCCESS_RESP(vm_id, source);
 			break;
 		default:

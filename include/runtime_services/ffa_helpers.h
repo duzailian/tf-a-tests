@@ -20,6 +20,9 @@
 /* By convention, SP IDs (as opposed to VM IDs) have bit 15 set */
 #define SP_ID(x)        ((x) | (1 << 15))
 
+/* Message pattern send from tftf to SP */
+#define SP_BLOCKING_REQ        (0xdddd0000)
+
 typedef unsigned short ffa_vm_id_t;
 typedef unsigned short ffa_vm_count_t;
 typedef unsigned short ffa_vcpu_count_t;

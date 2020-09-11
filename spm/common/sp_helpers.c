@@ -13,6 +13,8 @@
 
 #include "sp_helpers.h"
 
+volatile int busy_loop;
+
 uintptr_t bound_rand(uintptr_t min, uintptr_t max)
 {
 	/*
@@ -71,9 +73,21 @@ void sp_sleep(uint32_t ms)
 	}
 }
 
+void run_busy_loop()
+{
+	busy_loop = 1;
+	while (busy_loop) {}
+}
+
 /* Save SP context */
 void sp_save_context(void)
 {
+	/*
+	 * Only required when tftf interrupt test being executed, but won't harm
+	 * in other scenarios.
+	 * Need to break the busy loop when SP context is restored.
+	 */
+	busy_loop = 0;
 }
 
 /*******************************************************************************
