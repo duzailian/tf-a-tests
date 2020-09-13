@@ -123,6 +123,24 @@
       "revId": "3345ec89dad5161bafa0df95618f00311c4ba437",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf06c7d4_a0170b64",
+        "filename": "spm/common/sp_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-13T04:04:15Z",
+      "side": 1,
+      "message": "What do you reckon? Should I just delete these functions altogether?",
+      "parentUuid": "eb3578aa_5be53c15",
+      "revId": "3345ec89dad5161bafa0df95618f00311c4ba437",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
