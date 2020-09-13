@@ -70,6 +70,30 @@
       "revId": "165cd0b7e7923c8c4aa6672e0940da04edf803bd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71f7b119_d89108f0",
+        "filename": "spm/cactus/cactus_def.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-13T04:39:24Z",
+      "side": 1,
+      "message": "Are you saying these functions should not be called for pre-8.4 CPUs?",
+      "parentUuid": "2b6757f2_0c8f8efe",
+      "range": {
+        "startLine": 49,
+        "startChar": 8,
+        "endLine": 49,
+        "endChar": 34
+      },
+      "revId": "165cd0b7e7923c8c4aa6672e0940da04edf803bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }

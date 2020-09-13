@@ -52,6 +52,24 @@
       "revId": "dfa4d219a440d59d0063f843cfdf9a8c1132095b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2da934ab_e7599d39",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-13T04:39:24Z",
+      "side": 1,
+      "message": "I see. The current code across the stack is biased towards post 8.4 CPUs. We need to do better in supporting pre 8.4 platforms. There\u0027s no other way. We cannot break those platforms.\n\nHaving said that, I think SPMD needs some intelligence to check if FFA_ID_GET is issued by SEL2 or SEL1 and then return the \"right\" value. Does this sound right? I can make that change once you confirm.",
+      "parentUuid": "9a9dfa96_8fe3a629",
+      "revId": "dfa4d219a440d59d0063f843cfdf9a8c1132095b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
