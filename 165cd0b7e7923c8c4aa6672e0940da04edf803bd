@@ -94,6 +94,30 @@
       "revId": "165cd0b7e7923c8c4aa6672e0940da04edf803bd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fbd14c06_63ce1a99",
+        "filename": "spm/cactus/cactus_def.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-14T08:08:35Z",
+      "side": 1,
+      "message": "The SPMC at S-EL1 cannot make hypercalls as those wrappers do. \"Virtualization\" or \"VMs\" is irrelevant in this model. So yes, that\u0027s definitely not meant for the \"SPMC at S-EL1\".\nSecondly (but this concerns more the cactus SP), the wrappers using those two defines in this change will disappear imminently (support removed from Hafnium).",
+      "parentUuid": "71f7b119_d89108f0",
+      "range": {
+        "startLine": 49,
+        "startChar": 8,
+        "endLine": 49,
+        "endChar": 34
+      },
+      "revId": "165cd0b7e7923c8c4aa6672e0940da04edf803bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }

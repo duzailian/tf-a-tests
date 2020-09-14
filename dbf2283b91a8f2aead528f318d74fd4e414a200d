@@ -217,6 +217,30 @@
     },
     {
       "key": {
+        "uuid": "d93de76e_e5f6f6b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-14T08:08:35Z",
+      "side": 1,
+      "message": "Maybe it\u0027s a matter of phrasing the exact SW architecture envisioned for \"Cactus as an SPMC\". There are a number of models and use cases, referring to section 2.2.2 in the FF-A 1.0 spec:\n1/ the S-EL1 payload is an SPMC managing S-EL0 partitions (or Trusted Applications...). Secure services reside at S-EL0. The S-EL1 SPMC provides memory isolation among S-EL0 services. This looks like what a legacy TOS would do, by using FF-A.\n2/ the S-EL1 payload is an SPMC + a logical SP at same exception level. S-EL1 logical SP would implement secure service(s). There is no memory isolation (by hw) between the SPMC and the logical SP.\nNotice depending on what you wish to support it can introduce impdef behaviors.\n\nStepping back on the rationale for the original cactus secure partition on top of S-EL2 firmware/Hafnium (see section 2.2.1) it is related to implementing secure services at S-EL1 or bring a legacy TOS and provide memory isolation from other TOS and the NWd. The SPMC role is left to the S-EL2 firmware.",
+      "parentUuid": "8d517684_ed7cb498",
+      "range": {
+        "startLine": 7,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 41
+      },
+      "revId": "dbf2283b91a8f2aead528f318d74fd4e414a200d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8b828f7f_b3ccf7a1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2

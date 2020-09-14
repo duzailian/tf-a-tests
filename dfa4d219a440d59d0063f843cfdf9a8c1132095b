@@ -70,6 +70,24 @@
       "revId": "dfa4d219a440d59d0063f843cfdf9a8c1132095b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22e30195_0d7663f3",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-14T08:08:35Z",
+      "side": 1,
+      "message": "\u003e SPMD needs some intelligence to check if FFA_ID_GET is issued by SEL2 or SEL1\n\nI don\u0027t think that\u0027s a right strategy. The SPMD as a callee is meant to return the SPMC id, and that\u0027s what you get when caller is the SPMC.\nAgain, it boils down to defining exactly what you want to achieve (the sw architecture) with \"cactus SPMC\" (see other more detailed comment).",
+      "parentUuid": "2da934ab_e7599d39",
+      "revId": "dfa4d219a440d59d0063f843cfdf9a8c1132095b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
