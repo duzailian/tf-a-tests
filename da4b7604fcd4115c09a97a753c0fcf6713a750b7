@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7329e175_c42e2296",
+        "filename": "drivers/ti/uart/aarch64/16550_console.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:02:03Z",
+      "side": 1,
+      "message": "Why was console_putc renamed to console_core_putc, but console_getc wasn\u0027t?",
+      "revId": "da4b7604fcd4115c09a97a753c0fcf6713a750b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf3a5fde_28b1b4f9",
+        "filename": "drivers/ti/uart/aarch64/16550_console.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:02:03Z",
+      "side": 1,
+      "message": "the same question",
+      "revId": "da4b7604fcd4115c09a97a753c0fcf6713a750b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ebf7b2ae_5be86343",
+        "filename": "plat/nvidia/tegra194/include/platform_def.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:02:03Z",
+      "side": 1,
+      "message": "#if defined(IMAGE_CACTUS) || defined(IMAGE_IVY)\nused in assembler files. Why just \"#if IMAGE_CACTUS\" here?",
+      "revId": "da4b7604fcd4115c09a97a753c0fcf6713a750b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d270a05_202fac16",
+        "filename": "spm/ivy/ivy_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:02:03Z",
+      "side": 1,
+      "message": "there\u0027re (uintptr_t) casts in cactus_main.c. Are they needed here?",
+      "revId": "da4b7604fcd4115c09a97a753c0fcf6713a750b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
