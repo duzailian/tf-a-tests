@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "acc55fc0_a53bb7a9",
+        "filename": "plat/arm/arm_fpga/aarch64/plat_helpers.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "x0, x1",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c5e32ce_0e5e516d",
+        "filename": "plat/arm/arm_fpga/arm_fpga_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#header-guards",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae4aee29_d058ac4d",
+        "filename": "plat/arm/arm_fpga/arm_fpga_pwr_state.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "remove , here and in other places",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a8aa4b5_2c58dd3f",
+        "filename": "plat/arm/arm_fpga/arm_fpga_topology.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "platform headers should be last",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12661a2d_30d34933",
+        "filename": "plat/arm/arm_fpga/arm_fpga_topology.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "It would be more readable to define this structure type and declare array of that elements.",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df8655f0_6abce492",
+        "filename": "plat/arm/arm_fpga/arm_fpga_topology.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "Only clusters 0 and 1 are here.",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3fe99559_5f5cb086",
+        "filename": "plat/arm/arm_fpga/arm_fpga_topology.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "empty line is required after variables\u0027 declarations.\nremove space after cast",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fee9227_edd1cfa8",
+        "filename": "plat/arm/arm_fpga/include/platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#header-guards",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bf8aca0_48eac654",
+        "filename": "plat/arm/arm_fpga/include/platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "From your platform.mk:\n\"# Only aarch64 supported\"",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0a09156f_7997e5bb",
+        "filename": "plat/arm/arm_fpga/include/platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "remove extra tabs to align with lines above",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ead3724c_1c07d14f",
+        "filename": "plat/arm/arm_fpga/include/platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "add extra tab to align with lines above",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5831c08b_d3ee2a2d",
+        "filename": "plat/arm/arm_fpga/include/platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "Do you need these commented defines?",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "765f8aa2_f9ac77b8",
+        "filename": "plat/arm/arm_fpga/plat_setup.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "Will it compile if line #14 is false?",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4906bca7_f0b15bfa",
+        "filename": "plat/arm/arm_fpga/plat_setup.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T16:31:01Z",
+      "side": 1,
+      "message": "\"No newline at end of revision file.\"",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
