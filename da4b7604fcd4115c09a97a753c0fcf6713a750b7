@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a7b69de7_6b7bd763",
+        "filename": "drivers/ti/uart/aarch64/16550_console.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-14T18:20:01Z",
+      "side": 1,
+      "message": "Cactus overrides the console_putc handler. This means we have a way for this driver to exist in TFTF and Cactus. Hence the new handler. The same problem does not exist for console_getc",
+      "parentUuid": "7329e175_c42e2296",
+      "revId": "da4b7604fcd4115c09a97a753c0fcf6713a750b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bf3a5fde_28b1b4f9",
         "filename": "drivers/ti/uart/aarch64/16550_console.S",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2020-09-14T16:02:03Z",
       "side": 1,
       "message": "the same question",
+      "revId": "da4b7604fcd4115c09a97a753c0fcf6713a750b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f1ed8cd_09b4fe9e",
+        "filename": "drivers/ti/uart/aarch64/16550_console.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-14T18:20:01Z",
+      "side": 1,
+      "message": "Same answer 😊",
+      "parentUuid": "bf3a5fde_28b1b4f9",
       "revId": "da4b7604fcd4115c09a97a753c0fcf6713a750b7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "a65b7817_406959ea",
+        "filename": "plat/nvidia/tegra194/include/platform_def.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-14T18:20:01Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ebf7b2ae_5be86343",
+      "revId": "da4b7604fcd4115c09a97a753c0fcf6713a750b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3d270a05_202fac16",
         "filename": "spm/ivy/ivy_main.c",
         "patchSetId": 5
@@ -67,6 +121,24 @@
       "revId": "da4b7604fcd4115c09a97a753c0fcf6713a750b7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c2592cd_7aaa5524",
+        "filename": "spm/ivy/ivy_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-14T18:20:01Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3d270a05_202fac16",
+      "revId": "da4b7604fcd4115c09a97a753c0fcf6713a750b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
