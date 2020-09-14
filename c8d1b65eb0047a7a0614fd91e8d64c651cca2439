@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb39f74f_ec1821bf",
+        "filename": "include/lib/aarch32/arch_features.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-14T15:38:44Z",
+      "side": 1,
+      "message": "From ARM ARM:\n\"AArch32 System register ID_PFR1[31:0] is architecturally mapped to AArch64 System register\nID_PFR1_EL1[31:0]...ID_PFR1 is a 32-bit register.\"",
+      "revId": "c8d1b65eb0047a7a0614fd91e8d64c651cca2439",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
