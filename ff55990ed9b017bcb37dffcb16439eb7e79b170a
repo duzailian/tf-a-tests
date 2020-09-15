@@ -1,0 +1,463 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "06e8e1d6_a00af972",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#header-guards",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "645d5431_034c0060",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "remove empty line",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0200e546_bdc7e70b",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "I\u0027d suggest to add parameters\u0027 names and space after ,",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a1f12c4_688a035d",
+        "filename": "smc_fuzz/include/smcmalloc.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#header-guards",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d339c4c0_e4a93cce",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "put this on the line above",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f4907133_bd22bce3",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "Same here. add space after ,",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83d1dc28_aa752a11",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "put on the line above",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "736be29a_1e4d5c87",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "align * with line above",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f021963_7f5f83a0",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "unsigned int\nhttps://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#conditional-statement-bodies",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31965110_390e118d",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "the same here",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab7ffb26_664c5e94",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "align *",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b2942e1_8a6f43e7",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "unsigned int here and everywhere",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e978ccfb_48d7f437",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8702f5b1_148b9f3f",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "align * here and everywhere in this file",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f09f841_508fbe71",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "space after ,",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db15d26f_9b0d7849",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "C...SMC",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f01568e_0ad82fda",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "add spaces for \u003c\u003c and \u0026",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c719ab9_a0ff1752",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "remove empty line",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db3a2856_022ea5bc",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#conditional-statement-bodies",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97cebd8e_50a9a1b5",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "spaces for %",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ea3ef9c_c32577f3",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "this line is too long, use tabs for placing one line under another",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6cfecfca_02a6cca2",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "violation of MISRA Rule 7.2",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "055e9d2d_4452dd6e",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "line is too long",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "caa7a13f_080cbb6a",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#conditional-statement-bodies here and everywhere",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b45985ae_bd5e1b7d",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "too long",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d2abb3c_06ac575b",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "unsogned int\nremove space after (",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06f12add_ab8711aa",
+        "filename": "tftf/tests/tests-smcfuzzing.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-15T09:47:52Z",
+      "side": 1,
+      "message": "remove empty line",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
