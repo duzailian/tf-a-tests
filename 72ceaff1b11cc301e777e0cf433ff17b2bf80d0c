@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "eb714a8e_910ba30f",
+        "filename": "plat/arm/arm_fpga/arm_fpga_pwr_state.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000440
+      },
+      "writtenOn": "2020-09-15T12:25:22Z",
+      "side": 1,
+      "message": "If my understanding is correct, the guidelines recommend against anonymous enum typedefs:\nhttps://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#avoid-anonymous-typedefs-of-structs-enums-in-headers\n\nThis is not a header file, but if the enum might eventually get used somewhere else, could it still be important?",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1a8aa4b5_2c58dd3f",
         "filename": "plat/arm/arm_fpga/arm_fpga_topology.c",
         "patchSetId": 1
@@ -64,6 +81,41 @@
       "writtenOn": "2020-09-14T16:31:01Z",
       "side": 1,
       "message": "platform headers should be last",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12f20f0c_232edbdd",
+        "filename": "plat/arm/arm_fpga/arm_fpga_topology.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000440
+      },
+      "writtenOn": "2020-09-15T12:25:22Z",
+      "side": 1,
+      "message": "AIUI the full layout should be:\n\nsystem / libc headers:\n assert.h\n stddef.h\n[blank line]\nproject headers:\n arch.h\n mmio.h\n[blank line]\nplatform headers:\n platform_def.h",
+      "parentUuid": "1a8aa4b5_2c58dd3f",
+      "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40cda475_e3a00cb9",
+        "filename": "plat/arm/arm_fpga/arm_fpga_topology.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000440
+      },
+      "writtenOn": "2020-09-15T12:25:22Z",
+      "side": 1,
+      "message": "Are the tftf_lib.h and plat_topology.h includes needed? They are not in the trusted-firmware-a repository and no other files seem to include them.",
       "revId": "72ceaff1b11cc301e777e0cf433ff17b2bf80d0c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
