@@ -15,8 +15,6 @@
 #define SPM_VM_ID_SECOND                (2)
 #define SPM_VM_ID_THIRD                 (3)
 
-#define SPM_VM_GET_COUNT                (0xFF01)
-#define SPM_VCPU_GET_COUNT              (0xFF02)
 #define SPM_DEBUG_LOG                   (0xBD000000)
 
 typedef struct {
