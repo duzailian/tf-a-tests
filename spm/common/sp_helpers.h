@@ -17,6 +17,7 @@
 
 #define SPM_VM_GET_COUNT                (0xFF01)
 #define SPM_VCPU_GET_COUNT              (0xFF02)
+#define SPM_INTERRUPT_GET               (0xFF06)
 #define SPM_DEBUG_LOG                   (0xBD000000)
 
 typedef struct {
@@ -74,6 +75,8 @@ void sp_sleep(uint32_t ms);
 ffa_vcpu_count_t spm_vcpu_get_count(ffa_vm_id_t vm_id);
 
 ffa_vm_count_t spm_vm_get_count(void);
+
+ffa_int_id_t spm_interrupt_get(void);
 
 void spm_debug_log(char c);
 
