@@ -98,6 +98,17 @@ ffa_vm_count_t spm_vm_get_count(void)
 	return ret.ret0;
 }
 
+ffa_int_id_t spm_interrupt_get(void)
+{
+	hvc_args args = {
+		.fid = SPM_INTERRUPT_GET
+	};
+
+	hvc_ret_values ret = tftf_hvc(&args);
+
+	return ret.ret0;
+}
+
 void spm_debug_log(char c)
 {
 	hvc_args args = {
