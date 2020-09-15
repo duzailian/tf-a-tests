@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7bc8f1ca_1af4027d",
+        "filename": "spm/cactus/aarch64/cactus_entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-09-15T21:56:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29388167_785079d5",
+      "revId": "e1520934c919845b357cc0250daa4ad143401828",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8494e43c_73ccd32a",
         "filename": "spm/cactus/cactus_main.c",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2020-09-15T09:58:47Z",
       "side": 1,
       "message": "MISRA will complain about that, better use\nwhile (true) {\n}",
+      "revId": "e1520934c919845b357cc0250daa4ad143401828",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "536d79e6_85b04b24",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-09-15T21:56:45Z",
+      "side": 1,
+      "message": "Remove the loop altogether.",
+      "parentUuid": "8494e43c_73ccd32a",
       "revId": "e1520934c919845b357cc0250daa4ad143401828",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
