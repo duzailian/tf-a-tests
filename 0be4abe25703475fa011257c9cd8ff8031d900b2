@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "92281178_73213321",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-09-17T14:58:13Z",
+      "side": 1,
+      "message": "This would fail for now, since we are actually getting vcpu_count from partition_info_get for now. (which is 2)",
+      "range": {
+        "startLine": 125,
+        "startChar": 47,
+        "endLine": 125,
+        "endChar": 49
+      },
+      "revId": "0be4abe25703475fa011257c9cd8ff8031d900b2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28d1a392_775678fc",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-09-17T14:58:13Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 126,
+        "startChar": 47,
+        "endLine": 126,
+        "endChar": 49
+      },
+      "revId": "0be4abe25703475fa011257c9cd8ff8031d900b2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
