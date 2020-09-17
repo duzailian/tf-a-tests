@@ -35,9 +35,7 @@ static void shim_print_memory_layout(void)
 	NOTICE("    Data region            : %p - %p\n",
 		(void *)IVY_DATA_START, (void *)IVY_DATA_END);
 	NOTICE("    BSS region             : %p - %p\n",
-		(void *)IVY_BSS_START, (void *)IVY_BSS_END);
-	NOTICE("    Total image memory     : %p - %p\n",
-		(void *)IVY_IMAGE_BASE,
+		(void *)IVY_BSS_START, (void *)IVY_BSS_END); NOTICE("    Total image memory     : %p - %p\n", (void *)IVY_IMAGE_BASE,
 		(void *)(IVY_IMAGE_BASE + IVY_IMAGE_SIZE));
 	NOTICE("  SPM regions\n");
 	NOTICE("    SPM <-> SP buffer      : %p - %p\n",
@@ -100,6 +98,8 @@ int shim_main(void)
 	enable_mmu_el1(0);
 
 	shim_print_memory_layout();
+
+	set_putc_impl(SVC_CALL_AS_STDOUT);
 
 	return 0;
 }
