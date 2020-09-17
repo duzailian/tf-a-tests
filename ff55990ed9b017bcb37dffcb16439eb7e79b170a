@@ -317,6 +317,24 @@
     },
     {
       "key": {
+        "uuid": "9456fa24_79de14f4",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "but index of array cannot be negative, use cast in comparison then.",
+      "parentUuid": "2d2c0889_9c743eb8",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "31965110_390e118d",
         "filename": "smc_fuzz/src/fifo3d.c",
         "patchSetId": 6
@@ -486,6 +504,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "8702f5b1_148b9f3f",
+      "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7039311d_1802fbe0",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "still not aligned.",
+      "parentUuid": "bf8e692a_1601174d",
       "revId": "ff55990ed9b017bcb37dffcb16439eb7e79b170a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false

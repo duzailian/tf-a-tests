@@ -1,0 +1,1002 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b1edcf66_4d4879be",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "add extra tab on line #33\nadd space after ,",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dfa65c8f_fcc87d56",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "star on line #60 is still not aligned with others",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08c4cf48_9958089d",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "still not aligned",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c52cfc6c_561adafe",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "not aligned",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af0c6225_3dad5558",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same here and everywhere",
+      "range": {
+        "startLine": 136,
+        "startChar": 4,
+        "endLine": 136,
+        "endChar": 5
+      },
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8684cd72_947607d8",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "0xFF0000U and for other masks",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1be5da09_ac4f22b4",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "unsigned int offset, so:\nif (offset !\u003d 0U)",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5dd2f69b_fa90d51b",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "add empty lines here and before #105",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e70906c8_451fc41f",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "trailing space",
+      "range": {
+        "startLine": 119,
+        "startChar": 86,
+        "endLine": 119,
+        "endChar": 87
+      },
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0b4957e_53c41e22",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e94fd20_b23e6bf7",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "you added spaces on lines #161,162 and now * on #160 is not aligned",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6af7fca3_eccc8511",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "trailing space. Did you run chckpatch script?",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f59ed532_4d7ed990",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3ec1d5e_0cd82c2c",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "trailing space",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f703693d_39a3c537",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d67b76d8_38bf8208",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "space after .",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "38f6a4c6_1d184517",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bda4f159_df208b6f",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "trailing space",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6319381a_83f4dba0",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e5bf05d_fb1d848e",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a62c78ca_7e42b826",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5368e000_a404055c",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6889c8fd_e995abba",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d6e43e0_8b54b336",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1cd5c3f_c794fb59",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "add spaces around first /",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "deb8dbe2_bb0d62db",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b810b29c_eb218a6a",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3cc643cc_43bcedaa",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "865835bd_513a2c8d",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "100U",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2dbb155_24610d57",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#conditional-statement-bodies",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2dc21b0e_337fed1d",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "it was aligned in the previous version",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd838327_9f60ca22",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "comment for previous revision not resolved",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9f8ef7a_7511ba59",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb5af6f6_ae8260ca",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "MISRA Rule 7.2",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "686cabcf_c744d8de",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4da057d3_19c7ea5f",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7bd127b_79d4c74e",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bdde3f0d_02f6ef75",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f95cd726_3da43fc5",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "this looks weird, put on the next line",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52501279_14a05395",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60967742_955357aa",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "MISRA 7.2",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39775c88_4b6df048",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab68107c_de073dec",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a31ba956_04ff12ad",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "MISRA 7.2",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0cd50ab9_484c523b",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b9dd2aa_c51bc65c",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3ba4ef4_3514ecfc",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "MISRA 7.2",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f1f2f45a_510f2692",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a2c78d2_4e374a9d",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "MISRA 7.2",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5b8c6b2_11ab7904",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "align **",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d7489c1_e91c9d3a",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "add space after ,\nany chances to split this long line?\nadd spaces around last /",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "062e30db_ea55bd36",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "add space after ,",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "426ebef0_41ebf247",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1669632_3b15c207",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "49743034_910852bc",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "unsigned int i",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f36572ef_47c712eb",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "add space around last /",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6eb97d64_b04bdf33",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "add space after , add spaces around last /\nsplit long line",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e325d72_a296a94c",
+        "filename": "tftf/tests/tests-smcfuzzing.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-17T11:26:16Z",
+      "side": 1,
+      "message": "comment for the previos revision is not resolved",
+      "revId": "35dc0f6bd12bad68b82ae6b8fb87dcf2db85df49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
