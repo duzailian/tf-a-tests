@@ -65,12 +65,11 @@ void announce_test_end(const char *test_desc);
 /* Sleep for at least 'ms' milliseconds. */
 void sp_sleep(uint32_t ms);
 
-/*
+/**
  * Hypervisor Calls Wrappers
  */
 
 ffa_int_id_t spm_interrupt_get(void);
-
 void spm_debug_log(char c);
 
 #endif /* SP_HELPERS_H */
