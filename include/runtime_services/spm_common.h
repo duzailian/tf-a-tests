@@ -115,4 +115,18 @@ ffa_memory_handle_t memory_init_and_send(
 	const struct ffa_memory_region_constituent* constituents,
 	uint32_t constituents_count, uint32_t mem_func);
 
+/**
+ * Hypervisor Calls Wrappers
+ */
+
+#define SPM_INTERRUPT_ENABLE            (0xFF03)
+
+/** IRQ/FIQ pin used for signaling a virtual interrupt. */
+enum interrupt_pin {
+	INTERRUPT_TYPE_IRQ,
+	INTERRUPT_TYPE_FIQ,
+};
+
+int64_t spm_interrupt_enable(ffa_int_id_t int_id, bool enable, enum interrupt_pin pin);
+
 #endif /* SPM_COMMON_H */
