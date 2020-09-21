@@ -8,6 +8,7 @@
 
 #include <ffa_helpers.h>
 #include <sp_helpers.h>
+#include <spmc.h>
 
 int cactus_irq_handler(void)
 {
