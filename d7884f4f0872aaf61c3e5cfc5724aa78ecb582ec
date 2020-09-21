@@ -22,6 +22,30 @@
       "revId": "d7884f4f0872aaf61c3e5cfc5724aa78ecb582ec",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a0de3c7_6920037b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-09-21T21:48:39Z",
+      "side": 1,
+      "message": "I have a question on similar lines. Are both secure and non-secure interrupts trapped to higher EL?",
+      "parentUuid": "eb052715_ac302361",
+      "range": {
+        "startLine": 9,
+        "startChar": 53,
+        "endLine": 10,
+        "endChar": 6
+      },
+      "revId": "d7884f4f0872aaf61c3e5cfc5724aa78ecb582ec",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
