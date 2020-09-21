@@ -14,6 +14,7 @@
 #define SPM_VM_ID_FIRST                 SP_ID(1)
 
 /* Should match with IDs defined in SPM/Hafnium */
+#define SPM_INTERRUPT_ENABLE            (0xFF03)
 #define SPM_INTERRUPT_GET               (0xFF04)
 #define SPM_DEBUG_LOG                   (0xBD000000)
 
@@ -69,7 +70,8 @@ void sp_sleep(uint32_t ms);
  * Hypervisor Calls Wrappers
  */
 
-ffa_int_id_t spm_interrupt_get(void);
+int64_t spm_interrupt_enable(ffa_int_id_t int_id, enum interrupt_type type, bool enable);
+ffa_int_id_t spm_interrupt_get(enum interrupt_type type);
 
 void spm_debug_log(char c);
 
