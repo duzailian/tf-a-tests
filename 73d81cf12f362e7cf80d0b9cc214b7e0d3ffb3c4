@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "841d2146_200bd685",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-09-21T18:58:37Z",
+      "side": 1,
+      "message": "if these conditions should never happen, perhaps they should be asserts instead of explicit checks ?",
+      "range": {
+        "startLine": 52,
+        "startChar": 2,
+        "endLine": 68,
+        "endChar": 3
+      },
+      "revId": "73d81cf12f362e7cf80d0b9cc214b7e0d3ffb3c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
