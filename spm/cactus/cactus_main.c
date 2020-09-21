@@ -30,6 +30,9 @@
 extern const char build_message[];
 extern const char version_string[];
 
+/* Global ffa_id */
+static ffa_vm_id_t ffa_id;
+
 /*
  *
  * Message loop function
@@ -179,7 +182,15 @@ static void cactus_plat_configure_mmu(unsigned int vm_id)
 
 int tftf_irq_handler_dispatcher(void)
 {
-	ERROR("%s\n", __func__);
+	ffa_int_id_t irq_num;
+
+	irq_num = spm_interrupt_get();
+	if (irq_num == MANAGED_EXIT_INTERRUPT_ID) {
+		/* Real Partition would save its context here */
+		ffa_msg_send_direct_resp(ffa_id, HYP_ID, irq_num);
+	} else {
+		panic();
+	}
 
 	return 0;
 }
@@ -200,7 +211,7 @@ void __dead2 cactus_main(void)
 		panic();
 	}
 
-	ffa_vm_id_t ffa_id = ffa_id_ret.ret2 & 0xffff;
+	ffa_id = ffa_id_ret.ret2 & 0xffff;
 	mb.send = (void *) get_sp_tx_start(ffa_id);
 	mb.recv = (void *) get_sp_rx_start(ffa_id);
 
@@ -241,6 +252,13 @@ void __dead2 cactus_main(void)
 
 	/* Invoking Tests */
 	ffa_tests(&mb);
+
+	/* Enable Managed exit interrupt */
+	spm_interrupt_enable(MANAGED_EXIT_INTERRUPT_ID, true);
+
+	/* Enable IRQ/FIQ */
+	enable_irq();
+	enable_fiq();
 
 	/* End up to message loop */
 	message_loop(ffa_id, &mb);
