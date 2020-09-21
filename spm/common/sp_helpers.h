@@ -17,6 +17,8 @@
 #define SPM_INTERRUPT_GET               (0xFF04)
 #define SPM_DEBUG_LOG                   (0xBD000000)
 
+#define MANAGED_EXIT_INTERRUPT_ID	(4)
+
 typedef struct {
 	u_register_t fid;
 	u_register_t arg1;
@@ -64,6 +66,9 @@ void announce_test_end(const char *test_desc);
 
 /* Sleep for at least 'ms' milliseconds. */
 void sp_sleep(uint32_t ms);
+
+/* Save SP context */
+void sp_save_context();
 
 /*
  * Hypervisor Calls Wrappers
