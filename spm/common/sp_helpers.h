@@ -14,8 +14,11 @@
 #define SPM_VM_ID_FIRST                 SP_ID(1)
 
 /* Should match with IDs defined in SPM/Hafnium */
+#define SPM_INTERRUPT_ENABLE            (0xFF03)
 #define SPM_INTERRUPT_GET               (0xFF04)
 #define SPM_DEBUG_LOG                   (0xBD000000)
+
+#define MANAGED_EXIT_INTERRUPT_ID	(4)
 
 typedef struct {
 	u_register_t fid;
@@ -65,12 +68,15 @@ void announce_test_end(const char *test_desc);
 /* Sleep for at least 'ms' milliseconds. */
 void sp_sleep(uint32_t ms);
 
+/* Save SP context */
+void sp_save_context();
+
 /*
  * Hypervisor Calls Wrappers
  */
 
+int spm_interrupt_enable(ffa_int_id_t int_id, bool enable);
 ffa_int_id_t spm_interrupt_get(void);
-
 void spm_debug_log(char c);
 
 #endif /* SP_HELPERS_H */

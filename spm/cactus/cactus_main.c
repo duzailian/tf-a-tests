@@ -30,6 +30,8 @@
 extern const char build_message[];
 extern const char version_string[];
 
+/* Global ffa_id */
+ffa_vm_id_t ffa_id;
 /*
  *
  * Message loop function
@@ -179,7 +181,15 @@ static void cactus_plat_configure_mmu(unsigned int vm_id)
 
 int tftf_irq_handler_dispatcher(void)
 {
-	ERROR("%s\n", __func__);
+	ffa_int_id_t irq_num;
+
+	irq_num = spm_interrupt_get();
+	if (irq_num == MANAGED_EXIT_INTERRUPT_ID) {
+		sp_save_context();
+		ffa_msg_send_direct_resp(ffa_id, HYP_ID, MANAGED_EXIT_INTERRUPT_ID);
+	} else {
+		panic();
+	}
 
 	return 0;
 }
@@ -200,13 +210,15 @@ void __dead2 cactus_main(void)
 		panic();
 	}
 
-	ffa_vm_id_t ffa_id = ffa_id_ret.ret2 & 0xffff;
+	ffa_id = ffa_id_ret.ret2 & 0xffff;
 	mb.send = (void *) get_sp_tx_start(ffa_id);
 	mb.recv = (void *) get_sp_rx_start(ffa_id);
 
 	/* Configure and enable Stage-1 MMU, enable D-Cache */
 	cactus_plat_configure_mmu(ffa_id);
 	enable_mmu_el1(0);
+	enable_irq();
+	enable_fiq();
 
 	if (ffa_id == SPM_VM_ID_FIRST) {
 		console_init(CACTUS_PL011_UART_BASE,
@@ -238,6 +250,9 @@ void __dead2 cactus_main(void)
 
 	INFO("FF-A id: %x\n", ffa_id);
 	cactus_print_memory_layout(ffa_id);
+
+	/* Enable Managed exit interrupt */
+	spm_interrupt_enable(MANAGED_EXIT_INTERRUPT_ID, true);
 
 	/* Invoking Tests */
 	ffa_tests(&mb);
