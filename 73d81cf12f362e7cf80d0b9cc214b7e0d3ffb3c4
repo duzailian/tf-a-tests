@@ -46,6 +46,30 @@
       "revId": "73d81cf12f362e7cf80d0b9cc214b7e0d3ffb3c4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34c64797_10f26a47",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-09-22T00:48:43Z",
+      "side": 1,
+      "message": "understood. I was wondering if it should even be a panic. These conditions should never occur and those are(invariants) and typically what you would assert on...But since this is a test app i guess a panic might be okay..If asserts are compiled in always for cactus, it would seem cleaner to see asserts in code or perhaps these should be a macro like hafnium\u0027s EXPECT_EQ.\nAnyway, not strongly opposed. Just general curiosity. This is totally fine.",
+      "parentUuid": "61152ec2_d0999ab4",
+      "range": {
+        "startLine": 52,
+        "startChar": 2,
+        "endLine": 68,
+        "endChar": 3
+      },
+      "revId": "73d81cf12f362e7cf80d0b9cc214b7e0d3ffb3c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
