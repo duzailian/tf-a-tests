@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "053dcc4e_ca1cbd41",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-09-23T07:11:34Z",
+      "side": 1,
+      "message": "Did you mention you\u0027d want SPMC at S-EL1 to handle multiple secure partitions?\nIn which case this check is slightly incorrect.\nIf it\u0027s a short term fix to avoid targeting a second partition then you\u0027d rather use a CACTUS_SPMC_SEL1 define at TFTF level.",
+      "revId": "a44984283f000c2650984e0a232952d8ab9c4348",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
