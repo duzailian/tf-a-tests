@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1fa8b87f_5e1c766f",
+        "filename": "drivers/ti/uart/aarch64/16550_console.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-23T20:46:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a7b69de7_6b7bd763",
+      "revId": "da4b7604fcd4115c09a97a753c0fcf6713a750b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf3a5fde_28b1b4f9",
         "filename": "drivers/ti/uart/aarch64/16550_console.S",
         "patchSetId": 5
@@ -69,6 +87,24 @@
       "revId": "da4b7604fcd4115c09a97a753c0fcf6713a750b7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "722ce3eb_51c432c9",
+        "filename": "drivers/ti/uart/aarch64/16550_console.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-23T20:46:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8f1ed8cd_09b4fe9e",
+      "revId": "da4b7604fcd4115c09a97a753c0fcf6713a750b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
