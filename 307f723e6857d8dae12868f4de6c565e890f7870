@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "79e381d9_2817f1da",
+        "filename": "Makefile",
+        "patchSetId": 5
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-09-23T20:03:25Z",
+      "side": 1,
+      "message": "I guess this message should also be updated:\n@echo \"ERROR: $@ is supported only on AArch64 FVP and Tegra194.\"",
+      "revId": "307f723e6857d8dae12868f4de6c565e890f7870",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
