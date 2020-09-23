@@ -16,6 +16,24 @@
       "revId": "a44984283f000c2650984e0a232952d8ab9c4348",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2c1f75c_11526d91",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-09-23T17:54:41Z",
+      "side": 1,
+      "message": "Hi Olivier, it\u0027s correct that we want SPMC at SEL1. The end goal is to have the SPMC manage multiple SPs.\n\nCan you suggest the right check for this scenario? I want to work towards the right solution instead of a short term fix.\n\n-Varun",
+      "parentUuid": "053dcc4e_ca1cbd41",
+      "revId": "a44984283f000c2650984e0a232952d8ab9c4348",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
