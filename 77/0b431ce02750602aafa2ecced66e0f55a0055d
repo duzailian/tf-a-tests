@@ -1,0 +1,9 @@
+Allow-CI+1: Olivier Deprez <olivier.deprez@arm.com>
+Verified+1: TrustedFirmware Code Review
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Owner-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Thu, 24 Sep 2020 21:37:26 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/5619
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
