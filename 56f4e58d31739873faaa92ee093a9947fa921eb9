@@ -22,6 +22,30 @@
       "revId": "56f4e58d31739873faaa92ee093a9947fa921eb9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97a30a79_1b97f70f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000396
+      },
+      "writtenOn": "2020-09-25T14:04:05Z",
+      "side": 1,
+      "message": "Done.\n\nI changed the verb to s/overridden/overwritten/, I believe semantically it is the same. Some other typos fixed.",
+      "parentUuid": "229cbab7_b12eaa4a",
+      "range": {
+        "startLine": 9,
+        "startChar": 43,
+        "endLine": 9,
+        "endChar": 51
+      },
+      "revId": "56f4e58d31739873faaa92ee093a9947fa921eb9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
