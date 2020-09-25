@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "56361178_344937b3",
+        "filename": "spm/cactus/plat/arm/fvp/include/cactus_platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-25T15:21:27Z",
+      "side": 1,
+      "message": "(c)?",
+      "revId": "9a47f2228b1ce7c4865762b961ea9213c62c4ec2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
