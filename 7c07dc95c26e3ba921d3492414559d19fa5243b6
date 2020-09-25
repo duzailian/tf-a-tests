@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "000ea378_5176ae10",
+        "filename": "make_helpers/build_macros.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-25T16:35:15Z",
+      "side": 1,
+      "message": "remove extra empty line",
+      "revId": "7c07dc95c26e3ba921d3492414559d19fa5243b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
