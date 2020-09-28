@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a6ce9ed7_e79a8e39",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_rm_any.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-09-28T11:07:51Z",
+      "side": 1,
+      "message": "violation of MISRA Rule 7.2. Fix everywhere.",
+      "revId": "e3374e7a171c79c327ee2c1c6dd47dc307c660f9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
