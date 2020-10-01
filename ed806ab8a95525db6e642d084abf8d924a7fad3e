@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d15dbd31_fc697403",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-01T11:11:27Z",
+      "side": 1,
+      "message": "Why did you change \"error\" to \"serror\"?",
+      "revId": "ed806ab8a95525db6e642d084abf8d924a7fad3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5656a0d_74086696",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-01T11:11:27Z",
+      "side": 1,
+      "message": "(int)i \u003c (4 - (cntchr % 4))\n?",
+      "revId": "ed806ab8a95525db6e642d084abf8d924a7fad3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bad582f7_181890d0",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-01T11:11:27Z",
+      "side": 1,
+      "message": "Can you split this long line?\nfnode and bias_count are unsigned, use %u not %d",
+      "revId": "ed806ab8a95525db6e642d084abf8d924a7fad3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c0b6906_a830e396",
+        "filename": "smc_fuzz/src/smcmalloc.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-01T11:11:27Z",
+      "side": 1,
+      "message": "Can you split all these long lines?",
+      "revId": "ed806ab8a95525db6e642d084abf8d924a7fad3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
