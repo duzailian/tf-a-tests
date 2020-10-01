@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "550e3d43_d2e5aea8",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_rm_any.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-10-01T22:47:08Z",
+      "side": 1,
+      "message": "Since this function will be invoked on multiple cpus, would be safer to use mp_printf() instead of printf()? Or is it guaranteed that this function will be executed on each cpu one after another?",
+      "revId": "0193d17f022b3c1e3b6445fa27f19236d31f8119",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5672ad3e_05bd8866",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_rm_any.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-10-01T22:47:08Z",
+      "side": 1,
+      "message": "can you explain why this for loop is needed? Is it possible that core_count is not same as PLATFORM_CORE_COUNT?",
+      "revId": "0193d17f022b3c1e3b6445fa27f19236d31f8119",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "82d6a7ec_45de0840",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_rm_any.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-10-01T22:47:08Z",
+      "side": 1,
+      "message": "Once the test is done, would it be a good idea to powerdown all the secondary cores?",
+      "revId": "0193d17f022b3c1e3b6445fa27f19236d31f8119",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
