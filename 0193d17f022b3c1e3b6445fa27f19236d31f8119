@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "754bf5d2_ee6b6a2c",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_rm_any.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000340
+      },
+      "writtenOn": "2020-10-02T03:11:02Z",
+      "side": 1,
+      "message": "An SDEI event of this type is handled only on a single CPU, so only one instance of this print should run at a time.",
+      "parentUuid": "550e3d43_d2e5aea8",
+      "revId": "0193d17f022b3c1e3b6445fa27f19236d31f8119",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5672ad3e_05bd8866",
         "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_rm_any.c",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "a31d5999_61be4b28",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_rm_any.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000340
+      },
+      "writtenOn": "2020-10-02T03:11:02Z",
+      "side": 1,
+      "message": "I found in my testing that PLATFORM_CORE_COUNT is not necessarily correct depending on what FVP model and parameters you use, so rather than rely on it I count the number of cores in the for_each_cpu macro.",
+      "parentUuid": "5672ad3e_05bd8866",
+      "revId": "0193d17f022b3c1e3b6445fa27f19236d31f8119",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "82d6a7ec_45de0840",
         "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_rm_any.c",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2020-10-01T22:47:08Z",
       "side": 1,
       "message": "Once the test is done, would it be a good idea to powerdown all the secondary cores?",
+      "revId": "0193d17f022b3c1e3b6445fa27f19236d31f8119",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9faa9340_55ef3c91",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_rm_any.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1000340
+      },
+      "writtenOn": "2020-10-02T03:11:02Z",
+      "side": 1,
+      "message": "TFTF framework powers down secondary cores when the entry point function returns, and test is considered done once the last core returns.  As each core receives an event it returns, causing TFTF to shut it down.",
+      "parentUuid": "82d6a7ec_45de0840",
       "revId": "0193d17f022b3c1e3b6445fa27f19236d31f8119",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
