@@ -7,6 +7,178 @@ Firmware-A version for simplicity. At any point in time, TF-A Tests version
 Tests are not guaranteed to be compatible. This also means that a version
 upgrade on the TF-A-Tests side might not necessarily introduce any new feature.
 
+Version 2.4
+-----------
+
+New features
+^^^^^^^^^^^^
+-  More tests are made available in this release to help validate the
+   functionalities in the following areas:
+   -  SMCCC.
+   -  New architecture specific features.
+   -  FF-A features.
+   -  New platform ports.
+
+-  Various improvements to test framework and test suite such as documentation,
+   removing un-necessary dependancies etc.
+
+TFTF
+~~~~
+
+-  Use conditional assignment on sphinx variables so that can be overwritten
+   by environment and/or command line.
+
+-  Remove dependencies from FVP to generic code by converting some FVP platform
+   specific macros to the common macros.
+
+-  Remove make as a package dependency to compile TF-A test code.
+
+-  Move defaults values and macro defs in a separate folder from Makefile.
+
+-  Add support for documentation build as a target in Makefile.
+
+-  Update list of maintainers.
+
+-  Allow alternate stdout to be used apart from pl011 UART.
+
+-  Update documentation to explain how to locally build the documentation.
+
+-  Add .editorconfig from TF-A to define the coding style.
+
+-  Get FVP platform's topology from build options to make FVP platform
+   configuration more flexible and eliminates test errors when the platform
+   is configured with number of CPUs less than default values in the makefile.
+
+-  Update the FIP corrupt address which is used to corrupt BL2 image that helps
+   to trigger firmware update process.
+
+-  Fix documentation to include 'path/to' prefix when specifying tftf.bin on
+   make fip cmd.
+
+-  Add explicit barrier before sev() in tftf_send_event_common API to avoid
+   core hung up.
+
+-  Align output properly on issuing make help_tests by removing dashes
+   and sort tests.
+
+-  Use docker to build documentation.
+
+-  Found some FVP and Juno specific defines used in common header hence those
+   defines moved to platform specific header file.
+
+-  Replace SPCI with PSA FF-A in code and documentation as SPCI is now called
+   as FF-A.
+
+-  Add owner field to sp_layout generation to differentiate owner of SP could
+   either be Silicon Provider or Platform provider.
+
+-  Add v8.5 Branch Target Identifier(BTI) support in TFTF.
+
+-  Remove dependency on SYS_CNT_BASE1 to read the memory mapped timers.
+
+-  New tests:
+
+   -  Add test for SDEI RM_ANY routing mode.
+
+   -  Add initial platform support for TC0.
+
+   -  Add SMC fuzzing module test.
+
+   -  Add test case for SMCCC_ARCH_SOC_ID feature.
+
+   -  Add test that supports ARMv8.6-FGT in TF-A.
+
+   -  Add test that supports ARMv8.6-ECV in TF-A.
+
+   -  Add test for FFA_VERSION interface.
+
+   -  Add test for FFA_FEATURES interface.
+
+Secure partitions
+~~~~~~~~~~~~~~~~~
+
+Cactus
+~~~~~~
+
+-  TFTF doesn't need to boot Secondary Cactus as Hafnium now boots all
+   partitions according to "boot-order" field value in the partition
+   manifests.
+
+-  Do not compile irrelevant test files.
+
+-  Select different stdout device at runtime as primary VM can access
+   to UART while secondary VM's use hypervisor call to SPM for debug
+   logging.
+
+-  Use memory mapped regions as RX/TX buffers in SPM.
+
+-  Update memory/device region nodes in manifest.
+
+-  Add FFA Version Test.
+
+-  Add FFA_FEATURES test.
+
+-  Add FFA_PARTITION_INFO_GET test.
+
+-  Create tertiary partition without RX_TX region specified to test the
+   RXTX_MAP API.
+
+-  Add third partition to ffa_partition_info_get test to test that a
+   partition can successfully get information about the third cactus
+   partition.
+
+-  Map RXTX region to third partition to point the mailbox to this RXTX
+   region.
+
+-  Adjust the number of EC context to max number of PEs according to
+   the secure partition manager's platform topology.
+
+-  Re-align secure partition id to define from 0x8001 to 0xfffe as per
+   requirement.
+
+-  Break the message loop on bad message request instead of replying
+   with the FF-A error ABI to the SPMC.
+
+-  Remove deprecated hypervisor calls spm_vm_get_count and spm_vcpu_get_count
+   instead use FFA_PARTITION_INFO_GET discovery ABI.
+
+-  Add exception/interrupt framework.
+
+-  Implement hvc call 'SPM_INTERRUPT_GET' to get interrupt id.
+
+-  Re-structure platform dependent files by moving platform dependent files
+   and macros to platform specific folder.
+
+-  Add cactus support for TC0 platform.
+
+-  Adjust partition info get properties to support receipt of direct
+   message request.
+
+Issues resolved since last release
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  Update link to SMCCC specification.
+
+-  Trim down the top-level readme file to give brief overview of the project
+   and also fix/update a number of broken/out-dated links in it.
+
+-  Bug fix in Multicore IRQ spurious test.
+
+-  Fix memory regions mapping with no NS bit set.
+
+-  Reenable PSCI NODE_HW_STATE test which was disabled earlier due to
+   outdated SCP firmware.
+
+-  Fix Aarch32 zeromem() function by avoiding infinite loop in 'zeromem'
+   function and optimizing 'memcpy4' function.
+
+-  Add missing help_tests info on help target in the top-level Makefile.
+
+-  Remove unused top-level readme file.
+
+-  Fix maximum number of CPUs in DSU cluster by setting maximum number of CPUs
+   in DSU cluster to 8.
+
 Version 2.3
 -----------
 
