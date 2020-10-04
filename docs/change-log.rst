@@ -7,6 +7,158 @@ Firmware-A version for simplicity. At any point in time, TF-A Tests version
 Tests are not guaranteed to be compatible. This also means that a version
 upgrade on the TF-A-Tests side might not necessarily introduce any new feature.
 
+Version 2.4
+-----------
+
+New features
+^^^^^^^^^^^^
+-  More tests are made available in this release to help validate
+   the functionality of TF-A.
+
+-  Various improvements to test framework and test suite.
+
+TFTF
+~~~~
+
+-  Use conditional assignment on sphinx variables so can overwritten by
+   environment and/or command line.
+
+-  Remove dependencies from FVP to generic code. Some FVP platform specific
+   macros are converted to common macros.
+
+-  Remove make as package dependency to compile TF-A test code.
+
+-  Move defaults values and macro defs in a separate folder from Makefile.
+
+-  Add support for documentation build as a target in Makefile.
+
+-  Update list of maintainers.
+
+-  Allow alternate stdout to be used apart from pl011 UART.
+
+-  Update documentation to explain how to locally build the documentation.
+
+-  Add .editorconfig from TF-A.
+
+-  Get FVP platform's topology from build options.
+
+-  Update the FIP corrupt address which is used to corrupt BL2 image.
+
+-  Include 'path/to' prefix when specifying tftf.bin on make fip cmd in
+   documentation.
+
+-  Add explicit barrier before sev() in tftf_send_event_common API.
+
+-  Align output properly on issuing make help_tests by removing dashes
+   and sort tests.
+
+-  Use docker to build documentation.
+
+-  Move defines to platform specific header file.
+
+-  Replace SPCI with PSA FF-A in code and documentation.
+
+-  Add owner to sp_layout generation.
+
+-  Add ARMv8.5 BTI-related definitions.
+
+-  Add ARMv8.5 BTI support in assembler files.
+
+-  Add ARMv8.5 BTI support in xlat_tables_v2 library.
+
+-  Add ARMv8.5 BTI support in makefiles.
+
+-  Remove dependency on SYS_CNT_BASE1 to read the memory mapped
+   timers.
+
+-  New tests:
+
+   -  Add test for SDEI RM_ANY routing mode.
+
+   -  Add initial platform support for TC0.
+
+   -  Add SMC fuzzing module test.
+
+   -  Add test case for SMCCC_ARCH_SOC_ID feature.
+
+   -  Add test that supports ARMv8.6-FGT in TF-A.
+
+   -  Add test that supports ARMv8.6-ECV in TF-A.
+
+   -  Add test for FFA_VERSION interface.
+
+   -  Add test for FFA_FEATURES interface.
+
+Secure partitions
+~~~~~~~~~~~~~~~~~
+
+Cactus
+~~~~~~
+
+-  TFTF doesn't need to boot Secondary Cactus.
+
+-  Do not compile irrelevant test files.
+
+-  Select different stdout device at runtime.
+
+-  Use memory mapped regions as RX/TX buffers in SPM.
+
+-  Update memory/device region nodes in manifest.
+
+-  Add FFA Version Test.
+
+-  Add FFA_FEATURES test.
+
+-  Add FFA_PARTITION_INFO_GET test.
+
+-  Create tertiary partition.
+
+-  Add third partion to ffa_partition_info_get test.
+
+-  Map RXTX region to third partion.
+
+-  Adjust the number of EC context to max number of PEs.
+
+-  Re-align secure partition id.
+
+-  Break the message loop on bad message request.
+
+-  Remove deprecated hypervisor calls.
+
+-  Add exception/interrupt framework.
+
+-  Implement hvc call to get interrupt id.
+
+-  Re-structure platform dependent files.
+
+-  Add cactus support for TC0 platform.
+
+-  Adjust partition info get properties to support receipt of direct
+   message request.
+
+Issues resolved since last release
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  Update link to SMCCC specification.
+
+-  Trim down the top-level readme file to give brief overview of the project
+   and also fix/update a number of broken/out-dated links in it.
+
+-  Bug fix in Multicore IRQ spurious test.
+
+-  Fix memory regions mapping with no NS bit set.
+
+-  Reenable PSCI NODE_HW_STATE test which was disabled earlier due to
+   outdated SCP firmware.
+
+-  Fix Aarch32 zeromem() function.
+
+-  Add missing help_tests info on help target in the top-level Makefile.
+
+-  Remove unused top-level readme file.
+
+-  Fix maximum number of CPUs in DSU cluster.
+
 Version 2.3
 -----------
 
