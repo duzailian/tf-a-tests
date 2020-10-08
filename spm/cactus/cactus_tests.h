@@ -16,7 +16,12 @@
 /*
  * Test to FFA interfaces.
  */
+void ffa_memory_management_test(struct mailbox_buffers *mb, ffa_vm_id_t vm_id,
+				ffa_vm_id_t sender, uint32_t mem_func,
+				uint64_t handle);
+
 void ffa_tests(struct mailbox_buffers *mb);
+
 
 /*
  * Test other things like the version number returned by SPM.
