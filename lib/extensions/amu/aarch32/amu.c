@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2020, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -15,11 +15,19 @@ int amu_supported(void)
 	uint64_t features;
 
 	features = read_id_pfr0() >> ID_PFR0_AMU_SHIFT;
-	return (features & ID_PFR0_AMU_MASK) == 1;
+	return (features & ID_PFR0_AMU_MASK) >= 1U;
+}
+
+int amu_supported_8_6(void)
+{
+	uint64_t features;
+
+	features = read_id_pfr0() >> ID_PFR0_AMU_SHIFT;
+	return (features & ID_PFR0_AMU_MASK) >= 2U;
 }
 
 /* Read the group 0 counter identified by the given `idx`. */
-uint64_t amu_group0_cnt_read(int idx)
+uint64_t amu_group0_cnt_read(unsigned int idx)
 {
 	assert(amu_supported());
 	assert(idx >= 0 && idx < AMU_GROUP0_NR_COUNTERS);
@@ -28,7 +36,7 @@ uint64_t amu_group0_cnt_read(int idx)
 }
 
 /* Read the group 1 counter identified by the given `idx`. */
-uint64_t amu_group1_cnt_read(int idx)
+uint64_t amu_group1_cnt_read(unsigned int idx)
 {
 	assert(amu_supported());
 	assert(idx >= 0 && idx < AMU_GROUP1_NR_COUNTERS);
