@@ -9,7 +9,13 @@
 
 #include <stdint.h>
 
-uint64_t amu_group0_cnt_read_internal(int idx);
-uint64_t amu_group1_cnt_read_internal(int idx);
+uint64_t amu_group0_cnt_read_internal(unsigned int idx);
+uint64_t amu_group1_cnt_read_internal(unsigned int idx);
+
+uint64_t amu_group0_voffset_read_internal(unsigned int idx);
+void amu_group0_voffset_write_internal(unsigned int idx, uint64_t val);
+
+uint64_t amu_group1_voffset_read_internal(unsigned int idx);
+void amu_group1_voffset_write_internal(unsigned int idx, uint64_t val);
 
 #endif /* __AMU_PRIVATE_H__ */
