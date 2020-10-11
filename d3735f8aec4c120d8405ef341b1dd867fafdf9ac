@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ada564ef_dd381410",
+        "filename": "tftf/framework/aarch64/arch.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2020-10-11T21:56:13Z",
+      "side": 1,
+      "message": "Comment says enable synchronous aborts. Sync aborts are reported at the sync exception vector as opposed to the serror vector and afaik, serrors are asynchronous.. incorrect comment?",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 14,
+        "endChar": 15
+      },
+      "revId": "d3735f8aec4c120d8405ef341b1dd867fafdf9ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
