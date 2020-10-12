@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3548c3a0_8c2c8064",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-12T08:17:53Z",
+      "side": 1,
+      "message": "that\u0027s",
+      "revId": "c1f4b0cd3fa3036f959eebd4801c779d595918cc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c501a04c_81c6b664",
+        "filename": "include/lib/extensions/amu.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-12T08:17:53Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#header-guards",
+      "revId": "c1f4b0cd3fa3036f959eebd4801c779d595918cc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2284a84_b9f6026e",
+        "filename": "include/lib/extensions/amu.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-12T08:17:53Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#include-statement-ordering",
+      "revId": "c1f4b0cd3fa3036f959eebd4801c779d595918cc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea986ee6_53c3d4a4",
+        "filename": "include/lib/extensions/amu_private.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-12T08:17:53Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#header-guards",
+      "revId": "c1f4b0cd3fa3036f959eebd4801c779d595918cc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "789438d0_31dc4bdd",
+        "filename": "lib/extensions/amu/aarch32/amu.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-12T08:17:53Z",
+      "side": 1,
+      "message": "use extra ()",
+      "revId": "c1f4b0cd3fa3036f959eebd4801c779d595918cc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2f8ac72_6380ab4c",
+        "filename": "lib/extensions/amu/aarch32/amu.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-12T08:17:53Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "c1f4b0cd3fa3036f959eebd4801c779d595918cc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d87adba_dd7dd70e",
+        "filename": "lib/extensions/amu/aarch64/amu.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-12T08:17:53Z",
+      "side": 1,
+      "message": "Can you define AMEVCNTOFF1 shift position instead of using 16U magic number?",
+      "revId": "c1f4b0cd3fa3036f959eebd4801c779d595918cc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0a4d749_4b7e174d",
+        "filename": "lib/extensions/amu/aarch64/amu.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-12T08:17:53Z",
+      "side": 1,
+      "message": "see above",
+      "revId": "c1f4b0cd3fa3036f959eebd4801c779d595918cc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "434db9f9_637ab745",
+        "filename": "lib/extensions/amu/aarch64/amu_helpers.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-12T08:17:53Z",
+      "side": 1,
+      "message": "This doesn\u0027t take in account ENABLE_BTI",
+      "revId": "c1f4b0cd3fa3036f959eebd4801c779d595918cc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "246b16b6_00e3cde9",
+        "filename": "lib/extensions/amu/aarch64/amu_helpers.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-12T08:17:53Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "c1f4b0cd3fa3036f959eebd4801c779d595918cc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6728b5c_98933df9",
+        "filename": "tftf/tests/extensions/amu/test_amu.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-12T08:17:53Z",
+      "side": 1,
+      "message": "unsigned int",
+      "revId": "c1f4b0cd3fa3036f959eebd4801c779d595918cc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
