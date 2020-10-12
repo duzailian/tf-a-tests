@@ -1,0 +1,9 @@
+Code-Owner-Review+1: Mark Dykes
+Allow-CI+2: John Powell <john.powell@arm.com>
+Verified+1: TrustedFirmware Code Review
+Maintainer-Review+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Mon, 12 Oct 2020 14:37:52 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/5904
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
