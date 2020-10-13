@@ -10,6 +10,7 @@
 #include <sp_helpers.h>
 
 #include "cactus_test_cmds.h"
+#include "spm_common.h"
 
 extern ffa_vm_id_t ffa_id;
 
