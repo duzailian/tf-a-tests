@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a41c57d1_f6f50395",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-10-14T14:49:11Z",
+      "side": 1,
+      "message": "Can you recall the reason for this copy of source files into output directories?\nI can\u0027t seem to relate it to the existing build flow.",
+      "revId": "b8706b46d6ba59b244564a68f720c99ba0386942",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
