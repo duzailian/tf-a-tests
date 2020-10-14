@@ -22,6 +22,30 @@
       "revId": "c2f297d1999c45f51ae5e0faff1dc5c0b02e1aae",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c87082d_5e82727a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2020-10-14T19:40:44Z",
+      "side": 1,
+      "message": "Done\ncactus support for tc0 is added in a separate commit.\nI will remove the comment as well from the commit message.",
+      "parentUuid": "3a7a50f9_bc5631d3",
+      "range": {
+        "startLine": 10,
+        "startChar": 55,
+        "endLine": 10,
+        "endChar": 59
+      },
+      "revId": "c2f297d1999c45f51ae5e0faff1dc5c0b02e1aae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
