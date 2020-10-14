@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "441d1dfc_f5e37ede",
+        "filename": "include/lib/libfdt/libfdt_env_fm.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-10-14T09:28:26Z",
+      "side": 1,
+      "message": "LIBFDT_ENV_FM_H ??",
+      "range": {
+        "startLine": 1,
+        "startChar": 8,
+        "endLine": 1,
+        "endChar": 20
+      },
+      "revId": "c5636f9070af9299c1158bbdfd182249bae46e77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
