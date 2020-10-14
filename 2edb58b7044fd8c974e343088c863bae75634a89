@@ -22,6 +22,30 @@
       "revId": "2edb58b7044fd8c974e343088c863bae75634a89",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4fd589ab_11e5d490",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-14T16:49:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0bd44712_0e02bdc2",
+      "range": {
+        "startLine": 193,
+        "startChar": 20,
+        "endLine": 193,
+        "endChar": 22
+      },
+      "revId": "2edb58b7044fd8c974e343088c863bae75634a89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
