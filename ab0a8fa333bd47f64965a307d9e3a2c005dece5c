@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f707cf18_e040d3ec",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-10-14T14:16:46Z",
+      "side": 1,
+      "message": "what about unmaping dynamic region in failed cases? may be a single exit path for failed cases ??",
+      "range": {
+        "startLine": 51,
+        "startChar": 2,
+        "endLine": 51,
+        "endChar": 26
+      },
+      "revId": "ab0a8fa333bd47f64965a307d9e3a2c005dece5c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c146514b_869c356d",
+        "filename": "tftf/tests/tests-tegra194.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-10-14T14:16:46Z",
+      "side": 1,
+      "message": "nit: move it to next line",
+      "range": {
+        "startLine": 7,
+        "startChar": 17,
+        "endLine": 8,
+        "endChar": 13
+      },
+      "revId": "ab0a8fa333bd47f64965a307d9e3a2c005dece5c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
