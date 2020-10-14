@@ -1,0 +1,10 @@
+Code-Owner-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Allow-CI+2: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Verified+1: TrustedFirmware Code Review
+Maintainer-Review+1: Mark Dykes
+Submitted-by: Mark Dykes
+Submitted-at: Wed, 14 Oct 2020 15:14:15 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/6100
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
