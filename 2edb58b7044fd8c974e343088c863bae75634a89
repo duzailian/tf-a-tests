@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0bd44712_0e02bdc2",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-10-14T14:20:18Z",
+      "side": 1,
+      "message": "nit: a\nAlso, bit more details about would be better.",
+      "range": {
+        "startLine": 193,
+        "startChar": 20,
+        "endLine": 193,
+        "endChar": 22
+      },
+      "revId": "2edb58b7044fd8c974e343088c863bae75634a89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
