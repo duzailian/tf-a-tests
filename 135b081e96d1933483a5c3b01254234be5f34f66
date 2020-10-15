@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e17f0084_a0cdbddc",
+        "filename": "plat/arm/tc0/tc0_topology.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-15T10:17:06Z",
+      "side": 1,
+      "message": "remove ,",
+      "revId": "135b081e96d1933483a5c3b01254234be5f34f66",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68184e83_e404b2d5",
+        "filename": "plat/arm/tc0/tc0_topology.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-15T10:17:06Z",
+      "side": 1,
+      "message": "function should return uint64_t, but mpid is unsigned int",
+      "revId": "135b081e96d1933483a5c3b01254234be5f34f66",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
