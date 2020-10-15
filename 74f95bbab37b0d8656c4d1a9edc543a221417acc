@@ -34,6 +34,24 @@
       "revId": "74f95bbab37b0d8656c4d1a9edc543a221417acc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "749e58ea_bde6eee2",
+        "filename": "plat/arm/tc0/tc0_topology.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-15T11:58:47Z",
+      "side": 1,
+      "message": "You need uint64_t cast\nor just return (uint64_t)make_mpid(......)\u0027",
+      "parentUuid": "41bddc77_d3434084",
+      "revId": "74f95bbab37b0d8656c4d1a9edc543a221417acc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
