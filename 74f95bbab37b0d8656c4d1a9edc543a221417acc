@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cb0b21f9_5225388b",
+        "filename": "plat/arm/tc0/tc0_topology.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-15T11:26:46Z",
+      "side": 1,
+      "message": "make_mpid() returns unsigned int, not uint64_t",
+      "revId": "74f95bbab37b0d8656c4d1a9edc543a221417acc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
