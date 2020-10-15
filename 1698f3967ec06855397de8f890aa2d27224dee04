@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a3175dfd_b4f3e090",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-15T09:41:44Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#include-statement-ordering",
+      "revId": "1698f3967ec06855397de8f890aa2d27224dee04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "73e0e079_aad22273",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-15T09:41:44Z",
+      "side": 1,
+      "message": "0UL?",
+      "revId": "1698f3967ec06855397de8f890aa2d27224dee04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f4139b2c_c681c85b",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-15T09:41:44Z",
+      "side": 1,
+      "message": "u_register_t arg2, but size_in_bytes is uint32_t.\nSee other cases.",
+      "revId": "1698f3967ec06855397de8f890aa2d27224dee04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87346ee2_dfd2d412",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-15T09:41:44Z",
+      "side": 1,
+      "message": "violation of MISRA-C Rule 7.2",
+      "revId": "1698f3967ec06855397de8f890aa2d27224dee04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "914f86e5_255b4bea",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-15T09:41:44Z",
+      "side": 1,
+      "message": "0ULL?",
+      "revId": "1698f3967ec06855397de8f890aa2d27224dee04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f42d388_2021800a",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-15T09:41:44Z",
+      "side": 1,
+      "message": "MISRA-C 7.2",
+      "revId": "1698f3967ec06855397de8f890aa2d27224dee04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
