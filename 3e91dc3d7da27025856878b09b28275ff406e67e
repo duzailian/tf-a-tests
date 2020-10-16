@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c5c4349c_2be45f27",
+        "filename": "include/lib/aarch32/arch.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2020-10-16T11:26:23Z",
+      "side": 1,
+      "message": "Update copyright notice",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "3e91dc3d7da27025856878b09b28275ff406e67e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ff73e06_57fa26a3",
+        "filename": "tftf/tests/extensions/amu/test_amu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2020-10-16T11:26:23Z",
+      "side": 1,
+      "message": "Not very experienced with AMU, but why are you iterating over AMU_GROUP0_NR_COUNTERS for reading while you wrote on the first three offsets without taking NR_COUNTERS into account (L174 - L176)?",
+      "range": {
+        "startLine": 211,
+        "startChar": 1,
+        "endLine": 211,
+        "endChar": 48
+      },
+      "revId": "3e91dc3d7da27025856878b09b28275ff406e67e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
