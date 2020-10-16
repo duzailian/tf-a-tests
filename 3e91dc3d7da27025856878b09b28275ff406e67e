@@ -45,6 +45,30 @@
       "revId": "3e91dc3d7da27025856878b09b28275ff406e67e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2d7aac54_3b50d5d4",
+        "filename": "tftf/tests/extensions/amu/test_amu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1000340
+      },
+      "writtenOn": "2020-10-16T15:50:57Z",
+      "side": 1,
+      "message": "Since the number of G0 counters is fixed at 4 for all systems and virtual offset registers only exist for 0,2,3 it seemed simpler and overall better to just have 3 write operations rather than do it in a loop and check for i !\u003d 1 on each iteration for just setting the values in L174-L176.\n\nIn this instance here each value needs to be checked, so rather than have a separate if cases and print statement for each value I used a loop.\n\nI can use loops everywhere if you\u0027d prefer.  That method has the advantage of scaling if for whatever reason a later AMU version adds more G0 counters.",
+      "parentUuid": "2ff73e06_57fa26a3",
+      "range": {
+        "startLine": 211,
+        "startChar": 1,
+        "endLine": 211,
+        "endChar": 48
+      },
+      "revId": "3e91dc3d7da27025856878b09b28275ff406e67e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
