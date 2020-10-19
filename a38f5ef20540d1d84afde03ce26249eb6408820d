@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e6ac32a6_564be421",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T14:57:59Z",
+      "side": 1,
+      "message": "PSCI",
+      "revId": "a38f5ef20540d1d84afde03ce26249eb6408820d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fccd0361_0e4d5a6c",
+        "filename": "plat/nvidia/tegra210/helpers.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T14:57:59Z",
+      "side": 1,
+      "message": "x1 is a positive number, so b.gt instruction cannot be used here",
+      "revId": "a38f5ef20540d1d84afde03ce26249eb6408820d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8fd6711_2f7501fe",
+        "filename": "plat/nvidia/tegra210/helpers.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T14:57:59Z",
+      "side": 1,
+      "message": "x0 - x1",
+      "revId": "a38f5ef20540d1d84afde03ce26249eb6408820d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d770773f_c731195a",
+        "filename": "plat/nvidia/tegra210/include/platform_def.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T14:57:59Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#header-guards",
+      "revId": "a38f5ef20540d1d84afde03ce26249eb6408820d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2be3dec8_46eeb583",
+        "filename": "plat/nvidia/tegra210/pwr_state.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T14:57:59Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#include-statement-ordering\nShould platform.h be the last?",
+      "revId": "a38f5ef20540d1d84afde03ce26249eb6408820d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "efbb895c_39ce9077",
+        "filename": "plat/nvidia/tegra210/pwr_state.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T14:57:59Z",
+      "side": 1,
+      "message": "delete ,",
+      "revId": "a38f5ef20540d1d84afde03ce26249eb6408820d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00bd700f_1b09b5d4",
+        "filename": "plat/nvidia/tegra210/setup.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T14:57:59Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#include-statement-ordering",
+      "revId": "a38f5ef20540d1d84afde03ce26249eb6408820d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "23d6269d_9324f141",
+        "filename": "plat/nvidia/tegra210/topology.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T14:57:59Z",
+      "side": 1,
+      "message": "make_mpid() returns unsigned int",
+      "revId": "a38f5ef20540d1d84afde03ce26249eb6408820d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
