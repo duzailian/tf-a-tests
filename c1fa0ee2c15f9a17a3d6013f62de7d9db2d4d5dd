@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "30f58a26_78d9a4a8",
+        "filename": "plat/nvidia/drivers/timer/timers.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T15:24:24Z",
+      "side": 1,
+      "message": "Should platform.h be the last one?",
+      "revId": "c1fa0ee2c15f9a17a3d6013f62de7d9db2d4d5dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de28e248_17f454f6",
+        "filename": "plat/nvidia/drivers/timer/timers.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T15:24:24Z",
+      "side": 1,
+      "message": "use extra tabs to align numeric values",
+      "revId": "c1fa0ee2c15f9a17a3d6013f62de7d9db2d4d5dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e05aa65_3c1b3f8e",
+        "filename": "plat/nvidia/drivers/timer/timers.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T15:24:24Z",
+      "side": 1,
+      "message": "violation of MISRA-C Rule 7.2",
+      "revId": "c1fa0ee2c15f9a17a3d6013f62de7d9db2d4d5dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab4943b0_d60e8e0e",
+        "filename": "plat/nvidia/drivers/timer/timers.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T15:24:24Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "c1fa0ee2c15f9a17a3d6013f62de7d9db2d4d5dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c4485fa_2698d65d",
+        "filename": "plat/nvidia/drivers/timer/timers.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T15:24:24Z",
+      "side": 1,
+      "message": "the same here. 1ULL",
+      "revId": "c1fa0ee2c15f9a17a3d6013f62de7d9db2d4d5dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68eb64e7_df3a91e9",
+        "filename": "plat/nvidia/drivers/timer/timers.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T15:24:24Z",
+      "side": 1,
+      "message": "MSRA-C Rule 7.2. Fix everywhere",
+      "revId": "c1fa0ee2c15f9a17a3d6013f62de7d9db2d4d5dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9a5e588_b4604b70",
+        "filename": "plat/nvidia/drivers/timer/timers.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T15:24:24Z",
+      "side": 1,
+      "message": "violation of MISRA-C Rule 14.4",
+      "revId": "c1fa0ee2c15f9a17a3d6013f62de7d9db2d4d5dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ff71f9c_b5130e36",
+        "filename": "plat/nvidia/drivers/watchdog/watchdog.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T15:24:24Z",
+      "side": 1,
+      "message": "remove empty lne",
+      "revId": "c1fa0ee2c15f9a17a3d6013f62de7d9db2d4d5dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4809a4c_2213e503",
+        "filename": "plat/nvidia/tegra194/helpers.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T15:24:24Z",
+      "side": 1,
+      "message": "x0 - x1",
+      "revId": "c1fa0ee2c15f9a17a3d6013f62de7d9db2d4d5dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b931287_9bc6fa7a",
+        "filename": "plat/nvidia/tegra194/include/platform_def.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T15:24:24Z",
+      "side": 1,
+      "message": "remove extra tabs to align",
+      "revId": "c1fa0ee2c15f9a17a3d6013f62de7d9db2d4d5dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b21d367_378df793",
+        "filename": "plat/nvidia/tegra194/pwr_mgmt.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T15:24:24Z",
+      "side": 1,
+      "message": "unsigned int i",
+      "revId": "c1fa0ee2c15f9a17a3d6013f62de7d9db2d4d5dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
