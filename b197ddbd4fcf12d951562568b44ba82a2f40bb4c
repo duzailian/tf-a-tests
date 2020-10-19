@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d407eb32_510498e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T14:41:46Z",
+      "side": 1,
+      "message": "IRQ",
+      "revId": "b197ddbd4fcf12d951562568b44ba82a2f40bb4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60142f68_3bccc068",
+        "filename": "plat/nvidia/tegra186/include/platform_def.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T14:41:46Z",
+      "side": 1,
+      "message": "Why just not define TEGRA_RTC_IRQ?",
+      "revId": "b197ddbd4fcf12d951562568b44ba82a2f40bb4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a331dcd_10223b4f",
+        "filename": "plat/nvidia/tegra194/include/platform_def.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-19T14:41:46Z",
+      "side": 1,
+      "message": "remove extra tabs for algnment",
+      "revId": "b197ddbd4fcf12d951562568b44ba82a2f40bb4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
