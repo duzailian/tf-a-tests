@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "dd074150_8c0b92d4",
+        "filename": "plat/nvidia/tegra210/pwr_state.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-19T21:50:38Z",
+      "side": 1,
+      "message": "This header resides under /include/ folder",
+      "parentUuid": "be76b304_03a8d9bf",
+      "revId": "a38f5ef20540d1d84afde03ce26249eb6408820d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "efbb895c_39ce9077",
         "filename": "plat/nvidia/tegra210/pwr_state.c",
         "patchSetId": 5
@@ -241,6 +259,24 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "00bd700f_1b09b5d4",
+      "revId": "a38f5ef20540d1d84afde03ce26249eb6408820d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "774cec25_4ce39e17",
+        "filename": "plat/nvidia/tegra210/setup.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-19T21:50:38Z",
+      "side": 1,
+      "message": "platform.h is located under /include/ folder",
+      "parentUuid": "e87a3607_e99ad6f7",
       "revId": "a38f5ef20540d1d84afde03ce26249eb6408820d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
