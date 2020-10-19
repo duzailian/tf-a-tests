@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5fb74432_df60dfa1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-19T15:23:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d407eb32_510498e6",
+      "revId": "b197ddbd4fcf12d951562568b44ba82a2f40bb4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "60142f68_3bccc068",
         "filename": "plat/nvidia/tegra186/include/platform_def.h",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2020-10-19T14:41:46Z",
       "side": 1,
       "message": "Why just not define TEGRA_RTC_IRQ?",
+      "revId": "b197ddbd4fcf12d951562568b44ba82a2f40bb4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2aba378_fb1f75e0",
+        "filename": "plat/nvidia/tegra186/include/platform_def.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-19T15:23:45Z",
+      "side": 1,
+      "message": "Yes, that\u0027s one way of doing it. If it is too big of an issue, I will change the current approach",
+      "parentUuid": "60142f68_3bccc068",
       "revId": "b197ddbd4fcf12d951562568b44ba82a2f40bb4c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
@@ -50,6 +86,24 @@
       "revId": "b197ddbd4fcf12d951562568b44ba82a2f40bb4c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c986775_df3e417b",
+        "filename": "plat/nvidia/tegra194/include/platform_def.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-19T15:23:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9a331dcd_10223b4f",
+      "revId": "b197ddbd4fcf12d951562568b44ba82a2f40bb4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
