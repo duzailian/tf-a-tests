@@ -1,0 +1,11 @@
+Allow-CI+2: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Verified+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Code-Review+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Owner-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Tue, 20 Oct 2020 16:30:26 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/5617
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
