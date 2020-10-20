@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8448c69b_5843eb1b",
+        "filename": "plat/nvidia/drivers/watchdog/watchdog.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-20T11:36:43Z",
+      "side": 1,
+      "message": "0U",
+      "revId": "438825448b9ce6f331851eba350eec293c35c05b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba496c3b_00a0a589",
+        "filename": "plat/nvidia/tegra194/helpers.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-20T11:36:43Z",
+      "side": 1,
+      "message": "x1 is unsigned value, b.gt instruction shouldn\u0027t be used here",
+      "revId": "438825448b9ce6f331851eba350eec293c35c05b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2874bd5_30fd578c",
+        "filename": "plat/nvidia/tegra194/helpers.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-20T11:36:43Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "438825448b9ce6f331851eba350eec293c35c05b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2123d08_588db1bd",
+        "filename": "plat/nvidia/tegra194/include/platform_def.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-20T11:36:43Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#header-guards",
+      "revId": "438825448b9ce6f331851eba350eec293c35c05b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae7dee9a_8e00bfc4",
+        "filename": "plat/nvidia/tegra194/pwr_mgmt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-20T11:36:43Z",
+      "side": 1,
+      "message": "MISRA-C Rule 7.2",
+      "revId": "438825448b9ce6f331851eba350eec293c35c05b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
