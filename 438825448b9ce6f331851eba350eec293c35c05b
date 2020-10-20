@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "edbc2761_50f19136",
+        "filename": "plat/nvidia/drivers/watchdog/watchdog.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-20T15:25:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8448c69b_5843eb1b",
+      "revId": "438825448b9ce6f331851eba350eec293c35c05b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba496c3b_00a0a589",
         "filename": "plat/nvidia/tegra194/helpers.S",
         "patchSetId": 5
@@ -33,6 +51,24 @@
       "revId": "438825448b9ce6f331851eba350eec293c35c05b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4900d80_16dc90e8",
+        "filename": "plat/nvidia/tegra194/helpers.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-20T15:25:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ba496c3b_00a0a589",
+      "revId": "438825448b9ce6f331851eba350eec293c35c05b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "831bcb9b_7a5c4c7c",
+        "filename": "plat/nvidia/tegra194/helpers.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-20T15:25:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a2874bd5_30fd578c",
+      "revId": "438825448b9ce6f331851eba350eec293c35c05b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a2123d08_588db1bd",
         "filename": "plat/nvidia/tegra194/include/platform_def.h",
         "patchSetId": 5
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ca233439_5e204a07",
+        "filename": "plat/nvidia/tegra194/include/platform_def.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-20T15:25:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a2123d08_588db1bd",
+      "revId": "438825448b9ce6f331851eba350eec293c35c05b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae7dee9a_8e00bfc4",
         "filename": "plat/nvidia/tegra194/pwr_mgmt.c",
         "patchSetId": 5
@@ -84,6 +156,24 @@
       "revId": "438825448b9ce6f331851eba350eec293c35c05b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ea58b67_eff5e3c6",
+        "filename": "plat/nvidia/tegra194/pwr_mgmt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-20T15:25:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ae7dee9a_8e00bfc4",
+      "revId": "438825448b9ce6f331851eba350eec293c35c05b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
