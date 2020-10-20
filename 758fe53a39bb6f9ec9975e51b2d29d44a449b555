@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "149ac685_b11c0ccc",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-10-20T16:30:13Z",
+      "side": 1,
+      "message": "remove space after cast.\nret.ret0 is u_register_t\nand\ntypedef unsigned long u_register_t;\nWhy is this cast needed? Also see lines #219-221",
+      "revId": "758fe53a39bb6f9ec9975e51b2d29d44a449b555",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
