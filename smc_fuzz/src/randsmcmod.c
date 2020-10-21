@@ -470,9 +470,9 @@ void runtestfunction(char *funcstr)
 }
 
 /*
- * Top of SMC fuzzing module
+ * Function executes a single SMC fuzz test instance with a supplied seed.
  */
-test_result_t smc_fuzzing_top(void)
+test_result_t smc_fuzzing_instance(uint32_t seed)
 {
 	/*
 	 * Setting up malloc block parameters
@@ -508,9 +508,9 @@ test_result_t smc_fuzzing_top(void)
 	}
 
 	/*
-	 * Hard coded seed, will change in the near future for better strategy
+	 * Initialize pseudo random number generator with supplied seed.
 	 */
-	srand(89758389);
+	srand(seed);
 
 	/*
 	 * Code to traverse the bias tree and select function based on the biaes within
@@ -532,7 +532,7 @@ test_result_t smc_fuzzing_top(void)
 	 * another loop to continue the process of selection until an eventual leaf
 	 * node is found.
 	 */
-	for (unsigned int i = 0U; i < 100U; i++) {
+	for (unsigned int i = 0U; i < SMC_FUZZ_CALLS_PER_INSTANCE; i++) {
 		tlnode = &ndarray[cntndarray - 1];
 		int nd = 0;
 		while (nd == 0) {
@@ -564,6 +564,52 @@ test_result_t smc_fuzzing_top(void)
 			GENFREE(ndarray[j].treenodes);
 		}
 		GENFREE(ndarray);
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * Top of SMC fuzzing module
+ */
+test_result_t smc_fuzzing_top(void)
+{
+	/* These SMC_FUZZ_x macros are supplied by the build system. */
+	test_result_t results[SMC_FUZZ_INSTANCE_COUNT];
+	uint32_t seeds[SMC_FUZZ_INSTANCE_COUNT] = {SMC_FUZZ_SEEDS};
+	unsigned int i;
+
+	/* Run each instance. */
+	for (i = 0; i < SMC_FUZZ_INSTANCE_COUNT; i++) {
+		printf("Starting SMC fuzz test with seed 0x%x\n", seeds[i]);
+		results[i] = smc_fuzzing_instance(seeds[i]);
+	}
+
+	/* Report successes and failures. */
+	printf("SMC Fuzz Test Results Summary\n");
+	for (i = 0; i < SMC_FUZZ_INSTANCE_COUNT; i++) {
+		/* Display instance number. */
+		printf("  Instance #%d\n", i);
+
+		/* Print test result. */
+		printf("    Result: ");
+		if (results[i] == TEST_RESULT_SUCCESS) {
+			printf("SUCCESS\n");
+		} else if (results[i] == TEST_RESULT_FAIL) {
+			printf("FAIL\n");
+		} else if (results[i] == TEST_RESULT_SKIPPED) {
+			printf("SKIPPED\n");
+		}
+
+		/* Print seed used */
+		printf("    Seed: 0x%x\n", seeds[i]);
+	}
+
+	/* Figure out what value to return. */
+	for (i = 0; i < SMC_FUZZ_INSTANCE_COUNT; i++) {
+		if (results[i] == TEST_RESULT_FAIL) {
+			return TEST_RESULT_FAIL;
+		}
 	}
 
 	return TEST_RESULT_SUCCESS;
