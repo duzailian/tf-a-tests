@@ -1,0 +1,13 @@
+Allow-CI+2: Manish Pandey <manish.pandey2@arm.com>
+Allow-CI+2: Manish V Badarkhe <manish.badarkhe@arm.com>
+Allow-CI+2: Joanna Farley <joanna.farley@arm.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Maintainer-Review+1: Joanna Farley <joanna.farley@arm.com>
+Verified+1: TrustedFirmware Code Review
+Code-Review+1: John Powell <john.powell@arm.com>
+Code-Owner-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Submitted-by: Joanna Farley <joanna.farley@arm.com>
+Submitted-at: Wed, 21 Oct 2020 13:06:20 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/5123
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
