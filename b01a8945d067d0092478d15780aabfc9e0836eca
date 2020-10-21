@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "4ea274fa_a623668e",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-21T19:00:21Z",
+      "side": 1,
+      "message": "Forgot to mark as resolved",
+      "parentUuid": "23774400_9cc64bef",
+      "revId": "b01a8945d067d0092478d15780aabfc9e0836eca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b9e0e9a9_6278add2",
         "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
         "patchSetId": 5
@@ -69,6 +87,24 @@
       "revId": "b01a8945d067d0092478d15780aabfc9e0836eca",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd16e42b_cb65eec4",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-21T19:00:21Z",
+      "side": 1,
+      "message": "Forgot to mark as resolved",
+      "parentUuid": "f153d2eb_68d6f944",
+      "revId": "b01a8945d067d0092478d15780aabfc9e0836eca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
