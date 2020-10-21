@@ -1,0 +1,9 @@
+Code-Owner-Review+1: Varun Wadekar <vwadekar@nvidia.com>
+Code-Review+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Verified+1: Manish Pandey <manish.pandey2@arm.com>
+Maintainer-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Wed, 21 Oct 2020 10:06:34 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/6293
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
