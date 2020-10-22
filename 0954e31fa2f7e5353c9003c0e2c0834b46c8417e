@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d9feda1c_4a7f3c79",
+        "filename": "lib/extensions/amu/aarch32/amu.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-22T18:16:07Z",
+      "side": 1,
+      "message": "Is this statement \u0027true\u0027 always? what is the rationale behind making \u0027idx\u0027 unsigned?",
+      "range": {
+        "startLine": 33,
+        "startChar": 8,
+        "endLine": 33,
+        "endChar": 19
+      },
+      "revId": "0954e31fa2f7e5353c9003c0e2c0834b46c8417e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07619ff7_782b7a18",
+        "filename": "lib/extensions/amu/aarch32/amu.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-22T18:16:07Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 42,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 19
+      },
+      "revId": "0954e31fa2f7e5353c9003c0e2c0834b46c8417e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
