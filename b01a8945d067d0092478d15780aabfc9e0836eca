@@ -154,6 +154,54 @@
     },
     {
       "key": {
+        "uuid": "ed2dc694_6c3b63bf",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-22T15:46:33Z",
+      "side": 1,
+      "message": "We would like to address the memory as uint64 chunks",
+      "parentUuid": "f493fe57_a56f342a",
+      "range": {
+        "startLine": 101,
+        "startChar": 19,
+        "endLine": 101,
+        "endChar": 27
+      },
+      "revId": "b01a8945d067d0092478d15780aabfc9e0836eca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9451b341_2b9e498a",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-22T15:46:33Z",
+      "side": 1,
+      "message": "This is actually DRAM memory marked as device. So we dont feel the need to use mmio* here",
+      "parentUuid": "bb4db3be_3bf91b7a",
+      "range": {
+        "startLine": 101,
+        "startChar": 6,
+        "endLine": 101,
+        "endChar": 19
+      },
+      "revId": "b01a8945d067d0092478d15780aabfc9e0836eca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c6e6c67f_7be01f1f",
         "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
         "patchSetId": 5
@@ -177,6 +225,30 @@
     },
     {
       "key": {
+        "uuid": "8b7b5515_ab48242c",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-22T15:46:33Z",
+      "side": 1,
+      "message": "This is to unmap the previously mapped memory before exiting the test",
+      "parentUuid": "c6e6c67f_7be01f1f",
+      "range": {
+        "startLine": 105,
+        "startChar": 3,
+        "endLine": 105,
+        "endChar": 13
+      },
+      "revId": "b01a8945d067d0092478d15780aabfc9e0836eca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c0e8a573_cd8e50f1",
         "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
         "patchSetId": 5
@@ -197,6 +269,30 @@
       "revId": "b01a8945d067d0092478d15780aabfc9e0836eca",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20b8f01e_69d30455",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-22T15:46:33Z",
+      "side": 1,
+      "message": "Dont see a lot of benefit, but we can do that to maintain uniformity",
+      "parentUuid": "c0e8a573_cd8e50f1",
+      "range": {
+        "startLine": 115,
+        "startChar": 2,
+        "endLine": 115,
+        "endChar": 25
+      },
+      "revId": "b01a8945d067d0092478d15780aabfc9e0836eca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
