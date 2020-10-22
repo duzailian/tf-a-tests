@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9277514d_a83f22e1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-22T15:48:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7886db0e_67939ef4",
+      "revId": "c9e9428f95943b9180d01cd508353a15db159f96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b2ed478b_4ef83a25",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -33,6 +51,24 @@
       "revId": "c9e9428f95943b9180d01cd508353a15db159f96",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e02156ee_41b4d9a3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-22T15:48:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b2ed478b_4ef83a25",
+      "revId": "c9e9428f95943b9180d01cd508353a15db159f96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -56,6 +92,30 @@
       "revId": "c9e9428f95943b9180d01cd508353a15db159f96",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ce57b0a_32fbcbb2",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-22T15:48:23Z",
+      "side": 1,
+      "message": "Yes. This SMC does not expect any inputs",
+      "parentUuid": "60657e3c_376cc0f4",
+      "range": {
+        "startLine": 206,
+        "startChar": 52,
+        "endLine": 206,
+        "endChar": 74
+      },
+      "revId": "c9e9428f95943b9180d01cd508353a15db159f96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -96,6 +156,48 @@
       "revId": "c9e9428f95943b9180d01cd508353a15db159f96",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "919f505a_53d7776f",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-22T15:48:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0a3ed8de_a2912acb",
+      "range": {
+        "startLine": 214,
+        "startChar": 24,
+        "endLine": 214,
+        "endChar": 36
+      },
+      "revId": "c9e9428f95943b9180d01cd508353a15db159f96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c705e0bf_5c303099",
+        "filename": "tftf/tests/plat/nvidia/common/test_sip.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-22T15:48:23Z",
+      "side": 1,
+      "message": "Actually it is treated as a negative error code here",
+      "parentUuid": "0cf5810c_371940a0",
+      "revId": "c9e9428f95943b9180d01cd508353a15db159f96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
