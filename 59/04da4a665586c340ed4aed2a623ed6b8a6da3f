@@ -1,0 +1,8 @@
+Code-Owner-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Verified+1: Manish Pandey <manish.pandey2@arm.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Mon, 26 Oct 2020 16:57:41 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/6295
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
