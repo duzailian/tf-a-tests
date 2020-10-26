@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6a64cac2_c25e0983",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-10-26T09:33:06Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "4d5b5bfdb7dccd008847ee3cb1b53e8799bef15d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39bf480d_c7688d07",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-10-26T09:33:06Z",
+      "side": 1,
+      "message": "Not sure why it would have to be called at least for first and second cactus instances.\nI would even have thought fails because buffers are already set up by Hafnium at boot time.",
+      "revId": "4d5b5bfdb7dccd008847ee3cb1b53e8799bef15d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9461059_5f1e3fe8",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-10-26T09:33:06Z",
+      "side": 1,
+      "message": "Can you add this reference?\nhttps://lists.trustedfirmware.org/pipermail/hafnium/2020-June/000023.html",
+      "range": {
+        "startLine": 76,
+        "startChar": 10,
+        "endLine": 76,
+        "endChar": 39
+      },
+      "revId": "4d5b5bfdb7dccd008847ee3cb1b53e8799bef15d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
