@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "77efc9f1_1923892d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-10-27T10:38:58Z",
+      "side": 1,
+      "message": "Nit: to be consistent - lowercase \"cactus\"?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 1
+      },
+      "revId": "fd69b96940c3bd28d485c69a14eebf256e73d1dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c19668a0_b4866434",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-10-27T10:38:58Z",
+      "side": 1,
+      "message": "Maybe something like ffa_msg_send_direct_req64_short() ffa_msg_send_direct_req64_full()?",
+      "range": {
+        "startLine": 365,
+        "startChar": 0,
+        "endLine": 369,
+        "endChar": 23
+      },
+      "revId": "fd69b96940c3bd28d485c69a14eebf256e73d1dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
