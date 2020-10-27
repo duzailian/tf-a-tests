@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0709481d_96999f48",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-10-27T12:46:03Z",
+      "side": 1,
+      "message": "They regard to different cacheability parameters. they will affect the same register in the same bits, however for different configurations of memory the meaning changes slightly. As for now I used only one value out of these. I think this definition needs to be here for when they are needed for the future. They need to be consistent with what is defined in Hafnium codebase.",
+      "parentUuid": "c1c297bb_75ab5551",
+      "range": {
+        "startLine": 70,
+        "startChar": 1,
+        "endLine": 77,
+        "endChar": 26
+      },
+      "revId": "b6fba17b0a6e8ff1b758413391ae0e0dbb3a0bd7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2829e5bd_0349f98e",
         "filename": "include/runtime_services/ffa_helpers.h",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2020-10-27T10:25:33Z",
       "side": 1,
       "message": "I would say either move `ffa_memory_receiver_flags_t` here or move this typedef to the top",
+      "range": {
+        "startLine": 87,
+        "startChar": 16,
+        "endLine": 87,
+        "endChar": 47
+      },
+      "revId": "b6fba17b0a6e8ff1b758413391ae0e0dbb3a0bd7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4f67a8b_53f82996",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-10-27T12:46:03Z",
+      "side": 1,
+      "message": "the reason for this be here is because this is a bitmap using the above enums for access permissions, and they are accessed using defined sets and gets below.\n\nMakes it easier to follow the code. ffa_memory_flags, doesn\u0027t regard to either the enums or the set/get methods",
+      "parentUuid": "2829e5bd_0349f98e",
       "range": {
         "startLine": 87,
         "startChar": 16,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "ec69a315_6ba70eae",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-10-27T12:46:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d18f402d_fae207bb",
+      "range": {
+        "startLine": 219,
+        "startChar": 37,
+        "endLine": 219,
+        "endChar": 40
+      },
+      "revId": "b6fba17b0a6e8ff1b758413391ae0e0dbb3a0bd7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d43c9808_9a0d8fd8",
         "filename": "include/runtime_services/ffa_helpers.h",
         "patchSetId": 4
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "67485355_ee8648f4",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-10-27T12:46:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d43c9808_9a0d8fd8",
+      "range": {
+        "startLine": 225,
+        "startChar": 42,
+        "endLine": 225,
+        "endChar": 45
+      },
+      "revId": "b6fba17b0a6e8ff1b758413391ae0e0dbb3a0bd7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "79d3c36e_bdcdc460",
         "filename": "include/runtime_services/ffa_helpers.h",
         "patchSetId": 4
@@ -114,6 +210,30 @@
       "revId": "b6fba17b0a6e8ff1b758413391ae0e0dbb3a0bd7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27152384_28401237",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-10-27T12:46:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79d3c36e_bdcdc460",
+      "range": {
+        "startLine": 231,
+        "startChar": 48,
+        "endLine": 231,
+        "endChar": 51
+      },
+      "revId": "b6fba17b0a6e8ff1b758413391ae0e0dbb3a0bd7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
