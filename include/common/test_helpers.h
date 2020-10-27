@@ -27,6 +27,8 @@ typedef struct {
 
 typedef test_result_t (*test_function_arg_t)(void *arg);
 
+#define CACTUS_UUID {0xb4b5671e, 0x4a904fe1, 0xb81ffb13, 0xdae1dacb}
+
 #ifndef __aarch64__
 #define SKIP_TEST_IF_AARCH32()							\
 	do {									\
@@ -199,6 +201,22 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 					     debug_ver,				\
 					     version);				\
 			return TEST_RESULT_SKIPPED;				\
+		}								\
+	} while (0)
+
+#define SKIP_TEST_IF_FFA_ENDPOINT_NOT_DEPLOYED(mb, uuid)			\
+	do {									\
+		const uint32_t ffa_uuid[4] = uuid;				\
+		smc_ret_values smc_ret = ffa_partition_info_get(ffa_uuid);	\
+		ffa_rx_release();						\
+		if (smc_ret.ret0 == FFA_ERROR && 				\
+		    smc_ret.ret2 == FFA_ERROR_INVALID_PARAMETER) {		\
+			tftf_testcase_printf("FFA endpoint not deployed!\n");	\
+			return TEST_RESULT_SKIPPED;				\
+		} else if (smc_ret.ret0 != FFA_SUCCESS_SMC32) {			\
+			tftf_testcase_printf("ffa_partition_info_get "		\
+						"failed!\n");			\
+			return TEST_RESULT_FAIL;				\
 		}								\
 	} while (0)
 
