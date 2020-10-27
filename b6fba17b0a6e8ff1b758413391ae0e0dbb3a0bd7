@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c1c297bb_75ab5551",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-10-27T10:25:33Z",
+      "side": 1,
+      "message": "What is the purpose of _DEV_? Same values as _CACHE_",
+      "range": {
+        "startLine": 70,
+        "startChar": 1,
+        "endLine": 77,
+        "endChar": 26
+      },
+      "revId": "b6fba17b0a6e8ff1b758413391ae0e0dbb3a0bd7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2829e5bd_0349f98e",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-10-27T10:25:33Z",
+      "side": 1,
+      "message": "I would say either move `ffa_memory_receiver_flags_t` here or move this typedef to the top",
+      "range": {
+        "startLine": 87,
+        "startChar": 16,
+        "endLine": 87,
+        "endChar": 47
+      },
+      "revId": "b6fba17b0a6e8ff1b758413391ae0e0dbb3a0bd7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d18f402d_fae207bb",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-10-27T10:25:33Z",
+      "side": 1,
+      "message": "0x1U?",
+      "range": {
+        "startLine": 219,
+        "startChar": 37,
+        "endLine": 219,
+        "endChar": 40
+      },
+      "revId": "b6fba17b0a6e8ff1b758413391ae0e0dbb3a0bd7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d43c9808_9a0d8fd8",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-10-27T10:25:33Z",
+      "side": 1,
+      "message": "0x2U?",
+      "range": {
+        "startLine": 225,
+        "startChar": 42,
+        "endLine": 225,
+        "endChar": 45
+      },
+      "revId": "b6fba17b0a6e8ff1b758413391ae0e0dbb3a0bd7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79d3c36e_bdcdc460",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-10-27T10:25:33Z",
+      "side": 1,
+      "message": "0x4U?",
+      "range": {
+        "startLine": 231,
+        "startChar": 48,
+        "endLine": 231,
+        "endChar": 51
+      },
+      "revId": "b6fba17b0a6e8ff1b758413391ae0e0dbb3a0bd7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
