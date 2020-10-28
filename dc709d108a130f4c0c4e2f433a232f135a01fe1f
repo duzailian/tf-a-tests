@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "e180df45_92d6b187",
+        "filename": "plat/nvidia/tegra186/helpers.S",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-10-28T15:46:42Z",
+      "side": 1,
+      "message": "You mean PLATFORM_CORES_CLUSTER0?\n\nClusters are asymmetric, so using 2 is ok but it does not relate to cluster count or cpus per cluster.",
+      "parentUuid": "201f7f85_7807ce69",
+      "range": {
+        "startLine": 36,
+        "startChar": 10,
+        "endLine": 36,
+        "endChar": 11
+      },
+      "revId": "dc709d108a130f4c0c4e2f433a232f135a01fe1f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "aa4bc3f2_8baa39cc",
         "filename": "plat/nvidia/tegra186/include/platform_def.h",
         "patchSetId": 11
