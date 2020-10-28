@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "050e19e4_28237b07",
+        "filename": "plat/nvidia/tegra186/helpers.S",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-28T18:29:55Z",
+      "side": 1,
+      "message": "Fixed this in the next patchset. Actually we should be using PLATFORM_CORES_CLUSTER1 to use logical CPU IDs 0-7",
+      "parentUuid": "e180df45_92d6b187",
+      "range": {
+        "startLine": 36,
+        "startChar": 10,
+        "endLine": 36,
+        "endChar": 11
+      },
+      "revId": "dc709d108a130f4c0c4e2f433a232f135a01fe1f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aa4bc3f2_8baa39cc",
         "filename": "plat/nvidia/tegra186/include/platform_def.h",
         "patchSetId": 11
