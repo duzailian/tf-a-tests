@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2de60b08_9ae86096",
+        "filename": "plat/nvidia/tegra210/helpers.S",
+        "patchSetId": 12
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-28T18:52:56Z",
+      "side": 1,
+      "message": "Oops.",
+      "parentUuid": "c7115ac4_ae84bb29",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 10
+      },
+      "revId": "4318774447f37058b1d3b33c9bd9d3a90bff207d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6953d6e3_23275399",
         "filename": "plat/nvidia/tegra210/include/platform_def.h",
         "patchSetId": 12
