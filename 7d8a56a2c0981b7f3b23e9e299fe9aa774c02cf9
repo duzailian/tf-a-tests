@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3b011793_fb384430",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-10-28T22:18:28Z",
+      "side": 1,
+      "message": "and hopefully memory sharing.",
+      "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc92b6ae_ff0b1152",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-10-28T22:18:28Z",
+      "side": 1,
+      "message": "You can mention deprecation of SPCI Alpha specification and removal of SPRT interface.",
+      "range": {
+        "startLine": 108,
+        "startChar": 3,
+        "endLine": 108,
+        "endChar": 40
+      },
+      "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d198a0a_1d6ac339",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-10-28T22:18:28Z",
+      "side": 1,
+      "message": "An SP maps its RX/TX buffers in its EL1\u00260 Stage-1 translation regime. The same RX/TX buffers are mapped by the SPMC in the SP\u0027s EL1\u00260 Stage-2 translation regime during boot time.",
+      "range": {
+        "startLine": 114,
+        "startChar": 3,
+        "endLine": 114,
+        "endChar": 53
+      },
+      "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fd94486d_b439d1cd",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-10-28T22:18:28Z",
+      "side": 1,
+      "message": "The reason is more about the FF-A specification mandating that a SP must either:\n-implement as many ECs as the number of PEs (in case of a \"multi-processor\" SP with pinned contexts).\n-implement a single EC (in case of a migratable \"uni-processor\" SP).",
+      "range": {
+        "startLine": 128,
+        "startChar": 56,
+        "endLine": 129,
+        "endChar": 52
+      },
+      "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9856f699_fcd77df0",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-10-28T22:18:28Z",
+      "side": 1,
+      "message": "this is an implementation choice.",
+      "range": {
+        "startLine": 131,
+        "startChar": 64,
+        "endLine": 132,
+        "endChar": 15
+      },
+      "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e4308ca_c45bd8ed",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2020-10-28T22:18:28Z",
+      "side": 1,
+      "message": "Hopefully we\u0027ll add FFA_MEM_SHARE/LEND/DONATE tests in this release.",
+      "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
