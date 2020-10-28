@@ -154,6 +154,24 @@
     },
     {
       "key": {
+        "uuid": "fa99cdda_4d287bcd",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2020-10-28T20:33:47Z",
+      "side": 1,
+      "message": "That could be good!",
+      "parentUuid": "3bd275b1_2f01a777",
+      "revId": "6f5a1ac38bb5795cb3d07a7f6ab20a3c9392b3e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0da4b44d_8f09eda2",
         "filename": "docs/change-log.rst",
         "patchSetId": 2
@@ -183,6 +201,24 @@
       "side": 1,
       "message": "Ok, will add \u0027New tests\u0027 as subsection under \u0027Cactus\u0027 and will list down all new tests added for Cactus-secure partition.",
       "parentUuid": "0da4b44d_8f09eda2",
+      "revId": "6f5a1ac38bb5795cb3d07a7f6ab20a3c9392b3e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3dcb603b_80cf2b19",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2020-10-28T20:33:47Z",
+      "side": 1,
+      "message": "Sounds good!",
+      "parentUuid": "eed18b52_40dc199e",
       "revId": "6f5a1ac38bb5795cb3d07a7f6ab20a3c9392b3e4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
