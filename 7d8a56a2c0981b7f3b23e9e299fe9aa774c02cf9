@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ceb799c0_5ca7055b",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-28T22:41:56Z",
+      "side": 1,
+      "message": "Yes, Let\u0027s merge memory sharing patch and then will add the change log accordingly.",
+      "parentUuid": "3b011793_fb384430",
+      "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cc92b6ae_ff0b1152",
         "filename": "docs/change-log.rst",
         "patchSetId": 3
@@ -39,6 +57,30 @@
       "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a5cc8c8_ec0010a2",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-28T22:41:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "cc92b6ae_ff0b1152",
+      "range": {
+        "startLine": 108,
+        "startChar": 3,
+        "endLine": 108,
+        "endChar": 40
+      },
+      "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "db8c9caf_4d6e481f",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-28T22:41:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5d198a0a_1d6ac339",
+      "range": {
+        "startLine": 114,
+        "startChar": 3,
+        "endLine": 114,
+        "endChar": 53
+      },
+      "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fd94486d_b439d1cd",
         "filename": "docs/change-log.rst",
         "patchSetId": 3
@@ -85,6 +151,30 @@
       "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ae2a447_424bb54a",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-28T22:41:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "fd94486d_b439d1cd",
+      "range": {
+        "startLine": 128,
+        "startChar": 56,
+        "endLine": 129,
+        "endChar": 52
+      },
+      "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "73f233c3_8311bb88",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-28T22:41:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9856f699_fcd77df0",
+      "range": {
+        "startLine": 131,
+        "startChar": 64,
+        "endLine": 132,
+        "endChar": 15
+      },
+      "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9e4308ca_c45bd8ed",
         "filename": "docs/change-log.rst",
         "patchSetId": 3
@@ -122,6 +236,24 @@
       "writtenOn": "2020-10-28T22:18:28Z",
       "side": 1,
       "message": "Hopefully we\u0027ll add FFA_MEM_SHARE/LEND/DONATE tests in this release.",
+      "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de4e22b5_f2ef3ed8",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-28T22:41:56Z",
+      "side": 1,
+      "message": "Yes, Let\u0027s merge these FFA tests and then will add the change logs accordingly.",
+      "parentUuid": "9e4308ca_c45bd8ed",
       "revId": "7d8a56a2c0981b7f3b23e9e299fe9aa774c02cf9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
