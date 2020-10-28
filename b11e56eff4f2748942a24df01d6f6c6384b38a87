@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1bd80ad6_c7b3a2ab",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T13:49:31Z",
+      "side": 1,
+      "message": "I was expecting a bit more. Any particular areas that stand out as new features? If nothing stands out then we did not really have any new features and should lose the line and say no major new features in this release.",
+      "parentUuid": "9af459df_73ab1418",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a2d8d728_b6adf9ea",
         "filename": "docs/change-log.rst",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "a2d8d728_b6adf9ea",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7a2bfd_e3f7b686",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T13:49:31Z",
+      "side": 1,
+      "message": "Again what sort of improvements.  If we cannot summarise the types of improves we don\u0027t really  need this entry.",
+      "parentUuid": "5f9c37eb_58b6ed29",
       "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
@@ -107,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "e76e0228_b5eb3062",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T13:49:31Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5551df63_a74018c8",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9b1dd807_3a99bcfe",
         "filename": "docs/change-log.rst",
         "patchSetId": 1
@@ -136,6 +190,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "9b1dd807_3a99bcfe",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6079e859_c9fe71a7",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T13:49:31Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "36841d88_26d60e1d",
       "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
@@ -177,6 +249,24 @@
     },
     {
       "key": {
+        "uuid": "870f2ed3_ab458938",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T13:49:31Z",
+      "side": 1,
+      "message": "What was the why here? We created to test something? support something? provide more coverage for something?",
+      "parentUuid": "d490014f_8c071f1e",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "950be036_b2dae6f9",
         "filename": "docs/change-log.rst",
         "patchSetId": 1
@@ -206,6 +296,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "950be036_b2dae6f9",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "936f47fb_c2f79e2d",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T13:49:31Z",
+      "side": 1,
+      "message": "For what purpose? To test something? support something? provide more coverage for something?",
+      "parentUuid": "16179833_bb9eba2e",
       "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
@@ -247,6 +355,24 @@
     },
     {
       "key": {
+        "uuid": "ada8c7a3_faa1d810",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T13:49:31Z",
+      "side": 1,
+      "message": "to achieve what?",
+      "parentUuid": "e3a94071_7423f4e2",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b6f48753_97ada244",
         "filename": "docs/change-log.rst",
         "patchSetId": 1
@@ -276,6 +402,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "b6f48753_97ada244",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bea8b5e6_d26ffd56",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T13:49:31Z",
+      "side": 1,
+      "message": "So what was the fix fixing? List the error that was fixed.",
+      "parentUuid": "1b8062aa_bb605b3e",
       "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": false
