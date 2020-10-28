@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0d6f6aaa_705c23c2",
+        "filename": "plat/nvidia/tegra186/helpers.S",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-28T19:01:37Z",
+      "side": 1,
+      "message": "This is what this function returns",
+      "parentUuid": "cd1c77d6_89fde678",
+      "range": {
+        "startLine": 17,
+        "startChar": 11,
+        "endLine": 17,
+        "endChar": 17
+      },
+      "revId": "dbf8a2f79fcb10857cca95cf76c5102798c03286",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "206a806c_a848df05",
         "filename": "plat/nvidia/tegra186/helpers.S",
         "patchSetId": 12
@@ -45,6 +69,30 @@
       "revId": "dbf8a2f79fcb10857cca95cf76c5102798c03286",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a08e7764_d107a4e2",
+        "filename": "plat/nvidia/tegra186/helpers.S",
+        "patchSetId": 12
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2020-10-28T19:01:37Z",
+      "side": 1,
+      "message": "No. This is expected. Cluster 0 has only 2 cores and cluster 1 has 4 cores. So the logical IDs are expected to be 0,1,4,5,6,7.",
+      "parentUuid": "206a806c_a848df05",
+      "range": {
+        "startLine": 35,
+        "startChar": 10,
+        "endLine": 35,
+        "endChar": 33
+      },
+      "revId": "dbf8a2f79fcb10857cca95cf76c5102798c03286",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
