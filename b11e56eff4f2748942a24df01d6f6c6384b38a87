@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b94134e_051f42fb",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T09:28:20Z",
+      "side": 1,
+      "message": "Can we be a little bit more specific. \"... to help validate the functionality of TF-A in the following areas...\"",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2d8d728_b6adf9ea",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T09:28:20Z",
+      "side": 1,
+      "message": "The same here, a little bit more info.",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "574f4e3a_b2bb0c25",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T09:28:20Z",
+      "side": 1,
+      "message": "list why to stop me guessing why.",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b1dd807_3a99bcfe",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T09:28:20Z",
+      "side": 1,
+      "message": "Is there a reason why? Might be worth listing.",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d4d0752_75ef0b56",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T09:28:20Z",
+      "side": 1,
+      "message": "Again a short why may be useful.",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "950be036_b2dae6f9",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T09:28:20Z",
+      "side": 1,
+      "message": "Again a short why.",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21fbee26_6a9383bf",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T09:28:20Z",
+      "side": 1,
+      "message": "explain why.",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6f48753_97ada244",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2020-10-28T09:28:20Z",
+      "side": 1,
+      "message": "How fixed?",
+      "revId": "b11e56eff4f2748942a24df01d6f6c6384b38a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
