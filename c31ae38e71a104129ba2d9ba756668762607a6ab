@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7cc830b8_c4efb90c",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-10-29T10:12:24Z",
+      "side": 1,
+      "message": "I meant to keep the consistency with above macros. \n\nThis one is not an Error, as it is the case for which the test should be skipped. I don\u0027t consider that an error, although the return is being checked against FFA_ERROR.\n\nFFA_ERROR_INVALID_PARAMETERS is used when the provided uuid can\u0027t be found.\nIt is an error on the scope of the ABI, but not on the scope of this macro.",
+      "parentUuid": "069d68c3_09c017f2",
+      "range": {
+        "startLine": 212,
+        "startChar": 3,
+        "endLine": 212,
+        "endChar": 23
+      },
+      "revId": "c31ae38e71a104129ba2d9ba756668762607a6ab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "467b9f8e_3ce44be4",
         "filename": "include/common/test_helpers.h",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2020-10-28T21:56:46Z",
       "side": 1,
       "message": "ERROR?",
+      "range": {
+        "startLine": 215,
+        "startChar": 3,
+        "endLine": 215,
+        "endChar": 23
+      },
+      "revId": "c31ae38e71a104129ba2d9ba756668762607a6ab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "096bf0f1_62bde5bc",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-10-29T10:12:24Z",
+      "side": 1,
+      "message": "This one should be an error. wanted to remain consistent with remaining macros. However I do notice that most of them don\u0027t consider the case of an error.\nWill change this one.",
+      "parentUuid": "467b9f8e_3ce44be4",
       "range": {
         "startLine": 215,
         "startChar": 3,
