@@ -1,0 +1,8 @@
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Owner-Review+1: Varun Wadekar <vwadekar@nvidia.com>
+Verified+1: Manish Pandey <manish.pandey2@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Thu, 29 Oct 2020 16:08:33 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/6301
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
