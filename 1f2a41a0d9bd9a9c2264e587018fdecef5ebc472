@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d927662b_0765991e",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-30T18:37:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f6c9df78_373c93ec",
+      "range": {
+        "startLine": 23,
+        "startChar": 25,
+        "endLine": 23,
+        "endChar": 37
+      },
+      "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0d6c990a_63df1a54",
         "filename": "docs/change-log.rst",
         "patchSetId": 6
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "84ab5e75_722c6ecc",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-30T18:37:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0d6c990a_63df1a54",
+      "range": {
+        "startLine": 38,
+        "startChar": 35,
+        "endLine": 38,
+        "endChar": 45
+      },
+      "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c28c5119_22da53e6",
         "filename": "docs/change-log.rst",
         "patchSetId": 6
@@ -62,6 +110,24 @@
       "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b8c49b3_8836d8d7",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-30T18:37:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c28c5119_22da53e6",
+      "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -85,6 +151,30 @@
       "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52071e0b_c91cd91f",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-30T18:37:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b9a86664_03149847",
+      "range": {
+        "startLine": 55,
+        "startChar": 72,
+        "endLine": 55,
+        "endChar": 77
+      },
+      "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -152,6 +242,24 @@
     },
     {
       "key": {
+        "uuid": "9a4e42f6_d2900693",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-30T18:37:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d4926a65_5865bd85",
+      "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e9b91d8a_4d857c45",
         "filename": "docs/change-log.rst",
         "patchSetId": 6
@@ -169,6 +277,24 @@
     },
     {
       "key": {
+        "uuid": "902f4877_7655e8aa",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-30T18:37:59Z",
+      "side": 1,
+      "message": "Ack, missed to remove \u0027according\u0027",
+      "parentUuid": "e9b91d8a_4d857c45",
+      "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2a2c7821_c682809c",
         "filename": "docs/change-log.rst",
         "patchSetId": 6
@@ -180,6 +306,24 @@
       "writtenOn": "2020-10-30T17:16:47Z",
       "side": 1,
       "message": "I didnt understand this statement. Can you rephrase it?",
+      "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ed0961a_29c95235",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-30T18:37:59Z",
+      "side": 1,
+      "message": "May be I can rephrase this statement as below:\n\"Secure partition ids are defined in the range from 0x8001 to 0xfffe. 0x8000 and 0xffff are reserved FF-A IDs respectively for the SPMC and the SPMD and in the NWd, the Hypervisor ID is 0 and VMs are numbered in the range of 1 to 0x7fff as per implementation choice hence accordingly updated cactus test payload and TFTF ids.\"",
+      "parentUuid": "2a2c7821_c682809c",
       "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
@@ -203,6 +347,24 @@
     },
     {
       "key": {
+        "uuid": "cd0d6b31_7b50a6e9",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-30T18:37:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b906276f_e9f74800",
+      "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6034da01_f6557f0c",
         "filename": "docs/change-log.rst",
         "patchSetId": 6
@@ -214,6 +376,24 @@
       "writtenOn": "2020-10-30T17:16:47Z",
       "side": 1,
       "message": "the top level readme file is still present in the git repo.",
+      "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "332dd2e5_e6261fb3",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-30T18:37:59Z",
+      "side": 1,
+      "message": "Thanks for pointing this out. missed to see this patch is reverted and trim down version of readme put instead. I will do the necessary changes.",
+      "parentUuid": "6034da01_f6557f0c",
       "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
