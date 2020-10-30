@@ -22,6 +22,30 @@
       "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a170826_8e7af9f6",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2020-10-30T08:23:20Z",
+      "side": 1,
+      "message": "Hi Varun, I think changes for Tegra186 and Tegra210 are recently merged (Yesterday only).\n4d0dcc8 Tegra210: introduce platform support\ndbf8a2f Tegra186: introduce platform support\n\nPlease do not merge any changes as we reached to the code-freeze date. I will add above 2 change in this list. Just FYI, we are planning to merge the change log for tf-a and tf-a-tests as part of rc1 candidate.",
+      "parentUuid": "cab1a14f_e76315a3",
+      "range": {
+        "startLine": 83,
+        "startChar": 3,
+        "endLine": 83,
+        "endChar": 19
+      },
+      "revId": "1f2a41a0d9bd9a9c2264e587018fdecef5ebc472",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
