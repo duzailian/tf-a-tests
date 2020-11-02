@@ -5,11 +5,14 @@
  */
 
 #include <arch_helpers.h>
+#include <ffa_helpers.h>
 #include <plat_topology.h>
 #include <platform.h>
 #include <power_management.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
+
+static struct mailbox_buffers test_mb = {.send = NULL, .recv = NULL};
 
 int is_sys_suspend_state_ready(void)
 {
@@ -127,4 +130,18 @@ test_result_t map_test_unmap(const map_args_unmap_t *args,
 	}
 
 	return test_ret;
+}
+
+inline void set_global_mailbox(struct mailbox_buffers mb)
+{
+	test_mb = mb;
+}
+
+inline bool get_global_mailbox(struct mailbox_buffers *mb)
+{
+	if (test_mb.recv != NULL && test_mb.send != NULL) {
+		*mb = test_mb;
+		return true;
+	}
+	return false;
 }
