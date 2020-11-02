@@ -267,4 +267,19 @@ unsigned char *psci_mem_prot_get_sentinel(void);
 test_result_t map_test_unmap(const map_args_unmap_t *args,
 			     test_function_arg_t test);
 
+/*
+ * Helper function to set tftf global mailbox for spm related tests.
+ * This function should be invoked by the first tftf test that requires
+ * rx and/or tx buffers.
+ */
+void set_tftf_mailbox(struct mailbox_buffers mb);
+
+/*
+ * Helper function to get tftf global mailbox for spm related tests.
+ * This function should be called by all tests that require access to rx or tx
+ * buffers, after the function 'set_tftf_mailbox' has been used by the first
+ * test to rely on rx and tx buffers.
+ */
+bool get_tftf_mailbox(struct mailbox_buffers *mb);
+
 #endif /* __TEST_HELPERS_H__ */
