@@ -267,4 +267,7 @@ unsigned char *psci_mem_prot_get_sentinel(void);
 test_result_t map_test_unmap(const map_args_unmap_t *args,
 			     test_function_arg_t test);
 
+void set_global_mailbox(struct mailbox_buffers mb);
+bool get_global_mailbox(struct mailbox_buffers *mb);
+
 #endif /* __TEST_HELPERS_H__ */
