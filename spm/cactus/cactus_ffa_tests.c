@@ -263,7 +263,7 @@ bool ffa_memory_retrieve_test(struct mailbox_buffers *mb,
 			" receivers!\n");
 	}
 
-	NOTICE("Memory Retrieved!\n");
+	VERBOSE("Memory Retrieved!\n");
 
 	return true;
 }
@@ -279,7 +279,7 @@ bool ffa_memory_relinquish_test(struct ffa_mem_relinquish *m,
 		return false;
 	}
 
-	NOTICE("Memory Relinquished!\n");
+	VERBOSE("Memory Relinquished!\n");
 	return true;
 }
 
@@ -302,7 +302,7 @@ void ffa_memory_management_test(struct mailbox_buffers *mb, ffa_vm_id_t vm_id,
 
 	composite = ffa_memory_region_get_composite(&m, 0);
 
-	NOTICE("Address: %p; page_count: %x %x\n",
+	VERBOSE("Address: %p; page_count: %x %x\n",
 		composite->constituents[0].address,
 		composite->constituents[0].page_count, PAGE_SIZE);
 
