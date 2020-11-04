@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f1e939d6_254af24e",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2020-11-04T15:58:35Z",
+      "side": 1,
+      "message": "nit:\nERROR(\"Failed to map RXTX buffers. Error: %lu\\n\", ret.ret2);",
+      "revId": "67b1185d8b0a3d11803740e6379ed76ef452397b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
