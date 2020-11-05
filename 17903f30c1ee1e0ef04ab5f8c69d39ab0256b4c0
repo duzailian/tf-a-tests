@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3c2189e4_0d1efb13",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-11-05T09:57:12Z",
+      "side": 1,
+      "message": "I agree with you. But I think it is better to make it in a different commit. Because we would need to change also the invocations of this function in the remaining SPM related tests.\nSo in doing so, we would maintain a clearer project history.",
+      "parentUuid": "397c42fe_1d8f1822",
+      "range": {
+        "startLine": 26,
+        "startChar": 5,
+        "endLine": 26,
+        "endChar": 31
+      },
+      "revId": "17903f30c1ee1e0ef04ab5f8c69d39ab0256b4c0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2e314354_b53c81e9",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
         "patchSetId": 3
@@ -39,6 +63,24 @@
       "revId": "17903f30c1ee1e0ef04ab5f8c69d39ab0256b4c0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db5b8ed4_74a27700",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-11-05T09:57:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e314354_b53c81e9",
+      "revId": "17903f30c1ee1e0ef04ab5f8c69d39ab0256b4c0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
