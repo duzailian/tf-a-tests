@@ -1,0 +1,10 @@
+Allow-CI+2: Joao Alves <joao.alves@arm.com>
+Verified+1: TrustedFirmware Code Review
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Review+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Code-Owner-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Fri, 06 Nov 2020 17:22:41 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/6855
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
