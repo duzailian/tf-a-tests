@@ -43,6 +43,7 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 	smc_ret_values ffa_ret;
 	uint32_t sp_response;
 	ffa_vm_id_t source;
+	ffa_vm_id_t destination;
 
 	/*
 	* This initial wait call is necessary to inform SPMD that
@@ -55,6 +56,11 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 	for (;;) {
 		VERBOSE("Woke up with func id: %lx\n", ffa_ret.ret0);
 
+		if (ffa_ret.ret0 == FFA_ERROR) {
+			ERROR("Error: %lx\n", ffa_ret.ret2);
+			break;
+		}
+
 		if (ffa_ret.ret0 != FFA_MSG_SEND_DIRECT_REQ_SMC32 &&
 		    ffa_ret.ret0 != FFA_MSG_SEND_DIRECT_REQ_SMC64) {
 			ERROR("%s(%u) unknown func id 0x%lx\n",
@@ -62,15 +68,18 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 			break;
 		}
 
-		if (ffa_ret.ret1 != vm_id) {
+		destination = ffa_ret.ret1 & U(0xFFFF);
+
+		source = ffa_ret.ret1 >> 16;
+
+		if (destination != vm_id) {
 			ERROR("%s(%u) invalid vm id 0x%lx\n",
 				__func__, vm_id, ffa_ret.ret1);
 			break;
 		}
-		source = ffa_ret.ret2;
 
-		if (source != HYP_ID) {
-			ERROR("%s(%u) invalid hyp id 0x%lx\n",
+		if ((source != HYP_ID) && !IS_SP_ID(source)) {
+			ERROR("%s(%u) invalid source id 0x%lx\n",
 				__func__, vm_id, ffa_ret.ret2);
 			break;
 		}
@@ -92,6 +101,44 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 			 */
 			ffa_ret = CACTUS_SUCCESS_RESP(vm_id, source);
 			break;
+
+		case CACTUS_ECHO_CMD:
+		{
+			uint64_t echo_val = CACTUS_ECHO_GET_VAL(ffa_ret);
+
+			VERBOSE("Received echo at %x, value %llx.\n",
+				destination, echo_val);
+			ffa_ret = CACTUS_RESPONSE(vm_id, source, echo_val);
+			break;
+		}
+		case CACTUS_REQ_ECHO_CMD:
+		{
+			ffa_vm_id_t echo_dest =
+					CACTUS_REQ_ECHO_GET_ECHO_DEST(ffa_ret);
+			uint64_t echo_val = CACTUS_ECHO_GET_VAL(ffa_ret);
+			bool success = true;
+
+			VERBOSE("%x requested to send echo to %x, value %llx\n",
+				source, echo_dest, echo_val);
+
+			ffa_ret = CACTUS_ECHO_SEND_CMD(vm_id, echo_dest,
+							echo_val);
+
+			if (ffa_ret.ret0 != FFA_MSG_SEND_DIRECT_RESP_SMC32) {
+				ERROR("Failed to send message. error: %lx\n",
+					ffa_ret.ret2);
+				success = false;
+			}
+
+			if (CACTUS_GET_RESPONSE(ffa_ret) != echo_val) {
+				ERROR("Echo Failed!\n");
+				success = false;
+			}
+
+			ffa_ret = success ? CACTUS_SUCCESS_RESP(vm_id, source) :
+					    CACTUS_ERROR_RESP(vm_id, source);
+			break;
+		}
 		default:
 			/*
 			 * Currently direct message test is handled here.
@@ -99,7 +146,7 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 			 * For the sake of testing, add the vm id to the
 			 * received message.
 			 */
-			NOTICE("Replying to Direct MSG test\n");
+			VERBOSE("Replying to Direct MSG test\n");
 			sp_response = ffa_ret.ret3 | vm_id;
 			ffa_ret = ffa_msg_send_direct_resp(vm_id,
 							   HYP_ID,
@@ -189,6 +236,7 @@ void __dead2 cactus_main(void)
 	assert(IS_IN_EL1() != 0);
 
 	struct mailbox_buffers mb;
+
 	/* Clear BSS */
 	memset((void *)CACTUS_BSS_START,
 	       0, CACTUS_BSS_END - CACTUS_BSS_START);
