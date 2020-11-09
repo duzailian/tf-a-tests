@@ -17,8 +17,16 @@
 /* Hypervisor ID at physical FFA instance */
 #define HYP_ID          (0)
 
+/*
+ * The bit of the FFA ID that indicates whether the VM ID is allocated by the
+ * normal world or the secure world.
+ */
+#define SP_ID_MASK U(0x8000)
+
 /* By convention, SP IDs (as opposed to VM IDs) have bit 15 set */
-#define SP_ID(x)        ((x) | (1 << 15))
+#define SP_ID(x)        ((x) | SP_ID_MASK)
+
+#define IS_SP_ID(x)	((x & SP_ID_MASK) != 0)
 
 typedef unsigned short ffa_vm_id_t;
 typedef unsigned short ffa_vm_count_t;
