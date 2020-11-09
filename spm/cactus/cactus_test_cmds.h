@@ -35,6 +35,35 @@
 		smc_ret.ret6, smc_ret.ret7)
 
 /**
+ * With this test command the sender transmits a 64-bit value that it then
+ * expects to receive on the respective command response.
+ *
+ * The id is the hex representation of the string 'echo'.
+ */
+#define CACTUS_ECHO_CMD U(0x70696e67)
+
+#define CACTUS_ECHO_SEND_CMD(source, dest, echo_val) 				\
+		CACTUS_SEND_CMD(source, dest, CACTUS_ECHO_CMD, echo_val,	\
+				0, 0, 0)
+
+#define CACTUS_ECHO_GET_VAL(smc_ret) smc_ret.ret4
+
+/**
+ * Command to request a cactus secure partition to send an echo command to
+ * another partition.
+ *
+ * The sender of this command expects to receive CACTUS_SUCCESS if the requested
+ * echo interaction happened successfully, or CACTUS_ERROR otherwise.
+ */
+#define CACTUS_REQ_ECHO_CMD (CACTUS_ECHO_CMD + 1)
+
+#define CACTUS_REQ_ECHO_SEND_CMD(source, dest, echo_dest, echo_val) 		\
+		CACTUS_SEND_CMD(source, dest, CACTUS_REQ_ECHO_CMD, echo_val,	\
+				echo_dest, 0, 0)
+
+#define CACTUS_REQ_ECHO_GET_ECHO_DEST(smc_ret) smc_ret.ret5
+
+/**
  * Command to notify cactus of a memory management operation. The cmd value
  * should be the memory management smc function id.
  */
