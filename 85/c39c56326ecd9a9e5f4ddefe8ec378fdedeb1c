@@ -1,0 +1,11 @@
+Maintainer-Review+1: Raghu K <raghu.ncstate@icloud.com>
+Code-Review+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Code-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Allow-CI+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Verified+1: TrustedFirmware Code Review
+Code-Owner-Review+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Submitted-by: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Submitted-at: Tue, 10 Nov 2020 15:14:15 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/6892
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
