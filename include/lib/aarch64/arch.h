@@ -278,6 +278,11 @@
 #define MTE_IMPLEMENTED_EL0	ULL(1)	/* MTE is only implemented at EL0 */
 #define MTE_IMPLEMENTED_ELX	ULL(2)	/* MTE is implemented at all ELs */
 
+#define ID_AA64PFR1_EL1_SME_SHIFT	U(24)
+#define ID_AA64PFR1_EL1_SME_MASK	ULL(0xf)
+
+#define SME_IMPLEMENTED			U(0x1)
+
 /* ID_PFR1_EL1 definitions */
 #define ID_PFR1_VIRTEXT_SHIFT	U(12)
 #define ID_PFR1_VIRTEXT_MASK	U(0xf)
@@ -433,6 +438,7 @@
 #define TCPAC_BIT		(U(1) << 31)
 #define TAM_BIT			(U(1) << 30)
 #define TTA_BIT			(U(1) << 20)
+#define ESM_BIT			(U(1) << 12)
 #define TFP_BIT			(U(1) << 10)
 #define CPTR_EZ_BIT		(U(1) << 8)
 #define CPTR_EL3_RESET_VAL	U(0x0)
@@ -441,7 +447,10 @@
 #define CPTR_EL2_RES1		((ULL(3) << 12) | (ULL(1) << 9) | (ULL(0xff)))
 #define CPTR_EL2_TCPAC_BIT	(ULL(1) << 31)
 #define CPTR_EL2_TAM_BIT	(ULL(1) << 30)
+#define CPTR_EL2_SMEN_MASK	ULL(0x3)
+#define CPTR_EL2_SMEN_SHIFT	U(24)
 #define CPTR_EL2_TTA_BIT	(ULL(1) << 20)
+#define CPTR_EL2_TSM_BIT	(ULL(1) << 12)
 #define CPTR_EL2_TFP_BIT	(ULL(1) << 10)
 #define CPTR_EL2_TZ_BIT		(ULL(1) << 8)
 #define CPTR_EL2_RESET_VAL	CPTR_EL2_RES1
@@ -766,6 +775,67 @@
 
 /* ZCR_EL2 definitions */
 #define ZCR_EL2_LEN_MASK	U(0xf)
+
+/*******************************************************************************
+ * Definitions for system register interface to SME
+ ******************************************************************************/
+#define ID_AA64SMFR0_EL1		S3_0_C0_C4_5
+#define SVCR				S3_3_C4_C2_2
+#define SMPRI_EL1			S3_0_C1_C2_4
+#define SMPRIMAP_EL2			S3_4_C1_C2_5
+#define SMIDR_EL1			S3_1_C0_C0_6
+#define TPIDR2_EL0			S3_3_C13_C0_5
+#define SMCR_EL1			S3_0_C1_C2_6
+#define SMCR_EL2			S3_4_C1_C2_6
+#define SMCR_EL3			S3_6_C1_C2_6
+
+/* Immediate value (faster) forms of SVCR accesses. */
+#define SVCRSM_0			S0_3_C4_C2_3
+#define SVCRSM_1			S0_3_C4_C3_3
+#define SVCRZA_0			S0_3_C4_C4_3
+#define SVCRZA_1			S0_3_C4_C5_3
+#define SVCRSMZA_0			S0_3_C4_C6_3
+#define SVCRSMZA_1			S0_3_C4_C7_3
+
+/* ID_AA64SMFR0_EL1 definitions */
+#define ID_AA64SMFR0_EL1_FA64_BIT	(UL(1) << 63)
+#define ID_AA64SMFR0_EL1_SMEVER_SHIFT	U(56)
+#define ID_AA64SMFR0_EL1_SMEVER_MASK	U(0xf)
+#define ID_AA64SMFR0_EL1_I16I64_SHIFT	U(52)
+#define ID_AA64SMFR0_EL1_I16I64_MASK	U(0xf)
+#define ID_AA64SMFR0_EL1_F64F64_BIT	(UL(1) << 48)
+#define ID_AA64SMFR0_EL1_I8I32_SHIFT	U(36)
+#define ID_AA64SMFR0_EL1_I8I32_MASK	U(0xf)
+#define ID_AA64SMFR0_EL1_F16F32_BIT	(UL(1) << 35)
+#define ID_AA64SMFR0_EL1_B16F32_BIT	(UL(1) << 34)
+#define ID_AA64SMFR0_EL1_F32F32_BIT	(UL(1) << 32)
+
+/* SVCR definitions */
+#define SVCR_ZA_BIT			(U(1) << 1)
+#define SVCR_SM_BIT			(U(1) << 0)
+
+/* SMPRI_EL1 definitions */
+#define SMPRI_EL1_PRIORITY_SHIFT	U(0)
+#define SMPRI_EL1_PRIORITY_MASK		U(0xf)
+
+/* SMPRIMAP_EL2 definitions */
+/* Register is composed of 16 priority map fields of 4 bits numbered 0-15. */
+#define SMPRIMAP_EL2_MAP_SHIFT(pri)	U((pri) * 4)
+#define SMPRIMAP_EL2_MAP_MASK		U(0xf)
+
+/* SMIDR_EL1 definitions */
+#define SMIDR_EL1_IMPLEMENTER_SHIFT	U(24)
+#define SMIDR_EL1_IMPLEMENTER_MASK	U(0xff)
+#define SMIDR_EL1_REVISION_SHIFT	U(16)
+#define SMIDR_EL1_REVISION_MASK		U(0xff)
+#define SMIDR_EL1_SMPS_BIT		(U(1) << 15)
+#define SMIDR_EL1_AFFINITY_SHIFT	U(0)
+#define SMIDR_EL1_AFFINITY_MASK		U(0xfff)
+
+/* SMCR_ELx definitions */
+#define SMCR_ELX_LEN_SHIFT		U(0)
+#define SMCR_ELX_LEN_MASK		U(0x1ff)
+#define SMCR_ELX_FA64_BIT		(U(1) << 31)
 
 /*******************************************************************************
  * Definitions of MAIR encodings for device and normal memory
