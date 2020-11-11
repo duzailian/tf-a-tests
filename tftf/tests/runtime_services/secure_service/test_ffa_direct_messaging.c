@@ -76,9 +76,8 @@ test_result_t test_ffa_direct_messaging(void)
 	 * Send a message to SP2 through direct messaging
 	 **********************************************************************/
 	result = send_receive_direct_msg(SP_ID(2), DIRECT_MSG_TEST_PATTERN2);
-	if (result != TEST_RESULT_SUCCESS) {
+	if (result != TEST_RESULT_SUCCESS)
 		return result;
-	}
 
 	/**********************************************************************
 	 * Send a message to SP1 through direct messaging
@@ -124,16 +123,40 @@ test_result_t test_ffa_sp_to_sp_direct_messaging(void)
 	CHECK_HAFNIUM_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
 
 	result = send_cactus_req_echo_cmd(SP_ID(1), SP_ID(2), ECHO_VAL1);
-	if (result == TEST_RESULT_FAIL) {
+	if (result == TEST_RESULT_FAIL)
 		return result;
-	}
 
 	result = send_cactus_req_echo_cmd(SP_ID(2), SP_ID(3), ECHO_VAL2);
-	if (result == TEST_RESULT_FAIL) {
+	if (result == TEST_RESULT_FAIL)
 		return result;
-	}
 
 	result = send_cactus_req_echo_cmd(SP_ID(3), SP_ID(1), ECHO_VAL3);
 
 	return result;
+}
+
+test_result_t test_ffa_sp_to_sp_deadlock(void)
+{
+	smc_ret_values ret;
+
+	/**********************************************************************
+	 * Check SPMC has ffa_version and expected FFA endpoints are deployed.
+	 **********************************************************************/
+	CHECK_HAFNIUM_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
+
+	ret = CACTUS_REQ_DEADLOCK_SEND_CMD(HYP_ID, SP_ID(1), SP_ID(2),
+					   SP_ID(3));
+
+	if (ret.ret0 != FFA_MSG_SEND_DIRECT_RESP_SMC32) {
+		ERROR("Failed to send message. error: %lx\n",
+		      ret.ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	if (CACTUS_GET_RESPONSE(ret) == CACTUS_ERROR) {
+		ERROR("cactus SP response is CACTUS_ERROR!\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
 }
