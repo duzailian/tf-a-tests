@@ -36,8 +36,11 @@
      <testcase name="FF-A direct messaging API"
                function="test_ffa_direct_messaging" />
 
-     <testcase name="FFA Request SP-to-SP direct messaging"
+     <testcase name="FF-A Request SP-to-SP direct messaging"
                function="test_ffa_sp_to_sp_direct_messaging" />
+
+     <testcase name="FF-A Request SP-to-SP direct messaging deadlock"
+           function="test_ffa_sp_to_sp_deadlock" />
 
   </testsuite>
 
