@@ -36,11 +36,14 @@
      <testcase name="FF-A direct messaging"
                function="test_ffa_direct_messaging" />
 
-     <testcase name="FF-A Request SP-to-SP direct messaging"
-               function="test_ffa_sp_to_sp_direct_messaging" />
+     <!--testcase name="FF-A Request SP-to-SP direct messaging"
+               function="test_ffa_sp_to_sp_direct_messaging" /-->
 
-     <testcase name="FF-A Request SP-to-SP direct messaging deadlock"
-           function="test_ffa_sp_to_sp_deadlock" />
+     <!--testcase name="FF-A Request SP-to-SP direct messaging deadlock"
+           function="test_ffa_sp_to_sp_deadlock" /-->
+
+     <testcase name="FF-A secondary core direct messaging"
+           function="test_ffa_secondary_core_direct_msg" />
 
   </testsuite>
 
@@ -52,12 +55,12 @@
                function="test_mem_share_sp" />
      <testcase name="Donate Memory to Secure World"
                function="test_mem_donate_sp"/>
-     <testcase name="Request Share Memory SP-to-SP"
-               function="test_req_mem_share_sp_to_sp" />
-     <testcase name="Request Lend Memory SP-to-SP"
-               function="test_req_mem_lend_sp_to_sp" />
-     <testcase name="Request Donate Memory SP-to-SP"
-               function="test_req_mem_donate_sp_to_sp" />
+     <!--testcase name="Request Share Memory SP-to-SP"
+               function="test_req_mem_share_sp_to_sp" /-->
+     <!--testcase name="Request Lend Memory SP-to-SP"
+               function="test_req_mem_lend_sp_to_sp" /-->
+     <!--testcase name="Request Donate Memory SP-to-SP"
+               function="test_req_mem_donate_sp_to_sp" /-->
   </testsuite>
 
   <testsuite name="FF-A features"
