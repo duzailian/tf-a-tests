@@ -13,6 +13,7 @@
 #include <drivers/arm/pl011.h>
 #include <drivers/console.h>
 #include <lib/aarch64/arch_helpers.h>
+#include <lib/tftf_lib.h>
 #include <lib/xlat_tables/xlat_mmu_helpers.h>
 #include <lib/xlat_tables/xlat_tables_v2.h>
 #include <plat_arm.h>
@@ -31,6 +32,8 @@ extern const char version_string[];
 
 /* Memory section to be used for memory share operations */
 static __aligned(PAGE_SIZE) uint8_t share_page[PAGE_SIZE];
+
+extern void secondary_cold_entry(void);
 
 /*
  *
@@ -371,6 +374,16 @@ static void cactus_plat_configure_mmu(unsigned int vm_id)
 	init_xlat_tables();
 }
 
+static void register_secondary_entrypoint(void)
+{
+	smc_args args;
+
+	args.fid = FFA_SECONDARY_EP_REGISTER_SMC64;
+	args.arg1 = (u_register_t)&secondary_cold_entry;
+
+	tftf_smc(&args);
+}
+
 int tftf_irq_handler_dispatcher(void)
 {
 	ERROR("%s\n", __func__);
@@ -378,15 +391,11 @@ int tftf_irq_handler_dispatcher(void)
 	return 0;
 }
 
-void __dead2 cactus_main(void)
+void __dead2 cactus_main(bool primary_cold_boot)
 {
 	assert(IS_IN_EL1() != 0);
 
 	struct mailbox_buffers mb;
-
-	/* Clear BSS */
-	memset((void *)CACTUS_BSS_START,
-	       0, CACTUS_BSS_END - CACTUS_BSS_START);
 
 	/* Get current FFA id */
 	smc_ret_values ffa_id_ret = ffa_id_get();
@@ -394,14 +403,26 @@ void __dead2 cactus_main(void)
 		ERROR("FFA_ID_GET failed.\n");
 		panic();
 	}
-
 	ffa_vm_id_t ffa_id = ffa_id_ret.ret2 & 0xffff;
-	mb.send = (void *) get_sp_tx_start(ffa_id);
-	mb.recv = (void *) get_sp_rx_start(ffa_id);
 
-	/* Configure and enable Stage-1 MMU, enable D-Cache */
-	cactus_plat_configure_mmu(ffa_id);
+	if (primary_cold_boot) {
+		/* Clear BSS */
+		memset((void *)CACTUS_BSS_START,
+		       0, CACTUS_BSS_END - CACTUS_BSS_START);
+
+
+		mb.send = (void *) get_sp_tx_start(ffa_id);
+		mb.recv = (void *) get_sp_rx_start(ffa_id);
+
+		/* Configure and enable Stage-1 MMU, enable D-Cache */
+		cactus_plat_configure_mmu(ffa_id);
+	}
+
 	enable_mmu_el1(0);
+
+	if (!primary_cold_boot) {
+		goto exit_msg_loop;
+	}
 
 	if (ffa_id == SPM_VM_ID_FIRST) {
 		console_init(CACTUS_PL011_UART_BASE,
@@ -434,9 +455,12 @@ void __dead2 cactus_main(void)
 	INFO("FF-A id: %x\n", ffa_id);
 	cactus_print_memory_layout(ffa_id);
 
+	register_secondary_entrypoint();
+
 	/* Invoking Tests */
 	ffa_tests(&mb);
 
+exit_msg_loop:
 	/* End up to message loop */
 	message_loop(ffa_id, &mb);
 
