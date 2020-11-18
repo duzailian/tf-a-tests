@@ -404,7 +404,7 @@ ffa_memory_handle_t ffa_memory_send(
 ffa_memory_handle_t ffa_memory_init_and_send(
 	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
 	ffa_vm_id_t sender, ffa_vm_id_t receiver,
-	struct ffa_memory_region_constituent* constituents,
+	const struct ffa_memory_region_constituent* constituents,
 	uint32_t constituents_count, uint32_t mem_func);
 
 bool check_spmc_execution_level(void);
