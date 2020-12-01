@@ -11,6 +11,10 @@
 #include <ffa_helpers.h>
 #include <ffa_svc.h>
 
+#define __STR(x) #x
+#define STR(x) __STR(x)
+#define SIMD_TWO_VECTORS_BYTES_STR	(2 * SIMD_VECTOR_LEN_BYTES)
+
 /*-----------------------------------------------------------------------------
  * FFA_RUN
  *
