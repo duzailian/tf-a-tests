@@ -92,6 +92,11 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 			 */
 			ffa_ret = CACTUS_SUCCESS_RESP(vm_id, source);
 			break;
+		// TODO: Change 0x53494d44(SIMD in hex) to relevant command name
+		case 0x53494d44:
+			fill_simd_vectors();
+			ffa_ret = CACTUS_SUCCESS_RESP(vm_id, source);
+			break;
 		default:
 			/*
 			 * Currently direct message test is handled here.

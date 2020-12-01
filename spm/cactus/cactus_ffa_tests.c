@@ -57,6 +57,17 @@ static const struct feature_test test_target[] = {
 	{"Check non-existent command", 0xFFFF, FFA_ERROR}
 };
 
+void fill_simd_vectors(void)
+{
+	simd_vector_t simd_vectors[SIMD_NUM_VECTORS];
+
+	for (unsigned int num = 0U; num < SIMD_NUM_VECTORS; num++) {
+		memset(simd_vectors[num], 0x22 * num, sizeof(simd_vector_t));
+	}
+
+	ffa_fill_simd_vector_regs(simd_vectors);
+}
+
 /*
  * Test FFA_FEATURES interface.
  */
