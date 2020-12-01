@@ -71,6 +71,24 @@ struct mailbox_buffers {
 			);							\
 	} while (false)
 
+/*
+ * Vector length:
+ * SIMD: 128 bits = 16 bytes
+ */
+#define SIMD_VECTOR_LEN_BYTES		16
+#define SIMD_NUM_VECTORS		32
+typedef uint32_t simd_vector_t[SIMD_VECTOR_LEN_BYTES / sizeof(uint32_t)];
+
+/*
+ * Fills SIMD vector registers with the content of vector v
+ */
+void ffa_fill_simd_vector_regs(const simd_vector_t *v);
+
+/*
+ * Dumps contents of SIMD vector registers into provided vector v
+ */
+void ffa_dump_simd_vector_regs(simd_vector_t *v);
+
 struct ffa_partition_info {
 	/** The ID of the VM the information is about */
 	ffa_vm_id_t id;
