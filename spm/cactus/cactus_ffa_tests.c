@@ -58,6 +58,22 @@ static const struct feature_test test_target[] = {
 };
 
 /*
+ * Fill SIMD vectors from secure world side with a unique value.
+ * 0x22 is just a dummy value to be distinguished from the value
+ * in the normal world.
+ */
+void fill_simd_vectors(void)
+{
+	simd_vector_t simd_vectors[SIMD_NUM_VECTORS];
+
+	for (unsigned int num = 0U; num < SIMD_NUM_VECTORS; num++) {
+		memset(simd_vectors[num], 0x22 * num, sizeof(simd_vector_t));
+	}
+
+	ffa_fill_simd_vector_regs(simd_vectors);
+}
+
+/*
  * Test FFA_FEATURES interface.
  */
 static void ffa_features_test(void)

@@ -175,6 +175,19 @@ static inline ffa_vm_id_t cactus_req_mem_send_get_receiver(smc_ret_values ret)
 }
 
 /**
+ * Command to request a SIMD vector operation.
+ *
+ * The command id is the hex representation of the string "SIMD"
+ */
+#define CACTUS_REQ_SIMD_FILL U(0x53494d44)
+
+static inline smc_ret_values cactus_req_simd_fill_send_cmd(ffa_vm_id_t source,
+		ffa_vm_id_t dest)
+{
+	return cactus_send_cmd(source, dest, CACTUS_REQ_SIMD_FILL, 0, 0, 0, 0);
+}
+
+/**
  * Template for responses to CACTUS commands.
  */
 static inline smc_ret_values cactus_response(
