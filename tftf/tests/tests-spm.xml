@@ -54,4 +54,10 @@
                function="test_ffa_features" />
   </testsuite>
 
+  <testsuite name="FF-A CPU features"
+             description="Check CPU related features around FF-A" >
+     <testcase name="SIMD vectors preserved"
+               function="test_ffa_simd_preserved" />
+  </testsuite>
+
 </testsuites>

@@ -57,6 +57,34 @@ static const struct feature_test test_target[] = {
 	{"Check non-existent command", 0xFFFF, FFA_ERROR}
 };
 
+void fill_simd_vectors(void)
+{
+	uint128_t temp[32];
+	for (unsigned int num = 0U; num < 32; num++) {
+		memset(&temp[num], num+2, sizeof(uint128_t));
+	}
+
+	__asm__ volatile(
+		"ldp q0, q1, [%0], #32;"
+		"ldp q2, q3, [%0], #32;"
+		"ldp q4, q5, [%0], #32;"
+		"ldp q6, q7, [%0], #32;"
+		"ldp q8, q9, [%0], #32;"
+		"ldp q10, q11, [%0], #32;"
+		"ldp q12, q13, [%0], #32;"
+		"ldp q14, q15, [%0], #32;"
+		"ldp q16, q17, [%0], #32;"
+		"ldp q18, q19, [%0], #32;"
+		"ldp q20, q21, [%0], #32;"
+		"ldp q22, q23, [%0], #32;"
+		"ldp q24, q25, [%0], #32;"
+		"ldp q26, q27, [%0], #32;"
+		"ldp q28, q29, [%0], #32;"
+		"ldp q30, q31, [%0], #32;"
+		"sub %0, %0, #512;"
+		: : "r" (temp));
+}
+
 /*
  * Test FFA_FEATURES interface.
  */
