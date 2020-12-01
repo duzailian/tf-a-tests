@@ -27,6 +27,16 @@ func cactus_entrypoint
 	msr	sctlr_el1, x0
 	isb
 
+	/*
+	 * Set CPACR_EL1.FPEN=11 no EL1/0 trapping of
+	 * SVE/Adv. SIMD/FP instructions.
+	 */
+	mov	x1, #3
+	mrs	x0, cpacr_el1
+	orr	x0, x0, x1, lsl #20
+	msr	cpacr_el1, x0
+	isb
+
 	/* Relocate symbols */
 pie_fixup:
 	ldr	x0, =pie_fixup
