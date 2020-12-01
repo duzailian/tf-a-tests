@@ -26,6 +26,10 @@
 #define SP_ID(x)	((x) | SP_ID_MASK)
 #define IS_SP_ID(x)	((x & SP_ID_MASK) != 0U)
 
+#define __STR(x) #x
+#define STR(x) __STR(x)
+#define SIMD_TWO_VECTORS_BYTES_STR	(2 * SIMD_VECTOR_LEN_BYTES)
+
 struct mailbox_buffers {
 	void *recv;
 	void *send;
@@ -51,6 +55,26 @@ struct mailbox_buffers {
 				buffers_size / PAGE_SIZE			\
 			);							\
 	} while (false)
+
+/*
+ * Vector length:
+ * SIMD: 128 bits = 16 bytes
+ */
+#define SIMD_VECTOR_LEN_BYTES		16
+#define SIMD_NUM_VECTORS		32
+typedef uint128_t simd_vector_t[SIMD_VECTOR_LEN_BYTES / sizeof(uint128_t)];
+
+/*
+ * Fills SIMD registers with the content of the container v.
+ * Number of vectors is assumed to be SIMD_NUM_VECTORS.
+ */
+void fill_simd_vector_regs(const simd_vector_t v[SIMD_NUM_VECTORS]);
+
+/*
+ * Reads contents of SIMD registers into the provided container v.
+ * Number of vectors is assumed to be SIMD_NUM_VECTORS.
+ */
+void read_simd_vector_regs(simd_vector_t v[SIMD_NUM_VECTORS]);
 
 bool check_spmc_execution_level(void);
 
