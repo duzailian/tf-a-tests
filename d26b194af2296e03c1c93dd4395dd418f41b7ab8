@@ -135,6 +135,23 @@
       "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "028479fa_f862015c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T17:04:30Z",
+      "side": 1,
+      "message": "remove 2 empty lines",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
