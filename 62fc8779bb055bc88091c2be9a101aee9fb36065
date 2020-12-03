@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a1177336_43ff9df0",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T18:17:30Z",
+      "side": 1,
+      "message": "yes it does. If tftf mailbox has been set (i.e. both rx and tx buffers are different than NULL), the value will be passed in mb argument, and the function returns true, else will return false.",
+      "parentUuid": "9ec96824_1a6aefbf",
+      "range": {
+        "startLine": 221,
+        "startChar": 7,
+        "endLine": 221,
+        "endChar": 23
+      },
+      "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "10f9ae60_ec3f2bfc",
         "filename": "include/common/test_helpers.h",
         "patchSetId": 3
@@ -39,6 +63,24 @@
       "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1762e61d_47dbadcb",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T18:17:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10f9ae60_ec3f2bfc",
+      "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "906c01cc_b1ab7a62",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T18:17:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "236e4b52_ee9a27c9",
+      "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df9225f5_7ed5376b",
         "filename": "include/runtime_services/ffa_helpers.h",
         "patchSetId": 3
@@ -70,6 +130,24 @@
       "writtenOn": "2020-12-03T16:29:01Z",
       "side": 1,
       "message": "Can be uint128_t used instead of this structure?",
+      "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9eca9387_a2ef2c7a",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T18:17:30Z",
+      "side": 1,
+      "message": "I would prefer the structure, just for a matter of consistency with Hafnium codebase:\nhttps://git.trustedfirmware.org/hafnium/hafnium.git/tree/inc/vmapi/hf/ffa.h#n299",
+      "parentUuid": "df9225f5_7ed5376b",
       "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "d245d278_6c386a04",
+        "filename": "tftf/tests/common/test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T18:17:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f9dabc8_cfcacfba",
+      "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "13a1be29_f6606dc1",
         "filename": "tftf/tests/common/test_helpers.c",
         "patchSetId": 3
@@ -107,6 +203,24 @@
       "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bdd76166_3aa4b9c1",
+        "filename": "tftf/tests/common/test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T18:17:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13a1be29_f6606dc1",
+      "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
