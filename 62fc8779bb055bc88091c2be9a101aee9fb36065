@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ec96824_1a6aefbf",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:29:01Z",
+      "side": 1,
+      "message": "Does get_tftf_mailbox() return bool?",
+      "range": {
+        "startLine": 221,
+        "startChar": 7,
+        "endLine": 221,
+        "endChar": 23
+      },
+      "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10f9ae60_ec3f2bfc",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:29:01Z",
+      "side": 1,
+      "message": "add speace before (",
+      "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "236e4b52_ee9a27c9",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:29:01Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df9225f5_7ed5376b",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:29:01Z",
+      "side": 1,
+      "message": "Can be uint128_t used instead of this structure?",
+      "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f9dabc8_cfcacfba",
+        "filename": "tftf/tests/common/test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:29:01Z",
+      "side": 1,
+      "message": "OP-TEE",
+      "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13a1be29_f6606dc1",
+        "filename": "tftf/tests/common/test_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:29:01Z",
+      "side": 1,
+      "message": "0U",
+      "revId": "62fc8779bb055bc88091c2be9a101aee9fb36065",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
