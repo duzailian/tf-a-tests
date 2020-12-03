@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4297d1db_8aabfffb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T18:33:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f2f1a9f_10c1e9dd",
+      "revId": "77d579663ec7795238b7931f605ed181b8c00aa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f28ced4_3674ad84",
         "filename": "spm/cactus/cactus_test_cmds.h",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2020-12-03T16:17:09Z",
       "side": 1,
       "message": "Why were the checks failing? Was there comparison  \"\u003d\u003d CACTUS_SUCCESS\", or anything else?",
+      "revId": "77d579663ec7795238b7931f605ed181b8c00aa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ef720bb_102522f0",
+        "filename": "spm/cactus/cactus_test_cmds.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T18:33:43Z",
+      "side": 1,
+      "message": "On cactus SP if the response to a command was CACTUS_ERROR, TFTF would return TEST_RESULT_SUCCESS. \n\nThe comparison was: if (CACTUS_GET_RESPONSE(ret) !\u003d CACTUS_SUCCESS) { .... }\n\nI think here the choice of not using static inline functions was not the most adequate, a few type conversions are not being explicit, and could potentially create these issues. I am mocking up another test where I am replace all the macros with static inline functions. I am hoping it will help prevent these issues.\n\nAlso relevant that ffa_msg_send_direct_resp uses uint32_t type for the response payload.",
+      "parentUuid": "5f28ced4_3674ad84",
       "revId": "77d579663ec7795238b7931f605ed181b8c00aa6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
