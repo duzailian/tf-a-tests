@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "7989491e_d23c6b2c",
+        "filename": "tftf/tests/common/test_helpers.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T17:57:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "732c5400_cc894b02",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6d382a16_57d67cd0",
         "filename": "tftf/tests/common/test_helpers.c",
         "patchSetId": 9
@@ -64,6 +82,24 @@
       "writtenOn": "2020-12-03T16:55:40Z",
       "side": 1,
       "message": "How is this structure passed as parameter? I would expect copy to stack from the calling function, passing the pointer and then a new copy in set_tftf_mailbox() itself.\nWould\u0027t it better to pass\nconst struct mailbox_buffers *mb\n?",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2818c154_37d89b28",
+        "filename": "tftf/tests/common/test_helpers.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T17:57:52Z",
+      "side": 1,
+      "message": "Because the structure is small, only holds two addresses fitting in two registers, I would expect the values to be passed through argument registers.",
+      "parentUuid": "6d382a16_57d67cd0",
       "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "ce2e28b6_c5390598",
+        "filename": "tftf/tests/common/test_helpers.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T17:57:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb26ccd9_9ec3816c",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4db4e701_b4ac9db1",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
         "patchSetId": 9
@@ -101,6 +155,24 @@
       "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "510a41c8_522cc00b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T17:57:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4db4e701_b4ac9db1",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "0979cd6b_1a5e9961",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T17:57:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9603e25_c4b8cf93",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bad0483f_07f262c3",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
         "patchSetId": 9
@@ -135,6 +225,24 @@
       "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da8dea5c_68a014ae",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-03T17:57:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bad0483f_07f262c3",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
