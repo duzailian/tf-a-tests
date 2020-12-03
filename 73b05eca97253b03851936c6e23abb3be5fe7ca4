@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ab5d7c0_b0e29ac1",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T17:09:04Z",
+      "side": 1,
+      "message": "add space before {",
+      "revId": "73b05eca97253b03851936c6e23abb3be5fe7ca4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b95e6e54_8156f0eb",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T17:09:04Z",
+      "side": 1,
+      "message": "remove spaces after casts",
+      "revId": "73b05eca97253b03851936c6e23abb3be5fe7ca4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "796c1316_d6632381",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T17:09:04Z",
+      "side": 1,
+      "message": "use while (false) to make MISRA happy",
+      "revId": "73b05eca97253b03851936c6e23abb3be5fe7ca4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e76736eb_eabc7db7",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T17:09:04Z",
+      "side": 1,
+      "message": "the same here (casts)",
+      "revId": "73b05eca97253b03851936c6e23abb3be5fe7ca4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39f36745_44a63755",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T17:09:04Z",
+      "side": 1,
+      "message": "use while (false) to make MISRA happy",
+      "revId": "73b05eca97253b03851936c6e23abb3be5fe7ca4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
