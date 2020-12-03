@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "434ecd01_57410f58",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000440
+      },
+      "writtenOn": "2020-12-03T15:20:41Z",
+      "side": 1,
+      "message": "This is a MISRA violation (rule 15.6) - if statement bodies should have braces (even if there is only one statement in the body)\nIt\u0027s possible this doesn\u0027t apply to tf-a-tests, though",
+      "revId": "0a111322ce2e54b0286c83613a3f41855b11ac4b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
