@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b430e798_551f7172",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:55:40Z",
+      "side": 1,
+      "message": "TFTF",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4781f2fa_53034457",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:55:40Z",
+      "side": 1,
+      "message": "RXTX",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "732c5400_cc894b02",
+        "filename": "tftf/tests/common/test_helpers.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:55:40Z",
+      "side": 1,
+      "message": "- 2020",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d382a16_57d67cd0",
+        "filename": "tftf/tests/common/test_helpers.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:55:40Z",
+      "side": 1,
+      "message": "How is this structure passed as parameter? I would expect copy to stack from the calling function, passing the pointer and then a new copy in set_tftf_mailbox() itself.\nWould\u0027t it better to pass\nconst struct mailbox_buffers *mb\n?",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb26ccd9_9ec3816c",
+        "filename": "tftf/tests/common/test_helpers.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:55:40Z",
+      "side": 1,
+      "message": "use extra ()",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4db4e701_b4ac9db1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:55:40Z",
+      "side": 1,
+      "message": "OP-TEE",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9603e25_c4b8cf93",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:55:40Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bad0483f_07f262c3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-03T16:55:40Z",
+      "side": 1,
+      "message": "Test mapping RXTX buffers from Normal world.",
+      "revId": "d26b194af2296e03c1c93dd4395dd418f41b7ab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
