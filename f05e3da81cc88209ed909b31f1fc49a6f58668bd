@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "edae574f_d8206202",
+        "filename": "Makefile",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-12-08T21:50:37Z",
+      "side": 1,
+      "message": "Why do you need \"arch-features\" variable? can you not do directly do something like\n\nifneq(${ARM_ARCH_FEATURE},none)\n$(info Arm Architecture Features specified:$(subst +, ,${ARM_ARCH_FEATURE}))",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 73
+      },
+      "revId": "f05e3da81cc88209ed909b31f1fc49a6f58668bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
