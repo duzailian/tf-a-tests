@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9bdf0a50_37687d57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-12-08T16:24:09Z",
+      "side": 1,
+      "message": "Could you please rephrase it, something like ...\n\nThis patch adds a new ARM_ARCH_FEATURE build option to add support for compiler\u0027s feature modifiers.\nARM_ARCH_FEATURE can be passed as \"feature1+feature2...\" which translates to \"-march\u003dArmVx-a+feature1+feature2\" target architecture option.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 41
+      },
+      "revId": "d53a2b5e8275c277160886be051d4fefea149476",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6e69f95_2d06c13e",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2020-12-08T16:24:09Z",
+      "side": 1,
+      "message": "This option is passed as \"feature1+feature2...\" and defaults to none. This translates into compiler option \"-march\u003darmv8-a+feature1+feature2...\"\nSee compiler\u0027s documentation for the list of supported feature modifiers.",
+      "range": {
+        "startLine": 28,
+        "startChar": 34,
+        "endLine": 30,
+        "endChar": 31
+      },
+      "revId": "d53a2b5e8275c277160886be051d4fefea149476",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
