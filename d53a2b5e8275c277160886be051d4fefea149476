@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8c271c62_56ad7e49",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-08T17:06:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9bdf0a50_37687d57",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 41
+      },
+      "revId": "d53a2b5e8275c277160886be051d4fefea149476",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e6e69f95_2d06c13e",
         "filename": "docs/getting_started/build-options.rst",
         "patchSetId": 2
