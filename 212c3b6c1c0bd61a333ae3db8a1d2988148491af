@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "acd0bdcc_3bba717b",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-12-09T12:51:30Z",
+      "side": 1,
+      "message": "Should this be CACTUS_DEADLOCK_GET_PREV_DEST()?",
+      "range": {
+        "startLine": 161,
+        "startChar": 5,
+        "endLine": 161,
+        "endChar": 35
+      },
+      "revId": "212c3b6c1c0bd61a333ae3db8a1d2988148491af",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
