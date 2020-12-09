@@ -22,6 +22,30 @@
       "revId": "212c3b6c1c0bd61a333ae3db8a1d2988148491af",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df1b6249_abf6965d",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-09T14:11:57Z",
+      "side": 1,
+      "message": "Not necessarily. \n\nThis cmd aims at creating a scenario where we have a cyclic dependency such: A-\u003eB-\u003eC-\u003eA\nAnd validate this is not possible.\n\nThe need for command comes from:\n- we trigger tests from NWd (when cmd is CACTUS_REQ_DEADLOCK_CMD);\n- SPs can\u0027t communicate back to NWd other than with a response;\n\nSo the loop of dependencies is to be created between SPs. Therefore the whole sequence of communication is:\nNWd -\u003e A-\u003eB-\u003eC-\u003eD\n\nSo that argument is only relevant on the first time this handler is executed. At this point there is not really a Previous next.\n\nSteps to create cycle with CACTUS_REQ_DEADLOCK_CMD:\n- NWd sends request to A:\n - receiver A\n - Next B\n - Next2 C\n\nAfter this point SPs will create a cyclic dependency between them using CACTUS_DEADLOCK_CMD, at this point we could consider a \"previous next\" however, no need because we can just reuse the arguments in the payload. right?",
+      "parentUuid": "acd0bdcc_3bba717b",
+      "range": {
+        "startLine": 161,
+        "startChar": 5,
+        "endLine": 161,
+        "endChar": 35
+      },
+      "revId": "212c3b6c1c0bd61a333ae3db8a1d2988148491af",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
