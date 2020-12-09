@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a40f02fb_d0c4f7af",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2020-12-09T11:56:06Z",
+      "side": 1,
+      "message": "Short comment description",
+      "range": {
+        "startLine": 270,
+        "startChar": 0,
+        "endLine": 271,
+        "endChar": 50
+      },
+      "revId": "93aa0bae1d11799b2a291f10d931ebb38bfacfb7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
