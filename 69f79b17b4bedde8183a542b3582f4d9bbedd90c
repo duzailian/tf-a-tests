@@ -22,6 +22,30 @@
       "revId": "69f79b17b4bedde8183a542b3582f4d9bbedd90c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "023b98ac_2fc06e16",
+        "filename": "Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-10T08:56:05Z",
+      "side": 1,
+      "message": "No. Because there were no any additions like \"+memtag\" for TF-A, which would end up as  \"none+memtag\". arch-fetures will be added only if \"arch-feautures !\u003d none\"",
+      "parentUuid": "9ac021f5_6dfa6ff7",
+      "range": {
+        "startLine": 196,
+        "startChar": 0,
+        "endLine": 198,
+        "endChar": 58
+      },
+      "revId": "69f79b17b4bedde8183a542b3582f4d9bbedd90c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
