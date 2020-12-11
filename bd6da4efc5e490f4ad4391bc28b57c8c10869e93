@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "476fc0fd_c3075b07",
+        "filename": "spm/README.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-11T14:36:25Z",
+      "side": 1,
+      "message": "It",
+      "range": {
+        "startLine": 4,
+        "startChar": 10,
+        "endLine": 4,
+        "endChar": 12
+      },
+      "revId": "bd6da4efc5e490f4ad4391bc28b57c8c10869e93",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
