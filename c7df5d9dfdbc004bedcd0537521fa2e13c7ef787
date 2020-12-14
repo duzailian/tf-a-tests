@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6d4072be_7eced93e",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T10:55:09Z",
+      "side": 1,
+      "message": "Secure Partition (SP)",
+      "revId": "c7df5d9dfdbc004bedcd0537521fa2e13c7ef787",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b146ded8_b106d478",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T10:55:09Z",
+      "side": 1,
+      "message": "align with following lines",
+      "revId": "c7df5d9dfdbc004bedcd0537521fa2e13c7ef787",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
