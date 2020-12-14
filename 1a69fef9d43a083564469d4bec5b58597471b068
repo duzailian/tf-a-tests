@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "06f97d63_6c2cc8f0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T10:52:22Z",
+      "side": 1,
+      "message": "TFTF",
+      "revId": "1a69fef9d43a083564469d4bec5b58597471b068",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "196d602b_530b99c9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T10:52:22Z",
+      "side": 1,
+      "message": "Why are in capitals here, but not at lines #21-23?",
+      "revId": "1a69fef9d43a083564469d4bec5b58597471b068",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43bad1bd_9660ded2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T10:52:22Z",
+      "side": 1,
+      "message": "The test will continue if result \u003d TEST_RESULT_CRASHED.",
+      "revId": "1a69fef9d43a083564469d4bec5b58597471b068",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14fc3f8f_edc3438e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T10:52:22Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "1a69fef9d43a083564469d4bec5b58597471b068",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "38a0cae3_0f3de8aa",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T10:52:22Z",
+      "side": 1,
+      "message": "align with line #40",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 1
+      },
+      "revId": "1a69fef9d43a083564469d4bec5b58597471b068",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
