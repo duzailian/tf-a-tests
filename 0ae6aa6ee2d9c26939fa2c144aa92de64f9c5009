@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "56d5cb54_99771ca1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-14T18:33:12Z",
+      "side": 1,
+      "message": "FF-A is the correct one. I tried to changed them all to FF-A.\nWill grep for FFA in code base and check the previous commit messages.",
+      "parentUuid": "c130ca2e_c97c00be",
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "38929f39_a46f40e6",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
         "patchSetId": 5
@@ -33,6 +51,24 @@
       "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b59df35_49c16db7",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-14T18:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "38929f39_a46f40e6",
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1dea8b32_457626da",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-14T18:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf755f61_66688519",
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "43773f2c_91a159bf",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
         "patchSetId": 5
@@ -67,6 +121,24 @@
       "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14deaced_e388ae40",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-14T18:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "43773f2c_91a159bf",
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "f32ea2cc_49fb1c89",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-14T18:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52240059_c41ac11b",
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e73eaa1e_2c69f782",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
         "patchSetId": 5
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "fc7e2251_f85ff4a6",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-14T18:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e73eaa1e_2c69f782",
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6d03d9e8_e4f6bbb4",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
         "patchSetId": 5
@@ -118,6 +226,24 @@
       "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2e48436_365b6ede",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-14T18:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d03d9e8_e4f6bbb4",
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -167,6 +293,54 @@
     },
     {
       "key": {
+        "uuid": "37944356_2067121d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-14T18:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9dd1d05_3a03a5b8",
+      "range": {
+        "startLine": 30,
+        "startChar": 28,
+        "endLine": 30,
+        "endChar": 33
+      },
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51cb1e20_5a00cafd",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-14T18:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06067ae2_5da1cfd2",
+      "range": {
+        "startLine": 30,
+        "startChar": 42,
+        "endLine": 30,
+        "endChar": 55
+      },
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "224527cd_c0c85998",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
         "patchSetId": 5
@@ -187,6 +361,30 @@
       "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3807fddb_50e062c8",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-14T18:33:12Z",
+      "side": 1,
+      "message": "Here I just wanted to see that SP used the memory region.\n\nWill rephrase to clarify. thanks!",
+      "parentUuid": "224527cd_c0c85998",
+      "range": {
+        "startLine": 31,
+        "startChar": 12,
+        "endLine": 31,
+        "endChar": 67
+      },
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -213,6 +411,30 @@
     },
     {
       "key": {
+        "uuid": "8075b8e4_3108b627",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-14T18:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d459f523_c97e3ab2",
+      "range": {
+        "startLine": 33,
+        "startChar": 20,
+        "endLine": 33,
+        "endChar": 33
+      },
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7df9096f_e432320a",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
         "patchSetId": 5
@@ -233,6 +455,30 @@
       "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1a05805_b5e4d63f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-14T18:33:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7df9096f_e432320a",
+      "range": {
+        "startLine": 34,
+        "startChar": 3,
+        "endLine": 34,
+        "endChar": 5
+      },
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
