@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cff3e6d1_7963c337",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T10:45:22Z",
+      "side": 1,
+      "message": "TFTF",
+      "revId": "50f9226c215e06d93d1929debbc1b695e2f61621",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
