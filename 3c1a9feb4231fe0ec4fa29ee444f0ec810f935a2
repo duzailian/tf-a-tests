@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95a08ce9_c0cdcf5f",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T10:48:22Z",
+      "side": 1,
+      "message": "cactus_cmd is uint64_t, but FFA_MEM_??? are defined as U(0xXX)",
+      "revId": "3c1a9feb4231fe0ec4fa29ee444f0ec810f935a2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
