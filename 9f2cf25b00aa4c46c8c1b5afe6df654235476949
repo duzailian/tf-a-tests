@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "30745028_0d774912",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T11:15:36Z",
+      "side": 1,
+      "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#header-guards",
+      "revId": "9f2cf25b00aa4c46c8c1b5afe6df654235476949",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6feeba7b_8536c768",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T11:15:36Z",
+      "side": 1,
+      "message": "remove space after \\n",
+      "revId": "9f2cf25b00aa4c46c8c1b5afe6df654235476949",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ccb1b9f_a81f64f4",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T11:15:36Z",
+      "side": 1,
+      "message": "add space after if",
+      "revId": "9f2cf25b00aa4c46c8c1b5afe6df654235476949",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fdc24f11_0e958939",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T11:15:36Z",
+      "side": 1,
+      "message": "const ?\nThis is not typedef and will define ffa_uuid structure with 0s in every file which includes ffa_helpers.h. Is it intended?",
+      "revId": "9f2cf25b00aa4c46c8c1b5afe6df654235476949",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ccd3de5e_92373bb2",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2020-12-14T11:15:36Z",
+      "side": 1,
+      "message": "The same here.",
+      "revId": "9f2cf25b00aa4c46c8c1b5afe6df654235476949",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
