@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7fec936e_24271194",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-14T19:18:09Z",
+      "side": 1,
+      "message": "also there is an on-going clean-up here:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/6984",
+      "parentUuid": "56d5cb54_99771ca1",
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "38929f39_a46f40e6",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
         "patchSetId": 5
