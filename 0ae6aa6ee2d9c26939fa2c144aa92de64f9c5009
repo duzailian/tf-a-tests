@@ -118,6 +118,121 @@
       "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06067ae2_5da1cfd2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2020-12-14T12:04:07Z",
+      "side": 1,
+      "message": "NIT: access to the",
+      "range": {
+        "startLine": 30,
+        "startChar": 42,
+        "endLine": 30,
+        "endChar": 55
+      },
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9dd1d05_3a03a5b8",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2020-12-14T12:04:07Z",
+      "side": 1,
+      "message": "NIT: it will",
+      "range": {
+        "startLine": 30,
+        "startChar": 28,
+        "endLine": 30,
+        "endChar": 33
+      },
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "224527cd_c0c85998",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2020-12-14T12:04:07Z",
+      "side": 1,
+      "message": "the contents of the memory region that has been used by the receiver sp",
+      "range": {
+        "startLine": 31,
+        "startChar": 12,
+        "endLine": 31,
+        "endChar": 67
+      },
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d459f523_c97e3ab2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2020-12-14T12:04:07Z",
+      "side": 1,
+      "message": "NIT: before a memory",
+      "range": {
+        "startLine": 33,
+        "startChar": 20,
+        "endLine": 33,
+        "endChar": 33
+      },
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7df9096f_e432320a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2020-12-14T12:04:07Z",
+      "side": 1,
+      "message": "NIT: in",
+      "range": {
+        "startLine": 34,
+        "startChar": 3,
+        "endLine": 34,
+        "endChar": 5
+      },
+      "revId": "0ae6aa6ee2d9c26939fa2c144aa92de64f9c5009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
