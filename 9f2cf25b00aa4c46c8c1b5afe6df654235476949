@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b4e23ec0_f0050f4c",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-15T11:09:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30745028_0d774912",
+      "revId": "9f2cf25b00aa4c46c8c1b5afe6df654235476949",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6feeba7b_8536c768",
         "filename": "include/common/test_helpers.h",
         "patchSetId": 7
@@ -33,6 +51,24 @@
       "revId": "9f2cf25b00aa4c46c8c1b5afe6df654235476949",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7cbce5b4_dc0c80c1",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-15T11:09:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6feeba7b_8536c768",
+      "revId": "9f2cf25b00aa4c46c8c1b5afe6df654235476949",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "690688d7_1d8fa62b",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-15T11:09:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ccb1b9f_a81f64f4",
+      "revId": "9f2cf25b00aa4c46c8c1b5afe6df654235476949",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fdc24f11_0e958939",
         "filename": "include/runtime_services/ffa_helpers.h",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2020-12-14T11:15:36Z",
       "side": 1,
       "message": "const ?\nThis is not typedef and will define ffa_uuid structure with 0s in every file which includes ffa_helpers.h. Is it intended?",
+      "revId": "9f2cf25b00aa4c46c8c1b5afe6df654235476949",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "572cdae2_9090b52c",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-15T11:09:30Z",
+      "side": 1,
+      "message": "My understanding was that this statement was just a definition of a type. \u0027typedef\u0027 is just a way to simplify declaring instances of a given type, whose presence was optional. right?\n\nIf what you say is accurate, should we able to create multiple instances of this same type like:\n\u0027struct ffa_uuid var;\u0027?\nplus, if doing where ffa_helpers was included (void)ffa_uuid I got that identifier was not defined.",
+      "parentUuid": "fdc24f11_0e958939",
       "revId": "9f2cf25b00aa4c46c8c1b5afe6df654235476949",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
