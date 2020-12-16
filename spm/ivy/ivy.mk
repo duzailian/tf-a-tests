@@ -5,10 +5,15 @@
 #
 
 include branch_protection.mk
-include lib/sprt/sprt_client.mk
 include lib/xlat_tables_v2/xlat_tables.mk
 
-IVY_DTB		:= $(BUILD_PLAT)/ivy.dtb
+# Include ivy platform Makefile
+IVY_PLAT_PATH	:= $(shell find spm/ivy/plat -wholename '*/${PLAT}')
+ifneq (${IVY_PLAT_PATH},)
+	include ${IVY_PLAT_PATH}/platform.mk
+endif
+
+IVY_DTB		:= build/${PLAT}/debug/ivy.dtb
 
 IVY_INCLUDES :=					\
 	-Itftf/framework/include			\
@@ -53,8 +58,7 @@ IVY_SOURCES	+= 	drivers/arm/pl011/${ARCH}/pl011_console.S	\
 			lib/smc/${ARCH}/hvc.c				\
 			lib/locks/${ARCH}/spinlock.S			\
 			lib/utils/mp_printf.c				\
-			plat/arm/fvp/aarch64/plat_helpers.S		\
-			${SPRT_LIB_SOURCES}				\
+			plat/arm/${PLAT}/aarch64/plat_helpers.S		\
 			${XLAT_TABLES_LIB_SRCS}
 
 IVY_LINKERFILE	:=	spm/ivy/ivy.ld.S
@@ -74,12 +78,31 @@ $(eval $(call add_define,IVY_DEFINES,LOG_LEVEL))
 $(eval $(call add_define,IVY_DEFINES,PLAT_${PLAT}))
 
 $(IVY_DTB) : $(BUILD_PLAT)/ivy $(BUILD_PLAT)/ivy/ivy.elf
-$(IVY_DTB) : spm/ivy/ivy.dts
-	@echo "  DTBGEN  spm/ivy/ivy.dts"
+$(IVY_DTB) : $(IVY_DTS)
+	@echo "  DTBGEN  $@"
 	${Q}tools/generate_dtb/generate_dtb.sh \
-		ivy spm/ivy/ivy.dts $(BUILD_PLAT)
+		ivy ${IVY_DTS} $(BUILD_PLAT)
+	${Q}tools/generate_json/generate_json.sh \
+		ivy $(BUILD_PLAT)
 	@echo
 	@echo "Built $@ successfully"
 	@echo
 
 ivy: $(IVY_DTB)
+
+# FDTS_CP copies flattened device tree sources
+#   $(1) = output directory
+#   $(2) = flattened device tree source file to copy
+define FDTS_CP
+        $(eval FDTS := $(addprefix $(1)/,$(notdir $(2))))
+FDTS_LIST += $(FDTS)
+$(FDTS): $(2) $(IVY_DTB)
+	@echo "  CP      $$<"
+	${Q}cp $$< $$@
+endef
+
+ifdef FDTS_CP_LIST
+        $(eval files := $(filter %.dts,$(FDTS_CP_LIST)))
+        $(eval $(foreach file,$(files),$(call FDTS_CP,$(BUILD_PLAT),$(file))))
+ivy: $(FDTS_LIST)
+endif
