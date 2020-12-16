@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2021, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  *
@@ -17,15 +17,18 @@
 	description = "ivy-1";
 	ffa-version = <0x00010000>; /* 31:16 - Major, 15:0 - Minor */
 	uuid = <0xeaba83d8 0xbaaf4eaf 0x8144f7fd 0xcbe544a7>;
+	id = <1>;
+	auxiliary-id = <0xae>;
+	stream-endpoint-ids = <0 1 2 3>;
 	execution-ctx-count = <1>;
 	exception-level = <2>; /* S-EL1 */
 	execution-state = <0>; /* AARCH64 */
-	load-address = <0x7600000>;
+	load-address = <0xfe280000>;
 	entrypoint-offset = <0x00001000>;
 	xlat-granule = <0>; /* 4KiB */
 	boot-order = <0>;
 	messaging-method = <0>; /* Direct messaging only */
-	run-time-model = <0>; /* Run to completion */
+	run-time-model = <1>; /* SP pre-emptible */
 
 	/* Boot protocol */
 	gp-register-num = <0x0>;
