@@ -1,0 +1,8 @@
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Owner-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Verified+1: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Wed, 16 Dec 2020 16:48:08 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/6762
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
