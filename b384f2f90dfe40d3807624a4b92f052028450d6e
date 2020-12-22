@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d6016d0d_872ef6cf",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-22T15:34:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5594a983_c96d8838",
+      "revId": "b384f2f90dfe40d3807624a4b92f052028450d6e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f4c221f5_2226bbfa",
         "filename": "spm/cactus/cactus_main.c",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2020-12-16T22:57:15Z",
       "side": 1,
       "message": "Are the { } needed ?",
+      "revId": "b384f2f90dfe40d3807624a4b92f052028450d6e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "384189e2_024abf6c",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-22T15:34:59Z",
+      "side": 1,
+      "message": "I used them because wanted to restrict the scope of some variables to the specific case.\n\nI intend to break this switch case into function handlers for each command. Using the {} helps to restrict the scope of variables, which I think will make things easier when making the shift to having function handlers for each command.\n\nThis should be therefore temporary, however dependent on when I take time (or someone else) to produce such change.\n\nIf you don\u0027t mind, we could keep things like this for the time being, given it should be temporary.",
+      "parentUuid": "f4c221f5_2226bbfa",
       "revId": "b384f2f90dfe40d3807624a4b92f052028450d6e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
@@ -50,6 +86,24 @@
       "revId": "b384f2f90dfe40d3807624a4b92f052028450d6e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e19cc7b9_4b556f0d",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2020-12-22T15:34:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "761d8ea2_a9eb504a",
+      "revId": "b384f2f90dfe40d3807624a4b92f052028450d6e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
