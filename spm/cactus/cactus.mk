@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018-2020, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2021, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -34,6 +34,7 @@ CACTUS_SOURCES	:=					\
 		aarch64/cactus_entrypoint.S		\
 		cactus_debug.c				\
 		cactus_ffa_tests.c 			\
+		cactus_tests_smmuv3.c			\
 		cactus_main.c				\
 	)						\
 	$(addprefix spm/common/,			\

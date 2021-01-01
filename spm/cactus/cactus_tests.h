@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2017-2021, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -48,4 +48,5 @@ void system_setup_tests(void);
  */
 void mem_attr_changes_tests(void);
 
+bool run_smmuv3_test(struct mailbox_buffers *mb,  ffa_vm_id_t ffa_id);
 #endif /* CACTUS_TESTS_H */

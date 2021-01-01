@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2021, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -185,10 +185,22 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 			ffa_ret = cactus_success_resp(vm_id, source);
 			break;
 		}
+		case CACTUS_DMA_SMMUv3_CMD:
+		{
+			NOTICE("Received request through direct message "
+					"for DMA service\n");
+
+			if (run_smmuv3_test(mb, vm_id)) {
+				ffa_ret = ffa_msg_send_direct_resp(vm_id,
+						HYP_ID, cactus_cmd | vm_id);
+			} else {
+				ffa_ret = cactus_error_resp(vm_id, source);
+			}
+			break;
+		}
 		case CACTUS_ECHO_CMD:
 		{
 			uint64_t echo_val = cactus_echo_get_val(ffa_ret);
-
 			VERBOSE("Received echo at %x, value %llx.\n",
 				destination, echo_val);
 			ffa_ret = cactus_response(vm_id, source, echo_val);
@@ -307,6 +319,8 @@ static const mmap_region_t cactus_mmap[] __attribute__((used)) = {
 	/* PLAT_ARM_DEVICE0 area includes UART2 necessary to console */
 	MAP_REGION_FLAT(PLAT_ARM_DEVICE0_BASE, PLAT_ARM_DEVICE0_SIZE,
 			MT_DEVICE | MT_RW),
+	/* scratch memory allocated to be used for running SMMU tests */
+	MAP_REGION_FLAT(0x7400000, 0x8000, MT_MEMORY | MT_RW),
 	{0}
 };
 

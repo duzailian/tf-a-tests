@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2021, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -199,5 +199,7 @@ static inline uint32_t cactus_get_response(smc_ret_values ret)
 {
 	return (uint32_t)ret.ret3;
 }
+
+#define CACTUS_DMA_SMMUv3_CMD           (0xdddd0000)
 
 #endif
