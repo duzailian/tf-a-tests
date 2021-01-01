@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2021, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -17,6 +17,10 @@
 
 #define PLAT_CACTUS_RX_BASE		ULL(0x7300000)
 #define PLAT_CACTUS_CORE_COUNT		(8U)
+
+/* Scratch memory used for SMMUv3 driver testing purposes in Cactus SP */
+#define PLAT_CACTUS_MEMCPY_BASE		ULL(0x7400000)
+#define PLAT_CACTUS_MEMCPY_RANGE	ULL(0x8000)
 
 #define CACTUS_PRIMARY_EC_COUNT		(8U)
 #define CACTUS_SECONDARY_EC_COUNT	(8U)
