@@ -78,4 +78,9 @@
                function="test_simd_vectors_preserved" />
   </testsuite>
 
+  <testsuite name="SMMUv3 tests"
+             description="Initiate stage2 translation for streams from upstream peripherals" >
+     <testcase name="Check DMA command by SMMUv3TestEngine completes"
+               function="test_smmu_spm" />
+  </testsuite>
 </testsuites>
