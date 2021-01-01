@@ -81,6 +81,14 @@ test_result_t test_ffa_direct_messaging(void)
 	 **********************************************************************/
 	result = send_cactus_echo_cmd(HYP_ID, SP_ID(1), ECHO_VAL3);
 
+	/**********************************************************************
+	 * Send a message to SP1 through direct messaging to initiate DMA
+	 * service with the help of a peripheral device upstream of an SMMUv3 IP
+	 **********************************************************************/
+	VERBOSE("Sending direct message to SP %x for initiating DMA transfer\n",
+			SP_ID(1));
+	result = send_cactus_echo_cmd(HYP_ID, SP_ID(1), CACTUS_DMA_SMMUv3_CMD);
+
 	return result;
 }
 

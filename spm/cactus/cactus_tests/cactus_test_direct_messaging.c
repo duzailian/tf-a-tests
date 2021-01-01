@@ -6,6 +6,7 @@
 
 #include "cactus_message_loop.h"
 #include "cactus_test_cmds.h"
+#include "cactus_tests.h"
 #include <debug.h>
 #include <ffa_helpers.h>
 
@@ -19,6 +20,24 @@ CACTUS_CMD_HANDLER(echo_cmd, CACTUS_ECHO_CMD)
 	return cactus_success_resp(ffa_dir_msg_dest(*args),
 				   ffa_dir_msg_source(*args),
 				   echo_val);
+}
+
+CACTUS_CMD_HANDLER(smmuv3_cmd, CACTUS_DMA_SMMUv3_CMD)
+{
+	smc_ret_values ffa_ret;
+	ffa_vm_id_t vm_id = ffa_dir_msg_dest(*args);
+
+	NOTICE("Received request through direct message for DMA service\n");
+
+	if (run_smmuv3_test(mb, vm_id)) {
+		ffa_ret = cactus_success_resp(vm_id,
+				HYP_ID, CACTUS_DMA_SMMUv3_CMD| vm_id);
+	} else {
+		ffa_ret = cactus_error_resp(vm_id, ffa_dir_msg_source(*args),
+					    CACTUS_ERROR_TEST);
+	}
+
+	return ffa_ret;
 }
 
 CACTUS_CMD_HANDLER(req_echo_cmd, CACTUS_REQ_ECHO_CMD)
