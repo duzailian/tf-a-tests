@@ -17,6 +17,9 @@
 
 #define PLAT_CACTUS_RX_BASE		ULL(0x7300000)
 
+/* Auxiliary memory used for testing purposes in Cactus SP */
+#define PLAT_CACTUS_AUX_BASE		ULL(0x7400000)
+
 #define CACTUS_PRIMARY_EC_COUNT		(8U)
 #define CACTUS_SECONDARY_EC_COUNT	(8U)
 #define CACTUS_TERTIARY_EC_COUNT	(8U)

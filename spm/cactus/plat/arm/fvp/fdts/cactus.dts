@@ -62,6 +62,20 @@
 			pages-count = <4>;
 			attributes = <0x7>; /* read-write-execute */
 		};
+
+		auxiliary-src {
+			description = "memcpy-source";
+			pages-count = <4>;
+			base-address = <0x00000000 0x7400000>;
+			attributes = <0x3>; /* read-write */
+		};
+
+		auxiliary-dst {
+			description = "memcpy-destination";
+			pages-count = <4>;
+			base-address = <0x00000000 0x7404000>;
+			attributes = <0x3>; /* read-write */
+		};
 	};
 
 	device-regions {
@@ -71,6 +85,22 @@
 			base-address = <0x00000000 0x1c0b0000>;
 			pages-count = <1>;
 			attributes = <0x3>; /* read-write */
+		};
+
+		smmuv3-testengine {
+			/* SMMUv3TestEngine is a DMA IP modeled in the
+			   Base-RevC FVP Model.
+			   User Frame: 0x2bfe0000
+			   Privileged Frame: 0x2bff0000
+			 */
+			base-address = <0x00000000 0x2bfe0000>;
+			pages-count = <32>; /* Two 64KB pages */
+			attributes = <0x3>; /* read-write */
+			smmu-id = <0>;
+			stream-ids = <0x0 0x1>;
+			interrupts = <0x2 0x3>,
+					<0x4 0x5>;
+			exclusive-access;
 		};
 
 		test-reg {

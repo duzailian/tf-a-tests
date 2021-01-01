@@ -48,4 +48,5 @@ void system_setup_tests(void);
  */
 void mem_attr_changes_tests(void);
 
+bool run_smmuv3_test(struct mailbox_buffers *mb,  ffa_vm_id_t ffa_id);
 #endif /* CACTUS_TESTS_H */

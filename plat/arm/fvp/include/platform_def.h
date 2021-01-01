@@ -217,7 +217,11 @@
 #define MAX_XLAT_TABLES			20
 #define MAX_MMAP_REGIONS		50
 #else
+#if !IMAGE_NS_BL1U
+#define MAX_XLAT_TABLES			6
+#else
 #define MAX_XLAT_TABLES			5
+#endif
 #define MAX_MMAP_REGIONS		16
 #endif
 
