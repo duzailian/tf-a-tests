@@ -200,4 +200,6 @@ static inline uint32_t cactus_get_response(smc_ret_values ret)
 	return (uint32_t)ret.ret3;
 }
 
+#define CACTUS_DMA_SMMUv3_CMD           (0xdddd0000)
+
 #endif
