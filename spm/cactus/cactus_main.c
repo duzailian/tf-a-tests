@@ -89,6 +89,8 @@ static const mmap_region_t cactus_mmap[] __attribute__((used)) = {
 	/* PLAT_ARM_DEVICE0 area includes UART2 necessary to console */
 	MAP_REGION_FLAT(PLAT_ARM_DEVICE0_BASE, PLAT_ARM_DEVICE0_SIZE,
 			MT_DEVICE | MT_RW),
+	/* scratch memory allocated to be used for running SMMU tests */
+	MAP_REGION_FLAT(0x7400000, 0x8000, MT_MEMORY | MT_RW),
 	{0}
 };
 

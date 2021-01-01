@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2021, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -249,4 +249,17 @@ static inline smc_ret_values cactus_req_simd_fill_send_cmd(
 			       0);
 }
 
+/**
+ * Request to initiate DMA transaction by upstream peripheral.
+ *
+ * The command id is the hex representation of the string "SMMU"
+ */
+#define CACTUS_DMA_SMMUv3_CMD           (0x534d4d55)
+
+static inline smc_ret_values cactus_send_dma_cmd(
+	ffa_vm_id_t source, ffa_vm_id_t dest)
+{
+	return cactus_send_cmd(source, dest, CACTUS_DMA_SMMUv3_CMD, 0, 0, 0,
+			       0);
+}
 #endif
