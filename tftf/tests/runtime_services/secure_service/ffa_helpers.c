@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2021, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -346,9 +346,9 @@ ffa_memory_handle_t ffa_memory_send(
 		return FFA_MEMORY_HANDLE_INVALID;
 	}
 
-	if (ret.ret0 != FFA_SUCCESS_SMC32) {
-		ERROR("Failed to send memory to %x, error: %lx.\n",
-				      receiver, ret.ret2);
+	if (ffa_func_id(ret) != FFA_SUCCESS_SMC32) {
+		ERROR("Failed to send memory to %x, error: %x.\n",
+				      receiver, ffa_error_code(ret));
 		return FFA_MEMORY_HANDLE_INVALID;
 	}
 
