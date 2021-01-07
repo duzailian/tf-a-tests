@@ -80,6 +80,14 @@ struct ffa_partition_info {
 	uint32_t properties;
 };
 
+static inline uint32_t ffa_func_id(smc_ret_values val) {
+	return (uint32_t) val.ret0;
+}
+
+static inline uint32_t ffa_error_code(smc_ret_values val) {
+	return (uint32_t) val.ret2;
+}
+
 enum ffa_data_access {
 	FFA_DATA_ACCESS_NOT_SPECIFIED,
 	FFA_DATA_ACCESS_RO,
@@ -406,6 +414,14 @@ ffa_memory_handle_t ffa_memory_init_and_send(
 	ffa_vm_id_t sender, ffa_vm_id_t receiver,
 	const struct ffa_memory_region_constituent* constituents,
 	uint32_t constituents_count, uint32_t mem_func);
+
+static inline ffa_vm_id_t ffa_dir_msg_dest(smc_ret_values val) {
+	return (ffa_vm_id_t)val.ret1 & U(0xFFFF);
+}
+
+static inline ffa_vm_id_t ffa_dir_msg_source(smc_ret_values val) {
+	return (ffa_vm_id_t)(val.ret1 >> 16U);
+}
 
 bool check_spmc_execution_level(void);
 smc_ret_values ffa_msg_send_direct_req(uint32_t source_id, uint32_t dest_id, uint32_t message);
