@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2021, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -11,7 +11,7 @@
 struct feature_test {
 	const char *test_name;
 	unsigned int feature;
-	u_register_t expected_ret;
+	uint32_t expected_ret;
 };
 
 static const struct feature_test test_target[] = {
@@ -57,20 +57,20 @@ test_result_t test_ffa_features(void)
 
 	for (i = 0U; i < test_target_size; i++) {
 		ffa_ret = ffa_features(test_target[i].feature);
-		if (ffa_ret.ret0 != test_target[i].expected_ret) {
-			tftf_testcase_printf("%s returned %lx, expected %lx\n",
+		if (ffa_func_id(ffa_ret) != test_target[i].expected_ret) {
+			tftf_testcase_printf("%s returned %x, expected %x\n",
 					     test_target[i].test_name,
-					     ffa_ret.ret0,
+					     ffa_func_id(ffa_ret),
 					     test_target[i].expected_ret);
 			return TEST_RESULT_FAIL;
 		}
-		if ((test_target[i].expected_ret == (u_register_t)FFA_ERROR) &&
-		    (ffa_ret.ret2 != (u_register_t)FFA_ERROR_NOT_SUPPORTED)) {
+		if ((test_target[i].expected_ret == FFA_ERROR) &&
+		    (ffa_error_code(ffa_ret) != FFA_ERROR_NOT_SUPPORTED)) {
 			tftf_testcase_printf("%s failed for the wrong reason: "
-					     "returned %lx, expected %lx\n",
+					     "returned %x, expected %x\n",
 					     test_target[i].test_name,
-					     ffa_ret.ret2,
-					     (u_register_t)FFA_ERROR_NOT_SUPPORTED);
+					     ffa_error_code(ffa_ret),
+					     FFA_ERROR_NOT_SUPPORTED);
 			return TEST_RESULT_FAIL;
 		}
 	}
