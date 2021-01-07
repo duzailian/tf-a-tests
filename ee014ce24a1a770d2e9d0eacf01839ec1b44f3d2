@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49b82a61_5934cef3",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-07T08:26:33Z",
+      "side": 1,
+      "message": "remove PSA",
+      "range": {
+        "startLine": 51,
+        "startChar": 20,
+        "endLine": 51,
+        "endChar": 24
+      },
+      "revId": "ee014ce24a1a770d2e9d0eacf01839ec1b44f3d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
