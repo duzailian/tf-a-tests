@@ -1,0 +1,193 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "62a27d39_5b454966",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-11T17:12:37Z",
+      "side": 1,
+      "message": "SPMC",
+      "range": {
+        "startLine": 9,
+        "startChar": 62,
+        "endLine": 9,
+        "endChar": 65
+      },
+      "revId": "75524d0bdecde78ca6caa6b1dc1ecb602e63f8ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5efb0bb8_026805c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-11T17:12:37Z",
+      "side": 1,
+      "message": "Maybe precise this is using GICv3 (as GICv2 would route differently).",
+      "range": {
+        "startLine": 10,
+        "startChar": 3,
+        "endLine": 10,
+        "endChar": 6
+      },
+      "revId": "75524d0bdecde78ca6caa6b1dc1ecb602e63f8ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5b56b5c_1f99bfdd",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-11T17:12:37Z",
+      "side": 1,
+      "message": "add blank",
+      "revId": "75524d0bdecde78ca6caa6b1dc1ecb602e63f8ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6961bd0d_2ef2f2f5",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-11T17:12:37Z",
+      "side": 1,
+      "message": "make it static?",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 19
+      },
+      "revId": "75524d0bdecde78ca6caa6b1dc1ecb602e63f8ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a75283e4_4ef8e4f7",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-11T17:12:37Z",
+      "side": 1,
+      "message": "I guess you can just discard this rather than adding an empty function. You can leave a comment stating that a production partition such as a TEE would save its internal state (like live thread context) at this stage.",
+      "range": {
+        "startLine": 188,
+        "startChar": 2,
+        "endLine": 188,
+        "endChar": 20
+      },
+      "revId": "75524d0bdecde78ca6caa6b1dc1ecb602e63f8ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95ed9546_b0e58bc0",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-11T17:12:37Z",
+      "side": 1,
+      "message": "Can we move after line 258 and after spm_interrupt_enable ?",
+      "revId": "75524d0bdecde78ca6caa6b1dc1ecb602e63f8ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a6d8b7e_eadf7c01",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-11T17:12:37Z",
+      "side": 1,
+      "message": "Can we move after line 258 as this is not required by ffa_tests?",
+      "revId": "75524d0bdecde78ca6caa6b1dc1ecb602e63f8ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e70eb8fc_7a07b541",
+        "filename": "spm/common/sp_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-11T17:12:37Z",
+      "side": 1,
+      "message": "return int64_t as api_interrupt_enable returns int64_t and hvc_ret_values holds u_register_t fields?",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 3
+      },
+      "revId": "75524d0bdecde78ca6caa6b1dc1ecb602e63f8ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7c1d3cc_8a58d5c7",
+        "filename": "spm/common/sp_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-11T17:12:37Z",
+      "side": 1,
+      "message": "(int64_t)ret.ret0",
+      "range": {
+        "startLine": 93,
+        "startChar": 8,
+        "endLine": 93,
+        "endChar": 16
+      },
+      "revId": "75524d0bdecde78ca6caa6b1dc1ecb602e63f8ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
