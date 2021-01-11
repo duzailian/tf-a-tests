@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "e85f25a0_cefcca6e",
+        "filename": "spm/common/sp_helpers.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-11T16:20:51Z",
+      "side": 1,
+      "message": "SPs indeed can no longer access the physical counter (CNTPCT) although they can still access the virtual counter (CNTVCT) for which Hafnium leaves the offset to 0 for SPs. So eventually CNTVCT follows CNTPCT. This to say that we could improve sp_sleep to access the virtual counter and thus call sp_sleep(200) from cactus_main rather than defining an infinite loop helper.",
+      "parentUuid": "0c5759d6_04675e8c",
+      "revId": "ee014ce24a1a770d2e9d0eacf01839ec1b44f3d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "49b82a61_5934cef3",
         "filename": "tftf/tests/tests-spm.xml",
         "patchSetId": 1
