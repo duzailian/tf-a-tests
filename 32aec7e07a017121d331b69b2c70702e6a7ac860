@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d833eb7c_d8066cf2",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus-secondary.dts",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2021-01-11T21:39:24Z",
+      "side": 1,
+      "message": "You are right, we are not testing secondary \u0026 tertiary in current test. I kept it here just because i was enabling managed exit support for all cactus instances.\nBut i think i can remove it.",
+      "parentUuid": "856dde00_fb06a313",
+      "revId": "32aec7e07a017121d331b69b2c70702e6a7ac860",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8070f41c_dd5c79c0",
         "filename": "spm/cactus/plat/arm/fvp/fdts/cactus-tertiary.dts",
         "patchSetId": 2
