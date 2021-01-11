@@ -111,6 +111,30 @@
     },
     {
       "key": {
+        "uuid": "5ee3f971_0c14b1aa",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-11T17:28:38Z",
+      "side": 1,
+      "message": "Ok I saw the reason for the function in the next change.\nThere is an alternative to just set an irq_occurred flag from here.\nSuch flag (irq occurred / not occurred) would be passed as result into the direct message response.",
+      "parentUuid": "a75283e4_4ef8e4f7",
+      "range": {
+        "startLine": 188,
+        "startChar": 2,
+        "endLine": 188,
+        "endChar": 20
+      },
+      "revId": "75524d0bdecde78ca6caa6b1dc1ecb602e63f8ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "95ed9546_b0e58bc0",
         "filename": "spm/cactus/cactus_main.c",
         "patchSetId": 2
