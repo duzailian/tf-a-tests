@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "379b8ccc_f317ff41",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-12T15:06:01Z",
+      "side": 1,
+      "message": "I think it is better to move it to a dedicated function ffa_deadlock_test, same as you have done with memmory management test.",
+      "range": {
+        "startLine": 143,
+        "startChar": 3,
+        "endLine": 193,
+        "endChar": 4
+      },
+      "revId": "0d40012f0d1e30e68318baf90a16035b91465863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
