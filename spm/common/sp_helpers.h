@@ -66,7 +66,7 @@ void announce_test_start(const char *test_desc);
 void announce_test_end(const char *test_desc);
 
 /* Sleep for at least 'ms' milliseconds. */
-void sp_sleep(uint32_t ms);
+void sp_sleep(uint16_t ms);
 
 /*
  * Hypervisor Calls Wrappers
