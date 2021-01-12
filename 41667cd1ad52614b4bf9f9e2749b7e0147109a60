@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "55aa09ad_5b763b3a",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 15
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-12T15:07:59Z",
+      "side": 1,
+      "message": "Nit: perhaps it\u0027s better to move this to next commit (refactoring)",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 60
+      },
+      "revId": "41667cd1ad52614b4bf9f9e2749b7e0147109a60",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
