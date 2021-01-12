@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "512af1bd_403e6414",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-12T15:27:55Z",
+      "side": 1,
+      "message": "can this be handled in ffa_memory_management_test()?",
+      "range": {
+        "startLine": 105,
+        "startChar": 2,
+        "endLine": 184,
+        "endChar": 4
+      },
+      "revId": "08bd0c0a1f5a6f2f849e2c9adc88d90400824142",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
