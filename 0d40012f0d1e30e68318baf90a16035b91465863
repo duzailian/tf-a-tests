@@ -22,6 +22,30 @@
       "revId": "0d40012f0d1e30e68318baf90a16035b91465863",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52851027_b98ab38f",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-12T16:02:53Z",
+      "side": 1,
+      "message": "This concern have been noted, and raised by other reviewers.\nI have agreed to have this being address in a separate patch, that I\u0027m currently working on. \nI am trying to remove dependency to this switch case. Instead have a table that pairs the command ids with the respective handler. The message loop will loop over this table and call the respective handler. The intent is reduce the size of this handler, and reduce the \"burden\" of adding tests by making them more scalable. Following this approach, it should be possible to fix the handling of this command as well as the others that are looking \"bulky\".\n\nWould you be ok by accepting this change to come separately and approving this patch as is for the time being to speed up?",
+      "parentUuid": "379b8ccc_f317ff41",
+      "range": {
+        "startLine": 143,
+        "startChar": 3,
+        "endLine": 193,
+        "endChar": 4
+      },
+      "revId": "0d40012f0d1e30e68318baf90a16035b91465863",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
