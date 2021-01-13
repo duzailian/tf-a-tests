@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a5274fe0_6b015a56",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2021-01-13T10:15:48Z",
+      "side": 1,
+      "message": "framework (TFTF)",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63e6df9d_b8ff5b26",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2021-01-13T10:15:48Z",
+      "side": 1,
+      "message": "acknowledges",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ff235f2_da2be5b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2021-01-13T10:15:48Z",
+      "side": 1,
+      "message": "framework (TFTF)",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db641408_76cabe39",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2021-01-13T10:15:48Z",
+      "side": 1,
+      "message": "TFTF",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b4bc9bd_e839093a",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2021-01-13T10:15:48Z",
+      "side": 1,
+      "message": "2021?",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a35a5850_2eeab49f",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2021-01-13T10:15:48Z",
+      "side": 1,
+      "message": "sent from TFTF",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8385f4a7_de865f43",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2021-01-13T10:15:48Z",
+      "side": 1,
+      "message": "200U",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a98ef5a_1b7fa381",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_blocking_interrupt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2021-01-13T10:15:48Z",
+      "side": 1,
+      "message": "Is printing line number actually needed here?",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0e8451a_2801594a",
+        "filename": "tftf/tests/tests-spm.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2021-01-13T10:15:48Z",
+      "side": 1,
+      "message": "2021?",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a65fd9bc_2a21fdc8",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2021-01-13T10:15:48Z",
+      "side": 1,
+      "message": "2021?",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
