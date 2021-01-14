@@ -12,9 +12,9 @@
 #include <ffa_svc.h>
 #include <test_helpers.h>
 
-#define DIRECT_MSG_TEST_PATTERN1	(0xaaaa0000)
-#define DIRECT_MSG_TEST_PATTERN2	(0xbbbb0000)
-#define DIRECT_MSG_TEST_PATTERN3	(0xcccc0000)
+#define DIRECT_MSG_TEST_PATTERN1	U(0x0000aaaa)
+#define DIRECT_MSG_TEST_PATTERN2	U(0x0000bbbb)
+#define DIRECT_MSG_TEST_PATTERN3	U(0x0000cccc)
 
 static test_result_t send_receive_direct_msg(unsigned int sp_id,
 					     unsigned int test_pattern)
@@ -36,9 +36,9 @@ static test_result_t send_receive_direct_msg(unsigned int sp_id,
 
 	/*
 	 * Message loop in SP returns initial message with the running VM id
-	 * into the lower 16 bits of initial message.
+	 * into the upper 16 bits of initial message.
 	 */
-	if (ret_values.ret3 != (test_pattern | sp_id)) {
+	if (ret_values.ret3 != (test_pattern | (sp_id << 16))) {
 		return TEST_RESULT_FAIL;
 	}
 

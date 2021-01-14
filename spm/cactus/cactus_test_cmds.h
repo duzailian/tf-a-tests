@@ -19,8 +19,9 @@
 /**
  * Get command from struct smc_ret_values.
  */
-#define CACTUS_GET_CMD(smc_ret) smc_ret.ret3
-
+#define CACTUS_PACK_MSG(cmd, payload)	(uint32_t)((payload << 16) | cmd)
+#define CACTUS_GET_MSG_CMD(smc_ret)	(uint16_t)(smc_ret.ret3 & 0xFFFF)
+#define CACTUS_GET_MSG_PAYLOAD(smc_ret)	(uint16_t)((smc_ret.ret3 >> 16) & 0xFFFF)
 /**
  * Template for commands to be sent to CACTUS partitions over direct
  * messages interfaces.

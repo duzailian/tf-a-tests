@@ -45,6 +45,7 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 {
 	smc_ret_values ffa_ret;
 	uint32_t sp_response;
+	uint16_t cmd, payload;
 	ffa_vm_id_t source;
 
 	/*
@@ -80,13 +81,16 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 
 		PRINT_CMD(ffa_ret);
 
-		switch (CACTUS_GET_CMD(ffa_ret)) {
-		case FFA_MEM_SHARE_SMC32:
-		case FFA_MEM_LEND_SMC32:
-		case FFA_MEM_DONATE_SMC32:
+		cmd = CACTUS_GET_MSG_CMD(ffa_ret);
+		payload = CACTUS_GET_MSG_PAYLOAD(ffa_ret);
+
+		switch (cmd) {
+		case FFA_FNUM_MEM_SHARE:
+		case FFA_FNUM_MEM_LEND:
+		case FFA_FNUM_MEM_DONATE:
 			ffa_memory_management_test(
 					mb, vm_id, source,
-					CACTUS_GET_CMD(ffa_ret),
+					CACTUS_PACK_MSG(cmd, payload),
 					CACTUS_MEM_SEND_GET_HANDLE(ffa_ret));
 
 			/*
@@ -102,7 +106,7 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 			 * For the sake of testing, add the vm id to the
 			 * received message.
 			 */
-			sp_response = ffa_ret.ret3 | vm_id;
+			sp_response = CACTUS_PACK_MSG(cmd, vm_id);
 			VERBOSE("Replying with direct message response: %x\n", sp_response);
 			ffa_ret = ffa_msg_send_direct_resp(vm_id,
 							   HYP_ID,
