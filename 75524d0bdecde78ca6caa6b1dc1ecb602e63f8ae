@@ -273,6 +273,30 @@
     },
     {
       "key": {
+        "uuid": "736686f4_0b87c03b",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2021-01-15T10:38:17Z",
+      "side": 1,
+      "message": "Implemented a state machine for interrupt and managed its state in secure side but by the time response at https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/7790/3/spm/cactus/cactus_main.c#100 sent to Nwd, the test is already finished. So this response is send when Swd is scheduled next, by that time Nwd does not have context of this test, so i can\u0027t clearly figure out where we should capture this response in Nwd ?",
+      "parentUuid": "2492a02a_5eab6e15",
+      "range": {
+        "startLine": 188,
+        "startChar": 2,
+        "endLine": 188,
+        "endChar": 20
+      },
+      "revId": "75524d0bdecde78ca6caa6b1dc1ecb602e63f8ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "95ed9546_b0e58bc0",
         "filename": "spm/cactus/cactus_main.c",
         "patchSetId": 2
