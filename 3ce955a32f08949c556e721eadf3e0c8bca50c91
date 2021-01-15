@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "63b5f771_3c55fc31",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-15T11:51:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e6123ac_540871a4",
+      "range": {
+        "startLine": 11,
+        "startChar": 49,
+        "endLine": 11,
+        "endChar": 50
+      },
+      "revId": "3ce955a32f08949c556e721eadf3e0c8bca50c91",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f3d2362_52598853",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
         "patchSetId": 10
@@ -45,6 +69,30 @@
       "revId": "3ce955a32f08949c556e721eadf3e0c8bca50c91",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fbe009e_47619b22",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-15T11:51:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f3d2362_52598853",
+      "range": {
+        "startLine": 314,
+        "startChar": 66,
+        "endLine": 314,
+        "endChar": 75
+      },
+      "revId": "3ce955a32f08949c556e721eadf3e0c8bca50c91",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "289592a7_90107055",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-15T11:51:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c157024_6715d933",
+      "range": {
+        "startLine": 360,
+        "startChar": 37,
+        "endLine": 360,
+        "endChar": 50
+      },
+      "revId": "3ce955a32f08949c556e721eadf3e0c8bca50c91",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f6870948_db9d3d4b",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
         "patchSetId": 10
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "d6c31326_28e7d9b5",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-15T11:51:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f6870948_db9d3d4b",
+      "range": {
+        "startLine": 395,
+        "startChar": 48,
+        "endLine": 395,
+        "endChar": 49
+      },
+      "revId": "3ce955a32f08949c556e721eadf3e0c8bca50c91",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9c2ad72e_530485ae",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
         "patchSetId": 10
@@ -105,6 +201,30 @@
       "writtenOn": "2021-01-12T15:23:32Z",
       "side": 1,
       "message": "donation?",
+      "range": {
+        "startLine": 37,
+        "startChar": 3,
+        "endLine": 37,
+        "endChar": 9
+      },
+      "revId": "3ce955a32f08949c556e721eadf3e0c8bca50c91",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8897c638_664bfff3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-15T11:51:01Z",
+      "side": 1,
+      "message": "I\u0027d rather keep this as donate/lend/share to align with the name of the operations as listed in the spec. I changed this reference to \u0027memory donate operation\u0027.",
+      "parentUuid": "9c2ad72e_530485ae",
       "range": {
         "startLine": 37,
         "startChar": 3,
@@ -137,6 +257,30 @@
       "revId": "3ce955a32f08949c556e721eadf3e0c8bca50c91",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1da1109_94102529",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-15T11:51:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1e171a1_bd4fc0d5",
+      "range": {
+        "startLine": 42,
+        "startChar": 30,
+        "endLine": 42,
+        "endChar": 31
+      },
+      "revId": "3ce955a32f08949c556e721eadf3e0c8bca50c91",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
