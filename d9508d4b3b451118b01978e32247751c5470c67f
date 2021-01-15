@@ -22,6 +22,30 @@
       "revId": "d9508d4b3b451118b01978e32247751c5470c67f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "edb5e6c9_a117ba7e",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2021-01-15T11:06:43Z",
+      "side": 1,
+      "message": "yes, you are right. This response will be send when SWD is next scheduled after current test is already finished with success msg.",
+      "parentUuid": "cadf2fc0_5f2fef54",
+      "range": {
+        "startLine": 113,
+        "startChar": 2,
+        "endLine": 117,
+        "endChar": 56
+      },
+      "revId": "d9508d4b3b451118b01978e32247751c5470c67f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }

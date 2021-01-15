@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "1fe03208_2b22f9bd",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2021-01-15T11:06:43Z",
+      "side": 1,
+      "message": "Not major change in file so not mandatory.",
+      "parentUuid": "9b4bc9bd_e839093a",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a35a5850_2eeab49f",
         "filename": "include/runtime_services/ffa_helpers.h",
         "patchSetId": 3
@@ -101,6 +119,24 @@
       "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "031ea092_0c90401e",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2021-01-15T11:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a35a5850_2eeab49f",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -121,6 +157,24 @@
     },
     {
       "key": {
+        "uuid": "fc8c2569_8386ac13",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2021-01-15T11:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8385f4a7_de865f43",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a98ef5a_1b7fa381",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_blocking_interrupt.c",
         "patchSetId": 3
@@ -135,6 +189,24 @@
       "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0ad6d1a_5ce2e921",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_blocking_interrupt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2021-01-15T11:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a98ef5a_1b7fa381",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -155,6 +227,24 @@
     },
     {
       "key": {
+        "uuid": "ffc1bab3_fd74a682",
+        "filename": "tftf/tests/tests-spm.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2021-01-15T11:06:43Z",
+      "side": 1,
+      "message": "Not major change in file so not mandatory.",
+      "parentUuid": "e0e8451a_2801594a",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a65fd9bc_2a21fdc8",
         "filename": "tftf/tests/tests-spm.xml",
         "patchSetId": 3
@@ -166,6 +256,24 @@
       "writtenOn": "2021-01-13T10:15:48Z",
       "side": 1,
       "message": "2021?",
+      "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e18c28be_77c336c0",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2021-01-15T11:06:43Z",
+      "side": 1,
+      "message": "Not major change in file so not mandatory.",
+      "parentUuid": "a65fd9bc_2a21fdc8",
       "revId": "63bc826165a1db7d115f979456ad2c8ab9e9cb17",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
