@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "339a0457_2e4148af",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-19T10:05:44Z",
+      "side": 1,
+      "message": "This macro is being used in other tests that are not related with this deadlock test.\n\nIn this file in line 125, and also in following patch:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/7586/9/tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c#142\n\nIn addition, the macro is defined in test_helpers.h not ffa_helpers.h:\nhttps://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/include/common/test_helpers.h#n229\nAnother change might be needed in line 306 of the same file. \n\nAre you sure I should do the change in this file?",
+      "parentUuid": "11bff83d_5a68193b",
+      "range": {
+        "startLine": 156,
+        "startChar": 7,
+        "endLine": 156,
+        "endChar": 14
+      },
+      "revId": "41667cd1ad52614b4bf9f9e2749b7e0147109a60",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "55aa09ad_5b763b3a",
         "filename": "tftf/tests/tests-spm.xml",
         "patchSetId": 15
