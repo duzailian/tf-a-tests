@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "252d5198_0e1849a7",
+        "filename": "include/lib/extensions/amu_private.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2021-01-22T11:30:15Z",
+      "side": 1,
+      "message": "nit: 2017-2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "ec875f6886c0d6e3248fe6cd9059136e9ead1bbd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88d1e8da_d1e2c215",
+        "filename": "lib/extensions/amu/aarch32/amu.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2021-01-22T11:30:15Z",
+      "side": 1,
+      "message": "2018-2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "ec875f6886c0d6e3248fe6cd9059136e9ead1bbd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ce1747c4_48f213aa",
+        "filename": "lib/extensions/amu/aarch64/amu.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2021-01-22T11:30:15Z",
+      "side": 1,
+      "message": "2018-2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "ec875f6886c0d6e3248fe6cd9059136e9ead1bbd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "595cba33_03a7f15a",
+        "filename": "lib/extensions/amu/aarch64/amu.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2021-01-22T11:30:15Z",
+      "side": 1,
+      "message": "nit: \"must be\"?",
+      "range": {
+        "startLine": 44,
+        "startChar": 61,
+        "endLine": 44,
+        "endChar": 72
+      },
+      "revId": "ec875f6886c0d6e3248fe6cd9059136e9ead1bbd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
