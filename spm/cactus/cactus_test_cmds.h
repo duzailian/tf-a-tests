@@ -13,8 +13,9 @@
 /**
  * Success and error return to be sent over a msg response.
  */
-#define CACTUS_SUCCESS	 U(0)
-#define CACTUS_ERROR	 U(-1)
+#define CACTUS_SUCCESS		U(0)
+#define CACTUS_ERROR		U(-1)
+#define CACTUS_INVALID		U(-2)
 
 /**
  * Get command from struct smc_ret_values.
@@ -200,4 +201,38 @@ static inline uint32_t cactus_get_response(smc_ret_values ret)
 	return (uint32_t)ret.ret3;
 }
 
+/**
+ * Pairs a command id with a function call, to handle the command ID	.
+ */
+struct cactus_cmd_handler {
+	const uint64_t id;
+	uint32_t (*fn)(const smc_ret_values*, struct mailbox_buffers*);
+};
+
+/**
+ * Helper to create the name of a handler function.
+ */
+#define CACTUS_HANDLER_FN_NAME(name) cactus_##name##_handler
+
+/**
+ * Define handler's function signature.
+ */
+#define CACTUS_HANDLER_FN(name)						\
+	static uint32_t CACTUS_HANDLER_FN_NAME(name)(			\
+		const smc_ret_values *args, struct mailbox_buffers *mb)
+
+/**
+ * Helper to define Cactus command handler, and pair it with a command ID.
+ * It also creates a table with this information, to be traversed by
+ * 'cactus_handle_cmd' function.
+ */
+#define CACTUS_CMD_HANDLER(name, ID)					\
+	CACTUS_HANDLER_FN(name);					\
+	struct cactus_cmd_handler name __section(".cactus_handler") = {	\
+		.id = ID, .fn = CACTUS_HANDLER_FN_NAME(name),		\
+	};								\
+	CACTUS_HANDLER_FN(name)
+
+bool cactus_handle_cmd(smc_ret_values *cmd_args, smc_ret_values *ret,
+		       struct mailbox_buffers *mb);
 #endif

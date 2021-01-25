@@ -52,6 +52,10 @@ SECTIONS
         . = ALIGN(PAGE_SIZE);
         __DATA_START__ = .;
         *(.data*)
+        . = ALIGN(PAGE_SIZE);
+        cactus_cmd_handler_begin = .;
+        KEEP(*(.cactus_handler))
+        cactus_cmd_handler_end = .;
         . = NEXT(PAGE_SIZE);
         __DATA_END__ = .;
     }
