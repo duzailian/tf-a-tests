@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ded68c07_40efa1b6",
+        "filename": "spm/cactus/aarch64/cactus_entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-26T11:31:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b5b26f2_14b31a3e",
+      "revId": "299da4300b0789a8ce3ee9f83607d04a0e460f73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "75f93ee1_377f5028",
         "filename": "spm/cactus/cactus_ffa_tests.c",
         "patchSetId": 1
@@ -56,6 +74,30 @@
       "revId": "299da4300b0789a8ce3ee9f83607d04a0e460f73",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c887125_5ce9f45c",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-26T11:31:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24a257a0_fa317b76",
+      "range": {
+        "startLine": 63,
+        "startChar": 35,
+        "endLine": 63,
+        "endChar": 37
+      },
+      "revId": "299da4300b0789a8ce3ee9f83607d04a0e460f73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
