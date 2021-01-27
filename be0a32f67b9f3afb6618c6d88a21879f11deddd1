@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "49da4e56_7c4c67ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T18:33:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6969dfc_b70951c6",
+      "range": {
+        "startLine": 9,
+        "startChar": 70,
+        "endLine": 10,
+        "endChar": 6
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "38493eb0_02dc6ba7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T18:33:36Z",
+      "side": 1,
+      "message": "Changed everything to full names, thank you!",
+      "parentUuid": "9f308aca_1f6bb572",
+      "range": {
+        "startLine": 10,
+        "startChar": 26,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bc0cd116_bc5750b2",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -94,6 +142,54 @@
     },
     {
       "key": {
+        "uuid": "52b18710_944389dd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T18:33:36Z",
+      "side": 1,
+      "message": "Something went wrong in this sentence. Rephrased this.",
+      "parentUuid": "bc0cd116_bc5750b2",
+      "range": {
+        "startLine": 12,
+        "startChar": 74,
+        "endLine": 12,
+        "endChar": 78
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3c3cc3_f55cc10c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T18:33:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b00dcb8_2e7d4096",
+      "range": {
+        "startLine": 12,
+        "startChar": 23,
+        "endLine": 12,
+        "endChar": 26
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5813424e_43b7a0f2",
         "filename": "include/runtime_services/ffa_helpers.h",
         "patchSetId": 5
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "6b624924_7a9941fe",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T18:33:36Z",
+      "side": 1,
+      "message": "No particular reason, I guess it would make sense to change to uint8_t since this is the smallest granule for SIMD/SVE vectors. Will change.",
+      "parentUuid": "5813424e_43b7a0f2",
+      "range": {
+        "startLine": 80,
+        "startChar": 8,
+        "endLine": 80,
+        "endChar": 16
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "96269941_f2a17964",
         "filename": "spm/cactus/cactus_ffa_tests.c",
         "patchSetId": 5
@@ -137,6 +257,30 @@
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e1b4a76_9ea274d1",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T18:33:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96269941_f2a17964",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 1
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     },
     {
       "key": {
@@ -186,6 +330,54 @@
     },
     {
       "key": {
+        "uuid": "485fa95f_8856c413",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T18:33:36Z",
+      "side": 1,
+      "message": "sizeof(simd_vector_t) would give the desired size since it is effectively sizeof(uint8_t[N]). The problem with this kind of typedef is that \nsimd_vector_t a;\nsizeof(a) will give the size of pointer.",
+      "parentUuid": "13fd8ab5_2c43748c",
+      "range": {
+        "startLine": 65,
+        "startChar": 40,
+        "endLine": 65,
+        "endChar": 61
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bfb653cb_39c5e140",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T18:33:36Z",
+      "side": 1,
+      "message": "Yes, the only condition is that it has to be different from the one in the normal world. I was thinking of defining it in ffa_helpers.h, but deemed it unfitting. Will add a comment in the function doc.",
+      "parentUuid": "c39e138b_55b5b798",
+      "range": {
+        "startLine": 65,
+        "startChar": 28,
+        "endLine": 65,
+        "endChar": 38
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "82ab79a8_7d2a9637",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
         "patchSetId": 5
@@ -197,6 +389,30 @@
       "writtenOn": "2021-01-27T17:00:56Z",
       "side": 1,
       "message": "Is it guaranteed that v is always of size SIMD_NUM_VECTORS? Is there a way to assert that?\n\nIn another function, you passed the length to the function as well.",
+      "range": {
+        "startLine": 626,
+        "startChar": 35,
+        "endLine": 626,
+        "endChar": 51
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75aab65b_ea96ebf2",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 626,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T18:33:36Z",
+      "side": 1,
+      "message": "This is a good point. It is assumed that the size if always SIMD_NUM_VECTORS since the assembly function is assuming that.\nIt is not communicated well in the function though. Will address that.",
+      "parentUuid": "82ab79a8_7d2a9637",
       "range": {
         "startLine": 626,
         "startChar": 35,
@@ -232,6 +448,30 @@
     },
     {
       "key": {
+        "uuid": "b61b6818_4f51e37f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T18:33:36Z",
+      "side": 1,
+      "message": "I agree.",
+      "parentUuid": "764bbb78_3effaef0",
+      "range": {
+        "startLine": 17,
+        "startChar": 76,
+        "endLine": 17,
+        "endChar": 96
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3d93758d_5d9c56e6",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
         "patchSetId": 5
@@ -255,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "b6211ef1_c35f1664",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T18:33:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d93758d_5d9c56e6",
+      "range": {
+        "startLine": 30,
+        "startChar": 77,
+        "endLine": 30,
+        "endChar": 79
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfd91c94_367dc091",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
         "patchSetId": 5
@@ -275,6 +539,30 @@
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3cb3153e_92bbc2b7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T18:33:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfd91c94_367dc091",
+      "range": {
+        "startLine": 31,
+        "startChar": 7,
+        "endLine": 31,
+        "endChar": 10
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
     }
   ]
 }
