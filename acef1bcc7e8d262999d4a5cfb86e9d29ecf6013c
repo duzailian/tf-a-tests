@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "eb459c7d_5cc0d12f",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T11:44:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "daa84fb0_c0fe967e",
+      "range": {
+        "startLine": 287,
+        "startChar": 7,
+        "endLine": 287,
+        "endChar": 17
+      },
+      "revId": "acef1bcc7e8d262999d4a5cfb86e9d29ecf6013c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9c66180f_a4abf0c1",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
         "patchSetId": 4
@@ -178,6 +202,30 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "9c66180f_a4abf0c1",
+      "range": {
+        "startLine": 13,
+        "startChar": 55,
+        "endLine": 13,
+        "endChar": 56
+      },
+      "revId": "acef1bcc7e8d262999d4a5cfb86e9d29ecf6013c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d05eb233_8fe8cb35",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T11:44:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f53a7b3_22dd181b",
       "range": {
         "startLine": 13,
         "startChar": 55,
@@ -237,6 +285,30 @@
     },
     {
       "key": {
+        "uuid": "e549e1c9_3845a65a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T11:44:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1fce2477_5027f052",
+      "range": {
+        "startLine": 14,
+        "startChar": 3,
+        "endLine": 14,
+        "endChar": 9
+      },
+      "revId": "acef1bcc7e8d262999d4a5cfb86e9d29ecf6013c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e1cb5063_0886e069",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
         "patchSetId": 4
@@ -272,6 +344,30 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "e1cb5063_0886e069",
+      "range": {
+        "startLine": 22,
+        "startChar": 14,
+        "endLine": 22,
+        "endChar": 37
+      },
+      "revId": "acef1bcc7e8d262999d4a5cfb86e9d29ecf6013c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "efcdf93b_91388b57",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T11:44:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53eebeb7_dec602b5",
       "range": {
         "startLine": 22,
         "startChar": 14,
@@ -366,6 +462,30 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "13d64606_40f84d93",
+      "range": {
+        "startLine": 37,
+        "startChar": 1,
+        "endLine": 38,
+        "endChar": 55
+      },
+      "revId": "acef1bcc7e8d262999d4a5cfb86e9d29ecf6013c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4264e876_b1d9f9e2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-01-27T11:44:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "222d7983_0aac14f9",
       "range": {
         "startLine": 37,
         "startChar": 1,
