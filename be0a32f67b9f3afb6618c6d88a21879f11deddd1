@@ -1,0 +1,280 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a6969dfc_b70951c6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-27T17:00:56Z",
+      "side": 1,
+      "message": "... \"in the secure world\".\n\nalso notice that here you didn\u0027t recur to the acronym, so not consistent.",
+      "range": {
+        "startLine": 9,
+        "startChar": 70,
+        "endLine": 10,
+        "endChar": 6
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f308aca_1f6bb572",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-27T17:00:56Z",
+      "side": 1,
+      "message": "These acronyms you are using, please make sure you remain consist with way these show in the arm documentation/commits.\nIn FF-A spec this (I think) shows as normal world, no acronym used. \nHowever I did look for how it shows in commits from previous contributions and this shows with a \u0027d\u0027 in the end, i.e. NWd.\nI think would be better to use either one of \u0027NWd\u0027 or \"normal world\".",
+      "range": {
+        "startLine": 10,
+        "startChar": 26,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc0cd116_bc5750b2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-27T17:00:56Z",
+      "side": 1,
+      "message": "NWd ? or are referring to Non-Secure buffers?\n\nI haven\u0027t seen n-SW be used before.",
+      "range": {
+        "startLine": 12,
+        "startChar": 74,
+        "endLine": 12,
+        "endChar": 78
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b00dcb8_2e7d4096",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-27T17:00:56Z",
+      "side": 1,
+      "message": "same as before. SWd or Secure World.",
+      "range": {
+        "startLine": 12,
+        "startChar": 23,
+        "endLine": 12,
+        "endChar": 26
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5813424e_43b7a0f2",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-27T17:00:56Z",
+      "side": 1,
+      "message": "Why did you use uint32_t instead of uint8_t?",
+      "range": {
+        "startLine": 80,
+        "startChar": 8,
+        "endLine": 80,
+        "endChar": 16
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96269941_f2a17964",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-27T17:00:56Z",
+      "side": 1,
+      "message": "Nit: Add doc comment",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 1
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13fd8ab5_2c43748c",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-27T17:00:56Z",
+      "side": 1,
+      "message": "is this giving the right size?\nMy understanding is that simd_vector_t in a typedef of an array. This hides that this type is an array. I would expect this to be giving you the size of a pointer, and not the size of the array.\n\nQuickly browsed the internet and found a few resources that described this case the same way I described above.\n\nJust bringing this up, to be sure it is giving you the size you want...",
+      "range": {
+        "startLine": 65,
+        "startChar": 40,
+        "endLine": 65,
+        "endChar": 61
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c39e138b_55b5b798",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-27T17:00:56Z",
+      "side": 1,
+      "message": "Is this is just a dummy value? for demonstration purposes? \nWould be ok to add that in a comment?",
+      "range": {
+        "startLine": 65,
+        "startChar": 28,
+        "endLine": 65,
+        "endChar": 38
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "82ab79a8_7d2a9637",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 626,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-27T17:00:56Z",
+      "side": 1,
+      "message": "Is it guaranteed that v is always of size SIMD_NUM_VECTORS? Is there a way to assert that?\n\nIn another function, you passed the length to the function as well.",
+      "range": {
+        "startLine": 626,
+        "startChar": 35,
+        "endLine": 626,
+        "endChar": 51
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "764bbb78_3effaef0",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-27T17:00:56Z",
+      "side": 1,
+      "message": "here you are passing the length. I have seen it somewhere else where you are using hardcoded SIMD_NUM_VECTORS in the function although you are passing simd_vector_t as argument.\nMight be worth making this approach consitent between function calls.",
+      "range": {
+        "startLine": 17,
+        "startChar": 76,
+        "endLine": 17,
+        "endChar": 96
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d93758d_5d9c56e6",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-27T17:00:56Z",
+      "side": 1,
+      "message": "same comment as in commit msg. \n\nHere is probably worth looking at how this is referred in the code base. I think SW is generally used for Software. Secure World -\u003e SWd",
+      "range": {
+        "startLine": 30,
+        "startChar": 77,
+        "endLine": 30,
+        "endChar": 79
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bfd91c94_367dc091",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-27T17:00:56Z",
+      "side": 1,
+      "message": "NWd",
+      "range": {
+        "startLine": 31,
+        "startChar": 7,
+        "endLine": 31,
+        "endChar": 10
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
