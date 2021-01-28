@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "ad5c188d_dc187710",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-28T10:45:08Z",
+      "side": 1,
+      "message": "This change also affects Cactus target. You can split this in two commits, one per target, if you think it makes sense...\nElse, change from tftf to SPM.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "67b0e294_1d7d42bb",
         "filename": "include/runtime_services/ffa_helpers.h",
         "patchSetId": 6
@@ -47,6 +70,29 @@
       "writtenOn": "2021-01-28T08:24:03Z",
       "side": 1,
       "message": "possible to re-use defines from include/lib/aarch64/arch.h\n\ne.g. CPACR_EL1_FPEN(CPACR_EL1_FP_TRAP_NONE)",
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8f721cd_58dae47d",
+        "filename": "spm/cactus/cactus_test_cmds.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-28T10:45:08Z",
+      "side": 1,
+      "message": "this is specifically to fill the SIMD vector with dummy values for validation of SIMD registers context save/restore.\n\nI think it is worth making the comment a bit more specific.",
+      "range": {
+        "startLine": 178,
+        "startChar": 22,
+        "endLine": 178,
+        "endChar": 46
+      },
       "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
@@ -87,6 +133,75 @@
       "writtenOn": "2021-01-28T08:24:03Z",
       "side": 1,
       "message": "Are those helpers belonging to FF-A as they\u0027re more around Arm arch cpu feature?",
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f4aface_c0774cc4",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-28T10:45:08Z",
+      "side": 1,
+      "message": "I have seen comments saying this is may not be ffa related. if that is the case, all references to ffa in the function\u0027s name should be removed to be more correct.",
+      "range": {
+        "startLine": 36,
+        "startChar": 19,
+        "endLine": 36,
+        "endChar": 22
+      },
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "38a0166b_2ea8303f",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-28T10:45:08Z",
+      "side": 1,
+      "message": "I\u0027ve seen some comments about this not being FF-A related. If that is the case this label needs to be revised as well.",
+      "range": {
+        "startLine": 69,
+        "startChar": 19,
+        "endLine": 69,
+        "endChar": 23
+      },
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c51a3308_70da2a96",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-01-28T10:45:08Z",
+      "side": 1,
+      "message": "Something like below might be more accurate.\n\"Check to SIMD registers context save/context restore\"",
+      "range": {
+        "startLine": 70,
+        "startChar": 27,
+        "endLine": 70,
+        "endChar": 61
+      },
       "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
