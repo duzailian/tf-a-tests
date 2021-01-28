@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "37629635_ecfea2cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-28T08:24:03Z",
+      "side": 1,
+      "message": "nit: can you wrap the commit message body to 72 chars max.?",
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67b0e294_1d7d42bb",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-28T08:24:03Z",
+      "side": 1,
+      "message": "To relay an earlier comment it looks those changes are more related to Arm arch CPU than FF-A strictly speaking, so we may consider moving to more generic headers.",
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37aed723_2d7b968a",
+        "filename": "spm/cactus/aarch64/cactus_entrypoint.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-28T08:24:03Z",
+      "side": 1,
+      "message": "possible to re-use defines from include/lib/aarch64/arch.h\n\ne.g. CPACR_EL1_FPEN(CPACR_EL1_FP_TRAP_NONE)",
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c1d5b1a_2b278fd2",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-28T08:24:03Z",
+      "side": 1,
+      "message": "this might be moved to move generic/top level TFTF headers",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 23
+      },
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c7ce99c3_aa730af4",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-28T08:24:03Z",
+      "side": 1,
+      "message": "Are those helpers belonging to FF-A as they\u0027re more around Arm arch cpu feature?",
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}

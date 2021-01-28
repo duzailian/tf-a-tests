@@ -237,6 +237,30 @@
     },
     {
       "key": {
+        "uuid": "40581691_ae23b685",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-28T08:24:03Z",
+      "side": 1,
+      "message": "And why not uint128_t which exactly maps one SIMD vector length ;) ?\nMoving forward, when further scaling to SVE, remind an SVE vector length is a multiple of 128 bits...",
+      "parentUuid": "6b624924_7a9941fe",
+      "range": {
+        "startLine": 80,
+        "startChar": 8,
+        "endLine": 80,
+        "endChar": 16
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "96269941_f2a17964",
         "filename": "spm/cactus/cactus_ffa_tests.c",
         "patchSetId": 5
@@ -460,6 +484,30 @@
       "side": 1,
       "message": "I agree.",
       "parentUuid": "764bbb78_3effaef0",
+      "range": {
+        "startLine": 17,
+        "startChar": 76,
+        "endLine": 17,
+        "endChar": 96
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a19cdd1_64f4d4b9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-01-28T08:24:03Z",
+      "side": 1,
+      "message": "Reminder, the intent of passing the length is to make the function scalable to larger vector lengths (for later SVE support...)",
+      "parentUuid": "b61b6818_4f51e37f",
       "range": {
         "startLine": 17,
         "startChar": 76,
