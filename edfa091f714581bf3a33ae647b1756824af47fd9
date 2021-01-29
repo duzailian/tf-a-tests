@@ -22,6 +22,30 @@
       "revId": "edfa091f714581bf3a33ae647b1756824af47fd9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8d24f82_78882173",
+        "filename": "tftf/tests/extensions/amu/test_amu.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000340
+      },
+      "writtenOn": "2021-01-29T23:12:41Z",
+      "side": 1,
+      "message": "The original function tested the save/restore of AMU counter values.  This function builds on that by testing the save/restore of the AMU counter offset values as well.\n\nIn my opinion, these are related enough to put them in one function, but I will make the new test it\u0027s own function if there is a consensus that that is better.",
+      "parentUuid": "a29d2369_8e450542",
+      "range": {
+        "startLine": 167,
+        "startChar": 1,
+        "endLine": 172,
+        "endChar": 4
+      },
+      "revId": "edfa091f714581bf3a33ae647b1756824af47fd9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
