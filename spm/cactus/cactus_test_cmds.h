@@ -16,6 +16,7 @@
 #define CACTUS_SUCCESS		U(0)
 #define CACTUS_ERROR		U(-1)
 #define CACTUS_INVALID		U(-2)
+#define CACTUS_UNHANDLED	U(-3)
 
 /**
  * Get command from struct smc_ret_values.
