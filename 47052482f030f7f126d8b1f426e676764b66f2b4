@@ -22,6 +22,30 @@
       "revId": "47052482f030f7f126d8b1f426e676764b66f2b4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae9266df_414efd75",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-02-04T19:29:54Z",
+      "side": 1,
+      "message": "Might have found the answers in other reviews but i\u0027ll let you answer any way. it seems like we have a problem where when a secondary PE is booted, we need a VCPU to be picked to run, so that it can enter the message loop to wait which can then go to SPMD and back to normal world. Without that, seems like we will have to invent a way to suspend the secondary PE in the SPMC...is that right?",
+      "parentUuid": "ebfa680b_7d4a208e",
+      "range": {
+        "startLine": 11,
+        "startChar": 50,
+        "endLine": 13,
+        "endChar": 69
+      },
+      "revId": "47052482f030f7f126d8b1f426e676764b66f2b4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
     }
   ]
 }
