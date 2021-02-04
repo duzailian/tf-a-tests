@@ -43,6 +43,25 @@ static inline smc_ret_values cactus_send_cmd(
 		smc_ret.ret6, smc_ret.ret7)
 
 /**
+ * Basic test command for direct message in coming from NWd.
+ * The response will be the "payload | receiver FF-A id".
+ *
+ * The id is the hex representation of the string 'dirmsg'.
+ */
+#define CACTUS_DIR_MSG_TEST_CMD U(0x6469726d7367)
+
+static inline uint32_t cactus_dir_msg_test_payload(smc_ret_values ret) {
+	return (uint32_t)ret.ret4;
+}
+
+static inline smc_ret_values cactus_dir_msg_test_send_cmd(
+	ffa_vm_id_t source, ffa_vm_id_t receiver, uint32_t payload)
+{
+	return cactus_send_cmd(source, receiver, CACTUS_DIR_MSG_TEST_CMD,
+			       payload, 0, 0, 0);
+}
+
+/**
  * With this test command the sender transmits a 64-bit value that it then
  * expects to receive on the respective command response.
  *
