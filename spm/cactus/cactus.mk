@@ -46,6 +46,7 @@ CACTUS_SOURCES	+=					\
 	tftf/framework/debug.c				\
 	tftf/framework/${ARCH}/asm_debug.S		\
 	tftf/tests/runtime_services/secure_service/ffa_helpers.c \
+	tftf/tests/runtime_services/secure_service/spm_common.c	\
 	tftf/framework/${ARCH}/exceptions.S		\
 	tftf/framework/${ARCH}/exception_report.c
 
