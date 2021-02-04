@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ebfa680b_7d4a208e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-02-04T18:59:14Z",
+      "side": 1,
+      "message": "not sure why this is the case. WHy is the first SP special? WHy is the first SP\u0027s secondary cold path run on a PSCI_CPU_ON? Should that also be run only on ffa_run?",
+      "range": {
+        "startLine": 11,
+        "startChar": 50,
+        "endLine": 13,
+        "endChar": 69
+      },
+      "revId": "47052482f030f7f126d8b1f426e676764b66f2b4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
+      "unresolved": true
+    }
+  ]
+}
