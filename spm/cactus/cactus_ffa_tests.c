@@ -1,16 +1,17 @@
 /*
- * Copyright (c) 2018-2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2021, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
 #include <assert.h>
 #include <debug.h>
 #include <errno.h>
-#include <cactus_platform_def.h>
+
 #include <cactus_def.h>
+#include <cactus_platform_def.h>
 #include <ffa_endpoints.h>
-#include <ffa_helpers.h>
 #include <sp_helpers.h>
+#include <spm_common.h>
 
 #include <lib/libc/string.h>
 #include <lib/xlat_tables/xlat_tables_v2.h>
