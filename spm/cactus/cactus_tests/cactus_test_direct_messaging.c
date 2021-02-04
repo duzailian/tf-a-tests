@@ -8,6 +8,21 @@
 #include <debug.h>
 #include <ffa_helpers.h>
 
+CACTUS_CMD_HANDLER(dir_msg_test, CACTUS_DIR_MSG_TEST_CMD)
+{
+	/*
+	 * For the sake of testing, add the vm id to the
+	 * received message.
+	 */
+	uint32_t sp_response = cactus_dir_msg_test_payload(*args) |
+			       ffa_dir_msg_dest(*args);
+
+	VERBOSE("Replying with direct message response: %x\n", sp_response);
+	return cactus_success_resp(ffa_dir_msg_dest(*args),
+				   ffa_dir_msg_source(*args),
+				   sp_response);
+}
+
 CACTUS_CMD_HANDLER(echo_cmd, CACTUS_ECHO_CMD)
 {
 	uint64_t echo_val = cactus_echo_get_val(*args);
