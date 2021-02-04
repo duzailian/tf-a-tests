@@ -32,7 +32,7 @@ static test_result_t send_receive_direct_msg(unsigned int sp_id,
 	smc_ret_values ret_values;
 
 	/* Send a message to SP through direct messaging */
-	ret_values = ffa_msg_send_direct_req(HYP_ID, sp_id, test_pattern);
+	ret_values = cactus_dir_msg_test_send_cmd(HYP_ID, sp_id, test_pattern);
 
 	/*
 	 * Return responses may be FFA_MSG_SEND_DIRECT_RESP or FFA_INTERRUPT,
@@ -48,7 +48,7 @@ static test_result_t send_receive_direct_msg(unsigned int sp_id,
 	 * Message loop in SP returns initial message with the running VM id
 	 * into the lower 16 bits of initial message.
 	 */
-	if (ret_values.ret3 != (test_pattern | sp_id)) {
+	if (cactus_dir_msg_test_payload(ret_values) != (test_pattern | sp_id)) {
 		return TEST_RESULT_FAIL;
 	}
 
