@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "bbfb6ffb_10fdd2e5",
         "filename": "spm/cactus/cactus_main.c",
@@ -20,10 +21,10 @@
         "endChar": 13
       },
       "revId": "eefe806b783c960afe443020cf7c3bd3aae32c80",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "407e6487_66cd2c12",
         "filename": "spm/cactus/cactus_test_cmds.h",
@@ -43,10 +44,10 @@
         "endChar": 9
       },
       "revId": "eefe806b783c960afe443020cf7c3bd3aae32c80",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "2823fd90_b62e21e7",
         "filename": "spm/cactus/cactus_test_cmds.h",
@@ -67,10 +68,10 @@
         "endChar": 9
       },
       "revId": "eefe806b783c960afe443020cf7c3bd3aae32c80",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": false
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "7044fefa_19ecad92",
         "filename": "spm/cactus/cactus_test_cmds.h",
@@ -90,10 +91,10 @@
         "endChar": 25
       },
       "revId": "eefe806b783c960afe443020cf7c3bd3aae32c80",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "5a378311_c233b3ba",
         "filename": "spm/cactus/cactus_test_cmds.h",
@@ -114,8 +115,31 @@
         "endChar": 25
       },
       "revId": "eefe806b783c960afe443020cf7c3bd3aae32c80",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7af76d4e_f74bbeae",
+        "filename": "spm/cactus/cactus_test_cmds.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T09:21:37Z",
+      "side": 1,
+      "message": "Got it, thatnk you",
+      "parentUuid": "5a378311_c233b3ba",
+      "range": {
+        "startLine": 231,
+        "startChar": 0,
+        "endLine": 231,
+        "endChar": 25
+      },
+      "revId": "eefe806b783c960afe443020cf7c3bd3aae32c80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
