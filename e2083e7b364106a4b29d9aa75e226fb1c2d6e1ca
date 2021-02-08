@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "54709b75_01f1bcee",
         "filename": "/COMMIT_MSG",
@@ -20,10 +21,34 @@
         "endChar": 31
       },
       "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f65dc17_10b9fba2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T12:19:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54709b75_01f1bcee",
+      "range": {
+        "startLine": 7,
+        "startChar": 22,
+        "endLine": 7,
+        "endChar": 31
+      },
+      "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "a2d0776e_3185b0ae",
         "filename": "/COMMIT_MSG",
@@ -43,10 +68,10 @@
         "endChar": 43
       },
       "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "4b15c07f_87b51ffb",
         "filename": "/COMMIT_MSG",
@@ -66,10 +91,58 @@
         "endChar": 50
       },
       "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3aaba55_80bf5741",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T12:19:43Z",
+      "side": 1,
+      "message": "Thank you!\nDone",
+      "parentUuid": "a2d0776e_3185b0ae",
+      "range": {
+        "startLine": 9,
+        "startChar": 17,
+        "endLine": 9,
+        "endChar": 43
+      },
+      "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60ab816b_fa022706",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T12:19:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b15c07f_87b51ffb",
+      "range": {
+        "startLine": 9,
+        "startChar": 47,
+        "endLine": 9,
+        "endChar": 50
+      },
+      "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "7a4db9b8_f758c17f",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
@@ -83,10 +156,28 @@
       "side": 1,
       "message": "Nit: remove empty line",
       "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ce78c6b_4e6f2ef0",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T12:19:43Z",
+      "side": 1,
+      "message": "I am referring to the following code guideline on separating includes: https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#include-statement-ordering\nThe difference between *project* and *platform\" is a bit vague in my opinion, but I think we can separate system includes.",
+      "parentUuid": "7a4db9b8_f758c17f",
+      "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "2c148a60_5f42635a",
         "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
@@ -106,10 +197,34 @@
         "endChar": 3
       },
       "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "09683d73_928d8cb8",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T12:19:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c148a60_5f42635a",
+      "range": {
+        "startLine": 29,
+        "startChar": 1,
+        "endLine": 29,
+        "endChar": 3
+      },
+      "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "57ce9522_ea1102fd",
         "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
@@ -129,10 +244,34 @@
         "endChar": 3
       },
       "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "513636e4_a3374a7a",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T12:19:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57ce9522_ea1102fd",
+      "range": {
+        "startLine": 41,
+        "startChar": 1,
+        "endLine": 41,
+        "endChar": 3
+      },
+      "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "55e03f7a_80d347c3",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
@@ -146,10 +285,10 @@
       "side": 1,
       "message": "NIT: remove empty line",
       "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "80983c4e_2e2e593f",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_features.c",
@@ -169,10 +308,34 @@
         "endChar": 2
       },
       "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3da3825_f0b1c7b1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_features.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T12:19:43Z",
+      "side": 1,
+      "message": "Thanks for spotting! Missed this.",
+      "parentUuid": "80983c4e_2e2e593f",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 2
+      },
+      "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "ded0c338_a6fe367e",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
@@ -186,10 +349,10 @@
       "side": 1,
       "message": "nit: remove empty line",
       "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "dff67342_2f8a7585",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
@@ -203,8 +366,7 @@
       "side": 1,
       "message": "Nit: Remove newline",
       "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
