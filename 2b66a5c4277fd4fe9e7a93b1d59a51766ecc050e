@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "37629635_ecfea2cf",
         "filename": "/COMMIT_MSG",
@@ -14,10 +15,28 @@
       "side": 1,
       "message": "nit: can you wrap the commit message body to 72 chars max.?",
       "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e35a801_cd6d514e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T15:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37629635_ecfea2cf",
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "ad5c188d_dc187710",
         "filename": "/COMMIT_MSG",
@@ -37,10 +56,34 @@
         "endChar": 4
       },
       "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6655996_21c23fb6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T15:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad5c188d_dc187710",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "67b0e294_1d7d42bb",
         "filename": "include/runtime_services/ffa_helpers.h",
@@ -54,10 +97,28 @@
       "side": 1,
       "message": "To relay an earlier comment it looks those changes are more related to Arm arch CPU than FF-A strictly speaking, so we may consider moving to more generic headers.",
       "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c79710c_8c82b3ed",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T15:30:56Z",
+      "side": 1,
+      "message": "Done. Moved to new spm_common file",
+      "parentUuid": "67b0e294_1d7d42bb",
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "37aed723_2d7b968a",
         "filename": "spm/cactus/aarch64/cactus_entrypoint.S",
@@ -71,10 +132,28 @@
       "side": 1,
       "message": "possible to re-use defines from include/lib/aarch64/arch.h\n\ne.g. CPACR_EL1_FPEN(CPACR_EL1_FP_TRAP_NONE)",
       "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5a42578_afe6c5b4",
+        "filename": "spm/cactus/aarch64/cactus_entrypoint.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T15:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37aed723_2d7b968a",
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "d8f721cd_58dae47d",
         "filename": "spm/cactus/cactus_test_cmds.h",
@@ -94,10 +173,34 @@
         "endChar": 46
       },
       "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "44e6e857_b7b2e204",
+        "filename": "spm/cactus/cactus_test_cmds.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T15:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8f721cd_58dae47d",
+      "range": {
+        "startLine": 178,
+        "startChar": 22,
+        "endLine": 178,
+        "endChar": 46
+      },
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "6c1d5b1a_2b278fd2",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
@@ -117,10 +220,34 @@
         "endChar": 23
       },
       "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e61a7873_aa0749e2",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T15:30:56Z",
+      "side": 1,
+      "message": "Moved to spm_common.",
+      "parentUuid": "6c1d5b1a_2b278fd2",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 23
+      },
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "c7ce99c3_aa730af4",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
@@ -134,10 +261,28 @@
       "side": 1,
       "message": "Are those helpers belonging to FF-A as they\u0027re more around Arm arch cpu feature?",
       "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "26ee9a6b_c88a9f91",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 649,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T15:30:56Z",
+      "side": 1,
+      "message": "They do not belong to FF-A indeed, but I don\u0027t think they belong to arch cpu related file, since they are for testing purposes.\nMoved to spm_common",
+      "parentUuid": "c7ce99c3_aa730af4",
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "3f4aface_c0774cc4",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
@@ -157,10 +302,34 @@
         "endChar": 22
       },
       "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6cb988de_a4efebbb",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T15:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f4aface_c0774cc4",
+      "range": {
+        "startLine": 36,
+        "startChar": 19,
+        "endLine": 36,
+        "endChar": 22
+      },
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "38a0166b_2ea8303f",
         "filename": "tftf/tests/tests-spm.xml",
@@ -180,10 +349,34 @@
         "endChar": 23
       },
       "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f6a0f3e_c5115efa",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T15:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "38a0166b_2ea8303f",
+      "range": {
+        "startLine": 69,
+        "startChar": 19,
+        "endLine": 69,
+        "endChar": 23
+      },
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "c51a3308_70da2a96",
         "filename": "tftf/tests/tests-spm.xml",
@@ -203,8 +396,31 @@
         "endChar": 61
       },
       "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81b4a535_79321184",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T15:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c51a3308_70da2a96",
+      "range": {
+        "startLine": 70,
+        "startChar": 27,
+        "endLine": 70,
+        "endChar": 61
+      },
+      "revId": "2b66a5c4277fd4fe9e7a93b1d59a51766ecc050e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }

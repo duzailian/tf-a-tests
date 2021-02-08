@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "a6969dfc_b70951c6",
         "filename": "/COMMIT_MSG",
@@ -20,10 +21,10 @@
         "endChar": 6
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "9f308aca_1f6bb572",
         "filename": "/COMMIT_MSG",
@@ -43,10 +44,10 @@
         "endChar": 28
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "49da4e56_7c4c67ae",
         "filename": "/COMMIT_MSG",
@@ -67,10 +68,10 @@
         "endChar": 6
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": false
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "38493eb0_02dc6ba7",
         "filename": "/COMMIT_MSG",
@@ -91,10 +92,10 @@
         "endChar": 28
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": false
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "bc0cd116_bc5750b2",
         "filename": "/COMMIT_MSG",
@@ -114,10 +115,10 @@
         "endChar": 78
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "1b00dcb8_2e7d4096",
         "filename": "/COMMIT_MSG",
@@ -137,10 +138,10 @@
         "endChar": 26
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "52b18710_944389dd",
         "filename": "/COMMIT_MSG",
@@ -161,10 +162,10 @@
         "endChar": 78
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": false
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "9a3c3cc3_f55cc10c",
         "filename": "/COMMIT_MSG",
@@ -185,10 +186,10 @@
         "endChar": 26
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": false
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "5813424e_43b7a0f2",
         "filename": "include/runtime_services/ffa_helpers.h",
@@ -208,10 +209,10 @@
         "endChar": 16
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "6b624924_7a9941fe",
         "filename": "include/runtime_services/ffa_helpers.h",
@@ -232,10 +233,10 @@
         "endChar": 16
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": false
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "40581691_ae23b685",
         "filename": "include/runtime_services/ffa_helpers.h",
@@ -256,10 +257,34 @@
         "endChar": 16
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": false
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "13e60e5c_491c31ed",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T15:30:56Z",
+      "side": 1,
+      "message": "An original intent was not to have problems with ARCH\u003daarch32. But this whole story is about aarch64, so it has to be conditional anyways.\nChanging back to uint128_t",
+      "parentUuid": "40581691_ae23b685",
+      "range": {
+        "startLine": 80,
+        "startChar": 8,
+        "endLine": 80,
+        "endChar": 16
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "96269941_f2a17964",
         "filename": "spm/cactus/cactus_ffa_tests.c",
@@ -279,10 +304,10 @@
         "endChar": 1
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "5e1b4a76_9ea274d1",
         "filename": "spm/cactus/cactus_ffa_tests.c",
@@ -303,10 +328,10 @@
         "endChar": 1
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": false
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "13fd8ab5_2c43748c",
         "filename": "spm/cactus/cactus_ffa_tests.c",
@@ -326,10 +351,10 @@
         "endChar": 61
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "c39e138b_55b5b798",
         "filename": "spm/cactus/cactus_ffa_tests.c",
@@ -349,10 +374,10 @@
         "endChar": 38
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "485fa95f_8856c413",
         "filename": "spm/cactus/cactus_ffa_tests.c",
@@ -373,10 +398,10 @@
         "endChar": 61
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "bfb653cb_39c5e140",
         "filename": "spm/cactus/cactus_ffa_tests.c",
@@ -397,10 +422,10 @@
         "endChar": 38
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "82ab79a8_7d2a9637",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
@@ -420,10 +445,10 @@
         "endChar": 51
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "75aab65b_ea96ebf2",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
@@ -444,10 +469,10 @@
         "endChar": 51
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "764bbb78_3effaef0",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
@@ -467,10 +492,10 @@
         "endChar": 96
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "b61b6818_4f51e37f",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
@@ -491,10 +516,10 @@
         "endChar": 96
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "1a19cdd1_64f4d4b9",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
@@ -515,10 +540,34 @@
         "endChar": 96
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "0438a249_27a5546e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-08T15:30:56Z",
+      "side": 1,
+      "message": "The number of vectors (SIMD_NUM_VECTORS) is 32 for both SIMD and SVE.\nIn transition to SVE single vector size will be different indeed, but that is controlled by SIMD_VECTOR_LEN_BYTES.",
+      "parentUuid": "1a19cdd1_64f4d4b9",
+      "range": {
+        "startLine": 17,
+        "startChar": 76,
+        "endLine": 17,
+        "endChar": 96
+      },
+      "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "3d93758d_5d9c56e6",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
@@ -538,10 +587,10 @@
         "endChar": 79
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "b6211ef1_c35f1664",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
@@ -562,10 +611,10 @@
         "endChar": 79
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": false
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "bfd91c94_367dc091",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
@@ -585,10 +634,10 @@
         "endChar": 10
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "3cb3153e_92bbc2b7",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_cpu_features.c",
@@ -609,8 +658,7 @@
         "endChar": 10
       },
       "revId": "be0a32f67b9f3afb6618c6d88a21879f11deddd1",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": false
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
