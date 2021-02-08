@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "ebfa680b_7d4a208e",
         "filename": "/COMMIT_MSG",
@@ -20,10 +21,10 @@
         "endChar": 69
       },
       "revId": "47052482f030f7f126d8b1f426e676764b66f2b4",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "ae9266df_414efd75",
         "filename": "/COMMIT_MSG",
@@ -44,8 +45,31 @@
         "endChar": 69
       },
       "revId": "47052482f030f7f126d8b1f426e676764b66f2b4",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8866ade_18b263ed",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-02-08T17:35:33Z",
+      "side": 1,
+      "message": "Hope comment here provided enough clarification:\nhttps://review.trustedfirmware.org/c/hafnium/hafnium/+/6009/comment/fa9b2037_b23bdb3b/\n\nYes for each SP, we need each EC (beyond the first EC which is run at boot time) to run through the init sequence and reach the message loop. An EC cannot accept an FF-A message if it has not exited once through FFA_MSG_WAIT.",
+      "parentUuid": "ae9266df_414efd75",
+      "range": {
+        "startLine": 11,
+        "startChar": 50,
+        "endLine": 13,
+        "endChar": 69
+      },
+      "revId": "47052482f030f7f126d8b1f426e676764b66f2b4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
