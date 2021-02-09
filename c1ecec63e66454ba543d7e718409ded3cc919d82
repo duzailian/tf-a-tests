@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "267cfc5d_4eefd80f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-09T10:58:50Z",
+      "side": 1,
+      "message": "Thanks for noticing, fixed.",
+      "parentUuid": "6521db2b_82e3780e",
+      "revId": "c1ecec63e66454ba543d7e718409ded3cc919d82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc7cc28c_c77d2893",
@@ -48,6 +66,30 @@
       "writtenOn": "2021-02-09T10:37:16Z",
       "side": 1,
       "message": "NIT: 2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "c1ecec63e66454ba543d7e718409ded3cc919d82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aca94c09_87a4fced",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-09T10:58:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc7cc28c_c77d2893",
       "range": {
         "startLine": 2,
         "startChar": 21,
@@ -81,6 +123,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2959c6a_d2374094",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-09T10:58:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f665a7ce_d72bcbe9",
+      "range": {
+        "startLine": 8,
+        "startChar": 22,
+        "endLine": 8,
+        "endChar": 23
+      },
+      "revId": "c1ecec63e66454ba543d7e718409ded3cc919d82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1c8b8b6_294781f6",
@@ -94,6 +160,30 @@
       "writtenOn": "2021-02-09T10:48:52Z",
       "side": 1,
       "message": "Move this closer to get_ffa_feature_test_target.\n\nI am guessing this file with time will have quite a few definitions or functions of miscellaneous purposes, might be good to keep them together in the file to make it easier to read.\n\nNit picking detail, I leave it at your own discretion.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 2
+      },
+      "revId": "c1ecec63e66454ba543d7e718409ded3cc919d82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f1b9134_381b0d26",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-09T10:58:50Z",
+      "side": 1,
+      "message": "My idea was to keep functions separately from the rest, but you are right. In the future it will be easier.",
+      "parentUuid": "d1c8b8b6_294781f6",
       "range": {
         "startLine": 9,
         "startChar": 0,
