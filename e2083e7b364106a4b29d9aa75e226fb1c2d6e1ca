@@ -177,6 +177,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6ae9f49_16b683eb",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-09T12:19:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ce78c6b_4e6f2ef0",
+      "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c148a60_5f42635a",
@@ -288,6 +306,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c7c7abb_a85f09c1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-09T12:19:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55e03f7a_80d347c3",
+      "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80983c4e_2e2e593f",
@@ -352,6 +388,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bd67222_480a2f66",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-09T12:19:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ded0c338_a6fe367e",
+      "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dff67342_2f8a7585",
@@ -365,6 +419,24 @@
       "writtenOn": "2021-02-05T17:21:07Z",
       "side": 1,
       "message": "Nit: Remove newline",
+      "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a7a2da9_4b39ae8c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_rxtx_map.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-02-09T12:19:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dff67342_2f8a7585",
       "revId": "e2083e7b364106a4b29d9aa75e226fb1c2d6e1ca",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
