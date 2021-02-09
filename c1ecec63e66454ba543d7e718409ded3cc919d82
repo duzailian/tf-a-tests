@@ -16,6 +16,46 @@
       "message": "Thank for the review",
       "revId": "c1ecec63e66454ba543d7e718409ded3cc919d82",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6521db2b_82e3780e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-02-09T10:37:16Z",
+      "side": 1,
+      "message": "Look good, just one copyright header missed",
+      "revId": "c1ecec63e66454ba543d7e718409ded3cc919d82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc7cc28c_c77d2893",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-02-09T10:37:16Z",
+      "side": 1,
+      "message": "NIT: 2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "c1ecec63e66454ba543d7e718409ded3cc919d82",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
