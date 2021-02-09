@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9106aff_4907e3aa",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-09T11:04:47Z",
+      "side": 1,
+      "message": "why not place these definitions next to the rest from line 65?",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 62
+      },
+      "revId": "f88e4262b53d5190012fd0b9e7ef6e9246856b4f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d65ddde8_7baace6d",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-09T11:04:47Z",
+      "side": 1,
+      "message": "Is this necessary?",
+      "range": {
+        "startLine": 71,
+        "startChar": 52,
+        "endLine": 71,
+        "endChar": 69
+      },
+      "revId": "f88e4262b53d5190012fd0b9e7ef6e9246856b4f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3dcd2e5b_51b99e71",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-09T11:04:47Z",
+      "side": 1,
+      "message": "Note (not necessarily for you): this will need update for integrating with new changes from framework.",
+      "range": {
+        "startLine": 285,
+        "startChar": 2,
+        "endLine": 288,
+        "endChar": 9
+      },
+      "revId": "f88e4262b53d5190012fd0b9e7ef6e9246856b4f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8609e9f4_7a223620",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-09T11:04:47Z",
+      "side": 1,
+      "message": "No need for the for loop, by making memset look like:\nmemset(v, 0, sizeof(simd_vector_t) * SIMD_NUM_VECTORS);\n\nSmall optimization, leave it at your discretion thought.",
+      "range": {
+        "startLine": 65,
+        "startChar": 2,
+        "endLine": 65,
+        "endChar": 43
+      },
+      "revId": "f88e4262b53d5190012fd0b9e7ef6e9246856b4f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91a7f700_c12abba8",
+        "filename": "tftf/tests/tests-spm.mk",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-09T11:04:47Z",
+      "side": 1,
+      "message": "Nit: align \\ with rest ?",
+      "range": {
+        "startLine": 11,
+        "startChar": 29,
+        "endLine": 11,
+        "endChar": 30
+      },
+      "revId": "f88e4262b53d5190012fd0b9e7ef6e9246856b4f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3913f668_13043aa4",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-09T11:04:47Z",
+      "side": 1,
+      "message": "NIT: make the test suite description specific to SIMD/SVE context switch.\nOther \"cpu features\" might have a longer list of tests, that might require their own testsuite.\n\nName could be \"SIMD/SVE context\"... Description could be \"Validate context switch between NWd and SWd, of SIMD registers\".\n\nNot critical, so leave it your discretion...",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 66
+      },
+      "revId": "f88e4262b53d5190012fd0b9e7ef6e9246856b4f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
