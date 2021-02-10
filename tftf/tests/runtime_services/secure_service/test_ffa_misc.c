@@ -14,13 +14,13 @@ test_result_t test_ffa_spm_id_get(void)
 
 	smc_ret_values ffa_ret = ffa_spm_id_get();
 	if (ffa_ret.ret0 != FFA_SUCCESS_SMC32) {
-		ERROR("FFA_SPM_ID_GET call failed!\n");
+		ERROR("FFA_SPM_ID_GET call failed! Error code: 0x%lx\n", ffa_ret.ret2);
 		return TEST_RESULT_FAIL;
 	}
 	/* Check the SPMC value given in the fvp_spmc_manifest is returned */
-	ffa_id_t spm_id = ffa_ret.ret2 & 0xffff;
+	ffa_id_t spm_id = ffa_component_id(ffa_ret);
 	if (spm_id != SPMC_ID) {
-		ERROR("Expected SPMC_ID of 0x8000 recieved: 0x%x\n", spm_id);
+		ERROR("Expected SPMC_ID of 0x%x\n recieved: 0x%x\n", SPMC_ID, spm_id);
 		return TEST_RESULT_FAIL;
 	}
 
