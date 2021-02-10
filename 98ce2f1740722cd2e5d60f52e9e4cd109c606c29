@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "7e6a9302_3b81d1b7",
         "filename": "spm/cactus/cactus_tests_smmuv3.c",
@@ -20,8 +21,31 @@
         "endChar": 41
       },
       "revId": "98ce2f1740722cd2e5d60f52e9e4cd109c606c29",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80b0c96f_230e0452",
+        "filename": "spm/cactus/cactus_tests_smmuv3.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-02-10T01:17:30Z",
+      "side": 1,
+      "message": "Hi Raghu\nI see that this macro is essentially a data cache operation on the virtual addresses in the range target_addr to target_addr+cpy_range. The addresses for the subsequent reads are also computed from target_addr. I was under the impression that this is a true dependency and the execution would essentially follow \"sequential consistency\" model. Hence, I did not use an explicit barrier such as DSB. Let me know your thoughts.\n\nfortunately, the macro has an implicit barrier: https://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/lib/aarch64/cache_helpers.S#n34",
+      "parentUuid": "7e6a9302_3b81d1b7",
+      "range": {
+        "startLine": 171,
+        "startChar": 1,
+        "endLine": 171,
+        "endChar": 41
+      },
+      "revId": "98ce2f1740722cd2e5d60f52e9e4cd109c606c29",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
