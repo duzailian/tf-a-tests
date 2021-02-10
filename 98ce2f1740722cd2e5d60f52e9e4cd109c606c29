@@ -94,6 +94,30 @@
       },
       "revId": "98ce2f1740722cd2e5d60f52e9e4cd109c606c29",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d29d86c2_d0764325",
+        "filename": "spm/cactus/cactus_tests_smmuv3.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-02-10T23:27:17Z",
+      "side": 1,
+      "message": "I believe the dependency has to be respected between cache maintenance operation and a load. I could not find where exactly it is described in ARM ARM. However, From the barrier cook book[1], I found example in section 9.1.4 somewhat relevant to our scenario. In the instruction sequence from Thread P1, there is no barrier between the following 2 instructions: \n\nDCIMVAC R1 ; ensure cache discards stale copies before use\nLDR R5, [R1]\n\n\n[1] https://developer.arm.com/documentation/genc007826/latest",
+      "parentUuid": "739449c1_7043dc09",
+      "range": {
+        "startLine": 171,
+        "startChar": 1,
+        "endLine": 171,
+        "endChar": 41
+      },
+      "revId": "98ce2f1740722cd2e5d60f52e9e4cd109c606c29",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
