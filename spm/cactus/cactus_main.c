@@ -98,7 +98,7 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 			 * If execution gets to this point means all operations
 			 * with memory retrieval went well, as such replying
 			 */
-			ffa_ret = cactus_success_resp(vm_id, source);
+			ffa_ret = cactus_success_resp(vm_id, source, 0);
 			break;
 		case CACTUS_REQ_MEM_SEND_CMD:
 		{
@@ -138,14 +138,14 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 			if (!is_ffa_direct_response(ffa_ret)) {
 				ERROR("Failed to send message. error: %x\n",
 					ffa_error_code(ffa_ret));
-				ffa_ret = cactus_error_resp(vm_id, source);
+				ffa_ret = cactus_error_resp(vm_id, source, 0);
 				break;
 			}
 
 			/* If anything went bad on the receiver's end. */
 			if (cactus_get_response(ffa_ret) == CACTUS_ERROR) {
 				ERROR("Received error from receiver!\n");
-				ffa_ret = cactus_error_resp(vm_id, source);
+				ffa_ret = cactus_error_resp(vm_id, source, 0);
 				break;
 			}
 
@@ -160,7 +160,7 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 							.ret0 == FFA_ERROR) {
 					ERROR("Failed to reclaim memory!\n");
 					ffa_ret = cactus_error_resp(vm_id,
-								    source);
+								    source, 0);
 					break;
 				}
 
@@ -182,7 +182,7 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 				#endif
 			}
 
-			ffa_ret = cactus_success_resp(vm_id, source);
+			ffa_ret = cactus_success_resp(vm_id, source, 0);
 			break;
 		}
 		case CACTUS_ECHO_CMD:
@@ -218,8 +218,9 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 				success = false;
 			}
 
-			ffa_ret = success ? cactus_success_resp(vm_id, source) :
-					    cactus_error_resp(vm_id, source);
+			ffa_ret = success ?
+				  cactus_success_resp(vm_id, source,0) :
+				  cactus_error_resp(vm_id, source, 0);
 			break;
 		}
 		case CACTUS_DEADLOCK_CMD:
@@ -274,13 +275,13 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 				 * created the deadlock. As such, reply back
 				 * to the partitions.
 				 */
-				ffa_ret = cactus_success_resp(vm_id, source);
+				ffa_ret = cactus_success_resp(vm_id, source, 0);
 				break;
 			}
 
 			/* Shouldn't get to this point */
 			ERROR("Deadlock test went wrong!\n");
-			ffa_ret = cactus_error_resp(vm_id, source);
+			ffa_ret = cactus_error_resp(vm_id, source, 0);
 			break;
 		}
 		default:
