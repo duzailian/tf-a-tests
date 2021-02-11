@@ -187,8 +187,8 @@ static test_result_t cpu_on_handler(void)
 	smc_ret_values ffa_ret;
 
 	/*
-	 * Send a direct message request to SP1 from current physical CPU.
-	 * Notice SP1 ECs are already woken as a result of the PSCI_CPU_ON
+	 * Send a direct message request to SP1 MP SP) from current physical
+	 * CPU. Notice SP1 ECs are already woken as a result of the PSCI_CPU_ON
 	 * invocation so they already reached the message loop.
 	 * The SPMC uses the MP pinned context corresponding to the physical
 	 * CPU emitting the request.
@@ -211,12 +211,22 @@ static test_result_t cpu_on_handler(void)
 	}
 
 	/*
-	 * Send a direct message request to SP2 from current physical CPU.
-	 * The SPMC uses the MP pinned context corresponding to the physical
-	 * CPU emitting the request.
+	 * Send a direct message request to SP2 (MP SP) from current physical
+	 * CPU. The SPMC uses the MP pinned context corresponding to the
+	 * physical CPU emitting the request.
 	 */
 	ret = send_receive_direct_msg(SP_ID(2), DIRECT_MSG_TEST_PATTERN2);
 	if (ret != TEST_RESULT_SUCCESS) {
+		goto out;
+	}
+
+	/*
+	 * Send a direct message request to SP3 (UP SP) from current physical CPU.
+	 * The SPMC uses the single vCPU migrated to the new physical core.
+	 */
+	ret = send_receive_direct_msg(SP_ID(3), 0xaaaaaaaa);
+	if (ret != TEST_RESULT_SUCCESS) {
+		ERROR("core %u failed sending direct msg req to SP3\n", core_pos);
 		goto out;
 	}
 
