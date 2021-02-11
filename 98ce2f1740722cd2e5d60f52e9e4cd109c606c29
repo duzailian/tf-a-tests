@@ -118,6 +118,30 @@
       },
       "revId": "98ce2f1740722cd2e5d60f52e9e4cd109c606c29",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7a7cfd2_4e853a52",
+        "filename": "spm/cactus/cactus_tests_smmuv3.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-02-11T02:26:27Z",
+      "side": 1,
+      "message": "So the cook book is REALLY old and almost predates ARMv8. I looked through the litmus test in the ARMv8 ARM(latest available online) and i dont see any example without a barrier after a data cache clean...",
+      "parentUuid": "d29d86c2_d0764325",
+      "range": {
+        "startLine": 171,
+        "startChar": 1,
+        "endLine": 171,
+        "endChar": 41
+      },
+      "revId": "98ce2f1740722cd2e5d60f52e9e4cd109c606c29",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
