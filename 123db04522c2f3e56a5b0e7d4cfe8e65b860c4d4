@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fefe199f_61709f5f",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-02-12T14:31:56Z",
+      "side": 1,
+      "message": "Why is this switch still here when it will always hit the default case?",
+      "range": {
+        "startLine": 90,
+        "startChar": 2,
+        "endLine": 90,
+        "endChar": 23
+      },
+      "revId": "123db04522c2f3e56a5b0e7d4cfe8e65b860c4d4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
