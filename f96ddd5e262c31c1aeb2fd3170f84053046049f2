@@ -16,6 +16,24 @@
       "message": "ffa_msg_send_direct_req64() seems to use ffa_msg_send_direct_req64_5args() instead of tftf_smc() directly do we not want to do the same thing here?",
       "revId": "f96ddd5e262c31c1aeb2fd3170f84053046049f2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07193141_113a0615",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-15T11:26:25Z",
+      "side": 1,
+      "message": "Will do for consistency",
+      "parentUuid": "47188c37_01a03dc3",
+      "revId": "f96ddd5e262c31c1aeb2fd3170f84053046049f2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
