@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39065d22_fd8487c9",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-18T10:24:38Z",
+      "side": 1,
+      "message": "Is this described in FF-A spec?\nIf not maybe could be placed in spm_common.c/h?\n\nIf this is test specific, maybe it is best to place with the test functions.",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 2
+      },
+      "revId": "9cf89263fd7295a6362bcb7036da8eeccd68183b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a40e2d05_6003f812",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-18T10:24:38Z",
+      "side": 1,
+      "message": "could this function be placed in the test specific file under cactus_tests/ ?",
+      "range": {
+        "startLine": 158,
+        "startChar": 4,
+        "endLine": 158,
+        "endChar": 31
+      },
+      "revId": "9cf89263fd7295a6362bcb7036da8eeccd68183b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "edfae2fc_a6c5368c",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-18T10:24:38Z",
+      "side": 1,
+      "message": "I missed to find what is the request to this?\nIf the ffa_msg_send_direct_resp is not called in the context of ffa_dir_msg_req, it should fail.\n\nYou can use either cactus_response, or cactus_success_resp to be consistent with other tests.\n\nYou\u0027re also not evaluating the return for this call... So t might be failing, and nothing is happening.\n\nAlso missed to find where tftf_irq_handler_dispatcher is being configured for something?",
+      "range": {
+        "startLine": 166,
+        "startChar": 2,
+        "endLine": 166,
+        "endChar": 26
+      },
+      "revId": "9cf89263fd7295a6362bcb7036da8eeccd68183b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e62089d3_3c35376c",
+        "filename": "spm/cactus/cactus_tests/cactus_test_direct_messaging.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-18T10:24:38Z",
+      "side": 1,
+      "message": "Could this be placed in a specific file for the test?",
+      "range": {
+        "startLine": 138,
+        "startChar": 1,
+        "endLine": 154,
+        "endChar": 1
+      },
+      "revId": "9cf89263fd7295a6362bcb7036da8eeccd68183b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62352bc0_caec8414",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_blocking_interrupt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-18T10:24:38Z",
+      "side": 1,
+      "message": "FFA_MSG_SEND_DIRECT_RESP",
+      "range": {
+        "startLine": 45,
+        "startChar": 58,
+        "endLine": 45,
+        "endChar": 78
+      },
+      "revId": "9cf89263fd7295a6362bcb7036da8eeccd68183b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95a999f4_04f2493e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_blocking_interrupt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-18T10:24:38Z",
+      "side": 1,
+      "message": "the interrupt",
+      "range": {
+        "startLine": 46,
+        "startChar": 35,
+        "endLine": 46,
+        "endChar": 38
+      },
+      "revId": "9cf89263fd7295a6362bcb7036da8eeccd68183b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82ad9dbc_41c5f01f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_blocking_interrupt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-18T10:24:38Z",
+      "side": 1,
+      "message": "NIT: was successfully handled",
+      "range": {
+        "startLine": 48,
+        "startChar": 64,
+        "endLine": 49,
+        "endChar": 13
+      },
+      "revId": "9cf89263fd7295a6362bcb7036da8eeccd68183b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df5e7cd7_bea94ace",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_blocking_interrupt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-18T10:24:38Z",
+      "side": 1,
+      "message": "Use macro CHECK_SPMC_TESTING_SETUP instead.",
+      "range": {
+        "startLine": 56,
+        "startChar": 1,
+        "endLine": 56,
+        "endChar": 35
+      },
+      "revId": "9cf89263fd7295a6362bcb7036da8eeccd68183b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7b74e90_618c5386",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_blocking_interrupt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-02-18T10:24:38Z",
+      "side": 1,
+      "message": "tab",
+      "range": {
+        "startLine": 74,
+        "startChar": 1,
+        "endLine": 74,
+        "endChar": 7
+      },
+      "revId": "9cf89263fd7295a6362bcb7036da8eeccd68183b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
