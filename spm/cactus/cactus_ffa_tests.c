@@ -181,8 +181,8 @@ void ffa_version_test(void)
 
 bool ffa_memory_retrieve_test(struct mailbox_buffers *mb,
 			 struct ffa_memory_region **retrieved,
-			 uint64_t handle, ffa_vm_id_t sender,
-			 ffa_vm_id_t receiver, uint32_t mem_func)
+			 uint64_t handle, ffa_id_t sender,
+			 ffa_id_t receiver, uint32_t mem_func)
 {
 	smc_ret_values ret;
 	uint32_t fragment_size;
@@ -252,7 +252,7 @@ bool ffa_memory_retrieve_test(struct mailbox_buffers *mb,
 
 bool ffa_memory_relinquish_test(struct ffa_mem_relinquish *m,
 			   uint64_t handle,
-			   ffa_vm_id_t id)
+			   ffa_id_t id)
 {
 	ffa_mem_relinquish_init(m, handle, 0, id);
 
@@ -265,8 +265,8 @@ bool ffa_memory_relinquish_test(struct ffa_mem_relinquish *m,
 	return true;
 }
 
-void ffa_memory_management_test(struct mailbox_buffers *mb, ffa_vm_id_t vm_id,
-				ffa_vm_id_t sender, uint32_t mem_func,
+void ffa_memory_management_test(struct mailbox_buffers *mb, ffa_id_t vm_id,
+				ffa_id_t sender, uint32_t mem_func,
 				uint64_t handle)
 {
 	const char *test_ffa = "Memory Management";

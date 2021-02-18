@@ -40,12 +40,12 @@ static __aligned(PAGE_SIZE) uint8_t share_page[PAGE_SIZE];
  * but rather through Hafnium print hypercall.
  *
  */
-static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
+static void __dead2 message_loop(ffa_id_t vm_id, struct mailbox_buffers *mb)
 {
 	smc_ret_values ffa_ret;
 	uint32_t sp_response;
-	ffa_vm_id_t source;
-	ffa_vm_id_t destination;
+	ffa_id_t source;
+	ffa_id_t destination;
 	uint64_t cactus_cmd;
 
 	/*
@@ -103,7 +103,7 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 		{
 			uint32_t mem_func =
 				cactus_req_mem_send_get_mem_func(ffa_ret);
-			ffa_vm_id_t receiver =
+			ffa_id_t receiver =
 				cactus_req_mem_send_get_receiver(ffa_ret);
 			ffa_memory_handle_t handle;
 
@@ -195,7 +195,7 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 		}
 		case CACTUS_REQ_ECHO_CMD:
 		{
-			ffa_vm_id_t echo_dest =
+			ffa_id_t echo_dest =
 					cactus_req_echo_get_echo_dest(ffa_ret);
 			uint64_t echo_val = cactus_echo_get_val(ffa_ret);
 			bool success = true;
@@ -224,9 +224,9 @@ static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
 		case CACTUS_DEADLOCK_CMD:
 		case CACTUS_REQ_DEADLOCK_CMD:
 		{
-			ffa_vm_id_t deadlock_dest =
+			ffa_id_t deadlock_dest =
 				cactus_deadlock_get_next_dest(ffa_ret);
-			ffa_vm_id_t deadlock_next_dest = source;
+			ffa_id_t deadlock_next_dest = source;
 
 			if (cactus_cmd == CACTUS_DEADLOCK_CMD) {
 				VERBOSE("%x is creating deadlock. next: %x\n",
@@ -395,7 +395,7 @@ void __dead2 cactus_main(void)
 		panic();
 	}
 
-	ffa_vm_id_t ffa_id = ffa_id_ret.ret2 & 0xffff;
+	ffa_id_t ffa_id = ffa_id_ret.ret2 & 0xffff;
 	mb.send = (void *) get_sp_tx_start(ffa_id);
 	mb.recv = (void *) get_sp_rx_start(ffa_id);
 
