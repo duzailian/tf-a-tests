@@ -86,7 +86,8 @@ bool check_spmc_execution_level(void)
 	 * FFA direct message.
 	 */
 	ret_values = ffa_msg_send_direct_req(HYP_ID, SP_ID(1),
-						OPTEE_FFA_GET_API_VERSION);
+					     OPTEE_FFA_GET_API_VERSION, 0,
+					     0, 0, 0);
 	if ((ret_values.ret3 == FFA_VERSION_MAJOR) &&
 	    (ret_values.ret4 == FFA_VERSION_MINOR)) {
 		is_optee_spmc_criteria++;
@@ -97,7 +98,8 @@ bool check_spmc_execution_level(void)
 	 * FFA direct message.
 	 */
 	ret_values = ffa_msg_send_direct_req(HYP_ID, SP_ID(1),
-						OPTEE_FFA_GET_OS_VERSION);
+					     OPTEE_FFA_GET_OS_VERSION,
+					     0, 0, 0, 0);
 	if ((ret_values.ret3 == OPTEE_FFA_GET_OS_VERSION_MAJOR) &&
 	    (ret_values.ret4 == OPTEE_FFA_GET_OS_VERSION_MINOR)) {
 		is_optee_spmc_criteria++;
