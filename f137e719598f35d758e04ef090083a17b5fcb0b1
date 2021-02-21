@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ca86aae_d8d072d6",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-02-21T15:43:21Z",
+      "side": 1,
+      "message": "i know we discussed this in other patches too but i\u0027m not entirely convinced of the idea that primary/first SP is treated differently than the secondary sp\u0027s. In a system where normal world  and secure world components come from different vendors, such coupling becomes problematic. Normal world should not really require to know which EC belongs to a primary/first SP or secondary SP. Would suggest to take a closer look at another solution.\n\nA brute force way would be to run EC\u0027s of all SP\u0027s on a PSCI_CPU_ON call. or bake this into the direct request call such that an EC that is not woken up is woken up to the message loop before processing the actual message.",
+      "range": {
+        "startLine": 201,
+        "startChar": 1,
+        "endLine": 205,
+        "endChar": 4
+      },
+      "revId": "f137e719598f35d758e04ef090083a17b5fcb0b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
