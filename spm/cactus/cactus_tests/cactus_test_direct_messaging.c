@@ -33,8 +33,6 @@ CACTUS_CMD_HANDLER(req_echo_cmd, CACTUS_REQ_ECHO_CMD)
 	ffa_ret = cactus_echo_send_cmd(vm_id, echo_dest, echo_val);
 
 	if (!is_ffa_direct_response(ffa_ret)) {
-		ERROR("Failed to send message. error: %x\n",
-			ffa_error_code(ffa_ret));
 		return cactus_error_resp(vm_id, ffa_dir_msg_source(*args),
 					 CACTUS_ERROR_FFA_CALL);
 	}
@@ -75,8 +73,7 @@ static smc_ret_values base_deadlock_handler(ffa_vm_id_t vm_id,
 		(cactus_get_response(ffa_ret) == CACTUS_SUCCESS);
 
 	if (is_deadlock_detected) {
-		NOTICE("Attempting dealock but got error %x\n",
-			ffa_error_code(ffa_ret));
+		NOTICE("Attempt to create deadlock failed\n");
 	}
 
 	if (is_deadlock_detected || is_returning_from_deadlock) {
