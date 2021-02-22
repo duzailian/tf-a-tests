@@ -39,8 +39,6 @@ static test_result_t send_receive_direct_msg(unsigned int sp_id,
 	 * but only expect the former. Expect SMC32 convention from SP.
 	 */
 	if (!is_ffa_direct_response(ret_values)) {
-		tftf_testcase_printf("ffa_msg_send_direct_req returned %x\n",
-				     ffa_func_id(ret_values));
 		return TEST_RESULT_FAIL;
 	}
 
@@ -106,8 +104,6 @@ static test_result_t send_cactus_req_echo_cmd(ffa_vm_id_t sender,
 	ret = cactus_req_echo_send_cmd(sender, dest, echo_dest, value);
 
 	if (!is_ffa_direct_response(ret)) {
-		ERROR("Failed to send message. error: %x\n",
-		      ffa_error_code(ret));
 		return TEST_RESULT_FAIL;
 	}
 
@@ -158,8 +154,6 @@ test_result_t test_ffa_sp_to_sp_deadlock(void)
 	ret = cactus_req_deadlock_send_cmd(HYP_ID, SP_ID(1), SP_ID(2), SP_ID(3));
 
 	if (!is_ffa_direct_response(ret)) {
-		ERROR("Failed to send message. error: %x\n",
-		      ffa_error_code(ret));
 		return TEST_RESULT_FAIL;
 	}
 
