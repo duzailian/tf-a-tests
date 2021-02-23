@@ -374,19 +374,19 @@ static const struct ffa_partition_info ffa_partition_info_test_target[] = {
 	{
 		.id = SP_ID(1),
 		.exec_context = PRIMARY_EXEC_CTX,
-		.properties = (FFA_PARTITION_DIRECT_RECV | FFA_PARTITION_DIRECT_SEND)
+		.properties = (FFA_PARTITION_DIRECT_RECV)
 	},
 	/* Secondary partition info */
 	{
 		.id = SP_ID(2),
 		.exec_context = SECONDARY_EXEC_CTX,
-		.properties = (FFA_PARTITION_DIRECT_RECV | FFA_PARTITION_DIRECT_SEND)
+		.properties = (FFA_PARTITION_DIRECT_RECV)
 	},
 	/* Tertiary partition info */
 	{
 		.id = SP_ID(3),
 		.exec_context = TERTIARY_EXEC_CTX,
-		.properties = (FFA_PARTITION_DIRECT_RECV | FFA_PARTITION_DIRECT_SEND)
+		.properties = (FFA_PARTITION_DIRECT_RECV)
 	}
 };
 
