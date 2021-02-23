@@ -66,6 +66,12 @@
                function="test_ffa_features" />
   </testsuite>
 
+  <testsuite name="FF-A Partition Info"
+             description="Test ffa_partition_info_get ABI" >
+     <testcase name="Test ffa_partition_info_get"
+               function="test_ffa_partition_info" />
+  </testsuite>
+
   <testsuite name="SIMD,SVE Registers context"
              description="Validate context switch between NWd and SWd" >
      <testcase name="Check that SIMD registers context is preserved"
