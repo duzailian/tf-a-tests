@@ -374,6 +374,27 @@ static const struct ffa_partition_info ffa_partition_info_test_target[] = {
 	{
 		.id = SP_ID(1),
 		.exec_context = PRIMARY_EXEC_CTX,
+		.properties = (FFA_PARTITION_DIRECT_RECV)
+	},
+	/* Secondary partition info */
+	{
+		.id = SP_ID(2),
+		.exec_context = SECONDARY_EXEC_CTX,
+		.properties = (FFA_PARTITION_DIRECT_RECV)
+	},
+	/* Tertiary partition info */
+	{
+		.id = SP_ID(3),
+		.exec_context = TERTIARY_EXEC_CTX,
+		.properties = (FFA_PARTITION_DIRECT_RECV)
+	}
+};
+
+static const struct ffa_partition_info ffa_partition_info_test_target_sec[] = {
+	/* Primary partition info */
+	{
+		.id = SP_ID(1),
+		.exec_context = PRIMARY_EXEC_CTX,
 		.properties = (FFA_PARTITION_DIRECT_RECV | FFA_PARTITION_DIRECT_SEND)
 	},
 	/* Secondary partition info */
@@ -392,18 +413,29 @@ static const struct ffa_partition_info ffa_partition_info_test_target[] = {
 
 /*
  * Populates test_target with content of ffa_partition_info_test_target.
+ * Uses the secure target if is_secure_sender is true. If the sender is secure
+ * it is expected that SP does support direct message send in addition to
+ * receiving messages.
  *
  * Returns number of elements in the *test_target.
  */
 unsigned int get_ffa_partition_info_test_target(
-	const struct ffa_partition_info **test_target)
+	const struct ffa_partition_info **test_target, bool is_secure_sender)
 {
 	if (test_target != NULL) {
-		*test_target = ffa_partition_info_test_target;
+		if (is_secure_sender) {
+			*test_target = ffa_partition_info_test_target_sec;
+			return sizeof(ffa_partition_info_test_target_sec) /
+				sizeof(struct ffa_partition_info);
+		} else {
+			*test_target = ffa_partition_info_test_target;
+			return sizeof(ffa_partition_info_test_target) /
+				sizeof(struct ffa_partition_info);
+		}
+	} else {
+		ERROR("Invalid pointer\n");
+		return 0;
 	}
-
-	return sizeof(ffa_partition_info_test_target) /
-	       sizeof(struct ffa_partition_info);
 }
 
 /*

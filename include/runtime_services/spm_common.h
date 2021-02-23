@@ -128,7 +128,7 @@ ffa_memory_handle_t memory_init_and_send(
 	uint32_t constituents_count, uint32_t mem_func);
 
 unsigned int get_ffa_partition_info_test_target(
-	const struct ffa_partition_info **test_target);
+	const struct ffa_partition_info **test_target, bool is_secure_sender);
 
 bool ffa_partition_info_helper(struct mailbox_buffers *mb,
 			const uint32_t uuid[4],

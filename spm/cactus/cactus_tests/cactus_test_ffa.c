@@ -80,7 +80,7 @@ static void ffa_partition_info_get_test(struct mailbox_buffers *mb)
 
 	const struct ffa_partition_info *expected_info;
 	unsigned int num_of_partitions =
-		get_ffa_partition_info_test_target(&expected_info);
+		get_ffa_partition_info_test_target(&expected_info, true);
 
 	expect(num_of_partitions, 3);
 
