@@ -11,6 +11,7 @@ TESTS_SOURCES	+=							\
 		test_ffa_direct_messaging.c				\
 		test_ffa_interrupts.c					\
 		test_ffa_memory_sharing.c				\
+		test_ffa_partition_info_get.c				\
 		test_ffa_setup_and_discovery.c				\
 		test_spm_cpu_features.c					\
 		test_spm_smmu.c						\
