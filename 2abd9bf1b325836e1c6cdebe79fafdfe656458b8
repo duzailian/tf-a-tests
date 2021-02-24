@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c16427d_b98da923",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2021-02-24T23:22:24Z",
+      "side": 1,
+      "message": "pushed new version for rebase, don\u0027t review it yet.",
+      "revId": "2abd9bf1b325836e1c6cdebe79fafdfe656458b8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
