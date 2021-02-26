@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81ce0cd7_f0f1cff6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2021-02-26T15:58:08Z",
+      "side": 1,
+      "message": "I\u0027m going to go ahead and +1 this, but I have to ask whether it really is wise to duplicate \u003e15,000 lines of code?  Is this a parallel-maintenance issue?",
+      "revId": "be51bd242d795a27e6f45e2512c3955f5a927f44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
