@@ -29,6 +29,9 @@
 extern const char build_message[];
 extern const char version_string[];
 
+/* Global ffa_id */
+ffa_vm_id_t ffa_id;
+
 /*
  *
  * Message loop function
@@ -164,7 +167,7 @@ void __dead2 cactus_main(void)
 		panic();
 	}
 
-	ffa_vm_id_t ffa_id = ffa_id_ret.ret2 & 0xffff;
+	ffa_id = ffa_id_ret.ret2 & 0xffff;
 	mb.send = (void *) get_sp_tx_start(ffa_id);
 	mb.recv = (void *) get_sp_rx_start(ffa_id);
 
