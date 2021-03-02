@@ -70,6 +70,30 @@
       },
       "revId": "f137e719598f35d758e04ef090083a17b5fcb0b1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3009307_85340edf",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-03-02T21:45:55Z",
+      "side": 1,
+      "message": "Thanks Olivier. Why would \" bake this into the direct request call such that an EC that is not woken up is woken up to the message loop before processing the actual message.\" not work for those EC\"s that do not register power events? I find it odd to expect normal world software to know which SP\u0027s registered to power events and which did not. That works in tightly integrated systems but not in systems where SP\u0027s may come from different parties and things work based on discovery. At the least, the FF-A spec should provide a method for normal world to discover whether an SP registers for FF-A run or if normal world needs to call ffa_run once, before it sends direct messages. What do you think?\n\nAlso \"I appreciate this is not a complete/final solution but needed at least to bring up a single partition\" - Assume always that my comments are meant for discussion/learning/understanding and not to block a patch :) Totally understand that there are more immediate goals than to indulge my requirements!",
+      "parentUuid": "cc46eba2_cfec1b2a",
+      "range": {
+        "startLine": 201,
+        "startChar": 1,
+        "endLine": 205,
+        "endChar": 4
+      },
+      "revId": "f137e719598f35d758e04ef090083a17b5fcb0b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
