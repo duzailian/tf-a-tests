@@ -46,6 +46,30 @@
       },
       "revId": "f137e719598f35d758e04ef090083a17b5fcb0b1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc46eba2_cfec1b2a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-02T19:01:34Z",
+      "side": 1,
+      "message": "Ignore this sentence \"By the PSCI implementation, this happens on a per core basis and a PM event received on one core cannot influence what happens to other cores.\" I misinterpreted what you said.",
+      "parentUuid": "b8d5eb80_4dbd9dbd",
+      "range": {
+        "startLine": 201,
+        "startChar": 1,
+        "endLine": 205,
+        "endChar": 4
+      },
+      "revId": "f137e719598f35d758e04ef090083a17b5fcb0b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
