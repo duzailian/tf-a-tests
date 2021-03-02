@@ -47,8 +47,8 @@ pie_fixup:
 	bl	fixup_gdt_reloc
 
 	/* Set up exceptions vector table */
-	adrp	x0, tftf_vector
-	add	x0, x0, :lo12:tftf_vector
+	adrp	x0, cactus_vector
+	add	x0, x0, :lo12:cactus_vector
 	msr	vbar_el1, x0
 	isb
 
