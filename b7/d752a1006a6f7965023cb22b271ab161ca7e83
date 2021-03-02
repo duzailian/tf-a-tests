@@ -1,0 +1,11 @@
+Allow-CI+2: John <john.powell@arm.com>
+Code-Review+1: Javier <javier.almansasobrino@arm.com>
+Verified+1: TrustedFirmware Code Review
+Maintainer-Review+1: <bipin.ravi@arm.com>
+Code-Owner-Review+1: Mark Dykes
+Validation-Bot-Review+1: TrustedFirmware Code Review
+Submitted-by: Mark Dykes
+Submitted-at: Wed, 03 Mar 2021 00:14:41 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/6307
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
