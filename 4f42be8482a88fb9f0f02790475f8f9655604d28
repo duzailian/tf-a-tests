@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c430ffe9_51534f1f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_misc.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-02T09:56:13Z",
+      "side": 0,
+      "message": "I see this file was added in the previous commit, which was mostly concerned with changing the name of the type. Please squash the state of the file on that commit with these changes and make it part of this commit only. \n\nIf you need help with the rebasing commands drop me a message.",
+      "revId": "4f42be8482a88fb9f0f02790475f8f9655604d28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
