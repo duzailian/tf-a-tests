@@ -22,6 +22,30 @@
       },
       "revId": "f137e719598f35d758e04ef090083a17b5fcb0b1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8d5eb80_4dbd9dbd",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-02T18:59:08Z",
+      "side": 1,
+      "message": "\u003e i\u0027m not entirely convinced of the idea that primary/first SP is treated differently than the secondary sp\u0027s.\nI appreciate this is not a complete/final solution but needed at least to bring up a single partition in form of a TEE. In later changes, the intent is for SPs to register PM events.\n\n\u003e bake this into the direct request call such that an EC that is not woken up is woken up to the message loop before processing the actual message.\nThis isn\u0027t really possible because the first direct message request used for the sake of allocating cycles to \"secondary ECs\" would never get a response. The message loop is entered by a first call to FFA_MSG_WAIT which is not a valid response to a direct message request.\n\n\u003e A brute force way would be to run EC\u0027s of all SP\u0027s on a PSCI_CPU_ON call.\nBy the PSCI implementation, this happens on a per core basis and a PM event received on one core cannot influence what happens to other cores.\nThe first EC for each SP gets executed at boot time, this is an opportunity for each SP to initialize itself at least on one context.\nWe agreed in early discussions this is not reasonable to relay any PM event to all SPs as a general rule for latency/performance reasons. It\u0027s likely a platform only allows a limited subset of SPs to receive PM events. This is done on a SP registration basis with a policy for the integrator to limit the number of SPs able to receive PM events.",
+      "parentUuid": "5ca86aae_d8d072d6",
+      "range": {
+        "startLine": 201,
+        "startChar": 1,
+        "endLine": 205,
+        "endChar": 4
+      },
+      "revId": "f137e719598f35d758e04ef090083a17b5fcb0b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
