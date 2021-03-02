@@ -237,6 +237,10 @@ void __dead2 cactus_main(bool primary_cold_boot)
 	/* Invoking Tests */
 	ffa_tests(&mb);
 
+	/* Enable IRQ/FIQ */
+	enable_irq();
+	enable_fiq();
+
 msg_loop:
 	/* End up to message loop */
 	message_loop(ffa_id, &mb);
