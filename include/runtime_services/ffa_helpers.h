@@ -47,6 +47,10 @@ static inline int32_t ffa_error_code(smc_ret_values val) {
 	return (int32_t) val.ret2;
 }
 
+static inline ffa_id_t ffa_endpoint_id(smc_ret_values val) {
+	return (ffa_id_t) val.ret2 & 0xffff;
+}
+
 enum ffa_data_access {
 	FFA_DATA_ACCESS_NOT_SPECIFIED,
 	FFA_DATA_ACCESS_RO,
@@ -391,6 +395,7 @@ smc_ret_values ffa_msg_send_direct_req64_5args(uint32_t source_id, uint32_t dest
 smc_ret_values ffa_run(uint32_t dest_id, uint32_t vcpu_id);
 smc_ret_values ffa_version(uint32_t input_version);
 smc_ret_values ffa_id_get(void);
+smc_ret_values ffa_spm_id_get(void);
 smc_ret_values ffa_msg_wait(void);
 smc_ret_values ffa_msg_send_direct_resp(ffa_id_t source_id,
 					ffa_id_t dest_id, uint32_t message);

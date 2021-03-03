@@ -20,6 +20,8 @@
 #define FFA_MAJOR 1U
 #define FFA_MINOR 0U
 
+static uint32_t spm_version = 0U;
+
 static const uint32_t primary_uuid[4] = PRIMARY_UUID;
 static const uint32_t secondary_uuid[4] = SECONDARY_UUID;
 static const uint32_t tertiary_uuid[4] = TERTIARY_UUID;
@@ -163,7 +165,7 @@ void ffa_version_test(void)
 	announce_test_start(test_ffa_version);
 
 	smc_ret_values ret = ffa_version(MAKE_FFA_VERSION(FFA_MAJOR, FFA_MINOR));
-	uint32_t spm_version = (uint32_t)ret.ret0;
+	spm_version = (uint32_t)ret.ret0;
 
 	bool ffa_version_compatible =
 		((spm_version >> FFA_VERSION_MAJOR_SHIFT) == FFA_MAJOR &&
@@ -177,6 +179,29 @@ void ffa_version_test(void)
 	expect((int)ffa_version_compatible, (int)true);
 
 	announce_test_end(test_ffa_version);
+}
+
+void ffa_spm_id_get_test(void)
+{
+	const char *test_spm_id_get = "FFA_SPM_ID_GET SMC Function";
+
+	announce_test_start(test_spm_id_get);
+	
+	if (spm_version >= MAKE_FFA_VERSION(1,1)) {
+		smc_ret_values ret = ffa_spm_id_get();
+
+		expect(ffa_func_id(ret), FFA_SUCCESS_SMC32);
+
+		ffa_id_t spm_id = ffa_endpoint_id(ret);
+
+		VERBOSE("SPM ID = 0x%x\n", spm_id);
+		/* Check the SPMC value given in the fvp_spmc_manifest is returned */
+		expect(spm_id, SPMC_ID);
+	} else {
+		NOTICE("FFA_SPM_ID_GET not supported in this version of FF-A." \
+			" Test skipped\n");
+	}
+	announce_test_end(test_spm_id_get);
 }
 
 bool ffa_memory_retrieve_test(const struct mailbox_buffers *mb,
@@ -347,6 +372,7 @@ void ffa_tests(struct mailbox_buffers *mb)
 
 	ffa_features_test();
 	ffa_version_test();
+	ffa_spm_id_get_test();
 	ffa_partition_info_get_test(mb);
 
 	announce_test_section_end(test_ffa);
