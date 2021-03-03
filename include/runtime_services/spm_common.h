@@ -120,6 +120,7 @@ ffa_memory_handle_t memory_init_and_send(
  */
 
 #define SPM_INTERRUPT_ENABLE            (0xFF03)
+#define MANAGED_EXIT_INTERRUPT_ID	(4)
 
 /** IRQ/FIQ pin used for signaling a virtual interrupt. */
 enum interrupt_pin {
