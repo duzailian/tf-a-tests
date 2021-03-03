@@ -179,6 +179,25 @@ void ffa_version_test(void)
 	announce_test_end(test_ffa_version);
 }
 
+void ffa_spm_id_get_test(void)
+{
+	const char *test_spm_id_get = "FFA_SPM_ID_GET SMC Function";
+
+	announce_test_start(test_spm_id_get);
+
+	smc_ret_values ret = ffa_spm_id_get();
+
+	expect(ret.ret0, FFA_SUCCESS_SMC32);
+
+	ffa_id_t spm_id = ffa_endpoint_id(ret);
+
+	VERBOSE("SPM ID = 0x%x\n", spm_id);
+	/* Check the SPMC value given in the fvp_spmc_manifest is returned */
+	expect(spm_id, SPMC_ID);
+
+	announce_test_end(test_spm_id_get);
+}
+
 bool ffa_memory_retrieve_test(const struct mailbox_buffers *mb,
 			 struct ffa_memory_region **retrieved,
 			 uint64_t handle, ffa_id_t sender,
@@ -344,6 +363,7 @@ void ffa_tests(struct mailbox_buffers *mb)
 
 	ffa_features_test();
 	ffa_version_test();
+	ffa_spm_id_get_test();
 	ffa_partition_info_get_test(mb);
 
 	announce_test_section_end(test_ffa);
