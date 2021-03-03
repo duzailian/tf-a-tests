@@ -179,7 +179,7 @@ void __dead2 cactus_main(bool primary_cold_boot)
 		ERROR("FFA_ID_GET failed.\n");
 		panic();
 	}
-	ffa_id_t ffa_id = ffa_id_ret.ret2 & 0xffff;
+	ffa_id_t ffa_id = ffa_endpoint_id(ffa_id_ret);
 
 	if (primary_cold_boot == true) {
 		/* Clear BSS */
