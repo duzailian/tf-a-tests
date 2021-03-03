@@ -87,6 +87,8 @@ enum ffa_memory_shareability {
 
 typedef uint8_t ffa_memory_access_permissions_t;
 
+#define MANAGED_EXIT_INTERRUPT_ID	(4)
+
 enum interrupt_type {
 	INTERRUPT_TYPE_IRQ,
 	INTERRUPT_TYPE_FIQ,
