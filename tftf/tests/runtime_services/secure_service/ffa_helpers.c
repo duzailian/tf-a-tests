@@ -114,9 +114,9 @@ smc_ret_values ffa_msg_send_direct_req64(uint32_t source_id, uint32_t dest_id,
  * composite memory region offset.
  */
 static void ffa_memory_region_init_header(
-	struct ffa_memory_region *memory_region, ffa_vm_id_t sender,
+	struct ffa_memory_region *memory_region, ffa_id_t sender,
 	ffa_memory_attributes_t attributes, ffa_memory_region_flags_t flags,
-	ffa_memory_handle_t handle, uint32_t tag, ffa_vm_id_t receiver,
+	ffa_memory_handle_t handle, uint32_t tag, ffa_id_t receiver,
 	ffa_memory_access_permissions_t permissions)
 {
 	memory_region->sender = sender;
@@ -145,7 +145,7 @@ static void ffa_memory_region_init_header(
  */
 uint32_t ffa_memory_region_init(
 	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
-	ffa_vm_id_t sender, ffa_vm_id_t receiver,
+	ffa_id_t sender, ffa_id_t receiver,
 	const struct ffa_memory_region_constituent constituents[],
 	uint32_t constituent_count, uint32_t tag,
 	ffa_memory_region_flags_t flags, enum ffa_data_access data_access,
@@ -236,7 +236,7 @@ uint32_t ffa_memory_region_init(
  */
 uint32_t ffa_memory_retrieve_request_init(
 	struct ffa_memory_region *memory_region, ffa_memory_handle_t handle,
-	ffa_vm_id_t sender, ffa_vm_id_t receiver, uint32_t tag,
+	ffa_id_t sender, ffa_id_t receiver, uint32_t tag,
 	ffa_memory_region_flags_t flags, enum ffa_data_access data_access,
 	enum ffa_instruction_access instruction_access,
 	enum ffa_memory_type type, enum ffa_memory_cacheability cacheability,
@@ -280,7 +280,7 @@ ffa_memory_handle_t ffa_memory_send(
 	uint32_t fragment_length, uint32_t total_length)
 {
 	smc_ret_values ret;
-	ffa_vm_id_t receiver =
+	ffa_id_t receiver =
 		memory_region->receivers[0].receiver_permissions.receiver;
 
 	if (fragment_length != total_length) {
@@ -321,7 +321,7 @@ ffa_memory_handle_t ffa_memory_send(
  */
 ffa_memory_handle_t ffa_memory_init_and_send(
 	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
-	ffa_vm_id_t sender, ffa_vm_id_t receiver,
+	ffa_id_t sender, ffa_id_t receiver,
 	const struct ffa_memory_region_constituent *constituents,
 	uint32_t constituents_count, uint32_t mem_func)
 {
@@ -388,8 +388,8 @@ smc_ret_values ffa_msg_wait(void)
 	return tftf_smc(&args);
 }
 
-smc_ret_values ffa_msg_send_direct_resp(ffa_vm_id_t source_id,
-						ffa_vm_id_t dest_id,
+smc_ret_values ffa_msg_send_direct_resp(ffa_id_t source_id,
+						ffa_id_t dest_id,
 						uint32_t message)
 {
 	smc_args args = {

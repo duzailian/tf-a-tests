@@ -96,9 +96,9 @@ test_result_t test_ffa_direct_messaging(void)
  * otherwise.
  * For the CACTUS_SUCCESS response, the test returns TEST_RESULT_SUCCESS.
  */
-static test_result_t send_cactus_req_echo_cmd(ffa_vm_id_t sender,
-					      ffa_vm_id_t dest,
-					      ffa_vm_id_t echo_dest,
+static test_result_t send_cactus_req_echo_cmd(ffa_id_t sender,
+					      ffa_id_t dest,
+					      ffa_id_t echo_dest,
 					      uint64_t value)
 {
 	smc_ret_values ret;
