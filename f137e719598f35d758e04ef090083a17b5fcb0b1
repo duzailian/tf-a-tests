@@ -94,6 +94,30 @@
       },
       "revId": "f137e719598f35d758e04ef090083a17b5fcb0b1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4fab228b_9f402e8f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-03T09:44:59Z",
+      "side": 1,
+      "message": "Hi Raghu,\n\u003e\" bake this into the direct request call such that an EC that is not woken up is woken up to the message loop before processing the actual message.\" not work for those EC\"s that do not register power events?\n\nTo provide a bit more details, there is this condition to fulfill in the SPMD:\nhttps://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/services/std_svc/spmd/spmd_main.c?h\u003dv2.4#n618\nEach physical core woken up pinned to a corresponding vCPU in the first SP must return with FFA_MSG_WAIT as the only option to indicate a successful initialization. Then the SPMD toggles the physical CPU state to ON here:\nhttps://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/services/std_svc/spmd/spmd_pm.c?h\u003dv2.4#n110\nWhen all cores are booted, all ECs in the first SP and the first EC in other SPs (1) reached the message loop. It means for other ECs (2), a round of ffa_run is needed to reach the message loop and emit ffa_msg_wait. For those ECs sending a direct message request straight would fail because the direct message request would be conveyed at the SP entry point rather than resuming the SP within the message loop (after ffa_msg_wait).\n\n\u003e At the least, the FF-A spec should provide a method for normal world to discover whether an SP registers for FF-A run or if normal world needs to call ffa_run once, before it sends direct messages. What do you think?\n\nI guess we can convey this to Achin for specification related aspects.\n\n\u003e Assume always that my comments are meant for discussion/learning/understanding and not to block a patch :) Totally understand that there are more immediate goals than to indulge my requirements!\n\nNo worries. I see it as an iterative approach and we already have dependencies to those change sets (Total Compute goals, FF-A compliance test suite, ...) which took very long to mature. I hope this initial thinking is fair enough to fulfill at least FF-A v1.0. Obviously we will refine things as we enter into more complex PM scenarios and as the spec evolves.",
+      "parentUuid": "b3009307_85340edf",
+      "range": {
+        "startLine": 201,
+        "startChar": 1,
+        "endLine": 205,
+        "endChar": 4
+      },
+      "revId": "f137e719598f35d758e04ef090083a17b5fcb0b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
