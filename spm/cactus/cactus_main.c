@@ -395,7 +395,7 @@ void __dead2 cactus_main(void)
 		panic();
 	}
 
-	ffa_id_t ffa_id = ffa_id_ret.ret2 & 0xffff;
+	ffa_id_t ffa_id = ffa_endpoint_id(ffa_id_ret);
 	mb.send = (void *) get_sp_tx_start(ffa_id);
 	mb.recv = (void *) get_sp_rx_start(ffa_id);
 
