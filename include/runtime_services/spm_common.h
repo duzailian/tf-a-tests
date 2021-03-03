@@ -13,6 +13,8 @@
 
 /* Hypervisor ID at physical FFA instance */
 #define HYP_ID          (0)
+/* SPMC ID */
+#define SPMC_ID		U(0x8000)
 
 /* ID for the first Secure Partition. */
 #define SPM_VM_ID_FIRST                 SP_ID(1)
