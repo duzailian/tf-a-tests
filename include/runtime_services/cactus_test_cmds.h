@@ -249,4 +249,89 @@ static inline smc_ret_values cactus_req_simd_fill_send_cmd(
 			       0);
 }
 
+/**
+ * Command to request cactus to go in blocking sleep mode for given time in ms
+ *
+ * The command id is the hex representation of string "sleep"
+ */
+#define CACTUS_SLEEP_CMD U(0x736c656570)
+
+static inline smc_ret_values cactus_sleep_cmd(
+	ffa_vm_id_t source, ffa_vm_id_t dest, uint32_t sleep_time)
+{
+	return cactus_send_cmd(source, dest, CACTUS_SLEEP_CMD, sleep_time, 0, 0,
+			       0);
+}
+
+static inline uint32_t cactus_get_sleep_time(smc_ret_values ret)
+{
+	return (uint32_t)ret.ret4;
+}
+
+/**
+ * Command to request cactus to enable/disable an interrupt
+ *
+ * The command id is the hex representation of string "intr"
+ */
+#define CACTUS_INTERRUPT_CMD U(0x696e7472)
+
+static inline smc_ret_values cactus_interrupt_cmd(
+	ffa_vm_id_t source, ffa_vm_id_t dest, uint32_t interrupt_id,
+	uint32_t type, bool enable)
+{
+	return cactus_send_cmd(source, dest, CACTUS_INTERRUPT_CMD, interrupt_id,
+			       type, enable, 0);
+}
+
+static inline uint32_t cactus_get_interrupt_id(smc_ret_values ret)
+{
+	return (uint32_t)ret.ret4;
+}
+
+static inline uint32_t cactus_get_interrupt_type(smc_ret_values ret)
+{
+	return (uint32_t)ret.ret5;
+}
+
+static inline uint32_t cactus_get_interrupt_enable(smc_ret_values ret)
+{
+	return (bool)ret.ret6;
+}
+
+/**
+ * Pairs a command id with a function call, to handle the command ID.
+ */
+struct cactus_cmd_handler {
+	const uint64_t id;
+	smc_ret_values (*fn)(const smc_ret_values *args,
+			     struct mailbox_buffers *mb);
+};
+
+/**
+ * Helper to create the name of a handler function.
+ */
+#define CACTUS_HANDLER_FN_NAME(name) cactus_##name##_handler
+
+/**
+ * Define handler's function signature.
+ */
+#define CACTUS_HANDLER_FN(name)						\
+	static smc_ret_values CACTUS_HANDLER_FN_NAME(name)(		\
+		const smc_ret_values *args, struct mailbox_buffers *mb)
+
+/**
+ * Helper to define Cactus command handler, and pair it with a command ID.
+ * It also creates a table with this information, to be traversed by
+ * 'cactus_handle_cmd' function.
+ */
+#define CACTUS_CMD_HANDLER(name, ID)					\
+	CACTUS_HANDLER_FN(name);					\
+	struct cactus_cmd_handler name __section(".cactus_handler") = {	\
+		.id = ID, .fn = CACTUS_HANDLER_FN_NAME(name),		\
+	};								\
+	CACTUS_HANDLER_FN(name)
+
+bool cactus_handle_cmd(smc_ret_values *cmd_args, smc_ret_values *ret,
+		       struct mailbox_buffers *mb);
+
 #endif
