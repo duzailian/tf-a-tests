@@ -118,6 +118,30 @@
       },
       "revId": "f137e719598f35d758e04ef090083a17b5fcb0b1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d421d96_fdec9f33",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-03-03T16:43:53Z",
+      "side": 1,
+      "message": "Olivier, i understand this \"When all cores are booted, all ECs in the first SP and the first EC in other SPs (1) reached the message loop. It means for other ECs (2), a round of ffa_run is needed to reach the message loop and emit ffa_msg_wait. For those ECs sending a direct message request straight would fail because the direct message request would be conveyed at the SP entry point rather than resuming the SP within the message loop (after ffa_msg_wait).\"\n\nLet me try again. Imagine if we call api_ffa_run inside api_ffa_send_direct_req, if we find that the vcpu is in off state. Why can we not do that? If we realize the vcpu is off, we save off the direct request paramaters, within the direct_req call, call ffa_run on the vcpu which would then enter the SP at the entry point, and the SP would call msg wait in the loop. When we get the message wait, just like the line you pointed out, we can see if there was a pending direct_req on the message wait, and then make the direct_req_call.\nWould that not work?\n\nThe advantage of doing so is not having to modify the spec and normal world need not be aware of what is the first sp or second sp and make the special call for ffa_run on non-first SP.",
+      "parentUuid": "4fab228b_9f402e8f",
+      "range": {
+        "startLine": 201,
+        "startChar": 1,
+        "endLine": 205,
+        "endChar": 4
+      },
+      "revId": "f137e719598f35d758e04ef090083a17b5fcb0b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
