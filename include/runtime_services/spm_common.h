@@ -13,6 +13,8 @@
 
 /* Hypervisor ID at physical FFA instance */
 #define HYP_ID          (0)
+/* SPMC ID */
+#define SPMC_ID		U(0x8000)
 
 /*
  * The bit 15 of the FF-A ID indicates whether the partition is executing
