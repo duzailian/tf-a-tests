@@ -22,8 +22,8 @@ void fill_simd_vectors(void);
 /*
  * Test to FFA interfaces.
  */
-void ffa_memory_management_test(struct mailbox_buffers *mb, ffa_vm_id_t vm_id,
-				ffa_vm_id_t sender, uint32_t mem_func,
+void ffa_memory_management_test(const struct mailbox_buffers *mb, ffa_id_t vm_id,
+				ffa_id_t sender, uint32_t mem_func,
 				uint64_t handle);
 
 void ffa_tests(struct mailbox_buffers *mb);
