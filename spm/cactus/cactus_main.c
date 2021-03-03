@@ -41,10 +41,10 @@ extern void secondary_cold_entry(void);
  *
  */
 
-static void __dead2 message_loop(ffa_vm_id_t vm_id, struct mailbox_buffers *mb)
+static void __dead2 message_loop(ffa_id_t vm_id, struct mailbox_buffers *mb)
 {
 	smc_ret_values ffa_ret;
-	ffa_vm_id_t destination;
+	ffa_id_t destination;
 
 	/*
 	* This initial wait call is necessary to inform SPMD that
@@ -179,7 +179,7 @@ void __dead2 cactus_main(bool primary_cold_boot)
 		ERROR("FFA_ID_GET failed.\n");
 		panic();
 	}
-	ffa_vm_id_t ffa_id = ffa_id_ret.ret2 & 0xffff;
+	ffa_id_t ffa_id = ffa_id_ret.ret2 & 0xffff;
 
 	if (primary_cold_boot == true) {
 		/* Clear BSS */
