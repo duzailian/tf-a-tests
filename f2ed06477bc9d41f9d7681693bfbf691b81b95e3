@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f12e4da_9a770dd8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-04T08:38:10Z",
+      "side": 1,
+      "message": "I think one of the intent was to keep the same type name between Hafnium and TF-A-tests permitting code re-use eventually. Not sure if this change helps much in this matter. Tbd.",
+      "revId": "f2ed06477bc9d41f9d7681693bfbf691b81b95e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
