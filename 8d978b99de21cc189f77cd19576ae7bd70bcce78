@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0930c0f_26be0490",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-04T09:23:45Z",
+      "side": 1,
+      "message": "Allowing CI+1 so we can see what happens with the static checks.",
+      "revId": "8d978b99de21cc189f77cd19576ae7bd70bcce78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
