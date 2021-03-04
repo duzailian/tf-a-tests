@@ -16,6 +16,24 @@
       "message": "I think one of the intent was to keep the same type name between Hafnium and TF-A-tests permitting code re-use eventually. Not sure if this change helps much in this matter. Tbd.",
       "revId": "f2ed06477bc9d41f9d7681693bfbf691b81b95e3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5f7b0e4_79c40370",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-04T09:22:22Z",
+      "side": 1,
+      "message": "That is a point, also the fact it is semantically more sound. For his patch Daniel was using uint16_t to hold the id of the SPMC. Dropping the \"_vm\" makes it a bit more accurate and reusable for holding the id of the hypervisor.\n\nThe benefits of this change is not huge, but it makes things more correct at least to my view.",
+      "parentUuid": "8f12e4da_9a770dd8",
+      "revId": "f2ed06477bc9d41f9d7681693bfbf691b81b95e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
