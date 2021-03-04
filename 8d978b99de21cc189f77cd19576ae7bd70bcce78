@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0854936d_cffcd44a",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-03-04T17:23:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f83b9dd3_1dbf2993",
+      "range": {
+        "startLine": 187,
+        "startChar": 1,
+        "endLine": 190,
+        "endChar": 2
+      },
+      "revId": "8d978b99de21cc189f77cd19576ae7bd70bcce78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c0c6986c_c5e24fd9",
@@ -64,6 +88,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0baeddc3_f9863d92",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-03-04T17:23:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c0c6986c_c5e24fd9",
+      "range": {
+        "startLine": 192,
+        "startChar": 1,
+        "endLine": 192,
+        "endChar": 7
+      },
+      "revId": "8d978b99de21cc189f77cd19576ae7bd70bcce78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "187dfdf9_85d1077f",
@@ -77,6 +125,24 @@
       "writtenOn": "2021-03-04T11:01:12Z",
       "side": 1,
       "message": "Can you group version, features, id, RXTX mapping in a single test suite called \"FF-A Setup and discovery\"? This corresponds to ABIs defined in Section 8 of the spec.\nThis can be a separate change though.",
+      "revId": "8d978b99de21cc189f77cd19576ae7bd70bcce78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fab9d79_a75d5500",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-03-04T17:23:37Z",
+      "side": 1,
+      "message": "Done, I\u0027ve pushed as a separate commit",
+      "parentUuid": "187dfdf9_85d1077f",
       "revId": "8d978b99de21cc189f77cd19576ae7bd70bcce78",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
