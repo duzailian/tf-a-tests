@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a1cd5cd_2d5b482d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-04T09:16:22Z",
+      "side": 1,
+      "message": "The CI seems to be failing due to issues non-related with the tests.\n",
+      "revId": "50f391e40cb952a4eb5cea3d0da01026f716d441",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
