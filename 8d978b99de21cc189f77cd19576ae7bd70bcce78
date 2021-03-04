@@ -16,6 +16,69 @@
       "message": "Allowing CI+1 so we can see what happens with the static checks.",
       "revId": "8d978b99de21cc189f77cd19576ae7bd70bcce78",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f83b9dd3_1dbf2993",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-04T11:01:12Z",
+      "side": 1,
+      "message": "use expect",
+      "range": {
+        "startLine": 187,
+        "startChar": 1,
+        "endLine": 190,
+        "endChar": 2
+      },
+      "revId": "8d978b99de21cc189f77cd19576ae7bd70bcce78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0c6986c_c5e24fd9",
+        "filename": "spm/cactus/cactus_ffa_tests.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-04T11:01:12Z",
+      "side": 1,
+      "message": "VERBOSE",
+      "range": {
+        "startLine": 192,
+        "startChar": 1,
+        "endLine": 192,
+        "endChar": 7
+      },
+      "revId": "8d978b99de21cc189f77cd19576ae7bd70bcce78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "187dfdf9_85d1077f",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-04T11:01:12Z",
+      "side": 1,
+      "message": "Can you group version, features, id, RXTX mapping in a single test suite called \"FF-A Setup and discovery\"? This corresponds to ABIs defined in Section 8 of the spec.\nThis can be a separate change though.",
+      "revId": "8d978b99de21cc189f77cd19576ae7bd70bcce78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
