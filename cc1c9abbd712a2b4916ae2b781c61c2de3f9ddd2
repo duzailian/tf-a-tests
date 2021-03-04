@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37cd056c_c758aaa9",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-03-04T21:10:27Z",
+      "side": 1,
+      "message": "U",
+      "range": {
+        "startLine": 75,
+        "startChar": 27,
+        "endLine": 75,
+        "endChar": 28
+      },
+      "revId": "cc1c9abbd712a2b4916ae2b781c61c2de3f9ddd2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37ef2675_bbe6f16c",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-03-04T21:10:27Z",
+      "side": 1,
+      "message": "U",
+      "range": {
+        "startLine": 80,
+        "startChar": 27,
+        "endLine": 80,
+        "endChar": 31
+      },
+      "revId": "cc1c9abbd712a2b4916ae2b781c61c2de3f9ddd2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b92c310e_5e088a6a",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-03-04T21:10:27Z",
+      "side": 1,
+      "message": "U",
+      "range": {
+        "startLine": 85,
+        "startChar": 27,
+        "endLine": 85,
+        "endChar": 28
+      },
+      "revId": "cc1c9abbd712a2b4916ae2b781c61c2de3f9ddd2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5904831d_77aa2ca3",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-03-04T21:10:27Z",
+      "side": 1,
+      "message": "U",
+      "range": {
+        "startLine": 122,
+        "startChar": 27,
+        "endLine": 122,
+        "endChar": 28
+      },
+      "revId": "cc1c9abbd712a2b4916ae2b781c61c2de3f9ddd2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65b7f426_d88e5361",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-03-04T21:10:27Z",
+      "side": 1,
+      "message": "U",
+      "range": {
+        "startLine": 127,
+        "startChar": 27,
+        "endLine": 127,
+        "endChar": 31
+      },
+      "revId": "cc1c9abbd712a2b4916ae2b781c61c2de3f9ddd2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "366cfe80_cfa24816",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-03-04T21:10:27Z",
+      "side": 1,
+      "message": "U",
+      "range": {
+        "startLine": 132,
+        "startChar": 27,
+        "endLine": 132,
+        "endChar": 28
+      },
+      "revId": "cc1c9abbd712a2b4916ae2b781c61c2de3f9ddd2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
