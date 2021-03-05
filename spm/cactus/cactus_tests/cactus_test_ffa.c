@@ -94,29 +94,13 @@ static void ffa_partition_info_get_test(struct mailbox_buffers *mb)
 	const char *test_tertiary = "Get tertiary partition info";
 	const char *test_all = "Get all partitions info";
 
-	const struct ffa_partition_info expected_info[] = {
-		/* Primary partition info */
-		{
-			.id = SPM_VM_ID_FIRST,
-			.exec_context = CACTUS_PRIMARY_EC_COUNT,
-			/* Supports receipt of direct message requests. */
-			.properties = 1U
-		},
-		/* Secondary partition info */
-		{
-			.id = SPM_VM_ID_FIRST + 1U,
-			.exec_context = CACTUS_SECONDARY_EC_COUNT,
-			.properties = 1U
-		},
-		/* Tertiary partition info */
-		{
-			.id = SPM_VM_ID_FIRST + 2U,
-			.exec_context = CACTUS_TERTIARY_EC_COUNT,
-			.properties = 1U
-		}
-	};
-
 	announce_test_section_start(test_partition_info);
+
+	const struct ffa_partition_info *expected_info;
+	unsigned int num_of_partitions =
+		get_ffa_partition_info_test_target(&expected_info);
+
+	expect(num_of_partitions, 3);
 
 	announce_test_start(test_tertiary);
 	ffa_partition_info_helper(mb, tertiary_uuid, &expected_info[2], 1);

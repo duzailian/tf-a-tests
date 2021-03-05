@@ -368,3 +368,40 @@ ffa_memory_handle_t memory_init_and_send(
 	return memory_send(memory_region, mem_func, fragment_length,
 			       total_length);
 }
+
+static const struct ffa_partition_info ffa_partition_info_test_target[] = {
+	/* Primary partition info */
+	{
+		.id = SP_ID(1),
+		.exec_context = PRIMARY_EXEC_CTX,
+		.properties = (FFA_PARTITION_DIRECT_RECV | FFA_PARTITION_DIRECT_SEND)
+	},
+	/* Secondary partition info */
+	{
+		.id = SP_ID(2),
+		.exec_context = SECONDARY_EXEC_CTX,
+		.properties = (FFA_PARTITION_DIRECT_RECV | FFA_PARTITION_DIRECT_SEND)
+	},
+	/* Tertiary partition info */
+	{
+		.id = SP_ID(3),
+		.exec_context = TERTIARY_EXEC_CTX,
+		.properties = (FFA_PARTITION_DIRECT_RECV | FFA_PARTITION_DIRECT_SEND)
+	}
+};
+
+/*
+ * Populates test_target with content of ffa_partition_info_test_target.
+ *
+ * Returns number of elements in the *test_target.
+ */
+unsigned int get_ffa_partition_info_test_target(
+	const struct ffa_partition_info **test_target)
+{
+	if (test_target != NULL) {
+		*test_target = ffa_partition_info_test_target;
+	}
+
+	return sizeof(ffa_partition_info_test_target) /
+	       sizeof(struct ffa_partition_info);
+}
