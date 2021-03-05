@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bb2706c8_0733bde7",
+        "filename": "include/runtime_services/trng.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-03-05T20:49:59Z",
+      "side": 1,
+      "message": "I think you did as I recommended.",
+      "parentUuid": "d465dd81_54d6f747",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 33
+      },
+      "revId": "cc1c9abbd712a2b4916ae2b781c61c2de3f9ddd2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "37cd056c_c758aaa9",
         "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
         "patchSetId": 1
