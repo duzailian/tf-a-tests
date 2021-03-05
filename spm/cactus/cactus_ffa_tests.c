@@ -117,19 +117,19 @@ static void ffa_partition_info_get_test(struct mailbox_buffers *mb)
 			.id = SPM_VM_ID_FIRST,
 			.exec_context = CACTUS_PRIMARY_EC_COUNT,
 			/* Supports receipt of direct message requests. */
-			.properties = 1U
+			.properties = 3U
 		},
 		/* Secondary partition info */
 		{
 			.id = SPM_VM_ID_FIRST + 1U,
 			.exec_context = CACTUS_SECONDARY_EC_COUNT,
-			.properties = 1U
+			.properties = 3U
 		},
 		/* Tertiary partition info */
 		{
 			.id = SPM_VM_ID_FIRST + 2U,
 			.exec_context = CACTUS_TERTIARY_EC_COUNT,
-			.properties = 1U
+			.properties = 3U
 		}
 	};
 
