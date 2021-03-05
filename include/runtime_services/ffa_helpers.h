@@ -29,6 +29,15 @@ struct ffa_uuid {
 
 #include <stdint.h>
 
+/** Partition property: partition supports receipt of direct requests. */
+#define FFA_PARTITION_DIRECT_RECV 0x1
+
+/** Partition property: partition can send direct requests. */
+#define FFA_PARTITION_DIRECT_SEND 0x2
+
+/** Partition property: partition can send and receive indirect messages. */
+#define FFA_PARTITION_INDIRECT_MSG 0x4
+
 struct ffa_partition_info {
 	/** The ID of the VM the information is about */
 	ffa_id_t id;
