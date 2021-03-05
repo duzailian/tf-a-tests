@@ -82,4 +82,7 @@ bool check_spmc_execution_level(void);
 
 unsigned int get_ffa_feature_test_target(const struct ffa_features_test **test_target);
 
+unsigned int get_ffa_partition_info_test_target(
+	const struct ffa_partition_info **test_target);
+
 #endif /* SPM_COMMON_H */
