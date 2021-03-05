@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7bb23c9_bf85b555",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2021-03-05T07:39:02Z",
+      "side": 1,
+      "message": "I did a local build, I confirm that this patch is fixing the build issue we were seeing in the CI.",
+      "revId": "22a40a65e7a2cd88261cec8275612f5f655b5c34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
