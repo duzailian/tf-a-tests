@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "af0490b4_4579546a",
+        "filename": "spm/cactus/plat/arm/fvp/include/cactus_platform_def.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-08T14:27:42Z",
+      "side": 1,
+      "message": "This is intended to be platform specific (here FVP) while ffa_endpoints.h is not?",
+      "parentUuid": "d27168eb_b28e79a2",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 37
+      },
+      "revId": "3c62a10afe38bc28895aabe1438d20ce95fd9b3f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "44d2a707_a0d6e601",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
         "patchSetId": 4
@@ -37,6 +61,30 @@
       "writtenOn": "2021-03-08T11:39:10Z",
       "side": 1,
       "message": "Note: On the patch stack changing cactus_message_loop, this has been with the echo logic.",
+      "range": {
+        "startLine": 218,
+        "startChar": 7,
+        "endLine": 218,
+        "endChar": 30
+      },
+      "revId": "3c62a10afe38bc28895aabe1438d20ce95fd9b3f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8038ace_6927ffbc",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-08T14:27:42Z",
+      "side": 1,
+      "message": "Yes I can rebase if the cactus msg loop patchset is merged first.",
+      "parentUuid": "44d2a707_a0d6e601",
       "range": {
         "startLine": 218,
         "startChar": 7,
