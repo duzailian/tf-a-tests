@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1cb770f4_98330bda",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-08T11:18:24Z",
+      "side": 1,
+      "message": "General comment:\nGiven that now the tests might be extended to a MP scenario, I am thinking some extra hardening might be needed... Do you think having a lock to access the RXTX buffers will be relevant (and other global resources)?\nI am thinking the execution is still sequential within tftf, so the handling of the test requests will be sequential as well, so probably not going to face issues for the time being...",
+      "range": {
+        "startLine": 414,
+        "startChar": 2,
+        "endLine": 415,
+        "endChar": 45
+      },
+      "revId": "37cc60e3360547fc229f8e0f3cc60ab261396547",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94c4b0f4_b53141a1",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-08T11:18:24Z",
+      "side": 1,
+      "message": "nit: rename label msg_loop. I find the use of \"exit_\" here misleading. \nUp to you, if you wish to make the change.",
+      "range": {
+        "startLine": 463,
+        "startChar": 0,
+        "endLine": 463,
+        "endChar": 13
+      },
+      "revId": "37cc60e3360547fc229f8e0f3cc60ab261396547",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
