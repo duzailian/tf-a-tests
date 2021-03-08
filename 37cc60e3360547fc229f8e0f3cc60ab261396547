@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2b82dce7_d05885c2",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-08T14:29:04Z",
+      "side": 1,
+      "message": "Yes I agree. Though the only test going through waking up other cores and sending messages is through direct message request/response not making use of RX/TX buffers.\nIf you agree can we had this protection of rx/tx buffers through locking in a later change?",
+      "parentUuid": "5441a5c6_8bf2a6d3",
+      "range": {
+        "startLine": 414,
+        "startChar": 2,
+        "endLine": 415,
+        "endChar": 45
+      },
+      "revId": "37cc60e3360547fc229f8e0f3cc60ab261396547",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "94c4b0f4_b53141a1",
         "filename": "spm/cactus/cactus_main.c",
         "patchSetId": 6
@@ -61,6 +85,30 @@
       "writtenOn": "2021-03-08T11:18:24Z",
       "side": 1,
       "message": "nit: rename label msg_loop. I find the use of \"exit_\" here misleading. \nUp to you, if you wish to make the change.",
+      "range": {
+        "startLine": 463,
+        "startChar": 0,
+        "endLine": 463,
+        "endChar": 13
+      },
+      "revId": "37cc60e3360547fc229f8e0f3cc60ab261396547",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ca0bac4_e7f84516",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-08T14:29:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "94c4b0f4_b53141a1",
       "range": {
         "startLine": 463,
         "startChar": 0,
