@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "79fc9a4d_109913c9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_partition_info_get.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-09T16:26:52Z",
+      "side": 1,
+      "message": "The NOTICE/ERROR/VERBOSE logging macros work properly in both targets cactus and tftf.\nI think using those would make the function generic.\n\nThen in cactus when calling it, I think you can use expect to check it returned true.\n\nIf there is a failure in the checks you have done here:\n- break the loop,\n- release rx buffer,\n- return false.\n\nIf all goes well, after the loop, release buffer and return true.\n\nI think an update on this function, and moving it to the generic spm_common.c/h is beneficial for maintainability, and given you have this function working, there isn\u0027t much more todo other calibrating a few \u0027nit\u0027 bits.",
+      "parentUuid": "c1df0c9c_3ee2182d",
+      "range": {
+        "startLine": 16,
+        "startChar": 12,
+        "endLine": 16,
+        "endChar": 37
+      },
+      "revId": "33eed572d517fb61f321404601b1ca706581ac01",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "15958fb1_b2bd85a4",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_partition_info_get.c",
         "patchSetId": 1
