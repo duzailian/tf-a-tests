@@ -27,6 +27,7 @@ struct ffa_uuid {
 
 #ifndef __ASSEMBLY__
 
+#include <cassert.h>
 #include <stdint.h>
 
 struct ffa_partition_info {
@@ -49,6 +50,14 @@ static inline int32_t ffa_error_code(smc_ret_values val) {
 static inline ffa_id_t ffa_endpoint_id(smc_ret_values val) {
 	return (ffa_id_t) val.ret2 & 0xffff;
 }
+
+#define FFA_NOTIFICATION(ID)		(UINT64_C(1) << ID)
+
+#define MAX_FFA_NOTIFICATIONS		64U
+
+#define FFA_NOTIFICATIONS_FLAG_PER_VCPU	UINT32_C(0x1 << 0)
+
+#define FFA_NOTIFICATIONS_FLAGS_VCPU_ID(id) UINT32_C((id & 0xFFFF) << 16)
 
 enum ffa_data_access {
 	FFA_DATA_ACCESS_NOT_SPECIFIED,
@@ -418,7 +427,10 @@ smc_ret_values ffa_mem_reclaim(uint64_t handle, uint32_t flags);
 smc_ret_values ffa_notification_bitmap_create(ffa_id_t vm_id,
 					      uint32_t vcpu_count);
 smc_ret_values ffa_notification_bitmap_destroy(ffa_id_t vm_id);
-
+smc_ret_values ffa_notification_bind(ffa_id_t sender, ffa_id_t receiver,
+				     uint32_t flags, uint64_t notifications);
+smc_ret_values ffa_notification_unbind(ffa_id_t sender, ffa_id_t receiver,
+					uint64_t notifications);
 #endif /* __ASSEMBLY__ */
 
 #endif /* FFA_HELPERS_H */
