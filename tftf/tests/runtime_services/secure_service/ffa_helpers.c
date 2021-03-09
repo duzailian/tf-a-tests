@@ -483,7 +483,7 @@ smc_ret_values ffa_notification_bitmap_create(ffa_vm_id_t vm_id,
 		.arg4 = FFA_PARAM_MBZ,
 		.arg5 = FFA_PARAM_MBZ,
 		.arg6 = FFA_PARAM_MBZ,
-		.arg7 = FFA_PARAM_MBZ
+		.arg7 = FFA_PARAM_MBZ,
 	};
 
 	return tftf_smc(&args);
@@ -500,9 +500,46 @@ smc_ret_values ffa_notification_bitmap_destroy(ffa_vm_id_t vm_id)
 		.arg4 = FFA_PARAM_MBZ,
 		.arg5 = FFA_PARAM_MBZ,
 		.arg6 = FFA_PARAM_MBZ,
-		.arg7 = FFA_PARAM_MBZ
+		.arg7 = FFA_PARAM_MBZ,
 	};
 
 	return tftf_smc(&args);
 }
 
+/** Bind VM to all the notifications in the bitmap */
+smc_ret_values ffa_notification_bind(ffa_vm_id_t sender, ffa_vm_id_t receiver,
+				     uint32_t flags,
+				     uint64_t bitmap)
+{
+	smc_args args = {
+		.fid = FFA_NOTIFICATION_BIND,
+		.arg1 = (sender << 16) | (receiver),
+		.arg2 = flags,
+		.arg3 = (uint32_t)(bitmap),
+		.arg4 = (uint32_t)(bitmap >> 32),
+		.arg5 = FFA_PARAM_MBZ,
+		.arg6 = FFA_PARAM_MBZ,
+		.arg7 = FFA_PARAM_MBZ,
+	};
+
+	return tftf_smc(&args);
+}
+
+/** Unbind previously bound VM from notifications in bitmap */
+smc_ret_values ffa_notification_unbind(ffa_vm_id_t sender,
+				       ffa_vm_id_t receiver,
+				       uint64_t bitmap)
+{
+	smc_args args = {
+		.fid = FFA_NOTIFICATION_UNBIND,
+		.arg1 = (sender << 16) | (receiver),
+		.arg2 = FFA_PARAM_MBZ,
+		.arg3 = (uint32_t)(bitmap),
+		.arg4 = (uint32_t)(bitmap >> 32),
+		.arg5 = FFA_PARAM_MBZ,
+		.arg6 = FFA_PARAM_MBZ,
+		.arg7 = FFA_PARAM_MBZ
+	};
+
+	return tftf_smc(&args);
+}
