@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4924156_fbe2a168",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-10T18:52:51Z",
+      "side": 1,
+      "message": "* Does it make a better sense to use %d modifer (rather than %x) to display the FFA_ERROR 32b error code?\n * There are different places where the error code (w2) is displayed though func id is not necessarily FFA_ERROR. Should this be improved to only display the error code when func id is effectively FFA_ERROR?\n",
+      "revId": "6cb21d985c25383baf105afbd17d52d43006990d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
