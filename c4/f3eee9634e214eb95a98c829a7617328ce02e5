@@ -1,0 +1,12 @@
+Allow-CI+2: Zelalem Aweke <zelalem.aweke@arm.com>
+Allow-CI+1: Gary Morrison <gary.morrison@arm.com>
+Validation-Bot-Review+1: TrustedFirmware Code Review
+Code-Review+1: Gary Morrison <gary.morrison@arm.com>
+Verified+1: Zelalem Aweke <zelalem.aweke@arm.com>
+Maintainer-Review+1: <bipin.ravi@arm.com>
+Code-Owner-Review+1: Mark Dykes <mark.dykes@arm.com>
+Submitted-by: Mark Dykes <mark.dykes@arm.com>
+Submitted-at: Wed, 10 Mar 2021 23:18:17 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/8571
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
