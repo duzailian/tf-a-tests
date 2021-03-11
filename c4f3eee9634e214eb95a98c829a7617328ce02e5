@@ -35,6 +35,23 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "770277f9_d0d6f7a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-03-11T16:38:04Z",
+      "side": 1,
+      "message": "Thanks for the comments! I will prepare another patch with fixes as this one is already merged.",
+      "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9d61a538_4f1d44f9",
@@ -48,6 +65,24 @@
       "writtenOn": "2021-03-11T00:57:48Z",
       "side": 1,
       "message": "What is the fifth? I only see VERSION, FEATURES, UUID, and RND in the spec?",
+      "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3540cc54_dfe1077f",
+        "filename": "include/runtime_services/trng.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-03-11T16:38:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9d61a538_4f1d44f9",
       "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -71,6 +106,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e10b37ff_daf94397",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-03-11T16:38:04Z",
+      "side": 1,
+      "message": "Agreed, it can be cleaned-up a bit.",
+      "parentUuid": "08df0a5b_a108beda",
+      "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "edddbed9_b188e214",
         "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
         "patchSetId": 3
@@ -82,6 +135,24 @@
       "writtenOn": "2021-03-11T00:57:48Z",
       "side": 1,
       "message": "Isn\u0027t an unsupported version call a failure?",
+      "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f76f20e3_56ff315a",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-03-11T16:38:04Z",
+      "side": 1,
+      "message": "This test can run with TRNG_SUPPORT \u003d 0 for FVPs. In that case I think the right thing to do is skip it.",
+      "parentUuid": "edddbed9_b188e214",
       "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -105,6 +176,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eaca8630_3008131d",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-03-11T16:38:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "90db338f_0c62ed28",
+      "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b5c40a55_45a5c195",
         "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
         "patchSetId": 3
@@ -116,6 +205,24 @@
       "writtenOn": "2021-03-11T00:57:48Z",
       "side": 1,
       "message": "Is there any particular reason for the negative logic? That\u0027s always harder to read and counter-intuitive (you read __aarch64__, but the code is actually for AArch32).",
+      "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "958780e1_ecefead9",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-03-11T16:38:04Z",
+      "side": 1,
+      "message": "No particular reason. I see what you mean.",
+      "parentUuid": "b5c40a55_45a5c195",
       "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -139,6 +246,42 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e492d7c5_ceb1acef",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-03-11T16:38:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8f2201ef_d441e031",
+      "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5b4d6d4_baf25795",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-03-11T16:38:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8f2201ef_d441e031",
+      "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5a0e08b3_5eb02c7e",
         "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
         "patchSetId": 3
@@ -156,6 +299,42 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "42044c3a_98586ada",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-03-11T16:38:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5a0e08b3_5eb02c7e",
+      "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8d9395b_52088abb",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-03-11T16:38:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5a0e08b3_5eb02c7e",
+      "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bea2b101_e08c251a",
         "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
         "patchSetId": 3
@@ -167,6 +346,24 @@
       "writtenOn": "2021-03-11T00:57:48Z",
       "side": 1,
       "message": "So this looks like almost the same code, apart from the mask?\nCan\u0027t you just prepare the mask depending on the bitness, then use a single function?\nsmc_ret_values seems to abstract the differences already.",
+      "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8ec1cd1_1ce9a23d",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-03-11T16:38:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "bea2b101_e08c251a",
       "revId": "c4f3eee9634e214eb95a98c829a7617328ce02e5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
