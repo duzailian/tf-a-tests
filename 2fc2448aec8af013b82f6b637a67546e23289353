@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "01877ff5_ab70892a",
+        "filename": "spm/cactus/cactus_tests/cactus_test_direct_messaging.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-12T12:54:18Z",
+      "side": 1,
+      "message": "No, because the intention is to have this log just on the partition in which the deadlock is detected.",
+      "parentUuid": "0c01a6a4_f5064dd4",
+      "revId": "2fc2448aec8af013b82f6b637a67546e23289353",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0dce63df_7b51e72f",
         "filename": "spm/cactus/cactus_tests/cactus_test_direct_messaging.c",
         "patchSetId": 15
@@ -31,6 +49,30 @@
       "writtenOn": "2021-03-12T07:59:23Z",
       "side": 1,
       "message": "VERBOSE",
+      "range": {
+        "startLine": 78,
+        "startChar": 2,
+        "endLine": 78,
+        "endChar": 8
+      },
+      "revId": "2fc2448aec8af013b82f6b637a67546e23289353",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "281eb9fd_762d6f08",
+        "filename": "spm/cactus/cactus_tests/cactus_test_direct_messaging.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-12T12:54:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0dce63df_7b51e72f",
       "range": {
         "startLine": 78,
         "startChar": 2,
