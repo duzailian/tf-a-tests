@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42d074a5_371ecb32",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-12T15:27:39Z",
+      "side": 1,
+      "message": "Verified+1 propagated from top patch https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/9122",
+      "revId": "ecd307465ef642a8ab9f2bfcc56c2580e6d66a86",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
