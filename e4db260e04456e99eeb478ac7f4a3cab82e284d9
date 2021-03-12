@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0984330_c502511f",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-12T08:10:30Z",
+      "side": 1,
+      "message": "source_id is unsigned short\nShould it be explicitly casted to arg1 type (32 or 64b)?",
+      "range": {
+        "startLine": 82,
+        "startChar": 11,
+        "endLine": 82,
+        "endChar": 20
+      },
+      "revId": "e4db260e04456e99eeb478ac7f4a3cab82e284d9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
