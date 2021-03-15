@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a47ccd8b_e69277a3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-15T16:12:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e7ca0ec_212e5786",
+      "range": {
+        "startLine": 14,
+        "startChar": 32,
+        "endLine": 15,
+        "endChar": 17
+      },
+      "revId": "552e32fc94d716a8153ac42d3c263384f5e101dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "899a9df3_51060bd6",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-03-15T10:04:52Z",
       "side": 1,
       "message": "CHECK_SPMC_TESTING_SETUP instead of this code.",
+      "range": {
+        "startLine": 229,
+        "startChar": 1,
+        "endLine": 240,
+        "endChar": 2
+      },
+      "revId": "552e32fc94d716a8153ac42d3c263384f5e101dc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36ea2dfd_cb8d4d11",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-15T16:12:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "899a9df3_51060bd6",
       "range": {
         "startLine": 229,
         "startChar": 1,

@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dea64f35_8684290c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-15T16:12:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a910cbe7_2e14b1f6",
+      "range": {
+        "startLine": 154,
+        "startChar": 6,
+        "endLine": 154,
+        "endChar": 33
+      },
+      "revId": "853408393124c92f0a33e6b18043c046b8df4aaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6a75ca7a_77456809",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ced3d3b_748421c6",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-15T16:12:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a75ca7a_77456809",
+      "range": {
+        "startLine": 234,
+        "startChar": 23,
+        "endLine": 234,
+        "endChar": 24
+      },
+      "revId": "853408393124c92f0a33e6b18043c046b8df4aaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff0031b5_4e8653b2",
@@ -60,6 +108,30 @@
       "writtenOn": "2021-03-15T15:21:29Z",
       "side": 1,
       "message": "U?",
+      "range": {
+        "startLine": 244,
+        "startChar": 54,
+        "endLine": 244,
+        "endChar": 55
+      },
+      "revId": "853408393124c92f0a33e6b18043c046b8df4aaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d75a082_01e5e947",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-03-15T16:12:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff0031b5_4e8653b2",
       "range": {
         "startLine": 244,
         "startChar": 54,
