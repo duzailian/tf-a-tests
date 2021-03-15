@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b10c18f_df275243",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-15T10:33:04Z",
+      "side": 1,
+      "message": "Great, only saw this change after comment to the previous patch. \nWould it be worth placing them in the .c file as well? 👍",
+      "revId": "1f88435bdbbbc6c45116e7893c590ae06617eeec",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
