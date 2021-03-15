@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac181d83_ab12cbea",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-03-15T15:11:11Z",
+      "side": 1,
+      "message": "primary_cold_boot !\u003d 0",
+      "range": {
+        "startLine": 184,
+        "startChar": 5,
+        "endLine": 184,
+        "endChar": 22
+      },
+      "revId": "f3b8898b9ce2af4bd00b039bf48b31160313d99c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4405ceb_69a6d3c2",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-03-15T15:11:11Z",
+      "side": 1,
+      "message": "primary_cold_boot \u003d\u003d 0",
+      "range": {
+        "startLine": 199,
+        "startChar": 6,
+        "endLine": 199,
+        "endChar": 23
+      },
+      "revId": "f3b8898b9ce2af4bd00b039bf48b31160313d99c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
