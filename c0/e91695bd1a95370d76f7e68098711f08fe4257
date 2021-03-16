@@ -1,0 +1,8 @@
+Maintainer-Review+1: Mark Dykes <mark.dykes@arm.com>
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Verified+1: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Tue, 16 Mar 2021 16:15:14 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/8257
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
