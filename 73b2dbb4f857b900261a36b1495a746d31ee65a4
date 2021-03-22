@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "075e5c71_7b47acd5",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2021-03-22T22:22:54Z",
+      "side": 1,
+      "message": "Perhaps I\u0027m missing something, but why not:\nif (primary_cold_boot !\u003d false) {\n   if (ffa_id \u003d\u003d SPM_VM...\n   ...\n}\n/* End up to message loop */\nmessage_loop(ffa_id, \u0026mb);",
+      "revId": "73b2dbb4f857b900261a36b1495a746d31ee65a4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
