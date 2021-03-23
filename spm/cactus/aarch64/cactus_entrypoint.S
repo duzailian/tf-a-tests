@@ -32,6 +32,19 @@ secondary_cold_entry:
 	mul	x2, x0, x2
 	sub	sp, x1, x2
 
+	/*
+	 * Invalidate the data cache for the partition RW sections. The
+	 * immutable text section is cleaned at the loader stage. The
+	 * Cactus linker script includes the GOT section after
+	 * __RODATA_START__. Provided Cactus is built as PIE and symbol
+	 * relocation is done below (pie_fixup) it is necessary for the
+	 * GOT to be considered RW as well.
+	 */
+	adrp	x0, __RODATA_START__
+	adrp	x1, __BSS_END__
+	sub	x1, x1, x0
+	bl	inv_dcache_range
+
 	/* Enable I-Cache */
 	mrs	x1, sctlr_el1
 	orr	x1, x1, #SCTLR_I_BIT
