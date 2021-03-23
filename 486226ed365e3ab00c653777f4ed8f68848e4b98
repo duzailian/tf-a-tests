@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec4fdc8c_9eba7246",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-23T10:28:39Z",
+      "side": 1,
+      "message": "If this is defined in the spec, we usually add the \"ffa_\" suffix. If this isn\u0027t defined in the spec, maybe this can be placed in spmc_common.c\\h, or sp_helpers.h?\n\nI saw it was being used in system calls that don\u0027t regard with FF-A interfaces... If that is the case, I guess it is a stronger reason to put it in sp_helpers.h.",
+      "range": {
+        "startLine": 90,
+        "startChar": 5,
+        "endLine": 90,
+        "endChar": 19
+      },
+      "revId": "486226ed365e3ab00c653777f4ed8f68848e4b98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
