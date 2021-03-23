@@ -32,6 +32,12 @@ secondary_cold_entry:
 	mul	x2, x0, x2
 	sub	sp, x1, x2
 
+	/* Clean data cache for the partition RW sections. */
+	adrp x0, __RODATA_START__
+	adrp x1, __BSS_END__
+	sub x1, x1, x0
+	bl inv_dcache_range
+
 	/* Enable I-Cache */
 	mrs	x1, sctlr_el1
 	orr	x1, x1, #SCTLR_I_BIT
