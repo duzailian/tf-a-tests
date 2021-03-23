@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fea9e2a3_b352f703",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-23T10:40:28Z",
+      "side": 1,
+      "message": "Comments made to patchset 7 haven\u0027t been resolved yet.",
+      "revId": "d398fa5819b102243da8a58bed36344ac356baa1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
