@@ -34,6 +34,46 @@
       "parentUuid": "075e5c71_7b47acd5",
       "revId": "73b2dbb4f857b900261a36b1495a746d31ee65a4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae11967f_51d1ed7c",
+        "filename": "spm/cactus/cactus_tests/cactus_test_direct_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-23T16:11:53Z",
+      "side": 1,
+      "message": "Place this command handler within the file you created for the SMMU tests.",
+      "revId": "73b2dbb4f857b900261a36b1495a746d31ee65a4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "773ee246_772c4ada",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-23T16:11:53Z",
+      "side": 1,
+      "message": "This is not related with testing FF-A interfaces for direct messaging.\nPlease create a specific test function in (I think this might be the best location) \"test_spm_cpu_features.c\".\n\nAlso in cactus_test_cmds.h define a specific wrapper function to send your test command, and invoke it here.\n\nThe function \u0027send_cactus_echo_cmd\u0027 is intended to validate FF-A direct messaging interfaces are working, just by sending an arbitrary value to Cactus, and sending that value back to TFTF.",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 72
+      },
+      "revId": "73b2dbb4f857b900261a36b1495a746d31ee65a4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
