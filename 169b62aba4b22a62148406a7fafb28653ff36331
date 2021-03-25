@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "45c3ffa8_077f54bb",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_misc.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-03-25T18:06:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a48b150_04b3b71a",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 20,
+        "endChar": 2
+      },
+      "revId": "169b62aba4b22a62148406a7fafb28653ff36331",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f4b73235_505e6f13",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-03-15T10:31:48Z",
       "side": 1,
       "message": "I\u0027m thinking that to tidy things, we could put all tests regarding set-up and discovery interfaces in the same file. That could include this test, ffa features, ffa version, and ffa partition info get.\n\nDon\u0027t need to do it in this change (unless you want to), this is a general observation.",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 14,
+        "endChar": 15
+      },
+      "revId": "169b62aba4b22a62148406a7fafb28653ff36331",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4e62214_7a265483",
+        "filename": "tftf/tests/tests-spm.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-03-25T18:06:22Z",
+      "side": 1,
+      "message": "Ack, I\u0027ll work on moving the test into the same file tomorrow. Marking as resolved as I\u0027ll update progress on the new commit",
+      "parentUuid": "f4b73235_505e6f13",
       "range": {
         "startLine": 14,
         "startChar": 2,
