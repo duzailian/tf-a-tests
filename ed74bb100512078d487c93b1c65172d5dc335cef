@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71737a4b_ab9efca1",
+        "filename": "spm/ivy/ivy.dts",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-03-25T02:17:12Z",
+      "side": 1,
+      "message": "better name perhaps?",
+      "range": {
+        "startLine": 17,
+        "startChar": 16,
+        "endLine": 17,
+        "endChar": 22
+      },
+      "revId": "ed74bb100512078d487c93b1c65172d5dc335cef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10e336c3_f32594cd",
+        "filename": "spm/ivy/ivy.dts",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-03-25T02:17:12Z",
+      "side": 1,
+      "message": "This id can go away. i dont see it being parsed by hafnium. same with auxiliary-id",
+      "range": {
+        "startLine": 20,
+        "startChar": 7,
+        "endLine": 20,
+        "endChar": 8
+      },
+      "revId": "ed74bb100512078d487c93b1c65172d5dc335cef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cee6f7fb_fac3c78f",
+        "filename": "spm/ivy/ivy.dts",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-03-25T02:17:12Z",
+      "side": 1,
+      "message": "not really required.",
+      "range": {
+        "startLine": 22,
+        "startChar": 1,
+        "endLine": 22,
+        "endChar": 32
+      },
+      "revId": "ed74bb100512078d487c93b1c65172d5dc335cef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
