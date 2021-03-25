@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53062ce1_4a6cf4a7",
+        "filename": "spm/ivy/aarch64/spm_shim_exceptions.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-03-25T02:12:36Z",
+      "side": 1,
+      "message": "Nit: Fix code style. I know this is copied from other places in the repo, wouldnt mind if you fixed those as well 😊",
+      "range": {
+        "startLine": 28,
+        "startChar": 17,
+        "endLine": 28,
+        "endChar": 23
+      },
+      "revId": "5f3c47107b3eedea51d2d6dac008f265bf69062a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d25b1355_9519b200",
+        "filename": "spm/ivy/ivy.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-03-25T02:12:36Z",
+      "side": 1,
+      "message": "having",
+      "range": {
+        "startLine": 37,
+        "startChar": 41,
+        "endLine": 37,
+        "endChar": 48
+      },
+      "revId": "5f3c47107b3eedea51d2d6dac008f265bf69062a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
