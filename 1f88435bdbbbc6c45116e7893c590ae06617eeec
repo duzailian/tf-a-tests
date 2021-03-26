@@ -16,6 +16,24 @@
       "message": "Great, only saw this change after comment to the previous patch. \nWould it be worth placing them in the .c file as well? 👍",
       "revId": "1f88435bdbbbc6c45116e7893c590ae06617eeec",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bb55fec_818c5e5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000553
+      },
+      "writtenOn": "2021-03-26T14:31:53Z",
+      "side": 1,
+      "message": "Done. I also noticed that nesting the testsuite tags like I did in the previous patchset didn\u0027t work as I think it caused the tests to run multiple times. So I\u0027ve had to remove that which unfortunatly means all tests just fall under the testsuite Setup and Discovery and aren\u0027t grouped into smaller groups. I think to do this would require changing the way the test lists are generated from the xml which I can look into if you would like",
+      "parentUuid": "8b10c18f_df275243",
+      "revId": "1f88435bdbbbc6c45116e7893c590ae06617eeec",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
