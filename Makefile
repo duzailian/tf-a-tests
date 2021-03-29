@@ -58,7 +58,7 @@ export Q
 ifneq (${DEBUG}, 0)
 	BUILD_TYPE	:=	debug
 	# Use LOG_LEVEL_INFO by default for debug builds
-	LOG_LEVEL       :=      40
+	LOG_LEVEL       :=      100
 else
 	BUILD_TYPE	:=	release
 	# Use LOG_LEVEL_ERROR by default for release builds
