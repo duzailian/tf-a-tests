@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dfaeee6_49a4254c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_partition_info_get.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-30T16:19:05Z",
+      "side": 1,
+      "message": "ffa_func_id",
+      "range": {
+        "startLine": 24,
+        "startChar": 5,
+        "endLine": 24,
+        "endChar": 13
+      },
+      "revId": "47ee83af51c64aee18338c18ff5110c201e34c6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b454385b_fca697b8",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_partition_info_get.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-30T16:19:05Z",
+      "side": 1,
+      "message": "Nit: should we create a wrapper function for this return?",
+      "range": {
+        "startLine": 25,
+        "startChar": 6,
+        "endLine": 25,
+        "endChar": 14
+      },
+      "revId": "47ee83af51c64aee18338c18ff5110c201e34c6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a56dc34f_38164b74",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_partition_info_get.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-30T16:19:05Z",
+      "side": 1,
+      "message": "ffa_func_id",
+      "range": {
+        "startLine": 55,
+        "startChar": 5,
+        "endLine": 55,
+        "endChar": 13
+      },
+      "revId": "47ee83af51c64aee18338c18ff5110c201e34c6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7ac7305_da255daf",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_partition_info_get.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-30T16:19:05Z",
+      "side": 1,
+      "message": "There are helper functions in spmc_common.c/h to help with checks to FF-A calls returns and logging.",
+      "range": {
+        "startLine": 55,
+        "startChar": 1,
+        "endLine": 55,
+        "endChar": 37
+      },
+      "revId": "47ee83af51c64aee18338c18ff5110c201e34c6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
