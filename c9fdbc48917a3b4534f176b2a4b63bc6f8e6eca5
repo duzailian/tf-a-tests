@@ -33,6 +33,29 @@
       "message": "Good that .properties now has an easy-to-understand decoding, as the OR of two named properties.  However, it\u0027s a little unfortunate that .exec_content appears to have gone from a human-comprehensible, named constant, to a somewhat-more-cryptic \"8U\".  I won\u0027t complain though;  I\u0027ll mark this as Resolved.",
       "revId": "c9fdbc48917a3b4534f176b2a4b63bc6f8e6eca5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6675062c_59c5619d",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-30T16:11:53Z",
+      "side": 1,
+      "message": "This is not 8 anymore.\nIt would be better to keep the use of the Partition\u0027s specific macro value.",
+      "range": {
+        "startLine": 166,
+        "startChar": 18,
+        "endLine": 166,
+        "endChar": 20
+      },
+      "revId": "c9fdbc48917a3b4534f176b2a4b63bc6f8e6eca5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
