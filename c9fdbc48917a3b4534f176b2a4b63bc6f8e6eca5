@@ -56,6 +56,30 @@
       },
       "revId": "c9fdbc48917a3b4534f176b2a4b63bc6f8e6eca5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62679779_e9acaf8e",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-03-30T16:15:44Z",
+      "side": 1,
+      "message": "To clarify, it is not 8 for SP 3. As it is a UP partition, I expect the ffa_partition_info_get to return 1, but you can check this on the respective partition\u0027s manifests.\n\nMaybe it is better to include these values in macros in the file:\ntf-a-tests/include/runtime_services/ffa_endpoints.h.",
+      "parentUuid": "6675062c_59c5619d",
+      "range": {
+        "startLine": 166,
+        "startChar": 18,
+        "endLine": 166,
+        "endChar": 20
+      },
+      "revId": "c9fdbc48917a3b4534f176b2a4b63bc6f8e6eca5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
