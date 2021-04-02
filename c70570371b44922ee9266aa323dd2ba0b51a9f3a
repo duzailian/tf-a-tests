@@ -16,6 +16,24 @@
       "message": "I think this can be squashed with: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/8548/3",
       "revId": "c70570371b44922ee9266aa323dd2ba0b51a9f3a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3daf9ce_d2f0d27f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-02T14:02:50Z",
+      "side": 1,
+      "message": "Can you explain why we should do that?",
+      "parentUuid": "6103989e_60e1c1c5",
+      "revId": "c70570371b44922ee9266aa323dd2ba0b51a9f3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
