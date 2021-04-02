@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "856dde00_fb06a313",
         "filename": "spm/cactus/plat/arm/fvp/fdts/cactus-secondary.dts",
@@ -14,10 +15,10 @@
       "side": 1,
       "message": "is this change required provided the interrupt test is only directed to first cactus instance?",
       "revId": "32aec7e07a017121d331b69b2c70702e6a7ac860",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "d833eb7c_d8066cf2",
         "filename": "spm/cactus/plat/arm/fvp/fdts/cactus-secondary.dts",
@@ -32,10 +33,28 @@
       "message": "You are right, we are not testing secondary \u0026 tertiary in current test. I kept it here just because i was enabling managed exit support for all cactus instances.\nBut i think i can remove it.",
       "parentUuid": "856dde00_fb06a313",
       "revId": "32aec7e07a017121d331b69b2c70702e6a7ac860",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "10380a0a_f2b5f0c6",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus-secondary.dts",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-02T14:35:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d833eb7c_d8066cf2",
+      "revId": "32aec7e07a017121d331b69b2c70702e6a7ac860",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "8070f41c_dd5c79c0",
         "filename": "spm/cactus/plat/arm/fvp/fdts/cactus-tertiary.dts",
@@ -49,8 +68,7 @@
       "side": 1,
       "message": "is this change required provided the interrupt test is only directed to first cactus instance?",
       "revId": "32aec7e07a017121d331b69b2c70702e6a7ac860",
-      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda",
-      "unresolved": true
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
