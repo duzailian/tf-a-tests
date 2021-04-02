@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "25cb5c4b_924c1ab6",
+        "filename": "include/runtime_services/cactus_test_cmds.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-02T14:33:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7425e0fa_ec234e7f",
+      "range": {
+        "startLine": 253,
+        "startChar": 29,
+        "endLine": 253,
+        "endChar": 68
+      },
+      "revId": "a65a7f95eba0a6a7fe3135127f47beabe445e1ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9772464d_603b0f71",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-03-23T10:37:47Z",
       "side": 1,
       "message": "Is it possible this call might fail?\nIf so, adding a error message or responding to TFTF with CACTUS_ERROR wouldn\u0027t make it easier to understand if there is a problem?",
+      "range": {
+        "startLine": 40,
+        "startChar": 1,
+        "endLine": 40,
+        "endChar": 21
+      },
+      "revId": "a65a7f95eba0a6a7fe3135127f47beabe445e1ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cd48e6e_46df6776",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-02T14:33:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9772464d_603b0f71",
       "range": {
         "startLine": 40,
         "startChar": 1,
