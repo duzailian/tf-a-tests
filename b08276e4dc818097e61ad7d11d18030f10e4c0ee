@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef93f38f_09c16d2a",
+        "filename": "spm/cactus/aarch64/cactus_entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-02T15:32:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fd2c66ac_228fe238",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 9
+      },
+      "revId": "b08276e4dc818097e61ad7d11d18030f10e4c0ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f150504c_e4bc75b6",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bfc38d8_0e313cf1",
+        "filename": "spm/cactus/aarch64/cactus_entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-02T15:32:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f150504c_e4bc75b6",
+      "range": {
+        "startLine": 36,
+        "startChar": 10,
+        "endLine": 36,
+        "endChar": 26
+      },
+      "revId": "b08276e4dc818097e61ad7d11d18030f10e4c0ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "08a4ea06_45f7be2c",
@@ -60,6 +108,30 @@
       "writtenOn": "2021-04-02T12:32:04Z",
       "side": 1,
       "message": "(minor) Other lines in this file insert a tab between the mnemonic and the operands. Make it consistent?",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 20
+      },
+      "revId": "b08276e4dc818097e61ad7d11d18030f10e4c0ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a3c9964_ff62db11",
+        "filename": "spm/cactus/aarch64/cactus_entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-02T15:32:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08a4ea06_45f7be2c",
       "range": {
         "startLine": 36,
         "startChar": 0,
