@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f861f6db_b6271b58",
+        "filename": "spm/ivy/ivy.dts",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000553
+      },
+      "writtenOn": "2021-04-06T13:47:12Z",
+      "side": 1,
+      "message": "Changed to ivy-1 to match the description given for cactus in spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+      "parentUuid": "71737a4b_ab9efca1",
+      "range": {
+        "startLine": 17,
+        "startChar": 16,
+        "endLine": 17,
+        "endChar": 22
+      },
+      "revId": "ed74bb100512078d487c93b1c65172d5dc335cef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "10e336c3_f32594cd",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aad6a83d_82c0d0b1",
+        "filename": "spm/ivy/ivy.dts",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000553
+      },
+      "writtenOn": "2021-04-06T13:47:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10e336c3_f32594cd",
+      "range": {
+        "startLine": 20,
+        "startChar": 7,
+        "endLine": 20,
+        "endChar": 8
+      },
+      "revId": "ed74bb100512078d487c93b1c65172d5dc335cef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cee6f7fb_fac3c78f",
@@ -60,6 +108,30 @@
       "writtenOn": "2021-03-25T02:17:12Z",
       "side": 1,
       "message": "not really required.",
+      "range": {
+        "startLine": 22,
+        "startChar": 1,
+        "endLine": 22,
+        "endChar": 32
+      },
+      "revId": "ed74bb100512078d487c93b1c65172d5dc335cef",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0f01f2e_e3b14299",
+        "filename": "spm/ivy/ivy.dts",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000553
+      },
+      "writtenOn": "2021-04-06T13:47:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cee6f7fb_fac3c78f",
       "range": {
         "startLine": 22,
         "startChar": 1,
