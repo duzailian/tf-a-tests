@@ -33,6 +33,24 @@
       "message": "Just a minor nitpick:  Can this be cut down to 80 characters per line?  Perhaps something like:\n\t\ttftf_testcase_printf(\"Interrupts were not correctly \" \\\n                                     \"masked during SDEI event signal\\n\" \\\n\t\t\t\t     \"Expected DAIF: 0x%lx, Actual DAIF: 0x%lx\\n\", \n                                     all_interrupts_masked, daif);\nSimilarly, line 84, 103, 119, 139, 155, 174, 198, 214?",
       "revId": "de9d04f353281b39c77f75d485691be8eda0653f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5406a1ec_83492827",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000553
+      },
+      "writtenOn": "2021-04-06T17:54:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d13df4f_bc37a949",
+      "revId": "de9d04f353281b39c77f75d485691be8eda0653f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
