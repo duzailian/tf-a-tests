@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "adeb7986_32654c2a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2021-04-07T16:58:09Z",
+      "side": 1,
+      "message": "Looks even more reasonable than patchset 3.  😊",
+      "revId": "e285805f017a6319e9dee9ecf2fb73a8ef1285e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
