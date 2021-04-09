@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1858276f_4d92b359",
+        "filename": "spm/common/spmc.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-09T13:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f899810d_759afbbd",
+      "revId": "6d40ca4c6fbb2bef784805160c943e88af69fb33",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5f77873d_568f117e",
@@ -31,6 +49,30 @@
       "writtenOn": "2021-04-09T09:56:13Z",
       "side": 1,
       "message": "Is there a reason why the return can\u0027t/shouldn\u0027t be int32_t?",
+      "range": {
+        "startLine": 45,
+        "startChar": 9,
+        "endLine": 45,
+        "endChar": 16
+      },
+      "revId": "6d40ca4c6fbb2bef784805160c943e88af69fb33",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e04c91c_a7662da1",
+        "filename": "spm/common/spmc.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-09T13:13:18Z",
+      "side": 1,
+      "message": "It\u0027s the return value of api_interrupt_enable within Hafnium so mapped to the same type:\nhttps://git.trustedfirmware.org/hafnium/hafnium.git/tree/src/api.c#n1412",
+      "parentUuid": "5f77873d_568f117e",
       "range": {
         "startLine": 45,
         "startChar": 9,
