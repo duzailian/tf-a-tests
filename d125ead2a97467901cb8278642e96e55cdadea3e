@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d989c77_35b4fa4b",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-04-09T10:00:12Z",
+      "side": 1,
+      "message": "any reason for not using g_ffa_id here straight?\n\nAlso, should this be assigned after the checking the return to this call is successful(i.e. after line 186?\n\nNo need for variable ffa_id.",
+      "range": {
+        "startLine": 182,
+        "startChar": 13,
+        "endLine": 182,
+        "endChar": 19
+      },
+      "revId": "d125ead2a97467901cb8278642e96e55cdadea3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6807756_4ef75b5c",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-04-09T10:00:12Z",
+      "side": 1,
+      "message": "Following the remaining suggestions to this code, use g_ffa_id here...",
+      "range": {
+        "startLine": 193,
+        "startChar": 37,
+        "endLine": 193,
+        "endChar": 43
+      },
+      "revId": "d125ead2a97467901cb8278642e96e55cdadea3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
