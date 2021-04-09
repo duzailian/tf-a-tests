@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e59a5231_4342d1b2",
+        "filename": "spm/common/spmc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-04-09T09:30:50Z",
+      "side": 1,
+      "message": "I see this is defined in ffa_helpers.c/h. I don\u0027t this type should be ff-a specific.\nI don\u0027t know where I would put a type def for this though.\nIf you have an idea, maybe that could be done within this patch. if not we can leave it for future update.\nWhat do you think?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 12
+      },
+      "revId": "50df9dde651eec4737edfeae7ced6455addc00be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
