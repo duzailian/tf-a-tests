@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e77a954b_96d67fae",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-09T11:08:18Z",
+      "side": 1,
+      "message": "It\u0027s not possible as explained line 201 because memset at line 190 clears the BSS into which g_ffa_id is held. So we keep the id temporarily on the stack prior to memset.",
+      "parentUuid": "2d989c77_35b4fa4b",
+      "range": {
+        "startLine": 182,
+        "startChar": 13,
+        "endLine": 182,
+        "endChar": 19
+      },
+      "revId": "d125ead2a97467901cb8278642e96e55cdadea3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f6807756_4ef75b5c",
         "filename": "spm/cactus/cactus_main.c",
         "patchSetId": 5
@@ -37,6 +61,30 @@
       "writtenOn": "2021-04-09T10:00:12Z",
       "side": 1,
       "message": "Following the remaining suggestions to this code, use g_ffa_id here...",
+      "range": {
+        "startLine": 193,
+        "startChar": 37,
+        "endLine": 193,
+        "endChar": 43
+      },
+      "revId": "d125ead2a97467901cb8278642e96e55cdadea3e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f0539e0_3d3b00b7",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-09T11:08:18Z",
+      "side": 1,
+      "message": "same reason as above g_ffa_id is affected by memset",
+      "parentUuid": "f6807756_4ef75b5c",
       "range": {
         "startLine": 193,
         "startChar": 37,
