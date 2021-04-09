@@ -22,6 +22,30 @@
       },
       "revId": "50df9dde651eec4737edfeae7ced6455addc00be",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37eaf500_f31b7204",
+        "filename": "spm/common/spmc.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-09T09:37:05Z",
+      "side": 1,
+      "message": "I had the same question in mind.\nI suggest we don\u0027t use a typedef and use uint32_t, ok to you?",
+      "parentUuid": "e59a5231_4342d1b2",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 12
+      },
+      "revId": "50df9dde651eec4737edfeae7ced6455addc00be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
