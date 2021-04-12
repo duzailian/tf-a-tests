@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40f227d1_00fc55e3",
+        "filename": "spm/cactus/aarch64/cactus_exceptions.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-12T21:48:18Z",
+      "side": 1,
+      "message": "It looks like vector entry for SError from Current EL with SPx is missing. Is it intentional?",
+      "revId": "324273a75c64fae4a0766dc179e9c706baa6f31a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
