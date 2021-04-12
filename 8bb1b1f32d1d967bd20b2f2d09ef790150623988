@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "490f9ca8_1f367075",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-12T22:48:18Z",
+      "side": 1,
+      "message": "Hi Manish,\nEvent 3 in the commit message of [1] tells that SP could trap to either IRQ or FIQ handler as part of performing managed exit. My understanding is that this virtual interrupt (i.e., HF_MANAGED_EXIT_INITID \u003d 4) can be signaled as either virtual irq or virtual fiq. \nIn your previous patch[2], only fiq_handler is equipped to perform managed exit and the tftf test is also implemented based on this assumption. Is this intentional? I guess irq_handler in cactus can be made simiar to fiq_handler. Please let me know if I am mistaken.\n\n[1] https://review.trustedfirmware.org/c/hafnium/hafnium/+/7794/14//COMMIT_MSG#19\n[2] https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/8548/9/spm/cactus/cactus_interrupt.c",
+      "range": {
+        "startLine": 48,
+        "startChar": 6,
+        "endLine": 49,
+        "endChar": 70
+      },
+      "revId": "8bb1b1f32d1d967bd20b2f2d09ef790150623988",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
