@@ -22,6 +22,30 @@
       },
       "revId": "8bb1b1f32d1d967bd20b2f2d09ef790150623988",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6a34188_0ba24e00",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-13T16:40:20Z",
+      "side": 1,
+      "message": "In this test configuration, we intend to only signal the NS interrupt in the SP as a virtual FIQ. Indeed the same interrupt can be signaled as a virtual IRQ if such option is passed in the interrupt enable hyper call from cactus. So yes both IRQ/FIQ handlers could be merged based on this flexibility. Though we may also want to make sure the SP does not receive a vIRQ when we expect it receives a vFIQ for a managed exit.\nThe reasoning is that to ease migration of TEEs such as OP-TEE relying on receiving physical Group1 NS/Group0 interrupts as FIQ on GICv3, the same TEE now as a Secure Partition receives a virtual FIQ as NS interrupts as well (or a so called foreign interrupt: https://git.trustedfirmware.org/OP-TEE/optee_os.git/tree/core/arch/arm/kernel/thread_a64.S#n1011). There is also the flexibility for other TEEs like Trusty to receive all interrupts (Grp1S/Grp1NS/Grp0) to the same \"pin\" e.g. vIRQ.",
+      "parentUuid": "490f9ca8_1f367075",
+      "range": {
+        "startLine": 48,
+        "startChar": 6,
+        "endLine": 49,
+        "endChar": 70
+      },
+      "revId": "8bb1b1f32d1d967bd20b2f2d09ef790150623988",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
