@@ -16,6 +16,24 @@
       "message": "Hi Manish\nI somehow feel the name spmc is not appropriate for this file. It is only a wrapper utility for hvc calls. Would you be willing to rename it as any of the following:\n-\u003e spm_helpers.c\n-\u003e swd_hvc_wrapper.c",
       "revId": "d06ff843d800ab657e564b00b89c082bbfc8d245",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "280a7a04_fbfae442",
+        "filename": "spm/common/spmc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-13T16:39:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ecfceb7_d2a3d52c",
+      "revId": "d06ff843d800ab657e564b00b89c082bbfc8d245",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
