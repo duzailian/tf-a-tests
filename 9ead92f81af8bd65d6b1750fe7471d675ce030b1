@@ -22,6 +22,30 @@
       },
       "revId": "9ead92f81af8bd65d6b1750fe7471d675ce030b1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82a1d628_b57b2e50",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-04-14T12:54:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75a3458e_b2441340",
+      "range": {
+        "startLine": 150,
+        "startChar": 13,
+        "endLine": 150,
+        "endChar": 18
+      },
+      "revId": "9ead92f81af8bd65d6b1750fe7471d675ce030b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
