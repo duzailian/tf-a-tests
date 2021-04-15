@@ -121,6 +121,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1b5f2599_0cc9dd69",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_partition_info_get.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-04-15T16:36:06Z",
+      "side": 1,
+      "message": "Agreed, will refactor.",
+      "parentUuid": "79fc9a4d_109913c9",
+      "range": {
+        "startLine": 16,
+        "startChar": 12,
+        "endLine": 16,
+        "endChar": 37
+      },
+      "revId": "33eed572d517fb61f321404601b1ca706581ac01",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "15958fb1_b2bd85a4",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_partition_info_get.c",
         "patchSetId": 1
