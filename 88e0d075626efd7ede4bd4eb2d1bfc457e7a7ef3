@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "af3da765_ae891fa7",
+        "filename": "include/lib/mmio.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-19T20:44:25Z",
+      "side": 1,
+      "message": "I did this because the pointer arithmetic would lead to increment in size of 4(integer width). \n\nIf I understood your comment correctly, are you suggesting I do this way:\n\nmmio_write_32(addr + (uintptr_t)byte_off), data)",
+      "parentUuid": "199a119a_61679326",
+      "range": {
+        "startLine": 30,
+        "startChar": 15,
+        "endLine": 30,
+        "endChar": 38
+      },
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "54b89a3d_50163441",
         "filename": "include/runtime_services/cactus_test_cmds.h",
         "patchSetId": 6
@@ -37,6 +61,30 @@
       "writtenOn": "2021-04-19T16:03:16Z",
       "side": 1,
       "message": "keep 2021?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aff5c51e_0c3f71f1",
+        "filename": "include/runtime_services/cactus_test_cmds.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-19T20:44:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54b89a3d_50163441",
       "range": {
         "startLine": 2,
         "startChar": 17,
@@ -60,6 +108,30 @@
       "writtenOn": "2021-04-19T16:03:16Z",
       "side": 1,
       "message": "Can this be restricted to IMAGE_CACTUS?",
+      "range": {
+        "startLine": 220,
+        "startChar": 4,
+        "endLine": 220,
+        "endChar": 18
+      },
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "911b9acc_f4708b2f",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-19T20:44:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "883f0b5a_40955d0a",
       "range": {
         "startLine": 220,
         "startChar": 4,
@@ -116,6 +188,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa6b9c5c_30555f55",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-19T20:44:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbc2405e_2142af8e",
+      "range": {
+        "startLine": 93,
+        "startChar": 17,
+        "endLine": 93,
+        "endChar": 26
+      },
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3abf97d_bdeaadbf",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-19T20:44:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f57a5265_18b7310b",
+      "range": {
+        "startLine": 93,
+        "startChar": 28,
+        "endLine": 93,
+        "endChar": 34
+      },
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ddbf92a1_6b24d773",
@@ -139,6 +259,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "795b7895_ea0628e5",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-19T20:44:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ddbf92a1_6b24d773",
+      "range": {
+        "startLine": 66,
+        "startChar": 2,
+        "endLine": 66,
+        "endChar": 15
+      },
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "12b4f01b_08635fba",
@@ -152,6 +296,24 @@
       "writtenOn": "2021-04-19T16:03:16Z",
       "side": 1,
       "message": "nit: blank line",
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "160675c0_66626931",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-19T20:44:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12b4f01b_08635fba",
       "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
