@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "199a119a_61679326",
+        "filename": "include/lib/mmio.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-19T16:03:16Z",
+      "side": 1,
+      "message": "Why this double cast here and below?\n\nYou could avoid using pointer arithmetic here.\nMaybe the only trap is making sure to cast byte_off to uintptr_t prior to adding to addr",
+      "range": {
+        "startLine": 30,
+        "startChar": 15,
+        "endLine": 30,
+        "endChar": 38
+      },
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54b89a3d_50163441",
+        "filename": "include/runtime_services/cactus_test_cmds.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-19T16:03:16Z",
+      "side": 1,
+      "message": "keep 2021?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "883f0b5a_40955d0a",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-19T16:03:16Z",
+      "side": 1,
+      "message": "Can this be restricted to IMAGE_CACTUS?",
+      "range": {
+        "startLine": 220,
+        "startChar": 4,
+        "endLine": 220,
+        "endChar": 18
+      },
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f57a5265_18b7310b",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-19T16:03:16Z",
+      "side": 1,
+      "message": "may be good to have a define as well",
+      "range": {
+        "startLine": 93,
+        "startChar": 28,
+        "endLine": 93,
+        "endChar": 34
+      },
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbc2405e_2142af8e",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-19T16:03:16Z",
+      "side": 1,
+      "message": "PLAT_CACTUS_AUX_BASE",
+      "range": {
+        "startLine": 93,
+        "startChar": 17,
+        "endLine": 93,
+        "endChar": 26
+      },
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddbf92a1_6b24d773",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-19T16:03:16Z",
+      "side": 1,
+      "message": "Can you use a more meaningful name to hint that\u0027s for use by smmu tests? Also in the description field?\n\nSame for auxiliary-dst node.",
+      "range": {
+        "startLine": 66,
+        "startChar": 2,
+        "endLine": 66,
+        "endChar": 15
+      },
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12b4f01b_08635fba",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-19T16:03:16Z",
+      "side": 1,
+      "message": "nit: blank line",
+      "revId": "88e0d075626efd7ede4bd4eb2d1bfc457e7a7ef3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
