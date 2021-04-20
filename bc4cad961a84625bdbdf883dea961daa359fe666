@@ -16,6 +16,24 @@
       "message": "@Madhu the start address symbol changed to __TEXT_START__ which is asserted by:\nhttps://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/spm/cactus/cactus.ld.S#n19\nIn any case if you are concerned by the alignment, adrp returns an aligned address.\nIs this ok to you?",
       "revId": "bc4cad961a84625bdbdf883dea961daa359fe666",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74149d65_71faf90a",
+        "filename": "spm/cactus/aarch64/cactus_entrypoint.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-20T19:08:11Z",
+      "side": 1,
+      "message": "Sounds good to me.",
+      "parentUuid": "d978cd4d_201d8139",
+      "revId": "bc4cad961a84625bdbdf883dea961daa359fe666",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
