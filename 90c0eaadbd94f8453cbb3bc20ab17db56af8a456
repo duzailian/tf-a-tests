@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6498e44d_cd1e529c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-04-20T09:59:30Z",
+      "side": 1,
+      "message": "Juno board failed on the run. Passed on jbo retrigger.",
+      "revId": "90c0eaadbd94f8453cbb3bc20ab17db56af8a456",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
