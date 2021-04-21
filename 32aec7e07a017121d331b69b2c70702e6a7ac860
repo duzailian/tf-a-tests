@@ -69,6 +69,24 @@
       "message": "is this change required provided the interrupt test is only directed to first cactus instance?",
       "revId": "32aec7e07a017121d331b69b2c70702e6a7ac860",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c12b30b4_247bc0b3",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus-tertiary.dts",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-21T05:19:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8070f41c_dd5c79c0",
+      "revId": "32aec7e07a017121d331b69b2c70702e6a7ac860",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
