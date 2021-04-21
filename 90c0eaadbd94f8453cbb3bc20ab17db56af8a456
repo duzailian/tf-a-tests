@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "08382724_e8306cc5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-04-21T10:33:41Z",
+      "side": 1,
+      "message": "ffa_partition_info_get to be coherent with reference in the other patches you prepared",
+      "range": {
+        "startLine": 7,
+        "startChar": 11,
+        "endLine": 7,
+        "endChar": 30
+      },
+      "revId": "90c0eaadbd94f8453cbb3bc20ab17db56af8a456",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "6498e44d_cd1e529c",
@@ -14,6 +37,23 @@
       "writtenOn": "2021-04-20T09:59:30Z",
       "side": 1,
       "message": "Juno board failed on the run. Passed on jbo retrigger.",
+      "revId": "90c0eaadbd94f8453cbb3bc20ab17db56af8a456",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7acda17_99b90f47",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-04-21T10:33:41Z",
+      "side": 1,
+      "message": "This have may have to be changed in accordance to changes to other patches in the same topic.",
       "revId": "90c0eaadbd94f8453cbb3bc20ab17db56af8a456",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
