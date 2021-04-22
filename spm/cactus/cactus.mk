@@ -51,6 +51,7 @@ CACTUS_SOURCES	:=					\
 		cactus_test_memory_sharing.c		\
 		cactus_tests_smmuv3.c			\
 		cactus_test_notifications.c		\
+		cactus_test_exceptions.c		\
 	)
 
 # TODO: Remove dependency on TFTF files.
@@ -68,6 +69,7 @@ CACTUS_SOURCES	+= 	drivers/arm/pl011/${ARCH}/pl011_console.S	\
 			lib/smc/${ARCH}/asm_smc.S			\
 			lib/smc/${ARCH}/smc.c				\
 			lib/smc/${ARCH}/hvc.c				\
+			lib/exceptions/${ARCH}/sync.c			\
 			lib/locks/${ARCH}/spinlock.S			\
 			lib/utils/mp_printf.c				\
 			${XLAT_TABLES_LIB_SRCS}
