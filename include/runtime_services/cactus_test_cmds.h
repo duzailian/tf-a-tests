@@ -522,4 +522,13 @@ static inline uint32_t cactus_get_req_count(smc_ret_values ret)
 	return (uint32_t)ret.ret4;
 }
 
+#define CACTUS_EXCEPTIONS_CMD U(0x45584345)
+
+static inline smc_ret_values cactus_send_exceptions_cmd(
+	ffa_id_t source, ffa_id_t dest, ffa_memory_handle_t handle)
+{
+	return cactus_send_cmd(source, dest, CACTUS_EXCEPTIONS_CMD, 0, handle,
+			       0, 0);
+}
+
 #endif
