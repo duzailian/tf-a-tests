@@ -43,3 +43,21 @@ bool tftf_sync_exception_handler(void)
 
 	return resume;
 }
+
+bool cactus_sync_exception_handler(void)
+{
+	uint64_t elr_el1 = read_elr_el1();
+	bool resume = false;
+
+	if (custom_sync_exception_handler == NULL) {
+		return false;
+	}
+
+	resume = custom_sync_exception_handler();
+
+	if (resume) {
+		write_elr_el1(elr_el1 + 4);
+	}
+
+	return resume;
+}
