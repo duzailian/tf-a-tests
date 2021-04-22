@@ -48,7 +48,7 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 	uint32_t mem_func = cactus_req_mem_send_get_mem_func(*args);
 	uint64_t handle = cactus_mem_send_get_handle(*args);
 
-	expect(memory_retrieve(mb, &m, handle, source, vm_id, mem_func), true);
+	expect(memory_retrieve(mb, &m, handle, source, vm_id), true);
 
 	composite = ffa_memory_region_get_composite(m, 0);
 
@@ -100,7 +100,7 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 			composite->constituents[0].page_count * PAGE_SIZE);
 
 		if (ret != 0) {
-			ERROR("Failed first mmap_add_dynamic_region!\n");
+			ERROR("Failed to unmap received memory region(%d)!\n", ret);
 			return cactus_error_resp(vm_id, source,
 						 CACTUS_ERROR_TEST);
 		}
