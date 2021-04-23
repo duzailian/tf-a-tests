@@ -52,6 +52,7 @@ func inject_serror_record
 
 2:
 	wfe
+	dsb	st
 	ldr	x0, [x3, #0]
 	cbz	x0, 2b
 
