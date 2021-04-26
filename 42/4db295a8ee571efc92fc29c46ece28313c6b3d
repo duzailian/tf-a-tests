@@ -1,0 +1,12 @@
+Allow-CI+2: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Legacy-CI+2: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Verified+1: TrustedFirmware Code Review
+Validation-Bot-Review+1: TrustedFirmware Code Review
+Code-Review+1: TrustedFirmware Code Review
+Code-Owner-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Maintainer-Review+1: Lauren Wehrmeister <lauren.wehrmeister@arm.com>
+Submitted-by: Lauren Wehrmeister <lauren.wehrmeister@arm.com>
+Submitted-at: Mon, 26 Apr 2021 22:15:58 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/9741
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
