@@ -16,6 +16,92 @@
       "message": "Tests pass on re-run.",
       "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10ccfa75_a87f8f0a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-04-27T08:58:47Z",
+      "side": 1,
+      "message": "Some small comments, overall it looks ready to go.",
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19233fa2_8a215e31",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-04-27T08:58:47Z",
+      "side": 1,
+      "message": "nit: space var, operator and literal value.",
+      "range": {
+        "startLine": 181,
+        "startChar": 19,
+        "endLine": 181,
+        "endChar": 30
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b554092_3b5b9179",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-04-27T08:58:47Z",
+      "side": 1,
+      "message": "spaces.",
+      "range": {
+        "startLine": 182,
+        "startChar": 33,
+        "endLine": 182,
+        "endChar": 36
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2b3ae22_abc01822",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-04-27T08:58:47Z",
+      "side": 1,
+      "message": "Please remove.\n\nOn your test code you are solely interacting with SP1. Therefore for this test, it is the only expected to be deployed for this test to succeed.",
+      "range": {
+        "startLine": 15,
+        "startChar": 16,
+        "endLine": 15,
+        "endChar": 51
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
