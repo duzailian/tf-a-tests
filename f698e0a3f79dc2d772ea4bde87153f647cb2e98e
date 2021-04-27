@@ -37,6 +37,362 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "24b64453_c582d3a0",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "Is this standard practice to interleave headers related to include path \u003c...\u003e vs related to current path \"...\" ?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9fcd22e_83df0172",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "Ideally this should reside in spm/cactus/plat/arm/fvp/include/cactus_platform_def.h",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 34
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0dcf641d_34f33723",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "Can we move all the test engine specifics here and below into a dedicated header in same directory?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 33
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24df3293_8c104954",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "nit: space",
+      "range": {
+        "startLine": 29,
+        "startChar": 60,
+        "endLine": 29,
+        "endChar": 62
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad006d1d_b8ef9dbc",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "nit: use same formatting as line 35",
+      "range": {
+        "startLine": 36,
+        "startChar": 39,
+        "endLine": 36,
+        "endChar": 40
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2bc0818_3afdbfea",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "nit: TRANSFER_SIZE ?",
+      "range": {
+        "startLine": 70,
+        "startChar": 8,
+        "endLine": 70,
+        "endChar": 20
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95533e68_36830b5d",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "Should this rather be loop count rather than \"time out\"?",
+      "range": {
+        "startLine": 71,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 20
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "000d7127_b95803e1",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "consider removing as mb is unused in the function",
+      "range": {
+        "startLine": 73,
+        "startChar": 21,
+        "endLine": 73,
+        "endChar": 47
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9286c25f_b325bb33",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "ffa_id is used only for filtering the command to the first partition\nIs this check really needed? Or can it be moved into the command handler and removed from run_smmuv3_test?",
+      "range": {
+        "startLine": 80,
+        "startChar": 1,
+        "endLine": 82,
+        "endChar": 2
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ed6e1ba_609cca21",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "nit: space",
+      "range": {
+        "startLine": 97,
+        "startChar": 33,
+        "endLine": 97,
+        "endChar": 35
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "870ce566_1f1d3b62",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "nit: update constants here and other places in the file to use unsigned typing ULL etc.",
+      "range": {
+        "startLine": 100,
+        "startChar": 2,
+        "endLine": 100,
+        "endChar": 20
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e650972b_3c7ba710",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "Why performing a data cache clean on the target buffer provided the test did not update the buffer?\nWould this rather be an invalidate operation? (or a clean + invalidate?)\nOr is this even required at all provided invalidate is done at line 178?",
+      "range": {
+        "startLine": 111,
+        "startChar": 1,
+        "endLine": 111,
+        "endChar": 44
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7e93df5_39b8b03a",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "nit: use same format for errors",
+      "range": {
+        "startLine": 150,
+        "startChar": 10,
+        "endLine": 150,
+        "endChar": 26
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf3d1af5_22ce97b5",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "nit: capital to start and full stop to end.",
+      "range": {
+        "startLine": 154,
+        "startChar": 5,
+        "endLine": 154,
+        "endChar": 37
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15a3659c_7ffb77f2",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "Should this allow some grace delay for the hw to complete the operation rather than actively polling (possibly starving the interconnect while the smmu runs) ?",
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "060bebe1_51aa397e",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "Is there a running status to be checked for?\nCan any other status value be returned in which case the test would probably fail?",
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "19233fa2_8a215e31",
         "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
         "patchSetId": 8
@@ -76,6 +432,69 @@
         "startChar": 33,
         "endLine": 182,
         "endChar": 36
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e2219a4_7451c895",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "nit: leave one blank",
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df9bfd5e_c559a3fd",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 8
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "Is this required?",
+      "range": {
+        "startLine": 106,
+        "startChar": 3,
+        "endLine": 107,
+        "endChar": 15
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64c66e53_8bcb734e",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 8
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-27T15:07:57Z",
+      "side": 1,
+      "message": "Is this required?",
+      "range": {
+        "startLine": 108,
+        "startChar": 3,
+        "endLine": 108,
+        "endChar": 20
       },
       "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
