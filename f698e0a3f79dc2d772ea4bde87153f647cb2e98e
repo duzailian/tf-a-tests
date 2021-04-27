@@ -60,6 +60,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "74a34fd6_43b6bd46",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "My mistake. I have seen this style in other files in tf-a-tests project. However, TF-A coding guidelines suggests to keep them separate. I will split them accordingly.",
+      "parentUuid": "24b64453_c582d3a0",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e9fcd22e_83df0172",
         "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
         "patchSetId": 8
@@ -71,6 +95,30 @@
       "writtenOn": "2021-04-27T15:07:57Z",
       "side": 1,
       "message": "Ideally this should reside in spm/cactus/plat/arm/fvp/include/cactus_platform_def.h",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 34
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cdd85dc_34147656",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9fcd22e_83df0172",
       "range": {
         "startLine": 21,
         "startChar": 0,
@@ -104,6 +152,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37e66096_7a83a9fe",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0dcf641d_34f33723",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 33
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "24df3293_8c104954",
@@ -117,6 +189,30 @@
       "writtenOn": "2021-04-27T15:07:57Z",
       "side": 1,
       "message": "nit: space",
+      "range": {
+        "startLine": 29,
+        "startChar": 60,
+        "endLine": 29,
+        "endChar": 62
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "798ea186_928385ce",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24df3293_8c104954",
       "range": {
         "startLine": 29,
         "startChar": 60,
@@ -150,6 +246,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3de74db1_3b34f5d1",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad006d1d_b8ef9dbc",
+      "range": {
+        "startLine": 36,
+        "startChar": 39,
+        "endLine": 36,
+        "endChar": 40
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e2bc0818_3afdbfea",
@@ -173,6 +293,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18c18d27_8104c511",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2bc0818_3afdbfea",
+      "range": {
+        "startLine": 70,
+        "startChar": 8,
+        "endLine": 70,
+        "endChar": 20
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "95533e68_36830b5d",
@@ -186,6 +330,30 @@
       "writtenOn": "2021-04-27T15:07:57Z",
       "side": 1,
       "message": "Should this rather be loop count rather than \"time out\"?",
+      "range": {
+        "startLine": 71,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 20
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f058c6c3_aee6880b",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95533e68_36830b5d",
       "range": {
         "startLine": 71,
         "startChar": 8,
@@ -242,6 +410,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6380b98_f8326564",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e408a04_440acfd5",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 20
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6322563f_38ebb779",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "000d7127_b95803e1",
+      "range": {
+        "startLine": 73,
+        "startChar": 21,
+        "endLine": 73,
+        "endChar": 47
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9286c25f_b325bb33",
@@ -255,6 +471,30 @@
       "writtenOn": "2021-04-27T15:07:57Z",
       "side": 1,
       "message": "ffa_id is used only for filtering the command to the first partition\nIs this check really needed? Or can it be moved into the command handler and removed from run_smmuv3_test?",
+      "range": {
+        "startLine": 80,
+        "startChar": 1,
+        "endLine": 82,
+        "endChar": 2
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f52aa97c_a4524076",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "My assumption is that the test cannot be run concurrently since there is only one test engine in the system(FVP). hence, I had put this check to make sure this test in only run by first SP. Accordingly, Normal world sends a command only to the first SP to run this test. In line with this assumption, I, through SPM, have mapped the MMIO region of the test engine in the first SP memory map using its partition manifest. \n\nI can remove this check from this function and move it to the appropriate command handler(after line 196). Please let me know your thoughts.",
+      "parentUuid": "9286c25f_b325bb33",
       "range": {
         "startLine": 80,
         "startChar": 1,
@@ -288,6 +528,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "907f7863_d327d3a1",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ed6e1ba_609cca21",
+      "range": {
+        "startLine": 97,
+        "startChar": 33,
+        "endLine": 97,
+        "endChar": 35
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "870ce566_1f1d3b62",
@@ -301,6 +565,30 @@
       "writtenOn": "2021-04-27T15:07:57Z",
       "side": 1,
       "message": "nit: update constants here and other places in the file to use unsigned typing ULL etc.",
+      "range": {
+        "startLine": 100,
+        "startChar": 2,
+        "endLine": 100,
+        "endChar": 20
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5e1ec94_37135ca4",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "870ce566_1f1d3b62",
       "range": {
         "startLine": 100,
         "startChar": 2,
@@ -359,6 +647,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a7f38fcb_3c0e3e9a",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "It was intentional to use SMMUv3TestEngine here because, otherwise, I feel the statement \"SMMUv3 misconfigured for frame: \" doesn\u0027t sound correct. May be I misunderstood your comment.",
+      "parentUuid": "d7e93df5_39b8b03a",
+      "range": {
+        "startLine": 150,
+        "startChar": 10,
+        "endLine": 150,
+        "endChar": 26
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bf3d1af5_22ce97b5",
         "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
         "patchSetId": 8
@@ -370,6 +682,30 @@
       "writtenOn": "2021-04-27T15:07:57Z",
       "side": 1,
       "message": "nit: capital to start and full stop to end.",
+      "range": {
+        "startLine": 154,
+        "startChar": 5,
+        "endLine": 154,
+        "endChar": 37
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44bcedba_75429288",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf3d1af5_22ce97b5",
       "range": {
         "startLine": 154,
         "startChar": 5,
@@ -416,6 +752,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e8c1b674_202c0acf",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "If the frame is not misconfigured(as checked in line 149), it is guaranteed that the status can only be either ENGINE_HALTED or ENGINE_ERROR.",
+      "parentUuid": "060bebe1_51aa397e",
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "19233fa2_8a215e31",
         "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
         "patchSetId": 8
@@ -427,6 +781,30 @@
       "writtenOn": "2021-04-27T08:58:47Z",
       "side": 1,
       "message": "nit: space var, operator and literal value.",
+      "range": {
+        "startLine": 181,
+        "startChar": 19,
+        "endLine": 181,
+        "endChar": 30
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b702e51a_e62d430d",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19233fa2_8a215e31",
       "range": {
         "startLine": 181,
         "startChar": 19,
@@ -460,6 +838,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8be23ca8_6181a7a5",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b554092_3b5b9179",
+      "range": {
+        "startLine": 182,
+        "startChar": 33,
+        "endLine": 182,
+        "endChar": 36
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4e2219a4_7451c895",
@@ -473,6 +875,24 @@
       "writtenOn": "2021-04-27T15:07:57Z",
       "side": 1,
       "message": "nit: leave one blank",
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec11c22a_7c6ea7d3",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-27T23:04:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e2219a4_7451c895",
       "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
