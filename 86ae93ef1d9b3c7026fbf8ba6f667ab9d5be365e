@@ -33,6 +33,24 @@
       "message": "Hi Leonardo, do we have intermittent CI network issues? Seeing a number of errors like this in tis CI run:\n\n19:02:07 ++ curl --fail -sLS -o /home/buildslave/workspace/tf-a-builder/workspace/juno_recovery/SOFTWARE/scp_bl1.bin https://downloads.trustedfirmware.org/tf-a/css_scp_2.8.0-dev/juno/scp_bl1.bin\n19:02:17 curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to downloads.trustedfirmware.org:443 ",
       "revId": "86ae93ef1d9b3c7026fbf8ba6f667ab9d5be365e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2752cd9_24425872",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000396
+      },
+      "writtenOn": "2021-04-28T14:25:07Z",
+      "side": 1,
+      "message": "Hi Joanna, let me investigate this problem. Binaries are placed correctly at the file server, and the error indicates a syscall error, so it may be a docker/host related problem.",
+      "parentUuid": "2e26e0d3_ae0dc486",
+      "revId": "86ae93ef1d9b3c7026fbf8ba6f667ab9d5be365e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
