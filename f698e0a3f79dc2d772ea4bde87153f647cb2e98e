@@ -624,6 +624,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dc1dfc29_1688387b",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-04-28T15:48:04Z",
+      "side": 1,
+      "message": "Yes, I agree this clean operation is not required since CPU did not write to the target buffer. Invalidate operation at line 178 is good enough. I will make the change in the patch.",
+      "parentUuid": "e650972b_3c7ba710",
+      "range": {
+        "startLine": 111,
+        "startChar": 1,
+        "endLine": 111,
+        "endChar": 44
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d7e93df5_39b8b03a",
         "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
         "patchSetId": 8
