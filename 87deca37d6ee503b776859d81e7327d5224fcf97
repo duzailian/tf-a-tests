@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "61b58449_d21e8f9e",
+        "filename": "spm/ivy/aarch64/spm_shim_entrypoint.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-04-28T17:02:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "83d74987_94058154",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "87deca37d6ee503b776859d81e7327d5224fcf97",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d2959c96_f361802b",
@@ -37,6 +61,24 @@
       "writtenOn": "2021-04-16T13:21:53Z",
       "side": 1,
       "message": "Can you insert a similar change as per:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/9384/3/spm/cactus/aarch64/cactus_entrypoint.S#35\n\nTo invalidate the data cache for the whole shim+S-EL0 text+data ranges?",
+      "revId": "87deca37d6ee503b776859d81e7327d5224fcf97",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1bf2a97_52421717",
+        "filename": "spm/ivy/aarch64/spm_shim_entrypoint.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-04-28T17:02:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2959c96_f361802b",
       "revId": "87deca37d6ee503b776859d81e7327d5224fcf97",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6517382a_f733f212",
+        "filename": "spm/ivy/aarch64/spm_shim_entrypoint.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-04-28T17:02:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "087e463a_9341dadb",
+      "range": {
+        "startLine": 75,
+        "startChar": 1,
+        "endLine": 75,
+        "endChar": 12
+      },
+      "revId": "87deca37d6ee503b776859d81e7327d5224fcf97",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d444b210_15f9deaa",
@@ -77,6 +143,30 @@
       "writtenOn": "2021-04-16T13:21:53Z",
       "side": 1,
       "message": "2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "87deca37d6ee503b776859d81e7327d5224fcf97",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a471a7b_16e05901",
+        "filename": "spm/ivy/shim_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-04-28T17:02:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d444b210_15f9deaa",
       "range": {
         "startLine": 2,
         "startChar": 17,
