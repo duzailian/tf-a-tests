@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84ae9c56_c58fa2fd",
+        "filename": "spm/cactus/cactus_tests/cactus_test_ffa.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-04-29T15:20:55Z",
+      "side": 1,
+      "message": "Clean up suggestion:\nWould it be better to have just one global pair of these announce_test_start/announce_test_end functions?\n\nWith string announcing test to ffa_partition_info_get interface...\nI think it is currently \"too verbose\" with little benefit.",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 2
+      },
+      "revId": "bef10c907e942da0c7345fbe149a837b6454ac10",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b55f7c0_5253e150",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-04-29T15:20:55Z",
+      "side": 1,
+      "message": "I think the logic of this method makes the two arrays above \"not common\", so probably they don\u0027t below to spm_common.c/h.\n\nThe ffa_partition_info_helper still belongs here...\n\nI just think we don\u0027t need the method get_ffa_partition_info_test_target:\n- The \"target\" to be used by TFTF can be part of test_ffa_partition_info_get.c that you added in the next patch.\n- The \"target\" used in cactus can be placed in cactus_test_ffa.c, next to the test function.\n\nLet me know what you think.",
+      "range": {
+        "startLine": 422,
+        "startChar": 0,
+        "endLine": 439,
+        "endChar": 1
+      },
+      "revId": "bef10c907e942da0c7345fbe149a837b6454ac10",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
