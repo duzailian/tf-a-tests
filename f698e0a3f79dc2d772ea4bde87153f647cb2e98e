@@ -1210,6 +1210,30 @@
       },
       "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cc14445_30abaac1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-04-29T17:33:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5e2a52a4_35f3fe5c",
+      "range": {
+        "startLine": 15,
+        "startChar": 16,
+        "endLine": 15,
+        "endChar": 51
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
