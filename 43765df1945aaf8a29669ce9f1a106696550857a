@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0a31bc3_c8d05db9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-04-29T15:23:11Z",
+      "side": 1,
+      "message": "Some of the comments on the previous patch may affect this patch as well. ",
+      "revId": "43765df1945aaf8a29669ce9f1a106696550857a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
