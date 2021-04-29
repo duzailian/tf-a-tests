@@ -51,6 +51,24 @@
       "parentUuid": "2e26e0d3_ae0dc486",
       "revId": "86ae93ef1d9b3c7026fbf8ba6f667ab9d5be365e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be708c30_d9fd8e88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000396
+      },
+      "writtenOn": "2021-04-29T16:08:58Z",
+      "side": 1,
+      "message": "@Joanna, the problem was caused by a transient network problem and AFAIK, no other jenkins job were affected. So if possible, let\u0027s re-trigger this one.",
+      "parentUuid": "f2752cd9_24425872",
+      "revId": "86ae93ef1d9b3c7026fbf8ba6f667ab9d5be365e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
