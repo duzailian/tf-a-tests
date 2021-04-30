@@ -1,0 +1,9 @@
+Legacy-CI+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Verified+1: TrustedFirmware Code Review
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Fri, 30 Apr 2021 17:28:23 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/8248
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
