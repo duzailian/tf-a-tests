@@ -22,6 +22,30 @@
       },
       "revId": "1b297a27f7333eaf4dc5e02521a1db857fbab925",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f42ea271_36e7d24b",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-30T07:44:36Z",
+      "side": 1,
+      "message": "Ok.. I\u0027m wondering why this happens on this file specifically as if this is a general rule, it would trigger on many other unrelated changes? Then can you revert such that it passes the static check, we can bring the question to the forum.",
+      "parentUuid": "d22b07a3_8c652c9d",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 31
+      },
+      "revId": "1b297a27f7333eaf4dc5e02521a1db857fbab925",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
