@@ -1292,6 +1292,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "160dfe50_94e239ac",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 8
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-30T15:26:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ab45f44_cde76c8f",
+      "range": {
+        "startLine": 106,
+        "startChar": 3,
+        "endLine": 107,
+        "endChar": 15
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "64c66e53_8bcb734e",
@@ -1329,6 +1353,30 @@
       "side": 1,
       "message": "I will remove it.",
       "parentUuid": "64c66e53_8bcb734e",
+      "range": {
+        "startLine": 108,
+        "startChar": 3,
+        "endLine": 108,
+        "endChar": 20
+      },
+      "revId": "f698e0a3f79dc2d772ea4bde87153f647cb2e98e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e56347a_a4e872ff",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 8
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-04-30T15:26:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46746a3f_c5b312ba",
       "range": {
         "startLine": 108,
         "startChar": 3,
