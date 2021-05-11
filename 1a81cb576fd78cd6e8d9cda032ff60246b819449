@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88c3ee00_284f92b8",
+        "filename": "docs/getting_started/build.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-05-11T14:56:18Z",
+      "side": 1,
+      "message": "nitpick: would it be possible to provide a hyperlink to this text? \nhttps://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+      "range": {
+        "startLine": 273,
+        "startChar": 36,
+        "endLine": 273,
+        "endChar": 46
+      },
+      "revId": "1a81cb576fd78cd6e8d9cda032ff60246b819449",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
