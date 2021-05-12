@@ -52,6 +52,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "68b57716_e70d428d",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-12T20:11:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c1ec13b0_ef290e28",
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0779e049_0eb7e269",
@@ -65,6 +83,24 @@
       "writtenOn": "2021-05-12T19:36:17Z",
       "side": 1,
       "message": "Was this a fix for tests newly added since last release? Could remove if so",
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9fa0a932_f26e5dab",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-12T20:11:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0779e049_0eb7e269",
       "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -88,6 +124,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cfe8fd80_52d143f6",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-12T20:11:14Z",
+      "side": 1,
+      "message": "This is the TFTF side, there is a separate entry for the test partition.",
+      "parentUuid": "fe415449_ea9e798b",
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "33e07c64_528be8f4",
         "filename": "docs/change-log.rst",
         "patchSetId": 1
@@ -99,6 +153,24 @@
       "writtenOn": "2021-05-12T10:45:29Z",
       "side": 1,
       "message": "NIT: Reads a bit odd. Was there a reason why we were not using MTE instructions in a test called \u0027test_mte_instructions\u0027 that we had to over come?  Or was this simple a new test case to test MTE instructions where we did not have a test before? I appreciate its most likely how it was described in the commit message.",
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3d3b777_cf9635a7",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-12T20:11:14Z",
+      "side": 1,
+      "message": "replaces \u0027.inst\u0027 AArch64 machine directives with CPU Memory Tagging Extension instructions in \u0027test_mte_instructions\u0027",
+      "parentUuid": "33e07c64_528be8f4",
       "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -122,6 +194,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0d312ee6_54437e8f",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-12T20:11:14Z",
+      "side": 1,
+      "message": "Updated to include Theodul as an L3 subsystem.",
+      "parentUuid": "dfb9dda5_ee153e35",
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6ffdf0cb_2447ff95",
         "filename": "docs/change-log.rst",
         "patchSetId": 1
@@ -139,6 +229,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e89659c2_434347c4",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-12T20:11:14Z",
+      "side": 1,
+      "message": "updated to include \"S-EL1 test partition\"",
+      "parentUuid": "6ffdf0cb_2447ff95",
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c0c07b82_ff6d629b",
         "filename": "docs/change-log.rst",
         "patchSetId": 1
@@ -150,6 +258,30 @@
       "writtenOn": "2021-05-12T19:36:17Z",
       "side": 1,
       "message": "Remove space",
+      "range": {
+        "startLine": 101,
+        "startChar": 70,
+        "endLine": 101,
+        "endChar": 71
+      },
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17e8a955_988ed4af",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-12T20:11:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c0c07b82_ff6d629b",
       "range": {
         "startLine": 101,
         "startChar": 70,
@@ -183,6 +315,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "27b3ec83_33507018",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-12T20:11:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b5c8d4d4_8a458de9",
+      "range": {
+        "startLine": 117,
+        "startChar": 72,
+        "endLine": 117,
+        "endChar": 73
+      },
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19dedcc5_870f38bc",
@@ -200,6 +356,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af55ea0a_819d8aa1",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-12T20:11:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "19dedcc5_870f38bc",
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dde870c8_f9cbccd6",
@@ -213,6 +387,30 @@
       "writtenOn": "2021-05-12T19:36:17Z",
       "side": 1,
       "message": "Remove space",
+      "range": {
+        "startLine": 171,
+        "startChar": 75,
+        "endLine": 171,
+        "endChar": 76
+      },
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6ee449e_5e6a106e",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-12T20:11:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "dde870c8_f9cbccd6",
       "range": {
         "startLine": 171,
         "startChar": 75,
