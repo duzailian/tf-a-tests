@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4807575c_45349de6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2021-05-12T10:45:29Z",
+      "side": 1,
+      "message": "All NIT level comments from me to help provide a clearer changelog.",
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1ec13b0_ef290e28",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2021-05-12T10:45:29Z",
+      "side": 1,
+      "message": "NIT: For this high level New Features section it might be good to clarify what the acronyms are. We d do it for SP so why not others. I appreciate at Arm we have a lot and cannot really do it throughout but be good for the new Features which are often referenced later in the details.",
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33e07c64_528be8f4",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2021-05-12T10:45:29Z",
+      "side": 1,
+      "message": "NIT: Reads a bit odd. Was there a reason why we were not using MTE instructions in a test called \u0027test_mte_instructions\u0027 that we had to over come?  Or was this simple a new test case to test MTE instructions where we did not have a test before? I appreciate its most likely how it was described in the commit message.",
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfb9dda5_ee153e35",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2021-05-12T10:45:29Z",
+      "side": 1,
+      "message": "NIT: might want to make it clear that Theodul is a CPU. I assume we have not replaced the CPU code name with the real name yet? Might want to check.",
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ffdf0cb_2447ff95",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2021-05-12T10:45:29Z",
+      "side": 1,
+      "message": "Might be good to clarify what Cactus is in the title a little bit more. Maybe \"Cactus Test Partition\"?",
+      "revId": "8bc8793be0e3238ea12a8f8a1e789d05278eab4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
