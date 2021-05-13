@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2116f635_46f4552c",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-13T19:43:41Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9f41d533_7c72cd52",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e6e47b50_a220c688",
@@ -48,6 +66,24 @@
       "writtenOn": "2021-05-13T16:55:25Z",
       "side": 1,
       "message": "This is about supporting the Theodul DSU (DynamIQ Shared Unit) for the Total Compute (TC0) platform.",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "279c2cfb_e15bae68",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-13T19:43:41Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e6e47b50_a220c688",
       "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -71,6 +107,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "17d74bbe_1eaba29d",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-13T19:43:41Z",
+      "side": 1,
+      "message": "Don\u0027t need it in the changed description",
+      "parentUuid": "133b8bc3_6eb4d4fb",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bb771c14_720e49c7",
         "filename": "docs/change-log.rst",
         "patchSetId": 2
@@ -82,6 +136,24 @@
       "writtenOn": "2021-05-13T16:55:25Z",
       "side": 1,
       "message": "or Implement HF_INTERRUPT_ENABLE Hafnium hypervisor call wrapper. With this service, a secure partition calls into the SPMC to enable/disable a particular virtual interrupt.",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39c513a2_5859f03c",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-13T19:43:41Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "bb771c14_720e49c7",
       "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -103,6 +175,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db273871_5fb354ae",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-13T19:43:41Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3bd9248f_5bcb4cec",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a50fbee9_2b98e845",
@@ -116,6 +206,24 @@
       "writtenOn": "2021-05-13T16:55:25Z",
       "side": 1,
       "message": "same as line 80",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b46fda8_0b727e51",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-13T19:43:41Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a50fbee9_2b98e845",
       "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -137,6 +245,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "17375ed0_0dc432d9",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-13T19:43:41Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d96815b1_de639c81",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3b33065a_2a8b64f3",
@@ -150,6 +276,24 @@
       "writtenOn": "2021-05-13T16:55:25Z",
       "side": 1,
       "message": "extended to use 5 registers",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7f41ba9_a145f71d",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-05-13T19:43:41Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3b33065a_2a8b64f3",
       "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
