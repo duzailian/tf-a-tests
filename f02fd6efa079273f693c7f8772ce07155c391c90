@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91177256_abd788b7",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-05-13T16:55:25Z",
+      "side": 1,
+      "message": "I don\u0027t think testing SVE is merged in this release.\nThe new test relates to SPM saving/restoring the NS SIMD context. This is described line 136. Both a normal world FF-A endpoint (TFTF) and a secure partition can use SIMD vectors and instructions independently.\nThe similar support for SVE will be added post v2.5 release.\n\nBullets 2, 3, 4, 5 may be grouped into a \"SPM and FF-A v1.0\" testing bucket.",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f41d533_7c72cd52",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-05-13T16:55:25Z",
+      "side": 1,
+      "message": "Bullets 1, 2, 4 may be grouped into a same SPM / FF-A v1.0 testing bucket.",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6e47b50_a220c688",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-05-13T16:55:25Z",
+      "side": 1,
+      "message": "This is about supporting the Theodul DSU (DynamIQ Shared Unit) for the Total Compute (TC0) platform.",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "133b8bc3_6eb4d4fb",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-05-13T16:55:25Z",
+      "side": 1,
+      "message": "closing parenthesis",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb771c14_720e49c7",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-05-13T16:55:25Z",
+      "side": 1,
+      "message": "or Implement HF_INTERRUPT_ENABLE Hafnium hypervisor call wrapper. With this service, a secure partition calls into the SPMC to enable/disable a particular virtual interrupt.",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bd9248f_5bcb4cec",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-05-13T16:55:25Z",
+      "side": 1,
+      "message": "redundant with first bullet",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a50fbee9_2b98e845",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-05-13T16:55:25Z",
+      "side": 1,
+      "message": "same as line 80",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d96815b1_de639c81",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-05-13T16:55:25Z",
+      "side": 1,
+      "message": "same as line 82",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b33065a_2a8b64f3",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-05-13T16:55:25Z",
+      "side": 1,
+      "message": "extended to use 5 registers",
+      "revId": "f02fd6efa079273f693c7f8772ce07155c391c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
