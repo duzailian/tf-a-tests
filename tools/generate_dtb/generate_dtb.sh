@@ -18,7 +18,7 @@ MAPFILE="$3/$1/$1.map"
 EXTRA_DTS="$3/$1/$1_extra.dts"
 COMBINED_DTS="$3/$1/$1_combined.dts"
 PREPROCESSED_DTS="$3/$1/$1_preprocessed.dts"
-GENERATED_DTB="$3/$1.dtb"
+GENERATED_DTB=$4
 
 # Look for the start and end of the sections that are only known in the elf file
 # after compiling the partition.

@@ -13,6 +13,8 @@ ifneq (${IVY_PLAT_PATH},)
 	include ${IVY_PLAT_PATH}/platform.mk
 endif
 
+IVY_SHIM	:= 1
+
 IVY_DTB		:= build/${PLAT}/debug/ivy.dtb
 
 IVY_INCLUDES :=					\
@@ -35,17 +37,21 @@ IVY_SOURCES	:=					\
 		aarch64/ivy_entrypoint.S		\
 		ivy_main.c				\
 	)						\
-	$(addprefix spm/ivy/shim/,			\
-		aarch64/spm_shim_entrypoint.S		\
-		aarch64/spm_shim_exceptions.S		\
-		shim_main.c				\
-	)						\
 	$(addprefix spm/common/,			\
 		aarch64/sp_arch_helpers.S		\
 		sp_debug.c				\
 		sp_helpers.c				\
 		spm_helpers.c				\
 	)						\
+
+ifeq ($(IVY_SHIM),1)
+IVY_SOURCES	+=					\
+	$(addprefix spm/ivy/shim/,			\
+		aarch64/spm_shim_entrypoint.S		\
+		aarch64/spm_shim_exceptions.S		\
+		shim_main.c				\
+	)
+endif
 
 # TODO: Remove dependency on TFTF files.
 IVY_SOURCES	+=					\
@@ -75,12 +81,13 @@ $(eval $(call add_define,IVY_DEFINES,ENABLE_BTI))
 $(eval $(call add_define,IVY_DEFINES,ENABLE_PAUTH))
 $(eval $(call add_define,IVY_DEFINES,LOG_LEVEL))
 $(eval $(call add_define,IVY_DEFINES,PLAT_${PLAT}))
+$(eval $(call add_define,IVY_DEFINES,IVY_SHIM))
 
 $(IVY_DTB) : $(BUILD_PLAT)/ivy $(BUILD_PLAT)/ivy/ivy.elf
 $(IVY_DTB) : $(IVY_DTS)
 	@echo "  DTBGEN  $@"
 	${Q}tools/generate_dtb/generate_dtb.sh \
-		ivy ${IVY_DTS} $(BUILD_PLAT)
+		ivy ${IVY_DTS} $(BUILD_PLAT) $(IVY_DTB)
 	${Q}tools/generate_json/generate_json.sh \
 		ivy $(BUILD_PLAT)
 	@echo
