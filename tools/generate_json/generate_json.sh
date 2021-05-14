@@ -37,7 +37,7 @@ if [ "$1" == "cactus" ]; then
 	\t\"pm\": \"$1-tertiary.dts\",\n \
 	\t\"owner\": \"Plat\"\n\t},\n\n\t\"ivy\" : {\n \
 	\t\"image\": \"ivy.bin\",\n \
-	\t\"pm\": \"ivy.dts\", \n \
+	\t\"pm\": \"ivy-sel1.dts\", \n \
 	\t\"owner\": \"Plat\"\n \
 	}\n}" \
 	> "$GENERATED_JSON"
