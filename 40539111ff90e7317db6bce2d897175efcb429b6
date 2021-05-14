@@ -33,6 +33,24 @@
       "message": "The FFA_FEATURES tests is failing:\nhttps://ci-builds.trustedfirmware.org/static-files/5_Sgz23_jCjh6n8BLCUXSL1_kUt9bMQ0ptFfxRzzTnUxNjIwOTc4ODc3OTg0Ojk6YW5vbnltb3VzOmpvYi90Zi1hLWJ1aWxkZXIvMjM1MjQ1L2FydGlmYWN0/lava-uart2.log\n",
       "revId": "40539111ff90e7317db6bce2d897175efcb429b6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "747768d8_5fb5c79b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-05-14T07:58:26Z",
+      "side": 1,
+      "message": "And here too:\nhttps://ci-builds.trustedfirmware.org/static-files/YDkd7Fvst-cQGj9dyPM4G2WrjwIEpPhxywrgCYhqm_8xNjIwOTc5MDY4MTU5Ojk6YW5vbnltb3VzOmpvYi90Zi1hLWJ1aWxkZXIvMjM1MjQ4L2FydGlmYWN0/lava-uart2.log\n\nSame reason...",
+      "parentUuid": "361edd0d_ea4a74b6",
+      "revId": "40539111ff90e7317db6bce2d897175efcb429b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
