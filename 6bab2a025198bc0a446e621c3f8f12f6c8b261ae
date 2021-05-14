@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea78b095_da0b6ac0",
+        "filename": "spm/ivy/plat/arm/tc0/include/ivy_platform_def.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-05-14T17:27:49Z",
+      "side": 1,
+      "message": "Can you align with https://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/spm/cactus/plat/arm/fvp/include/cactus_platform_def.h\n\nand check that building cactus for PLAT\u003dtc0 passes?",
+      "revId": "6bab2a025198bc0a446e621c3f8f12f6c8b261ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
