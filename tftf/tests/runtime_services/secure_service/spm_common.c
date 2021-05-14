@@ -19,7 +19,7 @@
 bool is_ffa_call_error(smc_ret_values ret)
 {
 	if (ffa_func_id(ret) == FFA_ERROR) {
-		ERROR("FF-A call returned error (%x): %d\n",
+		VERBOSE("FF-A call returned error (%x): %d\n",
 		      ffa_func_id(ret), ffa_error_code(ret));
 		return true;
 	}
