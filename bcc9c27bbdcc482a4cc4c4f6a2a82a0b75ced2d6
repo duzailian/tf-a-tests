@@ -3,6 +3,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "44caf9c6_347cb535",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-05-24T14:30:09Z",
+      "side": 1,
+      "message": "these values are platform specific. Would it be best to put them in an platform specific file?",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 28
+      },
+      "revId": "bcc9c27bbdcc482a4cc4c4f6a2a82a0b75ced2d6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68375ca6_68222ed1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-05-24T14:30:09Z",
+      "side": 1,
+      "message": "Should this be put within the checks of macro CHECK_SPMC_TESTING_SETUP?\nMy understanding is that generally, hafnium is not compliant with aarch32 partitions.",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 2
+      },
+      "revId": "bcc9c27bbdcc482a4cc4c4f6a2a82a0b75ced2d6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fa6c2154_e23d7d7c",
         "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
         "patchSetId": 5
