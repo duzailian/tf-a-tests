@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b19ea49_6a93c42c",
+        "filename": "spm/ivy/shim_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-05-26T13:25:04Z",
+      "side": 1,
+      "message": "Can you move this to ivy_main.c ?\nThis will help later re-use in context of SEL0 partitions without shim.",
+      "range": {
+        "startLine": 102,
+        "startChar": 1,
+        "endLine": 102,
+        "endChar": 35
+      },
+      "revId": "40bbf7a86d13feec44b5123f1dc4617021e030d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
