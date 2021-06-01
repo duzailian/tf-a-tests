@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2f057c5f_50189e7a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-01T14:28:19Z",
+      "side": 1,
+      "message": "From tf-a-tests perspective Ivy really is the only consumer for the shim. The Ivy partition is self-contained and consists in the SEL1 shim + the SEL0 sample code. Unless there are other test partitions needing the shim it doesn\u0027t need the complexity in the makefile structure to build the shim independently at an upper level. I\u0027d suggest leaving the patches as is and go with extracting the shim in a later iteration if/when necessary.\nAs you know, in the long term we might migrate to a non-shim approach where we provide an Ivy related build option such that the SEL0 portion is isolated from the shim. If the shim is built independently it means the top level build flow has to cater with this build option to elide the Ivy dependency to the shim.\nThe build option can be temporary first, and then set permanently if ever the shim gets abandoned (ultimately the shim code stripped out).",
+      "parentUuid": "5e45dea2_b8320457",
+      "revId": "23b27eeee6b5dba03a6542fbdd5704b6d3fbf4ea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e2d0a81f_64fb03f5",
         "filename": "spm/ivy/aarch64/spm_shim_entrypoint.S",
         "patchSetId": 5
