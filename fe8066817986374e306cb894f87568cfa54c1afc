@@ -45,6 +45,30 @@
       },
       "revId": "fe8066817986374e306cb894f87568cfa54c1afc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a6ca606_8d8f7f9f",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-06-03T09:27:57Z",
+      "side": 1,
+      "message": "Yes that is true.\n\nI was confused, I thought this was another change. 😒\nSorry for this.",
+      "parentUuid": "83bbd4da_e2d62274",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 48
+      },
+      "revId": "fe8066817986374e306cb894f87568cfa54c1afc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
