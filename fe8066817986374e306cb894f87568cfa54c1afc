@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79db4a8b_8121f3d8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2021-06-03T08:45:43Z",
+      "side": 1,
+      "message": "Sorry I don\u0027t really understand the motivation of this patch. Could you please elaborate on why this error message was misleading? On first look, it looked appropriate to me, as the code searched the command through the list of valid commands and printed the message in case it\u0027s not found...",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "fe8066817986374e306cb894f87568cfa54c1afc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
