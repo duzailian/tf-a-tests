@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a8887bc_0d547a5f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2021-06-03T09:27:22Z",
+      "side": 1,
+      "message": "Thanks, that makes sense to me now!",
+      "revId": "77eb5d900cb745c3bfced1a0f2b20c423ecb5659",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
