@@ -69,6 +69,30 @@
       },
       "revId": "fe8066817986374e306cb894f87568cfa54c1afc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46acd4a2_a43b3d5b",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-06-03T09:39:39Z",
+      "side": 1,
+      "message": "Sorry again. I realized what was happening.\n\nNote for myself, looking at two branches of work at the same time can be confusing, even if one of those is very simple. 😄\n\nI think now is as it should. spm_common.c part of the next patch, and unhandled command log as part of this patch, for differentiation of rationale.",
+      "parentUuid": "0a6ca606_8d8f7f9f",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 48
+      },
+      "revId": "fe8066817986374e306cb894f87568cfa54c1afc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
