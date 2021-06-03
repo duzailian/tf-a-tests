@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "1f758d2c_c3e5a118",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-06-03T09:48:25Z",
+      "side": 1,
+      "message": "Thank you for reviewing, and sorry for the confusion. 👍",
+      "parentUuid": "3a8887bc_0d547a5f",
+      "revId": "77eb5d900cb745c3bfced1a0f2b20c423ecb5659",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "5b81a55b_95e11958",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 4
