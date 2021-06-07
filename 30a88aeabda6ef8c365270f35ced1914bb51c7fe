@@ -96,6 +96,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "402adf28_613bf615",
+        "filename": "spm/ivy/ivy.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-07T16:27:04Z",
+      "side": 1,
+      "message": "This can move to plat/arm/fvp/platform.mk by adding\nIVY_SOURCES    +\u003d      plat/arm/fvp/${ARCH}/plat_helpers.S",
+      "parentUuid": "45dbae74_069e4690",
+      "range": {
+        "startLine": 51,
+        "startChar": 3,
+        "endLine": 51,
+        "endChar": 38
+      },
+      "revId": "30a88aeabda6ef8c365270f35ced1914bb51c7fe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "153f366f_ce5d2b80",
         "filename": "spm/ivy/ivy.mk",
         "patchSetId": 4
