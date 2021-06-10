@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5aeb597a_cc6f8368",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-06-10T08:50:54Z",
+      "side": 1,
+      "message": "Split the patch into console initialization and mmap + ff-a message handling patches. Console initialization patch was squashed with the patches which create the sp_debug files. Hopefully this makes more sense",
+      "parentUuid": "80d6954e_3989f10d",
+      "range": {
+        "startLine": 7,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 32
+      },
+      "revId": "0b9d35a2f6b3bb8507d52b282ab263f1e83fb775",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0d3f9670_10422157",
@@ -78,6 +102,24 @@
       "side": 1,
       "message": "I agree. Dont see value in adding the file here and then deleting it later",
       "parentUuid": "54a240ee_44556bce",
+      "revId": "0b9d35a2f6b3bb8507d52b282ab263f1e83fb775",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e05d05dd_5d46ff1a",
+        "filename": "spm/ivy/ivy_debug.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-06-10T08:50:54Z",
+      "side": 1,
+      "message": "Done, reordered the commit so that the sp_debug can be used in this patch",
+      "parentUuid": "8d209215_3f821c0f",
       "revId": "0b9d35a2f6b3bb8507d52b282ab263f1e83fb775",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
