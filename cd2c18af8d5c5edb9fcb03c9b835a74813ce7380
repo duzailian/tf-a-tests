@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "985e68f7_b12e366f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-11T14:48:45Z",
+      "side": 1,
+      "message": "More precisely:\nThe shim prepares the S-EL1/0 environment (stack, VBAR, MMU, I-cache, BSS clear, PIE fixup) for usage by the S-EL0 application.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 56
+      },
+      "revId": "cd2c18af8d5c5edb9fcb03c9b835a74813ce7380",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
