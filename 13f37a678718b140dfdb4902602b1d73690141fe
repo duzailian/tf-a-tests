@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f031cd0_2a237692",
+        "filename": "plat/arm/fvp/platform.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-06-11T14:05:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9fe32a3_02cfc3f1",
+      "revId": "13f37a678718b140dfdb4902602b1d73690141fe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc74be8a_cca0f72a",
@@ -31,6 +49,30 @@
       "writtenOn": "2021-06-10T09:20:38Z",
       "side": 1,
       "message": "This is removed later in this change: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/9375/7/spm/ivy/aarch64/ivy_entrypoint.S\n\nSo can you remove from the current change?",
+      "range": {
+        "startLine": 23,
+        "startChar": 1,
+        "endLine": 38,
+        "endChar": 19
+      },
+      "revId": "13f37a678718b140dfdb4902602b1d73690141fe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad31f100_ae48b153",
+        "filename": "spm/ivy/aarch64/ivy_entrypoint.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-06-11T14:05:43Z",
+      "side": 1,
+      "message": "I think it is removed in the later change because theses bits are then done in the shim entrypoint. So I think whilst there is no shim entrypoint it needs doing here",
+      "parentUuid": "cc74be8a_cca0f72a",
       "range": {
         "startLine": 23,
         "startChar": 1,
