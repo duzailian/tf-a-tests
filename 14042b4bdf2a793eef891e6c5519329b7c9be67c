@@ -16,6 +16,46 @@
       "message": "Moved adding SVC for STDOUT into this patch as this is where the SVC option is used",
       "revId": "14042b4bdf2a793eef891e6c5519329b7c9be67c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e94a226_8b99a0f9",
+        "filename": "spm/common/sp_debug.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-11T14:43:46Z",
+      "side": 1,
+      "message": "nit: remove blank",
+      "revId": "14042b4bdf2a793eef891e6c5519329b7c9be67c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4580842f_cfe23528",
+        "filename": "spm/ivy/ivy_main.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-11T14:43:46Z",
+      "side": 1,
+      "message": "Remove. SPRT is deprecated.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 21
+      },
+      "revId": "14042b4bdf2a793eef891e6c5519329b7c9be67c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
