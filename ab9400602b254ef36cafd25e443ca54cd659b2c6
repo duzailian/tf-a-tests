@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79514e33_915650d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2021-06-14T09:06:59Z",
+      "side": 1,
+      "message": "Please add a detailed description.",
+      "revId": "ab9400602b254ef36cafd25e443ca54cd659b2c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a01343c6_4948550a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2021-06-14T09:06:59Z",
+      "side": 1,
+      "message": "Code LGTM",
+      "revId": "ab9400602b254ef36cafd25e443ca54cd659b2c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
