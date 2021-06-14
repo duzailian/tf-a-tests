@@ -440,6 +440,41 @@ static bool is_notifications_get_as_expected(
 	return true;
 }
 
+static bool is_notifications_info_get_as_expected(
+	smc_ret_values *ret, uint16_t *ids, uint32_t *lists_sizes,
+	const uint32_t max_ids_count, uint32_t lists_count, bool more_pending)
+{
+	if (lists_count != ffa_notifications_info_get_lists_count(*ret) ||
+	    more_pending != ffa_notifications_info_get_more_pending(*ret)) {
+		ERROR("Notification info get not as expected.\n"
+		      "    Lists counts: %u; more pending %u\n",
+		      ffa_notifications_info_get_lists_count(*ret),
+		      ffa_notifications_info_get_more_pending(*ret));
+		dump_smc_ret_values(*ret);
+		return false;
+	}
+
+	for (unsigned int i = 0; i < lists_count; i++) {
+		uint32_t cur_size =
+				ffa_notifications_info_get_list_size(*ret,
+								     i + 1);
+
+		if (lists_sizes[i] != cur_size) {
+			ERROR("Expected list size[%u] %u != %u\n", i,
+			      lists_sizes[i], cur_size);
+			return false;
+		}
+	}
+
+	/* Compare the IDs list */
+	if (memcmp(&ret->ret3, ids, sizeof(ids[0]) * max_ids_count) != 0) {
+		ERROR("List of IDs not as expected\n");
+		return false;
+	}
+
+	return true;
+}
+
 /**
  * Helper to get the SP to bind notification, and set it for the SP.
  */
@@ -477,6 +512,25 @@ static bool request_notification_get_and_validate(ffa_id_t sender,
 			&ret, 0, notification, receiver);
 }
 
+static bool notifications_info_get(
+	uint16_t *expected_ids, uint32_t expected_lists_count,
+	uint32_t *expected_lists_sizes, const uint32_t max_ids_count,
+	bool expected_more_pending)
+{
+	smc_ret_values ret;
+
+	VERBOSE("Getting pending notification's info.\n");
+
+	ret = ffa_notification_info_get();
+
+	return !is_ffa_call_error(ret) &&
+		is_notifications_info_get_as_expected(&ret, expected_ids,
+						      expected_lists_sizes,
+						      max_ids_count,
+						      expected_lists_count,
+						      expected_more_pending);
+}
+
 /**
  * Test to validate a VM can signal an SP.
  */
@@ -489,9 +543,26 @@ test_result_t test_ffa_notifications_vm_signals_sp(void)
 	const uint32_t flags_get = FFA_NOTIFICATIONS_FLAG_BITMAP_VM;
 	test_result_t result = TEST_RESULT_SUCCESS;
 
+	/** Variables to validate calls to FFA_NOTIFICATION_INFO_GET. */
+	uint16_t ids[FFA_NOTIFICATIONS_INFO_GET_MAX_IDS] = {0};
+	uint32_t lists_count;
+	uint32_t lists_sizes[FFA_NOTIFICATIONS_INFO_GET_MAX_IDS] = {0};
+
 	if (!request_notification_bind_and_set(sender, receiver,
 					       notification, 0)) {
 		return TEST_RESULT_FAIL;
+	}
+
+	/**
+	 * Simple list of IDs expected on return from FFA_NOTIFICATION_INFO_GET.
+	 */
+	ids[0] = receiver;
+	lists_count = 1;
+
+	if (!notifications_info_get(ids, lists_count, lists_sizes,
+				    FFA_NOTIFICATIONS_INFO_GET_MAX_IDS,
+				    false)) {
+		result = TEST_RESULT_FAIL;
 	}
 
 	if (!request_notification_get_and_validate(sender, receiver,
@@ -507,7 +578,6 @@ test_result_t test_ffa_notifications_vm_signals_sp(void)
 	return result;
 }
 
-
 /**
  * Test to validate an SP can signal an SP.
  */
@@ -519,6 +589,11 @@ test_result_t test_ffa_notifications_sp_signals_sp(void)
 	uint32_t get_flags = FFA_NOTIFICATIONS_FLAG_BITMAP_SP;
 	smc_ret_values ret;
 
+	/** Variables to validate calls to FFA_NOTIFICATION_INFO_GET. */
+	uint16_t ids[FFA_NOTIFICATIONS_INFO_GET_MAX_IDS] = {0};
+	uint32_t lists_count;
+	uint32_t lists_sizes[FFA_NOTIFICATIONS_INFO_GET_MAX_IDS] = {0};
+
 	/** Request receiver to bind a set of notifications to the sender */
 	if (!request_notification_bind(receiver, receiver, sender,
 				       g_notifications, 0, CACTUS_SUCCESS, 0)) {
@@ -527,6 +602,19 @@ test_result_t test_ffa_notifications_sp_signals_sp(void)
 
 	if (!request_notification_set(sender, receiver, sender, 0,
 				      g_notifications, CACTUS_SUCCESS, 0)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/**
+	 * FFA_NOTIFICATION_INFO_GET return list should be simple, containing
+	 * only the receiver's ID.
+	 */
+	ids[0] = receiver;
+	lists_count = 1;
+
+	if (!notifications_info_get(ids, lists_count, lists_sizes,
+				    FFA_NOTIFICATIONS_INFO_GET_MAX_IDS,
+				    false)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -558,6 +646,11 @@ test_result_t test_ffa_notifications_sp_signals_vm(void)
 	uint32_t get_flags = FFA_NOTIFICATIONS_FLAG_BITMAP_SP;
 	smc_ret_values ret;
 
+	/** Variables to validate calls to FFA_NOTIFICATION_INFO_GET. */
+	uint16_t ids[FFA_NOTIFICATIONS_INFO_GET_MAX_IDS] = {0};
+	uint32_t lists_count;
+	uint32_t lists_sizes[FFA_NOTIFICATIONS_INFO_GET_MAX_IDS] = {0};
+
 	/** Ask SPMC to allocate notifications bitmap */
 	if (!notifications_bitmap_create(receiver, 1)) {
 		return TEST_RESULT_FAIL;
@@ -573,6 +666,19 @@ test_result_t test_ffa_notifications_sp_signals_vm(void)
 	/* Request SP to set notifications */
 	if (!request_notification_set(sender, receiver, sender, 0,
 				      g_notifications, CACTUS_SUCCESS, 0)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/**
+	 * FFA_NOTIFICATION_INFO_GET return list should be simple, containing
+	 * only the receiver's ID.
+	 */
+	ids[0] = receiver;
+	lists_count = 1;
+
+	if (!notifications_info_get(ids, lists_count, lists_sizes,
+				    FFA_NOTIFICATIONS_INFO_GET_MAX_IDS,
+				    false)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -641,6 +747,30 @@ test_result_t test_ffa_notifications_unbind_pending(void)
 	/* Unbind all notifications, to not interfere with other tests */
 	if (!request_notification_unbind(receiver, receiver, sender,
 					notifications, CACTUS_SUCCESS, 0)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/**
+ * Test the result of a call to FFA_NOTIFICATION_INFO_GET if no pending
+ * notifications.
+ */
+test_result_t test_ffa_notifications_info_get_none(void)
+{
+	SKIP_TEST_IF_FFA_VERSION_LESS_THAN(1, 1);
+
+	if (check_spmc_execution_level()) {
+		VERBOSE("OPTEE as SPMC at S-EL1. Skipping test!\n");
+		return TEST_RESULT_SKIPPED;
+	}
+
+	smc_ret_values ret;
+
+	ret = ffa_notification_info_get();
+
+	if (!is_expected_ffa_error(ret, FFA_ERROR_NO_DATA)) {
 		return TEST_RESULT_FAIL;
 	}
 
