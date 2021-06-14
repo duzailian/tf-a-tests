@@ -33,6 +33,115 @@
       "message": "Code LGTM",
       "revId": "ab9400602b254ef36cafd25e443ca54cd659b2c6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8cf4574_5aa00f1b",
+        "filename": "spm/common/sp_debug.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-14T10:23:16Z",
+      "side": 1,
+      "message": "nit: remove one blank",
+      "revId": "ab9400602b254ef36cafd25e443ca54cd659b2c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "542c244a_65279c37",
+        "filename": "spm/ivy/ivy.mk",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-14T10:23:16Z",
+      "side": 1,
+      "message": "Remove.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 31
+      },
+      "revId": "ab9400602b254ef36cafd25e443ca54cd659b2c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ece5b3c_58360a16",
+        "filename": "spm/ivy/ivy.mk",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-14T10:23:16Z",
+      "side": 1,
+      "message": "Remove.",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 26,
+        "endChar": 19
+      },
+      "revId": "ab9400602b254ef36cafd25e443ca54cd659b2c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81437057_c01c6126",
+        "filename": "spm/ivy/plat/arm/fvp/fdts/ivy.dts",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-14T10:23:16Z",
+      "side": 1,
+      "message": "Update to SP pre-emptible.",
+      "range": {
+        "startLine": 28,
+        "startChar": 25,
+        "endLine": 28,
+        "endChar": 43
+      },
+      "revId": "ab9400602b254ef36cafd25e443ca54cd659b2c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c945052_1cad6bca",
+        "filename": "spm/ivy/plat/arm/tc0/fdts/ivy.dts",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-14T10:23:16Z",
+      "side": 1,
+      "message": "Update to SP pre-emptible.",
+      "range": {
+        "startLine": 31,
+        "startChar": 26,
+        "endLine": 31,
+        "endChar": 43
+      },
+      "revId": "ab9400602b254ef36cafd25e443ca54cd659b2c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
