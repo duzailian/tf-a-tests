@@ -143,6 +143,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1f62210_5ad992b7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_partition_info_get.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-06-14T16:08:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b5f2599_0cc9dd69",
+      "range": {
+        "startLine": 16,
+        "startChar": 12,
+        "endLine": 16,
+        "endChar": 37
+      },
+      "revId": "33eed572d517fb61f321404601b1ca706581ac01",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "15958fb1_b2bd85a4",
