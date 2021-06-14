@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6e26fc4_28df2e4f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-06-14T16:21:24Z",
+      "side": 1,
+      "message": "NIT: TFTF ?",
+      "range": {
+        "startLine": 7,
+        "startChar": 31,
+        "endLine": 7,
+        "endChar": 35
+      },
+      "revId": "468995c84be466fde083bcd48d44b72bc2c56828",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d88d543c_8f620859",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-06-14T16:21:24Z",
+      "side": 1,
+      "message": "Almost ready, as I understand it...",
+      "revId": "468995c84be466fde083bcd48d44b72bc2c56828",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8cb6215_08c266ae",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-06-14T16:21:24Z",
+      "side": 1,
+      "message": "As discussed in hafnium patches, these are platform specific right?\nJust checking: Are these to be placed in platform-specific source files in the future as well?",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 28
+      },
+      "revId": "468995c84be466fde083bcd48d44b72bc2c56828",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
