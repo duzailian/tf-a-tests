@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48fc5daa_8db437cf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-06-17T20:00:50Z",
+      "side": 1,
+      "message": "Run legacy CI as other patches from other repos in the same topic need to be used",
+      "revId": "6833ea5159f6adc08bda18d5147aba1e6ca281b5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
