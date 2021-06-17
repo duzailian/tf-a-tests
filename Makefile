@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
+hello!
+
 # TFTF Version
 VERSION_MAJOR		:= 2
 VERSION_MINOR		:= 5
