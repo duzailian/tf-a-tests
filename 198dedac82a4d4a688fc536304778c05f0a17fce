@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9103703_cdd3841d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-18T15:27:53Z",
+      "side": 1,
+      "message": "Verified by https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/8510",
+      "revId": "198dedac82a4d4a688fc536304778c05f0a17fce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
