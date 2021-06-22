@@ -16,6 +16,24 @@
       "message": "Have a look at the static checks.\nAfter that should be ok.",
       "revId": "d135702e884ba965e8347dc13fef518d169b4e7c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fdd4cfe0_d4b9a0c8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-06-22T14:24:52Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "919ef133_63192143",
+      "revId": "d135702e884ba965e8347dc13fef518d169b4e7c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
