@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef218964_badbd9c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2021-06-24T11:17:18Z",
+      "side": 1,
+      "message": "Ah okay, then it make sense.\n\n(minor)\nIMO, some notes in commit message should as below IIUC,\n1. Fill SIMD vectors with particular value from Nwd TFTF test\n2. Send request to cactus to fill SIMD vectors\n3. Return to normal world and check vectors are preserved with the same values written in (1).\n\nMay be it is quite obvious, but reader can easily get from commit message about the test if you put it in elaborated way.\n\nIt is not blocking comment, I am fine even if we go ahead with this patch as it is.",
+      "parentUuid": "8c50cf7b_b5474eec",
+      "range": {
+        "startLine": 7,
+        "startChar": 28,
+        "endLine": 7,
+        "endChar": 35
+      },
+      "revId": "cef59601e865df7e5c88dae049d92474e89fa2c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ed502dbf_062f9f25",
