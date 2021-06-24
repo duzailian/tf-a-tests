@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a06985f2_8e81f9bf",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-06-24T12:43:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05eaedc9_f93bf83c",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 28
+      },
+      "revId": "bcc9c27bbdcc482a4cc4c4f6a2a82a0b75ced2d6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "68375ca6_68222ed1",
@@ -132,6 +156,30 @@
       "side": 1,
       "message": "It\u0027s on purpose. SIMD and SVE uses the same vectors (with different lengths). This test uses SVE vectors on tftf (non-secure) side and SIMD on cactus (secure) side.",
       "parentUuid": "fa6c2154_e23d7d7c",
+      "range": {
+        "startLine": 95,
+        "startChar": 22,
+        "endLine": 95,
+        "endChar": 51
+      },
+      "revId": "bcc9c27bbdcc482a4cc4c4f6a2a82a0b75ced2d6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3618eb28_d3387276",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-06-24T12:43:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1db17184_b0e78723",
       "range": {
         "startLine": 95,
         "startChar": 22,
