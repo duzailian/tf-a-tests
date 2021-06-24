@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6f3536f_a3b80b54",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-24T17:19:41Z",
+      "side": 1,
+      "message": "BTW (for a future change) there may the same enforcement to do at the Hafnium level, such that the vector length is always controlled at EL2. This may have to be taken care of in the EL2 context save/restore routine at EL3 as well.",
+      "parentUuid": "8b3309ec_86666740",
+      "revId": "bbf178526dea6dedfc7c7ce69e3a7b14650ccdd9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d0d33e48_f48ec703",
