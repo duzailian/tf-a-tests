@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "922f519c_6b2429f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-06-24T10:33:05Z",
+      "side": 1,
+      "message": "Build passed on a re-run (lava failing) +2 CI passed for the whole patchset.",
+      "revId": "bbf178526dea6dedfc7c7ce69e3a7b14650ccdd9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
