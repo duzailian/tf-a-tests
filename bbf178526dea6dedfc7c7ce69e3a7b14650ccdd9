@@ -16,6 +16,109 @@
       "message": "Build passed on a re-run (lava failing) +2 CI passed for the whole patchset.",
       "revId": "bbf178526dea6dedfc7c7ce69e3a7b14650ccdd9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0d33e48_f48ec703",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-24T16:50:54Z",
+      "side": 1,
+      "message": "Worth using this macro here? https://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/tftf/tests/extensions/sve/test_sve.c?h\u003dv2.5#n36",
+      "revId": "bbf178526dea6dedfc7c7ce69e3a7b14650ccdd9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5bada1de_f2713e6b",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-24T16:50:54Z",
+      "side": 1,
+      "message": "Should SVE helpers move to a new generic header include/lib/extensions/sve.h ?",
+      "revId": "bbf178526dea6dedfc7c7ce69e3a7b14650ccdd9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d90cd8d8_16004e0c",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-24T16:50:54Z",
+      "side": 1,
+      "message": "Rather than tricking the source/target address with additions, should it preferably do:\n\n#define fill_sve_helper(num) \"ldr z\"#num\", [%0, #\"#num\", MUL VL];\"\n#define read_sve_helper(num) \"str z\"#num\", [%0, #\"#num\", MUL VL];\"\n\nI\u0027ll figure out if there a similar way to avoid address manipulations with SIMD.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 43
+      },
+      "revId": "bbf178526dea6dedfc7c7ce69e3a7b14650ccdd9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7571ec11_9699a7c6",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-24T16:50:54Z",
+      "side": 1,
+      "message": "can be removed if using the MUL VL semantics",
+      "range": {
+        "startLine": 158,
+        "startChar": 2,
+        "endLine": 158,
+        "endChar": 65
+      },
+      "revId": "bbf178526dea6dedfc7c7ce69e3a7b14650ccdd9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccd8681e_b64e6cd5",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-06-24T16:50:54Z",
+      "side": 1,
+      "message": "can be removed if using the MUL VL semantics",
+      "range": {
+        "startLine": 202,
+        "startChar": 2,
+        "endLine": 202,
+        "endChar": 65
+      },
+      "revId": "bbf178526dea6dedfc7c7ce69e3a7b14650ccdd9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
