@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "930f501b_3371dd9e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-06-28T11:49:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3114e0c0_7c08351b",
+      "revId": "b7e36e45909e3614d72ed94bd8303eefaf70f41f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "d25c4f5b_fe94af63",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 4
@@ -48,6 +66,30 @@
       "writtenOn": "2021-05-14T16:46:10Z",
       "side": 1,
       "message": "2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "b7e36e45909e3614d72ed94bd8303eefaf70f41f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be3197c7_6712f4e3",
+        "filename": "spm/common/sp_debug.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-06-28T11:49:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5f9d772_45e7d001",
       "range": {
         "startLine": 2,
         "startChar": 17,
