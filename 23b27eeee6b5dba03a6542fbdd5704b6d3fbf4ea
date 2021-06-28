@@ -107,6 +107,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f743b59_5f7f5c6b",
+        "filename": "spm/ivy/aarch64/spm_shim_entrypoint.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-06-28T11:48:46Z",
+      "side": 1,
+      "message": "After rework I don\u0027t think this is required anymore",
+      "parentUuid": "e2d0a81f_64fb03f5",
+      "revId": "23b27eeee6b5dba03a6542fbdd5704b6d3fbf4ea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "58c10665_931fca4a",
@@ -120,6 +138,30 @@
       "writtenOn": "2021-05-14T17:19:22Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 70,
+        "startChar": 1,
+        "endLine": 78,
+        "endChar": 5
+      },
+      "revId": "23b27eeee6b5dba03a6542fbdd5704b6d3fbf4ea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "907f1339_4c496515",
+        "filename": "spm/ivy/aarch64/spm_shim_entrypoint.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-06-28T11:48:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58c10665_931fca4a",
       "range": {
         "startLine": 70,
         "startChar": 1,
@@ -153,6 +195,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b7cdff8_c101498b",
+        "filename": "spm/ivy/aarch64/spm_shim_entrypoint.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-06-28T11:48:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e3840c9_8eefb3c1",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 2
+      },
+      "revId": "23b27eeee6b5dba03a6542fbdd5704b6d3fbf4ea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7c517f1f_e8584acb",
@@ -166,6 +232,24 @@
       "writtenOn": "2021-05-14T17:19:22Z",
       "side": 1,
       "message": "nit: remove blank",
+      "revId": "23b27eeee6b5dba03a6542fbdd5704b6d3fbf4ea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "afe98004_88a63a05",
+        "filename": "spm/ivy/ivy.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-06-28T11:48:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7c517f1f_e8584acb",
       "revId": "23b27eeee6b5dba03a6542fbdd5704b6d3fbf4ea",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
