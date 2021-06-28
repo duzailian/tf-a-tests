@@ -99,6 +99,30 @@
       },
       "revId": "dd77c3fbafcd54782c0811f573ec00f1121812a1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9716868c_213b2d2d",
+        "filename": "spm/ivy/aarch64/ivy_entrypoint.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-06-28T11:50:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51fe3c51_421d8125",
+      "range": {
+        "startLine": 23,
+        "startChar": 9,
+        "endLine": 23,
+        "endChar": 32
+      },
+      "revId": "dd77c3fbafcd54782c0811f573ec00f1121812a1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
