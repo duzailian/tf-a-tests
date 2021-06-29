@@ -1,0 +1,12 @@
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Allow-CI+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Review+1: TrustedFirmware Code Review
+Code-Review+1: Varun Wadekar <vwadekar@nvidia.com>
+Verified+1: Olivier Deprez <olivier.deprez@arm.com>
+Validation-Bot-Review+1: TrustedFirmware Code Review
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Tue, 29 Jun 2021 14:34:47 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/9377
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master

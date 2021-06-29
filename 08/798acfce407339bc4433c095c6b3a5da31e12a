@@ -1,0 +1,9 @@
+Verified+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Review+1: Gary Morrison <gary.morrison@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Tue, 29 Jun 2021 14:34:47 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/9510
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
