@@ -68,12 +68,17 @@ static inline ffa_id_t ffa_endpoint_id(smc_ret_values val) {
 
 #define FFA_NOTIFICATIONS_FLAG_PER_VCPU	UINT32_C(0x1 << 0)
 
+/** Flag to delay Schedule Receiver Interrupt. */
+#define FFA_NOTIFICATIONS_FLAG_DELAY_SRI	UINT32_C(0x1 << 1)
+
 #define FFA_NOTIFICATIONS_FLAGS_VCPU_ID(id) UINT32_C((id & 0xFFFF) << 16)
 
 #define FFA_NOTIFICATIONS_FLAG_BITMAP_SP	UINT32_C(0x1 << 0)
 #define FFA_NOTIFICATIONS_FLAG_BITMAP_VM	UINT32_C(0x1 << 1)
 #define FFA_NOTIFICATIONS_FLAG_BITMAP_SPM	UINT32_C(0x1 << 2)
 #define FFA_NOTIFICATIONS_FLAG_BITMAP_HYP	UINT32_C(0x1 << 3)
+
+#define FFA_SCHEDULE_RECEIVER_INTERRUPT_ID 8
 
 #define FFA_NOTIFICATIONS_BITMAP(lo, hi)	\
 	(uint64_t)(lo) | ((hi << 32) & 0xFFFFFFFF00000000U)
