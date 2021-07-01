@@ -7,6 +7,7 @@
 #include <arch_helpers.h>
 #include <plat_topology.h>
 #include <platform.h>
+#include <events.h>
 #include <power_management.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
@@ -173,6 +174,49 @@ test_result_t check_spmc_testing_set_up(
 
 	for (unsigned int i = 0U; i < ffa_uuids_size; i++)
 		SKIP_TEST_IF_FFA_ENDPOINT_NOT_DEPLOYED(*mb, ffa_uuids[i]);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t spm_run_multi_core_test(uintptr_t cpu_on_handler,
+				      event_t *cpu_done)
+{
+	unsigned int lead_mpid = read_mpidr_el1() & MPID_MASK;
+	unsigned int core_pos, cpu_node, mpidr;
+	int32_t ret;
+
+	VERBOSE("Powering on all cpus.\n");
+
+	for (unsigned int i = 0U; i < PLATFORM_CORE_COUNT; i++) {
+		tftf_init_event(&cpu_done[i]);
+	}
+
+	for_each_cpu(cpu_node) {
+		mpidr = tftf_get_mpidr_from_node(cpu_node);
+		if (mpidr == lead_mpid) {
+			continue;
+		}
+
+		ret = tftf_cpu_on(mpidr, (uintptr_t)cpu_on_handler, 0U);
+		if (ret != 0) {
+			ERROR("tftf_cpu_on mpidr 0x%x returns %d\n",
+			      mpidr, ret);
+		}
+	}
+
+	VERBOSE("Waiting secondary CPUs to turn off ...\n");
+
+	for_each_cpu(cpu_node) {
+		mpidr = tftf_get_mpidr_from_node(cpu_node);
+		if (mpidr == lead_mpid) {
+			continue;
+		}
+
+		core_pos = platform_get_core_pos(mpidr);
+		tftf_wait_for_event(&cpu_done[core_pos]);
+	}
+
+	VERBOSE("Done exiting.\n");
 
 	return TEST_RESULT_SUCCESS;
 }
