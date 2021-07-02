@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7838ac4e_c1f4bfaf",
+        "filename": "spm/cactus/plat/arm/fvp/include/cactus_platform_def.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-07-02T15:22:37Z",
+      "side": 0,
+      "message": "Why was this moved to ffa_endpoints.h? This seems like a platform and application (cactus) specific value",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 4
+      },
+      "revId": "1e65e855cf232560f37e64aefa75afb5239e5403",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
