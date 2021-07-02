@@ -22,6 +22,30 @@
       },
       "revId": "1e65e855cf232560f37e64aefa75afb5239e5403",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fed14042_6ca2a2d8",
+        "filename": "spm/cactus/plat/arm/fvp/include/cactus_platform_def.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-07-02T15:42:41Z",
+      "side": 0,
+      "message": "Nevermind, I\u0027ve seen you use these macros in the next patch",
+      "parentUuid": "7838ac4e_c1f4bfaf",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 4
+      },
+      "revId": "1e65e855cf232560f37e64aefa75afb5239e5403",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
