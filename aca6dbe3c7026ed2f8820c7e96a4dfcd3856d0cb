@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bcf02fbb_8c3c4b38",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-07-02T15:45:27Z",
+      "side": 1,
+      "message": "Did you mean \"a normal world VM\" or \"the normal world\"?",
+      "range": {
+        "startLine": 9,
+        "startChar": 8,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "aca6dbe3c7026ed2f8820c7e96a4dfcd3856d0cb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96465016_8e9e3f2c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-07-02T15:45:27Z",
+      "side": 1,
+      "message": "Just a small question about commit message wording\n",
+      "revId": "aca6dbe3c7026ed2f8820c7e96a4dfcd3856d0cb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
