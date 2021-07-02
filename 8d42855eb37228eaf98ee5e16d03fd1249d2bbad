@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66fa64bd_908d0822",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_partition_info_get.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-02T09:37:32Z",
+      "side": 1,
+      "message": "nit: drop parenthesis",
+      "range": {
+        "startLine": 39,
+        "startChar": 16,
+        "endLine": 39,
+        "endChar": 17
+      },
+      "revId": "8d42855eb37228eaf98ee5e16d03fd1249d2bbad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
