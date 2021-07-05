@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "56651ac8_d52d4bd1",
+        "filename": "include/runtime_services/ffa_endpoints.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-07-05T15:04:05Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c72f4105_b9efb15e",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 24
+      },
+      "revId": "cc1573a81c8288d9a6bd77d6d2c3dfa7e424bfaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "33d41715_d691cf56",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-07-05T14:25:47Z",
       "side": 1,
       "message": "once the result is known to be false, do we still need to proceed to next \"if\" condition? Shouldn\u0027t we break from here?",
+      "range": {
+        "startLine": 487,
+        "startChar": 4,
+        "endLine": 487,
+        "endChar": 19
+      },
+      "revId": "cc1573a81c8288d9a6bd77d6d2c3dfa7e424bfaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3011caec_f15bbb74",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-07-05T15:04:05Z",
+      "side": 1,
+      "message": "I found it usefull to have a full information on a failing partition, that\u0027s why I have independant \"ifs\" here.\nIt is usefull to check if other partitions are giving a correct information, that\u0027s why there is no break from \"for\" loop.\nIn summary - I think that if there is no strong reason (dependant conditions) to break from test early, the test should finish and give a full information.",
+      "parentUuid": "33d41715_d691cf56",
       "range": {
         "startLine": 487,
         "startChar": 4,
