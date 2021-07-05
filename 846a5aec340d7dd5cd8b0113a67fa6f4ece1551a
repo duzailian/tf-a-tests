@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "90b777c3_74a91473",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-07-05T11:29:11Z",
+      "side": 1,
+      "message": "Actualy should be lower case in the \"topic\" field.",
+      "parentUuid": "041535c3_1878a0b9",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "846a5aec340d7dd5cd8b0113a67fa6f4ece1551a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2c85db5c_fdfb7476",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-07-02T15:22:37Z",
       "side": 1,
       "message": "Can you limit the line length of the commit body to 72 characters to prevent this wrapping?",
+      "range": {
+        "startLine": 10,
+        "startChar": 66,
+        "endLine": 10,
+        "endChar": 75
+      },
+      "revId": "846a5aec340d7dd5cd8b0113a67fa6f4ece1551a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29d07128_c8b56eb5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-07-05T11:29:11Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2c85db5c_fdfb7476",
       "range": {
         "startLine": 10,
         "startChar": 66,
@@ -77,6 +125,30 @@
       "writtenOn": "2021-07-02T15:22:37Z",
       "side": 1,
       "message": "I think this should be 2020-2021 since you\u0027ve just added to the file",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "846a5aec340d7dd5cd8b0113a67fa6f4ece1551a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05ee1708_7e01db1d",
+        "filename": "include/runtime_services/ffa_endpoints.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-07-05T11:29:11Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4918edbe_7f2df712",
       "range": {
         "startLine": 2,
         "startChar": 17,
