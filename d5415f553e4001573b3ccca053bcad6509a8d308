@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47b919f8_cf981a13",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 12
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-05T11:57:10Z",
+      "side": 1,
+      "message": "Just noticed now.\nNIT: move this to test suite \"Setup and Discovery\".",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 52
+      },
+      "revId": "d5415f553e4001573b3ccca053bcad6509a8d308",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
