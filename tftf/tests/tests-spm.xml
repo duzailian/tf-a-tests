@@ -62,8 +62,8 @@
                function="test_req_mem_share_sp_to_sp" />
      <testcase name="Request Lend Memory SP-to-SP"
                function="test_req_mem_lend_sp_to_sp" />
-     <testcase name="Request Donate Memory SP-to-SP"
-               function="test_req_mem_donate_sp_to_sp" />
+     <!-- <testcase name="Request Donate Memory SP-to-SP"
+               function="test_req_mem_donate_sp_to_sp" /> -->
   </testsuite>
 
   <testsuite name="SIMD,SVE Registers context"
