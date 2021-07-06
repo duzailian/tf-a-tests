@@ -114,6 +114,10 @@
                function="test_ffa_notifications_sp_signals_vm" />
      <testcase name="Notifications unbind while pending"
                function="test_ffa_notifications_unbind_pending" />
-  </testsuite>
+     <testcase name="Notifications VM signals SP per VCPU"
+               function="test_ffa_notifications_vm_signals_sp_per_vcpu" />
+     <testcase name="Notifications SP signals SP per VCPU"
+               function="test_ffa_notifications_sp_signals_sp_per_vcpu" />
+ </testsuite>
 
 </testsuites>
