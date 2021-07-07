@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb945d52_0170f956",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-07-07T18:50:09Z",
+      "side": 1,
+      "message": "maintained",
+      "range": {
+        "startLine": 122,
+        "startChar": 44,
+        "endLine": 122,
+        "endChar": 52
+      },
+      "revId": "b209227d793716545fcaa72fb91e629a286e822a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98229e3f_563af056",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-07-07T18:50:09Z",
+      "side": 1,
+      "message": "maintained",
+      "range": {
+        "startLine": 142,
+        "startChar": 44,
+        "endLine": 142,
+        "endChar": 52
+      },
+      "revId": "b209227d793716545fcaa72fb91e629a286e822a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f757b34f_658c4202",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-07-07T18:50:09Z",
+      "side": 1,
+      "message": "maintained",
+      "range": {
+        "startLine": 170,
+        "startChar": 44,
+        "endLine": 170,
+        "endChar": 52
+      },
+      "revId": "b209227d793716545fcaa72fb91e629a286e822a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39637034_bd124a9b",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-07-07T18:50:09Z",
+      "side": 1,
+      "message": "maintained",
+      "range": {
+        "startLine": 191,
+        "startChar": 44,
+        "endLine": 191,
+        "endChar": 52
+      },
+      "revId": "b209227d793716545fcaa72fb91e629a286e822a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71fecdb3_8c7b064e",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-07-07T18:50:09Z",
+      "side": 1,
+      "message": "maintained",
+      "range": {
+        "startLine": 250,
+        "startChar": 44,
+        "endLine": 250,
+        "endChar": 52
+      },
+      "revId": "b209227d793716545fcaa72fb91e629a286e822a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95d388b1_ff896f98",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-07-07T18:50:09Z",
+      "side": 1,
+      "message": "maintained",
+      "range": {
+        "startLine": 270,
+        "startChar": 44,
+        "endLine": 270,
+        "endChar": 52
+      },
+      "revId": "b209227d793716545fcaa72fb91e629a286e822a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
