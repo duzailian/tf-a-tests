@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15a8974b_ce77b5f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-07-07T15:11:56Z",
+      "side": 1,
+      "message": "Failed CI tests passing localy.\nWill try to re-run on the CI",
+      "revId": "5d8ebddd428073718f4a7789e5966fcf1e09b0ea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
