@@ -99,4 +99,11 @@ static inline bool get_armv9_trbe_support(void)
 		ID_AA64DFR0_TRACEBUFFER_SUPPORTED;
 }
 
+static inline bool get_armv8_4_trf_support(void)
+{
+        return ((read_id_aa64dfr0_el1() >> ID_AA64DFR0_TRACEFILT_SHIFT) &
+		ID_AA64DFR0_TRACEFILT_MASK) ==
+		ID_AA64DFR0_TRACEFILT_SUPPORTED;
+}
+
 #endif /* ARCH_FEATURES_H */
