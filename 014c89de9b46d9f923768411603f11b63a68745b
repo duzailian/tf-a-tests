@@ -16,6 +16,24 @@
       "message": "I think the patches that introduce the tests can be squashed with the patches that introduce the functions, especially since they have the same commit title",
       "revId": "014c89de9b46d9f923768411603f11b63a68745b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ddb660e_6baec309",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-09T11:15:22Z",
+      "side": 1,
+      "message": "The intent in spliting is to make it so if you set HEAD to which ever commit in the patch stack, the project will build, and it is still executable (i.e. the tests can still invoked without failures).\n\nThat being said, and because I think it is good to split cactus patches from tftf, to make it easy to review:\n- cactus change needs to be merged before tftf, otherwise tests would fail settig HEAD to tftf patches.\n- the FF-A call wrappers are needed in cactus and tftf, so they need to be there before cactus patches otherwise there are compilation errors if setting HEAD to cactus.",
+      "parentUuid": "6f1a72f6_f588a77d",
+      "revId": "014c89de9b46d9f923768411603f11b63a68745b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
