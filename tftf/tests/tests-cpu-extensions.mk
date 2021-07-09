@@ -17,4 +17,5 @@ TESTS_SOURCES	+=	$(addprefix tftf/tests/,			\
 	extensions/pauth/test_pauth.c					\
 	extensions/trbe/test_trbe.c					\
 	extensions/trf/test_trf.c					\
+	extensions/sys_reg_trace/test_sys_reg_trace.c			\
 )
