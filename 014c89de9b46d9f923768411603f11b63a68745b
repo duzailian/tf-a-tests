@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f1a72f6_f588a77d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-07-09T11:00:12Z",
+      "side": 1,
+      "message": "I think the patches that introduce the tests can be squashed with the patches that introduce the functions, especially since they have the same commit title",
+      "revId": "014c89de9b46d9f923768411603f11b63a68745b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
