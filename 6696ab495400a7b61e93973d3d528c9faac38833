@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a4d87d10_db10f027",
+        "filename": "include/runtime_services/ffa_endpoints.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-12T09:18:48Z",
+      "side": 1,
+      "message": "IMO the platform specific information is something like \"PLATFORM_CORE_COUNT\".\nIn this case we are defining the number of cores for the partition itself, and with this define that the partition is \"MP pinned execution contexts\" or \"UP non-pinned execution context\". This aspect is \"Endpoint\" specific, and should change from platform to platform.\n\nPossibly, to make this a bit more compliant I think that instead of setting 8, the platform specific macro should be used instead (i.e. the aforementioned PLATFORM_CORE_COUNT).\n\nI did see the other comment about affecting TC0 platform, it seems to me that using PLATFORM_CORE_COUNT would work for TC0 as well.",
+      "parentUuid": "b79ee56a_60570425",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 31
+      },
+      "revId": "6696ab495400a7b61e93973d3d528c9faac38833",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e05e5635_5c4267dd",
         "filename": "include/runtime_services/ffa_helpers.h",
         "patchSetId": 14
