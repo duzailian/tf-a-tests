@@ -63,6 +63,24 @@
       "message": "Why remove from there? This is platform dependent information.\nAlso a change in this file might also reflect in the TC0 platform:\nhttps://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/spm/cactus/plat/arm/tc0/include/cactus_platform_def.h",
       "revId": "1e65e855cf232560f37e64aefa75afb5239e5403",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd4c41ad_87f131e6",
+        "filename": "spm/cactus/plat/arm/fvp/include/cactus_platform_def.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-07-13T14:00:47Z",
+      "side": 0,
+      "message": "Changed to take PLATFORM_CORE_COUNT into account to be platform-specific. (Although there are no differences between platforms now in that aspect)",
+      "parentUuid": "f4f3e3ea_5c5e33d2",
+      "revId": "1e65e855cf232560f37e64aefa75afb5239e5403",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
