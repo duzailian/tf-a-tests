@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57f249f8_c8c0e9b1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-07-15T11:29:32Z",
+      "side": 1,
+      "message": "Juno boards passed on reruns",
+      "revId": "eb2555d59ee01abb9797bc6b47aa5450e3e10c66",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
