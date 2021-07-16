@@ -110,6 +110,24 @@
       "message": "Looks good but I think it would also be worth adding a test for the FFA_ERROR RETRY case",
       "revId": "56d36469897676697223e094193a5155e59147ac",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c99d1adc_ac276168",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-16T09:26:08Z",
+      "side": 1,
+      "message": "You are right.\n\nWill definitely add that as well.",
+      "parentUuid": "3443a151_58733659",
+      "revId": "56d36469897676697223e094193a5155e59147ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
