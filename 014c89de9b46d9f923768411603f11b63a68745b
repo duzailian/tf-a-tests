@@ -52,6 +52,24 @@
       "parentUuid": "0ddb660e_6baec309",
       "revId": "014c89de9b46d9f923768411603f11b63a68745b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6aa6d8c1_ed22fd7a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-16T09:12:34Z",
+      "side": 1,
+      "message": "Prefer to keep the cactus patches separate, as they might be used in multiple tests in TFTF, not necessarily just those testing a given ABI.\nAlso for the sake of having a more manageable size of changes. Helps to get reviews done.\n\nAddressed though, your comment about changing the commit titles. Have a look and let me know.",
+      "parentUuid": "3ecbc7d8_e33ead84",
+      "revId": "014c89de9b46d9f923768411603f11b63a68745b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
