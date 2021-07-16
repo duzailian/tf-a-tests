@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f3be5cd_56a35b3d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-16T09:24:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9eedfcbc_d89de44b",
+      "range": {
+        "startLine": 10,
+        "startChar": 12,
+        "endLine": 10,
+        "endChar": 20
+      },
+      "revId": "56d36469897676697223e094193a5155e59147ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0711c490_9a653533",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-07-15T10:12:10Z",
       "side": 1,
       "message": "NIT: \"signal a notification from an SP to a VM\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 9,
+        "endLine": 11,
+        "endChar": 47
+      },
+      "revId": "56d36469897676697223e094193a5155e59147ac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb98084b_bebd5031",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-16T09:24:53Z",
+      "side": 1,
+      "message": "Thanks for pointing this. Will rewrite to make it clear.\nThe point was though \"from SP to VM\" and vice-versa as well. :)",
+      "parentUuid": "0711c490_9a653533",
       "range": {
         "startLine": 11,
         "startChar": 9,
