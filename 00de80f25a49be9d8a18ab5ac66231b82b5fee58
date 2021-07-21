@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0faab3e_d36b0a90",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-07-21T17:22:00Z",
+      "side": 1,
+      "message": "This should be 1 before the patch is merged",
+      "range": {
+        "startLine": 175,
+        "startChar": 29,
+        "endLine": 175,
+        "endChar": 30
+      },
+      "revId": "00de80f25a49be9d8a18ab5ac66231b82b5fee58",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
