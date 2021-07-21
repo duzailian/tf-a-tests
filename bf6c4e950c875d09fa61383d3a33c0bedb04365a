@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82d313d7_a577934b",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-07-21T12:47:44Z",
+      "side": 1,
+      "message": "This change should be in the previous patch",
+      "range": {
+        "startLine": 494,
+        "startChar": 23,
+        "endLine": 494,
+        "endChar": 24
+      },
+      "revId": "bf6c4e950c875d09fa61383d3a33c0bedb04365a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6033887_5b44e336",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-07-21T12:47:44Z",
+      "side": 1,
+      "message": "As above",
+      "range": {
+        "startLine": 511,
+        "startChar": 23,
+        "endLine": 511,
+        "endChar": 24
+      },
+      "revId": "bf6c4e950c875d09fa61383d3a33c0bedb04365a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61e27d61_f98cbc6d",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-07-21T12:47:44Z",
+      "side": 1,
+      "message": "NIT: add comma",
+      "range": {
+        "startLine": 549,
+        "startChar": 10,
+        "endLine": 549,
+        "endChar": 23
+      },
+      "revId": "bf6c4e950c875d09fa61383d3a33c0bedb04365a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
