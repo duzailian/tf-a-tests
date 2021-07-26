@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f6ad83c_b256ef66",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-26T11:29:11Z",
+      "side": 1,
+      "message": "nit: test",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "c718062ec156b33e9fccec215f3f28b6a0c8e34f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8aadcb95_c0f30e04",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-26T11:29:11Z",
+      "side": 1,
+      "message": "I don\u0027t hold a strong preference... could you use \"is_ffa_error\" from spm_common?\nOr you prefer not to. If you prefer not to, is ok as well, I am just wondering because if there is a reason, the helper can be improved, I guess.",
+      "range": {
+        "startLine": 260,
+        "startChar": 5,
+        "endLine": 260,
+        "endChar": 49
+      },
+      "revId": "c718062ec156b33e9fccec215f3f28b6a0c8e34f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43d38447_9236e7e1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-26T11:29:11Z",
+      "side": 1,
+      "message": "Is a panic need here? Couldn\u0027t it just return TEST_RESULT_FAIL?",
+      "range": {
+        "startLine": 260,
+        "startChar": 5,
+        "endLine": 262,
+        "endChar": 10
+      },
+      "revId": "c718062ec156b33e9fccec215f3f28b6a0c8e34f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d801b2d1_41b9e8b5",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-26T11:29:11Z",
+      "side": 1,
+      "message": "there is also a helper for this in spm_common. Same question, as above.",
+      "range": {
+        "startLine": 266,
+        "startChar": 4,
+        "endLine": 266,
+        "endChar": 40
+      },
+      "revId": "c718062ec156b33e9fccec215f3f28b6a0c8e34f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
