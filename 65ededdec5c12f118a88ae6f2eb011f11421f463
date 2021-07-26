@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "26e717c7_bb35dd7e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-26T17:44:52Z",
+      "side": 1,
+      "message": "NIT: I think the conventional commits defines title to start with lower case.\nhttps://www.conventionalcommits.org/en/v1.0.0/\nI just had a quick look, also I\u0027ve been following that (at least for the most of my patches). please do validate I am not wrong, and update if necessary.",
+      "range": {
+        "startLine": 7,
+        "startChar": 12,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "65ededdec5c12f118a88ae6f2eb011f11421f463",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d3e5339d_822cc24f",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
         "patchSetId": 2
