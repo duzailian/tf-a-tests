@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3e5339d_822cc24f",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-26T17:42:12Z",
+      "side": 1,
+      "message": "should the remaining args be FFA_PARAM_MBZ? or the spec doesn\u0027t specify?\nJust checking, I do notice for RXTX_MAP this is not done...\nFor correctness sake maybe it should have as well...",
+      "range": {
+        "startLine": 402,
+        "startChar": 1,
+        "endLine": 402,
+        "endChar": 3
+      },
+      "revId": "65ededdec5c12f118a88ae6f2eb011f11421f463",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a851187_2c8ae513",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-26T17:42:12Z",
+      "side": 1,
+      "message": "Prefer using macro HYP_ID.",
+      "range": {
+        "startLine": 257,
+        "startChar": 22,
+        "endLine": 257,
+        "endChar": 23
+      },
+      "revId": "65ededdec5c12f118a88ae6f2eb011f11421f463",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ef86fd8_dde757b0",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-26T17:42:12Z",
+      "side": 1,
+      "message": "given we have a few tests for this functionality (map/unmap) it seems from test to test, we are relying on it being done in a given order.\n\nDo you think it is worth either:\n1- put the tests all in one function, where the given sequence of operations is done?\n2- simply document that the tests should be listed in the tests-spm.xml in the required order, and document the order?\n\nThis to prevent things fell out of order, even if just by accident.\nI guess the 2nd option is easier. less effort for you at this point, so I\u0027d go for that. If you prefer 1st option, that is also ok.",
+      "range": {
+        "startLine": 292,
+        "startChar": 0,
+        "endLine": 292,
+        "endChar": 5
+      },
+      "revId": "65ededdec5c12f118a88ae6f2eb011f11421f463",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
