@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36b60099_f1b0d287",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2021-07-27T14:19:38Z",
+      "side": 1,
+      "message": "Hi Daniel,\n\nI reviewed your patch from the C coding standards perspective alone. Its neat and looks great to me !\nI have commented out couple of cosmetic changes which could be considered for making it better. ",
+      "revId": "b1d9ca8ab4d540f17a14a55c2bafe86adad15518",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "183dae28_01a44deb",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2021-07-27T14:19:38Z",
+      "side": 1,
+      "message": "Just to place things under common headings and make it much better, PAN_BIT macro could be placed below the Armv8.1 Registers block with an other relative comment/heading.",
+      "revId": "b1d9ca8ab4d540f17a14a55c2bafe86adad15518",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea9029d3_363ae049",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2021-07-27T14:19:38Z",
+      "side": 1,
+      "message": "Add a space after the asterisk, to keep the comments aligned.",
+      "revId": "b1d9ca8ab4d540f17a14a55c2bafe86adad15518",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
