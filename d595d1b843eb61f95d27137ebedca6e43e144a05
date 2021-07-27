@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8100d5f1_1611a1dc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-07-27T17:57:45Z",
+      "side": 1,
+      "message": "event handler to follow these requirements",
+      "range": {
+        "startLine": 14,
+        "startChar": 49,
+        "endLine": 15,
+        "endChar": 7
+      },
+      "revId": "d595d1b843eb61f95d27137ebedca6e43e144a05",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
