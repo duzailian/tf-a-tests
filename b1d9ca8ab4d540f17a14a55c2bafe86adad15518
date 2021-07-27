@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c0ceef5e_7c6ff80c",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-07-27T16:33:48Z",
+      "side": 1,
+      "message": "This was based on the headings below Eg line 985 which contains both the register and the relevant bit. I have added to the header to be specific to PAN like the others. Is this ok?",
+      "parentUuid": "183dae28_01a44deb",
+      "revId": "b1d9ca8ab4d540f17a14a55c2bafe86adad15518",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ea9029d3_363ae049",
         "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
         "patchSetId": 8
@@ -48,6 +66,24 @@
       "writtenOn": "2021-07-27T14:19:38Z",
       "side": 1,
       "message": "Add a space after the asterisk, to keep the comments aligned.",
+      "revId": "b1d9ca8ab4d540f17a14a55c2bafe86adad15518",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "064dd301_5af5b79e",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-07-27T16:33:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea9029d3_363ae049",
       "revId": "b1d9ca8ab4d540f17a14a55c2bafe86adad15518",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
