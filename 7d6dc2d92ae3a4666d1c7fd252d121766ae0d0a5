@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a1293a2_0a712e3c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2021-07-28T19:34:41Z",
+      "side": 1,
+      "message": "John, Look to run the CI yourself to get verified+1",
+      "revId": "7d6dc2d92ae3a4666d1c7fd252d121766ae0d0a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
