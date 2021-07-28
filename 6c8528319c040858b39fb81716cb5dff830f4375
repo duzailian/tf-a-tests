@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef345446_710c4811",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-28T13:20:23Z",
+      "side": 1,
+      "message": "Issue has been fixed, and this patch can now be reviewed.",
+      "revId": "6c8528319c040858b39fb81716cb5dff830f4375",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
