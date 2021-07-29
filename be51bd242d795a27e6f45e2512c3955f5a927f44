@@ -67,6 +67,24 @@
       "message": "This seems odd. Can we not git submodule the ACS project, build it and link a library into tftf? duplication of so many files does not seem wise as Gary has mentioned in another comment.\n",
       "revId": "be51bd242d795a27e6f45e2512c3955f5a927f44",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3092dbd2_53d66a07",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000340
+      },
+      "writtenOn": "2021-07-29T21:25:48Z",
+      "side": 1,
+      "message": "At the time I submitted this patch I did not know about git submodule but I think that is a great way to do this.\n\nI don\u0027t know if we\u0027ll be able to link it as a library but it should possible to make some minor changes to the tf-a-tests build system to build the needed test case files.",
+      "parentUuid": "81e5e667_a0d5068e",
+      "revId": "be51bd242d795a27e6f45e2512c3955f5a927f44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
