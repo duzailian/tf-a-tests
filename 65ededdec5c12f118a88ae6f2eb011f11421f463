@@ -187,6 +187,30 @@
       },
       "revId": "65ededdec5c12f118a88ae6f2eb011f11421f463",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d61cb298_059a1995",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-07-30T16:25:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f3bec00f_36655daf",
+      "range": {
+        "startLine": 292,
+        "startChar": 0,
+        "endLine": 292,
+        "endChar": 5
+      },
+      "revId": "65ededdec5c12f118a88ae6f2eb011f11421f463",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
