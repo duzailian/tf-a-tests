@@ -8,7 +8,16 @@
 #include "cactus_test_cmds.h"
 #include <ffa_helpers.h>
 #include <debug.h>
+#include <platform.h>
+#include <events.h>
 
+/**
+ * Counter of the number of handled requests, for each CPU. The number of
+ * requests can be accessed from another Cactus SP, or from the normal world
+ * recurring to the special test command.
+ */
+static uint32_t requests_counter[PLATFORM_CORE_COUNT];
+static spinlock_t requests_counter_lock;
 
 /**
  * Begin and end of command handler table, respectively. Both symbols defined by
@@ -31,6 +40,10 @@ bool cactus_handle_cmd(smc_ret_values *cmd_args, smc_ret_values *ret,
 {
 	uint64_t in_cmd;
 
+	/* Get which core it is running from. */
+	unsigned int core_pos = platform_get_core_pos(
+						read_mpidr_el1() & MPID_MASK);
+
 	if (cmd_args == NULL || ret == NULL) {
 		ERROR("Invalid argumentos passed to %s!\n", __func__);
 		return false;
@@ -45,8 +58,35 @@ bool cactus_handle_cmd(smc_ret_values *cmd_args, smc_ret_values *ret,
 	     it_cmd++) {
 		if (it_cmd->id == in_cmd) {
 			*ret = it_cmd->fn(cmd_args, mb);
+
+			/**
+			 * Increment the number of requests handled in current
+			 * core.
+			 */
+			spin_lock(&requests_counter_lock);
+			requests_counter[core_pos]++;
+			spin_unlock(&requests_counter_lock);
+
 			return true;
 		}
+	}
+
+	/* Handle special command. */
+	if (in_cmd == CACTUS_GET_REQ_COUNT_CMD) {
+		uint32_t requests_counter_resp;
+
+		/** Read value from array. */
+		spin_lock(&requests_counter_lock);
+		requests_counter_resp = requests_counter[core_pos];
+		VERBOSE("Requests Counter %u, core: %u\n", requests_counter_resp,
+							   core_pos);
+		spin_unlock(&requests_counter_lock);
+
+		*ret = cactus_success_resp(
+			ffa_dir_msg_dest(*cmd_args),
+			ffa_dir_msg_source(*cmd_args),
+			requests_counter_resp);
+		return true;
 	}
 
 	*ret = cactus_error_resp(ffa_dir_msg_dest(*cmd_args),
