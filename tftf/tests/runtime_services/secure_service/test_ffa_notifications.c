@@ -371,15 +371,15 @@ static bool request_notification_get(
 
 static bool request_notification_set(
 	ffa_id_t cmd_dest, ffa_id_t receiver, ffa_id_t sender,
-	uint32_t flags, uint64_t notifications, uint32_t exp_resp,
-	int32_t exp_error)
+	uint32_t flags, ffa_id_t echo_dest, uint64_t notifications,
+	uint32_t exp_resp, int32_t exp_error)
 {
 	smc_ret_values ret;
 
 	VERBOSE("TFTF requesting SP to set notifications\n");
 
 	ret = cactus_notifications_set_send_cmd(HYP_ID, cmd_dest, receiver,
-						sender, flags, notifications);
+						sender, flags, notifications, 0);
 
 	return is_expected_cactus_response(ret, exp_resp, exp_error);
 }
@@ -486,8 +486,8 @@ static bool request_notification_bind_and_set(ffa_id_t sender,
 
 	if (IS_SP_ID(sender)) {
 		return request_notification_set(sender, receiver, sender, flags,
-						notifications, CACTUS_SUCCESS,
-						0);
+						0, notifications,
+						CACTUS_SUCCESS, 0);
 	}
 
 	ret = ffa_notification_set(sender, receiver, flags, notifications);
@@ -654,7 +654,7 @@ test_result_t test_ffa_notifications_sp_signals_sp(void)
 	}
 
 	if (!request_notification_set(sender, receiver, sender,
-				      FFA_NOTIFICATIONS_FLAG_DELAY_SRI,
+				      FFA_NOTIFICATIONS_FLAG_DELAY_SRI, 0,
 				      g_notifications, CACTUS_SUCCESS, 0)) {
 		result = TEST_RESULT_FAIL;
 	}
@@ -724,7 +724,7 @@ test_result_t test_ffa_notifications_sp_signals_vm(void)
 
 	/* Request SP to set notifications */
 	if (!request_notification_set(sender, receiver, sender,
-				      FFA_NOTIFICATIONS_FLAG_DELAY_SRI,
+				      FFA_NOTIFICATIONS_FLAG_DELAY_SRI, 0,
 				      g_notifications, CACTUS_SUCCESS, 0)) {
 		result = TEST_RESULT_FAIL;
 	}
@@ -1119,7 +1119,7 @@ test_result_t test_ffa_notifications_sp_signals_vm_per_vcpu(void)
 		}
 
 		if (!request_notification_set(per_vcpu_sender, per_vcpu_receiver,
-					      per_vcpu_sender, flags,
+					      per_vcpu_sender, flags, 0,
 					      FFA_NOTIFICATION(i),
 					      CACTUS_SUCCESS, 0)) {
 			return TEST_RESULT_FAIL;
