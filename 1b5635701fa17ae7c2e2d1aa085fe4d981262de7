@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15471390_5f003cd6",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-07-30T12:57:05Z",
+      "side": 1,
+      "message": "This space was removed in the patch \"test(ff-a): signaling per-vCPU notifications\" can you put it back there instead of here?",
+      "range": {
+        "startLine": 128,
+        "startChar": 1,
+        "endLine": 128,
+        "endChar": 2
+      },
+      "revId": "1b5635701fa17ae7c2e2d1aa085fe4d981262de7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
