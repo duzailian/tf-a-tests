@@ -223,8 +223,8 @@ bool check_spmc_execution_level(void)
 	ret_values = ffa_msg_send_direct_req32(HYP_ID, SP_ID(1),
 					       OPTEE_FFA_GET_API_VERSION, 0,
 					       0, 0, 0);
-	if ((ret_values.ret3 == FFA_VERSION_MAJOR) &&
-	    (ret_values.ret4 == FFA_VERSION_MINOR)) {
+	if (ret_values.ret3 == 1 &&
+	    (ret_values.ret4 == 0 || ret_values.ret4 == 1)) {
 		is_optee_spmc_criteria++;
 	}
 
@@ -239,6 +239,8 @@ bool check_spmc_execution_level(void)
 	    (ret_values.ret4 == OPTEE_FFA_GET_OS_VERSION_MINOR)) {
 		is_optee_spmc_criteria++;
 	}
+
+	NOTICE("%s %u\n", __func__, is_optee_spmc_criteria);
 
 	return (is_optee_spmc_criteria == 2U);
 }
