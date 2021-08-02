@@ -142,6 +142,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "112512eb_88e1e4c1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-08-02T09:41:03Z",
+      "side": 1,
+      "message": "Achin has confirmed that arg1 MBZ at the virtual FF-A instance",
+      "parentUuid": "f2dd280e_8327e075",
+      "range": {
+        "startLine": 257,
+        "startChar": 22,
+        "endLine": 257,
+        "endChar": 23
+      },
+      "revId": "65ededdec5c12f118a88ae6f2eb011f11421f463",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4ef86fd8_dde757b0",
