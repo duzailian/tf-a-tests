@@ -33,6 +33,24 @@
       "message": "nitpick: missing \"\\n\"",
       "revId": "44e995f86eb4ec327482e50c50df3378c62b2737",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "573a3d35_ed7dacf9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-08-04T16:11:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77a09c93_7993425d",
+      "revId": "44e995f86eb4ec327482e50c50df3378c62b2737",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
