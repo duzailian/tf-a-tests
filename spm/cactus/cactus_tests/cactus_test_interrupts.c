@@ -7,6 +7,7 @@
 #include <common/debug.h>
 #include <sp_helpers.h>
 #include <spm_helpers.h>
+#include <drivers/arm/sp805.h>
 
 #include "cactus_message_loop.h"
 #include "cactus_test_cmds.h"
@@ -19,13 +20,16 @@ CACTUS_CMD_HANDLER(sleep_cmd, CACTUS_SLEEP_CMD)
 
 	VERBOSE("Request to sleep %x for %ums.\n", ffa_dir_msg_dest(*args), sleep_time);
 
+	isb();
 	time1 = read_cntvct_el0();
 	sp_sleep(sleep_time);
+	isb();
 	time2 = read_cntvct_el0();
 
 	/* Lapsed time should be at least equal to sleep time */
 	time_lapsed = ((time2 - time1) * 1000) / timer_freq;
 
+	VERBOSE("Sleep complete: %llx\n", time_lapsed);
 	return cactus_response(ffa_dir_msg_dest(*args),
 			       ffa_dir_msg_source(*args),
 			       time_lapsed);
@@ -48,4 +52,18 @@ CACTUS_CMD_HANDLER(interrupt_cmd, CACTUS_INTERRUPT_CMD)
 	return cactus_response(ffa_dir_msg_dest(*args),
 			       ffa_dir_msg_source(*args),
 			       CACTUS_SUCCESS);
+}
+
+CACTUS_CMD_HANDLER(twdog_cmd, CACTUS_TWDOG_START_CMD)
+{
+	ffa_id_t vm_id = ffa_dir_msg_dest(*args);
+	ffa_id_t source = ffa_dir_msg_source(*args);
+
+	uint64_t time_ms = (*args).ret4;
+
+	VERBOSE("Starting TWDOG: %llums\n", time_ms);
+	sp805_twdog_refresh();
+	sp805_twdog_start((time_ms * ARM_SP805_TWDG_CLK_HZ) / 1000);
+
+	return cactus_success_resp(vm_id, source, time_ms);
 }
