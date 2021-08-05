@@ -24,5 +24,5 @@ uint32_t spm_interrupt_get(void);
 int64_t spm_interrupt_enable(uint32_t int_id, bool enable, enum interrupt_pin pin);
 int64_t spm_interrupt_deactivate(uint32_t pint_id, uint32_t vint_id);
 void spm_debug_log(char c);
-
+smc_ret_values handle_interrupt(int int_id);
 #endif /* SPMC_H */

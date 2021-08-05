@@ -5,6 +5,7 @@
  */
 
 #include <asm_macros.S>
+#include <context.h>
 
 	.globl	cactus_vector
 
@@ -99,12 +100,24 @@ unhandled_exception serr_a32
 .endm
 
 func irq_vector_entry
-	sub	sp, sp, #0x100
+	sub	sp, sp, #CTX_REGS_END
 	save_gp_regs
+	/* Save return address & mode. */
+	mrs x1, elr_el1
+	mrs x2, spsr_el1
+	stp	x1, x2, [sp, #CTX_REGS_ELR_EL1]
+	mov	x15, sp
+	mov	x0, sp
 	bl	cactus_irq_handler
+	mov	sp, x15
+	/* Restore return address & mode. */
+	ldp	x1, x2, [sp, #CTX_REGS_ELR_EL1]
+	msr	spsr_el1, x2
+	msr	elr_el1, x1
 	restore_gp_regs
-	add	sp, sp, #0x100
-	eret
+	mrs	x15, elr_el1
+	add	sp, sp, #CTX_REGS_END
+	ret	x15
 endfunc irq_vector_entry
 
 func fiq_vector_entry
