@@ -47,9 +47,15 @@
 #define SP805_WDOG_PCELL_ID_SHIFT	0
 #define SP805_WDOG_PCELL_ID_MASK	0xff
 
+#define ARM_SP805_TWDG_CLK_HZ	32768
+
 void sp805_wdog_start(unsigned int wdog_cycles);
 void sp805_wdog_stop(void);
 void sp805_wdog_refresh(void);
+
+void sp805_twdog_start(unsigned int wdog_cycles);
+void sp805_twdog_stop(void);
+void sp805_twdog_refresh(void);
 
 #endif /* __SP805_H__ */
 
