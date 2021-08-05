@@ -36,6 +36,8 @@
 
 /* Base address of non-trusted watchdog (SP805) */
 #define SP805_WDOG_BASE			0x1C0F0000
+#define SP805_TWDOG_BASE		0x2A490000
+#define IRQ_TWDOG_INTID			56
 
 /*******************************************************************************
  * Base address and size of external NVM flash
