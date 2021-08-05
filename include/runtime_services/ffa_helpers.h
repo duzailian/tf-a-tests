@@ -93,6 +93,11 @@ static inline ffa_notification_bitmap_t ffa_notifications_get_from_vm(smc_ret_va
 	return FFA_NOTIFICATIONS_BITMAP(val.ret4, val.ret5);
 }
 
+static inline uint32_t ffa_interrupt_id(smc_ret_values val)
+{
+	return (uint32_t) val.ret1;
+}
+
 enum ffa_data_access {
 	FFA_DATA_ACCESS_NOT_SPECIFIED,
 	FFA_DATA_ACCESS_RO,
