@@ -227,6 +227,7 @@ void __dead2 cactus_main(bool primary_cold_boot)
 
 		NOTICE("Booting Primary Cactus Secure Partition\n%s\n%s\n",
 			build_message, version_string);
+
 	} else {
 		smc_ret_values ret;
 		set_putc_impl(HVC_CALL_AS_STDOUT);
