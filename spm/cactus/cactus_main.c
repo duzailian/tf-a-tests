@@ -58,6 +58,7 @@ static void __dead2 message_loop(ffa_id_t vm_id, struct mailbox_buffers *mb)
 	* a direct message request.
 	*/
 
+waiting:
 	ffa_ret = ffa_msg_wait();
 
 	for (;;) {
@@ -69,14 +70,27 @@ static void __dead2 message_loop(ffa_id_t vm_id, struct mailbox_buffers *mb)
 		}
 
 		if (ffa_func_id(ffa_ret) != FFA_MSG_SEND_DIRECT_REQ_SMC32 &&
-		    ffa_func_id(ffa_ret) != FFA_MSG_SEND_DIRECT_REQ_SMC64) {
+		    ffa_func_id(ffa_ret) != FFA_MSG_SEND_DIRECT_REQ_SMC64 &&
+		    ffa_func_id(ffa_ret) != FFA_INTERRUPT) {
 			ERROR("%s(%u) unknown func id 0x%x\n",
 				__func__, vm_id, ffa_func_id(ffa_ret));
 			break;
 		}
 
-		destination = ffa_dir_msg_dest(ffa_ret);
+		if (ffa_func_id(ffa_ret) == FFA_INTERRUPT) {
+			/*
+			 * Received FFA_INTERRUPT in waiting state.
+			 * The interrupt id is passed although this is just
+			 * informational as we're running with virtual
+			 * interrupts unmasked and the interrupt is processed
+			 * by the interrupt handler.
+			 */
+			NOTICE("FFA_INTERRUPT (ID %u).\n",
+				ffa_interrupt_id(ffa_ret));
+			goto waiting;
+		}
 
+		destination = ffa_dir_msg_dest(ffa_ret);
 		if (destination != vm_id) {
 			ERROR("%s(%u) invalid vm id 0x%x\n",
 				__func__, vm_id, destination);

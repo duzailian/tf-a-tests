@@ -8,6 +8,7 @@
 #include <sp_helpers.h>
 #include <spm_helpers.h>
 #include <drivers/arm/sp805.h>
+#include <platform.h>
 
 #include "cactus_message_loop.h"
 #include "cactus_test_cmds.h"
@@ -37,14 +38,20 @@ CACTUS_CMD_HANDLER(sleep_fwd_cmd, CACTUS_FWD_SLEEP_CMD)
 	ffa_id_t fwd_dest = cactus_get_fwd_sleep_dest(*args);
 	uint32_t sleep_ms = cactus_get_sleep_time(*args);
 
-
 	VERBOSE("VM%x requested %x to sleep for value %u\n",
 		ffa_dir_msg_source(*args), fwd_dest, sleep_ms);
 
 	ffa_ret = cactus_sleep_cmd(vm_id, fwd_dest, sleep_ms);
 
+	while (ffa_ret.ret0 == FFA_INTERRUPT) {
+		/* Received FFA_INTERRUPT in blocked state. */
+		NOTICE("Processing FFA_INTERRUPT while blocked on direct response\n");
+		unsigned int my_core_pos = platform_get_core_pos(read_mpidr_el1());
+		ffa_ret = ffa_run(fwd_dest, my_core_pos);
+	}
+
 	if (!is_ffa_direct_response(ffa_ret)) {
-		INFO("Encountered error in CACTUS_FWD_SLEEP_CMD response\n");
+		ERROR("Encountered error in CACTUS_FWD_SLEEP_CMD response\n");
 		return cactus_error_resp(vm_id, ffa_dir_msg_source(*args),
 					 CACTUS_ERROR_FFA_CALL);
 	}
