@@ -128,6 +128,11 @@ static inline bool ffa_notifications_info_get_more_pending(smc_ret_values ret)
 	return (ret.ret2 & FFA_NOTIFICATIONS_INFO_GET_FLAG_MORE_PENDING) != 0U;
 }
 
+static inline uint32_t ffa_interrupt_id(smc_ret_values val)
+{
+	return (uint32_t) val.ret1;
+}
+
 enum ffa_data_access {
 	FFA_DATA_ACCESS_NOT_SPECIFIED,
 	FFA_DATA_ACCESS_RO,
