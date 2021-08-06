@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05dab0da_75b7f2b4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-08-06T10:35:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e8e9844_7f718545",
+      "range": {
+        "startLine": 9,
+        "startChar": 45,
+        "endLine": 9,
+        "endChar": 55
+      },
+      "revId": "c84e2aee4465af69aea3ae4afae87f5e0a86226e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bcf47230_b7309c85",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "571efb3d_42817092",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-08-06T10:35:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bcf47230_b7309c85",
+      "range": {
+        "startLine": 9,
+        "startChar": 69,
+        "endLine": 10,
+        "endChar": 4
+      },
+      "revId": "c84e2aee4465af69aea3ae4afae87f5e0a86226e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8776fc66_82820247",
@@ -60,6 +108,30 @@
       "writtenOn": "2021-07-30T09:30:34Z",
       "side": 1,
       "message": "Nit: vCPU",
+      "range": {
+        "startLine": 999,
+        "startChar": 8,
+        "endLine": 999,
+        "endChar": 12
+      },
+      "revId": "c84e2aee4465af69aea3ae4afae87f5e0a86226e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "000458d3_fa8a2067",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 999,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-08-06T10:35:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8776fc66_82820247",
       "range": {
         "startLine": 999,
         "startChar": 8,
