@@ -1,0 +1,8 @@
+Code-Owner-Review+1: Daniel Boulby <daniel.boulby@arm.com>
+Maintainer-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Verified+1: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Tue, 10 Aug 2021 11:14:59 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/10911
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
