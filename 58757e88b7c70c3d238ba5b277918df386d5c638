@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bdca68b_55c4cbe5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-08-10T09:14:31Z",
+      "side": 1,
+      "message": "Verified by https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/10909\n",
+      "revId": "58757e88b7c70c3d238ba5b277918df386d5c638",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
