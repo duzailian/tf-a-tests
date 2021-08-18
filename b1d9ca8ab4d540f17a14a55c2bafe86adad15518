@@ -94,6 +94,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f44ae38a_0c4c6752",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/sdei_entrypoint.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-08-18T15:38:47Z",
+      "side": 1,
+      "message": "This is based on the entrypoints for the other tests (above). I think since it\u0027s simple and to keep things consistent with the other tests it\u0027s better to the entry point in this file as is.",
+      "parentUuid": "5498be3d_a121ad04",
+      "range": {
+        "startLine": 130,
+        "startChar": 5,
+        "endLine": 130,
+        "endChar": 33
+      },
+      "revId": "b1d9ca8ab4d540f17a14a55c2bafe86adad15518",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ea9029d3_363ae049",
