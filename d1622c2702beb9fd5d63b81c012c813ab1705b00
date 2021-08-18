@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41dcbc98_6a406f06",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-08-18T03:39:28Z",
+      "side": 1,
+      "message": "this method of handling interrupt is confusing (at least at the moment, so bear with me). Can we do this without consuming the FFA_INTERRUPT in the interrupt handler? The interrupt handler remains simple in that it always calls spm_interrupt_get and the interrupt handler.\nThe FFA_INTERRUPT can always be consumed in the main wait loop. In the wait loop, you know if the interrupts are enabled or disabled so if you see an FFA_INTERRUPT, you simply go back to FFA_MSG_WAIT in the wait loop, which will signal completion of the interrupt...\n\nAlso i dont understand the ffa_run in handle_interrupt. If we follow the above design, can we get rid of the ffa_run? \nI feel like above design is simpler and cleaner as the example to follow..unless i\u0027m missing something..",
+      "range": {
+        "startLine": 82,
+        "startChar": 1,
+        "endLine": 82,
+        "endChar": 37
+      },
+      "revId": "d1622c2702beb9fd5d63b81c012c813ab1705b00",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f210261_591ff5d9",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-08-18T03:39:28Z",
+      "side": 1,
+      "message": "this part is not clear to me..why would this be required? When does the SPMC return 0xFFFF? maybe i need to look at hafnium changes..",
+      "range": {
+        "startLine": 95,
+        "startChar": 14,
+        "endLine": 95,
+        "endChar": 34
+      },
+      "revId": "d1622c2702beb9fd5d63b81c012c813ab1705b00",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
