@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d1b6d05_3dc41888",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-08-19T13:38:08Z",
+      "side": 1,
+      "message": "It seems like the contents of this patch has been squashed in to the previous one",
+      "revId": "ba0c4d73f30aac95aceb4667736dbcb42700926f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
