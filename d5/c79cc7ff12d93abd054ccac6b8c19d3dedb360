@@ -1,0 +1,9 @@
+Legacy-CI+2: John <john.powell@arm.com>
+Verified+1: TrustedFirmware Code Review
+Maintainer-Review+1: Joanna Farley <joanna.farley@arm.com>
+Code-Owner-Review+1: Mark Dykes <mark.dykes@arm.com>
+Submitted-by: Joanna Farley <joanna.farley@arm.com>
+Submitted-at: Wed, 25 Aug 2021 14:22:43 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/10416
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
