@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e7be3d6_34d3345f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-08-26T20:57:47Z",
+      "side": 1,
+      "message": "LGTM.",
+      "revId": "87c03d1f4c06c1dea78abb359d9b1b4c24470f88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c638714_69182fe7",
+        "filename": "tftf/tests/extensions/trbe/test_trbe.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-08-26T20:57:47Z",
+      "side": 1,
+      "message": "In this test case, we are exercising the positive test i.e., ns-el2 has access to trace control registers when the feature is enabled in EL3 (ENABLE_TRBE_FOR_NS \u003d 1). \n\nI think we should also exercise a negative test i.e., ns-el2 should crash when the feature is not enabled in EL3. With help of expect scripts, we can make sure that such as negative test passes.",
+      "range": {
+        "startLine": 15,
+        "startChar": 47,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "87c03d1f4c06c1dea78abb359d9b1b4c24470f88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
