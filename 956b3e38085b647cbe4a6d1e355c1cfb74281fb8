@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ef31b55_f501f16d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-08-26T16:53:59Z",
+      "side": 1,
+      "message": "is giving?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 5
+      },
+      "revId": "956b3e38085b647cbe4a6d1e355c1cfb74281fb8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a030dcb4_d9f9aab5",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-08-26T16:53:59Z",
+      "side": 1,
+      "message": "`false` to align with the rest of the file",
+      "range": {
+        "startLine": 264,
+        "startChar": 10,
+        "endLine": 264,
+        "endChar": 11
+      },
+      "revId": "956b3e38085b647cbe4a6d1e355c1cfb74281fb8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8dd0f69c_a06886fa",
+        "filename": "include/lib/aarch32/arch_features.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-08-26T16:53:59Z",
+      "side": 1,
+      "message": "2019-2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "956b3e38085b647cbe4a6d1e355c1cfb74281fb8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e10604b7_9212ca1a",
+        "filename": "include/lib/aarch32/arch_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-08-26T16:53:59Z",
+      "side": 1,
+      "message": "2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "956b3e38085b647cbe4a6d1e355c1cfb74281fb8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9134c207_a57f911a",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-08-26T16:53:59Z",
+      "side": 1,
+      "message": "2020-2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "956b3e38085b647cbe4a6d1e355c1cfb74281fb8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46a3863d_2ec9e0a9",
+        "filename": "tftf/tests/extensions/trf/test_trf.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-08-26T16:53:59Z",
+      "side": 1,
+      "message": "I think proper order would be:\n#include \u003cstring.h\u003e\n\n#include \u003ctest_helpers.h\u003e\n#include \u003ctftf_lib.h\u003e\n#include \u003ctftf.h\u003e",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 0
+      },
+      "revId": "956b3e38085b647cbe4a6d1e355c1cfb74281fb8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16a7975e_e7afdb37",
+        "filename": "tftf/tests/tests-cpu-extensions.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-08-26T16:53:59Z",
+      "side": 1,
+      "message": "2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "956b3e38085b647cbe4a6d1e355c1cfb74281fb8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
