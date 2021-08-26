@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "2acef5fc_8ea3f0fb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2021-08-26T18:09:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5232dcc9_f301fede",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 5
+      },
+      "revId": "48451e2cb4ab58a4d2a7cd9067b4687da985a368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "4621cdac_14a9061d",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 3
@@ -64,6 +88,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cc7025d_7e75f491",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2021-08-26T18:09:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ac58b17_d0183980",
+      "range": {
+        "startLine": 273,
+        "startChar": 10,
+        "endLine": 273,
+        "endChar": 11
+      },
+      "revId": "48451e2cb4ab58a4d2a7cd9067b4687da985a368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4cf91c23_94f6d522",
@@ -77,6 +125,30 @@
       "writtenOn": "2021-08-26T17:00:51Z",
       "side": 1,
       "message": "2019-2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "48451e2cb4ab58a4d2a7cd9067b4687da985a368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de25c04c_9e8e5487",
+        "filename": "include/lib/aarch32/arch_features.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2021-08-26T18:09:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4cf91c23_94f6d522",
       "range": {
         "startLine": 2,
         "startChar": 17,
@@ -110,6 +182,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6d33969_882c2cf5",
+        "filename": "include/lib/aarch32/arch_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2021-08-26T18:09:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9cd6117f_75b5bd1d",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "48451e2cb4ab58a4d2a7cd9067b4687da985a368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c13774e_85e9ea34",
@@ -123,6 +219,30 @@
       "writtenOn": "2021-08-26T17:00:51Z",
       "side": 1,
       "message": "2020-2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "48451e2cb4ab58a4d2a7cd9067b4687da985a368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70e93512_b4bd4e0b",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2021-08-26T18:09:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c13774e_85e9ea34",
       "range": {
         "startLine": 2,
         "startChar": 17,
@@ -156,6 +276,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2be40926_0e379d9c",
+        "filename": "tftf/tests/extensions/sys_reg_trace/test_sys_reg_trace.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2021-08-26T18:09:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8eacee6_326b92ba",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 19
+      },
+      "revId": "48451e2cb4ab58a4d2a7cd9067b4687da985a368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "baa49cc3_36741de6",
@@ -169,6 +313,30 @@
       "writtenOn": "2021-08-26T17:00:51Z",
       "side": 1,
       "message": "Question about all these tests:\nIn case the operation is trapped in EL3 - will the test report failure?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 18
+      },
+      "revId": "48451e2cb4ab58a4d2a7cd9067b4687da985a368",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29758347_d36ea15f",
+        "filename": "tftf/tests/extensions/sys_reg_trace/test_sys_reg_trace.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2021-08-26T18:09:46Z",
+      "side": 1,
+      "message": "No, there is no recovery possible once trap happens in EL3.",
+      "parentUuid": "baa49cc3_36741de6",
       "range": {
         "startLine": 23,
         "startChar": 0,
