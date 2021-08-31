@@ -39,6 +39,30 @@
       },
       "revId": "87c03d1f4c06c1dea78abb359d9b1b4c24470f88",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35b36750_5a88ff08",
+        "filename": "tftf/tests/extensions/trbe/test_trbe.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2021-08-31T07:13:01Z",
+      "side": 1,
+      "message": "Thanks Madhukar! \nI tested these negative scenarios manually, but it is good idea as you suggested to add these tests as a part of CI with the help of expect script.\nLet me push a CI patch to cover these negative tests.",
+      "parentUuid": "2c638714_69182fe7",
+      "range": {
+        "startLine": 15,
+        "startChar": 47,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "87c03d1f4c06c1dea78abb359d9b1b4c24470f88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
