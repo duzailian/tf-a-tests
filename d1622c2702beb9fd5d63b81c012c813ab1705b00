@@ -95,6 +95,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c542f5fe_a6834280",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-08-31T15:29:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3dc4eb77_5d5fbdae",
+      "range": {
+        "startLine": 82,
+        "startChar": 1,
+        "endLine": 82,
+        "endChar": 37
+      },
+      "revId": "d1622c2702beb9fd5d63b81c012c813ab1705b00",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "508009c6_702b5161",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-08-31T15:29:16Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3dc4eb77_5d5fbdae",
+      "range": {
+        "startLine": 82,
+        "startChar": 1,
+        "endLine": 82,
+        "endChar": 37
+      },
+      "revId": "d1622c2702beb9fd5d63b81c012c813ab1705b00",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f210261_591ff5d9",
@@ -132,6 +180,30 @@
       "side": 1,
       "message": "In the scenario where SP is in blocked state, spec says we dont need to pass interrupt id. Hence, I passed 0XFFFF in arg1 to help distinguish between WAITING and BLOCKED state. This is under the assumption that a SP by itself doesnt track its own state. Please take a look at the companion hafnium patches.\n\nHowever, I had a conversation with Achin. He seems to suggest we can track if the SP is currently blocked and the destination VM/SP on which it is blocked. This could change the design of Cactus SP interrupt handling. I am working on this and will push an updated patchset shortly.",
       "parentUuid": "2f210261_591ff5d9",
+      "range": {
+        "startLine": 95,
+        "startChar": 14,
+        "endLine": 95,
+        "endChar": 34
+      },
+      "revId": "d1622c2702beb9fd5d63b81c012c813ab1705b00",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc8e2b3b_7686f2d2",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-08-31T15:29:16Z",
+      "side": 1,
+      "message": "Yes, this is what i would have expected as well, where the SPM tracks the state of the SP vCPUs..",
+      "parentUuid": "fdac84af_4def49ba",
       "range": {
         "startLine": 95,
         "startChar": 14,

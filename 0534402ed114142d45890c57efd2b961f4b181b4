@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2017f24_4c8704fa",
+        "filename": "spm/cactus/aarch64/cactus_exceptions.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-08-31T15:29:16Z",
+      "side": 1,
+      "message": "why would we want to reenable IRQ? or ERET, SPSR will be restored so it goes back to whatever state it was in.",
+      "revId": "0534402ed114142d45890c57efd2b961f4b181b4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
