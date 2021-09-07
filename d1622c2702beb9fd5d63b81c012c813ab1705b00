@@ -212,6 +212,30 @@
       },
       "revId": "d1622c2702beb9fd5d63b81c012c813ab1705b00",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef7cdb93_c9841391",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-09-07T19:33:32Z",
+      "side": 1,
+      "message": "Hi Raghu\nThanks a lot for the review comments.\nPerhaps, I am missing something. Even if SP tracks which VM/SP it is blocked on, it might not be sufficient for signal completion when in the BLOCKED state. Consider the following hypothetical scenario. SP1 is blocked on SP2. SP2 is blocked on SP3. SP3 is currently running a service and gets preempted by a secure interrupt whose target vCPU belongs to SP1. \nSPM resumes SP1 vCPU.  Spec says SP must invoke FFA_RUN but how would it know that it has to invoke FFA_RUN to resume SP3. SPM might know about this but SP1 does not.",
+      "parentUuid": "dc8e2b3b_7686f2d2",
+      "range": {
+        "startLine": 95,
+        "startChar": 14,
+        "endLine": 95,
+        "endChar": 34
+      },
+      "revId": "d1622c2702beb9fd5d63b81c012c813ab1705b00",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
