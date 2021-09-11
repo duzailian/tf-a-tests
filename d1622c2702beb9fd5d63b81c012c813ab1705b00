@@ -236,6 +236,30 @@
       },
       "revId": "d1622c2702beb9fd5d63b81c012c813ab1705b00",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e79be1c_b9c19684",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-09-11T22:07:26Z",
+      "side": 1,
+      "message": "yep, explanation makes sense to me. However, An SP does not necessarily require to know through an error code. In your hypothetical situation, SPM resumes SP1 vCPU and has injected the interrupt. Assuming interrupts are not masked, the interrupt fires, interrupt is handled, interrupt handler calls deactivate, and then erets to S-EL1 code where it had called, say direct_req, that made it enter the blocked state. Now, when the interrupt handler ERET resumes this, your direct_req call will see an error code of FFA_INTERRUPT and it \"knows\", oh interrupts were enabled, and it must have been handled, let me just call ffa_run...does that make sense? in that way, the interrupt handler does not need to do much with ffa calls at all. that would all live in the main non-interrupt code executing on the vcpu..",
+      "parentUuid": "ef7cdb93_c9841391",
+      "range": {
+        "startLine": 95,
+        "startChar": 14,
+        "endLine": 95,
+        "endChar": 34
+      },
+      "revId": "d1622c2702beb9fd5d63b81c012c813ab1705b00",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
