@@ -19,6 +19,8 @@
 #include <plat_topology.h>
 #include <platform.h>
 
+//testing the ip review mechanism
+
 extern char _binary___dtb_start[];
 
 struct memmod tmod __aligned(65536) __section("smcfuzz");
