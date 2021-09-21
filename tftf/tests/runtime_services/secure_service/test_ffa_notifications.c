@@ -614,7 +614,9 @@ test_result_t test_ffa_notifications_vm_signals_sp(void)
 		result = TEST_RESULT_FAIL;
 	}
 
-	check_schedule_receiver_interrupt_handled();
+	if (!check_schedule_receiver_interrupt_handled()) {
+		result = TEST_RESULT_FAIL;
+	}
 
 	/**
 	 * Simple list of IDs expected on return from FFA_NOTIFICATION_INFO_GET.
@@ -673,7 +675,9 @@ test_result_t test_ffa_notifications_sp_signals_sp(void)
 		result = TEST_RESULT_FAIL;
 	}
 
-	check_schedule_receiver_interrupt_handled();
+	if (!check_schedule_receiver_interrupt_handled()) {
+		result = TEST_RESULT_FAIL;
+	}
 
 	/**
 	 * FFA_NOTIFICATION_INFO_GET return list should be simple, containing
@@ -743,7 +747,9 @@ test_result_t test_ffa_notifications_sp_signals_vm(void)
 		result = TEST_RESULT_FAIL;
 	}
 
-	check_schedule_receiver_interrupt_handled();
+	if (!check_schedule_receiver_interrupt_handled()) {
+		result = TEST_RESULT_FAIL;
+	}
 
 	/**
 	 * FFA_NOTIFICATION_INFO_GET return list should be simple, containing
@@ -1171,6 +1177,96 @@ out:
 				      notifications_to_unbind);
 	if (is_ffa_call_error(ret)) {
 		result = TEST_RESULT_FAIL;
+	}
+
+	return result;
+}
+
+/**
+ * Test to validate behavior in SWd if the SRI is not delayed. If the
+ * notification setter handled a managed exit it is indicative the SRI was
+ * sent immediately.
+ */
+test_result_t test_ffa_notifications_sp_signals_sp_immediate_sri(void)
+{
+	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
+	const ffa_id_t sender = SP_ID(1);
+	const ffa_id_t receiver = SP_ID(2);
+	uint32_t get_flags = FFA_NOTIFICATIONS_FLAG_BITMAP_SP;
+	smc_ret_values ret;
+	test_result_t result = TEST_RESULT_SUCCESS;
+
+	/** Variables to validate calls to FFA_NOTIFICATION_INFO_GET. */
+	uint16_t ids[FFA_NOTIFICATIONS_INFO_GET_MAX_IDS] = {0};
+	uint32_t lists_count;
+	uint32_t lists_sizes[FFA_NOTIFICATIONS_INFO_GET_MAX_IDS] = {0};
+
+	ids[0] = receiver;
+	lists_count = 1;
+
+	/* Enable managed exit interrupt as FIQ in the secure side. */
+	if (!spm_set_managed_exit_int(sender, true)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	schedule_receiver_interrupt_init();
+
+	/** Request receiver to bind a set of notifications to the sender */
+	if (!request_notification_bind(receiver, receiver, sender,
+				       g_notifications, 0, CACTUS_SUCCESS, 0)) {
+		result = TEST_RESULT_FAIL;
+	}
+
+	/**
+	 * Request sender to set notification, and expect the response is
+	 * MANAGED_EXIT_INTERRUPT_ID.
+	 */
+	if (!request_notification_set(sender, receiver, sender, 0, 0,
+				      g_notifications, MANAGED_EXIT_INTERRUPT_ID,
+				      0)) {
+		VERBOSE("SRI not handled immediately!\n");
+		result = TEST_RESULT_FAIL;
+	} else {
+		VERBOSE("SP %x did a managed exit.\n", sender);
+	}
+
+	if (!check_schedule_receiver_interrupt_handled()) {
+		result = TEST_RESULT_FAIL;
+	}
+
+	/* Call FFA_NOTIFICATION_INFO_GET and validate return. */
+	if (!notifications_info_get(ids, lists_count, lists_sizes, false)) {
+		result = TEST_RESULT_FAIL;
+	}
+
+	/** Validate notification get. */
+	if (!request_notification_get(receiver, receiver, 0, get_flags, &ret) ||
+	    !is_notifications_get_as_expected(&ret, g_notifications, 0,
+					      receiver)) {
+		result = TEST_RESULT_FAIL;
+	}
+
+	/**
+	 * Resume setter Cactus in the handling of CACTUS_NOTIFICATIONS_SET_CMD.
+	 */
+	ret = ffa_msg_send_direct_req64(HYP_ID, sender, 0, 0, 0, 0, 0);
+
+	/** Expected result to CACTUS_NOTIFICATIONS_SET_CMD. */
+	if (!is_expected_cactus_response(ret, CACTUS_SUCCESS, 0)) {
+		result = TEST_RESULT_FAIL;
+	}
+
+	/* Unbind for clean-up. */
+	if (!request_notification_unbind(receiver, receiver, sender,
+					 g_notifications, CACTUS_SUCCESS, 0)) {
+		result = TEST_RESULT_FAIL;
+	}
+
+	schedule_receiver_interrupt_deinit();
+
+	/* Disable managed exit interrupt as FIQ in the secure side. */
+	if (!spm_set_managed_exit_int(sender, false)) {
+		return TEST_RESULT_FAIL;
 	}
 
 	return result;
