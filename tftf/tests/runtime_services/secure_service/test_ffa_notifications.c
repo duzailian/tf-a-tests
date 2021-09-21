@@ -397,7 +397,8 @@ static bool request_notification_set(
 		cmd_dest, sender, receiver);
 
 	ret = cactus_notifications_set_send_cmd(HYP_ID, cmd_dest, receiver,
-						sender, flags, notifications, 0);
+						sender, flags, notifications,
+						echo_dest);
 
 	return is_expected_cactus_response(ret, exp_resp, exp_error);
 }
@@ -1249,6 +1250,107 @@ test_result_t test_ffa_notifications_sp_signals_sp_immediate_sri(void)
 
 	/** Expected result to CACTUS_NOTIFICATIONS_SET_CMD. */
 	if (!is_expected_cactus_response(ret, CACTUS_SUCCESS, 0)) {
+		result = TEST_RESULT_FAIL;
+	}
+
+	/* Unbind for clean-up. */
+	if (!request_notification_unbind(receiver, receiver, sender,
+					 g_notifications, CACTUS_SUCCESS, 0)) {
+		result = TEST_RESULT_FAIL;
+	}
+
+	schedule_receiver_interrupt_deinit();
+
+	/* Disable managed exit interrupt as FIQ in the secure side. */
+	if (!spm_set_managed_exit_int(sender, false)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return result;
+}
+
+/**
+ * Test to validate behavior in SWd if the SRI is delayed.
+ */
+test_result_t test_ffa_notifications_sp_signals_sp_delayed_sri(void)
+{
+	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
+	const ffa_id_t sender = SP_ID(3);
+	const ffa_id_t receiver = SP_ID(2);
+	const ffa_id_t echo_dest = SP_ID(1);
+	uint32_t echo_dest_cmd_count = 0;
+	uint32_t get_flags = FFA_NOTIFICATIONS_FLAG_BITMAP_SP;
+	smc_ret_values ret;
+	test_result_t result = TEST_RESULT_SUCCESS;
+
+	/* Enable managed exit interrupt as FIQ in the secure side. */
+	if (!spm_set_managed_exit_int(sender, true)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	schedule_receiver_interrupt_init();
+
+	/** Request receiver to bind a set of notifications to the sender. */
+	if (!request_notification_bind(receiver, receiver, sender,
+				       g_notifications, 0, CACTUS_SUCCESS, 0)) {
+		result = TEST_RESULT_FAIL;
+	}
+
+	ret = cactus_get_req_count_send_cmd(HYP_ID, echo_dest);
+
+	if (cactus_get_response(ret) == CACTUS_SUCCESS) {
+		/*
+		 * Save the command count from the echo_dest, to validate it
+		 * has been incremented after the request to set notifications.
+		 */
+		echo_dest_cmd_count = cactus_get_req_count(ret);
+		VERBOSE("Partition %x command count %u.\n", echo_dest,
+			echo_dest_cmd_count);
+	} else {
+		VERBOSE("Failed to get cmds count from %u\n", echo_dest);
+		result = TEST_RESULT_FAIL;
+	}
+
+	/**
+	 * Request sender to set notification with Delay SRI flag, and specify
+	 * echo destination.
+	 */
+	if (!request_notification_set(sender, receiver, sender,
+				      FFA_NOTIFICATIONS_FLAG_DELAY_SRI,
+				      echo_dest, g_notifications,
+				      CACTUS_SUCCESS, 0)) {
+		VERBOSE("Failed to set notifications!\n");
+		result = TEST_RESULT_FAIL;
+	}
+
+	if (!check_schedule_receiver_interrupt_handled()) {
+		result = TEST_RESULT_FAIL;
+	}
+
+	/**
+	 * Get command count again from echo_dest, to validate that it has been
+	 * incremented by one. This should indicate the notification setter has
+	 * issued a request to echo_dest right after the notification set, thus
+	 * proving the SRI hasn't been sent right after FFA_NOTIFICATION_SET.
+	 */
+	ret = cactus_get_req_count_send_cmd(HYP_ID, echo_dest);
+	if (cactus_get_response(ret) == CACTUS_SUCCESS) {
+		if (cactus_get_req_count(ret) == echo_dest_cmd_count + 1) {
+			VERBOSE("SRI successfully delayed.\n");
+		} else {
+			VERBOSE("Failed to get cmds count from %u.\n",
+				echo_dest);
+			result = TEST_RESULT_FAIL;
+		}
+	} else {
+		VERBOSE("Failed to get cmds count from %x\n", echo_dest);
+		result = TEST_RESULT_FAIL;
+	}
+
+	/** Validate notification get. */
+	if (!request_notification_get(receiver, receiver, 0, get_flags, &ret) ||
+	    !is_notifications_get_as_expected(&ret, g_notifications, 0,
+					      receiver)) {
 		result = TEST_RESULT_FAIL;
 	}
 
