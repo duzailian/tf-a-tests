@@ -22,6 +22,30 @@
       },
       "revId": "9ca82e9b77053b181c3f82b28e036d37f572ae64",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e56e391d_ba577c57",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_test.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-09-21T14:25:49Z",
+      "side": 1,
+      "message": "I was receiving no error when two CPU\u0027s delegate the same granule.  I updated John and he has changed the GPT such that we now get errors on this condition.  I will change the test accordingly.",
+      "parentUuid": "92ee92c1_9de4f53e",
+      "range": {
+        "startLine": 199,
+        "startChar": 0,
+        "endLine": 200,
+        "endChar": 106
+      },
+      "revId": "9ca82e9b77053b181c3f82b28e036d37f572ae64",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
