@@ -78,6 +78,12 @@ static inline ffa_id_t ffa_endpoint_id(smc_ret_values val) {
 #define FFA_NOTIFICATIONS_FLAG_BITMAP_SPM	UINT32_C(0x1 << 2)
 #define FFA_NOTIFICATIONS_FLAG_BITMAP_HYP	UINT32_C(0x1 << 3)
 
+/**
+ * This ID regards with an Secure SGI, that the SPMC was expected to have
+ * configured as non-secure.
+ */
+#define FFA_SCHEDULE_RECEIVER_INTERRUPT_ID 8
+
 #define FFA_NOTIFICATIONS_BITMAP(lo, hi)	\
 	(uint64_t)(lo) | (((uint64_t)hi << 32) & 0xFFFFFFFF00000000U)
 
