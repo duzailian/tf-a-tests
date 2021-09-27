@@ -257,11 +257,14 @@ static const struct ffa_features_test ffa_feature_test_target[] = {
 	{"FFA_ID_GET_32 check", FFA_ID_GET, FFA_SUCCESS_SMC32},
 	{"FFA_SPM_ID_GET_32 check", FFA_SPM_ID_GET, FFA_SUCCESS_SMC32,
 		MAKE_FFA_VERSION(1, 1)},
-	{"FFA_MSG_POLL_32 check", FFA_MSG_POLL, FFA_SUCCESS_SMC32},
+	/* Indirect messaging is only supported in Nwd */
+	{"FFA_MSG_POLL_32 check", FFA_MSG_POLL, FFA_ERROR},
 	{"FFA_MSG_WAIT_32 check", FFA_MSG_WAIT, FFA_SUCCESS_SMC32},
-	{"FFA_YIELD_32 check", FFA_MSG_YIELD, FFA_SUCCESS_SMC32},
+	/* Indirect messaging is only supported in Nwd */
+	{"FFA_YIELD_32 check", FFA_MSG_YIELD, FFA_ERROR},
 	{"FFA_RUN_32 check", FFA_MSG_RUN, FFA_SUCCESS_SMC32},
-	{"FFA_MSG_SEND_32 check", FFA_MSG_SEND, FFA_SUCCESS_SMC32},
+	/* Indirect messaging is only supported in Nwd */
+	{"FFA_MSG_SEND_32 check", FFA_MSG_SEND, FFA_ERROR},
 	{"FFA_MEM_DONATE_32 check", FFA_MEM_DONATE_SMC32, FFA_SUCCESS_SMC32},
 	{"FFA_MEM_LEND_32 check", FFA_MEM_LEND_SMC32, FFA_SUCCESS_SMC32},
 	{"FFA_MEM_SHARE_32 check", FFA_MEM_SHARE_SMC32, FFA_SUCCESS_SMC32},
