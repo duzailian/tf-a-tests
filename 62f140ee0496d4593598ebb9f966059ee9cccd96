@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "429dbd33_102a1e07",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-09-27T13:28:07Z",
+      "side": 1,
+      "message": "Can you define those address in spm/cactus/plat/arm/fvp/include/cactus_platform_def.h ?\nIdeally this would also require to have the same platform definitions spm/cactus/plat/arm/tc0/include/cactus_platform_def.h",
+      "range": {
+        "startLine": 27,
+        "startChar": 17,
+        "endLine": 27,
+        "endChar": 26
+      },
+      "revId": "62f140ee0496d4593598ebb9f966059ee9cccd96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c19898ca_a5cfe28a",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-09-27T13:28:07Z",
+      "side": 1,
+      "message": "Is this required?",
+      "range": {
+        "startLine": 150,
+        "startChar": 14,
+        "endLine": 150,
+        "endChar": 26
+      },
+      "revId": "62f140ee0496d4593598ebb9f966059ee9cccd96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82478065_dc1ce2c7",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 13
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-09-27T13:28:07Z",
+      "side": 1,
+      "message": "Not sure I get why this is needed?\nThis looks actually redundant because the SPM would map the region the SP Stage-2 translation regime at boot time. \nLater on, at runtime a mem share operation updates again the SP Stage-2 for the same buffer?",
+      "range": {
+        "startLine": 60,
+        "startChar": 1,
+        "endLine": 61,
+        "endChar": 16
+      },
+      "revId": "62f140ee0496d4593598ebb9f966059ee9cccd96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f21d312a_b7f2d562",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 13
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-09-27T13:28:07Z",
+      "side": 1,
+      "message": "RW may be enough?",
+      "range": {
+        "startLine": 65,
+        "startChar": 26,
+        "endLine": 65,
+        "endChar": 44
+      },
+      "revId": "62f140ee0496d4593598ebb9f966059ee9cccd96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
