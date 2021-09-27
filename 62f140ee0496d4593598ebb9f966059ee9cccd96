@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9e6a5bd_2d23fee7",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-09-27T16:24:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "429dbd33_102a1e07",
+      "range": {
+        "startLine": 27,
+        "startChar": 17,
+        "endLine": 27,
+        "endChar": 26
+      },
+      "revId": "62f140ee0496d4593598ebb9f966059ee9cccd96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c19898ca_a5cfe28a",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-09-27T13:28:07Z",
       "side": 1,
       "message": "Is this required?",
+      "range": {
+        "startLine": 150,
+        "startChar": 14,
+        "endLine": 150,
+        "endChar": 26
+      },
+      "revId": "62f140ee0496d4593598ebb9f966059ee9cccd96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bca4e01a_1b1f82dd",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-09-27T16:24:36Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "c19898ca_a5cfe28a",
       "range": {
         "startLine": 150,
         "startChar": 14,
@@ -107,6 +155,30 @@
       "writtenOn": "2021-09-27T13:28:07Z",
       "side": 1,
       "message": "RW may be enough?",
+      "range": {
+        "startLine": 65,
+        "startChar": 26,
+        "endLine": 65,
+        "endChar": 44
+      },
+      "revId": "62f140ee0496d4593598ebb9f966059ee9cccd96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17cbef19_20dd7b1f",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 13
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-09-27T16:24:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f21d312a_b7f2d562",
       "range": {
         "startLine": 65,
         "startChar": 26,
