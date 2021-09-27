@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0fb9feb_34bbaae1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-09-27T12:40:51Z",
+      "side": 1,
+      "message": "Why was this changed from per-vCPU to per vCPU?",
+      "range": {
+        "startLine": 9,
+        "startChar": 8,
+        "endLine": 9,
+        "endChar": 16
+      },
+      "revId": "dedeb7b6d9cdd6b11a7e7bfbf11a1ae92555b893",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
