@@ -70,6 +70,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa827fd2_c1b509d2",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 13
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-09-27T15:51:02Z",
+      "side": 1,
+      "message": "Never mind, per our discussion, regions used for NWd/SP mem sharing are not the same (ranges) as the ones used for SP-SP mem sharing (declared in the manifest).",
+      "parentUuid": "82478065_dc1ce2c7",
+      "range": {
+        "startLine": 60,
+        "startChar": 1,
+        "endLine": 61,
+        "endChar": 16
+      },
+      "revId": "62f140ee0496d4593598ebb9f966059ee9cccd96",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f21d312a_b7f2d562",
