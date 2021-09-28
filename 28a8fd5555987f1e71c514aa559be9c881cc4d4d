@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbc5f2c7_de8b796e",
+        "filename": "include/runtime_services/cactus_test_cmds.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-09-28T10:16:42Z",
+      "side": 1,
+      "message": "Will remove. not used, not even in subsequent patches.",
+      "parentUuid": "ccf4c380_827f8425",
+      "revId": "28a8fd5555987f1e71c514aa559be9c881cc4d4d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "26fd702c_b85b03a5",
@@ -43,6 +61,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "727435bf_88d679a5",
+        "filename": "include/runtime_services/cactus_test_cmds.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-09-28T10:16:42Z",
+      "side": 1,
+      "message": "in a subsequent test. just wrapper to access argument.",
+      "parentUuid": "26fd702c_b85b03a5",
+      "range": {
+        "startLine": 453,
+        "startChar": 23,
+        "endLine": 453,
+        "endChar": 43
+      },
+      "revId": "28a8fd5555987f1e71c514aa559be9c881cc4d4d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9af29a73_aaac1fc5",
         "filename": "spm/cactus/cactus_tests/cactus_message_loop.c",
         "patchSetId": 4
@@ -54,6 +96,30 @@
       "writtenOn": "2021-09-27T13:09:55Z",
       "side": 1,
       "message": "TYPO: handled",
+      "range": {
+        "startLine": 63,
+        "startChar": 39,
+        "endLine": 63,
+        "endChar": 45
+      },
+      "revId": "28a8fd5555987f1e71c514aa559be9c881cc4d4d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b6248b5_66898f29",
+        "filename": "spm/cactus/cactus_tests/cactus_message_loop.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-09-28T10:16:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9af29a73_aaac1fc5",
       "range": {
         "startLine": 63,
         "startChar": 39,
