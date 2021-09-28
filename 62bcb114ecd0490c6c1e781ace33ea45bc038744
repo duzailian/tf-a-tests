@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5214ded7_42121616",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2021-09-28T14:56:50Z",
+      "side": 1,
+      "message": "Nit:\nMulti CPU delegation with granules that are randomly initialized.\nEach CPU is assigned its own set of granules to avoid locking issues.\n5. Fail scenarios for delegation including double delegation of a\ngranule and submission of a misaligned address.",
+      "range": {
+        "startLine": 15,
+        "startChar": 3,
+        "endLine": 18,
+        "endChar": 46
+      },
+      "revId": "62bcb114ecd0490c6c1e781ace33ea45bc038744",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
