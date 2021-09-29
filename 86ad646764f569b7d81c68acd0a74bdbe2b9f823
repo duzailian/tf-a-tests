@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "983ff4c8_dc877f77",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-09-29T16:06:26Z",
+      "side": 1,
+      "message": "Is the \"default:\" case intentionally omitted?",
+      "revId": "86ad646764f569b7d81c68acd0a74bdbe2b9f823",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
