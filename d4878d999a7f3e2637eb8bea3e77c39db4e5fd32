@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54f840ad_6d8586ac",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-09-29T16:20:15Z",
+      "side": 1,
+      "message": "nitpick: would it better to perform a bit-wise AND operation on bitmap\n.arg3 \u003d (uint32_t)(bitmap \u0026 0xFFFFFFFF),",
+      "revId": "d4878d999a7f3e2637eb8bea3e77c39db4e5fd32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
