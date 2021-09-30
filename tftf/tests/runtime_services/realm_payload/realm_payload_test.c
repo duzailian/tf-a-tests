@@ -9,7 +9,11 @@
 #include <arch_features.h>
 #include <plat_topology.h>
 #include <power_management.h>
+#include <platform.h>
 #include <runtime_services/realm_payload/realm_payload_test.h>
+
+test_result_t realm_multi_cpu_payload_test(void);
+test_result_t realm_multi_cpu_payload_del_undel(void);
 
 /* Buffer to delegate and undelegate */
 static char bufferdelegate[NUM_GRANULES * GRANULE_SIZE * PLATFORM_CORE_COUNT] __aligned(GRANULE_SIZE);
@@ -32,16 +36,6 @@ static char bufferstate[NUM_GRANULES * PLATFORM_CORE_COUNT];
  * attempting to perform a delegation on the same granule
  * twice and then testing a misaligned address
  */
-
-int get_cpu_node(u_register_t mpidr)
-{
-	for (int i = 0; i < PLATFORM_CORE_COUNT; i++) {
-		if (mpidr == cpu_cnt_mpidr[i]) {
-			return i;
-		}
-	}
-	return 0;
-}
 
 test_result_t init_buffer_del(void)
 {
@@ -250,7 +244,7 @@ test_result_t realm_multi_cpu_payload_del_undel(void)
 	u_register_t retrmm;
 	int cpu_node;
 
-	cpu_node = get_cpu_node(read_mpidr_el1() & MPID_MASK);
+	cpu_node = platform_get_core_pos(read_mpidr_el1() & MPID_MASK);
 
 	for (int i = 0; i < NUM_GRANULES; i++) {
 		if (bufferstate[((cpu_node * NUM_GRANULES) + i)] == B_UNDELEGATED) {
