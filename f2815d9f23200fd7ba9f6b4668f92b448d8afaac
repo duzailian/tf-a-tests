@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3b4a3d3_8ca709b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 25
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-05T16:21:28Z",
+      "side": 1,
+      "message": "I think needed rebase for CI to pass.",
+      "revId": "f2815d9f23200fd7ba9f6b4668f92b448d8afaac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
