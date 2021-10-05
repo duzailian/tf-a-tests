@@ -24,7 +24,11 @@ void __dead2 ivy_main(void)
 
 	set_putc_impl(SVC_CALL_AS_STDOUT);
 
-	NOTICE("Entering S-EL0 Secure Partition\n");
+	args = (svc_args){.fid = FFA_ID_GET};
+	ret = sp_svc(&args);
+
+	NOTICE("Booting Secure Partition (ID: %x)\n",
+		(unsigned int)args.arg2);
 	NOTICE("%s\n", build_message);
 	NOTICE("%s\n", version_string);
 
