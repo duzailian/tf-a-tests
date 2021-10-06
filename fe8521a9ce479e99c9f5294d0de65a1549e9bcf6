@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80c9f356_07c678db",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-10-06T14:20:15Z",
+      "side": 1,
+      "message": "nitpick: why is this split into 3 NOTICEs rather than 1",
+      "range": {
+        "startLine": 234,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 31
+      },
+      "revId": "fe8521a9ce479e99c9f5294d0de65a1549e9bcf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
