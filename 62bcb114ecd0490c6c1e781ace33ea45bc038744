@@ -118,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf62f76c_b74b5d38",
+        "filename": "include/runtime_services/realm_payload/realm_payload_test.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-10-06T23:05:55Z",
+      "side": 1,
+      "message": "You can declare them at the top inside tftf/tests/runtime_services/realm_payload/realm_payload_test.c or move their definitions to the top (before their use) as an alternative. They can also be made \"static\" I believe.",
+      "parentUuid": "7ded1d84_8201a788",
+      "range": {
+        "startLine": 54,
+        "startChar": 14,
+        "endLine": 54,
+        "endChar": 47
+      },
+      "revId": "62bcb114ecd0490c6c1e781ace33ea45bc038744",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f77a9ace_63cb6442",
