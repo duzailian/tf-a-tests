@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76425df5_5d875660",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-10-06T20:08:44Z",
+      "side": 1,
+      "message": "nitpick:\n(uint32_t)(bitmap \u0026 0xFFFFFFFFU)",
+      "revId": "794663ae6c7b4c1f338c3efb649edbe901074c51",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
