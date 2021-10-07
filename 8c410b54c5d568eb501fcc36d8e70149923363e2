@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4707b7e_5681cca8",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 19
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-07T12:40:40Z",
+      "side": 1,
+      "message": "ffa_vcpu_count_t?",
+      "range": {
+        "startLine": 429,
+        "startChar": 11,
+        "endLine": 429,
+        "endChar": 19
+      },
+      "revId": "8c410b54c5d568eb501fcc36d8e70149923363e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
