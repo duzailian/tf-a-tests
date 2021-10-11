@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee81ec91_a1f04ea7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 28
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-11T10:55:26Z",
+      "side": 1,
+      "message": "Failure non-related with the patch stack. ",
+      "revId": "b43e637fef6409bb2ee0792e33f5c0c99b73a5b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
