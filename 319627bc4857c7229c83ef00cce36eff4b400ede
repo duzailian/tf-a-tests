@@ -33,6 +33,24 @@
       "message": "NIT: Leave an empty line below the macro",
       "revId": "319627bc4857c7229c83ef00cce36eff4b400ede",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "142be8bc_77b56246",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-12T11:16:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c5f06a56_2cafbf8c",
+      "revId": "319627bc4857c7229c83ef00cce36eff4b400ede",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
