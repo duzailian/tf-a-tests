@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab689646_6d4fc7c3",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-14T16:37:57Z",
+      "side": 1,
+      "message": "switch case with the respective interrupt id?",
+      "revId": "d0bb7d280fd30d4dfec725f5f111d220fea554df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "422b3f24_1c4349bf",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-14T16:37:57Z",
+      "side": 1,
+      "message": "add helper copy function to spm_common.c/h.\nReplace this bit of code and then from line 100.",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 36
+      },
+      "revId": "d0bb7d280fd30d4dfec725f5f111d220fea554df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59de5819_4d1ec198",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-14T16:37:57Z",
+      "side": 1,
+      "message": "ffa_func_id()",
+      "range": {
+        "startLine": 97,
+        "startChar": 5,
+        "endLine": 97,
+        "endChar": 17
+      },
+      "revId": "d0bb7d280fd30d4dfec725f5f111d220fea554df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68b5e33f_f7c4dc17",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-14T16:37:57Z",
+      "side": 1,
+      "message": "add wrapper to ffa_helpers.h",
+      "range": {
+        "startLine": 98,
+        "startChar": 12,
+        "endLine": 98,
+        "endChar": 26
+      },
+      "revId": "d0bb7d280fd30d4dfec725f5f111d220fea554df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ced75943_fbe4de95",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-14T16:37:57Z",
+      "side": 1,
+      "message": "I suggested the use of switch case in the body of this function...\nAlternatively, you could rename the function to something like `twdog_int_handler`.",
+      "range": {
+        "startLine": 112,
+        "startChar": 3,
+        "endLine": 112,
+        "endChar": 27
+      },
+      "revId": "d0bb7d280fd30d4dfec725f5f111d220fea554df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4200287a_fc0bdbd1",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-14T16:37:57Z",
+      "side": 1,
+      "message": "is this the best place for this macro?\nspm_common.h?\ntest_helpers.h?",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 1
+      },
+      "revId": "d0bb7d280fd30d4dfec725f5f111d220fea554df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a42d4e4c_fe74085f",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-14T16:37:57Z",
+      "side": 1,
+      "message": "seems like no difference other than the doc comments.",
+      "range": {
+        "startLine": 90,
+        "startChar": 2,
+        "endLine": 96,
+        "endChar": 4
+      },
+      "revId": "d0bb7d280fd30d4dfec725f5f111d220fea554df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b5fc84f_528da852",
+        "filename": "spm/common/spm_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-14T16:37:57Z",
+      "side": 1,
+      "message": "I think this file is not meant to have this type of function.\nI think this file was intended for Hafnium\u0027s custom API calls.\nspm_helpers.h are also used by tftf.",
+      "range": {
+        "startLine": 27,
+        "startChar": 15,
+        "endLine": 27,
+        "endChar": 31
+      },
+      "revId": "d0bb7d280fd30d4dfec725f5f111d220fea554df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
