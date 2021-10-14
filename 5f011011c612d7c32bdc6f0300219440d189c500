@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4ef8bd6f_8e6f3b88",
+        "filename": "include/drivers/arm/sp805.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-14T13:36:05Z",
+      "side": 1,
+      "message": "Add doc comment to make it evident some functions are for the NT watchdog, and the others are for the trusted watch dog.",
+      "revId": "5f011011c612d7c32bdc6f0300219440d189c500",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "00df9b41_c7925e16",
         "filename": "plat/arm/fvp/include/platform_def.h",
         "patchSetId": 3
