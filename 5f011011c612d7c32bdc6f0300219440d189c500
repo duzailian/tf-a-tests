@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00df9b41_c7925e16",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-14T13:33:54Z",
+      "side": 1,
+      "message": "nit: add comment stating trusted watchdog, as above.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 4
+      },
+      "revId": "5f011011c612d7c32bdc6f0300219440d189c500",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
