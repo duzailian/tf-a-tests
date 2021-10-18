@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "17374db9_4c6a99c4",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-18T13:52:00Z",
+      "side": 1,
+      "message": "should this be called again at the end of the test to deinit the interrupt?",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 2
+      },
+      "revId": "5b2a18ede1dcc424b5ae14759d9ae59169edf08c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7ee7d58c_c914cca0",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
         "patchSetId": 4
