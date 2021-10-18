@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a16a28a_87e79c3c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-18T09:40:05Z",
+      "side": 1,
+      "message": "nit: Full stop.",
+      "range": {
+        "startLine": 11,
+        "startChar": 43,
+        "endLine": 11,
+        "endChar": 44
+      },
+      "revId": "f808408deef2c32eae381ea35aae34bbe8ea29fa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
