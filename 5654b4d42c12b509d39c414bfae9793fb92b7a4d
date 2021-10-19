@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e442c12e_ce320d9f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-19T11:36:40Z",
+      "side": 1,
+      "message": "Two unrelated failures\nSPM tests pass https://ci.trustedfirmware.org/job/tf-ci-gateway/15572/",
+      "revId": "5654b4d42c12b509d39c414bfae9793fb92b7a4d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
