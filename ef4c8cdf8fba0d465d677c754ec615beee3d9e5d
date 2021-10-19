@@ -16,6 +16,24 @@
       "message": "Zelalem, seems like some CI failures need looking into.",
       "revId": "ef4c8cdf8fba0d465d677c754ec615beee3d9e5d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54dfd074_8cd5ad5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-10-19T18:35:32Z",
+      "side": 1,
+      "message": "Thanks Joanna. You\u0027re right they failures were related to this path. It should be fixed now.",
+      "parentUuid": "d5dfd98a_23eac9ef",
+      "revId": "ef4c8cdf8fba0d465d677c754ec615beee3d9e5d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
