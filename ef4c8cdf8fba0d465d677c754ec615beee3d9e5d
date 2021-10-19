@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5dfd98a_23eac9ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2021-10-19T09:50:53Z",
+      "side": 1,
+      "message": "Zelalem, seems like some CI failures need looking into.",
+      "revId": "ef4c8cdf8fba0d465d677c754ec615beee3d9e5d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
