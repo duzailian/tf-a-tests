@@ -13,6 +13,10 @@
 #include "cactus_test_cmds.h"
 #include "spm_common.h"
 
+#define NOTIFICATION_PENDING_INTERRUPT_INTID 5
+
+extern void notification_pending_interrupt_handler(void);
+
 extern ffa_id_t g_ffa_id;
 
 static void managed_exit_handler(void)
@@ -30,7 +34,11 @@ int cactus_irq_handler(void)
 
 	irq_num = spm_interrupt_get();
 
-	ERROR("%s: Interrupt ID %u not handled!\n", __func__, irq_num);
+	VERBOSE("%s: Interrupt ID %u!\n", __func__, irq_num);
+
+	if (irq_num == NOTIFICATION_PENDING_INTERRUPT_INTID) {
+		notification_pending_interrupt_handler();
+	}
 
 	return 0;
 }
