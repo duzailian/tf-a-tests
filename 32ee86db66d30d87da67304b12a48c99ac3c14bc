@@ -47,6 +47,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f3c67ea_4a27d7ae",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-10-21T22:28:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0641af60_834b81ee",
+      "range": {
+        "startLine": 31,
+        "startChar": 83,
+        "endLine": 31,
+        "endChar": 88
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1dca24a3_0a4ec6fe",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-10-21T22:28:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c284425f_adf77228",
+      "range": {
+        "startLine": 31,
+        "startChar": 34,
+        "endLine": 31,
+        "endChar": 35
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ba3064d4_7e0e7edd",
@@ -60,6 +108,30 @@
       "writtenOn": "2021-10-21T21:42:45Z",
       "side": 1,
       "message": "This can be static",
+      "range": {
+        "startLine": 41,
+        "startChar": 5,
+        "endLine": 41,
+        "endChar": 21
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d07ef48_5a22e6f9",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-10-21T22:28:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3064d4_7e0e7edd",
       "range": {
         "startLine": 41,
         "startChar": 5,
@@ -95,6 +167,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f7e704ba_ea492009",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-10-21T22:28:19Z",
+      "side": 1,
+      "message": "This is to indicate a status that is neither a SPM or RMI test which are 1 and 0 respectively.  I then randomly choose which are SPM and the final loop populates the RMI with zeros.",
+      "parentUuid": "15471cd9_21542e45",
+      "range": {
+        "startLine": 46,
+        "startChar": 2,
+        "endLine": 46,
+        "endChar": 27
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3f3ffcd3_3611f4dc",
         "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
         "patchSetId": 7
@@ -106,6 +202,30 @@
       "writtenOn": "2021-10-21T21:42:45Z",
       "side": 1,
       "message": "This can be static",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 16
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61da9509_fd6c7adb",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-10-21T22:28:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f3ffcd3_3611f4dc",
       "range": {
         "startLine": 68,
         "startChar": 0,
@@ -139,6 +259,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1b4c9e6_39143d62",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-10-21T22:28:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae6422bd_5047b211",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 13
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b2e0564c_06c30ad8",
@@ -162,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "079bf19b_cc34d442",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-10-21T22:28:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2e0564c_06c30ad8",
+      "range": {
+        "startLine": 135,
+        "startChar": 21,
+        "endLine": 135,
+        "endChar": 35
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "91c6be45_ae4a6935",
@@ -175,6 +343,30 @@
       "writtenOn": "2021-10-21T21:42:45Z",
       "side": 1,
       "message": "can you avoid this by using platform_get_core_pos?",
+      "range": {
+        "startLine": 241,
+        "startChar": 1,
+        "endLine": 246,
+        "endChar": 2
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b830121_1f881ab2",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-10-21T22:28:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91c6be45_ae4a6935",
       "range": {
         "startLine": 241,
         "startChar": 1,
@@ -210,6 +402,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d09e1fbb_12001c93",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-10-21T22:28:19Z",
+      "side": 1,
+      "message": "In order to be closer to a real world scenario we would attempt to allocate the CPUs in various ways to find if there are any bugs in the system.  Reproducing would not be an issue since we would always know the generated seed to create the same test again.",
+      "parentUuid": "c2e4f55e_682e5010",
+      "range": {
+        "startLine": 251,
+        "startChar": 1,
+        "endLine": 251,
+        "endChar": 20
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1feb4d28_74b58e0a",
         "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
         "patchSetId": 7
@@ -221,6 +437,30 @@
       "writtenOn": "2021-10-21T21:42:45Z",
       "side": 1,
       "message": "Is the goal here to assign a CPU a different test than it was assigned before? If that is the case how do we know it won\u0027t be assigned the same test again?",
+      "range": {
+        "startLine": 304,
+        "startChar": 1,
+        "endLine": 304,
+        "endChar": 19
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fefeb52_f16348ea",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2021-10-21T22:28:19Z",
+      "side": 1,
+      "message": "That is not necessarily the goal.  It is to get closer to a real scenario where the tests would not be required to get assigned the opposite of what it was before.  However we can cover this given a sufficient number of seeds.",
+      "parentUuid": "1feb4d28_74b58e0a",
       "range": {
         "startLine": 304,
         "startChar": 1,
