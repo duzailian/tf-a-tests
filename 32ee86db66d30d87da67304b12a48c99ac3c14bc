@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c284425f_adf77228",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-10-21T21:42:45Z",
+      "side": 1,
+      "message": "Missing closing bracket.",
+      "range": {
+        "startLine": 31,
+        "startChar": 34,
+        "endLine": 31,
+        "endChar": 35
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0641af60_834b81ee",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-10-21T21:42:45Z",
+      "side": 1,
+      "message": "CPUs",
+      "range": {
+        "startLine": 31,
+        "startChar": 83,
+        "endLine": 31,
+        "endChar": 88
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba3064d4_7e0e7edd",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-10-21T21:42:45Z",
+      "side": 1,
+      "message": "This can be static",
+      "range": {
+        "startLine": 41,
+        "startChar": 5,
+        "endLine": 41,
+        "endChar": 21
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15471cd9_21542e45",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-10-21T21:42:45Z",
+      "side": 1,
+      "message": "Can you initialize these to zero to avoid the loop on line 58?",
+      "range": {
+        "startLine": 46,
+        "startChar": 2,
+        "endLine": 46,
+        "endChar": 27
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f3ffcd3_3611f4dc",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-10-21T21:42:45Z",
+      "side": 1,
+      "message": "This can be static",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 16
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae6422bd_5047b211",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-10-21T21:42:45Z",
+      "side": 1,
+      "message": "this can be static.",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 13
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2e0564c_06c30ad8",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-10-21T21:42:45Z",
+      "side": 1,
+      "message": "Can you rename this to be more descriptive of the test?",
+      "range": {
+        "startLine": 135,
+        "startChar": 21,
+        "endLine": 135,
+        "endChar": 35
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91c6be45_ae4a6935",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-10-21T21:42:45Z",
+      "side": 1,
+      "message": "can you avoid this by using platform_get_core_pos?",
+      "range": {
+        "startLine": 241,
+        "startChar": 1,
+        "endLine": 246,
+        "endChar": 2
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2e4f55e_682e5010",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-10-21T21:42:45Z",
+      "side": 1,
+      "message": "Is there an advantage in assigning random tests to each CPU as opposed to assigning predetermined half spm tests and the other half rmi tests? I\u0027m concerned it makes it hard to reproduce a test thus making it harder to debug.",
+      "range": {
+        "startLine": 251,
+        "startChar": 1,
+        "endLine": 251,
+        "endChar": 20
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1feb4d28_74b58e0a",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2021-10-21T21:42:45Z",
+      "side": 1,
+      "message": "Is the goal here to assign a CPU a different test than it was assigned before? If that is the case how do we know it won\u0027t be assigned the same test again?",
+      "range": {
+        "startLine": 304,
+        "startChar": 1,
+        "endLine": 304,
+        "endChar": 19
+      },
+      "revId": "32ee86db66d30d87da67304b12a48c99ac3c14bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
