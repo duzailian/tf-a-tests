@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "577242a0_16ca2f36",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T08:08:32Z",
+      "side": 1,
+      "message": "This deserves a helper in include/lib/aarch64/arch_helpers.h similarly to syscounter_read.\n\nPerhaps this has to be a separate change (in addition to the change to sp_sleep).",
+      "range": {
+        "startLine": 24,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 27
+      },
+      "revId": "e9e430ebecd42b0c2695f47ecd78facab8969660",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
