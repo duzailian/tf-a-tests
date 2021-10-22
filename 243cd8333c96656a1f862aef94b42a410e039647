@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "add4108c_9946d4a2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T08:59:12Z",
+      "side": 1,
+      "message": "BL31/SPMD",
+      "range": {
+        "startLine": 161,
+        "startChar": 34,
+        "endLine": 161,
+        "endChar": 44
+      },
+      "revId": "243cd8333c96656a1f862aef94b42a410e039647",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1af23a70_dd30b1c9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T08:59:12Z",
+      "side": 1,
+      "message": "SPM injects a virtual IRQ",
+      "range": {
+        "startLine": 164,
+        "startChar": 6,
+        "endLine": 164,
+        "endChar": 42
+      },
+      "revId": "243cd8333c96656a1f862aef94b42a410e039647",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8315dd2c_6528a79d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T08:59:12Z",
+      "side": 1,
+      "message": "Actually what prevents the SP sending a direct resp. ? It would effect entering the waiting state the same way.",
+      "range": {
+        "startLine": 167,
+        "startChar": 12,
+        "endLine": 167,
+        "endChar": 35
+      },
+      "revId": "243cd8333c96656a1f862aef94b42a410e039647",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2f9f4b8_c2bcbb81",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T08:59:12Z",
+      "side": 1,
+      "message": "nit: TFTF",
+      "range": {
+        "startLine": 175,
+        "startChar": 50,
+        "endLine": 175,
+        "endChar": 54
+      },
+      "revId": "243cd8333c96656a1f862aef94b42a410e039647",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "979148d9_b0f8cbca",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T08:59:12Z",
+      "side": 1,
+      "message": "nit: TFTF",
+      "range": {
+        "startLine": 178,
+        "startChar": 16,
+        "endLine": 178,
+        "endChar": 20
+      },
+      "revId": "243cd8333c96656a1f862aef94b42a410e039647",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90d58c41_de1dea68",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T08:59:12Z",
+      "side": 1,
+      "message": "nit: TFTF",
+      "range": {
+        "startLine": 181,
+        "startChar": 43,
+        "endLine": 181,
+        "endChar": 47
+      },
+      "revId": "243cd8333c96656a1f862aef94b42a410e039647",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b8a04f2_f1edc847",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T08:59:12Z",
+      "side": 1,
+      "message": "remove?",
+      "range": {
+        "startLine": 208,
+        "startChar": 1,
+        "endLine": 208,
+        "endChar": 15
+      },
+      "revId": "243cd8333c96656a1f862aef94b42a410e039647",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
