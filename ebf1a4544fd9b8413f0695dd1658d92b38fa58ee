@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1930d0ba_94f8ef76",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T08:42:34Z",
+      "side": 1,
+      "message": "all the logic here has to go to the main loop",
+      "revId": "ebf1a4544fd9b8413f0695dd1658d92b38fa58ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9855ad1b_cbf1dd1c",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T08:42:34Z",
+      "side": 1,
+      "message": "You can call spm_interrupt_get straight. No need for any GP regs context management.\nThe FFA_INTERRUPT status reporting is consumed at the main loop level.\nI feel current implementation is more complex than what a TOS would do..",
+      "revId": "ebf1a4544fd9b8413f0695dd1658d92b38fa58ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17eb9420_4cb0a110",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T08:42:34Z",
+      "side": 1,
+      "message": "If getting FFA_INTERRUPT here it\u0027s likely that the interrupt handler has been called and has handled the interrupt already, provided virtual interrupt are unmasked.\nAll what the SP has to do is to emit a direct response to return in waiting state, or call FFA_RUN if it had called into another SP with a direct request.",
+      "revId": "ebf1a4544fd9b8413f0695dd1658d92b38fa58ee",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

@@ -145,6 +145,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8f553103_8d951eca",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T08:42:34Z",
+      "side": 1,
+      "message": "I must admit I\u0027m also confused by this implementation. The irq handler should really just consume the virtual IRQ signal (because of HCR_EL2.VI\u003d1). It does not have to peek into the GP regs context. The main loop consumes FFA_INTERRUPT if virtual interrupts are masked (PSTATE.I\u003d1).",
+      "parentUuid": "c542f5fe_a6834280",
+      "range": {
+        "startLine": 82,
+        "startChar": 1,
+        "endLine": 82,
+        "endChar": 37
+      },
+      "revId": "d1622c2702beb9fd5d63b81c012c813ab1705b00",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2f210261_591ff5d9",
         "filename": "spm/cactus/cactus_main.c",
         "patchSetId": 1
