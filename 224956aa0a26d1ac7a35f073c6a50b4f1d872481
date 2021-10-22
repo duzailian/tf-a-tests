@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac3a6521_4a0de629",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:49:03Z",
+      "side": 1,
+      "message": "The interrupt is trapped to the SPM as a physical IRQ. The SPM injects a virtual IRQ to the first SP and resumes it while it is in waiting state.",
+      "range": {
+        "startLine": 356,
+        "startChar": 6,
+        "endLine": 358,
+        "endChar": 28
+      },
+      "revId": "224956aa0a26d1ac7a35f073c6a50b4f1d872481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b08d1fad_31e741f0",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:49:03Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 360,
+        "startChar": 29,
+        "endLine": 360,
+        "endChar": 35
+      },
+      "revId": "224956aa0a26d1ac7a35f073c6a50b4f1d872481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1b38bc5_32a18c13",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:49:03Z",
+      "side": 1,
+      "message": "First SP performs EOI by calling the interrupt deactivate HVC",
+      "range": {
+        "startLine": 363,
+        "startChar": 6,
+        "endLine": 363,
+        "endChar": 45
+      },
+      "revId": "224956aa0a26d1ac7a35f073c6a50b4f1d872481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da4e0c4d_3486dd8c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:49:03Z",
+      "side": 1,
+      "message": "Can be a direct response (hence SP returns to waiting state)?",
+      "range": {
+        "startLine": 363,
+        "startChar": 50,
+        "endLine": 364,
+        "endChar": 42
+      },
+      "revId": "224956aa0a26d1ac7a35f073c6a50b4f1d872481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18b437a1_5b6228c1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:49:03Z",
+      "side": 1,
+      "message": "nit: TFTF",
+      "range": {
+        "startLine": 374,
+        "startChar": 50,
+        "endLine": 374,
+        "endChar": 54
+      },
+      "revId": "224956aa0a26d1ac7a35f073c6a50b4f1d872481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4ce6eb6_c3d26599",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:49:03Z",
+      "side": 1,
+      "message": "nit: TFTF",
+      "range": {
+        "startLine": 377,
+        "startChar": 16,
+        "endLine": 377,
+        "endChar": 20
+      },
+      "revId": "224956aa0a26d1ac7a35f073c6a50b4f1d872481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6820b991_9bca5dad",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:49:03Z",
+      "side": 1,
+      "message": "nit: TFTF",
+      "range": {
+        "startLine": 380,
+        "startChar": 43,
+        "endLine": 380,
+        "endChar": 47
+      },
+      "revId": "224956aa0a26d1ac7a35f073c6a50b4f1d872481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4a68501_825dfc64",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:49:03Z",
+      "side": 1,
+      "message": "Secure interrupt has resumed SP while in waiting state",
+      "range": {
+        "startLine": 411,
+        "startChar": 10,
+        "endLine": 411,
+        "endChar": 50
+      },
+      "revId": "224956aa0a26d1ac7a35f073c6a50b4f1d872481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
