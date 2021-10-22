@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9081064b_4ea8adb9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:28:52Z",
+      "side": 1,
+      "message": "The interrupt is trapped to the SPM as a physical IRQ. The SPM injects a virtual IRQ to the first SP and resumes it while it is in blocked state.",
+      "range": {
+        "startLine": 260,
+        "startChar": 6,
+        "endLine": 262,
+        "endChar": 28
+      },
+      "revId": "a6349b83b8d6cb848c595ce258dd64d5b63116a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5216123c_bc5d5ba5",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:28:52Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 264,
+        "startChar": 29,
+        "endLine": 264,
+        "endChar": 35
+      },
+      "revId": "a6349b83b8d6cb848c595ce258dd64d5b63116a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35386d3d_0aa7f37b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:28:52Z",
+      "side": 1,
+      "message": "First SP performs EOI by calling the interrupt deactivate HVC",
+      "range": {
+        "startLine": 267,
+        "startChar": 5,
+        "endLine": 267,
+        "endChar": 45
+      },
+      "revId": "a6349b83b8d6cb848c595ce258dd64d5b63116a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c1058b7_4a64bbd5",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:28:52Z",
+      "side": 1,
+      "message": "nit: TFTF",
+      "range": {
+        "startLine": 274,
+        "startChar": 30,
+        "endLine": 274,
+        "endChar": 34
+      },
+      "revId": "a6349b83b8d6cb848c595ce258dd64d5b63116a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf721999_3f1e5e52",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:28:52Z",
+      "side": 1,
+      "message": "nit: TFTF",
+      "range": {
+        "startLine": 276,
+        "startChar": 49,
+        "endLine": 276,
+        "endChar": 53
+      },
+      "revId": "a6349b83b8d6cb848c595ce258dd64d5b63116a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5632ef37_6ba8f982",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:28:52Z",
+      "side": 1,
+      "message": "nit: TFTF",
+      "range": {
+        "startLine": 279,
+        "startChar": 16,
+        "endLine": 279,
+        "endChar": 20
+      },
+      "revId": "a6349b83b8d6cb848c595ce258dd64d5b63116a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5d74ba1_4bf95635",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:28:52Z",
+      "side": 1,
+      "message": "nit: TFTF",
+      "range": {
+        "startLine": 282,
+        "startChar": 43,
+        "endLine": 282,
+        "endChar": 47
+      },
+      "revId": "a6349b83b8d6cb848c595ce258dd64d5b63116a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f327805c_ce76fd11",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-22T12:28:52Z",
+      "side": 1,
+      "message": "resumed?",
+      "range": {
+        "startLine": 321,
+        "startChar": 31,
+        "endLine": 321,
+        "endChar": 40
+      },
+      "revId": "a6349b83b8d6cb848c595ce258dd64d5b63116a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
