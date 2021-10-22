@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "393ef753_9b748252",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_test.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2021-10-22T18:43:51Z",
+      "side": 1,
+      "message": "Most likely not a problem (mark as resolved), but just asking does it make better sense to declare this as type test_result_t?  Just asking...",
+      "revId": "16b7169c22b104f420bd3f5e247459a2f0b21879",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
