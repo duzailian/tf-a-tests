@@ -1,0 +1,8 @@
+Code-Owner-Review+1: Zelalem Aweke <zelalem.aweke@arm.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Verified+1: Mark Dykes <mark.dykes@arm.com>
+Submitted-by: Mark Dykes <mark.dykes@arm.com>
+Submitted-at: Mon, 25 Oct 2021 23:33:22 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/12112
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
