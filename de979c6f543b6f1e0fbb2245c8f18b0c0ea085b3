@@ -26,6 +26,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b695485e_ab9315d1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 37
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-10-25T09:57:10Z",
+      "side": 1,
+      "message": "NIT: per-vCPU",
+      "range": {
+        "startLine": 820,
+        "startChar": 22,
+        "endLine": 820,
+        "endChar": 30
+      },
+      "revId": "de979c6f543b6f1e0fbb2245c8f18b0c0ea085b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "886a555d_8fcfc857",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 37
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-10-25T09:57:10Z",
+      "side": 1,
+      "message": "NIT: vCPU",
+      "range": {
+        "startLine": 837,
+        "startChar": 56,
+        "endLine": 837,
+        "endChar": 60
+      },
+      "revId": "de979c6f543b6f1e0fbb2245c8f18b0c0ea085b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b53c1ee5_7b7bc5f3",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
         "patchSetId": 37
