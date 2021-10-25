@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48f03446_c55b27c3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 35
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-25T14:25:41Z",
+      "side": 1,
+      "message": "nit: uint32_t",
+      "range": {
+        "startLine": 461,
+        "startChar": 6,
+        "endLine": 461,
+        "endChar": 18
+      },
+      "revId": "a1947e369bc513c02e250a57694e3dca97618637",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "189a25dc_03335d35",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 35
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-25T14:25:41Z",
+      "side": 1,
+      "message": "nit: move line 582?",
+      "range": {
+        "startLine": 571,
+        "startChar": 1,
+        "endLine": 571,
+        "endChar": 51
+      },
+      "revId": "a1947e369bc513c02e250a57694e3dca97618637",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55738ef6_6317083c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 35
+      },
+      "lineNbr": 617,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-25T14:25:41Z",
+      "side": 1,
+      "message": "nit: move to line 626?",
+      "range": {
+        "startLine": 617,
+        "startChar": 1,
+        "endLine": 617,
+        "endChar": 51
+      },
+      "revId": "a1947e369bc513c02e250a57694e3dca97618637",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
