@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7a9dde1_ae9d55ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 39
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-10-25T10:44:21Z",
+      "side": 1,
+      "message": "Couple of small points but otherwise looks good",
+      "revId": "13eb77d1760f51c0cf4487624bbe48c8bec3b889",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0901a57_67117117",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 39
+      },
+      "lineNbr": 978,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-10-25T10:44:21Z",
+      "side": 1,
+      "message": "I think it would be better to keep the value assigned to result at declaration consistent. In the rest of the test functions it is set to TEST_RESULT_SUCCESS on declaration",
+      "range": {
+        "startLine": 978,
+        "startChar": 24,
+        "endLine": 978,
+        "endChar": 40
+      },
+      "revId": "13eb77d1760f51c0cf4487624bbe48c8bec3b889",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40708fe6_edafce60",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 39
+      },
+      "lineNbr": 1090,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-10-25T10:44:21Z",
+      "side": 1,
+      "message": "In base_test_per_vcpu_notifications if notification_get_and_validate fails for core 0 you still run spm_run_multi_core_test with notification_get_per_vcpu_on_handler. I don\u0027t know which approach is better but I think they should be consistent between the two tests. \nAlso I think you need to set\nresult \u003d TEST_RESULT_FAIL here as well",
+      "range": {
+        "startLine": 1090,
+        "startChar": 2,
+        "endLine": 1090,
+        "endChar": 6
+      },
+      "revId": "13eb77d1760f51c0cf4487624bbe48c8bec3b889",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
