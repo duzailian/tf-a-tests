@@ -3,6 +3,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cecf2ccd_24285e78",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-25T10:36:08Z",
+      "side": 1,
+      "message": "Miss a copyright/license header?",
+      "revId": "eb6a27908c7d113428c3457832014e7e7590ce41",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdc8201c_eb0afb28",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-25T10:36:08Z",
+      "side": 1,
+      "message": "nit: typo",
+      "range": {
+        "startLine": 31,
+        "startChar": 61,
+        "endLine": 31,
+        "endChar": 72
+      },
+      "revId": "eb6a27908c7d113428c3457832014e7e7590ce41",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "835b357b_2195de6a",
         "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
         "patchSetId": 8
@@ -14,6 +54,23 @@
       "writtenOn": "2021-10-25T08:57:37Z",
       "side": 1,
       "message": "We should probably skip the tests if RME is not implemented. Would this not cause failures in existing FVP TFTF run configs ? \n\n\tif (get_armv9_2_feat_rme_support() \u003d\u003d 0U) {\n\t\treturn TEST_RESULT_SKIPPED;\n\t}",
+      "revId": "eb6a27908c7d113428c3457832014e7e7590ce41",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99d81d80_902aed16",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-25T10:36:08Z",
+      "side": 1,
+      "message": "nit: when possible, wrap to 80 columns",
       "revId": "eb6a27908c7d113428c3457832014e7e7590ce41",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
