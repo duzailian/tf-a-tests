@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6897a5fc_381c09cd",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 32
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-25T14:25:38Z",
+      "side": 1,
+      "message": "This assumes SMC64 convention used. Can you just leave a note here?",
+      "range": {
+        "startLine": 96,
+        "startChar": 43,
+        "endLine": 96,
+        "endChar": 46
+      },
+      "revId": "6d0ae5c9c20ac5060dd60969f668e3d34dff272a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2ff6a53_b92d0f9e",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 32
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-25T14:25:38Z",
+      "side": 1,
+      "message": "Notice bit 4 is MBZ when SMC32 is used.",
+      "range": {
+        "startLine": 101,
+        "startChar": 43,
+        "endLine": 101,
+        "endChar": 48
+      },
+      "revId": "6d0ae5c9c20ac5060dd60969f668e3d34dff272a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80f50688_2aca785d",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 32
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-10-25T14:25:38Z",
+      "side": 1,
+      "message": "nit: uint32_t",
+      "range": {
+        "startLine": 113,
+        "startChar": 21,
+        "endLine": 113,
+        "endChar": 33
+      },
+      "revId": "6d0ae5c9c20ac5060dd60969f668e3d34dff272a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
