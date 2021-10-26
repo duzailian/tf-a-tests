@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "88aba25d_a81b19fe",
+        "filename": "spm/common/spm_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-10-26T20:10:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f6e5a70_00bfbbbe",
+      "range": {
+        "startLine": 57,
+        "startChar": 33,
+        "endLine": 57,
+        "endChar": 50
+      },
+      "revId": "3543e5adc72ff836ca71222b0d7f10e1550d2c6c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aa3efb53_61f1abd7",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-10-22T08:19:51Z",
       "side": 1,
       "message": "A virtual machine doesn\u0027t know about physical interrupts.\nAs mentioned in the Hafnium review, the interface should really be that a SP deactivates a virtual interrupt. Now the service is merged in Hafnium but I\u0027d prefer we reflect it in the test framework, that is a single parameter is passed which is the virtual interrupt id.",
+      "range": {
+        "startLine": 25,
+        "startChar": 42,
+        "endLine": 25,
+        "endChar": 50
+      },
+      "revId": "3543e5adc72ff836ca71222b0d7f10e1550d2c6c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "942e66b9_0edab371",
+        "filename": "spm/common/spm_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-10-26T20:10:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa3efb53_61f1abd7",
       "range": {
         "startLine": 25,
         "startChar": 42,
