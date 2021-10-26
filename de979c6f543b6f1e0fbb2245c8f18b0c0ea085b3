@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "81ad60c7_184faf80",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 37
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-26T14:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ad9f352_91ba2c41",
+      "range": {
+        "startLine": 787,
+        "startChar": 0,
+        "endLine": 802,
+        "endChar": 54
+      },
+      "revId": "de979c6f543b6f1e0fbb2245c8f18b0c0ea085b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b695485e_ab9315d1",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-10-25T09:57:10Z",
       "side": 1,
       "message": "NIT: per-vCPU",
+      "range": {
+        "startLine": 820,
+        "startChar": 22,
+        "endLine": 820,
+        "endChar": 30
+      },
+      "revId": "de979c6f543b6f1e0fbb2245c8f18b0c0ea085b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5e454f7_cc977c82",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 37
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-26T14:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b695485e_ab9315d1",
       "range": {
         "startLine": 820,
         "startChar": 22,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a155cd1_1469ff3e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 37
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-26T14:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "886a555d_8fcfc857",
+      "range": {
+        "startLine": 837,
+        "startChar": 56,
+        "endLine": 837,
+        "endChar": 60
+      },
+      "revId": "de979c6f543b6f1e0fbb2245c8f18b0c0ea085b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b53c1ee5_7b7bc5f3",
@@ -83,6 +155,30 @@
       "writtenOn": "2021-10-22T16:28:19Z",
       "side": 1,
       "message": "Can this be arguments to base_test_per_vcpu_notifications ?",
+      "range": {
+        "startLine": 956,
+        "startChar": 1,
+        "endLine": 957,
+        "endChar": 21
+      },
+      "revId": "de979c6f543b6f1e0fbb2245c8f18b0c0ea085b3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e676cfa3_5a9949d3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 37
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-26T14:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b53c1ee5_7b7bc5f3",
       "range": {
         "startLine": 956,
         "startChar": 1,
