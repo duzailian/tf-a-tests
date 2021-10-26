@@ -34,6 +34,24 @@
       "parentUuid": "5e724048_6d445219",
       "revId": "b54cac87cff5fe5e40d9a3f9cf3d2310bc2bb875",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b398d5e0_fed0332f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-10-26T20:10:30Z",
+      "side": 1,
+      "message": "I have made changes to the patch stack as you suggested. I have abandoned this patch.",
+      "parentUuid": "67c57117_ea7a4024",
+      "revId": "b54cac87cff5fe5e40d9a3f9cf3d2310bc2bb875",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
