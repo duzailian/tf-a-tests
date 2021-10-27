@@ -7,9 +7,12 @@
 #ifndef SPM_COMMON_H
 #define SPM_COMMON_H
 
-#include <ffa_helpers.h>
+#include <plat/common/platform.h>
+
 #include <stdint.h>
 #include <string.h>
+
+#include <ffa_helpers.h>
 
 /* Hypervisor ID at physical FFA instance */
 #define HYP_ID          (0)
@@ -145,5 +148,6 @@ bool ffa_partition_info_helper(struct mailbox_buffers *mb,
 			const struct ffa_uuid uuid,
 			const struct ffa_partition_info *expected,
 			const uint16_t expected_size);
+
 
 #endif /* SPM_COMMON_H */
