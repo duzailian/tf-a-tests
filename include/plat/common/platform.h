@@ -10,6 +10,7 @@
 #include <stdint.h>
 #include <timer.h>
 #include <xlat_tables_v2.h>
+#include <arch_helpers.h>
 
 #define PLAT_PSCI_DUMMY_STATE_ID		0xF
 
@@ -183,5 +184,13 @@ int plat_get_image_source(unsigned int image_id,
 		uintptr_t *image_spec);
 
 void plat_fwu_io_setup(void);
+
+/**
+ * Returns current executing core.
+ */
+static inline uint32_t get_current_core_id(void)
+{
+	return platform_get_core_pos(read_mpidr_el1() & MPID_MASK);
+}
 
 #endif /* __PLATFORM_H__ */
