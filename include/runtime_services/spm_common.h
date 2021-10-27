@@ -7,6 +7,8 @@
 #ifndef SPM_COMMON_H
 #define SPM_COMMON_H
 
+#include <plat/common/platform.h>
+
 #include <ffa_helpers.h>
 #include <stdint.h>
 #include <string.h>
@@ -145,5 +147,10 @@ bool ffa_partition_info_helper(struct mailbox_buffers *mb,
 			const struct ffa_uuid uuid,
 			const struct ffa_partition_info *expected,
 			const uint16_t expected_size);
+
+static inline uint32_t get_current_core_id(void)
+{
+	return platform_get_core_pos(read_mpidr_el1() & MPID_MASK);
+}
 
 #endif /* SPM_COMMON_H */
