@@ -13,14 +13,12 @@
 #include <runtime_services/realm_payload/realm_payload_test.h>
 #include <test_helpers.h>
 
-#ifdef __aarch64__
 static test_result_t realm_multi_cpu_payload_test(void);
 static test_result_t realm_multi_cpu_payload_del_undel(void);
 
 /* Buffer to delegate and undelegate */
 static char bufferdelegate[NUM_GRANULES * GRANULE_SIZE * PLATFORM_CORE_COUNT] __aligned(GRANULE_SIZE);
 static char bufferstate[NUM_GRANULES * PLATFORM_CORE_COUNT];
-#endif
 
 /*
  * Overall test for realm payload in three sections:
@@ -39,7 +37,6 @@ static char bufferstate[NUM_GRANULES * PLATFORM_CORE_COUNT];
  * twice and then testing a misaligned address
  */
 
-#ifdef __aarch64__
 test_result_t init_buffer_del(void)
 {
 	u_register_t retrmm;
@@ -58,15 +55,12 @@ test_result_t init_buffer_del(void)
 	}
 	return TEST_RESULT_SUCCESS;
 }
-#endif
 
 /*
  * Single CPU version check function
  */
 test_result_t realm_version_single_cpu(void)
 {
-	SKIP_TEST_IF_AARCH32();
-#ifdef __aarch64__
 	u_register_t retrmm;
 
 	if (get_armv9_2_feat_rme_support() == 0U) {
@@ -80,7 +74,6 @@ test_result_t realm_version_single_cpu(void)
 			RMI_ABI_VERSION_GET_MINOR(retrmm));
 
 	return TEST_RESULT_SUCCESS;
-#endif
 }
 
 /*
@@ -88,8 +81,6 @@ test_result_t realm_version_single_cpu(void)
  */
 test_result_t realm_version_multi_cpu(void)
 {
-	SKIP_TEST_IF_AARCH32();
-#ifdef __aarch64__
 	u_register_t lead_mpid, target_mpid;
 	int cpu_node;
 	long long ret;
@@ -134,7 +125,6 @@ test_result_t realm_version_multi_cpu(void)
 	}
 
 	return ret;
-#endif
 }
 
 /*
@@ -142,8 +132,6 @@ test_result_t realm_version_multi_cpu(void)
  */
 test_result_t realm_delegate_undelegate(void)
 {
-	SKIP_TEST_IF_AARCH32();
-#ifdef __aarch64__
 	u_register_t retrmm;
 
 	if (get_armv9_2_feat_rme_support() == 0U) {
@@ -164,21 +152,18 @@ test_result_t realm_delegate_undelegate(void)
 			(uintptr_t)bufferdelegate);
 
 	return TEST_RESULT_SUCCESS;
-#endif
 }
 
-#ifdef __aarch64__
 static test_result_t realm_multi_cpu_payload_test(void)
 {
 	u_register_t retrmm = realm_version();
 
 	tftf_testcase_printf("Multi CPU RMM version on CPU %llx is: %lu.%lu\n",
-			read_mpidr_el1() & MPID_MASK, RMI_ABI_VERSION_GET_MAJOR(retrmm),
+			(long long)read_mpidr_el1() & MPID_MASK, RMI_ABI_VERSION_GET_MAJOR(retrmm),
 			RMI_ABI_VERSION_GET_MINOR(retrmm));
 
 	return TEST_RESULT_SUCCESS;
 }
-#endif
 
 /*
  * Select all CPU's to randomly delegate/undelegate
@@ -186,8 +171,6 @@ static test_result_t realm_multi_cpu_payload_test(void)
  */
 test_result_t realm_delundel_multi_cpu(void)
 {
-	SKIP_TEST_IF_AARCH32();
-#ifdef __aarch64__
 	u_register_t lead_mpid, target_mpid;
 	int cpu_node;
 	long long ret;
@@ -235,7 +218,6 @@ test_result_t realm_delundel_multi_cpu(void)
 
 	ret = TEST_RESULT_SUCCESS;
 	return ret;
-#endif
 }
 
 /*
@@ -245,7 +227,6 @@ test_result_t realm_delundel_multi_cpu(void)
  * assigns NUM_GRANULES to each CPU for delegation or undelgation
  * depending upon the initial state
  */
-#ifdef __aarch64__
 static test_result_t realm_multi_cpu_payload_del_undel(void)
 {
 	u_register_t retrmm;
@@ -270,7 +251,6 @@ static test_result_t realm_multi_cpu_payload_del_undel(void)
 	}
 	return TEST_RESULT_SUCCESS;
 }
-#endif
 
 /*Fail testing of delegation process. The first is an error expected
  * for processing the same granule twice and the second is submission of
@@ -279,8 +259,6 @@ static test_result_t realm_multi_cpu_payload_del_undel(void)
 
 test_result_t realm_fail_del(void)
 {
-	SKIP_TEST_IF_AARCH32();
-#ifdef __aarch64__
 	u_register_t retrmm;
 
 	retrmm = realm_granule_delegate((u_register_t)&bufferdelegate[0]);
@@ -301,5 +279,4 @@ test_result_t realm_fail_del(void)
 	}
 
 	return TEST_RESULT_SUCCESS;
-#endif
 }
