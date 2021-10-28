@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "084ebf6f_2bd4d7a3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 27
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-10-28T14:51:28Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "cec3a1c8fd008ae8d9f327f11117c6ad7134a8f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "982fd2aa_98303cfd",
+        "filename": "spm/cactus/cactus_tests/cactus_message_loop.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-10-28T14:51:28Z",
+      "side": 1,
+      "message": "nitpick: I believe we dont use this format in tf-a-tests. Can you use \"/*\" ? Moreover this is not a doc comment.",
+      "range": {
+        "startLine": 62,
+        "startChar": 3,
+        "endLine": 62,
+        "endChar": 6
+      },
+      "revId": "cec3a1c8fd008ae8d9f327f11117c6ad7134a8f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "655bad02_3509028d",
+        "filename": "spm/cactus/cactus_tests/cactus_message_loop.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-10-28T14:51:28Z",
+      "side": 1,
+      "message": "same as above.",
+      "range": {
+        "startLine": 78,
+        "startChar": 2,
+        "endLine": 78,
+        "endChar": 5
+      },
+      "revId": "cec3a1c8fd008ae8d9f327f11117c6ad7134a8f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
