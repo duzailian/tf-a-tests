@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e625300d_abcd2b64",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 41
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-28T15:51:28Z",
+      "side": 1,
+      "message": "Static checks failure is a bug on the static checks tool, I think...",
+      "revId": "61550630ed7202020bee6ad120cfee74b06645a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
