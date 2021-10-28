@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b69bcf71_acfca89d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 41
+      },
+      "lineNbr": 1025,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-10-28T16:35:47Z",
+      "side": 1,
+      "message": "Can you create a macro? something like VM_ID(1)",
+      "range": {
+        "startLine": 1025,
+        "startChar": 21,
+        "endLine": 1025,
+        "endChar": 23
+      },
+      "revId": "9bbd3f97b57a6c236fa16783e3a1025948424646",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4773a387_bfb51e9b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 41
+      },
+      "lineNbr": 1057,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-10-28T16:35:47Z",
+      "side": 1,
+      "message": "nitpick: 0U",
+      "range": {
+        "startLine": 1057,
+        "startChar": 23,
+        "endLine": 1057,
+        "endChar": 24
+      },
+      "revId": "9bbd3f97b57a6c236fa16783e3a1025948424646",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fcf8e372_4921c22f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 41
+      },
+      "lineNbr": 1076,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-10-28T16:35:47Z",
+      "side": 1,
+      "message": "nitpick: ERROR",
+      "range": {
+        "startLine": 1076,
+        "startChar": 2,
+        "endLine": 1076,
+        "endChar": 9
+      },
+      "revId": "9bbd3f97b57a6c236fa16783e3a1025948424646",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
