@@ -16,6 +16,46 @@
       "message": "Static checks failure is a bug on the static checks tool, I think...",
       "revId": "61550630ed7202020bee6ad120cfee74b06645a7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2a883fa_8e8d784b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 41
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-10-28T16:25:31Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "61550630ed7202020bee6ad120cfee74b06645a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e847a5f_adb56eb0",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 41
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-10-28T16:25:31Z",
+      "side": 1,
+      "message": "nitpick: VERBOSE?",
+      "range": {
+        "startLine": 194,
+        "startChar": 1,
+        "endLine": 194,
+        "endChar": 7
+      },
+      "revId": "61550630ed7202020bee6ad120cfee74b06645a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
