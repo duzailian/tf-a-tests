@@ -16,6 +16,24 @@
       "message": "I believe this helper function is not specific to spm. Can you move to this another header file(like test_helpers.h) such that it is accessible for tftf as well?",
       "revId": "ae35264af5da11743b018e2018bfd80b9783b656",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db9952d6_32573a45",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-10-28T15:12:50Z",
+      "side": 1,
+      "message": "That was actually something I thought, but placed it here as I thought could be useful for cactus. spm_common is meant for both cactus and tftf spm related tests.\n\ntest_helpers.h is solely intended for tftf, I think.",
+      "parentUuid": "8be5205b_066db438",
+      "revId": "ae35264af5da11743b018e2018bfd80b9783b656",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
