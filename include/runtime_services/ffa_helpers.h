@@ -77,6 +77,11 @@ static inline ffa_id_t ffa_endpoint_id(smc_ret_values val) {
 	return (ffa_id_t) val.ret2 & 0xffff;
 }
 
+static inline uint32_t ffa_feature_intid(smc_ret_values val)
+{
+	return (uint32_t)val.ret2;
+}
+
 typedef uint64_t ffa_notification_bitmap_t;
 
 #define FFA_NOTIFICATION(ID)		(UINT64_C(1) << ID)
