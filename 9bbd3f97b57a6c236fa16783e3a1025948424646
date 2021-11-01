@@ -72,6 +72,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "70b71407_1fd28d4a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 41
+      },
+      "lineNbr": 1025,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-01T18:36:30Z",
+      "side": 1,
+      "message": "Thanks!",
+      "parentUuid": "ebff1d4d_2248a774",
+      "range": {
+        "startLine": 1025,
+        "startChar": 21,
+        "endLine": 1025,
+        "endChar": 23
+      },
+      "revId": "9bbd3f97b57a6c236fa16783e3a1025948424646",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4773a387_bfb51e9b",
