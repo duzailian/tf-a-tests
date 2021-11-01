@@ -70,6 +70,24 @@
       "parentUuid": "de66dfe6_4af70179",
       "revId": "ae35264af5da11743b018e2018bfd80b9783b656",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de2ec4d9_02945861",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-01T18:44:06Z",
+      "side": 1,
+      "message": "Yeah, platform.h is also a good candidate.",
+      "parentUuid": "4647a39f_a25361b4",
+      "revId": "ae35264af5da11743b018e2018bfd80b9783b656",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
