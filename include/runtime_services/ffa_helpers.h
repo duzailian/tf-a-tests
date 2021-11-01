@@ -30,6 +30,21 @@ struct ffa_uuid {
 #include <cassert.h>
 #include <stdint.h>
 
+/**
+ * FF-A Feature ID, to be used with interface FFA_FEATURES.
+ * As defined in the FF-A v1.1 Beta specification, table 13.10, in section
+ * 13.2.
+ */
+
+/** Query interrupt ID of Notification Pending Interrupt. */
+#define FFA_FEATURE_NPI 0x1U
+
+/** Query interrupt ID of Schedule Receiver Interrupt. */
+#define FFA_FEATURE_SRI 0x2U
+
+/** Query interrupt ID of the Managed Exit Interrupt. */
+#define FFA_FEATURE_MEI 0x3U
+
 /** Partition property: partition supports receipt of direct requests. */
 #define FFA_PARTITION_DIRECT_REQ_RECV 0x1
 
