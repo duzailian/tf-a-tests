@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb35b45f_3f3e663f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-11-02T16:38:56Z",
+      "side": 1,
+      "message": "Add Signed-off-by: Madhu ..",
+      "revId": "8ac296165e9defefa9788d3a733c2c2ec2268420",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
