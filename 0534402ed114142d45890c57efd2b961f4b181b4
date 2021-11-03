@@ -33,6 +33,24 @@
       "message": "why would we want to reenable IRQ? or ERET, SPSR will be restored so it goes back to whatever state it was in.",
       "revId": "0534402ed114142d45890c57efd2b961f4b181b4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36ad0a78_36797b12",
+        "filename": "spm/cactus/aarch64/cactus_exceptions.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-11-03T20:28:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2017f24_4c8704fa",
+      "revId": "0534402ed114142d45890c57efd2b961f4b181b4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
