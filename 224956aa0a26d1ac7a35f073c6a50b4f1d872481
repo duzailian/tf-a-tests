@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "67b0cfce_cc9dd4f7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-03T19:53:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac3a6521_4a0de629",
+      "range": {
+        "startLine": 356,
+        "startChar": 6,
+        "endLine": 358,
+        "endChar": 28
+      },
+      "revId": "224956aa0a26d1ac7a35f073c6a50b4f1d872481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b08d1fad_31e741f0",
@@ -94,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba4982ab_7a193a3c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-03T19:53:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e1b38bc5_32a18c13",
+      "range": {
+        "startLine": 363,
+        "startChar": 6,
+        "endLine": 363,
+        "endChar": 45
+      },
+      "revId": "224956aa0a26d1ac7a35f073c6a50b4f1d872481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da4e0c4d_3486dd8c",
@@ -107,6 +155,30 @@
       "writtenOn": "2021-10-22T12:49:03Z",
       "side": 1,
       "message": "Can be a direct response (hence SP returns to waiting state)?",
+      "range": {
+        "startLine": 363,
+        "startChar": 50,
+        "endLine": 364,
+        "endChar": 42
+      },
+      "revId": "224956aa0a26d1ac7a35f073c6a50b4f1d872481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3cf5297_f90d9e5c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-03T19:53:24Z",
+      "side": 1,
+      "message": "SP1 is in waiting state and cannot issue a direct response. However, the scenario where interrupt signal completion is done through direct response is covered by first test(line 89).",
+      "parentUuid": "da4e0c4d_3486dd8c",
       "range": {
         "startLine": 363,
         "startChar": 50,
@@ -271,6 +343,30 @@
       "writtenOn": "2021-10-22T12:49:03Z",
       "side": 1,
       "message": "Secure interrupt has resumed SP while in waiting state",
+      "range": {
+        "startLine": 411,
+        "startChar": 10,
+        "endLine": 411,
+        "endChar": 50
+      },
+      "revId": "224956aa0a26d1ac7a35f073c6a50b4f1d872481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b2a2f0e_66faba81",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-03T19:53:24Z",
+      "side": 1,
+      "message": "I believe both statements are correct. I can modify it to something like this or I can remove it since it\u0027s only for debugging.\n\nVERBOSE(\"Secure interrupt has preempted SP2 execution context and SPMC resumed SP1 while it\u0027s in waiting state.\");",
+      "parentUuid": "d4a68501_825dfc64",
       "range": {
         "startLine": 411,
         "startChar": 10,
