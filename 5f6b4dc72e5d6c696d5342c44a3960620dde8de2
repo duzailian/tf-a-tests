@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50389f5b_e8e670c2",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-11-04T17:26:53Z",
+      "side": 1,
+      "message": "Is this function still being used anywhere in the patch stack?",
+      "range": {
+        "startLine": 131,
+        "startChar": 23,
+        "endLine": 131,
+        "endChar": 39
+      },
+      "revId": "5f6b4dc72e5d6c696d5342c44a3960620dde8de2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
