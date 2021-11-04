@@ -16,6 +16,24 @@
       "message": "I think it would be good to add a sentance on the motivation for this patch. Perhaps something like\n\"This adds a needed isb when reading the virtual counter, to prevent reading stale values, as well as reducing the number of reads of the virtual counter required.\"",
       "revId": "6f9bd27fb6442bd264ea638275f52656702c07a0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37fb770f_a008e193",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-11-04T14:30:15Z",
+      "side": 1,
+      "message": "You can mention Arm ARM D11.2.2:\n\"Reads of CNTVCT_EL0 can occur speculatively and out of order relative to other instructions executed on the same\nPE.\"",
+      "parentUuid": "8ed9f9f6_f36ce01e",
+      "revId": "6f9bd27fb6442bd264ea638275f52656702c07a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
