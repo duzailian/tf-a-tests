@@ -16,6 +16,23 @@
       "message": "Nit. Some copyrights need updating.",
       "revId": "7fb1e4f4b8dd538595877254fdc7c0db60799d4c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1f18b7c_ff0d04ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2021-11-04T09:27:30Z",
+      "side": 1,
+      "message": "Expecting one of the other maintainers to do a more in depth code review and give CO+1.",
+      "revId": "7fb1e4f4b8dd538595877254fdc7c0db60799d4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
