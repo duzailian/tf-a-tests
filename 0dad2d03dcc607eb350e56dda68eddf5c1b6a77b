@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac72494f_036c91bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2021-11-04T04:42:15Z",
+      "side": 1,
+      "message": "The test is buggy and needs to be fixed.",
+      "revId": "0dad2d03dcc607eb350e56dda68eddf5c1b6a77b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9aa9ad46_0c2aa2ac",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2021-11-04T04:42:15Z",
+      "side": 1,
+      "message": "This could have been already been delegated by previous test. That is why you are hitting a random failure.",
+      "revId": "0dad2d03dcc607eb350e56dda68eddf5c1b6a77b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc4cdeee_49953a5c",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2021-11-04T04:42:15Z",
+      "side": 1,
+      "message": "Again, this test does not cleanup itself after execution causing issues for next test.",
+      "revId": "0dad2d03dcc607eb350e56dda68eddf5c1b6a77b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "840a1e5e_de1f4047",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2021-11-04T04:42:15Z",
+      "side": 1,
+      "message": "The test needs to undo the delegate operation before exit from this test.",
+      "revId": "0dad2d03dcc607eb350e56dda68eddf5c1b6a77b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5de88674_ca826b28",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_test.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2021-11-04T04:42:15Z",
+      "side": 1,
+      "message": "This test needs to check for RME feature.",
+      "revId": "0dad2d03dcc607eb350e56dda68eddf5c1b6a77b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
