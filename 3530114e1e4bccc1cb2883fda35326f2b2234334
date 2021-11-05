@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6eb75d1_688427c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-11-05T15:14:53Z",
+      "side": 1,
+      "message": "Small NIT, since it\u0027s a small change I\u0027d prioritise any other comments as it would be fine if merged as is ",
+      "revId": "3530114e1e4bccc1cb2883fda35326f2b2234334",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
