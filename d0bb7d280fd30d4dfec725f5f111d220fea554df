@@ -247,6 +247,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3603d98_29956217",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-11-08T14:51:20Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "4200287a_fc0bdbd1",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 1
+      },
+      "revId": "d0bb7d280fd30d4dfec725f5f111d220fea554df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a42d4e4c_fe74085f",
@@ -270,6 +294,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "36aac17e_6d11f581",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-11-08T14:51:20Z",
+      "side": 1,
+      "message": "Code changed. Resolving.",
+      "parentUuid": "a42d4e4c_fe74085f",
+      "range": {
+        "startLine": 90,
+        "startChar": 2,
+        "endLine": 96,
+        "endChar": 4
+      },
+      "revId": "d0bb7d280fd30d4dfec725f5f111d220fea554df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b5fc84f_528da852",
@@ -283,6 +331,30 @@
       "writtenOn": "2021-10-14T16:37:57Z",
       "side": 1,
       "message": "I think this file is not meant to have this type of function.\nI think this file was intended for Hafnium\u0027s custom API calls.\nspm_helpers.h are also used by tftf.",
+      "range": {
+        "startLine": 27,
+        "startChar": 15,
+        "endLine": 27,
+        "endChar": 31
+      },
+      "revId": "d0bb7d280fd30d4dfec725f5f111d220fea554df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85530e7f_103ccb2f",
+        "filename": "spm/common/spm_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-11-08T14:51:20Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "1b5fc84f_528da852",
       "range": {
         "startLine": 27,
         "startChar": 15,
