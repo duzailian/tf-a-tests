@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d51b969d_9bcaa1e3",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-11-08T16:13:58Z",
+      "side": 1,
+      "message": "Weirdly, don\u0027t know what happened there. deleting.\nThanks",
+      "parentUuid": "d98616ae_7507ae1b",
+      "range": {
+        "startLine": 321,
+        "startChar": 0,
+        "endLine": 323,
+        "endChar": 52
+      },
+      "revId": "f0369a271a1e3d700c2cc99ab556b2550c971871",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "99acf6e9_9e7b4c3e",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-11-08T14:47:32Z",
       "side": 1,
       "message": "same as above.",
+      "range": {
+        "startLine": 332,
+        "startChar": 0,
+        "endLine": 335,
+        "endChar": 21
+      },
+      "revId": "f0369a271a1e3d700c2cc99ab556b2550c971871",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5b0fe12_e3184a02",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-11-08T16:13:58Z",
+      "side": 1,
+      "message": "deleting one.",
+      "parentUuid": "99acf6e9_9e7b4c3e",
       "range": {
         "startLine": 332,
         "startChar": 0,
