@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fb4d520_33c86b94",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-11-08T14:50:42Z",
+      "side": 1,
+      "message": "NIT: remove added empty line",
+      "revId": "ab0577d65896086e2bf68735e31c05ac7981b289",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
