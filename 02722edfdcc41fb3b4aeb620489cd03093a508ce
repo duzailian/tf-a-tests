@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe4ba82d_2fac22e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-08T22:55:20Z",
+      "side": 1,
+      "message": "Failing tests pass on synchronizing with tf-a patch.\nhttps://jenkins.oss.arm.com/job/tf-ci-gateway/106682/",
+      "revId": "02722edfdcc41fb3b4aeb620489cd03093a508ce",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
