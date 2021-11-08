@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e80501bb_cab5ddc7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-08T22:56:45Z",
+      "side": 1,
+      "message": "Propagating vote from top patches.",
+      "revId": "46d06d7e778b4c17b24b8ff4676cde2288528472",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
