@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2aafff7f_5bdceb2c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_notifications.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-08T14:57:20Z",
+      "side": 1,
+      "message": "I was under the impression that tftf based testing with Cactus SPs assumes that SPMC is implemented by the hafnium project and hence runs at S-EL2. Is this check needed?",
+      "range": {
+        "startLine": 61,
+        "startChar": 1,
+        "endLine": 64,
+        "endChar": 2
+      },
+      "revId": "a6c5b55f3c014f749e0861d48301af9235412c30",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
