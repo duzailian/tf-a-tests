@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a860fac_17833d4a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-11-09T11:11:48Z",
+      "side": 1,
+      "message": "Actually I wonder how this happens.\nThe statement https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/12366/3/spm/ivy/shim/shim_main.c#95 makes that print information goes through an HVC call to Hafnium. So there is no printf or spinlock involved here.\nOr perhaps are you changing this default route? Or repurposing this sample partition in another context?",
+      "range": {
+        "startLine": 9,
+        "startChar": 42,
+        "endLine": 10,
+        "endChar": 43
+      },
+      "revId": "4bf62f03dccba9f6fd00abf5c600268278695a06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
