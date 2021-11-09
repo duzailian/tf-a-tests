@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d65c26f_e0c250ff",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 47
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-11-09T17:14:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d6c4d159_bd2e92d1",
+      "range": {
+        "startLine": 84,
+        "startChar": 11,
+        "endLine": 84,
+        "endChar": 23
+      },
+      "revId": "889dcd63b654a511e4dae83b5becf5a14378ad1d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6266e264_40057448",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-11-08T17:57:41Z",
       "side": 1,
       "message": "The description may elaborate a bit more.\nEventually this is not a secure SGI but an SGI INTID donated by the secure world configured as a non-secure SGI.\nIn reality there are 32 SGIs which can be configured either as secure or non secure. \nBy pure SW convention convention the first 8 are meant to be non-secure and the higher 8 are meant to be secure. FF-A amends this convention by the secure world relinquishing one of its INTID to non-secure world.",
+      "range": {
+        "startLine": 84,
+        "startChar": 3,
+        "endLine": 85,
+        "endChar": 28
+      },
+      "revId": "889dcd63b654a511e4dae83b5becf5a14378ad1d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3adcedf5_79a5419c",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 47
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-11-09T17:14:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6266e264_40057448",
       "range": {
         "startLine": 84,
         "startChar": 3,
