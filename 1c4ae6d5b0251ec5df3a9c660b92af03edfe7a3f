@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1d8fbf4_cff3daca",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-11-10T11:06:35Z",
+      "side": 1,
+      "message": "Remove, redundant with line 84",
+      "range": {
+        "startLine": 71,
+        "startChar": 1,
+        "endLine": 74,
+        "endChar": 3
+      },
+      "revId": "1c4ae6d5b0251ec5df3a9c660b92af03edfe7a3f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
