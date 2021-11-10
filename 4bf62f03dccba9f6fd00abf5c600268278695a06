@@ -46,6 +46,30 @@
       },
       "revId": "4bf62f03dccba9f6fd00abf5c600268278695a06",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a38934e8_da422100",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-11-10T10:38:52Z",
+      "side": 1,
+      "message": "You\u0027re right! Thanks for clarifying.",
+      "parentUuid": "21bce45c_38829f6e",
+      "range": {
+        "startLine": 9,
+        "startChar": 42,
+        "endLine": 10,
+        "endChar": 43
+      },
+      "revId": "4bf62f03dccba9f6fd00abf5c600268278695a06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
