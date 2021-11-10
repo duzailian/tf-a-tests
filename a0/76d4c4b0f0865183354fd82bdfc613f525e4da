@@ -1,0 +1,8 @@
+Verified+1: Olivier Deprez <olivier.deprez@arm.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Owner-Review+1: Maksims Svecovs <maksims.svecovs@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Wed, 10 Nov 2021 14:16:32 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/12140
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
