@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87ac4493_d6f63c9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-10T02:52:48Z",
+      "side": 1,
+      "message": "Tested the patch offline with tf-l3-boot-tests-css test group\nhttps://jenkins.oss.arm.com/job/tf-ci-gateway/106825/",
+      "revId": "cd9e93a117766d64499849e6ac1fe468689b97f1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
