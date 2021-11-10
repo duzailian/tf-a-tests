@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba23120e_f4af227a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-11-10T09:54:58Z",
+      "side": 1,
+      "message": "OpenCI SPM tests fail because need use TF-A integration branch (OpenCI does not sync branches presently).\nRelying on Legacy CI+2 results for now.\n",
+      "revId": "6ee25384303b9e35a27b38cd3cbc1a7b8cec6979",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
