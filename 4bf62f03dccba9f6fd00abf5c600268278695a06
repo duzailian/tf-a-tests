@@ -70,6 +70,23 @@
       },
       "revId": "4bf62f03dccba9f6fd00abf5c600268278695a06",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae44e08a_943a72a9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2021-11-10T16:01:41Z",
+      "side": 1,
+      "message": "@Daniel can you please provide the COR +1 score, if you agree with the change?",
+      "revId": "4bf62f03dccba9f6fd00abf5c600268278695a06",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
