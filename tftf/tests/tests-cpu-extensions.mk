@@ -8,6 +8,7 @@ TESTS_SOURCES	+=	$(addprefix tftf/tests/,			\
 	extensions/amu/test_amu.c					\
 	extensions/ecv/test_ecv.c					\
 	extensions/fgt/test_fgt.c					\
+	extensions/hcx/test_hcx.c					\
 	extensions/mte/test_mte.c					\
 	extensions/pauth/test_pauth.c					\
 	extensions/sve/sve_operations.S					\
