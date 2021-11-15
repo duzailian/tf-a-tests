@@ -1,0 +1,389 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86770139_245c01c5",
+        "filename": "include/lib/extensions/sme.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "2021",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "597472e9_c5ce1375",
+        "filename": "lib/extensions/sme/aarch64/sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "This file is added to FRAMEWORK_SOURCES and compiled only if ARCH is aarch64. Do we need this guard here?",
+      "range": {
+        "startLine": 14,
+        "startChar": 7,
+        "endLine": 14,
+        "endChar": 18
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f54dfa2d_05c7da31",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "VERBOSE?",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 7
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8b34cd0_598e1710",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "Can be it be removed?",
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea95abe2_fe05a8fb",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "VERBOSE?",
+      "range": {
+        "startLine": 35,
+        "startChar": 1,
+        "endLine": 35,
+        "endChar": 7
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3dac47d6_06a5a6cb",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "Can be it be removed?",
+      "range": {
+        "startLine": 40,
+        "startChar": 1,
+        "endLine": 40,
+        "endChar": 18
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1192c574_feef45c4",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "VERBOSE?",
+      "range": {
+        "startLine": 43,
+        "startChar": 1,
+        "endLine": 43,
+        "endChar": 7
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddd3c028_269322c8",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "Can be it be removed?",
+      "range": {
+        "startLine": 54,
+        "startChar": 1,
+        "endLine": 54,
+        "endChar": 21
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d58d8af_287dc5c7",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "VERBOSE?",
+      "range": {
+        "startLine": 57,
+        "startChar": 1,
+        "endLine": 57,
+        "endChar": 7
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1ed0c40_c04632e6",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "Can be it be removed?",
+      "range": {
+        "startLine": 64,
+        "startChar": 1,
+        "endLine": 64,
+        "endChar": 20
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be77bad3_8a2316e4",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "VERBOSE?",
+      "range": {
+        "startLine": 71,
+        "startChar": 1,
+        "endLine": 71,
+        "endChar": 7
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66149733_6ccff975",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "VERBOSE?",
+      "range": {
+        "startLine": 77,
+        "startChar": 1,
+        "endLine": 77,
+        "endChar": 7
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4daf95f6_c9cefab2",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "VERBOSE?",
+      "range": {
+        "startLine": 95,
+        "startChar": 3,
+        "endLine": 95,
+        "endChar": 9
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eeaa4e45_1a37b6d8",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "VERBOSE?",
+      "range": {
+        "startLine": 97,
+        "startChar": 3,
+        "endLine": 97,
+        "endChar": 9
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00dde73e_b1f46072",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "VERBOSE?",
+      "range": {
+        "startLine": 99,
+        "startChar": 2,
+        "endLine": 99,
+        "endChar": 8
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b1634fa_d80b4d93",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "remove?",
+      "range": {
+        "startLine": 110,
+        "startChar": 2,
+        "endLine": 110,
+        "endChar": 26
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97f24a2e_228a2a5a",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T20:28:09Z",
+      "side": 1,
+      "message": "INFO",
+      "range": {
+        "startLine": 120,
+        "startChar": 1,
+        "endLine": 120,
+        "endChar": 7
+      },
+      "revId": "ac8a61f0fef14e5814fc0d23e495c5d8e6f6bac0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
