@@ -138,8 +138,10 @@ static void cactus_print_memory_layout(unsigned int vm_id)
 		(void *)get_sp_tx_end(vm_id));
 }
 
+
 static void cactus_plat_configure_mmu(unsigned int vm_id)
 {
+#ifndef CACTUS_IS_EL0
 	mmap_add_region(CACTUS_TEXT_START,
 			CACTUS_TEXT_START,
 			CACTUS_TEXT_END - CACTUS_TEXT_START,
@@ -169,16 +171,19 @@ static void cactus_plat_configure_mmu(unsigned int vm_id)
 
 	mmap_add(cactus_mmap);
 	init_xlat_tables();
+#endif
 }
 
 static void register_secondary_entrypoint(void)
 {
+#ifndef CACTUS_IS_EL0
 	smc_args args;
 
 	args.fid = FFA_SECONDARY_EP_REGISTER_SMC64;
 	args.arg1 = (u_register_t)&secondary_cold_entry;
 
 	tftf_smc(&args);
+#endif
 }
 
 int tftf_irq_handler_dispatcher(void)
@@ -190,7 +195,9 @@ int tftf_irq_handler_dispatcher(void)
 
 void __dead2 cactus_main(bool primary_cold_boot)
 {
+#ifndef CACTUS_IS_EL0
 	assert(IS_IN_EL1() != 0);
+#endif
 
 	struct mailbox_buffers mb;
 	smc_ret_values ret;
@@ -208,9 +215,10 @@ void __dead2 cactus_main(bool primary_cold_boot)
 		memset((void *)CACTUS_BSS_START,
 		       0, CACTUS_BSS_END - CACTUS_BSS_START);
 
+#ifndef CACTUS_IS_EL0
 		mb.send = (void *) get_sp_tx_start(ffa_id);
 		mb.recv = (void *) get_sp_rx_start(ffa_id);
-
+#endif
 		/* Configure and enable Stage-1 MMU, enable D-Cache */
 		cactus_plat_configure_mmu(ffa_id);
 	}
@@ -221,16 +229,18 @@ void __dead2 cactus_main(bool primary_cold_boot)
 	 */
 	g_ffa_id = ffa_id;
 
+#ifndef CACTUS_IS_EL0
 	enable_mmu_el1(0);
 
 	/* Enable IRQ/FIQ */
 	enable_irq();
 	enable_fiq();
-
+#endif
 	if (primary_cold_boot == false) {
 		goto msg_loop;
 	}
 
+#ifndef CACTUS_IS_EL0
 	if (ffa_id == SPM_VM_ID_FIRST) {
 		console_init(CACTUS_PL011_UART_BASE,
 			     CACTUS_PL011_UART_CLK_IN_HZ,
@@ -241,6 +251,9 @@ void __dead2 cactus_main(bool primary_cold_boot)
 	} else {
 		set_putc_impl(HVC_CALL_AS_STDOUT);
 	}
+#else
+	set_putc_impl(SVC_CALL_AS_STDOUT);
+#endif
 
 	/* Below string is monitored by CI expect script. */
 	NOTICE("Booting Secure Partition (ID: %x)\n%s\n%s\n",
@@ -260,10 +273,10 @@ void __dead2 cactus_main(bool primary_cold_boot)
 	cactus_print_memory_layout(ffa_id);
 
 	register_secondary_entrypoint();
-
+#ifndef CACTUS_IS_EL0
 	/* Invoking Tests */
 	ffa_tests(&mb);
-
+#endif
 msg_loop:
 	/* End up to message loop */
 	message_loop(ffa_id, &mb);

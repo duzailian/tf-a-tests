@@ -21,7 +21,7 @@ SECTIONS
 
     .text : {
         __TEXT_START__ = .;
-        *cactus_entrypoint.o(.text*)
+        *cactus_*entrypoint.o(.text*)
         *(.text*)
         *(.vectors)
         . = NEXT(PAGE_SIZE);

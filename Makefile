@@ -112,6 +112,7 @@ include fwu/ns_bl2u/ns_bl2u.mk
 ifeq (${ARCH}-${PLAT},aarch64-fvp)
 include spm/cactus_mm/cactus_mm.mk
 include spm/quark/quark.mk
+include spm/cactus/cactus_el0.mk
 endif
 
 # cactus and ivy are supported on platforms: fvp, tc0
@@ -247,6 +248,7 @@ NS_BL1U_CFLAGS		+= -mbranch-protection=${BP_OPTION}
 NS_BL2U_CFLAGS		+= -mbranch-protection=${BP_OPTION}
 CACTUS_MM_CFLAGS	+= -mbranch-protection=${BP_OPTION}
 CACTUS_CFLAGS		+= -mbranch-protection=${BP_OPTION}
+CACTUS_EL0_CFLAGS	+= -mbranch-protection=${BP_OPTION}
 IVY_CFLAGS		+= -mbranch-protection=${BP_OPTION}
 QUARK_CFLAGS		+= -mbranch-protection=${BP_OPTION}
 endif
@@ -286,6 +288,12 @@ CACTUS_INCLUDES		+= ${PLAT_INCLUDES}
 CACTUS_CFLAGS		+= ${COMMON_CFLAGS} -fpie
 CACTUS_ASFLAGS		+= ${COMMON_ASFLAGS}
 CACTUS_LDFLAGS		+= ${COMMON_LDFLAGS} $(PIE_LDFLAGS)
+
+CACTUS_EL0_SOURCES	+= ${LIBC_SRCS}
+CACTUS_EL0_INCLUDES	+= ${PLAT_INCLUDES}
+CACTUS_EL0_CFLAGS	+= ${COMMON_CFLAGS} -fpie
+CACTUS_EL0_ASFLAGS	+= ${COMMON_ASFLAGS}
+CACTUS_EL0_LDFLAGS	+= ${COMMON_LDFLAGS} $(PIE_LDFLAGS)
 
 IVY_SOURCES		+= ${LIBC_SRCS}
 IVY_INCLUDES		+= ${PLAT_INCLUDES}
@@ -362,6 +370,11 @@ ns_bl1u ns_bl2u:
 endif
 
 ifneq (${ARCH}-${PLAT},aarch64-fvp)
+.PHONY: cactus_el0
+cactus_el0:
+	@echo "ERROR: $@ is supported only on AArch64 FVP."
+	@exit 1
+
 .PHONY: cactus_mm
 cactus_mm:
 	@echo "ERROR: $@ is supported only on AArch64 FVP."
@@ -518,6 +531,7 @@ endif
 ifeq (${ARCH}-${PLAT},aarch64-fvp)
   $(eval $(call MAKE_IMG,cactus_mm))
   $(eval $(call MAKE_IMG,cactus))
+  $(eval $(call MAKE_IMG,cactus_el0))
   $(eval $(call MAKE_IMG,ivy))
   $(eval $(call MAKE_IMG,quark))
 endif
@@ -552,7 +566,7 @@ cscope:
 .SILENT: help
 help:
 	echo "usage: ${MAKE} PLAT=<${PLATFORMS}> \
-<all|tftf|ns_bl1u|ns_bl2u|cactus|ivy|quark|el3_payload|distclean|clean|checkcodebase|checkpatch|help_tests>"
+<all|tftf|ns_bl1u|ns_bl2u|cactus|cactus_el0|ivy|quark|el3_payload|distclean|clean|checkcodebase|checkpatch|help_tests>"
 	echo ""
 	echo "PLAT is used to specify which platform you wish to build."
 	echo "If no platform is specified, PLAT defaults to: ${DEFAULT_PLAT}"
@@ -563,7 +577,8 @@ help:
 	echo "  tftf           Build the TFTF image"
 	echo "  ns_bl1u        Build the NS_BL1U image"
 	echo "  ns_bl2u        Build the NS_BL2U image"
-	echo "  cactus         Build the Cactus image (Test S-EL0 payload) and resource description."
+	echo "  cactus         Build the Cactus image (Test S-EL1 payload) and resource description."
+	echo "  cactus_el0     Build the Cactus image (Test S-EL0 payload) and resource description."
 	echo "  cactus_mm      Build the Cactus-MM image (Test S-EL0 payload)."
 	echo "  ivy            Build the Ivy image (Test S-EL0 payload) and resource description."
 	echo "  quark          Build the Quark image (Test S-EL0 payload) and resource description."

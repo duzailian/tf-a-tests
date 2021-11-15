@@ -15,3 +15,6 @@ CACTUS_DTS		= ${FVP_CACTUS_BASE}/fdts/cactus.dts
 FDTS_CP_LIST		= ${FVP_CACTUS_BASE}/fdts/cactus.dts
 FDTS_CP_LIST		+= ${FVP_CACTUS_BASE}/fdts/cactus-secondary.dts
 FDTS_CP_LIST		+= ${FVP_CACTUS_BASE}/fdts/cactus-tertiary.dts
+
+CACTUS_EL0_DTS		= ${FVP_CACTUS_BASE}/fdts/cactus_el0.dts
+FDTS_EL0_CP_LIST	= ${FVP_CACTUS_BASE}/fdts/cactus_el0.dts

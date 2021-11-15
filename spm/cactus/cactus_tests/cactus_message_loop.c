@@ -40,10 +40,13 @@ bool cactus_handle_cmd(smc_ret_values *cmd_args, smc_ret_values *ret,
 {
 	uint64_t in_cmd;
 
+#ifndef CACTUS_IS_EL0
 	/* Get which core it is running from. */
 	unsigned int core_pos = platform_get_core_pos(
 						read_mpidr_el1() & MPID_MASK);
-
+#else
+	unsigned int core_pos = 0;
+#endif
 	if (cmd_args == NULL || ret == NULL) {
 		ERROR("Invalid arguments passed to %s!\n", __func__);
 		return false;

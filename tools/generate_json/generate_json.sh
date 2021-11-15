@@ -32,7 +32,10 @@ if [ "$1" == "cactus" ]; then
 	\t\"owner\": \"Plat\"\n\t},\n\n\t\"ivy\" : {\n \
 	\t\"image\": \"ivy.bin\",\n \
 	\t\"pm\": \"ivy.dts\", \n \
-	\t\"owner\": \"Plat\"\n \
+	\t\"owner\": \"Plat\"\n\t}, \n\n\t\"cactus_el0\" : {\n \
+	\t\"image\": \"cactus_el0.bin\",\n \
+	\t\"pm\": \"cactus_el0.dts\", \n \
+	\t\"owner\": \"Plat\"\n
 	}\n}" \
 	> "$GENERATED_JSON"
 else

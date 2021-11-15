@@ -19,6 +19,7 @@
 #define ECHO_VAL1 U(0xa0a0a0a0)
 #define ECHO_VAL2 U(0xb0b0b0b0)
 #define ECHO_VAL3 U(0xc0c0c0c0)
+#define ECHO_VAL5 U(0xdeadbeef)
 
 static const struct ffa_uuid expected_sp_uuids[] = {
 		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}
@@ -79,7 +80,11 @@ test_result_t test_ffa_direct_messaging(void)
 	 * Send a message to SP1 through direct messaging
 	 **********************************************************************/
 	result = send_cactus_echo_cmd(HYP_ID, SP_ID(1), ECHO_VAL3);
+	if (result != TEST_RESULT_SUCCESS) {
+		return result;
+	}
 
+	result = send_cactus_echo_cmd(HYP_ID, SP_ID(5), ECHO_VAL5);
 	return result;
 }
 

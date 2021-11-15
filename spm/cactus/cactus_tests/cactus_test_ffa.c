@@ -57,6 +57,11 @@ static const struct ffa_partition_info ffa_expected_partition_info[] = {
 		.id = SP_ID(4),
 		.exec_context = IVY_EXEC_CTX_COUNT,
 		.properties = (FFA_PARTITION_DIRECT_REQ_RECV | FFA_PARTITION_DIRECT_REQ_SEND)
+	},
+	{
+		.id = SP_ID(5),
+		.exec_context = 1,
+		.properties = (FFA_PARTITION_DIRECT_REQ_RECV | FFA_PARTITION_DIRECT_REQ_SEND)
 	}
 };
 

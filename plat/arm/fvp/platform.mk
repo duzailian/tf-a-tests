@@ -60,6 +60,10 @@ $(eval $(call add_define,CACTUS_DEFINES,FVP_CLUSTER_COUNT))
 $(eval $(call add_define,CACTUS_DEFINES,FVP_MAX_CPUS_PER_CLUSTER))
 $(eval $(call add_define,CACTUS_DEFINES,FVP_MAX_PE_PER_CPU))
 
+$(eval $(call add_define,CACTUS_EL0_DEFINES,FVP_CLUSTER_COUNT))
+$(eval $(call add_define,CACTUS_EL0_DEFINES,FVP_MAX_CPUS_PER_CLUSTER))
+$(eval $(call add_define,CACTUS_EL0_DEFINES,FVP_MAX_PE_PER_CPU))
+
 $(eval $(call add_define,CACTUS_MM_DEFINES,FVP_CLUSTER_COUNT))
 $(eval $(call add_define,CACTUS_MM_DEFINES,FVP_MAX_CPUS_PER_CLUSTER))
 $(eval $(call add_define,CACTUS_MM_DEFINES,FVP_MAX_PE_PER_CPU))
@@ -95,6 +99,7 @@ PLAT_SOURCES	:=	drivers/arm/gic/arm_gic_v2v3.c			\
 			plat/arm/fvp/plat_setup.c
 
 CACTUS_SOURCES	+=	plat/arm/fvp/${ARCH}/plat_helpers.S
+CACTUS_EL0_SOURCES	+=	plat/arm/fvp/${ARCH}/plat_helpers.S
 IVY_SOURCES	+=	plat/arm/fvp/${ARCH}/plat_helpers.S
 
 # Firmware update is implemented on FVP.
