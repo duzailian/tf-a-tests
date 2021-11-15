@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a2d6c79_f72dcd27",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-11-15T19:02:33Z",
+      "side": 1,
+      "message": "Post 2.6 release (so no immediate hurry), id like to get your opinion on how we can go about adding an EL0 partition or two to TFTF. This is a quick POC to make it work on FVP using top of tree tf-a, tf-a-tests and hafnium iwth all vhe patches.",
+      "revId": "622ec95b274e03a93dd0e3859ba8626fc52d0ab2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
