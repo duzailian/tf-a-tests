@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68282326_9fd226e1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T21:19:45Z",
+      "side": 1,
+      "message": "Would this a clean exit? Is CI (test config and/or expect scripts) equipped to handle the crash?",
+      "range": {
+        "startLine": 11,
+        "startChar": 24,
+        "endLine": 11,
+        "endChar": 31
+      },
+      "revId": "e04767484879cf5df8065b7528810855e983511b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55dd6573_a07604b5",
+        "filename": "tftf/tests/extensions/hcx/test_hcx.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-15T21:19:45Z",
+      "side": 1,
+      "message": "nit: remove",
+      "range": {
+        "startLine": 18,
+        "startChar": 43,
+        "endLine": 18,
+        "endChar": 44
+      },
+      "revId": "e04767484879cf5df8065b7528810855e983511b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
