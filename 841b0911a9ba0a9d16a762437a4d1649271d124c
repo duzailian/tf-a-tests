@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aecf757e_b9df3478",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2021-11-16T08:39:05Z",
+      "side": 1,
+      "message": "nit: IMO we should also add \u0027Embedded Trace Extension and Trace Buffer Extension (ETE and TRBE)\u0027 in this section.",
+      "revId": "841b0911a9ba0a9d16a762437a4d1649271d124c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
