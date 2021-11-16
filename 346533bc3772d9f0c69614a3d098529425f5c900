@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "358b9f05_1251d226",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2021-11-16T21:59:44Z",
+      "side": 1,
+      "message": "May something like this would be better, you don\u0027t need to write it twice (refer to tftf/tests/extensions/mte/test_mte.c) \n\ntest_result_t test_sme_support(void)\n{\n   SKIP_TEST_IF_AARCH32();\n#ifdef __aarch64__",
+      "revId": "346533bc3772d9f0c69614a3d098529425f5c900",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
