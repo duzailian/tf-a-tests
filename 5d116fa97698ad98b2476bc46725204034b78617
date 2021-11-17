@@ -16,6 +16,40 @@
       "message": "The OpenCI is failing https://ci.trustedfirmware.org/job/tf-a-builder/586277/console\n\n\n00:51:59 ++ echo \u0027Fetch: /home/buildslave/workspace/tf-a-builder/nfs/projectscratch/ssg/trusted-fw/ci-files/spm/FVP_AARCH64_EFI.fd -\u003e .\u0027\n00:51:59 Fetch: /home/buildslave/workspace/tf-a-builder/nfs/projectscratch/ssg/trusted-fw/ci-files/spm/FVP_AARCH64_EFI.fd -\u003e .\n00:51:59 ++ cp /home/buildslave/workspace/tf-a-builder/nfs/projectscratch/ssg/trusted-fw/ci-files/spm/FVP_AARCH64_EFI.fd .\n00:51:59 cp: cannot stat \u0027/home/buildslave/workspace/tf-a-builder/nfs/projectscratch/ssg/trusted-fw/ci-files/spm/FVP_AARCH64_EFI.fd\u0027: No such file or directory\n\n",
       "revId": "5d116fa97698ad98b2476bc46725204034b78617",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63cedbce_67675fb1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2021-11-17T11:20:22Z",
+      "side": 1,
+      "message": "SME tests are skipped in all the configurations, could you please point me to a test where this test ran and passed? ",
+      "revId": "5d116fa97698ad98b2476bc46725204034b78617",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20c772aa_6c6a513a",
+        "filename": "tftf/tests/tests-cpu-extensions.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2021-11-17T11:20:22Z",
+      "side": 1,
+      "message": "Please move it to line#13",
+      "revId": "5d116fa97698ad98b2476bc46725204034b78617",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
