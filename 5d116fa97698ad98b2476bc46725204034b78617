@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfd42d55_9805c26c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-11-17T13:38:50Z",
+      "side": 1,
+      "message": "I think this is related to https://review.trustedfirmware.org/c/ci/tf-a-job-configs/+/12443/2/tf-a-builder/builders.sh removing copy from spm directory.",
+      "parentUuid": "a94fe204_ed0f0fbc",
+      "revId": "5d116fa97698ad98b2476bc46725204034b78617",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "20c772aa_6c6a513a",
