@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a94fe204_ed0f0fbc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2021-11-17T09:43:54Z",
+      "side": 1,
+      "message": "The OpenCI is failing https://ci.trustedfirmware.org/job/tf-a-builder/586277/console\n\n\n00:51:59 ++ echo \u0027Fetch: /home/buildslave/workspace/tf-a-builder/nfs/projectscratch/ssg/trusted-fw/ci-files/spm/FVP_AARCH64_EFI.fd -\u003e .\u0027\n00:51:59 Fetch: /home/buildslave/workspace/tf-a-builder/nfs/projectscratch/ssg/trusted-fw/ci-files/spm/FVP_AARCH64_EFI.fd -\u003e .\n00:51:59 ++ cp /home/buildslave/workspace/tf-a-builder/nfs/projectscratch/ssg/trusted-fw/ci-files/spm/FVP_AARCH64_EFI.fd .\n00:51:59 cp: cannot stat \u0027/home/buildslave/workspace/tf-a-builder/nfs/projectscratch/ssg/trusted-fw/ci-files/spm/FVP_AARCH64_EFI.fd\u0027: No such file or directory\n\n",
+      "revId": "5d116fa97698ad98b2476bc46725204034b78617",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
