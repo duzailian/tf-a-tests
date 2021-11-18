@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb6f582d_8a0f12bb",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2021-11-18T16:12:38Z",
+      "side": 1,
+      "message": "nit: remove these extra ~",
+      "range": {
+        "startLine": 93,
+        "startChar": 31,
+        "endLine": 93,
+        "endChar": 33
+      },
+      "revId": "03db210080fc611228f7247faf0da16319963dbd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
