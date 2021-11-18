@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "888bb98c_4b853462",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2021-11-18T16:30:04Z",
+      "side": 1,
+      "message": "nit: An additional space after hyphen could be removed.",
+      "revId": "2e7748908346c5f16dd625433a0e178bf9b1fe51",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
