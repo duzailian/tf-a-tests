@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c54f58c2_3e974594",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-18T19:50:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "888bb98c_4b853462",
+      "revId": "2e7748908346c5f16dd625433a0e178bf9b1fe51",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aad2b3f0_d5c71bca",
@@ -35,6 +53,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "623b3858_139dc5e7",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-18T19:50:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aad2b3f0_d5c71bca",
+      "revId": "2e7748908346c5f16dd625433a0e178bf9b1fe51",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "68320fd2_cdab51dc",
@@ -48,6 +84,30 @@
       "writtenOn": "2021-11-18T16:35:05Z",
       "side": 1,
       "message": "TYPO: generate",
+      "range": {
+        "startLine": 82,
+        "startChar": 34,
+        "endLine": 82,
+        "endChar": 42
+      },
+      "revId": "2e7748908346c5f16dd625433a0e178bf9b1fe51",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bfd5563_143ca9ab",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-18T19:50:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68320fd2_cdab51dc",
       "range": {
         "startLine": 82,
         "startChar": 34,
