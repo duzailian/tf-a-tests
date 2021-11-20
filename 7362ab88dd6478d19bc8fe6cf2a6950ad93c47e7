@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46623258_2292fd4e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2021-11-20T17:04:56Z",
+      "side": 1,
+      "message": "Does the OpenCI test the build of the TF-A Tests Changelog?",
+      "revId": "7362ab88dd6478d19bc8fe6cf2a6950ad93c47e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
