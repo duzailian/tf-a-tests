@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7f7e0bf_d92726bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-22T14:07:49Z",
+      "side": 1,
+      "message": "Yes, it does.\nhttps://ci.trustedfirmware.org/job/tf-ci-gateway/17841/",
+      "parentUuid": "46623258_2292fd4e",
+      "revId": "7362ab88dd6478d19bc8fe6cf2a6950ad93c47e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3498de39_f0736099",
@@ -31,6 +49,30 @@
       "writtenOn": "2021-11-22T09:57:20Z",
       "side": 1,
       "message": "nit: please remove this extra ~",
+      "range": {
+        "startLine": 95,
+        "startChar": 31,
+        "endLine": 95,
+        "endChar": 33
+      },
+      "revId": "7362ab88dd6478d19bc8fe6cf2a6950ad93c47e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e1f061b_35c5e72c",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2021-11-22T14:07:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3498de39_f0736099",
       "range": {
         "startLine": 95,
         "startChar": 31,
