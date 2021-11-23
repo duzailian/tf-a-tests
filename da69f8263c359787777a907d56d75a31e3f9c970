@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90cf9755_a23f5147",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2021-11-23T15:12:08Z",
+      "side": 1,
+      "message": "CI passed. Really should get the verified label updated automatically like the TF-A rep CI.\n",
+      "revId": "da69f8263c359787777a907d56d75a31e3f9c970",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
