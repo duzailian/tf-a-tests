@@ -1,0 +1,10 @@
+Code-Owner-Review+1: Joanna Farley <joanna.farley@arm.com>
+Allow-CI+1: Joanna Farley <joanna.farley@arm.com>
+Code-Review+1: TrustedFirmware Code Review
+Verified+1: Joanna Farley <joanna.farley@arm.com>
+Maintainer-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Tue, 23 Nov 2021 16:31:17 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/12488
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
