@@ -52,6 +52,24 @@
       "parentUuid": "4387eca5_e065176a",
       "revId": "622ec95b274e03a93dd0e3859ba8626fc52d0ab2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "651d3c87_c5a8472b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-11-24T13:20:39Z",
+      "side": 1,
+      "message": "Hi,\nSubmitted here: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/12638\n\nThe main difference are:\nRe-purposing Ivy rather than creating a new \"Cactus\" flavor (the idea is that Ivy continues to demonstrate SEL0 partitions and Cactus partitions remain SEL1).\nRe-using svc helper from spm/common/aarch64/sp_arch_helpers.S\nThe macros and helpers from https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/12485/1/spm/cactus/aarch64/cactus_el0_entrypoint.S can certainly be commonalized.",
+      "parentUuid": "9bebf2ac_70ad0b54",
+      "revId": "622ec95b274e03a93dd0e3859ba8626fc52d0ab2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
