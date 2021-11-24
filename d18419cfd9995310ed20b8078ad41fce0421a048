@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45d1e894_779ceb88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2021-11-24T13:22:38Z",
+      "side": 1,
+      "message": "\nBased on https://trustedfirmware-a-tests.readthedocs.io/en/latest/getting_started/build.html#cactus-and-ivy\n\nCactus remains the sample S-EL1 partition.\nIvy remains the sample \"S-EL0 partition\" either using the shim at SEL1 (as of today), or leveraging Hafnium VHE (reason for this change).\nThe same code base is re-used by adding the IVY_SHIM toggle. IVY_SHIM\u003d1 is default using the shim, or 0 to use VHE (and strip the shim out).\nUsing svc helper from spm/common/aarch64/sp_arch_helpers.S\n\nTypical build command for a VHE-enabled Ivy partition:\nmake CROSS_COMPILE\u003daarch64-none-elf- PLAT\u003dfvp DEBUG\u003d1 TESTS\u003dspm ARM_ARCH_MINOR\u003d5 BRANCH_PROTECTION\u003d1 IVY_SHIM\u003d0 ivy -j8\n\nThe intent is to create a dedicated tftf_config build config to build with Ivy enabled for VHE in the CI.",
+      "revId": "d18419cfd9995310ed20b8078ad41fce0421a048",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
