@@ -16,6 +16,52 @@
       "message": "Hi Olivier, this patch looks great actually and simpler than the patch stack i had. The only disadvantage i see with this is we cannot reuse a lot of the cactus infra put into place. Almost all the tests that work on S-EL1 VMs should work on S-EL0 with minor mods so if we go this route, we have to replicate or reuse the cactus infra in place as much as possible for ivy testing...I\u0027m happy to contribute adding EL0 tests for direct messaging etc if we can have this merged...\nI have no strong preference for one approach over the other. From a code cleanliness point of view, i think this is a clear winner.",
       "revId": "8832ac4dd8db76a404670ddef386eff4838d6912",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "afa751a0_984f738e",
+        "filename": "spm/ivy/app/aarch64/ivy_entrypoint.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-11-26T21:10:27Z",
+      "side": 1,
+      "message": "this is missing setting rodata back to RO in the page tables..need a mem perm set call. and then another one to remap rw section as rw i think (or maybe the second call can be avoided).",
+      "range": {
+        "startLine": 41,
+        "startChar": 1,
+        "endLine": 41,
+        "endChar": 19
+      },
+      "revId": "8832ac4dd8db76a404670ddef386eff4838d6912",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4ab02d9_eb7bd37f",
+        "filename": "spm/ivy/app/ivy_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2021-11-26T21:10:27Z",
+      "side": 1,
+      "message": "we need to start creating wrappers for such calls like we have in cactus. one of the disadvantage of this approach over reusing cactus, but not a big deal. i think we can refactor code to reuse some of those helpers.",
+      "range": {
+        "startLine": 30,
+        "startChar": 7,
+        "endLine": 30,
+        "endChar": 14
+      },
+      "revId": "8832ac4dd8db76a404670ddef386eff4838d6912",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
