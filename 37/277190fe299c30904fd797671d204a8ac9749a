@@ -1,0 +1,10 @@
+Legacy-CI+2: Joao Alves <joao.alves@arm.com>
+Code-Owner-Review+1: Maksims Svecovs <maksims.svecovs@arm.com>
+Allow-CI+1: Joao Alves <joao.alves@arm.com>
+Verified+1: Olivier Deprez <olivier.deprez@arm.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Fri, 03 Dec 2021 14:57:54 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/12713
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
