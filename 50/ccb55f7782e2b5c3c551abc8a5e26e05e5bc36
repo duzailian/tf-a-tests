@@ -1,0 +1,10 @@
+Allow-CI+1: John <john.powell@arm.com>
+Legacy-CI+1: John <john.powell@arm.com>
+Verified+1: TrustedFirmware Code Review
+Code-Owner-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Maintainer-Review+1: Mark Dykes <mark.dykes@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Fri, 10 Dec 2021 11:48:02 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/12259
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
