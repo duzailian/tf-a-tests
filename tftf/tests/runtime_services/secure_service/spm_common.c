@@ -58,7 +58,7 @@ bool is_ffa_direct_response(smc_ret_values ret)
 		return true;
 	}
 
-	VERBOSE("%x is not FF-A response.\n", ffa_func_id(ret));
+	ERROR("%x is not FF-A response.\n", ffa_func_id(ret));
 	/* To log error in case it is FFA_ERROR*/
 	is_ffa_call_error(ret);
 
