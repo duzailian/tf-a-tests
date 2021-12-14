@@ -78,7 +78,7 @@ static test_result_t test_memory_send_sp(uint32_t mem_func)
 
 	ptr = (uint32_t *)constituents[0].address;
 
-	ret = cactus_mem_send_cmd(SENDER, RECEIVER, mem_func, handle);
+	ret = cactus_mem_send_cmd(SENDER, RECEIVER, mem_func, handle, 0, 5);
 
 	if (!is_ffa_direct_response(ret)) {
 		return TEST_RESULT_FAIL;
@@ -170,4 +170,78 @@ test_result_t test_req_mem_donate_sp_to_sp(void)
 {
 	return test_req_mem_send_sp_to_sp(FFA_MEM_DONATE_SMC32, SP_ID(1),
 					  SP_ID(3));
+}
+
+test_result_t test_mem_share_to_sp_clear_memory(void)
+{
+	struct ffa_memory_region_constituent constituents[] = {
+						{(void *)share_page, 1, 0}};
+	const uint32_t constituents_count = sizeof(constituents) /
+			sizeof(struct ffa_memory_region_constituent);
+	struct mailbox_buffers mb;
+	uint32_t remaining_constituent_count;
+	uint32_t total_length;
+	uint32_t fragment_length;
+	ffa_memory_handle_t handle;
+	smc_ret_values ret;
+	uint32_t *ptr;
+	const uint32_t words_to_write = 10U;
+
+	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
+
+	GET_TFTF_MAILBOX(mb);
+
+	remaining_constituent_count = ffa_memory_region_init(
+		(struct ffa_memory_region*)mb.send, MAILBOX_SIZE, SENDER,
+		RECEIVER, constituents, constituents_count, 0,
+		FFA_MEMORY_REGION_FLAG_CLEAR, FFA_DATA_ACCESS_RW,
+		FFA_INSTRUCTION_ACCESS_NOT_SPECIFIED, FFA_MEMORY_NORMAL_MEM,
+		FFA_MEMORY_CACHE_WRITE_BACK, FFA_MEMORY_INNER_SHAREABLE,
+		&total_length, &fragment_length);
+
+	if (remaining_constituent_count != 0) {
+		ERROR("Transaction descriptor initialization failed!\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	handle = memory_send(mb.send, FFA_MEM_LEND_SMC32, fragment_length,
+			     total_length);
+
+	VERBOSE("Memory has been shared!\n");
+
+	if (handle == FFA_MEMORY_HANDLE_INVALID) {
+		ERROR("Memory Share failed!\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	ret = cactus_mem_send_cmd(SENDER, RECEIVER, FFA_MEM_LEND_SMC32, handle,
+				  FFA_MEMORY_REGION_FLAG_CLEAR, words_to_write);
+
+	if (!is_ffa_direct_response(ret)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	if (cactus_get_response(ret) != CACTUS_SUCCESS) {
+		ERROR("Failed memory send operation!\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	ret = ffa_mem_reclaim(handle, 0);
+
+	if (is_ffa_call_error(ret)) {
+		ERROR("Memory reclaim failed!\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	ptr = (uint32_t *)constituents[0].address;
+
+	/*
+	 * Print 5 words from the memory region to validate SP wrote to the
+	 * memory region.
+	 */
+	VERBOSE("TFTF - Memory contents after SP use:\n");
+	for (unsigned int i = 0U; i < words_to_write; i++)
+		VERBOSE("      %u: %x\n", i, ptr[i]);
+
+	return TEST_RESULT_SUCCESS;
 }
