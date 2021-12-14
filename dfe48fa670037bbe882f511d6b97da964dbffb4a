@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e19173f1_50b33f61",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-12-14T17:12:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f613057_e08e8824",
+      "range": {
+        "startLine": 171,
+        "startChar": 2,
+        "endLine": 171,
+        "endChar": 7
+      },
+      "revId": "dfe48fa670037bbe882f511d6b97da964dbffb4a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b47370fd_16c694d4",
@@ -66,6 +90,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "df37df1c_cf052e06",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-12-14T17:12:55Z",
+      "side": 1,
+      "message": "I think it is handled in is_ffa_direct_response:\nVERBOSE(\"%x is not FF-A response.\\n\", ffa_func_id(ret));\n\t/* To log error in case it is FFA_ERROR*/\n\tis_ffa_call_error(ret);\nWill change VERBOSE -\u003e ERROR there",
+      "parentUuid": "b47370fd_16c694d4",
+      "range": {
+        "startLine": 176,
+        "startChar": 6,
+        "endLine": 176,
+        "endChar": 28
+      },
+      "revId": "dfe48fa670037bbe882f511d6b97da964dbffb4a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bbcbeb54_c7ce5064",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
         "patchSetId": 2
@@ -77,6 +125,24 @@
       "writtenOn": "2021-12-14T15:07:39Z",
       "side": 1,
       "message": "nit: Add descriptive \"ERROR\" log here.",
+      "revId": "dfe48fa670037bbe882f511d6b97da964dbffb4a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dad13033_98c1b4f7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-12-14T17:12:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bbcbeb54_c7ce5064",
       "revId": "dfe48fa670037bbe882f511d6b97da964dbffb4a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
