@@ -170,7 +170,7 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 	if (handle == FFA_MEMORY_HANDLE_INVALID) {
 		ERROR("Received an invalid FF-A memory Handle!\n");
 		return cactus_error_resp(vm_id, source,
-					 CACTUS_ERROR_TEST);
+					 ffa_error_code(ffa_ret));
 	}
 
 	ffa_ret = cactus_mem_send_cmd(vm_id, receiver, mem_func, handle);
