@@ -36,6 +36,24 @@ static void *share_page(ffa_id_t cactus_sp_id)
 	}
 }
 
+/**
+ * Check if the error occured in the memory_init_and_send is an expected test
+ * error. There are tests that attempt illegal operations intentionally: SP->VM
+ * memory operations that are not permited.
+ */
+static uint32_t handle_the_error(ffa_id_t receiver, smc_ret_values ret)
+{
+	uint32_t error_code = CACTUS_ERROR_TEST;
+	if (!IS_SP_ID(receiver) && ffa_error_code(ret) == FFA_ERROR_DENIED) {
+		VERBOSE("This is a VM->SP memory operation "
+			"error is expected\n");
+		error_code = CACTUS_ERROR_EXPECTED;
+	} else {
+		ERROR("Received an invalid FF-A memory Handle!\n");
+	}
+	return error_code;
+}
+
 CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 {
 	struct ffa_memory_region *m;
@@ -168,9 +186,8 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 	 * If returned an invalid handle, we should break the test.
 	 */
 	if (handle == FFA_MEMORY_HANDLE_INVALID) {
-		ERROR("Received an invalid FF-A memory Handle!\n");
 		return cactus_error_resp(vm_id, source,
-					 CACTUS_ERROR_TEST);
+					 handle_the_error(receiver, ffa_ret));
 	}
 
 	ffa_ret = cactus_mem_send_cmd(vm_id, receiver, mem_func, handle);
