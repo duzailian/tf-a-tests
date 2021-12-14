@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ca60c80_242646eb",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-12-14T14:27:18Z",
+      "side": 1,
+      "message": "This function doesn\u0027t scale for testing/validating other error codes.\nInstead of returning CACTUS_ERROR_EXPECTED, use the FF-A error code. In TFTF, validate that cactus response is CACTUS_ERROR and the other argument is FFA_ERROR_DENIED.\n\nThis approach will allow us to better test other error returns to FF-A calls without needing to change a lot the code here in cactus.\n\nThe remaining comments are to help understand the proposed change here.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 1
+      },
+      "revId": "01a385a439a64551ca4873686267304fb742455f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b8945d5_e64c0980",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-12-14T14:27:18Z",
+      "side": 1,
+      "message": "ffa_error_code(ffa_ret)",
+      "range": {
+        "startLine": 190,
+        "startChar": 6,
+        "endLine": 190,
+        "endChar": 41
+      },
+      "revId": "01a385a439a64551ca4873686267304fb742455f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1a80639_a7d6dc97",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-12-14T14:27:18Z",
+      "side": 1,
+      "message": "With the CACTUS_ERROR, providing FF-A error code of the last memory send FF-A call that cactus performed.",
+      "range": {
+        "startLine": 159,
+        "startChar": 36,
+        "endLine": 160,
+        "endChar": 18
+      },
+      "revId": "01a385a439a64551ca4873686267304fb742455f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73733bd3_06dac68a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-12-14T14:27:18Z",
+      "side": 1,
+      "message": "FFA_ERROR_DENIED",
+      "range": {
+        "startLine": 181,
+        "startChar": 31,
+        "endLine": 181,
+        "endChar": 52
+      },
+      "revId": "01a385a439a64551ca4873686267304fb742455f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
