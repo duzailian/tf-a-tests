@@ -71,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d90beb8d_a1bc8ed6",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-12-14T14:51:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b8945d5_e64c0980",
+      "range": {
+        "startLine": 190,
+        "startChar": 6,
+        "endLine": 190,
+        "endChar": 41
+      },
+      "revId": "01a385a439a64551ca4873686267304fb742455f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1a80639_a7d6dc97",
@@ -94,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f8091a7_78c42819",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-12-14T14:51:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1a80639_a7d6dc97",
+      "range": {
+        "startLine": 159,
+        "startChar": 36,
+        "endLine": 160,
+        "endChar": 18
+      },
+      "revId": "01a385a439a64551ca4873686267304fb742455f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "73733bd3_06dac68a",
@@ -107,6 +155,30 @@
       "writtenOn": "2021-12-14T14:27:18Z",
       "side": 1,
       "message": "FFA_ERROR_DENIED",
+      "range": {
+        "startLine": 181,
+        "startChar": 31,
+        "endLine": 181,
+        "endChar": 52
+      },
+      "revId": "01a385a439a64551ca4873686267304fb742455f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6932ba14_0c793111",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2021-12-14T14:51:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73733bd3_06dac68a",
       "range": {
         "startLine": 181,
         "startChar": 31,
