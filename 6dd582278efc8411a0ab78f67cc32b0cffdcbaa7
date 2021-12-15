@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "431d9cfd_05f85843",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-12-15T12:30:09Z",
+      "side": 1,
+      "message": "Could you check this doesn\u0027t add ERROR logs to successful tests?\nMaking it VERBOSE was to prevent adding misleading information to successful tests.",
+      "range": {
+        "startLine": 61,
+        "startChar": 1,
+        "endLine": 61,
+        "endChar": 6
+      },
+      "revId": "6dd582278efc8411a0ab78f67cc32b0cffdcbaa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "523f9518_c939a166",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-12-15T12:30:09Z",
+      "side": 1,
+      "message": "nit:\"sharing memory between SPs. Error code:\"",
+      "range": {
+        "startLine": 151,
+        "startChar": 16,
+        "endLine": 151,
+        "endChar": 38
+      },
+      "revId": "6dd582278efc8411a0ab78f67cc32b0cffdcbaa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "038dfbce_5e6f5009",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2021-12-15T12:30:09Z",
+      "side": 1,
+      "message": "nit: \u0027the expected error\u0027",
+      "range": {
+        "startLine": 187,
+        "startChar": 35,
+        "endLine": 187,
+        "endChar": 37
+      },
+      "revId": "6dd582278efc8411a0ab78f67cc32b0cffdcbaa7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
