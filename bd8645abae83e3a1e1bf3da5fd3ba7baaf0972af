@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3157115d_d9f76eb3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-12-17T18:24:31Z",
+      "side": 1,
+      "message": "typo: targeting",
+      "range": {
+        "startLine": 10,
+        "startChar": 18,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "bd8645abae83e3a1e1bf3da5fd3ba7baaf0972af",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3084a780_95b5075b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2021-12-17T18:24:31Z",
+      "side": 1,
+      "message": "Looks good, just a small typo. I think targetted with two ts is the British spelling",
+      "revId": "bd8645abae83e3a1e1bf3da5fd3ba7baaf0972af",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
