@@ -24,6 +24,10 @@
     <testcase name="Use trace filter control Registers" function="test_trf_enabled" />
     <testcase name="Use trace system Registers" function="test_sys_reg_trace_enabled" />
     <testcase name="SME support" function="test_sme_support" />
+    <testcase name="Test wfit instruction" function="test_wfit_instruction" />
+    <testcase name="Test wfet instruction" function="test_wfet_instruction" />
+
+
   </testsuite>
 
   <testsuite name="ARM_ARCH_SVC" description="Arm Architecture Service tests">
