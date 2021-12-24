@@ -10,6 +10,7 @@
 #include <stdbool.h>
 
 #include <arch_helpers.h>
+#include <debug.h>
 
 static inline bool is_armv7_gentimer_present(void)
 {
@@ -152,6 +153,14 @@ static inline bool get_feat_afp_present(void)
 {
 	return (((read_id_aa64mmfr1_el1() >> ID_AA64MMFR1_EL1_AFP_SHIFT) &
 		  ID_AA64MMFR1_EL1_AFP_MASK) == ID_AA64MMFR1_EL1_AFP_SUPPORTED);
+}
+
+static inline bool get_feat_wfxt_present(void)
+{
+	uint64_t val = read_id_aa64isar2_el1();
+	INFO("val = %llu\n", val);
+	return (((read_id_aa64isar2_el1() >> ID_AA64ISAR2_WFXT_SHIFT) &
+		ID_AA64ISAR2_WFXT_MASK) == ID_AA64ISAR2_WFXT_SUPPORTED);
 }
 
 #endif /* ARCH_FEATURES_H */
