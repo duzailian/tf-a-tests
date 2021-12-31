@@ -866,7 +866,18 @@
 /*******************************************************************************
  * Definitions for system register interface to SPE
  ******************************************************************************/
+#define PMSCR_EL1		S3_0_C9_C9_0
+#define PMSNEVFR_EL1		S3_0_C9_C9_1
+#define PMSICR_EL1		S3_0_C9_C9_2
+#define PMSIRR_EL1		S3_0_C9_C9_3
+#define PMSFCR_EL1		S3_0_C9_C9_4
+#define PMSEVFR_EL1		S3_0_C9_C9_5
+#define PMSLATFR_EL1		S3_0_C9_C9_6
+#define PMSIDR_EL1		S3_0_C9_C9_7
 #define PMBLIMITR_EL1		S3_0_C9_C10_0
+#define PMBPTR_EL1		S3_0_C9_C10_1
+#define PMBSR_EL1		S3_0_C9_C10_3
+#define PMSCR_EL2		S3_4_C9_C9_0
 
 /*******************************************************************************
  * Definitions for system register interface to MPAM
