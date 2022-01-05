@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -64,6 +64,8 @@ struct ffa_partition_info {
 	uint16_t exec_context;
 	/** The Partition's properties, e.g. supported messaging methods */
 	uint32_t properties;
+	/** The uuid of the partition */
+	struct ffa_uuid uuid;
 };
 
 static inline uint32_t ffa_func_id(smc_ret_values val)
