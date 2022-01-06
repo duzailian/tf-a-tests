@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a2d3689_8240baa6",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_pstate_after_exception.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-01-06T15:12:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d1d9840_b6325172",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 17
+      },
+      "revId": "56fd81dae43a7c0bf66088d885b079952c0f002c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bafe8144_aae0b9b6",
@@ -37,6 +61,24 @@
       "writtenOn": "2022-01-06T10:37:26Z",
       "side": 1,
       "message": "nit: remove blank line",
+      "revId": "56fd81dae43a7c0bf66088d885b079952c0f002c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0b5c012_dfa61e8b",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_pstate_after_exception.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-01-06T15:12:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bafe8144_aae0b9b6",
       "revId": "56fd81dae43a7c0bf66088d885b079952c0f002c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac66568e_f45a0444",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_pstate_after_exception.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-01-06T15:12:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a785eaec_98cbe8c4",
+      "range": {
+        "startLine": 46,
+        "startChar": 5,
+        "endLine": 46,
+        "endChar": 14
+      },
+      "revId": "56fd81dae43a7c0bf66088d885b079952c0f002c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9c3e304c_e392fc44",
@@ -77,6 +143,24 @@
       "writtenOn": "2022-01-06T10:37:26Z",
       "side": 1,
       "message": "nit: Add one-liner comment \"Check the DIT Bit in the TFTF is still set\" to be consistent with comment mentioned at line no.59 or you can remove comment at line 59 as \u0027tftf_print\u0027 itself shows intention of reading DIT bit.",
+      "revId": "56fd81dae43a7c0bf66088d885b079952c0f002c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc6f86b5_6c5cbe8a",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_pstate_after_exception.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-01-06T15:12:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c3e304c_e392fc44",
       "revId": "56fd81dae43a7c0bf66088d885b079952c0f002c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -104,6 +188,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "754836bc_ee087e85",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_pstate_after_exception.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-01-06T15:12:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbc4a4b1_280319d2",
+      "range": {
+        "startLine": 64,
+        "startChar": 5,
+        "endLine": 64,
+        "endChar": 14
+      },
+      "revId": "56fd81dae43a7c0bf66088d885b079952c0f002c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b1a2c343_1b463c9a",
@@ -117,6 +225,30 @@
       "writtenOn": "2022-01-06T10:37:26Z",
       "side": 1,
       "message": "What TMP means here? Looks like it is some temporary name, that you missed to change it.",
+      "range": {
+        "startLine": 35,
+        "startChar": 21,
+        "endLine": 35,
+        "endChar": 29
+      },
+      "revId": "56fd81dae43a7c0bf66088d885b079952c0f002c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5d5ebaf_ddf9a853",
+        "filename": "tftf/tests/tests-tsp.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-01-06T15:12:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b1a2c343_1b463c9a",
       "range": {
         "startLine": 35,
         "startChar": 21,
