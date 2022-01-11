@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5236482_b327fed0",
+        "filename": "tftf/tests/extensions/afp/test_afp.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-01-11T16:49:40Z",
+      "side": 1,
+      "message": "I think read_fpcsr() (from line 19) returns an architecturally UNKNOWN value. Should we be writing this back to FPCR register?",
+      "range": {
+        "startLine": 31,
+        "startChar": 1,
+        "endLine": 31,
+        "endChar": 24
+      },
+      "revId": "6cc0711c9215751a8465fa520fd3c96f3d2f584e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
