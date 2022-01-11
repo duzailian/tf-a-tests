@@ -46,6 +46,30 @@
       },
       "revId": "6cc0711c9215751a8465fa520fd3c96f3d2f584e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "006bad96_7534d7ef",
+        "filename": "tftf/tests/extensions/afp/test_afp.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-01-11T17:29:45Z",
+      "side": 1,
+      "message": "I am okay with the patch. Thanks for clarification!",
+      "parentUuid": "74a2c6d9_4ec78faa",
+      "range": {
+        "startLine": 31,
+        "startChar": 1,
+        "endLine": 31,
+        "endChar": 24
+      },
+      "revId": "6cc0711c9215751a8465fa520fd3c96f3d2f584e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
