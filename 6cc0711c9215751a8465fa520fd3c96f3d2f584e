@@ -22,6 +22,30 @@
       },
       "revId": "6cc0711c9215751a8465fa520fd3c96f3d2f584e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74a2c6d9_4ec78faa",
+        "filename": "tftf/tests/extensions/afp/test_afp.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-01-11T17:24:32Z",
+      "side": 1,
+      "message": "Mainly, I read it to just restore it back to the previous value (to avoid unnecessary leaving AFP control bits set). NS-EL2 can read the FPCR register as per ARM Arm (refer- Accessing FPCR register). Please let me know what do you think?",
+      "parentUuid": "f5236482_b327fed0",
+      "range": {
+        "startLine": 31,
+        "startChar": 1,
+        "endLine": 31,
+        "endChar": 24
+      },
+      "revId": "6cc0711c9215751a8465fa520fd3c96f3d2f584e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
