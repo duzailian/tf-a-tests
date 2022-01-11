@@ -16,6 +16,24 @@
       "message": "We know that, by design, tftf runs in NS-EL2. Do we need this check?",
       "revId": "e16e4dc87133a6d10fa0948d46519fb7715ff378",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20d9d7a8_bd90866f",
+        "filename": "tftf/tests/extensions/spe/test_spe.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-01-11T17:09:30Z",
+      "side": 1,
+      "message": "Mostly TFTF runs in NS-EL2, but there are few CIs that makes TFTF to run in NS-EL1 [1] where SPE is enabled.\n\n[1] https://git.trustedfirmware.org/ci/tf-a-ci-scripts.git/tree/run_config/fvp-aemv8a.assymetric#n13",
+      "parentUuid": "b5a69dda_fa22e0d6",
+      "revId": "e16e4dc87133a6d10fa0948d46519fb7715ff378",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
