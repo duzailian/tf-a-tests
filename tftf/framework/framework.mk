@@ -53,7 +53,8 @@ FRAMEWORK_SOURCES	+=						\
 	lib/events/events.c						\
 	lib/extensions/amu/${ARCH}/amu.c				\
 	lib/extensions/amu/${ARCH}/amu_helpers.S			\
-	lib/irq/irq.c							\
+	lib/exceptions/irq.c						\
+	lib/exceptions/sync.c						\
 	lib/locks/${ARCH}/spinlock.S					\
 	lib/power_management/hotplug/hotplug.c				\
 	lib/power_management/suspend/${ARCH}/asm_tftf_suspend.S		\
