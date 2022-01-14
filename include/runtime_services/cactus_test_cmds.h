@@ -197,10 +197,12 @@ static inline ffa_id_t cactus_deadlock_get_next_dest2(smc_ret_values ret)
 static inline smc_ret_values cactus_mem_send_cmd(
 	ffa_id_t source, ffa_id_t dest, uint32_t mem_func,
 	ffa_memory_handle_t handle, ffa_memory_region_flags_t retrieve_flags,
-	uint32_t word_to_write)
+	bool non_secure, uint32_t word_to_write)
 {
+	/* `non_secure` and `retrieve_flags` are packed in the same register. */
+	uint64_t val2 = ((uint64_t)non_secure << 32) | retrieve_flags;
 	return cactus_send_cmd(source, dest, CACTUS_MEM_SEND_CMD, mem_func,
-			       handle, retrieve_flags, word_to_write);
+			       handle, val2, word_to_write);
 }
 
 static inline ffa_memory_handle_t cactus_mem_send_get_handle(smc_ret_values ret)
@@ -212,6 +214,12 @@ static inline ffa_memory_region_flags_t cactus_mem_send_get_retrv_flags(
 	smc_ret_values ret)
 {
 	return (ffa_memory_region_flags_t)ret.ret6;
+}
+
+static inline ffa_memory_region_flags_t cactus_mem_send_get_non_secure(
+	smc_ret_values ret)
+{
+	return (bool)(ret.ret6 >> 32);
 }
 
 static inline uint32_t cactus_mem_send_words_to_write(smc_ret_values ret)
@@ -230,10 +238,10 @@ static inline uint32_t cactus_mem_send_words_to_write(smc_ret_values ret)
 
 static inline smc_ret_values cactus_req_mem_send_send_cmd(
 	ffa_id_t source, ffa_id_t dest, uint32_t mem_func,
-	ffa_id_t receiver)
+	ffa_id_t receiver, bool non_secure)
 {
 	return cactus_send_cmd(source, dest, CACTUS_REQ_MEM_SEND_CMD, mem_func,
-			       receiver, 0, 0);
+			       receiver, non_secure, 0);
 }
 
 static inline uint32_t cactus_req_mem_send_get_mem_func(smc_ret_values ret)
@@ -244,6 +252,11 @@ static inline uint32_t cactus_req_mem_send_get_mem_func(smc_ret_values ret)
 static inline ffa_id_t cactus_req_mem_send_get_receiver(smc_ret_values ret)
 {
 	return (ffa_id_t)ret.ret5;
+}
+
+static inline bool cactus_req_mem_send_get_non_secure(smc_ret_values ret)
+{
+	return (bool)ret.ret6;
 }
 
 /**
