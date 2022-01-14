@@ -230,10 +230,10 @@ static inline uint32_t cactus_mem_send_words_to_write(smc_ret_values ret)
 
 static inline smc_ret_values cactus_req_mem_send_send_cmd(
 	ffa_id_t source, ffa_id_t dest, uint32_t mem_func,
-	ffa_id_t receiver)
+	ffa_id_t receiver, bool non_secure)
 {
 	return cactus_send_cmd(source, dest, CACTUS_REQ_MEM_SEND_CMD, mem_func,
-			       receiver, 0, 0);
+			       receiver, non_secure, 0);
 }
 
 static inline uint32_t cactus_req_mem_send_get_mem_func(smc_ret_values ret)
@@ -244,6 +244,11 @@ static inline uint32_t cactus_req_mem_send_get_mem_func(smc_ret_values ret)
 static inline ffa_id_t cactus_req_mem_send_get_receiver(smc_ret_values ret)
 {
 	return (ffa_id_t)ret.ret5;
+}
+
+static inline bool cactus_req_mem_send_get_non_secure(smc_ret_values ret)
+{
+	return (bool)ret.ret6;
 }
 
 /**
