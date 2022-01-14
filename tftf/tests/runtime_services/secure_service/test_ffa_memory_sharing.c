@@ -78,7 +78,7 @@ static test_result_t test_memory_send_sp(uint32_t mem_func)
 
 	ptr = (uint32_t *)constituents[0].address;
 
-	ret = cactus_mem_send_cmd(SENDER, RECEIVER, mem_func, handle);
+	ret = cactus_mem_send_cmd(SENDER, RECEIVER, mem_func, handle, true);
 
 	if (!is_ffa_direct_response(ret)) {
 		return TEST_RESULT_FAIL;
@@ -131,7 +131,8 @@ test_result_t test_mem_donate_sp(void)
  */
 static test_result_t test_req_mem_send_sp_to_sp(uint32_t mem_func,
 						ffa_id_t sender_sp,
-						ffa_id_t receiver_sp)
+						ffa_id_t receiver_sp,
+						bool non_secure)
 {
 	smc_ret_values ret;
 
@@ -141,7 +142,7 @@ static test_result_t test_req_mem_send_sp_to_sp(uint32_t mem_func,
 	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
 
 	ret = cactus_req_mem_send_send_cmd(HYP_ID, sender_sp, mem_func,
-					   receiver_sp);
+					   receiver_sp, non_secure);
 
 	if (!is_ffa_direct_response(ret)) {
 		return TEST_RESULT_FAIL;
@@ -173,7 +174,7 @@ static test_result_t test_req_mem_send_sp_to_vm(uint32_t mem_func,
 	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
 
 	ret = cactus_req_mem_send_send_cmd(HYP_ID, sender_sp, mem_func,
-					   receiver_vm);
+					   receiver_vm, false);
 
 	if (!is_ffa_direct_response(ret)) {
 		return TEST_RESULT_FAIL;
@@ -193,19 +194,25 @@ static test_result_t test_req_mem_send_sp_to_vm(uint32_t mem_func,
 test_result_t test_req_mem_share_sp_to_sp(void)
 {
 	return test_req_mem_send_sp_to_sp(FFA_MEM_SHARE_SMC32, SP_ID(3),
-					  SP_ID(2));
+					  SP_ID(2), false);
+}
+
+test_result_t test_req_ns_mem_share_sp_to_sp(void)
+{
+	return test_req_mem_send_sp_to_sp(FFA_MEM_SHARE_SMC32, SP_ID(3),
+					  SP_ID(2), true);
 }
 
 test_result_t test_req_mem_lend_sp_to_sp(void)
 {
 	return test_req_mem_send_sp_to_sp(FFA_MEM_LEND_SMC32, SP_ID(3),
-					  SP_ID(2));
+					  SP_ID(2), false);
 }
 
 test_result_t test_req_mem_donate_sp_to_sp(void)
 {
 	return test_req_mem_send_sp_to_sp(FFA_MEM_DONATE_SMC32, SP_ID(1),
-					  SP_ID(3));
+					  SP_ID(3), false);
 }
 
 test_result_t test_req_mem_share_sp_to_vm(void)
