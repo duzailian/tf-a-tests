@@ -299,6 +299,14 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 		}								\
 	} while (false)
 
+#define SKIP_TEST_IF_PA_SIZE_LESS_THAN_48_BITS()				\
+	do {									\
+		if (get_pa_range() < 6) {					\
+			tftf_testcase_printf("PA size less than 48-bit");	\
+			return TEST_RESULT_SKIPPED;				\
+		}								\
+	} while (false)
+
 /* Helper macro to verify if system suspend API is supported */
 #define is_psci_sys_susp_supported()	\
 		(tftf_get_psci_feature_info(SMC_PSCI_SYSTEM_SUSPEND)		\

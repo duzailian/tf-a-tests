@@ -137,7 +137,7 @@
  * calculated using the current NS_BL1U RW debug size plus a little space
  * for growth.
  ******************************************************************************/
-#define NS_BL1U_RW_SIZE		(0x7000)
+#define NS_BL1U_RW_SIZE		(0x9000)
 #define NS_BL1U_RW_BASE		(NSRAM_BASE)
 #define NS_BL1U_RW_LIMIT	(NS_BL1U_RW_BASE + NS_BL1U_RW_SIZE)
 
@@ -153,7 +153,7 @@
  * Base address and limit for NS_BL2U image.
  ******************************************************************************/
 #define NS_BL2U_BASE		DRAM_BASE
-#define NS_BL2U_LIMIT		(NS_BL2U_BASE + 0x4D000)
+#define NS_BL2U_LIMIT		(NS_BL2U_BASE + 0x4E000)
 
 /******************************************************************************
  * Memory mapped Generic timer interfaces
@@ -239,8 +239,13 @@
  * Platform specific page table and MMU setup constants
  ******************************************************************************/
 #ifdef __aarch64__
+#ifdef PA_SIZE_48
+#define PLAT_PHY_ADDR_SPACE_SIZE	(ULL(1) << 48)
+#define PLAT_VIRT_ADDR_SPACE_SIZE	(ULL(1) << 48)
+#else
 #define PLAT_PHY_ADDR_SPACE_SIZE	(ULL(1) << 34)
 #define PLAT_VIRT_ADDR_SPACE_SIZE	(ULL(1) << 34)
+#endif
 #else
 #define PLAT_PHY_ADDR_SPACE_SIZE	(ULL(1) << 32)
 #define PLAT_VIRT_ADDR_SPACE_SIZE	(ULL(1) << 32)
@@ -252,7 +257,7 @@
 #define MAX_MMAP_REGIONS		50
 #else
 #if IMAGE_CACTUS
-#define MAX_XLAT_TABLES			6
+#define MAX_XLAT_TABLES			8
 #else
 #define MAX_XLAT_TABLES			5
 #endif
