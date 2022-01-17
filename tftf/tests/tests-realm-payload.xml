@@ -15,6 +15,9 @@
 	  <testcase name="Multi CPU Realm payload Delegate and Undelegate" function="realm_delundel_multi_cpu" />
 	  <testcase name="Testing delegation fails" function="realm_fail_del" />
 	  <testcase name="Realm testing with SPM tests" function="test_ffa_secondary_core_direct_realm_msg" />
+	  <testcase name="Test NS call Realm and SPM in serial with single core" function="serial_spm_rmi_msg_singel_core" />
+	  <testcase name="Test NS call Realm and SPM in serial with single core after on/off" function="serial_spm_rmi_msg_singel_core_on_off" />
+	  <testcase name="Test NS call Realm and SPM in parallel with multi  core" function="parallel_spm_rmi_msg_multiple_cores" />
   </testsuite>
 
 </testsuites>

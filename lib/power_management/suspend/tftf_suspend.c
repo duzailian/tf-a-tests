@@ -108,7 +108,7 @@ int tftf_suspend(const suspend_info_t *info)
 
 	disable_irq();
 
-	INFO("Going into suspend state\n");
+	VERBOSE("Going into suspend state\n");
 
 	/* Save the local GIC context */
 	arm_gic_save_context_local();
@@ -125,7 +125,7 @@ int tftf_suspend(const suspend_info_t *info)
 	 */
 	write_daif(flags);
 
-	INFO("Resumed from suspend state\n");
+	VERBOSE("Resumed from suspend state\n");
 
 	return rc;
 }
