@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "791e04f6_904282ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-01-17T11:13:05Z",
+      "side": 1,
+      "message": "This new test cases written to fulfill the following test requirements:\n-NS world must be able to communicate with S and RL worlds in series via SMC from a single core. (tc2a)\n-NS world must be able to communicate with S and RL worlds in parallel via SMC using multiple cores. (tc3)",
+      "revId": "91072955472f3a44cb9bee95bcbbd40039db0cf8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
