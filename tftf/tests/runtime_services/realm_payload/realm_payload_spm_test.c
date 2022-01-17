@@ -22,7 +22,6 @@
 #include <runtime_services/realm_payload/realm_payload_test.h>
 
 static test_result_t realm_multi_cpu_payload_del_undel(void);
-
 #define ECHO_VAL1 U(0xa0a0a0a0)
 #define ECHO_VAL2 U(0xb0b0b0b0)
 #define ECHO_VAL3 U(0xc0c0c0c0)
@@ -31,7 +30,11 @@ static test_result_t realm_multi_cpu_payload_del_undel(void);
 static char bufferdelegate[NUM_GRANULES * GRANULE_SIZE * PLATFORM_CORE_COUNT] __aligned(GRANULE_SIZE);
 static char bufferstate[NUM_GRANULES * PLATFORM_CORE_COUNT];
 static int cpu_test_spm_rmi[PLATFORM_CORE_COUNT];
+static volatile int core_count = 0;
+static bool init_buffer_del_spm_rmi_initialized = false;
 
+/* Lock to prevent concurrent accesses to the core count */
+static spinlock_t core_count_lock;
 /*
  * The following test conducts SPM(direct messaging) tests on a subset of selected CPUs while
  * simultaneously performing another set of tests of the RMI(delegation)
@@ -67,6 +70,24 @@ static void rand_cpu_spm_rmi(void)
 	}
 }
 
+static void wait_for_secondary_cores_to_turn_off(void)
+{
+	unsigned int cpu_node, mpidr;
+	VERBOSE("Waiting for secondary CPUs to turn off ...\n");
+
+	for_each_cpu(cpu_node)
+	{
+		mpidr = tftf_get_mpidr_from_node(cpu_node);
+		if (mpidr == (read_mpidr_el1() & MPID_MASK) ) {
+			continue;
+		}
+
+		while (tftf_psci_affinity_info(mpidr, MPIDR_AFFLVL0) !=
+		PSCI_STATE_OFF) {
+			continue;
+		}
+	}
+}
 /*
  * Get function to determine what has been assigned to a given CPU
  */
@@ -82,7 +103,13 @@ static int spm_rmi_test(unsigned int mpidr)
 static test_result_t init_buffer_del_spm_rmi(void)
 {
 	u_register_t retrmm;
-
+	/*
+	 * to run only one time across all tests
+	 */
+	if (init_buffer_del_spm_rmi_initialized)
+	{
+		return TEST_RESULT_SUCCESS;
+	}
 	for (int i = 0; i < (NUM_GRANULES * PLATFORM_CORE_COUNT) ; i++) {
 		if ((rand() % 2) == 0) {
 			retrmm = realm_granule_delegate((u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
@@ -95,6 +122,7 @@ static test_result_t init_buffer_del_spm_rmi(void)
 			bufferstate[i] = B_UNDELEGATED;
 		}
 	}
+	init_buffer_del_spm_rmi_initialized = true;
 	return TEST_RESULT_SUCCESS;
 }
 
@@ -143,7 +171,6 @@ static test_result_t run_spm_direct_message(void)
 	unsigned int core_pos = platform_get_core_pos(mpid);
 	test_result_t ret = TEST_RESULT_SUCCESS;
 	smc_ret_values ffa_ret;
-
 	/*
 	 * Send a direct message request to SP1 (MP SP) from current physical
 	 * CPU. Notice SP1 ECs are already woken as a result of the PSCI_CPU_ON
@@ -220,149 +247,27 @@ out:
 }
 
 /*
- * Test function to dispatch a number of SPM and RMI tests to the platform
- * number of CPU's.  The test is run twice on a another set of randomly determined
- * CPU's.
+ * Test the SPM interface
+ * Non secure world tftf can access secure world SP at S-EL1.
  */
-test_result_t test_ffa_secondary_core_direct_realm_msg(void)
+static test_result_t non_secure_call_secure(void)
 {
-	if (get_armv9_2_feat_rme_support() == 0U) {
-		return TEST_RESULT_SKIPPED;
-	}
+	return run_spm_direct_message();
+}
 
-	unsigned int lead_mpid = read_mpidr_el1() & MPID_MASK;
-	unsigned int cpu_node, mpidr;
-	int32_t ret;
-	u_register_t retrmm;
+/*
+ * Each CPU reaching this function will increment the number of CPUs and wait
+ * for other CPUs to start execution in parallel.
+ */
+static test_result_t non_secure_call_secure_multi_cpu_sync(void)
+{
+	spin_lock(&core_count_lock);
+	core_count++;
+	VERBOSE("run_spm_direct_message_sync() core_count=%d\n",core_count);
+	spin_unlock(&core_count_lock);
 
-	/**********************************************************************
-	 * Check SPMC has ffa_version and expected FFA endpoints are deployed.
-	 **********************************************************************/
-	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
-
-	for (unsigned int i = 0U; i < PLATFORM_CORE_COUNT; i++) {
-		tftf_init_event(&cpu_booted[i]);
-	}
-
-	/*
-	 * Randomize the assignment of the CPU's to either SPM or RMI
-	 */
-	rand_cpu_spm_rmi();
-
-	/*
-	 * Randomize the initial state of the RMI granules to realm or non-secure
-	 */
-	if (init_buffer_del_spm_rmi() == TEST_RESULT_FAIL) {
-		return TEST_RESULT_FAIL;
-	}
-
-	/*
-	 * Main test to run both SPM and RMI together
-	 */
-	for_each_cpu(cpu_node) {
-		mpidr = tftf_get_mpidr_from_node(cpu_node);
-		if (mpidr == lead_mpid) {
-			continue;
-		}
-
-		if (spm_rmi_test(mpidr) == 1) {
-			ret = tftf_cpu_on(mpidr, (uintptr_t)run_spm_direct_message, 0U);
-			if (ret != 0) {
-				ERROR("tftf_cpu_on mpidr 0x%x returns %d\n", mpidr, ret);
-				return TEST_RESULT_FAIL;
-			}
-		} else {
-			ret = tftf_cpu_on(mpidr,
-				(uintptr_t)realm_multi_cpu_payload_del_undel, 0);
-
-			if (ret != PSCI_E_SUCCESS) {
-				ERROR("CPU ON failed for 0x%llx\n",
-					(unsigned long long)mpidr);
-				return TEST_RESULT_FAIL;
-			}
-		}
-	}
-
-	VERBOSE("Waiting for secondary CPUs to turn off ...\n");
-
-	for_each_cpu(cpu_node) {
-		mpidr = tftf_get_mpidr_from_node(cpu_node);
-		if (mpidr == lead_mpid) {
-			continue;
-		}
-
-		while (tftf_psci_affinity_info(mpidr, MPIDR_AFFLVL0) !=
-				PSCI_STATE_OFF) {
-				continue;
-		}
-	}
-
-	/*
-	 * Randomize the CPU's again
-	 */
-	rand_cpu_spm_rmi();
-
-	/*
-	 * Run test again
-	 */
-	for_each_cpu(cpu_node) {
-		mpidr = tftf_get_mpidr_from_node(cpu_node);
-		if (mpidr == lead_mpid) {
-			continue;
-		}
-
-		if (spm_rmi_test(mpidr) == 1) {
-			ret = tftf_cpu_on(mpidr, (uintptr_t)run_spm_direct_message, 0U);
-			if (ret != 0) {
-				ERROR("tftf_cpu_on mpidr 0x%x returns %d\n", mpidr, ret);
-				return TEST_RESULT_FAIL;
-			}
-		} else {
-			ret = tftf_cpu_on(mpidr,
-				(uintptr_t)realm_multi_cpu_payload_del_undel, 0);
-
-			if (ret != PSCI_E_SUCCESS) {
-				ERROR("CPU ON failed for 0x%llx\n",
-					(unsigned long long)mpidr);
-				return TEST_RESULT_FAIL;
-			}
-		}
-	}
-
-	VERBOSE("Waiting for secondary CPUs to turn off ...\n");
-
-	for_each_cpu(cpu_node) {
-		mpidr = tftf_get_mpidr_from_node(cpu_node);
-		if (mpidr == lead_mpid) {
-			continue;
-		}
-
-		while (tftf_psci_affinity_info(mpidr, MPIDR_AFFLVL0) !=
-				PSCI_STATE_OFF) {
-			continue;
-		}
-
-	}
-
-	for (int i = 0; i < (NUM_GRANULES * PLATFORM_CORE_COUNT) ; i++) {
-		if (bufferstate[i] == B_DELEGATED) {
-			retrmm = realm_granule_undelegate(
-				(u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
-			bufferstate[i] = B_UNDELEGATED;
-			if (retrmm != 0UL) {
-				tftf_testcase_printf("Delegate operation returns fail, %lx\n", retrmm);
-				return TEST_RESULT_FAIL;
-			}
-		}
-	}
-
-	VERBOSE("Done exiting.\n");
-
-	/**********************************************************************
-	 * All tests passed.
-	 **********************************************************************/
-
-	return TEST_RESULT_SUCCESS;
+	while(core_count != (PLATFORM_CORE_COUNT -1));
+	return non_secure_call_secure();
 }
 
 /*
@@ -396,6 +301,259 @@ static test_result_t realm_multi_cpu_payload_del_undel(void)
 			return TEST_RESULT_FAIL;
 		}
 	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * Test the RMI interface - Single CPU and multi-CPU granule transition tests.
+ * Non secure world tftf can access TRP(R-EL2) through  RMI and RMMD(EL3).
+ */
+static test_result_t non_secure_call_realm(void)
+{
+	return realm_multi_cpu_payload_del_undel();
+}
+
+/*
+ * Each CPU reaching this function will increment the number of CPUs and wait
+ * for other CPUs to start execution in parallel.
+ */
+static test_result_t non_secure_call_realm_multi_cpu_sync(void)
+{
+	spin_lock(&core_count_lock);
+	core_count++;
+	VERBOSE("non_secure_call_realm_multi_cpu_sync() core_count=%d\n",core_count);
+	spin_unlock(&core_count_lock);
+
+	while(core_count != (PLATFORM_CORE_COUNT -1));
+	return realm_multi_cpu_payload_del_undel();
+}
+
+/*
+ * Single core will perform sequentially a call to secure and realm worlds.
+ */
+test_result_t non_secure_call_secure_and_realm(void)
+{
+	test_result_t result = non_secure_call_secure();
+	if(result != TEST_RESULT_SUCCESS)
+		return result;
+	return non_secure_call_realm();
+}
+
+/*
+ * NS world communicate with S and RL worlds in series via SMC from a single core.
+ */
+test_result_t serial_spm_rmi_msg_single_core(void)
+{
+	if (get_armv9_2_feat_rme_support() == 0U) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	unsigned int lead_mpid = read_mpidr_el1() & MPID_MASK;
+	unsigned int  mpidr;
+	int32_t ret;
+
+	/**********************************************************************
+	 * Check SPMC has ffa_version and expected FFA endpoints are deployed.
+	 **********************************************************************/
+	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
+
+	for (unsigned int i = 0U; i < PLATFORM_CORE_COUNT; i++) {
+		tftf_init_event(&cpu_booted[i]);
+	}
+
+	/*
+	 * Randomize the initial state of the RMI granules to realm or non-secure
+	 */
+	if (init_buffer_del_spm_rmi() == TEST_RESULT_FAIL) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/*
+	 * Preparation step:
+	 * Find another CPU than the lead CPU and power it on.
+	 */
+
+	mpidr = tftf_find_any_cpu_other_than(lead_mpid);
+	assert(mpidr != INVALID_MPID);
+
+    /* Make an SPM call */
+	ret = tftf_cpu_on(mpidr, (uintptr_t)non_secure_call_secure_and_realm, 0U);
+	if (ret != 0) {
+		ERROR("tftf_cpu_on mpidr 0x%x returns %d\n", mpidr, ret);
+		return TEST_RESULT_FAIL;
+	}
+	wait_for_secondary_cores_to_turn_off();
+
+	VERBOSE("Done exiting.\n");
+
+	/**********************************************************************
+	 * All tests passed.
+	 **********************************************************************/
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * Test function to let NS world communicate with S and RL worlds in parallel
+ * via SMC using multiple cores
+ */
+test_result_t parallel_spm_rmi_msg_multiple_cores(void)
+{
+	if (get_armv9_2_feat_rme_support() == 0U) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	unsigned int lead_mpid = read_mpidr_el1() & MPID_MASK;
+	unsigned int cpu_node, mpidr;
+	int32_t ret;
+	u_register_t retrmm;
+
+	/**********************************************************************
+	 * Check SPMC has ffa_version and expected FFA endpoints are deployed.
+	 **********************************************************************/
+	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
+
+	for (unsigned int i = 0U; i < PLATFORM_CORE_COUNT; i++) {
+		tftf_init_event(&cpu_booted[i]);
+	}
+
+	/*
+	 * Randomize the initial state of the RMI granules to realm or non-secure
+	 */
+	if (init_buffer_del_spm_rmi() == TEST_RESULT_FAIL) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/*
+	 * Main test to run both SPM and RMI together in parallel
+	 */
+	for (int i = 0; i < 3; i++) {
+		INFO("Main test(%d) to run both SPM and RMI together in parallel...\n",i);
+		/*
+		 * Randomise the assignment of the CPU's to either SPM or RMI
+		 */
+		rand_cpu_spm_rmi();
+		/*
+		 * init the number of cores accessing the two test functions
+		 */
+		spin_lock(&core_count_lock);
+		core_count = 0;
+		spin_unlock(&core_count_lock);
+		/*
+		 * for each CPU we assign  it randomly either spm or rmi test function
+		 */
+		for_each_cpu(cpu_node) {
+			mpidr = tftf_get_mpidr_from_node(cpu_node);
+			if (mpidr == lead_mpid) {
+				continue;
+			}
+
+			if (spm_rmi_test(mpidr) == 1) {
+				ret = tftf_cpu_on(mpidr, (uintptr_t)non_secure_call_secure_multi_cpu_sync, 0U);
+				if (ret != 0) {
+					ERROR("tftf_cpu_on mpidr 0x%x returns %d\n", mpidr, ret);
+					return TEST_RESULT_FAIL;
+				}
+			} else {
+				ret = tftf_cpu_on(mpidr,
+					(uintptr_t)non_secure_call_realm_multi_cpu_sync, 0);
+
+				if (ret != PSCI_E_SUCCESS) {
+					ERROR("CPU ON failed for 0x%llx\n",
+						(unsigned long long)mpidr);
+					return TEST_RESULT_FAIL;
+				}
+			}
+		}
+		wait_for_secondary_cores_to_turn_off();
+	}
+	for (int i = 0; i < (NUM_GRANULES * PLATFORM_CORE_COUNT) ; i++) {
+		if (bufferstate[i] == B_DELEGATED) {
+			retrmm = realm_granule_undelegate(
+				(u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
+			bufferstate[i] = B_UNDELEGATED;
+			if (retrmm != 0UL) {
+				tftf_testcase_printf("Delegate operation returns fail, %lx\n", retrmm);
+				return TEST_RESULT_FAIL;
+			}
+		}
+	}
+
+	VERBOSE("Done exiting.\n");
+
+	/**********************************************************************
+	 * All tests passed.
+	 **********************************************************************/
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * Test function to let the NS world communicate with S and RL worlds in series
+ * via SMC from a single core.
+ * Core is powered on and off in each access, in this test.
+ */
+test_result_t serial_spm_rmi_msg_single_core_on_off(void)
+{
+	if (get_armv9_2_feat_rme_support() == 0U) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	unsigned int lead_mpid = read_mpidr_el1() & MPID_MASK;
+	unsigned int  mpidr;
+	int32_t ret;
+
+	/**********************************************************************
+	 * Check SPMC has ffa_version and expected FFA endpoints are deployed.
+	 **********************************************************************/
+	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
+
+	for (unsigned int i = 0U; i < PLATFORM_CORE_COUNT; i++) {
+		tftf_init_event(&cpu_booted[i]);
+	}
+
+	/*
+	 * Randomize the initial state of the RMI granules to realm or non-secure
+	 */
+	if (init_buffer_del_spm_rmi() == TEST_RESULT_FAIL) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/*
+	 * Preparation step:
+	 * Find another CPU than the lead CPU and power it on.
+	 */
+
+	mpidr = tftf_find_any_cpu_other_than(lead_mpid);
+	assert(mpidr != INVALID_MPID);
+
+	/* Make an SPM call */
+	ret = tftf_cpu_on(mpidr, (uintptr_t)non_secure_call_secure, 0U);
+	if (ret != 0) {
+		ERROR("tftf_cpu_on mpidr 0x%x returns %d\n", mpidr, ret);
+		return TEST_RESULT_FAIL;
+	}
+
+	wait_for_secondary_cores_to_turn_off();
+
+	/* Make a RMI call */
+	ret = tftf_cpu_on(mpidr,
+		(uintptr_t)non_secure_call_realm, 0);
+
+	if (ret != PSCI_E_SUCCESS) {
+		ERROR("CPU ON failed for 0x%llx\n",
+			(unsigned long long)mpidr);
+		return TEST_RESULT_FAIL;
+	}
+
+	wait_for_secondary_cores_to_turn_off();
+
+	VERBOSE("Done exiting.\n");
+
+	/**********************************************************************
+	 * All tests passed.
+	 **********************************************************************/
 
 	return TEST_RESULT_SUCCESS;
 }
