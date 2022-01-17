@@ -1,0 +1,9 @@
+#
+# Copyright (c) 2022, Arm Limited. All rights reserved.
+#
+# SPDX-License-Identifier: BSD-3-Clause
+#
+
+ifeq (${ARCH},aarch64)
+TESTS_SOURCES	+=	tftf/tests/misc_tests/test_invalid_access.c
+endif
