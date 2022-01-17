@@ -33,6 +33,23 @@
       "message": "The CI seems to not pick up the correct hafnium refspec: +refs/heads/master:refs/remotes/origin/master\nAll tests pass locally.",
       "revId": "61740652496f48c7cf91db4aea1e5e4e761bda5b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3fff4db_2e8a2128",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2022-01-17T15:15:38Z",
+      "side": 1,
+      "message": "Now that hafnium changes are merged - tests should be passing",
+      "revId": "61740652496f48c7cf91db4aea1e5e4e761bda5b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
