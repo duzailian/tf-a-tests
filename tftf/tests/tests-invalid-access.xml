@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Copyright (c) 2022, Arm Limited. All rights reserved.
+
+  SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<testsuites>
+  <testsuite name="Invalid memory access" description="Invalid memory access">
+      <testcase name="Access Secure memory from NS world"
+                function="access_secure_from_ns" />
+  </testsuite>
+</testsuites>
