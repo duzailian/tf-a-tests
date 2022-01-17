@@ -80,7 +80,7 @@ void tftf_restore_system_ctx(tftf_suspend_ctx_t *ctx)
 
 	tftf_early_platform_setup();
 
-	INFO("Restoring system context\n");
+	VERBOSE("Restoring system context\n");
 
 	/* restore the global GIC context */
 	arm_gic_restore_context_global();
@@ -93,7 +93,7 @@ void tftf_save_system_ctx(tftf_suspend_ctx_t *ctx)
 	assert(ctx->save_system_context);
 
 	/* Nothing to do here currently */
-	INFO("Saving system context\n");
+	VERBOSE("Saving system context\n");
 
 	/* Save the global GIC context */
 	arm_gic_save_context_global();
