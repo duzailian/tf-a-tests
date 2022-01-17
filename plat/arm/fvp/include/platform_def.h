@@ -57,6 +57,11 @@
 #define NOR_FLASH_BLOCKS_COUNT		255
 #define FLASH_SIZE			(NOR_FLASH_BLOCK_SIZE * NOR_FLASH_BLOCKS_COUNT)
 
+/**********************************
+ * Address to test invalid accesses
+ **********************************/
+#define SECURE_ACCESS_TEST_ADDRESS	0x04000000
+
 /*******************************************************************************
  * Base address and size for the FIP that contains FWU images.
  ******************************************************************************/
