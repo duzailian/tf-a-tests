@@ -654,6 +654,8 @@
 #define ESR_EC_SHIFT			U(26)
 #define ESR_EC_MASK			U(0x3f)
 #define ESR_EC_LENGTH			U(6)
+#define ESR_ISS_SHIFT			U(0x0)
+#define ESR_ISS_MASK			U(0xffffff)
 #define EC_UNKNOWN			U(0x0)
 #define EC_WFE_WFI			U(0x1)
 #define EC_AARCH32_CP15_MRC_MCR		U(0x3)
@@ -688,6 +690,7 @@
 #define ESR_ISS_EABORT_EA_BIT		U(9)
 
 #define EC_BITS(x)			(((x) >> ESR_EC_SHIFT) & ESR_EC_MASK)
+#define ISS_BITS(x)			(((x) >> ESR_ISS_SHIFT) & ESR_ISS_MASK)
 
 /* Reset bit inside the Reset management register for EL3 (RMR_EL3) */
 #define RMR_RESET_REQUEST_SHIFT 	U(0x1)
