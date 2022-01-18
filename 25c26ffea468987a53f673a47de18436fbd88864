@@ -50,6 +50,29 @@
       "message": "nitpick: for robustness, since this address is mapped as RW, can we check for write access, which should also lead to sync abort",
       "revId": "25c26ffea468987a53f673a47de18436fbd88864",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18549808_1c218951",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2022-01-18T21:11:36Z",
+      "side": 1,
+      "message": "if this read from memory gets executed speculatively, it is possible that we might end up getting an SError. This is marked as normal memory so a core is free to order it before the call to register_custom_sync_exception handler. on aggressively out of order cores, you might not see the abort handler being called. Likely need a barrier between registration and dereference of test address.\nSame for after the access. access can be ordered after unregister_custom_sync and then you wont have a handler if core reorders the access.",
+      "range": {
+        "startLine": 36,
+        "startChar": 24,
+        "endLine": 36,
+        "endChar": 36
+      },
+      "revId": "25c26ffea468987a53f673a47de18436fbd88864",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
