@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c49996b1_e98e81b7",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-01-18T16:27:36Z",
+      "side": 1,
+      "message": "On Arm CCA enabled HW, do we expect a synchronous external abort because of the TZC, or a GPF?\nIs this worth checking ESR_EL2.DFSC?",
+      "revId": "25c26ffea468987a53f673a47de18436fbd88864",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a224d1c_49cf3a1f",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-01-18T16:27:36Z",
+      "side": 1,
+      "message": "Does it make sense to actually check a flag or counter to prove that data_abort_handler has been called?",
+      "revId": "25c26ffea468987a53f673a47de18436fbd88864",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
