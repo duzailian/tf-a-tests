@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4708e388_d4b51d45",
+        "filename": "lib/exceptions/sync.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-01-18T18:18:53Z",
+      "side": 1,
+      "message": "Instead of guarding whole implementation under this macro. Will it makes sense to move this file under lib/exceptions/aarch64?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 18
+      },
+      "revId": "6f19c68d17ca4a393304b1f240764eceabf7af80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e3a1cd30_a76a2e15",
         "filename": "lib/exceptions/sync.c",
         "patchSetId": 5
@@ -43,6 +66,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8b170c56_a8569c11",
+        "filename": "lib/exceptions/sync.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-01-18T18:18:53Z",
+      "side": 1,
+      "message": "Commenting on this operation would be helpful.",
+      "range": {
+        "startLine": 38,
+        "startChar": 2,
+        "endLine": 38,
+        "endChar": 29
+      },
+      "revId": "6f19c68d17ca4a393304b1f240764eceabf7af80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e7d8b6b4_46e4a6d9",
         "filename": "tftf/framework/aarch64/exceptions.S",
         "patchSetId": 5
@@ -59,6 +105,52 @@
         "startChar": 17,
         "endLine": 2,
         "endChar": 21
+      },
+      "revId": "6f19c68d17ca4a393304b1f240764eceabf7af80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8b5a009_3b033471",
+        "filename": "tftf/framework/aarch64/exceptions.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-01-18T18:18:53Z",
+      "side": 1,
+      "message": "nit: insert tab",
+      "range": {
+        "startLine": 106,
+        "startChar": 4,
+        "endLine": 106,
+        "endChar": 5
+      },
+      "revId": "6f19c68d17ca4a393304b1f240764eceabf7af80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d52131f_4c03f8e3",
+        "filename": "tftf/framework/aarch64/exceptions.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-01-18T18:18:53Z",
+      "side": 1,
+      "message": "nit: insert tab",
+      "range": {
+        "startLine": 110,
+        "startChar": 2,
+        "endLine": 110,
+        "endChar": 3
       },
       "revId": "6f19c68d17ca4a393304b1f240764eceabf7af80",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
