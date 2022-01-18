@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bd443bb_e950affd",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-01-18T16:17:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d3216c7_02c37981",
+      "revId": "5368db61e7dee19d7002ea83eeba698d90d5f70b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "03470848_139d6935",
@@ -31,6 +49,30 @@
       "writtenOn": "2022-01-18T14:43:14Z",
       "side": 1,
       "message": "VERBOSE?",
+      "range": {
+        "startLine": 20,
+        "startChar": 1,
+        "endLine": 20,
+        "endChar": 5
+      },
+      "revId": "5368db61e7dee19d7002ea83eeba698d90d5f70b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dabf4e0c_d3e0d823",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-01-18T16:17:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "03470848_139d6935",
       "range": {
         "startLine": 20,
         "startChar": 1,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0a84895_d517af6e",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-01-18T16:17:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e58357ce_a0614324",
+      "range": {
+        "startLine": 30,
+        "startChar": 33,
+        "endLine": 30,
+        "endChar": 35
+      },
+      "revId": "5368db61e7dee19d7002ea83eeba698d90d5f70b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c37b754c_420dcc1a",
@@ -77,6 +143,30 @@
       "writtenOn": "2022-01-18T14:43:14Z",
       "side": 1,
       "message": "VERBOSE?",
+      "range": {
+        "startLine": 34,
+        "startChar": 1,
+        "endLine": 34,
+        "endChar": 21
+      },
+      "revId": "5368db61e7dee19d7002ea83eeba698d90d5f70b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3ec8185_6dea9b22",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-01-18T16:17:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c37b754c_420dcc1a",
       "range": {
         "startLine": 34,
         "startChar": 1,
