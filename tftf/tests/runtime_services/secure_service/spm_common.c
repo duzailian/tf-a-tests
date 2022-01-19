@@ -374,7 +374,7 @@ bool memory_retrieve(struct mailbox_buffers *mb,
 	    FFA_INSTRUCTION_ACCESS_NX,
 	    FFA_MEMORY_NORMAL_MEM,
 	    FFA_MEMORY_CACHE_WRITE_BACK,
-	    FFA_MEMORY_OUTER_SHAREABLE);
+	    FFA_MEMORY_INNER_SHAREABLE);
 
 	ret = ffa_mem_retrieve_req(descriptor_size, descriptor_size);
 
