@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9626d597_23a7d753",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-01-20T14:13:32Z",
+      "side": 1,
+      "message": "V+1 propagated from https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/13038",
+      "revId": "a65a907146dd93557ac7aa2584cd2e6f626dd975",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
