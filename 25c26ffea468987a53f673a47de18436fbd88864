@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "47574b66_38f0a114",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-01-21T10:36:28Z",
+      "side": 1,
+      "message": "Based on the test address definition (points to Trusted SRAM) the data abort type is synchronous external abort because the target implements a slave side filter gating a non-secure access request.\nTo be clear the test does not exercise the TZC400 or the GPC. This is perfectly ok but just wanted to emphasize it, perhaps fez comments or a commit message update is worth.",
+      "parentUuid": "c49996b1_e98e81b7",
+      "revId": "25c26ffea468987a53f673a47de18436fbd88864",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1a224d1c_49cf3a1f",
         "filename": "tftf/tests/misc_tests/test_invalid_access.c",
         "patchSetId": 5
@@ -65,6 +83,30 @@
       "writtenOn": "2022-01-18T21:11:36Z",
       "side": 1,
       "message": "if this read from memory gets executed speculatively, it is possible that we might end up getting an SError. This is marked as normal memory so a core is free to order it before the call to register_custom_sync_exception handler. on aggressively out of order cores, you might not see the abort handler being called. Likely need a barrier between registration and dereference of test address.\nSame for after the access. access can be ordered after unregister_custom_sync and then you wont have a handler if core reorders the access.",
+      "range": {
+        "startLine": 36,
+        "startChar": 24,
+        "endLine": 36,
+        "endChar": 36
+      },
+      "revId": "25c26ffea468987a53f673a47de18436fbd88864",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a34b0876_f5074a33",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-01-21T10:36:28Z",
+      "side": 1,
+      "message": "Agree on the need for barriers.\n\n\u003eif this read from memory gets executed speculatively, it is possible that we might end up getting an SError.\nJust curious, why an SError rather than a sync external abort from the TZC (but too early as you say because the handler is not yet registered)? If an SError is triggered it\u0027s possible it\u0027s not caught because of PSTATE.A is masked. If unmasked it would result in calling the SError exception handler (aka unhandled exception)?",
+      "parentUuid": "18549808_1c218951",
       "range": {
         "startLine": 36,
         "startChar": 24,
