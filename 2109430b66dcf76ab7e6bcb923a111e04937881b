@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfe78424_d3c64e5d",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2022-01-21T18:57:31Z",
+      "side": 1,
+      "message": "typo: world",
+      "range": {
+        "startLine": 431,
+        "startChar": 13,
+        "endLine": 431,
+        "endChar": 17
+      },
+      "revId": "2109430b66dcf76ab7e6bcb923a111e04937881b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df82b1d5_ee1c0b72",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2022-01-21T18:57:31Z",
+      "side": 1,
+      "message": "This function does the same thing as test_ffa_secondary_core_direct_realm_msg. Are you planning to remove test_ffa_secondary_core_direct_realm_msg?",
+      "range": {
+        "startLine": 522,
+        "startChar": 14,
+        "endLine": 522,
+        "endChar": 49
+      },
+      "revId": "2109430b66dcf76ab7e6bcb923a111e04937881b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
