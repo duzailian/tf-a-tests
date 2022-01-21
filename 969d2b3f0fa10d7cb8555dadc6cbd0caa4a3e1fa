@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c50a7787_bf7fdc05",
+        "filename": "include/runtime_services/cactus_test_cmds.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000715
+      },
+      "writtenOn": "2022-01-21T09:52:22Z",
+      "side": 1,
+      "message": "it seems Joao had the same idea in this patch:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/13046/3/include/runtime_services/cactus_test_cmds.h",
+      "revId": "969d2b3f0fa10d7cb8555dadc6cbd0caa4a3e1fa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
