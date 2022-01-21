@@ -16,6 +16,24 @@
       "message": "Should it be added to tftf/tests/tests-standard.xml?",
       "revId": "1c4be3ff212b4d09187c12667a0efb60fd58ca46",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21531b7d_4b88fc44",
+        "filename": "tftf/tests/tests-invalid-access.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-01-21T13:42:35Z",
+      "side": 1,
+      "message": "test-standard are executed for all the platforms, but since this test has dependency on platform passing some info, i kept it out of it.\nThis test is only executed for fvp platform, look at corresponding CI patach\nhttps://review.trustedfirmware.org/c/ci/tf-a-ci-scripts/+/13508",
+      "parentUuid": "f515bafd_d8c2c88b",
+      "revId": "1c4be3ff212b4d09187c12667a0efb60fd58ca46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
