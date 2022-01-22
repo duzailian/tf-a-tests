@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "535f8e02_450dff94",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2022-01-22T05:42:31Z",
+      "side": 1,
+      "message": "On CCA, this should result in GPF sync exception no, since the GPC fails?",
+      "parentUuid": "47574b66_38f0a114",
+      "revId": "25c26ffea468987a53f673a47de18436fbd88864",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1a224d1c_49cf3a1f",
         "filename": "tftf/tests/misc_tests/test_invalid_access.c",
         "patchSetId": 5
@@ -107,6 +125,30 @@
       "side": 1,
       "message": "Agree on the need for barriers.\n\n\u003eif this read from memory gets executed speculatively, it is possible that we might end up getting an SError.\nJust curious, why an SError rather than a sync external abort from the TZC (but too early as you say because the handler is not yet registered)? If an SError is triggered it\u0027s possible it\u0027s not caught because of PSTATE.A is masked. If unmasked it would result in calling the SError exception handler (aka unhandled exception)?",
       "parentUuid": "18549808_1c218951",
+      "range": {
+        "startLine": 36,
+        "startChar": 24,
+        "endLine": 36,
+        "endChar": 36
+      },
+      "revId": "25c26ffea468987a53f673a47de18436fbd88864",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e7ca42a_17e6ed0a",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2022-01-22T05:42:31Z",
+      "side": 1,
+      "message": "Serror could happen due to the load executing speculatively (since address is marked as normal memory) or the core deciding to prefetch the memory into cache in anticipation of the load and the request for the cache line is sent out to memory, but the access violates TZC policy and an error response is sent back. There is no committed load in the core yet to peg the error response to, so the core may decide to map it as an SError.\n\nAnd i think i want to take back my comment about requiring barriers. In general each core should perceive its memory accesses as occurring in program order (reorder buffer should commit everything in program order) and the compiler should not move things across the volatile access...so i think we may be fine without barriers..",
+      "parentUuid": "a34b0876_f5074a33",
       "range": {
         "startLine": 36,
         "startChar": 24,
