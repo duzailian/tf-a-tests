@@ -33,6 +33,24 @@
       "message": "Code(owner) review should not be done by the author ",
       "revId": "91072955472f3a44cb9bee95bcbbd40039db0cf8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f49e0f4_873c19ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-01-24T11:51:43Z",
+      "side": 1,
+      "message": "got it",
+      "parentUuid": "b9b68e7f_8e36de96",
+      "revId": "91072955472f3a44cb9bee95bcbbd40039db0cf8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
