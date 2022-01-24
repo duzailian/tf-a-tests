@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "205a6fe9_4a3c7ea3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-01-24T09:48:26Z",
+      "side": 1,
+      "message": "no uppercase in title\nuse normal world rather than NS, or abbreviated nwd\nand secure world (abbrev. swd)",
+      "range": {
+        "startLine": 7,
+        "startChar": 12,
+        "endLine": 7,
+        "endChar": 39
+      },
+      "revId": "f92e76c6584e9586e2423e338071975799208f8d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f42d6538_e794542d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-01-24T09:48:26Z",
+      "side": 1,
+      "message": "needs a blank here",
+      "revId": "f92e76c6584e9586e2423e338071975799208f8d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54b855f3_acc8482f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-01-24T09:48:26Z",
+      "side": 1,
+      "message": "nit: configure git to use your full name",
+      "range": {
+        "startLine": 13,
+        "startChar": 15,
+        "endLine": 13,
+        "endChar": 23
+      },
+      "revId": "f92e76c6584e9586e2423e338071975799208f8d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24b4dd6e_5d8c71d2",
+        "filename": "tftf/tests/tests-realm-payload.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-01-24T09:48:26Z",
+      "side": 1,
+      "message": "nit: remove space",
+      "range": {
+        "startLine": 19,
+        "startChar": 69,
+        "endLine": 19,
+        "endChar": 70
+      },
+      "revId": "f92e76c6584e9586e2423e338071975799208f8d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
