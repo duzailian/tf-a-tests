@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7da155dd_631a9374",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-01-24T21:29:04Z",
+      "side": 1,
+      "message": "ISS is 25 bits long. Should this mask be U(0x1ffffff)",
+      "revId": "5dd6b549d568ec3cabf88c011d8ceeafe92803cb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
