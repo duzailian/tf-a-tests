@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b74f30ff_f0210eb0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-01-24T12:33:16Z",
+      "side": 1,
+      "message": "Can you add a bit more context in the commit message? And about what the change exactly does?",
+      "revId": "bea0f9f0acb25844da04dd0f3d19f33d426e32e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b823d94f_50c8c7ef",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-01-24T12:33:16Z",
+      "side": 1,
+      "message": "Do you recall the reason for NS-BL1U rw region size increase?",
+      "revId": "bea0f9f0acb25844da04dd0f3d19f33d426e32e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
