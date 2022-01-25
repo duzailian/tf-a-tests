@@ -25,6 +25,82 @@ struct ffa_uuid {
 	const uint32_t uuid[4];
 };
 
+/** Length in bytes of the name in ffa_boot_nvs. */
+#define FFA_BOOT_INFO_NAME_LEN 16
+
+struct ffa_boot_info_desc {
+	char name[FFA_BOOT_INFO_NAME_LEN];
+	uint8_t type;
+	uint8_t reserved;
+	uint16_t flags;
+	uint32_t size;
+	uint64_t content;
+};
+
+/* IMPDEF boot info type mask. */
+#define FFA_BOOT_INFO_TYPE_IMPDEF_MASK UINT8_C(1 << 7)
+
+/** Standard boot info types. */
+#define FFA_BOOT_INFO_TYPE_MASK UINT8_C(0x7F)
+#define FFA_BOOT_INFO_TYPE_FDT UINT8_C(0)
+#define FFA_BOOT_INFO_TYPE_HOB UINT8_C(1)
+#define FFA_BOOT_INFO_TYPE_TPM UINT8_C(2)
+
+/** FF-A Boot Info descriptors flags. */
+#define FFA_BOOT_INFO_FLAG_MBZ_MASK UINT16_C(0xF)
+
+/** Bits [1:0] encode the format of NAME in  ffa_boot_info_desc.*/
+#define FFA_BOOT_INFO_FLAG_NAME_FORMAT_SHIFT 0
+#define FFA_BOOT_INFO_FLAG_NAME_FORMAT_MASK \
+	UINT16_C(0x3 << FFA_BOOT_INFO_FLAG_NAME_FORMAT_SHIFT)
+#define FFA_BOOT_INFO_FLAG_NAME_FORMAT_NAME UINT16_C(0x0)
+#define FFA_BOOT_INFO_FLAG_NAME_FORMAT_UUID UINT16_C(0x1)
+
+/** Bits [3:2] encode the format of NAME in  ffa_boot_info_desc.*/
+#define FFA_BOOT_INFO_FLAG_CONTENT_FORMAT_SHIFT 2
+#define FFA_BOOT_INFO_FLAG_CONTENT_FORMAT_MASK \
+	UINT16_C(0x3 << FFA_BOOT_INFO_FLAG_CONTENT_FORMAT_SHIFT)
+#define FFA_BOOT_INFO_FLAG_CONTENT_FORMAT_VALUE UINT16_C(0x1)
+#define FFA_BOOT_INFO_FLAG_CONTENT_FORMAT_ADDR UINT16_C(0x0)
+
+static inline uint16_t ffa_boot_info_content_format(
+	struct ffa_boot_info_desc *desc)
+{
+	return (desc->flags & FFA_BOOT_INFO_FLAG_CONTENT_FORMAT_MASK) >>
+	       FFA_BOOT_INFO_FLAG_CONTENT_FORMAT_MASK;
+}
+
+static inline uint16_t ffa_boot_info_name_format(
+	struct ffa_boot_info_desc *desc)
+{
+	return (desc->flags & FFA_BOOT_INFO_FLAG_NAME_FORMAT_MASK) >>
+	       FFA_BOOT_INFO_FLAG_NAME_FORMAT_SHIFT;
+}
+
+static inline uint8_t ffa_boot_info_type(struct ffa_boot_info_desc *desc)
+{
+	return (desc->type & FFA_BOOT_INFO_TYPE_MASK);
+}
+
+static inline bool ffa_boot_info_type_impdef(struct ffa_boot_info_desc *desc)
+{
+	return (desc->type & FFA_BOOT_INFO_TYPE_IMPDEF_MASK) != 0;
+}
+
+/** Length in bytes of the signature in the boot descriptor. */
+#define FFA_BOOT_INFO_SIGNATURE_LEN 4 /* bytes */
+
+struct ffa_boot_info_header {
+	uint32_t signature;
+	uint32_t version;
+	uint32_t blob_size;
+	uint32_t desc_size;
+	uint32_t desc_count;
+	uint64_t desc_offset;
+	uint32_t reserved;
+	struct ffa_boot_info_desc boot_info[];
+};
+
 #ifndef __ASSEMBLY__
 
 #include <cassert.h>
