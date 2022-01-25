@@ -33,6 +33,58 @@
       "message": "Do you recall the reason for NS-BL1U rw region size increase?",
       "revId": "bea0f9f0acb25844da04dd0f3d19f33d426e32e7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad50c3e5_3c238b49",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000715
+      },
+      "writtenOn": "2022-01-25T13:33:21Z",
+      "side": 1,
+      "message": "Needed to be increased to fix linker error:\n\naarch64-none-elf-ld: build/fvp/debug/ns_bl1u/ns_bl1u.elf section `xlat_table\u0027 will not fit in region `RAM\u0027\naarch64-none-elf-ld: NS_BL1U\u0027s RW section has exceeded its limit.\naarch64-none-elf-ld: region `RAM\u0027 overflowed by 8192 bytes",
+      "parentUuid": "b823d94f_50c8c7ef",
+      "revId": "bea0f9f0acb25844da04dd0f3d19f33d426e32e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "907d547d_29d2781b",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000715
+      },
+      "writtenOn": "2022-01-25T13:33:21Z",
+      "side": 1,
+      "message": "Needed to be increased to fix linker error:\n\naarch64-none-elf-ld: build/fvp/debug/ns_bl2u/ns_bl2u.elf section `xlat_table\u0027 will not fit in region `RAM\u0027\naarch64-none-elf-ld: NS_BL2U image has exceeded its limit.\naarch64-none-elf-ld: region `RAM\u0027 overflowed by 4096 bytes",
+      "revId": "bea0f9f0acb25844da04dd0f3d19f33d426e32e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45bd79b7_b529c58b",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1000715
+      },
+      "writtenOn": "2022-01-25T13:33:21Z",
+      "side": 1,
+      "message": "empirically found to be the lowest number of page table to have test passing",
+      "revId": "bea0f9f0acb25844da04dd0f3d19f33d426e32e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
