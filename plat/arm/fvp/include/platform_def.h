@@ -57,6 +57,39 @@
 #define NOR_FLASH_BLOCKS_COUNT		255
 #define FLASH_SIZE			(NOR_FLASH_BLOCK_SIZE * NOR_FLASH_BLOCKS_COUNT)
 
+/**********************************
+ * Addresses to test invalid access
+ **********************************/
+/*
+ * The top 16MB (or 64MB if RME is enabled) of DRAM1 is configured as
+ * follows for FVP platform:
+ *   - L1 GPT DRAM: Reserved for L1 GPT if RME is enabled
+ *   - REALM DRAM: Reserved for Realm world if RME is enabled
+ *   - AP TZC DRAM: The remaining TZC secured DRAM reserved for AP use
+ *
+ *              RME enabled(64MB)                RME not enabled(16MB)
+ *              --------------------             -------------------
+ *              |                  |             |                 |
+ *              |  AP TZC (~28MB)  |             |  AP TZC (~14MB) |
+ *              --------------------             -------------------
+ *              |                  |             |                 |
+ *              |  REALM (32MB)    |             |  EL3 TZC (2MB)  |
+ *              --------------------             ------------------- 0xFFFF_FFFF
+ *              |                  |
+ *              |  EL3 TZC (3MB)   |
+ *              --------------------
+ *              |  L1 GPT (1MB)    |
+ *              |                  |
+ *  0xFFFF_FFFF --------------------
+ *
+ *
+ */
+#define INVALID_MEM_ACCESS_TEST_BASE		U(0xFC000000)
+/*  Map top 64MB in tftf to cover both RME/non-RME scenario */
+#define INVALID_MEM_ACCESS_TEST_SIZE		U(0x04000000)
+/* For both RME & non-RME case top 2MB will be EL3 memory */
+#define EL3_MEMORY_ACCESS_ADDR			U(0xFFE00000)
+
 /*******************************************************************************
  * Base address and size for the FIP that contains FWU images.
  ******************************************************************************/
