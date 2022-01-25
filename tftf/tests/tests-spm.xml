@@ -118,11 +118,11 @@
                function="test_ffa_sec_interrupt_sp1_waiting_sp2_running" />
   </testsuite>
 
-  <testsuite name="SMMUv3 tests"
+  <!-- <testsuite name="SMMUv3 tests"
              description="Initiate stage2 translation for streams from upstream peripherals" >
      <testcase name="Check DMA command by SMMUv3TestEngine completes"
                function="test_smmu_spm" />
-  </testsuite>
+  </testsuite> -->
 
   <testsuite name="FF-A Notifications"
              description="Test Notifications functionality" >
