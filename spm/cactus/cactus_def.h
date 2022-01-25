@@ -10,6 +10,12 @@
 #include <utils_def.h>
 
 /*
+ * Register where the address of the boot arguments will be at boot time.
+ * According to the FFA spec, this value should be from x0-x3.
+ */
+#define CACTUS_GP_REG_NUM "x2"
+
+/*
  * Layout of the Secure Partition image.
  */
 
@@ -35,5 +41,9 @@
 #define get_sp_rx_end(sp_id) (CACTUS_RX_BASE + (((sp_id & 0x7FFFU) - 1U) * CACTUS_RX_TX_SIZE) + PAGE_SIZE)
 #define get_sp_tx_start(sp_id) (CACTUS_TX_BASE + (((sp_id & 0x7FFFU) - 1U) * CACTUS_RX_TX_SIZE))
 #define get_sp_tx_end(sp_id) (CACTUS_TX_BASE + (((sp_id & 0x7FFFU) - 1U) * CACTUS_RX_TX_SIZE) + PAGE_SIZE)
+
+/* Size of the Initialization Memory */
+#define CACTUS_INIT_MEM_SIZE		PAGE_SIZE
+
 
 #endif /* CACTUS_DEF_H */

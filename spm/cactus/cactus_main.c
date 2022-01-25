@@ -115,8 +115,11 @@ static const mmap_region_t cactus_mmap[] __attribute__((used)) = {
 	{0}
 };
 
-static void cactus_print_memory_layout(unsigned int vm_id)
+static void cactus_print_memory_layout(unsigned int vm_id,
+				       void *init_descriptor)
 {
+	uint64_t init_add = (uint64_t)init_descriptor;
+
 	INFO("Secure Partition memory layout:\n");
 
 	INFO("  Text region            : %p - %p\n",
@@ -138,6 +141,53 @@ static void cactus_print_memory_layout(unsigned int vm_id)
 	INFO("  TX                     : %p - %p\n",
 		(void *)get_sp_tx_start(vm_id),
 		(void *)get_sp_tx_end(vm_id));
+
+	if (init_descriptor == NULL) {
+		return;
+	}
+
+	NOTICE("  Init Region            : %p - %p\n",
+		(void *)(init_descriptor),
+		(void *)(init_add + CACTUS_INIT_MEM_SIZE));
+
+}
+
+static void cactus_print_boot_info(struct ffa_boot_info_header *info_header)
+{
+	struct ffa_boot_info_desc *boot_info;
+
+	if (info_header == NULL) {
+		NOTICE("SP doesn't have boot arguments!\n");
+		return;
+	}
+
+	VERBOSE("SP boot info:\n");
+	VERBOSE("  Signature: %x\n", info_header->signature);
+	VERBOSE("  Version: %x\n", info_header->version);
+	VERBOSE("  Blob Size: %u\n", info_header->info_blob_size);
+	VERBOSE("  Descriptor Size: %u\n", info_header->desc_size);
+	VERBOSE("  Descriptor Count: %u\n", info_header->desc_count);
+
+	boot_info = info_header->boot_info;
+
+	if (boot_info == NULL) {
+		ERROR("Boot data arguments error...");
+		return;
+	}
+
+	for (uint32_t i = 0; i < info_header->desc_count; i++) {
+		struct ffa_boot_info_desc *current = &boot_info[i];
+		(void) current;
+		VERBOSE("    Boot Data: %s\n", boot_info[i].name);
+		VERBOSE("      Type: %u\n", boot_info[i].type);
+		VERBOSE("      Flags:\n");
+		VERBOSE("        Name Format: %x\n",
+				ffa_boot_info_name_format(&boot_info[i]));
+		VERBOSE("        Content Format: %x\n",
+				ffa_boot_info_content_format(&boot_info[i]));
+		VERBOSE("      Size: %u\n", boot_info[i].size);
+		VERBOSE("      Value: %llx\n", boot_info[i].content);
+	}
 }
 
 static void cactus_plat_configure_mmu(unsigned int vm_id)
@@ -187,6 +237,8 @@ void __dead2 cactus_main(bool primary_cold_boot, uint64_t arg1, uint64_t arg2,
 			 uint64_t arg3, uint64_t arg4)
 {
 	uint32_t current_core_idx = (uint32_t)arg4;
+	struct ffa_boot_info_header *info_header =
+				(struct ffa_boot_info_header *) arg2;
 
 	assert(IS_IN_EL1() != 0);
 
@@ -211,6 +263,12 @@ void __dead2 cactus_main(bool primary_cold_boot, uint64_t arg1, uint64_t arg2,
 
 		/* Configure and enable Stage-1 MMU, enable D-Cache */
 		cactus_plat_configure_mmu(ffa_id);
+
+		if (info_header != NULL) {
+			mmap_add_dynamic_region((unsigned long long)info_header,
+						(uintptr_t)info_header,
+						CACTUS_INIT_MEM_SIZE, MT_RW_DATA);
+		}
 	}
 
 	/*
@@ -255,7 +313,9 @@ void __dead2 cactus_main(bool primary_cold_boot, uint64_t arg1, uint64_t arg2,
 		}
 	}
 
-	cactus_print_memory_layout(ffa_id);
+	cactus_print_boot_info(info_header);
+	NOTICE("FFA id: %u\n", ffa_id);
+	cactus_print_memory_layout(ffa_id, (void *)info_header);
 
 	register_secondary_entrypoint();
 
