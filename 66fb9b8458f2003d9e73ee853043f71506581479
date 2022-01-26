@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ef84863_d4b7d10f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-01-26T14:06:42Z",
+      "side": 1,
+      "message": "Running, legacy CI so all patches in the topic are included",
+      "revId": "66fb9b8458f2003d9e73ee853043f71506581479",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
