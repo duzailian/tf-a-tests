@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f8e2cc9_fa3f90b9",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-01-28T16:39:59Z",
+      "side": 1,
+      "message": "Its not required any more, as both tzc and gpf faults are covered in data_abort_handler()",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 115,
+        "endChar": 1
+      },
+      "revId": "bdddb6a2260cc6a374e1e8a5487cdfb3aac9822a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
