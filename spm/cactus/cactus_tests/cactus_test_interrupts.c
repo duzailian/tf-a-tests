@@ -14,6 +14,14 @@
 
 #include <platform.h>
 
+static int flag_set;
+
+static void sec_wdog_interrupt_handled(void)
+{
+	expect(flag_set, 0);
+	flag_set = 1;
+}
+
 CACTUS_CMD_HANDLER(sleep_cmd, CACTUS_SLEEP_CMD)
 {
 	uint64_t time_lapsed;
@@ -106,15 +114,29 @@ CACTUS_CMD_HANDLER(sleep_twdog_cmd, CACTUS_SLEEP_TRIGGER_TWDOG_CMD)
 {
 	uint64_t time_lapsed;
 	uint32_t sleep_time = cactus_get_sleep_time(*args) / 2;
+	uint64_t time_ms = cactus_get_wdog_trigger_duration(*args);
 
 	VERBOSE("Request to sleep %x for %ums.\n", ffa_dir_msg_dest(*args),
 		sleep_time);
 
+	sp_register_interrupt_tail_end_handler(sec_wdog_interrupt_handled,
+						IRQ_TWDOG_INTID);
 	time_lapsed = sp_sleep_elapsed_time(sleep_time);
+
+	if (flag_set == 0) {
+		/* Test failed. */
+		ERROR("Watchdog interrupt not handled\n");
+		return cactus_error_resp(ffa_dir_msg_dest(*args),
+					 ffa_dir_msg_source(*args),
+					 CACTUS_ERROR_TEST);
+	}
+
+	/* Reset the flag and unregister the handler. */
+	flag_set = 0;
+	sp_unregister_interrupt_tail_end_handler(IRQ_TWDOG_INTID);
 
 	/* Lapsed time should be at least equal to sleep time. */
 	VERBOSE("Sleep complete: %llu\n", time_lapsed);
-	uint64_t time_ms = cactus_get_wdog_trigger_duration(*args);
 
 	VERBOSE("Starting TWDOG: %llums\n", time_ms);
 	sp805_twdog_refresh();
@@ -123,7 +145,21 @@ CACTUS_CMD_HANDLER(sleep_twdog_cmd, CACTUS_SLEEP_TRIGGER_TWDOG_CMD)
 	VERBOSE("2nd Request to sleep %x for %ums.\n", ffa_dir_msg_dest(*args),
 		sleep_time);
 
+	sp_register_interrupt_tail_end_handler(sec_wdog_interrupt_handled,
+						IRQ_TWDOG_INTID);
 	time_lapsed += sp_sleep_elapsed_time(sleep_time);
+
+	if (flag_set == 0) {
+		/* Test failed. */
+		ERROR("Watchdog interrupt not handled\n");
+		return cactus_error_resp(ffa_dir_msg_dest(*args),
+					 ffa_dir_msg_source(*args),
+					 CACTUS_ERROR_TEST);
+	}
+
+	/* Reset the flag and unregister the handler. */
+	flag_set = 0;
+	sp_unregister_interrupt_tail_end_handler(IRQ_TWDOG_INTID);
 
 	/* Lapsed time should be at least equal to sleep time. */
 	VERBOSE("2nd Sleep complete: %llu\n", time_lapsed);
