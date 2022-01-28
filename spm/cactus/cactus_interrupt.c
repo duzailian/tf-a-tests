@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2021-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -58,5 +58,10 @@ void cactus_interrupt_handler(void)
 		ERROR("%s: Interrupt ID %x not handled!\n", __func__,
 			 intid);
 		panic();
+	}
+
+	/* Invoke the tail end handler registered by the SP. */
+	if (sp_interrupt_tail_end_handler[intid]) {
+		sp_interrupt_tail_end_handler[intid]();
 	}
 }
