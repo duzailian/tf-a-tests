@@ -16,6 +16,24 @@
       "message": "There is one SPM-MM test failure, I wonder if it is related\n\n\u003e Executing \u0027SPM NS interrupts test\u0027\n  TEST COMPLETE                                                 Failed\n70: mmap_add_dynamic_region() \u003d -1\n\n\u003e Executing \u0027SPM secondary CPUs sequential test\u0027\n  TEST COMPLETE                                                 Failed\n80: mmap_add_dynamic_region() \u003d -1\n\n\u003e Executing \u0027SPM secondary CPUs simultaneous test\u0027\n  TEST COMPLETE                                                 Failed\n196: mmap_add_dynamic_region() \u003d -1",
       "revId": "dd099d9a228857e2eb01ef31f5a8929e7d22e44a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5df32096_6389f596",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-01-28T14:40:55Z",
+      "side": 1,
+      "message": "Yes it seems to be related, as i tried to map whole top 64MB for testing purpose(for fvp platform), but this test is mapping part of this memory.\nNeed to come up with allow this test to pass.",
+      "parentUuid": "8088b16b_a2103bac",
+      "revId": "dd099d9a228857e2eb01ef31f5a8929e7d22e44a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
