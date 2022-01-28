@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -79,4 +79,40 @@ uint64_t sp_sleep_elapsed_time(uint32_t ms)
 void sp_sleep(uint32_t ms)
 {
 	(void)sp_sleep_elapsed_time(ms);
+}
+
+spinlock_t sp_handler_lock[NUM_VINT_ID];
+
+void sp_handler_spin_lock_init(void)
+{
+	for (uint8_t i = 0; i < NUM_VINT_ID; i++) {
+		init_spinlock(&sp_handler_lock[i]);
+	}
+}
+
+void (*sp_interrupt_tail_end_handler[NUM_VINT_ID])(void);
+
+void sp_register_interrupt_tail_end_handler(void (*handler)(void),
+			uint32_t interrupt_id)
+{
+	if (interrupt_id >= NUM_VINT_ID) {
+		ERROR("Cannot register handler for interrupt %u\n", interrupt_id);
+		panic();
+	}
+
+	spin_lock(&sp_handler_lock[interrupt_id]);
+	sp_interrupt_tail_end_handler[interrupt_id] = handler;
+	spin_unlock(&sp_handler_lock[interrupt_id]);
+}
+
+void sp_unregister_interrupt_tail_end_handler(uint32_t interrupt_id)
+{
+	if (interrupt_id >= NUM_VINT_ID) {
+		ERROR("Cannot unregister handler for interrupt %u\n", interrupt_id);
+		panic();
+	}
+
+	spin_lock(&sp_handler_lock[interrupt_id]);
+	sp_interrupt_tail_end_handler[interrupt_id] = NULL;
+	spin_unlock(&sp_handler_lock[interrupt_id]);
 }
