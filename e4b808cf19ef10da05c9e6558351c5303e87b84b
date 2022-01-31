@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a13be22a_073caadb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-01-31T18:25:38Z",
+      "side": 1,
+      "message": "Only failing test juno-tspd-tbb-mbedtls,juno-default:juno-tftf-r1 passed when rerun https://jenkins.oss.arm.com/job/tf-ci-gateway/111019/",
+      "revId": "e4b808cf19ef10da05c9e6558351c5303e87b84b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
