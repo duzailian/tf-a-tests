@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db03bbc2_b52af686",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-02-01T21:34:04Z",
+      "side": 1,
+      "message": "Run these tests for 10 times",
+      "revId": "90d656bc1b30f2a0de7d5acaa8e2416bf791c987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9af714a3_2d87699f",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-02-01T21:34:04Z",
+      "side": 1,
+      "message": "You can wait the core which is running the test to turn of instead of all secondary cores \"wait_for_core_to_turn_off(mpidr)\"",
+      "range": {
+        "startLine": 538,
+        "startChar": 1,
+        "endLine": 538,
+        "endChar": 37
+      },
+      "revId": "90d656bc1b30f2a0de7d5acaa8e2416bf791c987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
