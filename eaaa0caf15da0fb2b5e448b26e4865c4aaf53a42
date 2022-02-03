@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99201ac1_0be0bdea",
+        "filename": "include/runtime_services/cactus_test_cmds.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-02-03T10:29:48Z",
+      "side": 1,
+      "message": "Add doc comment explaining the aim of the command",
+      "range": {
+        "startLine": 513,
+        "startChar": 1,
+        "endLine": 513,
+        "endChar": 7
+      },
+      "revId": "eaaa0caf15da0fb2b5e448b26e4865c4aaf53a42",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b424485_046cde13",
+        "filename": "spm/cactus/cactus_tests/cactus_test_exceptions.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-02-03T10:29:48Z",
+      "side": 1,
+      "message": "Not a strong suggestion...\nWe could spare this whole test command: \n- The selected bit of logic can be integrated in the cactus_mem_send command handler to capture an invalid memory access.\n- Another error can be added to cactus cmds framework (e.g. CACTUS_ERROR_INVALID_ACCESS), which the cactus SP could send back to tftf in the response.\n- TFTF would determine if the test has been successful if the response has been CACTUS_ERROR with the aforementioned cactus error code.",
+      "range": {
+        "startLine": 74,
+        "startChar": 1,
+        "endLine": 80,
+        "endChar": 1
+      },
+      "revId": "eaaa0caf15da0fb2b5e448b26e4865c4aaf53a42",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e00fe81b_cdd84b0b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_exceptions.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-02-03T10:29:48Z",
+      "side": 1,
+      "message": "CHECK_SPMC_TESTING_SETUP instead?",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 2
+      },
+      "revId": "eaaa0caf15da0fb2b5e448b26e4865c4aaf53a42",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
