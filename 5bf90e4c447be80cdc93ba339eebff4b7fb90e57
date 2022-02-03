@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26ed9b4b_cccfe7ff",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-02-03T17:41:07Z",
+      "side": 1,
+      "message": "nit: should be Ext. Data Abort\nbecause it is not necessarily triggered by the TZC e.g. for the Trusted SRAM abort originates from the interconnect decoding logic.",
+      "range": {
+        "startLine": 48,
+        "startChar": 16,
+        "endLine": 48,
+        "endChar": 30
+      },
+      "revId": "5bf90e4c447be80cdc93ba339eebff4b7fb90e57",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
