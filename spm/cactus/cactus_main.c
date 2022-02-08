@@ -47,17 +47,19 @@ ffa_id_t g_ffa_id;
  *
  */
 
-static void __dead2 message_loop(ffa_id_t vm_id, struct mailbox_buffers *mb)
+static void __dead2 message_loop(ffa_id_t vm_id, struct mailbox_buffers *mb,
+				uint32_t vcpu_id)
 {
 	smc_ret_values ffa_ret;
 	ffa_id_t destination;
 
-	/*
-	* This initial wait call is necessary to inform SPMD that
-	* SP initialization has completed. It blocks until receiving
-	* a direct message request.
-	*/
+	INFO("Waiting for messages in core: %x\n", vcpu_id);
 
+	/*
+	 * This initial wait call is necessary to inform SPMD that
+	 * SP initialization has completed. It blocks until receiving
+	 * a direct message request.
+	 */
 	ffa_ret = ffa_msg_wait();
 
 	for (;;) {
@@ -190,6 +192,9 @@ int tftf_irq_handler_dispatcher(void)
 
 void __dead2 cactus_main(bool primary_cold_boot)
 {
+	register uint64_t CURRENT_VCPU_ID __asm__(CACTUS_GP_VCPU_ID);
+	uint32_t current_vcpu_id = (uint32_t) CURRENT_VCPU_ID;
+
 	assert(IS_IN_EL1() != 0);
 
 	struct mailbox_buffers mb;
@@ -243,8 +248,8 @@ void __dead2 cactus_main(bool primary_cold_boot)
 	}
 
 	/* Below string is monitored by CI expect script. */
-	NOTICE("Booting Secure Partition (ID: %x)\n%s\n%s\n",
-		ffa_id, build_message, version_string);
+	NOTICE("Booting Secure Partition (ID: %x; vCPU: %x)\n%s\n%s\n",
+		ffa_id, current_vcpu_id, build_message, version_string);
 
 	if (ffa_id == (SPM_VM_ID_FIRST + 2)) {
 		VERBOSE("Mapping RXTX Region\n");
@@ -266,7 +271,7 @@ void __dead2 cactus_main(bool primary_cold_boot)
 
 msg_loop:
 	/* End up to message loop */
-	message_loop(ffa_id, &mb);
+	message_loop(ffa_id, &mb, current_vcpu_id);
 
 	/* Not reached */
 }
