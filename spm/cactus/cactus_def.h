@@ -36,4 +36,7 @@
 #define get_sp_tx_start(sp_id) (CACTUS_TX_BASE + (((sp_id & 0x7FFFU) - 1U) * CACTUS_RX_TX_SIZE))
 #define get_sp_tx_end(sp_id) (CACTUS_TX_BASE + (((sp_id & 0x7FFFU) - 1U) * CACTUS_RX_TX_SIZE) + PAGE_SIZE)
 
+/* GP registers that Cactus expects to receive some information. */
+#define CACTUS_GP_CORE_IDX "x4"
+
 #endif /* CACTUS_DEF_H */
