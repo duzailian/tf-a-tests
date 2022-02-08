@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -47,17 +47,19 @@ ffa_id_t g_ffa_id;
  *
  */
 
-static void __dead2 message_loop(ffa_id_t vm_id, struct mailbox_buffers *mb)
+static void __dead2 message_loop(ffa_id_t vm_id, struct mailbox_buffers *mb,
+				uint32_t core_idx)
 {
 	smc_ret_values ffa_ret;
 	ffa_id_t destination;
 
-	/*
-	* This initial wait call is necessary to inform SPMD that
-	* SP initialization has completed. It blocks until receiving
-	* a direct message request.
-	*/
+	VERBOSE("Waiting for messages in core: %x\n", core_idx);
 
+	/*
+	 * This initial wait call is necessary to inform SPMC that
+	 * SP initialization has completed. It blocks until receiving
+	 * a direct message request.
+	 */
 	ffa_ret = ffa_msg_wait();
 
 	for (;;) {
@@ -181,8 +183,11 @@ static void register_secondary_entrypoint(void)
 	tftf_smc(&args);
 }
 
-void __dead2 cactus_main(bool primary_cold_boot)
+void __dead2 cactus_main(bool primary_cold_boot, uint64_t arg1, uint64_t arg2,
+			 uint64_t arg3, uint64_t arg4)
 {
+	uint32_t current_core_idx = (uint32_t)arg4;
+
 	assert(IS_IN_EL1() != 0);
 
 	struct mailbox_buffers mb;
@@ -236,8 +241,8 @@ void __dead2 cactus_main(bool primary_cold_boot)
 	}
 
 	/* Below string is monitored by CI expect script. */
-	NOTICE("Booting Secure Partition (ID: %x)\n%s\n%s\n",
-		ffa_id, build_message, version_string);
+	NOTICE("Booting Secure Partition (ID: %x; core: %x)\n%s\n%s\n",
+		ffa_id, current_core_idx, build_message, version_string);
 
 	if (ffa_id == (SPM_VM_ID_FIRST + 2)) {
 		VERBOSE("Mapping RXTX Region\n");
@@ -259,7 +264,7 @@ void __dead2 cactus_main(bool primary_cold_boot)
 
 msg_loop:
 	/* End up to message loop */
-	message_loop(ffa_id, &mb);
+	message_loop(ffa_id, &mb, current_core_idx);
 
 	/* Not reached */
 }
