@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2afda2a5_937d2c8e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-02-09T18:43:23Z",
+      "side": 1,
+      "message": "can we rename this to \"prevent el3/Root region access from nwd\" for more readability",
+      "revId": "876e6177ceb49b88ebc1240bf0065eceb7f13354",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
