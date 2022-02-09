@@ -81,6 +81,24 @@
       "parentUuid": "c26be667_1465fd01",
       "revId": "73e9bb734d6838936aa7638a746f80860d565875",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bb13faa_4553a7bd",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-02-09T17:05:47Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8b215c50_4f3bda72",
+      "revId": "73e9bb734d6838936aa7638a746f80860d565875",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
