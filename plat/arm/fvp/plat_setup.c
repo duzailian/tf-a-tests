@@ -35,7 +35,12 @@ static const mmap_region_t mmap[] = {
 #endif
 	MAP_REGION_FLAT(DRAM_BASE, TFTF_BASE - DRAM_BASE, MT_MEMORY | MT_RW | MT_NS),
 	/* Not usable in tftf, Only for testing purpose */
+#ifdef EL3_MEMORY_ACCESS_ADDR
 	MAP_REGION_FLAT(EL3_MEMORY_ACCESS_ADDR, PAGE_SIZE, MT_MEMORY | MT_RW | MT_NS),
+#endif
+#ifdef SECURE_MEMORY_ACCESS_ADDR
+	MAP_REGION_FLAT(SECURE_MEMORY_ACCESS_ADDR, PAGE_SIZE, MT_MEMORY | MT_RW | MT_NS),
+#endif
 	{0}
 };
 #endif	/* IMAGE_NS_BL1U */
