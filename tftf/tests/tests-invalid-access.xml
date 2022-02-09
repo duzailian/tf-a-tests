@@ -12,5 +12,7 @@
                 function="access_el3_memory_from_ns" />
       <testcase name="Access Realm memory from NS world"
                 function="rl_memory_cannot_be_accessed_in_ns" />
+      <testcase name="Access Secure memory from NS world"
+                function="s_memory_cannot_be_accessed_in_ns" />
   </testsuite>
 </testsuites>
