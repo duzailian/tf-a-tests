@@ -38,3 +38,28 @@ u_register_t realm_granule_undelegate(u_register_t add)
 	ret = tftf_smc(&args);
 	return ret.ret0;
 }
+
+u_register_t realm_granule_create(u_register_t rd_addr, u_register_t realm_params_addr)
+{
+	smc_args args = { 0 };
+	smc_ret_values ret;
+
+	args.fid = SMC_RMM_GRANULE_CREATE;
+	args.arg1 = rd_addr;
+	args.arg2 = realm_params_addr;
+
+	ret = tftf_smc(&args);
+	return ret.ret0;
+}
+
+u_register_t realm_granule_destroy(u_register_t rd_addr)
+{
+	smc_args args = { 0 };
+	smc_ret_values ret;
+
+	args.fid = SMC_RMM_GRANULE_DESTROY;
+	args.arg1 = rd_addr;
+
+	ret = tftf_smc(&args);
+	return ret.ret0;
+}
