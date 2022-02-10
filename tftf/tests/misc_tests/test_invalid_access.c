@@ -41,6 +41,7 @@ static volatile bool data_abort_triggered;
 
 static __aligned(PAGE_SIZE) uint64_t share_page[PAGE_SIZE / sizeof(uint64_t)];
 
+
 static bool data_abort_handler(void)
 {
 	uint64_t esr_elx = IS_IN_EL2() ? read_esr_el2() : read_esr_el1();
@@ -192,6 +193,49 @@ test_result_t s_memory_cannot_be_accessed_in_ns(void)
 	return TEST_RESULT_SUCCESS;
 }
 
+test_result_t memory_cannot_be_accessed_in_rl(u_register_t params)
+{
+	u_register_t retrmm;
+	static char rd[GRANULE_SIZE] __aligned(GRANULE_SIZE);
+
+	SKIP_TEST_IF_INVALID_ADDRESS(params);
+	retrmm = realm_granule_delegate((u_register_t)&rd[0]);
+	if (retrmm != 0UL) {
+		ERROR("Delegate operation returns fail, %lx\n", retrmm);
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Create a realm using a parameter in a secure physical address space should fail. */
+	retrmm = realm_granule_create((u_register_t)&rd[0], params);
+	if (retrmm == 0UL) {
+		ERROR("Realm create operation should fail, %lx\n", retrmm);
+		retrmm = realm_granule_destroy((u_register_t)&rd[0]);
+		if (retrmm != 0UL) {
+			ERROR("Delegate destroy operation returns fail, %lx\n", retrmm);
+			return TEST_RESULT_FAIL;
+		}
+		return TEST_RESULT_FAIL;
+	/* The error code 513 is the packed version of rmm error {STATUS_ERROR_INPUT,2}. */
+	}else if (retrmm != 513) {
+		ERROR("Realm create operation should fail with cod:513 retrmm:%ld\n", retrmm);
+		return TEST_RESULT_FAIL;
+	}
+
+	retrmm = realm_granule_undelegate((u_register_t)&rd[0]);
+	if (retrmm != 0UL) {
+		INFO("Undelegate operation returns fail, %lx\n", retrmm);
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t s_memory_cannot_be_accessed_in_rl(void)
+{
+	u_register_t params = (u_register_t)SECURE_MEMORY_ACCESS_ADDR;
+	return memory_cannot_be_accessed_in_rl(params);
+}
+
 #else
 
 test_result_t access_el3_memory_from_ns(void)
@@ -211,4 +255,11 @@ test_result_t s_memory_cannot_be_accessed_in_ns(void)
 	tftf_testcase_printf("Test not ported to AArch32\n");
 	return TEST_RESULT_SKIPPED;
 }
+
+test_result_t s_memory_cannot_be_accessed_in_rl(void)
+{
+	tftf_testcase_printf("Test not ported to AArch32\n");
+	return TEST_RESULT_SKIPPED;
+}
+
 #endif /* __aarch64__ */
