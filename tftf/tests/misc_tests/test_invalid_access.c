@@ -30,10 +30,13 @@
  */
 #ifdef __aarch64__
 
+
+#define STATUS_ERROR_INPUT		513UL
 static volatile bool sync_exception_triggered;
 static volatile bool data_abort_triggered;
 
 static __aligned(PAGE_SIZE) uint64_t share_page[PAGE_SIZE / sizeof(uint64_t)];
+
 
 static bool data_abort_handler(void)
 {
@@ -207,6 +210,67 @@ test_result_t s_memory_cannot_be_accessed_in_ns(void)
 	return TEST_RESULT_SUCCESS;
 }
 
+test_result_t memory_cannot_be_accessed_in_rl(u_register_t params)
+{
+	u_register_t retrmm;
+	static char rd[GRANULE_SIZE] __aligned(GRANULE_SIZE);
+
+	if (get_armv9_2_feat_rme_support() == 0U) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	retrmm = realm_version();
+
+	VERBOSE("RMM version is: %lu.%lu\n",
+			RMI_ABI_VERSION_GET_MAJOR(retrmm),
+			RMI_ABI_VERSION_GET_MINOR(retrmm));
+
+	/*
+	 * TODO: Remove this once SMC_RMM_REALM_CREATE is implemented in TRP
+	 * For the moment skip the test if RMM is TRP, TRP version is always null.
+	 */
+	if (retrmm == 0U) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	retrmm = realm_granule_delegate((u_register_t)&rd[0]);
+	if (retrmm != 0UL) {
+		ERROR("Delegate operation returns fail, %lx\n", retrmm);
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Create a realm using a parameter in a secure physical address space should fail. */
+	retrmm = realm_create((u_register_t)&rd[0], params);
+	if (retrmm == 0UL) {
+		ERROR("Realm create operation should fail, %lx\n", retrmm);
+		retrmm = realm_destroy((u_register_t)&rd[0]);
+		if (retrmm != 0UL) {
+			ERROR("Delegate destroy operation returns fail, %lx\n", retrmm);
+			return TEST_RESULT_FAIL;
+		}
+		return TEST_RESULT_FAIL;
+	/* The error code 513 is the packed version of rmm error {STATUS_ERROR_INPUT,2}. */
+	} else if (retrmm != STATUS_ERROR_INPUT) {
+		ERROR("Realm create operation should fail with code:%ld retrmm:%ld\n",
+		STATUS_ERROR_INPUT, retrmm);
+		return TEST_RESULT_FAIL;
+	}
+
+	retrmm = realm_granule_undelegate((u_register_t)&rd[0]);
+	if (retrmm != 0UL) {
+		INFO("Undelegate operation returns fail, %lx\n", retrmm);
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t s_memory_cannot_be_accessed_in_rl(void)
+{
+	u_register_t params = (u_register_t)SECURE_MEMORY_ACCESS_ADDR;
+	return memory_cannot_be_accessed_in_rl(params);
+}
+
 #else
 
 test_result_t access_el3_memory_from_ns(void)
@@ -226,4 +290,11 @@ test_result_t s_memory_cannot_be_accessed_in_ns(void)
 	tftf_testcase_printf("Test not ported to AArch32\n");
 	return TEST_RESULT_SKIPPED;
 }
+
+test_result_t s_memory_cannot_be_accessed_in_rl(void)
+{
+	tftf_testcase_printf("Test not ported to AArch32\n");
+	return TEST_RESULT_SKIPPED;
+}
+
 #endif /* __aarch64__ */
