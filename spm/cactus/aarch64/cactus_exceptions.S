@@ -104,7 +104,7 @@ func sync_exception_vector_entry
 	sub	sp, sp, #0x100
 	save_gp_regs
 	mov	x19, sp
-	bl	cactus_sync_exception_handler
+	bl	tftf_sync_exception_handler
 	cbnz	x0, 0f
 	mov x0, x19
 	/* Save original stack pointer value on the stack */
