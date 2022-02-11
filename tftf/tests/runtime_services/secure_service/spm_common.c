@@ -350,7 +350,8 @@ unsigned int get_ffa_feature_test_target(
 
 bool memory_retrieve(struct mailbox_buffers *mb,
 		     struct ffa_memory_region **retrieved, uint64_t handle,
-		     ffa_id_t sender, ffa_id_t receiver)
+		     ffa_id_t sender, ffa_id_t receiver,
+		     ffa_memory_region_flags_t flags)
 {
 	smc_ret_values ret;
 	uint32_t fragment_size;
