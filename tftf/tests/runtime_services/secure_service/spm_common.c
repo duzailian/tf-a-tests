@@ -363,7 +363,7 @@ bool memory_retrieve(struct mailbox_buffers *mb,
 	}
 
 	descriptor_size = ffa_memory_retrieve_request_init(
-	    mb->send, handle, sender, receiver, 0, flags,
+	    mb->send, handle, sender, receiver, 0, 0,
 	    FFA_DATA_ACCESS_RW,
 	    FFA_INSTRUCTION_ACCESS_NX,
 	    FFA_MEMORY_NORMAL_MEM,
