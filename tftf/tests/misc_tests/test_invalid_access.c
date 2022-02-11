@@ -236,6 +236,12 @@ test_result_t s_memory_cannot_be_accessed_in_rl(void)
 	return memory_cannot_be_accessed_in_rl(params);
 }
 
+test_result_t rt_memory_cannot_be_accessed_in_rl(void)
+{
+	u_register_t params = (u_register_t)EL3_MEMORY_ACCESS_ADDR;
+	return memory_cannot_be_accessed_in_rl(params);
+}
+
 #else
 
 test_result_t access_el3_memory_from_ns(void)
@@ -257,6 +263,12 @@ test_result_t s_memory_cannot_be_accessed_in_ns(void)
 }
 
 test_result_t s_memory_cannot_be_accessed_in_rl(void)
+{
+	tftf_testcase_printf("Test not ported to AArch32\n");
+	return TEST_RESULT_SKIPPED;
+}
+
+test_result_t rt_memory_cannot_be_accessed_in_rl(void)
 {
 	tftf_testcase_printf("Test not ported to AArch32\n");
 	return TEST_RESULT_SKIPPED;
