@@ -98,3 +98,57 @@ test_result_t rl_memory_cannot_be_accessed_in_s(void)
 
 	return TEST_RESULT_SUCCESS;
 }
+
+test_result_t rt_memory_cannot_be_accessed_in_s(void)
+{
+	const uintptr_t test_address = EL3_MEMORY_ACCESS_ADDR;
+	SKIP_TEST_IF_INVALID_ADDRESS(test_address);
+	struct ffa_memory_region_constituent constituents[] = {
+		{
+			(void *)test_address, 1, 0
+		}
+	};
+	const uint32_t constituents_count = sizeof(constituents) /
+		sizeof(struct ffa_memory_region_constituent);
+	ffa_memory_handle_t handle;
+	struct mailbox_buffers mb;
+	smc_ret_values ret;
+
+	if (get_armv9_2_feat_rme_support() == 0U) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	SKIP_TEST_IF_FFA_VERSION_LESS_THAN(1, 1);
+
+	GET_TFTF_MAILBOX(mb);
+
+	/* Check if SPMC is OP-TEE at S-EL1 */
+	if (check_spmc_execution_level()) {
+		/* FFA_FEATURES is not yet supported in OP-TEE */
+		return TEST_RESULT_SUCCESS;
+	}
+
+	handle = memory_init_and_send((struct ffa_memory_region *)mb.send,
+					PAGE_SIZE, SENDER, RECEIVER,
+					constituents, constituents_count,
+					FFA_MEM_SHARE_SMC32, &ret);
+
+	if (handle == FFA_MEMORY_HANDLE_INVALID) {
+		return TEST_RESULT_FAIL;
+	}
+
+	VERBOSE("TFTF - Handle: %llx Address: %p\n",
+		handle, constituents[0].address);
+
+	/* Retrieve the shared page and attempt accessing it. */
+	ret = cactus_send_exceptions_cmd(SENDER, RECEIVER, handle);
+
+	/* TODO: reclaim the memory region. */
+
+	if (cactus_get_response(ret) != CACTUS_SUCCESS) {
+		ERROR("Exceptions test failed!\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}

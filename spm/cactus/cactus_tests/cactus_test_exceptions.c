@@ -69,7 +69,7 @@ CACTUS_CMD_HANDLER(exceptions_cmd, CACTUS_EXCEPTIONS_CMD)
 
 	void *test_address = composite->constituents[0].address;
 
-	VERBOSE("Attempt read access to realm region (%p)\n", test_address);
+	VERBOSE("Attempt read access to region (%p)\n", test_address);
 
 	register_custom_sync_exception_handler(data_abort_gpf_handler);
 	expect(data_abort_gpf_triggered, 0);
@@ -78,7 +78,8 @@ CACTUS_CMD_HANDLER(exceptions_cmd, CACTUS_EXCEPTIONS_CMD)
 
 	unregister_custom_sync_exception_handler();
 	expect(data_abort_gpf_triggered, 1);
-
+	/* same catuse cmd will be used in two different test cases so we clear the value */
+	data_abort_gpf_triggered = 0;
 	ret = mmap_remove_dynamic_region(
 		(uint64_t)composite->constituents[0].address,
 		composite->constituents[0].page_count * PAGE_SIZE);
