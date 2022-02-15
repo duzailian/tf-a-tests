@@ -22,6 +22,9 @@ extern void notification_pending_interrupt_handler(void);
 
 extern ffa_id_t g_ffa_id;
 
+/* Secure virtual interrupt that was last handled by Cactus SP. */
+uint32_t last_serviced_interrupt;
+
 void cactus_interrupt_handler(void)
 {
 	uint32_t intid = spm_interrupt_get();
@@ -59,6 +62,7 @@ void cactus_interrupt_handler(void)
 			 intid);
 		panic();
 	}
+	last_serviced_interrupt = intid;
 
 	/* Invoke the tail end handler registered by the SP. */
 	if (sp_interrupt_tail_end_handler[intid]) {

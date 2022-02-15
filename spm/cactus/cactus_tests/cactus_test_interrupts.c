@@ -14,6 +14,8 @@
 
 #include <platform.h>
 
+/* Secure virtual interrupt that was last handled by Cactus SP. */
+extern uint32_t last_serviced_interrupt;
 static int flag_set;
 
 static void sec_wdog_interrupt_handled(void)
@@ -167,4 +169,11 @@ CACTUS_CMD_HANDLER(sleep_twdog_cmd, CACTUS_SLEEP_TRIGGER_TWDOG_CMD)
 	return cactus_response(ffa_dir_msg_dest(*args),
 			       ffa_dir_msg_source(*args),
 			       time_lapsed);
+}
+
+CACTUS_CMD_HANDLER(interrupt_serviced_cmd, CACTUS_LAST_INTERRUPT_SERVICED_CMD)
+{
+	return cactus_response(ffa_dir_msg_dest(*args),
+			       ffa_dir_msg_source(*args),
+			       last_serviced_interrupt);
 }
