@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2024, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -33,6 +33,9 @@
 
 #define DEVICE1_BASE		0x2f000000
 #define DEVICE1_SIZE		0x400000
+
+#define DEVICE2_BASE		0x1d000000
+#define DEVICE2_SIZE		0x10000
 
 /*******************************************************************************
  * GIC-400 & interrupt handling related constants
