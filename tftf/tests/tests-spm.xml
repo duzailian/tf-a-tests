@@ -51,7 +51,8 @@
 
      <testcase name="Access from a SP to a Realm region"
                function="rl_memory_cannot_be_accessed_in_s" />
-
+     <testcase name="Access from a SP to a Root region"
+               function="rt_memory_cannot_be_accessed_in_s" />
   </testsuite>
 
   <testsuite name="FF-A Direct messaging"
