@@ -56,6 +56,11 @@
 
 #define NUM_CPU_DED_SPM			PLATFORM_CORE_COUNT / 2
 
+/* The error code 513 is the packed version of the
+ * rmm error {STATUS_ERROR_INPUT,2} happened when Granule(params_ptr).pas != NS
+ */
+#define STATUS_ERROR_INPUT		513UL
+
 u_register_t realm_version(void);
 u_register_t realm_granule_delegate(uintptr_t);
 u_register_t realm_granule_undelegate(uintptr_t);
