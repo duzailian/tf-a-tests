@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af29dca6_49641f21",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-02-23T06:52:17Z",
+      "side": 1,
+      "message": "This is because the region (\"EL3 memory\") is marked secure on a 2 worlds system and root on a 4 worlds system. Is this worth stating this?",
+      "range": {
+        "startLine": 13,
+        "startChar": 14,
+        "endLine": 14,
+        "endChar": 30
+      },
+      "revId": "127568f87c12b9a034ae5326907b7f550853ca8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fadc92f1_0e23ff77",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-02-23T06:52:17Z",
+      "side": 1,
+      "message": "AP secure memory?\nGPC faults before the TZC when accessing this region.",
+      "range": {
+        "startLine": 73,
+        "startChar": 19,
+        "endLine": 73,
+        "endChar": 25
+      },
+      "revId": "127568f87c12b9a034ae5326907b7f550853ca8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7ea28d4_8930502e",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-02-23T06:52:17Z",
+      "side": 1,
+      "message": "Should this be EL3 Root ?\nThe picture should show the expectation from memory type programmed in the GPT.\nThis test in effect attempts accessing a region marked root.",
+      "range": {
+        "startLine": 79,
+        "startChar": 19,
+        "endLine": 79,
+        "endChar": 26
+      },
+      "revId": "127568f87c12b9a034ae5326907b7f550853ca8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
