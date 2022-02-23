@@ -54,6 +54,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "866247b6_b5c85faf",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-02-23T06:54:23Z",
+      "side": 1,
+      "message": "Yes on 2 worlds system, a sync ext abort triggers if accessing Trusted SRAM (response from fabric) or DRAM because protected by TZC.\nOn 4 worlds system, it is always a GPF exception because the \u0027third stage\u0027 MMU gates the access even before reaching the target.",
+      "parentUuid": "535f8e02_450dff94",
+      "revId": "25c26ffea468987a53f673a47de18436fbd88864",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1a224d1c_49cf3a1f",
@@ -149,6 +167,48 @@
       "side": 1,
       "message": "Serror could happen due to the load executing speculatively (since address is marked as normal memory) or the core deciding to prefetch the memory into cache in anticipation of the load and the request for the cache line is sent out to memory, but the access violates TZC policy and an error response is sent back. There is no committed load in the core yet to peg the error response to, so the core may decide to map it as an SError.\n\nAnd i think i want to take back my comment about requiring barriers. In general each core should perceive its memory accesses as occurring in program order (reorder buffer should commit everything in program order) and the compiler should not move things across the volatile access...so i think we may be fine without barriers..",
       "parentUuid": "a34b0876_f5074a33",
+      "range": {
+        "startLine": 36,
+        "startChar": 24,
+        "endLine": 36,
+        "endChar": 36
+      },
+      "revId": "25c26ffea468987a53f673a47de18436fbd88864",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a638702_e256a1df",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-02-23T06:54:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a224d1c_49cf3a1f",
+      "revId": "25c26ffea468987a53f673a47de18436fbd88864",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89446a8e_1e59d4cc",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-02-23T06:54:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4e7ca42a_17e6ed0a",
       "range": {
         "startLine": 36,
         "startChar": 24,

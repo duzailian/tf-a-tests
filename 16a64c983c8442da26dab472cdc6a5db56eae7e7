@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff55d2ba_4f302a85",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-02-23T06:54:23Z",
+      "side": 1,
+      "message": "preferably \"protected memory\" because depending on the context (non-RME vs RME) the region is marked secure or root.",
+      "range": {
+        "startLine": 22,
+        "startChar": 13,
+        "endLine": 22,
+        "endChar": 19
+      },
+      "revId": "16a64c983c8442da26dab472cdc6a5db56eae7e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
