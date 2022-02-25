@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13b028c8_2080a1f5",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-02-25T18:06:57Z",
+      "side": 1,
+      "message": "The RME map may need revisit ?\n0xff000000-0xffffffff is 16MB.. \n\nShould this be 0xfc000000 - 0xffffffff (64MB) ?\n\n AP TZC (or AP secure) starts at 0xfc000000\n Realm starts at 0xfdc00000\n EL3 root starts at 0xffc00000\n L1 GPT 0xfff00000\n\n0xffe00000 is effectively in root region, is this what is indicated?",
+      "revId": "ad3173ba201bdca3e1f6f8319b1956a94486355b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
