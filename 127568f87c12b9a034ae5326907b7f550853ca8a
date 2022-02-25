@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "92e8b5b3_affd0993",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-02-25T12:46:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af29dca6_49641f21",
+      "range": {
+        "startLine": 13,
+        "startChar": 14,
+        "endLine": 14,
+        "endChar": 30
+      },
+      "revId": "127568f87c12b9a034ae5326907b7f550853ca8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fadc92f1_0e23ff77",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "246758f8_8ab40862",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-02-25T12:46:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fadc92f1_0e23ff77",
+      "range": {
+        "startLine": 73,
+        "startChar": 19,
+        "endLine": 73,
+        "endChar": 25
+      },
+      "revId": "127568f87c12b9a034ae5326907b7f550853ca8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c7ea28d4_8930502e",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-02-23T06:52:17Z",
       "side": 1,
       "message": "Should this be EL3 Root ?\nThe picture should show the expectation from memory type programmed in the GPT.\nThis test in effect attempts accessing a region marked root.",
+      "range": {
+        "startLine": 79,
+        "startChar": 19,
+        "endLine": 79,
+        "endChar": 26
+      },
+      "revId": "127568f87c12b9a034ae5326907b7f550853ca8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "609a2f0c_05bdec53",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 14
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-02-25T12:46:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7ea28d4_8930502e",
       "range": {
         "startLine": 79,
         "startChar": 19,
