@@ -124,6 +124,8 @@
              description="Initiate stage2 translation for streams from upstream peripherals" >
      <testcase name="Check DMA command by SMMUv3TestEngine completes"
                function="test_smmu_spm" />
+     <testcase name="Check secure peripheral access to realm region is aborted by the SMMU"
+               function="test_spm_smmu_invalid_access" />
   </testsuite>
 
   <testsuite name="FF-A Notifications"

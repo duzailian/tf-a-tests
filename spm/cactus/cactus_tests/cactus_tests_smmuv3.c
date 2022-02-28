@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -19,22 +19,22 @@
 #include <sp_helpers.h>
 #include <spm_common.h>
 
-/* Source and target address for memcopy operation */
-#define MEMCPY_SOURCE_BASE	PLAT_CACTUS_MEMCPY_BASE
-#define MEMPCY_TOTAL_SIZE	(PLAT_CACTUS_MEMCPY_RANGE / 2)
-#define MEMCPY_TARGET_BASE	(MEMCPY_SOURCE_BASE + MEMPCY_TOTAL_SIZE)
-
 /* Miscellaneous */
 #define NO_SUBSTREAMID	(0xFFFFFFFFU)
-#define TRANSFER_SIZE	(MEMPCY_TOTAL_SIZE / FRAME_COUNT)
 #define LOOP_COUNT	(5000U)
 
-static bool run_smmuv3_test(void)
+static bool run_smmuv3_memcpy(uintptr_t start_address, size_t size)
 {
-	uint64_t source_addr, cpy_range, target_addr;
-	uint64_t begin_addr, end_addr, dest_addr;
-	uint32_t status;
-	unsigned int i, f, attempts;
+	const uint32_t streamID_list[] = { 0U, 1U };
+	const uint64_t data[] = {
+		ULL(0xBAADFEEDCEEBDAAF),
+		ULL(0x0123456776543210)
+	};
+
+	uintptr_t source_addr, target_addr;
+	uintptr_t begin_addr, end_addr, dest_addr;
+	uint32_t status, f, attempts;
+	size_t cpy_range, transfer_size;
 
 	/*
 	 * The test engine's MEMCPY command copies data from the region in
@@ -46,18 +46,13 @@ static bool run_smmuv3_test(void)
 
 	VERBOSE("CACTUS: Running SMMUv3 test\n");
 
-	source_addr = MEMCPY_SOURCE_BASE;
-	cpy_range = MEMPCY_TOTAL_SIZE;
-	target_addr = MEMCPY_TARGET_BASE;
-	uint32_t streamID_list[] = { 0U, 1U };
-
-	uint64_t data[] = {
-		ULL(0xBAADFEEDCEEBDAAF),
-		ULL(0x0123456776543210)
-	};
+	source_addr = start_address;
+	cpy_range = size >> 1;
+	target_addr = start_address + cpy_range;
+	transfer_size = cpy_range / FRAME_COUNT;
 
 	/* Write pre-determined content to source pages */
-	for (i = 0U; i < (cpy_range / 8U); i++) {
+	for (size_t i = 0U; i < (cpy_range / 8U); i++) {
 		mmio_write64_offset(source_addr, i * 8, data[i%2]);
 	}
 
@@ -73,9 +68,9 @@ static bool run_smmuv3_test(void)
 
 	for (f = 0U; f < FRAME_COUNT; f++) {
 		attempts = 0U;
-		begin_addr = source_addr + (TRANSFER_SIZE * f);
-		end_addr = begin_addr + TRANSFER_SIZE - 1U;
-		dest_addr = target_addr + (TRANSFER_SIZE * f);
+		begin_addr = source_addr + (transfer_size * f);
+		end_addr = begin_addr + transfer_size - 1U;
+		dest_addr = target_addr + (transfer_size * f);
 
 		/* Initiate DMA sequence */
 		mmio_write32_offset(PRIV_BASE_FRAME + F_IDX(f), PCTRL_OFF, 0);
@@ -123,7 +118,7 @@ static bool run_smmuv3_test(void)
 		}
 
 		if (attempts == LOOP_COUNT) {
-			ERROR("SMMUv3: Test failed\n");
+			VERBOSE("SMMUv3: Test failed\n");
 			return false;
 		}
 
@@ -138,9 +133,9 @@ static bool run_smmuv3_test(void)
 	inv_dcache_range(target_addr, cpy_range);
 
 	/* Compare source and destination memory locations for data */
-	for (i = 0U; i < (cpy_range / 8U); i++) {
+	for (size_t i = 0U; i < (cpy_range / 8U); i++) {
 		if (mmio_read_64(source_addr + 8 * i) != mmio_read_64(target_addr + 8 * i)) {
-			ERROR("SMMUv3: Mem copy failed: %llx\n", target_addr + 8 * i);
+			ERROR("SMMUv3: Mem copy failed: %lx\n", target_addr + 8 * i);
 			return false;
 		}
 	}
@@ -148,13 +143,100 @@ static bool run_smmuv3_test(void)
 	return true;
 }
 
+static bool run_smmuv3_rand48(uintptr_t start_address, size_t size)
+{
+	size_t transfer_size = (size >> 1) / FRAME_COUNT;
+	uint64_t source_addr, target_addr;
+	uint64_t begin_addr, end_addr, dest_addr;
+	uint32_t status;
+	unsigned int f, attempts;
+
+	/*
+	 * The test engine's MEMCPY command copies data from the region in
+	 * range [begin, end_incl] to the region with base address as udata.
+	 * In this test, we configure the test engine to initiate memcpy from
+	 * scratch page located at MEMCPY_SOURCE_BASE to the page located at
+	 * address MEMCPY_TARGET_BASE
+	 */
+
+	VERBOSE("CACTUS: Running SMMUv3 test\n");
+
+	source_addr = start_address;
+	target_addr = start_address + (size >> 1);
+	uint32_t streamID_list[] = { 0U, 1U };
+
+	for (f = 0U; f < FRAME_COUNT; f++) {
+		attempts = 0U;
+		begin_addr = source_addr + (transfer_size * f);
+		end_addr = begin_addr + transfer_size - 1U;
+		dest_addr = target_addr + (transfer_size * f);
+
+		/* Initiate DMA sequence */
+		mmio_write32_offset(PRIV_BASE_FRAME + F_IDX(f), PCTRL_OFF, 0);
+		mmio_write32_offset(PRIV_BASE_FRAME + F_IDX(f), DOWNSTREAM_PORT_OFF, 0);
+		mmio_write32_offset(PRIV_BASE_FRAME + F_IDX(f), STREAM_ID_OFF, streamID_list[f%2]);
+		mmio_write32_offset(PRIV_BASE_FRAME + F_IDX(f), SUBSTREAM_ID_OFF, NO_SUBSTREAMID);
+
+		mmio_write32_offset(USR_BASE_FRAME + F_IDX(f), UCTRL_OFF, 0);
+		mmio_write32_offset(USR_BASE_FRAME + F_IDX(f), SEED_OFF, 0);
+		mmio_write64_offset(USR_BASE_FRAME + F_IDX(f), BEGIN_OFF, begin_addr);
+		mmio_write64_offset(USR_BASE_FRAME + F_IDX(f), END_CTRL_OFF, end_addr);
+
+		/* Legal values for stride: 1 and any multiples of 8 */
+		mmio_write64_offset(USR_BASE_FRAME + F_IDX(f), STRIDE_OFF, 1);
+		mmio_write64_offset(USR_BASE_FRAME + F_IDX(f), UDATA_OFF, dest_addr);
+
+		mmio_write32_offset(USR_BASE_FRAME + F_IDX(f), CMD_OFF, ENGINE_MEMCPY);
+		VERBOSE("SMMUv3TestEngine: Waiting for MEMCPY completion for frame: %u\n", f);
+
+		/*
+		 * It is guaranteed that a read of "cmd" fields after writing to it will
+		 * immediately return ENGINE_FRAME_MISCONFIGURED if the command was
+		 * invalid.
+		 */
+		if (mmio_read32_offset(USR_BASE_FRAME + F_IDX(f), CMD_OFF) == ENGINE_MIS_CFG) {
+			ERROR("SMMUv3TestEngine: Misconfigured for frame: %u\n", f);
+			return false;
+		}
+
+		/* Wait for mem copy to be complete */
+		while (attempts++ < LOOP_COUNT) {
+			status = mmio_read32_offset(USR_BASE_FRAME + F_IDX(f), CMD_OFF);
+			if (status == ENGINE_HALTED) {
+				break;
+			} else if (status == ENGINE_ERROR) {
+				ERROR("SMMUv3: Test failed\n");
+				return false;
+			}
+
+			/*
+			 * TODO: Introduce a small delay here to make sure the
+			 * CPU memory accesses do not starve the interconnect
+			 * due to continuous polling.
+			 */
+		}
+
+		if (attempts == LOOP_COUNT) {
+			VERBOSE("SMMUv3: Test failed\n");
+			return false;
+		}
+
+		dsbsy();
+	}
+
+	return true;
+}
+
 CACTUS_CMD_HANDLER(smmuv3_cmd, CACTUS_DMA_SMMUv3_CMD)
 {
-	smc_ret_values ffa_ret;
 	ffa_id_t vm_id = ffa_dir_msg_dest(*args);
 	ffa_id_t source = ffa_dir_msg_source(*args);
+	uint32_t operation = args->ret4;
+	uintptr_t start_address = args->ret5;
+	size_t size = args->ret6;
 
-	VERBOSE("Received request through direct message for DMA service\n");
+	VERBOSE("Received request through direct message for DMA service.\n");
+	NOTICE("%s op %u addr 0x%lx range %lu\n", __func__, operation, start_address, size);
 
 	/*
 	 * At present, the test cannot be run concurrently on multiple SPs as
@@ -162,14 +244,24 @@ CACTUS_CMD_HANDLER(smmuv3_cmd, CACTUS_DMA_SMMUv3_CMD)
 	 * the test only on the first SP.
 	 */
 	if (vm_id != SPM_VM_ID_FIRST) {
-		return cactus_error_resp(vm_id, source, 0);
+		goto exit_error;
 	}
 
-	if (run_smmuv3_test()) {
-		ffa_ret = cactus_success_resp(vm_id, source, 0);
-	} else {
-		ffa_ret = cactus_error_resp(vm_id, source, 0);
+	switch (operation) {
+	case ENGINE_MEMCPY:
+		if (run_smmuv3_memcpy(start_address, size)) {
+			return cactus_success_resp(vm_id, source, 0);
+		}
+		break;
+	case ENGINE_RAND48:
+		if (run_smmuv3_rand48(start_address, size)) {
+			return cactus_success_resp(vm_id, source, 0);
+		}
+		break;
+	default:
+		break;
 	}
 
-	return ffa_ret;
+exit_error:
+	return cactus_error_resp(vm_id, source, 0);
 }

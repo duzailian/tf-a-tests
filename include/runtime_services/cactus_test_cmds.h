@@ -378,10 +378,12 @@ static inline enum interrupt_pin cactus_get_interrupt_pin(smc_ret_values ret)
 #define CACTUS_DMA_SMMUv3_CMD           (0x534d4d55)
 
 static inline smc_ret_values cactus_send_dma_cmd(
-	ffa_id_t source, ffa_id_t dest)
+	ffa_id_t source, ffa_id_t dest, uint32_t operation,
+	uintptr_t test_buffer_address, size_t range)
 {
-	return cactus_send_cmd(source, dest, CACTUS_DMA_SMMUv3_CMD, 0, 0, 0,
-			       0);
+	return cactus_send_cmd(source, dest, CACTUS_DMA_SMMUv3_CMD,
+			       (uint64_t)operation, (uint64_t)test_buffer_address,
+			       (uint64_t)range, 0);
 }
 
 /*
