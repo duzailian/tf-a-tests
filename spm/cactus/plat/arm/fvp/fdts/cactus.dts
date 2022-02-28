@@ -90,6 +90,13 @@
 			base-address = <0x00000000 0x7404000>;
 			attributes = <0x3>; /* read-write */
 		};
+
+		smmuv3-ns-region {
+			description = "smmuv3-ns-region";
+			pages-count = <8>;
+			base-address = <0x00000000 0x82000000>;
+			attributes = <0x83>; /* ns-read-write */
+		};
 	};
 
 	device-regions {
