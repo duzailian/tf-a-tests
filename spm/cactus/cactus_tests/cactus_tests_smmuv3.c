@@ -20,21 +20,20 @@
 #include <spm_common.h>
 
 /* Source and target address for memcopy operation */
-#define MEMCPY_SOURCE_BASE	PLAT_CACTUS_MEMCPY_BASE
 #define MEMPCY_TOTAL_SIZE	(PLAT_CACTUS_MEMCPY_RANGE / 2)
-#define MEMCPY_TARGET_BASE	(MEMCPY_SOURCE_BASE + MEMPCY_TOTAL_SIZE)
 
 /* Miscellaneous */
 #define NO_SUBSTREAMID	(0xFFFFFFFFU)
 #define TRANSFER_SIZE	(MEMPCY_TOTAL_SIZE / FRAME_COUNT)
 #define LOOP_COUNT	(5000U)
 
-static bool run_smmuv3_test(void)
+static bool run_smmuv3_test(uintptr_t test_buffer_address)
 {
-	uint64_t source_addr, cpy_range, target_addr;
+	uint64_t source_addr, /*cpy_range,*/ target_addr;
 	uint64_t begin_addr, end_addr, dest_addr;
 	uint32_t status;
-	unsigned int i, f, attempts;
+	//unsigned int i;
+	unsigned int f, attempts;
 
 	/*
 	 * The test engine's MEMCPY command copies data from the region in
@@ -46,11 +45,12 @@ static bool run_smmuv3_test(void)
 
 	VERBOSE("CACTUS: Running SMMUv3 test\n");
 
-	source_addr = MEMCPY_SOURCE_BASE;
-	cpy_range = MEMPCY_TOTAL_SIZE;
-	target_addr = MEMCPY_TARGET_BASE;
+	source_addr = test_buffer_address;
+	//cpy_range = MEMPCY_TOTAL_SIZE;
+	target_addr = test_buffer_address + MEMPCY_TOTAL_SIZE;
 	uint32_t streamID_list[] = { 0U, 1U };
 
+#if 0
 	uint64_t data[] = {
 		ULL(0xBAADFEEDCEEBDAAF),
 		ULL(0x0123456776543210)
@@ -70,6 +70,7 @@ static bool run_smmuv3_test(void)
 	 * fields
 	 */
 	dsbsy();
+#endif
 
 	for (f = 0U; f < FRAME_COUNT; f++) {
 		attempts = 0U;
@@ -123,13 +124,14 @@ static bool run_smmuv3_test(void)
 		}
 
 		if (attempts == LOOP_COUNT) {
-			ERROR("SMMUv3: Test failed\n");
+			VERBOSE("SMMUv3: Test failed\n");
 			return false;
 		}
 
 		dsbsy();
 	}
 
+#if 0
 	/*
 	 * Invalidate cached entries to force the CPU to fetch the data from
 	 * Main memory
@@ -144,17 +146,25 @@ static bool run_smmuv3_test(void)
 			return false;
 		}
 	}
+#endif
 
 	return true;
 }
 
 CACTUS_CMD_HANDLER(smmuv3_cmd, CACTUS_DMA_SMMUv3_CMD)
 {
-	smc_ret_values ffa_ret;
 	ffa_id_t vm_id = ffa_dir_msg_dest(*args);
 	ffa_id_t source = ffa_dir_msg_source(*args);
+	uint32_t operation = args->ret4;
+	uintptr_t test_buffer_address = args->ret5;
+	size_t range = args->ret6;
 
-	VERBOSE("Received request through direct message for DMA service\n");
+	VERBOSE("Received request through direct message for DMA service.\n");
+	NOTICE("%s op %u addr 0x%lx range %lu\n", __func__, operation, test_buffer_address, range);
+
+	if (operation != ENGINE_MEMCPY) {
+		goto exit_error;
+	}
 
 	/*
 	 * At present, the test cannot be run concurrently on multiple SPs as
@@ -162,14 +172,13 @@ CACTUS_CMD_HANDLER(smmuv3_cmd, CACTUS_DMA_SMMUv3_CMD)
 	 * the test only on the first SP.
 	 */
 	if (vm_id != SPM_VM_ID_FIRST) {
-		return cactus_error_resp(vm_id, source, 0);
+		goto exit_error;
 	}
 
-	if (run_smmuv3_test()) {
-		ffa_ret = cactus_success_resp(vm_id, source, 0);
-	} else {
-		ffa_ret = cactus_error_resp(vm_id, source, 0);
+	if (run_smmuv3_test(test_buffer_address)) {
+		return cactus_success_resp(vm_id, source, 0);
 	}
 
-	return ffa_ret;
+exit_error:
+	return cactus_error_resp(vm_id, source, 0);
 }

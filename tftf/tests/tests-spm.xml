@@ -106,7 +106,7 @@
                function="test_sve_vectors_preserved" />
   </testsuite>
 
-   <testsuite name="FF-A Interrupt"
+   <!--testsuite name="FF-A Interrupt"
              description="Test non-secure Interrupts" >
      <testcase name="Test NS interrupts"
                function="test_ffa_ns_interrupt" />
@@ -118,12 +118,14 @@
                function="test_ffa_sec_interrupt_sp_blocked" />
      <testcase name="Test Secure interrupt handling while SP1 waiting SP2 running"
                function="test_ffa_sec_interrupt_sp1_waiting_sp2_running" />
-  </testsuite>
+  </testsuite-->
 
   <testsuite name="SMMUv3 tests"
              description="Initiate stage2 translation for streams from upstream peripherals" >
      <testcase name="Check DMA command by SMMUv3TestEngine completes"
                function="test_smmu_spm" />
+     <testcase name="Check SMMU access from secure peripheral to a realm region"
+               function="test_spm_smmu_invalid_access" />
   </testsuite>
 
   <testsuite name="FF-A Notifications"
