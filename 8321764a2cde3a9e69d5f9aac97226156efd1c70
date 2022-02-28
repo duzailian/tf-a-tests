@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7731a4fa_8deccac1",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000219
+      },
+      "writtenOn": "2022-02-28T20:27:08Z",
+      "side": 1,
+      "message": "Ah, so the AP Secure start address is 0xFC00_0000?",
+      "parentUuid": "88bcccd2_3151866f",
+      "range": {
+        "startLine": 73,
+        "startChar": 3,
+        "endLine": 73,
+        "endChar": 14
+      },
+      "revId": "8321764a2cde3a9e69d5f9aac97226156efd1c70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4d216b57_761e7a06",
         "filename": "tftf/tests/misc_tests/test_invalid_access.c",
         "patchSetId": 11
