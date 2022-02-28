@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f1423a7_db52573e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-02-28T18:57:48Z",
+      "side": 1,
+      "message": "build has failed because of timeout on some \"juno-tspd-tbb-mbedtls,juno-default:juno-tftf-r2\":\nBuild timed out (after 180 minutes). Marking the build as failed.\nhttps://ci.trustedfirmware.org/job/tf-a-builder/794609/\nwhich looks for me have nothing to do with these patches",
+      "revId": "170d546793323bd6a3ec362c24d477e34c496efa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
