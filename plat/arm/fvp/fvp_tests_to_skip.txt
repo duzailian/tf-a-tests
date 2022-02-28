@@ -6,3 +6,4 @@
 
 # Disable Group0 secure interrupt tests as there is no source of EL3 interrupt
 FF-A Group0 interrupts
+SMMUv3 tests

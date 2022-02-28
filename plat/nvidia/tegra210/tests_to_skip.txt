@@ -35,3 +35,5 @@ Timer framework Validation/Stress test the timer framework
 
 # Tegra210 uses all 27:0 bits of the PSTATE
 EL3 power state parser validation/Create all power states and validate EL3 power state parsing
+
+SMMUv3 tests

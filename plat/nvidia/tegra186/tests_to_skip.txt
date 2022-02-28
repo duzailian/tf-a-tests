@@ -36,3 +36,5 @@ Timer framework Validation/Stress test the timer framework
 # Tegra186 uses all 27:0 bits of the PSTATE
 EL3 power state parser validation/Create all power states and validate EL3 power state parsing
 EL3 power state parser validation/Create a power state with valid and invalid local state ID at different levels and validate power state parsing
+
+SMMUv3 tests

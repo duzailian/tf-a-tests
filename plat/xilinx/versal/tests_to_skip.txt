@@ -38,3 +38,5 @@ EL3 power state parser validation/Create a power state with valid and invalid lo
 PSCI CPU ON OFF Stress Tests/PSCI CPU ON OFF stress test
 PSCI CPU ON OFF Stress Tests/Repeated hotplug of all cores to stress test CPU_ON and CPU_OFF
 PSCI CPU ON OFF Stress Tests/Random hotplug cores in a large iteration to stress boot path code
+
+SMMUv3 tests

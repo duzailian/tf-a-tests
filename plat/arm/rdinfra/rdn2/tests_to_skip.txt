@@ -14,3 +14,5 @@ PSCI System Suspend Validation
 # The following test cases result in unhandled exception at EL3
 CPU extensions/Use trace buffer control Registers
 CPU extensions/Use trace filter control Registers
+
+SMMUv3 tests

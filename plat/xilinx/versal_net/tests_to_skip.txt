@@ -61,3 +61,5 @@ PSCI System Suspend Validation/Validate suspend to RAM functionality
 
 #TESTS: el3-power-state
 EL3 power state parser validation
+
+SMMUv3 tests

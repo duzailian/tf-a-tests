@@ -12,3 +12,6 @@ PSCI System Suspend Validation
 PSCI STAT/Stats test cases after system suspend
 IRQ support in TSP/Resume preempted STD SMC after PSCI SYSTEM SUSPEND
 PSCI SYSTEM SUSPEND stress tests
+
+SMMUv3 tests
+

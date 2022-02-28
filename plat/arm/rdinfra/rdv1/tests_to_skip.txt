@@ -20,3 +20,5 @@ PSCI CPU Suspend/CPU suspend to powerdown at level 1
 # The following tests are not supported on RD-V1
 CPU extensions/Use trace buffer control Registers
 CPU extensions/Use trace filter control Registers
+
+SMMUv3 tests

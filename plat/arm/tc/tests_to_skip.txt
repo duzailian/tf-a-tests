@@ -16,3 +16,4 @@ PSCI System Suspend Validation
 
 # Disable FF-A Interrupt tests as TWDOG is not supported by TC platform
 FF-A Interrupt
+SMMUv3 tests
