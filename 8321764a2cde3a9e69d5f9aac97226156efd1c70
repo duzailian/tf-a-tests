@@ -74,6 +74,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b3a9d537_a197488d",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-03-01T16:32:06Z",
+      "side": 1,
+      "message": "Yes that\u0027s my understanding it means the AP secure start address is somewhat wrong in this diagram.",
+      "parentUuid": "7731a4fa_8deccac1",
+      "range": {
+        "startLine": 73,
+        "startChar": 3,
+        "endLine": 73,
+        "endChar": 14
+      },
+      "revId": "8321764a2cde3a9e69d5f9aac97226156efd1c70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4d216b57_761e7a06",
         "filename": "tftf/tests/misc_tests/test_invalid_access.c",
         "patchSetId": 11
