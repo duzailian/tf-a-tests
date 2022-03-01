@@ -370,11 +370,10 @@ test_result_t serial_spm_rmi_msg(void)
 		}
 
 		VERBOSE("Waiting for secondary CPU to turn off ...\n");
-		while ((mpidr != (read_mpidr_el1() & MPID_MASK)) && \
-		(tftf_psci_affinity_info(mpidr, MPIDR_AFFLVL0)) !=
-		PSCI_STATE_OFF) {
-			continue;
-		}
+		/* Wait for the target CPU to turn OFF */
+		while (tftf_psci_affinity_info(mpidr,
+		MPIDR_AFFLVL0) != PSCI_STATE_OFF)
+		  ;
 
 		/*RMI call*/
 		ret = tftf_cpu_on(mpidr, (uintptr_t)non_secure_call_realm, 0U);
@@ -383,10 +382,10 @@ test_result_t serial_spm_rmi_msg(void)
 			return TEST_RESULT_FAIL;
 		}
 		VERBOSE("Waiting for secondary CPU to turn off ...\n");
-		while ((mpidr != (read_mpidr_el1() & MPID_MASK)) && (tftf_psci_affinity_info(mpidr, MPIDR_AFFLVL0)) !=
-		PSCI_STATE_OFF) {
-			continue;
-		}
+		/* Wait for the target CPU to turn OFF */
+		while (tftf_psci_affinity_info(mpidr,
+		MPIDR_AFFLVL0) != PSCI_STATE_OFF)
+		  ;
 	}
 
 	for (int i = 0; i < (NUM_GRANULES * PLATFORM_CORE_COUNT) ; i++) {
@@ -482,19 +481,7 @@ test_result_t parallel_spm_rmi_msg(void)
 			}
 		}
 		VERBOSE("Waiting for secondary CPUs to turn off ...\n");
-
-		for_each_cpu(cpu_node) {
-			mpidr = tftf_get_mpidr_from_node(cpu_node);
-			if (mpidr == lead_mpid) {
-				continue;
-			}
-
-			while (tftf_psci_affinity_info(mpidr, MPIDR_AFFLVL0) !=
-					PSCI_STATE_OFF) {
-				continue;
-			}
-
-		}
+		wait_for_non_lead_cpus();
 	}
 	for (int i = 0; i < (NUM_GRANULES * PLATFORM_CORE_COUNT) ; i++) {
 		if (bufferstate[i] == B_DELEGATED) {
