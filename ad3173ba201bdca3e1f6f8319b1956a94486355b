@@ -34,6 +34,24 @@
       "parentUuid": "13b028c8_2080a1f5",
       "revId": "ad3173ba201bdca3e1f6f8319b1956a94486355b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd1e5504_c41d56a5",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-03-01T16:54:31Z",
+      "side": 1,
+      "message": "Ohh yes, i missed the first part of your comments",
+      "parentUuid": "1171fdbf_97afa2f2",
+      "revId": "ad3173ba201bdca3e1f6f8319b1956a94486355b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
