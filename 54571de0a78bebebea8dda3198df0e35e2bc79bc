@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3204023a_0390fefb",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-03-01T13:00:59Z",
+      "side": 1,
+      "message": "don\u0027t need this function",
+      "range": {
+        "startLine": 355,
+        "startChar": 0,
+        "endLine": 362,
+        "endChar": 1
+      },
+      "revId": "54571de0a78bebebea8dda3198df0e35e2bc79bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ccc0e22_a7889e72",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-03-01T13:00:59Z",
+      "side": 1,
+      "message": "rename to serial_spm_rmi_msg()",
+      "range": {
+        "startLine": 367,
+        "startChar": 14,
+        "endLine": 367,
+        "endChar": 44
+      },
+      "revId": "54571de0a78bebebea8dda3198df0e35e2bc79bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "775ec3d2_ecfc7ce6",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-03-01T13:00:59Z",
+      "side": 1,
+      "message": "directly call non_secure_call_secure() and non_secure_call_realm() function from here in a loop for 3 and again call these functions with power_off in the middle 3 times, so the code would look like \n\n3 times \nnon_secure_call_secure();\nnon_secure_call_realm();\n\nand 3 times\nnon_secure_call_secure();\ncore_power_off();\nnon_secure_call_realm();",
+      "range": {
+        "startLine": 401,
+        "startChar": 1,
+        "endLine": 406,
+        "endChar": 2
+      },
+      "revId": "54571de0a78bebebea8dda3198df0e35e2bc79bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9dac87a2_8282dcf3",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-03-01T13:00:59Z",
+      "side": 1,
+      "message": "rename to paralle_spm_rmi_msg()",
+      "range": {
+        "startLine": 423,
+        "startChar": 14,
+        "endLine": 423,
+        "endChar": 49
+      },
+      "revId": "54571de0a78bebebea8dda3198df0e35e2bc79bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "839c9efb_94989304",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-03-01T13:00:59Z",
+      "side": 1,
+      "message": "IMO, we better remove this function and test this functionality in serial_spm_rmi_msg() function.",
+      "revId": "54571de0a78bebebea8dda3198df0e35e2bc79bc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
