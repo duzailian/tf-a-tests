@@ -389,4 +389,9 @@ bool spm_core_sp_init(ffa_id_t sp_id);
  */
 bool spm_set_managed_exit_int(ffa_id_t sp_id, bool enable);
 
+/*
+ * Utility function to wait for all CPUs other than the caller to be
+ * OFF.
+ */
+void wait_for_non_lead_cpus(void);
 #endif /* __TEST_HELPERS_H__ */
