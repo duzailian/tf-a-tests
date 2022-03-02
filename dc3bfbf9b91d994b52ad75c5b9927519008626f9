@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0738835_ada5f564",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000715
+      },
+      "writtenOn": "2022-03-02T18:27:16Z",
+      "side": 1,
+      "message": "CI seems to fail for a good reason:\n2022-03-01T20:11:39 ASSERT: lib/xlat_tables_v2/xlat_tables_core.c:1219:ctx-\u003epa_max_address \u003c\u003d xlat_arch_get_max_supported_pa()\n\nGoing to reproduce and debug locally.",
+      "revId": "dc3bfbf9b91d994b52ad75c5b9927519008626f9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
