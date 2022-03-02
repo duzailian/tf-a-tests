@@ -83,15 +83,34 @@ static test_result_t init_buffer_del_spm_rmi(void)
 {
 	u_register_t retrmm;
 
-	for (int i = 0; i < (NUM_GRANULES * PLATFORM_CORE_COUNT) ; i++) {
+	for (uint32_t i = 0; i < (NUM_GRANULES * PLATFORM_CORE_COUNT) ; i++) {
 		if ((rand() % 2) == 0) {
 			retrmm = realm_granule_delegate((u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
 			bufferstate[i] = B_DELEGATED;
 			if (retrmm != 0UL) {
-				tftf_testcase_printf("Delegate operation returns fail, %lx\n", retrmm);
+				ERROR("Delegate operation returns fail, %lx\n", retrmm);
 				return TEST_RESULT_FAIL;
 			}
 		} else {
+			bufferstate[i] = B_UNDELEGATED;
+		}
+	}
+	return TEST_RESULT_SUCCESS;
+}
+
+static test_result_t reset_buffer_del_spm_rmi(void)
+{
+	u_register_t retrmm;
+
+	for (uint32_t i = 0; i < (NUM_GRANULES * PLATFORM_CORE_COUNT) ; i++) {
+		if (bufferstate[i] == B_DELEGATED) {
+			retrmm = realm_granule_undelegate(
+				(u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
+			if (retrmm != 0UL) {
+				ERROR("Undelegate operation returns fail, %lx\n",
+				retrmm);
+				return TEST_RESULT_FAIL;
+			}
 			bufferstate[i] = B_UNDELEGATED;
 		}
 	}
@@ -330,30 +349,10 @@ test_result_t test_ffa_secondary_core_direct_realm_msg(void)
 	}
 
 	VERBOSE("Waiting for secondary CPUs to turn off ...\n");
+	wait_for_non_lead_cpus();
 
-	for_each_cpu(cpu_node) {
-		mpidr = tftf_get_mpidr_from_node(cpu_node);
-		if (mpidr == lead_mpid) {
-			continue;
-		}
-
-		while (tftf_psci_affinity_info(mpidr, MPIDR_AFFLVL0) !=
-				PSCI_STATE_OFF) {
-			continue;
-		}
-
-	}
-
-	for (int i = 0; i < (NUM_GRANULES * PLATFORM_CORE_COUNT) ; i++) {
-		if (bufferstate[i] == B_DELEGATED) {
-			retrmm = realm_granule_undelegate(
-				(u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
-			bufferstate[i] = B_UNDELEGATED;
-			if (retrmm != 0UL) {
-				tftf_testcase_printf("Delegate operation returns fail, %lx\n", retrmm);
-				return TEST_RESULT_FAIL;
-			}
-		}
+	if (TEST_RESULT_SUCCESS != reset_buffer_del_spm_rmi()) {
+		return TEST_RESULT_FAIL;
 	}
 
 	VERBOSE("Done exiting.\n");
