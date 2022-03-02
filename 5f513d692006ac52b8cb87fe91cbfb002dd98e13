@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86a0b6a6_2de83573",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000125
+      },
+      "writtenOn": "2022-03-02T19:39:11Z",
+      "side": 1,
+      "message": "CR+1, but just checking:\n\nI\u0027m assuming this is \"-D\"ed from the command line (or makefiles)?  If not, does this require a specific #include order (i.e., whatever header #defines EL3_MEMORY... having to be #included before this)?",
+      "revId": "5f513d692006ac52b8cb87fe91cbfb002dd98e13",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
