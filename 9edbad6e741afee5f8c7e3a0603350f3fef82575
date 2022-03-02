@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bd7b98f_8bea33dd",
+        "filename": "tftf/tests/performance_tests/test_psci_latencies.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-03-02T17:40:39Z",
+      "side": 0,
+      "message": "I think you need to remove this function from this file [1] also, where it is duplicated.\n\n[1]: https://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c#n53",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 40
+      },
+      "revId": "9edbad6e741afee5f8c7e3a0603350f3fef82575",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
