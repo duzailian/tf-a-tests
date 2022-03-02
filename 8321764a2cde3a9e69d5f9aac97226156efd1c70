@@ -144,6 +144,126 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9c1f853_2beb482d",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-02T19:02:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1af4831d_35c0e323",
+      "range": {
+        "startLine": 73,
+        "startChar": 3,
+        "endLine": 73,
+        "endChar": 14
+      },
+      "revId": "8321764a2cde3a9e69d5f9aac97226156efd1c70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da6296a7_abc76259",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-02T19:02:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1af4831d_35c0e323",
+      "range": {
+        "startLine": 73,
+        "startChar": 3,
+        "endLine": 73,
+        "endChar": 14
+      },
+      "revId": "8321764a2cde3a9e69d5f9aac97226156efd1c70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36dbcd6f_59e2f91b",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-02T19:02:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1af4831d_35c0e323",
+      "range": {
+        "startLine": 73,
+        "startChar": 3,
+        "endLine": 73,
+        "endChar": 14
+      },
+      "revId": "8321764a2cde3a9e69d5f9aac97226156efd1c70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5004e853_8d832668",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-02T19:02:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1af4831d_35c0e323",
+      "range": {
+        "startLine": 73,
+        "startChar": 3,
+        "endLine": 73,
+        "endChar": 14
+      },
+      "revId": "8321764a2cde3a9e69d5f9aac97226156efd1c70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b02415c_93c827d4",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-02T19:02:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1af4831d_35c0e323",
+      "range": {
+        "startLine": 73,
+        "startChar": 3,
+        "endLine": 73,
+        "endChar": 14
+      },
+      "revId": "8321764a2cde3a9e69d5f9aac97226156efd1c70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d216b57_761e7a06",
@@ -157,6 +277,30 @@
       "writtenOn": "2022-02-25T18:24:10Z",
       "side": 1,
       "message": "I think there should be a check for armv9_2_feat_rme_support before or after this line similar to line 118 in \u0027rl_memory_cannot_be_accessed_in_ns\u0027 function. Or is it intended for non-rme configs as well?",
+      "range": {
+        "startLine": 168,
+        "startChar": 1,
+        "endLine": 168,
+        "endChar": 43
+      },
+      "revId": "8321764a2cde3a9e69d5f9aac97226156efd1c70",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d16508b2_3a81aadc",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-02T19:02:26Z",
+      "side": 1,
+      "message": "you\u0027re right, the test was skipped as you can see on this run:\n\u003e Executing \u0027Access Secure memory from NS world\u0027\n  TEST COMPLETE                                                Skipped\nNo sync exception while accessing (0xfd000000)\n\n\nmaybe because the address belong to non secure space in case of non RME memory model.\nbut it s better to skip this properly like you mentioned.",
+      "parentUuid": "4d216b57_761e7a06",
       "range": {
         "startLine": 168,
         "startChar": 1,
