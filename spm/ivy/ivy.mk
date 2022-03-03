@@ -89,7 +89,7 @@ $(IVY_DTB) : $(IVY_DTS)
 	${Q}tools/generate_dtb/generate_dtb.sh \
 		ivy ${IVY_DTS} $(BUILD_PLAT) $(IVY_DTB)
 	${Q}tools/generate_json/generate_json.sh \
-		ivy $(BUILD_PLAT)
+		ivy $(BUILD_PLAT) $(IVY_SHIM)
 	@echo
 	@echo "Built $@ successfully"
 	@echo
