@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88bff512_785df8a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-03T10:08:34Z",
+      "side": 1,
+      "message": "The build is failing because of test case “Access Secure memory from Realm world” in https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/13863/15  it uses “RMI_FNUM_REALM_CREATE     U(0x158)” SMC call which is not yet ready/implemented in TRP.\n\nRemarque: REALM_CREATE  SMC is the only API in RMM which try to access non secure memory, hence the use in this test case by providing secure page and expect GPF.\n\nin this patch I\u0027ll skip the test, and provide a “doxygen” like comment that this will be updated when TRP implement realm create RMI.\n ",
+      "revId": "ed01339e95f067114350312fda69b92dbce3f67e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
