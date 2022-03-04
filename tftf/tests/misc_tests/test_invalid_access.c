@@ -311,6 +311,7 @@ test_result_t rt_memory_cannot_be_accessed_in_s(void)
 	}
 
 	return TEST_RESULT_FAIL;
+
 }
 
 test_result_t s_memory_cannot_be_accessed_in_rl(void)
