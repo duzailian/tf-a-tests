@@ -201,10 +201,15 @@ static inline ffa_id_t cactus_deadlock_get_next_dest2(struct ffa_value ret)
 static inline struct ffa_value cactus_mem_send_cmd(
 	ffa_id_t source, ffa_id_t dest, uint32_t mem_func,
 	ffa_memory_handle_t handle, ffa_memory_region_flags_t retrieve_flags,
-	uint16_t word_to_write)
+	uint16_t nr_words_to_write)
 {
 	return cactus_send_cmd(source, dest, CACTUS_MEM_SEND_CMD, mem_func,
-			       handle, retrieve_flags, word_to_write);
+			       handle, retrieve_flags, nr_words_to_write);
+}
+
+static inline uint32_t cactus_mem_send_get_mem_func(struct ffa_value ret)
+{
+	return (uint32_t)ret.arg4;
 }
 
 static inline ffa_memory_handle_t cactus_mem_send_get_handle(
@@ -235,10 +240,10 @@ static inline uint16_t cactus_mem_send_words_to_write(struct ffa_value ret)
 
 static inline struct ffa_value cactus_req_mem_send_send_cmd(
 	ffa_id_t source, ffa_id_t dest, uint32_t mem_func,
-	ffa_id_t receiver, bool non_secure)
+	ffa_id_t receiver)
 {
 	return cactus_send_cmd(source, dest, CACTUS_REQ_MEM_SEND_CMD, mem_func,
-			       receiver, non_secure, 0);
+			       receiver, 0, 0);
 }
 
 static inline uint32_t cactus_req_mem_send_get_mem_func(struct ffa_value ret)
@@ -249,11 +254,6 @@ static inline uint32_t cactus_req_mem_send_get_mem_func(struct ffa_value ret)
 static inline ffa_id_t cactus_req_mem_send_get_receiver(struct ffa_value ret)
 {
 	return (ffa_id_t)ret.arg5;
-}
-
-static inline bool cactus_req_mem_send_get_non_secure(struct ffa_value ret)
-{
-	return (bool)ret.arg6;
 }
 
 /**
