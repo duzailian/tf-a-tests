@@ -121,7 +121,8 @@ test_result_t test_share_forbidden_ranges(void)
  */
 static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 					 struct ffa_memory_region_constituent *constituents,
-					 size_t constituents_count)
+					 size_t constituents_count,
+					 bool check_test_data)
 {
 	struct ffa_value ret;
 	ffa_memory_handle_t handle;
@@ -143,7 +144,7 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 	}
 
 	for (size_t i = 0; i < constituents_count; i++) {
-		VERBOSE("TFTF - Address: %p\n", constituents[0].address);
+		NOTICE("TFTF - Address: %p\n", constituents[0].address);
 	}
 
 	handle = memory_init_and_send((struct ffa_memory_region *)mb.send,
@@ -160,7 +161,7 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 	ptr = (uint32_t *)constituents[0].address;
 
 	ret = cactus_mem_send_cmd(SENDER, borrower, mem_func, handle, 0,
-				  true, nr_words_to_write);
+				  nr_words_to_write);
 
 	if (!is_ffa_direct_response(ret)) {
 		return TEST_RESULT_FAIL;
@@ -172,7 +173,7 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 	}
 
 	/* Check that borrower used the memory as expected for this test. */
-	if (!check_written_words(ptr, mem_func, nr_words_to_write)) {
+	if (check_test_data && !check_written_words(ptr, mem_func, nr_words_to_write)) {
 		ERROR("Words written to shared memory, not as expected.\n");
 		return TEST_RESULT_FAIL;
 	}
@@ -196,7 +197,37 @@ test_result_t test_mem_share_sp(void)
 				sizeof(struct ffa_memory_region_constituent);
 
 	return test_memory_send_sp(FFA_MEM_SHARE_SMC32, RECEIVER, constituents,
-				   constituents_count);
+				   constituents_count, true);
+}
+
+test_result_t test_mem_share_sp_large_pa(void)
+{
+	const uintptr_t test_large_pa_ns_base = 0x880080000000ULL;
+	struct ffa_memory_region_constituent constituents[] = {
+		{(void *)test_large_pa_ns_base, 1, 0}
+	};
+
+	const uint32_t constituents_count = sizeof(constituents) /
+				sizeof(struct ffa_memory_region_constituent);
+	/*
+	 * Skip the test when RME is enabled (for test setup reasons).
+	 * For RME tests, the model specifies 48b physical address size
+	 * at the PE, but misses allocating RAM and increasing the PA at
+	 * the interconnect level.
+	 */
+	if (get_armv9_2_feat_rme_support() != 0U) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	/* This test requires 48b physical address size capability. */
+	SKIP_TEST_IF_PA_SIZE_LESS_THAN(48);
+
+	/*
+	 * TODO: for the 'large PA' case do not check written data as it
+	 * requires mapping the region into the NS EL2 S1 translation regime.
+	 */
+	return test_memory_send_sp(FFA_MEM_SHARE_SMC32, RECEIVER, constituents,
+				   constituents_count, false);
 }
 
 test_result_t test_mem_lend_sp(void)
@@ -209,7 +240,7 @@ test_result_t test_mem_lend_sp(void)
 				sizeof(struct ffa_memory_region_constituent);
 
 	return test_memory_send_sp(FFA_MEM_LEND_SMC32, RECEIVER, constituents,
-				   constituents_count);
+				   constituents_count, true);
 }
 
 test_result_t test_mem_donate_sp(void)
@@ -219,8 +250,9 @@ test_result_t test_mem_donate_sp(void)
 	};
 	const uint32_t constituents_count = sizeof(constituents) /
 				sizeof(struct ffa_memory_region_constituent);
+
 	return test_memory_send_sp(FFA_MEM_DONATE_SMC32, RECEIVER, constituents,
-				   constituents_count);
+				   constituents_count, true);
 }
 
 test_result_t test_consecutive_donate(void)
@@ -235,10 +267,11 @@ test_result_t test_consecutive_donate(void)
 
 	test_result_t ret = test_memory_send_sp(FFA_MEM_DONATE_SMC32, SP_ID(1),
 						constituents,
-						constituents_count);
+						constituents_count,
+						true);
 
 	if (ret != TEST_RESULT_SUCCESS) {
-		ERROR("Failed at first attempting of sharing.\n");
+		ERROR("Failed first mem donate attempt.\n");
 		return TEST_RESULT_FAIL;
 	}
 
@@ -267,8 +300,7 @@ test_result_t test_consecutive_donate(void)
  */
 static test_result_t test_req_mem_send_sp_to_sp(uint32_t mem_func,
 						ffa_id_t sender_sp,
-						ffa_id_t receiver_sp,
-						bool non_secure)
+						ffa_id_t receiver_sp)
 {
 	struct ffa_value ret;
 
@@ -278,7 +310,7 @@ static test_result_t test_req_mem_send_sp_to_sp(uint32_t mem_func,
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 
 	ret = cactus_req_mem_send_send_cmd(HYP_ID, sender_sp, mem_func,
-					   receiver_sp, non_secure);
+					   receiver_sp);
 
 	if (!is_ffa_direct_response(ret)) {
 		return TEST_RESULT_FAIL;
@@ -309,8 +341,9 @@ static test_result_t test_req_mem_send_sp_to_vm(uint32_t mem_func,
 	 *********************************************************************/
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 
+	/* TODO: is it intended to share secure memory from SP to VM? */
 	ret = cactus_req_mem_send_send_cmd(HYP_ID, sender_sp, mem_func,
-					   receiver_vm, false);
+					   receiver_vm);
 
 	if (!is_ffa_direct_response(ret)) {
 		return TEST_RESULT_FAIL;
@@ -330,38 +363,19 @@ static test_result_t test_req_mem_send_sp_to_vm(uint32_t mem_func,
 test_result_t test_req_mem_share_sp_to_sp(void)
 {
 	return test_req_mem_send_sp_to_sp(FFA_MEM_SHARE_SMC32, SP_ID(3),
-					  SP_ID(2), false);
-}
-
-test_result_t test_req_ns_mem_share_sp_to_sp(void)
-{
-	/*
-	 * Skip the test when RME is enabled (for test setup reasons).
-	 * For RME tests, the model specifies 48b physical address size
-	 * at the PE, but misses allocating RAM and increasing the PA at
-	 * the interconnect level.
-	 */
-	if (get_armv9_2_feat_rme_support() != 0U) {
-		return TEST_RESULT_SKIPPED;
-	}
-
-	/* This test requires 48b physical address size capability. */
-	SKIP_TEST_IF_PA_SIZE_LESS_THAN(48);
-
-	return test_req_mem_send_sp_to_sp(FFA_MEM_SHARE_SMC32, SP_ID(3),
-					  SP_ID(2), true);
+					  SP_ID(2));
 }
 
 test_result_t test_req_mem_lend_sp_to_sp(void)
 {
 	return test_req_mem_send_sp_to_sp(FFA_MEM_LEND_SMC32, SP_ID(3),
-					  SP_ID(2), false);
+					  SP_ID(2));
 }
 
 test_result_t test_req_mem_donate_sp_to_sp(void)
 {
 	return test_req_mem_send_sp_to_sp(FFA_MEM_DONATE_SMC32, SP_ID(1),
-					  SP_ID(3), false);
+					  SP_ID(3));
 }
 
 test_result_t test_req_mem_share_sp_to_vm(void)
@@ -420,7 +434,7 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 	VERBOSE("Memory has been shared!\n");
 
 	ret = cactus_mem_send_cmd(SENDER, RECEIVER, FFA_MEM_LEND_SMC32, handle,
-				  FFA_MEMORY_REGION_FLAG_CLEAR, true,
+				  FFA_MEMORY_REGION_FLAG_CLEAR,
 				  nr_words_to_write);
 
 	if (!is_ffa_direct_response(ret)) {
