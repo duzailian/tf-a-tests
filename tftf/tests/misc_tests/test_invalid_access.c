@@ -291,9 +291,8 @@ static test_result_t memory_cannot_be_accessed_in_rl(u_register_t params)
  * This change adds TFTF and cactus test to permit checking a root region
  * cannot be accessed from secure world.
  * A hardcoded address marked Root in the GPT is shared to a secure
- * partition. The SP retrieves the region from the SPM, maps it and
- * attempts a read access to the region. It is expected to trigger a GPF
- * data abort on the PE caught by a custom exception handler.
+ * partition. Hafnium rejects the mem share operation because the region
+ * isn't specified as NS memory in the SPMC manifest.
  *
  */
 test_result_t rt_memory_cannot_be_accessed_in_s(void)
@@ -325,29 +324,7 @@ test_result_t rt_memory_cannot_be_accessed_in_s(void)
 					constituents, constituents_count,
 					FFA_MEM_SHARE_SMC32, &ret);
 
-	if (handle == FFA_MEMORY_HANDLE_INVALID) {
-		return TEST_RESULT_FAIL;
-	}
-
-	VERBOSE("TFTF - Handle: %llx Address: %p\n",
-		handle, constituents[0].address);
-
-	/* Retrieve the shared page and attempt accessing it. */
-	ret = cactus_mem_send_cmd(SENDER, RECEIVER, FFA_MEM_SHARE_SMC32,
-				  handle, 0, true, 1);
-
-	if (is_ffa_call_error(ffa_mem_reclaim(handle, 0))) {
-		ERROR("Memory reclaim failed!\n");
-		return TEST_RESULT_FAIL;
-	}
-
-	/*
-	 * Expect success response with value 1 hinting an exception
-	 * triggered while the SP accessed the region.
-	 */
-	if (!(cactus_get_response(ret) == CACTUS_SUCCESS &&
-	      cactus_error_code(ret) == 1)) {
-		ERROR("Exceptions test failed!\n");
+	if (handle != FFA_MEMORY_HANDLE_INVALID) {
 		return TEST_RESULT_FAIL;
 	}
 

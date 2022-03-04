@@ -35,37 +35,6 @@ static bool data_abort_gpf_handler(void)
 	return false;
 }
 
-/**
- * Each Cactus SP has a memory region dedicated to memory sharing tests
- * described in their partition manifest.
- * This function returns the expected base address depending on the
- * SP ID (should be the same as the manifest).
- */
-static void *share_page(ffa_id_t cactus_sp_id)
-{
-	switch (cactus_sp_id) {
-	case SP_ID(1):
-		return (void *)CACTUS_SP1_MEM_SHARE_BASE;
-	case SP_ID(2):
-		return (void *)CACTUS_SP2_MEM_SHARE_BASE;
-	case SP_ID(3):
-		return (void *)CACTUS_SP3_MEM_SHARE_BASE;
-	default:
-		ERROR("Helper function expecting a valid Cactus SP ID!\n");
-		panic();
-	}
-}
-
-static void *share_page_non_secure(ffa_id_t cactus_sp_id)
-{
-	if (cactus_sp_id != SP_ID(3)) {
-		ERROR("Helper function expecting a valid Cactus SP ID!\n");
-		panic();
-	}
-
-	return (void *)CACTUS_SP3_NS_MEM_SHARE_BASE;
-}
-
 CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 {
 	struct ffa_memory_region *m;
@@ -75,12 +44,12 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 	uint32_t *ptr;
 	ffa_id_t source = ffa_dir_msg_source(*args);
 	ffa_id_t vm_id = ffa_dir_msg_dest(*args);
-	uint32_t mem_func = cactus_req_mem_send_get_mem_func(*args);
+	uint32_t mem_func = cactus_mem_send_get_mem_func(*args);
 	uint64_t handle = cactus_mem_send_get_handle(*args);
 	ffa_memory_region_flags_t retrv_flags =
 					 cactus_mem_send_get_retrv_flags(*args);
 	uint32_t words_to_write = cactus_mem_send_words_to_write(*args);
-	bool non_secure = cactus_mem_send_get_non_secure(*args);
+	bool map_non_secure;
 
 	expect(memory_retrieve(mb, &m, handle, source, vm_id,
 			       retrv_flags), true);
@@ -101,9 +70,13 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 
 	mem_attrs = MT_RW_DATA | MT_EXECUTE_NEVER;
 
-	if (non_secure) {
+	map_non_secure = (m->attributes & (1U << 6)) != 0;
+	if (map_non_secure) {
 		mem_attrs |= MT_NS;
 	}
+
+	NOTICE("Memory region is %s\n",
+	       (map_non_secure) ? "non-secure" : "secure");
 
 	ret = mmap_add_dynamic_region(
 			(uint64_t)composite->constituents[0].address,
@@ -178,6 +151,27 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 				   source, data_abort_gpf_triggered);
 }
 
+/**
+ * Each Cactus SP has a memory region dedicated to memory sharing tests
+ * described in their partition manifest.
+ * This function returns the expected base address depending on the
+ * SP ID (should be the same as the manifest).
+ */
+static void *share_page(ffa_id_t cactus_sp_id)
+{
+	switch (cactus_sp_id) {
+	case SP_ID(1):
+		return (void *)CACTUS_SP1_MEM_SHARE_BASE;
+	case SP_ID(2):
+		return (void *)CACTUS_SP2_MEM_SHARE_BASE;
+	case SP_ID(3):
+		return (void *)CACTUS_SP3_MEM_SHARE_BASE;
+	default:
+		ERROR("Helper function expecting a valid Cactus SP ID!\n");
+		panic();
+	}
+}
+
 CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 {
 	struct ffa_value ffa_ret;
@@ -186,9 +180,7 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 	ffa_memory_handle_t handle;
 	ffa_id_t vm_id = ffa_dir_msg_dest(*args);
 	ffa_id_t source = ffa_dir_msg_source(*args);
-	bool non_secure = cactus_req_mem_send_get_non_secure(*args);
-	void *share_page_addr =
-		non_secure ? share_page_non_secure(vm_id) : share_page(vm_id);
+	void *share_page_addr = share_page(vm_id);
 	unsigned int mem_attrs;
 	int ret;
 
@@ -203,11 +195,7 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 					     sizeof(constituents[0]));
 
 	VERBOSE("Sharing at 0x%llx\n", (uint64_t)constituents[0].address);
-	mem_attrs = MT_RW_DATA;
-
-	if (non_secure) {
-		mem_attrs |= MT_NS;
-	}
+	mem_attrs = MT_RW_DATA | MT_EXECUTE_NEVER;
 
 	ret = mmap_add_dynamic_region(
 		(uint64_t)constituents[0].address,
@@ -237,7 +225,7 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 	}
 
 	ffa_ret = cactus_mem_send_cmd(vm_id, receiver, mem_func, handle,
-				      0, non_secure, 10);
+				      0, 10);
 
 	if (!is_ffa_direct_response(ffa_ret)) {
 		return cactus_error_resp(vm_id, source, CACTUS_ERROR_FFA_CALL);
@@ -276,14 +264,16 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 		#endif
 	}
 
-	/* Always unmap the sent memory region, will be remapped by another
-	 * test if needed. */
+	/*
+	 * Always unmap the sent memory region, will be remapped by another
+	 * test if needed.
+	 */
 	ret = mmap_remove_dynamic_region(
 		(uint64_t)constituents[0].address,
 		constituents[0].page_count * PAGE_SIZE);
 
 	if (ret != 0) {
-		ERROR("Failed to unmap share memory region (%d)!\n", ret);
+		ERROR("Failed to unmap shared memory region (%d)!\n", ret);
 		return cactus_error_resp(vm_id, source,
 					 CACTUS_ERROR_TEST);
 	}
