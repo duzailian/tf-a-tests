@@ -22,6 +22,47 @@
       },
       "revId": "ec0326d249d3bc3e9b1f3e80674f6c29f492d37c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "827e772a_7add8a5b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-03-07T23:01:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1afacfb6_26d6fc08",
+      "range": {
+        "startLine": 7,
+        "startChar": 17,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "ec0326d249d3bc3e9b1f3e80674f6c29f492d37c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5343567a_174082c4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-03-07T23:01:02Z",
+      "side": 1,
+      "message": "Thanks for the reviews, Joao!",
+      "revId": "ec0326d249d3bc3e9b1f3e80674f6c29f492d37c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
