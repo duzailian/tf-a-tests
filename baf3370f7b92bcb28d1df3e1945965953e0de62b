@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5771428_4978c702",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-03-07T17:08:18Z",
+      "side": 1,
+      "message": "should we lock the table before jumping to the position? what if concurrently there is a call to clear the handler for the given \u0027intid\u0027?",
+      "range": {
+        "startLine": 64,
+        "startChar": 1,
+        "endLine": 66,
+        "endChar": 2
+      },
+      "revId": "baf3370f7b92bcb28d1df3e1945965953e0de62b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "963ffa50_b8ec21f3",
+        "filename": "spm/common/sp_helpers.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-03-07T17:08:18Z",
+      "side": 1,
+      "message": "I am confused by the fact the sp_handler_lock is an array.\n\nEach core seems to be locking a spinlock which is in its \u0027core_pos\u0027. The remaining cores will do the same, as a consequence of this they will never check for the same lock in the array. As I see it, two concurrent cores can lock their respective locks, and change the handler to the same interrupt.\n\nI think sp_handler_lock should be a single variable, accessed by all cores. This will ensure synchronous access to the sp_interrupt_tail_end_handler.\nOr instead have a lock per interrupt instead of per core. Like this the interrupt respective lock will be held when the interrupt handler is being registered, serviced and cleared. This might be better than having a single lock monitoring the access to the whole table.\n\nLet me know if I am missing something.",
+      "range": {
+        "startLine": 103,
+        "startChar": 1,
+        "endLine": 105,
+        "endChar": 41
+      },
+      "revId": "baf3370f7b92bcb28d1df3e1945965953e0de62b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
