@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ede86c2_8a816473",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-03-07T23:00:37Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a5771428_4978c702",
+      "range": {
+        "startLine": 64,
+        "startChar": 1,
+        "endLine": 66,
+        "endChar": 2
+      },
+      "revId": "baf3370f7b92bcb28d1df3e1945965953e0de62b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "963ffa50_b8ec21f3",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-03-07T17:08:18Z",
       "side": 1,
       "message": "I am confused by the fact the sp_handler_lock is an array.\n\nEach core seems to be locking a spinlock which is in its \u0027core_pos\u0027. The remaining cores will do the same, as a consequence of this they will never check for the same lock in the array. As I see it, two concurrent cores can lock their respective locks, and change the handler to the same interrupt.\n\nI think sp_handler_lock should be a single variable, accessed by all cores. This will ensure synchronous access to the sp_interrupt_tail_end_handler.\nOr instead have a lock per interrupt instead of per core. Like this the interrupt respective lock will be held when the interrupt handler is being registered, serviced and cleared. This might be better than having a single lock monitoring the access to the whole table.\n\nLet me know if I am missing something.",
+      "range": {
+        "startLine": 103,
+        "startChar": 1,
+        "endLine": 105,
+        "endChar": 41
+      },
+      "revId": "baf3370f7b92bcb28d1df3e1945965953e0de62b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f32be140_9d271143",
+        "filename": "spm/common/sp_helpers.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-03-07T23:00:37Z",
+      "side": 1,
+      "message": "Hi Joao\nThanks for the feedback. I will change it to one lock per interrupt.",
+      "parentUuid": "963ffa50_b8ec21f3",
       "range": {
         "startLine": 103,
         "startChar": 1,
