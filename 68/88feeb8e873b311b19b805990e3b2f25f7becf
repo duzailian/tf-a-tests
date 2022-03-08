@@ -1,0 +1,10 @@
+Allow-CI+2: Manish Pandey <manish.pandey2@arm.com>
+Verified+1: Manish Pandey <manish.pandey2@arm.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Code-Owner-Review+1: Joanna Farley <joanna.farley@arm.com>
+Submitted-by: Joanna Farley <joanna.farley@arm.com>
+Submitted-at: Tue, 08 Mar 2022 19:52:16 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/14289
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
