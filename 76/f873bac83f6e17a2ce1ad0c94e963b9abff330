@@ -1,0 +1,9 @@
+Maintainer-Review+1: Joanna Farley <joanna.farley@arm.com>
+Code-Owner-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Verified+1: Manish Pandey <manish.pandey2@arm.com>
+Verified+1: Joanna Farley <joanna.farley@arm.com>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Tue, 08 Mar 2022 22:22:21 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/14301
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
