@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13461ab7_07a0b1a3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-03-08T09:29:38Z",
+      "side": 0,
+      "message": "nit: keep empty line",
+      "revId": "a7ccb402229b3b9419ec17f311576ffdf1e037b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
