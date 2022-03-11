@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "64665036_788161e7",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1000715
+      },
+      "writtenOn": "2022-03-11T18:12:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c08e3b8f_d9520f02",
+      "range": {
+        "startLine": 302,
+        "startChar": 39,
+        "endLine": 302,
+        "endChar": 48
+      },
+      "revId": "7fa35378d35e48c945e8b2d5b5739d570c5be686",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f59ce402_cdd2a63d",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e436282_95a520fa",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000715
+      },
+      "writtenOn": "2022-03-11T18:12:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f59ce402_cdd2a63d",
+      "range": {
+        "startLine": 246,
+        "startChar": 44,
+        "endLine": 246,
+        "endChar": 46
+      },
+      "revId": "7fa35378d35e48c945e8b2d5b5739d570c5be686",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "72c8a4bf_94dc98cd",
@@ -60,6 +108,24 @@
       "writtenOn": "2022-03-11T13:13:34Z",
       "side": 1,
       "message": "Should this be a more global TFTF setting rather than constrained to cactus?",
+      "revId": "7fa35378d35e48c945e8b2d5b5739d570c5be686",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6767429_a3f345b0",
+        "filename": "spm/cactus/cactus.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000715
+      },
+      "writtenOn": "2022-03-11T18:12:22Z",
+      "side": 1,
+      "message": "yes, can be a more global param, but it needs to be a platform param not only a TFTF",
+      "parentUuid": "72c8a4bf_94dc98cd",
       "revId": "7fa35378d35e48c945e8b2d5b5739d570c5be686",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
