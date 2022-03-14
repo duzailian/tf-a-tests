@@ -306,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f4040fb_1d13d24e",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 32
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-14T14:15:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41235533_4332cb3e",
+      "range": {
+        "startLine": 307,
+        "startChar": 55,
+        "endLine": 307,
+        "endChar": 56
+      },
+      "revId": "4bc35acdce26a8493b87d99c8cd0753842c2bea3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "75a2c36f_f8b1569b",
@@ -366,6 +390,30 @@
       "writtenOn": "2022-03-03T20:54:34Z",
       "side": 1,
       "message": "this is the same function body as non_secure_call_secure_multi_cpu_sync\ncan it be factored in a single function passing a function pointer as parameter?",
+      "range": {
+        "startLine": 319,
+        "startChar": 1,
+        "endLine": 327,
+        "endChar": 44
+      },
+      "revId": "4bc35acdce26a8493b87d99c8cd0753842c2bea3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1de61840_43f9fe48",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 32
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-14T14:15:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "018d251f_7587550b",
       "range": {
         "startLine": 319,
         "startChar": 1,
@@ -763,6 +811,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b9dcf1c_d0065697",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 32
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-14T14:15:58Z",
+      "side": 1,
+      "message": "I replaced by wait for event instead of on/off.\nthe tc2a describe that the test should run sequentially SPM/RMI on a second core other then the main lead core",
+      "parentUuid": "50e9315b_8c14512f",
+      "revId": "4bc35acdce26a8493b87d99c8cd0753842c2bea3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ae0ff6be_3ad15ea3",
@@ -893,6 +959,30 @@
       "writtenOn": "2022-03-03T20:54:34Z",
       "side": 1,
       "message": "suggest to create a wrapper",
+      "range": {
+        "startLine": 402,
+        "startChar": 2,
+        "endLine": 406,
+        "endChar": 4
+      },
+      "revId": "4bc35acdce26a8493b87d99c8cd0753842c2bea3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8314597_ba92ac76",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 32
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-14T14:15:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32d9f414_c789f0ed",
       "range": {
         "startLine": 402,
         "startChar": 2,
@@ -1184,6 +1274,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e968cf7_6652e565",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 32
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-14T14:15:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b260f725_01079e88",
+      "range": {
+        "startLine": 484,
+        "startChar": 4,
+        "endLine": 491,
+        "endChar": 5
+      },
+      "revId": "4bc35acdce26a8493b87d99c8cd0753842c2bea3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "64a53119_8c7f15ea",
@@ -1260,6 +1374,54 @@
         "startChar": 71,
         "endLine": 17,
         "endChar": 89
+      },
+      "revId": "4bc35acdce26a8493b87d99c8cd0753842c2bea3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09a03707_0d688500",
+        "filename": "tftf/tests/tests-realm-payload.xml",
+        "patchSetId": 32
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-14T14:15:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfc1de0e_baf95538",
+      "range": {
+        "startLine": 17,
+        "startChar": 71,
+        "endLine": 17,
+        "endChar": 89
+      },
+      "revId": "4bc35acdce26a8493b87d99c8cd0753842c2bea3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f9dcf6d_12725538",
+        "filename": "tftf/tests/tests-realm-payload.xml",
+        "patchSetId": 32
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-03-14T14:15:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37dff31b_084e26bf",
+      "range": {
+        "startLine": 17,
+        "startChar": 36,
+        "endLine": 17,
+        "endChar": 49
       },
       "revId": "4bc35acdce26a8493b87d99c8cd0753842c2bea3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
