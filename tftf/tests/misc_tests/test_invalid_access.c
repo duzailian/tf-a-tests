@@ -17,6 +17,8 @@
 #include <lib/aarch64/arch_features.h>
 #include <runtime_services/realm_payload/realm_payload_test.h>
 #include <tftf_lib.h>
+#include <xlat_tables_v2.h>
+
 #include <platform_def.h>
 
 /*
@@ -73,7 +75,17 @@ test_result_t access_el3_memory_from_ns(void)
 	register_custom_sync_exception_handler(data_abort_handler);
 	dsbsy();
 
+	int rc = mmap_add_dynamic_region(test_address, test_address, PAGE_SIZE,
+					MT_MEMORY | MT_RW | MT_NS);
+
+	if (rc != 0) {
+		tftf_testcase_printf("%d: mmap_add_dynamic_region() = %d\n", __LINE__, rc);
+		return TEST_RESULT_FAIL;
+	}
+
 	*((volatile uint64_t *)test_address);
+
+	mmap_remove_dynamic_region(test_address, PAGE_SIZE);
 
 	dsbsy();
 	unregister_custom_sync_exception_handler();
