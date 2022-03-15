@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6108b22d_ada279df",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-03-15T16:28:54Z",
+      "side": 1,
+      "message": "The test which run invalid_access test has passed \nhttps://jenkins.oss.arm.com/job/tf-worker/2917450/artifact/run/uart0_full.txt",
+      "revId": "813b51b45126713166fdc6da0ecc8014c17d5227",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
