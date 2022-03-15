@@ -283,6 +283,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c9be92f_a0d228bb",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 32
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-03-15T17:31:34Z",
+      "side": 1,
+      "message": "\u003e the read for my opinion don\u0027t need a lock it just spin the core until the last one came\nI still think it can silently break. It may work by luck on Arm/AArch64 but isn\u0027t portable. If for some reason the read isn\u0027t atomic e.g. the compiler decides to break a 64b read into two 32b reads (or 32b into two 16b halves) then it\u0027s likely the counter value is biased.\n\u003e I know counting semaphore is better in this case, but we don\u0027t have the library in TFTF, so I just used what we have.\nI understand but I\u0027d prefer integrating robust code, so if semaphores are strictly required for a test case then it\u0027s a matter of implementing those helpers, or find another solution not requiring semaphores which apparently you did.",
+      "parentUuid": "feacbc75_8d357c7a",
+      "range": {
+        "startLine": 265,
+        "startChar": 1,
+        "endLine": 266,
+        "endChar": 3
+      },
+      "revId": "4bc35acdce26a8493b87d99c8cd0753842c2bea3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "41235533_4332cb3e",
@@ -367,6 +391,30 @@
       "side": 1,
       "message": "https://confluence.arm.com/display/BSGSoftware/Newmore+STP+Phase+1+Test+Plan:\ntc3:\nNS world must be able to communicate with S and RL worlds in parallel via SMC using multiple cores.\nsome history:\nhttps://jira.arm.com/browse/GENFW-5411",
       "parentUuid": "75a2c36f_f8b1569b",
+      "range": {
+        "startLine": 315,
+        "startChar": 69,
+        "endLine": 316,
+        "endChar": 17
+      },
+      "revId": "4bc35acdce26a8493b87d99c8cd0753842c2bea3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "359ba04b_0443d156",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 32
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-03-15T17:31:34Z",
+      "side": 1,
+      "message": "I was challenging the fact that all cores could be left free running from the time they\u0027re released from reset. As opposed to inventing some kind of rendezvous semantics such that each core synchronize to reach a common point after being released from reset. This latter implementation looked a bit over-engineered eventually ending up to a similar behavior (aka parallel execution of all cores).",
+      "parentUuid": "9abf2145_4759cdd5",
       "range": {
         "startLine": 315,
         "startChar": 69,
