@@ -120,7 +120,7 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 #define SKIP_TEST_IF_SVE_NOT_SUPPORTED()					\
 	do {									\
 		if (!is_armv8_2_sve_present()) {				\
-			tftf_testcase_printf("SVE not supported\n");		\
+			VERBOSE("SVE not supported\n");		\
 			return TEST_RESULT_SKIPPED;				\
 		}								\
 	} while (0)
