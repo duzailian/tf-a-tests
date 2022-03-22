@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a2ba59e_22b7d3b0",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-03-22T13:42:44Z",
+      "side": 1,
+      "message": "nit: miss \\n?",
+      "range": {
+        "startLine": 300,
+        "startChar": 47,
+        "endLine": 300,
+        "endChar": 50
+      },
+      "revId": "fb1b867df4179a78a6c0bd89c04c13888b41ff73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
