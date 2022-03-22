@@ -424,3 +424,20 @@ test_result_t test_ffa_partition_info_v1_0(void)
 	}
 	return result;
 }
+
+/**
+ * Sets the Mailbox for other SPM related tests that need to use
+ * RXTX buffers.
+ */
+bool mailbox_init(void)
+{
+	smc_ret_values ret;
+	ffa_rxtx_unmap();
+	CONFIGURE_AND_MAP_MAILBOX(mb, PAGE_SIZE, ret);
+	if (ffa_func_id(ret) != FFA_SUCCESS_SMC32) {
+		ERROR("Failed to map RXTX buffers %x!\n", ffa_error_code(ret));
+		return false;
+	}
+	set_tftf_mailbox(&mb);
+	return true;
+}
