@@ -22,6 +22,30 @@
       },
       "revId": "b95b57fe01f42cd563260446e87a7c207879d654",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "381cdbe9_9cf77d01",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-03-22T18:28:41Z",
+      "side": 1,
+      "message": "I have to agree it\u0027s tricky to limit to 50 characters for this patch :)",
+      "parentUuid": "ad6098ec_29285fb8",
+      "range": {
+        "startLine": 7,
+        "startChar": 65,
+        "endLine": 7,
+        "endChar": 72
+      },
+      "revId": "b95b57fe01f42cd563260446e87a7c207879d654",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
