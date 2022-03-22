@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f83436bb_e29216d1",
+        "filename": "tftf/tests/tests-invalid-access.xml",
+        "patchSetId": 17
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-03-22T14:27:16Z",
+      "side": 1,
+      "message": "while you are here, can you please rename this function to \"el3_memory_cannot_be_accessed_in_ns\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 26,
+        "endLine": 12,
+        "endChar": 51
+      },
+      "revId": "3b39761333fcc2c6763f609d3c1eb0cbdcfbbc1e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
