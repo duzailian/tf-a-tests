@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ebdb601_496bef6b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_exceptions.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-03-22T13:17:18Z",
+      "side": 1,
+      "message": "Do you need this anymore?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 6
+      },
+      "revId": "a95136e9528da44808299e875ac2acaacb1c736f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
