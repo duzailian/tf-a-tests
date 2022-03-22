@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "162f6e76_2c1990f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-03-22T14:35:05Z",
+      "side": 1,
+      "message": "The newly introduced tests pass tf-main https://jenkins.oss.arm.com/job/tf-main/2647/  \n2 world test : https://jenkins.oss.arm.com/job/tf-worker/2934405/artifact/run/uart0_full.txt\n4 world test : https://jenkins.oss.arm.com/job/tf-worker/2934418/artifact/run/uart0_full.txt",
+      "revId": "5f86b0ec05c5700113ecef636c430e567c314ae3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
