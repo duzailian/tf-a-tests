@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "875b7372_78577c02",
+        "filename": "tftf/tests/common/test_helpers.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-03-23T08:41:10Z",
+      "side": 1,
+      "message": "Can this call wait_for_core_to_turn_off?",
+      "range": {
+        "startLine": 275,
+        "startChar": 2,
+        "endLine": 277,
+        "endChar": 4
+      },
+      "revId": "268fd24b804de3da2873b7bb5f5cb5bd25c1620a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
