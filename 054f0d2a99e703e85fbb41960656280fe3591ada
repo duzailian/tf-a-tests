@@ -95,6 +95,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "363f960c_765f630e",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 41
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-03-23T08:43:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05cccf64_c21706ae",
+      "range": {
+        "startLine": 128,
+        "startChar": 1,
+        "endLine": 139,
+        "endChar": 2
+      },
+      "revId": "054f0d2a99e703e85fbb41960656280fe3591ada",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "32e508f0_45b926c3",
@@ -493,6 +517,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "57b409bc_958d4a4f",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 41
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-03-23T08:43:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "965cbec4_8e060630",
+      "range": {
+        "startLine": 396,
+        "startChar": 2,
+        "endLine": 396,
+        "endChar": 24
+      },
+      "revId": "054f0d2a99e703e85fbb41960656280fe3591ada",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "86cc8fff_470c3fc7",
@@ -571,6 +619,24 @@
       "side": 1,
       "message": "here we need to decide (you and Manish) ether I keep on/off or same function call FFA and RMI in lead and secondary core, then I\u0027ll change code accordingly.\nat the first code I was using :\nwhile (tftf_psci_affinity_info(mpidr, MPIDR_AFFLVL0) !\u003d\n\t\tPSCI_STATE_OFF) {\n\t\t\tcontinue;\n\t\t}\nwhich will wait until second core is completely off.\njust we need to decide what I need to keep here.",
       "parentUuid": "4ea23149_abf93a79",
+      "revId": "054f0d2a99e703e85fbb41960656280fe3591ada",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "604f49d7_69613009",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 41
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-03-23T08:43:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5374ea79_4f86f45a",
       "revId": "054f0d2a99e703e85fbb41960656280fe3591ada",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
