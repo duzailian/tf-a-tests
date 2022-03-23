@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e65afcc_b04d9a1f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-03-23T15:40:04Z",
+      "side": 1,
+      "message": "Passed tests here https://jenkins.oss.arm.com/job/tf-main/2651/\nhttps://jenkins.oss.arm.com/job/tf-worker/2937367/artifact/run/uart0_full.txt/*view*/ and \nhttps://jenkins.oss.arm.com/job/tf-worker/2937394/artifact/run/uart0_full.txt\n",
+      "revId": "368054b4b4cc91893e56a8b8c0082fb999922f1e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
