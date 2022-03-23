@@ -145,6 +145,30 @@
       },
       "revId": "b0210f97b7f594d2203af292106d648c35b83c0d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "255ec07d_52f05e41",
+        "filename": "spm/common/sp_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-03-23T08:24:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "94606dc5_94121964",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 19
+      },
+      "revId": "b0210f97b7f594d2203af292106d648c35b83c0d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
