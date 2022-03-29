@@ -1,8 +1,14 @@
 #
-# Copyright (c) 2018-2021, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2022, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
+
+TESTS_SOURCES	+=							\
+	$(addprefix spm/common/,					\
+		aarch64/sp_arch_helpers.S				\
+		sp_helpers.c						\
+	)
 
 TESTS_SOURCES	+=							\
 	$(addprefix tftf/tests/runtime_services/secure_service/,	\

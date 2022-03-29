@@ -17,6 +17,16 @@ spinlock_t sp_handler_lock[NUM_VINT_ID];
 
 void (*sp_interrupt_tail_end_handler[NUM_VINT_ID])(void);
 
+struct sc_value sp_service_call(struct sc_value *args)
+{
+#if IMAGE_IVY
+	sp_svc(args);
+#else
+	sp_smc(args);
+#endif
+	return *args;
+}
+
 uintptr_t bound_rand(uintptr_t min, uintptr_t max)
 {
 	/*
