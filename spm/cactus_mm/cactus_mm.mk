@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018-2020, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2022, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -7,6 +7,7 @@
 include branch_protection.mk
 
 CACTUS_MM_INCLUDES :=					\
+	-Itftf/framework/include			\
 	-Iinclude					\
 	-Iinclude/common				\
 	-Iinclude/common/${ARCH}			\
@@ -44,6 +45,8 @@ CACTUS_MM_SOURCES	+=				\
 	drivers/console/console.c			\
 	lib/${ARCH}/cache_helpers.S			\
 	lib/${ARCH}/misc_helpers.S			\
+	lib/smc/${ARCH}/asm_smc.S			\
+	lib/smc/${ARCH}/svc.c
 
 CACTUS_MM_LINKERFILE	:=	spm/cactus_mm/cactus_mm.ld.S
 

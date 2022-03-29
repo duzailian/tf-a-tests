@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2019, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -53,7 +53,9 @@ static int32_t request_mem_attr_changes(uintptr_t base_address,
 				base_address,
 				pages_count,
 				memory_access_controls };
-	return sp_svc(&svc_values);
+	svc_ret_values svc_ret = tftf_svc(&svc_values);
+
+	return svc_ret.ret0;
 }
 
 /*
@@ -67,7 +69,9 @@ static int32_t request_get_mem_attr(uintptr_t base_address)
 
 	svc_args svc_values = { SP_MEMORY_ATTRIBUTES_GET_AARCH64,
 				base_address };
-	return sp_svc(&svc_values);
+	svc_ret_values svc_ret = tftf_svc(&svc_values);
+
+	return svc_ret.ret0;
 }
 
 /*

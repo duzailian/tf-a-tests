@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2013-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -73,3 +73,21 @@ func asm_tftf_hvc64
 	smccc_conduit hvc
 	ret
 endfunc asm_tftf_hvc64
+
+/* ---------------------------------------------------------------------------
+ * svc_ret_values asm_tftf_svcc64(uint32_t fid,
+ *				 u_register_t arg1,
+ *				 u_register_t arg2,
+ *				 u_register_t arg3,
+ *				 u_register_t arg4,
+ *				 u_register_t arg5,
+ *				 u_register_t arg6,
+ *				 u_register_t arg7);
+ * ---------------------------------------------------------------------------
+ */
+	.globl	asm_tftf_svc64
+
+func asm_tftf_svc64
+	smccc_conduit svc
+	ret
+endfunc asm_tftf_svc64
