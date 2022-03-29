@@ -30,14 +30,14 @@ QUARK_SOURCES	:=					\
 		quark_main.c				\
 	)						\
 	$(addprefix spm/common/,			\
-		aarch64/sp_arch_helpers.S		\
 		sp_helpers.c				\
 	)						\
 
 # TODO: Remove dependency on TFTF files.
 QUARK_SOURCES	+=					\
 	tftf/framework/debug.c				\
-	tftf/framework/${ARCH}/asm_debug.S
+	tftf/framework/${ARCH}/asm_debug.S		\
+	tftf/tests/runtime_services/secure_service/${ARCH}/ffa_arch_helpers.S
 
 QUARK_SOURCES	+= 	drivers/console/${ARCH}/dummy_console.S		\
 			lib/locks/${ARCH}/spinlock.S			\

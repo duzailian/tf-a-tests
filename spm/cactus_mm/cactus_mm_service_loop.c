@@ -1,11 +1,12 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
 #include <assert.h>
 #include <debug.h>
+#include <ffa_helpers.h>
 #include <mm_svc.h>
 #include <secure_partition.h>
 #include <sp_helpers.h>
@@ -68,7 +69,7 @@ static int32_t cactus_handle_fast_request(int cc,
 __dead2 void secure_services_loop(void)
 {
 	int32_t event_status_code;
-	svc_args svc_values = { 0 };
+	struct ffa_value svc_values = { 0 };
 
 	/*
 	 * The first time this loop is executed corresponds to when Cactus has
@@ -81,7 +82,7 @@ __dead2 void secure_services_loop(void)
 	while (1) {
 		svc_values.fid = SP_EVENT_COMPLETE_AARCH64;
 		svc_values.arg1 = event_status_code;
-		int32_t event_id = sp_svc(&svc_values);
+		int32_t event_id = ffa_svc(&svc_values);
 
 		switch (event_id) {
 		case MM_COMMUNICATE_AARCH64:

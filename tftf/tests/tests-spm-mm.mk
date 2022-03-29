@@ -9,4 +9,8 @@ TESTS_SOURCES	+=							\
 		secure_service_helpers.c				\
 		test_secure_service_handle.c 				\
 		test_secure_service_interrupts.c			\
+	)								\
+	$(addprefix tftf/tests/runtime_services/secure_service/,	\
+		${ARCH}/ffa_arch_helpers.S				\
+		ffa_helpers.c						\
 	)
