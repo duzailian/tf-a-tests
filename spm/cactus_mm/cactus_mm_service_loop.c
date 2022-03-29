@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -81,14 +81,15 @@ __dead2 void secure_services_loop(void)
 	while (1) {
 		svc_values.fid = SP_EVENT_COMPLETE_AARCH64;
 		svc_values.arg1 = event_status_code;
-		int32_t event_id = sp_svc(&svc_values);
+		svc_ret_values svc_ret = tftf_svc(&svc_values);
+		int32_t event_id = svc_ret.ret0;
 
 		switch (event_id) {
 		case MM_COMMUNICATE_AARCH64:
 		  {
-			uint64_t ctx_addr = svc_values.arg1;
-			uint32_t ctx_size = svc_values.arg2;
-			uint64_t cookie = svc_values.arg3;
+			uint64_t ctx_addr = svc_ret.ret1;
+			uint32_t ctx_size = svc_ret.ret2;
+			uint64_t cookie = svc_ret.ret3;
 
 			NOTICE("Cactus: Received MM_COMMUNICATE_AARCH64 call\n");
 			NOTICE("Cactus:   Context address: 0x%llx\n", ctx_addr);
@@ -110,9 +111,9 @@ __dead2 void secure_services_loop(void)
 
 		case MM_COMMUNICATE_AARCH32:
 		  {
-			uint32_t ctx_addr = svc_values.arg1;
-			uint32_t ctx_size = svc_values.arg2;
-			uint32_t cookie = svc_values.arg3;
+			uint32_t ctx_addr = svc_ret.ret1;
+			uint32_t ctx_size = svc_ret.ret2;
+			uint32_t cookie = svc_ret.ret3;
 
 			NOTICE("Cactus: Received MM_COMMUNICATE_AARCH32 call\n");
 			NOTICE("Cactus:   Context address: 0x%x\n", ctx_addr);

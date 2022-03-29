@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -7,7 +7,6 @@
 #include <drivers/arm/pl011.h>
 #include <drivers/console.h>
 #include <sp_debug.h>
-#include <sp_helpers.h>
 #include <spm_helpers.h>
 
 static int (*putc_impl)(int);
@@ -26,7 +25,7 @@ static int putc_svccall(int c)
 		.fid = SPM_DEBUG_LOG,
 		.arg1 = c
 	};
-	sp_svc(&args);
+	tftf_svc(&args);
 
 	return c;
 }

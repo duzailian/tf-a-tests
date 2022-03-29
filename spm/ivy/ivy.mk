@@ -13,6 +13,8 @@ ifneq (${IVY_PLAT_PATH},)
 	include ${IVY_PLAT_PATH}/platform.mk
 endif
 
+EL0_SP		= 1
+
 IVY_SHIM	:= 1
 
 IVY_DTB		:= $(BUILD_PLAT)/ivy.dtb
@@ -65,6 +67,7 @@ IVY_SOURCES	+= 	drivers/arm/pl011/${ARCH}/pl011_console.S	\
 			lib/smc/${ARCH}/asm_smc.S			\
 			lib/smc/${ARCH}/smc.c				\
 			lib/smc/${ARCH}/hvc.c				\
+			lib/smc/${ARCH}/svc.c				\
 			lib/locks/${ARCH}/spinlock.S			\
 			lib/utils/mp_printf.c				\
 			${XLAT_TABLES_LIB_SRCS}
@@ -82,6 +85,7 @@ $(eval $(call add_define,IVY_DEFINES,ENABLE_PAUTH))
 $(eval $(call add_define,IVY_DEFINES,LOG_LEVEL))
 $(eval $(call add_define,IVY_DEFINES,PLAT_${PLAT}))
 $(eval $(call add_define,IVY_DEFINES,IVY_SHIM))
+$(eval $(call add_define,IVY_DEFINES,EL0_SP))
 
 $(IVY_DTB) : $(BUILD_PLAT)/ivy $(BUILD_PLAT)/ivy/ivy.elf
 $(IVY_DTB) : $(IVY_DTS)
