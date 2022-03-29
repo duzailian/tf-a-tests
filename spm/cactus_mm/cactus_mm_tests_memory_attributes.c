@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2019, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -49,10 +49,10 @@ static int32_t request_mem_attr_changes(uintptr_t base_address,
 	INFO("  Number of pages: %i\n", pages_count);
 	INFO("  Attributes     : 0x%x\n", memory_access_controls);
 
-	svc_args svc_values = { SP_MEMORY_ATTRIBUTES_SET_AARCH64,
-				base_address,
-				pages_count,
-				memory_access_controls };
+	struct ffa_value svc_values = { SP_MEMORY_ATTRIBUTES_SET_AARCH64,
+					base_address,
+					pages_count,
+					memory_access_controls };
 	return sp_svc(&svc_values);
 }
 
@@ -65,8 +65,8 @@ static int32_t request_get_mem_attr(uintptr_t base_address)
 	INFO("Requesting memory attributes\n");
 	INFO("  Base address  : %p\n", (void *) base_address);
 
-	svc_args svc_values = { SP_MEMORY_ATTRIBUTES_GET_AARCH64,
-				base_address };
+	struct ffa_value svc_values = { SP_MEMORY_ATTRIBUTES_GET_AARCH64,
+					base_address };
 	return sp_svc(&svc_values);
 }
 

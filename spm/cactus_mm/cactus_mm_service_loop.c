@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -68,7 +68,7 @@ static int32_t cactus_handle_fast_request(int cc,
 __dead2 void secure_services_loop(void)
 {
 	int32_t event_status_code;
-	svc_args svc_values = { 0 };
+	struct ffa_value svc_values = { 0 };
 
 	/*
 	 * The first time this loop is executed corresponds to when Cactus has

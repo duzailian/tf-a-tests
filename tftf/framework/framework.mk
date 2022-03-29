@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018-2021, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2022, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -28,6 +28,7 @@ TFTF_INCLUDES	:= 					\
 	-Ispm/cactus					\
 	-Ispm/ivy					\
 	-Ispm/quark					\
+	-Ispm/common					\
 	-Ismc_fuzz/include
 
 FRAMEWORK_SOURCES	:=	${AUTOGEN_DIR}/tests_list.c
@@ -75,6 +76,11 @@ FRAMEWORK_SOURCES	+=						\
 
 
 FRAMEWORK_SOURCES	+=	${COMPILER_RT_SRCS}
+
+FRAMEWORK_SOURCES	+=						\
+	$(addprefix spm/common/,					\
+		aarch64/sp_arch_helpers.S				\
+	)
 
 ifeq (${ARCH},aarch64)
 # ARMv8.3 Pointer Authentication support files

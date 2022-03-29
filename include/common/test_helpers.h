@@ -12,6 +12,7 @@
 #include <events.h>
 #include <plat_topology.h>
 #include <psci.h>
+#include <sp_helpers.h>
 #include <spm_common.h>
 #include <tftf_lib.h>
 #include <trusted_os.h>
@@ -137,8 +138,7 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 #define SKIP_TEST_IF_MM_NOT_PRESENT()						\
 	do {									\
 		smc_args version_smc = { MM_VERSION_AARCH32 };			\
-		smc_ret_values smc_ret = tftf_smc(&version_smc);		\
-		uint32_t version = smc_ret.ret0;				\
+		uint32_t version = sp_smc(&version_smc);			\
 										\
 		if (version == (uint32_t) SMC_UNKNOWN) {			\
 			tftf_testcase_printf("SPM not detected.\n");		\
@@ -157,9 +157,8 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 
 #define SKIP_TEST_IF_MM_VERSION_LESS_THAN(major, minor)				\
 	do {									\
-		smc_args version_smc = { MM_VERSION_AARCH32 };			\
-		smc_ret_values smc_ret = tftf_smc(&version_smc);		\
-		uint32_t version = smc_ret.ret0;				\
+		struct ffa_value version_smc = { MM_VERSION_AARCH32 };		\
+		uint32_t version = sp_smc(&version_smc);			\
 										\
 		if (version == (uint32_t) SMC_UNKNOWN) {			\
 			tftf_testcase_printf("SPM not detected.\n");		\
@@ -182,16 +181,16 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 
 #define SKIP_TEST_IF_FFA_VERSION_LESS_THAN(major, minor)			\
 	do {									\
-		smc_ret_values smc_ret = ffa_version(				\
+		struct ffa_value smc_ret = ffa_version(				\
 					MAKE_FFA_VERSION(major, minor));	\
-		uint32_t version = smc_ret.ret0;				\
+		uint32_t version = smc_ret.fid;					\
 										\
 		if (version == FFA_ERROR_NOT_SUPPORTED) {			\
 			tftf_testcase_printf("FFA_VERSION not supported.\n");	\
 			return TEST_RESULT_SKIPPED;				\
 		}								\
 										\
-		if ((version & FFA_VERSION_BIT31_MASK) != 0U) {				\
+		if ((version & FFA_VERSION_BIT31_MASK) != 0U) {			\
 			tftf_testcase_printf("FFA_VERSION bad response: %x\n",	\
 					version);				\
 			return TEST_RESULT_FAIL;				\
@@ -222,13 +221,13 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 
 #define SKIP_TEST_IF_FFA_ENDPOINT_NOT_DEPLOYED(mb, ffa_uuid)			\
 	do {									\
-		smc_ret_values smc_ret = ffa_partition_info_get(ffa_uuid);	\
+		struct ffa_value smc_ret = ffa_partition_info_get(ffa_uuid);	\
 		ffa_rx_release();						\
 		if (ffa_func_id(smc_ret) == FFA_ERROR && 			\
 		    ffa_error_code(smc_ret) == FFA_ERROR_INVALID_PARAMETER) {	\
 			tftf_testcase_printf("FFA endpoint not deployed!\n");	\
 			return TEST_RESULT_SKIPPED;				\
-		} else if (smc_ret.ret0 != FFA_SUCCESS_SMC32) {			\
+		} else if (ffa_func_id(smc_ret) != FFA_SUCCESS_SMC32) {		\
 			ERROR("ffa_partition_info_get failed!\n");		\
 			return TEST_RESULT_FAIL;				\
 		}								\
