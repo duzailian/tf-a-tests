@@ -37,7 +37,6 @@ CACTUS_SOURCES	:=					\
 		cactus_main.c				\
 	)						\
 	$(addprefix spm/common/,			\
-		aarch64/sp_arch_helpers.S		\
 		sp_debug.c				\
 		sp_helpers.c				\
 		spm_helpers.c				\
@@ -57,6 +56,7 @@ CACTUS_SOURCES	:=					\
 CACTUS_SOURCES	+=					\
 	tftf/framework/debug.c				\
 	tftf/framework/${ARCH}/asm_debug.S		\
+	tftf/tests/runtime_services/secure_service/${ARCH}/ffa_arch_helpers.S \
 	tftf/tests/runtime_services/secure_service/ffa_helpers.c \
 	tftf/tests/runtime_services/secure_service/spm_common.c	\
 	tftf/framework/${ARCH}/exception_report.c

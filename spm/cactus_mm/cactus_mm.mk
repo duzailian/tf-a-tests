@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018-2020, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2022, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -31,13 +31,13 @@ CACTUS_MM_SOURCES	:=				\
 		cactus_mm_tests_system_setup.c		\
 	)						\
 	$(addprefix spm/common/,			\
-		aarch64/sp_arch_helpers.S		\
 		sp_helpers.c				\
 	)						\
 
 # TODO: Remove dependency on TFTF files.
 CACTUS_MM_SOURCES	+=				\
 	tftf/framework/debug.c				\
+	tftf/tests/runtime_services/secure_service/${ARCH}/ffa_arch_helpers.S
 
 CACTUS_MM_SOURCES	+=				\
 	drivers/arm/pl011/${ARCH}/pl011_console.S	\

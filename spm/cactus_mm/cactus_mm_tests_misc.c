@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2019, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -7,6 +7,7 @@
 #include <assert.h>
 #include <debug.h>
 #include <errno.h>
+#include <ffa_helpers.h>
 #include <sp_helpers.h>
 #include <spm_svc.h>
 #include <stdint.h>
@@ -28,8 +29,9 @@ void misc_tests(void)
 	const char *test_version = "SPM version check";
 
 	announce_test_start(test_version);
-	svc_args svc_values = { SPM_VERSION_AARCH32 };
-	ret = sp_svc(&svc_values);
+	struct ffa_value svc_values = { SPM_VERSION_AARCH32 };
+
+	ret = ffa_svc(&svc_values);
 	INFO("Version = 0x%x (%u.%u)\n", ret,
 	     (ret >> 16) & 0x7FFF, ret & 0xFFFF);
 	expect(ret, SPM_VERSION_COMPILED);
