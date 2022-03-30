@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f8b8ec0_3b66adeb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-03-30T17:17:42Z",
+      "side": 1,
+      "message": "Providing CoR on Olivier\u0027s behalf as the change between two version is just adding \"\\n\" in print statement",
+      "revId": "d3749b08d49a6cb4fd69e66da1e405dbbd3de57f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
