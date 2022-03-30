@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19aaecd5_534d1368",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-03-30T16:26:21Z",
+      "side": 1,
+      "message": "Remove no longer included in spec",
+      "range": {
+        "startLine": 47,
+        "startChar": 8,
+        "endLine": 47,
+        "endChar": 30
+      },
+      "revId": "0c2bdff56bb3c7588f7e8dac8078700ab95f9d8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
