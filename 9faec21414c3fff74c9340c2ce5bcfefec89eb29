@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de8c8008_2a470db9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-03-30T16:43:36Z",
+      "side": 1,
+      "message": "Looks good, although it might be worth adding tests to check the value of the boot info descriptors as well",
+      "revId": "9faec21414c3fff74c9340c2ce5bcfefec89eb29",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
