@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -9,7 +9,6 @@
 #include <debug.h>
 
 #include <cactus_message_loop.h>
-#include <cactus_platform_def.h>
 #include <drivers/arm/pl011.h>
 #include <drivers/console.h>
 #include <lib/aarch64/arch_helpers.h>
@@ -25,8 +24,8 @@
 #include <spm_helpers.h>
 #include <std_svc.h>
 
-#include "cactus_def.h"
-#include "cactus_tests.h"
+#include "sp_def.h"
+#include "sp_tests.h"
 #include "cactus.h"
 
 /* Host machine information injected by the build system in the ELF file. */

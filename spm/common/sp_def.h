@@ -1,13 +1,14 @@
 /*
- * Copyright (c) 2018-2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#ifndef CACTUS_DEF_H
-#define CACTUS_DEF_H
+#ifndef SP_DEF_H
+#define SP_DEF_H
 
 #include <utils_def.h>
+#include <sp_platform_def.h>
 
 /*
  * Layout of the Secure Partition image.
