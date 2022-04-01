@@ -61,14 +61,14 @@ static inline smc_ret_values cactus_send_response(
  * For responses of one value only.
  */
 static inline smc_ret_values cactus_response(
-	ffa_id_t source, ffa_id_t dest, uint32_t response)
+	ffa_id_t source, ffa_id_t dest, uint64_t response)
 {
 	return cactus_send_response(source, dest, response, 0, 0, 0, 0);
 }
 
-static inline uint32_t cactus_get_response(smc_ret_values ret)
+static inline uint64_t cactus_get_response(smc_ret_values ret)
 {
-	return (uint32_t)ret.ret3;
+	return (uint64_t)ret.ret3;
 }
 
 /**
@@ -194,16 +194,18 @@ static inline ffa_id_t cactus_deadlock_get_next_dest2(smc_ret_values ret)
  */
 #define CACTUS_MEM_SEND_CMD U(0x6d656d)
 
+#define CACTUS_MEM_SEND_WORDS_TO_WRITE 100U
+
 static inline smc_ret_values cactus_mem_send_cmd(
 	ffa_id_t source, ffa_id_t dest, uint32_t mem_func,
 	ffa_memory_handle_t handle, ffa_memory_region_flags_t retrieve_flags,
-	bool non_secure, uint16_t word_to_write)
+	bool non_secure, ffa_id_t lender)
 {
 	/*
-	 * `non_secure` and `word_to_write` are packed in the same register.
+	 * `non_secure` and `lender` are packed in the same register.
 	 * Packed in a 32-bit value to support AArch32 platforms (eg Juno).
 	 */
-	uint32_t val3 = ((uint32_t)non_secure << 16) | word_to_write;
+	uint32_t val3 = ((uint32_t)non_secure << 16) | lender;
 	return cactus_send_cmd(source, dest, CACTUS_MEM_SEND_CMD, mem_func,
 			       handle, retrieve_flags, val3);
 }
@@ -219,9 +221,9 @@ static inline ffa_memory_region_flags_t cactus_mem_send_get_retrv_flags(
 	return (ffa_memory_region_flags_t)ret.ret6;
 }
 
-static inline uint16_t cactus_mem_send_words_to_write(smc_ret_values ret)
+static inline uint16_t cactus_mem_send_lender(smc_ret_values ret)
 {
-	return (uint16_t)ret.ret7;
+	return (ffa_id_t)ret.ret7;
 }
 
 static inline bool cactus_mem_send_get_non_secure(smc_ret_values ret)

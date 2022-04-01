@@ -59,7 +59,7 @@ CACTUS_CMD_HANDLER(sleep_fwd_cmd, CACTUS_FWD_SLEEP_CMD)
 	}
 
 	if (cactus_get_response(ffa_ret) != sleep_ms) {
-		ERROR("Request returned: %u ms!\n",
+		ERROR("Request returned: %llu ms!\n",
 		      cactus_get_response(ffa_ret));
 		return cactus_error_resp(vm_id, ffa_dir_msg_source(*args),
 					 CACTUS_ERROR_TEST);

@@ -76,14 +76,14 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 	uint32_t *ptr;
 	ffa_id_t source = ffa_dir_msg_source(*args);
 	ffa_id_t vm_id = ffa_dir_msg_dest(*args);
+	ffa_id_t lender = cactus_mem_send_lender(*args);
 	uint32_t mem_func = cactus_req_mem_send_get_mem_func(*args);
 	uint64_t handle = cactus_mem_send_get_handle(*args);
 	ffa_memory_region_flags_t retrv_flags =
 					 cactus_mem_send_get_retrv_flags(*args);
-	uint32_t words_to_write = cactus_mem_send_words_to_write(*args);
 	bool non_secure = cactus_mem_send_get_non_secure(*args);
 
-	expect(memory_retrieve(mb, &m, handle, source, vm_id,
+	expect(memory_retrieve(mb, &m, handle, lender, vm_id,
 			       retrv_flags), true);
 
 	composite = ffa_memory_region_get_composite(m, 0);
@@ -124,7 +124,7 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 	/* Check that memory has been cleared by the SPMC before using it. */
 	if ((retrv_flags & FFA_MEMORY_REGION_FLAG_CLEAR) != 0U) {
 		VERBOSE("Check if memory has been cleared!\n");
-		for (uint32_t i = 0; i < words_to_write; i++) {
+		for (uint32_t i = 0; i < CACTUS_MEM_SEND_WORDS_TO_WRITE; i++) {
 			if (ptr[i] != 0) {
 				/*
 				 * If it hasn't been cleared, shouldn't be used.
@@ -141,7 +141,7 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 
 	/* Write mem_func to retrieved memory region for validation purposes. */
 	VERBOSE("Writing: %x\n", mem_func);
-	for (unsigned int i = 0U; i < words_to_write; i++) {
+	for (unsigned int i = 0U; i < CACTUS_MEM_SEND_WORDS_TO_WRITE; i++) {
 		ptr[i] = mem_func;
 	}
 
@@ -234,19 +234,6 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 					 ffa_error_code(ffa_ret));
 	}
 
-	ffa_ret = cactus_mem_send_cmd(vm_id, receiver, mem_func, handle,
-				      0, non_secure, 10);
-
-	if (!is_ffa_direct_response(ffa_ret)) {
-		return cactus_error_resp(vm_id, source, CACTUS_ERROR_FFA_CALL);
-	}
-
-	/* If anything went bad on the receiver's end. */
-	if (cactus_get_response(ffa_ret) == CACTUS_ERROR) {
-		ERROR("Received error from receiver!\n");
-		return cactus_error_resp(vm_id, source, CACTUS_ERROR_TEST);
-	}
-
 	if (mem_func != FFA_MEM_DONATE_SMC32) {
 		/*
 		 * Do a memory reclaim only if the mem_func regards to memory
@@ -286,5 +273,5 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 					 CACTUS_ERROR_TEST);
 	}
 
-	return cactus_success_resp(vm_id, source, 0);
+	return cactus_success_resp(vm_id, source, handle);
 }

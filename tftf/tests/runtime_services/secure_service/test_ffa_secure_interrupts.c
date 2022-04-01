@@ -120,7 +120,7 @@ test_result_t test_ffa_sec_interrupt_sp_running(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	VERBOSE("Secure interrupt has preempted execution: %u\n",
+	VERBOSE("Secure interrupt has preempted execution: %llu\n",
 					cactus_get_response(ret_values));
 
 	/* Make sure elapsed time not less than sleep time */

@@ -25,10 +25,10 @@ static const struct ffa_uuid expected_sp_uuids[] = {
 /* Memory section to be used for memory share operations */
 static __aligned(PAGE_SIZE) uint8_t share_page[PAGE_SIZE];
 
-static bool check_written_words(uint32_t *ptr, uint32_t word, uint32_t wcount)
+static bool check_written_words(uint32_t *ptr, uint32_t word)
 {
 	VERBOSE("TFTF - Memory contents after SP use:\n");
-	for (unsigned int i = 0U; i < wcount; i++) {
+	for (unsigned int i = 0U; i < CACTUS_MEM_SEND_WORDS_TO_WRITE; i++) {
 		VERBOSE("      %u: %x\n", i, ptr[i]);
 
 		/* Verify content of memory is as expected. */
@@ -64,9 +64,6 @@ static test_result_t test_memory_send_sp(uint32_t mem_func)
 	uint32_t *ptr;
 	struct mailbox_buffers mb;
 
-	/* Arbitrarily write 5 words after using memory. */
-	const uint32_t nr_words_to_write = 5;
-
 	/***********************************************************************
 	 * Check if SPMC has ffa_version and expected FFA endpoints are deployed.
 	 **********************************************************************/
@@ -96,7 +93,7 @@ static test_result_t test_memory_send_sp(uint32_t mem_func)
 	ptr = (uint32_t *)constituents[0].address;
 
 	ret = cactus_mem_send_cmd(SENDER, RECEIVER, mem_func, handle, 0,
-				  true, nr_words_to_write);
+				  true, SENDER);
 
 	if (!is_ffa_direct_response(ret)) {
 		return TEST_RESULT_FAIL;
@@ -108,7 +105,7 @@ static test_result_t test_memory_send_sp(uint32_t mem_func)
 	}
 
 	/* Check that borrower used the memory as expected for this test. */
-	if (!check_written_words(ptr, mem_func, nr_words_to_write)) {
+	if (!check_written_words(ptr, mem_func)) {
 		ERROR("Words written to shared memory, not as expected.\n");
 		return TEST_RESULT_FAIL;
 	}
@@ -147,6 +144,7 @@ static test_result_t test_req_mem_send_sp_to_sp(uint32_t mem_func,
 						bool non_secure)
 {
 	smc_ret_values ret;
+	ffa_memory_handle_t handle;
 
 	/***********************************************************************
 	 * Check if SPMC's ffa_version and presence of expected FF-A endpoints.
@@ -163,6 +161,22 @@ static test_result_t test_req_mem_send_sp_to_sp(uint32_t mem_func,
 	if (cactus_get_response(ret) == CACTUS_ERROR) {
 		ERROR("Failed sharing memory between SPs. Error code: %d\n",
 			cactus_error_code(ret));
+		return TEST_RESULT_FAIL;
+	}
+
+	handle = cactus_get_response(ret);
+
+	ret = cactus_mem_send_cmd(HYP_ID, receiver_sp, mem_func, handle,
+				  0, non_secure, sender_sp);
+
+	if (!is_ffa_direct_response(ret)) {
+		ERROR("Failed to send memory handle to: %x\n", receiver_sp);
+		return TEST_RESULT_FAIL;
+	}
+
+	/* If anything went bad on the receiver's end. */
+	if (cactus_get_response(ret) == CACTUS_ERROR) {
+		ERROR("Received error from %x!\n", receiver_sp);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -198,7 +212,7 @@ static test_result_t test_req_mem_send_sp_to_vm(uint32_t mem_func,
 	}
 
 	tftf_testcase_printf("Did not get the expected error, "
-			     "mem send returned with %d\n",
+			     "mem send returned with %lld\n",
 			     cactus_get_response(ret));
 	return TEST_RESULT_FAIL;
 }
@@ -261,8 +275,6 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 	ffa_memory_handle_t handle;
 	smc_ret_values ret;
 	uint32_t *ptr;
-	/* Arbitrarily write 10 words after using shared memory. */
-	const uint32_t nr_words_to_write = 10U;
 
 	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
 
@@ -293,7 +305,7 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 
 	ret = cactus_mem_send_cmd(SENDER, RECEIVER, FFA_MEM_LEND_SMC32, handle,
 				  FFA_MEMORY_REGION_FLAG_CLEAR, true,
-				  nr_words_to_write);
+				  SENDER);
 
 	if (!is_ffa_direct_response(ret)) {
 		return TEST_RESULT_FAIL;
@@ -314,7 +326,7 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 	ptr = (uint32_t *)constituents[0].address;
 
 	/* Check that borrower used the memory as expected for this test. */
-	if (!check_written_words(ptr, FFA_MEM_LEND_SMC32, nr_words_to_write)) {
+	if (!check_written_words(ptr, FFA_MEM_LEND_SMC32)) {
 		ERROR("Words written to shared memory, not as expected.\n");
 		return TEST_RESULT_FAIL;
 	}
