@@ -107,7 +107,7 @@ static const mmap_region_t cactus_mmap[] __attribute__((used)) = {
 	MAP_REGION_FLAT(PLAT_ARM_DEVICE0_BASE, PLAT_ARM_DEVICE0_SIZE,
 			MT_DEVICE | MT_RW),
 	/* scratch memory allocated to be used for running SMMU tests */
-	MAP_REGION_FLAT(PLAT_CACTUS_MEMCPY_BASE, PLAT_CACTUS_MEMCPY_RANGE,
+	MAP_REGION_FLAT(PLAT_SP_MEMCPY_BASE, PLAT_SP_MEMCPY_RANGE,
 			MT_MEMORY | MT_RW),
 	{0}
 };
@@ -158,12 +158,12 @@ static void cactus_plat_configure_mmu(unsigned int vm_id)
 
 	mmap_add_region(get_sp_rx_start(vm_id),
 			get_sp_rx_start(vm_id),
-			(CACTUS_RX_TX_SIZE / 2),
+			(SP_RX_TX_SIZE / 2),
 			MT_RO_DATA);
 
 	mmap_add_region(get_sp_tx_start(vm_id),
 			get_sp_tx_start(vm_id),
-			(CACTUS_RX_TX_SIZE / 2),
+			(SP_RX_TX_SIZE / 2),
 			MT_RW_DATA);
 
 	mmap_add(cactus_mmap);
@@ -227,8 +227,8 @@ void __dead2 cactus_main(bool primary_cold_boot)
 	}
 
 	if (ffa_id == SPM_VM_ID_FIRST) {
-		console_init(CACTUS_PL011_UART_BASE,
-			     CACTUS_PL011_UART_CLK_IN_HZ,
+		console_init(SP_PL011_UART_BASE,
+			     SP_PL011_UART_CLK_IN_HZ,
 			     PL011_BAUDRATE);
 
 		set_putc_impl(PL011_AS_STDOUT);

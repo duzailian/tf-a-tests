@@ -20,8 +20,8 @@
 #include <spm_common.h>
 
 /* Source and target address for memcopy operation */
-#define MEMCPY_SOURCE_BASE	PLAT_CACTUS_MEMCPY_BASE
-#define MEMPCY_TOTAL_SIZE	(PLAT_CACTUS_MEMCPY_RANGE / 2)
+#define MEMCPY_SOURCE_BASE	PLAT_SP_MEMCPY_BASE
+#define MEMPCY_TOTAL_SIZE	(PLAT_SP_MEMCPY_RANGE / 2)
 #define MEMCPY_TARGET_BASE	(MEMCPY_SOURCE_BASE + MEMPCY_TOTAL_SIZE)
 
 /* Miscellaneous */
