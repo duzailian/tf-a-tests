@@ -26,11 +26,13 @@ IVY_INCLUDES :=					\
 	-Iinclude/lib/${ARCH}				\
 	-Iinclude/lib/utils				\
 	-Iinclude/lib/xlat_tables			\
+	-Iinclude/plat/common				\
 	-Iinclude/runtime_services			\
 	-Iinclude/runtime_services/secure_el0_payloads	\
-	-Ispm/ivy/app				\
+	-Ispm/ivy/app					\
 	-Ispm/ivy/shim					\
-	-Ispm/common
+	-Ispm/common					\
+	-Ispm/common/sp_tests/
 
 IVY_SOURCES	:=					\
 	$(addprefix spm/ivy/app/,			\
@@ -43,6 +45,9 @@ IVY_SOURCES	:=					\
 		sp_helpers.c				\
 		spm_helpers.c				\
 	)						\
+	$(addprefix spm/common/sp_tests/,		\
+		sp_test_ffa.c				\
+	)
 
 ifeq ($(IVY_SHIM),1)
 IVY_SOURCES	+=					\
@@ -57,7 +62,8 @@ endif
 IVY_SOURCES	+=					\
 	tftf/framework/debug.c				\
 	tftf/framework/${ARCH}/asm_debug.S		\
-	tftf/tests/runtime_services/secure_service/ffa_helpers.c
+	tftf/tests/runtime_services/secure_service/ffa_helpers.c \
+	tftf/tests/runtime_services/secure_service/spm_common.c
 
 IVY_SOURCES	+= 	drivers/arm/pl011/${ARCH}/pl011_console.S	\
 			lib/${ARCH}/cache_helpers.S			\
