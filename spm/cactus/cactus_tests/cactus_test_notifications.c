@@ -1,12 +1,13 @@
 /*
- * Copyright (c) 2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2021-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
 #include "cactus_message_loop.h"
 #include "cactus_test_cmds.h"
-#include "cactus_tests.h"
+#include "sp_tests.h"
+
 #include <ffa_helpers.h>
 #include <debug.h>
 

@@ -1,13 +1,12 @@
 /*
- * Copyright (c) 2017-2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2017-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
 #include <arch.h>
 #include <asm_macros.S>
-#include <cactus_def.h>
-#include <cactus_platform_def.h>
+#include <sp_def.h>
 
 	.globl	cactus_entrypoint
 	.globl	secondary_cold_entry
