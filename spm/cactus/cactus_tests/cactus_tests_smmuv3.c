@@ -9,19 +9,19 @@
 #include <arch_helpers.h>
 #include "cactus.h"
 #include "cactus_message_loop.h"
-#include <cactus_platform_def.h>
+#include <sp_platform_def.h>
 #include "cactus_test_cmds.h"
-#include "cactus_tests.h"
 #include <debug.h>
 #include <ffa_helpers.h>
 #include <mmio.h>
 #include "smmuv3_test_engine.h"
 #include <sp_helpers.h>
+#include "sp_tests.h"
 #include <spm_common.h>
 
 /* Source and target address for memcopy operation */
-#define MEMCPY_SOURCE_BASE	PLAT_CACTUS_MEMCPY_BASE
-#define MEMPCY_TOTAL_SIZE	(PLAT_CACTUS_MEMCPY_RANGE / 2)
+#define MEMCPY_SOURCE_BASE	PLAT_SP_MEMCPY_BASE
+#define MEMPCY_TOTAL_SIZE	(PLAT_SP_MEMCPY_RANGE / 2)
 #define MEMCPY_TARGET_BASE	(MEMCPY_SOURCE_BASE + MEMPCY_TOTAL_SIZE)
 
 /* Miscellaneous */
