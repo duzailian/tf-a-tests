@@ -264,6 +264,29 @@ static inline bool cactus_req_mem_send_get_non_secure(smc_ret_values ret)
 }
 
 /**
+ * Command to request Cactus SP to reclaim a given memory region.
+ *
+ * The command id is the hex representation of the string "".
+ */
+#define CACTUS_MEM_RECLAIM_CMD U(0x7265636c61696d)
+
+static inline smc_ret_values cactus_mem_reclaim_cmd(
+	ffa_id_t source, ffa_id_t dest, ffa_memory_handle_t handle, uint32_t flags)
+{
+	return cactus_send_cmd(source, dest, CACTUS_MEM_RECLAIM_CMD, handle, flags, 0, 0);
+}
+
+static inline ffa_memory_handle_t cactus_mem_reclaim_handle(smc_ret_values ret)
+{
+	return (ffa_memory_handle_t)ret.ret4;
+}
+
+static inline ffa_memory_handle_t cactus_mem_reclaim_flags(smc_ret_values ret)
+{
+	return (uint32_t)ret.ret5;
+}
+
+/**
  * Request to fill SIMD vectors with dummy values with purpose to check a
  * save/restore routine during the context switches between secure world and
  * normal world.

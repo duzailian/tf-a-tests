@@ -169,15 +169,20 @@ static test_result_t test_req_mem_send_sp_to_sp(uint32_t mem_func,
 	ret = cactus_mem_send_cmd(HYP_ID, receiver_sp, mem_func, handle,
 				  0, non_secure, sender_sp);
 
-	if (!is_ffa_direct_response(ret)) {
+	if (!is_ffa_direct_response(ret) ||
+	    !is_expected_cactus_response(ret, CACTUS_SUCCESS, 0)) {
 		ERROR("Failed to send memory handle to: %x\n", receiver_sp);
 		return TEST_RESULT_FAIL;
 	}
 
-	/* If anything went bad on the receiver's end. */
-	if (cactus_get_response(ret) == CACTUS_ERROR) {
-		ERROR("Received error from %x!\n", receiver_sp);
-		return TEST_RESULT_FAIL;
+	if (mem_func != FFA_MEM_DONATE_SMC32) {
+		ret = cactus_mem_reclaim_cmd(HYP_ID, sender_sp, handle, 0);
+
+		if (!is_ffa_direct_response(ret) || cactus_get_response(ret)) {
+			ERROR("Partition failed to reclaim memory: %x\n",
+			      sender_sp);
+			return TEST_RESULT_FAIL;
+		}
 	}
 
 	return TEST_RESULT_SUCCESS;

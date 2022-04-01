@@ -234,35 +234,10 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 					 ffa_error_code(ffa_ret));
 	}
 
-	if (mem_func != FFA_MEM_DONATE_SMC32) {
-		/*
-		 * Do a memory reclaim only if the mem_func regards to memory
-		 * share or lend operations, as with a donate the owner is
-		 * permanently given up access to the memory region.
-		 */
-		ffa_ret = ffa_mem_reclaim(handle, 0);
-		if (is_ffa_call_error(ffa_ret)) {
-			return cactus_error_resp(vm_id, source,
-						 CACTUS_ERROR_TEST);
-		}
-
-		/**
-		 * Read Content that has been written to memory to validate
-		 * access to memory segment has been reestablished, and receiver
-		 * made use of memory region.
-		 */
-		#if (LOG_LEVEL >= LOG_LEVEL_VERBOSE)
-			uint32_t *ptr = (uint32_t *)constituents->address;
-
-			VERBOSE("Memory contents after receiver SP's use:\n");
-			for (unsigned int i = 0U; i < 5U; i++) {
-				VERBOSE("      %u: %x\n", i, ptr[i]);
-			}
-		#endif
-	}
-
-	/* Always unmap the sent memory region, will be remapped by another
-	 * test if needed. */
+	/*
+	 * Always unmap the sent memory region, will be remapped by another
+	 * test if needed.
+	 */
 	ret = mmap_remove_dynamic_region(
 		(uint64_t)constituents[0].address,
 		constituents[0].page_count * PAGE_SIZE);
@@ -274,4 +249,26 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 	}
 
 	return cactus_success_resp(vm_id, source, handle);
+}
+
+/*
+ * Do a memory reclaim only if the mem_func regards to memory
+ * share or lend operations, as with a donate the owner is
+ * permanently given up access to the memory region.
+ */
+CACTUS_CMD_HANDLER(mem_reclaim, CACTUS_MEM_RECLAIM_CMD)
+{
+	ffa_id_t vm_id = ffa_dir_msg_dest(*args);
+	ffa_id_t source = ffa_dir_msg_source(*args);
+	smc_ret_values ret = ffa_mem_reclaim(cactus_mem_reclaim_handle(*args),
+					     cactus_mem_reclaim_flags(*args));
+
+	if (is_ffa_call_error(ret)) {
+		return cactus_error_resp(vm_id, source,
+					 CACTUS_ERROR_TEST);
+	}
+
+	VERBOSE("Reclaimed memory.\n");
+
+	return cactus_success_resp(vm_id, source, 0);
 }
