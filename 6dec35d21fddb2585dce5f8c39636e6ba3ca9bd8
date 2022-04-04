@@ -258,6 +258,30 @@
       },
       "revId": "6dec35d21fddb2585dce5f8c39636e6ba3ca9bd8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ead3f80_1f1453e4",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-04T10:03:59Z",
+      "side": 1,
+      "message": "The tf-a-tests conversion macro must not be used from SPs (this is already a mistake in the cactus asm entry) because MPIDR is virtual and the conversion macro depends on platform specific number of cluster/core configuration.\nIt would preferable to either use this id derived from x4 indeed, or use the vMPIDR reported by Hafnium which is a core linear id (not affinities).",
+      "parentUuid": "05da9ee2_9200077f",
+      "range": {
+        "startLine": 267,
+        "startChar": 26,
+        "endLine": 267,
+        "endChar": 45
+      },
+      "revId": "6dec35d21fddb2585dce5f8c39636e6ba3ca9bd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
