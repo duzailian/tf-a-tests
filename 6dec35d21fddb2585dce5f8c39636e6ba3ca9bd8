@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a777560b_30fb9b1e",
+        "filename": "spm/cactus/cactus_def.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-04T09:54:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c079308e_952347b4",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "6dec35d21fddb2585dce5f8c39636e6ba3ca9bd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "baac2615_a57d6666",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3d97a12_8b8f4eea",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-04T09:54:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baac2615_a57d6666",
+      "range": {
+        "startLine": 56,
+        "startChar": 1,
+        "endLine": 56,
+        "endChar": 5
+      },
+      "revId": "6dec35d21fddb2585dce5f8c39636e6ba3ca9bd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31181a4b_b6fd3546",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-04-04T09:47:58Z",
       "side": 1,
       "message": "SPMC?",
+      "range": {
+        "startLine": 59,
+        "startChar": 50,
+        "endLine": 59,
+        "endChar": 54
+      },
+      "revId": "6dec35d21fddb2585dce5f8c39636e6ba3ca9bd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d9027fb_64656d53",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-04T09:54:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31181a4b_b6fd3546",
       "range": {
         "startLine": 59,
         "startChar": 50,
@@ -107,6 +179,30 @@
       "side": 1,
       "message": "To be fair the passing for physical core id in x4 is mostly to support legacy, I\u0027m not sure we should really build upon it moving forward with new features, unless there is a good justification.",
       "parentUuid": "4295efce_2e0b9f63",
+      "range": {
+        "startLine": 267,
+        "startChar": 26,
+        "endLine": 267,
+        "endChar": 45
+      },
+      "revId": "6dec35d21fddb2585dce5f8c39636e6ba3ca9bd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05da9ee2_9200077f",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-04T09:54:39Z",
+      "side": 1,
+      "message": "I do not have a use for it yet, besides log printing.\nTF-A-Tests provide a plat specific way to read the current core id.",
+      "parentUuid": "a8956c0c_29f642a8",
       "range": {
         "startLine": 267,
         "startChar": 26,
