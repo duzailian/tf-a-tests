@@ -19,20 +19,21 @@
 stacks_end:
 
 func cactus_entrypoint
-	/* Entry reason is primary EC cold boot */
+	/* Entry reason is primary EC cold boot. */
 	mov	x19, #1
 secondary_cold_entry:
-	/* Saving parameter registers to temporary registers. */
-	mov x10, x1
-	mov x11, x2
-	mov x12, x3
-	mov x13, x4
-
-	/* Entry reason is secondary EC cold boot */
+	/* Get the vMPIDR. The SPMC passes the vCPU linear id in lower bits. */
 	mrs	x0, mpidr_el1
-	bl	platform_get_core_pos
+	bic	x0, x0, #0x80000000
 
-	/* Setup the stack pointer. */
+	/*
+	 * The SPMC passes the physical core linear id through x4
+	 * as a convenience. It must match the id passed by vMPIDR.
+	 */
+	cmp	x0, x4
+	bne	.
+
+	/* Setup the stack pointer. x0 holds the core linear id. */
 	adr	x1, stacks_end
 	mov	x2, #CACTUS_STACKS_SIZE
 	mul	x2, x0, x2
@@ -83,12 +84,6 @@ pie_fixup:
 
 	/* Jump to the C entrypoint (it does not return) */
 0:	mov	x0, x19
-
-	/* Restoring parameter registers before jumping to cactus_main. */
-	mov x1, x10
-	mov x2, x11
-	mov x3, x12
-	mov x4, x13
 
 	/* And jump to the C entrypoint. */
 	b	cactus_main
