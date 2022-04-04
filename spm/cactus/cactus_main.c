@@ -138,6 +138,42 @@ static void cactus_print_memory_layout(unsigned int vm_id)
 		(void *)get_sp_tx_end(vm_id));
 }
 
+static void cactus_print_boot_info(struct ffa_boot_info_header *info_header)
+{
+	struct ffa_boot_info_desc *boot_info;
+
+	if (info_header == NULL) {
+		NOTICE("SP doesn't have boot arguments!\n");
+		return;
+	}
+
+	VERBOSE("SP boot info:\n");
+	VERBOSE("  Signature: %x\n", info_header->signature);
+	VERBOSE("  Version: %x\n", info_header->version);
+	VERBOSE("  Blob Size: %u\n", info_header->info_blob_size);
+	VERBOSE("  Descriptor Size: %u\n", info_header->desc_size);
+	VERBOSE("  Descriptor Count: %u\n", info_header->desc_count);
+
+	boot_info = info_header->boot_info;
+
+	if (boot_info == NULL) {
+		ERROR("Boot data arguments error...");
+		return;
+	}
+
+	for (uint32_t i = 0; i < info_header->desc_count; i++) {
+		VERBOSE("    Boot Data:\n");
+		VERBOSE("      Type: %u\n", boot_info[i].type);
+		VERBOSE("      Flags:\n");
+		VERBOSE("        Name Format: %x\n",
+				ffa_boot_info_name_format(&boot_info[i]));
+		VERBOSE("        Content Format: %x\n",
+				ffa_boot_info_content_format(&boot_info[i]));
+		VERBOSE("      Size: %u\n", boot_info[i].size);
+		VERBOSE("      Value: %llx\n", boot_info[i].content);
+	}
+}
+
 static void cactus_plat_configure_mmu(unsigned int vm_id)
 {
 	mmap_add_region(CACTUS_TEXT_START,
@@ -181,8 +217,11 @@ static void register_secondary_entrypoint(void)
 	tftf_smc(&args);
 }
 
-void __dead2 cactus_main(bool primary_cold_boot)
+void __dead2 cactus_main(bool primary_cold_boot, void *boot_info_blob)
 {
+	struct ffa_boot_info_header *boot_info_header =
+				(struct ffa_boot_info_header *) boot_info_blob;
+
 	assert(IS_IN_EL1() != 0);
 
 	struct mailbox_buffers mb;
@@ -209,6 +248,19 @@ void __dead2 cactus_main(bool primary_cold_boot)
 
 		/* Initialize locks for tail end interrupt handler */
 		sp_handler_spin_lock_init();
+
+		if (boot_info_blob != NULL) {
+			/*
+			 * TODO: Currently just validating that cactus can
+			 * access the boot info descriptors. In case we want to
+			 * use the contest of the boot info, we should check the
+			 * blob and remap if the size is bigger than one page.
+			 * Only then access the contents.
+			 */
+			mmap_add_dynamic_region((unsigned long long)boot_info_blob,
+						(uintptr_t)boot_info_blob,
+						PAGE_SIZE, MT_RW_DATA);
+		}
 	}
 
 	/*
@@ -234,6 +286,7 @@ void __dead2 cactus_main(bool primary_cold_boot)
 
 		set_putc_impl(PL011_AS_STDOUT);
 
+		cactus_print_boot_info(boot_info_header);
 	} else {
 		set_putc_impl(HVC_CALL_AS_STDOUT);
 	}
@@ -253,6 +306,7 @@ void __dead2 cactus_main(bool primary_cold_boot)
 		}
 	}
 
+	NOTICE("FFA id: %u\n", ffa_id);
 	cactus_print_memory_layout(ffa_id);
 
 	register_secondary_entrypoint();
