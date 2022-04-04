@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c079308e_952347b4",
+        "filename": "spm/cactus/cactus_def.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-04T09:47:58Z",
+      "side": 1,
+      "message": "nit: is this required if the file is unchanged?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "6dec35d21fddb2585dce5f8c39636e6ba3ca9bd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "baac2615_a57d6666",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-04T09:47:58Z",
+      "side": 1,
+      "message": "prefer VERBOSE",
+      "range": {
+        "startLine": 56,
+        "startChar": 1,
+        "endLine": 56,
+        "endChar": 5
+      },
+      "revId": "6dec35d21fddb2585dce5f8c39636e6ba3ca9bd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31181a4b_b6fd3546",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-04T09:47:58Z",
+      "side": 1,
+      "message": "SPMC?",
+      "range": {
+        "startLine": 59,
+        "startChar": 50,
+        "endLine": 59,
+        "endChar": 54
+      },
+      "revId": "6dec35d21fddb2585dce5f8c39636e6ba3ca9bd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4295efce_2e0b9f63",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-04T09:47:58Z",
+      "side": 1,
+      "message": "Can you briefly explain why the message loop has to know about the physical core it running on to (apart from debug printing...)?",
+      "range": {
+        "startLine": 267,
+        "startChar": 26,
+        "endLine": 267,
+        "endChar": 45
+      },
+      "revId": "6dec35d21fddb2585dce5f8c39636e6ba3ca9bd8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
