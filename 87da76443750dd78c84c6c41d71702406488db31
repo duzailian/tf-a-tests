@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e49e6eba_2f455d49",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2022-04-10T22:22:51Z",
+      "side": 1,
+      "message": "why is it 2000 for cactus and 4000 for others? and why dont they have boot information? Is it because they simply dont subscribe to it?",
+      "range": {
+        "startLine": 27,
+        "startChar": 22,
+        "endLine": 27,
+        "endChar": 32
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
