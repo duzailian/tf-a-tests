@@ -3,6 +3,489 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "369cbcd5_a64ff466",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "This doesn\u0027t restrict to cactus as we now have the Ivy sample SP.",
+      "range": {
+        "startLine": 9,
+        "startChar": 8,
+        "endLine": 9,
+        "endChar": 14
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abf327c8_0af35307",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "nit: partition\u0027s",
+      "range": {
+        "startLine": 10,
+        "startChar": 9,
+        "endLine": 10,
+        "endChar": 19
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "adaadf6b_2918ca08",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "Strictly speaking this depends on the boot info contents as data can also be passed by value.",
+      "range": {
+        "startLine": 11,
+        "startChar": 39,
+        "endLine": 11,
+        "endChar": 59
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "309d714a_e79720c4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "Update?",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 7
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfabb975_43cc52a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "This means the boot information request flag in the SP package header?",
+      "range": {
+        "startLine": 14,
+        "startChar": 31,
+        "endLine": 14,
+        "endChar": 52
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ac2dd6d_e342a19f",
+        "filename": "spm/cactus/aarch64/cactus_entrypoint.S",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "nit: looks like instructions above used tabs, possible to keep for consistency?",
+      "range": {
+        "startLine": 96,
+        "startChar": 2,
+        "endLine": 96,
+        "endChar": 3
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90faafc1_752f238f",
+        "filename": "spm/cactus/cactus_def.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "Is this required and used?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 30
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7075353a_7279144c",
+        "filename": "spm/cactus/cactus_def.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "What is \u0027initialization memory\u0027?",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 39
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe459b7d_d00f7811",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "uintptr_t?",
+      "range": {
+        "startLine": 119,
+        "startChar": 1,
+        "endLine": 119,
+        "endChar": 9
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ca67b59_4a9eafd4",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "Boot information blob?",
+      "range": {
+        "startLine": 147,
+        "startChar": 11,
+        "endLine": 147,
+        "endChar": 22
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5bc6312a_92d799a3",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "nit: boot_info_header?",
+      "range": {
+        "startLine": 153,
+        "startChar": 64,
+        "endLine": 153,
+        "endChar": 75
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21e0a4c2_b4b0c50e",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "nit: boot_info_desc?",
+      "range": {
+        "startLine": 155,
+        "startChar": 28,
+        "endLine": 155,
+        "endChar": 37
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "272600a5_01513dbb",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "nit: information?",
+      "range": {
+        "startLine": 158,
+        "startChar": 31,
+        "endLine": 158,
+        "endChar": 40
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "745cb908_c109d1ea",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "misses \\n",
+      "range": {
+        "startLine": 172,
+        "startChar": 34,
+        "endLine": 172,
+        "endChar": 37
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d71be9d1_efd436d2",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "What\u0027s the reason for this?",
+      "range": {
+        "startLine": 178,
+        "startChar": 2,
+        "endLine": 178,
+        "endChar": 17
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e592c0e4_9bf7f697",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "Better check name format is a string, otherwise this can end up in a buffer overflow.",
+      "range": {
+        "startLine": 179,
+        "startChar": 26,
+        "endLine": 179,
+        "endChar": 50
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8087744_fbf6721a",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "Can be ffa_boot_info_header.",
+      "range": {
+        "startLine": 234,
+        "startChar": 49,
+        "endLine": 234,
+        "endChar": 53
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "309dafc7_e1adcdd9",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "Is it required? Can we use the passed parameter?",
+      "range": {
+        "startLine": 235,
+        "startChar": 1,
+        "endLine": 237,
+        "endChar": 51
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a8cea73_0c3281d1",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "Read-only would be enough?",
+      "range": {
+        "startLine": 269,
+        "startChar": 28,
+        "endLine": 269,
+        "endChar": 38
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77a32637_ae14dd7c",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "Should this be extrapolated from the header blob size?",
+      "range": {
+        "startLine": 269,
+        "startChar": 6,
+        "endLine": 269,
+        "endChar": 26
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "769c557a_33cc3ce8",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "Remove (already done lines 302-303).",
+      "range": {
+        "startLine": 316,
+        "startChar": 1,
+        "endLine": 316,
+        "endChar": 32
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e49e6eba_2f455d49",
         "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
         "patchSetId": 9
@@ -20,6 +503,23 @@
         "endLine": 27,
         "endChar": 32
       },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c6158ed_b338cd2d",
+        "filename": "tools/generate_json/generate_json.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T13:22:25Z",
+      "side": 1,
+      "message": "Just hinting a possible conflict with https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/14375",
       "revId": "87da76443750dd78c84c6c41d71702406488db31",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
