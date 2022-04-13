@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a906d08_471d1ff0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "369cbcd5_a64ff466",
+      "range": {
+        "startLine": 9,
+        "startChar": 8,
+        "endLine": 9,
+        "endChar": 14
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "abf327c8_0af35307",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-04-13T13:22:25Z",
       "side": 1,
       "message": "nit: partition\u0027s",
+      "range": {
+        "startLine": 10,
+        "startChar": 9,
+        "endLine": 10,
+        "endChar": 19
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73bf75b2_62d3b4cb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "abf327c8_0af35307",
       "range": {
         "startLine": 10,
         "startChar": 9,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4373ed02_e2df618c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "adaadf6b_2918ca08",
+      "range": {
+        "startLine": 11,
+        "startChar": 39,
+        "endLine": 11,
+        "endChar": 59
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "309d714a_e79720c4",
@@ -83,6 +155,30 @@
       "writtenOn": "2022-04-13T13:22:25Z",
       "side": 1,
       "message": "Update?",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 7
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07e2c4ee_3c24a434",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "309d714a_e79720c4",
       "range": {
         "startLine": 13,
         "startChar": 2,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "176648a0_c423fd46",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "The flag has been deleted as per comments hafnium patch stack.",
+      "parentUuid": "dfabb975_43cc52a9",
+      "range": {
+        "startLine": 14,
+        "startChar": 31,
+        "endLine": 14,
+        "endChar": 52
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ac2dd6d_e342a19f",
@@ -129,6 +249,30 @@
       "writtenOn": "2022-04-13T13:22:25Z",
       "side": 1,
       "message": "nit: looks like instructions above used tabs, possible to keep for consistency?",
+      "range": {
+        "startLine": 96,
+        "startChar": 2,
+        "endLine": 96,
+        "endChar": 3
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f436153e_fd1544c6",
+        "filename": "spm/cactus/aarch64/cactus_entrypoint.S",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ac2dd6d_e342a19f",
       "range": {
         "startLine": 96,
         "startChar": 2,
@@ -162,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "35d5577e_b2bfe13b",
+        "filename": "spm/cactus/cactus_def.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "90faafc1_752f238f",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 30
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7075353a_7279144c",
@@ -175,6 +343,30 @@
       "writtenOn": "2022-04-13T13:22:25Z",
       "side": 1,
       "message": "What is \u0027initialization memory\u0027?",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 39
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d82e007_bec3ce9f",
+        "filename": "spm/cactus/cactus_def.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Deleted, as residual.",
+      "parentUuid": "7075353a_7279144c",
       "range": {
         "startLine": 44,
         "startChar": 0,
@@ -208,6 +400,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcf59277_ec5aec85",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "deleted.",
+      "parentUuid": "fe459b7d_d00f7811",
+      "range": {
+        "startLine": 119,
+        "startChar": 1,
+        "endLine": 119,
+        "endChar": 9
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6ca67b59_4a9eafd4",
@@ -221,6 +437,30 @@
       "writtenOn": "2022-04-13T13:22:25Z",
       "side": 1,
       "message": "Boot information blob?",
+      "range": {
+        "startLine": 147,
+        "startChar": 11,
+        "endLine": 147,
+        "endChar": 22
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c607d798_1d435120",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "deleted.",
+      "parentUuid": "6ca67b59_4a9eafd4",
       "range": {
         "startLine": 147,
         "startChar": 11,
@@ -254,6 +494,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6550a8b_b2f366a0",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5bc6312a_92d799a3",
+      "range": {
+        "startLine": 153,
+        "startChar": 64,
+        "endLine": 153,
+        "endChar": 75
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "21e0a4c2_b4b0c50e",
@@ -267,6 +531,30 @@
       "writtenOn": "2022-04-13T13:22:25Z",
       "side": 1,
       "message": "nit: boot_info_desc?",
+      "range": {
+        "startLine": 155,
+        "startChar": 28,
+        "endLine": 155,
+        "endChar": 37
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b3e26d5_c8131c46",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21e0a4c2_b4b0c50e",
       "range": {
         "startLine": 155,
         "startChar": 28,
@@ -300,6 +588,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6827302_9a2330ab",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "272600a5_01513dbb",
+      "range": {
+        "startLine": 158,
+        "startChar": 31,
+        "endLine": 158,
+        "endChar": 40
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "745cb908_c109d1ea",
@@ -313,6 +625,30 @@
       "writtenOn": "2022-04-13T13:22:25Z",
       "side": 1,
       "message": "misses \\n",
+      "range": {
+        "startLine": 172,
+        "startChar": 34,
+        "endLine": 172,
+        "endChar": 37
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa911634_85d208ea",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "745cb908_c109d1ea",
       "range": {
         "startLine": 172,
         "startChar": 34,
@@ -346,6 +682,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1ce92bd_488e3c68",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "residual, deleted.",
+      "parentUuid": "d71be9d1_efd436d2",
+      "range": {
+        "startLine": 178,
+        "startChar": 2,
+        "endLine": 178,
+        "endChar": 17
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e592c0e4_9bf7f697",
@@ -359,6 +719,30 @@
       "writtenOn": "2022-04-13T13:22:25Z",
       "side": 1,
       "message": "Better check name format is a string, otherwise this can end up in a buffer overflow.",
+      "range": {
+        "startLine": 179,
+        "startChar": 26,
+        "endLine": 179,
+        "endChar": 50
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a66e1166_b482c45b",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "deleted, as we don\u0027t use it.",
+      "parentUuid": "e592c0e4_9bf7f697",
       "range": {
         "startLine": 179,
         "startChar": 26,
@@ -392,6 +776,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2617b403_5a65ea0a",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8087744_fbf6721a",
+      "range": {
+        "startLine": 234,
+        "startChar": 49,
+        "endLine": 234,
+        "endChar": 53
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "309dafc7_e1adcdd9",
@@ -405,6 +813,30 @@
       "writtenOn": "2022-04-13T13:22:25Z",
       "side": 1,
       "message": "Is it required? Can we use the passed parameter?",
+      "range": {
+        "startLine": 235,
+        "startChar": 1,
+        "endLine": 237,
+        "endChar": 51
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c5730ab_e1bdf902",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "309dafc7_e1adcdd9",
       "range": {
         "startLine": 235,
         "startChar": 1,
@@ -463,6 +895,54 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6815e7d3_43ea1e7c",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Yes, I thought about changing this. I added a comment to document this, stating that if we want to use the contents of the boot info, we would need to remap for full blob size.\nIs this enough, or would it require anything else?",
+      "parentUuid": "77a32637_ae14dd7c",
+      "range": {
+        "startLine": 269,
+        "startChar": 6,
+        "endLine": 269,
+        "endChar": 26
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a78c7eb_46b7199a",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8cea73_0c3281d1",
+      "range": {
+        "startLine": 269,
+        "startChar": 28,
+        "endLine": 269,
+        "endChar": 38
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "769c557a_33cc3ce8",
         "filename": "spm/cactus/cactus_main.c",
         "patchSetId": 9
@@ -474,6 +954,30 @@
       "writtenOn": "2022-04-13T13:22:25Z",
       "side": 1,
       "message": "Remove (already done lines 302-303).",
+      "range": {
+        "startLine": 316,
+        "startChar": 1,
+        "endLine": 316,
+        "endChar": 32
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c38e6ec_0bfbe43a",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "769c557a_33cc3ce8",
       "range": {
         "startLine": 316,
         "startChar": 1,
@@ -497,6 +1001,30 @@
       "writtenOn": "2022-04-10T22:22:51Z",
       "side": 1,
       "message": "why is it 2000 for cactus and 4000 for others? and why dont they have boot information? Is it because they simply dont subscribe to it?",
+      "range": {
+        "startLine": 27,
+        "startChar": 22,
+        "endLine": 27,
+        "endChar": 32
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2257b7e4_389d2058",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-13T14:52:17Z",
+      "side": 1,
+      "message": "For the cactus primary, the offset has been adjusted here:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/14504/9..10/tools/generate_json/generate_json.sh#26\nWhereas for the remaining, they are using sptool\u0027s default value.\n\n\nThis cactus instance is subscribing to boot information, the remainder is not.",
+      "parentUuid": "e49e6eba_2f455d49",
       "range": {
         "startLine": 27,
         "startChar": 22,
