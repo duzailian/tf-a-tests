@@ -1,0 +1,314 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ba70905_18f359ad",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy-sel0.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "Mention this is the DTS file to be used when a SEL0 partition runs on top of Hafnium with VHE enabled (no SEL1 shim included).\nAlso for tc0 platform.",
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f089a54_0a8be165",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy-sel0.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 31
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "905c3830_9f7ff743",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy-sel0.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 28,
+        "endChar": 44
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35aca618_8687e935",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "Mention this is the DTS file to be used when a SEL0 partition implements the SEL1 shim.\nAlso for tc0 platform.",
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af58b797_55766059",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "Perhaps we can mention ivy-shim-fvp to state this is the SEL0 partition implementation including a SEL1 shim.",
+      "range": {
+        "startLine": 17,
+        "startChar": 16,
+        "endLine": 17,
+        "endChar": 23
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7916ab80_945603e4",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "I believe we can remove, this isn\u0027t consumed by Hafnium.",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 31
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67736047_6c692ad8",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "I believe we can remove, this isn\u0027t consumed by Hafnium.",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 28,
+        "endChar": 44
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c00cb28d_09050596",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy-sel0.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 33
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bba8a81f_14c18c88",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy-sel0.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 31
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddf00206_a0aaca4b",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy-sel0.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 30,
+        "startChar": 1,
+        "endLine": 30,
+        "endChar": 44
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05b0d4bf_2382c91e",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "ivy-shim-tc0",
+      "range": {
+        "startLine": 16,
+        "startChar": 16,
+        "endLine": 16,
+        "endChar": 23
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9ecf235_f48a66e0",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "Remove.",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 33
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "497412b7_8650dd0e",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 31
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1678a8c4_3547f983",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-13T06:34:01Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 30,
+        "startChar": 1,
+        "endLine": 30,
+        "endChar": 44
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
