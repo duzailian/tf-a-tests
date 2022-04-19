@@ -16,6 +16,46 @@
       "message": "Can you add a bit more context?",
       "revId": "031fbf4eb15501a418da6abba21dc345251b03ec",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e427a1a_36c27486",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-19T10:52:11Z",
+      "side": 1,
+      "message": "I think we need to rethink a bit the intent of this and the previous patch.\nThere might be defines that can be shared between ivy and cactus, however some of the cactus defines are really specific to cactus sp, and I think we shouldn\u0027t change those. the naming and file placing makes it clearer.\n",
+      "revId": "031fbf4eb15501a418da6abba21dc345251b03ec",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01d1a544_cf1f06ac",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-19T10:52:11Z",
+      "side": 1,
+      "message": "aren\u0027t these CACTUS specific?",
+      "range": {
+        "startLine": 110,
+        "startChar": 17,
+        "endLine": 110,
+        "endChar": 36
+      },
+      "revId": "031fbf4eb15501a418da6abba21dc345251b03ec",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
