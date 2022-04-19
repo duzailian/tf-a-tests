@@ -43,6 +43,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cb99c4c4_8ce8e9d5",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-19T10:38:05Z",
+      "side": 1,
+      "message": "would it be worth having a general \"tftf_s_call\", which abstract the logic of the EL0_SP macro?\n\nIt would reduce significantly reduce the instances to EL0_SP macro, and consequently have a much cleaner file here.",
+      "range": {
+        "startLine": 327,
+        "startChar": 0,
+        "endLine": 331,
+        "endChar": 6
+      },
+      "revId": "c63f722908de50f9eb14de9e02f989cd6d0aad58",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "53d0d725_f5a12f72",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
         "patchSetId": 2
