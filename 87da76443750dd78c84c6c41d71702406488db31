@@ -941,6 +941,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2729226e_2b6f657b",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-20T13:05:06Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6815e7d3_43ea1e7c",
+      "range": {
+        "startLine": 269,
+        "startChar": 6,
+        "endLine": 269,
+        "endChar": 26
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "769c557a_33cc3ce8",
@@ -1049,6 +1073,30 @@
       "side": 1,
       "message": "thanks. sorry to bring this up again, this sort of adds to my comments about sp tool we are having in other reviews. as an sp developer, i dont care what the SP tool does. I just want to give you a DTB and an image file and want it to package it up...thats why i want entrypoint offset to be calculated by the sptool or some other tool..tomorrow if the sp tool adds a new feature or new boot info page in the final SP memory layout, all these dts files would need to change yet again..that seems less than optimal.",
       "parentUuid": "2257b7e4_389d2058",
+      "range": {
+        "startLine": 27,
+        "startChar": 22,
+        "endLine": 27,
+        "endChar": 32
+      },
+      "revId": "87da76443750dd78c84c6c41d71702406488db31",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb56d571_62328801",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-04-20T13:05:06Z",
+      "side": 1,
+      "message": "Resolving for now. This query is beyond the scope of the patch set topic which is about introducing the FF-A v1.1 boot protocol. Current changes do not amend the way it has been behaving since early days. Agree to look at the query from an improvement perspective moving forward, on top of this patch stack.",
+      "parentUuid": "c6247006_2925ba43",
       "range": {
         "startLine": 27,
         "startChar": 22,
