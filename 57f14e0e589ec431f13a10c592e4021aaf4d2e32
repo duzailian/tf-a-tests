@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "329c87c1_1c8a86e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-04-21T10:48:04Z",
+      "side": 1,
+      "message": "Couple of suggestions for comments but otherwise it looks good to me",
+      "revId": "57f14e0e589ec431f13a10c592e4021aaf4d2e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d50e0f65_c6f3a05c",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-04-21T10:48:04Z",
+      "side": 1,
+      "message": "Nit: I think a comment saying this is based of Table 5.8 would be useful",
+      "revId": "57f14e0e589ec431f13a10c592e4021aaf4d2e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9479bf6_703a0248",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-04-21T10:48:04Z",
+      "side": 1,
+      "message": "Nit: Similarly here I think a comment saying it is from Table 5.9 would be good",
+      "revId": "57f14e0e589ec431f13a10c592e4021aaf4d2e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
