@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47d0eeb7_5f6a9616",
+        "filename": "tools/generate_json/generate_json.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2022-04-21T13:19:32Z",
+      "side": 1,
+      "message": "The naming is out of sync with the \"shim\" and \"app\" naming convention. Does it make sense to use \u0027ivy-app.dts\u0027?",
+      "range": {
+        "startLine": 28,
+        "startChar": 15,
+        "endLine": 28,
+        "endChar": 27
+      },
+      "revId": "4831e0decc645cd606fdc8179f78dbdfea3ae375",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
