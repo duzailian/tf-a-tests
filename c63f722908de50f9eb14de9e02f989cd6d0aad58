@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "453c6e95_012423c1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2022-04-22T07:40:33Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 9,
+        "startChar": 50,
+        "endLine": 9,
+        "endChar": 58
+      },
+      "revId": "c63f722908de50f9eb14de9e02f989cd6d0aad58",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7be2f2b3_87042c16",
         "filename": "include/runtime_services/ffa_helpers.h",
         "patchSetId": 2
@@ -37,6 +60,47 @@
       "writtenOn": "2022-04-13T11:34:18Z",
       "side": 1,
       "message": "Not sure we really need to introduce a new define flag.\nCan\u0027t we just use #if IMAGE_IVY \u0026\u0026 IVY_SHIM \u003d\u003d 0 in the code?",
+      "revId": "c63f722908de50f9eb14de9e02f989cd6d0aad58",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6868938d_c03c573e",
+        "filename": "spm/ivy/ivy.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2022-04-22T07:40:33Z",
+      "side": 1,
+      "message": "I agree. That would be a better option",
+      "parentUuid": "073643de_5b5cc4bd",
+      "revId": "c63f722908de50f9eb14de9e02f989cd6d0aad58",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f49960d_25127ce2",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000162
+      },
+      "writtenOn": "2022-04-22T07:40:33Z",
+      "side": 1,
+      "message": "Can we merge these calls into one and use \u0027mrs Xt, CurrentEL\u0027 to decide between SVC or SMC?",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 24
+      },
       "revId": "c63f722908de50f9eb14de9e02f989cd6d0aad58",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
