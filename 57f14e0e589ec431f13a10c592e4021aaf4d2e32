@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "78b6b083_2dc7db61",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-22T11:23:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d50e0f65_c6f3a05c",
+      "revId": "57f14e0e589ec431f13a10c592e4021aaf4d2e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c9479bf6_703a0248",
@@ -48,6 +66,24 @@
       "writtenOn": "2022-04-21T10:48:04Z",
       "side": 1,
       "message": "Nit: Similarly here I think a comment saying it is from Table 5.9 would be good",
+      "revId": "57f14e0e589ec431f13a10c592e4021aaf4d2e32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46931604_78a733e3",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-04-22T11:23:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9479bf6_703a0248",
       "revId": "57f14e0e589ec431f13a10c592e4021aaf4d2e32",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
