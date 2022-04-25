@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "233e6c91_41980578",
+        "filename": "tftf/tests/extensions/brbe/test_brbe.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-04-25T08:41:10Z",
+      "side": 1,
+      "message": "I think, we should add CI test configuration to verify the negative test scenario. Here\u0027s something similar that we already have in CI repo -\n\n1. https://git.trustedfirmware.org/ci/tf-a-ci-scripts.git/tree/group/tf-l2-boot-tests-misc/fvp-aarch64-roxlattables,fvp-default:fvp-tftf-fip.tftf-aemv8a.roxlattables.bl31_panic-debug\n2. https://git.trustedfirmware.org/ci/tf-a-ci-scripts.git/tree/group/tf-l2-boot-tests-misc/fvp-no-sys-regs-trace-access,fvp-default:fvp-tftf-fip.tftf-aemva.ete_trace_ext.bl31_panic-debug",
+      "parentUuid": "d44f59fe_e3edd4b8",
+      "range": {
+        "startLine": 15,
+        "startChar": 18,
+        "endLine": 16,
+        "endChar": 31
+      },
+      "revId": "74914274b6d04f5d11c2a3806853fdf2c7190524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c465dcd8_7e02c830",
         "filename": "tftf/tests/extensions/brbe/test_brbe.c",
         "patchSetId": 2
