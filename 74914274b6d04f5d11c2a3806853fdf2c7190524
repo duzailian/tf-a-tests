@@ -96,6 +96,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05afac21_f7698c0d",
+        "filename": "tftf/tests/extensions/brbe/test_brbe.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000340
+      },
+      "writtenOn": "2022-04-27T19:08:40Z",
+      "side": 1,
+      "message": "Patch adding the negative test case is here: https://review.trustedfirmware.org/c/ci/tf-a-ci-scripts/+/14990",
+      "parentUuid": "0d6c28a7_2f2039aa",
+      "range": {
+        "startLine": 15,
+        "startChar": 18,
+        "endLine": 16,
+        "endChar": 31
+      },
+      "revId": "74914274b6d04f5d11c2a3806853fdf2c7190524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c465dcd8_7e02c830",
