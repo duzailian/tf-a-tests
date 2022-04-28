@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c1809cd_2cd0a4ea",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-04-28T12:28:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "453c6e95_012423c1",
+      "range": {
+        "startLine": 9,
+        "startChar": 50,
+        "endLine": 9,
+        "endChar": 58
+      },
+      "revId": "c63f722908de50f9eb14de9e02f989cd6d0aad58",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7be2f2b3_87042c16",
@@ -82,6 +106,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "882991a6_ce10af1a",
+        "filename": "spm/ivy/ivy.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-04-28T12:28:57Z",
+      "side": 1,
+      "message": "Yes, sorry I missed the IMAGE_IVY define",
+      "parentUuid": "6868938d_c03c573e",
+      "revId": "c63f722908de50f9eb14de9e02f989cd6d0aad58",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f49960d_25127ce2",
@@ -95,6 +137,30 @@
       "writtenOn": "2022-04-22T07:40:33Z",
       "side": 1,
       "message": "Can we merge these calls into one and use \u0027mrs Xt, CurrentEL\u0027 to decide between SVC or SMC?",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 104,
+        "endChar": 24
+      },
+      "revId": "c63f722908de50f9eb14de9e02f989cd6d0aad58",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c822c63_ff4a5c18",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-04-28T12:28:57Z",
+      "side": 1,
+      "message": "I\u0027ve created a function to move the preprocessor logic to one place however it seems like unnecessary overhead to check the currentEL at runtime. I can\u0027t think of a case where this would be needed but please let me know if I\u0027m wrong",
+      "parentUuid": "2f49960d_25127ce2",
       "range": {
         "startLine": 101,
         "startChar": 0,
@@ -128,6 +194,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfbcbe76_cdf173ac",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-04-28T12:28:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb99c4c4_8ce8e9d5",
+      "range": {
+        "startLine": 327,
+        "startChar": 0,
+        "endLine": 331,
+        "endChar": 6
+      },
+      "revId": "c63f722908de50f9eb14de9e02f989cd6d0aad58",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "53d0d725_f5a12f72",
@@ -141,6 +231,30 @@
       "writtenOn": "2022-04-13T11:34:18Z",
       "side": 1,
       "message": "misplaced?",
+      "range": {
+        "startLine": 735,
+        "startChar": 1,
+        "endLine": 735,
+        "endChar": 6
+      },
+      "revId": "c63f722908de50f9eb14de9e02f989cd6d0aad58",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe2c1665_89d91949",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 735,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-04-28T12:28:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53d0d725_f5a12f72",
       "range": {
         "startLine": 735,
         "startChar": 1,
