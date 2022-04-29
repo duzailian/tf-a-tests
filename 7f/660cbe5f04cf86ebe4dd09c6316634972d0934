@@ -1,0 +1,10 @@
+Allow-CI+1: Vishnu <vishnu.banavath@arm.com>
+Code-Owner-Review+1: Emekcan Aras <emekcan.aras@arm.com>
+Verified+1: Vishnu <vishnu.banavath@arm.com>
+Legacy-CI+2: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Maintainer-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Fri, 29 Apr 2022 11:33:10 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/14938
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
