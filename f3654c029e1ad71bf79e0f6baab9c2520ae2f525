@@ -16,6 +16,23 @@
       "message": "The failing tests are due to the BRBE enablement patch not being merged yet. When I run the tests with the correct TF refspec the tests pass. https://jenkins.oss.arm.com/job/tf-ci-gateway/115233/",
       "revId": "f3654c029e1ad71bf79e0f6baab9c2520ae2f525",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cb58b66_cdb9eadc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000340
+      },
+      "writtenOn": "2022-04-29T16:48:10Z",
+      "side": 1,
+      "message": "The failing tests are due to the BRBE enablement patch not yet being merged.",
+      "revId": "f3654c029e1ad71bf79e0f6baab9c2520ae2f525",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
