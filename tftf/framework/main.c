@@ -25,6 +25,7 @@
 #include <tftf_lib.h>
 #include <timer.h>
 
+#define MIN_RETRY_TO_POWER_ON_LEAD_CPU       10
 /* version information for TFTF */
 extern const char version_string[];
 
@@ -309,6 +310,7 @@ static unsigned int close_test(void)
 static void __dead2 hand_over_to_lead_cpu(void)
 {
 	int ret;
+	unsigned int tftf_cpu_pwr_on_ctr = 0;
 	unsigned int mpid = read_mpidr_el1() & MPID_MASK;
 	unsigned int core_pos = platform_get_core_pos(mpid);
 
@@ -322,7 +324,17 @@ static void __dead2 hand_over_to_lead_cpu(void)
 	 * Pass a NULL pointer to easily catch the problem in case something
 	 * goes wrong.
 	 */
-	ret = tftf_cpu_on(lead_cpu_mpid, 0, 0);
+	while (tftf_cpu_pwr_on_ctr < MIN_RETRY_TO_POWER_ON_LEAD_CPU) {
+		ret = tftf_cpu_on(lead_cpu_mpid, 0, 0);
+		if (ret == PSCI_E_SUCCESS)
+			break;
+
+		else {
+			tftf_cpu_pwr_on_ctr += 1;
+			waitms(1);
+		}
+	}
+
 	if (ret != PSCI_E_SUCCESS) {
 		ERROR("CPU%u: Failed to power on lead CPU%u (%d)\n",
 			core_pos, platform_get_core_pos(lead_cpu_mpid), ret);
