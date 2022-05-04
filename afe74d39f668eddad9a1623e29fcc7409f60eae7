@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2f2f617_408849c9",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2022-05-04T08:24:30Z",
+      "side": 1,
+      "message": "Same question/concern as in TF-A [1]: I wonder whether it is valid to use different versions of DWARF for asm and C files.\n\n[1] https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/15070",
+      "range": {
+        "startLine": 178,
+        "startChar": 27,
+        "endLine": 178,
+        "endChar": 37
+      },
+      "revId": "afe74d39f668eddad9a1623e29fcc7409f60eae7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
