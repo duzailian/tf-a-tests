@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "024805f1_e10e1ab0",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy-sel0.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ba70905_18f359ad",
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0f089a54_0a8be165",
@@ -31,6 +49,30 @@
       "writtenOn": "2022-04-13T06:34:01Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 31
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b860330b_de844c1d",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy-sel0.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f089a54_0a8be165",
       "range": {
         "startLine": 25,
         "startChar": 1,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "40d3b784_a9b3ba11",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy-sel0.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "905c3830_9f7ff743",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 28,
+        "endChar": 44
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "35aca618_8687e935",
@@ -81,6 +147,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5eb36aaa_586acc1a",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35aca618_8687e935",
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "af58b797_55766059",
@@ -94,6 +178,30 @@
       "writtenOn": "2022-04-13T06:34:01Z",
       "side": 1,
       "message": "Perhaps we can mention ivy-shim-fvp to state this is the SEL0 partition implementation including a SEL1 shim.",
+      "range": {
+        "startLine": 17,
+        "startChar": 16,
+        "endLine": 17,
+        "endChar": 23
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcef74f8_8bb42475",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af58b797_55766059",
       "range": {
         "startLine": 17,
         "startChar": 16,
@@ -127,6 +235,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "04ebe4f2_6f761b23",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7916ab80_945603e4",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 31
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "67736047_6c692ad8",
@@ -140,6 +272,30 @@
       "writtenOn": "2022-04-13T06:34:01Z",
       "side": 1,
       "message": "I believe we can remove, this isn\u0027t consumed by Hafnium.",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 28,
+        "endChar": 44
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de5e37c3_58f02ffd",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67736047_6c692ad8",
       "range": {
         "startLine": 28,
         "startChar": 1,
@@ -173,6 +329,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebc9b6e3_0bab9b27",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy-sel0.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c00cb28d_09050596",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 33
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bba8a81f_14c18c88",
@@ -186,6 +366,30 @@
       "writtenOn": "2022-04-13T06:34:01Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 31
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cb6cda0_5336f1ce",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy-sel0.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bba8a81f_14c18c88",
       "range": {
         "startLine": 27,
         "startChar": 1,
@@ -219,6 +423,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c697cbf9_d8941b6f",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy-sel0.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ddf00206_a0aaca4b",
+      "range": {
+        "startLine": 30,
+        "startChar": 1,
+        "endLine": 30,
+        "endChar": 44
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "05b0d4bf_2382c91e",
@@ -232,6 +460,30 @@
       "writtenOn": "2022-04-13T06:34:01Z",
       "side": 1,
       "message": "ivy-shim-tc0",
+      "range": {
+        "startLine": 16,
+        "startChar": 16,
+        "endLine": 16,
+        "endChar": 23
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c57b67f1_d1b4b396",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05b0d4bf_2382c91e",
       "range": {
         "startLine": 16,
         "startChar": 16,
@@ -265,6 +517,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f3b7b67_9a6694cd",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9ecf235_f48a66e0",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 33
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "497412b7_8650dd0e",
@@ -288,6 +564,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3c98bbb_c4bfdb4a",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "497412b7_8650dd0e",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 31
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1678a8c4_3547f983",
@@ -301,6 +601,30 @@
       "writtenOn": "2022-04-13T06:34:01Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 30,
+        "startChar": 1,
+        "endLine": 30,
+        "endChar": 44
+      },
+      "revId": "81c982ab83d4ab7c2d91d12b6192e0ec42c02d18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fe45fdd_1848001f",
+        "filename": "spm/ivy/app/plat/arm/tc0/fdts/ivy.dts",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1678a8c4_3547f983",
       "range": {
         "startLine": 30,
         "startChar": 1,
