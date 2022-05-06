@@ -22,6 +22,30 @@
       },
       "revId": "4831e0decc645cd606fdc8179f78dbdfea3ae375",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cb1374b_aa1514a8",
+        "filename": "tools/generate_json/generate_json.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-06T14:19:33Z",
+      "side": 1,
+      "message": "Changed to ivy-sel0 and ivy-sel1 naming convention since ivy-shim isn\u0027t really appropriate as that partition is built up of the shim code and app code",
+      "parentUuid": "47d0eeb7_5f6a9616",
+      "range": {
+        "startLine": 28,
+        "startChar": 15,
+        "endLine": 28,
+        "endChar": 27
+      },
+      "revId": "4831e0decc645cd606fdc8179f78dbdfea3ae375",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
