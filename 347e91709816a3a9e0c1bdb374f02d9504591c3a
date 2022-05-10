@@ -34,6 +34,24 @@
       "parentUuid": "ecfbe841_e451f1b5",
       "revId": "347e91709816a3a9e0c1bdb374f02d9504591c3a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45ec447d_eea67d9e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 27
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-05-10T13:55:28Z",
+      "side": 1,
+      "message": "it is working if we create the correct config fragment:\nhttps://jenkins.oss.arm.com/job/tf-ci-gateway/115767/\nconfig fragment:\nhttps://review.trustedfirmware.org/c/ci/tf-a-ci-scripts/+/15143",
+      "parentUuid": "c35e07b7_1c02ce65",
+      "revId": "347e91709816a3a9e0c1bdb374f02d9504591c3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
