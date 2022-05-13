@@ -1,0 +1,10 @@
+Allow-CI+1: Olivier Deprez <olivier.deprez@arm.com>
+Maintainer-Review+1: Joanna Farley <joanna.farley@arm.com>
+Code-Review+1: TrustedFirmware Code Review
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Verified+1: Joanna Farley <joanna.farley@arm.com>
+Submitted-by: Joanna Farley <joanna.farley@arm.com>
+Submitted-at: Fri, 13 May 2022 16:12:07 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/15055
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
