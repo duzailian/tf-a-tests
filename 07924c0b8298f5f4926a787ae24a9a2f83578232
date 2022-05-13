@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "721cf871_1bccc8da",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-05-13T12:43:06Z",
+      "side": 1,
+      "message": "Please add your \u0027Signed-off-by\u0027 also for this patch.",
+      "revId": "07924c0b8298f5f4926a787ae24a9a2f83578232",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
