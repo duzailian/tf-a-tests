@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14664b37_56416519",
+        "filename": "spm/ivy/app/ivy_main.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-16T12:33:25Z",
+      "side": 1,
+      "message": "Extract source id from sender args.arg1, rather than implicitly hardcoding destination to 0.\n\nEventually this would use ffa_dir_msg_source(args) if args were of struct ffa_value",
+      "range": {
+        "startLine": 54,
+        "startChar": 14,
+        "endLine": 54,
+        "endChar": 41
+      },
+      "revId": "350c7a1bafbb20e6e31f9c16e5f4846927b0b226",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7170465e_7690f93c",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy-sel0.dts",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-16T12:33:25Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 31
+      },
+      "revId": "350c7a1bafbb20e6e31f9c16e5f4846927b0b226",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "daae9c34_5ce1fa5c",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy-sel0.dts",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-16T12:33:25Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 28,
+        "startChar": 1,
+        "endLine": 28,
+        "endChar": 44
+      },
+      "revId": "350c7a1bafbb20e6e31f9c16e5f4846927b0b226",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31b6b5a8_415b5c5c",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy-sel1.dts",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-16T12:33:25Z",
+      "side": 1,
+      "message": "0x7600000",
+      "range": {
+        "startLine": 24,
+        "startChar": 17,
+        "endLine": 24,
+        "endChar": 27
+      },
+      "revId": "350c7a1bafbb20e6e31f9c16e5f4846927b0b226",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
