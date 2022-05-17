@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d763675_2b51893b",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-17T14:56:18Z",
+      "side": 1,
+      "message": "Removed spaces instead as I think this is what the coding style document prefers for unary operators.",
+      "parentUuid": "12249ba3_97e32901",
+      "range": {
+        "startLine": 225,
+        "startChar": 17,
+        "endLine": 225,
+        "endChar": 19
+      },
+      "revId": "fb69be7a3d0c9b33d771266bf54bfe60488cdafd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "65d314db_3361583a",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-05-17T14:31:12Z",
       "side": 1,
       "message": "nit: I believe you can remove",
+      "range": {
+        "startLine": 24,
+        "startChar": 1,
+        "endLine": 24,
+        "endChar": 20
+      },
+      "revId": "fb69be7a3d0c9b33d771266bf54bfe60488cdafd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f450977_1a58c3f2",
+        "filename": "spm/common/sp_debug.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-17T14:56:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65d314db_3361583a",
       "range": {
         "startLine": 24,
         "startChar": 1,
