@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82bee986_da82042e",
+        "filename": "spm/ivy/app/ivy_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-17T13:58:11Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 49,
+        "startChar": 2,
+        "endLine": 49,
+        "endChar": 48
+      },
+      "revId": "e551f3d72f273d22fb7238421c9d8fe6bed28d50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
