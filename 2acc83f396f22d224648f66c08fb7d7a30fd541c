@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96316aa1_fc12bac5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-17T13:45:51Z",
+      "side": 1,
+      "message": "NOTE: Squashing this into the patch below since the changes to generate_json.sh are required in that patch for it to build and run correctly for both values of IVY_SHIM",
+      "revId": "2acc83f396f22d224648f66c08fb7d7a30fd541c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
