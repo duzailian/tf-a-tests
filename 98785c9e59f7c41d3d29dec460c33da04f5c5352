@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b65adffd_8dfc3528",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 38
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-18T12:55:31Z",
+      "side": 1,
+      "message": "RMM catches",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 9
+      },
+      "revId": "98785c9e59f7c41d3d29dec460c33da04f5c5352",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
