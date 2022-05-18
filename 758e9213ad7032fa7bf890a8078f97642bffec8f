@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5ef2bf9_20fb8ea6",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 33
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-18T12:46:00Z",
+      "side": 1,
+      "message": "Would it be possible to relocate this test to https://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/tftf/tests/runtime_services/secure_service/test_ffa_exceptions.c ?\nAs this is very similar to rl_memory_cannot_be_accessed_in_s and would avoid duplicating definitions",
+      "revId": "758e9213ad7032fa7bf890a8078f97642bffec8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
