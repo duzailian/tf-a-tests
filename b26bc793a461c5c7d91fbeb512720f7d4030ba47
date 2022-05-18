@@ -16,6 +16,24 @@
       "message": "\u003e Patch Set 9: Verified-1\n\u003e \n\u003e Build Failed \n\u003e \n\u003e https://jenkins.oss.arm.com/job/tf-tftf-gerrit-tforg-l2/369/ : This Jenkins server is not publicly accessible. A core maintainer will let you know if this CI failure is blocking the merge of this patch.\n\nThere seems to be a build failure with SPM-MM?\n\ntftf/tests/runtime_services/mm_service/test_secure_service_handle.c: In function \u0027test_secure_partition_secondary_cores_seq\u0027:\ninclude/common/test_helpers.h:160:36: error: incompatible types when initializing type \u0027uint32_t\u0027 {aka \u0027unsigned int\u0027} using type \u0027struct ffa_value\u0027\n  160 |                 uint32_t version \u003d ffa_service_call(\u0026version_sc);                       \\\n      |                                    ^~~~~~~~~~~~~~~~\ntftf/tests/runtime_services/mm_service/test_secure_service_handle.c:70:9: note: in expansion of macro \u0027SKIP_TEST_IF_MM_VERSION_LESS_THAN\u0027\n   70 |         SKIP_TEST_IF_MM_VERSION_LESS_THAN(1, 0);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\ntftf/tests/runtime_services/mm_service/test_secure_service_handle.c: In function \u0027test_secure_partition_secondary_cores_sim\u0027:\ninclude/common/test_helpers.h:160:36: error: incompatible types when initializing type \u0027uint32_t\u0027 {aka \u0027unsigned int\u0027} using type \u0027struct ffa_value\u0027\n  160 |                 uint32_t version \u003d ffa_service_call(\u0026version_sc);                       \\\n      |                                    ^~~~~~~~~~~~~~~~\ntftf/tests/runtime_services/mm_service/test_secure_service_handle.c:186:9: note: in expansion of macro \u0027SKIP_TEST_IF_MM_VERSION_LESS_THAN\u0027\n  186 |         SKIP_TEST_IF_MM_VERSION_LESS_THAN(1, 0);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nMakefile:511: recipe for target \u0027build/fvp/debug/tftf/test_secure_service_handle.o\u0027 failed\nmake: *** [build/fvp/debug/tftf/test_secure_service_handle.o] Error 1\n",
       "revId": "b26bc793a461c5c7d91fbeb512720f7d4030ba47",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74ce6eaf_548618eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-18T09:42:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9bdbbce2_a1ee1e18",
+      "revId": "b26bc793a461c5c7d91fbeb512720f7d4030ba47",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
