@@ -16,6 +16,24 @@
       "message": "General comment about a clean-up we could do, not necessarily in this patch stack.\nThis file is not necessary.\nTF-A build-flow builds fdts from the dts file provide through the SP layout file. Unless there is another setup that still uses it. \nDo you if that is the case?",
       "revId": "a13b64bd4a2191b2c9715709b4db841b20fe7110",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71e5345b_9bcf2938",
+        "filename": "tools/generate_dtb/generate_dtb.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-18T15:10:44Z",
+      "side": 0,
+      "message": "Good spot, from my quick test this script does seem unnecessary. However I think it would be better in a different patch as it seems out of the scope of this one",
+      "parentUuid": "4a2a87c5_8e06b7c4",
+      "revId": "a13b64bd4a2191b2c9715709b4db841b20fe7110",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
