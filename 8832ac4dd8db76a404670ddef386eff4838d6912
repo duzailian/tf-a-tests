@@ -65,6 +65,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddfab2ec_fd1f55ed",
+        "filename": "spm/ivy/app/aarch64/ivy_entrypoint.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-18T11:46:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c469b54_1a9ecbe1",
+      "range": {
+        "startLine": 41,
+        "startChar": 1,
+        "endLine": 41,
+        "endChar": 19
+      },
+      "revId": "8832ac4dd8db76a404670ddef386eff4838d6912",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f4ab02d9_eb7bd37f",
@@ -78,6 +102,30 @@
       "writtenOn": "2021-11-26T21:10:27Z",
       "side": 1,
       "message": "we need to start creating wrappers for such calls like we have in cactus. one of the disadvantage of this approach over reusing cactus, but not a big deal. i think we can refactor code to reuse some of those helpers.",
+      "range": {
+        "startLine": 30,
+        "startChar": 7,
+        "endLine": 30,
+        "endChar": 14
+      },
+      "revId": "8832ac4dd8db76a404670ddef386eff4838d6912",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f102b97_6ec27766",
+        "filename": "spm/ivy/app/ivy_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-18T11:46:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4ab02d9_eb7bd37f",
       "range": {
         "startLine": 30,
         "startChar": 7,
