@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "136d2940_0c4eee37",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 33
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-05-18T16:55:44Z",
+      "side": 1,
+      "message": "https://jenkins.oss.arm.com/job/tf-ci-gateway/116085/\npointing to the las commit of this patch",
+      "revId": "e714786200bfd3be0f7ea426c0912eb2be984eca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
