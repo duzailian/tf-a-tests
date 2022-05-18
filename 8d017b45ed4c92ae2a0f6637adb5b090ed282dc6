@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "7c538161_f4badbdb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-18T15:11:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "83896701_c1f85629",
+      "range": {
+        "startLine": 11,
+        "startChar": 46,
+        "endLine": 11,
+        "endChar": 49
+      },
+      "revId": "8d017b45ed4c92ae2a0f6637adb5b090ed282dc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "75a07008_69b030ec",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 11
@@ -99,6 +123,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b141185_6caae5fb",
+        "filename": "spm/cactus/cactus_tests/cactus_test_direct_messaging.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-18T15:11:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0705c0c9_d45fcce3",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 5
+      },
+      "revId": "8d017b45ed4c92ae2a0f6637adb5b090ed282dc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3171f7b9_344853b8",
@@ -112,6 +160,30 @@
       "writtenOn": "2022-05-18T13:10:45Z",
       "side": 1,
       "message": "full stop.",
+      "range": {
+        "startLine": 10,
+        "startChar": 54,
+        "endLine": 10,
+        "endChar": 55
+      },
+      "revId": "8d017b45ed4c92ae2a0f6637adb5b090ed282dc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19a968f4_714713e4",
+        "filename": "tftf/tests/runtime_services/secure_service/aarch32/ffa_arch_helpers.S",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-18T15:11:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3171f7b9_344853b8",
       "range": {
         "startLine": 10,
         "startChar": 54,
