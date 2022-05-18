@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b99dd2b5_fdceea41",
+        "filename": "spm/ivy/app/ivy_main.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-05-18T12:55:59Z",
+      "side": 1,
+      "message": "ffa_id_t?\ndefine it in the top of this scope.\nExplicitly cast the result of the shift operation to (ffa_id_t).",
+      "range": {
+        "startLine": 53,
+        "startChar": 2,
+        "endLine": 53,
+        "endChar": 10
+      },
+      "revId": "317c7735a947bdf1b070be00f01ce8e2adaccaf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b70a4bcc_2c09f2eb",
+        "filename": "spm/ivy/app/ivy_main.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-05-18T12:55:59Z",
+      "side": 1,
+      "message": "nit: cast this as well?",
+      "range": {
+        "startLine": 56,
+        "startChar": 44,
+        "endLine": 56,
+        "endChar": 54
+      },
+      "revId": "317c7735a947bdf1b070be00f01ce8e2adaccaf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa7f8dcc_dfcf78bd",
+        "filename": "spm/ivy/ivy.mk",
+        "patchSetId": 13
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-05-18T12:55:59Z",
+      "side": 1,
+      "message": "DTBs are built as part of the TF-A build flow.\nWe could look into cleaning tf-a-tests build system, given it is generating artifacts that are not used.\nSee comment in one of the following files.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 5
+      },
+      "revId": "317c7735a947bdf1b070be00f01ce8e2adaccaf6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
