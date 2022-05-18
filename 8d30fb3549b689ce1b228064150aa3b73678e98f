@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5911c4ce_88ea52bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-05-18T17:02:03Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "8d30fb3549b689ce1b228064150aa3b73678e98f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a9979b1_ac472b1b",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy-sel0.dts",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-05-18T17:02:03Z",
+      "side": 1,
+      "message": "nit: included",
+      "range": {
+        "startLine": 7,
+        "startChar": 70,
+        "endLine": 7,
+        "endChar": 77
+      },
+      "revId": "8d30fb3549b689ce1b228064150aa3b73678e98f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7c4adf1_7ef6f4db",
+        "filename": "tools/generate_dtb/generate_dtb.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-05-18T17:02:03Z",
+      "side": 1,
+      "message": "nitpick: Add another comment here to describe arg $4",
+      "revId": "8d30fb3549b689ce1b228064150aa3b73678e98f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
