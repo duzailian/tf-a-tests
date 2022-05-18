@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfe5666f_41914773",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-05-18T14:00:57Z",
+      "side": 1,
+      "message": "Patch explicitly being tested here for FVP launched with v8.7 support:\n\nhttps://jenkins.oss.arm.com/job/tf-worker/3018268/console\n\nThanks!",
+      "revId": "b31bc759af589bc95e3a88bbe5b525ad84d1ac89",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
