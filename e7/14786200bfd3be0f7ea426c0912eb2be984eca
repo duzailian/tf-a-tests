@@ -1,0 +1,10 @@
+Allow-CI+2: Nabil Kahlouche <nabil.kahlouche@arm.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Verified+1: TrustedFirmware Code Review
+Code-Owner-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Code-Review+1: TrustedFirmware Code Review
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Wed, 18 May 2022 19:13:54 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/13884
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
