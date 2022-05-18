@@ -94,6 +94,30 @@
       },
       "revId": "b60025629610d3612e2abe91fe35cb73de53bdf1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98d354cd_b86b2a47",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-18T10:16:50Z",
+      "side": 1,
+      "message": "see the comment above:\n\n\u003e Following test intends to run on RME enabled platforms when EL3 is Root world. In a non RME platform, EL3 is secure. Access to secure memory from NS world is already covered by access_el3_memory_from_ns.",
+      "parentUuid": "48cb2f0a_a6a73d7c",
+      "range": {
+        "startLine": 170,
+        "startChar": 4,
+        "endLine": 170,
+        "endChar": 85
+      },
+      "revId": "b60025629610d3612e2abe91fe35cb73de53bdf1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
