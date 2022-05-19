@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2b163a1_2f0896ee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-05-19T14:50:34Z",
+      "side": 1,
+      "message": "Can somebody please upvote the CR to CoR?",
+      "revId": "5cf0463895c3b43a3d5ecab240d7ac0fc4643642",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
