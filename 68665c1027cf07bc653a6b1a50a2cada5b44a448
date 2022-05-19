@@ -118,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "82d6b6b8_b413f761",
+        "filename": "spm/cactus/plat/arm/fvp/include/sp_platform_def.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-19T12:51:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4198a38_53bdf48b",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 41
+      },
+      "revId": "68665c1027cf07bc653a6b1a50a2cada5b44a448",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2d8e65f5_dcb41218",
