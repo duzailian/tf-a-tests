@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65655469_ff8dd519",
+        "filename": "spm/ivy/app/plat/arm/fvp/include/sp_platform_def.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-19T12:53:53Z",
+      "side": 1,
+      "message": "nit: remove one blank",
+      "revId": "cf4d15345a74736890237b2d1521fbe0b13193b0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
