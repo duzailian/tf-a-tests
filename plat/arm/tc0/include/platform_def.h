@@ -58,6 +58,11 @@
 #define NOR_FLASH_BLOCK_SIZE		0x40000		/* 256KB */
 #define FLASH_SIZE			0x4000000	/* 64MB */
 
+/**********************************
+ * Addresses to test invalid access
+ **********************************/
+#define EL3_MEMORY_ACCESS_ADDR			U(0xFFE00000)
+
 /*
  * If you want to use DRAM for non-volatile memory then the first 128MB
  * can be used. However for tests that involve power resets this is not
