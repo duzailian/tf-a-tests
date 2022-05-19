@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5347d33_3f7f149c",
+        "filename": "spm/cactus/plat/arm/fvp/include/sp_platform_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-19T11:56:08Z",
+      "side": 1,
+      "message": "Should this move after line 16?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc281263_b9f0d8c5",
+        "filename": "spm/cactus/plat/arm/tc0/include/sp_platform_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-19T11:56:08Z",
+      "side": 1,
+      "message": "Should this move after line 16?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 1
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "716e8445_bd55bb1b",
+        "filename": "spm/common/sp_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-19T11:56:08Z",
+      "side": 1,
+      "message": "nit: 2022",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9bcc1c3a_ea691c41",
+        "filename": "spm/common/sp_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-19T11:56:08Z",
+      "side": 1,
+      "message": "SP_DEF_H",
+      "range": {
+        "startLine": 46,
+        "startChar": 10,
+        "endLine": 46,
+        "endChar": 22
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4b5700c_662ce973",
+        "filename": "spm/ivy/app/plat/arm/fvp/include/sp_platform_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-19T11:56:08Z",
+      "side": 1,
+      "message": "nit: keep only 2022",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c62f35c4_83001d99",
+        "filename": "spm/ivy/app/plat/arm/tc0/include/sp_platform_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-19T11:56:08Z",
+      "side": 1,
+      "message": "nit: 2022",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f70229a0_03a80d18",
+        "filename": "spm/ivy/app/plat/arm/tc0/include/sp_platform_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-05-19T11:56:08Z",
+      "side": 1,
+      "message": "Should this move after line 16?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
