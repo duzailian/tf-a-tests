@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "28e2bcc2_801ed3b5",
+        "filename": "spm/cactus/plat/arm/fvp/include/sp_platform_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-19T12:47:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c5347d33_3f7f149c",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fc281263_b9f0d8c5",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-05-19T11:56:08Z",
       "side": 1,
       "message": "Should this move after line 16?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 1
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0f9d4cb_512cf192",
+        "filename": "spm/cactus/plat/arm/tc0/include/sp_platform_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-19T12:47:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc281263_b9f0d8c5",
       "range": {
         "startLine": 13,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "45b100a2_7e74a03c",
+        "filename": "spm/common/sp_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-19T12:47:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "716e8445_bd55bb1b",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9bcc1c3a_ea691c41",
@@ -83,6 +155,30 @@
       "writtenOn": "2022-05-19T11:56:08Z",
       "side": 1,
       "message": "SP_DEF_H",
+      "range": {
+        "startLine": 46,
+        "startChar": 10,
+        "endLine": 46,
+        "endChar": 22
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d483a6d1_4f945f79",
+        "filename": "spm/common/sp_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-19T12:47:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9bcc1c3a_ea691c41",
       "range": {
         "startLine": 46,
         "startChar": 10,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c9070f4_dddd54b8",
+        "filename": "spm/ivy/app/plat/arm/fvp/include/sp_platform_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-19T12:47:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4b5700c_662ce973",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c62f35c4_83001d99",
@@ -139,6 +259,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "54fee7a3_539de7ee",
+        "filename": "spm/ivy/app/plat/arm/tc0/include/sp_platform_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-19T12:47:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c62f35c4_83001d99",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f70229a0_03a80d18",
@@ -152,6 +296,30 @@
       "writtenOn": "2022-05-19T11:56:08Z",
       "side": 1,
       "message": "Should this move after line 16?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "5ecd426d9403819d67449c2ad05ad0cc34462d79",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d396f98_5bb0a5af",
+        "filename": "spm/ivy/app/plat/arm/tc0/include/sp_platform_def.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-19T12:47:47Z",
+      "side": 1,
+      "message": "Removed as not needed anymore",
+      "parentUuid": "f70229a0_03a80d18",
       "range": {
         "startLine": 13,
         "startChar": 0,
