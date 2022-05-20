@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5094b2f_cea3a5ad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-05-20T10:54:58Z",
+      "side": 1,
+      "message": "fvp-fwu-aemv8a.aarch32.NVM_reboot Test known to fail, not caused by this patch.\nhttps://jenkins.oss.arm.com/job/tf-worker/3021088/: Failed due to infrastructure",
+      "revId": "48dbbb2d212bb8db93bab2985e44adce69a2b819",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
