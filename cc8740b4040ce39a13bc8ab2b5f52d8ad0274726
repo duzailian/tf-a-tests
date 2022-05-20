@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95780894_a32ade03",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2022-05-20T11:01:14Z",
+      "side": 1,
+      "message": "Weirdly the CI bot voted on Code-Review label rather than Verified...",
+      "revId": "cc8740b4040ce39a13bc8ab2b5f52d8ad0274726",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
