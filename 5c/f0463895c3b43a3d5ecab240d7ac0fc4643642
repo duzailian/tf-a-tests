@@ -1,0 +1,11 @@
+Allow-CI+2: jayanthchidanand-arm <jayanthdodderi.chidanand@arm.com>
+Code-Review+1: TrustedFirmware Code Review
+Code-Review+1: Soby Mathew <soby.mathew@arm.com>
+Verified+1: TrustedFirmware Code Review
+Maintainer-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Code-Owner-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Fri, 20 May 2022 12:15:39 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/15141
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
