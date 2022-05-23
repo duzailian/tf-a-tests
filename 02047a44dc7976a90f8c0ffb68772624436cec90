@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "bce01249_2f9cd7fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-05-23T21:25:13Z",
+      "side": 1,
+      "message": "I think this can be shortened\nbuild(el3_payload): add conditional platform check",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 71
+      },
+      "revId": "02047a44dc7976a90f8c0ffb68772624436cec90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "eb0e9466_e645d524",
@@ -14,6 +37,23 @@
       "writtenOn": "2022-05-23T21:19:33Z",
       "side": 1,
       "message": "Unrelated test fail.",
+      "revId": "02047a44dc7976a90f8c0ffb68772624436cec90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a43fce18_d81eadee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-05-23T21:25:13Z",
+      "side": 1,
+      "message": "Looks good to me.",
       "revId": "02047a44dc7976a90f8c0ffb68772624436cec90",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
