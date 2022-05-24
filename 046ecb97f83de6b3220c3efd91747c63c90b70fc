@@ -375,6 +375,30 @@
       },
       "revId": "046ecb97f83de6b3220c3efd91747c63c90b70fc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc44db54_fe52e067",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_3.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-05-24T05:59:40Z",
+      "side": 1,
+      "message": "There are 3 possible values seen, so keeping same as other tests.",
+      "parentUuid": "3ad7ed17_aac51b74",
+      "range": {
+        "startLine": 134,
+        "startChar": 8,
+        "endLine": 135,
+        "endChar": 18
+      },
+      "revId": "046ecb97f83de6b3220c3efd91747c63c90b70fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
