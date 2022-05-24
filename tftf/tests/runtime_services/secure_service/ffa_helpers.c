@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 #include <smccc.h>
+#include <assert.h>
 
 #include <ffa_endpoints.h>
 #include <ffa_helpers.h>
@@ -630,6 +631,19 @@ struct ffa_value ffa_notification_info_get(void)
 		.arg6 = FFA_PARAM_MBZ,
 		.arg7 = FFA_PARAM_MBZ
 	};
+
+	return ffa_service_call(&args);
+}
+
+struct ffa_value ffa_console_log(const char* message, size_t char_count)
+{
+	struct ffa_value args = {
+		.fid = FFA_CONSOLE_LOG_SMC64,
+		.arg1 = char_count,
+	};
+
+	assert(char_count <= 6 * sizeof(args.arg2));
+	memcpy(&args.arg2, message, char_count);
 
 	return ffa_service_call(&args);
 }

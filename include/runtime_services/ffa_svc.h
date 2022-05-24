@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -100,6 +100,8 @@
 #define FFA_FNUM_SPM_ID_GET			U(0x85)
 #define FFA_FNUM_MSG_SEND2			U(0x86)
 #define FFA_FNUM_SECONDARY_EP_REGISTER		U(0x87)
+#define FFA_FNUM_CONSOLE_LOG			U(0x8A)
+
 
 /* FFA SMC32 FIDs */
 #define FFA_ERROR		FFA_FID(SMC_32, FFA_FNUM_ERROR)
@@ -140,6 +142,7 @@
 #define FFA_NOTIFICATION_INFO_GET \
 	FFA_FID(SMC_32, FFA_FNUM_NOTIFICATION_INFO_GET)
 #define FFA_SPM_ID_GET		FFA_FID(SMC_32, FFA_FNUM_SPM_ID_GET)
+#define FFA_CONSOLE_LOG_SMC32	FFA_FID(SMC_32, FFA_FNUM_CONSOLE_LOG)
 
 /* FFA SMC64 FIDs */
 #define FFA_SUCCESS_SMC64	FFA_FID(SMC_64, FFA_FNUM_SUCCESS)
@@ -157,6 +160,7 @@
 	FFA_FID(SMC_64, FFA_FNUM_SECONDARY_EP_REGISTER)
 #define FFA_NOTIFICATION_INFO_GET_SMC64 \
 	FFA_FID(SMC_64, FFA_FNUM_NOTIFICATION_INFO_GET)
+#define FFA_CONSOLE_LOG_SMC64	FFA_FID(SMC_64, FFA_FNUM_CONSOLE_LOG)
 /*
  * Reserve a special value for traffic targeted to the Hypervisor or SPM.
  */
