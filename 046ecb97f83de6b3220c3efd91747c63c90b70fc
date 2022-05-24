@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e23f819_6db80c5a",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_3.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-05-24T05:55:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "12b22f48_64c2d101",
+      "range": {
+        "startLine": 20,
+        "startChar": 23,
+        "endLine": 20,
+        "endChar": 24
+      },
+      "revId": "046ecb97f83de6b3220c3efd91747c63c90b70fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "97ee8c61_7bf8e2c5",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-05-19T10:42:28Z",
       "side": 1,
       "message": "ditto.",
+      "range": {
+        "startLine": 21,
+        "startChar": 23,
+        "endLine": 21,
+        "endChar": 24
+      },
+      "revId": "046ecb97f83de6b3220c3efd91747c63c90b70fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90e7c905_6182a149",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_3.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-05-24T05:55:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "97ee8c61_7bf8e2c5",
       "range": {
         "startLine": 21,
         "startChar": 23,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "abf14143_bce6cc12",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_3.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-05-24T05:55:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a1fd7681_45c87dc8",
+      "range": {
+        "startLine": 46,
+        "startChar": 1,
+        "endLine": 46,
+        "endChar": 41
+      },
+      "revId": "046ecb97f83de6b3220c3efd91747c63c90b70fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ffb8693_ed774592",
@@ -83,6 +155,30 @@
       "writtenOn": "2022-05-19T10:42:28Z",
       "side": 1,
       "message": "braces around \u0027if\u0027 and \u0027else\u0027",
+      "range": {
+        "startLine": 82,
+        "startChar": 1,
+        "endLine": 82,
+        "endChar": 24
+      },
+      "revId": "046ecb97f83de6b3220c3efd91747c63c90b70fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12849e33_e6977557",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_3.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-05-24T05:55:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1ffb8693_ed774592",
       "range": {
         "startLine": 82,
         "startChar": 1,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "242e51d8_c3652553",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_3.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-05-24T05:55:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2f43156c_ee38302b",
+      "range": {
+        "startLine": 99,
+        "startChar": 5,
+        "endLine": 99,
+        "endChar": 29
+      },
+      "revId": "046ecb97f83de6b3220c3efd91747c63c90b70fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "375845db_1c3b3abd",
@@ -129,6 +249,30 @@
       "writtenOn": "2022-05-19T14:49:57Z",
       "side": 1,
       "message": "nitpick: TF-A",
+      "range": {
+        "startLine": 100,
+        "startChar": 63,
+        "endLine": 100,
+        "endChar": 65
+      },
+      "revId": "046ecb97f83de6b3220c3efd91747c63c90b70fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48b085d1_df65b4d3",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_3.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-05-24T05:55:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "375845db_1c3b3abd",
       "range": {
         "startLine": 100,
         "startChar": 63,
@@ -162,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4610851_e80d44d0",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_3.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-05-24T05:55:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "dba4e408_d3a79804",
+      "range": {
+        "startLine": 121,
+        "startChar": 2,
+        "endLine": 121,
+        "endChar": 31
+      },
+      "revId": "046ecb97f83de6b3220c3efd91747c63c90b70fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c13308af_626712fd",
@@ -175,6 +343,30 @@
       "writtenOn": "2022-05-19T10:42:28Z",
       "side": 1,
       "message": "can this be simply - while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) \u003d\u003d PSCI_STATE_ON); without \u0027continue\u0027?",
+      "range": {
+        "startLine": 134,
+        "startChar": 8,
+        "endLine": 135,
+        "endChar": 18
+      },
+      "revId": "046ecb97f83de6b3220c3efd91747c63c90b70fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ad7ed17_aac51b74",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_3.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-05-24T05:55:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c13308af_626712fd",
       "range": {
         "startLine": 134,
         "startChar": 8,
