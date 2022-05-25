@@ -1,0 +1,11 @@
+Allow-CI+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Legacy-CI+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Code-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Verified+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Code-Owner-Review+1: Daniel Boulby <daniel.boulby@arm.com>
+Maintainer-Review+1: Joanna Farley <joanna.farley@arm.com>
+Submitted-by: Bipin Ravi <bipin.ravi@arm.com>
+Submitted-at: Wed, 25 May 2022 19:01:16 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/15303
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
