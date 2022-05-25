@@ -33,6 +33,69 @@
       "message": "Some of the entries could be grouped in related areas (eg the Realm new tests) while the Interrupt tests listed are they related to FF-A only changes and if so that could be clarified (see v2.6 section).\n\nI don\u0027t feel strongly enough about this to not give a +1 though.",
       "revId": "07d5dac1d38a85b34e0dcc9639c2ccffd63418c3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abb6d84b_4a1cd0ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-05-25T15:49:57Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "07d5dac1d38a85b34e0dcc9639c2ccffd63418c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7dd4b6b4_1af8600e",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-05-25T15:49:57Z",
+      "side": 1,
+      "message": "nitpick: Partitions",
+      "range": {
+        "startLine": 91,
+        "startChar": 61,
+        "endLine": 91,
+        "endChar": 69
+      },
+      "revId": "07d5dac1d38a85b34e0dcc9639c2ccffd63418c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9ab412f_856c8c47",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-05-25T15:49:57Z",
+      "side": 1,
+      "message": "nitpick: PSCI",
+      "range": {
+        "startLine": 120,
+        "startChar": 12,
+        "endLine": 120,
+        "endChar": 16
+      },
+      "revId": "07d5dac1d38a85b34e0dcc9639c2ccffd63418c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
