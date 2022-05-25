@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb5fa0c8_59993afc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-05-25T07:25:44Z",
+      "side": 1,
+      "message": "Hi all,\n\nKindly review this patch concerning changelog for TF-A tests repo and add your comments.\n\nThanks!",
+      "revId": "07d5dac1d38a85b34e0dcc9639c2ccffd63418c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
