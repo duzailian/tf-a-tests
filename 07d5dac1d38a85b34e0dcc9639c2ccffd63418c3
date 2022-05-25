@@ -16,6 +16,23 @@
       "message": "Hi all,\n\nKindly review this patch concerning changelog for TF-A tests repo and add your comments.\n\nThanks!",
       "revId": "07d5dac1d38a85b34e0dcc9639c2ccffd63418c3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd15299a_5f07c9da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2022-05-25T09:19:53Z",
+      "side": 1,
+      "message": "Some of the entries could be grouped in related areas (eg the Realm new tests) while the Interrupt tests listed are they related to FF-A only changes and if so that could be clarified (see v2.6 section).\n\nI don\u0027t feel strongly enough about this to not give a +1 though.",
+      "revId": "07d5dac1d38a85b34e0dcc9639c2ccffd63418c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
