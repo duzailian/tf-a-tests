@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Copyright (c) 2018-2022, Arm Limited. All rights reserved.
+
+  SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<testsuites>
+	<testsuite name="Secure interrupt in Realm EL1"
+		description="Test secure Interrupts with Realm" >
+	<testcase name="Test Secure interrupt can preempt Realm EL1"
+		function="test_sec_interrupt_can_preempt_rl" />
+	</testsuite>
+</testsuites>
