@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "294b820e_12203f35",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-05-30T11:03:52Z",
+      "side": 1,
+      "message": "Commits after v2.7 rc0-tag are also covered here.",
+      "revId": "0b0cfb7ef973caad3ad482639c4ba60378db3b43",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
