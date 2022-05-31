@@ -562,16 +562,26 @@ bool ffa_partition_info_helper(struct mailbox_buffers *mb,
 				      info[i].properties);
 				result = false;
 			}
-			if (info[i].uuid.uuid[0] != expected[i].uuid.uuid[0] ||
-			    info[i].uuid.uuid[1] != expected[i].uuid.uuid[1] ||
-			    info[i].uuid.uuid[2] != expected[i].uuid.uuid[2] ||
-			    info[i].uuid.uuid[3] != expected[i].uuid.uuid[3]) {
+			/*
+			 * If a UUID is specified then the UUID returned in the
+			 * partition info descriptor MBZ.
+			 */
+			struct ffa_uuid expected_uuid = (uuid.uuid[0] == 0 &&
+							 uuid.uuid[1] == 0 &&
+							 uuid.uuid[2] == 0 &&
+							 uuid.uuid[3] == 0) ?
+				expected[i].uuid :
+				(struct ffa_uuid) { .uuid = {0} };
+			if (info[i].uuid.uuid[0] != expected_uuid.uuid[0] ||
+			    info[i].uuid.uuid[1] != expected_uuid.uuid[1] ||
+			    info[i].uuid.uuid[2] != expected_uuid.uuid[2] ||
+			    info[i].uuid.uuid[3] != expected_uuid.uuid[3]) {
 				ERROR("Wrong UUID. Expected %x %x %x %x, "
 				      "got %x %x %x %x\n",
-				      expected[i].uuid.uuid[0],
-				      expected[i].uuid.uuid[1],
-				      expected[i].uuid.uuid[2],
-				      expected[i].uuid.uuid[3],
+				      expected_uuid.uuid[0],
+				      expected_uuid.uuid[1],
+				      expected_uuid.uuid[2],
+				      expected_uuid.uuid[3],
 				      info[i].uuid.uuid[0],
 				      info[i].uuid.uuid[1],
 				      info[i].uuid.uuid[2],
