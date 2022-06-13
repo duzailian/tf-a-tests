@@ -39,7 +39,9 @@ typedef struct  host_shared_data{
  */
 enum realm_cmd {
 	REALM_SLEEP_CMD = 1,
-	REALM_GET_RSI_VERSION
+	REALM_GET_RSI_VERSION,
+	REALM_REQ_FPU_FILL_CMD,
+	REALM_REQ_FPU_CMP_CMD
 };
 
 /*

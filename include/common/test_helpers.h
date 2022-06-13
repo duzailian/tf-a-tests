@@ -444,4 +444,5 @@ void wait_for_non_lead_cpus(void);
  * OFF.
  */
 void wait_for_core_to_turn_off(unsigned int mpidr);
+
 #endif /* __TEST_HELPERS_H__ */
