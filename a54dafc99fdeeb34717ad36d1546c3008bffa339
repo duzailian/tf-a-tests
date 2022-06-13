@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c15cde01_b0d3bfd7",
+        "filename": "plat/arm/n1sdp/include/platform_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-06-13T15:35:27Z",
+      "side": 1,
+      "message": "nitpick:\nThis comment doesnt seem to be coherent with the definition below.",
+      "range": {
+        "startLine": 142,
+        "startChar": 22,
+        "endLine": 142,
+        "endChar": 36
+      },
+      "revId": "a54dafc99fdeeb34717ad36d1546c3008bffa339",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "754b6698_6131b379",
+        "filename": "plat/arm/n1sdp/n1sdp_topology.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-06-13T15:35:27Z",
+      "side": 1,
+      "message": "nipick: 2022",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "a54dafc99fdeeb34717ad36d1546c3008bffa339",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
