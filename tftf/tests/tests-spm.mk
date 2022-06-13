@@ -28,3 +28,11 @@ TESTS_SOURCES	+=							\
 	$(addprefix tftf/tests/runtime_services/host_realm_managment/,	\
 		host_realm_rmi.c					\
 	)
+
+ifeq (${ARCH},aarch64)
+TESTS_SOURCES	+=							\
+	$(addprefix lib/extensions/fpu/,				\
+		${ARCH}/fpu_halpers.S					\
+		fpu.c							\
+	)
+endif
