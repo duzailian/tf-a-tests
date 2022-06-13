@@ -18,6 +18,7 @@
  */
 test_result_t test_realm_create_enter(void)
 {
+#ifdef __aarch64__
 	bool ret1, ret2;
 	u_register_t retrmm;
 
@@ -60,4 +61,7 @@ test_result_t test_realm_create_enter(void)
 		return TEST_RESULT_FAIL;
 	}
 	return TEST_RESULT_SUCCESS;
+#else
+	return TEST_RESULT_SKIPPED;
+#endif
 }

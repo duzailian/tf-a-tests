@@ -16,8 +16,6 @@ TESTS_SOURCES	+=							\
 TESTS_SOURCES	+=							\
 	$(addprefix tftf/tests/runtime_services/host_realm_managment/,	\
 		host_realm_rmi.c					\
-		host_realm_helper.c					\
-		host_shared_data.c					\
 		rmi_delegate_tests.c					\
 	)
 
@@ -32,3 +30,16 @@ TESTS_SOURCES	+=							\
 	$(addprefix lib/heap/,						\
 		page_alloc.c						\
 	)
+
+ifeq (${ARCH},aarch64)
+TESTS_SOURCES	+=							\
+	$(addprefix tftf/tests/runtime_services/host_realm_managment/,	\
+		host_realm_helper.c					\
+		host_shared_data.c					\
+	)
+TESTS_SOURCES	+=							\
+	$(addprefix lib/extensions/fpu/,				\
+		${ARCH}/fpu_halpers.S					\
+		fpu.c							\
+	)
+endif
