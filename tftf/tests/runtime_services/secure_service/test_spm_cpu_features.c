@@ -3,10 +3,10 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-
 #include <cactus_test_cmds.h>
 #include <ffa_endpoints.h>
 #include <ffa_helpers.h>
+#include <lib/extensions/fpu.h>
 #include <test_helpers.h>
 
 #define SENDER HYP_ID
@@ -19,6 +19,16 @@ static const struct ffa_uuid expected_sp_uuids[] = { {PRIMARY_UUID} };
 extern void sve_subtract_interleaved_smc(int *difference, const int *sve_op_1,
 				       const int *sve_op_2);
 
+#define SIMD_NS_VALUE		0x11U
+#define FPCR_NS_VALUE		0x7FF9F00U
+#define FPSR_NS_VALUE		0xF800009FU
+
+#ifdef __aarch64__
+static sve_vector_t sve_vectors_input[SVE_NUM_VECTORS] __aligned(16);
+static sve_vector_t sve_vectors_output[SVE_NUM_VECTORS] __aligned(16);
+static int sve_op_1[SVE_ARRAYSIZE];
+static int sve_op_2[SVE_ARRAYSIZE];
+
 static test_result_t fp_vector_compare(uint8_t *a, uint8_t *b,
 	size_t vector_size, uint8_t vectors_num)
 {
@@ -27,14 +37,7 @@ static test_result_t fp_vector_compare(uint8_t *a, uint8_t *b,
 	}
 	return TEST_RESULT_SUCCESS;
 }
-
-#ifdef __aarch64__
-static sve_vector_t sve_vectors_input[SVE_NUM_VECTORS] __aligned(16);
-static sve_vector_t sve_vectors_output[SVE_NUM_VECTORS] __aligned(16);
-static int sve_op_1[SVE_ARRAYSIZE];
-static int sve_op_2[SVE_ARRAYSIZE];
-#endif
-
+#endif /* __aarch64__ */
 /*
  * Tests that SIMD vectors are preserved during the context switches between
  * normal world and the secure world.
@@ -48,15 +51,10 @@ test_result_t test_simd_vectors_preserved(void)
 	 **********************************************************************/
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 
-	simd_vector_t simd_vectors_send[SIMD_NUM_VECTORS],
-		      simd_vectors_receive[SIMD_NUM_VECTORS];
-
-	/* 0x11 is just a dummy value to be distinguished from the value in the
-	 * secure world. */
-	for (unsigned int num = 0U; num < SIMD_NUM_VECTORS; num++) {
-		memset(simd_vectors_send[num], 0x11 * (num+1), sizeof(simd_vector_t));
-	}
-	fill_simd_vector_regs(simd_vectors_send);
+	/* Non secure world fill FPU/SIMD state registers */
+	fpu_state_write_template(SIMD_NS_VALUE,
+			FPCR_NS_VALUE,
+			FPSR_NS_VALUE);
 
 	struct ffa_value ret = cactus_req_simd_fill_send_cmd(SENDER, RECEIVER);
 
@@ -68,11 +66,10 @@ test_result_t test_simd_vectors_preserved(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	read_simd_vector_regs(simd_vectors_receive);
-
-	return fp_vector_compare((uint8_t *)simd_vectors_send,
-				 (uint8_t *)simd_vectors_receive,
-				 sizeof(simd_vector_t), SIMD_NUM_VECTORS);
+	/* Normal world verify its FPU/SIMD state registers data */
+	return fpu_state_compare_template(SIMD_NS_VALUE,
+			FPCR_NS_VALUE,
+			FPSR_NS_VALUE);
 }
 
 /*
