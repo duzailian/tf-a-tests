@@ -84,7 +84,10 @@ FRAMEWORK_SOURCES	+=						\
 	lib/extensions/pauth/aarch64/pauth.c				\
 	lib/extensions/pauth/aarch64/pauth_helpers.S			\
 	lib/extensions/sme/aarch64/sme.c				\
-	lib/extensions/sme/aarch64/sme_helpers.S
+	lib/extensions/sme/aarch64/sme_helpers.S			\
+	lib/extensions/fpu/aarch64/fpu_halpers.S			\
+	lib/extensions/fpu/fpu.c
+
 endif
 
 TFTF_LINKERFILE		:=	tftf/framework/tftf.ld.S

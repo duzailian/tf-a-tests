@@ -10,6 +10,7 @@ TFTF_INCLUDES +=							\
 TESTS_SOURCES	+=							\
 	$(addprefix tftf/tests/runtime_services/realm_payload/,		\
 		host_realm_payload_tests.c				\
+		test_realm_spm.c					\
 	)
 
 TESTS_SOURCES	+=							\

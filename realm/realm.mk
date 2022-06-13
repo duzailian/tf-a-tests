@@ -15,7 +15,9 @@ REALM_INCLUDES :=							\
 	-Iinclude/lib/${ARCH}						\
 	-Iinclude/lib/utils						\
 	-Iinclude/lib/xlat_tables					\
+	-Iinclude/plat/common						\
 	-Iinclude/runtime_services					\
+	-Iinclude/runtime_services/realm_payload			\
 	-Iinclude/runtime_services/host_realm_managment			\
 	-Irealm								\
 	-Irealm/aarch64
@@ -37,7 +39,9 @@ REALM_SOURCES += lib/${ARCH}/cache_helpers.S				\
 	lib/smc/${ARCH}/smc.c						\
 	lib/exceptions/${ARCH}/sync.c					\
 	lib/locks/${ARCH}/spinlock.S					\
-	lib/delay/delay.c
+	lib/delay/delay.c						\
+	lib/extensions/fpu/aarch64/fpu_halpers.S			\
+	lib/extensions/fpu/fpu.c					\
 
 REALM_LINKERFILE:=	realm/realm.ld.S
 

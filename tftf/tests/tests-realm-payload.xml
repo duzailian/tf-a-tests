@@ -8,6 +8,9 @@
 
 <testsuites>
   <testsuite name="Realm payload at EL1" description="Test Realm EL1 framework capabilities" >
-	  <testcase name="Realm EL1 creation and execution test" function="test_realm_create_enter" />
+	  <testcase name="Realm EL1 creation and execution test"
+	  function="test_realm_create_enter" />	  
+	  <testcase name="Check that FPU state registers context is preserved in RL/SE/NS" 
+	  function="fpu_concurrent_in_rl_ns_se" /> 
   </testsuite>
 </testsuites>
