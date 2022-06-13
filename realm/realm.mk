@@ -15,6 +15,7 @@ REALM_INCLUDES :=							\
 	-Iinclude/lib/${ARCH}						\
 	-Iinclude/lib/utils						\
 	-Iinclude/lib/xlat_tables					\
+	-Iinclude/lib/extensions					\
 	-Iinclude/runtime_services					\
 	-Iinclude/runtime_services/host_realm_managment			\
 	-Irealm								\
@@ -37,7 +38,9 @@ REALM_SOURCES += lib/${ARCH}/cache_helpers.S				\
 	lib/smc/${ARCH}/smc.c						\
 	lib/exceptions/${ARCH}/sync.c					\
 	lib/locks/${ARCH}/spinlock.S					\
-	lib/delay/delay.c
+	lib/delay/delay.c						\
+	lib/extensions/fpu/aarch64/fpu_halpers.S			\
+	lib/extensions/fpu/fpu.c					\
 
 # TODO: Remove dependency on TFTF files.
 REALM_SOURCES	+=							\
