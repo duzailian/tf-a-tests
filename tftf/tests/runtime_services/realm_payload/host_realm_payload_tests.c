@@ -27,6 +27,7 @@ extern const char *rmi_exit[];
  */
 test_result_t host_test_realm_create_enter(void)
 {
+#ifdef __aarch64__
 	bool ret1, ret2;
 	u_register_t retrmm;
 
@@ -191,6 +192,9 @@ test_exit:
 	}
 
 	return host_cmp_result();
+#else
+	return TEST_RESULT_SKIPPED;
+#endif
 }
 
 /*

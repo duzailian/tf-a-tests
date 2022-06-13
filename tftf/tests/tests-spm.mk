@@ -29,3 +29,11 @@ TESTS_SOURCES	+=							\
 		host_realm_rmi.c					\
 		host_realm_helper.c					\
 	)
+
+ifeq (${ARCH},aarch64)
+TESTS_SOURCES	+=							\
+	$(addprefix lib/extensions/fpu/,				\
+		${ARCH}/fpu_halpers.S					\
+		fpu.c							\
+	)
+endif

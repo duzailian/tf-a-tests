@@ -10,11 +10,17 @@
 #include <debug.h>
 #include <host_realm_helper.h>
 #include <host_shared_data.h>
+#include <lib/extensions/fpu.h>
 #include "realm_def.h"
 #include <realm_rsi.h>
 #include <realm_tests.h>
 #include <tftf_lib.h>
 
+#define SIMD_REALM_VALUE	0x33U
+
+/* Store the template FPU registers here. */
+/* ToDO support concurrent CPU. */
+fpu_reg_state_t fpu_temp;
 /*
  * This function reads sleep time in ms from shared buffer and spins PE
  * in a loop for that time period.
@@ -84,6 +90,12 @@ void realm_payload_main(void)
 			break;
 		case REALM_PMU_INTERRUPT:
 			test_succeed = test_pmuv3_overflow_interrupt();
+		case REALM_REQ_FPU_FILL_CMD:
+			fpu_temp = fpu_state_write_template(SIMD_REALM_VALUE);
+			test_succeed = true;
+			break;
+		case REALM_REQ_FPU_CMP_CMD:
+			test_succeed = fpu_state_compare_template(&fpu_temp);
 			break;
 		default:
 			realm_printf("%s() invalid cmd %u\n", __func__, cmd);
