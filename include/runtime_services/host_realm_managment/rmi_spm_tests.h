@@ -12,4 +12,5 @@
 #define B_UNDELEGATED			1U
 #define NUM_CPU_DED_SPM			PLATFORM_CORE_COUNT / 2U
 
+
 #endif
