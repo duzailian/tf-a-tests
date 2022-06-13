@@ -9,7 +9,12 @@
 <testsuites>
 	<testsuite name="Secure interrupt in Realm EL1"
 		description="Test secure Interrupts with Realm" >
-	<testcase name="Test Secure interrupt can preempt Realm EL1"
+		<testcase name="Test Secure interrupt can preempt Realm EL1"
 		function="test_sec_interrupt_can_preempt_rl" />
+	</testsuite>
+	<testsuite name="FPU State context"
+		description="Validate context switch between NWd, SWd and Realm EL1" >
+		<testcase name="Check that FPU state registers context is preserved in RL/SE/NS"
+		function="fpu_concurrent_in_rl_ns_se" />
 	</testsuite>
 </testsuites>

@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
+TFTF_INCLUDES +=							\
+	-Iinclude/runtime_services/host_realm_managment			\
+	-Iinclude/runtime_services/realm_payload
 TESTS_SOURCES	+=							\
 	$(addprefix tftf/tests/runtime_services/host_realm_managment/,	\
 		host_realm_rmi.c					\
