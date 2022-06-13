@@ -22,5 +22,7 @@
 	  function="realm_fail_del" />
 	  <testcase name="Test Secure interrupt can preempt Realm EL1"
 	  function="test_sec_interrupt_can_preempt_rl" />
+	  <testcase name="Check that FPU state registers context is preserved in RL/SE/NS"
+	  function="fpu_concurrent_in_rl_ns_se" />
   </testsuite>
 </testsuites>
