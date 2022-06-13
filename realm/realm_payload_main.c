@@ -10,9 +10,14 @@
 #include <debug.h>
 #include <host_realm_helper.h>
 #include <host_shared_data.h>
+#include <lib/extensions/fpu.h>
 #include "realm_def.h"
 #include <realm_rsi.h>
 #include <tftf_lib.h>
+
+#define SIMD_REALM_VALUE	0x33U
+#define FPCR_REALM_VALUE	0x75F9500U
+#define FPSR_REALM_VALUE	0x88000097U
 
 /*
  * This function reads sleep time in ms from shared buffer and spins PE in a loop
@@ -70,6 +75,17 @@ void realm_payload_main(void)
 		case REALM_GET_RSI_VERSION:
 			realm_get_rsi_version();
 			test_succeed = true;
+			break;
+		case REALM_REQ_FPU_FILL_CMD:
+			fpu_state_write_template(SIMD_REALM_VALUE,
+					FPCR_REALM_VALUE,
+					FPSR_REALM_VALUE);
+			test_succeed = true;
+			break;
+		case REALM_REQ_FPU_CMP_CMD:
+			test_succeed = fpu_state_compare_template(SIMD_REALM_VALUE,
+					FPCR_REALM_VALUE,
+					FPSR_REALM_VALUE);
 			break;
 		default:
 			INFO("REALM_PAYLOAD: %s invalid cmd=%hhu", __func__, cmd);
