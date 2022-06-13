@@ -31,3 +31,9 @@ TESTS_SOURCES	+=							\
 	$(addprefix lib/heap/,						\
 		page_alloc.c						\
 	)
+
+TESTS_SOURCES	+=							\
+	$(addprefix lib/extensions/fpu/,				\
+		aarch64/fpu_halpers.S					\
+		fpu.c							\
+	)

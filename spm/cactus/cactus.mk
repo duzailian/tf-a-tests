@@ -25,11 +25,13 @@ CACTUS_INCLUDES :=					\
 	-Iinclude/lib/${ARCH}				\
 	-Iinclude/lib/utils				\
 	-Iinclude/lib/xlat_tables			\
+	-Iinclude/lib/extensions			\
 	-Iinclude/plat/common				\
 	-Iinclude/runtime_services			\
 	-Ispm/cactus					\
 	-Ispm/common					\
-	-Ispm/common/sp_tests
+	-Ispm/common/sp_tests			\
+	-Iinclude/runtime_services/secure_el1_payloads
 
 CACTUS_SOURCES	:=					\
 	$(addprefix spm/cactus/,			\
@@ -63,7 +65,8 @@ CACTUS_SOURCES	+=							\
 	tftf/tests/runtime_services/secure_service/${ARCH}/ffa_arch_helpers.S \
 	tftf/tests/runtime_services/secure_service/ffa_helpers.c 	\
 	tftf/tests/runtime_services/secure_service/spm_common.c		\
-	tftf/framework/${ARCH}/exception_report.c
+	tftf/framework/${ARCH}/exception_report.c					\
+	tftf/tests/common/test_helpers.c
 
 CACTUS_SOURCES	+= 	drivers/arm/pl011/${ARCH}/pl011_console.S	\
 			drivers/arm/sp805/sp805.c			\
@@ -75,6 +78,8 @@ CACTUS_SOURCES	+= 	drivers/arm/pl011/${ARCH}/pl011_console.S	\
 			lib/exceptions/${ARCH}/sync.c			\
 			lib/locks/${ARCH}/spinlock.S			\
 			lib/utils/mp_printf.c				\
+			lib/extensions/fpu/aarch64/fpu_halpers.S	\
+			lib/extensions/fpu/fpu.c			\
 			${XLAT_TABLES_LIB_SRCS}
 
 CACTUS_LINKERFILE	:=	spm/cactus/cactus.ld.S
