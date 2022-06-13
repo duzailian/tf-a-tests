@@ -10,9 +10,14 @@
 #include <debug.h>
 #include <host_realm_helper.h>
 #include <host_shared_data.h>
+#include <lib/extensions/fpu.h>
 #include "realm_def.h"
 #include <realm_rsi.h>
 #include <tftf_lib.h>
+
+#define SIMD_REALM_VALUE	0x33U
+#define FPCR_REALM_VALUE	0x75F9500U
+#define FPSR_REALM_VALUE	0x88000097U
 
 /*
  * This function reads sleep time in ms from shared buffer and spins PE in a loop
@@ -47,6 +52,42 @@ static void realm_get_rsi_version(void)
 }
 
 /*
+ * Fill FPU state(SIMD vectors, FPCR, FPSR) in realm world with a template values,
+ * SIMD_REALM_VALUE, FPCR_REALM_VALUE, FPSR_REALM_VALUE to be distinguished
+ * from the value in the normal and secure worlds.
+ */
+static void realm_req_fpu_fill_cmd(void)
+{
+	fpu_reg_state_t fpu_state_send;
+	fpu_state_set(&fpu_state_send, SIMD_REALM_VALUE, FPCR_REALM_VALUE, FPSR_REALM_VALUE);
+	fill_fpu_state_registers(&fpu_state_send);
+}
+
+/*
+ * compare FPU reg state from secure world side with the previously loaded values.
+ */
+static bool realm_req_fpu_cmp_cmd(void)
+{
+	fpu_reg_state_t fpu_state_send, fpu_state_receive;
+
+	fpu_state_set(&fpu_state_send, SIMD_REALM_VALUE, FPCR_REALM_VALUE, FPSR_REALM_VALUE);
+	fpu_state_set(&fpu_state_receive, 0, 0, 0);
+	/* read FPU/SIMD state registers values.*/
+	read_fpu_state_registers(&fpu_state_receive);
+	/* compare.*/
+	if (memcmp((uint8_t *)&fpu_state_send,
+			(uint8_t *)&fpu_state_receive,
+			sizeof(fpu_reg_state_t)) != 0) {
+			ERROR("REALM_PAYLOAD: realm_req_fpu_cmp_cmd faild\n");
+			return false;
+	}
+	else {
+		return true;
+	}
+
+}
+
+/*
  * This is the entry function for Realm payload, it first requests the shared buffer
  * IPA address from Host using HOST_CALL/RSI, it reads the command to be executed,
  * performs the request, and returns to Host with the execution state SUCCESS/FAILED
@@ -70,6 +111,13 @@ void realm_payload_main(void)
 		case REALM_GET_RSI_VERSION:
 			realm_get_rsi_version();
 			test_succeed = true;
+			break;
+		case REALM_REQ_FPU_FILL_CMD:
+			realm_req_fpu_fill_cmd();
+			test_succeed = true;
+			break;
+		case REALM_REQ_FPU_CMP_CMD:
+			test_succeed = realm_req_fpu_cmp_cmd();
 			break;
 		default:
 			INFO("REALM_PAYLOAD: %s invalid cmd=%hhu", __func__, cmd);
