@@ -86,6 +86,7 @@ FRAMEWORK_SOURCES	+=						\
 	lib/extensions/pauth/aarch64/pauth_helpers.S			\
 	lib/extensions/sme/aarch64/sme.c				\
 	lib/extensions/sme/aarch64/sme_helpers.S
+
 endif
 
 TFTF_LINKERFILE		:=	tftf/framework/tftf.ld.S
