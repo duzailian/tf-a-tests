@@ -75,6 +75,8 @@ CACTUS_SOURCES	+= 	drivers/arm/pl011/${ARCH}/pl011_console.S	\
 			lib/exceptions/${ARCH}/sync.c			\
 			lib/locks/${ARCH}/spinlock.S			\
 			lib/utils/mp_printf.c				\
+			lib/extensions/fpu/aarch64/fpu_halpers.S	\
+			lib/extensions/fpu/fpu.c			\
 			${XLAT_TABLES_LIB_SRCS}
 
 CACTUS_LINKERFILE	:=	spm/cactus/cactus.ld.S
