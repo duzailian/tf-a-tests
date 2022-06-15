@@ -1,0 +1,10 @@
+Legacy-CI+2: Olivier Deprez <olivier.deprez@arm.com>
+Verified+1: TrustedFirmware Code Review
+Code-Review+1: TrustedFirmware Code Review
+Code-Owner-Review+1: Daniel Boulby <daniel.boulby@arm.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Wed, 15 Jun 2022 15:58:04 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/15448
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
