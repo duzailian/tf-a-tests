@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -166,5 +166,8 @@
  * Reserve a special value for MBZ parameters.
  */
 #define FFA_PARAM_MBZ			U(0x0)
+
+/* Feature ID to query Managed Exit Interrupt ID */
+#define FFA_FEATURE_ID_MEI	U(0x3)
 
 #endif /* FFA_SVC_H */
