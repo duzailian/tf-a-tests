@@ -25,6 +25,7 @@
 	entrypoint-offset = <0x00004000>;
 	boot-order = <0>;
 	messaging-method = <3>; /* Direct messaging only */
+	ns-interrupts-action = <0>; /* Non secure interrupts are queued. */
 
 	/* Boot protocol */
 	gp-register-num = <0x0>;
