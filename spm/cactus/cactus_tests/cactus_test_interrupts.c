@@ -54,12 +54,28 @@ CACTUS_CMD_HANDLER(sleep_fwd_cmd, CACTUS_FWD_SLEEP_CMD)
 
 	ffa_ret = cactus_sleep_cmd(vm_id, fwd_dest, sleep_ms);
 
-	while (ffa_func_id(ffa_ret) == FFA_INTERRUPT) {
-		/* Received FFA_INTERRUPT in blocked state. */
-		VERBOSE("Processing FFA_INTERRUPT while blocked on direct response\n");
-		unsigned int my_core_pos = platform_get_core_pos(read_mpidr_el1());
+	while ((ffa_func_id(ffa_ret) == FFA_INTERRUPT) ||
+		 (cactus_get_response(ffa_ret) == MANAGED_EXIT_INTERRUPT_ID)) {
 
-		ffa_ret = ffa_run(fwd_dest, my_core_pos);
+		if (ffa_func_id(ffa_ret) == FFA_INTERRUPT) {
+			/* Received FFA_INTERRUPT in blocked state. */
+			VERBOSE("Processing FFA_INTERRUPT while"
+				" blocked on direct response\n");
+			unsigned int my_core_pos =
+				platform_get_core_pos(read_mpidr_el1());
+
+			ffa_ret = ffa_run(fwd_dest, my_core_pos);
+		} else {
+			/*
+			 * Destination sent managed exit response. Allocate
+			 * dummy cycles thorugh direct request message to
+			 * destination SP.
+			 */
+			VERBOSE("SP%x: received Managed Exit as response\n",
+				vm_id);
+			ffa_ret = ffa_msg_send_direct_req64(vm_id, fwd_dest,
+					0, 0, 0, 0, 0);
+		} 
 	}
 
 	if (!is_ffa_direct_response(ffa_ret)) {
