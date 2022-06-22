@@ -17,6 +17,7 @@ static volatile int timer_irq_received;
 #define RECEIVER_2	SP_ID(2)
 #define RECEIVER_3	SP_ID(3)
 #define SLEEP_TIME	200U
+#define SP_SLEEP_TIME	1000U
 
 static const struct ffa_uuid expected_sp_uuids[] = {
 		{PRIMARY_UUID}
@@ -222,6 +223,145 @@ test_result_t test_ffa_ns_interrupt_signaled(void)
 	/* Make sure elapsed time not less than sleep time */
 	if (cactus_get_response(ret_values) < SLEEP_TIME) {
 		ERROR("Lapsed time less than requested sleep time\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * @Test_Aim@ This test exercises the following scenario: Managed exit is
+ * supported by both SPs in a call chain. A non secure interrupt triggers
+ * while second SP is processing a direct request message sent by the first SP.
+ * We choose SP(1) as first SP and SP(3) as second SP.
+ *
+ * 1. Enable managed exit interrupt by sending interrupt_enable command to both
+ *    the Cactus SPs.
+ *
+ * 2. Register a handler for the non-secure timer interrupt. Program it to fire
+ *    in a certain time.
+ *
+ * 3. Send a direct request to first SP(ID: 8001) to forward sleep command to
+ *    second SP(ID: 8003).
+ *
+ * 4. While second SP is running the busy loop, non secure interrupt would
+ *    trigger during this time.
+ *
+ * 5. The interrupt will be trapped to SPMC as FIQ. SPMC will inject the managed
+ *    exit signal to the second SP through vIRQ conduit and perform eret to
+ *    resume execution in second SP.
+ *
+ * 6. Second SP sends the managed exit direct response to first SP through its
+ *    interrupt handler for managed exit.
+ *
+ * 7. SPMC proactively injects managed exit signal to the first SP through vFIQ
+ *    conduit and resumes it using eret.
+ *
+ * 8. The first Cactus SP sends the managed exit direct response to TFTF through
+ *    its interrupt handler for managed exit.
+ *
+ * 9. TFTF checks the return value in the direct message response from first SP
+ *    and ensures it is managed signal interrupt ID.
+ *
+ * 10. Check whether the pending non-secure timer interrupt successfully got
+ *     handled in the normal world by TFTF.
+ *
+ * 11. Send a dummy direct message request command to resume first SP's execution.
+ *
+ * 12. First SP direct message request returns with managed exit response. It
+ *     then sends a dummy direct message request command to resume second SP's
+ *     execution.
+ *
+ * 13. Second SP resumes in the sleep routine and sends a direct message
+ *     response to the first SP.
+ *
+ * 14. First SP checks if time lapsed is greater than sleep time and if
+ *     successful, sends direct message response to the TFTF.
+ *
+ * 15. TFTF ensures the direct message response did not return with an error.
+ *
+ * 16. TFTF further disables the managed exit virtual interrupt for both the
+ *     Cactus SPs.
+ *
+ */
+test_result_t test_ffa_ns_interrupt_managed_exit_chained(void)
+{
+	int ret;
+	struct ffa_value ret_values;
+
+	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
+
+	/* Enable managed exit interrupt in the secure side. */
+	if (!spm_set_managed_exit_int(RECEIVER, true)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Enable managed exit interrupt in the secure side. */
+	if (!spm_set_managed_exit_int(RECEIVER_3, true)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Program timer */
+	timer_irq_received = 0;
+	tftf_timer_register_handler(timer_handler);
+
+	ret = tftf_program_timer(100);
+	if (ret < 0) {
+		ERROR("Failed to program timer (%d)\n", ret);
+		return TEST_RESULT_FAIL;
+	}
+
+	/*
+	 * Send request to first Cactus SP to send request to another Cactus
+	 * SP to sleep
+	 */
+	ret_values = cactus_fwd_sleep_cmd(SENDER, RECEIVER, RECEIVER_3,
+					 SP_SLEEP_TIME);
+
+	if (!is_ffa_direct_response(ret_values)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/*
+	 * Managed exit interrupt occurs during this time, Cactus
+	 * will respond with interrupt ID.
+	 */
+	if (cactus_get_response(ret_values) != MANAGED_EXIT_INTERRUPT_ID) {
+		ERROR("Managed exit interrupt did not occur!\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Check that the timer interrupt has been handled in NS-world (TFTF) */
+	tftf_cancel_timer();
+	tftf_timer_unregister_handler();
+
+	if (timer_irq_received == 0) {
+		ERROR("Timer interrupt hasn't actually been handled.\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	/*
+	 * Send a dummy direct message request to relinquish CPU cycles.
+	 * This resumes Cactus in the sleep routine.
+	 */
+	ret_values = ffa_msg_send_direct_req64(SENDER, RECEIVER,
+		0, 0, 0, 0, 0);
+
+	if (!is_ffa_direct_response(ret_values)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	if (cactus_get_response(ret_values) == CACTUS_ERROR) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Disable Managed exit interrupt */
+	if (!spm_set_managed_exit_int(RECEIVER, false)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Disable Managed exit interrupt */
+	if (!spm_set_managed_exit_int(RECEIVER_3, false)) {
 		return TEST_RESULT_FAIL;
 	}
 
