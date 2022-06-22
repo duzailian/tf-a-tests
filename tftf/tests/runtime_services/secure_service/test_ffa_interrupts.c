@@ -15,6 +15,7 @@ static volatile int timer_irq_received;
 #define SENDER		HYP_ID
 #define RECEIVER	SP_ID(1)
 #define RECEIVER_2	SP_ID(2)
+#define RECEIVER_3	SP_ID(3)
 #define SLEEP_TIME	200U
 
 static const struct ffa_uuid expected_sp_uuids[] = {
@@ -214,6 +215,78 @@ test_result_t test_ffa_ns_interrupt_signaled(void)
 	VERBOSE("Resuming %x\n",RECEIVER_2);
 	ret_values = ffa_run(RECEIVER_2, core_pos);
 
+	if (!is_ffa_direct_response(ret_values)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Make sure elapsed time not less than sleep time */
+	if (cactus_get_response(ret_values) < SLEEP_TIME) {
+		ERROR("Lapsed time less than requested sleep time\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * @Test_Aim@ Test the scenario where a non-secure interrupt triggers while a
+ * Secure Partition,that specified action for NS interrupt as QUEUED, is
+ * executing.
+ *
+ * 1. Register a handler for the non-secure timer interrupt. Program it to fire
+ *    in a certain time.
+ *
+ * 2. Send a blocking request to Cactus to execute in busy loop.
+ *
+ * 3. While executing in busy loop, the non-secure timer should fire. Cactus SP
+ *    should be NOT be pre-empted by non secure interrupt.
+ *
+ * 4. Cactus SP should complete the sleep routine and return with a direct
+ *    response message.
+ *
+ * 5. Ensure that elapsed time in the sleep routine is not less than sleep time
+ *    requested through direct message request.
+ *
+ */
+test_result_t test_ffa_ns_interrupt_queued(void)
+{
+	int ret;
+	struct ffa_value ret_values;
+
+	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
+
+	/* Program timer */
+	timer_irq_received = 0;
+	tftf_timer_register_handler(timer_handler);
+
+	ret = tftf_program_timer(100);
+	if (ret < 0) {
+		ERROR("Failed to program timer (%d)\n", ret);
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Send request to a Cactus SP to sleep for 200ms */
+	ret_values = cactus_sleep_cmd(SENDER, RECEIVER_3, SLEEP_TIME);
+
+	/* Check that the timer interrupt has been handled in NS-world (TFTF) */
+	tftf_cancel_timer();
+	tftf_timer_unregister_handler();
+
+	if (timer_irq_received == 0) {
+		ERROR("Timer interrupt hasn't actually been handled.\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Cactus SP should not be pre-empted by non secure interrupt. */
+	if (ffa_func_id(ret_values) == FFA_INTERRUPT) {
+		ERROR("Expected DIRECT RESPONSE\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	/*
+	 * Cactus SP should complete the sleep routine and return with a
+	 * direct response message.
+	 */
 	if (!is_ffa_direct_response(ret_values)) {
 		return TEST_RESULT_FAIL;
 	}
