@@ -176,4 +176,7 @@
  */
 #define FFA_PARAM_MBZ			U(0x0)
 
+/* Feature ID to query Managed Exit Interrupt ID */
+#define FFA_FEATURE_ID_MEI	U(0x3)
+
 #endif /* FFA_SVC_H */

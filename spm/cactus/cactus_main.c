@@ -37,6 +37,7 @@ extern void secondary_cold_entry(void);
 
 /* Global ffa_id */
 ffa_id_t g_ffa_id;
+uint32_t managed_exit_interrupt_id;
 
 /*
  *
@@ -220,6 +221,28 @@ static void register_secondary_entrypoint(void)
 	tftf_smc(&args);
 }
 
+/*
+ * Managed exit ID discoverable by querying the SPMC through
+ * FFA_FEATURES API.
+ */
+static void discover_managed_exit_interrupt_id(void)
+{
+	smc_args args;
+	smc_ret_values ret;
+
+	/*
+	 * Function ID is passed through Register W0
+	 * Feature ID is passed through Register W1
+	 * Interrupt ID value is returned through Register W2
+	 */
+	args.fid = FFA_FEATURES;
+	args.arg1 = FFA_FEATURE_ID_MEI;
+
+	ret = tftf_smc(&args);
+	managed_exit_interrupt_id = (uint32_t)ret.ret2;
+	INFO("Discovered managed_exit_interrupt_id: %d\n", managed_exit_interrupt_id);
+}
+
 void __dead2 cactus_main(bool primary_cold_boot,
 			 struct ffa_boot_info_header *boot_info_header)
 {
@@ -311,6 +334,7 @@ void __dead2 cactus_main(bool primary_cold_boot,
 	cactus_print_memory_layout(ffa_id);
 
 	register_secondary_entrypoint();
+	discover_managed_exit_interrupt_id();
 
 	/* Invoking Tests */
 	ffa_tests(&mb);
