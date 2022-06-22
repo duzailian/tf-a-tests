@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9bf6479d_6ae03ab8",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-06-22T13:22:15Z",
+      "side": 1,
+      "message": "could it be added an ffa_uuid_equal like in the hafnium tests?",
+      "range": {
+        "startLine": 565,
+        "startChar": 7,
+        "endLine": 568,
+        "endChar": 55
+      },
+      "revId": "3527de9aedea63f1cbec8db19202ccdf6eeca4d9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
