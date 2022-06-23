@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08e44bd7_a1195dcb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-06-23T15:53:10Z",
+      "side": 1,
+      "message": "Failed Juno Test Passed after rerun:\n\n\nOriginal test run: https://jenkins.oss.arm.com/job/tf-tftf-gerrit-tforg-l2/389/\nRerun Juno test: https://jenkins.oss.arm.com/job/tf-ci-gateway/117659/",
+      "revId": "4a2888a2f46e812f715d07eee82458635a751475",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
