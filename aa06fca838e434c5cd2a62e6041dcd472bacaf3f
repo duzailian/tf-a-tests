@@ -93,6 +93,30 @@
       },
       "revId": "aa06fca838e434c5cd2a62e6041dcd472bacaf3f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d313bb0_e4649e4b",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2022-06-24T15:05:51Z",
+      "side": 1,
+      "message": "Refactoring is bigger than expected. Leaving it be for now.\nRefactoring should involve reworking of `expect` function since it assumes that test functions have no return value, while SKIP_TEST_IF_FFA_VERSION_LESS_THAN returns test_result_t value.\nEssentially refactoring should be done to move from `sp_helpers` to `test_helpers`",
+      "parentUuid": "cbcc0081_0f6360b6",
+      "range": {
+        "startLine": 198,
+        "startChar": 20,
+        "endLine": 198,
+        "endChar": 36
+      },
+      "revId": "aa06fca838e434c5cd2a62e6041dcd472bacaf3f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
