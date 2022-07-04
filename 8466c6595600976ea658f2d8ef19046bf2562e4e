@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68d1d3b4_c64c95c6",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2022-07-04T10:26:18Z",
+      "side": 1,
+      "message": "I think a comment here would be useful",
+      "range": {
+        "startLine": 502,
+        "startChar": 2,
+        "endLine": 502,
+        "endChar": 10
+      },
+      "revId": "8466c6595600976ea658f2d8ef19046bf2562e4e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
