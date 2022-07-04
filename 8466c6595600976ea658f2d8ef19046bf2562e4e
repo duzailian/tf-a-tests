@@ -22,6 +22,30 @@
       },
       "revId": "8466c6595600976ea658f2d8ef19046bf2562e4e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea400a55_b4021ce2",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-07-04T10:45:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68d1d3b4_c64c95c6",
+      "range": {
+        "startLine": 502,
+        "startChar": 2,
+        "endLine": 502,
+        "endChar": 10
+      },
+      "revId": "8466c6595600976ea658f2d8ef19046bf2562e4e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
