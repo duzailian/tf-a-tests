@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "698c63ea_397c8a14",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 26
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2022-07-05T09:41:50Z",
+      "side": 1,
+      "message": "Patch stack seems quite close. Looks like a CO review is needed (Manish?). ",
+      "revId": "64965a16f388c5b319d93ccedfbc99bbdada9711",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
