@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abfb384d_ff03bd43",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 57
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2022-07-05T09:40:34Z",
+      "side": 1,
+      "message": "This stack looks quite close. Seemed to stall around v2.7 release time. Need CO reviews (Manish?) ",
+      "revId": "f3a46afefaf001550a82b6aa856137af32df4d73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
