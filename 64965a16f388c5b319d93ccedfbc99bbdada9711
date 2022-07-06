@@ -16,6 +16,29 @@
       "message": "Patch stack seems quite close. Looks like a CO review is needed (Manish?). ",
       "revId": "64965a16f388c5b319d93ccedfbc99bbdada9711",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38b1451f_f1fbf8e6",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-07-06T07:03:23Z",
+      "side": 1,
+      "message": "prefer returning the result from reset_buffer_del_spm_rmi",
+      "range": {
+        "startLine": 357,
+        "startChar": 9,
+        "endLine": 357,
+        "endChar": 26
+      },
+      "revId": "64965a16f388c5b319d93ccedfbc99bbdada9711",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
