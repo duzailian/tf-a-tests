@@ -12,12 +12,15 @@
 #include <host_realm_mem_layout.h>
 #include <host_shared_data.h>
 #include <lib/extensions/fpu.h>
+#include <lib/extensions/sve.h>
 #include <test_helpers.h>
-
 
 #define SIMD_NS_VALUE			0x11U
 #define FPCR_NS_VALUE			0x7FF9F00U
 #define FPSR_NS_VALUE			0xF800009FU
+#define SVE_Z_NS_VALUE			0x44U
+#define SVE_P_NS_VALUE			0x77U
+#define SVE_FFR_NS_VALUE		0xaaU
 
 #define REALM_TIME_SLEEP		300U
 #define SENDER HYP_ID
@@ -33,6 +36,12 @@ typedef enum realm_test_cmd {
 	CMD_SIMD_SEC_CMP,
 	CMD_SIMD_RL_FILL,
 	CMD_SIMD_RL_CMP,
+	CMD_SVE_NS_FILL,
+	CMD_SVE_NS_CMP,
+	CMD_SVE_SEC_FILL,
+	CMD_SVE_SEC_CMP,
+	CMD_SVE_RL_FILL,
+	CMD_SVE_RL_CMP,
 	CMD_MAX_COUNT
 } realm_test_cmd_t;
 
@@ -127,6 +136,15 @@ static bool fpu_cmp_sec(void)
 static bool fpu_fill_rl(void)
 {
 	if (!host_enter_realm_execute(REALM_REQ_FPU_FILL_CMD)) {
+		ERROR("%s failed %d\n", __func__, __LINE__);
+		return false;
+	}
+	return true;
+}
+
+static bool sve_fill_rl(void)
+{
+	if(!host_enter_realm_execute(REALM_REQ_SVE_FILL_CMD)) {
 		ERROR("%s failed %d\n", __func__, __LINE__);
 		return false;
 	}
@@ -342,6 +360,139 @@ test_result_t fpu_concurrent_in_rl_ns_se(void)
 	}
 
 	if (!host_destroy_realm()) {
+		ERROR("host_destroy_realm error\n");
+		return TEST_RESULT_FAIL;
+	}
+	return TEST_RESULT_SUCCESS;
+destroy_realm:
+	host_destroy_realm();
+	return TEST_RESULT_FAIL;
+}
+
+/*
+ * Test that SVE state are preserved during a randomly context switch between
+ * secure/non-secure/realm(R-EL1)worlds.
+ *
+ * SVE state consist of 32 scalable vector registers named Z0-Z31, 16 scalable
+ * predicate registers named P0-P15, First Fault Register named FFR,
+ * Vector length  ZCR_EL1/ZCR_EL2, FPCR/FPSR registers.
+ *
+ * The test run for 1000 iterations with random combination of:
+ * SECURE_FILL_FPU, SECURE_READ_FPU,REALM_FILL_SVE, REALM_READ_SVE,
+ * NONSECURE_FILL_SVE, NONSECURE_READ_SVE, to test all possible situations
+ * of synchronous context switch between worlds, while the content of those registers
+ * is being used.
+ */
+test_result_t sve_concurrent_in_rl_ns_se(bool secure, bool realm)
+{
+	int cmd = -1, old_cmd  = -1;
+	uint32_t max_sve_vl;
+	test_result_t res;
+
+	res = init_test();
+	if(res != TEST_RESULT_SUCCESS) {
+		return res;
+	}
+
+	/* Get the implemented VL. */
+	max_sve_vl = CONVERT_SVE_LENGTH(8*sve_vector_length_get());
+
+	realm_shared_data_clear_realm_val();
+	/*
+	 * Set the implemented SVE/VL value in the shared buffer to be used later
+	 * by the R-EL1 payload test
+	 */
+	realm_shared_data_set_host_val(HOST_SVE_VL_INDEX,max_sve_vl);
+
+	/* Fill all 3 worlds SVE state regs with some known template values
+	 * in the beginning to have something later to compare to.
+	 */
+	sve_state_write_template(SVE_Z_NS_VALUE,
+			SVE_P_NS_VALUE,
+			FPSR_NS_VALUE,
+			FPCR_NS_VALUE,
+			max_sve_vl,
+			max_sve_vl,
+			SVE_FFR_NS_VALUE);
+
+	/*Fill secure world SVE registers*/
+	if(!fpu_fill_sec()) {
+		ERROR("fpu_fill_sec error\n");
+		goto destroy_realm;
+	}
+
+	/*Fill R-EL1 world SVE registers*/
+	if(!sve_fill_rl()) {
+		ERROR("sve_fill_rl error\n");
+		goto destroy_realm;
+	}
+	for (uint32_t i = 0; i < 1000; i++)
+	{
+		cmd = rand() % CMD_MAX_COUNT;
+		if(cmd == old_cmd)
+			continue;
+		old_cmd = cmd;
+
+		switch (cmd)
+		{
+			case CMD_SVE_NS_FILL:
+				/* Non secure world fill SVE state registers */
+				sve_state_write_template(SVE_Z_NS_VALUE,
+						SVE_P_NS_VALUE,
+						FPSR_NS_VALUE,
+						FPCR_NS_VALUE,
+						max_sve_vl,
+						max_sve_vl,
+						SVE_FFR_NS_VALUE);
+				break;
+			case CMD_SVE_NS_CMP:
+				/* Normal world verify its SVE state registers */
+				if (!sve_state_compare_template(SVE_Z_NS_VALUE,
+						SVE_P_NS_VALUE,
+						FPSR_NS_VALUE,
+						FPCR_NS_VALUE,
+						max_sve_vl,
+						max_sve_vl,
+						SVE_FFR_NS_VALUE)) {
+					ERROR("%s failed %d\n", __func__, __LINE__);
+					goto destroy_realm;
+				}
+				break;
+			case CMD_SIMD_SEC_FILL:
+				/* secure world fill FPU/SIMD state registers
+				 * (no SVE support in SPs)
+				 */
+				if (!fpu_fill_sec()) {
+					goto destroy_realm;
+				}
+				break;
+			case CMD_SIMD_SEC_CMP:
+				/* Secure world verify its FPU/SIMD state registers
+				 * (no SVE support in SPs)
+				 */
+				if (!fpu_cmp_sec()) {
+					goto destroy_realm;
+				}
+				break;
+			case CMD_SVE_RL_FILL:
+				/* Realm R-EL1 world fill SVE state registers */
+				if(!sve_fill_rl()) {
+					goto destroy_realm;
+				}
+				break;
+			case CMD_SVE_RL_CMP:
+				/* Realm R-EL1 world verify its SVE state registers */
+				if(!host_enter_realm_execute(REALM_REQ_SVE_CMP_CMD)) {
+					ERROR("%s failed %d\n", __func__, __LINE__);
+					goto destroy_realm;
+				}
+				break;
+			default:
+				break;
+		}
+	}
+
+	if(!host_destroy_realm()) {
 		ERROR("host_destroy_realm error\n");
 		return TEST_RESULT_FAIL;
 	}
