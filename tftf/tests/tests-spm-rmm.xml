@@ -16,5 +16,7 @@
 		description="Validate context switch between NWd, SWd and Realm EL1" >
 		<testcase name="Check that FPU state registers context is preserved in RL/SE/NS"
 		function="fpu_concurrent_in_rl_ns_se" />
+		<testcase name="Check that SVE state registers context is preserved in RL/SE/NS"
+		function="sve_concurrent_in_rl_ns_se" />
 	</testsuite>
 </testsuites>
