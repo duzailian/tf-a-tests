@@ -47,7 +47,9 @@ REALM_SOURCES += lib/${ARCH}/cache_helpers.S				\
 	lib/locks/${ARCH}/spinlock.S					\
 	lib/delay/delay.c						\
 	lib/extensions/fpu/aarch64/fpu_halpers.S			\
+	lib/extensions/sve/aarch64/sve_helpers.S			\
 	lib/extensions/fpu/fpu.c					\
+	lib/extensions/sve/sve.c					\
 	tftf/tests/runtime_services/secure_service/${ARCH}/ffa_arch_helpers.S	\
 	tftf/framework/${ARCH}/exception_report.c			\
 	${XLAT_TABLES_LIB_SRCS}
