@@ -83,7 +83,10 @@ func arch_init
 	 * Set CPACR_EL1.FPEN=11 no EL1/0 trapping of
 	 * SVE/Adv. SIMD/FP instructions.
 	 */
-	mov	x1, CPACR_EL1_FPEN(CPACR_EL1_FP_TRAP_NONE)
+	mov	x1, (CPACR_EL1_FPEN(CPACR_EL1_FP_TRAP_NONE) |\
+			CPACR_EL1_ZEN(CPACR_EL1_ZEN_TRAP_NONE) |\
+			CPACR_EL1_SMEN(CPACR_EL1_ZEN_TRAP_NONE))
+			mov     x1, CPACR_EL1_FPEN(CPACR_EL1_FP_TRAP_NONE)
 	mrs	x0, cpacr_el1
 	orr	x0, x0, x1
 	msr	cpacr_el1, x0
