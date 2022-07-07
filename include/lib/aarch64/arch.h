@@ -379,6 +379,9 @@
 #define CPACR_EL1_FP_TRAP_EL0	U(0x1)
 #define CPACR_EL1_FP_TRAP_ALL	U(0x2)
 #define CPACR_EL1_FP_TRAP_NONE	U(0x3)
+#define CPACR_EL1_ZEN(x)	((x) << 16)
+#define CPACR_EL1_SMEN(x)	((x) << 24)
+#define CPACR_EL1_ZEN_TRAP_NONE	UL(0x3)
 
 /* SCR definitions */
 #define SCR_RES1_BITS		((U(1) << 4) | (U(1) << 5))

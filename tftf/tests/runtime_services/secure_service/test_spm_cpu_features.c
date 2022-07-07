@@ -7,12 +7,17 @@
 #include <ffa_endpoints.h>
 #include <ffa_helpers.h>
 #include <lib/extensions/fpu.h>
+#include <lib/extensions/sve.h>
 #include <test_helpers.h>
 
 #define SENDER HYP_ID
 #define RECEIVER SP_ID(1)
 #define SVE_TEST_ITERATIONS	100
 #define SVE_ARRAYSIZE		1024
+
+#define SVE_Z_NS_VALUE		0x44U
+#define SVE_P_NS_VALUE		0x77U
+#define SVE_FFR_NS_VALUE	0xaaU
 
 static const struct ffa_uuid expected_sp_uuids[] = { {PRIMARY_UUID} };
 
@@ -21,22 +26,13 @@ extern void sve_subtract_interleaved_smc(int *difference, const int *sve_op_1,
 
 #define SIMD_NS_VALUE		0x11U
 fpu_reg_state_t fpu_temp;
+struct sve_state sve;
 
 #ifdef __aarch64__
-static sve_vector_t sve_vectors_input[SVE_NUM_VECTORS] __aligned(16);
-static sve_vector_t sve_vectors_output[SVE_NUM_VECTORS] __aligned(16);
 static int sve_op_1[SVE_ARRAYSIZE];
 static int sve_op_2[SVE_ARRAYSIZE];
-
-static test_result_t fp_vector_compare(uint8_t *a, uint8_t *b,
-	size_t vector_size, uint8_t vectors_num)
-{
-	if (memcmp(a, b, vector_size * vectors_num) != 0) {
-		return TEST_RESULT_FAIL;
-	}
-	return TEST_RESULT_SUCCESS;
-}
 #endif /* __aarch64__ */
+
 /*
  * Tests that SIMD vectors are preserved during the context switches between
  * normal world and the secure world.
@@ -77,8 +73,7 @@ test_result_t test_simd_vectors_preserved(void)
 test_result_t test_sve_vectors_preserved(void)
 {
 #ifdef __aarch64__
-	uint64_t vl;
-	uint8_t *sve_vector;
+	int vl;
 
 	SKIP_TEST_IF_SVE_NOT_SUPPORTED();
 
@@ -87,30 +82,20 @@ test_result_t test_sve_vectors_preserved(void)
 	 **********************************************************************/
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 
-	/*
-	 * Clear SVE vectors buffers used to compare the SVE state before calling
-	 * into the Swd compared to SVE state restored after returning to NWd.
-	 */
-	memset(sve_vectors_input, sizeof(sve_vector_t) * SVE_NUM_VECTORS, 0);
-	memset(sve_vectors_output, sizeof(sve_vector_t) * SVE_NUM_VECTORS, 0);
-
 	/* Set ZCR_EL2.LEN to implemented VL (constrained by EL3). */
 	write_zcr_el2(0xf);
 	isb();
 
 	/* Get the implemented VL. */
-	vl = sve_vector_length_get();
+	vl = CONVERT_SVE_LENGTH(8*sve_vector_length_get());
 
-	/* Fill each vector for the VL size with a fixed pattern. */
-	sve_vector = (uint8_t *) sve_vectors_input;
-	for (uint32_t vector_num = 0U; vector_num < SVE_NUM_VECTORS; vector_num++) {
-		memset(sve_vector, 0x11 * (vector_num + 1), vl);
-		sve_vector += vl;
-	}
 
-	/* Fill SVE vector registers with the buffer contents prepared above. */
-	fill_sve_vector_regs(sve_vectors_input);
-
+	/* Fill SVE state registers for the VL size with a fixed pattern. */
+	sve = sve_state_write_template(SVE_Z_NS_VALUE,
+			SVE_P_NS_VALUE,
+			vl,
+			vl,
+			SVE_FFR_NS_VALUE);
 	/*
 	 * Call cactus secure partition which uses SIMD (and expect it doesn't
 	 * affect the normal world state on return).
@@ -125,13 +110,8 @@ test_result_t test_sve_vectors_preserved(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	/* Get the SVE vectors state after returning to normal world. */
-	read_sve_vector_regs(sve_vectors_output);
-
 	/* Compare to state before calling into secure world. */
-	return fp_vector_compare((uint8_t *)sve_vectors_input,
-				 (uint8_t *)sve_vectors_output,
-				 vl, SVE_NUM_VECTORS);
+	return sve_state_compare_template(&sve) ? TEST_RESULT_SUCCESS : TEST_RESULT_FAIL;
 #else
 	return TEST_RESULT_SKIPPED;
 #endif /* __aarch64__ */

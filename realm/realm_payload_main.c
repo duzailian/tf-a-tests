@@ -11,15 +11,20 @@
 #include <host_realm_helper.h>
 #include <host_shared_data.h>
 #include <lib/extensions/fpu.h>
+#include <lib/extensions/sve.h>
 #include "realm_def.h"
 #include <realm_rsi.h>
 #include <tftf_lib.h>
 
 #define SIMD_REALM_VALUE	0x33U
+#define SVE_Z_REALM_VALUE	0x55U
+#define SVE_P_REALM_VALUE	0x88U
+#define SVE_FFR_REALM_VALUE	0xbbU
 
 /* Store the template FPU registers here. */
 /* ToDO support concurrent CPU. */
 fpu_reg_state_t fpu_temp;
+struct sve_state sve;
 /*
  * This function reads sleep time in ms from shared buffer and spins PE in a loop
  * for that time period.
@@ -64,6 +69,7 @@ void realm_payload_main(void)
 {
 	uint8_t cmd = 0U;
 	bool test_succeed = false;
+	uint32_t zcr_elx;
 
 	realm_set_shared_structure((host_shared_data_t *)rsi_get_ns_buffer());
 	if (realm_get_shared_structure() != NULL) {
@@ -83,6 +89,19 @@ void realm_payload_main(void)
 			break;
 		case REALM_REQ_FPU_CMP_CMD:
 			test_succeed = fpu_state_compare_template(&fpu_temp);
+			break;
+		case REALM_REQ_SVE_FILL_CMD:
+			zcr_elx = realm_shared_data_get_host_val(HOST_SVE_VL_INDEX);
+			sve = sve_state_write_template(SVE_Z_REALM_VALUE,
+					SVE_P_REALM_VALUE,
+					zcr_elx,
+					zcr_elx,
+					SVE_FFR_REALM_VALUE);
+			test_succeed = true;
+			break;
+		case REALM_REQ_SVE_CMP_CMD:
+			zcr_elx = realm_shared_data_get_host_val(HOST_SVE_VL_INDEX);
+			test_succeed = sve_state_compare_template(&sve);
 			break;
 		default:
 			INFO("REALM_PAYLOAD: %s invalid cmd=%hhu", __func__, cmd);
