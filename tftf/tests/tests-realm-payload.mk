@@ -42,4 +42,9 @@ TESTS_SOURCES	+=							\
 		${ARCH}/fpu_halpers.S					\
 		fpu.c							\
 	)
+TESTS_SOURCES	+=							\
+	$(addprefix lib/extensions/sve/,				\
+		sve.c							\
+		${ARCH}/sve_helpers.S					\
+	)
 endif
