@@ -41,7 +41,9 @@ enum realm_cmd {
 	REALM_SLEEP_CMD = 1U,
 	REALM_GET_RSI_VERSION,
 	REALM_REQ_FPU_FILL_CMD,
-	REALM_REQ_FPU_CMP_CMD
+	REALM_REQ_FPU_CMP_CMD,
+	REALM_REQ_SVE_FILL_CMD,
+	REALM_REQ_SVE_CMP_CMD
 };
 
 /*
@@ -49,7 +51,8 @@ enum realm_cmd {
  */
 enum host_param_index {
 	HOST_CMD_INDEX = 0U,
-	HOST_SLEEP_INDEX
+	HOST_SLEEP_INDEX,
+	HOST_SVE_VL_INDEX
 };
 /*
  * Return shared buffer pointer mapped as host_shared_data_t structure
