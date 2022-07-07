@@ -38,3 +38,9 @@ TESTS_SOURCES	+=							\
 		aarch64/fpu_halpers.S					\
 		fpu.c							\
 	)
+
+TESTS_SOURCES	+=							\
+	$(addprefix lib/extensions/sve/,				\
+		sve.c							\
+		aarch64/sve_helpers.S					\
+	)
