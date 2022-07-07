@@ -11,6 +11,7 @@
 #include <host_realm_helper.h>
 #include <host_shared_data.h>
 #include <lib/extensions/fpu.h>
+#include <lib/extensions/sve.h>
 #include "realm_def.h"
 #include <realm_rsi.h>
 #include <tftf_lib.h>
@@ -18,6 +19,11 @@
 #define SIMD_REALM_VALUE 		0x33
 #define FPCR_REALM_VALUE 		0x75F9500
 #define FPSR_REALM_VALUE 		0x88000097
+#define SVE_Z_REALM_VALUE		0x55U
+#define SVE_P_REALM_VALUE		0x88U
+#define SVE_FFR_REALM_VALUE		0xbbU
+
+static struct sve_state sve_state_send, sve_state_receive;
 
 /**
  *   @brief    - C entry function for realm payload
@@ -63,6 +69,23 @@ static void realm_req_fpu_fill_cmd(void)
 }
 
 /*
+ * Fill SVE state(Z/P vectors, FPCR, FPSR) from secure
+ */
+static void realm_req_sve_fill_cmd(void)
+{
+	uint32_t zcr_el1 = realm_shared_data_get_host_val(1);
+	memset(&sve_state_send,0x0,sizeof(sve_state_send));
+	sve_state_set(&sve_state_send,
+			SVE_Z_REALM_VALUE,
+			SVE_P_REALM_VALUE,
+			FPSR_REALM_VALUE,
+			FPCR_REALM_VALUE,
+			zcr_el1,
+			zcr_el1,
+			SVE_FFR_REALM_VALUE);
+	write_sve_state(&sve_state_send);
+}
+/*
  * compare FPU reg state from secure world side with the previously loaded values.
  */
 static bool realm_req_fpu_cmp_cmd(void)
@@ -86,6 +109,30 @@ static bool realm_req_fpu_cmp_cmd(void)
 
 }
 
+/*
+ * compare SVE reg state from secure world side with the previously loaded values.
+ */
+static bool realm_req_sve_cmp_cmd(void)
+{
+	int index = -1;
+	uint32_t zcr_el1 = realm_shared_data_get_host_val(1);
+	memset(&sve_state_send,0x0,sizeof(sve_state_send));
+	sve_state_set(&sve_state_send,
+				SVE_Z_REALM_VALUE,
+				SVE_P_REALM_VALUE,
+				FPSR_REALM_VALUE,
+				FPCR_REALM_VALUE,
+				zcr_el1,
+				zcr_el1,
+				SVE_FFR_REALM_VALUE);
+	/* read SVE state registers values.*/
+	if (sve_read_compare((const struct sve_state*)&sve_state_send,
+			&sve_state_receive, &index) != SVE_STATE_SUCCESS) {
+		ERROR("realm_req_sve_cmp_cmd failed\n");
+				return false;
+	}
+	return true;
+}
 /**
  *   @brief    - C entry function for realm payload
  *   @param    - void
@@ -95,7 +142,6 @@ void realm_payload_main(void)
 {
 	uint8_t cmd = 0U;
 	bool test_succeed = true;
-
 	realm_set_shared_structure((host_shared_data_t *)rsi_get_ns_buffer());
 	if (realm_get_shared_structure() != NULL) {
 		cmd = realm_shared_data_get_realm_cmd();
@@ -111,6 +157,12 @@ void realm_payload_main(void)
 			break;
 		case REALM_REQ_FPU_CMP_CMD:
 			test_succeed = realm_req_fpu_cmp_cmd();
+			break;
+		case REALM_REQ_SVE_FILL_CMD:
+			realm_req_sve_fill_cmd();
+			break;
+		case REALM_REQ_SVE_CMP_CMD:
+			test_succeed = realm_req_sve_cmp_cmd();
 			break;
 		default:
 			INFO("REALM_PAYLOAD: %s invalid cmd=%hhu", __func__, cmd);

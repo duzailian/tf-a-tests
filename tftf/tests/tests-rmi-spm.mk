@@ -31,3 +31,8 @@ TESTS_SOURCES	+=							\
 	$(addprefix lib/heap/,						\
 		page_alloc.c						\
 	)
+TESTS_SOURCES	+=							\
+	$(addprefix lib/extensions/sve/,				\
+		sve.c							\
+		aarch64/sve_helpers.S					\
+	)

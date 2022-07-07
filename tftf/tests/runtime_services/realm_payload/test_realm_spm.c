@@ -15,10 +15,16 @@
 
 #include <stdlib.h>
 #include <lib/extensions/fpu.h>
+#include <lib/extensions/sve.h>
 
 #define SIMD_NS_VALUE 			0x11
 #define FPCR_NS_VALUE 			0x7FF9F00
 #define FPSR_NS_VALUE 			0xF800009F
+#define SVE_Z_NS_VALUE			0x44U
+#define SVE_P_NS_VALUE			0x77U
+#define SVE_FFR_NS_VALUE		0xaaU
+
+
 
 #define REALM_TIME_SLEEP		300U
 #define SENDER HYP_ID
@@ -26,6 +32,7 @@
 static const struct ffa_uuid expected_sp_uuids[] = { {PRIMARY_UUID} };
 static struct mailbox_buffers mb;
 static bool secure_mailbox_initialised;
+static struct sve_state sve_state_send, sve_state_receive;
 
 typedef enum realm_test_cmd {
 	CMD_SIMD_NS_FILL = 0U,
@@ -34,6 +41,12 @@ typedef enum realm_test_cmd {
 	CMD_SIMD_SEC_CMP,
 	CMD_SIMD_RL_FILL,
 	CMD_SIMD_RL_CMP,
+	CMD_SVE_NS_FILL,
+	CMD_SVE_NS_CMP,
+	CMD_SVE_SEC_FILL,
+	CMD_SVE_SEC_CMP,
+	CMD_SVE_RL_FILL,
+	CMD_SVE_RL_CMP,
 	CMD_MAX_COUNT
 } realm_test_cmd_t;
 
@@ -104,6 +117,15 @@ bool fpu_fill_rl(void)
 {
 	if(!host_enter_realm_execute(REALM_REQ_FPU_FILL_CMD)) {
 		ERROR("realm_create_enter_and_fill_simd error\n");
+		return false;
+	}
+	return true;
+}
+
+static bool sve_fill_rl(void)
+{
+	if(!host_enter_realm_execute(REALM_REQ_SVE_FILL_CMD)) {
+		ERROR("realm_create_enter_and_fill_sve error\n");
 		return false;
 	}
 	return true;
@@ -321,6 +343,119 @@ test_result_t fpu_concurrent_in_rl_ns_se(void)
 				/* Realm R-EL1 world verify its FPU/SIMD state registers data */
 				if(!host_enter_realm_execute(REALM_REQ_FPU_FILL_CMD)) {
 					ERROR("realm_enter_compare_simd error\n");
+					goto destroy_realm;
+				}
+				break;
+			default:
+				break;
+		}
+	}
+
+	if(!host_destroy_realm()) {
+		ERROR("host_destroy_realm error\n");
+		return TEST_RESULT_FAIL;
+	}
+	return TEST_RESULT_SUCCESS;
+destroy_realm:
+	host_destroy_realm();
+	return TEST_RESULT_FAIL;
+}
+
+test_result_t sve_concurrent_in_rl_ns_se(bool secure, bool realm)
+{
+	struct ffa_value ret;
+	int cmd = -1, old_cmd  = -1, index;
+	uint32_t max_sve_vl;
+	test_result_t res;
+
+	res = init_test();
+	if(res != TEST_RESULT_SUCCESS) {
+		return res;
+	}
+
+	/* Get the implemented VL. */
+	max_sve_vl = CONVERT_SVE_LENGTH(8*sve_vector_length_get());
+
+	INFO("max_sve_vl:%u\n",max_sve_vl);
+	INFO("sve_probe_vl_max bits:%lu\n",(max_sve_vl +1)*8*SVE_VLA_VL_MIN_Z);
+	/* SIMD_NS_VALUE is just a dummy value to be distinguished from the value in the
+	 * secure world.
+	 */
+	sve_state_set(&sve_state_send,
+			SVE_Z_NS_VALUE,
+			SVE_P_NS_VALUE,
+			FPSR_NS_VALUE,
+			FPCR_NS_VALUE,
+			max_sve_vl,
+			max_sve_vl,
+			SVE_FFR_NS_VALUE);
+
+	realm_shared_data_clear_realm_val();
+	realm_shared_data_set_host_val(1,max_sve_vl);
+
+	/* Fill all 3 worlds SVE state regs with some known values in the beginning
+	 * to have something later to compare to
+	 */
+	write_sve_state(&sve_state_send);
+	if(!fpu_fill_sec()) {
+		ERROR("fpu_fill_sec error\n");
+		goto destroy_realm;
+	}
+	if(!sve_fill_rl()) {
+		ERROR("sve_fill_rl error\n");
+		goto destroy_realm;
+	}
+	for (uint32_t i = 0; i < 1000; i++)
+	{
+		cmd = rand() % CMD_MAX_COUNT;
+		if(cmd == old_cmd)
+			continue;
+		old_cmd = cmd;
+		//INFO("fpu_concurrent_in_rl_ns_se cmd:%d\n", cmd);
+		switch (cmd)
+		{
+			case CMD_SIMD_NS_FILL:
+				/* Non secure world fill FPU/SIMD state registers */
+				write_sve_state(&sve_state_send);
+				break;
+			case CMD_SIMD_NS_CMP:
+				/* Normal world verify its FPU/SIMD state registers data */
+				if (sve_read_compare((const struct sve_state*)&sve_state_send,
+						&sve_state_receive, &index) != SVE_STATE_SUCCESS) {
+					ERROR("fpu_concurrent_in_rl_ns_se failed %d\n", __LINE__);
+					goto destroy_realm;
+				}
+				break;
+			case CMD_SIMD_SEC_FILL:
+				/* secure world fill FPU/SIMD state registers */
+				if(!fpu_fill_sec()) {
+					ERROR("fpu_fill_sec error\n");
+					goto destroy_realm;
+				}
+				break;
+			case CMD_SIMD_SEC_CMP:
+				/* Secure world verify its FPU/SIMD state registers data */
+				ret = cactus_req_simd_compare_send_cmd(SENDER, RECEIVER);
+				if (!is_ffa_direct_response(ret)) {
+					ERROR("fpu_concurrent_in_rl_ns_se failed %d\n", __LINE__);
+					goto destroy_realm;
+				}
+				if (cactus_get_response(ret) == CACTUS_ERROR) {
+					ERROR("fpu_concurrent_in_rl_ns_se failed %d\n", __LINE__);
+					goto destroy_realm;
+				}
+				break;
+			case CMD_SVE_RL_FILL:
+				/* Realm R-EL1 world fill FPU/SIMD state registers */
+				if(!sve_fill_rl()) {
+					ERROR("sve_fill_rl error\n");
+					goto destroy_realm;
+				}
+				break;
+			case CMD_SVE_RL_CMP:
+				/* Realm R-EL1 world verify its FPU/SIMD state registers data */
+				if(!host_enter_realm_execute(REALM_REQ_SVE_CMP_CMD)) {
+					ERROR("REALM_REQ_SVE_CMP_CMD error\n");
 					goto destroy_realm;
 				}
 				break;
