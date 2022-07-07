@@ -41,7 +41,9 @@ REALM_SOURCES += lib/${ARCH}/cache_helpers.S				\
 	lib/locks/${ARCH}/spinlock.S					\
 	lib/delay/delay.c						\
 	lib/extensions/fpu/aarch64/fpu_halpers.S			\
+	lib/extensions/sve/aarch64/sve_helpers.S			\
 	lib/extensions/fpu/fpu.c					\
+	lib/extensions/sve/sve.c
 
 # TODO: Remove dependency on TFTF files.
 REALM_SOURCES	+=							\
