@@ -247,6 +247,21 @@ void read_sve_vector_regs(sve_vector_t v[SVE_NUM_VECTORS])
 #endif
 }
 
+int get_sve_vl(void)
+{
+	int vl = 0;
+
+#ifdef __aarch64__
+	__asm__ volatile(
+		".arch_extension sve\n"
+		"rdvl	%x0, #1\n"
+		".arch_extension nosve\n"
+		: "=r" (vl));
+#endif
+
+	return vl;
+}
+
 /*
  * check_spmc_execution_level
  *

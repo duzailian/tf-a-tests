@@ -60,7 +60,7 @@ test_result_t test_simd_vectors_preserved(void)
 
 	return fp_vector_compare((uint8_t *)simd_vectors_send,
 				 (uint8_t *)simd_vectors_receive,
-				 sizeof(simd_vector_t), SIMD_NUM_VECTORS);
+				 get_sve_vl() / 8, SIMD_NUM_VECTORS);
 }
 
 /*
