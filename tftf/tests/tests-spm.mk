@@ -28,3 +28,8 @@ TESTS_SOURCES	+=							\
 	$(addprefix tftf/tests/runtime_services/host_realm_managment/,	\
 		host_realm_rmi.c					\
 	)
+TESTS_SOURCES	+=							\
+	$(addprefix lib/extensions/sve/,				\
+		sve.c							\
+		aarch64/sve_helpers.S					\
+	)

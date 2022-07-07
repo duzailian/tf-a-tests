@@ -106,18 +106,16 @@ void dump_ffa_value(struct ffa_value ret);
 typedef uint8_t simd_vector_t[SIMD_VECTOR_LEN_BYTES];
 
 /*
- * Fills SIMD/SVE registers with the content of the container v.
+ * Fills SIMD registers with the content of the container v.
  * Number of vectors is assumed to be SIMD/SVE_NUM_VECTORS.
  */
 void fill_simd_vector_regs(const simd_vector_t v[SIMD_NUM_VECTORS]);
-void fill_sve_vector_regs(const sve_vector_t v[SVE_NUM_VECTORS]);
 
 /*
- * Reads contents of SIMD/SVE registers into the provided container v.
+ * Reads contents of SIMD registers into the provided container v.
  * Number of vectors is assumed to be SIMD/SVE_NUM_VECTORS.
  */
 void read_simd_vector_regs(simd_vector_t v[SIMD_NUM_VECTORS]);
-void read_sve_vector_regs(sve_vector_t v[SVE_NUM_VECTORS]);
 
 bool check_spmc_execution_level(void);
 
