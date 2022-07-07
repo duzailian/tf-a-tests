@@ -103,5 +103,5 @@ test_result_t test_sve_vectors_preserved(void)
 
 	return fp_vector_compare((uint8_t *)sve_vectors_send,
 				 (uint8_t *)sve_vectors_receive,
-				 sizeof(sve_vector_t), SVE_NUM_VECTORS);
+				 get_sve_vl() / 8, SVE_NUM_VECTORS);
 }

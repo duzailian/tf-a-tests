@@ -106,6 +106,8 @@ void dump_ffa_value(struct ffa_value ret);
 typedef uint8_t simd_vector_t[SIMD_VECTOR_LEN_BYTES];
 typedef uint8_t sve_vector_t[SVE_VECTOR_LEN_BYTES];
 
+unsigned int get_sve_vl(void);
+
 /*
  * Fills SIMD/SVE registers with the content of the container v.
  * Number of vectors is assumed to be SIMD/SVE_NUM_VECTORS.
