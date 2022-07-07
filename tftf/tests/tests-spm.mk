@@ -31,8 +31,10 @@ TESTS_SOURCES	+=							\
 
 ifeq (${ARCH},aarch64)
 TESTS_SOURCES	+=							\
-	$(addprefix lib/extensions/fpu/,				\
-		${ARCH}/fpu_halpers.S					\
-		fpu.c							\
+	$(addprefix lib/extensions/,					\
+		fpu/${ARCH}/fpu_halpers.S				\
+		fpu/fpu.c						\
+		sve/sve.c						\
+		sve/${ARCH}/sve_helpers.S				\
 	)
 endif
