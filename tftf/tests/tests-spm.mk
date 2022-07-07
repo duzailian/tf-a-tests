@@ -30,7 +30,9 @@ TESTS_SOURCES	+=							\
 	)
 
 TESTS_SOURCES	+=							\
-	$(addprefix lib/extensions/fpu/,				\
-		aarch64/fpu_halpers.S					\
-		fpu.c							\
+	$(addprefix lib/extensions/,					\
+		fpu/aarch64/fpu_halpers.S				\
+		fpu/fpu.c						\
+		sve/sve.c						\
+		sve/aarch64/sve_helpers.S				\
 	)
