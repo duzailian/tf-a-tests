@@ -8,21 +8,23 @@
 
 <testsuites>
   <testsuite name="Realm payload at EL1" description="Test Realm EL1 framework capabilities" >
-	  <testcase name="Realm EL1 creation and execution test"
-	  function="test_realm_create_enter" />
-	  <testcase name="Realm payload boot"
-	  function="realm_version_single_cpu" />
-	  <testcase name="Realm payload multi CPU request"
-	  function="realm_version_multi_cpu" />
-	  <testcase name="Realm payload Delegate and Undelegate"
-	  function="realm_delegate_undelegate" />
-	  <testcase name="Multi CPU Realm payload Delegate and Undelegate"
-	  function="realm_delundel_multi_cpu" />
-	  <testcase name="Testing delegation fails"
-	  function="realm_fail_del" />
-	  <testcase name="Test Secure interrupt can preempt Realm EL1"
-	  function="test_sec_interrupt_can_preempt_rl" />
-	  <testcase name="Check that FPU state registers context is preserved in RL/SE/NS"
-	  function="fpu_concurrent_in_rl_ns_se" />
+<!--	  <testcase name="Realm EL1 creation and execution test"-->
+<!--	  function="test_realm_create_enter" />-->
+<!--	  <testcase name="Realm payload boot"-->
+<!--	  function="realm_version_single_cpu" />-->
+<!--	  <testcase name="Realm payload multi CPU request"-->
+<!--	  function="realm_version_multi_cpu" />-->
+<!--	  <testcase name="Realm payload Delegate and Undelegate"-->
+<!--	  function="realm_delegate_undelegate" />-->
+<!--	  <testcase name="Multi CPU Realm payload Delegate and Undelegate"-->
+<!--	  function="realm_delundel_multi_cpu" />-->
+<!--	  <testcase name="Testing delegation fails"-->
+<!--	  function="realm_fail_del" />-->
+<!--	  <testcase name="Test Secure interrupt can preempt Realm EL1"-->
+<!--	  function="test_sec_interrupt_can_preempt_rl" />-->
+<!--	  <testcase name="Check that FPU state registers context is preserved in RL/SE/NS"-->
+<!--	  function="fpu_concurrent_in_rl_ns_se" />-->
+	  <testcase name="Check that SVE state registers context is preserved in RL/SE/NS"
+	  function="sve_concurrent_in_rl_ns_se" />
   </testsuite>
 </testsuites>
