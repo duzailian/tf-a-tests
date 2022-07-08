@@ -94,12 +94,12 @@ bool is_expected_cactus_response(struct ffa_value ret, uint32_t expected_resp,
 void dump_ffa_value(struct ffa_value ret);
 
 /*
- * Vector length:
+ * Max. vector length:
  * SIMD: 128 bits = 16 bytes
- * SVE:	 512 bits = 64 bytes
+ * SVE:	 2048 bits = 256 bytes
  */
 #define SIMD_VECTOR_LEN_BYTES		16
-#define SVE_VECTOR_LEN_BYTES		64
+#define SVE_VECTOR_LEN_BYTES		256
 
 #define SIMD_NUM_VECTORS		32
 #define SVE_NUM_VECTORS			32
