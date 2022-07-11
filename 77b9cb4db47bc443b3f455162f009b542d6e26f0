@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c2237dc_de30dcc3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 60
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-07-11T09:53:56Z",
+      "side": 1,
+      "message": "Overridden Verified+1. Single failure is intermittent infra issue. Passed tests in the internal Arm CI.\n",
+      "revId": "77b9cb4db47bc443b3f455162f009b542d6e26f0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
