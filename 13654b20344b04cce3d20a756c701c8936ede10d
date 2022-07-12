@@ -90,6 +90,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "974f92fc_6528c992",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-07-12T15:21:48Z",
+      "side": 1,
+      "message": "This made sense when vector length was fixed. This was mainly to ease visualization with the debugger to check the state when switching worlds. Z[n] had a fixed value when leaving normal world, then secure world altering SIMD registers and back to normal world checking Z[n] remained consistent with the initial fixed value. We\u0027d want Z[n] !\u003d Z[n+1].\nNow the vector length uses the max. permitted by implementation, I agree this code now longer words as before and might require a bit of revisit.",
+      "parentUuid": "765bfe96_bbae2a0c",
+      "range": {
+        "startLine": 51,
+        "startChar": 38,
+        "endLine": 51,
+        "endChar": 41
+      },
+      "revId": "13654b20344b04cce3d20a756c701c8936ede10d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1de5414d_b4ada8f6",
         "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
         "patchSetId": 4
