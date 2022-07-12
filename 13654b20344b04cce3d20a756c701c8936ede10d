@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4a8797f_cc841800",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000686
+      },
+      "writtenOn": "2022-07-12T13:14:31Z",
+      "side": 1,
+      "message": "Looks good to me other than the one query.",
+      "revId": "13654b20344b04cce3d20a756c701c8936ede10d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "765bfe96_bbae2a0c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000686
+      },
+      "writtenOn": "2022-07-12T13:14:31Z",
+      "side": 1,
+      "message": "This change is not obvious to me? TBH I don\u0027t know why this isn\u0027t just a memset of the whole array en masse, there\u0027s no real advantage to doing this vector by vector.",
+      "range": {
+        "startLine": 51,
+        "startChar": 38,
+        "endLine": 51,
+        "endChar": 41
+      },
+      "revId": "13654b20344b04cce3d20a756c701c8936ede10d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
