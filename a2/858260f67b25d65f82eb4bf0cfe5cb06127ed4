@@ -1,0 +1,10 @@
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Allow-CI+2: Olivier Deprez <olivier.deprez@arm.com>
+Code-Review+1: TrustedFirmware Code Review
+Verified+1: TrustedFirmware Code Review
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Wed, 13 Jul 2022 11:04:22 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/15802
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
