@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e689b3b_912048e1",
+        "filename": "include/runtime_services/ffa_svc.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2022-07-19T19:42:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f569f1c_484cebc5",
+      "revId": "f6df125dcb4b0fc04fe19e47e97388d189a78341",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1064abb_47290fce",
@@ -31,6 +49,30 @@
       "writtenOn": "2022-07-13T06:52:53Z",
       "side": 1,
       "message": "typo",
+      "range": {
+        "startLine": 194,
+        "startChar": 46,
+        "endLine": 194,
+        "endChar": 54
+      },
+      "revId": "f6df125dcb4b0fc04fe19e47e97388d189a78341",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2570402_9246b22c",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2022-07-19T19:42:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1064abb_47290fce",
       "range": {
         "startLine": 194,
         "startChar": 46,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bec51879_13e479e7",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2022-07-19T19:42:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "528aea49_4d66f879",
+      "range": {
+        "startLine": 197,
+        "startChar": 1,
+        "endLine": 197,
+        "endChar": 45
+      },
+      "revId": "f6df125dcb4b0fc04fe19e47e97388d189a78341",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "22022710_0e4b63a4",
@@ -77,6 +143,30 @@
       "writtenOn": "2022-07-13T06:52:53Z",
       "side": 1,
       "message": "suggest removing to avoid overloading code",
+      "range": {
+        "startLine": 200,
+        "startChar": 2,
+        "endLine": 200,
+        "endChar": 50
+      },
+      "revId": "f6df125dcb4b0fc04fe19e47e97388d189a78341",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a95a35e_bbc48c29",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2022-07-19T19:42:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22022710_0e4b63a4",
       "range": {
         "startLine": 200,
         "startChar": 2,
