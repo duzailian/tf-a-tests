@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "055c4335_810a7082",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000279
+      },
+      "writtenOn": "2022-07-20T11:38:05Z",
+      "side": 1,
+      "message": "Removing VERBOSE build fix, there is a separate patch for that: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/15784",
+      "revId": "7e88e6210a7163e50dc6234224527dfce8c29e2f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
