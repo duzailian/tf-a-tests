@@ -112,6 +112,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4cfc423_8196ac98",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-07-21T15:43:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "974f92fc_6528c992",
+      "range": {
+        "startLine": 51,
+        "startChar": 38,
+        "endLine": 51,
+        "endChar": 41
+      },
+      "revId": "13654b20344b04cce3d20a756c701c8936ede10d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1de5414d_b4ada8f6",
