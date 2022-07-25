@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Copyright (c) 2022, Arm Limited. All rights reserved.
+
+  SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<testsuites>
+
+  <testsuite name="FEAT_RNG_TRAP" description="Tests that an access to RNDR and RNDRRS generates a trap to EL3.">
+    <testcase name="Test EL3 trap for RNDR and RNDRRS access" function="test_feat_rng_trap_enabled" />
+  </testsuite>
+
+</testsuites>

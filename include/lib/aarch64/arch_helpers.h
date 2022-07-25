@@ -516,6 +516,10 @@ DEFINE_RENAME_SYSREG_RW_FUNCS(gcr_el1, GCR_EL1)
 /* Armv8.4 Data Independent Timing */
 DEFINE_RENAME_SYSREG_RW_FUNCS(dit, DIT)
 
+/* Armv8.5 FEAT_RNG Registers */
+DEFINE_SYSREG_READ_FUNC(rndr)
+DEFINE_SYSREG_READ_FUNC(rndrrs)
+
 /* Armv8.6 Fine Grained Virtualization Traps Registers */
 DEFINE_RENAME_SYSREG_RW_FUNCS(hfgrtr_el2,  HFGRTR_EL2)
 DEFINE_RENAME_SYSREG_RW_FUNCS(hfgwtr_el2,  HFGWTR_EL2)
