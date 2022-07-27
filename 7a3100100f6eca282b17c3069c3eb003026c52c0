@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ce5cfd0_91e41a47",
+        "filename": "tools/generate_json/generate_json.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-07-27T12:14:19Z",
+      "side": 1,
+      "message": "nitpicking:\nVHE is not conceptually sound.\nVHE relates with Virtualization Host Extensions, that removes the necessity to have EL1 kernel for every EL0 application. EL2 takes care of S1 mapping for EL0 applications. That said VHE might be enabled, EL1 and EL0 coexist in the deployed system.\nSuggest to use \u0027ivy\u0027 only.",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 15
+      },
+      "revId": "7a3100100f6eca282b17c3069c3eb003026c52c0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
