@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5797510_7d6d6fc7",
+        "filename": "tools/generate_json/generate_json.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-07-28T14:40:14Z",
+      "side": 1,
+      "message": "We either build Ivy as a S-EL1 or S-EL0 partition. Can this check be made as elif?",
+      "revId": "5d7b866d94f2e1078f696fb9d5fadce7f9daaf88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
