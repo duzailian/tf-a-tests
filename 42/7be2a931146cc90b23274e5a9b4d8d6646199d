@@ -1,0 +1,10 @@
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Allow-CI+1: Joao Alves <joao.alves@arm.com>
+Legacy-CI+2: Joao Alves <joao.alves@arm.com>
+Verified+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Mon, 01 Aug 2022 15:29:20 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/16109
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
