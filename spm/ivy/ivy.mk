@@ -7,13 +7,13 @@
 include branch_protection.mk
 include lib/xlat_tables_v2/xlat_tables.mk
 
+IVY_SHIM	:= 0
+
 # Include ivy platform Makefile
 IVY_PLAT_PATH	:= $(shell find spm/ivy/app/plat -wholename '*/${PLAT}')
 ifneq (${IVY_PLAT_PATH},)
 	include ${IVY_PLAT_PATH}/platform.mk
 endif
-
-IVY_SHIM	:= 1
 
 ifeq (${IVY_SHIM},1)
 	IVY_DTB			:= $(BUILD_PLAT)/ivy-sel1.dtb
