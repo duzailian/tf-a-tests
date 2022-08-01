@@ -13,7 +13,7 @@ ifneq (${IVY_PLAT_PATH},)
 	include ${IVY_PLAT_PATH}/platform.mk
 endif
 
-IVY_SHIM	:= 1
+IVY_SHIM	:= 0
 
 ifeq (${IVY_SHIM},1)
 	IVY_DTB			:= $(BUILD_PLAT)/ivy-sel1.dtb
