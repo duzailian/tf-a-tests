@@ -16,6 +16,24 @@
       "message": "I can\u0027t tell what the issues are. It\u0027s complaining that the headers are in the wrong order but they\u0027re sorted lexically which would be the obvious order and appears to be the order used by the existing includes.\n\nIt\u0027s also complaining about coding style but isn\u0027t providing any kind of feedback on what or where there might be an issue which is not something I can usefully address. ",
       "revId": "569be40971323c2de87f798bc7da3bee142c2009",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a38144fb_3f43d37e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-08-04T12:25:21Z",
+      "side": 1,
+      "message": "Never mind hopefully I should have addressed the issues:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/15850/7..8/tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+      "parentUuid": "63ee8438_218578e8",
+      "revId": "569be40971323c2de87f798bc7da3bee142c2009",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
