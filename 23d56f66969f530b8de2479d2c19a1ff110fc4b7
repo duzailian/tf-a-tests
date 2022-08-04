@@ -16,6 +16,24 @@
       "message": "Failure due to some minor static checks:\nhttps://ci.trustedfirmware.org/job/tf-a-static-checks/1788/ \n\nPlease have a look and fix.",
       "revId": "23d56f66969f530b8de2479d2c19a1ff110fc4b7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b1a8d9e_638b3dc9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-08-04T12:14:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37674616_7840f9f6",
+      "revId": "23d56f66969f530b8de2479d2c19a1ff110fc4b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
