@@ -3,6 +3,121 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c669c3b5_26608a32",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:49:59Z",
+      "side": 1,
+      "message": "NWd or Normal world",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 3
+      },
+      "revId": "6df3bdad239040e34dd4108f1922021edae8cfa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a5bf556_3b94109d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:49:59Z",
+      "side": 1,
+      "message": "the first",
+      "range": {
+        "startLine": 11,
+        "startChar": 43,
+        "endLine": 11,
+        "endChar": 48
+      },
+      "revId": "6df3bdad239040e34dd4108f1922021edae8cfa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ebe38a31_795b3d66",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:49:59Z",
+      "side": 1,
+      "message": "the second",
+      "range": {
+        "startLine": 12,
+        "startChar": 60,
+        "endLine": 12,
+        "endChar": 61
+      },
+      "revId": "6df3bdad239040e34dd4108f1922021edae8cfa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e0d7773_37d91179",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:49:59Z",
+      "side": 1,
+      "message": "non-secure",
+      "range": {
+        "startLine": 13,
+        "startChar": 60,
+        "endLine": 14,
+        "endChar": 6
+      },
+      "revId": "6df3bdad239040e34dd4108f1922021edae8cfa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54ec6dbb_1df82126",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:49:59Z",
+      "side": 1,
+      "message": "SPs",
+      "range": {
+        "startLine": 16,
+        "startChar": 5,
+        "endLine": 16,
+        "endChar": 7
+      },
+      "revId": "6df3bdad239040e34dd4108f1922021edae8cfa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8ca95fd5_0b8c9789",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
         "patchSetId": 2
