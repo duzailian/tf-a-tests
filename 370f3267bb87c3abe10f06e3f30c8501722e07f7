@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab910620_624e2b25",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T10:52:25Z",
+      "side": 1,
+      "message": "nitpicking: make the title shorter.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 80
+      },
+      "revId": "370f3267bb87c3abe10f06e3f30c8501722e07f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1ace15c_ef753027",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T10:52:25Z",
+      "side": 1,
+      "message": "Confusing sentence.\nSuggestion:\n\"An SP could be interrupted by a NS interrupt whilst handling a direct message request from another SP.\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 38
+      },
+      "revId": "370f3267bb87c3abe10f06e3f30c8501722e07f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba4043a5_f20b46d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T10:52:25Z",
+      "side": 1,
+      "message": "non-secure?",
+      "range": {
+        "startLine": 10,
+        "startChar": 17,
+        "endLine": 10,
+        "endChar": 27
+      },
+      "revId": "370f3267bb87c3abe10f06e3f30c8501722e07f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac5c8469_5f6bd459",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T10:52:25Z",
+      "side": 1,
+      "message": "\"The targeted SP could send the managed exit response\"",
+      "range": {
+        "startLine": 10,
+        "startChar": 39,
+        "endLine": 11,
+        "endChar": 21
+      },
+      "revId": "370f3267bb87c3abe10f06e3f30c8501722e07f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04e50278_4cb88cce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T10:52:25Z",
+      "side": 1,
+      "message": "\"the sender of the direct message request\"",
+      "range": {
+        "startLine": 13,
+        "startChar": 13,
+        "endLine": 13,
+        "endChar": 28
+      },
+      "revId": "370f3267bb87c3abe10f06e3f30c8501722e07f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b20c6537_5446c613",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T10:52:25Z",
+      "side": 1,
+      "message": "I am bit confused by this.\nWhy is it in a while loop?\nShouldn\u0027t it be a one-time occurrence for both conditions of the if clause?\nIf so, wouldn\u0027t be best to make that as a sequence to be followed by the code, to capture unexpected sequences?",
+      "range": {
+        "startLine": 57,
+        "startChar": 1,
+        "endLine": 58,
+        "endChar": 65
+      },
+      "revId": "370f3267bb87c3abe10f06e3f30c8501722e07f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd8ef3f5_8f5b83c8",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T10:52:25Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 71,
+        "startChar": 19,
+        "endLine": 71,
+        "endChar": 26
+      },
+      "revId": "370f3267bb87c3abe10f06e3f30c8501722e07f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
