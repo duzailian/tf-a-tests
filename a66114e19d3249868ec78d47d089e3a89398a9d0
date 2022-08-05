@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fecffb15_0fdf97fc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:25:56Z",
+      "side": 1,
+      "message": "non-secure",
+      "range": {
+        "startLine": 9,
+        "startChar": 46,
+        "endLine": 9,
+        "endChar": 56
+      },
+      "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a226a36_fef63be4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:25:56Z",
+      "side": 1,
+      "message": "I see we don\u0027t have enough cactus partitions deployed for all configurations...\nThis might be something worth thinking and addressing.\nMight help with comprehensively test other functionalities...\nHafnium CI could be easier to get to something implementable. Each test execute from boot to test. Whereas here all tests are executed in a bulk.\n\nWill have in mind how this could be done, even if not immediately as a future improvement.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 36
+      },
+      "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1c3b914_53767cfc",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:25:56Z",
+      "side": 1,
+      "message": "the whole test looks actually quite similar to the above.\nWould it be worth having a \"base test function\" that receives the expected action for the target SP, and validate accordingly? Essentially between tests there is a difference in the middle section with use-case specific validation. For example in the ME test there is a validation to the Managed Exit response.\n\nNot a huge deal considering this test code, however could help with reducing code to be maintained as the project goes forward. In doing this, the helper function that I suggested below, becomes a bit redundant I guess...",
+      "range": {
+        "startLine": 251,
+        "startChar": 0,
+        "endLine": 251,
+        "endChar": 1
+      },
+      "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5abbb64_ea845834",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:25:56Z",
+      "side": 1,
+      "message": "1.1?",
+      "range": {
+        "startLine": 256,
+        "startChar": 25,
+        "endLine": 256,
+        "endChar": 31
+      },
+      "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bac42a6d_16ad9e02",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:25:56Z",
+      "side": 1,
+      "message": "helper function as mentioned in other patches.",
+      "range": {
+        "startLine": 259,
+        "startChar": 1,
+        "endLine": 266,
+        "endChar": 2
+      },
+      "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
