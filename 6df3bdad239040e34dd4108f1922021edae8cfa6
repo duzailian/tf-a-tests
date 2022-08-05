@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ca95fd5_0b8c9789",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:40:48Z",
+      "side": 1,
+      "message": "non-secure",
+      "range": {
+        "startLine": 234,
+        "startChar": 44,
+        "endLine": 234,
+        "endChar": 54
+      },
+      "revId": "6df3bdad239040e34dd4108f1922021edae8cfa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22ac99f6_1c5bca10",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:40:48Z",
+      "side": 1,
+      "message": "1.1?",
+      "range": {
+        "startLine": 292,
+        "startChar": 26,
+        "endLine": 292,
+        "endChar": 32
+      },
+      "revId": "6df3bdad239040e34dd4108f1922021edae8cfa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76b11dbc_c06d834c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:40:48Z",
+      "side": 1,
+      "message": "nitpicking: bundle them in an if clause with || operator?",
+      "range": {
+        "startLine": 294,
+        "startChar": 1,
+        "endLine": 302,
+        "endChar": 2
+      },
+      "revId": "6df3bdad239040e34dd4108f1922021edae8cfa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93c20db6_7183242f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:40:48Z",
+      "side": 1,
+      "message": "full stop.",
+      "range": {
+        "startLine": 316,
+        "startChar": 12,
+        "endLine": 317,
+        "endChar": 4
+      },
+      "revId": "6df3bdad239040e34dd4108f1922021edae8cfa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7832eff_9508ca54",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:40:48Z",
+      "side": 1,
+      "message": "add space to align.",
+      "range": {
+        "startLine": 319,
+        "startChar": 6,
+        "endLine": 319,
+        "endChar": 7
+      },
+      "revId": "6df3bdad239040e34dd4108f1922021edae8cfa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46478dc1_615ef315",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:40:48Z",
+      "side": 1,
+      "message": "align arguments with \"SENDER\"",
+      "range": {
+        "startLine": 348,
+        "startChar": 2,
+        "endLine": 348,
+        "endChar": 17
+      },
+      "revId": "6df3bdad239040e34dd4108f1922021edae8cfa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb6949e1_8682a7fb",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:40:48Z",
+      "side": 1,
+      "message": "if ... || ... ?",
+      "range": {
+        "startLine": 358,
+        "startChar": 1,
+        "endLine": 366,
+        "endChar": 2
+      },
+      "revId": "6df3bdad239040e34dd4108f1922021edae8cfa6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
