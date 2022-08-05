@@ -3,6 +3,167 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "19e01174_d15cc340",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T12:00:53Z",
+      "side": 1,
+      "message": "nitpicking: smaller title.\n\nSuggestion: \"managed exit in second SP of call chain\" ?",
+      "range": {
+        "startLine": 7,
+        "startChar": 1,
+        "endLine": 7,
+        "endChar": 78
+      },
+      "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17e74eeb_34a7d66d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T12:00:53Z",
+      "side": 1,
+      "message": "the first",
+      "range": {
+        "startLine": 11,
+        "startChar": 44,
+        "endLine": 11,
+        "endChar": 45
+      },
+      "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5daed356_a66c7b98",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T12:00:53Z",
+      "side": 1,
+      "message": "NWd or normal world.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 3
+      },
+      "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2589eee0_8fce3bbb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T12:00:53Z",
+      "side": 1,
+      "message": "the second",
+      "range": {
+        "startLine": 12,
+        "startChar": 60,
+        "endLine": 12,
+        "endChar": 61
+      },
+      "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12035ea7_72c10400",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T12:00:53Z",
+      "side": 1,
+      "message": "non-secure",
+      "range": {
+        "startLine": 13,
+        "startChar": 60,
+        "endLine": 14,
+        "endChar": 6
+      },
+      "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bf2edc2_db54706b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T12:00:53Z",
+      "side": 1,
+      "message": "the",
+      "range": {
+        "startLine": 16,
+        "startChar": 29,
+        "endLine": 16,
+        "endChar": 30
+      },
+      "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c1c4527_c2d766fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T12:00:53Z",
+      "side": 1,
+      "message": "the",
+      "range": {
+        "startLine": 16,
+        "startChar": 60,
+        "endLine": 16,
+        "endChar": 61
+      },
+      "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dbd643f1_f0a73700",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2
@@ -14,6 +175,144 @@
       "writtenOn": "2022-08-05T10:52:56Z",
       "side": 1,
       "message": "Have a look at the static checks:\nhttps://ci.trustedfirmware.org/job/tf-a-static-checks/1796/ ",
+      "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e74d7cc_852fbb65",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T12:00:53Z",
+      "side": 1,
+      "message": "the second",
+      "range": {
+        "startLine": 498,
+        "startChar": 16,
+        "endLine": 498,
+        "endChar": 17
+      },
+      "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b4c3cdf_14674be7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T12:00:53Z",
+      "side": 1,
+      "message": "nit: perhaps it is better to refer to macro here just in case the IDs change in the future...",
+      "range": {
+        "startLine": 508,
+        "startChar": 37,
+        "endLine": 508,
+        "endChar": 49
+      },
+      "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64c56e28_5d02000c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T12:00:53Z",
+      "side": 1,
+      "message": "non-secure",
+      "range": {
+        "startLine": 511,
+        "startChar": 48,
+        "endLine": 511,
+        "endChar": 58
+      },
+      "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c759b6da_811d3bb2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T12:00:53Z",
+      "side": 1,
+      "message": "1.1?",
+      "range": {
+        "startLine": 555,
+        "startChar": 26,
+        "endLine": 555,
+        "endChar": 31
+      },
+      "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08513fe2_c9ece522",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T12:00:53Z",
+      "side": 1,
+      "message": "full stop.",
+      "range": {
+        "startLine": 574,
+        "startChar": 14,
+        "endLine": 574,
+        "endChar": 15
+      },
+      "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b252ad00_dce9f2db",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T12:00:53Z",
+      "side": 1,
+      "message": "nitpicking: add a space to align args",
+      "range": {
+        "startLine": 578,
+        "startChar": 6,
+        "endLine": 578,
+        "endChar": 7
+      },
       "revId": "8c16b976441758dffd068f04e8a44d01e439ac2d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
