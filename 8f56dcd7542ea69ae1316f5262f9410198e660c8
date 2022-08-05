@@ -1,0 +1,395 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c882d1e_b66666ea",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "nitpicking: smaller title?",
+      "range": {
+        "startLine": 7,
+        "startChar": 1,
+        "endLine": 7,
+        "endChar": 77
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5411afae_257647d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "NWd or Normal world",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 3
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59199c7e_98365b9e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "the first",
+      "range": {
+        "startLine": 11,
+        "startChar": 42,
+        "endLine": 11,
+        "endChar": 45
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7e1ec84_71951945",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "the second",
+      "range": {
+        "startLine": 12,
+        "startChar": 58,
+        "endLine": 12,
+        "endChar": 62
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84cbe0b9_7629566b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "non-secure",
+      "range": {
+        "startLine": 13,
+        "startChar": 60,
+        "endLine": 14,
+        "endChar": 6
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c55bd07_d3c1656c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "the first",
+      "range": {
+        "startLine": 16,
+        "startChar": 26,
+        "endLine": 16,
+        "endChar": 31
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08ba8a9b_d647d95e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "the second",
+      "range": {
+        "startLine": 16,
+        "startChar": 59,
+        "endLine": 16,
+        "endChar": 65
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf9eb4eb_3522c238",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "non-secure",
+      "range": {
+        "startLine": 373,
+        "startChar": 69,
+        "endLine": 373,
+        "endChar": 79
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80c04e39_3e571afd",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "the first SP",
+      "range": {
+        "startLine": 373,
+        "startChar": 15,
+        "endLine": 373,
+        "endChar": 17
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19d9b3a8_ffb5351a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "non-secure",
+      "range": {
+        "startLine": 386,
+        "startChar": 48,
+        "endLine": 386,
+        "endChar": 58
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d54ac79e_fc5f17ae",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "this is correct",
+      "range": {
+        "startLine": 402,
+        "startChar": 32,
+        "endLine": 402,
+        "endChar": 42
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad465c36_d89b6f23",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "the first",
+      "range": {
+        "startLine": 405,
+        "startChar": 60,
+        "endLine": 405,
+        "endChar": 63
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20425343_f4c8450c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "1.1",
+      "range": {
+        "startLine": 427,
+        "startChar": 25,
+        "endLine": 427,
+        "endChar": 32
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16667e77_e3921253",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "full stop.",
+      "range": {
+        "startLine": 464,
+        "startChar": 68,
+        "endLine": 464,
+        "endChar": 70
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a82255f5_c46a94ae",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "NWd or normal world",
+      "range": {
+        "startLine": 464,
+        "startChar": 55,
+        "endLine": 464,
+        "endChar": 63
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43ec097f_150e78f3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "nit: align arguments with \u0027SENDER\u0027.",
+      "range": {
+        "startLine": 478,
+        "startChar": 2,
+        "endLine": 478,
+        "endChar": 3
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4ec3ca0_8c7ea20b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:55:42Z",
+      "side": 1,
+      "message": "full stop.",
+      "range": {
+        "startLine": 488,
+        "startChar": 33,
+        "endLine": 488,
+        "endChar": 34
+      },
+      "revId": "8f56dcd7542ea69ae1316f5262f9410198e660c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
