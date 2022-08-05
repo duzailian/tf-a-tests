@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b8ff0a1_0d330515",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T10:03:32Z",
+      "side": 1,
+      "message": "use defined wrappers, if they are not defined, define:\nffa_func_id and ffa_feature_id",
+      "range": {
+        "startLine": 238,
+        "startChar": 1,
+        "endLine": 239,
+        "endChar": 31
+      },
+      "revId": "bb28525bc5460343fd25ef7b744f1cf44482cb77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
