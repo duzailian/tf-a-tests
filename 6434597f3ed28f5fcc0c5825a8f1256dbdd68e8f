@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3da1e41_f5ccca2d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T10:19:39Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 7,
+        "startChar": 56,
+        "endLine": 7,
+        "endChar": 63
+      },
+      "revId": "6434597f3ed28f5fcc0c5825a8f1256dbdd68e8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43e3b703_7ed61132",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T10:19:39Z",
+      "side": 1,
+      "message": "\"An SP\" due to the \"S\" vowel sound.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 4
+      },
+      "revId": "6434597f3ed28f5fcc0c5825a8f1256dbdd68e8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0026e6a9_5bc38804",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T10:19:39Z",
+      "side": 1,
+      "message": "should it be handled like in the irq handler instead?\ni.e. with the value retrieve via ffa_features?",
+      "range": {
+        "startLine": 90,
+        "startChar": 3,
+        "endLine": 90,
+        "endChar": 32
+      },
+      "revId": "6434597f3ed28f5fcc0c5825a8f1256dbdd68e8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "291b1ff0_e7b4a1f7",
+        "filename": "spm/cactus/cactus_tests/cactus_message_loop.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T10:19:39Z",
+      "side": 1,
+      "message": "full stop.",
+      "range": {
+        "startLine": 55,
+        "startChar": 47,
+        "endLine": 55,
+        "endChar": 49
+      },
+      "revId": "6434597f3ed28f5fcc0c5825a8f1256dbdd68e8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2e479ef_4cd44a07",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus-tertiary.dts",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T10:19:39Z",
+      "side": 1,
+      "message": "is it worth running this test in another SP with the configuration set to managed-exit-fiq?",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 2
+      },
+      "revId": "6434597f3ed28f5fcc0c5825a8f1256dbdd68e8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
