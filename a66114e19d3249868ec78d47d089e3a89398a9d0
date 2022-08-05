@@ -114,6 +114,29 @@
       },
       "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "771f2114_8f9144f1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-05T11:48:44Z",
+      "side": 1,
+      "message": "NWd or normal world?",
+      "range": {
+        "startLine": 271,
+        "startChar": 55,
+        "endLine": 271,
+        "endChar": 63
+      },
+      "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
