@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9f090991_23e228fa",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-08T17:46:17Z",
+      "side": 1,
+      "message": "I don\u0027t really mind. I used RNDR_trap because the ARM-ARM defines it that way, but I can change it. Please let me know.",
+      "parentUuid": "587a2169_de75c618",
+      "revId": "e0950626840dabd6cf3ed21d9072f845415b0293",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "25345636_ddbbe908",
         "filename": "include/lib/aarch64/arch.h",
         "patchSetId": 1
@@ -31,6 +49,24 @@
       "writtenOn": "2022-08-08T16:52:41Z",
       "side": 1,
       "message": "ULL(0xf)",
+      "revId": "e0950626840dabd6cf3ed21d9072f845415b0293",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59860572_67f1b1f1",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-08T17:46:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25345636_ddbbe908",
       "revId": "e0950626840dabd6cf3ed21d9072f845415b0293",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -58,6 +94,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5738631_6f1b6e6f",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-08T17:46:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca55d756_b30abe31",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "e0950626840dabd6cf3ed21d9072f845415b0293",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "13f27e74_c6fc4dc5",
@@ -71,6 +131,24 @@
       "writtenOn": "2022-08-08T16:52:41Z",
       "side": 1,
       "message": "HCRX_EL2 ? Its RNDR",
+      "revId": "e0950626840dabd6cf3ed21d9072f845415b0293",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d0b09f8_d160dcbb",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-08T17:46:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13f27e74_c6fc4dc5",
       "revId": "e0950626840dabd6cf3ed21d9072f845415b0293",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -98,6 +176,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "92719cbb_40e9935f",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-08T17:46:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48562ddc_92da8a48",
+      "range": {
+        "startLine": 24,
+        "startChar": 37,
+        "endLine": 24,
+        "endChar": 43
+      },
+      "revId": "e0950626840dabd6cf3ed21d9072f845415b0293",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3200c1cc_0f4fbf8b",
@@ -115,6 +217,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec005ccd_0f4a3baa",
+        "filename": "tftf/tests/tests-rng_trap.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-08T17:46:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3200c1cc_0f4fbf8b",
+      "revId": "e0950626840dabd6cf3ed21d9072f845415b0293",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f9f72121_af81f3a8",
@@ -128,6 +248,30 @@
       "writtenOn": "2022-08-08T16:11:38Z",
       "side": 1,
       "message": "2022",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "e0950626840dabd6cf3ed21d9072f845415b0293",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "186422db_c1de0331",
+        "filename": "tftf/tests/tests-rng_trap.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-08T17:46:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9f72121_af81f3a8",
       "range": {
         "startLine": 4,
         "startChar": 16,
