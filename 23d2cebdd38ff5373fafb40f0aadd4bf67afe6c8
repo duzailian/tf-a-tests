@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "788b6a25_51a9b6b5",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-08-09T10:04:53Z",
+      "side": 1,
+      "message": "Capitalise here as well(trap) and in other files where applicable.",
+      "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc6dad82_7880895a",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-08-09T10:04:53Z",
+      "side": 1,
+      "message": "nit: can we place these functions above, where all read_fucntions are placed, just to maintain uniformity. (Either after line 386 or 419).",
+      "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e4502a7_dad60f66",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-08-09T10:04:53Z",
+      "side": 1,
+      "message": "We are leaving a scenario, wherein if feature is not supported, \nwe need to print it, something like, FEAT_RNG_TRAP not supported.\n\nRefer to this BRBE patch:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/14133/4/include/common/test_helpers.h\n\nWe could introduce a simple macro, under test_helpers.h and utilise it here.",
+      "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a72045cd_b87e1258",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-08-09T10:04:53Z",
+      "side": 1,
+      "message": "Just checking, any reasons behind that only rndr register is considered here and not rndrrs for testing ?",
+      "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9cd7f8d_2ff2f4c2",
+        "filename": "tftf/tests/tests-rng_trap.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-08-09T10:04:53Z",
+      "side": 1,
+      "message": "nit : Can we add this under tests-cpu-extensions.mk, and similarly the xml file under tests-cpu-extensions.xml.\nWe already have this common space for all the architecture extensions.\nSo thought this would be ideal rather than additional new files.",
+      "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
