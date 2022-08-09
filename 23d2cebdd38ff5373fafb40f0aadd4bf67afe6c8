@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "22eb629f_2f62b66b",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-09T19:09:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "788b6a25_51a9b6b5",
+      "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fc6dad82_7880895a",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-08-09T10:04:53Z",
       "side": 1,
       "message": "nit: can we place these functions above, where all read_fucntions are placed, just to maintain uniformity. (Either after line 386 or 419).",
+      "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "646763d1_dd4ba21d",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-09T19:09:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc6dad82_7880895a",
       "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -54,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f8d049d1_3c4fb73c",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-09T19:09:02Z",
+      "side": 1,
+      "message": "OK. I don\u0027t understand the do {...} while (false) block. It doesn\u0027t make any sense to me. I added it for now, but rather take it off if possible.",
+      "parentUuid": "5e4502a7_dad60f66",
+      "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a72045cd_b87e1258",
         "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
         "patchSetId": 2
@@ -65,6 +119,24 @@
       "writtenOn": "2022-08-09T10:04:53Z",
       "side": 1,
       "message": "Just checking, any reasons behind that only rndr register is considered here and not rndrrs for testing ?",
+      "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "478c0d9c_d9b96b63",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-09T19:09:02Z",
+      "side": 1,
+      "message": "I could. I guess I should create another test for that, since this test generates a trap that ends in a panic signal and the whole system halts.",
+      "parentUuid": "a72045cd_b87e1258",
       "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
