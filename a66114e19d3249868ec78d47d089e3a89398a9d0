@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "512afe31_b8e45e77",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-10T19:17:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fecffb15_0fdf97fc",
+      "range": {
+        "startLine": 9,
+        "startChar": 46,
+        "endLine": 9,
+        "endChar": 56
+      },
+      "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1a226a36_fef63be4",
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a31ae7e6_53bd0ad5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-10T19:17:52Z",
+      "side": 1,
+      "message": "You are right, Joao!\nI am planning to add some tests to Hafnium CI itself in the next iteration.",
+      "parentUuid": "1a226a36_fef63be4",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 36
+      },
+      "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b1c3b914_53767cfc",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
         "patchSetId": 2
@@ -60,6 +108,30 @@
       "writtenOn": "2022-08-05T11:25:56Z",
       "side": 1,
       "message": "the whole test looks actually quite similar to the above.\nWould it be worth having a \"base test function\" that receives the expected action for the target SP, and validate accordingly? Essentially between tests there is a difference in the middle section with use-case specific validation. For example in the ME test there is a validation to the Managed Exit response.\n\nNot a huge deal considering this test code, however could help with reducing code to be maintained as the project goes forward. In doing this, the helper function that I suggested below, becomes a bit redundant I guess...",
+      "range": {
+        "startLine": 251,
+        "startChar": 0,
+        "endLine": 251,
+        "endChar": 1
+      },
+      "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2b9b481_23cd9d18",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-10T19:17:52Z",
+      "side": 1,
+      "message": "I agree with you. I will take it up in the next iteration.",
+      "parentUuid": "b1c3b914_53767cfc",
       "range": {
         "startLine": 251,
         "startChar": 0,
@@ -116,6 +188,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f4e99fd_7ed513d4",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-10T19:17:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bac42a6d_16ad9e02",
+      "range": {
+        "startLine": 259,
+        "startChar": 1,
+        "endLine": 266,
+        "endChar": 2
+      },
+      "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "771f2114_8f9144f1",
@@ -129,6 +225,30 @@
       "writtenOn": "2022-08-05T11:48:44Z",
       "side": 1,
       "message": "NWd or normal world?",
+      "range": {
+        "startLine": 271,
+        "startChar": 55,
+        "endLine": 271,
+        "endChar": 63
+      },
+      "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56d58311_35f1d19f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-10T19:17:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "771f2114_8f9144f1",
       "range": {
         "startLine": 271,
         "startChar": 55,
