@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee52f491_85a61890",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-10T19:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d27ed79d_16bfc583",
+      "range": {
+        "startLine": 13,
+        "startChar": 3,
+        "endLine": 14,
+        "endChar": 11
+      },
+      "revId": "0a71293c59f50c637ddb68be406d07137bbf32eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "42e57fb6_936e730f",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-08-10T17:05:18Z",
       "side": 1,
       "message": "nitpick:\n/*\n* If we made it this far, the test has failed as it did not trigger a trap\n* to EL3.\n*/",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 24
+      },
+      "revId": "0a71293c59f50c637ddb68be406d07137bbf32eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8988bd4e_3fb22d6b",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-10T19:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "42e57fb6_936e730f",
       "range": {
         "startLine": 24,
         "startChar": 0,
