@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ff689aa_0893509e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-10T19:17:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4280097e_d65f9523",
+      "range": {
+        "startLine": 9,
+        "startChar": 46,
+        "endLine": 9,
+        "endChar": 56
+      },
+      "revId": "5ce2e37a2ba6a4f8f1521b53678516275e72fbb3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "266590a5_e4b6fdf4",
@@ -60,6 +84,30 @@
       "writtenOn": "2022-08-05T11:09:28Z",
       "side": 1,
       "message": "common code with the previous test.\nIs it worth creating a local function to do this?",
+      "range": {
+        "startLine": 179,
+        "startChar": 1,
+        "endLine": 186,
+        "endChar": 2
+      },
+      "revId": "5ce2e37a2ba6a4f8f1521b53678516275e72fbb3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97a85285_0d5fdbf0",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-10T19:17:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cae5713d_f0045424",
       "range": {
         "startLine": 179,
         "startChar": 1,
