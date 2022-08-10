@@ -22,6 +22,30 @@
       },
       "revId": "20e5d8b3a119a3b7929969f6b1799a0243b4f42b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "53fa5b2d_8a92eb7a",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus-tertiary.dts",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-10T19:18:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e56983f_4c23b153",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 2
+      },
+      "revId": "20e5d8b3a119a3b7929969f6b1799a0243b4f42b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
