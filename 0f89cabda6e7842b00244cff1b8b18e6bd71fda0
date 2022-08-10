@@ -18,6 +18,23 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "34c43e92_0c4be4b5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-08-10T16:05:29Z",
+      "side": 1,
+      "message": "Latest CI build failed: https://jenkins.oss.arm.com/job/tf-ci-gateway/119453/\nPlease go through them.",
+      "revId": "0f89cabda6e7842b00244cff1b8b18e6bd71fda0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "10f8fd92_e3e09be0",
