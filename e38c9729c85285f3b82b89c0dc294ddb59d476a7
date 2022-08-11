@@ -26,6 +26,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "09036502_0fbd279b",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-08-11T23:33:09Z",
+      "side": 1,
+      "message": "Is this used in this test?",
+      "range": {
+        "startLine": 422,
+        "startChar": 0,
+        "endLine": 422,
+        "endChar": 31
+      },
+      "revId": "e38c9729c85285f3b82b89c0dc294ddb59d476a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "81e6cfff_197c41dc",
         "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
         "patchSetId": 6
@@ -37,6 +60,30 @@
       "writtenOn": "2022-08-11T23:26:11Z",
       "side": 1,
       "message": "Why don\u0027t we have a test to read RNDRRS register as well?",
+      "range": {
+        "startLine": 21,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 13
+      },
+      "revId": "e38c9729c85285f3b82b89c0dc294ddb59d476a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e5a9129_7febafa9",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-08-11T23:33:09Z",
+      "side": 1,
+      "message": "IF we don\u0027t have a handler, I would recommend to add 2 separate tests\n\n1. tftf/tests/extensions/rng_trap/test_rng_trap_rndr.c (calls read_rndr() in test)\n2. tftf/tests/extensions/rng_trap/test_rng_trap_rndrrs.c (calls read_rndrrs() in test;",
+      "parentUuid": "81e6cfff_197c41dc",
       "range": {
         "startLine": 21,
         "startChar": 1,
