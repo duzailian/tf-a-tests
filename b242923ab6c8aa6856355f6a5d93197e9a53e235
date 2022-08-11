@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3fd2571c_34d4f522",
+        "filename": "include/runtime_services/ffa_svc.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-11T09:29:54Z",
+      "side": 1,
+      "message": "nit: move to ffa_helpers.h.\nhttps://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/include/runtime_services/ffa_helpers.h#n120",
+      "range": {
+        "startLine": 179,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 33
+      },
+      "revId": "b242923ab6c8aa6856355f6a5d93197e9a53e235",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "362ac757_1c363450",
         "filename": "spm/cactus/cactus_main.c",
         "patchSetId": 3
