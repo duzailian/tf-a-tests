@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8885bf1f_8795d9a9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-11T17:15:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1005bdd1_fcecdf5a",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 3
+      },
+      "revId": "4ee6b92b1a34f090ecf565789ec0d577f9fee208",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b78eab0f_50259450",
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1d62fb28_122272e5",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-11T17:15:40Z",
+      "side": 1,
+      "message": "I had the same question when I was working on this test. Yes,the SP goes into WAITING state. However, it does not reach message loop[1]. We need to allocate cpu cycles for it to resume in the message loop to process the original direct request message that was interrupted.\n\n[1] https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/15675/4/spm/cactus/cactus_interrupt.c#117",
+      "parentUuid": "b78eab0f_50259450",
+      "range": {
+        "startLine": 127,
+        "startChar": 1,
+        "endLine": 128,
+        "endChar": 27
+      },
+      "revId": "4ee6b92b1a34f090ecf565789ec0d577f9fee208",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "71a5dd65_843109eb",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
         "patchSetId": 4
@@ -60,6 +108,30 @@
       "writtenOn": "2022-08-11T10:03:31Z",
       "side": 1,
       "message": "full stop.",
+      "range": {
+        "startLine": 194,
+        "startChar": 50,
+        "endLine": 194,
+        "endChar": 58
+      },
+      "revId": "4ee6b92b1a34f090ecf565789ec0d577f9fee208",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "325174b0_148ba62b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-11T17:15:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71a5dd65_843109eb",
       "range": {
         "startLine": 194,
         "startChar": 50,
