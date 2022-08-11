@@ -119,6 +119,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a67b7d3_a3c963d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-11T17:15:54Z",
+      "side": 1,
+      "message": "Thanks Joao!\nI will catch up with you once I am able to get this patch stack merged.",
+      "parentUuid": "44a7f381_a917dde6",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 36
+      },
+      "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b1c3b914_53767cfc",
