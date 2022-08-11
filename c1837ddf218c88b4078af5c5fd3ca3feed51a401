@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d16ab1d_5b2bed26",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-11T10:10:25Z",
+      "side": 1,
+      "message": "add respective uuid to expected_sp_uuids",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 3
+      },
+      "revId": "c1837ddf218c88b4078af5c5fd3ca3feed51a401",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dcaea756_e5dec32c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-11T10:10:25Z",
+      "side": 1,
+      "message": "full stop.",
+      "range": {
+        "startLine": 266,
+        "startChar": 45,
+        "endLine": 266,
+        "endChar": 50
+      },
+      "revId": "c1837ddf218c88b4078af5c5fd3ca3feed51a401",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c1a5842_73dfd86b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-11T10:10:25Z",
+      "side": 1,
+      "message": "here too.",
+      "range": {
+        "startLine": 288,
+        "startChar": 47,
+        "endLine": 288,
+        "endChar": 51
+      },
+      "revId": "c1837ddf218c88b4078af5c5fd3ca3feed51a401",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
