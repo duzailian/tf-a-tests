@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89c2de34_e1a16904",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-08-12T07:24:39Z",
+      "side": 1,
+      "message": "Hi Raghu, I\u0027m embarrassed by this change, though tbh I don\u0027t have yet an alternative (beyond adding a red flag comment stating this is for tests purpose and must not be done in a real product). In this SW arch as you know the GIC is exclusively owned by SEL2 (and EL3). We made efforts since early days to forbid declaring any physical GIC resource from a partition manifest as it would make it a shared state between SPMC and the said SP. This TF-a-tests framework is meant to be a sample/reference for an integrator and in particular show what shall be done and what shall not be done. This change relates to the latter. For this particular case I\u0027m sure you know what you\u0027re doing, but if a developer comes and pulls cactus in a different context, it can easily derail into a partition directly accessing the physical GIC and conflict with SPMC\u0027s behavior leading to odd bugs.",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 137,
+        "endChar": 4
+      },
+      "revId": "d51f0a14fec0721c7c116a59fe2af701621e832d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
