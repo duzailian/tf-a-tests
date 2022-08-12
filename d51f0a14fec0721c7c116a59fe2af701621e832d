@@ -46,6 +46,30 @@
       },
       "revId": "d51f0a14fec0721c7c116a59fe2af701621e832d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b21c9d46_56ab8f96",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-08-12T16:02:37Z",
+      "side": 1,
+      "message": "Ok thanks for the feedback.\nI investigated FVP doc. and support and there is no peripheral whose INTID lands in the eSPI range. There is no way neither to override/reassign an existing peripheral (like sec. wtd) to this range.\nOther option is to permit triggering a sec int. from normal world. There is a control for this, but requires a secure write to the mentioned control register at boot which also end up looking like a hack.\nSo I have no other way atm, I will continue talking with the team to find a way forward.",
+      "parentUuid": "f8b52cf2_2c38a08f",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 137,
+        "endChar": 4
+      },
+      "revId": "d51f0a14fec0721c7c116a59fe2af701621e832d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
