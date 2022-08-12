@@ -24,6 +24,9 @@
 			array_name[var] = PWR_STATE_INIT_INDEX;			\
 	} while (0)
 
+/* Interrupt used for testing extended SPI handling. */
+#define IRQ_ESPI_TEST_INTID			5000
+
 /*
  * The platform structure to represent the valid local power state
  * properties for a particular affinity level. The platform needs to
