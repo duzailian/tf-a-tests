@@ -56,6 +56,9 @@ void cactus_interrupt_handler(void)
 	case NOTIFICATION_PENDING_INTERRUPT_INTID:
 		notification_pending_interrupt_handler();
 		break;
+	case IRQ_ESPI_TEST_INTID:
+		spm_interrupt_deactivate(intid);
+		break;
 	default:
 		/*
 		 * Currently the only source of secure interrupt is Trusted

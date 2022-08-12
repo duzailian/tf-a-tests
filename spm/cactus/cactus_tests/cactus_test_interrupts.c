@@ -13,6 +13,7 @@
 #include "cactus_test_cmds.h"
 
 #include <platform.h>
+#include <mmio.h>
 
 /* Secure virtual interrupt that was last handled by Cactus SP. */
 extern uint32_t last_serviced_interrupt[PLATFORM_CORE_COUNT];
@@ -177,4 +178,29 @@ CACTUS_CMD_HANDLER(interrupt_serviced_cmd, CACTUS_LAST_INTERRUPT_SERVICED_CMD)
 	return cactus_response(ffa_dir_msg_dest(*args),
 			       ffa_dir_msg_source(*args),
 			       last_serviced_interrupt[core_pos]);
+}
+
+static int test_espi_handled;
+static void sec_interrupt_test_espi_handled(void)
+{
+	expect(test_espi_handled, 0);
+	test_espi_handled = 1;
+	NOTICE("Interrupt handler for test espi interrupt called");
+}
+
+CACTUS_CMD_HANDLER(trigger_espi_cmd, CACTUS_TIGGER_ESPI_CMD)
+{
+	uintptr_t addr = GICD_BASE + (0x1600 + (4 * (904 >> 5)));
+
+	sp_register_interrupt_tail_end_handler(sec_interrupt_test_espi_handled,
+					       IRQ_ESPI_TEST_INTID);
+	mmio_write_32(addr, 0x100);
+	dsbish();
+	sp_sleep(10);
+
+	sp_unregister_interrupt_tail_end_handler(IRQ_ESPI_TEST_INTID);
+
+	return cactus_response(ffa_dir_msg_dest(*args),
+			       ffa_dir_msg_source(*args),
+			       test_espi_handled);
 }

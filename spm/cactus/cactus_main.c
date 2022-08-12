@@ -205,7 +205,10 @@ static void cactus_plat_configure_mmu(unsigned int vm_id)
 			get_sp_tx_start(vm_id),
 			(SP_RX_TX_SIZE / 2),
 			MT_RW_DATA);
-
+	mmap_add_region(GICD_BASE,
+			GICD_BASE,
+			0x10000,
+			MT_DEVICE | MT_RW);
 	mmap_add(cactus_mmap);
 	init_xlat_tables();
 }

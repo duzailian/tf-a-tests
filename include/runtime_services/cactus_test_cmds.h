@@ -573,4 +573,13 @@ static inline struct ffa_value cactus_get_last_interrupt_cmd(
 	return cactus_send_cmd(source, dest, CACTUS_LAST_INTERRUPT_SERVICED_CMD,
 				 0, 0, 0, 0);
 }
+
+#define CACTUS_TIGGER_ESPI_CMD U(0x65737069)
+static inline struct ffa_value cactus_trigger_espi_cmd(
+	ffa_id_t source, ffa_id_t dest)
+{
+	return cactus_send_cmd(source, dest, CACTUS_TIGGER_ESPI_CMD,
+				 0, 0, 0, 0);
+}
+
 #endif

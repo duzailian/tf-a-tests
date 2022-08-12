@@ -41,6 +41,8 @@
 #define SP805_TWDOG_BASE		0x2A490000
 #define IRQ_TWDOG_INTID			56
 
+#define IRQ_ESPI_TEST_INTID		5000
+
 /*******************************************************************************
  * Base address and size of external NVM flash
  ******************************************************************************/

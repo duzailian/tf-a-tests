@@ -128,5 +128,12 @@
 			attributes = <0x3>; /* read-write */
 			interrupts = <56 0x900>;
 		};
+
+		gicd {
+			base-address = <0x00000000 0x2f000000>;
+			pages-count = <16>;
+			attributes = <0x3>; /* read-write */
+			interrupts = <5000 0x900>;
+		};
 	};
 };

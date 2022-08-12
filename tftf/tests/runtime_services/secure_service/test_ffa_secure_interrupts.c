@@ -9,6 +9,8 @@
 #include <ffa_helpers.h>
 #include <test_helpers.h>
 #include <timer.h>
+#include <spm_common.h>
+#include <mmio.h>
 
 #define SENDER		HYP_ID
 #define RECEIVER	SP_ID(1)
@@ -452,5 +454,56 @@ test_result_t test_ffa_sec_interrupt_sp1_waiting_sp2_running(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t test_ffa_espi_sec_interrupt(void)
+{
+	struct ffa_value ret_values;
+
+	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
+
+	/* Enable ESPI 5000 */
+	ret_values = cactus_interrupt_cmd(SENDER, RECEIVER, IRQ_ESPI_TEST_INTID,
+					  true, INTERRUPT_TYPE_IRQ);
+
+	if (!is_ffa_direct_response(ret_values)) {
+		ERROR("Expected a direct response message while configuring"
+			" interrupt ESPI 5000\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	if (cactus_get_response(ret_values) != CACTUS_SUCCESS) {
+		ERROR("Failed to configure ESPI interrupt\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Trigger ESPI 5000 while running */
+	ret_values = cactus_trigger_espi_cmd(SENDER, RECEIVER);
+	if (!is_ffa_direct_response(ret_values)) {
+		ERROR("Expected a direct response message while triggering"
+			" interrupt ESPI 5000\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	if (cactus_get_response(ret_values) != 1) {
+		ERROR("interrupt 5000 not serviced by SP\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Disable ESPI 5000 */
+	ret_values = cactus_interrupt_cmd(SENDER, RECEIVER, IRQ_ESPI_TEST_INTID,
+					  false, INTERRUPT_TYPE_IRQ);
+
+	if (!is_ffa_direct_response(ret_values)) {
+		ERROR("Expected a direct response message while configuring"
+			" interrupt ESPI 5000\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	if (cactus_get_response(ret_values) != CACTUS_SUCCESS) {
+		ERROR("Failed to configure ESPI interrupt 5000\n");
+		return TEST_RESULT_FAIL;
+	}
 	return TEST_RESULT_SUCCESS;
 }
