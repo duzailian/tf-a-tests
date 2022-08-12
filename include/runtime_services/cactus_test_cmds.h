@@ -614,4 +614,12 @@ static inline struct ffa_value cactus_resume_after_managed_exit(
 	return cactus_send_cmd(source, dest, CACTUS_RESUME_AFTER_MANAGED_EXIT,
 				 0, 0, 0, 0);
 }
+
+#define CACTUS_TIGGER_ESPI_CMD U(0x65737069)
+static inline struct ffa_value cactus_trigger_espi_cmd(
+	ffa_id_t source, ffa_id_t dest)
+{
+	return cactus_send_cmd(source, dest, CACTUS_TIGGER_ESPI_CMD,
+				 0, 0, 0, 0);
+}
 #endif

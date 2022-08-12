@@ -118,7 +118,8 @@
 			base-address = <0x00000000 0x2a490000>;
 			pages-count = <32>; /* Two 64KB pages */
 			attributes = <0x3>; /* read-write */
-			interrupts = <56 0x900>;
+			interrupts = <56 0x900>,
+					<5000 0x900>;
 		};
 	};
 };
