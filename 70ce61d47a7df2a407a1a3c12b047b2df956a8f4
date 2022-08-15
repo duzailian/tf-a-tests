@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad3343f1_b1ef191c",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndrrs_trap.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-15T19:32:09Z",
+      "side": 1,
+      "message": "remove additional whitespace",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 3
+      },
+      "revId": "70ce61d47a7df2a407a1a3c12b047b2df956a8f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7e117e9_73fa35bd",
+        "filename": "tftf/tests/tests-rndr_trap.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-15T19:32:09Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 11,
+        "startChar": 80,
+        "endLine": 11,
+        "endChar": 90
+      },
+      "revId": "70ce61d47a7df2a407a1a3c12b047b2df956a8f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ebeb67cb_93aa7d3e",
+        "filename": "tftf/tests/tests-rndr_trap.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-15T19:32:09Z",
+      "side": 1,
+      "message": "RNDR",
+      "range": {
+        "startLine": 11,
+        "startChar": 23,
+        "endLine": 11,
+        "endChar": 27
+      },
+      "revId": "70ce61d47a7df2a407a1a3c12b047b2df956a8f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db120258_74540e09",
+        "filename": "tftf/tests/tests-rndrrs_trap.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-15T19:32:09Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 11,
+        "startChar": 75,
+        "endLine": 11,
+        "endChar": 83
+      },
+      "revId": "70ce61d47a7df2a407a1a3c12b047b2df956a8f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e075ebf9_a6a3de9c",
+        "filename": "tftf/tests/tests-rndrrs_trap.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-15T19:32:09Z",
+      "side": 1,
+      "message": "give appropriate name. this conflicts with other testsuite name",
+      "range": {
+        "startLine": 11,
+        "startChar": 19,
+        "endLine": 11,
+        "endChar": 32
+      },
+      "revId": "70ce61d47a7df2a407a1a3c12b047b2df956a8f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
