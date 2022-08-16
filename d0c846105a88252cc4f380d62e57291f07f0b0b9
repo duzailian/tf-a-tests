@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a6fef4a_49dd48f4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-08-16T14:56:54Z",
+      "side": 1,
+      "message": "tests",
+      "range": {
+        "startLine": 7,
+        "startChar": 20,
+        "endLine": 7,
+        "endChar": 24
+      },
+      "revId": "d0c846105a88252cc4f380d62e57291f07f0b0b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26c0487e_ee9a9ed2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-08-16T14:56:54Z",
+      "side": 1,
+      "message": "Added 2 tests that expects a trap to be triggered when a read is performed on\n1. RNDR register \n2. RNDRRS register",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 41
+      },
+      "revId": "d0c846105a88252cc4f380d62e57291f07f0b0b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20120d0b_b59e15f1",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-08-16T14:56:54Z",
+      "side": 1,
+      "message": "test just ensures that RNDR read access",
+      "range": {
+        "startLine": 13,
+        "startChar": 8,
+        "endLine": 13,
+        "endChar": 54
+      },
+      "revId": "d0c846105a88252cc4f380d62e57291f07f0b0b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8849e6d_7a699630",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndrrs_trap.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-08-16T14:56:54Z",
+      "side": 1,
+      "message": "test just ensures that RNDRRS read access",
+      "range": {
+        "startLine": 14,
+        "startChar": 8,
+        "endLine": 14,
+        "endChar": 56
+      },
+      "revId": "d0c846105a88252cc4f380d62e57291f07f0b0b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07dac3fe_fc06f61c",
+        "filename": "tftf/tests/tests-rndr_trap.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-08-16T14:56:54Z",
+      "side": 1,
+      "message": "a",
+      "range": {
+        "startLine": 12,
+        "startChar": 40,
+        "endLine": 12,
+        "endChar": 42
+      },
+      "revId": "d0c846105a88252cc4f380d62e57291f07f0b0b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83e306df_1c9b9b55",
+        "filename": "tftf/tests/tests-rndrrs_trap.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-08-16T14:56:54Z",
+      "side": 1,
+      "message": "a",
+      "range": {
+        "startLine": 12,
+        "startChar": 39,
+        "endLine": 12,
+        "endChar": 41
+      },
+      "revId": "d0c846105a88252cc4f380d62e57291f07f0b0b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
