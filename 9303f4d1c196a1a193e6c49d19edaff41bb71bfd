@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4540578_ce34756c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-18T13:29:36Z",
+      "side": 1,
+      "message": "Hi Juan\nIt seems you have resolved most comments, but didnt mark them as resolved. Please do the needful and I can then merge the patch.",
+      "revId": "9303f4d1c196a1a193e6c49d19edaff41bb71bfd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
