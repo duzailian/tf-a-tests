@@ -1,0 +1,12 @@
+Allow-CI+2: Bipin Ravi <bipin.ravi@arm.com>
+Allow-CI+2: Juan Pablo Conde <juanpablo.conde@arm.com>
+Maintainer-Review+1: Bipin Ravi <bipin.ravi@arm.com>
+Legacy-CI+2: Juan Pablo Conde <juanpablo.conde@arm.com>
+Verified+1: TrustedFirmware Code Review
+Code-Review+1: TrustedFirmware Code Review
+Code-Owner-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Thu, 18 Aug 2022 19:29:35 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/16167
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
