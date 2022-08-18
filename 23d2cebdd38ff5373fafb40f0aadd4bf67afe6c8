@@ -106,6 +106,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b3b50bf_b7611816",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-18T16:45:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f8d049d1_3c4fb73c",
+      "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a72045cd_b87e1258",
@@ -141,6 +159,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b25b8b4_2f68dd17",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-18T16:45:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "478c0d9c_d9b96b63",
+      "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a9cd7f8d_2ff2f4c2",
@@ -154,6 +190,24 @@
       "writtenOn": "2022-08-09T10:04:53Z",
       "side": 1,
       "message": "nit : Can we add this under tests-cpu-extensions.mk, and similarly the xml file under tests-cpu-extensions.xml.\nWe already have this common space for all the architecture extensions.\nSo thought this would be ideal rather than additional new files.",
+      "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91abd8f1_e84acf63",
+        "filename": "tftf/tests/tests-rng_trap.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-08-18T16:45:00Z",
+      "side": 1,
+      "message": "We discussed this with Madhu and Bipin. As these tests cause a system panic, it is best to run them separately in their own environment so we ensure that not only these but the other extension tests run properly. \nPlease let me know if you want to discuss this further. Otherwise I can mark it as resolved.",
+      "parentUuid": "a9cd7f8d_2ff2f4c2",
       "revId": "23d2cebdd38ff5373fafb40f0aadd4bf67afe6c8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
