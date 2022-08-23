@@ -12,8 +12,13 @@
 
 #define SENDER HYP_ID
 #define RECEIVER SP_ID(1)
+#define SVE_TEST_ITERATIONS 100
+#define SVE_ARRAYSIZE 1024
 
 static const struct ffa_uuid expected_sp_uuids[] = { {PRIMARY_UUID} };
+
+extern void sve_subtract_arrays(int *difference, const int *sve_op_1,
+				const int *sve_op_2);
 
 static test_result_t fp_vector_compare(uint8_t *a, uint8_t *b,
 	size_t vector_size, uint8_t vectors_num)
@@ -27,6 +32,8 @@ static test_result_t fp_vector_compare(uint8_t *a, uint8_t *b,
 #ifdef __aarch64__
 static sve_vector_t sve_vectors_input[SVE_NUM_VECTORS] __aligned(16);
 static sve_vector_t sve_vectors_output[SVE_NUM_VECTORS] __aligned(16);
+static int sve_op_1[SVE_ARRAYSIZE];
+static int sve_op_2[SVE_ARRAYSIZE];
 #endif
 
 /*
@@ -133,6 +140,64 @@ test_result_t test_sve_vectors_preserved(void)
 	return fp_vector_compare((uint8_t *)sve_vectors_input,
 				 (uint8_t *)sve_vectors_output,
 				 vl, SVE_NUM_VECTORS);
+#else
+	return TEST_RESULT_SKIPPED;
+#endif /* __aarch64__ */
+}
+
+/*
+ * Tests that SVE vector operations in normal world are not affected by context
+ * switches between normal world and the secure world.
+ */
+test_result_t test_sve_vectors_operations(void)
+{
+#ifdef __aarch64__
+	unsigned int val;
+
+	SKIP_TEST_IF_SVE_NOT_SUPPORTED();
+
+	/**********************************************************************
+	 * Verify that FFA is there and that it has the correct version.
+	 **********************************************************************/
+	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
+
+	val = 2 * SVE_TEST_ITERATIONS;
+
+	for (unsigned int i = 0; i < SVE_ARRAYSIZE; i++) {
+		sve_op_1[i] = val;
+		sve_op_2[i] = 1;
+	}
+
+	/* Set ZCR_EL2.LEN to implemented VL (constrained by EL3). */
+	write_zcr_el2(0xf);
+	isb();
+
+	for (unsigned int i = 0; i < SVE_TEST_ITERATIONS; i++) {
+		struct ffa_value ret;
+
+		/* Perform SVE operations. */
+		sve_subtract_arrays(sve_op_1, sve_op_1, sve_op_2);
+
+		/* Make call to secure world. */
+		ret = cactus_req_simd_fill_send_cmd(SENDER, RECEIVER);
+
+		if (!is_ffa_direct_response(ret)) {
+			return TEST_RESULT_FAIL;
+		}
+
+		if (cactus_get_response(ret) == CACTUS_ERROR) {
+			return TEST_RESULT_FAIL;
+		}
+	}
+
+	/* Check result of SVE operations. */
+	for (unsigned int i = 0; i < SVE_ARRAYSIZE; i++) {
+		if (sve_op_1[i] != (val - SVE_TEST_ITERATIONS)) {
+			return TEST_RESULT_FAIL;
+		}
+	}
+
+	return TEST_RESULT_SUCCESS;
 #else
 	return TEST_RESULT_SKIPPED;
 #endif /* __aarch64__ */
