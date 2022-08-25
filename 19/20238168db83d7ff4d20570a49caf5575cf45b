@@ -1,0 +1,12 @@
+Allow-CI+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Review+1: Chris Kay <chris.kay@arm.com>
+Code-Review+1: TrustedFirmware Code Review
+Code-Review+1: jayanthchidanand-arm <jayanthdodderi.chidanand@arm.com>
+Code-Owner-Review+1: Joanna Farley <joanna.farley@arm.com>
+Maintainer-Review+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Verified+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Thu, 25 Aug 2022 12:04:45 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/16400
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
