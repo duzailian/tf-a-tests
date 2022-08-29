@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9092d3f4_21115afb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-08-29T13:58:58Z",
+      "side": 1,
+      "message": "I am assuming this test depends on the feature ENABLE_SVE_FOR_SWD to be enabled for TF-A build. Which test config did you use to run this test? It looks like this feature is not enabled for spm builds https://git.trustedfirmware.org/ci/tf-a-ci-scripts.git/tree/tf_config/fvp-spm",
+      "revId": "fd1bd4500914363971046ec26aa753a220e16de6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
