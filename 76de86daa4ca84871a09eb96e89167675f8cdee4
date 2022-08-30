@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "016eabf8_2b52e753",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-30T13:52:48Z",
+      "side": 1,
+      "message": "Generally looks good. Small queries.",
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61cb01cb_32e30ca1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-30T13:52:48Z",
+      "side": 1,
+      "message": "is this correct?\nIs it meant to be FF-A version 1.0?",
+      "range": {
+        "startLine": 160,
+        "startChar": 29,
+        "endLine": 160,
+        "endChar": 30
+      },
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "369defa4_b4d28260",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-08-30T13:52:48Z",
+      "side": 1,
+      "message": "is this arbitrary?\n\nnitpicking: declare at the top of scope in which it is used.",
+      "range": {
+        "startLine": 162,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 5
+      },
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
