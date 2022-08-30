@@ -108,6 +108,23 @@
       },
       "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91c449de_a9a950c8",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-08-30T16:24:25Z",
+      "side": 1,
+      "message": "I think we\u0027d want to force the vector length per lines 105-110 to make sure ZCR_EL2.VL isn\u0027t any random, stale or undefined value prior to starting the test.\ne.g. should SVE_ARRAYSIZE be tuned appropriately based on the programmed VL ?",
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
