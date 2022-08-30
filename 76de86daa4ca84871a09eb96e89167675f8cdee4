@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a7eb2b93_bda3f676",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-08-30T16:20:09Z",
+      "side": 1,
+      "message": "uint32_t as you don\u0027t expect negative numbers?",
+      "range": {
+        "startLine": 35,
+        "startChar": 7,
+        "endLine": 35,
+        "endChar": 10
+      },
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "61cb01cb_32e30ca1",
         "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
         "patchSetId": 2
@@ -59,6 +82,29 @@
         "startChar": 0,
         "endLine": 162,
         "endChar": 5
+      },
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d1d0936_a9ad50a1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-08-30T16:20:09Z",
+      "side": 1,
+      "message": "use unsigned int or uint32_t in for loops here and below",
+      "range": {
+        "startLine": 164,
+        "startChar": 6,
+        "endLine": 164,
+        "endChar": 9
       },
       "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
