@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ea505d73_c3b39872",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-08-30T22:08:19Z",
+      "side": 1,
+      "message": "as written, sve_subtract_arrays (which is being reused from another test) takes an array of int as its argument which is why this is declared as int",
+      "parentUuid": "a7eb2b93_bda3f676",
+      "range": {
+        "startLine": 35,
+        "startChar": 7,
+        "endLine": 35,
+        "endChar": 10
+      },
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "61cb01cb_32e30ca1",
         "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
         "patchSetId": 2
@@ -54,6 +78,30 @@
       "writtenOn": "2022-08-30T13:52:48Z",
       "side": 1,
       "message": "is this correct?\nIs it meant to be FF-A version 1.0?",
+      "range": {
+        "startLine": 160,
+        "startChar": 29,
+        "endLine": 160,
+        "endChar": 30
+      },
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8944fae7_4d98c0d2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-08-30T22:08:19Z",
+      "side": 1,
+      "message": "I copied this line from the tests above since they were similar. I don\u0027t see any mention of SVE in the FFA spec so I don\u0027t know if a specific version is necessary.",
+      "parentUuid": "61cb01cb_32e30ca1",
       "range": {
         "startLine": 160,
         "startChar": 29,
@@ -89,6 +137,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cb9c9a40_806c9bde",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-08-30T22:08:19Z",
+      "side": 1,
+      "message": "value is arbitrary, I just wanted to initialize it to something bigger than the number of test iterations. Something like SVE_TEST_ITERATIONS + 1 would have also worked\n\nAck on moving the declaration to the top of the scope",
+      "parentUuid": "369defa4_b4d28260",
+      "range": {
+        "startLine": 162,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 5
+      },
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8d1d0936_a9ad50a1",
         "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
         "patchSetId": 2
@@ -100,6 +172,30 @@
       "writtenOn": "2022-08-30T16:20:09Z",
       "side": 1,
       "message": "use unsigned int or uint32_t in for loops here and below",
+      "range": {
+        "startLine": 164,
+        "startChar": 6,
+        "endLine": 164,
+        "endChar": 9
+      },
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6dfd263e_c9f19689",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-08-30T22:08:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8d1d0936_a9ad50a1",
       "range": {
         "startLine": 164,
         "startChar": 6,
@@ -123,6 +219,24 @@
       "writtenOn": "2022-08-30T16:24:25Z",
       "side": 1,
       "message": "I think we\u0027d want to force the vector length per lines 105-110 to make sure ZCR_EL2.VL isn\u0027t any random, stale or undefined value prior to starting the test.\ne.g. should SVE_ARRAYSIZE be tuned appropriately based on the programmed VL ?",
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc0f6072_1fde87d5",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-08-30T22:08:19Z",
+      "side": 1,
+      "message": "I do think it is a good idea to set ZCR_EL2.VL\n\nAs for SVE_ARRAYSIZE, being adjusted according to the programmed VL I am not sure. All the materials I looked at with SVE programming examples advocated for a vector length agnostic approach - the actual SVE code will adjust the predicate to do the correct number of loops through the vector depending on the vector length and element size. \n\nAlternatively, SVE_ARRAYSIZE could be defined as a multiple of VL. Not sure if one approach is more of a real-world use case than the other but I think both are valid.\n\nFor reference, here\u0027s how it is used in tf-a-tests/tftf/tests/extensions/sve/sve_operations.S:\nfunc sve_subtract_arrays                                                         \n 23         mov     x4, SVE_ARRAYSIZE                                                \n 24         mov     x5, x4                                                           \n 25         mov     x3, 0                                                            \n 26         whilelo p0.s, xzr, x4",
+      "parentUuid": "91c449de_a9a950c8",
       "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
