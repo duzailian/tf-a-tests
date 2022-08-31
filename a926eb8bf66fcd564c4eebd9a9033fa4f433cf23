@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3d3911c_54c96ff5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-08-31T16:41:00Z",
+      "side": 1,
+      "message": "LGTM. One minor comment.",
+      "revId": "a926eb8bf66fcd564c4eebd9a9033fa4f433cf23",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "26775937_d4d95396",
@@ -20,6 +37,23 @@
         "endLine": 57,
         "endChar": 20
       },
+      "revId": "a926eb8bf66fcd564c4eebd9a9033fa4f433cf23",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96f561ea_f3423efb",
+        "filename": "tftf/tests/extensions/pauth/test_pauth.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-08-31T16:41:00Z",
+      "side": 1,
+      "message": "nit: 2019-2022",
       "revId": "a926eb8bf66fcd564c4eebd9a9033fa4f433cf23",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
