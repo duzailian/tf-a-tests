@@ -65,6 +65,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee7759ac_16ddb72b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-01T09:30:50Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ea505d73_c3b39872",
+      "range": {
+        "startLine": 35,
+        "startChar": 7,
+        "endLine": 35,
+        "endChar": 10
+      },
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "61cb01cb_32e30ca1",
@@ -102,6 +126,30 @@
       "side": 1,
       "message": "I copied this line from the tests above since they were similar. I don\u0027t see any mention of SVE in the FFA spec so I don\u0027t know if a specific version is necessary.",
       "parentUuid": "61cb01cb_32e30ca1",
+      "range": {
+        "startLine": 160,
+        "startChar": 29,
+        "endLine": 160,
+        "endChar": 30
+      },
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cad433b3_35b46175",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-01T09:30:50Z",
+      "side": 1,
+      "message": "I believe Joao is right, this 1.0 version request is there by legacy from the time those test cases were developed. It makes sense to bump all to \u0027v1.1\u0027.",
+      "parentUuid": "8944fae7_4d98c0d2",
       "range": {
         "startLine": 160,
         "startChar": 29,
@@ -237,6 +285,24 @@
       "side": 1,
       "message": "I do think it is a good idea to set ZCR_EL2.VL\n\nAs for SVE_ARRAYSIZE, being adjusted according to the programmed VL I am not sure. All the materials I looked at with SVE programming examples advocated for a vector length agnostic approach - the actual SVE code will adjust the predicate to do the correct number of loops through the vector depending on the vector length and element size. \n\nAlternatively, SVE_ARRAYSIZE could be defined as a multiple of VL. Not sure if one approach is more of a real-world use case than the other but I think both are valid.\n\nFor reference, here\u0027s how it is used in tf-a-tests/tftf/tests/extensions/sve/sve_operations.S:\nfunc sve_subtract_arrays                                                         \n 23         mov     x4, SVE_ARRAYSIZE                                                \n 24         mov     x5, x4                                                           \n 25         mov     x3, 0                                                            \n 26         whilelo p0.s, xzr, x4",
       "parentUuid": "91c449de_a9a950c8",
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99666d8a_4402cd5e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-01T09:30:50Z",
+      "side": 1,
+      "message": "\u003e I do think it is a good idea to set ZCR_EL2.VL\nI think the bare minimum is to set it to something because Arm SVE supplement says ZCR_ELx.LEN field \u0027resets to an architecturally UNKNOWN value.\u0027 Eventually this may be a miss in the legacy test_sve_support test case. This is normally handled by supervisory sw but in context of TFTF I noticed it\u0027s omitted from any cpu startup code.\n\n\u003e As for SVE_ARRAYSIZE, being adjusted according to the programmed VL I am not sure. All the materials I looked at with SVE programming examples advocated for a vector length agnostic approach\nAgree! In my mind the code lines 105-110 is more to illustrate what an EL2 supervisory sw should do when it has to schedule VMs at EL1. In context of TFTF, the end application code directly runs at EL2 so that may be over-engineered. Just setting LEN to 0xf should be enough.",
+      "parentUuid": "bc0f6072_1fde87d5",
       "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
