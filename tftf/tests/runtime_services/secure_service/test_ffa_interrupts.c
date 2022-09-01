@@ -57,9 +57,6 @@ static int check_timer_interrupt(void)
  * @Test_Aim@ Test non-secure interrupts while a Secure Partition capable
  * of managed exit is executing.
  *
- * 1. Enable managed exit interrupt by sending interrupt_enable command to
- *    Cactus.
- *
  * 2. Register a handler for the non-secure timer interrupt. Program it to fire
  *    in a certain time.
  *
@@ -90,11 +87,6 @@ test_result_t test_ffa_ns_interrupt_managed_exit(void)
 	struct ffa_value ret_values;
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
-
-	/* Enable managed exit interrupt as FIQ in the secure side. */
-	if (!spm_set_managed_exit_int(RECEIVER, true)) {
-		return TEST_RESULT_FAIL;
-	}
 
 	ret = program_timer(TIMER_DURATION);
 	if (ret < 0) {
@@ -141,11 +133,6 @@ test_result_t test_ffa_ns_interrupt_managed_exit(void)
 	/* Make sure elapsed time not less than sleep time. */
 	if (cactus_get_response(ret_values) < SLEEP_TIME) {
 		ERROR("Lapsed time less than requested sleep time\n");
-		return TEST_RESULT_FAIL;
-	}
-
-	/* Disable Managed exit interrupt. */
-	if (!spm_set_managed_exit_int(RECEIVER, false)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -251,9 +238,6 @@ test_result_t test_ffa_ns_interrupt_signaled(void)
  * while the second SP is processing a direct request message sent by the first
  * SP. We choose SP(1) as the first SP and SP(3) as the second SP.
  *
- * 1. Enable managed exit interrupt by sending interrupt_enable command to both
- *    the Cactus SPs.
- *
  * 2. Register a handler for the non-secure timer interrupt. Program it to fire
  *    in a certain time.
  *
@@ -296,9 +280,6 @@ test_result_t test_ffa_ns_interrupt_signaled(void)
  *
  * 15. TFTF ensures the direct message response did not return with an error.
  *
- * 16. TFTF further disables the managed exit virtual interrupt for both the
- *     Cactus SPs.
- *
  */
 test_result_t test_ffa_ns_interrupt_managed_exit_chained(void)
 {
@@ -306,12 +287,6 @@ test_result_t test_ffa_ns_interrupt_managed_exit_chained(void)
 	struct ffa_value ret_values;
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
-
-	/* Enable managed exit interrupt in the secure side. */
-	if (!spm_set_managed_exit_int(RECEIVER, true) ||
-		!spm_set_managed_exit_int(RECEIVER_3, true)) {
-		return TEST_RESULT_FAIL;
-	}
 
 	ret = program_timer(TIMER_DURATION);
 	if (ret < 0) {
@@ -359,12 +334,6 @@ test_result_t test_ffa_ns_interrupt_managed_exit_chained(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	/* Disable Managed exit interrupt. */
-	if (!spm_set_managed_exit_int(RECEIVER, false) ||
-		!spm_set_managed_exit_int(RECEIVER_3, false)) {
-		return TEST_RESULT_FAIL;
-	}
-
 	return TEST_RESULT_SUCCESS;
 }
 
@@ -374,9 +343,6 @@ test_result_t test_ffa_ns_interrupt_managed_exit_chained(void)
  * non-secure interrupt triggers while the second SP is processing a direct request
  * message sent by the first SP. We choose SP(1) as the first SP and SP(2) as
  * the second SP.
- *
- * 1. Enable managed exit interrupt by sending interrupt_enable command to
- *    the first Cactus SP in the call chain.
  *
  * 2. Register a handler for the non-secure timer interrupt. Program it to fire
  *    in a certain time.
@@ -416,9 +382,6 @@ test_result_t test_ffa_ns_interrupt_managed_exit_chained(void)
  *
  * 14. TFTF ensures the direct message response did not return with an error.
  *
- * 15. TFTF further disables the managed exit virtual interrupt for the first
- *     Cactus SP.
- *
  */
 test_result_t test_ffa_SPx_ME_SPy_signaled(void)
 {
@@ -426,11 +389,6 @@ test_result_t test_ffa_SPx_ME_SPy_signaled(void)
 	struct ffa_value ret_values;
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
-
-	/* Enable managed exit interrupt as FIQ in the secure side. */
-	if (!spm_set_managed_exit_int(RECEIVER, true)) {
-		return TEST_RESULT_FAIL;
-	}
 
 	ret = program_timer(TIMER_DURATION);
 	if (ret < 0) {
@@ -478,11 +436,6 @@ test_result_t test_ffa_SPx_ME_SPy_signaled(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	/* Disable Managed exit interrupt. */
-	if (!spm_set_managed_exit_int(RECEIVER, false)) {
-		return TEST_RESULT_FAIL;
-	}
-
 	return TEST_RESULT_SUCCESS;
 }
 
@@ -491,9 +444,6 @@ test_result_t test_ffa_SPx_ME_SPy_signaled(void)
  * supported by the second SP but not by the first SP in a call chain. A non-secure
  * interrupt triggers while the second SP is processing a direct request message
  * sent by the first SP. We choose SP(2) as the first SP and SP(1) as the second SP.
- *
- * 1. Enable managed exit interrupt by sending interrupt_enable command to
- *    the second Cactus SP in the call chain.
  *
  * 2. Register a handler for the non-secure timer interrupt. Program it to fire
  *    in a certain time.
@@ -535,9 +485,6 @@ test_result_t test_ffa_SPx_ME_SPy_signaled(void)
  *
  * 14. TFTF ensures the direct message response did not return with an error.
  *
- * 15. TFTF further disables the managed exit virtual interrupt for the second
- *     Cactus SP.
- *
  */
 test_result_t test_ffa_SPx_signaled_SPy_ME(void)
 {
@@ -546,11 +493,6 @@ test_result_t test_ffa_SPx_signaled_SPy_ME(void)
 	unsigned int core_pos = get_current_core_id();
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
-
-	/* Enable managed exit interrupt as FIQ in the secure side. */
-	if (!spm_set_managed_exit_int(RECEIVER, true)) {
-		return TEST_RESULT_FAIL;
-	}
 
 	ret = program_timer(TIMER_DURATION);
 	if (ret < 0) {
@@ -605,11 +547,6 @@ test_result_t test_ffa_SPx_signaled_SPy_ME(void)
 	}
 
 	if (cactus_get_response(ret_values) == CACTUS_ERROR) {
-		return TEST_RESULT_FAIL;
-	}
-
-	/* Disable Managed exit interrupt. */
-	if (!spm_set_managed_exit_int(RECEIVER, false)) {
 		return TEST_RESULT_FAIL;
 	}
 
