@@ -91,11 +91,6 @@ test_result_t test_ffa_ns_interrupt_managed_exit(void)
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 
-	/* Enable managed exit interrupt as FIQ in the secure side. */
-	if (!spm_set_managed_exit_int(RECEIVER, true)) {
-		return TEST_RESULT_FAIL;
-	}
-
 	ret = program_timer(100);
 	if (ret < 0) {
 		ERROR("Failed to program timer (%d)\n", ret);
@@ -141,11 +136,6 @@ test_result_t test_ffa_ns_interrupt_managed_exit(void)
 	/* Make sure elapsed time not less than sleep time. */
 	if (cactus_get_response(ret_values) < SLEEP_TIME) {
 		ERROR("Lapsed time less than requested sleep time\n");
-		return TEST_RESULT_FAIL;
-	}
-
-	/* Disable Managed exit interrupt. */
-	if (!spm_set_managed_exit_int(RECEIVER, false)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -307,12 +297,6 @@ test_result_t test_ffa_ns_interrupt_managed_exit_chained(void)
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 
-	/* Enable managed exit interrupt in the secure side. */
-	if (!spm_set_managed_exit_int(RECEIVER, true) ||
-		!spm_set_managed_exit_int(RECEIVER_3, true)) {
-		return TEST_RESULT_FAIL;
-	}
-
 	ret = program_timer(100);
 	if (ret < 0) {
 		ERROR("Failed to program timer (%d)\n", ret);
@@ -356,12 +340,6 @@ test_result_t test_ffa_ns_interrupt_managed_exit_chained(void)
 	}
 
 	if (cactus_get_response(ret_values) == CACTUS_ERROR) {
-		return TEST_RESULT_FAIL;
-	}
-
-	/* Disable Managed exit interrupt. */
-	if (!spm_set_managed_exit_int(RECEIVER, false) ||
-		!spm_set_managed_exit_int(RECEIVER_3, false)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -427,11 +405,6 @@ test_result_t test_ffa_SPx_ME_SPy_signaled(void)
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 
-	/* Enable managed exit interrupt as FIQ in the secure side. */
-	if (!spm_set_managed_exit_int(RECEIVER, true)) {
-		return TEST_RESULT_FAIL;
-	}
-
 	ret = program_timer(100);
 	if (ret < 0) {
 		ERROR("Failed to program timer (%d)\n", ret);
@@ -475,11 +448,6 @@ test_result_t test_ffa_SPx_ME_SPy_signaled(void)
 	}
 
 	if (cactus_get_response(ret_values) == CACTUS_ERROR) {
-		return TEST_RESULT_FAIL;
-	}
-
-	/* Disable Managed exit interrupt. */
-	if (!spm_set_managed_exit_int(RECEIVER, false)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -547,11 +515,6 @@ test_result_t test_ffa_SPx_signaled_SPy_ME(void)
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 
-	/* Enable managed exit interrupt as FIQ in the secure side. */
-	if (!spm_set_managed_exit_int(RECEIVER, true)) {
-		return TEST_RESULT_FAIL;
-	}
-
 	ret = program_timer(100);
 	if (ret < 0) {
 		ERROR("Failed to program timer (%d)\n", ret);
@@ -605,11 +568,6 @@ test_result_t test_ffa_SPx_signaled_SPy_ME(void)
 	}
 
 	if (cactus_get_response(ret_values) == CACTUS_ERROR) {
-		return TEST_RESULT_FAIL;
-	}
-
-	/* Disable Managed exit interrupt. */
-	if (!spm_set_managed_exit_int(RECEIVER, false)) {
 		return TEST_RESULT_FAIL;
 	}
 
