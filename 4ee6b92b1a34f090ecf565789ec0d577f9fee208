@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e758747a_1deda80b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-09-07T15:49:30Z",
+      "side": 1,
+      "message": "Ahh I see.\nWould it be worth refactoring the handling of the ME?\nInstead of sending the response within the IRQ handler, pend somehow that the ME has arrived, finish the handling of the on-going test command handler, and at the very end either send ME response or the actual the cactus command response.\n\nI get this might not be critical given this serves the purpose of testing ME, making this change shows the expected \"correct\" use of ME. Our test code might be used by partners of how to use certain bits of functionality. For that matter I think might be worth changing things slightly.",
+      "parentUuid": "1d62fb28_122272e5",
+      "range": {
+        "startLine": 127,
+        "startChar": 1,
+        "endLine": 128,
+        "endChar": 27
+      },
+      "revId": "4ee6b92b1a34f090ecf565789ec0d577f9fee208",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "71a5dd65_843109eb",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
         "patchSetId": 4
