@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08fdfb8d_e68a8fa0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-09-07T16:45:52Z",
+      "side": 1,
+      "message": "General question about the rationale of this patch...\n\nIs it possible that an SP might be doing some atomic operation that it doesn\u0027t what to be interrupted?\n\nThat said... perhaps it may make sense to not needing to enable ME if it was specified as an action in the partition\u0027s manifest. I wonder though, if that makes sense for the NPI... NPI is due to communication protocol. I think it makes sense to give the flexibility to the SPs to enable/disable as they need for atomic operations.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 1
+      },
+      "revId": "52bc318c14eb1e84294a2a207cc29c8e43fb864c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
