@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e3ea5e7_8e5a85a0",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-09-07T16:24:51Z",
+      "side": 1,
+      "message": "This is validating that the expected action was taken by the First VM. However, there isn\u0027t any check that the Second VM behave as expected? or is there?",
+      "range": {
+        "startLine": 438,
+        "startChar": 1,
+        "endLine": 445,
+        "endChar": 2
+      },
+      "revId": "65036ca7d57b29954a46d418cc08997389eecf1f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
