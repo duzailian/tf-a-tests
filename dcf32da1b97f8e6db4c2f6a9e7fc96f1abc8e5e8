@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71c3ee93_a3188571",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-09-07T12:25:19Z",
+      "side": 1,
+      "message": "Is there a wrapper function for this?\nIf it helps copy the helper used in the hafnium CI:\nhttps://review.trustedfirmware.org/plugins/gitiles/hafnium/hafnium/+/refs/heads/master/inc/vmapi/hf/ffa.h#423",
+      "range": {
+        "startLine": 41,
+        "startChar": 39,
+        "endLine": 41,
+        "endChar": 51
+      },
+      "revId": "dcf32da1b97f8e6db4c2f6a9e7fc96f1abc8e5e8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
