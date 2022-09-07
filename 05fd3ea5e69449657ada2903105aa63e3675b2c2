@@ -93,6 +93,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "e47c796d_ba848c09",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-09-07T16:31:53Z",
+      "side": 1,
+      "message": "The actual check you wrote in the cactus command handler is if the elapsed time is different, not greater:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/15676/5/spm/cactus/cactus_tests/cactus_test_interrupts.c#92\n\nWhich perhaps adds to the above point?",
+      "parentUuid": "dbde96af_43e93098",
+      "range": {
+        "startLine": 280,
+        "startChar": 3,
+        "endLine": 281,
+        "endChar": 61
+      },
+      "revId": "05fd3ea5e69449657ada2903105aa63e3675b2c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "1a2604c2_f35d387b",
