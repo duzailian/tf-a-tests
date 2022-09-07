@@ -45,6 +45,30 @@
       },
       "revId": "ee932f36047d215c08b0934d08532a23cc188988",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e6e24c6_d8475279",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-09-07T15:40:23Z",
+      "side": 1,
+      "message": "Duplicate from another comment in another patch:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/15677/comment/b78eab0f_50259450/",
+      "parentUuid": "e0d503ed_08a6ddba",
+      "range": {
+        "startLine": 81,
+        "startChar": 3,
+        "endLine": 82,
+        "endChar": 26
+      },
+      "revId": "ee932f36047d215c08b0934d08532a23cc188988",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
