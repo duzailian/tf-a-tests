@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5e382a6c_62a24d48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-09-07T16:50:26Z",
+      "side": 1,
+      "message": "I saw Ivy\u0027s action is to queue NS interrupts. is it possible to use Ivy in this test?\n\nI get this might ne adding a requirement to the setup that VHE needs to enabled... that said... I think this is probably something we do in other tests... so better to add this to the CI than not?\nI mean, if possible... what do you think?",
+      "parentUuid": "de1949da_6409bc47",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 36
+      },
+      "revId": "db680c509fcd454bf0086979427c87bd53eda7bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ed1c0690_90d75a49",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
         "patchSetId": 6
