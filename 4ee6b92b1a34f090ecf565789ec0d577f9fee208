@@ -145,6 +145,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "62a76b8a_c10ba54e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-08T19:35:57Z",
+      "side": 1,
+      "message": "Hi Joao,\nMy understanding of the managed exit is that it gives an opportunity to the SP to manage its internal state and relinquish control to NWd asap. Hence, by design, it should not finish handling of the on-going work(command handler in the test). So I am not sure if we can refactor handling of the managed exit mechanism.\n\nLet me know your thoughts on this.",
+      "parentUuid": "a2e1ecc0_1120bd3b",
+      "range": {
+        "startLine": 127,
+        "startChar": 1,
+        "endLine": 128,
+        "endChar": 27
+      },
+      "revId": "4ee6b92b1a34f090ecf565789ec0d577f9fee208",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "71a5dd65_843109eb",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
         "patchSetId": 4
