@@ -22,6 +22,30 @@
       },
       "revId": "b364f97a2b90f9e9cdb34dd25b60074b3a514849",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76c3292a_fed06a20",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-08T19:22:58Z",
+      "side": 1,
+      "message": "I believe it for any illegal state transition.",
+      "parentUuid": "ea532824_befb1c4c",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 66
+      },
+      "revId": "b364f97a2b90f9e9cdb34dd25b60074b3a514849",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
