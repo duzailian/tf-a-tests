@@ -22,6 +22,30 @@
       },
       "revId": "65036ca7d57b29954a46d418cc08997389eecf1f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d428377_b5c8955d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-08T17:29:26Z",
+      "side": 1,
+      "message": "You are right. there is no explicit check in this test that the second SP got preempted by a non secure interrupt. However, the functionality around an SP getting preempted by a NS interrupt(i.e. action is signaled) is independently tested in another test case test_ffa_ns_interrupt_signaled() in line 182.\n\nI felt it was sufficient for testing purposes. However, if you insist, I can enhance the cactus_fwd_sleep_cmd() to take an additional argument that hints that the final SP is expected to be preempted. Let me know your opinion.",
+      "parentUuid": "1e3ea5e7_8e5a85a0",
+      "range": {
+        "startLine": 438,
+        "startChar": 1,
+        "endLine": 445,
+        "endChar": 2
+      },
+      "revId": "65036ca7d57b29954a46d418cc08997389eecf1f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
