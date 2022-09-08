@@ -22,6 +22,30 @@
       },
       "revId": "52bc318c14eb1e84294a2a207cc29c8e43fb864c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e02ac221_b50aab03",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-08T17:29:19Z",
+      "side": 1,
+      "message": "Hi Joao\nThere is a special provision in the spec to specify that a partition doesn\u0027t want to be interrupted: i.e. \"Run to Completion\". Please note support for this feature is not yet available in Hafnium SPMC. I am working on it.",
+      "parentUuid": "08fdfb8d_e68a8fa0",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 1
+      },
+      "revId": "52bc318c14eb1e84294a2a207cc29c8e43fb864c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
