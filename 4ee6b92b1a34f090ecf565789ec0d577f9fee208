@@ -169,6 +169,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a34e4372_49569152",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-09-09T08:52:43Z",
+      "side": 1,
+      "message": "My point is that if the SP goes to waiting state that means it should be at a stage in which it can handle any request, from any endpoint.\nFrom this implementation, this is not the case. Other endpoints can\u0027t send another cactus command and obtain a response because its execution hasn\u0027t reached the message loop.\nSo the test SP\u0027s implementation doesn\u0027t fit one for the ME enabled configuration.\n\nI understand though that the caller to SP sleep command needs to get the \"elapsed time\". For this, we could add another cactus command: \"last_elapsed_time_cmd\". something like this...\nIt could check if the sender of such request was the last endpoint to call the sleep_cmd, if so provide read and provide the lapsed time; If not, return error.\n\nWith this the sleep_cmd could be changed: to save the id of the most recent caller to this command; and to look for a \"ME\" flag, to be set in the IRQ handler.\nIf the \"ME\" flag is set, do an ME dir response; else return with elapsed time.\n\nAfter doing those changes the tests for ME in TFTF should be:\n- Calling the Sleep Cmd;\n- Expect the ME response;\n- (Optional, although useful validation) Get other SPs to do a direct message request to validate others can communicate with the SP (request echo command was implemented);\n- Send the \"last_elapsed_time\" command, and check if the time was as expected.\n\nLet me know what you think of these suggestions.",
+      "parentUuid": "62a76b8a_c10ba54e",
+      "range": {
+        "startLine": 127,
+        "startChar": 1,
+        "endLine": 128,
+        "endChar": 27
+      },
+      "revId": "4ee6b92b1a34f090ecf565789ec0d577f9fee208",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "71a5dd65_843109eb",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
         "patchSetId": 4
