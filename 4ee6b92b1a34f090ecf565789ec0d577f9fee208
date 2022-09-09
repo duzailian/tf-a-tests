@@ -193,6 +193,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "07b7e3cc_57cd5f45",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-09-09T08:54:36Z",
+      "side": 1,
+      "message": "Suggestions would affect the change:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/15675/6",
+      "parentUuid": "a34e4372_49569152",
+      "range": {
+        "startLine": 127,
+        "startChar": 1,
+        "endLine": 128,
+        "endChar": 27
+      },
+      "revId": "4ee6b92b1a34f090ecf565789ec0d577f9fee208",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "71a5dd65_843109eb",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
         "patchSetId": 4
