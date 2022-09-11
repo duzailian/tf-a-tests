@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "656c5a8b_277b705a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-11T19:07:49Z",
+      "side": 1,
+      "message": "Thanks a lot for the reviews, Joao!",
+      "revId": "5e70ceb7f0feea9966e9555d5f1b7022fb4d6e3c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "84f6033b_0b553664",
@@ -14,6 +31,30 @@
       "writtenOn": "2022-09-09T10:49:56Z",
       "side": 1,
       "message": "pend flag that managed exit happened instead.",
+      "range": {
+        "startLine": 92,
+        "startChar": 3,
+        "endLine": 93,
+        "endChar": 32
+      },
+      "revId": "5e70ceb7f0feea9966e9555d5f1b7022fb4d6e3c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b25dd6fb_861387d8",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-11T19:07:49Z",
+      "side": 1,
+      "message": "Responded to the relevant comment.",
+      "parentUuid": "84f6033b_0b553664",
       "range": {
         "startLine": 92,
         "startChar": 3,
@@ -47,6 +88,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5902f388_aae3cdbb",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-11T19:07:49Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "11c2c3a9_928e2be9",
+      "range": {
+        "startLine": 117,
+        "startChar": 2,
+        "endLine": 118,
+        "endChar": 31
+      },
+      "revId": "5e70ceb7f0feea9966e9555d5f1b7022fb4d6e3c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8c92766c_fabf4ed7",
@@ -60,6 +125,30 @@
       "writtenOn": "2022-09-09T10:49:56Z",
       "side": 1,
       "message": "this is not needed as global.\nIn accordance to the proposed refactoring.\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/15677/comment/b78eab0f_50259450/",
+      "range": {
+        "startLine": 35,
+        "startChar": 9,
+        "endLine": 35,
+        "endChar": 28
+      },
+      "revId": "5e70ceb7f0feea9966e9555d5f1b7022fb4d6e3c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93c41b73_d5fbe8c5",
+        "filename": "spm/cactus/cactus_tests/cactus_message_loop.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-11T19:07:49Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8c92766c_fabf4ed7",
       "range": {
         "startLine": 35,
         "startChar": 9,
