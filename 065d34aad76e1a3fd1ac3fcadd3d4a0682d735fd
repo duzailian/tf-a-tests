@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7d8e7ca_c045b694",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-11T19:04:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b38b387e_eee4eac5",
+      "range": {
+        "startLine": 203,
+        "startChar": 27,
+        "endLine": 203,
+        "endChar": 28
+      },
+      "revId": "065d34aad76e1a3fd1ac3fcadd3d4a0682d735fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6001ee31_03cb119a",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-09-09T10:30:03Z",
       "side": 1,
       "message": "nitpicking: lower letters or FFA_MSG_SEND_DIRECT_RESP.",
+      "range": {
+        "startLine": 214,
+        "startChar": 31,
+        "endLine": 214,
+        "endChar": 46
+      },
+      "revId": "065d34aad76e1a3fd1ac3fcadd3d4a0682d735fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ef87d5a_2010095a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-11T19:04:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6001ee31_03cb119a",
       "range": {
         "startLine": 214,
         "startChar": 31,
@@ -101,6 +149,30 @@
       "side": 1,
       "message": "*FFA_MSG_SEND_DIRECT_REQ",
       "parentUuid": "c3b409a8_1851ff2b",
+      "range": {
+        "startLine": 212,
+        "startChar": 1,
+        "endLine": 217,
+        "endChar": 44
+      },
+      "revId": "065d34aad76e1a3fd1ac3fcadd3d4a0682d735fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc443f61_e1550c7a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-11T19:04:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d80edada_33393718",
       "range": {
         "startLine": 212,
         "startChar": 1,
