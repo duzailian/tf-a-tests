@@ -241,6 +241,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5f19b933_c4b8b95f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-09-12T10:08:20Z",
+      "side": 1,
+      "message": "I disagree with the point we need to have threads to make it work.\n\nIn the above changes, I was not contemplating bringing up other cores and have concurrency. Which I believe was the reason you mentioned the multi-thread support(?).\n\nThe changes I described above can be done and implemented in sequential single-core execution.\n\nSo TFTF would handle the NS interrupt, and instead of sending a \"dummy request\", it could request another Cactus SP to communicate with the partition that handled the ME. This is single core and single thread.\nI think that in doing that the SP that just handled ME should be able to handle the request from the mentioned Cactus SP.\n\nLet me know if this doesn\u0027t make things clearer.",
+      "parentUuid": "0bc424bc_0216bbdb",
+      "range": {
+        "startLine": 127,
+        "startChar": 1,
+        "endLine": 128,
+        "endChar": 27
+      },
+      "revId": "4ee6b92b1a34f090ecf565789ec0d577f9fee208",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "71a5dd65_843109eb",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
         "patchSetId": 4
