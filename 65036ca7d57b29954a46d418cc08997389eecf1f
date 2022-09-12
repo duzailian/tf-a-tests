@@ -70,6 +70,30 @@
       },
       "revId": "65036ca7d57b29954a46d418cc08997389eecf1f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c4b3382_ff0b225c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-12T20:10:45Z",
+      "side": 1,
+      "message": "I have implemented it in a new patch:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/16668\n\nPlease help to review.",
+      "parentUuid": "77e9edf0_9c67dd6f",
+      "range": {
+        "startLine": 438,
+        "startChar": 1,
+        "endLine": 445,
+        "endChar": 2
+      },
+      "revId": "65036ca7d57b29954a46d418cc08997389eecf1f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
