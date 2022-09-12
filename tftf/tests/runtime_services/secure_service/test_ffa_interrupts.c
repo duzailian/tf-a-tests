@@ -299,7 +299,7 @@ test_result_t test_ffa_ns_interrupt_managed_exit_chained(void)
 	 * SP to sleep.
 	 */
 	ret_values = cactus_fwd_sleep_cmd(SENDER, RECEIVER, RECEIVER_3,
-					  SP_SLEEP_TIME);
+					  SP_SLEEP_TIME, true);
 
 	if (!is_ffa_direct_response(ret_values)) {
 		return TEST_RESULT_FAIL;
@@ -401,7 +401,7 @@ test_result_t test_ffa_SPx_ME_SPy_signaled(void)
 	 * SP to sleep.
 	 */
 	ret_values = cactus_fwd_sleep_cmd(SENDER, RECEIVER, RECEIVER_2,
-					  SP_SLEEP_TIME);
+					  SP_SLEEP_TIME, true);
 
 	if (!is_ffa_direct_response(ret_values)) {
 		return TEST_RESULT_FAIL;
@@ -506,7 +506,7 @@ test_result_t test_ffa_SPx_signaled_SPy_ME(void)
 	 */
 	VERBOSE("Forward sleep command\n");
 	ret_values = cactus_fwd_sleep_cmd(SENDER, RECEIVER_2, RECEIVER,
-					  SP_SLEEP_TIME);
+					  SP_SLEEP_TIME, true);
 
 	if (check_timer_interrupt() == 0) {
 		ERROR("Timer interrupt hasn't actually been handled.\n");
