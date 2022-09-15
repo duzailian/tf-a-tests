@@ -265,6 +265,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4a437a9c_684909d7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-15T12:59:11Z",
+      "side": 1,
+      "message": "Hi, I think this design is pretty correct but might have taken a non-harmful shortcut.\nThere is a bit of nuance in that TFTF (or normal world driver) knows from line 113 that the partition has been pre-empted by a NS interrupt while it was doing work. So in any case the driver knows that, after normal world has handled the NS interrupt, it has to resume the partition to let it complete what it was doing and hence the presence of the dummy direct req.\nBecause of the partition message response contents (SP exited because of an interrupt), there is no reason for the driver to emit a fresh direct req. different from the purpose of resuming the partition.\nIn a real TOS implementation though it\u0027s true that the TEE reaches its main loop before handing over to normal world e.g. for OP-TEE:\n\nvFIQ ME traps:\nhttps://github.com/OP-TEE/optee_os/blob/master/core/arch/arm/kernel/thread_a64.S#L1209\nOP-TEE parks current thread:\nhttps://github.com/OP-TEE/optee_os/blob/master/core/arch/arm/kernel/thread_a64.S#L1058\nOP-TEE prepares for nwd exit:\nhttps://github.com/OP-TEE/optee_os/blob/master/core/arch/arm/kernel/thread_spmc_a64.S#L170\nOP-TEE completes ME with a direct resp. and enters the msg loop:\nhttps://github.com/OP-TEE/optee_os/blob/master/core/arch/arm/kernel/thread_spmc_a64.S#L32\n\nOn the driver side, OPTEE_FFA_YIELDING_CALL_RETURN_INTERRUPT is received through the direct resp. and execution resumed to same partition as a consequence:\nhttps://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/tee/optee/ffa_abi.c?h\u003dv6.0-rc5#n518\nhttps://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/tee/optee/ffa_abi.c?h\u003dv6.0-rc5#n584\n\nSo in essence OP-TEE could indeed consume a fresh direct request because it is entering the loop before exiting to nwd, but that\u0027s not how the driver is designed. It could be seen as an improvement to update cactus to adopt a behavior similar to OP-TEE although it would not really enable new use cases.\n\nThe analogous scenario with SPs pre-empted w/o ME is that the returned response by the SPMC is FFA_INTERRUPT (in place of direct resp (w3\u003dmanaged exit hint)). The driver has to take a similar action to resume the partition because of the FFA_INTERRUPT response and let it complete its work.",
+      "parentUuid": "5f19b933_c4b8b95f",
+      "range": {
+        "startLine": 127,
+        "startChar": 1,
+        "endLine": 128,
+        "endChar": 27
+      },
+      "revId": "4ee6b92b1a34f090ecf565789ec0d577f9fee208",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "71a5dd65_843109eb",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
         "patchSetId": 4
