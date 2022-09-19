@@ -59,6 +59,42 @@ static void post_interrupt_handler(uint32_t intid)
 	spin_unlock(&sp_handler_lock[intid]);
 }
 
+/*
+ * Cactus SP does not implement application threads. Hence, once the Cactus SP
+ * sends the managed exit response to the direct request originator, execution
+ * is still frozen in interrupt handler context.
+ * Though it moves to WAITING state, it is not able to accept new direct request
+ * message from any endpoint. It can only receive a direct request message with
+ * the command CACTUS_RESUME_AFTER_MANAGED_EXIT from the originator of the
+ * suspended direct request message in order to return from the interrupt
+ * handler context and resume the processing of suspended request.
+ */
+void send_managed_exit_response(void)
+{
+	struct ffa_value ffa_ret;
+
+	/* Send managed exit response. */
+	ffa_ret = cactus_response(g_ffa_id, g_dir_req_source_id,
+			MANAGED_EXIT_INTERRUPT_ID);
+
+	while (true) {
+		if ( (ffa_func_id(ffa_ret) != FFA_MSG_SEND_DIRECT_REQ_SMC32 &&
+		      ffa_func_id(ffa_ret) != FFA_MSG_SEND_DIRECT_REQ_SMC64) ||
+		      ffa_dir_msg_source(ffa_ret) != g_dir_req_source_id ||
+		      cactus_get_cmd(ffa_ret) != CACTUS_RESUME_AFTER_MANAGED_EXIT) {
+			ERROR("Expected a direct message request from endpoint"
+			      " %x with command CACTUS_RESUME_AFTER_MANAGED_EXIT\n",
+			       g_dir_req_source_id);
+			ffa_ret = cactus_error_resp(g_ffa_id,
+						    ffa_dir_msg_source(ffa_ret),
+						    CACTUS_ERROR_TEST);
+		} else {
+			VERBOSE("Resuming the suspended command\n");
+			break;
+		}
+	}
+}
+
 void cactus_interrupt_handler_irq(void)
 {
 	uint32_t intid = spm_interrupt_get();
@@ -89,8 +125,7 @@ void cactus_interrupt_handler_irq(void)
 			 */
 			VERBOSE("vIRQ: Sending ME response to %x\n",
 				g_dir_req_source_id);
-			cactus_response(g_ffa_id, g_dir_req_source_id,
-					managed_exit_interrupt_id);
+			send_managed_exit_response();
 		} else {
 			ERROR("%s: Interrupt ID %x not handled!\n", __func__,
 				 intid);
@@ -114,8 +149,7 @@ void cactus_interrupt_handler_fiq(void)
 		 */
 		VERBOSE("vFIQ: Sending ME response to %x\n",
 			g_dir_req_source_id);
-		cactus_response(g_ffa_id, g_dir_req_source_id,
-				MANAGED_EXIT_INTERRUPT_ID);
+		send_managed_exit_response();
 		break;
 	default:
 		/*
