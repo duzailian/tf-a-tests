@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "633d19b7_637b8e98",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000263
+      },
+      "writtenOn": "2022-09-20T12:05:51Z",
+      "side": 1,
+      "message": "Legacy CI failure is unrelated to this patch.",
+      "revId": "eba24713863086e7ce6c8eceaa598e59017f1ceb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
