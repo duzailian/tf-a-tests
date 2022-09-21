@@ -16,6 +16,23 @@
       "message": "Legacy CI failure is unrelated to this patch.",
       "revId": "eba24713863086e7ce6c8eceaa598e59017f1ceb",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dea18fbb_a062915d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000263
+      },
+      "writtenOn": "2022-09-21T06:09:59Z",
+      "side": 1,
+      "message": "The failure by TF-CI are unrelated to this patch. Hence removed it.\n\n    11:11:28 ++ curl --fail -sLS -o scp_bl2.bin https://downloads.trustedfirmware.org/tf-  a/css_scp_2.10.0/juno/release/juno-bl2.bin\n    11:11:38 curl: (6) Could not resolve host: downloads.trustedfirmware.org",
+      "revId": "eba24713863086e7ce6c8eceaa598e59017f1ceb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
