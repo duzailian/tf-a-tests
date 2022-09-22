@@ -50,6 +50,23 @@
       "message": "Hi, Please review this patch series.",
       "revId": "eba24713863086e7ce6c8eceaa598e59017f1ceb",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa0bc84f_e9d197a4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-22T20:52:43Z",
+      "side": 1,
+      "message": "Please push a CI patch to add build configs for newly introduced platforms. Example: https://git.trustedfirmware.org/ci/tf-a-ci-scripts.git/tree/group/tftf-l1-build/nil,n1sdp-default:nil",
+      "revId": "eba24713863086e7ce6c8eceaa598e59017f1ceb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
