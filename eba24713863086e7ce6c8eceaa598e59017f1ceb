@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "1230b12c_3523b6d4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-22T20:54:49Z",
+      "side": 1,
+      "message": "nitpick: Please capture this info as a comment in some header file such as plat/arm/rdinfra/rdn2/include/platform_def.h",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 72
+      },
+      "revId": "eba24713863086e7ce6c8eceaa598e59017f1ceb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "633d19b7_637b8e98",
