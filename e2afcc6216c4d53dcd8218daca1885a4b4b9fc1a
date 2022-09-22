@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53d6db3d_815b8344",
+        "filename": "plat/arm/rdinfra/rdv1/topology.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-22T23:32:34Z",
+      "side": 1,
+      "message": "(uint64_t)mpid",
+      "range": {
+        "startLine": 106,
+        "startChar": 8,
+        "endLine": 106,
+        "endChar": 12
+      },
+      "revId": "e2afcc6216c4d53dcd8218daca1885a4b4b9fc1a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
