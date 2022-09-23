@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5183259_3e62363a",
+        "filename": "plat/arm/rdinfra/rdn2/platform.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-09-23T08:55:23Z",
+      "side": 1,
+      "message": "nit: provide few tabs to align with previous variables.",
+      "range": {
+        "startLine": 15,
+        "startChar": 15,
+        "endLine": 15,
+        "endChar": 16
+      },
+      "revId": "13f057443326e0980fc00f4784cd8bd68c26527d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
