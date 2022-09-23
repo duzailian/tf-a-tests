@@ -1,0 +1,11 @@
+Code-Review+1: Vijayenthiran Subramaniam <vijayenthiran.subramaniam@arm.com>
+Code-Review+1: TrustedFirmware Code Review
+Code-Owner-Review+1: Vijayenthiran Subramaniam <vijayenthiran.subramaniam@arm.com>
+Allow-CI+1: Vijayenthiran Subramaniam <vijayenthiran.subramaniam@arm.com>
+Maintainer-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Verified+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-by: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-at: Fri, 23 Sep 2022 17:13:50 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/16789
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
