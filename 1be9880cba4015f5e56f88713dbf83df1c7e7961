@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ea6b03e_32b4239b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-09-23T10:23:35Z",
+      "side": 1,
+      "message": "Test is commented and therefor not included in target bin. But otherwise looks good.",
+      "revId": "1be9880cba4015f5e56f88713dbf83df1c7e7961",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
