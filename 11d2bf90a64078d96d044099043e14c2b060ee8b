@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e828ae98_b0d7c754",
+        "filename": "spm/ivy/app/plat/arm/fvp/fdts/ivy-sel1.dts",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-09-23T10:15:16Z",
+      "side": 1,
+      "message": "nit: Non-secure",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 14
+      },
+      "revId": "11d2bf90a64078d96d044099043e14c2b060ee8b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
