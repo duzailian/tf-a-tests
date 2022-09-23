@@ -22,6 +22,30 @@
       },
       "revId": "dde2de157df867a8481b98517b13f7a95e0b9e25",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31db8080_1ce187e6",
+        "filename": "plat/arm/rdinfra/rdn2/topology.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000692
+      },
+      "writtenOn": "2022-09-23T03:41:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "581c2c5b_41d48d33",
+      "range": {
+        "startLine": 106,
+        "startChar": 8,
+        "endLine": 106,
+        "endChar": 12
+      },
+      "revId": "dde2de157df867a8481b98517b13f7a95e0b9e25",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
