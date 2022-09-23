@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6efef02_30e4594f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-09-23T15:11:41Z",
+      "side": 1,
+      "message": "Propagating Verified+1 vote from top patch in this series.",
+      "revId": "e10a50814c4963f3e17104808da4d5e28f99262d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
