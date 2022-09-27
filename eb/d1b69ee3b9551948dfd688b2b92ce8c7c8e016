@@ -1,0 +1,8 @@
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Owner-Review+1: Bipin Ravi <bipin.ravi@arm.com>
+Verified+1: Bipin Ravi <bipin.ravi@arm.com>
+Submitted-by: Bipin Ravi <bipin.ravi@arm.com>
+Submitted-at: Tue, 27 Sep 2022 20:17:08 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/16419
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
