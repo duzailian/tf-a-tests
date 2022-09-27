@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f410678_d632ed45",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-27T15:38:10Z",
+      "side": 1,
+      "message": "this echo value is defined in:\ntests/runtime_services/realm_payload/realm_payload_spm_test.c\ntests/runtime_services/secure_service/test_ffa_direct_messaging.c\ntests/runtime_services/secure_service/test_ffa_secure_interrupts.c\n\nperhaps it should moved to a common header?",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 30
+      },
+      "revId": "a1c4cf5d2e14aefb3a5618573932be9272a97e40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "106e1ad1_79906496",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-27T15:38:10Z",
+      "side": 1,
+      "message": "Do we have an opportunity to reduce timer and active wait sleep time? The test suite run time has significantly increased, I believe those values are significantly high and could be cut at least in half.",
+      "range": {
+        "startLine": 97,
+        "startChar": 21,
+        "endLine": 97,
+        "endChar": 24
+      },
+      "revId": "a1c4cf5d2e14aefb3a5618573932be9272a97e40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "baf7ffc5_f712e1cb",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-27T15:38:10Z",
+      "side": 1,
+      "message": "Is this similar to:\nhttps://git.trustedfirmware.org/hafnium/hafnium.git/tree/test/vmapi/ffa_secure_partitions/interrupts.c#n37\nWith a delta that a SPI is used as opposed to a PPI in hafnium CI?",
+      "range": {
+        "startLine": 154,
+        "startChar": 14,
+        "endLine": 156,
+        "endChar": 13
+      },
+      "revId": "a1c4cf5d2e14aefb3a5618573932be9272a97e40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a49c1c5_d38ea1e2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-27T15:38:10Z",
+      "side": 1,
+      "message": "it means a direct request?",
+      "range": {
+        "startLine": 161,
+        "startChar": 13,
+        "endLine": 161,
+        "endChar": 21
+      },
+      "revId": "a1c4cf5d2e14aefb3a5618573932be9272a97e40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
