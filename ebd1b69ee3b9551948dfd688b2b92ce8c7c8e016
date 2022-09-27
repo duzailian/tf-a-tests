@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "deccd247_38707fbe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-09-27T18:16:27Z",
+      "side": 1,
+      "message": "Run LCI+2 before.",
+      "revId": "ebd1b69ee3b9551948dfd688b2b92ce8c7c8e016",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
