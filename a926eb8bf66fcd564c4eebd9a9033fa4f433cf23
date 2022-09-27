@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5397525d_a7a34893",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-27T15:52:18Z",
+      "side": 1,
+      "message": "nitpick",
+      "parentUuid": "26775937_d4d95396",
+      "range": {
+        "startLine": 57,
+        "startChar": 13,
+        "endLine": 57,
+        "endChar": 20
+      },
+      "revId": "a926eb8bf66fcd564c4eebd9a9033fa4f433cf23",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "96f561ea_f3423efb",
         "filename": "tftf/tests/extensions/pauth/test_pauth.c",
         "patchSetId": 2
