@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbe0178c_e961894e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-09-27T18:56:07Z",
+      "side": 1,
+      "message": "Added code from Olivier into the subtract_sve_arrays assembly function to call cactus in between SVE operations. While the code is adapted from the file tf-a-tests/tftf/tests/extensions/sve/sve_operations.S, I created a new file so as not to affect any test that depended on the original. \n",
+      "revId": "11ed171ac7cfdcfdee6934090f10b892997fcf8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
