@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06a3ac06_2a75402c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-27T15:43:40Z",
+      "side": 1,
+      "message": "Could it be achieved with Ivy?\nThe reasoning is that being a UP SP, this is the more likely to adopt a queued ns interrupt model.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 36
+      },
+      "revId": "8a05a1e044b814cbf62d9355011b61f6e117c9ec",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
