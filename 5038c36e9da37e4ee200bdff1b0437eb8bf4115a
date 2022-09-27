@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7b1b9f3_a3570cb2",
+        "filename": "spm/cactus/aarch64/cactus_exceptions.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-27T14:59:42Z",
+      "side": 1,
+      "message": "you could keep a single C handler as earlier, by passing an argument e.g. \n  mov x0, _type\n  bl cactus_interrupt_handler\n\n\nIn which case, most of the interrupt handling flow is same in particular for managed exit.",
+      "revId": "5038c36e9da37e4ee200bdff1b0437eb8bf4115a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a13f0365_b2ab98f8",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-27T14:59:42Z",
+      "side": 1,
+      "message": "I don\u0027t think we want to do this. The partition must now to which partition to talk to, because this is where its driver resides. Re-using the \u0027last direct req. source id\u0027 doesn\u0027t look a right thing to do, or just unrelated to managed exit.",
+      "range": {
+        "startLine": 92,
+        "startChar": 29,
+        "endLine": 92,
+        "endChar": 48
+      },
+      "revId": "5038c36e9da37e4ee200bdff1b0437eb8bf4115a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3f0d041_15dcd9c0",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-27T14:59:42Z",
+      "side": 1,
+      "message": "Can it be extracted and moved before the switch case?\nUsing the default case doesn\u0027t read well.",
+      "range": {
+        "startLine": 83,
+        "startChar": 2,
+        "endLine": 94,
+        "endChar": 3
+      },
+      "revId": "5038c36e9da37e4ee200bdff1b0437eb8bf4115a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4ba98f8_940e3d08",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-27T14:59:42Z",
+      "side": 1,
+      "message": "Not for today but a later improvement (perhaps). If we stick to the spec, a partition shouldn\u0027t have to do an hvc call to get the interrupt id. Just the fact that a FIQ occurred tells this is a managed exit. I\u0027m fine with keeping it like this though but to keep in mind this is an impdef behavior.",
+      "range": {
+        "startLine": 106,
+        "startChar": 1,
+        "endLine": 106,
+        "endChar": 38
+      },
+      "revId": "5038c36e9da37e4ee200bdff1b0437eb8bf4115a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e41d7de_08973304",
+        "filename": "spm/cactus/cactus_tests/cactus_message_loop.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-27T14:59:42Z",
+      "side": 1,
+      "message": "remove if possible",
+      "range": {
+        "startLine": 55,
+        "startChar": 1,
+        "endLine": 59,
+        "endChar": 2
+      },
+      "revId": "5038c36e9da37e4ee200bdff1b0437eb8bf4115a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
