@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dde10fe4_a09f0243",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-28T10:32:23Z",
+      "side": 1,
+      "message": "Can this be reduced to help the test time?",
+      "range": {
+        "startLine": 20,
+        "startChar": 22,
+        "endLine": 20,
+        "endChar": 27
+      },
+      "revId": "9849cc452d6b65fcce800da32f2ed7e734e7fbf3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0c59ba4_0229ff5e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-28T10:32:23Z",
+      "side": 1,
+      "message": "Is this still required based on:\nhttps://review.trustedfirmware.org/c/hafnium/hafnium/+/15665/24/src/arch/aarch64/plat/ffa/spmc.c#2056 ?",
+      "range": {
+        "startLine": 254,
+        "startChar": 3,
+        "endLine": 255,
+        "endChar": 21
+      },
+      "revId": "9849cc452d6b65fcce800da32f2ed7e734e7fbf3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a65d147b_b21ecc71",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-28T10:32:23Z",
+      "side": 1,
+      "message": "Is this required?",
+      "range": {
+        "startLine": 299,
+        "startChar": 1,
+        "endLine": 300,
+        "endChar": 18
+      },
+      "revId": "9849cc452d6b65fcce800da32f2ed7e734e7fbf3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "671ba2da_17be3002",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-28T10:32:23Z",
+      "side": 1,
+      "message": "Is this required?",
+      "range": {
+        "startLine": 310,
+        "startChar": 1,
+        "endLine": 314,
+        "endChar": 2
+      },
+      "revId": "9849cc452d6b65fcce800da32f2ed7e734e7fbf3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "341557fd_231a7a9a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-28T10:32:23Z",
+      "side": 1,
+      "message": "Is this required?",
+      "range": {
+        "startLine": 362,
+        "startChar": 1,
+        "endLine": 366,
+        "endChar": 2
+      },
+      "revId": "9849cc452d6b65fcce800da32f2ed7e734e7fbf3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
