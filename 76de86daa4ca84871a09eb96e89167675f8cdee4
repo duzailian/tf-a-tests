@@ -160,6 +160,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "42c79323_8460cd06",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-09-28T22:27:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cad433b3_35b46175",
+      "range": {
+        "startLine": 160,
+        "startChar": 29,
+        "endLine": 160,
+        "endChar": 30
+      },
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "369defa4_b4d28260",
@@ -327,6 +351,24 @@
       "side": 1,
       "message": "\u003e I do think it is a good idea to set ZCR_EL2.VL\nI think the bare minimum is to set it to something because Arm SVE supplement says ZCR_ELx.LEN field \u0027resets to an architecturally UNKNOWN value.\u0027 Eventually this may be a miss in the legacy test_sve_support test case. This is normally handled by supervisory sw but in context of TFTF I noticed it\u0027s omitted from any cpu startup code.\n\n\u003e As for SVE_ARRAYSIZE, being adjusted according to the programmed VL I am not sure. All the materials I looked at with SVE programming examples advocated for a vector length agnostic approach\nAgree! In my mind the code lines 105-110 is more to illustrate what an EL2 supervisory sw should do when it has to schedule VMs at EL1. In context of TFTF, the end application code directly runs at EL2 so that may be over-engineered. Just setting LEN to 0xf should be enough.",
       "parentUuid": "bc0f6072_1fde87d5",
+      "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f130978_47366ae2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-09-28T22:27:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99666d8a_4402cd5e",
       "revId": "76de86daa4ca84871a09eb96e89167675f8cdee4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }

@@ -58,6 +58,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "158a9bc7_f7cd6d55",
+        "filename": "tftf/tests/runtime_services/secure_service/sve_operations_cactus.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-09-28T22:27:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "072deee8_03827cc0",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 1
+      },
+      "revId": "11ed171ac7cfdcfdee6934090f10b892997fcf8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6c1537b5_2cdf3e1e",
@@ -71,6 +95,30 @@
       "writtenOn": "2022-09-28T12:07:04Z",
       "side": 1,
       "message": "Would it be possible to place this in include/lib/extensions/sve.h and delete the file?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 1
+      },
+      "revId": "11ed171ac7cfdcfdee6934090f10b892997fcf8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d90b4249_5364d4a9",
+        "filename": "tftf/tests/runtime_services/secure_service/sve_operations_cactus.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-09-28T22:27:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c1537b5_2cdf3e1e",
       "range": {
         "startLine": 10,
         "startChar": 0,
@@ -104,6 +152,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "54d4fdaf_f021cafd",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-09-28T22:27:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1be416f8_e24e6b84",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 1
+      },
+      "revId": "11ed171ac7cfdcfdee6934090f10b892997fcf8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f509682_48ab257f",
@@ -117,6 +189,30 @@
       "writtenOn": "2022-09-28T12:07:04Z",
       "side": 1,
       "message": "nit: FF-A",
+      "range": {
+        "startLine": 160,
+        "startChar": 16,
+        "endLine": 160,
+        "endChar": 19
+      },
+      "revId": "11ed171ac7cfdcfdee6934090f10b892997fcf8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfc55fa2_602ef79b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-09-28T22:27:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f509682_48ab257f",
       "range": {
         "startLine": 160,
         "startChar": 16,
@@ -174,6 +270,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "102d088c_96feff15",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-09-28T22:27:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f5572afa_51900975",
+      "range": {
+        "startLine": 162,
+        "startChar": 29,
+        "endLine": 162,
+        "endChar": 30
+      },
+      "revId": "11ed171ac7cfdcfdee6934090f10b892997fcf8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "44601cef_48fe14c1",
@@ -197,6 +317,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a890718_442963a3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_sve.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-09-28T22:27:03Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "44601cef_48fe14c1",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "11ed171ac7cfdcfdee6934090f10b892997fcf8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fbcf4394_4fbfb9b2",
@@ -210,6 +354,24 @@
       "writtenOn": "2022-09-28T12:07:04Z",
       "side": 1,
       "message": "Is this header being used?",
+      "revId": "11ed171ac7cfdcfdee6934090f10b892997fcf8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abc8d1fe_433050ab",
+        "filename": "tftf/tests/runtime_services/secure_service/test_sve.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-09-28T22:27:03Z",
+      "side": 1,
+      "message": "Deleted it locally, forgot to push the change. Will update in the next patchset",
+      "parentUuid": "fbcf4394_4fbfb9b2",
       "revId": "11ed171ac7cfdcfdee6934090f10b892997fcf8f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
