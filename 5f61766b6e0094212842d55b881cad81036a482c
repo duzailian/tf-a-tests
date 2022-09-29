@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8fbebda7_6aec1761",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus-secondary.dts",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-29T21:27:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a7bdbfa_c3368671",
+      "range": {
+        "startLine": 33,
+        "startChar": 1,
+        "endLine": 33,
+        "endChar": 46
+      },
+      "revId": "5f61766b6e0094212842d55b881cad81036a482c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "59ee2661_92b7b978",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-09-26T16:29:41Z",
       "side": 1,
       "message": "In order to check backward compatibility do we want to leave one case with the former managed-exit attribute?",
+      "range": {
+        "startLine": 32,
+        "startChar": 1,
+        "endLine": 32,
+        "endChar": 28
+      },
+      "revId": "5f61766b6e0094212842d55b881cad81036a482c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37c4e99a_b95039b2",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus-tertiary.dts",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-29T21:27:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59ee2661_92b7b978",
       "range": {
         "startLine": 32,
         "startChar": 1,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "15e1e860_93560a9a",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus-tertiary.dts",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-29T21:27:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "42c06953_47727dfc",
+      "range": {
+        "startLine": 33,
+        "startChar": 1,
+        "endLine": 33,
+        "endChar": 46
+      },
+      "revId": "5f61766b6e0094212842d55b881cad81036a482c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "46aaf79f_de43eafd",
@@ -83,6 +155,30 @@
       "writtenOn": "2022-09-27T15:00:44Z",
       "side": 1,
       "message": "can we remove here or in a later change?",
+      "range": {
+        "startLine": 33,
+        "startChar": 1,
+        "endLine": 33,
+        "endChar": 46
+      },
+      "revId": "5f61766b6e0094212842d55b881cad81036a482c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "407bfa7e_550805f8",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-29T21:27:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46aaf79f_de43eafd",
       "range": {
         "startLine": 33,
         "startChar": 1,
