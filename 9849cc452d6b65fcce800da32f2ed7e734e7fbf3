@@ -47,6 +47,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7a23042_e3f79059",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-29T21:28:37Z",
+      "side": 1,
+      "message": "This is explicitly taken care in https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/16503",
+      "parentUuid": "b0c59ba4_0229ff5e",
+      "range": {
+        "startLine": 254,
+        "startChar": 3,
+        "endLine": 255,
+        "endChar": 21
+      },
+      "revId": "9849cc452d6b65fcce800da32f2ed7e734e7fbf3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a65d147b_b21ecc71",
@@ -60,6 +84,30 @@
       "writtenOn": "2022-09-28T10:32:23Z",
       "side": 1,
       "message": "Is this required?",
+      "range": {
+        "startLine": 299,
+        "startChar": 1,
+        "endLine": 300,
+        "endChar": 18
+      },
+      "revId": "9849cc452d6b65fcce800da32f2ed7e734e7fbf3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc2be5f2_9f50237f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-29T21:28:37Z",
+      "side": 1,
+      "message": "This is explicitly taken care in https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/16503",
+      "parentUuid": "a65d147b_b21ecc71",
       "range": {
         "startLine": 299,
         "startChar": 1,
@@ -93,6 +141,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bd5dca5_6357f285",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-29T21:28:37Z",
+      "side": 1,
+      "message": "This is explicitly taken care in https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/16503/4",
+      "parentUuid": "671ba2da_17be3002",
+      "range": {
+        "startLine": 310,
+        "startChar": 1,
+        "endLine": 314,
+        "endChar": 2
+      },
+      "revId": "9849cc452d6b65fcce800da32f2ed7e734e7fbf3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "341557fd_231a7a9a",
@@ -106,6 +178,30 @@
       "writtenOn": "2022-09-28T10:32:23Z",
       "side": 1,
       "message": "Is this required?",
+      "range": {
+        "startLine": 362,
+        "startChar": 1,
+        "endLine": 366,
+        "endChar": 2
+      },
+      "revId": "9849cc452d6b65fcce800da32f2ed7e734e7fbf3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61474286_c843b179",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-29T21:28:37Z",
+      "side": 1,
+      "message": "This is explicitly taken care in https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/16503/4",
+      "parentUuid": "341557fd_231a7a9a",
       "range": {
         "startLine": 362,
         "startChar": 1,
