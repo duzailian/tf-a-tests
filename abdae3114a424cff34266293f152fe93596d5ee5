@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "acdf3824_fa772dc8",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-29T21:28:58Z",
+      "side": 1,
+      "message": "Made necessary changes based on comments in previous patches.",
+      "revId": "abdae3114a424cff34266293f152fe93596d5ee5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
