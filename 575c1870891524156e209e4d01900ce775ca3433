@@ -22,6 +22,30 @@
       },
       "revId": "575c1870891524156e209e4d01900ce775ca3433",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79c1762e_a1c625ef",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-09-30T18:00:31Z",
+      "side": 1,
+      "message": "I was referring to plat_ffa_unwind_nwd_call_chain_interrupt() https://review.trustedfirmware.org/c/hafnium/hafnium/+/15662/24/src/arch/aarch64/plat/ffa/spmc.c#1909",
+      "parentUuid": "becf665a_680a3173",
+      "range": {
+        "startLine": 390,
+        "startChar": 52,
+        "endLine": 391,
+        "endChar": 44
+      },
+      "revId": "575c1870891524156e209e4d01900ce775ca3433",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
