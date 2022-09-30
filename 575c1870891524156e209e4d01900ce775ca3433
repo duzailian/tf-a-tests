@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "becf665a_680a3173",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-30T09:17:25Z",
+      "side": 1,
+      "message": "What is the purpose of it?",
+      "range": {
+        "startLine": 390,
+        "startChar": 52,
+        "endLine": 391,
+        "endChar": 44
+      },
+      "revId": "575c1870891524156e209e4d01900ce775ca3433",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
