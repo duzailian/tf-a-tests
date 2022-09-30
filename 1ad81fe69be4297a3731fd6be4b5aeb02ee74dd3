@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46b9ed28_6e161087",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-30T09:39:42Z",
+      "side": 1,
+      "message": "This first SP / second SP denomination is confusing.\nShould the description only deal with SP1 and SP2 rather than a mix of SP1/SP2/first/second?",
+      "range": {
+        "startLine": 493,
+        "startChar": 25,
+        "endLine": 493,
+        "endChar": 84
+      },
+      "revId": "1ad81fe69be4297a3731fd6be4b5aeb02ee74dd3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53b158fe_221ad5a9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-30T09:39:42Z",
+      "side": 1,
+      "message": "vFIQ?",
+      "range": {
+        "startLine": 508,
+        "startChar": 43,
+        "endLine": 508,
+        "endChar": 47
+      },
+      "revId": "1ad81fe69be4297a3731fd6be4b5aeb02ee74dd3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85041a52_27011238",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-30T09:39:42Z",
+      "side": 1,
+      "message": "Is first SP vCPU being resumed in this case? I tend to say it shouldn\u0027t.",
+      "range": {
+        "startLine": 511,
+        "startChar": 6,
+        "endLine": 512,
+        "endChar": 41
+      },
+      "revId": "1ad81fe69be4297a3731fd6be4b5aeb02ee74dd3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "629779e3_ab0f208d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-30T09:39:42Z",
+      "side": 1,
+      "message": "actually second SP is resumed and hands over to first SP to complete the sleep routine as mentioned in step 12?",
+      "range": {
+        "startLine": 523,
+        "startChar": 52,
+        "endLine": 524,
+        "endChar": 14
+      },
+      "revId": "1ad81fe69be4297a3731fd6be4b5aeb02ee74dd3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
