@@ -46,6 +46,30 @@
       },
       "revId": "52bc318c14eb1e84294a2a207cc29c8e43fb864c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33bb0aa6_19063f5b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-09-30T16:02:34Z",
+      "side": 1,
+      "message": "There is still possibility for a SEL1 SP to mask PSTATE.I/F and then it won\u0027t trap vIRQ/vFIQ.\n\nThe run to completion mechanism is mainly for SEL0 SPs which can\u0027t manipulate PSTATE.",
+      "parentUuid": "e02ac221_b50aab03",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 1
+      },
+      "revId": "52bc318c14eb1e84294a2a207cc29c8e43fb864c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
