@@ -146,6 +146,24 @@
       "parentUuid": "408e696b_7c99d2b2",
       "revId": "42a29df8bfc0f05e0297bb4f960a25c3d14bf408",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "213929ca_59c35319",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-10-03T16:07:11Z",
+      "side": 1,
+      "message": "I appreciate managed_exit_interrupt_id could be same as MANAGED_EXIT_INTERRUPT_ID. But then, I was wondering why would an SP have to dynamically discover id if it is same as statically allocated value (i.e., MANAGED_EXIT_INTERRUPT_ID)",
+      "parentUuid": "09a89237_abe03300",
+      "revId": "42a29df8bfc0f05e0297bb4f960a25c3d14bf408",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
