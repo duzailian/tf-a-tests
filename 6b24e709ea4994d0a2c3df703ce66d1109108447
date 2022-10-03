@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fed459f_6740ee83",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-10-03T08:58:44Z",
+      "side": 1,
+      "message": "Note the \u0027corrupted stack\u0027 message is unrelated to those changes. It has to do with an issue in the generic backtrace lib. when Pauth is enabled. I will submit a fix separately. I believe you could omit this from the commit message.\n\nIntent of current change is really about error message on line 12 and panic mentioned on line 16.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 40
+      },
+      "revId": "6b24e709ea4994d0a2c3df703ce66d1109108447",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
