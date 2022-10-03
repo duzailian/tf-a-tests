@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd1d6e3f_3e43e8f6",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-10-03T12:02:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "58f61ceb_e8138ce4",
+      "range": {
+        "startLine": 493,
+        "startChar": 25,
+        "endLine": 493,
+        "endChar": 84
+      },
+      "revId": "1ad81fe69be4297a3731fd6be4b5aeb02ee74dd3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "53b158fe_221ad5a9",
