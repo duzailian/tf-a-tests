@@ -190,6 +190,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37e63c4a_57fd8433",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-10-03T14:02:50Z",
+      "side": 1,
+      "message": "https://developer.trustedfirmware.org/T1001",
+      "parentUuid": "d2b9b481_23cd9d18",
+      "range": {
+        "startLine": 251,
+        "startChar": 0,
+        "endLine": 251,
+        "endChar": 1
+      },
+      "revId": "a66114e19d3249868ec78d47d089e3a89398a9d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f5abbb64_ea845834",
