@@ -164,6 +164,24 @@
       "parentUuid": "09a89237_abe03300",
       "revId": "42a29df8bfc0f05e0297bb4f960a25c3d14bf408",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69ac81af_ff398b2f",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-10-04T08:13:30Z",
+      "side": 1,
+      "message": "What is the other way of testing the SPMC returns the appropriate id value upon invoking FFA_FEATURES? It could be done as unit test in Hafnium CI but this isn\u0027t implemented AFAIU.\nA TEE wouldn\u0027t do this assertion indeed, but here the goal is to fill a testing gap.",
+      "parentUuid": "213929ca_59c35319",
+      "revId": "42a29df8bfc0f05e0297bb4f960a25c3d14bf408",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
