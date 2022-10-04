@@ -16,6 +16,24 @@
       "message": "See the static check failures:\n\nspm/cactus/cactus_interrupt.c:86: ERROR: code indent should use tabs where possible\n+^I^I         ffa_func_id(ffa_ret) !\u003d FFA_MSG_SEND_DIRECT_REQ_SMC64) ||$\n\nspm/cactus/cactus_interrupt.c:87: ERROR: code indent should use tabs where possible\n+^I^I         ffa_dir_msg_source(ffa_ret) !\u003d g_dir_req_source_id ||$\n\nspm/cactus/cactus_interrupt.c:88: ERROR: code indent should use tabs where possible\n+^I^I         cactus_get_cmd(ffa_ret) !\u003d CACTUS_RESUME_AFTER_MANAGED_EXIT;$\n\nspm/cactus/cactus_interrupt.c:99: ERROR: trailing whitespace\n+^I$",
       "revId": "78f0e066a317ead9d5f6f8f0d7a32fb19deb6b05",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c2bc093_116e2e2c",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-10-04T20:10:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bdb12f62_544ce55c",
+      "revId": "78f0e066a317ead9d5f6f8f0d7a32fb19deb6b05",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
