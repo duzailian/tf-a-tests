@@ -36,6 +36,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "81397d51_88ef28a9",
+        "filename": "spm/cactus/aarch64/cactus_exceptions.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-10-04T08:15:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e5010965_c6591115",
+      "revId": "5038c36e9da37e4ee200bdff1b0437eb8bf4115a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a13f0365_b2ab98f8",
@@ -49,6 +67,30 @@
       "writtenOn": "2022-09-27T14:59:42Z",
       "side": 1,
       "message": "I don\u0027t think we want to do this. The partition must now to which partition to talk to, because this is where its driver resides. Re-using the \u0027last direct req. source id\u0027 doesn\u0027t look a right thing to do, or just unrelated to managed exit.",
+      "range": {
+        "startLine": 92,
+        "startChar": 29,
+        "endLine": 92,
+        "endChar": 48
+      },
+      "revId": "5038c36e9da37e4ee200bdff1b0437eb8bf4115a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c769d4c8_4c77ba7d",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-10-04T08:15:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a13f0365_b2ab98f8",
       "range": {
         "startLine": 92,
         "startChar": 29,
@@ -190,6 +232,30 @@
       "writtenOn": "2022-09-27T14:59:42Z",
       "side": 1,
       "message": "remove if possible",
+      "range": {
+        "startLine": 55,
+        "startChar": 1,
+        "endLine": 59,
+        "endChar": 2
+      },
+      "revId": "5038c36e9da37e4ee200bdff1b0437eb8bf4115a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e05303f_e774f48b",
+        "filename": "spm/cactus/cactus_tests/cactus_message_loop.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-10-04T08:15:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8e41d7de_08973304",
       "range": {
         "startLine": 55,
         "startChar": 1,
