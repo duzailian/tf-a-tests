@@ -91,6 +91,30 @@
       },
       "revId": "68e2bfc1b58be4fea05aa0daa848bd1d633f29c7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d0a5e5c_e7cfd4d9",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-10-04T15:17:57Z",
+      "side": 1,
+      "message": "Consider this scenario: We have two SPs in a NWD scheduled call chain and they specified \"signalable\" as the action in response to non secure interrupt. So from TFTF, we set hint_interrupted to true.\n\nIf , due to a bug, SP2 was not preempted by a non secure interrupt, we would not enter the while loop. With help of fwd_dest_interrupted(\u003dfalse), we would be able to catch this.",
+      "parentUuid": "e30f0b09_42ebfd37",
+      "range": {
+        "startLine": 90,
+        "startChar": 25,
+        "endLine": 90,
+        "endChar": 46
+      },
+      "revId": "68e2bfc1b58be4fea05aa0daa848bd1d633f29c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
