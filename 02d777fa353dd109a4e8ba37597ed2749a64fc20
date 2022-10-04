@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e5ba575_81b92f75",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-10-04T20:02:27Z",
+      "side": 1,
+      "message": "Hi Joao, this change is a consequence of how the cactus framework is designed. The sequence in question is when cactus leaves with a direct resp. from within the interrupt context to complete the managed exit operation. In a real TEE implementation, the interrupt context is unwound and exits close to the main loop, such that the subsequent fresh FF-A direct req. enters in the main loop. We could achieve the same with cactus, if we were able to save the on going thread of execution. This is a capability we don\u0027t have in cactus. That said, it doesn\u0027t mean the design is wrong, because the semantics is actually what TEEs implement today (exit TEE to nwd driver because of an NS interrupt / nwd driver resumes the TEE after having handled the interrupt). In this framework components implementing those semantics are the SP (cactus) and TFTF acting as a driver.\nPerhaps I did not get what is meant by \"providing a test scenario for the SP to handle a request from any endpoint\". Actually the only valid action must be the nwd driver as an endpoint resumes the SP. There is no reason for the SP to receive a fresh direct req. from any another endpoint at this very moment.\nI\u0027m seeing the cactus framework from the angle of proving that a TEE implementation (be it legacy) works seamlessly on top of Hafnium. Agree this is restricted to the real world scenario and perhaps not covering the full scope of what the spec permits. Though the latter can probably be achieved by a redesign/addition to cactus framework.",
+      "parentUuid": "4f98d669_7473938f",
+      "range": {
+        "startLine": 63,
+        "startChar": 3,
+        "endLine": 70,
+        "endChar": 66
+      },
+      "revId": "02d777fa353dd109a4e8ba37597ed2749a64fc20",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "902d94ff_82e62ad5",
