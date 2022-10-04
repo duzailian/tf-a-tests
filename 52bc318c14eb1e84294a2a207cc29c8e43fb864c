@@ -70,6 +70,30 @@
       },
       "revId": "52bc318c14eb1e84294a2a207cc29c8e43fb864c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "450986b2_cfa8a581",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-10-04T12:59:52Z",
+      "side": 1,
+      "message": "Just for the sake of discussing:\n- Is it possible the SP wants to disable NPI alone to prevent preemption due to Notifications?",
+      "parentUuid": "33bb0aa6_19063f5b",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 1
+      },
+      "revId": "52bc318c14eb1e84294a2a207cc29c8e43fb864c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
