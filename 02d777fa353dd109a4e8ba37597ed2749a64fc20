@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f98d669_7473938f",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-10-04T13:58:33Z",
+      "side": 1,
+      "message": "I understand this came out of our discussion...\nStill find it worth mentioning that this function is not really changing the fact we are not providing a test scenario for the SP to handle a request from any endpoint. Actually, this kind of proves it can... From the perspective of our component, the SPMC. Which makes this \"fix\"  strange to me...\n\nI understand the argument about application threads for a SP expected to be put in a product, which is not the case for Cactus SPs. Application threads might be useful in a case of concurrency, and complex/unexpected messaging sequences. Interactions with Cactus are (at least so far) very simple and in \"controlled\" setups.\nCactus SPs purpose (IMO) is to provide a flow that validates and makes it clear what are the expected state transitions and operations that an SP might be subjected to. This code is not validating that, instead it is treating a valid operation as an error. Which is (IMO) misleading...\n\nI don\u0027t want to create a blocker, and I am ok with providing COR+1 to make the patch stack progress. Still thought to leave this, for future reference.",
+      "range": {
+        "startLine": 63,
+        "startChar": 3,
+        "endLine": 70,
+        "endChar": 66
+      },
+      "revId": "02d777fa353dd109a4e8ba37597ed2749a64fc20",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "902d94ff_82e62ad5",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-10-04T13:58:33Z",
+      "side": 1,
+      "message": "Soft Suggestion to make this section easier to read (feel free to resolve comment if you disagree):\n- Create bool called \"waiting_for_me_resume\" initialize it to true, after line 75.\n- place code from line 77 and 78 within while loop.\n- assign the result to the if condition in line 81 to the variable \"waiting_for_resume\". if it is still true, can print error log from line 85.\n- Move log in line 92 out of while loop.",
+      "range": {
+        "startLine": 76,
+        "startChar": 1,
+        "endLine": 95,
+        "endChar": 2
+      },
+      "revId": "02d777fa353dd109a4e8ba37597ed2749a64fc20",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7da50213_02a82f39",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-10-04T13:58:33Z",
+      "side": 1,
+      "message": "nitpicking: align conditions",
+      "range": {
+        "startLine": 129,
+        "startChar": 1,
+        "endLine": 129,
+        "endChar": 2
+      },
+      "revId": "02d777fa353dd109a4e8ba37597ed2749a64fc20",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddaa0a4a_2f2b4e7f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-10-04T13:58:33Z",
+      "side": 1,
+      "message": "nitpicking: align conditions",
+      "range": {
+        "startLine": 341,
+        "startChar": 1,
+        "endLine": 341,
+        "endChar": 2
+      },
+      "revId": "02d777fa353dd109a4e8ba37597ed2749a64fc20",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21268a3d_bb9221a1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-10-04T13:58:33Z",
+      "side": 1,
+      "message": "nitpicking: align conditions",
+      "range": {
+        "startLine": 451,
+        "startChar": 1,
+        "endLine": 451,
+        "endChar": 2
+      },
+      "revId": "02d777fa353dd109a4e8ba37597ed2749a64fc20",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
