@@ -182,6 +182,24 @@
       "parentUuid": "213929ca_59c35319",
       "revId": "42a29df8bfc0f05e0297bb4f960a25c3d14bf408",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "598c2bc2_33de4a32",
+        "filename": "spm/cactus/cactus_interrupt.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-10-04T10:38:57Z",
+      "side": 1,
+      "message": "Unit Tests in the hafnium CI would help. The \u0027api\u0027 module doesn\u0027t compile for a \"host\" target. UT are host applications to run on our machines. All FF-A ABIs need to be called from a testing component. Such as the Cactus SPs, TFTF or test partitions in hafnium CI.\n\nThere is a test already asserting the value of ME in hafnium CI:\nhttps://review.trustedfirmware.org/plugins/gitiles/hafnium/hafnium/+/refs/heads/master/test/vmapi/ffa_secure_partition_only/secure_partition.c",
+      "parentUuid": "69ac81af_ff398b2f",
+      "revId": "42a29df8bfc0f05e0297bb4f960a25c3d14bf408",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
