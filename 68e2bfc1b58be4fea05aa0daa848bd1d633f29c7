@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00f44168_64f50696",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-10-04T16:31:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2107bf30_c107af78",
+      "range": {
+        "startLine": 10,
+        "startChar": 48,
+        "endLine": 10,
+        "endChar": 58
+      },
+      "revId": "68e2bfc1b58be4fea05aa0daa848bd1d633f29c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "abbbf9db_b6179c44",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "09811fee_747a8c1e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-10-04T16:31:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "abbbf9db_b6179c44",
+      "range": {
+        "startLine": 12,
+        "startChar": 52,
+        "endLine": 12,
+        "endChar": 62
+      },
+      "revId": "68e2bfc1b58be4fea05aa0daa848bd1d633f29c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80ae3b90_c1f22a14",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-10-04T13:05:16Z",
       "side": 1,
       "message": "and here",
+      "range": {
+        "startLine": 305,
+        "startChar": 54,
+        "endLine": 305,
+        "endChar": 64
+      },
+      "revId": "68e2bfc1b58be4fea05aa0daa848bd1d633f29c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4afa3a15_a086ef26",
+        "filename": "include/runtime_services/cactus_test_cmds.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-10-04T16:31:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80ae3b90_c1f22a14",
       "range": {
         "startLine": 305,
         "startChar": 54,
