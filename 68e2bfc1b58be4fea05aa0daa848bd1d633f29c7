@@ -235,6 +235,30 @@
       },
       "revId": "68e2bfc1b58be4fea05aa0daa848bd1d633f29c7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e890bf0_ab44a694",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2022-10-05T12:49:22Z",
+      "side": 1,
+      "message": "Resolving, though expecting there will be a simple patch coming that sets explicitly variable \u0027fwd_dest_interrupted\u0027 to false.",
+      "parentUuid": "e75a3194_c6e81219",
+      "range": {
+        "startLine": 90,
+        "startChar": 25,
+        "endLine": 90,
+        "endChar": 46
+      },
+      "revId": "68e2bfc1b58be4fea05aa0daa848bd1d633f29c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
