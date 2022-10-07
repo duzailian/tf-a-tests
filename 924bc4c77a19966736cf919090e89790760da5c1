@@ -22,6 +22,30 @@
       },
       "revId": "924bc4c77a19966736cf919090e89790760da5c1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1510a22_cf4084c5",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-10-07T18:15:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c5160dab_5c8a1298",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 7
+      },
+      "revId": "924bc4c77a19966736cf919090e89790760da5c1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
