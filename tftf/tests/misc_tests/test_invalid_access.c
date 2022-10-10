@@ -15,7 +15,7 @@
 #endif
 #include <test_helpers.h>
 #include <lib/aarch64/arch_features.h>
-#include <runtime_services/realm_payload/realm_payload_test.h>
+#include <host_realm_helper.h>
 #include <tftf_lib.h>
 #include <xlat_tables_v2.h>
 
@@ -143,7 +143,7 @@ test_result_t rl_memory_cannot_be_accessed_in_ns(void)
 	}
 
 	/* Delegate the shared page to Realm. */
-	retmm = realm_granule_delegate((u_register_t)&share_page);
+	retmm = rmi_granule_delegate((u_register_t)&share_page);
 	if (retmm != 0UL) {
 		ERROR("Granule delegate failed!\n");
 		goto out_unregister;
@@ -161,7 +161,7 @@ test_result_t rl_memory_cannot_be_accessed_in_ns(void)
 
 out_undelegate:
 	/* Undelegate the shared page. */
-	retmm = realm_granule_undelegate((u_register_t)&share_page);
+	retmm = rmi_granule_undelegate((u_register_t)&share_page);
 	if (retmm != 0UL) {
 		ERROR("Granule undelegate failed!\n");
 	}
@@ -233,7 +233,7 @@ static test_result_t memory_cannot_be_accessed_in_rl(u_register_t params)
 		return TEST_RESULT_SKIPPED;
 	}
 
-	retrmm = realm_version();
+	retrmm = rmi_version();
 
 	VERBOSE("RMM version is: %lu.%lu\n",
 			RMI_ABI_VERSION_GET_MAJOR(retrmm),
@@ -247,17 +247,17 @@ static test_result_t memory_cannot_be_accessed_in_rl(u_register_t params)
 		return TEST_RESULT_SKIPPED;
 	}
 
-	retrmm = realm_granule_delegate((u_register_t)&rd[0]);
+	retrmm = rmi_granule_delegate((u_register_t)&rd[0]);
 	if (retrmm != 0UL) {
 		ERROR("Delegate operation returns fail, %lx\n", retrmm);
 		return TEST_RESULT_FAIL;
 	}
 
 	/* Create a realm using a parameter in a secure physical address space should fail. */
-	retrmm = realm_create((u_register_t)&rd[0], params);
+	retrmm = rmi_realm_create((u_register_t)&rd[0], params);
 	if (retrmm == 0UL) {
 		ERROR("Realm create operation should fail, %lx\n", retrmm);
-		retrmm = realm_destroy((u_register_t)&rd[0]);
+		retrmm = rmi_realm_destroy((u_register_t)&rd[0]);
 		if (retrmm != 0UL) {
 			ERROR("Realm destroy operation returns fail, %lx\n", retrmm);
 			return TEST_RESULT_FAIL;
@@ -269,7 +269,7 @@ static test_result_t memory_cannot_be_accessed_in_rl(u_register_t params)
 		return TEST_RESULT_FAIL;
 	}
 
-	retrmm = realm_granule_undelegate((u_register_t)&rd[0]);
+	retrmm = rmi_granule_undelegate((u_register_t)&rd[0]);
 	if (retrmm != 0UL) {
 		INFO("Undelegate operation returns fail, %lx\n", retrmm);
 		return TEST_RESULT_FAIL;

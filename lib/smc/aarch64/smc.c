@@ -7,15 +7,6 @@
 #include <stdint.h>
 #include <tftf.h>
 
-smc_ret_values asm_tftf_smc64(uint32_t fid,
-			      u_register_t arg1,
-			      u_register_t arg2,
-			      u_register_t arg3,
-			      u_register_t arg4,
-			      u_register_t arg5,
-			      u_register_t arg6,
-			      u_register_t arg7);
-
 smc_ret_values tftf_smc(const smc_args *args)
 {
 	return asm_tftf_smc64(args->fid,

@@ -39,6 +39,16 @@ typedef enum {
 	((result >= TEST_RESULT_MIN) && (result < TEST_RESULT_MAX))
 
 /*
+ * Defines member of structure and reserves space
+ * for the next member with specified offset.
+ */
+#define SET_MEMBER(member, start, end)	\
+	union {				\
+		member;			\
+		unsigned char reserved##end[end - start]; \
+	}
+
+/*
  * PSCI Function Wrappers
  *
  * SMC calls to PSCI functions
@@ -156,6 +166,15 @@ typedef struct {
 /*
  * Trigger an SMC call.
  */
+smc_ret_values asm_tftf_smc64(uint32_t fid,
+			      u_register_t arg1,
+			      u_register_t arg2,
+			      u_register_t arg3,
+			      u_register_t arg4,
+			      u_register_t arg5,
+			      u_register_t arg6,
+			      u_register_t arg7);
+
 smc_ret_values tftf_smc(const smc_args *args);
 
 /*
