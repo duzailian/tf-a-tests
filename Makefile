@@ -95,6 +95,8 @@ ifeq ($(wildcard ${PLAT_MAKEFILE_FULL}),)
 endif
 
 
+
+
 EL3_PAYLOAD_PLAT_PATH		:=	$(shell find el3_payload/plat/ -wholename '*/${PLAT}')
 EL3_PAYLOAD_PLAT_MAKEFILE_FULL	:=	${EL3_PAYLOAD_PLAT_PATH}/${PLAT_MAKEFILE}
 
@@ -119,6 +121,7 @@ SECURE_PARTITIONS	:=
 ifeq (${ARCH}-${PLAT},aarch64-fvp)
 include spm/cactus_mm/cactus_mm.mk
 include spm/quark/quark.mk
+include realm/realm.mk
 endif
 
 # cactus and ivy are supported on platforms: fvp, tc0
@@ -256,6 +259,7 @@ CACTUS_MM_CFLAGS	+= -mbranch-protection=${BP_OPTION}
 CACTUS_CFLAGS		+= -mbranch-protection=${BP_OPTION}
 IVY_CFLAGS		+= -mbranch-protection=${BP_OPTION}
 QUARK_CFLAGS		+= -mbranch-protection=${BP_OPTION}
+#REALM_CFLAGS		+= -mbranch-protection=${BP_OPTION} /* TBD */
 endif
 
 ifeq ($(SMC_FUZZING), 1)
@@ -305,6 +309,11 @@ QUARK_INCLUDES		+= ${PLAT_INCLUDES}
 QUARK_CFLAGS		+= ${COMMON_CFLAGS}
 QUARK_ASFLAGS		+= ${COMMON_ASFLAGS}
 QUARK_LDFLAGS		+= ${COMMON_LDFLAGS}
+
+REALM_SOURCES		+= ${LIBC_SRCS}
+REALM_CFLAGS		+= ${COMMON_CFLAGS} -fpie
+REALM_ASFLAGS		+= ${COMMON_ASFLAGS}
+REALM_LDFLAGS		+= ${COMMON_LDFLAGS} $(PIE_LDFLAGS)
 
 .PHONY: locate-checkpatch
 locate-checkpatch:
@@ -380,6 +389,11 @@ cactus_mm:
 
 .PHONY: quark
 quark:
+	@echo "ERROR: $@ is supported only on AArch64 FVP."
+	@exit 1
+
+.PHONY: realm
+realm:
 	@echo "ERROR: $@ is supported only on AArch64 FVP."
 	@exit 1
 endif
@@ -520,6 +534,7 @@ ifeq ($(SMC_FUZZING), 1)
 endif
 
 $(eval $(call MAKE_IMG,tftf))
+$(eval $(call MAKE_IMG,realm))
 
 ifeq ($(FIRMWARE_UPDATE), 1)
   $(eval $(call MAKE_IMG,ns_bl1u))
@@ -555,6 +570,13 @@ all: el3_payload
 endif
 endif
 
+# The Realm test payload is only supported in AArch64. packaging with tftf.bin
+# has an independent build target.
+.PHONY: pack_realm
+pack_realm: realm tftf
+	$(shell dd if=$(BUILD_PLAT)/realm.bin of=$(BUILD_PLAT)/tftf.bin obs=1 \
+	seek=$(TFTF_MAX_IMAGE_SIZE))
+
 doc:
 	@echo "  BUILD DOCUMENTATION"
 	${Q}${MAKE} --no-print-directory -C ${DOCS_PATH} html
@@ -569,7 +591,7 @@ cscope:
 .SILENT: help
 help:
 	echo "usage: ${MAKE} PLAT=<${PLATFORMS}> \
-<all|tftf|ns_bl1u|ns_bl2u|cactus|ivy|quark|el3_payload|distclean|clean|checkcodebase|checkpatch|help_tests>"
+<all|tftf|ns_bl1u|ns_bl2u|cactus|ivy|quark|realm|pack_realm|el3_payload|distclean|clean|checkcodebase|checkpatch|help_tests>"
 	echo ""
 	echo "PLAT is used to specify which platform you wish to build."
 	echo "If no platform is specified, PLAT defaults to: ${DEFAULT_PLAT}"
@@ -581,6 +603,8 @@ help:
 	echo "  ns_bl1u        Build the NS_BL1U image"
 	echo "  ns_bl2u        Build the NS_BL2U image"
 	echo "  cactus         Build the Cactus image (Test S-EL0 payload) and resource description."
+	echo "  realm          Build the Realm image (Test R-EL1 payload) and resource description."
+	echo "  pack_realm     Create final ns image tftf = tftf + realm"
 	echo "  cactus_mm      Build the Cactus-MM image (Test S-EL0 payload)."
 	echo "  ivy            Build the Ivy image (Test S-EL0 payload) and resource description."
 	echo "  quark          Build the Quark image (Test S-EL0 payload) and resource description."
