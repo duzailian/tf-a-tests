@@ -17,5 +17,8 @@
 	  <testcase name="Test TFTF can call RMM/TRP and SPM serially on a single core" function="test_spm_rmm_serial_smc" />
 	  <testcase name="Test TFTF can call RMM/TRP and SPM parallelly on a multi core" function="test_spm_rmm_parallel_smc" />
   </testsuite>
+  <testsuite name="Realm payload at EL1" description="Test Realm EL1 framework capabilities" >
+	  <testcase name="Realm EL1 creation and execution test" function="test_realm_create_enter" />
+  </testsuite>
 
 </testsuites>
