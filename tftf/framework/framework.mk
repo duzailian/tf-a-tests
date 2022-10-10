@@ -28,6 +28,7 @@ TFTF_INCLUDES	:= 					\
 	-Ispm/cactus					\
 	-Ispm/ivy					\
 	-Ispm/quark					\
+	-Irealm						\
 	-Ismc_fuzz/include
 
 FRAMEWORK_SOURCES	:=	${AUTOGEN_DIR}/tests_list.c

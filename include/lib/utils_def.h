@@ -162,4 +162,10 @@
 
 #define COMPILER_BARRIER() __asm__ volatile ("" ::: "memory")
 
+#define MASK(regfield) \
+	((~0UL >> (64UL - (regfield##_WIDTH))) << (regfield##_SHIFT))
+
+#define EXTRACT(regfield, reg) \
+	(((reg) & MASK(regfield)) >> (regfield##_SHIFT))
+
 #endif /* UTILS_DEF_H */
