@@ -22,8 +22,8 @@ TESTS_MAKEFILE := $(addprefix tftf/tests/,	\
 	tests-trng.mk				\
 	tests-tsp.mk				\
 	tests-uncontainable.mk			\
-	tests-debugfs.mk                        \
-	tests-realm-payload.mk			\
+	tests-debugfs.mk			\
+	tests-rmi-spm.mk			\
 )
 
 include ${TESTS_MAKEFILE}
