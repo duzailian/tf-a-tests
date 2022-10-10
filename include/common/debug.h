@@ -24,6 +24,11 @@ __attribute__((format(printf, 1, 2)))
 void mp_printf(const char *fmt, ...);
 #endif /* IMAGE_CACTUS_MM */
 
+#ifdef IMAGE_REALM
+void realm_printf(const char *fmt, ...);
+#define mp_printf realm_printf
+#endif
+
 /*
  * The log output macros print output to the console. These macros produce
  * compiled log output only if the LOG_LEVEL defined in the makefile (or the
