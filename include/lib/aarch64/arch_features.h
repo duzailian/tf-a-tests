@@ -198,4 +198,15 @@ static inline bool is_feat_rng_trap_present(void)
 			== ID_AA64PFR1_EL1_RNG_TRAP_SUPPORTED);
 }
 
+static inline bool get_feat_pmuv3_supported(void)
+{
+	return (((read_id_aa64dfr0_el1() >> ID_AA64DFR0_PMUVER_SHIFT) &
+		ID_AA64DFR0_PMUVER_MASK) != ID_AA64DFR0_PMUVER_NOT_SUPPORTED);
+}
+
+static inline bool get_feat_hpmn0_supported(void)
+{
+	return (((read_id_aa64dfr0_el1() >> ID_AA64DFR0_HPMN0_SHIFT) &
+		ID_AA64DFR0_HPMN0_MASK) == ID_AA64DFR0_HPMN0_SUPPORTED);
+}
 #endif /* ARCH_FEATURES_H */
