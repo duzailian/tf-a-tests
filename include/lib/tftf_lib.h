@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2022, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -37,6 +37,16 @@ typedef enum {
 
 #define TEST_RESULT_IS_VALID(result) \
 	((result >= TEST_RESULT_MIN) && (result < TEST_RESULT_MAX))
+
+/*
+ * Defines member of structure and reserves space
+ * for the next member with specified offset.
+ */
+#define SET_MEMBER(member, start, end)	\
+	union {				\
+		member;			\
+		unsigned char reserved##end[end - start]; \
+	}
 
 /*
  * PSCI Function Wrappers
