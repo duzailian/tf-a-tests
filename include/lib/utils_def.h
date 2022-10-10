@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2020, ARM Limited and Contributors. All rights reserved.
+ * Copyright (c) 2016-2022, ARM Limited and Contributors. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -161,5 +161,11 @@
 #define ASSERT_SYM_PTR_ALIGN(sym) assert(((size_t)(sym) % __alignof__(*(sym))) == 0)
 
 #define COMPILER_BARRIER() __asm__ volatile ("" ::: "memory")
+
+#define MASK(regfield) \
+	((~0ULL >> (64ULL - (regfield##_WIDTH))) << (regfield##_SHIFT))
+
+#define EXTRACT(regfield, reg) \
+	(((reg) & MASK(regfield)) >> (regfield##_SHIFT))
 
 #endif /* UTILS_DEF_H */
