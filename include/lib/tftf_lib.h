@@ -39,6 +39,16 @@ typedef enum {
 	((result >= TEST_RESULT_MIN) && (result < TEST_RESULT_MAX))
 
 /*
+ * Defines member of structure and reserves space
+ * for the next member with specified offset.
+ */
+#define SET_MEMBER(member, start, end)	\
+	union {				\
+		member;			\
+		unsigned char reserved##end[end - start]; \
+	}
+
+/*
  * PSCI Function Wrappers
  *
  * SMC calls to PSCI functions
