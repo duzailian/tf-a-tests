@@ -12,6 +12,31 @@
 
 #define PMU_EVT_INST_RETIRED	0x0008
 #define NOP_REPETITIONS		50
+#define MAX_COUNTERS		32
+
+#define read_all_counters(array, impl_ev_ctrs)					\
+	do {									\
+		array[0] = read_pmccntr_el0();					\
+		for (int i = 0; i < impl_ev_ctrs; i++)				\
+			array[i + 1] = read_pmevcntrn_el0(i);			\
+	} while (0)
+
+#define read_all_counter_configs(array, impl_ev_ctrs)				\
+	do {									\
+		array[0] = read_pmccfiltr_el0();				\
+		for (int i = 0; i < impl_ev_ctrs; i++)				\
+			array[i + 1] = read_pmevtypern_el0(i);			\
+	} while (0)
+
+#define read_all_pmu_configs(array)						\
+	do {									\
+		array[0] = read_pmcntenset_el0();				\
+		array[1] = read_pmcr_el0();					\
+		array[2] = read_pmselr_el0();					\
+		if (IS_IN_EL2()) {						\
+			array[3] = read_mdcr_el2();				\
+		}								\
+	} while (0)
 
 static inline void enable_counting(void)
 {
@@ -56,6 +81,13 @@ static inline void execute_nops(void)
 	for (int i = 0; i < NOP_REPETITIONS; i++) {
 		__asm__ ("orr x0, x0, x0\n");
 	}
+}
+
+static inline void execute_secure_nop(void)
+{
+	smc_args args = { TSP_FAST_FID(TSP_CHECK_DIT) };
+
+	tftf_smc(&args);
 }
 
 #endif /* defined(__aarch64__) */
@@ -149,5 +181,92 @@ test_result_t test_pmuv3_event_works_ns(void)
 		return TEST_RESULT_SUCCESS;
 	}
 	return TEST_RESULT_FAIL;
+#endif /* defined(__aarch64__) */
+}
+
+
+/*
+ * check if entering/exiting secure world preserves all PMU registers. Tries a
+ * couple ways to throw EL3 off. Complementary with leakage tests
+ */
+test_result_t test_pmuv3_preserved_ns(void)
+{
+	SKIP_TEST_IF_AARCH32();
+#if defined(__aarch64__)
+	u_register_t ctr_start[MAX_COUNTERS] = {0};
+	u_register_t ctr_cfg_start[MAX_COUNTERS] = {0};
+	u_register_t pmu_cfg_start[4];
+	u_register_t ctr_end[MAX_COUNTERS] = {0};
+	u_register_t ctr_cfg_end[MAX_COUNTERS] = {0};
+	u_register_t pmu_cfg_end[4];
+	int impl_ev_ctrs = (read_pmcr_el0() >> PMCR_EL0_N_SHIFT) & PMCR_EL0_N_MASK;
+
+	SKIP_TEST_IF_PMUV3_NOT_SUPPORTED();
+	SKIP_TEST_IF_TSP_NOT_PRESENT();
+
+	/* pretend counters have just been used */
+	enable_cycle_counter();
+	enable_event_counter(0);
+	enable_counting();
+	execute_nops();
+	disable_counting();
+
+	/* get before reading */
+	read_all_counters(ctr_start, impl_ev_ctrs);
+	read_all_counter_configs(ctr_cfg_start, impl_ev_ctrs);
+	read_all_pmu_configs(pmu_cfg_start);
+
+	/* give EL3 and secure world a chance to scramble everything */
+	execute_secure_nop();
+
+	/* get after reading */
+	read_all_counters(ctr_end, impl_ev_ctrs);
+	read_all_counter_configs(ctr_cfg_end, impl_ev_ctrs);
+	read_all_pmu_configs(pmu_cfg_end);
+
+	if (memcmp(ctr_start, ctr_end, sizeof(ctr_start)) != 0 ||
+	  memcmp(ctr_cfg_start, ctr_cfg_end, sizeof(ctr_cfg_start)) != 0 ||
+	  memcmp(pmu_cfg_start, pmu_cfg_end, sizeof(pmu_cfg_start)) != 0) {
+		tftf_testcase_printf("SMC call did not preserve registers\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* enter EL3 with pmu running to see if it reacts different */
+	read_all_counters(ctr_start, impl_ev_ctrs);
+	read_all_counter_configs(ctr_cfg_start, impl_ev_ctrs);
+	read_all_pmu_configs(pmu_cfg_start);
+
+	enable_counting();
+	execute_secure_nop();
+	disable_counting();
+
+	read_all_counters(ctr_end, impl_ev_ctrs);
+	read_all_counter_configs(ctr_cfg_end, impl_ev_ctrs);
+	read_all_pmu_configs(pmu_cfg_end);
+
+	if (memcmp(ctr_cfg_start, ctr_cfg_end, sizeof(ctr_cfg_start)) != 0 ||
+	  memcmp(pmu_cfg_start, pmu_cfg_end, sizeof(pmu_cfg_start)) != 0) {
+		tftf_testcase_printf(
+			"SMC call did not preserve registers while counting\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* test-pmu-leakage guarantee no increase so they could only be reset */
+	tftf_testcase_printf("Counted cycles from %ld to %ld\n",
+		ctr_start[0], ctr_end[0]);
+	if (ctr_start[0] >= ctr_end[0]) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* only first one was enabled */
+	if (impl_ev_ctrs) {
+		tftf_testcase_printf("Counted events from %ld to %ld\n",
+			ctr_start[1], ctr_end[1]);
+		if (ctr_start[1] >= ctr_end[1]) {
+			return TEST_RESULT_FAIL;
+		}
+	}
+
+	return TEST_RESULT_SUCCESS;
 #endif /* defined(__aarch64__) */
 }
