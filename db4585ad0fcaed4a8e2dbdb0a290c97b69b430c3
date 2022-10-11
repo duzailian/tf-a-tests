@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e3d1474_cf47ebeb",
+        "filename": "include/lib/extensions/sve.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-10-11T13:49:00Z",
+      "side": 1,
+      "message": "Those are test related definitions.\nIt doesn\u0027t seem correct to add them to the generic sve lib header?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 27
+      },
+      "revId": "db4585ad0fcaed4a8e2dbdb0a290c97b69b430c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfd49b5c_999708ad",
+        "filename": "tftf/tests/runtime_services/secure_service/sve_operations_cactus.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-10-11T13:49:00Z",
+      "side": 1,
+      "message": "nit: 2022 as this is a new file",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "db4585ad0fcaed4a8e2dbdb0a290c97b69b430c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6228a1f_963bc0ab",
+        "filename": "tftf/tests/runtime_services/secure_service/sve_operations_cactus.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-10-11T13:49:00Z",
+      "side": 1,
+      "message": "nit: I\u0027d rename it to be a bit more generic e.g.\nsve_substract_interleaved_smc",
+      "range": {
+        "startLine": 20,
+        "startChar": 9,
+        "endLine": 20,
+        "endChar": 35
+      },
+      "revId": "db4585ad0fcaed4a8e2dbdb0a290c97b69b430c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b40543c3_a5df518a",
+        "filename": "tftf/tests/runtime_services/secure_service/sve_operations_cactus.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-10-11T13:49:00Z",
+      "side": 1,
+      "message": "Add a comment about what this is doing.\ne.g. forge a FF-A direct request with a command for cactus to fill NEON vectors in the secure world.",
+      "revId": "db4585ad0fcaed4a8e2dbdb0a290c97b69b430c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "432f9c81_4f21185e",
+        "filename": "tftf/tests/runtime_services/secure_service/sve_operations_cactus.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-10-11T13:49:00Z",
+      "side": 1,
+      "message": "Add a comment saying the test hangs there if not getting a FF-A direct resp.\nWe could actually also check some success code is returned.",
+      "revId": "db4585ad0fcaed4a8e2dbdb0a290c97b69b430c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
