@@ -48,6 +48,7 @@ test_result_t test_sme_support(void)
 		ERROR("Could not write TPIDR2_EL0.\n");
 		return TEST_RESULT_FAIL;
 	}
+	isb();
 
 	/* Make sure we can start and stop streaming mode. */
 	VERBOSE("Entering Streaming SVE mode.\n");
