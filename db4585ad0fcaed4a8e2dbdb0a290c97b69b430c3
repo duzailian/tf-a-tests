@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcc0cc92_b080731b",
+        "filename": "include/lib/extensions/sve.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-10-18T03:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e3d1474_cf47ebeb",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 27
+      },
+      "revId": "db4585ad0fcaed4a8e2dbdb0a290c97b69b430c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dfd49b5c_999708ad",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-10-11T13:49:00Z",
       "side": 1,
       "message": "nit: 2022 as this is a new file",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "db4585ad0fcaed4a8e2dbdb0a290c97b69b430c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "493f849e_f0d1319d",
+        "filename": "tftf/tests/runtime_services/secure_service/sve_operations_cactus.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-10-18T03:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd49b5c_999708ad",
       "range": {
         "startLine": 2,
         "startChar": 17,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18a9842a_b8443132",
+        "filename": "tftf/tests/runtime_services/secure_service/sve_operations_cactus.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-10-18T03:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f6228a1f_963bc0ab",
+      "range": {
+        "startLine": 20,
+        "startChar": 9,
+        "endLine": 20,
+        "endChar": 35
+      },
+      "revId": "db4585ad0fcaed4a8e2dbdb0a290c97b69b430c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b40543c3_a5df518a",
@@ -87,6 +159,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a68a034_4f60b175",
+        "filename": "tftf/tests/runtime_services/secure_service/sve_operations_cactus.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-10-18T03:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b40543c3_a5df518a",
+      "revId": "db4585ad0fcaed4a8e2dbdb0a290c97b69b430c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "432f9c81_4f21185e",
@@ -100,6 +190,24 @@
       "writtenOn": "2022-10-11T13:49:00Z",
       "side": 1,
       "message": "Add a comment saying the test hangs there if not getting a FF-A direct resp.\nWe could actually also check some success code is returned.",
+      "revId": "db4585ad0fcaed4a8e2dbdb0a290c97b69b430c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00179d62_b67d1704",
+        "filename": "tftf/tests/runtime_services/secure_service/sve_operations_cactus.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2022-10-18T03:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "432f9c81_4f21185e",
       "revId": "db4585ad0fcaed4a8e2dbdb0a290c97b69b430c3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
