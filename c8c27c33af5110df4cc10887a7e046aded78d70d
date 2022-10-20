@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "aeb80dfd_d01f8f52",
+        "filename": "Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 576,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T14:34:32Z",
+      "side": 1,
+      "message": "pack_realm",
+      "parentUuid": "3b298413_35bb0bb6",
+      "range": {
+        "startLine": 576,
+        "startChar": 8,
+        "endLine": 576,
+        "endChar": 23
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e944102e_f4354a9b",
         "filename": "Makefile",
         "patchSetId": 4
@@ -54,6 +78,24 @@
       "writtenOn": "2022-10-20T13:38:19Z",
       "side": 1,
       "message": "add `pack_realm_payload` option",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58c0bb10_1a8dcaab",
+        "filename": "Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T14:34:32Z",
+      "side": 1,
+      "message": "pack_realm option",
+      "parentUuid": "e944102e_f4354a9b",
       "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -261,6 +303,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b7983bb8_7f5db6a5",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T14:34:32Z",
+      "side": 1,
+      "message": "On Second thougths, This is MAX_NS_IMAGE_SIZE \u003dTFTF_MAX_SIZE + REALM_PAYLOAD_SIZE \n\n\nand verify that all of this size is \u003c\u003d DRAM_SIZE",
+      "parentUuid": "d5413061_cae040dd",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 27
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a8d4497c_ba4f9443",
         "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
         "patchSetId": 4
@@ -307,6 +373,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c9d4e3ca_bee7c8aa",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T14:34:32Z",
+      "side": 1,
+      "message": "This should not be platform define.",
+      "parentUuid": "a8d4497c_ba4f9443",
+      "range": {
+        "startLine": 38,
+        "startChar": 8,
+        "endLine": 38,
+        "endChar": 33
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2cf8af11_0332153f",
         "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
         "patchSetId": 4
@@ -341,6 +431,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e5312b7f_64b00013",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T14:34:32Z",
+      "side": 1,
+      "message": "Make TFTF_MAX_SIZE a define from the makefile (already done) and set the size in platform.mk of FVP",
+      "parentUuid": "26981477_8ead7f80",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "21e06ecc_ed2f877f",
         "filename": "include/runtime_services/realm_payload/realm_payload_test.h",
         "patchSetId": 4
@@ -352,6 +460,75 @@
       "writtenOn": "2022-10-20T13:38:19Z",
       "side": 1,
       "message": "These are actually RMI tests so can be in host_realm_rmi.c and can be within the test file. remove this header.",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6aed54f_2d43d822",
+        "filename": "plat/arm/fvp/platform.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T14:34:32Z",
+      "side": 1,
+      "message": "This macro may not be needed.",
+      "range": {
+        "startLine": 71,
+        "startChar": 39,
+        "endLine": 71,
+        "endChar": 56
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e59aa8d_2dc7eddc",
+        "filename": "plat/arm/fvp/platform.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T14:34:32Z",
+      "side": 1,
+      "message": "This may not be needed,",
+      "range": {
+        "startLine": 72,
+        "startChar": 39,
+        "endLine": 72,
+        "endChar": 63
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "409cfaef_50ccc16c",
+        "filename": "plat/arm/fvp/platform.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T14:34:32Z",
+      "side": 1,
+      "message": "may  not be needed.",
+      "range": {
+        "startLine": 73,
+        "startChar": 39,
+        "endLine": 73,
+        "endChar": 57
+      },
       "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -375,6 +552,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "350aac74_56d28e0e",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T14:34:32Z",
+      "side": 1,
+      "message": "may not be needed",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6591f5da_bd59781d",
         "filename": "realm/realm.ld.S",
         "patchSetId": 4
@@ -386,6 +580,24 @@
       "writtenOn": "2022-10-20T13:38:19Z",
       "side": 1,
       "message": "Add \nMEMORY {\n    RAM (rwx): ORIGIN \u003d 0x0, LENGTH \u003d PLAT_REALM_MAX_SIZE\n}",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f19c2d2b_9783a620",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T14:34:32Z",
+      "side": 1,
+      "message": "LENGTH \u003d REALM_MAX_SIZE",
+      "parentUuid": "6591f5da_bd59781d",
       "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
