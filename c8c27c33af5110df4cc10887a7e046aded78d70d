@@ -1,0 +1,542 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebae7ae8_690e550c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "Overall very good work. Some changes related to structure suggested.",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b298413_35bb0bb6",
+        "filename": "Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 576,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "pack_realm_payload",
+      "range": {
+        "startLine": 576,
+        "startChar": 8,
+        "endLine": 576,
+        "endChar": 23
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e944102e_f4354a9b",
+        "filename": "Makefile",
+        "patchSetId": 4
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "add `pack_realm_payload` option",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfa06077_e5acd5cc",
+        "filename": "include/lib/tftf_lib.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "we could use the tftf_smc helper. I am not sure that the internal helper should be exposed.\n\nFor eg: \n    static inline u_register_t rmi_data_create(u_register_t data, u_register_t rd, u_register_t map_addr, u_register_t src)\n{\n\treturn ((smc_ret_values)(asm_tftf_smc64(RMI_DATA_CREATE,\n\t\tdata, rd, map_addr, src, 0UL, 0UL, 0UL))).ret0;\n}\n\ncan be implemented as :\n\n    static inline u_register_t rmi_data_create(u_register_t data, u_register_t rd, u_register_t map_addr, u_register_t src)\n{\n       smc_args args \u003d {RMI_DATA_CREATE, data, rd, map_addr, src, 0UL, 0UL, 0UL};\n\n\treturn ((smc_ret_values)(tftf_smc64(\u0026args))).ret0;\n}",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc386e08_bd82341f",
+        "filename": "include/lib/xlat_tables/xlat_tables_defs.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "not used, can be removed.",
+      "range": {
+        "startLine": 187,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 60
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b085b4b6_661883ce",
+        "filename": "include/lib/xlat_tables/xlat_tables_defs.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 191,
+        "startChar": 45,
+        "endLine": 191,
+        "endChar": 49
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a90144c_44573f67",
+        "filename": "include/lib/xlat_tables/xlat_tables_defs.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 193,
+        "startChar": 27,
+        "endLine": 193,
+        "endChar": 30
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2da27cc6_e575fda1",
+        "filename": "include/lib/xlat_tables/xlat_tables_defs.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 196,
+        "startChar": 1,
+        "endLine": 196,
+        "endChar": 50
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7119e39_98a5b168",
+        "filename": "include/lib/xlat_tables/xlat_tables_defs.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 200,
+        "startChar": 61,
+        "endLine": 200,
+        "endChar": 64
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "050571bd_0c280485",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_helper.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "use same macro name as header name  HOST_REALM_HELPER_H",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 6,
+        "endChar": 34
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5113f05d_ca6b469a",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "/*\n * Realm payload Memory Usage Layout\n *\n * +--------------+      +-------------+\n * |              |      | Host Image  |\n * |    TFTF      |      | (TFTF_MAX_IMAGE_SIZE)    |\n * | Normal World | \u003d\u003d\u003e  +-------------+  \u003d\u003d\u003e REALM_IMAGE_BASE\n * |    Image     |      | Realm Image |\n * | (MAX_NS_IMAGE_SUIZE)|   REALM_MAX_LOAG_IMG_SIZE |\n * +--------------+      +-------------+  \u003d\u003d\u003e PAGE_POOL_BASE\n * |  Memory Pool |      |    Heap     |\n * |    (PAGE_POOL_SIZE)     |      |   Memory    |\n * |   +           | \u003d\u003d\u003e  |    (PAGE_POOL_MAX_SIZE)    |\n * |    NS_REALM_SIZe          |      |             |\n * |              |      +-------------+  \u003d\u003d\u003e NS_REALM_SHARED_MEM_BASE\n * |              |      |Shared Region|\n * |              |      |              |\n * +--------------+      +-------------+\n *\n * \n */\n\nReplace all sizes with their respective macros.",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 3
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5413061_cae040dd",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "This should be PLATFORM_REALM_PAYLOAD_MAX_SIZE + PLATFORM_TFTF_MAX_SIZE",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 27
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8d4497c_ba4f9443",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "This should be platform define : PLATFORM_REALM_PAYLOAD_MAX_SIZE",
+      "range": {
+        "startLine": 38,
+        "startChar": 8,
+        "endLine": 38,
+        "endChar": 33
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85d9e555_2c4e3179",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "This should be platform define PLATFORM_TFTF_MAX_SIZE",
+      "range": {
+        "startLine": 38,
+        "startChar": 54,
+        "endLine": 38,
+        "endChar": 73
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cf8af11_0332153f",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "Add comment for sizes in MB",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26981477_8ead7f80",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "The linker script should be fixed up \n\nOUTPUT_FORMAT(PLATFORM_LINKER_FORMAT)\nOUTPUT_ARCH(PLATFORM_LINKER_ARCH)\nENTRY(tftf_entrypoint)\n\nMEMORY {\n    RAM (rwx): ORIGIN \u003d DRAM_BASE, LENGTH \u003d DRAM_SIZE\n}\n\n\nThe LENGTH should somehow connect to PLAT_TFTF_MAX_SIZE \nEither define this macro for every platform and for FVP, define this to be a fixed value.\nThis will affect every platform_def.h\n\nElse\n\n\nHere in this file, \n\nIMPORT__TFTF_END__ symbol and assert that this is less that PLAT_TFTF_MAX_SIZE",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21e06ecc_ed2f877f",
+        "filename": "include/runtime_services/realm_payload/realm_payload_test.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "These are actually RMI tests so can be in host_realm_rmi.c and can be within the test file. remove this header.",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f2f7f88_78cef59b",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "The folder can be realm_payload",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6591f5da_bd59781d",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "Add \nMEMORY {\n    RAM (rwx): ORIGIN \u003d 0x0, LENGTH \u003d PLAT_REALM_MAX_SIZE\n}",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c6ff338_27bd5a43",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "} \u003eRAM",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 5
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9489af0f_e4639ded",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "} \u003eRAM",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 5
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9026c738_091c320f",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "} \u003eRAM",
+      "range": {
+        "startLine": 57,
+        "startChar": 4,
+        "endLine": 57,
+        "endChar": 5
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61de01e7_d24a5bb1",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "} \u003eRAM",
+      "range": {
+        "startLine": 67,
+        "startChar": 4,
+        "endLine": 67,
+        "endChar": 5
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e28b4e2_e5ab7d87",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "} \u003eRAM",
+      "range": {
+        "startLine": 78,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 5
+      },
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f05ded5b_eed3ca04",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_spm_test.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "This can move to host_realm_mgmt folder.\n\nCan be renamed to host_rmi_spm_test.c",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "421bd2a2_28b4a41f",
+        "filename": "tftf/tests/runtime_services/realm_payload/realm_payload_test.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-20T13:38:19Z",
+      "side": 1,
+      "message": "host_rmi_delegate_tests",
+      "revId": "c8c27c33af5110df4cc10887a7e046aded78d70d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
