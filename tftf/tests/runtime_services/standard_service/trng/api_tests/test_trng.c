@@ -29,7 +29,6 @@ test_result_t test_trng_version(void)
 		return TEST_RESULT_SKIPPED;
 	}
 
-
 	if (version < TRNG_VERSION(1, 0)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -75,6 +74,11 @@ test_result_t test_trng_rnd(void)
 		return TEST_RESULT_SKIPPED;
 	}
 
+	/* Ensure function is implemented before requesting Entropy */
+	if (!(tftf_trng_feature_implemented(SMC_TRNG_RND))) {
+		return TEST_RESULT_FAIL;
+	}
+
 	/* Test invalid entropy sizes */
 	rnd_out = tftf_trng_rnd(U(0));
 	if (rnd_out.ret0 != TRNG_E_INVALID_PARAMS) {
@@ -97,7 +101,7 @@ test_result_t test_trng_rnd(void)
 	/* For N = 1, all returned entropy bits should be 0
 	 * except the least significant bit */
 	rnd_out = tftf_trng_rnd(U(1));
-	if (rnd_out.ret0 == TRNG_E_NO_ENTOPY) {
+	if (rnd_out.ret0 == TRNG_E_NO_ENTROPY) {
 		WARN("There is not a single bit of entropy\n");
 		return TEST_RESULT_SKIPPED;
 	}
@@ -116,7 +120,7 @@ test_result_t test_trng_rnd(void)
 
 	/* For N = MAX_BITS-1, the most significant bit should be 0 */
 	rnd_out = tftf_trng_rnd(TRNG_MAX_BITS - U(1));
-	if (rnd_out.ret0 == TRNG_E_NO_ENTOPY) {
+	if (rnd_out.ret0 == TRNG_E_NO_ENTROPY) {
 		WARN("There is not a single bit of entropy\n");
 		return TEST_RESULT_SKIPPED;
 	}
