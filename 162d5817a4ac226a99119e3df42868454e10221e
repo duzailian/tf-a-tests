@@ -1,0 +1,187 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f4ec426_8df17a5f",
+        "filename": "include/lib/heap/page_alloc.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-24T16:23:29Z",
+      "side": 1,
+      "message": "PAGE_ALLOC_H",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 8,
+        "endChar": 27
+      },
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe3aca74_fbc86a57",
+        "filename": "include/lib/xlat_tables/xlat_tables_defs.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-24T16:23:29Z",
+      "side": 1,
+      "message": "remove from here.",
+      "range": {
+        "startLine": 183,
+        "startChar": 39,
+        "endLine": 185,
+        "endChar": 37
+      },
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c41310e_173a66be",
+        "filename": "include/lib/xlat_tables/xlat_tables_defs.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-24T16:23:29Z",
+      "side": 1,
+      "message": "Add here: \n\"When FEAT_S2FWB is enabled.\n * RMM will set HCR_EL2.FWB So we set bit[4] to 1 and bits[3:2] to 0b10 and force\n * everything to be Normal Write-Back\n\"",
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13f80c21_59ae40e3",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_helper.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-24T16:23:29Z",
+      "side": 1,
+      "message": "this include may not be needed. can be directly included in the C file if needed.",
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "640c9686_e984f183",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-24T16:23:29Z",
+      "side": 1,
+      "message": "match header.",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 8,
+        "endChar": 31
+      },
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ea46dcb_b3b6dbe8",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-24T16:23:29Z",
+      "side": 1,
+      "message": "#define REALM_MAX_LOAD_IMG_SIZE to 1 MB here as it is platform independant.",
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0a7fd41_01d115d0",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-24T16:23:29Z",
+      "side": 1,
+      "message": "can be removed from platform.",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 31
+      },
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac51f5b7_869db865",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-24T16:23:29Z",
+      "side": 1,
+      "message": "Need to CASSERT that NS_REALM_SHARED_MEM_BASE + NS_REALM_SHARED_MEM_SIZE \u003c\u003d DRAM_BASE + SIZE.\n\nAlso assert __TFTF_END__ \u003c\u003d TFTF_BASE+ TFTF_MAX_IMAGE_SIZE",
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb26a7db_843524fc",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-24T16:23:29Z",
+      "side": 1,
+      "message": "match header.",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 8,
+        "endChar": 24
+      },
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
