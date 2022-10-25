@@ -388,6 +388,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3d95f12b_7a914799",
+        "filename": "tftf/tests/runtime_services/rmi_spm_services/rmi_delegate_tests.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-10-25T15:45:39Z",
+      "side": 1,
+      "message": "host_realm_managment folder include files related to Realm payload management and RMI ABI, this file a test file to test FFA/SPM along with RMI/ABI that\u0027s why I keep it in a new directory called rmi_spm_services where all RMI based test cases are grouped",
+      "parentUuid": "2cb3d34a_affeb8bf",
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2e24d1d4_9e400e98",
         "filename": "tftf/tests/runtime_services/rmi_spm_services/rmi_spm_tests.c",
         "patchSetId": 8
