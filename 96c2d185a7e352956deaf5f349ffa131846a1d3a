@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "32f2f232_07ad8176",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-10-26T15:11:24Z",
+      "side": 1,
+      "message": "extra not",
+      "range": {
+        "startLine": 10,
+        "startChar": 9,
+        "endLine": 10,
+        "endChar": 16
+      },
+      "revId": "96c2d185a7e352956deaf5f349ffa131846a1d3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "479a5ab5_884cf620",
         "filename": "tftf/tests/extensions/sme/test_sme.c",
         "patchSetId": 1
@@ -32,6 +55,24 @@
       "side": 1,
       "message": "the thinking was that the sme_enable doesn\u0027t affect tpidr2_el0 accesses and I wanted the isb() to cover the write to it as well. But it has no effects it could be immediately after too I suppose",
       "parentUuid": "479a5ab5_884cf620",
+      "revId": "96c2d185a7e352956deaf5f349ffa131846a1d3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0c29ea0_b060b6ba",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2022-10-26T15:11:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3ea73a33_c8a83f3b",
       "revId": "96c2d185a7e352956deaf5f349ffa131846a1d3a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
