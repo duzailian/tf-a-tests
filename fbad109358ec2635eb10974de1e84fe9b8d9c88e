@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21a5a994_9f3791ff",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-31T14:58:44Z",
+      "side": 1,
+      "message": "Not entirely correct as PMU is expected to be disabled on entry to Secure world but not the realm world. Could mention that here.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 61
+      },
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae9e5992_50aa285f",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-31T14:58:44Z",
+      "side": 1,
+      "message": "This test is assuming TSP which may not be the case going forward for Newmore. Would prefer the test to be written with FF-A.",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f275a5f3_7e6be0a3",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-31T14:58:44Z",
+      "side": 1,
+      "message": "A better way to test would be for Secure World to test that PMU is disabled when in Secure. The asset to protect is Secure world timings and hence that would be a better test. The PMU counter should always count up from current values, but should not rely on the count being the same even after return from Secure world.",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a76170d5_df1feff5",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-31T14:58:44Z",
+      "side": 1,
+      "message": "Not sure how this count will match start count ? The count is running when entering EL3 and similarly when returning.",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "684a2985_2abe1751",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-31T14:58:44Z",
+      "side": 1,
+      "message": "Is this the overflow case ?",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8414be5_09425733",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-31T14:58:44Z",
+      "side": 1,
+      "message": "Is this is the overflow case ?",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
