@@ -58,6 +58,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a0446bc_8096e9b5",
+        "filename": "Makefile",
+        "patchSetId": 16
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-10-31T07:31:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b14de81d_f82cbcd0",
+      "range": {
+        "startLine": 572,
+        "startChar": 0,
+        "endLine": 574,
+        "endChar": 34
+      },
+      "revId": "cf8eadd6de4ebb6feaf351e3129e8de601d19436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f568ce7a_c9b74c6b",
@@ -71,6 +95,30 @@
       "writtenOn": "2022-10-28T07:30:29Z",
       "side": 1,
       "message": "remove.",
+      "range": {
+        "startLine": 606,
+        "startChar": 67,
+        "endLine": 606,
+        "endChar": 92
+      },
+      "revId": "cf8eadd6de4ebb6feaf351e3129e8de601d19436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af2dee4f_947f33bc",
+        "filename": "Makefile",
+        "patchSetId": 16
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-10-31T07:31:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f568ce7a_c9b74c6b",
       "range": {
         "startLine": 606,
         "startChar": 67,
@@ -104,6 +152,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "91059cdc_3a2a53d3",
+        "filename": "Makefile",
+        "patchSetId": 16
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-10-31T07:31:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1d545e9_0b9798a6",
+      "range": {
+        "startLine": 607,
+        "startChar": 24,
+        "endLine": 607,
+        "endChar": 65
+      },
+      "revId": "cf8eadd6de4ebb6feaf351e3129e8de601d19436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "02060ce6_63f4c4f6",
@@ -117,6 +189,24 @@
       "writtenOn": "2022-10-28T07:30:29Z",
       "side": 1,
       "message": "utils_def.h might be a better place",
+      "revId": "cf8eadd6de4ebb6feaf351e3129e8de601d19436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "547c1e27_535e5752",
+        "filename": "include/lib/tftf_lib.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-10-31T07:31:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02060ce6_63f4c4f6",
       "revId": "cf8eadd6de4ebb6feaf351e3129e8de601d19436",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -140,6 +230,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7a4bf349_6544fc06",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-10-31T07:31:37Z",
+      "side": 1,
+      "message": "it is needed for TFTF_BASE for the corresponding platform",
+      "parentUuid": "960d1b7b_442d66f8",
+      "revId": "cf8eadd6de4ebb6feaf351e3129e8de601d19436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "369f8b47_eef8746d",
         "filename": "plat/arm/fvp/platform.mk",
         "patchSetId": 16
@@ -151,6 +259,30 @@
       "writtenOn": "2022-10-28T07:30:29Z",
       "side": 1,
       "message": "set default to 100 MB",
+      "range": {
+        "startLine": 7,
+        "startChar": 39,
+        "endLine": 7,
+        "endChar": 61
+      },
+      "revId": "cf8eadd6de4ebb6feaf351e3129e8de601d19436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4c42208_2ca0f4d7",
+        "filename": "plat/arm/fvp/platform.mk",
+        "patchSetId": 16
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-10-31T07:31:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "369f8b47_eef8746d",
       "range": {
         "startLine": 7,
         "startChar": 39,
