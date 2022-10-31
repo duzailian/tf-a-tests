@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ba935f27_2b351585",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-31T10:37:27Z",
+      "side": 1,
+      "message": "This needs to be taken care.",
+      "parentUuid": "ac6632ed_18eddbb8",
+      "revId": "cf8eadd6de4ebb6feaf351e3129e8de601d19436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3d408f49_694dc2da",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 16
@@ -242,6 +260,24 @@
       "side": 1,
       "message": "it is needed for TFTF_BASE for the corresponding platform",
       "parentUuid": "960d1b7b_442d66f8",
+      "revId": "cf8eadd6de4ebb6feaf351e3129e8de601d19436",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3854ba4c_3f60bd0e",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-10-31T10:37:27Z",
+      "side": 1,
+      "message": "Ah, OK, Currently TFTF_BASE is a define from build system so I assumed this is not needed.",
+      "parentUuid": "7a4bf349_6544fc06",
       "revId": "cf8eadd6de4ebb6feaf351e3129e8de601d19436",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
