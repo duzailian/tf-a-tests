@@ -1,0 +1,279 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2147269d_b930c530",
+        "filename": "Makefile",
+        "patchSetId": 19
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-01T14:34:56Z",
+      "side": 1,
+      "message": "nit: remove this two empty lines",
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7c9c569_cc4c28c2",
+        "filename": "Makefile",
+        "patchSetId": 19
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-01T14:34:56Z",
+      "side": 1,
+      "message": "Remove if not needed",
+      "range": {
+        "startLine": 262,
+        "startChar": 0,
+        "endLine": 262,
+        "endChar": 60
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf3ba7ca_c429be87",
+        "filename": "include/lib/heap/page_alloc.h",
+        "patchSetId": 19
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-01T14:34:56Z",
+      "side": 1,
+      "message": "Any reason why this is represented as 0U instead of a negative value?",
+      "range": {
+        "startLine": 14,
+        "startChar": 7,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea4e8e32_d55e4b46",
+        "filename": "include/lib/tftf_lib.h",
+        "patchSetId": 19
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-01T14:34:56Z",
+      "side": 1,
+      "message": "I think this is not needed",
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7934b406_8c7ad5c6",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 19
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-01T14:34:56Z",
+      "side": 1,
+      "message": "nit: LOAD?",
+      "range": {
+        "startLine": 23,
+        "startChar": 49,
+        "endLine": 23,
+        "endChar": 53
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12296352_4854a06d",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-01T14:34:56Z",
+      "side": 1,
+      "message": "nit: Use lowercase",
+      "range": {
+        "startLine": 22,
+        "startChar": 17,
+        "endLine": 22,
+        "endChar": 18
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97c11fb2_aa1108fc",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-01T14:34:56Z",
+      "side": 1,
+      "message": "I\u0027m wondering (just out of curiosity), is this really need to be treated as an error? If we request 0 bytes, why don\u0027t just return a NULL pointer or even a valid pointer to the next available item in the heap and let the caller handle that? (similar to what malloc() et al. do)",
+      "range": {
+        "startLine": 63,
+        "startChar": 1,
+        "endLine": 64,
+        "endChar": 14
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df4fa013_ecf4900c",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-01T14:34:56Z",
+      "side": 1,
+      "message": "Since page_free() is not implemented, maybe we should assert here, just to avoid a caller to use it and cause a potential bug if it is not aware that the implementation is empty.",
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd1490b5_37291551",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 19
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-01T14:34:56Z",
+      "side": 1,
+      "message": "Can we avoid the use of magic numbers here? A self-explanatory macro would be much better.",
+      "range": {
+        "startLine": 55,
+        "startChar": 10,
+        "endLine": 55,
+        "endChar": 17
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e02c9816_1e4a5b56",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-01T14:34:56Z",
+      "side": 1,
+      "message": "nit: Maybe add an empty line here to improve readability.",
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ccbfc374_b11c882f",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-01T14:34:56Z",
+      "side": 1,
+      "message": "Would it be possible to create a macro for this magic number. We should avoid magic numbers when possible.",
+      "range": {
+        "startLine": 298,
+        "startChar": 32,
+        "endLine": 298,
+        "endChar": 33
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2f900d2_631398e8",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 947,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-01T14:34:56Z",
+      "side": 1,
+      "message": "Use brackets also for single line blocks",
+      "range": {
+        "startLine": 947,
+        "startChar": 2,
+        "endLine": 947,
+        "endChar": 30
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4db5ca3e_8530378c",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 1122,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-01T14:34:56Z",
+      "side": 1,
+      "message": "Not sure we need this. RMM is only supported on aarch64 mode",
+      "range": {
+        "startLine": 1122,
+        "startChar": 0,
+        "endLine": 1122,
+        "endChar": 18
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
