@@ -98,6 +98,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "09154c7e_92ae439d",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-11-02T18:19:25Z",
+      "side": 1,
+      "message": "\u003e In a way when we call tftf_trng_version(), we are indirectly checking line number 53. Its kind of redundant check not a harm though. \nI mean, the check should be moved from line 53 to the tftf_trng_version function. Currently, tftf_trng_version function issues version SMC without checking if it has been implemented, according to its definition [1]. \n\n[1]: https://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/lib/trng/trng.c#n24",
+      "parentUuid": "e5f5ab62_aacbbdc4",
+      "range": {
+        "startLine": 53,
+        "startChar": 5,
+        "endLine": 53,
+        "endChar": 54
+      },
+      "revId": "816d0e0bd63396cbcae5e8e111b5f301ce981528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fb210be0_005a47b7",
         "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
         "patchSetId": 1
