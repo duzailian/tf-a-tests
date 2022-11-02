@@ -90,6 +90,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c9520fef_cf86288d",
+        "filename": "include/lib/heap/page_alloc.h",
+        "patchSetId": 19
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T15:51:48Z",
+      "side": 1,
+      "message": "I changed it to HEAP_NULL_PTR, is it ok? I can\u0027t use NULL ((void*)0)",
+      "parentUuid": "7e97897a_43e9ef78",
+      "range": {
+        "startLine": 14,
+        "startChar": 7,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ea4e8e32_d55e4b46",
         "filename": "include/lib/tftf_lib.h",
         "patchSetId": 19
@@ -200,6 +224,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a2b9ad1a_1a0d0d39",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T15:51:48Z",
+      "side": 1,
+      "message": "I\u0027m already retuning return HEAP_NULL_PTR;",
+      "parentUuid": "8a52ba25_91a4452b",
+      "range": {
+        "startLine": 63,
+        "startChar": 1,
+        "endLine": 64,
+        "endChar": 14
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "df4fa013_ecf4900c",
         "filename": "lib/heap/page_alloc.c",
         "patchSetId": 19
@@ -229,6 +277,24 @@
       "side": 1,
       "message": "I would suggest to remove this API and can be added later.",
       "parentUuid": "df4fa013_ecf4900c",
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e51d5aad_26f20ef2",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T15:51:48Z",
+      "side": 1,
+      "message": "in the code this API is called in strategic places which if removed today the next who want to add it need to figured out the places where and what to free.",
+      "parentUuid": "1e79fd31_e9a9a501",
       "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },

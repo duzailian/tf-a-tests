@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "450bea3c_54870f95",
+        "filename": "Makefile",
+        "patchSetId": 21
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T15:51:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a24e7824_fbb9f562",
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "596b0c12_86cc449e",
@@ -41,6 +59,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5866970_91c3d3cb",
+        "filename": "include/runtime_services/host_realm_managment/realm_def.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T15:51:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "596b0c12_86cc449e",
+      "range": {
+        "startLine": 21,
+        "startChar": 1,
+        "endLine": 31,
+        "endChar": 0
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9b50a31c_3aebfdb4",
@@ -54,6 +96,30 @@
       "writtenOn": "2022-11-02T04:06:46Z",
       "side": 1,
       "message": "add: \u003eRAM",
+      "range": {
+        "startLine": 68,
+        "startChar": 4,
+        "endLine": 68,
+        "endChar": 5
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d4afdb1_1e78f387",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 21
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T15:51:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b50a31c_3aebfdb4",
       "range": {
         "startLine": 68,
         "startChar": 4,
