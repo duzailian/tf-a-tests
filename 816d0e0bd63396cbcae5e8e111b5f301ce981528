@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a5aad3a8_03285ef4",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-11-02T14:07:15Z",
+      "side": 1,
+      "message": "As per the spec, the presence of the TRNG ABI is discovered by calling TRNG_VERSION. So that is the first action to be done before calling any other APIS. Once that passes, it ensures ABI is present and then we could proceed and test other functions.\nSo based on this I think the current implementation is fine.",
+      "parentUuid": "56210a18_c7ce516d",
+      "range": {
+        "startLine": 53,
+        "startChar": 5,
+        "endLine": 53,
+        "endChar": 54
+      },
+      "revId": "816d0e0bd63396cbcae5e8e111b5f301ce981528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fb210be0_005a47b7",
         "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
         "patchSetId": 1
