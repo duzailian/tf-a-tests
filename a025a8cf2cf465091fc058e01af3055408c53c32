@@ -66,6 +66,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7e97897a_43e9ef78",
+        "filename": "include/lib/heap/page_alloc.h",
+        "patchSetId": 19
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-02T04:12:24Z",
+      "side": 1,
+      "message": "I think this the NULL pointer returned on allocation failure. Perhaps it can be moved out of here as it looks like a error code.",
+      "parentUuid": "cf3ba7ca_c429be87",
+      "range": {
+        "startLine": 14,
+        "startChar": 7,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ea4e8e32_d55e4b46",
         "filename": "include/lib/tftf_lib.h",
         "patchSetId": 19
@@ -152,6 +176,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8a52ba25_91a4452b",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-02T04:12:24Z",
+      "side": 1,
+      "message": "I guess this way the logic is kept simple, we can always enhance this in future.",
+      "parentUuid": "97c11fb2_aa1108fc",
+      "range": {
+        "startLine": 63,
+        "startChar": 1,
+        "endLine": 64,
+        "endChar": 14
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "df4fa013_ecf4900c",
         "filename": "lib/heap/page_alloc.c",
         "patchSetId": 19
@@ -163,6 +211,24 @@
       "writtenOn": "2022-11-01T14:34:56Z",
       "side": 1,
       "message": "Since page_free() is not implemented, maybe we should assert here, just to avoid a caller to use it and cause a potential bug if it is not aware that the implementation is empty.",
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1e79fd31_e9a9a501",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-02T04:12:24Z",
+      "side": 1,
+      "message": "I would suggest to remove this API and can be added later.",
+      "parentUuid": "df4fa013_ecf4900c",
       "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
