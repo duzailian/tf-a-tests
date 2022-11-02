@@ -3,6 +3,144 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e06a7f16_bf6eea17",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-02T18:44:05Z",
+      "side": 1,
+      "message": "nit: adds",
+      "range": {
+        "startLine": 9,
+        "startChar": 11,
+        "endLine": 9,
+        "endChar": 14
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58a343c9_f71f787d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-02T18:44:05Z",
+      "side": 1,
+      "message": "nit: includes (+remove the comma)",
+      "range": {
+        "startLine": 10,
+        "startChar": 24,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ae99d35_68573772",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-02T18:44:05Z",
+      "side": 1,
+      "message": "nit: comma at end of line 11",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 1
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26254723_29e9f7bf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-02T18:44:05Z",
+      "side": 1,
+      "message": "to me this should be a separate change as the commit title doesn\u0027t suggest this",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 22
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a46bdc2_10c1a430",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-02T18:44:05Z",
+      "side": 1,
+      "message": "nit: is added",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 36
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca149b06_1b0ea904",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-02T18:44:05Z",
+      "side": 1,
+      "message": "nit: start (if referring to \u0027memory resources\u0027)",
+      "range": {
+        "startLine": 20,
+        "startChar": 55,
+        "endLine": 20,
+        "endChar": 61
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a24e7824_fbb9f562",
         "filename": "Makefile",
         "patchSetId": 21
@@ -102,6 +240,75 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "68e37f7a_0d280a9d",
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ac94c26_4b5d1fb4",
+        "filename": "include/common/debug.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-02T18:44:05Z",
+      "side": 1,
+      "message": "Why does this need to be redefined?\nCan\u0027t realms just use mp_printf?",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 30
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa502260_6f1b154f",
+        "filename": "include/lib/tftf_lib.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-02T18:44:05Z",
+      "side": 1,
+      "message": "not needed if the file doesn\u0027t change",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9762c624_f10545d3",
+        "filename": "include/lib/xlat_tables/xlat_tables_defs.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-02T18:44:05Z",
+      "side": 1,
+      "message": "As this is an RMM specific configuration, are those definitions at the right place?",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 15
+      },
       "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
