@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3ae61e29_5d35145b",
+        "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-11-02T14:45:48Z",
+      "side": 1,
+      "message": "Agree that version check is important before calling any other APIs.\nHowever, line no. 47, issuing TRNG Version SMC call, and then checking if TRNG version SMC is implemented or not does not sound good to me. \n\u0027tftf_trng_feature_implemented(SMC_TRNG_VERSION)\u0027 should have been called before issuing TRNG version SMC within \u0027tftf_trng_version\u0027.\n\nFeel free to ignore this comment as it is not related to your change.",
+      "parentUuid": "a5aad3a8_03285ef4",
+      "range": {
+        "startLine": 53,
+        "startChar": 5,
+        "endLine": 53,
+        "endChar": 54
+      },
+      "revId": "816d0e0bd63396cbcae5e8e111b5f301ce981528",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fb210be0_005a47b7",
         "filename": "tftf/tests/runtime_services/standard_service/trng/api_tests/test_trng.c",
         "patchSetId": 1
