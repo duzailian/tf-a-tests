@@ -53,6 +53,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bca5ea85_e7e16169",
+        "filename": "Makefile",
+        "patchSetId": 21
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af1888ba_1492c3b7",
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "68e37f7a_0d280a9d",
@@ -66,6 +84,24 @@
       "writtenOn": "2022-11-02T16:30:36Z",
       "side": 1,
       "message": "add : @echo \n\nelse make complains \"nothing to be done\".",
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22ab9cbc_a1ce7187",
+        "filename": "Makefile",
+        "patchSetId": 21
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68e37f7a_0d280a9d",
       "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },

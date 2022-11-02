@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "93be3e2e_93581062",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5844150b_a74a5c6b",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 21
+      },
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bc3b213b_c23fda91",
@@ -64,6 +88,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6725e2f4_2fc5e6ec",
+        "filename": "plat/arm/fvp/platform.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc3b213b_c23fda91",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 32
+      },
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a5d5fabe_a2231b23",
@@ -77,6 +125,30 @@
       "writtenOn": "2022-10-24T16:48:25Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 63
+      },
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd42b16e_27fb8dbc",
+        "filename": "plat/arm/fvp/platform.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5d5fabe_a2231b23",
       "range": {
         "startLine": 87,
         "startChar": 0,
@@ -122,6 +194,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "332d27dc_610bcd86",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f1adeb6_2bb379e0",
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ebb21895_0cd0aff0",
@@ -139,6 +229,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8abc099_38bab92c",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ebb21895_0cd0aff0",
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "81d7999d_f28296c3",
@@ -152,6 +260,30 @@
       "writtenOn": "2022-10-24T16:48:25Z",
       "side": 1,
       "message": "add \"\u003e RAM\"",
+      "range": {
+        "startLine": 43,
+        "startChar": 4,
+        "endLine": 43,
+        "endChar": 5
+      },
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3969330_096a9fa1",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81d7999d_f28296c3",
       "range": {
         "startLine": 43,
         "startChar": 4,
@@ -185,6 +317,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9165cf61_d0adbddf",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "230ea1af_661c86bf",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 5
+      },
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "467ffd89_aecdddc5",
@@ -198,6 +354,30 @@
       "writtenOn": "2022-10-24T16:48:25Z",
       "side": 1,
       "message": "add \"\u003e RAM\"",
+      "range": {
+        "startLine": 62,
+        "startChar": 4,
+        "endLine": 62,
+        "endChar": 5
+      },
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56670cba_6af04e85",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "467ffd89_aecdddc5",
       "range": {
         "startLine": 62,
         "startChar": 4,
@@ -231,6 +411,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "62dc44a8_bcbc6705",
+        "filename": "realm/realm.ld.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "074a85a8_8bb1c172",
+      "range": {
+        "startLine": 72,
+        "startChar": 4,
+        "endLine": 72,
+        "endChar": 5
+      },
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "05b27cd2_78cb3684",
@@ -244,6 +448,30 @@
       "writtenOn": "2022-10-24T16:48:25Z",
       "side": 1,
       "message": "replace strlen with strnlen",
+      "range": {
+        "startLine": 45,
+        "startChar": 5,
+        "endLine": 45,
+        "endChar": 11
+      },
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c497277_f0870927",
+        "filename": "realm/realm_debug.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05b27cd2_78cb3684",
       "range": {
         "startLine": 45,
         "startChar": 5,
@@ -277,6 +505,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a166cdb3_f902f316",
+        "filename": "realm/realm_debug.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a270a292_8f835b98",
+      "range": {
+        "startLine": 73,
+        "startChar": 5,
+        "endLine": 73,
+        "endChar": 11
+      },
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "673abd97_bcd229dc",
@@ -290,6 +542,30 @@
       "writtenOn": "2022-10-24T16:48:25Z",
       "side": 1,
       "message": "same comment here.",
+      "range": {
+        "startLine": 76,
+        "startChar": 24,
+        "endLine": 76,
+        "endChar": 30
+      },
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50d688eb_544d4e5d",
+        "filename": "realm/realm_debug.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "673abd97_bcd229dc",
       "range": {
         "startLine": 76,
         "startChar": 24,
@@ -323,6 +599,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fdb92db_992163cd",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7dc5a455_b4f2d2de",
+      "range": {
+        "startLine": 109,
+        "startChar": 0,
+        "endLine": 110,
+        "endChar": 21
+      },
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0e42f451_b3cc73c8",
@@ -346,6 +646,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65b5096c_69a4a834",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_shared_data.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e42f451_b3cc73c8",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 4
+      },
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6b3eaced_e9f57436",
@@ -359,6 +683,30 @@
       "writtenOn": "2022-10-24T16:48:25Z",
       "side": 1,
       "message": "\"guest\"",
+      "range": {
+        "startLine": 19,
+        "startChar": 27,
+        "endLine": 19,
+        "endChar": 31
+      },
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5d336ad_8a52025f",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_shared_data.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b3eaced_e9f57436",
       "range": {
         "startLine": 19,
         "startChar": 27,
@@ -404,6 +752,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7cbd170_9b9cfffa",
+        "filename": "tftf/tests/runtime_services/rmi_spm_services/rmi_delegate_tests.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d95f12b_7a914799",
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2e24d1d4_9e400e98",
@@ -417,6 +783,24 @@
       "writtenOn": "2022-10-24T16:48:25Z",
       "side": 1,
       "message": "can be in host_realm_mgmt folder and call this \"rmi_spm_tests.c\" which is fine.",
+      "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c09df71e_edd00936",
+        "filename": "tftf/tests/runtime_services/rmi_spm_services/rmi_spm_tests.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e24d1d4_9e400e98",
       "revId": "59b086cbb8575fd536b22ac5542afe8211264b99",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }

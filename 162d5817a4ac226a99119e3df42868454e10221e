@@ -24,6 +24,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f000ddcd_97d1ad60",
+        "filename": "include/lib/heap/page_alloc.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f4ec426_8df17a5f",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 8,
+        "endChar": 27
+      },
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6f74429_e12fc16e",
+        "filename": "include/lib/heap/page_alloc.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f4ec426_8df17a5f",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 8,
+        "endChar": 27
+      },
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fe3aca74_fbc86a57",
@@ -164,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ac21c45_21b9343c",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "640c9686_e984f183",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 8,
+        "endChar": 31
+      },
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2ea46dcb_b3b6dbe8",
@@ -177,6 +249,24 @@
       "writtenOn": "2022-10-24T16:23:29Z",
       "side": 1,
       "message": "#define REALM_MAX_LOAD_IMG_SIZE to 1 MB here as it is platform independant.",
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bc12ccc_e6307034",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ea46dcb_b3b6dbe8",
       "revId": "162d5817a4ac226a99119e3df42868454e10221e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -204,6 +294,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b0bcf49_bdd4abb7",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0a7fd41_01d115d0",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 31
+      },
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac51f5b7_869db865",
@@ -221,6 +335,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cad8149b_b4089087",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "fixed by:\n\n#ifndef TFTF_MAX_IMAGE_SIZE\n#define TFTF_MAX_IMAGE_SIZE DRAM_SIZE\n#endif\n\nMEMORY {\n    RAM (rwx): ORIGIN \u003d TFTF_BASE, LENGTH \u003d TFTF_MAX_IMAGE_SIZE\n}\n\nin tftf.ld.S",
+      "parentUuid": "ac51f5b7_869db865",
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cb26a7db_843524fc",
@@ -234,6 +366,30 @@
       "writtenOn": "2022-10-24T16:23:29Z",
       "side": 1,
       "message": "match header.",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 8,
+        "endChar": 24
+      },
+      "revId": "162d5817a4ac226a99119e3df42868454e10221e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f78a1d1b_951f9fc1",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-02T18:37:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb26a7db_843524fc",
       "range": {
         "startLine": 8,
         "startChar": 8,
