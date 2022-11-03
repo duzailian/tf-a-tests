@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <runtime_services/realm_payload/realm_payload_test.h>
+#include <runtime_services/rmi_spm_tests.h>
 
 u_register_t realm_version(void)
 {

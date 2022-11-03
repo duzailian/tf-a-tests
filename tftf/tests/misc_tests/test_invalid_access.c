@@ -15,7 +15,7 @@
 #endif
 #include <test_helpers.h>
 #include <lib/aarch64/arch_features.h>
-#include <runtime_services/realm_payload/realm_payload_test.h>
+#include <runtime_services/rmi_spm_tests.h>
 #include <tftf_lib.h>
 #include <xlat_tables_v2.h>
 
