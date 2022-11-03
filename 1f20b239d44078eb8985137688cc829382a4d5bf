@@ -95,6 +95,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ed796bda_55f7c867",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-03T16:40:53Z",
+      "side": 1,
+      "message": "Given the scale of changes in this patch, and since the change involves only renaming and moving the files, I think it is not worth doing the patch split at this stage for the sake of time.",
+      "parentUuid": "26254723_29e9f7bf",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 22
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4a46bdc2_10c1a430",
         "filename": "/COMMIT_MSG",
         "patchSetId": 21
