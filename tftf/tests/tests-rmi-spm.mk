@@ -5,10 +5,10 @@
 #
 
 TESTS_SOURCES	+=							\
-	$(addprefix tftf/tests/runtime_services/realm_payload/,		\
-		realm_payload_test_helpers.c				\
-		realm_payload_test.c					\
-		realm_payload_spm_test.c				\
+	$(addprefix tftf/tests/runtime_services/rmi_spm_services/,		\
+		rmi_spm_test_helpers.c				\
+		rmi_delegate_tests.c					\
+		rmi_spm_tests.c						\
 	)
 
 TESTS_SOURCES	+=							\

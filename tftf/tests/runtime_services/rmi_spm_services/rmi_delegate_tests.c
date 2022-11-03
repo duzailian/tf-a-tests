@@ -10,7 +10,7 @@
 #include <plat_topology.h>
 #include <power_management.h>
 #include <platform.h>
-#include <runtime_services/realm_payload/realm_payload_test.h>
+#include <runtime_services/rmi_spm_tests.h>
 #include <test_helpers.h>
 
 static test_result_t realm_multi_cpu_payload_test(void);

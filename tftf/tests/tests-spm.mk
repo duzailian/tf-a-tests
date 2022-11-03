@@ -21,6 +21,6 @@ TESTS_SOURCES	+=							\
 	)
 
 TESTS_SOURCES	+=							\
-	$(addprefix tftf/tests/runtime_services/realm_payload/,		\
-		realm_payload_test_helpers.c				\
+	$(addprefix tftf/tests/runtime_services/rmi_spm_services/,	\
+		rmi_spm_test_helpers.c					\
 	)

@@ -11,7 +11,7 @@
 #include <ffa_svc.h>
 #include <irq.h>
 #include <platform.h>
-#include <runtime_services/realm_payload/realm_payload_test.h>
+#include <runtime_services/rmi_spm_tests.h>
 #include <smccc.h>
 #include <spm_common.h>
 #include <test_helpers.h>
