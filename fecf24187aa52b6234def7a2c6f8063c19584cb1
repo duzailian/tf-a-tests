@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e3b298d_7a4076d7",
+        "filename": "realm/realm_debug.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "now I\u0027ve deleted this function and I\u0027m using the existing one in exception_report.c as suggested by Olivier",
+      "parentUuid": "723e9a9f_2914f642",
+      "range": {
+        "startLine": 108,
+        "startChar": 1,
+        "endLine": 109,
+        "endChar": 8
+      },
+      "revId": "fecf24187aa52b6234def7a2c6f8063c19584cb1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a2724fb_4a2b610d",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-11-03T14:09:00Z",
       "side": 1,
       "message": "Looks like this should be inside the previous if. Otherwise, the next if also checks that ret !\u003d RMI_SUCCESS",
+      "range": {
+        "startLine": 330,
+        "startChar": 1,
+        "endLine": 333,
+        "endChar": 2
+      },
+      "revId": "fecf24187aa52b6234def7a2c6f8063c19584cb1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42e03828_7d4de1a0",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a2724fb_4a2b610d",
       "range": {
         "startLine": 330,
         "startChar": 1,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "20259f53_f8f7f49a",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "918cbee0_bc3bbe03",
+      "range": {
+        "startLine": 425,
+        "startChar": 1,
+        "endLine": 428,
+        "endChar": 2
+      },
+      "revId": "fecf24187aa52b6234def7a2c6f8063c19584cb1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b5b278a5_3197a9fa",
@@ -83,6 +155,24 @@
       "writtenOn": "2022-11-03T14:09:00Z",
       "side": 1,
       "message": "I think this comment belongs to line 823",
+      "revId": "fecf24187aa52b6234def7a2c6f8063c19584cb1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e55c143c_35cf1629",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5b278a5_3197a9fa",
       "revId": "fecf24187aa52b6234def7a2c6f8063c19584cb1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -110,6 +200,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6f92ac6_fb1f2191",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_shared_data.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1acaf48f_ca1ec693",
+      "range": {
+        "startLine": 81,
+        "startChar": 2,
+        "endLine": 81,
+        "endChar": 4
+      },
+      "revId": "fecf24187aa52b6234def7a2c6f8063c19584cb1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9f30598b_49efe6f1",
@@ -123,6 +237,24 @@
       "writtenOn": "2022-11-03T14:09:00Z",
       "side": 1,
       "message": "Same as above.",
+      "revId": "fecf24187aa52b6234def7a2c6f8063c19584cb1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7244fbe8_f3de334a",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_shared_data.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f30598b_49efe6f1",
       "revId": "fecf24187aa52b6234def7a2c6f8063c19584cb1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }

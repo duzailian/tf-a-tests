@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "886b1f41_719b03cb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e06a7f16_bf6eea17",
+      "range": {
+        "startLine": 9,
+        "startChar": 11,
+        "endLine": 9,
+        "endChar": 14
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "58a343c9_f71f787d",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ead7a02_863f39db",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58a343c9_f71f787d",
+      "range": {
+        "startLine": 10,
+        "startChar": 24,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4ae99d35_68573772",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-11-02T18:44:05Z",
       "side": 1,
       "message": "nit: comma at end of line 11",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 1
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b396927_4d0d2111",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ae99d35_68573772",
       "range": {
         "startLine": 12,
         "startChar": 0,
@@ -140,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af85103e_86bfe5bd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a46bdc2_10c1a430",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 36
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ca149b06_1b0ea904",
@@ -153,6 +249,30 @@
       "writtenOn": "2022-11-02T18:44:05Z",
       "side": 1,
       "message": "nit: start (if referring to \u0027memory resources\u0027)",
+      "range": {
+        "startLine": 20,
+        "startChar": 55,
+        "endLine": 20,
+        "endChar": 61
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4021509_8b389e8e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca149b06_1b0ea904",
       "range": {
         "startLine": 20,
         "startChar": 55,
@@ -291,6 +411,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "32f5a5da_bc5248b4",
+        "filename": "include/common/debug.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "no, realm print on a buffer, doesn\u0027t use console/put ...",
+      "parentUuid": "5ac94c26_4b5d1fb4",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 30
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aa502260_6f1b154f",
@@ -304,6 +448,30 @@
       "writtenOn": "2022-11-02T18:44:05Z",
       "side": 1,
       "message": "not needed if the file doesn\u0027t change",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60e3a7c8_29e8c5ed",
+        "filename": "include/lib/tftf_lib.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa502260_6f1b154f",
       "range": {
         "startLine": 2,
         "startChar": 17,
@@ -350,6 +518,30 @@
       "writtenOn": "2022-11-04T11:57:52Z",
       "side": 1,
       "message": "This define can be made generic by :\n\n/*\n * Attributes when FEAT_S2FWB is enabled at EL2 (HCR_EL2.FWB \u003d\u003d 1). For Normal WB cacheability attribute, set bit[4] to 1 and bits[3:2] to 0b10.\n */\n#define S2TTE_MEMATTR_FWB_NORMAL_WB\t((1UL \u003c\u003c 4) | (2UL \u003c\u003c 2))\n#define S2TTE_ATTR_FWB_WB_RW\t(S2TTE_MEMATTR_FWB_NORMAL_WB | S2TTE_AP_RW | \\\n\t\t\tS2TTE_SH_IS)\n\nThis makes it an architectural define and is not RMM specific anymore.",
+      "parentUuid": "9762c624_f10545d3",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 15
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea79eb08_d8e01f5a",
+        "filename": "include/lib/xlat_tables/xlat_tables_defs.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "there is already some other S2TTE in this file, this is just new field to set",
       "parentUuid": "9762c624_f10545d3",
       "range": {
         "startLine": 194,

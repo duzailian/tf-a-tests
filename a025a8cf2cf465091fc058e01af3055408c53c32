@@ -403,6 +403,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7fcc38d_9c81b6bf",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "yes , sorry this will be fixed in the next patch 27",
+      "parentUuid": "d81e10d8_7fbb9b65",
+      "range": {
+        "startLine": 22,
+        "startChar": 17,
+        "endLine": 22,
+        "endChar": 18
+      },
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "97c11fb2_aa1108fc",
@@ -589,6 +613,24 @@
       "side": 1,
       "message": "Ok, got it. So you cannot remove it nor assert here then",
       "parentUuid": "e51d5aad_26f20ef2",
+      "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7d07aaa_4c2d6b2a",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-04T15:36:28Z",
+      "side": 1,
+      "message": "yes, we keep it, and add adequate implementation when \"dynamic\" memory allocation is really needed, for the moment is just linearly allocate until the end, reset and start from beginning.",
+      "parentUuid": "d0376c5c_8f602153",
       "revId": "a025a8cf2cf465091fc058e01af3055408c53c32",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
