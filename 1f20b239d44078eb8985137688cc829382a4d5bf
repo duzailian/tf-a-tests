@@ -339,6 +339,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ecc792b3_bbd91534",
+        "filename": "include/lib/xlat_tables/xlat_tables_defs.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-04T11:57:52Z",
+      "side": 1,
+      "message": "This define can be made generic by :\n\n/*\n * Attributes when FEAT_S2FWB is enabled at EL2 (HCR_EL2.FWB \u003d\u003d 1). For Normal WB cacheability attribute, set bit[4] to 1 and bits[3:2] to 0b10.\n */\n#define S2TTE_MEMATTR_FWB_NORMAL_WB\t((1UL \u003c\u003c 4) | (2UL \u003c\u003c 2))\n#define S2TTE_ATTR_FWB_WB_RW\t(S2TTE_MEMATTR_FWB_NORMAL_WB | S2TTE_AP_RW | \\\n\t\t\tS2TTE_SH_IS)\n\nThis makes it an architectural define and is not RMM specific anymore.",
+      "parentUuid": "9762c624_f10545d3",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 15
+      },
+      "revId": "1f20b239d44078eb8985137688cc829382a4d5bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "596b0c12_86cc449e",
         "filename": "include/runtime_services/host_realm_managment/realm_def.h",
         "patchSetId": 21
