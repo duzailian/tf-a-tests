@@ -326,6 +326,8 @@ bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr)
 
 	if (((exit_reason == RMI_EXIT_IRQ) &&
 	     (cmd == REALM_PMU_INTERRUPT)) ||
+	     ((exit_reason == RMI_EXIT_FIQ) &&
+	      (cmd == REALM_SLEEP_CMD)) ||
 	    ((exit_reason == RMI_EXIT_HOST_CALL) &&
 	     (host_call_result == TEST_RESULT_SUCCESS))) {
 		return true;
