@@ -1054,6 +1054,10 @@ u_register_t realm_rec_enter(struct realm *realm, u_register_t *exit_reason,
 				break;
 			}
 
+		} else if (run->exit.exit_reason == RMI_EXIT_FIQ) {
+			re_enter_rec = true;
+		} else {
+			*test_result =  TEST_RESULT_FAIL;
 		}
 
 	} while (re_enter_rec);
