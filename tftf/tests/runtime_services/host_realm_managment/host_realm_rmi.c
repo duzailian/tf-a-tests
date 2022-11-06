@@ -1142,6 +1142,10 @@ u_register_t host_realm_rec_enter(struct realm *realm,
 			default:
 				break;
 			}
+		} else if (run->exit.exit_reason == RMI_EXIT_FIQ) {
+			re_enter_rec = true;
+		} else {
+			*host_call_result =  TEST_RESULT_FAIL;
 		}
 	} while (re_enter_rec);
 
