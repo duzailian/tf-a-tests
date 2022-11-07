@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "497e1bb8_bd2fedb3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 28
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-07T13:11:48Z",
+      "side": 1,
+      "message": "Just a couple of nits. Otherwise it looks good to me",
+      "revId": "d4cfee9422145ca53e62a775c0dc1eceeb38474a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f74b09f8_c3220bb5",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 28
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-07T13:11:48Z",
+      "side": 1,
+      "message": "nit: requests",
+      "range": {
+        "startLine": 30,
+        "startChar": 17,
+        "endLine": 30,
+        "endChar": 24
+      },
+      "revId": "d4cfee9422145ca53e62a775c0dc1eceeb38474a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f5bff34_03973fb2",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 28
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-07T13:11:48Z",
+      "side": 1,
+      "message": "nit: performs and returns",
+      "range": {
+        "startLine": 52,
+        "startChar": 3,
+        "endLine": 52,
+        "endChar": 10
+      },
+      "revId": "d4cfee9422145ca53e62a775c0dc1eceeb38474a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68bd5211_b20ae5ca",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 28
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2022-11-07T13:11:48Z",
+      "side": 1,
+      "message": "nit: wants",
+      "range": {
+        "startLine": 55,
+        "startChar": 39,
+        "endLine": 55,
+        "endChar": 43
+      },
+      "revId": "d4cfee9422145ca53e62a775c0dc1eceeb38474a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
