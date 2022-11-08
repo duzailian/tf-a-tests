@@ -331,6 +331,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b31bb7c_cef229e2",
+        "filename": "include/runtime_services/host_realm_managment/rmi_spm_tests.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-08T14:58:02Z",
+      "side": 1,
+      "message": "Ok the file is not renamed but deleted and recreated with a new name.\nIt is marked \u0027Added\u0027 in the gerrit review hence the confusion.",
+      "parentUuid": "bf05c940_e135c9d9",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "8d7df356d3ef7c181ae7a426102f7dc8947cb082",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e04fca88_772a4e55",
@@ -368,6 +392,30 @@
       "side": 1,
       "message": "this is not my changes I\u0027ve just renamed include/runtime_services/realm_payload/realm_payload_test.h.",
       "parentUuid": "e04fca88_772a4e55",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 50
+      },
+      "revId": "8d7df356d3ef7c181ae7a426102f7dc8947cb082",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3dc4b1f6_e1bb4622",
+        "filename": "include/runtime_services/host_realm_managment/rmi_spm_tests.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-08T14:58:02Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1d2738a8_a0bd630d",
       "range": {
         "startLine": 13,
         "startChar": 0,
