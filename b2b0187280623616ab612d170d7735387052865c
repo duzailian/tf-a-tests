@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "357295d4_8396aac0",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-08T16:34:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1184c03_1129d2d7",
+      "range": {
+        "startLine": 60,
+        "startChar": 2,
+        "endLine": 60,
+        "endChar": 14
+      },
+      "revId": "b2b0187280623616ab612d170d7735387052865c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "648aab98_8e5022d8",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-11-08T15:00:05Z",
       "side": 1,
       "message": "return HEAP_NULL_PTR",
+      "range": {
+        "startLine": 64,
+        "startChar": 2,
+        "endLine": 64,
+        "endChar": 14
+      },
+      "revId": "b2b0187280623616ab612d170d7735387052865c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7076fc0e_61e202b8",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-08T16:34:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "648aab98_8e5022d8",
       "range": {
         "startLine": 64,
         "startChar": 2,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae0fb11f_5d3f41fc",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-08T16:34:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6544e96a_48b7d811",
+      "range": {
+        "startLine": 83,
+        "startChar": 1,
+        "endLine": 84,
+        "endChar": 30
+      },
+      "revId": "b2b0187280623616ab612d170d7735387052865c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a40a96ea_85d1999a",
@@ -83,6 +155,54 @@
       "writtenOn": "2022-11-08T14:58:02Z",
       "side": 1,
       "message": "move to host_realm_rmi.h with other similar alignment helpers introduced in this change\n\nIdeally all those helpers would have to go to a TFTF generic/common header..",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 39
+      },
+      "revId": "b2b0187280623616ab612d170d7735387052865c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74bf40ba_408da913",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-08T16:34:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a40a96ea_85d1999a",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 39
+      },
+      "revId": "b2b0187280623616ab612d170d7735387052865c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b983204f_aa2e0b24",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-08T16:34:56Z",
+      "side": 1,
+      "message": "this might get confused by the compiler because it has the same assembly key word ALIGN, that\u0027s why I avoided putting in a header file.\n\nI\u0027ve moved it to the less generic file to avoid this host_realm_rmi.h",
+      "parentUuid": "a40a96ea_85d1999a",
       "range": {
         "startLine": 19,
         "startChar": 0,
@@ -116,6 +236,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0536dbe_cd7655a4",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-08T16:34:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1587f78c_74eed4eb",
+      "range": {
+        "startLine": 57,
+        "startChar": 5,
+        "endLine": 57,
+        "endChar": 6
+      },
+      "revId": "b2b0187280623616ab612d170d7735387052865c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8601caff_3b74fc71",
@@ -139,6 +283,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec42fb92_3d441321",
+        "filename": "tftf/tests/tests-rmi-spm.mk",
+        "patchSetId": 30
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-08T16:34:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8601caff_3b74fc71",
+      "range": {
+        "startLine": 22,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 24
+      },
+      "revId": "b2b0187280623616ab612d170d7735387052865c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7eaefcbd_cbdfb01f",
+        "filename": "tftf/tests/tests-rmi-spm.mk",
+        "patchSetId": 30
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-08T16:34:56Z",
+      "side": 1,
+      "message": "you\u0027re right not used",
+      "parentUuid": "8601caff_3b74fc71",
+      "range": {
+        "startLine": 22,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 24
+      },
+      "revId": "b2b0187280623616ab612d170d7735387052865c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be57a7f5_60c0d62e",
@@ -152,6 +344,30 @@
       "writtenOn": "2022-11-08T14:58:02Z",
       "side": 1,
       "message": "Should this be moved to a RMM-only related group?\nAFAIU this was the case before this change as this was moved from tests-realm-payload.xml\nThere\u0027s nothing related to SPM in those tests contrary to what the test suite name/description suggests.",
+      "range": {
+        "startLine": 12,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 31
+      },
+      "revId": "b2b0187280623616ab612d170d7735387052865c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43acb069_b12f22a3",
+        "filename": "tftf/tests/tests-rmi-spm.xml",
+        "patchSetId": 30
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-08T16:34:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be57a7f5_60c0d62e",
       "range": {
         "startLine": 12,
         "startChar": 1,
