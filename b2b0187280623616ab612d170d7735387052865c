@@ -3,6 +3,75 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a1184c03_1129d2d7",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-08T15:00:05Z",
+      "side": 1,
+      "message": "return HEAP_NULL_PTR",
+      "range": {
+        "startLine": 60,
+        "startChar": 2,
+        "endLine": 60,
+        "endChar": 14
+      },
+      "revId": "b2b0187280623616ab612d170d7735387052865c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "648aab98_8e5022d8",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-08T15:00:05Z",
+      "side": 1,
+      "message": "return HEAP_NULL_PTR",
+      "range": {
+        "startLine": 64,
+        "startChar": 2,
+        "endLine": 64,
+        "endChar": 14
+      },
+      "revId": "b2b0187280623616ab612d170d7735387052865c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6544e96a_48b7d811",
+        "filename": "lib/heap/page_alloc.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-08T15:00:05Z",
+      "side": 1,
+      "message": "not necessary",
+      "range": {
+        "startLine": 83,
+        "startChar": 1,
+        "endLine": 84,
+        "endChar": 30
+      },
+      "revId": "b2b0187280623616ab612d170d7735387052865c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a40a96ea_85d1999a",
         "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
         "patchSetId": 30
