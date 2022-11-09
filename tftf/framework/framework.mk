@@ -27,7 +27,6 @@ TFTF_INCLUDES	:= 					\
 	-Iinclude/runtime_services/secure_el1_payloads	\
 	-Ispm/cactus					\
 	-Ispm/ivy					\
-	-Ispm/quark					\
 	-Ismc_fuzz/include
 
 FRAMEWORK_SOURCES	:=	${AUTOGEN_DIR}/tests_list.c
