@@ -1,0 +1,10 @@
+Legacy-CI+2: Bipin Ravi <bipin.ravi@arm.com>
+Allow-CI+2: Bipin Ravi <bipin.ravi@arm.com>
+Verified+1: Bipin Ravi <bipin.ravi@arm.com>
+Code-Owner-Review+1: Joanna Farley <joanna.farley@arm.com>
+Maintainer-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-by: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-at: Wed, 09 Nov 2022 17:37:01 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/15262
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
