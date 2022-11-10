@@ -1,0 +1,12 @@
+Allow-CI+1: Nabil Kahlouche <nabil.kahlouche@arm.com>
+Allow-CI+2: Soby Mathew <soby.mathew@arm.com>
+Code-Review+1: Javier <javier.almansasobrino@arm.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Legacy-CI+2: Soby Mathew <soby.mathew@arm.com>
+Code-Owner-Review+1: Soby Mathew <soby.mathew@arm.com>
+Verified+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Thu, 10 Nov 2022 11:38:52 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/17221
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
