@@ -555,7 +555,8 @@ ifeq (${ARCH}-${PLAT},aarch64-fvp)
 pack_realm: realm tftf
 	@echo "  PACK REALM PAYLOAD"
 	$(shell dd if=$(BUILD_PLAT)/realm.bin of=$(BUILD_PLAT)/tftf.bin obs=1 \
-	seek=$(TFTF_MAX_IMAGE_SIZE))
+	seek=$(REALM_IMAGE_PACK_OFFSET))
+all : pack_realm
 endif
 
 ifeq (${ARCH}-${PLAT},aarch64-tc0)
