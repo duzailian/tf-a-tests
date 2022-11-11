@@ -35,10 +35,11 @@
 
 /*
  * Default values defined in platform.mk, and can be provided as build arguments
- * TFTF_MAX_IMAGE_SIZE: 1mb
+ * REALM_IMAGE_PACK_OFFSET: 10mb
  */
 
-#ifdef TFTF_MAX_IMAGE_SIZE
+#ifdef REALM_IMAGE_PACK_OFFSET
+ #define TFTF_MAX_IMAGE_SIZE		REALM_IMAGE_PACK_OFFSET
 /* 1MB for shared buffer between Realm and Host*/
  #define NS_REALM_SHARED_MEM_SIZE	U(0x100000)
 /* 3MB of memory used as a pool for realm's objects creation*/
@@ -53,7 +54,8 @@
  #define TFTF_MAX_IMAGE_SIZE		DRAM_SIZE
 /* Base address of each section */
  #define REALM_IMAGE_BASE		0U
- #define PAGE_POOL_BASE			0U
+ #define REALM_IMAGE_PACK		0U
+ #define REALM_IMAGE_PACK_OFFSET	0U
  #define NS_REALM_SHARED_MEM_BASE	0U
 #endif
 
