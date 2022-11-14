@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cae4577c_c8a4036c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2022-11-14T18:20:02Z",
+      "side": 1,
+      "message": "Lets recover the situation for the release and try again with this patch in the future,",
+      "revId": "b35590ebd7a5fa8d7f932fc485e2a247b7d1b13c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
