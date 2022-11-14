@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "314b35f9_9f6aceb3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2022-11-14T12:05:23Z",
+      "side": 1,
+      "message": "I don\u0027t understand. This sentence is as generic as possible, why does this matter? Regardless, whether the PMU works or not outside NS is out of scope for these patches. That\u0027s kind of the whole point and I think \"regardless of what EL3 decides to do\" outlines this?",
+      "parentUuid": "21a5a994_9f3791ff",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 61
+      },
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ae9e5992_50aa285f",
         "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
         "patchSetId": 4
@@ -37,6 +61,24 @@
       "writtenOn": "2022-10-31T14:58:44Z",
       "side": 1,
       "message": "This test is assuming TSP which may not be the case going forward for Newmore. Would prefer the test to be written with FF-A.",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78d52387_dea8b6b5",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2022-11-14T12:05:23Z",
+      "side": 1,
+      "message": "It does assume TSP but it also checks for it before each test, as a few others do. Even if TSP disappeared this wouldn\u0027t break. \n\nI could implement it, but this would be the first such test. My proposal is consistent with the other tests. Is there somewhere a test I can use as a starting point? Alternatively, could you point me to the documentation?\n\nIs this a general thing that needs doing? MTE and PAUTH tests also do this.",
+      "parentUuid": "ae9e5992_50aa285f",
       "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -60,6 +102,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "825e70bc_1703f194",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2022-11-14T12:05:23Z",
+      "side": 1,
+      "message": "There is already such a test, test_pmu_leakage (from NS though), so this is strictly out of scope for my tests. This test is only for NS behaviour. \n\nWhy shouldn\u0027t the count remain the same after an SMC? EL3 does a context switch so there is no reason for the counters to change. This test only checks this.",
+      "parentUuid": "f275a5f3_7e6be0a3",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a76170d5_df1feff5",
         "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
         "patchSetId": 4
@@ -71,6 +131,24 @@
       "writtenOn": "2022-10-31T14:58:44Z",
       "side": 1,
       "message": "Not sure how this count will match start count ? The count is running when entering EL3 and similarly when returning.",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5b6dc58_1b43553f",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2022-11-14T12:05:23Z",
+      "side": 1,
+      "message": "It doesn\u0027t check the counter. Rather, it checks the counter (and PMU in general) _config_ which should remain the same across a context switch.\n\nThis bit doesn\u0027t care if the counter is running in EL3/secure world themselves (and test_pmu_leakage asserts that it is not), it only checks that entering EL3 with the counters running doesn\u0027t do anything funny. If it happens that EL3 disables the PMU for itself then there are enough instructions before and after it to bump the counters.",
+      "parentUuid": "a76170d5_df1feff5",
       "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -94,6 +172,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "130c0508_7f674d2f",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2022-11-14T12:05:23Z",
+      "side": 1,
+      "message": "No, this is the case where EL3 did not preserve counters. This checks only that EL3 didn\u0027t reset these registers to 0. I\u0027m not sure if there\u0027s a consistent way to check for any change in general here.",
+      "parentUuid": "684a2985_2abe1751",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c8414be5_09425733",
         "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
         "patchSetId": 4
@@ -105,6 +201,24 @@
       "writtenOn": "2022-10-31T14:58:44Z",
       "side": 1,
       "message": "Is this is the overflow case ?",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87f0eb1c_b911fec8",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2022-11-14T12:05:23Z",
+      "side": 1,
+      "message": "Same, but for the other counter.",
+      "parentUuid": "c8414be5_09425733",
       "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
