@@ -50,6 +50,24 @@
       "message": "nit: could you end all the sentences with (.) below as applicable?",
       "revId": "6688a2a2e456668df1984f457fe7bafdbc0a8f72",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c9f36ab_d8f27c13",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-11-17T21:14:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b39b256_0a93f88f",
+      "revId": "6688a2a2e456668df1984f457fe7bafdbc0a8f72",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
