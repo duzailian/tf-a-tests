@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8997796f_9fc84f1d",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2022-11-17T13:49:14Z",
+      "side": 1,
+      "message": "Because\nID_AA64DFR0_PMS_MASK\t\tULL(0xf)\nyou need cast after final \u0026 operation",
+      "revId": "e2c4fbe69d7d5cd6936609bb4c65779249029729",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
