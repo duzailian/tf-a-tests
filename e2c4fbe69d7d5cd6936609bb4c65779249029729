@@ -16,6 +16,24 @@
       "message": "Because\nID_AA64DFR0_PMS_MASK\t\tULL(0xf)\nyou need cast after final \u0026 operation",
       "revId": "e2c4fbe69d7d5cd6936609bb4c65779249029729",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50145570_a1f1cb92",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-11-17T13:53:10Z",
+      "side": 1,
+      "message": "I thought same but it is really followed in same way for others in this file. for example get_armv9_2_feat_rme_support\n\nBut agree casting whole operation makes sense.",
+      "parentUuid": "8997796f_9fc84f1d",
+      "revId": "e2c4fbe69d7d5cd6936609bb4c65779249029729",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
