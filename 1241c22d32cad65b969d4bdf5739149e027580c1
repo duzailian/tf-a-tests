@@ -16,6 +16,24 @@
       "message": "This function returns \u0027unsigned int\u0027, so you need cast to it, bacause read_id_aa64dfr0_el1() returns uint64_t.",
       "revId": "1241c22d32cad65b969d4bdf5739149e027580c1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73150ac3_33923cbb",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-11-17T13:45:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "240aebb5_9eaef32a",
+      "revId": "1241c22d32cad65b969d4bdf5739149e027580c1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
