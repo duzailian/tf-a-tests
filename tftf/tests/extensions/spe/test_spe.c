@@ -20,7 +20,9 @@ typedef enum {
 	ID_AA64DFR0_SPE_NOT_SUPPORTED = 0,
 	ID_AA64DFR0_SPE,
 	ID_AA64DFR0_SPE_V1P1,
-	ID_AA64DFR0_SPE_V1P2
+	ID_AA64DFR0_SPE_V1P2,
+	ID_AA64DFR0_SPE_V1P3,
+	ID_AA64DFR0_SPE_V1P4
 } spe_ver_t;
 
 static spe_ver_t spe_get_version(void)
@@ -38,7 +40,7 @@ test_result_t test_spe_support(void)
 #ifdef __aarch64__
 	spe_ver_t spe_ver = spe_get_version();
 
-	assert(spe_ver <= ID_AA64DFR0_SPE_V1P2);
+	assert(spe_ver <= ID_AA64DFR0_SPE_V1P4);
 
 	if (spe_ver == ID_AA64DFR0_SPE_NOT_SUPPORTED) {
 		return TEST_RESULT_SKIPPED;
