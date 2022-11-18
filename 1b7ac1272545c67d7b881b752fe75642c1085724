@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8d88da1_4f9c272c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-18T16:44:44Z",
+      "side": 1,
+      "message": "IIUC those bits are RES0 with AArch64, so the comparison will always fail as the bits cannot be set by a direct write to FPSR.",
+      "range": {
+        "startLine": 24,
+        "startChar": 25,
+        "endLine": 24,
+        "endChar": 26
+      },
+      "revId": "1b7ac1272545c67d7b881b752fe75642c1085724",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3f96c88_533aeac9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-18T16:44:44Z",
+      "side": 1,
+      "message": "This is wrong because fpu_state_compare_template returns a boolean implicitly cast to test_result_t.\nThis makes it skip the test when fpu_state_compare_template returns false.",
+      "range": {
+        "startLine": 70,
+        "startChar": 1,
+        "endLine": 70,
+        "endChar": 34
+      },
+      "revId": "1b7ac1272545c67d7b881b752fe75642c1085724",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
