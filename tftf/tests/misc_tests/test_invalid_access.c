@@ -258,12 +258,11 @@ static test_result_t memory_cannot_be_accessed_in_rl(u_register_t params)
 		retrmm = rmi_realm_destroy((u_register_t)&rd[0]);
 		if (retrmm != 0UL) {
 			ERROR("Realm destroy operation returns fail, %lx\n", retrmm);
-			return TEST_RESULT_FAIL;
+			goto error_undelegate_rd;
 		}
-		return TEST_RESULT_FAIL;
-	} else if (retrmm != RMM_STATUS_ERROR_INPUT) {
-		ERROR("Realm create operation should fail with code:%ld retrmm:%ld\n",
-		RMM_STATUS_ERROR_INPUT, retrmm);
+	} else if (retrmm != RMI_ERROR_INPUT) {
+		ERROR("Realm create operation should fail with code:%d retrmm:%ld\n",
+			RMI_ERROR_INPUT, retrmm);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -274,6 +273,12 @@ static test_result_t memory_cannot_be_accessed_in_rl(u_register_t params)
 	}
 
 	return TEST_RESULT_SUCCESS;
+error_undelegate_rd:
+	retrmm = rmi_granule_undelegate((u_register_t)&rd[0]);
+	if (retrmm != 0UL) {
+		INFO("Undelegate operation returns fail, %lx\n", retrmm);
+	}
+	return TEST_RESULT_FAIL;
 }
 
 /**
