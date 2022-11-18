@@ -49,6 +49,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8405ff95_c1bcfeea",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-18T17:36:36Z",
+      "side": 1,
+      "message": "this not Vector length , it is converted to VL last 4 bits 1111 \u003d\u003d 16",
+      "parentUuid": "43900f05_b62fe5a8",
+      "range": {
+        "startLine": 82,
+        "startChar": 1,
+        "endLine": 82,
+        "endChar": 4
+      },
+      "revId": "55863254cd6a6bab5c5084aebc834aff252ac9d4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2cb41f48_e879557d",
         "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
         "patchSetId": 22
@@ -60,6 +84,30 @@
       "writtenOn": "2022-11-18T16:44:50Z",
       "side": 1,
       "message": "This is wrong because sve_state_compare_template returns a boolean implicitly cast to test_result_t.\nThis makes it skip the test when sve_state_compare_template returns false.\n\nShould preferably be like this:\n\n\t/* Compare to state before calling into secure world. */\n\tif (!sve_state_compare_template(SVE_Z_NS_VALUE,\n\t\t\tSVE_P_NS_VALUE,\n\t\t\tFPSR_NS_VALUE,\n\t\t\tFPCR_NS_VALUE,\n\t\t\tvl,\n\t\t\tvl,\n\t\t\tSVE_FFR_NS_VALUE)) {\n\t\treturn TEST_RESULT_FAIL;\n\t}\n\n\treturn TEST_RESULT_SUCCESS;",
+      "range": {
+        "startLine": 122,
+        "startChar": 1,
+        "endLine": 122,
+        "endChar": 34
+      },
+      "revId": "55863254cd6a6bab5c5084aebc834aff252ac9d4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f631da0_9a8cfe21",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-18T17:36:36Z",
+      "side": 1,
+      "message": "? TEST_RESULT_SUCCESS : TEST_RESULT_FAIL;\nyou\u0027re right ?: can be used",
+      "parentUuid": "2cb41f48_e879557d",
       "range": {
         "startLine": 122,
         "startChar": 1,
