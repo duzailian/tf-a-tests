@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "942cd2d4_1f465e71",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-11-18T17:52:01Z",
+      "side": 1,
+      "message": "All errors reported are infra-related. Giving a manual Verified+1",
+      "revId": "8c7847fbad8a300178d39af5b77035e2794965d6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
