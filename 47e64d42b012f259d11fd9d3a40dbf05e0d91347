@@ -16,6 +16,23 @@
       "message": "Updated version number also as part of this patch.",
       "revId": "47e64d42b012f259d11fd9d3a40dbf05e0d91347",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d02e1219_df0dd3ed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-11-21T13:51:14Z",
+      "side": 1,
+      "message": "Triggered job passed, https://ci.trustedfirmware.org/job/tf-a-ci-gateway/22871/",
+      "revId": "47e64d42b012f259d11fd9d3a40dbf05e0d91347",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
