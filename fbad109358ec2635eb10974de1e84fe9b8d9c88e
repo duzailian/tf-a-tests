@@ -85,6 +85,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b6c42d0c_01ff5869",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T17:48:32Z",
+      "side": 1,
+      "message": "OK, I think going forward, you should use FF-A compatible Secure SMC calls for the tests. TSP is only for 2 worlds tests and will not be present in 4 worlds configs.\n\nElse, if you just need a call into EL3, use PSCI_VERSION or SMCCC_VERSION. Dont base tests on TSP as this test will just skip for most useful build configs.",
+      "parentUuid": "78d52387_dea8b6b5",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f275a5f3_7e6be0a3",
         "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
         "patchSetId": 4
@@ -120,6 +138,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e15f46ef_c2ce0bff",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T17:48:32Z",
+      "side": 1,
+      "message": "So the assumption made for this test is wrong I think. TSP (secure world) doesn\u0027t save PMU counters today , nor does EL3. \n\nThe test description should read:\n\n\"Check if entering/exiting secure world preserves all PMU config registers and the PMU counters can only be \u003e\u003d values prior to calling EL3.\n\nThe PMU counters remains the same , even after making the Secure call , because the Secure world/EL3 didn\u0027t touch those regs.\"",
+      "parentUuid": "825e70bc_1703f194",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a76170d5_df1feff5",
         "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
         "patchSetId": 4
@@ -149,6 +185,24 @@
       "side": 1,
       "message": "It doesn\u0027t check the counter. Rather, it checks the counter (and PMU in general) _config_ which should remain the same across a context switch.\n\nThis bit doesn\u0027t care if the counter is running in EL3/secure world themselves (and test_pmu_leakage asserts that it is not), it only checks that entering EL3 with the counters running doesn\u0027t do anything funny. If it happens that EL3 disables the PMU for itself then there are enough instructions before and after it to bump the counters.",
       "parentUuid": "a76170d5_df1feff5",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "636faac1_54358916",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T17:48:32Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a5b6dc58_1b43553f",
       "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -190,6 +244,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ebfef5f8_44103e62",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T17:48:32Z",
+      "side": 1,
+      "message": "The comments here were a bit confusing to me. PMU counters can overflow but it may not happen for  this test case. I think what you need to check if that count after SMC call is \u003e\u003d count before SMC.\n\n/* test-pmu-leakage guarantee no increase so they could only be reset */ \u003d\u003d\u003e \n\n/* Ensure counter values before SMC is \u003c\u003d the values after SMC. If EL3 or secure world has reset or corrupted the counters, we can expect this check to fail. We do not consider the overflow case here */\n\nif (ctr_start[[0] \u003e ctr_end[0])",
+      "parentUuid": "130c0508_7f674d2f",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c8414be5_09425733",
         "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
         "patchSetId": 4
@@ -219,6 +291,24 @@
       "side": 1,
       "message": "Same, but for the other counter.",
       "parentUuid": "c8414be5_09425733",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a8d2eae_34fbed82",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-22T17:48:32Z",
+      "side": 1,
+      "message": "see comments above.",
+      "parentUuid": "87f0eb1c_b911fec8",
       "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
