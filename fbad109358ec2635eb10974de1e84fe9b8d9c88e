@@ -103,6 +103,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9d42ab5e_9facdc56",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-11-22T21:34:05Z",
+      "side": 1,
+      "message": "You can use SMCCC_VERSION or an unimplemented SMC call and ignore the error.",
+      "parentUuid": "b6c42d0c_01ff5869",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f275a5f3_7e6be0a3",
         "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
         "patchSetId": 4
