@@ -121,6 +121,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1ac805b5_040f7200",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2022-11-23T11:07:02Z",
+      "side": 1,
+      "message": "I want to go inter SEL2 or higher with this test, staying in EL3 might not require it to context switch registers and the test could produce a false negative. Isn\u0027t SMCCC_VERSION handled in EL3 only?\n\nAs for FF-A, sure sounds good. Shouldn\u0027t we document this somewhere? I couldn\u0027t find in TF-A docs a hint TSP will disappear. This problem is sure to come up again and whoever is next will go through the same \"don\u0027t do this\" dance.",
+      "parentUuid": "9d42ab5e_9facdc56",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f275a5f3_7e6be0a3",
         "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
         "patchSetId": 4
@@ -168,6 +186,24 @@
       "side": 1,
       "message": "So the assumption made for this test is wrong I think. TSP (secure world) doesn\u0027t save PMU counters today , nor does EL3. \n\nThe test description should read:\n\n\"Check if entering/exiting secure world preserves all PMU config registers and the PMU counters can only be \u003e\u003d values prior to calling EL3.\n\nThe PMU counters remains the same , even after making the Secure call , because the Secure world/EL3 didn\u0027t touch those regs.\"",
       "parentUuid": "825e70bc_1703f194",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b62a7dc_f232dbe9",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2022-11-23T11:07:02Z",
+      "side": 1,
+      "message": "I don\u0027t think the assumption is wrong. The test checks something along the lines of \"NS should not have its counters altered regardless of what EL3 and secure world are up to\". Sure, they don\u0027t use the PMU (and as a consequence don\u0027t save anything) _today_ but that assumption could change in future and this test tries to capture that. NS should be able to rely on counters and configurations remaining the same regardless of whether secure world decides to save them and use the PMU or disable the PMU entirely.\n\nThe check for \u003e\u003d of the value is kind of an implementation detail of the test and shouldn\u0027t be in the header comment. It arises from the fact that the leakage tests guarantee that counters won\u0027t increase due to counting in secure world and the PMU allows for some inaccuracy in the count itself. If EL3 was to do something funny with those registers it only makes sense for them to reduce in value (i.e. probably get reset to zero). I could try to bound the allowed value but I\u0027m not sure how well that will play with the allowed inaccuracy.",
+      "parentUuid": "e15f46ef_c2ce0bff",
       "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -274,6 +310,24 @@
       "side": 1,
       "message": "The comments here were a bit confusing to me. PMU counters can overflow but it may not happen for  this test case. I think what you need to check if that count after SMC call is \u003e\u003d count before SMC.\n\n/* test-pmu-leakage guarantee no increase so they could only be reset */ \u003d\u003d\u003e \n\n/* Ensure counter values before SMC is \u003c\u003d the values after SMC. If EL3 or secure world has reset or corrupted the counters, we can expect this check to fail. We do not consider the overflow case here */\n\nif (ctr_start[[0] \u003e ctr_end[0])",
       "parentUuid": "130c0508_7f674d2f",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed4c17e0_ab3f4841",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2022-11-23T11:07:02Z",
+      "side": 1,
+      "message": "I\u0027m still not sure why overflow is relevant? My test is small enough for the 32 (or 64) bit counters to never get anywhere even close to that and pmu leakage tests assert that secure world won\u0027t increase them, so overflow is not a thing to worry about. The check you describe is the check I perform? It\u0027s just inverted as that\u0027s the failing case. After the check ctr_start \u003c ctr_end will be true.\n\nI can still expand the comment on when we expect to fail.",
+      "parentUuid": "ebfef5f8_44103e62",
       "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
