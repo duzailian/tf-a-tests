@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "884662c3_24f7f905",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2022-11-23T12:16:32Z",
+      "side": 1,
+      "message": "TFTF test passe in internal CI: \nhttps://jenkins.openci.aws.arm.com/view/RMM/job/rmm-ci-gateway-l2/291/",
+      "revId": "9800da20aae5a83a47d7020cd238f9043dbed008",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
