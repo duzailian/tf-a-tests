@@ -139,6 +139,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ad1d3865_2abd8020",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-23T11:56:12Z",
+      "side": 1,
+      "message": "Yup, I agree, is it more useful to go into secure world and then come back. This expectation to use FF-A calls for tests involving Secure world should be conveyed to the TF-A team appropriately.",
+      "parentUuid": "1ac805b5_040f7200",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f275a5f3_7e6be0a3",
         "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
         "patchSetId": 4
@@ -204,6 +222,24 @@
       "side": 1,
       "message": "I don\u0027t think the assumption is wrong. The test checks something along the lines of \"NS should not have its counters altered regardless of what EL3 and secure world are up to\". Sure, they don\u0027t use the PMU (and as a consequence don\u0027t save anything) _today_ but that assumption could change in future and this test tries to capture that. NS should be able to rely on counters and configurations remaining the same regardless of whether secure world decides to save them and use the PMU or disable the PMU entirely.\n\nThe check for \u003e\u003d of the value is kind of an implementation detail of the test and shouldn\u0027t be in the header comment. It arises from the fact that the leakage tests guarantee that counters won\u0027t increase due to counting in secure world and the PMU allows for some inaccuracy in the count itself. If EL3 was to do something funny with those registers it only makes sense for them to reduce in value (i.e. probably get reset to zero). I could try to bound the allowed value but I\u0027m not sure how well that will play with the allowed inaccuracy.",
       "parentUuid": "e15f46ef_c2ce0bff",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64eaf9d5_f6525ee9",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-23T11:56:12Z",
+      "side": 1,
+      "message": "hmm, I would say the description can be enhanced (which is what I suggested in the comment). The \"entering/exiting secure world preserves all PMU registers\" is not accurate obviously the counters are still expected count up by the test. EL3 may or may not save and restore PMU counters. It may even allow PMU counters to run in the secure world if the platform needs to be debugged. It depends on security model but as far the test is concerned, these are the expectations:\n1. the config is expected to remain the same\n2. the counters should never count backwards (ie end count should \u003e\u003d start_count).\n\nHence the ask to firm up the description. The \u003e\u003d statement PMU counters is also needed because the counter value are expected to go up,",
+      "parentUuid": "3b62a7dc_f232dbe9",
       "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -328,6 +364,24 @@
       "side": 1,
       "message": "I\u0027m still not sure why overflow is relevant? My test is small enough for the 32 (or 64) bit counters to never get anywhere even close to that and pmu leakage tests assert that secure world won\u0027t increase them, so overflow is not a thing to worry about. The check you describe is the check I perform? It\u0027s just inverted as that\u0027s the failing case. After the check ctr_start \u003c ctr_end will be true.\n\nI can still expand the comment on when we expect to fail.",
       "parentUuid": "ebfef5f8_44103e62",
+      "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "256fc412_a12a6c35",
+        "filename": "tftf/tests/extensions/pmuv3/test_pmuv3.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2022-11-23T11:56:12Z",
+      "side": 1,
+      "message": "The test is small enough, but it is making a call into the secure world which may take unbounded time to complete. The overflow is unlikely but worth of mention in the comment to make clear your expectation of the check.\n\nIn my comment , I changed the \u003e\u003d to just \u003e as it could be possible that the SMC returned very quickly that the counter did not increment at all. So the suggested change :\n\nif (ctr_start[0] \u003e\u003d ctr_end[0])  \u003d\u003d\u003e if (ctr_start[0] \u003e ctr_end[0])",
+      "parentUuid": "ed4c17e0_ab3f4841",
       "revId": "fbad109358ec2635eb10974de1e84fe9b8d9c88e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
