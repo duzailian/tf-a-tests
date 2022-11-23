@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15bebb38_0ba0e258",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-11-23T13:36:31Z",
+      "side": 1,
+      "message": "single failure with Legacy CI+2 is a Juno test failure, unrelated to this change",
+      "revId": "40777f82efb1854ab815f501059ac58430cba888",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
