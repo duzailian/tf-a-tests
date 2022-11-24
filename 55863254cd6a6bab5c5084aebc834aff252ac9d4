@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "16d62802_2415fdf4",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-24T15:48:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22bb8c27_b0b97b0a",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 34
+      },
+      "revId": "55863254cd6a6bab5c5084aebc834aff252ac9d4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "43900f05_b62fe5a8",
@@ -71,6 +95,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e05ae853_ce3f61e6",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-24T15:48:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8405ff95_c1bcfeea",
+      "range": {
+        "startLine": 82,
+        "startChar": 1,
+        "endLine": 82,
+        "endChar": 4
+      },
+      "revId": "55863254cd6a6bab5c5084aebc834aff252ac9d4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9b069e1_c724e476",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-24T15:48:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8405ff95_c1bcfeea",
+      "range": {
+        "startLine": 82,
+        "startChar": 1,
+        "endLine": 82,
+        "endChar": 4
+      },
+      "revId": "55863254cd6a6bab5c5084aebc834aff252ac9d4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2cb41f48_e879557d",
@@ -108,6 +180,54 @@
       "side": 1,
       "message": "? TEST_RESULT_SUCCESS : TEST_RESULT_FAIL;\nyou\u0027re right ?: can be used",
       "parentUuid": "2cb41f48_e879557d",
+      "range": {
+        "startLine": 122,
+        "startChar": 1,
+        "endLine": 122,
+        "endChar": 34
+      },
+      "revId": "55863254cd6a6bab5c5084aebc834aff252ac9d4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b159dd17_b47fca1f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-24T15:48:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f631da0_9a8cfe21",
+      "range": {
+        "startLine": 122,
+        "startChar": 1,
+        "endLine": 122,
+        "endChar": 34
+      },
+      "revId": "55863254cd6a6bab5c5084aebc834aff252ac9d4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ab87107_5ef06080",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000746
+      },
+      "writtenOn": "2022-11-24T15:48:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f631da0_9a8cfe21",
       "range": {
         "startLine": 122,
         "startChar": 1,
