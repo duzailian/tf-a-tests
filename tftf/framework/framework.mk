@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018-2022, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2023, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -64,6 +64,7 @@ FRAMEWORK_SOURCES	+=						\
 	lib/smc/${ARCH}/asm_smc.S					\
 	lib/smc/${ARCH}/smc.c						\
 	lib/trng/trng.c							\
+        lib/errata_abi/errata_abi.c                                     \
 	lib/trusted_os/trusted_os.c					\
 	lib/utils/mp_printf.c						\
 	lib/utils/uuid.c						\
