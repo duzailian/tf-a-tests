@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018-2022, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2023, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -20,6 +20,7 @@ TESTS_MAKEFILE := $(addprefix tftf/tests/,	\
 	tests-template.mk			\
 	tests-tftf-validation.mk		\
 	tests-trng.mk				\
+	tests-errata_abi.mk                     \
 	tests-tsp.mk				\
 	tests-uncontainable.mk			\
 	tests-debugfs.mk			\
