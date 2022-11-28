@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2022, ARM Limited and Contributors. All rights reserved.
+ * Copyright (c) 2016-2023, ARM Limited and Contributors. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -20,6 +20,8 @@
 #define MIDR_REV_BITS		U(4)
 #define MIDR_PN_MASK		U(0xfff)
 #define MIDR_PN_SHIFT		U(4)
+#define MIDR_VAR_MASK		U(0xf)
+#define MIDR_REV_MASK		U(0xf)
 
 /*******************************************************************************
  * MPIDR macros
