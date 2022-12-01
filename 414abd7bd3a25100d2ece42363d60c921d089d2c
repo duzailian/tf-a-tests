@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "afaad4ac_7c1055cd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2022-12-01T16:28:57Z",
+      "side": 1,
+      "message": "CI ran on higher patch",
+      "revId": "414abd7bd3a25100d2ece42363d60c921d089d2c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
