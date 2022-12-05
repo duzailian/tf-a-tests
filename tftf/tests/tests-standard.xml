@@ -10,6 +10,7 @@
 <!-- External references to all individual tests files. -->
 <!DOCTYPE testsuites [
   <!ENTITY tests-tftf-validation SYSTEM "tests-tftf-validation.xml">
+  <!ENTITY tests-stress SYSTEM "tests-stress.xml">
   <!ENTITY tests-boot-req SYSTEM "tests-boot-req.xml">
   <!ENTITY tests-psci SYSTEM "tests-psci.xml">
   <!ENTITY tests-sdei SYSTEM "tests-sdei.xml">
