@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-TESTS ?= standard
+TESTS ?= all
 
 tests_files	:= $(wildcard tftf/tests/*.xml)
 tests_sets	:= $(patsubst tftf/tests/tests-%.xml,%,${tests_files})

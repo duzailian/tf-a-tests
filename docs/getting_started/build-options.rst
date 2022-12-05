@@ -139,8 +139,8 @@ TFTF-specific Build Options
 
      make help_tests
 
-   If no set of tests is specified, the standard tests will be selected (see
-   ``tftf/tests/tests-standard.xml``).
+   If no set of tests is specified, the all tests will be selected (see
+   ``tftf/tests/tests-all.xml``).
 
 -  ``USE_NVM``: Used to select the location of test results. It can take either 0
    (RAM) or 1 (non-volatile memory like flash) as test results storage. Default

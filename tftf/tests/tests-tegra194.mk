@@ -14,5 +14,5 @@ TESTS_SOURCES	+=	$(addprefix tftf/tests/plat/nvidia/tegra194/,		\
 	serror_handler.S							\
 )
 
-include tftf/tests/tests-standard.mk
+include tftf/tests/tests-all.mk
 TESTS_SOURCES += $(sort ${TESTS_SOURCES})
