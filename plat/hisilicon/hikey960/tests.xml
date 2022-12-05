@@ -10,10 +10,12 @@
 <!-- External references to all individual tests files. -->
 <!DOCTYPE testsuites [
   <!ENTITY tests-tftf-validation SYSTEM "../../../tftf/tests/tests-tftf-validation.xml">
+  <!ENTITY tests-stress SYSTEM "./../../tftf/tests/tests-stress.xml">
 ]>
 
 <testsuites>
 
   &tests-tftf-validation;
+  &tests-stress;
 
 </testsuites>
