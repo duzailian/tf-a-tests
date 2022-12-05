@@ -6,7 +6,6 @@
 
 TESTS_SOURCES	+=						\
 	$(addprefix tftf/tests/framework_validation_tests/,	\
-		test_timer_framework.c				\
 		test_validation_events.c			\
 		test_validation_irq.c				\
 		test_validation_nvm.c				\
