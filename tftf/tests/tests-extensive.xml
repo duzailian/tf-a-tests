@@ -12,6 +12,7 @@
   <!ENTITY tests-psci-extensive SYSTEM "tests-psci-extensive.xml">
 
   <!ENTITY tests-tftf-validation SYSTEM "tests-tftf-validation.xml">
+  <!ENTITY tests-stress SYSTEM "tests-stress.xml">
   <!ENTITY tests-boot-req SYSTEM "tests-boot-req.xml">
   <!ENTITY tests-psci SYSTEM "tests-psci.xml">
   <!ENTITY tests-sdei SYSTEM "tests-sdei.xml">
@@ -30,6 +31,7 @@
   &tests-psci-extensive;
 
   &tests-tftf-validation;
+  &tests-stress;
   &tests-boot-req;
   &tests-psci;
   &tests-sdei;
