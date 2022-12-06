@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "844cb43d_0c16dae7",
+        "filename": "plat/hisilicon/hikey960/tests.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-12-06T15:11:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c8f0b95_86117120",
+      "range": {
+        "startLine": 13,
+        "startChar": 32,
+        "endLine": 13,
+        "endChar": 48
+      },
+      "revId": "2aa9e70bb89bcc9d5a1689a43d811a572cb9df09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "92c7a98c_1c7172b4",
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "Ok, that is good idea. Let me move this to the end.",
       "parentUuid": "92c7a98c_1c7172b4",
+      "range": {
+        "startLine": 34,
+        "startChar": 2,
+        "endLine": 34,
+        "endChar": 16
+      },
+      "revId": "2aa9e70bb89bcc9d5a1689a43d811a572cb9df09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8477ac56_b807f1cf",
+        "filename": "tftf/tests/tests-extensive.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-12-06T15:11:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "82f85f2f_f736e5f0",
       "range": {
         "startLine": 34,
         "startChar": 2,
