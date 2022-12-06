@@ -34,6 +34,24 @@
       "parentUuid": "cbd0147a_cd5c3376",
       "revId": "87548130bf6d9cba641de70a893860b13dbde06e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f3eed5f_5640f8bb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-12-06T22:21:02Z",
+      "side": 1,
+      "message": "If you agree then I will do the below change -\n1. rename the tests-validation.xml to tests-standard.xml \n2. rename the existing tests-standard.xml to tests-full.xml (as it contains standard + stress tests)\n3. Do necessary modifications in the code to use tests-full.xml as a default test-suite. \n4. Run ETM test configs with tests-standard test-suite",
+      "parentUuid": "a228062b_85c373ef",
+      "revId": "87548130bf6d9cba641de70a893860b13dbde06e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
