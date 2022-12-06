@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62a896d6_aa3c7b65",
+        "filename": "plat/hisilicon/hikey960/tests.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2022-12-06T16:34:21Z",
+      "side": 1,
+      "message": "You\u0027re missing a dot. As result, I think this will only go up to plat/.",
+      "range": {
+        "startLine": 13,
+        "startChar": 32,
+        "endLine": 13,
+        "endChar": 33
+      },
+      "revId": "1369c23c9384f75da339b12f09fcd92b1887b77b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
