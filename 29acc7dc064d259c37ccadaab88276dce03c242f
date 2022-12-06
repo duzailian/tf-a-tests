@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "74d1eb32_f83e8ce3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-12-06T14:41:15Z",
+      "side": 1,
+      "message": "CI+2 failed a juno test in timeout, unrelated to this change.",
+      "revId": "29acc7dc064d259c37ccadaab88276dce03c242f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6a96b45e_622254ad",
@@ -14,6 +31,30 @@
       "writtenOn": "2022-12-06T14:33:52Z",
       "side": 1,
       "message": "If the comparison fails, execution would get stuck in line this branch which I see is intentional. Since the vcpu is still in early boot, I guess there is no way to put an error message to console here. I feel it would be difficult to identify what went wrong. Would it be better if this check is moved to cactus_main where the C stack is already setup.",
+      "range": {
+        "startLine": 46,
+        "startChar": 1,
+        "endLine": 47,
+        "endChar": 6
+      },
+      "revId": "29acc7dc064d259c37ccadaab88276dce03c242f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f59e447_03b4eb76",
+        "filename": "spm/cactus/aarch64/cactus_entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-12-06T14:41:15Z",
+      "side": 1,
+      "message": "I\u0027d prefer leaving there as there is no usage for this value in the top level code. It would overload the cactus main entry point for no good reason apart from doing this check. Expect this check to always pass, otherwise there\u0027s something very wrong with the SPMC.",
+      "parentUuid": "6a96b45e_622254ad",
       "range": {
         "startLine": 46,
         "startChar": 1,
