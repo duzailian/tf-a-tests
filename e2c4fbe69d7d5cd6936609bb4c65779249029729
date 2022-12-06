@@ -34,6 +34,24 @@
       "parentUuid": "8997796f_9fc84f1d",
       "revId": "e2c4fbe69d7d5cd6936609bb4c65779249029729",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9126cab3_9894e199",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2022-12-06T15:58:24Z",
+      "side": 1,
+      "message": "Looks like this is done in latest patchset.",
+      "parentUuid": "50145570_a1f1cb92",
+      "revId": "e2c4fbe69d7d5cd6936609bb4c65779249029729",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
