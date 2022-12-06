@@ -16,6 +16,24 @@
       "message": "This new test suite seems to be the standard one (tests-standard.xml) + RMI/SPM testsuite only, right? In which case, could we instead add the latter testsuite in the standard test suite? Or does this need to be kept separate? If yes, why?\n\nIf we need to keep things this way, then can I suggest we choose a different test suite name? tests-validate does not make much sense to me. Perhaps tests-all?",
       "revId": "87548130bf6d9cba641de70a893860b13dbde06e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a228062b_85c373ef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-12-06T15:08:48Z",
+      "side": 1,
+      "message": "\u003e This new test suite seems to be the standard one (tests-standard.xml) + RMI/SPM testsuite only, right? \n\nNo, the new test suites avoids run of stress test (it is tests-standard.xml (- stress test)).\n\n\u003e In which case, could we instead add the latter testsuite in the standard test suite? Or does this need to be kept separate? If yes, why?\n\nThis patch addresses the failures we observed in CI for ETM test configurations. ETM test configurations will run this new testsuite to avoid stress tests.\n\nCurrently, the standard test suite runs all the tests, including the \"Stress test timer framework\" test. We will eventually need to change this.\n\n\u003e If we need to keep things this way, then can I suggest we choose a different test suite name? tests-validate does not make much sense to me. Perhaps tests-all?\n\nI don\u0027t think tests-all is suitable name as it gives perception it covers everything including stress tests. Do you have any other name in mind? \nThis is very much temporary name I have given to the test-suite, this test-suite eventually will become standard test suite.",
+      "parentUuid": "cbd0147a_cd5c3376",
+      "revId": "87548130bf6d9cba641de70a893860b13dbde06e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
