@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e549606_724537d3",
+        "filename": "plat/hisilicon/hikey960/tests.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2022-12-06T14:43:55Z",
+      "side": 1,
+      "message": "As the CWD is plat/hisilicon/hikey960/, should the path rather be ../../../tftf/tests/tests-stress.xml? Just like the line above.\n\nIf the CI does not pick this up, either I am wrong, or we are missing a build test for Hikey-960 platform, which we should then add.",
+      "range": {
+        "startLine": 13,
+        "startChar": 32,
+        "endLine": 13,
+        "endChar": 48
+      },
+      "revId": "2aa9e70bb89bcc9d5a1689a43d811a572cb9df09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92c7a98c_1c7172b4",
+        "filename": "tftf/tests/tests-extensive.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2022-12-06T14:43:55Z",
+      "side": 1,
+      "message": "It might be better to execute the stress tests last, as these would typically take a long time to complete. That way, we can get the other tests results earlier.\n\nSame comment throughout the patch.",
+      "range": {
+        "startLine": 34,
+        "startChar": 2,
+        "endLine": 34,
+        "endChar": 16
+      },
+      "revId": "2aa9e70bb89bcc9d5a1689a43d811a572cb9df09",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
