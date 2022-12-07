@@ -93,6 +93,30 @@
       },
       "revId": "7e606c5245e2abb10c2d39b6e5e6384d56b6f52a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3288ce18_2799047e",
+        "filename": "tftf/tests/tests-extensive.mk",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-12-07T13:59:26Z",
+      "side": 1,
+      "message": "I posted a new version, I did not rename this instead created a separate test-suite for timer i.e. tests-timer-stress.xml. There are few platforms for example, Hikey it needs standard test-suite + stress timer (and not necessary psci-extensive tests). Does it sounds okay?",
+      "parentUuid": "0992be53_767a3c4e",
+      "range": {
+        "startLine": 9,
+        "startChar": 40,
+        "endLine": 9,
+        "endChar": 49
+      },
+      "revId": "7e606c5245e2abb10c2d39b6e5e6384d56b6f52a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
