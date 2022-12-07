@@ -58,6 +58,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7384b0d5_9555b565",
+        "filename": "include/runtime_services/host_realm_managment/rmi_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2022-12-07T16:23:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "14458128_abe74cd1",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 31
+      },
+      "revId": "a5389ba2c395107a1c054c7a5444ab1069ffe987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a7b58387_824b1473",
@@ -71,6 +95,30 @@
       "writtenOn": "2022-12-07T12:07:12Z",
       "side": 1,
       "message": "since there are implicit variables used, these can be defined in the .c file.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 1
+      },
+      "revId": "a5389ba2c395107a1c054c7a5444ab1069ffe987",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc096b6e_085af31f",
+        "filename": "include/runtime_services/host_realm_managment/rmi_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2022-12-07T16:23:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7b58387_824b1473",
       "range": {
         "startLine": 14,
         "startChar": 0,
