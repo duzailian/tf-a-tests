@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d88d7360_d5f43764",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000709
+      },
+      "writtenOn": "2022-12-07T11:42:06Z",
+      "side": 1,
+      "message": "I don\u0027t know if these changes are actually prompted by the following issue:\n\nSince \"Stress test the timer framework\" testcase was added to test suite \u0027Timer framework Validation\u0027, LAVA tests timeout in that testcase, e.g. https://ci.trustedfirmware.org/job/tf-a-builder/1506001/",
+      "revId": "670cc3a220145ec1bb5bc1135a67e17c107b12e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
