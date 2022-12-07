@@ -17,17 +17,24 @@
 test_result_t test_rndrrs_trap_enabled(void)
 {
 #if defined __aarch64__
+	u_register_t rng1;
+	volatile u_register_t rng2;
+	
 	/* Make sure FEAT_RNG_TRAP is supported. */
 	SKIP_TEST_IF_RNG_TRAP_NOT_SUPPORTED();
-
-	/* Attempt to read RNDR. */
-	read_rndrrs();
-
-	/*
-	 * If we make it this far, the test fails, as there was no trap
-	 * to EL3 triggered.
-	 */
-	return TEST_RESULT_FAIL;
+	
+	/* Attempt to read RNDRRS. */
+	INFO("Attempting to read register RNDRRS...\n");
+	rng1 = read_rndrrs();
+	INFO("First random number: %lu\n", rng1);
+	
+	do
+	{
+	        rng2 = read_rndrrs();
+	        INFO("Second random number: %lu\n", rng2);
+	} while (rng1 == rng2);
+	
+	return TEST_RESULT_SUCCESS;
 #else
 	/* Skip test if AArch32 */
 	SKIP_TEST_IF_AARCH32();
