@@ -1,0 +1,10 @@
+Verified+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Code-Owner-Review+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Code-Review+1: Soby Mathew <soby.mathew@arm.com>
+Code-Review+1: TrustedFirmware Code Review
+Maintainer-Review+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Thu, 08 Dec 2022 09:58:45 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/18226
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
