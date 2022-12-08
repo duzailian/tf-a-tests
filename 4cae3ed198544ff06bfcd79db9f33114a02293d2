@@ -120,6 +120,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c112527a_1e201bce",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2022-12-08T23:52:39Z",
+      "side": 1,
+      "message": "loop iterations: *every* call to either RNDR or RNDRRS should always give you a random number, from a pseudo RNG. The latter version only re-seeds this DRNG before getting the next value. Now \"random\" theoretically also includes the ever so slightest probability of returning the same number twice, but for a proper DRNG with 64-bit return values this is *extremely* unlikely. That\u0027s why I suggested 3 as the loop count as the limit.\n\nAnd I don\u0027t know for sure if cycles spent in secure are visible to the non-secure counter, but this would be worth an experiment: Read the cycles with ENABLE_RNG_TRAP\u003d0, to measure how many cycles the model takes. Then do the same with the trap enabled, and check how the numbers differ.\n\nIf you want to be really eager, you could run some statistical tests on a number of returned values, but this might be overkill for this test.\nOne other thing worth checking is if the emulation corrupts GPRs, but this sounds also optional.",
+      "parentUuid": "320d2e42_ea88efdd",
+      "revId": "4cae3ed198544ff06bfcd79db9f33114a02293d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "23bc826b_6b6a69c2",
         "filename": "tftf/tests/extensions/rng_trap/test_rndrrs_trap.c",
         "patchSetId": 2
