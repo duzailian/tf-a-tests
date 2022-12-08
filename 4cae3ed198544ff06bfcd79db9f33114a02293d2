@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fedc31a8_86451299",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-12-08T23:02:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3dce2f77_48e31472",
+      "revId": "4cae3ed198544ff06bfcd79db9f33114a02293d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3ff17af2_c7026915",
@@ -31,6 +49,30 @@
       "writtenOn": "2022-12-08T14:33:28Z",
       "side": 1,
       "message": "can you change all INFO to VERBOSE",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 26,
+        "endChar": 5
+      },
+      "revId": "4cae3ed198544ff06bfcd79db9f33114a02293d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f15a76bb_a02fc222",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-12-08T23:02:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3ff17af2_c7026915",
       "range": {
         "startLine": 26,
         "startChar": 1,
@@ -60,6 +102,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "320d2e42_ea88efdd",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-12-08T23:02:09Z",
+      "side": 1,
+      "message": "Hi Andre, thanks for looking into this. \nWith respect to the loop iterations, I don\u0027t like the idea of an infinite loop either. I wasn\u0027t sure of how many iterations would be enough to get a new value from the entropy, so I left it infinite.\nI also like the second idea. However, the PMU might not be able to give EL2 the information about what happens in EL3, so we would probably end up having counting the same number, whether with FEAT_RNG_TRAP enabled or not. Madhu suggested me to print something out in the trap handler and track that with an expect script. Maybe that is a better approach. I\u0027m open to suggestions thoguh.",
+      "parentUuid": "e0585ca4_e74bca58",
+      "revId": "4cae3ed198544ff06bfcd79db9f33114a02293d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "23bc826b_6b6a69c2",
         "filename": "tftf/tests/extensions/rng_trap/test_rndrrs_trap.c",
         "patchSetId": 2
@@ -71,6 +131,30 @@
       "writtenOn": "2022-12-08T14:33:28Z",
       "side": 1,
       "message": "nit: change INFO to VERBOSE",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 5
+      },
+      "revId": "4cae3ed198544ff06bfcd79db9f33114a02293d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b191d8b6_ee18d204",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndrrs_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2022-12-08T23:02:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "23bc826b_6b6a69c2",
       "range": {
         "startLine": 27,
         "startChar": 1,
