@@ -16,6 +16,24 @@
       "message": "@Boyan could yo please check if the tests are genuine? Also, just run this test on CI and post the link here",
       "revId": "8585eef7ff4fa8ffde7143976cdb60ba4dd38431",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "239e7f38_f4412aa7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2022-12-12T10:42:37Z",
+      "side": 1,
+      "message": "what do you mean if the tests are genuine? The Ci ran but it can\u0027t produce an HTML report, I was hoping it would be fine the second run. I think I\u0027ll give it the +1 manually as it passes alright otherwise",
+      "parentUuid": "e75d3da3_8173a8c6",
+      "revId": "8585eef7ff4fa8ffde7143976cdb60ba4dd38431",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
