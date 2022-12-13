@@ -156,6 +156,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "60ce0048_bacd8143",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-12-13T09:40:26Z",
+      "side": 1,
+      "message": "@Juan, I guess we should divide this test in two parts\n1. Test if syreg trap working or not ? read_rndr() once and ensure that execution went to EL3\n2. Test whether random number is unique or not ? which would not have details of 1st test.",
+      "parentUuid": "b5a1e7a5_30214a4d",
+      "revId": "4cae3ed198544ff06bfcd79db9f33114a02293d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "23bc826b_6b6a69c2",
         "filename": "tftf/tests/extensions/rng_trap/test_rndrrs_trap.c",
         "patchSetId": 2
