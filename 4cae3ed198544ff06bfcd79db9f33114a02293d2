@@ -192,6 +192,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8f6462ff_00aebfdd",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2022-12-13T10:28:06Z",
+      "side": 1,
+      "message": "\"Ideally it should not corrupt any registers\"\u003e Yes, but this is something that could easily go wrong in the implementation. After all I deliberately tinker with the context in EL3. So I think it should be part of the test. And you would be amazed how far you get when you accidentally corrupt one of the lower registers.\nTBH, finding a random value in a register after an RNDR call isn\u0027t really a demanding test.\nBut I agree that this is a general problem: checking for register corruption after going to EL3, since this applies to SMCCC calls as well.\nSo we should have a routine that saves all registers before doing the smc call, and saves them again afterwards, to allow comparing. We could also provide a mask that states which register can be corrupted. For this trap here we only allow exactly one register to change, for SMCCC calls the list could be longer, depending on the actual service called.\n\n\"ensure that execution went to EL3\"\u003e This is somewhat tricky to pull off, architecturally. I will try some heuristics, for instance whether the cycle counter keeps ticking. James Morse also mentioned that load/store exclusive would *always* fail over an exception, which might be a good enough hint.\nI don\u0027t think patching BL31 is a good idea, since you then test this changed code, not the actually deployed firmware.",
+      "parentUuid": "ac8e0e10_4b1d0112",
+      "revId": "4cae3ed198544ff06bfcd79db9f33114a02293d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "23bc826b_6b6a69c2",
         "filename": "tftf/tests/extensions/rng_trap/test_rndrrs_trap.c",
         "patchSetId": 2
