@@ -83,6 +83,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e91563a_c3bbd426",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2022-12-13T23:39:28Z",
+      "side": 1,
+      "message": "It might be helpful to keep this output more prominent. If the trap hangs (current BL31 or something wrong), this gives a clear indication what was tried last. Otherwise there would just be no output at all.",
+      "parentUuid": "f15a76bb_a02fc222",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 26,
+        "endChar": 5
+      },
+      "revId": "4cae3ed198544ff06bfcd79db9f33114a02293d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e0585ca4_e74bca58",
@@ -258,6 +282,24 @@
       "side": 1,
       "message": "Sorry, @Andre, I forgot to comment on your suggestion. We talked with @Manish and we agreed this is a good approach. I\u0027m working on that. The only thing I don\u0027t understand is why this is inside a loop. What would cause the monitor not to be reset?",
       "parentUuid": "99cb1cab_679c3933",
+      "revId": "4cae3ed198544ff06bfcd79db9f33114a02293d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "935c66e1_5996e498",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2022-12-13T23:39:28Z",
+      "side": 1,
+      "message": "Yeah, this really deserves some comments.\nSo the loop is just for safety measures and portability, I guess in this context here it would strictly not be needed. Other reasons that could reset the monitor are interrupts, or some aborts due to the load/store exclusive accesses. So the stxr failing does not necessarily mean it is due to a trap of the RNDR instruction. However one passing stxr indicates that the instruction cannot have been trapped (hence the break;).\n\nSo I agree this is a bit paranoid, but we can surely afford it here and it helps the robustness of the code, also for re-usability in other tests.\n\nRegarding the GPR corruption: I strongly disagree on downplaying this. A *trap* is tricky in general, since we must not touch *any* GPR before it has been saved, and they would need to be restored in the correct order, again not touching any GPR after it has been restored. Plus the implementation explicitly changes the saved context, there are many things that could go wrong here: Do we index by the register number or by byte address? Do we use the correct base pointer? Has the target register number been miscalculated? Is anything else accidentally corrupting the context?\nI would argue that this part of the code is the most important to check, especially since it\u0027s written in error-prone assembly.\nMind you, the goal of this code is not to pass the test, but to actually verify the correctness of the function.\n\nAlso I don\u0027t understand what you mean with \"Even if there is a flaw and some register gets corrupted for some reason, at some point that will be fixed and the test will become useless.\" Can you elaborate on that?\n\nI would argue that some register corruption might slip through in real world applications, if you for instance corrupt x3 inside a function, which returns quickly afterwards. A very precise test here can really check *every* register and helps to uncover bugs.",
+      "parentUuid": "6d6cf9d7_4340fc41",
       "revId": "4cae3ed198544ff06bfcd79db9f33114a02293d2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
