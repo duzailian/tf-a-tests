@@ -210,6 +210,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e40bf74c_930421b9",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2022-12-13T17:16:02Z",
+      "side": 1,
+      "message": "So I tried the PMU cycle counter, but couldn\u0027t get it to tick at all (in EL2). Anyway it seems this might not work anyway, when/if BL31 blocks cycle counting in secure and/or EL3.\nBut the load/store exclusive trick worked. The ARMv8 ARM says in chapter B2.9.4 (Context switch support): \"An exception return clears the local monitor.\"\nAnd here is a code sketch for that:\n\n#define MAX_TRIES 100\nstatic bool does_rndr_trap(void)\n{\n       uint64_t exclusive, reg;\n       int i;\n\n       for (i \u003d 0; i \u003c MAX_TRIES; i++) {\n               __asm__ volatile (\"ldxr %0, %1\\n\" : \"\u003dr\"(reg) : \"Q\"(exclusive));\n               __asm__ volatile (\"mrs %0, S3_3_C2_C4_0\\n\" : \"\u003dr\" (reg));\n               __asm__ volatile (\"stxr %w0, %1, %2\\n\" : \"\u003d\u0026r\"(reg)\n                                 : \"r\"(0x42), \"Q\"(exclusive));\n               if (reg \u003d\u003d 0)\n                       break;\n       }\n\n       return i \u003d\u003d MAX_TRIES;\n}\n\nHope that helps!",
+      "parentUuid": "8f6462ff_00aebfdd",
+      "revId": "4cae3ed198544ff06bfcd79db9f33114a02293d2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "23bc826b_6b6a69c2",
         "filename": "tftf/tests/extensions/rng_trap/test_rndrrs_trap.c",
         "patchSetId": 2
