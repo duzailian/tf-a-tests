@@ -1,0 +1,10 @@
+Legacy-CI+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Verified+1: TrustedFirmware Code Review
+Code-Review+1: Javier Almansa Sobrino <javier.almansasobrino@arm.com>
+Code-Owner-Review+1: Soby Mathew <soby.mathew@arm.com>
+Maintainer-Review+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Thu, 15 Dec 2022 15:51:53 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/18037
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
