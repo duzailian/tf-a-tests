@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e120dcf5_118fe20b",
+        "filename": "tftf/tests/tests-invalid-access.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-12-16T11:25:22Z",
+      "side": 1,
+      "message": "nit: remove this extra line.",
+      "revId": "df14b1714189b0b80f159c494d239e02de50a90f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
