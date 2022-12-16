@@ -25,6 +25,7 @@ TESTS_MAKEFILE := $(addprefix tftf/tests/,	\
 	tests-debugfs.mk			\
 	tests-rmi-spm.mk			\
 	tests-realm-payload.mk			\
+	tests-invalid-access.mk			\
 )
 
 include ${TESTS_MAKEFILE}
