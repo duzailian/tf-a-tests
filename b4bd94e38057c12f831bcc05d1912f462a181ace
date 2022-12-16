@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c4ecc5a_44da693f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2022-12-16T13:15:28Z",
+      "side": 1,
+      "message": "I believe Allow-CI+2 shall be run on this kind of change e.g. it fails this L2 test:\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/24892/\n\n\u003e Executing \u0027Access from a SP to a Root region\u0027\nERROR:   Mailbox not configured!\nThis test relies on test suite \\\"FF-A RXTX Mapping\\\" to map/configure RXTX buffers\n  TEST COMPLETE                                                 Failed\n\n\u003e Executing \u0027Access Root memory from Realm world\u0027\n  TEST COMPLETE                                                Skipped\n\n******************************* Summary *******************************\n\u003e Test suite \u0027Invalid memory access\u0027\n                                                                Failed\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nTests Skipped : 2\nTests Passed  : 3\nTests Failed  : 1\nTests Crashed : 0\nTotal tests   : 6\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d",
+      "revId": "b4bd94e38057c12f831bcc05d1912f462a181ace",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
