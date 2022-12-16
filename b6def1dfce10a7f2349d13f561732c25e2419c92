@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4504bf7_dbd50ad7",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap_enabled.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2022-12-16T21:41:35Z",
+      "side": 1,
+      "message": "It\u0027s not really a \"very simple test\" anymore, I think? Please either explain what the whole routines does above, after the license tag, or here. And please mention why this works (exception returns clearing the exclusive monitor).",
+      "revId": "b6def1dfce10a7f2349d13f561732c25e2419c92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36c38fab_3cb756b6",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap_enabled.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2022-12-16T21:41:35Z",
+      "side": 1,
+      "message": "I am not sure if it\u0027s safe to execute \"a lot of code\" while the monitor is in exclusive state, because that increases the chance of it being cleared.\nSince you have debug messages around the normal execution of RNDR in that other test below, I don\u0027t think you need them here, especially since you will execute this in a loop.",
+      "revId": "b6def1dfce10a7f2349d13f561732c25e2419c92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "606c7968_e19d09ee",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap_enabled.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2022-12-16T21:41:35Z",
+      "side": 1,
+      "message": "In the worst case this will print \"first\" a 100 times ;-)",
+      "revId": "b6def1dfce10a7f2349d13f561732c25e2419c92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10564efe_8d8da8d6",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap_rng.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2022-12-16T21:41:35Z",
+      "side": 1,
+      "message": "I think this comment is no longer true.",
+      "revId": "b6def1dfce10a7f2349d13f561732c25e2419c92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0624301_2545c2f5",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap_rng.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2022-12-16T21:41:35Z",
+      "side": 1,
+      "message": "That\u0027s odd, you will execute the loop below at least once, and the compiler should see this.\nIf you still need it, initialise it above, at the declaration.",
+      "revId": "b6def1dfce10a7f2349d13f561732c25e2419c92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4db1aaf2_b9ab432d",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndr_trap_rng.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2022-12-16T21:41:35Z",
+      "side": 1,
+      "message": "It might be useful to print the value that was read, to give people a clue what was going on (if it\u0027s for instance 0 or -1, or if it\u0027s indeed a random number, but always the same.",
+      "revId": "b6def1dfce10a7f2349d13f561732c25e2419c92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae4d5110_351057e4",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndrrs_trap_enabled.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2022-12-16T21:41:35Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s a good idea to copy this whole file, that\u0027s quite massive code duplication.\nI don\u0027t even think you need separate tests, you could just test both instructions in one go.",
+      "revId": "b6def1dfce10a7f2349d13f561732c25e2419c92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "082e8ad3_9d3e1591",
+        "filename": "tftf/tests/extensions/rng_trap/test_rndrrs_trap_rng.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2022-12-16T21:41:35Z",
+      "side": 1,
+      "message": "Same here, that\u0027s the same as the other file, just with RNDRRS. Please join them in one file.",
+      "revId": "b6def1dfce10a7f2349d13f561732c25e2419c92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
