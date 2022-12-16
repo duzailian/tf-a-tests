@@ -1,0 +1,9 @@
+Legacy-CI+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Verified+1: Manish Pandey <manish.pandey2@arm.com>
+Code-Owner-Review+1: Soby Mathew <soby.mathew@arm.com>
+Maintainer-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Fri, 16 Dec 2022 16:59:45 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/18464
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
