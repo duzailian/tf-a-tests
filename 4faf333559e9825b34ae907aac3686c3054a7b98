@@ -87,6 +87,24 @@
       "message": "Can you state in one line, why is this change required?\nDid we omit to run build tests on an earlier change?",
       "revId": "4faf333559e9825b34ae907aac3686c3054a7b98",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa7ed0e5_664cd9c5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2022-12-16T12:45:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aba8ceff_bdd2cab2",
+      "revId": "4faf333559e9825b34ae907aac3686c3054a7b98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
