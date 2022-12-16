@@ -26,6 +26,7 @@
   <!ENTITY tests-debugfs SYSTEM "tests-debugfs.xml">
   <!ENTITY tests-rmi-spm SYSTEM "tests-rmi-spm.xml">
   <!ENTITY tests-realm-payload SYSTEM "tests-realm-payload.xml">
+  <!ENTITY tests-invalid-access SYSTEM "tests-invalid-access.xml">
 ]>
 
 <testsuites>
@@ -47,5 +48,6 @@
   &tests-debugfs;
   &tests-rmi-spm;
   &tests-realm-payload;
+  &tests-invalid-access;
 
 </testsuites>
