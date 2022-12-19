@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9002bfb_4c16aea0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-12-19T22:05:03Z",
+      "side": 1,
+      "message": "Few top level comments\n1. We don\u0027t need 4 separate files, all tests can be part of a single file.\n2. There should be 3 tests, first to test whether sysreg trap works or not?and you can any of the instruction to test that. And other two tests to verify both the instructions work fine or not",
+      "revId": "8c25ecc67875c24abc643c9c416a2765f12e3e7e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
