@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05595f03_fb7dc7ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2022-12-20T11:27:37Z",
+      "side": 1,
+      "message": "Tested locally with TF-A RMM image and SPM not present. Test is being skipped:\n\u003e Executing \u0027Access from a SP to a Root region\u0027\n  TEST COMPLETE                                                Skipped\nFFA_VERSION not supported.\n",
+      "revId": "fac8ed7355d7a81499112ac85a3adb952d37da8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
