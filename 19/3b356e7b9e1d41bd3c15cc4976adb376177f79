@@ -1,0 +1,11 @@
+Allow-CI+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Legacy-CI+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Verified+1: TrustedFirmware Code Review
+Code-Review+1: Bipin Ravi <bipin.ravi@arm.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Owner-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Fri, 23 Dec 2022 13:15:36 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/18528
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
