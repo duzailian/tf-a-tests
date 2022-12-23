@@ -49,6 +49,54 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "31bb5439_65904f43",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-12-23T14:29:10Z",
+      "side": 1,
+      "message": "To unify these functions the tricky bit is at following line\n\n__asm__ volatile (\"mrs %0, rndr\\n\" : \"\u003dr\" (rng)); \n\nNeed a mechanism to get the argument to this function as instruction and pass it on above inline assembly.",
+      "parentUuid": "73938649_4d79f132",
+      "range": {
+        "startLine": 29,
+        "startChar": 14,
+        "endLine": 29,
+        "endChar": 32
+      },
+      "revId": "6dbcce4e9a1dcad4a27de03370367e28010a5ac2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "82aa99cd_c2ec3289",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-12-23T14:29:10Z",
+      "side": 1,
+      "message": "I was trying to unify these two functions and introduce this argument but forget to remove it.",
+      "parentUuid": "8f2c0729_7ef84ffb",
+      "range": {
+        "startLine": 29,
+        "startChar": 33,
+        "endLine": 29,
+        "endChar": 42
+      },
+      "revId": "6dbcce4e9a1dcad4a27de03370367e28010a5ac2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9f84e0eb_1e631bca",
         "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
         "patchSetId": 11
@@ -60,6 +108,30 @@
       "writtenOn": "2022-12-22T10:07:11Z",
       "side": 1,
       "message": "nit:rndrrs?",
+      "range": {
+        "startLine": 96,
+        "startChar": 21,
+        "endLine": 96,
+        "endChar": 25
+      },
+      "revId": "6dbcce4e9a1dcad4a27de03370367e28010a5ac2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7528d719_b0fde251",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2022-12-23T14:29:10Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9f84e0eb_1e631bca",
       "range": {
         "startLine": 96,
         "startChar": 21,
