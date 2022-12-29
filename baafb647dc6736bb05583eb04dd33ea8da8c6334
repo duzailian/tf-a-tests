@@ -22,6 +22,91 @@
       },
       "revId": "baafb647dc6736bb05583eb04dd33ea8da8c6334",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6040c882_641e34b2",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-12-29T12:46:43Z",
+      "side": 1,
+      "message": "nit: uses",
+      "revId": "baafb647dc6736bb05583eb04dd33ea8da8c6334",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5101149e_ca40981b",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-12-29T12:46:43Z",
+      "side": 1,
+      "message": "nit: succeeds",
+      "revId": "baafb647dc6736bb05583eb04dd33ea8da8c6334",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4bb0989_335553b6",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-12-29T12:46:43Z",
+      "side": 1,
+      "message": "nit: #endif /* defined (__aarch64__) */",
+      "revId": "baafb647dc6736bb05583eb04dd33ea8da8c6334",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6866776_ca7c238d",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-12-29T12:46:43Z",
+      "side": 1,
+      "message": "nit: generates a reseeded random number\nAlso please limit to 80 chars in a line, at all places in this file.",
+      "revId": "baafb647dc6736bb05583eb04dd33ea8da8c6334",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5331197_21f512d8",
+        "filename": "tftf/tests/tests-rng_trap.xml",
+        "patchSetId": 14
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2022-12-29T12:46:43Z",
+      "side": 1,
+      "message": "nit: RNDRRS instruction returns/gets a reseeded random number, distinguishing it from RNDR instruction.\nEven though we are not worried about the reseeding part, it would be good to name it in the test case.",
+      "revId": "baafb647dc6736bb05583eb04dd33ea8da8c6334",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
