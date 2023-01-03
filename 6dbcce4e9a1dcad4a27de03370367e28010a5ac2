@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "02a62cb8_efe16f7f",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2023-01-03T14:05:31Z",
+      "side": 1,
+      "message": "You cannot pass a runtime char* to an inline assembly statement (if that was your plan). You can pass in a preprocessor macro, but by far the easiest is a boolean:\n    if (use_rndrrs)\n        __asm__ volatile (\"mrs %0, rndrrs\\n\" : \"\u003dr\" (rng));\n    else\n        __asm__ volatile (\"mrs %0, rndr\\n\" : \"\u003dr\" (rng));\n\nAnd there are only those two options, so no need to boil the ocean with supporting an arbitrary number of instructions.",
+      "parentUuid": "31bb5439_65904f43",
+      "range": {
+        "startLine": 29,
+        "startChar": 14,
+        "endLine": 29,
+        "endChar": 32
+      },
+      "revId": "6dbcce4e9a1dcad4a27de03370367e28010a5ac2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9f84e0eb_1e631bca",
         "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
         "patchSetId": 11
