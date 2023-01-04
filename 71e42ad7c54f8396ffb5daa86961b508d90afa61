@@ -39,6 +39,30 @@
       },
       "revId": "71e42ad7c54f8396ffb5daa86961b508d90afa61",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26ef22d7_feac0fe3",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2023-01-04T14:25:00Z",
+      "side": 1,
+      "message": "I was passing it directly from inside the function which looked weird,\n\ntest_rng_trap(false)\nI can remove it, if it makes more sense",
+      "parentUuid": "d60f0eaa_7ba1bb5d",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 23
+      },
+      "revId": "71e42ad7c54f8396ffb5daa86961b508d90afa61",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
