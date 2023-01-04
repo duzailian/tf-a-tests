@@ -110,6 +110,30 @@
       },
       "revId": "71e42ad7c54f8396ffb5daa86961b508d90afa61",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7c45268_6e978cf0",
+        "filename": "tftf/tests/extensions/rng_trap/test_rng_trap.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2023-01-04T17:16:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b6182d02_7bfd4522",
+      "range": {
+        "startLine": 18,
+        "startChar": 26,
+        "endLine": 18,
+        "endChar": 45
+      },
+      "revId": "71e42ad7c54f8396ffb5daa86961b508d90afa61",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
