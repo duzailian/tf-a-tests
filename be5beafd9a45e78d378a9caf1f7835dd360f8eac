@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84bedd26_7a94a26b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-01-05T16:23:27Z",
+      "side": 1,
+      "message": "WIP: waiting on hafnium code reviews",
+      "revId": "be5beafd9a45e78d378a9caf1f7835dd360f8eac",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
