@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c64ef21_0c114931",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-01-12T15:27:14Z",
+      "side": 1,
+      "message": "Added platform owners for CoR.",
+      "revId": "5c71203a7f4cbfb837fe797a9b6a66f97af8b567",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
