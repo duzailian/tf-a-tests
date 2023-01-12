@@ -207,7 +207,7 @@ static test_result_t test_ffa_rxtx_map(uint32_t expected_return)
 	/**********************************************************************
 	 * Verify that FFA is there and that it has the correct version.
 	 **********************************************************************/
-	SKIP_TEST_IF_FFA_VERSION_LESS_THAN(1, 0);
+	SKIP_TEST_IF_FFA_VERSION_LESS_THAN(1, 1);
 
 	/**********************************************************************
 	 * If OP-TEE is SPMC skip this test.
@@ -304,6 +304,42 @@ test_result_t test_ffa_rxtx_map_unmapped_success(void)
 	}
 	return ret;
 }
+
+/*
+ * The FFA_RXTX_UNMAP specification at the physical FF-A instance allows for
+ * an ID to be given to the SPMC. The ID should relate to a VM that had its ID
+ * previously forwarded to the SPMC.
+ * This test validates that calls to FFA_RXTX_UNMAP from the NS physical
+ * instance can unmap the ID of an SP.
+ */
+test_result_t test_ffa_rxtx_unmap_fail_if_sp(void)
+{
+	struct ffa_value ret;
+	struct ffa_value args;
+
+	CHECK_SPMC_TESTING_SETUP(1, 1, sp_uuids);
+
+	/* Invoked FFA_RXTX_UNMAP, providing the ID of an SP in w1. */
+	args = (struct ffa_value) {
+		.fid = FFA_RXTX_UNMAP,
+		.arg1 = SP_ID(1) << 16,
+		.arg2 = FFA_PARAM_MBZ,
+		.arg3 = FFA_PARAM_MBZ,
+		.arg4 = FFA_PARAM_MBZ,
+		.arg5 = FFA_PARAM_MBZ,
+		.arg6 = FFA_PARAM_MBZ,
+		.arg7 = FFA_PARAM_MBZ
+	};
+
+	ret = ffa_service_call(&args);
+
+	if (!is_expected_ffa_error(ret, FFA_ERROR_INVALID_PARAMETER)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
 /******************************************************************************
  * FF-A SPM_ID_GET ABI Tests
  ******************************************************************************/
