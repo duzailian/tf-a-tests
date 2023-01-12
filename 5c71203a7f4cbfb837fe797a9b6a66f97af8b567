@@ -16,6 +16,23 @@
       "message": "Added platform owners for CoR.",
       "revId": "5c71203a7f4cbfb837fe797a9b6a66f97af8b567",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f195f87c_eaf346bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-01-12T21:16:47Z",
+      "side": 1,
+      "message": "@Vijayenthiran or Thomas, Please provide your CoR.",
+      "revId": "5c71203a7f4cbfb837fe797a9b6a66f97af8b567",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
