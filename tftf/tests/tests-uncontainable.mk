@@ -5,6 +5,6 @@
 #
 
 TESTS_SOURCES	+=	$(addprefix tftf/tests/misc_tests/,	\
-	inject_serror.S 					\
+	inject_ras_error.S 					\
 	test_uncontainable.c 					\
 )
