@@ -8,11 +8,11 @@
 
 #ifdef __aarch64__
 
-extern void inject_uncontainable(void);
+extern void inject_uncontainable_ras_error(void);
 
 test_result_t test_uncontainable(void)
 {
-	inject_uncontainable();
+	inject_uncontainable_ras_error();
 
 	return TEST_RESULT_SUCCESS;
 }
