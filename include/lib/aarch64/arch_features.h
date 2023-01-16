@@ -231,4 +231,13 @@ static inline bool is_feat_sme_fa64_supported(void)
 	features = read_id_aa64smfr0_el1();
 	return (features & ID_AA64SMFR0_EL1_FA64_BIT) != 0U;
 }
+
+static inline bool is_feat_sme2_supported(void)
+{
+	uint64_t features;
+
+	features = read_id_aa64pfr1_el1() >> ID_AA64PFR1_EL1_SME_SHIFT;
+	return (features & ID_AA64PFR1_EL1_SME_MASK) >= ID_AA64PFR1_EL1_SME2_SUPPORTED;
+}
+
 #endif /* ARCH_FEATURES_H */

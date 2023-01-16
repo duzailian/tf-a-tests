@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2022, Arm Limited and Contributors. All rights reserved.
+ * Copyright (c) 2013-2023, Arm Limited and Contributors. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -326,6 +326,7 @@
 #define ID_AA64PFR1_EL1_SME_MASK		ULL(0xf)
 #define ID_AA64PFR1_EL1_SME_NOT_SUPPORTED	ULL(0x0)
 #define ID_AA64PFR1_EL1_SME_SUPPORTED		ULL(0x1)
+#define ID_AA64PFR1_EL1_SME2_SUPPORTED		ULL(0x2)
 
 /* ID_PFR1_EL1 definitions */
 #define ID_PFR1_VIRTEXT_SHIFT	U(12)
@@ -871,6 +872,7 @@
 /* SMCR_ELx definitions */
 #define SMCR_ELX_LEN_SHIFT		U(0)
 #define SMCR_ELX_LEN_MASK		U(0x1ff)
+#define SMCR_ELX_EZT0_BIT		(U(1) << 30)
 #define SMCR_ELX_FA64_BIT		(U(1) << 31)
 
 /*******************************************************************************
