@@ -168,7 +168,7 @@ test_result_t test_sme_support(void)
 	sme_smstop(SMSTOP_ZA);
 
 	/* If FEAT_SME_FA64 then attempt to execute an illegal instruction. */
-	if (feat_sme_fa64_supported()) {
+	if (is_feat_sme_fa64_supported()) {
 		VERBOSE("FA64 supported, trying illegal instruction.\n");
 		sme_try_illegal_instruction();
 	}
