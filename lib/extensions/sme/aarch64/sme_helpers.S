@@ -13,7 +13,6 @@
 	.arch	armv8-a+sve
 	.globl	sme_rdvl_1
 	.globl	sme_try_illegal_instruction
-
 /*
  * uint64_t sme_rdvl_1(void);
  *
