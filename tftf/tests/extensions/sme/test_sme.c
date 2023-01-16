@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2021-2023, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -26,10 +26,7 @@ test_result_t test_sme_support(void)
 	unsigned int len_max;
 
 	/* Skip the test if SME is not supported. */
-	if (!feat_sme_supported()) {
-		INFO("SME not supported, skipping.\n");
-		return TEST_RESULT_SKIPPED;
-	}
+        SKIP_TEST_IF_SME_NOT_SUPPORTED();
 
 	/* Enable SME for use at NS EL2. */
 	if (sme_enable() != 0) {
@@ -52,19 +49,21 @@ test_result_t test_sme_support(void)
 
 	/* Make sure we can start and stop streaming mode. */
 	VERBOSE("Entering Streaming SVE mode.\n");
-	sme_smstart(false);
+
+	sme_smstart(SMSTART_SM);
 	read_smcr_el2();
-	sme_smstop(false);
-	sme_smstart(true);
+	sme_smstop(SMSTOP_SM);
+
+        sme_smstart(SMSTART);
 	read_smcr_el2();
-	sme_smstop(true);
+	sme_smstop(SMSTOP);
 
 	/*
 	 * Iterate through values for LEN to detect supported vector lengths.
 	 * SME instructions aren't supported by GCC yet so for now this is all
 	 * we'll do.
 	 */
-	sme_smstart(false);
+	sme_smstart(SMSTART_SM);
 
 	/* Write SMCR_EL2 with the LEN max to find implemented width. */
 	write_smcr_el2(SME_SMCR_LEN_MAX);
@@ -92,10 +91,10 @@ test_result_t test_sme_support(void)
 			VERBOSE("NOT SUPPORTED: %u bits (LEN=%u)\n", requested_vector_len, i);
 		}
 	}
-	sme_smstop(false);
+	sme_smstop(SMSTOP_SM);
 
 	/* If FEAT_SME_FA64 then attempt to execute an illegal instruction. */
-	if (feat_sme_fa64_supported()) {
+	if (is_feat_sme_fa64_supported()) {
 		VERBOSE("FA64 supported, trying illegal instruction.\n");
 		sme_try_illegal_instruction();
 	}
