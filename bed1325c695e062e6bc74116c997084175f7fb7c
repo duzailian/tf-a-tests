@@ -16,6 +16,75 @@
       "message": "All impacted tests passed here https://ci.trustedfirmware.org/job/tf-a-ci-gateway/27037/ ",
       "revId": "bed1325c695e062e6bc74116c997084175f7fb7c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b3cd2d9_587ddb0e",
+        "filename": "tftf/tests/misc_tests/test_inject_serror.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-01-17T16:52:13Z",
+      "side": 1,
+      "message": "nit: cause an",
+      "range": {
+        "startLine": 19,
+        "startChar": 49,
+        "endLine": 19,
+        "endChar": 58
+      },
+      "revId": "bed1325c695e062e6bc74116c997084175f7fb7c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5f9e7ed_8f97ea52",
+        "filename": "tftf/tests/misc_tests/test_inject_serror.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-01-17T16:52:13Z",
+      "side": 1,
+      "message": "Instead (\"%d: mapping address %lu (%d) failed \\n\", __LINE__, test_address, rc). How does that sounds?",
+      "range": {
+        "startLine": 33,
+        "startChar": 28,
+        "endLine": 33,
+        "endChar": 53
+      },
+      "revId": "bed1325c695e062e6bc74116c997084175f7fb7c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "464e2b7f_d5918abe",
+        "filename": "tftf/tests/misc_tests/test_inject_serror.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-01-17T16:52:13Z",
+      "side": 1,
+      "message": "will Serror cause error on read also? If yes, then read may be better option to trigger Serror rather than writing garbage value.",
+      "range": {
+        "startLine": 38,
+        "startChar": 1,
+        "endLine": 38,
+        "endChar": 34
+      },
+      "revId": "bed1325c695e062e6bc74116c997084175f7fb7c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
