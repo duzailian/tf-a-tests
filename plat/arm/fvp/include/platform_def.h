@@ -40,6 +40,7 @@
 /* Base address of trusted watchdog (SP805) */
 #define SP805_TWDOG_BASE		0x2A490000
 #define IRQ_TWDOG_INTID			56
+#define PLAT_INTERRUPT_MPIDR		0x81010300
 
 /*******************************************************************************
  * Base address and size of external NVM flash
