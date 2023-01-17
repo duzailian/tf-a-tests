@@ -3,6 +3,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "58f15e93_0702ba70",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2023-01-17T21:58:01Z",
+      "side": 1,
+      "message": "Why is this test only for 1.1? Is RXTX buffer mapping not part of 1.0? At least according to the FFA spec it is. \n\nOr is TF-A only officially supporting 1.1? Just curious.",
+      "range": {
+        "startLine": 210,
+        "startChar": 1,
+        "endLine": 210,
+        "endChar": 42
+      },
+      "revId": "0bb04d4cc5890f1cd97a49220eae4a9c88ee8b11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f25ed68_a124bb4b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2023-01-17T21:58:01Z",
+      "side": 1,
+      "message": "Should this be more specifically \"the Non-secure physical FF-A instance\" to distinguish it from other physical instances (between secure components for example)?",
+      "range": {
+        "startLine": 309,
+        "startChar": 39,
+        "endLine": 309,
+        "endChar": 65
+      },
+      "revId": "0bb04d4cc5890f1cd97a49220eae4a9c88ee8b11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "744dda79_75d0c1bc",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
         "patchSetId": 1
@@ -43,6 +89,29 @@
         "startChar": 11,
         "endLine": 313,
         "endChar": 37
+      },
+      "revId": "0bb04d4cc5890f1cd97a49220eae4a9c88ee8b11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f8be670_f1c49872",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2023-01-17T21:58:01Z",
+      "side": 1,
+      "message": "It is unclear to me how this test distinguishes between a call of FFA_RXTX_UNMAP from the hypervisor (NS physical instance) vs a call of the same function from an SP.\n\nIf I understand correctly, a call from NS physical instance to unmap an SP\u0027s buffers should fail while a call from an SP to unmap its own buffers should be okay. \n\nWhat here indicates that the call is from the hypervisor? Is it the use of ffa_service_call? Maybe a comment could make this more clear.",
+      "range": {
+        "startLine": 312,
+        "startChar": 52,
+        "endLine": 313,
+        "endChar": 11
       },
       "revId": "0bb04d4cc5890f1cd97a49220eae4a9c88ee8b11",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
