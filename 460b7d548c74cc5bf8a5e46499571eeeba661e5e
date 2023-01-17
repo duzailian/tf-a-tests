@@ -16,6 +16,23 @@
       "message": "All impacted tests passed here https://ci.trustedfirmware.org/job/tf-a-ci-gateway/27037/ ",
       "revId": "460b7d548c74cc5bf8a5e46499571eeeba661e5e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1a0ed53_8adc5623",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-01-17T22:01:29Z",
+      "side": 1,
+      "message": "nit: update header with 2023 for all relevant files.",
+      "revId": "460b7d548c74cc5bf8a5e46499571eeeba661e5e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
