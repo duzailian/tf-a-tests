@@ -85,6 +85,30 @@
       },
       "revId": "bed1325c695e062e6bc74116c997084175f7fb7c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b0020ba_865a1203",
+        "filename": "tftf/tests/misc_tests/test_inject_serror.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-01-17T22:43:48Z",
+      "side": 1,
+      "message": "Is write to device regions guaranteed to generate async external aborts/SError on all implementations of the architecture? \n\nTypically, it is caused by writes to cacheable memory, line evictions, parity or ecc error etc. that happen after the response to the original write has been returned to the CPU. In the case of writes to normal cacheable bufferable regions, an early write response is given to the CPU. But the data when written to cache might encounter an ecc or parity error and can trigger an SError. Same with a line evicted which can encounter ecc or parity error OR the line written out might encounter an error in the L3 interconnect or the final external memory like DRAM. These are example instances that can generate SError. \n\n\"An exception is described as asynchronous if any of the following apply:\n• The exception is not generated as a result of direct execution or attempted execution of the instruction stream.\n• The return address presented to the exception handler is not guaranteed to indicate the instruction that caused \nthe exception. \n• The exception is imprecise\"",
+      "parentUuid": "464e2b7f_d5918abe",
+      "range": {
+        "startLine": 38,
+        "startChar": 1,
+        "endLine": 38,
+        "endChar": 34
+      },
+      "revId": "bed1325c695e062e6bc74116c997084175f7fb7c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
