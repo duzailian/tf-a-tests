@@ -211,6 +211,30 @@
       },
       "revId": "0bb04d4cc5890f1cd97a49220eae4a9c88ee8b11",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04ea0894_34a2721e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2023-01-18T16:42:54Z",
+      "side": 1,
+      "message": "Okay I think the key part I missed in the spec was that w1 is only valid at the NS physical instance. Thanks!",
+      "parentUuid": "62afdc8c_8e8efe05",
+      "range": {
+        "startLine": 312,
+        "startChar": 52,
+        "endLine": 313,
+        "endChar": 11
+      },
+      "revId": "0bb04d4cc5890f1cd97a49220eae4a9c88ee8b11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
