@@ -297,11 +297,7 @@ test_result_t test_ffa_rxtx_unmap_fail(void)
 test_result_t test_ffa_rxtx_map_unmapped_success(void)
 {
 	test_result_t ret =  test_ffa_rxtx_map(FFA_SUCCESS_SMC32);
-
-	if (ret == TEST_RESULT_SUCCESS) {
-		VERBOSE("Set RXTX Mailbox for remaining spm tests.\n");
-		set_tftf_mailbox(&mb);
-	}
+	ffa_rxtx_unmap();
 	return ret;
 }
 
