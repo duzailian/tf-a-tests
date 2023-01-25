@@ -16,6 +16,24 @@
       "message": "Failed the static checks\ntftf/tests/common/test_helpers.c:137: ERROR: space required before the open brace \u0027{\u0027\n+\tif(is_ffa_call_error(ffa_rxtx_unmap())){\n\ntftf/tests/common/test_helpers.c:137: ERROR: space required before the open parenthesis \u0027(\u0027\n+\tif(is_ffa_call_error(ffa_rxtx_unmap())){\n",
       "revId": "85eccf7b7457971a303ca2aa54137f3a50dd00c1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c9b2e96_12077ecb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-01-25T12:22:43Z",
+      "side": 1,
+      "message": "The \u0027make format\u0027 is so convenient.\nDone.",
+      "parentUuid": "633d4aad_afa8d6bf",
+      "revId": "85eccf7b7457971a303ca2aa54137f3a50dd00c1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
