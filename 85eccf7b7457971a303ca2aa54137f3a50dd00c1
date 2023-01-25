@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "633d4aad_afa8d6bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-01-25T11:43:15Z",
+      "side": 1,
+      "message": "Failed the static checks\ntftf/tests/common/test_helpers.c:137: ERROR: space required before the open brace \u0027{\u0027\n+\tif(is_ffa_call_error(ffa_rxtx_unmap())){\n\ntftf/tests/common/test_helpers.c:137: ERROR: space required before the open parenthesis \u0027(\u0027\n+\tif(is_ffa_call_error(ffa_rxtx_unmap())){\n",
+      "revId": "85eccf7b7457971a303ca2aa54137f3a50dd00c1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
