@@ -16,6 +16,23 @@
       "message": "Nabil has left Arm. The TF-RMM team will be taking ownership of this patch.",
       "revId": "b632681d01f850f8a3721874af83af7c51241cc2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "486e9443_efcc1c42",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2023-01-25T17:50:30Z",
+      "side": 1,
+      "message": "Soby says Shruti will be taking ownership of this once she returns to RMM team.",
+      "revId": "b632681d01f850f8a3721874af83af7c51241cc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
