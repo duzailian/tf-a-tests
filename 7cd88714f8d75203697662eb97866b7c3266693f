@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f6df5c7_2b98e0a5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-01-25T18:27:02Z",
+      "side": 1,
+      "message": "with the enhancements made in this patch, does the following limitation exist any more?\nhttps://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/tftf/tests/tests-spm.xml#n25",
+      "revId": "7cd88714f8d75203697662eb97866b7c3266693f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "650c356f_ad057517",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-01-25T18:27:02Z",
+      "side": 1,
+      "message": "I believe this comment needs to be updated since, towards the end of tests, the RXTX buffers are being unmapped.",
+      "range": {
+        "startLine": 294,
+        "startChar": 0,
+        "endLine": 295,
+        "endChar": 16
+      },
+      "revId": "7cd88714f8d75203697662eb97866b7c3266693f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34126e8b_7c675e30",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-01-25T18:27:02Z",
+      "side": 1,
+      "message": "I believe this is necessary for the test(line 311) following the current test in xml to work. Could you capture it as a comment?",
+      "range": {
+        "startLine": 300,
+        "startChar": 1,
+        "endLine": 300,
+        "endChar": 18
+      },
+      "revId": "7cd88714f8d75203697662eb97866b7c3266693f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
