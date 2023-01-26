@@ -1,0 +1,147 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c618d008_cc0cab2c",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-01-26T18:03:41Z",
+      "side": 1,
+      "message": "I feel this definition is only meaningful in the context of secure interrupt handling test suite. Please move it to the file test_ffa_secure_interrupts.c",
+      "revId": "f1c5d36c119af5ee69a1d7215a9d6b354407025b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3cc301c_0c986de4",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-01-26T18:03:41Z",
+      "side": 1,
+      "message": "Now that the tests are capable of exercising interrupts on secondary CPUs, could you also update these comments to reflect that.",
+      "revId": "f1c5d36c119af5ee69a1d7215a9d6b354407025b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6131e399_b9c73f76",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-01-26T18:03:41Z",
+      "side": 1,
+      "message": "nitpick: move to line 23",
+      "revId": "f1c5d36c119af5ee69a1d7215a9d6b354407025b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2dfb8eb5_73f2960d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-01-26T18:03:41Z",
+      "side": 1,
+      "message": "nitpick: Given that the use of this variable array is to signal completion of test on a specific cpu, would you name it something more specific. like `cpu_reached_end_of_test`",
+      "range": {
+        "startLine": 168,
+        "startChar": 18,
+        "endLine": 168,
+        "endChar": 28
+      },
+      "revId": "f1c5d36c119af5ee69a1d7215a9d6b354407025b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71cf9203_92d526f9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-01-26T18:03:41Z",
+      "side": 1,
+      "message": "nitpick: In case the test failed, it would print `test_ffa_sec_interrupt_sp_waiting_handler`. But I think we would like to see `test_ffa_sec_interrupt_sp_waiting` instead",
+      "range": {
+        "startLine": 290,
+        "startChar": 42,
+        "endLine": 290,
+        "endChar": 50
+      },
+      "revId": "f1c5d36c119af5ee69a1d7215a9d6b354407025b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f15e355_b8bee4f4",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-01-26T18:03:41Z",
+      "side": 1,
+      "message": "nit: It",
+      "range": {
+        "startLine": 502,
+        "startChar": 56,
+        "endLine": 502,
+        "endChar": 58
+      },
+      "revId": "f1c5d36c119af5ee69a1d7215a9d6b354407025b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30e0f49c_a00f99e5",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-01-26T18:03:41Z",
+      "side": 1,
+      "message": "I am not sure how this is possible. The primary CPU orchestrates the tests and essentially drives one test after the other. We are powering on the secondary CPUs on-demand through spm_run_multi_core_test and at the end of each test, the secondary CPUs shutdown themselves. May be I am missing something.",
+      "range": {
+        "startLine": 503,
+        "startChar": 4,
+        "endLine": 503,
+        "endChar": 44
+      },
+      "revId": "f1c5d36c119af5ee69a1d7215a9d6b354407025b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
