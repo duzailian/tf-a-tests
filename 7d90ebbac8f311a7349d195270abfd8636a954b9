@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62716d40_be0872d2",
+        "filename": "tftf/tests/misc_tests/test_nop.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-01T14:56:48Z",
+      "side": 1,
+      "message": "minor: a brief description of what is expected to happen here would be useful.\n\n\"This test is meant to be used in conjunction with TF-X (Trusted Firmware eXplorer). Power all secondary CPU and execute NOP hook. TF-X is expected to intercept control and take over testing at this point. Once TF-X is done, power down all the CPUs.\"",
+      "revId": "7d90ebbac8f311a7349d195270abfd8636a954b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
