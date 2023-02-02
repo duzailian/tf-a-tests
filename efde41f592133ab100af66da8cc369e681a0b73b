@@ -71,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1b3e0b4_58750b99",
+        "filename": "tftf/tests/misc_tests/test_inject_serror.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-02-02T11:10:44Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d8dfd7c3_f2189b46",
+      "range": {
+        "startLine": 39,
+        "startChar": 1,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "efde41f592133ab100af66da8cc369e681a0b73b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "55eafece_e849583a",
@@ -108,6 +132,30 @@
       "side": 1,
       "message": "Same explanation",
       "parentUuid": "55eafece_e849583a",
+      "range": {
+        "startLine": 42,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 10
+      },
+      "revId": "efde41f592133ab100af66da8cc369e681a0b73b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc3b1edb_48f31996",
+        "filename": "tftf/tests/misc_tests/test_inject_serror.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-02-02T11:10:44Z",
+      "side": 1,
+      "message": "Still \u0027rc\u0027 needs to be typecasted right?",
+      "parentUuid": "d51a5c7c_e6d2812f",
       "range": {
         "startLine": 42,
         "startChar": 8,
