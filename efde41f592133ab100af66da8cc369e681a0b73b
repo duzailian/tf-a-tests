@@ -49,6 +49,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d8dfd7c3_f2189b46",
+        "filename": "tftf/tests/misc_tests/test_inject_serror.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2023-02-02T10:41:00Z",
+      "side": 1,
+      "message": "There is a risk of compiler optimizing out mmio_read_32 as this value will not be used later.",
+      "parentUuid": "5fa8a9c1_63d829c1",
+      "range": {
+        "startLine": 39,
+        "startChar": 1,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "efde41f592133ab100af66da8cc369e681a0b73b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "55eafece_e849583a",
         "filename": "tftf/tests/misc_tests/test_inject_serror.c",
         "patchSetId": 5
@@ -60,6 +84,30 @@
       "writtenOn": "2023-02-02T10:35:18Z",
       "side": 1,
       "message": "This should be of type test_result_t? TEST_RESULT_FAIL instead?",
+      "range": {
+        "startLine": 42,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 10
+      },
+      "revId": "efde41f592133ab100af66da8cc369e681a0b73b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d51a5c7c_e6d2812f",
+        "filename": "tftf/tests/misc_tests/test_inject_serror.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2023-02-02T10:41:00Z",
+      "side": 1,
+      "message": "Same explanation",
+      "parentUuid": "55eafece_e849583a",
       "range": {
         "startLine": 42,
         "startChar": 8,
