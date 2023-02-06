@@ -200,6 +200,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9b1411a_a4e2d77e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-02-06T15:08:55Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "081d15b7_61bcd047",
+      "range": {
+        "startLine": 290,
+        "startChar": 42,
+        "endLine": 290,
+        "endChar": 50
+      },
+      "revId": "f1c5d36c119af5ee69a1d7215a9d6b354407025b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f15e355_b8bee4f4",
@@ -284,6 +308,30 @@
       "side": 1,
       "message": "Hi Madhu, this has nothing to do with the physical PE. imagine cactus vcpu 7, asecondary vcpu, was already started by a previous test, in which case, it would have already had to go through an ffa_run to wake up the vCPU. remember that we require an ffa_run to wake up secondary vcpus before we can send direct messages to it.\nAll this is saying is, this test will try to send ffa_run and it is possible that another test started the secondary vcpu, in which case we just warn and move on..\ndoes that make sense?",
       "parentUuid": "30e0f49c_a00f99e5",
+      "range": {
+        "startLine": 503,
+        "startChar": 4,
+        "endLine": 503,
+        "endChar": 44
+      },
+      "revId": "f1c5d36c119af5ee69a1d7215a9d6b354407025b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7952eb82_2e7d7bd8",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-02-06T15:08:55Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "fb2df763_e8779b9a",
       "range": {
         "startLine": 503,
         "startChar": 4,
