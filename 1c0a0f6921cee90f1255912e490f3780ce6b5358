@@ -16,6 +16,24 @@
       "message": "Please return TEST_RESULT_FAIL\nTo make sure compiler doesnt do the optimization, you could put a INFO() that uses rc value",
       "revId": "1c0a0f6921cee90f1255912e490f3780ce6b5358",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2f2460f_3e41845c",
+        "filename": "tftf/tests/misc_tests/test_inject_serror.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2023-02-06T15:55:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ffc46ce_a4587359",
+      "revId": "1c0a0f6921cee90f1255912e490f3780ce6b5358",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
