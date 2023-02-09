@@ -16,6 +16,29 @@
       "message": "CI passed here https://ci.trustedfirmware.org/job/tf-a-ci-gateway/28987/ ",
       "revId": "10df9d408a67aafb0b43778a81a5fc3d9d1a95a5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5bdc49ad_b8b2a007",
+        "filename": "tftf/tests/misc_tests/test_inject_serror.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-02-09T17:36:57Z",
+      "side": 1,
+      "message": "sorry, one more comment. \nThe error print is not needed anymore. It can be removed. The comment can be updated to:\n\" Execution not expected to reach this far. Return test fail to indicate so\"",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 60
+      },
+      "revId": "10df9d408a67aafb0b43778a81a5fc3d9d1a95a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
