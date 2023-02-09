@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "935eb2de_a924ecec",
+        "filename": "tftf/tests/misc_tests/test_inject_serror.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-02-09T16:51:14Z",
+      "side": 1,
+      "message": "write to",
+      "range": {
+        "startLine": 39,
+        "startChar": 11,
+        "endLine": 39,
+        "endChar": 15
+      },
+      "revId": "ef0c64302d6786ccdb39c464afdc76d5863dbc62",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
