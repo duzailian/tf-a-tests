@@ -16,6 +16,24 @@
       "message": "Were you able to test it on FVP?",
       "revId": "dcd35e26ec09f88d41c355eef5b048f45d49784e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0aa47ea_00e96b40",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2023-02-10T09:12:39Z",
+      "side": 1,
+      "message": "Yes, https://ci.trustedfirmware.org/job/tf-a-ci-gateway/28994/\n\nIf you look at Uart1 log https://ci-builds.trustedfirmware.org/static-files/INwuXysZfxWOqWX3RiLum2YYMBrnL6GduP5Gm6BFAr4xNjc2MDIwMjgxMDA1OjE3Om1hbmlzaC1wYW5kZXktYXJtOmpvYi90Zi1hLWJ1aWxkZXIvMTY5NTc0NS9hcnRpZmFjdA\u003d\u003d/lava-uart1.log it says the error syndrome\u003d0xbe000000 (which is Serro)",
+      "parentUuid": "9bd168a4_546c40e4",
+      "revId": "dcd35e26ec09f88d41c355eef5b048f45d49784e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
