@@ -7,6 +7,8 @@
 #ifndef SME_H
 #define SME_H
 
+#define MAX_VL                  (512)
+#define MAX_VL_B                (MAX_VL / 8)
 #define SME_SMCR_LEN_MAX	U(0x1FF)
 #define SME2_ARRAYSIZE		(512/64)
 #define SME2_INPUT_DATA		(0x1fffffffffffffff)
@@ -37,6 +39,8 @@ int sme2_enable(void);
 /* Assembly function prototypes */
 uint64_t sme_rdvl_1(void);
 void sme_try_illegal_instruction(void);
+void sme_vector_to_ZA(const uint64_t *input_vector);
+void sme_ZA_to_vector(const uint64_t *output_vector);
 void sme2_load_zt0_instruction(const uint64_t *inputbuf);
 void sme2_store_zt0_instruction(const uint64_t *outputbuf);
 

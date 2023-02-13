@@ -14,6 +14,39 @@
 #include <test_helpers.h>
 #include <tftf_lib.h>
 
+/* Global buffers*/
+static uint64_t ZA_In_vector[8] = {0xaaff,0xbbff,0xccff,0xddff,0xeeff,
+					0xffff,0xff00,0xff00};
+static uint64_t ZA_Out_vector[8] = {0};
+
+
+/**
+ * sme_zero_ZA
+ * ZER0 : Zero a list of upto eight 64bit element ZA tiles.
+ * ZERO {<mask>} , where mask=ff, to clear all the 8, 64 bit elements.
+ */
+static void sme_zero_ZA()
+{
+	/* Manual Encoding Instruction to Zero all the tiles of ZA array */
+	asm volatile(".inst 0xc008000f" : : : );
+}
+
+/**
+ * This function compares two buffers/vector elements
+ * Inputs: uint64* t ZA_In_vector, ZA_Out_vector 
+ * @return true : If both are equal
+ * @return false : If both are not equal
+ */
+static bool sme_cmp_vector(const uint64_t *ZA_In_vector, const uint64_t *ZA_Out_vector)
+{
+	bool ret=true;
+	for(int i=0; i<(MAX_VL_B/8); i++) {
+		if(ZA_In_vector[i] != ZA_Out_vector[i])
+			ret=false;
+	}
+	return ret;
+}
+
 test_result_t test_sme_support(void)
 {
 	/* SME is an AArch64-only feature.*/
@@ -24,9 +57,10 @@ test_result_t test_sme_support(void)
 	unsigned int current_vector_len;
 	unsigned int requested_vector_len;
 	unsigned int len_max;
+	unsigned int svl_max = 0;
 
 	/* Skip the test if SME is not supported. */
-        SKIP_TEST_IF_SME_NOT_SUPPORTED();
+	SKIP_TEST_IF_SME_NOT_SUPPORTED();
 
 	/* Enable SME for use at NS EL2. */
 	if (sme_enable() != 0) {
@@ -54,14 +88,12 @@ test_result_t test_sme_support(void)
 	read_smcr_el2();
 	sme_smstop(SMSTOP_SM);
 
-        sme_smstart(SMSTART);
+	sme_smstart(SMSTART);
 	read_smcr_el2();
 	sme_smstop(SMSTOP);
 
 	/*
 	 * Iterate through values for LEN to detect supported vector lengths.
-	 * SME instructions aren't supported by GCC yet so for now this is all
-	 * we'll do.
 	 */
 	sme_smstart(SMSTART_SM);
 
@@ -86,12 +118,41 @@ test_result_t test_sme_support(void)
 		 * match, we've found the largest supported value for SMLEN.
 		 */
 		if (current_vector_len == requested_vector_len) {
+			svl_max = current_vector_len;
 			VERBOSE("SUPPORTED:     %u bits (LEN=%u)\n", requested_vector_len, i);
 		} else {
-			VERBOSE("NOT SUPPORTED: %u bits (LEN=%u)\n", requested_vector_len, i);
+			VERBOSE("SUPPORTED:     %u bits (LEN=%u)\n", requested_vector_len, i);
 		}
 	}
+	INFO("Largest Supported Streaming Vector Length(SVL): %u bits \n", svl_max);
+
 	sme_smstop(SMSTOP_SM);
+
+	/**
+	 * Perform/Execute SME Instructions.
+	 * SME Data processing instructions LDR, STR, and ZERO instructions that
+	 * access the SME ZA storage are legal only if ZA is enabled.
+	 */
+
+	/* Enable SME ZA Array Storage */
+	sme_smstart(SMSTART_ZA);
+
+	/* LDR : Load vector to ZA Array */
+	sme_vector_to_ZA(ZA_In_vector);
+
+	/* STR : Store Vector from ZA Array. */
+	sme_ZA_to_vector(ZA_Out_vector);
+
+	/* Compare both vectors to ensure instructions have executed precisely*/
+	if(!sme_cmp_vector(ZA_In_vector, ZA_Out_vector)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Zero or clear the entire ZA Array Storage/Tile */
+	sme_zero_ZA();
+
+	/* Disable the SME ZA array storage. */
+	sme_smstop(SMSTOP_ZA);
 
 	/* If FEAT_SME_FA64 then attempt to execute an illegal instruction. */
 	if (is_feat_sme_fa64_supported()) {
