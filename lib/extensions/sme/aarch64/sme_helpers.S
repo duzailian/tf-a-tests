@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021, ARM Limited and Contributors. All rights reserved.
+ * Copyright (c) 2021-2023, ARM Limited and Contributors. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -13,6 +13,31 @@
 	.arch	armv8-a+sve
 	.globl	sme_rdvl_1
 	.globl	sme_try_illegal_instruction
+	.globl  sme_vector_to_ZA
+	.globl  sme_ZA_to_vector
+
+/*
+ * LDR (vector to ZA array):
+ * LDR ZA[\nw, #\offset], [X\nxbase, #\offset, MUL VL]
+ */
+.macro _ldr_za nw, nxbase, offset=0
+	.inst	0xe1000000			\
+		| (((\nw) & 3) << 13)		\
+		| ((\nxbase) << 5)		\
+		| ((\offset) & 0xf)
+.endm
+
+/*
+ * STR (vector from ZA array):
+ * STR ZA[\nw, #\offset], [X\nxbase, #\offset, MUL VL]
+ */
+.macro _str_za nw, nxbase, offset=0
+	.inst	0xe1200000			\
+		| (((\nw) & 3) << 13)		\
+		| ((\nxbase) << 5)		\
+		| ((\offset) & 0xf)
+.endm
+
 /*
  * uint64_t sme_rdvl_1(void);
  *
@@ -34,5 +59,28 @@ func sme_try_illegal_instruction
 	rdffr	p0.b
 	ret
 endfunc sme_try_illegal_instruction
+
+
+/**
+ * void sme_vector_to_ZA(uint64_t *input_vec)
+ *
+ * This function loads an vector of elements to an ZA Array storage
+ */
+func sme_vector_to_ZA
+	mov	w12, wzr
+	_ldr_za	12, 0		// ZA.H[W12] loaded from [X0 / input_vector]
+	ret
+endfunc sme_vector_to_ZA
+
+/**
+ * void sme_ZA_to_vector(uint64_t *out_vec)
+ *
+ * This function stores elements from ZA Array storage to an ZA vector
+ */
+func sme_ZA_to_vector
+	mov	w12, wzr
+	_str_za	12, 0		// ZA.H[W12] stored to [X0 / out_vector]
+	ret
+endfunc sme_ZA_to_vector
 
 #endif /* __aarch64__ */
