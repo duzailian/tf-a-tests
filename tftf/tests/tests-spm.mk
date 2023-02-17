@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018-2022, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2023, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -22,6 +22,7 @@ TESTS_SOURCES	+=							\
 		test_spm_smmu.c						\
 		test_ffa_exceptions.c					\
 		sve_operations_cactus.S					\
+		test_ffa_group0_interrupts.c				\
 	)
 
 TESTS_SOURCES	+=							\
