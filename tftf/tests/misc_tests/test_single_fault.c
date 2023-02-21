@@ -11,19 +11,17 @@
 
 #ifdef __aarch64__
 
-uint64_t serror_received;
+uint64_t sdei_event_received;
+extern void inject_unrecoverable_ras_error(uint64_t *wait_address);
+extern int serror_sdei_event_handler(int ev, uint64_t arg);
 
-extern void inject_unrecoverable_ras_error(void);
-
-int serror_handler(int ev, uint64_t arg)
+int sdei_handler(int ev, uint64_t arg)
 {
-	serror_received = 1;
+	sdei_event_received = 1;
 	tftf_testcase_printf("SError SDEI event received.\n");
 
 	return 0;
 }
-
-extern int serror_sdei_event_handler(int ev, uint64_t arg);
 
 test_result_t test_single_fault(void)
 {
@@ -51,7 +49,7 @@ test_result_t test_single_fault(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	inject_unrecoverable_ras_error();
+	inject_unrecoverable_ras_error(&sdei_event_received);
 
 	return TEST_RESULT_SUCCESS;
 }
