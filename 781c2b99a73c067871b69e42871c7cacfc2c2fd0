@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bb7e029_28315f31",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2023-02-21T14:20:45Z",
+      "side": 1,
+      "message": "Related Tests passed here https://ci.trustedfirmware.org/job/tf-a-ci-gateway/30083/",
+      "revId": "781c2b99a73c067871b69e42871c7cacfc2c2fd0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
