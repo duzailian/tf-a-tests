@@ -62,7 +62,7 @@ func inject_ras_error_record
 endfunc inject_ras_error_record
 
 /*
- * Inject Unrecoverable error through fault record 0. Wait until serror_received
+ * Inject Unrecoverable error through fault record 0. Wait until sdei_event_received
  * is set by the SDEI handler in response to receving the event.
  */
 func inject_unrecoverable_ras_error
@@ -77,8 +77,8 @@ func inject_unrecoverable_ras_error
 	mov	x2, #ERXPFGCTL_UEU_BIT
 
 	/* Wait address */
-	adrp	x3, serror_received
-	add	x3, x3, :lo12:serror_received
+	adrp	x3, sdei_event_received
+	add	x3, x3, :lo12:sdei_event_received
 
 	b	inject_ras_error_record
 endfunc inject_unrecoverable_ras_error
@@ -107,7 +107,7 @@ endfunc inject_uncontainable_ras_error
  */
 func serror_sdei_event_handler
 	stp	x29, x30, [sp, #-16]!
-	bl	serror_handler
+	bl	sdei_handler
 	ldp	x29, x30, [sp], #16
 	mov_imm	x0, SDEI_EVENT_COMPLETE
 	mov	x1, xzr
