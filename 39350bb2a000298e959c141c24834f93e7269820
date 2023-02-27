@@ -124,6 +124,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddad7ee6_7da6e2cb",
+        "filename": "tftf/tests/misc_tests/test_nop.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-27T11:56:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "bddd9126_10d15719",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 25
+      },
+      "revId": "39350bb2a000298e959c141c24834f93e7269820",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "51061e6d_54c14fad",
