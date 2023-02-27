@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5dcc22e6_50c32992",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2023-02-27T14:43:40Z",
+      "side": 1,
+      "message": "Mirroring this from TF-A. I don\u0027t have access to the readthedocs web portal so please double check that it is indeed identical",
+      "revId": "53689c8a17228b889365a184d1e3b606c4e7bd01",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
