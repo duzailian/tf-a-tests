@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "721e18e0_ff2301b2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000975
+      },
+      "writtenOn": "2023-02-27T11:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f22d8d95_17dc5468",
+      "range": {
+        "startLine": 10,
+        "startChar": 7,
+        "endLine": 10,
+        "endChar": 8
+      },
+      "revId": "39350bb2a000298e959c141c24834f93e7269820",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "baa1a93e_fb0cc0ab",
@@ -55,6 +79,47 @@
       "side": 1,
       "message": "We need the BL2 to load RMM, BL31 and for BL31 to handover to NS world as usual. SPIN_ON_BL1_EXIT will not load BL31 as I understand.",
       "parentUuid": "baa1a93e_fb0cc0ab",
+      "revId": "39350bb2a000298e959c141c24834f93e7269820",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60602abd_bf9dbc1f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000975
+      },
+      "writtenOn": "2023-02-27T11:42:15Z",
+      "side": 1,
+      "message": "I wasn\u0027t aware of that, but IIUC it provides different behaviour than that desired by TFX.  Specifically, TFX wants to stop the machine once EL3 and R-EL2 have both been initialized, and at the point where control is passed to NS-EL2.",
+      "parentUuid": "baa1a93e_fb0cc0ab",
+      "revId": "39350bb2a000298e959c141c24834f93e7269820",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bddd9126_10d15719",
+        "filename": "tftf/tests/misc_tests/test_nop.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000975
+      },
+      "writtenOn": "2023-02-27T11:42:15Z",
+      "side": 1,
+      "message": "I tried to #include \u003cint_lib.h\u003e, but the header wasn\u0027t found, and I couldn\u0027t see any other code (outside of lib/compiler-rt) which includes it.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 25
+      },
       "revId": "39350bb2a000298e959c141c24834f93e7269820",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
