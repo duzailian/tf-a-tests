@@ -43,6 +43,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e370bebb_a6dbeb9d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-27T10:20:32Z",
+      "side": 1,
+      "message": "We need the BL2 to load RMM, BL31 and for BL31 to handover to NS world as usual. SPIN_ON_BL1_EXIT will not load BL31 as I understand.",
+      "parentUuid": "baa1a93e_fb0cc0ab",
+      "revId": "39350bb2a000298e959c141c24834f93e7269820",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "51061e6d_54c14fad",
         "filename": "tftf/tests/misc_tests/test_nop.c",
         "patchSetId": 6
@@ -54,6 +72,30 @@
       "writtenOn": "2023-02-27T08:51:17Z",
       "side": 1,
       "message": "should be static?",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 12
+      },
+      "revId": "39350bb2a000298e959c141c24834f93e7269820",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "765e4329_b8ac7535",
+        "filename": "tftf/tests/misc_tests/test_nop.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-27T10:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51061e6d_54c14fad",
       "range": {
         "startLine": 11,
         "startChar": 11,
@@ -81,6 +123,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b471a59e_fe61a3ad",
+        "filename": "tftf/tests/misc_tests/test_nop.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-27T10:20:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa0ee3db_03884eb3",
+      "revId": "39350bb2a000298e959c141c24834f93e7269820",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2b831078_ce24e550",
@@ -94,6 +154,30 @@
       "writtenOn": "2023-02-27T08:51:17Z",
       "side": 1,
       "message": "It is unclear to me if this statement is really required.\nWill it loop over line 78, in which case empty braces are sufficient?",
+      "range": {
+        "startLine": 79,
+        "startChar": 3,
+        "endLine": 79,
+        "endChar": 12
+      },
+      "revId": "39350bb2a000298e959c141c24834f93e7269820",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba8d25f8_55183d02",
+        "filename": "tftf/tests/misc_tests/test_nop.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-02-27T10:20:32Z",
+      "side": 1,
+      "message": "Hmm, yes even without this, it should work. Having this or not having this does not make much difference so can be ignored?",
+      "parentUuid": "2b831078_ce24e550",
       "range": {
         "startLine": 79,
         "startChar": 3,
