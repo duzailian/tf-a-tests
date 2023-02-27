@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3ba229d_a0f286d8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-02-27T13:52:38Z",
+      "side": 1,
+      "message": "Thinking further, I guess the default core 0 case is covered by Hafnium CI as tests recently added do not specify interrupts-target field.",
+      "parentUuid": "01844c02_7294c6be",
+      "range": {
+        "startLine": 13,
+        "startChar": 57,
+        "endLine": 14,
+        "endChar": 6
+      },
+      "revId": "fd7eaa37d0a24a35b4e3cc9c4b3fa8528c194d28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "489d6c93_31413d3f",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-02-27T09:42:57Z",
       "side": 1,
       "message": "I believe this should move to spm/cactus/plat/arm/fvp/include/sp_platform_def.h",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 28
+      },
+      "revId": "fd7eaa37d0a24a35b4e3cc9c4b3fa8528c194d28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8354f8cf_10f59118",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-02-27T13:52:38Z",
+      "side": 1,
+      "message": "Ok I see this was moved upon request from Madhu..\nThe only little worry is that this definition is specific to FVP e.g. it won\u0027t work on other platforms like TC, hence the reason to have it in the platform specific include directory.",
+      "parentUuid": "93a985e9_9b302275",
       "range": {
         "startLine": 19,
         "startChar": 8,
