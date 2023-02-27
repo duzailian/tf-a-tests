@@ -93,6 +93,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "977a8635_a6034f37",
+        "filename": "tftf/tests/misc_tests/test_nop.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000975
+      },
+      "writtenOn": "2023-02-27T14:13:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa34ae3_a16f41f3",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 25
+      },
+      "revId": "89e4f121eb3ce49fc6eb77978727d51b86dd590a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "36d9b3b3_79ad1e44",
@@ -112,6 +136,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7c640d8c_f9d71d7b",
+        "filename": "tftf/tests/misc_tests/test_nop.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000975
+      },
+      "writtenOn": "2023-02-27T14:13:28Z",
+      "side": 1,
+      "message": "Unresolved; AFAICS the codebase lacks a macro for abstracting this.",
+      "parentUuid": "36d9b3b3_79ad1e44",
+      "revId": "89e4f121eb3ce49fc6eb77978727d51b86dd590a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "eb66dfb3_2de52820",
         "filename": "tftf/tests/misc_tests/test_nop.c",
         "patchSetId": 3
@@ -123,6 +165,30 @@
       "writtenOn": "2023-02-02T09:44:28Z",
       "side": 1,
       "message": "void debug_hook_func(void)",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 22
+      },
+      "revId": "89e4f121eb3ce49fc6eb77978727d51b86dd590a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c54cf1d_5139bec1",
+        "filename": "tftf/tests/misc_tests/test_nop.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000975
+      },
+      "writtenOn": "2023-02-27T14:13:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb66dfb3_2de52820",
       "range": {
         "startLine": 11,
         "startChar": 0,
