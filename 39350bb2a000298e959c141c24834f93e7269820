@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f22d8d95_17dc5468",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-02-27T08:51:17Z",
+      "side": 1,
+      "message": "nit: remove blank",
+      "range": {
+        "startLine": 10,
+        "startChar": 7,
+        "endLine": 10,
+        "endChar": 8
+      },
+      "revId": "39350bb2a000298e959c141c24834f93e7269820",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "baa1a93e_fb0cc0ab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-02-27T08:51:17Z",
+      "side": 1,
+      "message": "Out of curiosity did you consider SPIN_ON_BL1_EXIT?\nI appreciate this may not do exactly the same as current change (and perhaps require changes to TF-X). But as a matter of rationalizing, just checking if we\u0027re not adding functionality to tftf that may already be solved by other means?",
+      "revId": "39350bb2a000298e959c141c24834f93e7269820",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51061e6d_54c14fad",
+        "filename": "tftf/tests/misc_tests/test_nop.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-02-27T08:51:17Z",
+      "side": 1,
+      "message": "should be static?",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 12
+      },
+      "revId": "39350bb2a000298e959c141c24834f93e7269820",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa0ee3db_03884eb3",
+        "filename": "tftf/tests/misc_tests/test_nop.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-02-27T08:51:17Z",
+      "side": 1,
+      "message": "should be static?",
+      "revId": "39350bb2a000298e959c141c24834f93e7269820",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b831078_ce24e550",
+        "filename": "tftf/tests/misc_tests/test_nop.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-02-27T08:51:17Z",
+      "side": 1,
+      "message": "It is unclear to me if this statement is really required.\nWill it loop over line 78, in which case empty braces are sufficient?",
+      "range": {
+        "startLine": 79,
+        "startChar": 3,
+        "endLine": 79,
+        "endChar": 12
+      },
+      "revId": "39350bb2a000298e959c141c24834f93e7269820",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
