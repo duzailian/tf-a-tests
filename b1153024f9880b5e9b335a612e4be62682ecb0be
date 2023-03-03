@@ -39,6 +39,30 @@
       },
       "revId": "b1153024f9880b5e9b335a612e4be62682ecb0be",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de29112f_6683e06b",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-03-03T15:52:47Z",
+      "side": 1,
+      "message": "sure. will wait for you to get back on how to refactor. i\u0027m out of ideas :)",
+      "parentUuid": "d330f346_cde3dd27",
+      "range": {
+        "startLine": 312,
+        "startChar": 0,
+        "endLine": 312,
+        "endChar": 40
+      },
+      "revId": "b1153024f9880b5e9b335a612e4be62682ecb0be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
