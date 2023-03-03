@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "3421c8e9_08b86b69",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-03-03T06:12:14Z",
+      "side": 1,
+      "message": "correct. Can this be resolved then?",
+      "parentUuid": "c3ba229d_a0f286d8",
+      "range": {
+        "startLine": 13,
+        "startChar": 57,
+        "endLine": 14,
+        "endChar": 6
+      },
+      "revId": "fd7eaa37d0a24a35b4e3cc9c4b3fa8528c194d28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "489d6c93_31413d3f",
@@ -150,6 +174,30 @@
       "side": 1,
       "message": "Yes. And I think we need to add the proper MPIDR definition for TC0, otherwise this test case will fail:\nhttps://ci.trustedfirmware.org/job/tf-a-builder/1772060/\ntc-default,fvp-tc0-spm,fvp-tc0-spm:fvp-tc0.spm.tftf-debug",
       "parentUuid": "348f2c2d_6cf46151",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 28
+      },
+      "revId": "fd7eaa37d0a24a35b4e3cc9c4b3fa8528c194d28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd7995a5_92b2a19d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-03-03T06:12:14Z",
+      "side": 1,
+      "message": "yeah. this is a problem...not sure i know what the mpidr for tc0 is.. wondering if i should change to default to core 0 (platform_get_core_pos()) if PLAT_INTERRUPT_MPIDR is not defined? let me know your thoughtds?",
+      "parentUuid": "c7dcd4f7_f6cd75a1",
       "range": {
         "startLine": 19,
         "startChar": 8,
