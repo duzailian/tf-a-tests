@@ -6,7 +6,9 @@
 
 
 #include <arch_helpers.h>
+#include <psci.h>
 #include <serror.h>
+#include <smccc.h>
 #include <tftf_lib.h>
 
 #ifdef __aarch64__
@@ -30,6 +32,35 @@ test_result_t test_ras_kfh(void)
 		dccivac((uint64_t)&serror_triggered);
 		dmbish();
 	} while (serror_triggered == 0);
+
+	unregister_custom_serror_handler();
+
+	if (serror_triggered == false) {
+		tftf_testcase_printf("SError is not triggered\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t test_ras_kfh_esb(void)
+{
+	serror_triggered = false;
+
+	register_custom_serror_handler(serror_handler);
+	disable_serror();
+	inject_unrecoverable_ras_error();
+
+	do {
+		dmbish();
+	} while ((read_isr_el1() && ISR_A_SHIFT) != 1);
+
+	tftf_get_psci_version();
+
+	if (serror_triggered == false) {
+		tftf_testcase_printf("SError is not triggered\n");
+		return TEST_RESULT_FAIL;
+	}
 
 	unregister_custom_serror_handler();
 

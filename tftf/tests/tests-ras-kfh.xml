@@ -9,5 +9,6 @@
 <testsuites>
   <testsuite name="RAS KFH" description="RAS errors handled through Kernel First handling">
      <testcase name="Inject RAS error and wait" function="test_ras_kfh" />
+     <testcase name="Inject RAS error and make  SMC" function="test_ras_kfh_esb" />
   </testsuite>
 </testsuites>
