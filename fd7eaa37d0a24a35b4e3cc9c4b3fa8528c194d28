@@ -278,6 +278,30 @@
       },
       "revId": "fd7eaa37d0a24a35b4e3cc9c4b3fa8528c194d28",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5901e379_45f26a7e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-03-03T15:23:09Z",
+      "side": 1,
+      "message": "Ok, now I see the problem, \nspm/cactus/plat/arm/*/include/sp_platform_def.h are meant to be consumed by cactus images.\n\nHere we\u0027re dealing with the normal side tftf so indeed sp_platform_def.h might not be relevant.",
+      "parentUuid": "92fd829f_98e0c570",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 28
+      },
+      "revId": "fd7eaa37d0a24a35b4e3cc9c4b3fa8528c194d28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
