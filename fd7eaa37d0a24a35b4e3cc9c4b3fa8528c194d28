@@ -230,6 +230,30 @@
       },
       "revId": "fd7eaa37d0a24a35b4e3cc9c4b3fa8528c194d28",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9bd8505_232ef18a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-03-03T14:35:44Z",
+      "side": 1,
+      "message": "platform_def.h is available for all paltforms and to me that seems like the same place. Madhu, can you elaborate why it did not look good in the platform file?\n\nI think putting it back in platform_def.h and ifdef\u0027ing the code to behave differently when the macro is defined vs not, should fix issues.\nLet me know what you think? I\u0027m bracnh predicting that is okay and making relevant changes, and going back to using platform_def.h",
+      "parentUuid": "7f308fe7_d772e4d2",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 28
+      },
+      "revId": "fd7eaa37d0a24a35b4e3cc9c4b3fa8528c194d28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
