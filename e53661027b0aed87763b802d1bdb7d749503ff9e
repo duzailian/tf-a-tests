@@ -62,6 +62,23 @@
       "message": "LGTM",
       "revId": "e53661027b0aed87763b802d1bdb7d749503ff9e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f44aa36_e7a4cf93",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-03-08T11:42:33Z",
+      "side": 1,
+      "message": "passed SPM tests\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/31441/",
+      "revId": "e53661027b0aed87763b802d1bdb7d749503ff9e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
