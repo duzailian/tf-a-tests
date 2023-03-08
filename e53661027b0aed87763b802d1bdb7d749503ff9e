@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a618e177_df7c655a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-03-08T13:49:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "94b402c1_ce7ac544",
+      "range": {
+        "startLine": 13,
+        "startChar": 44,
+        "endLine": 13,
+        "endChar": 55
+      },
+      "revId": "e53661027b0aed87763b802d1bdb7d749503ff9e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a660fe90_a52d8920",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-03-08T11:01:09Z",
       "side": 1,
       "message": "Actually I don\u0027t think this is the exact reason.\nThis kind of memory region is initially holding an invalid base address (all 0xf\u0027s) at the manifest parsing, and this address is allocated and amended at VM load time. Although the new check introduced by change [1] verifies the address at manifest parsing time and spots the address as being invalid too early.",
+      "range": {
+        "startLine": 13,
+        "startChar": 56,
+        "endLine": 14,
+        "endChar": 54
+      },
+      "revId": "e53661027b0aed87763b802d1bdb7d749503ff9e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1a0b019_f1547545",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-03-08T13:49:28Z",
+      "side": 1,
+      "message": "Ah yes, thanks for this!\nWas still analysing hafnium code.\nUpdated the commit message, let me know if anything isn\u0027t clear.",
+      "parentUuid": "a660fe90_a52d8920",
       "range": {
         "startLine": 13,
         "startChar": 56,
