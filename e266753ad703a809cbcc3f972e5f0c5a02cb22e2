@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19698dff_e8782829",
+        "filename": "spm/cactus/plat/arm/tc0/fdts/cactus.dts",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-03-09T13:40:27Z",
+      "side": 1,
+      "message": "should be secure uart",
+      "range": {
+        "startLine": 76,
+        "startChar": 2,
+        "endLine": 76,
+        "endChar": 12
+      },
+      "revId": "e266753ad703a809cbcc3f972e5f0c5a02cb22e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eca4c5ed_d1754d8f",
+        "filename": "spm/cactus/plat/arm/tc0/fdts/cactus.dts",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-03-09T13:40:27Z",
+      "side": 1,
+      "message": "0x2a410000",
+      "range": {
+        "startLine": 77,
+        "startChar": 30,
+        "endLine": 77,
+        "endChar": 40
+      },
+      "revId": "e266753ad703a809cbcc3f972e5f0c5a02cb22e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
