@@ -409,16 +409,21 @@ DEFINE_SYSREG_READ_FUNC(isr_el1)
 DEFINE_SYSREG_RW_FUNCS(mdcr_el2)
 DEFINE_SYSREG_RW_FUNCS(mdcr_el3)
 DEFINE_SYSREG_RW_FUNCS(hstr_el2)
+
 DEFINE_SYSREG_RW_FUNCS(pmcr_el0)
+DEFINE_SYSREG_RW_FUNCS(pmcntenclr_el0)
 DEFINE_SYSREG_RW_FUNCS(pmcntenset_el0)
 DEFINE_SYSREG_READ_FUNC(pmccntr_el0)
 DEFINE_SYSREG_RW_FUNCS(pmccfiltr_el0)
-
 DEFINE_SYSREG_RW_FUNCS(pmevtyper0_el0)
 DEFINE_SYSREG_READ_FUNC(pmevcntr0_el0)
+DEFINE_SYSREG_RW_FUNCS(pmovsclr_el0)
+DEFINE_SYSREG_RW_FUNCS(pmovsset_el0)
 DEFINE_SYSREG_RW_FUNCS(pmselr_el0)
 DEFINE_SYSREG_RW_FUNCS(pmxevtyper_el0)
 DEFINE_SYSREG_RW_FUNCS(pmxevcntr_el0)
+DEFINE_SYSREG_RW_FUNCS(pmintenclr_el1)
+DEFINE_SYSREG_RW_FUNCS(pmintenset_el1)
 
 /* parameterised event counter accessors */
 static inline u_register_t read_pmevcntrn_el0(int ctr_num)

@@ -6,7 +6,7 @@
 
 #include <debug.h>
 
-/* dummy interrupt handler as for now*/
+/* Dummy interrupt handler as for now */
 void realm_interrupt_handler(void)
 {
 	INFO("%s\n", __func__);
