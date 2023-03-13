@@ -452,4 +452,8 @@ void wait_for_non_lead_cpus(void);
  * OFF.
  */
 void wait_for_core_to_turn_off(unsigned int mpidr);
+
+/* Generate 64-bit random number */
+unsigned long rand_reg(void);
+
 #endif /* __TEST_HELPERS_H__ */
