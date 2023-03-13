@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2022, Arm Limited and Contributors. All rights reserved.
+ * Copyright (c) 2013-2023, Arm Limited and Contributors. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -822,6 +822,7 @@
 #define PMCCFILTR_EL0_M_BIT		(U(1) << 26)
 #define PMCCFILTR_EL0_MT_BIT		(U(1) << 25)
 #define PMCCFILTR_EL0_SH_BIT		(U(1) << 24)
+#define PMCCFILTR_EL0_RLK_BIT		(U(1) << 22)
 
 /* PMSELR_EL0 definitions */
 #define PMSELR_EL0_SEL_SHIFT		U(0)

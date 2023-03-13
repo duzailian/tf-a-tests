@@ -12,6 +12,12 @@
 	  function="test_realm_create_enter" />
 	  <testcase name="Realm payload boot"
 	  function="realm_version_single_cpu" />
+	  <testcase name="PMUv3 cycle counter functional in Realm"
+	  function="realm_pmuv3_cycle_works" />
+	  <testcase name="PMUv3 event counter functional in Realm"
+	  function="realm_pmuv3_event_works" />
+	  <testcase name="PMUv3 SMC counter preservation"
+	  function="realm_pmuv3_el3_preserves" />
 	  <testcase name="Realm payload multi CPU request"
 	  function="realm_version_multi_cpu" />
 	  <testcase name="Realm payload Delegate and Undelegate"
