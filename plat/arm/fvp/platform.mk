@@ -84,6 +84,10 @@ $(eval $(call add_define,TFTF_DEFINES,FVP_MAX_CPUS_PER_CLUSTER))
 $(eval $(call add_define,TFTF_DEFINES,FVP_MAX_PE_PER_CPU))
 $(eval $(call add_define,TFTF_DEFINES,TFTF_MAX_IMAGE_SIZE))
 
+$(eval $(call add_define,REALM_DEFINES,FVP_CLUSTER_COUNT))
+$(eval $(call add_define,REALM_DEFINES,FVP_MAX_CPUS_PER_CLUSTER))
+$(eval $(call add_define,REALM_DEFINES,FVP_MAX_PE_PER_CPU))
+
 # Default PA size for FVP platform
 PA_SIZE := 34
 

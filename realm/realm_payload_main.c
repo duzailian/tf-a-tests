@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022, Arm Limited. All rights reserved.
+ * Copyright (c) 2022-2023, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  *
@@ -56,12 +56,12 @@ static void realm_get_rsi_version(void)
  */
 void realm_payload_main(void)
 {
-	uint8_t cmd = 0U;
 	bool test_succeed = false;
 
 	realm_set_shared_structure((host_shared_data_t *)rsi_get_ns_buffer());
+
 	if (realm_get_shared_structure() != NULL) {
-		cmd = realm_shared_data_get_realm_cmd();
+		uint8_t cmd = realm_shared_data_get_realm_cmd();
 		switch (cmd) {
 		case REALM_SLEEP_CMD:
 			realm_sleep_cmd();
@@ -70,6 +70,15 @@ void realm_payload_main(void)
 		case REALM_GET_RSI_VERSION:
 			realm_get_rsi_version();
 			test_succeed = true;
+			break;
+		case REALM_PMU_CYCLE:
+			test_succeed = test_pmuv3_cycle_works_realm();
+			break;
+		case REALM_PMU_EVENT:
+			test_succeed = test_pmuv3_event_works_realm();
+			break;
+		case REALM_PMU_PRESERVE:
+			test_succeed = test_pmuv3_el3_preserves();
 			break;
 		default:
 			INFO("REALM_PAYLOAD: %s invalid cmd=%hhu", __func__, cmd);
