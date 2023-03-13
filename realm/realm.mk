@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2022, Arm Limited. All rights reserved.
+# Copyright (c) 2022-2023, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -20,13 +20,20 @@ REALM_INCLUDES :=							\
 	-Irealm								\
 	-Irealm/aarch64
 
+REALM_INCLUDES +=							\
+	-I${AUTOGEN_DIR}						\
+	-Iinclude/plat/common						\
+	-Iplat/arm/fvp/include						\
+	-Iinclude/runtime_services/secure_el1_payloads
+
 REALM_SOURCES:=								\
 	$(addprefix realm/,						\
 	aarch64/realm_entrypoint.S					\
 	aarch64/realm_exceptions.S					\
 	realm_debug.c							\
-	realm_payload_main.c						\
 	realm_interrupt.c						\
+	realm_payload_main.c						\
+	realm_pmuv3.c							\
 	realm_rsi.c							\
 	realm_shared_data.c						\
 	)

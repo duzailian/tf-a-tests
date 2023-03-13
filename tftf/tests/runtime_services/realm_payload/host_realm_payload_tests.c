@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021-2022, Arm Limited. All rights reserved.
+ * Copyright (c) 2021-2023, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -44,7 +44,8 @@ test_result_t test_realm_create_enter(void)
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)(PAGE_POOL_MAX_SIZE +
 			NS_REALM_SHARED_MEM_SIZE),
-			(u_register_t)PAGE_POOL_MAX_SIZE)) {
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
@@ -57,10 +58,77 @@ test_result_t test_realm_create_enter(void)
 	ret2 = host_destroy_realm();
 
 	if (!ret1 || !ret2) {
-		ERROR("test_realm_create_enter create:%d destroy:%d\n",
-		ret1, ret2);
+		ERROR("%s(): enter:%d destroy:%d\n",
+		__func__, ret1, ret2);
 		return TEST_RESULT_FAIL;
 	}
 
 	return host_cmp_result();
+}
+
+/*
+ * @Test_Aim@ Test realm PMU
+ */
+static test_result_t realm_pmuv3(uint8_t cmd)
+{
+	bool ret1, ret2;
+	u_register_t retrmm;
+
+	if (get_armv9_2_feat_rme_support() == 0U) {
+		INFO("platform doesn't support RME\n");
+		return TEST_RESULT_SKIPPED;
+	}
+
+	rmi_init_cmp_result();
+
+	retrmm = rmi_version();
+	VERBOSE("RMM version is: %lu.%lu\n",
+			RMI_ABI_VERSION_GET_MAJOR(retrmm),
+			RMI_ABI_VERSION_GET_MINOR(retrmm));
+	/*
+	 * Skip the test if RMM is TRP, TRP version is always null.
+	 */
+	if (retrmm == 0UL) {
+		INFO("Test case not supported for TRP as RMM\n");
+		return TEST_RESULT_SKIPPED;
+	}
+
+	if (!host_create_realm_payload((u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)(PAGE_POOL_MAX_SIZE +
+			NS_REALM_SHARED_MEM_SIZE),
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			RMI_FEATURE_REGISTER_0_PMU_EN)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	ret1 = host_enter_realm_execute(cmd);
+	ret2 = host_destroy_realm();
+
+	if (!ret1 || !ret2) {
+		ERROR("%s(): enter:%d destroy:%d\n",
+		__func__, ret1, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return host_cmp_result();
+}
+
+test_result_t realm_pmuv3_cycle_works(void)
+{
+	return realm_pmuv3(REALM_PMU_CYCLE);
+}
+
+test_result_t realm_pmuv3_event_works(void)
+{
+	return realm_pmuv3(REALM_PMU_EVENT);
+}
+
+test_result_t realm_pmuv3_el3_preserves(void)
+{
+	return realm_pmuv3(REALM_PMU_PRESERVE);
 }
