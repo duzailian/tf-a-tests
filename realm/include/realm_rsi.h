@@ -63,12 +63,6 @@ typedef enum {
 	RSI_ERROR_COUNT
 } rsi_status_t;
 
-enum host_call_cmd {
-	HOST_CALL_GET_SHARED_BUFF_CMD = 1U,
-	HOST_CALL_EXIT_SUCCESS_CMD,
-	HOST_CALL_EXIT_FAILED_CMD
-};
-
 struct rsi_realm_config {
 	/* IPA width in bits */
 	SET_MEMBER(unsigned long ipa_width, 0, 0x1000);	/* Offset 0 */
@@ -100,6 +94,7 @@ struct rsi_host_call {
 
 
 #define RSI_ABI_VERSION		SMC_RSI_FID(0U)
+
 /*
  * arg0 == struct rsi_realm_config address
  */
