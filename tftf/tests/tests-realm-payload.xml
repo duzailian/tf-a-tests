@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  Copyright (c) 2021, Arm Limited. All rights reserved.
+  Copyright (c) 2021-2023, Arm Limited. All rights reserved.
 
   SPDX-License-Identifier: BSD-3-Clause
 -->
@@ -20,5 +20,13 @@
 	  function="realm_delundel_multi_cpu" />
 	  <testcase name="Testing delegation fails"
 	  function="realm_fail_del" />
+	  <testcase name="PMUv3 cycle counter functional in Realm"
+	  function="realm_pmuv3_cycle_works" />
+	  <testcase name="PMUv3 event counter functional in Realm"
+	  function="realm_pmuv3_event_works" />
+	  <testcase name="PMUv3 SMC counter preservation"
+	  function="realm_pmuv3_el3_preserves" />
+	  <testcase name="PMUv3 overflow interrupt"
+	  function="realm_pmuv3_overflow_interrupt" />
   </testsuite>
 </testsuites>

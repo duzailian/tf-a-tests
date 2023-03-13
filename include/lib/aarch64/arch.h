@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2022, Arm Limited and Contributors. All rights reserved.
+ * Copyright (c) 2013-2023, Arm Limited and Contributors. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -808,20 +808,28 @@
 
 /* PMEVTYPER<n>_EL0 definitions */
 #define PMEVTYPER_EL0_P_BIT		(U(1) << 31)
+#define PMEVTYPER_EL0_U_BIT		(U(1) << 30)
 #define PMEVTYPER_EL0_NSK_BIT		(U(1) << 29)
 #define PMEVTYPER_EL0_NSH_BIT		(U(1) << 27)
 #define PMEVTYPER_EL0_M_BIT		(U(1) << 26)
 #define PMEVTYPER_EL0_MT_BIT		(U(1) << 25)
 #define PMEVTYPER_EL0_SH_BIT		(U(1) << 24)
+#define PMEVTYPER_EL0_RLK_BIT		(U(1) << 22)
+#define PMEVTYPER_EL0_RLU_BIT		(U(1) << 21)
+#define PMEVTYPER_EL0_RLH_BIT		(U(1) << 20)
 #define PMEVTYPER_EL0_EVTCOUNT_BITS	U(0x0000FFFF)
 
 /* PMCCFILTR_EL0 definitions */
 #define PMCCFILTR_EL0_P_BIT		(U(1) << 31)
+#define PMCCFILTR_EL0_U_BIT		(U(1) << 30)
 #define PMCCFILTR_EL0_NSK_BIT		(U(1) << 29)
 #define PMCCFILTR_EL0_NSH_BIT		(U(1) << 27)
 #define PMCCFILTR_EL0_M_BIT		(U(1) << 26)
 #define PMCCFILTR_EL0_MT_BIT		(U(1) << 25)
 #define PMCCFILTR_EL0_SH_BIT		(U(1) << 24)
+#define PMCCFILTR_EL0_RLK_BIT		(U(1) << 22)
+#define PMCCFILTR_EL0_RLU_BIT		(U(1) << 21)
+#define PMCCFILTR_EL0_RLH_BIT		(U(1) << 20)
 
 /* PMSELR_EL0 definitions */
 #define PMSELR_EL0_SEL_SHIFT		U(0)

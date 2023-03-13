@@ -1,10 +1,12 @@
 #
-# Copyright (c) 2022, Arm Limited. All rights reserved.
+# Copyright (c) 2022-2023, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
 include branch_protection.mk
+#//***AF
+#include plat/arm/fvp/platform.mk
 
 REALM_INCLUDES :=							\
 	-Itftf/framework/include					\
@@ -20,13 +22,20 @@ REALM_INCLUDES :=							\
 	-Irealm								\
 	-Irealm/aarch64
 
+REALM_INCLUDES +=							\
+	-I${AUTOGEN_DIR}						\
+	-Iinclude/plat/common						\
+	-Iplat/arm/fvp/include						\
+	-Iinclude/runtime_services/secure_el1_payloads
+
 REALM_SOURCES:=								\
 	$(addprefix realm/,						\
 	aarch64/realm_entrypoint.S					\
 	aarch64/realm_exceptions.S					\
 	realm_debug.c							\
-	realm_payload_main.c						\
 	realm_interrupt.c						\
+	realm_payload_main.c						\
+	realm_pmuv3.c							\
 	realm_rsi.c							\
 	realm_shared_data.c						\
 	)
@@ -42,6 +51,13 @@ REALM_SOURCES += lib/${ARCH}/cache_helpers.S				\
 # TODO: Remove dependency on TFTF files.
 REALM_SOURCES	+=							\
 	tftf/framework/${ARCH}/exception_report.c
+
+#//***AF
+#REALM_SOURCES	+=							\
+#	plat/arm/fvp/${ARCH}/plat_helpers.S				\
+#	drivers/arm/gic/gic_v3.c					\
+#	drivers/arm/gic/gic_common.c					\
+#	lib/exceptions/irq.c
 
 REALM_LINKERFILE:=	realm/realm.ld.S
 
