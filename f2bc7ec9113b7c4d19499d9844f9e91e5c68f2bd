@@ -1,0 +1,377 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e843aebd_588db380",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "It is difficult to figure out which files are belonging to Host and which ones to Realm payload.\n\nI have given some comments to prefix  host_ for APIs executing on host side and realm_ for APIs exeucting on Realm",
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95c8ba8e_2c3a8998",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_helper.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "These need to be private to realm payload. \n\nSuggest to create a realm/include folder and then a realm_tests.h. These can go in that file.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 41
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e9af991_8b991ab1",
+        "filename": "plat/arm/fvp/platform.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "these are not needed for Realm payload.",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 59
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49a5364e_7dd19cb3",
+        "filename": "realm/realm.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "remove these",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 33
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7d78922_c6dffd76",
+        "filename": "realm/realm.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "Realm payload should not depend on platform.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 30
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb6ff981_b90c466e",
+        "filename": "realm/realm.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "We dont need this I think",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 47
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dea4edde_d47bc567",
+        "filename": "realm/realm.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "remove.",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 0
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37b76e6d_4b39ff16",
+        "filename": "realm/realm_pmuv3.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "rmm",
+      "range": {
+        "startLine": 212,
+        "startChar": 29,
+        "endLine": 212,
+        "endChar": 32
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01d41b6f_bde657ea",
+        "filename": "realm/realm_pmuv3.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "\"rmm\"",
+      "range": {
+        "startLine": 214,
+        "startChar": 16,
+        "endLine": 214,
+        "endChar": 19
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90d35ee6_bc41acac",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "It is better to have exit_reason as an argument to this function (say `exp_exit_reason`)\n\nThen this check would be\n\nif(exp_exit_reason !\u003d exit_reason)\n    return false;\n\nif ((exp_exit_reason \u003d\u003d RMI_EXIT_HOST_CALL) \u0026\u0026 (host_call_res !\u003d TEST_RESULT_SUCCESS))\n    return false;\n\nreturn true;",
+      "range": {
+        "startLine": 335,
+        "startChar": 22,
+        "endLine": 335,
+        "endChar": 34
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4234586b_39b2d0ee",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 1076,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "prefix all API in this file with host_",
+      "range": {
+        "startLine": 1076,
+        "startChar": 13,
+        "endLine": 1076,
+        "endChar": 28
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9cf6729_6a0ed632",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "This can ne renamed to host_call_result.",
+      "range": {
+        "startLine": 1116,
+        "startChar": 5,
+        "endLine": 1116,
+        "endChar": 17
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "101e540d_c6ac1e56",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 1121,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "This need not be set for RMI_EXIT_IRQ.",
+      "range": {
+        "startLine": 1121,
+        "startChar": 3,
+        "endLine": 1121,
+        "endChar": 38
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9acb9693_d93f02ef",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "host_test_realm_pmuv3()",
+      "range": {
+        "startLine": 80,
+        "startChar": 21,
+        "endLine": 80,
+        "endChar": 32
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29081acd_eb87ee65",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "host_test_realm_pmuv3...  same comments below.",
+      "range": {
+        "startLine": 164,
+        "startChar": 14,
+        "endLine": 164,
+        "endChar": 37
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c42a7b0b_c423e628",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "Before entering Realm, setup PMU on host with some values and then enter Realm.",
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53008bf6_877b4f57",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-17T12:26:55Z",
+      "side": 1,
+      "message": "After returning to host test if PMU counter set by host is corrupted by Realm or not.\n\nSame comments for below tests.",
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
