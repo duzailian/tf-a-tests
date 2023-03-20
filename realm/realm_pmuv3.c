@@ -7,6 +7,7 @@
 #include <arch_helpers.h>
 #include <arm_arch_svc.h>
 #include <test_helpers.h>
+#include <drivers/arm/gic_v3.h>
 
 /* PMUv3 events */
 #define PMU_EVT_SW_INCR		0x0
@@ -20,6 +21,8 @@
 #define ALL_CLEAR		0x1FFFF
 
 #define PRE_OVERFLOW		~(0xF)
+
+#define	DELAY_MS		3000ULL
 
 #define tftf_testcase_printf realm_printf
 
@@ -267,9 +270,28 @@ bool test_pmuv3_el3_preserves(void)
 	return true;
 }
 
-void test_pmuv3_overflow_interrupt(void)
+bool test_pmuv3_overflow_interrupt(void)
 {
+	unsigned long priority_bits, priority;
+	uint64_t delay_time = DELAY_MS;
+
 	pmu_reset();
+
+	/* Get the number of priority bits implemented */
+	priority_bits = ((read_icv_ctrl_el1() >> ICV_CTLR_EL1_PRIbits_SHIFT) &
+				ICV_CTLR_EL1_PRIbits_MASK) + 1UL;
+
+	/* Unimplemented bits are RES0 and start from LSB */
+	priority = (0xFFUL << (8UL - priority_bits)) & 0xFFUL;
+
+	/* Set the priority mask register to allow all interrupts */
+	write_icv_pmr_el1(priority);
+
+	/* Enable Virtual Group 1 interrupts */
+	write_icv_igrpen1_el1(ICV_IGRPEN1_EL1_Enable);
+
+	/* Enable IRQ */
+	enable_irq();
 
 	write_pmevcntrn_el0(0, PRE_OVERFLOW);
 	enable_event_counter(0);
@@ -277,9 +299,29 @@ void test_pmuv3_overflow_interrupt(void)
 	/* Enable interrupt on event counter #0 */
 	write_pmintenset_el1((1UL << 0));
 
+	tftf_testcase_printf("Waiting for PMU vIRQ...\n");
+
 	enable_counting();
 	execute_nops();
 
-	/* This code should not be reached */
-	assert(false);
+	while ((read_pmintenset_el1() != 0UL) &&
+	       (delay_time != 0ULL)) {
+		--delay_time;
+	}
+
+	/* Disable IRQ */
+	disable_irq();
+
+	pmu_reset();
+
+	if (delay_time == 0ULL) {
+		tftf_testcase_printf("PMU vIRQ %sreceived in %llums\n",
+			"not ", DELAY_MS);
+		return false;
+	}
+
+	tftf_testcase_printf("PMU vIRQ %sreceived in %llums\n", "",
+			DELAY_MS - delay_time);
+
+	return true;
 }

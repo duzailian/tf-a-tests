@@ -11,12 +11,13 @@
 #include <debug.h>
 #include <irq.h>
 #include <drivers/arm/arm_gic.h>
+#include <drivers/arm/gic_v3.h>
 
 #include <host_realm_helper.h>
 #include <host_realm_mem_layout.h>
+#include <host_realm_pmu.h>
 #include <host_shared_data.h>
 
-#define PMU_PPI		23
 #define SLEEP_TIME_MS	200U
 
 extern const char *rmi_exit[];
@@ -81,6 +82,7 @@ static test_result_t realm_pmuv3(uint8_t cmd)
 {
 	bool ret1, ret2;
 	u_register_t retrmm;
+	u_register_t exit_reason;
 	struct realm *realm_ptr;
 	struct rmi_rec_run *run;
 
@@ -122,18 +124,41 @@ static test_result_t realm_pmuv3(uint8_t cmd)
 	}
 
 	run = (struct rmi_rec_run *)realm_ptr->run;
-	u_register_t exit_reason = run->exit.exit_reason;
+	exit_reason = run->exit.exit_reason;
 
 	if (cmd == REALM_PMU_INTERRUPT) {
 		/* Check for exit reason and PMU state */
 		if ((exit_reason == RMI_EXIT_IRQ) &&
 		   ((run->exit.pmu_ovf & run->exit.pmu_intr_en &
 		     run->exit.pmu_cntr_en) != 0UL)) {
-			goto test_exit;
-		} else {
-			ERROR("pmu_ovf=%lx pmu_intr_en=%lx pmu_cntr_en=%lx\n",
-				run->exit.pmu_ovf, run->exit.pmu_intr_en,
-				run->exit.pmu_cntr_en);
+			unsigned int test_result;
+			int ret;
+
+			tftf_irq_disable(PMU_PPI);
+			ret = tftf_irq_unregister_handler(PMU_PPI);
+			if (ret != 0) {
+				ERROR("Failed to %sregister IRQ handler\n",
+					"un");
+				goto test_failed;
+			}
+
+			/* Inject PMU virtual interrupt */
+			run->entry.gicv3_lrs[0] =
+				ICH_LRn_EL2_STATE_Pending |
+				ICH_LRn_EL2_Group_1 |
+				(PMU_VIRQ << ICH_LRn_EL2_vINTID_SHIFT);
+
+			/* Re-enter Realm */
+			INFO("Re-entering Realm with vIRQ %lu pending\n", PMU_VIRQ);
+
+			retrmm = realm_rec_enter(realm_ptr, &exit_reason, &test_result);
+			if ((retrmm == REALM_SUCCESS) &&
+			    (exit_reason == RMI_EXIT_HOST_CALL) &&
+			    (test_result == TEST_RESULT_SUCCESS)) {
+				goto test_exit;
+			}
+			ERROR("%s() failed, ret=%lx test_result %u\n",
+				"realm_rec_enter", retrmm, test_result);
 		}
 	} else {
 		/* Check for exit reason */
@@ -142,6 +167,7 @@ static test_result_t realm_pmuv3(uint8_t cmd)
 		}
 	}
 
+test_failed:
 	if (exit_reason <= RMI_EXIT_SERROR) {
 		ERROR("exit_reason RMI_EXIT_%s\n", rmi_exit[exit_reason]);
 	} else {
@@ -190,8 +216,6 @@ static int overflow_interrupt(void *data)
 
 test_result_t realm_pmuv3_overflow_interrupt(void)
 {
-	test_result_t res;
-
 	/* Register PMU IRQ handler */
 	int ret = tftf_irq_register_handler(PMU_PPI, overflow_interrupt);
 
@@ -202,15 +226,5 @@ test_result_t realm_pmuv3_overflow_interrupt(void)
 	}
 
 	tftf_irq_enable(PMU_PPI, GIC_HIGHEST_NS_PRIORITY);
-	res = realm_pmuv3(REALM_PMU_INTERRUPT);
-
-	tftf_irq_disable(PMU_PPI);
-	ret = tftf_irq_unregister_handler(PMU_PPI);
-	if (ret != 0) {
-		tftf_testcase_printf("Failed to %sregister IRQ handler\n",
-					"un");
-		return TEST_RESULT_FAIL;
-	}
-
-	return res;
+	return realm_pmuv3(REALM_PMU_INTERRUPT);
 }
