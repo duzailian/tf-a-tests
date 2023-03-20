@@ -15,8 +15,8 @@
 #include <tftf_lib.h>
 
 /*
- * This function reads sleep time in ms from shared buffer and spins PE in a loop
- * for that time period.
+ * This function reads sleep time in ms from shared buffer and spins PE
+ * in a loop for that time period.
  */
 static void realm_sleep_cmd(void)
 {
@@ -82,7 +82,7 @@ void realm_payload_main(void)
 			test_succeed = test_pmuv3_el3_preserves();
 			break;
 		case REALM_PMU_INTERRUPT:
-			test_pmuv3_overflow_interrupt();
+			test_succeed = test_pmuv3_overflow_interrupt();
 			break;
 		default:
 			realm_printf("%s() invalid cmd %u\n", __func__, cmd);

@@ -5,8 +5,6 @@
 #
 
 include branch_protection.mk
-#//***AF
-#include plat/arm/fvp/platform.mk
 
 REALM_INCLUDES :=							\
 	-Itftf/framework/include					\
@@ -51,13 +49,6 @@ REALM_SOURCES += lib/${ARCH}/cache_helpers.S				\
 # TODO: Remove dependency on TFTF files.
 REALM_SOURCES	+=							\
 	tftf/framework/${ARCH}/exception_report.c
-
-#//***AF
-#REALM_SOURCES	+=							\
-#	plat/arm/fvp/${ARCH}/plat_helpers.S				\
-#	drivers/arm/gic/gic_v3.c					\
-#	drivers/arm/gic/gic_common.c					\
-#	lib/exceptions/irq.c
 
 REALM_LINKERFILE:=	realm/realm.ld.S
 
