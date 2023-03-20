@@ -6,6 +6,7 @@
 #ifndef HOST_REALM_HELPER_H
 #define HOST_REALM_HELPER_H
 
+#include <stdlib.h>
 #include <host_realm_rmi.h>
 
 bool host_create_realm_payload(u_register_t realm_payload_adr,
@@ -18,12 +19,7 @@ bool host_create_shared_mem(
 		u_register_t ns_shared_mem_size);
 bool host_destroy_realm(void);
 bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr);
-bool test_pmuv3_cycle_works_realm(void);
-bool test_pmuv3_event_works_realm(void);
-bool test_pmuv3_el3_preserves(void);
-bool test_pmuv3_overflow_interrupt(void);
-
 test_result_t host_cmp_result(void);
+u_register_t rand_reg(void);
 
 #endif /* HOST_REALM_HELPER_H */
-

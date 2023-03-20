@@ -16,8 +16,6 @@
 #include "rmi_spm_tests.h"
 #include <test_helpers.h>
 
-
-
 static test_result_t realm_multi_cpu_payload_test(void);
 static test_result_t realm_multi_cpu_payload_del_undel(void);
 
@@ -47,15 +45,15 @@ test_result_t init_buffer_del(void)
 {
 	u_register_t retrmm;
 
-	rmi_init_cmp_result();
+	host_rmi_init_cmp_result();
 
 	for (uint32_t i = 0; i < (NUM_GRANULES * PLATFORM_CORE_COUNT) ; i++) {
 		if ((rand() % 2) == 0) {
-			retrmm = rmi_granule_delegate(
-					(u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
+			retrmm = host_rmi_granule_delegate(
+				(u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
 			bufferstate[i] = B_DELEGATED;
 			if (retrmm != 0UL) {
-				tftf_testcase_printf("Delegate operation returns fail, %lx\n",
+				tftf_testcase_printf("Delegate operation returns 0x%lx\n",
 						retrmm);
 				return TEST_RESULT_FAIL;
 			}
@@ -78,9 +76,9 @@ test_result_t realm_version_single_cpu(void)
 		return TEST_RESULT_SKIPPED;
 	}
 
-	rmi_init_cmp_result();
+	host_rmi_init_cmp_result();
 
-	retrmm = rmi_version();
+	retrmm = host_rmi_version();
 
 	tftf_testcase_printf("RMM version is: %lu.%lu\n",
 			RMI_ABI_VERSION_GET_MAJOR(retrmm),
@@ -102,7 +100,7 @@ test_result_t realm_version_multi_cpu(void)
 		return TEST_RESULT_SKIPPED;
 	}
 
-	rmi_init_cmp_result();
+	host_rmi_init_cmp_result();
 
 	lead_mpid = read_mpidr_el1() & MPID_MASK;
 
@@ -153,16 +151,18 @@ test_result_t realm_delegate_undelegate(void)
 		return TEST_RESULT_SKIPPED;
 	}
 
-	rmi_init_cmp_result();
+	host_rmi_init_cmp_result();
 
-	retrmm = rmi_granule_delegate((u_register_t)bufferdelegate);
+	retrmm = host_rmi_granule_delegate((u_register_t)bufferdelegate);
 	if (retrmm != 0UL) {
-		tftf_testcase_printf("Delegate operation returns fail, %lx\n", retrmm);
+		tftf_testcase_printf("Delegate operation returns 0x%lx\n",
+					retrmm);
 		return TEST_RESULT_FAIL;
 	}
-	retrmm = rmi_granule_undelegate((u_register_t)bufferdelegate);
+	retrmm = host_rmi_granule_undelegate((u_register_t)bufferdelegate);
 	if (retrmm != 0UL) {
-		tftf_testcase_printf("Undelegate operation returns fail, %lx\n", retrmm);
+		tftf_testcase_printf("Undelegate operation returns 0x%lx\n",
+					retrmm);
 		return TEST_RESULT_FAIL;
 	}
 	tftf_testcase_printf("Delegate and undelegate of buffer 0x%lx succeeded\n",
@@ -175,9 +175,9 @@ static test_result_t realm_multi_cpu_payload_test(void)
 {
 	u_register_t retrmm;
 
-	rmi_init_cmp_result();
+	host_rmi_init_cmp_result();
 
-	retrmm = rmi_version();
+	retrmm = host_rmi_version();
 
 	tftf_testcase_printf("Multi CPU RMM version on CPU %llx is: %lu.%lu\n",
 			(long long)read_mpidr_el1() & MPID_MASK, RMI_ABI_VERSION_GET_MAJOR(retrmm),
@@ -203,7 +203,7 @@ test_result_t realm_delundel_multi_cpu(void)
 
 	lead_mpid = read_mpidr_el1() & MPID_MASK;
 
-	rmi_init_cmp_result();
+	host_rmi_init_cmp_result();
 
 	if (init_buffer_del() == TEST_RESULT_FAIL) {
 		return TEST_RESULT_FAIL;
@@ -245,8 +245,8 @@ test_result_t realm_delundel_multi_cpu(void)
 	 */
 	for (uint32_t i = 0; i < (NUM_GRANULES * PLATFORM_CORE_COUNT) ; i++) {
 		if (bufferstate[i] == B_DELEGATED) {
-			retrmm = rmi_granule_undelegate(
-					(u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
+			retrmm = host_rmi_granule_undelegate(
+				(u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
 			bufferstate[i] = B_UNDELEGATED;
 			if (retrmm != 0UL) {
 				tftf_testcase_printf("Delegate operation returns fail, %lx\n",
@@ -273,20 +273,21 @@ static test_result_t realm_multi_cpu_payload_del_undel(void)
 
 	cpu_node = platform_get_core_pos(read_mpidr_el1() & MPID_MASK);
 
-	rmi_init_cmp_result();
+	host_rmi_init_cmp_result();
 
 	for (uint32_t i = 0; i < NUM_GRANULES; i++) {
 		if (bufferstate[((cpu_node * NUM_GRANULES) + i)] == B_UNDELEGATED) {
-			retrmm = rmi_granule_delegate((u_register_t)
-					&bufferdelegate[((cpu_node * NUM_GRANULES) + i) * GRANULE_SIZE]);
+			retrmm = host_rmi_granule_delegate((u_register_t)
+				&bufferdelegate[((cpu_node * NUM_GRANULES) + i) * GRANULE_SIZE]);
 			bufferstate[((cpu_node * NUM_GRANULES) + i)] = B_DELEGATED;
 		} else {
-			retrmm = rmi_granule_undelegate((u_register_t)
-					&bufferdelegate[((cpu_node * NUM_GRANULES) + i) * GRANULE_SIZE]);
+			retrmm = host_rmi_granule_undelegate((u_register_t)
+				&bufferdelegate[((cpu_node * NUM_GRANULES) + i) * GRANULE_SIZE]);
 			bufferstate[((cpu_node * NUM_GRANULES) + i)] = B_UNDELEGATED;
 		}
 		if (retrmm != 0UL) {
-			tftf_testcase_printf("Delegate operation returns fail, %lx\n", retrmm);
+			tftf_testcase_printf("Delegate operation returns 0x%lx\n",
+						retrmm);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -307,33 +308,33 @@ test_result_t realm_fail_del(void)
 
 	u_register_t retrmm;
 
-	rmi_init_cmp_result();
+	host_rmi_init_cmp_result();
 
-	retrmm = rmi_granule_delegate((u_register_t)&bufferdelegate[0]);
-
+	retrmm = host_rmi_granule_delegate((u_register_t)&bufferdelegate[0]);
 	if (retrmm != 0UL) {
 		tftf_testcase_printf
-			("Delegate operation does not pass as expected for double delegation, %lx\n", retrmm);
+			("Delegate operation does not pass as expected for double delegation, %lx\n",
+			retrmm);
 		return TEST_RESULT_FAIL;
 	}
 
-	retrmm = rmi_granule_delegate((u_register_t)&bufferdelegate[0]);
-
+	retrmm = host_rmi_granule_delegate((u_register_t)&bufferdelegate[0]);
 	if (retrmm == 0UL) {
 		tftf_testcase_printf
-			("Delegate operation does not fail as expected for double delegation, %lx\n", retrmm);
+			("Delegate operation does not fail as expected for double delegation, %lx\n",
+			retrmm);
 		return TEST_RESULT_FAIL;
 	}
 
-	retrmm = rmi_granule_undelegate((u_register_t)&bufferdelegate[1]);
-
+	retrmm = host_rmi_granule_undelegate((u_register_t)&bufferdelegate[1]);
 	if (retrmm == 0UL) {
 		tftf_testcase_printf
-			("Delegate operation does not return fail for misaligned address, %lx\n", retrmm);
+			("Delegate operation does not return fail for misaligned address, %lx\n",
+			retrmm);
 		return TEST_RESULT_FAIL;
 	}
 
-	retrmm = rmi_granule_undelegate((u_register_t)&bufferdelegate[0]);
+	retrmm = host_rmi_granule_undelegate((u_register_t)&bufferdelegate[0]);
 
 	if (retrmm != 0UL) {
 		tftf_testcase_printf

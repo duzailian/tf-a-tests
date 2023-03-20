@@ -5,8 +5,6 @@
 #
 
 include branch_protection.mk
-#//***AF
-#include plat/arm/fvp/platform.mk
 
 REALM_INCLUDES :=							\
 	-Itftf/framework/include					\
@@ -20,13 +18,12 @@ REALM_INCLUDES :=							\
 	-Iinclude/runtime_services					\
 	-Iinclude/runtime_services/host_realm_managment			\
 	-Irealm								\
-	-Irealm/aarch64
+	-Irealm/aarch64							\
+	-Irealm/include
 
 REALM_INCLUDES +=							\
 	-I${AUTOGEN_DIR}						\
-	-Iinclude/plat/common						\
-	-Iplat/arm/fvp/include						\
-	-Iinclude/runtime_services/secure_el1_payloads
+	-Iinclude/plat/common
 
 REALM_SOURCES:=								\
 	$(addprefix realm/,						\
@@ -51,13 +48,6 @@ REALM_SOURCES += lib/${ARCH}/cache_helpers.S				\
 # TODO: Remove dependency on TFTF files.
 REALM_SOURCES	+=							\
 	tftf/framework/${ARCH}/exception_report.c
-
-#//***AF
-#REALM_SOURCES	+=							\
-#	plat/arm/fvp/${ARCH}/plat_helpers.S				\
-#	drivers/arm/gic/gic_v3.c					\
-#	drivers/arm/gic/gic_common.c					\
-#	lib/exceptions/irq.c
 
 REALM_LINKERFILE:=	realm/realm.ld.S
 
