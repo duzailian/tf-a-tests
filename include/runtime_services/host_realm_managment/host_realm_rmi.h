@@ -475,34 +475,32 @@ struct realm {
 };
 
 /* RMI/SMC */
-u_register_t rmi_version(void);
-u_register_t rmi_granule_delegate(u_register_t addr);
-u_register_t rmi_granule_undelegate(u_register_t addr);
-u_register_t rmi_realm_create(u_register_t rd, u_register_t params_ptr);
-u_register_t rmi_realm_destroy(u_register_t rd);
-u_register_t rmi_features(u_register_t index, u_register_t *features);
+u_register_t host_rmi_version(void);
+u_register_t host_rmi_granule_delegate(u_register_t addr);
+u_register_t host_rmi_granule_undelegate(u_register_t addr);
+u_register_t host_rmi_realm_create(u_register_t rd, u_register_t params_ptr);
+u_register_t host_rmi_realm_destroy(u_register_t rd);
+u_register_t host_rmi_features(u_register_t index, u_register_t *features);
 
 /* Realm management */
 u_register_t realm_map_protected_data_unknown(struct realm *realm,
 		u_register_t target_pa,
 		u_register_t map_size);
-u_register_t realm_create(struct realm *realm);
-u_register_t realm_map_payload_image(struct realm *realm,
-		u_register_t realm_payload_adr);
-u_register_t realm_map_ns_shared(struct realm *realm,
-		u_register_t ns_shared_mem_adr,
-		u_register_t ns_shared_mem_size);
-u_register_t realm_rec_create(struct realm *realm);
-u_register_t realm_activate(struct realm *realm);
-u_register_t realm_destroy(struct realm *realm);
-u_register_t realm_rec_enter(struct realm *realm, u_register_t *exit_reason,
-		unsigned int *test_result);
-u_register_t realm_init_ipa_state(struct realm *realm,
-		u_register_t  level,
-		u_register_t  start,
-		uint64_t  end);
+u_register_t host_realm_create(struct realm *realm);
+u_register_t host_realm_map_payload_image(struct realm *realm,
+					  u_register_t realm_payload_adr);
+u_register_t host_realm_map_ns_shared(struct realm *realm,
+					u_register_t ns_shared_mem_adr,
+					u_register_t ns_shared_mem_size);
+u_register_t host_realm_rec_create(struct realm *realm);
+u_register_t host_realm_activate(struct realm *realm);
+u_register_t host_realm_destroy(struct realm *realm);
+u_register_t host_realm_rec_enter(struct realm *realm, u_register_t *exit_reason,
+		unsigned int *host_call_result);
+u_register_t host_realm_init_ipa_state(struct realm *realm, u_register_t level,
+					u_register_t start, uint64_t end);
 test_result_t realm_cmp_result(void);
-void rmi_init_cmp_result(void);
-bool rmi_get_cmp_result(void);
+void host_rmi_init_cmp_result(void);
+bool host_rmi_get_cmp_result(void);
 
 #endif /* HOST_REALM_RMI_H */

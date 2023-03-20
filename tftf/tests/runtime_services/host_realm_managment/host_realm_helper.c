@@ -26,7 +26,7 @@ static bool realm_payload_created;
 static bool shared_mem_created;
 static bool realm_payload_mmaped;
 static u_register_t exit_reason = RMI_EXIT_INVALID;
-static unsigned int test_result = TEST_RESULT_FAIL;
+static unsigned int host_call_result = TEST_RESULT_FAIL;
 static volatile bool timer_enabled;
 
 /* From the TFTF_BASE offset, memory used by TFTF + Shared + Realm + POOL should
@@ -50,6 +50,12 @@ const char *rmi_exit[] = {
 	RMI_EXIT(HOST_CALL),
 	RMI_EXIT(SERROR)
 };
+
+/* Generate 64-bit random number */
+unsigned long rand_reg(void)
+{
+	return ((unsigned long)rand() << 32) | rand();
+}
 
 /*
  * The function handler to print the Realm logged buffer,
@@ -151,7 +157,8 @@ static test_result_t host_mmap_realm_payload(u_register_t realm_payload_adr,
 	return REALM_SUCCESS;
 }
 
-static bool host_enter_realm(u_register_t *exit_reason, unsigned int *test_result)
+static bool host_enter_realm(u_register_t *exit_reason,
+				unsigned int *host_call_result)
 {
 	u_register_t ret;
 
@@ -165,13 +172,13 @@ static bool host_enter_realm(u_register_t *exit_reason, unsigned int *test_resul
 	}
 
 	/* Enter Realm */
-	ret = realm_rec_enter(&realm, exit_reason, test_result);
+	ret = host_realm_rec_enter(&realm, exit_reason, host_call_result);
 	if (ret != REALM_SUCCESS) {
-		ERROR("%s() failed, ret=%lx\n", "realm_rec_enter", ret);
+		ERROR("%s() failed, ret=%lx\n", "host_realm_rec_enter", ret);
 
 		/* Free test resources */
-		if (realm_destroy(&realm) != REALM_SUCCESS) {
-			ERROR("%s() failed\n", "realm_destroy");
+		if (host_realm_destroy(&realm) != REALM_SUCCESS) {
+			ERROR("%s() failed\n", "host_realm_destroy");
 		}
 		realm_payload_created = false;
 		return false;
@@ -181,10 +188,10 @@ static bool host_enter_realm(u_register_t *exit_reason, unsigned int *test_resul
 }
 
 bool host_create_realm_payload(u_register_t realm_payload_adr,
-		u_register_t plat_mem_pool_adr,
-		u_register_t plat_mem_pool_size,
-		u_register_t realm_pages_size,
-		u_register_t feature_flag)
+				u_register_t plat_mem_pool_adr,
+				u_register_t plat_mem_pool_size,
+				u_register_t realm_pages_size,
+				u_register_t feature_flag)
 {
 	if (realm_payload_adr == TFTF_BASE) {
 		ERROR("realm_payload_adr should be grater then TFTF_BASE\n");
@@ -214,8 +221,8 @@ bool host_create_realm_payload(u_register_t realm_payload_adr,
 	}
 
 	/* Read Realm Feature Reg 0 */
-	if (rmi_features(0UL, &realm.rmm_feat_reg0) != REALM_SUCCESS) {
-		ERROR("%s() failed\n", "rmi_features");
+	if (host_rmi_features(0UL, &realm.rmm_feat_reg0) != REALM_SUCCESS) {
+		ERROR("%s() failed\n", "host_rmi_features");
 		goto destroy_realm;
 	}
 
@@ -227,33 +234,33 @@ bool host_create_realm_payload(u_register_t realm_payload_adr,
 	}
 
 	/* Create Realm */
-	if (realm_create(&realm) != REALM_SUCCESS) {
-		ERROR("%s() failed\n", "realm_create");
+	if (host_realm_create(&realm) != REALM_SUCCESS) {
+		ERROR("%s() failed\n", "host_realm_create");
 		goto destroy_realm;
 	}
 
-	if (realm_init_ipa_state(&realm, 0U, 0U, 1ULL << 32)
+	if (host_realm_init_ipa_state(&realm, 0U, 0U, 1ULL << 32)
 		!= RMI_SUCCESS) {
-		ERROR("%s() failed\n", "realm_init_ipa_state");
+		ERROR("%s() failed\n", "host_realm_init_ipa_state");
 		goto destroy_realm;
 	}
 
 	/* RTT map Realm image */
-	if (realm_map_payload_image(&realm, realm_payload_adr) !=
+	if (host_realm_map_payload_image(&realm, realm_payload_adr) !=
 			REALM_SUCCESS) {
-		ERROR("%s() failed\n", "realm_map_payload_image");
+		ERROR("%s() failed\n", "host_realm_map_payload_image");
 		goto destroy_realm;
 	}
 
 	/* Create REC */
-	if (realm_rec_create(&realm) != REALM_SUCCESS) {
-		ERROR("%s() failed\n", "realm_rec_create");
+	if (host_realm_rec_create(&realm) != REALM_SUCCESS) {
+		ERROR("%s() failed\n", "host_realm_rec_create");
 		goto destroy_realm;
 	}
 
 	/* Activate Realm */
-	if (realm_activate(&realm) != REALM_SUCCESS) {
-		ERROR("%s() failed\n", "realm_activate");
+	if (host_realm_activate(&realm) != REALM_SUCCESS) {
+		ERROR("%s() failed\n", "host_realm_activate");
 		goto destroy_realm;
 	}
 
@@ -263,8 +270,8 @@ bool host_create_realm_payload(u_register_t realm_payload_adr,
 
 	/* Free test resources */
 destroy_realm:
-	if (realm_destroy(&realm) != REALM_SUCCESS) {
-		ERROR("%s() failed\n", "realm_destroy");
+	if (host_realm_destroy(&realm) != REALM_SUCCESS) {
+		ERROR("%s() failed\n", "host_realm_destroy");
 	}
 	realm_payload_created = false;
 
@@ -275,9 +282,9 @@ bool host_create_shared_mem(u_register_t ns_shared_mem_adr,
 	u_register_t ns_shared_mem_size)
 {
 	/* RTT map NS shared region */
-	if (realm_map_ns_shared(&realm, ns_shared_mem_adr,
+	if (host_realm_map_ns_shared(&realm, ns_shared_mem_adr,
 				ns_shared_mem_size) != REALM_SUCCESS) {
-		ERROR("%s() failed\n", "realm_map_ns_shared");
+		ERROR("%s() failed\n", "host_realm_map_ns_shared");
 		shared_mem_created = false;
 		return false;
 	}
@@ -301,8 +308,8 @@ bool host_destroy_realm(void)
 	}
 
 	realm_payload_created = false;
-	if (realm_destroy(&realm) != REALM_SUCCESS) {
-		ERROR("%s() failed\n", "realm_destroy");
+	if (host_realm_destroy(&realm) != REALM_SUCCESS) {
+		ERROR("%s() failed\n", "host_realm_destroy");
 		return false;
 	}
 
@@ -312,10 +319,10 @@ bool host_destroy_realm(void)
 bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr)
 {
 	exit_reason = RMI_EXIT_INVALID;
-	test_result = TEST_RESULT_FAIL;
+	host_call_result = TEST_RESULT_FAIL;
 
 	realm_shared_data_set_realm_cmd(cmd);
-	if (!host_enter_realm(&exit_reason, &test_result)) {
+	if (!host_enter_realm(&exit_reason, &host_call_result)) {
 		return false;
 	}
 
@@ -323,26 +330,26 @@ bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr)
 		*realm_ptr = &realm;
 	}
 
-	if (exit_reason <= RMI_EXIT_SERROR) {
-		VERBOSE("%s(%u) RMI_EXIT_%s test_result=%u\n",
-			__func__, cmd, rmi_exit[exit_reason], test_result);
-	} else {
-		VERBOSE("%s(%u) 0x%lx test_result=%u\n",
-			__func__, cmd, exit_reason, test_result);
-	}
-
-	if (((exit_reason == RMI_EXIT_HOST_CALL) ||
-	     (exit_reason == RMI_EXIT_IRQ)) &&
-	     (test_result == TEST_RESULT_SUCCESS)) {
+	if (((exit_reason == RMI_EXIT_IRQ) &&
+	     (cmd == REALM_PMU_INTERRUPT)) ||
+	    ((exit_reason == RMI_EXIT_HOST_CALL) &&
+	     (host_call_result == TEST_RESULT_SUCCESS))) {
 		return true;
 	}
 
+	if (exit_reason <= RMI_EXIT_SERROR) {
+		ERROR("%s(%u) RMI_EXIT_%s host_call_result=%u\n",
+		__func__, cmd, rmi_exit[exit_reason], host_call_result);
+	} else {
+		ERROR("%s(%u) 0x%lx host_call_result=%u\n",
+		__func__, cmd, exit_reason, host_call_result);
+	}
 	return false;
 }
 
 test_result_t host_cmp_result(void)
 {
-	if (rmi_get_cmp_result()) {
+	if (host_rmi_get_cmp_result()) {
 		return TEST_RESULT_SUCCESS;
 	}
 
