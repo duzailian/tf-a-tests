@@ -100,6 +100,7 @@ struct rsi_host_call {
 
 
 #define RSI_ABI_VERSION		SMC_RSI_FID(0U)
+
 /*
  * arg0 == struct rsi_realm_config address
  */
