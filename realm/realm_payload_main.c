@@ -12,17 +12,18 @@
 #include <host_shared_data.h>
 #include "realm_def.h"
 #include <realm_rsi.h>
+#include <realm_tests.h>
 #include <tftf_lib.h>
 
 /*
- * This function reads sleep time in ms from shared buffer and spins PE in a loop
- * for that time period.
+ * This function reads sleep time in ms from shared buffer and spins PE
+ * in a loop for that time period.
  */
 static void realm_sleep_cmd(void)
 {
 	uint64_t sleep = realm_shared_data_get_host_val(HOST_SLEEP_INDEX);
 
-	realm_printf("REALM_PAYLOAD: Realm payload going to sleep for %llums\n", sleep);
+	realm_printf("Realm: going to sleep for %llums\n", sleep);
 	waitms(sleep);
 }
 
@@ -79,10 +80,10 @@ void realm_payload_main(void)
 			test_succeed = test_pmuv3_event_works_realm();
 			break;
 		case REALM_PMU_PRESERVE:
-			test_succeed = test_pmuv3_el3_preserves();
+			test_succeed = test_pmuv3_rmm_preserves();
 			break;
 		case REALM_PMU_INTERRUPT:
-			test_pmuv3_overflow_interrupt();
+			test_succeed = test_pmuv3_overflow_interrupt();
 			break;
 		default:
 			realm_printf("%s() invalid cmd %u\n", __func__, cmd);
