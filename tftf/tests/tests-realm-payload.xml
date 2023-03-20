@@ -24,8 +24,8 @@
 	  function="realm_pmuv3_cycle_works" />
 	  <testcase name="PMUv3 event counter functional in Realm"
 	  function="realm_pmuv3_event_works" />
-	  <testcase name="PMUv3 SMC counter preservation"
-	  function="realm_pmuv3_el3_preserves" />
+	  <testcase name="PMUv3 RSI SMC counter preservation"
+	  function="realm_pmuv3_rmm_preserves" />
 	  <testcase name="PMUv3 overflow interrupt"
 	  function="realm_pmuv3_overflow_interrupt" />
   </testsuite>
