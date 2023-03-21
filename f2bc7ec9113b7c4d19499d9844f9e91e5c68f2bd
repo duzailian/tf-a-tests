@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6b14d45_7143ac49",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_helper.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-21T11:46:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "95c8ba8e_2c3a8998",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 41
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e9af991_8b991ab1",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-03-17T12:26:55Z",
       "side": 1,
       "message": "these are not needed for Realm payload.",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 59
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "903f697c_1fcf33c7",
+        "filename": "plat/arm/fvp/platform.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-21T11:46:54Z",
+      "side": 1,
+      "message": "These definitions are needed, otherwise:\nplat/arm/fvp/include/../fvp_def.h:20:2: error: #error \"FVP_CLUSTER_COUNT is not set in makefile\"\n   20 | #error \"FVP_CLUSTER_COUNT is not set in makefile\"\n      |  ^~~~~\nplat/arm/fvp/include/../fvp_def.h:24:2: error: #error \"FVP_MAX_CPUS_PER_CLUSTER is not set in makefile\"\n   24 | #error \"FVP_MAX_CPUS_PER_CLUSTER is not set in makefile\"",
+      "parentUuid": "9e9af991_8b991ab1",
       "range": {
         "startLine": 87,
         "startChar": 0,
