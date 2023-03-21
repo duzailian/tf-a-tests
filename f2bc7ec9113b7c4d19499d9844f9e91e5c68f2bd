@@ -417,6 +417,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "493b4c3c_33147fe7",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-21T15:49:30Z",
+      "side": 1,
+      "message": "Will set \u0026 check exp_exit_reason based on cmd.",
+      "parentUuid": "90d35ee6_bc41acac",
+      "range": {
+        "startLine": 335,
+        "startChar": 22,
+        "endLine": 335,
+        "endChar": 34
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4234586b_39b2d0ee",
