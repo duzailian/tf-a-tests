@@ -559,6 +559,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5451600_7f7aba1d",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-22T11:21:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9cf6729_6a0ed632",
+      "range": {
+        "startLine": 1116,
+        "startChar": 5,
+        "endLine": 1116,
+        "endChar": 17
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "101e540d_c6ac1e56",
@@ -572,6 +596,30 @@
       "writtenOn": "2023-03-17T12:26:55Z",
       "side": 1,
       "message": "This need not be set for RMI_EXIT_IRQ.",
+      "range": {
+        "startLine": 1121,
+        "startChar": 3,
+        "endLine": 1121,
+        "endChar": 38
+      },
+      "revId": "f2bc7ec9113b7c4d19499d9844f9e91e5c68f2bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f33acb1_1dcd7cb8",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 1121,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-22T11:21:01Z",
+      "side": 1,
+      "message": "Then this check in host_enter_realm_execute():\n\texp_reason \u003d (cmd \u003d\u003d REALM_PMU_INTERRUPT) ?\n\t\t\tRMI_EXIT_IRQ : RMI_EXIT_HOST_CALL;\n\n\tif ((exit_reason !\u003d exp_reason) ||\n\t    (host_call_result !\u003d TEST_RESULT_SUCCESS)) {\n\t\treturn false;\n\t}\n\nfor RMI_EXIT_IRQ must be skipped.",
+      "parentUuid": "101e540d_c6ac1e56",
       "range": {
         "startLine": 1121,
         "startChar": 3,
