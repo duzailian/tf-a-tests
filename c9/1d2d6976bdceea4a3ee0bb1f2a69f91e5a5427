@@ -1,0 +1,10 @@
+Allow-CI+2: Boyan Karatotev <boyan.karatotev@arm.com>
+Verified+1: Boyan Karatotev <boyan.karatotev@arm.com>
+Maintainer-Review+1: Alexei Fedorov <Alexei.Fedorov@arm.com>
+Code-Review+1: jayanthchidanand-arm <jayanthdodderi.chidanand@arm.com>
+Code-Owner-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Wed, 22 Mar 2023 10:35:59 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/19963
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
