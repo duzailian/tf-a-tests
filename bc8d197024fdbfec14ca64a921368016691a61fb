@@ -3,6 +3,86 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f3e0cf84_90455736",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "minor comments",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99b5ee09_c9a1b17e",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "This is not defined anywhere. Can be removed.",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0661f956_54de7f95",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "This can be removed as it doesn\u0027t seem to be defined/used.",
+      "range": {
+        "startLine": 502,
+        "startChar": 14,
+        "endLine": 502,
+        "endChar": 30
+      },
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0546ef3f_7327f7a7",
+        "filename": "realm/include/platform.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "realm_platform.h is better name ?",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 8,
+        "endChar": 18
+      },
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ab3fe7da_c75f952c",
         "filename": "realm/realm.mk",
         "patchSetId": 6
@@ -14,6 +94,269 @@
       "writtenOn": "2023-03-24T11:04:49Z",
       "side": 1,
       "message": "Not needed, will be removed.",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff827bd0_68d9fa7a",
+        "filename": "realm/realm.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "Is this AUTOGEN needed ?",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 17
+      },
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29a75343_5754ba86",
+        "filename": "realm/realm.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "would like to avoid linking with platform layer of TFTF. Is this needed ?",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 22
+      },
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4f7a81b_623460dd",
+        "filename": "realm/realm_interrupt.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "else panic () ?",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2cab394_a629306a",
+        "filename": "realm/realm_pmuv3.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "write a small helper/macro for this.",
+      "range": {
+        "startLine": 173,
+        "startChar": 6,
+        "endLine": 173,
+        "endChar": 61
+      },
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ef27a9b_ad202d45",
+        "filename": "realm/realm_pmuv3.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "RMM",
+      "range": {
+        "startLine": 201,
+        "startChar": 29,
+        "endLine": 201,
+        "endChar": 33
+      },
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9f5bf7a_6e314b95",
+        "filename": "realm/realm_pmuv3.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "use macro or helper.",
+      "range": {
+        "startLine": 213,
+        "startChar": 16,
+        "endLine": 213,
+        "endChar": 71
+      },
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe72c0cb_9bc0c30e",
+        "filename": "realm/realm_pmuv3.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "Add a comment here saying that \"Interrupt handler will clear the intenset reg as part of handling the overflow interrupt\".",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fede2b7d_f81bfeae",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "Write a small description of the functionality of this function.",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36b34cd9_46278511",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "host_handle_realm_irq_exit() as function name.",
+      "range": {
+        "startLine": 78,
+        "startChar": 12,
+        "endLine": 78,
+        "endChar": 33
+      },
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6872843a_0b65756f",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "write  a small description of what this function does.",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fe5a7a1_4206841f",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "Gave a comment on earlier patch set to prefix these with host_ and edit the xml files as well.",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cdea5ff0_f5e74fdb",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "write a small description of test. Same comment for below functions.",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "316a66f1_6d006715",
+        "filename": "tftf/tests/tests-realm-payload.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-24T11:05:50Z",
+      "side": 1,
+      "message": "this is specific to realm payload. Does host need this ? Some shared declarations perhaps ?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 16
+      },
       "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
