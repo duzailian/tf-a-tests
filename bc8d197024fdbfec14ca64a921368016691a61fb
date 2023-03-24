@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab3fe7da_c75f952c",
+        "filename": "realm/realm.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-24T11:04:49Z",
+      "side": 1,
+      "message": "Not needed, will be removed.",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
