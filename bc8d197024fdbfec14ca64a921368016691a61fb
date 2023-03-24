@@ -58,6 +58,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a573e4fb_3edd52b0",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-24T11:13:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99b5ee09_c9a1b17e",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0661f956_54de7f95",
@@ -81,6 +99,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50826b44_c7aca5e9",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-24T11:13:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0661f956_54de7f95",
+      "range": {
+        "startLine": 502,
+        "startChar": 14,
+        "endLine": 502,
+        "endChar": 30
+      },
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0546ef3f_7327f7a7",
@@ -94,6 +136,30 @@
       "writtenOn": "2023-03-24T11:05:50Z",
       "side": 1,
       "message": "realm_platform.h is better name ?",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 8,
+        "endChar": 18
+      },
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d51bef0_b9f955bb",
+        "filename": "realm/include/platform.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-24T11:13:06Z",
+      "side": 1,
+      "message": "tried to rename already, this gives error:\ntftf/framework/aarch64/exception_report.c:12:10: fatal error: platform.h: No such file or directory\n   12 | #include \u003cplatform.h\u003e\n      |          ^~~~~~~~~~~~",
+      "parentUuid": "0546ef3f_7327f7a7",
       "range": {
         "startLine": 8,
         "startChar": 8,
