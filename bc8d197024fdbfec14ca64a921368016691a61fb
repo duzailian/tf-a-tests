@@ -236,6 +236,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6d06419f_af131526",
+        "filename": "realm/realm.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-24T12:23:13Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "ff827bd0_68d9fa7a",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 17
+      },
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "29a75343_5754ba86",
         "filename": "realm/realm.mk",
         "patchSetId": 6
@@ -247,6 +271,30 @@
       "writtenOn": "2023-03-24T11:05:50Z",
       "side": 1,
       "message": "would like to avoid linking with platform layer of TFTF. Is this needed ?",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 22
+      },
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b13c25db_c8a38fa2",
+        "filename": "realm/realm.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-24T12:23:13Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "29a75343_5754ba86",
       "range": {
         "startLine": 26,
         "startChar": 0,
@@ -485,6 +533,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c1b7faa_30f1591f",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-24T12:23:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fede2b7d_f81bfeae",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "36b34cd9_46278511",
@@ -498,6 +564,30 @@
       "writtenOn": "2023-03-24T11:05:50Z",
       "side": 1,
       "message": "host_handle_realm_irq_exit() as function name.",
+      "range": {
+        "startLine": 78,
+        "startChar": 12,
+        "endLine": 78,
+        "endChar": 33
+      },
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "141682ac_29df7b81",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-24T12:23:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36b34cd9_46278511",
       "range": {
         "startLine": 78,
         "startChar": 12,
@@ -542,6 +632,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "425db9ab_adb30fe9",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-24T12:23:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fe5a7a1_4206841f",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cdea5ff0_f5e74fdb",
@@ -555,6 +663,24 @@
       "writtenOn": "2023-03-24T11:05:50Z",
       "side": 1,
       "message": "write a small description of test. Same comment for below functions.",
+      "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "027ebbd0_3dcfecfb",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-03-24T12:23:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cdea5ff0_f5e74fdb",
       "revId": "bc8d197024fdbfec14ca64a921368016691a61fb",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
