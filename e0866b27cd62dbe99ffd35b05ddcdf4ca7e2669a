@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d8c00623_2545e2b7",
+        "filename": "lib/extensions/sme/aarch64/sme2.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-03-27T21:37:09Z",
+      "side": 1,
+      "message": "SME2 is an extended version of SME. If SME2 is present in the hardware, which is checked above at line 40. \nIf it passes, SME is present in hardware. So this check is not needed at all, as it will never get executed(Failure scenario)\nWe could just enable the SME functionality.\n\nThanks for highlighting this.",
+      "parentUuid": "635f66fd_4546a669",
+      "range": {
+        "startLine": 48,
+        "startChar": 5,
+        "endLine": 48,
+        "endChar": 15
+      },
+      "revId": "e0866b27cd62dbe99ffd35b05ddcdf4ca7e2669a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "04dd63f9_b5682713",
         "filename": "lib/extensions/sme/aarch64/sme2_helpers.S",
         "patchSetId": 4
