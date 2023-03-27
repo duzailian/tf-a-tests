@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfd586e1_b864e194",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-03-27T23:07:01Z",
+      "side": 1,
+      "message": "Passed here : [ http://ci.trustedfirmware.org/job/tf-a-tftf-gerrit-tforg-l2/165/ ]",
+      "revId": "7193cb7254e4ebec626465015fac160b0dbda6be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
