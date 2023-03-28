@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7e5ef35_82205eb2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-03-28T12:53:33Z",
+      "side": 1,
+      "message": "Hi team,\nKindly review these patches related to SME and SME2 features.\nI have introduced these simple tests to ensure the SME and SME2 instructions \nare allowed at lower ELs without being trapped.\n\nThanks!",
+      "revId": "581d1558b3890af32a75c577c1ee3d3314e01660",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
