@@ -33,6 +33,40 @@
       "message": "Hi team,\nKindly review these patches related to SME and SME2 features.\nI have introduced these simple tests to ensure the SME and SME2 instructions \nare allowed at lower ELs without being trapped.\n\nThanks!",
       "revId": "7193cb7254e4ebec626465015fac160b0dbda6be",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ed41bb3_20c87963",
+        "filename": "lib/extensions/sme/aarch64/sme.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2023-03-29T10:28:45Z",
+      "side": 1,
+      "message": "there\u0027s an arch_features.h, like in TF-A. Why not there?",
+      "revId": "7193cb7254e4ebec626465015fac160b0dbda6be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24aab2da_81c5a9e0",
+        "filename": "lib/extensions/sme/aarch64/sme.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2023-03-29T10:28:45Z",
+      "side": 1,
+      "message": "if the test is skipped if sme isn\u0027t present, is this needed? Or is it just the pattern in tftf?",
+      "revId": "7193cb7254e4ebec626465015fac160b0dbda6be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
