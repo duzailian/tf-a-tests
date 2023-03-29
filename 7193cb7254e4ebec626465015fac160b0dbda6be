@@ -52,6 +52,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ea59ab3_c6760c17",
+        "filename": "lib/extensions/sme/aarch64/sme.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-03-29T10:58:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9ed41bb3_20c87963",
+      "revId": "7193cb7254e4ebec626465015fac160b0dbda6be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "24aab2da_81c5a9e0",
@@ -65,6 +83,24 @@
       "writtenOn": "2023-03-29T10:28:45Z",
       "side": 1,
       "message": "if the test is skipped if sme isn\u0027t present, is this needed? Or is it just the pattern in tftf?",
+      "revId": "7193cb7254e4ebec626465015fac160b0dbda6be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "711b2b86_35403df9",
+        "filename": "lib/extensions/sme/aarch64/sme.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-03-29T10:58:26Z",
+      "side": 1,
+      "message": "You are right. Actually, I did introduce the macro, so this could be refactored.\nGood observation.\nThanks!",
+      "parentUuid": "24aab2da_81c5a9e0",
       "revId": "7193cb7254e4ebec626465015fac160b0dbda6be",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
