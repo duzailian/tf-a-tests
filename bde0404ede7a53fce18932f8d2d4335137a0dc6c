@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "075ba1ad_a709f9bb",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_helper.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T08:57:00Z",
+      "side": 1,
+      "message": "prefer to add this in .C file if there is no direct dependency for this header.",
+      "revId": "bde0404ede7a53fce18932f8d2d4335137a0dc6c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b43652a_91c34e6b",
+        "filename": "tftf/tests/tests-invalid-access.mk",
+        "patchSetId": 13
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T08:57:00Z",
+      "side": 1,
+      "message": "we should be able to avoid this here.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 16
+      },
+      "revId": "bde0404ede7a53fce18932f8d2d4335137a0dc6c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b823ed60_4b023064",
+        "filename": "tftf/tests/tests-realm-payload.mk",
+        "patchSetId": 13
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T08:57:00Z",
+      "side": 1,
+      "message": "can we avoid this as well ?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 16
+      },
+      "revId": "bde0404ede7a53fce18932f8d2d4335137a0dc6c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
