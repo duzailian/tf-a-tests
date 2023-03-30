@@ -22,6 +22,30 @@
       },
       "revId": "4250e89ce866520a211e8da8bf86678543789f4a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "813851bd_c789c375",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T14:05:55Z",
+      "side": 1,
+      "message": "\u003e Besides, do you have any examples of AArch32 test cases to skip in AArch64 runs that justify creating \u0027aarch64_tests_to_skip.txt\u0027?\n\nNo actually, we just did it for symmetry. We can remove it I guess if we dont need to have this symmeetry\n\n\u003e IMO, SKIP_TEST_IF_AARCH32 should be removed as part of the patch, and necessary test cases should be added to the AArch32 skip list.\n\nYes, eventually. For now, new tests can use this mechanism. The old tests can be refactored later on as there might some makefile changes in tests also needed for this to work well eg : https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/20024/14/tftf/tests/tests-standard.mk#29",
+      "parentUuid": "b2a81832_5ff59eb1",
+      "range": {
+        "startLine": 512,
+        "startChar": 0,
+        "endLine": 517,
+        "endChar": 0
+      },
+      "revId": "4250e89ce866520a211e8da8bf86678543789f4a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
