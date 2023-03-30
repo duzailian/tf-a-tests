@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30329497_2f1b60ee",
+        "filename": "tftf/tests/tests-invalid-access.mk",
+        "patchSetId": 14
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T10:01:38Z",
+      "side": 1,
+      "message": "nit: no need for this change.\n\ncan remove the white space as well at line 10.",
+      "range": {
+        "startLine": 2,
+        "startChar": 20,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "95e43b6b1e07b88a67b97b498e03580d804aac87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
