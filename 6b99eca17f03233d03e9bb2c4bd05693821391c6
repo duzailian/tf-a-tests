@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11ec9737_12528355",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 1149,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T12:24:02Z",
+      "side": 1,
+      "message": "hmm, I dont think we should do this. See the host_realm_handle_irq_exit() implementation.",
+      "range": {
+        "startLine": 1145,
+        "startChar": 3,
+        "endLine": 1149,
+        "endChar": 3
+      },
+      "revId": "6b99eca17f03233d03e9bb2c4bd05693821391c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6257188_cd8d8df5",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T12:24:02Z",
+      "side": 1,
+      "message": "hmm, I see why youneed to re-enter the rec from the othe function. The logic can be simplified by doing:\n\n\n\n *\n * 6. The interrupt is trapped to BL31/SPMD as FIQ and later synchronously\n *    delivered to SPM.\n *\n * 7. SPM injects a virtual IRQ to first Cactus Secure Partition.\n *\n * 8. Once the SP has handled the interrupt, it returns execution back to normal\n *    world using FFA_MSG_WAIT call.\n *\n * 9. TFTF parses REC\u0027s exit reason and confirms that reason was FIQ\n *\n *\n * 10. TFTF disables the trusted watchdog   interrupt through a direct message request \n *     command.\n *\n * 11. TFTF sends a direct request message to SP to query the ID of last serviced\n *     secure virtual interrupt. TFTF expects SP to return the ID of Trusted Watchdog timer\n *     interrupt as the response/\n *\n * 12. TFTF then proceed to destroy the Realm.\n *\n * 13. Test finishes successfully once the",
+      "revId": "6b99eca17f03233d03e9bb2c4bd05693821391c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
