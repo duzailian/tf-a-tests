@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2a81832_5ff59eb1",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-03-30T13:33:59Z",
+      "side": 1,
+      "message": "It\u0027s a deal-breaker. The need for it has been long-standing 😊.\n\nI think, this change replaces the macro below -\n\n #ifndef __aarch64__\n #define SKIP_TEST_IF_AARCH32()                                                  \\\n         do {                                                                    \\\n                 tftf_testcase_printf(\"Test not supported on aarch32\\n\");        \\\n                 return TEST_RESULT_SKIPPED;                                     \\\n         } while (0)\n #else\n #define SKIP_TEST_IF_AARCH32()\n #endif\n\nRealm test cases do not use this macro, but rather this implementation skips their execution in AArch32 runs. However, I believe this implementation can be used to skip all AArch64 tests in AArch32 runs. \nIMO, SKIP_TEST_IF_AARCH32 should be removed as part of the patch, and necessary test cases should be added to the AArch32 skip list.\n\nBesides, do you have any examples of AArch32 test cases to skip in AArch64 runs that justify creating \u0027aarch64_tests_to_skip.txt\u0027?",
+      "range": {
+        "startLine": 512,
+        "startChar": 0,
+        "endLine": 517,
+        "endChar": 0
+      },
+      "revId": "4250e89ce866520a211e8da8bf86678543789f4a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
