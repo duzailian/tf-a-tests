@@ -1,0 +1,187 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f274b6d_f5a4706a",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 27
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T13:41:33Z",
+      "side": 1,
+      "message": "We can a single definition , we dont need to use the __int128 type for aarch64",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 5
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec5987c2_d1383771",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 27
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T13:41:33Z",
+      "side": 1,
+      "message": "This can be done in C.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 58
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d914867e_dc1f31f9",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 27
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T13:41:33Z",
+      "side": 1,
+      "message": "hmm, we can just have a copy of the fpu state in memory and do a mem compare. Using template will scale for all regs (like the FPCR and FPSR).",
+      "range": {
+        "startLine": 53,
+        "startChar": 5,
+        "endLine": 53,
+        "endChar": 31
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbef4092_4fa5464b",
+        "filename": "spm/cactus/cactus_tests/cactus_test_cpu_features.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T13:41:33Z",
+      "side": 1,
+      "message": "Would prefer to SP is a separate patch.",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21e40ec2_4a48d871",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T13:41:33Z",
+      "side": 1,
+      "message": "this may not be needed after your change to skip aarch32.",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8dc79574_d1cb0bcd",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T13:41:33Z",
+      "side": 1,
+      "message": "this value can be random.",
+      "range": {
+        "startLine": 17,
+        "startChar": 24,
+        "endLine": 17,
+        "endChar": 29
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d3c1687_7b84dcef",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T13:41:33Z",
+      "side": 1,
+      "message": "\"test_rl_sec_fp_cmd\"",
+      "range": {
+        "startLine": 24,
+        "startChar": 13,
+        "endLine": 24,
+        "endChar": 28
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af2351e1_da211cba",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T13:41:33Z",
+      "side": 1,
+      "message": "can be removed.",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3485817b_7fa1e3c4",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-30T13:41:33Z",
+      "side": 1,
+      "message": "would avoid doing changes to SPM tests",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
