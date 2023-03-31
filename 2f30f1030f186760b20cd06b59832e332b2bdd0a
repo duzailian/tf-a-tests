@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af7fbf29_22571e5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-03-31T11:12:01Z",
+      "side": 1,
+      "message": "CI failure not due to this patch (FWU build fails for TF-A).",
+      "revId": "2f30f1030f186760b20cd06b59832e332b2bdd0a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
