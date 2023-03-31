@@ -56,6 +56,47 @@
       },
       "revId": "95e43b6b1e07b88a67b97b498e03580d804aac87",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abd61de2_f27a750a",
+        "filename": "tftf/tests/tests-invalid-access.mk",
+        "patchSetId": 14
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-03-31T09:08:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30329497_2f1b60ee",
+      "range": {
+        "startLine": 2,
+        "startChar": 20,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "95e43b6b1e07b88a67b97b498e03580d804aac87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "554a24b6_2fe2931b",
+        "filename": "tftf/tests/tests-standard.mk",
+        "patchSetId": 14
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-03-31T09:08:05Z",
+      "side": 1,
+      "message": "we need check here to avoid compilation of payload for aarch32",
+      "revId": "95e43b6b1e07b88a67b97b498e03580d804aac87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
