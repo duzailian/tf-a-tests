@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89856660_809d2323",
+        "filename": "tools/generate_json/generate_json.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-04T19:20:42Z",
+      "side": 1,
+      "message": "I think we should use tabs for indentation rather than spaces.",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 4
+      },
+      "revId": "f04494dd390afc442450379d441bda35eabf9083",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
