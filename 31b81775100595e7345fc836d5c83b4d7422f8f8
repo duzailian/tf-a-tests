@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1aa4b97e_33bbea74",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-04-04T16:11:16Z",
+      "side": 1,
+      "message": "CI+2 run was affected by some unrelated issue in TF-A (BL31 ram footprint issue).\nAnother round of SPM tests run was done here:\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/33993/",
+      "revId": "31b81775100595e7345fc836d5c83b4d7422f8f8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
