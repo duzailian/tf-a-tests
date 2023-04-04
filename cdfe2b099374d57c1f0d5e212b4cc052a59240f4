@@ -72,6 +72,80 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4c47da4a_1bcb66e5",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-04T15:18:08Z",
+      "side": 1,
+      "message": "This function is not used. can be removed?",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1cdd875_aefe6bc2",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-04T15:18:08Z",
+      "side": 1,
+      "message": "hmm, is there any specific reason on why the whole state has to be returned back to the caller?\n\nInstead the caller to this function can provide in an empty \u0027fpu_reg_state_t\u0027 and this function can fill in that state with random values and write to h/w FPU state.",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8d09a33_59cf4e82",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-04T15:18:08Z",
+      "side": 1,
+      "message": "Can this function be renamed to write_fpu_state_registers()?\nso that it matches the counterpart read_fpu_state_registers()",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e429b27f_e8860f41",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-04T15:18:08Z",
+      "side": 1,
+      "message": "can this arg name be changed to fpu_template_in? the name collides with global variable \u0027fpu_template\u0027.",
+      "range": {
+        "startLine": 47,
+        "startChar": 49,
+        "endLine": 47,
+        "endChar": 61
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bbef4092_4fa5464b",
         "filename": "spm/cactus/cactus_tests/cactus_test_cpu_features.c",
         "patchSetId": 27
@@ -163,6 +237,75 @@
       "writtenOn": "2023-03-30T13:41:33Z",
       "side": 1,
       "message": "can be removed.",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f067270_fa146cec",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-04T15:18:08Z",
+      "side": 1,
+      "message": "This function name is misleading to be concurrent, instead this could be like:\nfpu_access_in_rl_ns_se",
+      "range": {
+        "startLine": 275,
+        "startChar": 14,
+        "endLine": 275,
+        "endChar": 40
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01db2150_7dd667a0",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-04T15:18:08Z",
+      "side": 1,
+      "message": "This has to be\nfpu_temp_ns \u003d fpu_state_write_template(SIMD_NS_VALUE);\n\nIn the below loop if the first command is CMD_SIMD_NS_CMP, then comparison will fail as the \u0027fpu_temp_ns\u0027 state is empty.",
+      "range": {
+        "startLine": 290,
+        "startChar": 1,
+        "endLine": 290,
+        "endChar": 41
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1830e23c_ce10c5a5",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-04T15:18:08Z",
+      "side": 1,
+      "message": "This has to be REALM_REQ_FPU_CMP_CMD",
+      "range": {
+        "startLine": 339,
+        "startChar": 33,
+        "endLine": 339,
+        "endChar": 55
+      },
       "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
