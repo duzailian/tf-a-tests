@@ -1,0 +1,210 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4bff0174_4a995a7a",
+        "filename": "include/lib/extensions/sve.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-05T13:59:14Z",
+      "side": 1,
+      "message": "hmm, why an union is required here (that contains only one struct)? these doesn\u0027t share any memory, like the one shared in line #85-86",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 0
+      },
+      "revId": "1ec3e9e84070ecced42af1c05533752215c46622",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c3ae299_baeb7525",
+        "filename": "include/lib/extensions/sve.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-05T13:59:14Z",
+      "side": 1,
+      "message": "This is a local function, can be made static and removed from here?",
+      "range": {
+        "startLine": 145,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 41
+      },
+      "revId": "1ec3e9e84070ecced42af1c05533752215c46622",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69852e41_00c96273",
+        "filename": "lib/extensions/sve/sve.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-05T13:59:14Z",
+      "side": 1,
+      "message": "can you add prefix g_ to these globals?\nThere are function which takes in arguments that are called as sve_template, sve_read in line #131, #75 and this collides with this name.",
+      "revId": "1ec3e9e84070ecced42af1c05533752215c46622",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2214a4d4_0d93e922",
+        "filename": "lib/extensions/sve/sve.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-05T13:59:14Z",
+      "side": 1,
+      "message": "static",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 18
+      },
+      "revId": "1ec3e9e84070ecced42af1c05533752215c46622",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3e87a38_2533eff4",
+        "filename": "lib/extensions/sve/sve.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-05T13:59:14Z",
+      "side": 1,
+      "message": "These are \u0027vl\u0027 values and not zcr_el registers. so this can be changed to\n\u0027uint8_t sve_vl\u0027",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 20
+      },
+      "revId": "1ec3e9e84070ecced42af1c05533752215c46622",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7815b65e_eee8161f",
+        "filename": "lib/extensions/sve/sve.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-05T13:59:14Z",
+      "side": 1,
+      "message": "The \u0027vl\u0027 is directly assigned to 64bit ZCR_ELx registers, this might work as the ZCR.LEN bits are lower 4 bits in the register, but it is good to convert \u0027vl\u0027 to ZCR_ELx register and assign.",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 24
+      },
+      "revId": "1ec3e9e84070ecced42af1c05533752215c46622",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b79c0481_a3279052",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 24
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-05T13:59:14Z",
+      "side": 1,
+      "message": "hmm, this can be removed I guess, SME flags can enabled once realms support SME.",
+      "range": {
+        "startLine": 74,
+        "startChar": 3,
+        "endLine": 74,
+        "endChar": 43
+      },
+      "revId": "1ec3e9e84070ecced42af1c05533752215c46622",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71495524_8e21b73d",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-05T13:59:14Z",
+      "side": 1,
+      "message": "I\u0027m not sure how this was tested by Nabil, as with upstream RMM, access to SVE registers will result in trap. or it could be that there was a local patch added to RMM to allow access to SVE registers by realms.\n\n\nWith SVE support for Realms, this might not work as SVE was not enabled in the RMI feature register during realm creation.\n\nInitially we can review and merge\ntest(tftf): test FPU state registers context is preserved in RL/SE/NS -  https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/17223\n\nAnd this patch can be merged after SVE support for Realms patchset is merged.",
+      "revId": "1ec3e9e84070ecced42af1c05533752215c46622",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bea30db4_111ef107",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-05T13:59:14Z",
+      "side": 1,
+      "message": "These arguments are not used. This has to be void?",
+      "revId": "1ec3e9e84070ecced42af1c05533752215c46622",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6651c036_856540e5",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-05T13:59:14Z",
+      "side": 1,
+      "message": "This test must be skipped if FEAT_SVE is not present/supported.",
+      "revId": "1ec3e9e84070ecced42af1c05533752215c46622",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
