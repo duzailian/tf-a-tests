@@ -85,6 +85,15 @@ void realm_payload_main(void)
 		case REALM_PMU_INTERRUPT:
 			test_succeed = test_pmuv3_overflow_interrupt();
 			break;
+		case REALM_SVE_RDVL:
+			test_succeed = test_realm_sve_rdvl();
+			break;
+		case REALM_SVE_ID_REGISTERS:
+			test_succeed = test_realm_sve_read_id_registers();
+			break;
+		case REALM_SVE_PROBE_VL:
+			test_succeed = test_realm_sve_probe_vl();
+			break;
 		default:
 			realm_printf("%s() invalid cmd %u\n", __func__, cmd);
 			break;
