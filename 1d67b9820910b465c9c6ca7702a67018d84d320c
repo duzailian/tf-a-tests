@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bffba23_6930760a",
+        "filename": "include/runtime_services/errata_abi.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e3b8981a_6cf2b19f",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f51d80b_4ceb48c5",
@@ -70,6 +94,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "49b3ed22_c15fe4fd",
+        "filename": "include/runtime_services/errata_abi.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8f51d80b_4ceb48c5",
+      "range": {
+        "startLine": 37,
+        "startChar": 19,
+        "endLine": 37,
+        "endChar": 21
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2b12424_c5b8055f",
+        "filename": "include/runtime_services/errata_abi.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack, I added two macros, one for the abi calls and one for errata count. I thought I could use just one macro and use it for both.",
+      "parentUuid": "e6aa4dfb_2e25e507",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 18
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "99b070cc_d9b3f19f",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-04-05T16:38:24Z",
       "side": 1,
       "message": "use spaces rather than tabs. same for next two member field declarations",
+      "range": {
+        "startLine": 40,
+        "startChar": 9,
+        "endLine": 40,
+        "endChar": 10
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10c368ab_4a23d4f7",
+        "filename": "include/runtime_services/errata_abi.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "99b070cc_d9b3f19f",
       "range": {
         "startLine": 40,
         "startChar": 9,
@@ -110,6 +206,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9db71f71_48c844a1",
+        "filename": "lib/errata_abi/errata_abi.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f8769b93_a9fc4013",
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b07d8be_cf01b2af",
@@ -123,6 +237,30 @@
       "writtenOn": "2023-04-05T16:38:24Z",
       "side": 1,
       "message": "can this be removed",
+      "range": {
+        "startLine": 259,
+        "startChar": 1,
+        "endLine": 259,
+        "endChar": 44
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c01c7f50_2a9fcf2e",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1b07d8be_cf01b2af",
       "range": {
         "startLine": 259,
         "startChar": 1,
@@ -156,6 +294,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9122acb_77525420",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ab9e9d5b_d2e23819",
+      "range": {
+        "startLine": 278,
+        "startChar": 0,
+        "endLine": 284,
+        "endChar": 19
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "03d9bb2a_789d3ab2",
@@ -169,6 +331,30 @@
       "writtenOn": "2023-04-05T16:38:24Z",
       "side": 1,
       "message": "this looks a bit awkward. Perhaps, you can use a trick from TF-A\nhttps://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/include/arch/aarch64/arch_helpers.h#n688",
+      "range": {
+        "startLine": 297,
+        "startChar": 0,
+        "endLine": 301,
+        "endChar": 7
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83065081_0dc20fd5",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack, I have added a similar macro to read midr in aarch64",
+      "parentUuid": "03d9bb2a_789d3ab2",
       "range": {
         "startLine": 297,
         "startChar": 0,
@@ -202,6 +388,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a96d432b_1fb2bc6b",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7284ec8e_1d4e7eb2",
+      "range": {
+        "startLine": 302,
+        "startChar": 30,
+        "endLine": 303,
+        "endChar": 53
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "780fd3a8_afe2fa28",
@@ -215,6 +425,30 @@
       "writtenOn": "2023-04-05T16:38:24Z",
       "side": 1,
       "message": "return TEST_RESULT_SKIPPED;",
+      "range": {
+        "startLine": 310,
+        "startChar": 0,
+        "endLine": 311,
+        "endChar": 20
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45e865f3_c7b6a97d",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "780fd3a8_afe2fa28",
       "range": {
         "startLine": 310,
         "startChar": 0,
@@ -248,6 +482,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ab9b6d4_4ba0fcc6",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b94587c2_a47da7f7",
+      "range": {
+        "startLine": 322,
+        "startChar": 2,
+        "endLine": 322,
+        "endChar": 6
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c8625855_f61d3d4a",
@@ -265,6 +523,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cfb900d_0c838766",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack, yeah we can return directly from here. No need to run through the rest of the logic in MIDR did not match.",
+      "parentUuid": "c8625855_f61d3d4a",
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7a88904e_a836b639",
@@ -278,6 +554,30 @@
       "writtenOn": "2023-04-05T16:38:24Z",
       "side": 1,
       "message": "is this needed",
+      "range": {
+        "startLine": 485,
+        "startChar": 4,
+        "endLine": 485,
+        "endChar": 10
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8db73f8_edad7e67",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack, no not sure why I added that there. It makes no sense.",
+      "parentUuid": "7a88904e_a836b639",
       "range": {
         "startLine": 485,
         "startChar": 4,
@@ -311,6 +611,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a4e170e_71754183",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2fec7b76_1e75202c",
+      "range": {
+        "startLine": 497,
+        "startChar": 3,
+        "endLine": 497,
+        "endChar": 7
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e904145_ddf0fd18",
@@ -334,6 +658,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2186a510_59b95d53",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack, removing this statement won\u0027t let me see the return values or the errata values that I am testing for each cpu. Would it not be required incase the test failed and we want to check the return values or why the test failed?",
+      "parentUuid": "3e904145_ddf0fd18",
+      "range": {
+        "startLine": 502,
+        "startChar": 2,
+        "endLine": 503,
+        "endChar": 54
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f28c5eb9_2b8b7da8",
@@ -347,6 +695,30 @@
       "writtenOn": "2023-04-05T16:38:24Z",
       "side": 1,
       "message": "please update this description",
+      "range": {
+        "startLine": 11,
+        "startChar": 1,
+        "endLine": 13,
+        "endChar": 32
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cbe12ea_28aa1578",
+        "filename": "tftf/tests/tests-errata_abi.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-05T21:12:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f28c5eb9_2b8b7da8",
       "range": {
         "startLine": 11,
         "startChar": 1,
