@@ -10,6 +10,7 @@ TFTF_INCLUDES +=							\
 TESTS_SOURCES	+=							\
 	$(addprefix tftf/tests/runtime_services/realm_payload/,		\
 		host_realm_payload_tests.c				\
+		host_realm_payload_sve_tests.c				\
 	)
 
 TESTS_SOURCES	+=							\
@@ -24,4 +25,9 @@ TESTS_SOURCES	+=							\
 TESTS_SOURCES	+=							\
 	$(addprefix lib/heap/,						\
 		page_alloc.c						\
+	)
+
+TESTS_SOURCES	+=							\
+	$(addprefix lib/extensions/sve/,				\
+		sve.c							\
 	)
