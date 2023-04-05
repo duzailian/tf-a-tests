@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9313a0b8_03c7288a",
+        "filename": "include/runtime_services/errata_abi.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-04-05T21:50:39Z",
+      "side": 1,
+      "message": "is 5 the limit of errata count based on the specific CPUs tested? Or is it constrained to be 5.\nHopefully the unit test tested the upper limits for each CPU, to make sure the binary search is tested fully for each CPU errata list.",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 26
+      },
+      "revId": "2f231a3b6c6fdba81de95e7559e671b488c04529",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19ee2981_7171b53f",
+        "filename": "lib/errata_abi/errata_abi.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-04-05T21:50:39Z",
+      "side": 1,
+      "message": "Can you check all these includes are required? Check the rest too.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 16
+      },
+      "revId": "2f231a3b6c6fdba81de95e7559e671b488c04529",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02fae99a_1497c485",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-04-05T21:50:39Z",
+      "side": 1,
+      "message": "MIDR",
+      "range": {
+        "startLine": 300,
+        "startChar": 7,
+        "endLine": 300,
+        "endChar": 11
+      },
+      "revId": "2f231a3b6c6fdba81de95e7559e671b488c04529",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58fec3dd_88e5d15b",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-04-05T21:50:39Z",
+      "side": 1,
+      "message": "MIDR. Same for all below instances in the INFO. \n\nBe consistent and use either \"MIDR matches\" or \"MIDR value matches\". Replace instance for \"MIDR val matches\" with one of the first two as this is a third variant.",
+      "range": {
+        "startLine": 315,
+        "startChar": 11,
+        "endLine": 315,
+        "endChar": 15
+      },
+      "revId": "2f231a3b6c6fdba81de95e7559e671b488c04529",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "392a7492_84a4335e",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-04-05T21:50:39Z",
+      "side": 1,
+      "message": "Neoverse V2 or V2. Keep the naming also consistent. Use of neoverse or not using that for the family of cores, for other instances as well.",
+      "range": {
+        "startLine": 381,
+        "startChar": 28,
+        "endLine": 381,
+        "endChar": 35
+      },
+      "revId": "2f231a3b6c6fdba81de95e7559e671b488c04529",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e9da60b_7d606070",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-04-05T21:50:39Z",
+      "side": 1,
+      "message": "Same as above.",
+      "range": {
+        "startLine": 321,
+        "startChar": 0,
+        "endLine": 441,
+        "endChar": 38
+      },
+      "revId": "2f231a3b6c6fdba81de95e7559e671b488c04529",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
