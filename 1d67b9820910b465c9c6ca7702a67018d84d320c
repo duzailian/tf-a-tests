@@ -1,0 +1,360 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3b8981a_6cf2b19f",
+        "filename": "include/runtime_services/errata_abi.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "/*\n * Definitions",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f51d80b_4ceb48c5",
+        "filename": "include/runtime_services/errata_abi.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "why 5? we see only 3 function IDs inErrata Support spec",
+      "range": {
+        "startLine": 37,
+        "startChar": 19,
+        "endLine": 37,
+        "endChar": 21
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6aa4dfb_2e25e507",
+        "filename": "include/runtime_services/errata_abi.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "this sounds ambiguous.",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 18
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99b070cc_d9b3f19f",
+        "filename": "include/runtime_services/errata_abi.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "use spaces rather than tabs. same for next two member field declarations",
+      "range": {
+        "startLine": 40,
+        "startChar": 9,
+        "endLine": 40,
+        "endChar": 10
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8769b93_a9fc4013",
+        "filename": "lib/errata_abi/errata_abi.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "nitpick: \nlimit to 80 characters if possible",
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b07d8be_cf01b2af",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "can this be removed",
+      "range": {
+        "startLine": 259,
+        "startChar": 1,
+        "endLine": 259,
+        "endChar": 44
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab9e9d5b_d2e23819",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "no need of return_val\n\n\tif (!(tftf_em_abi_feature_implemented(EM_CPU_ERRATUM_FEATURES))) {\n\t\treturn TEST_RESULT_FAIL;\n\t} \n\treturn TEST_RESULT_SUCCESS;",
+      "range": {
+        "startLine": 278,
+        "startChar": 0,
+        "endLine": 284,
+        "endChar": 19
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03d9bb2a_789d3ab2",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "this looks a bit awkward. Perhaps, you can use a trick from TF-A\nhttps://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/include/arch/aarch64/arch_helpers.h#n688",
+      "range": {
+        "startLine": 297,
+        "startChar": 0,
+        "endLine": 301,
+        "endChar": 7
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7284ec8e_1d4e7eb2",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "please create a macro for this operation",
+      "range": {
+        "startLine": 302,
+        "startChar": 30,
+        "endLine": 303,
+        "endChar": 53
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "780fd3a8_afe2fa28",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "return TEST_RESULT_SKIPPED;",
+      "range": {
+        "startLine": 310,
+        "startChar": 0,
+        "endLine": 311,
+        "endChar": 20
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b94587c2_a47da7f7",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "I think you can change these INFO to VERBOSE in the switch block",
+      "range": {
+        "startLine": 322,
+        "startChar": 2,
+        "endLine": 322,
+        "endChar": 6
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8625855_f61d3d4a",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "Shouldnt you return TEST_RESULT_FAIL in this scenario",
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a88904e_a836b639",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "is this needed",
+      "range": {
+        "startLine": 485,
+        "startChar": 4,
+        "endLine": 485,
+        "endChar": 10
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fec7b76_1e75202c",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "ERROR",
+      "range": {
+        "startLine": 497,
+        "startChar": 3,
+        "endLine": 497,
+        "endChar": 7
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e904145_ddf0fd18",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "can this be removed",
+      "range": {
+        "startLine": 502,
+        "startChar": 2,
+        "endLine": 503,
+        "endChar": 54
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f28c5eb9_2b8b7da8",
+        "filename": "tftf/tests/tests-errata_abi.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-05T16:38:24Z",
+      "side": 1,
+      "message": "please update this description",
+      "range": {
+        "startLine": 11,
+        "startChar": 1,
+        "endLine": 13,
+        "endChar": 32
+      },
+      "revId": "1d67b9820910b465c9c6ca7702a67018d84d320c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
