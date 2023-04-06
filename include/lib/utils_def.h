@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2022, Arm Limited and Contributors. All rights reserved.
+ * Copyright (c) 2016-2023, Arm Limited and Contributors. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -167,6 +167,9 @@
 
 #define EXTRACT(regfield, reg) \
 	(((reg) & MASK(regfield)) >> (regfield##_SHIFT))
+
+#define INPLACE(regfield, val) \
+	(((val) + 0ULL) << (regfield##_SHIFT))
 
 /*
  * Defines member of structure and reserves space
