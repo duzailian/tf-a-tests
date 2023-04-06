@@ -224,7 +224,7 @@ bool host_create_realm_payload(u_register_t realm_payload_adr,
 	if ((feature_flag & RMI_FEATURE_REGISTER_0_PMU_EN) == 0UL) {
 		realm.rmm_feat_reg0 &=
 			~(RMI_FEATURE_REGISTER_0_PMU_EN |
-			  RMI_FEATURE_REGISTER_0_PMU_NUM_CTRS);
+			  MASK(RMI_FEATURE_REGISTER_0_PMU_NUM_CTRS));
 	}
 
 	/* Create Realm */
