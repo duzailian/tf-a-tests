@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bd585a1_76316324",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000709
+      },
+      "writtenOn": "2023-04-07T19:55:22Z",
+      "side": 1,
+      "message": "FYI, I\u0027ve run https://ci.staging.trustedfirmware.org/job/tf-a-lts2.8-main/16/ to build with following 2 patches:\n\nhttps://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/20361\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/20363\n\nThere\u0027re still 2 sub-build failures, but it\u0027s improvement over older 3.\n",
+      "revId": "a4d71c03a524d875f7be9f6740e382b8a634eea9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
