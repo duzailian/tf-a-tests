@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f90f799_8ebba6b0",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-04-07T11:40:33Z",
+      "side": 0,
+      "message": "This test is actually not supported (SP to SP sharing NS memory).",
+      "revId": "79fc9196228a9aa2fd6832b1cd4275932871d95c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
