@@ -51,6 +51,24 @@
       "parentUuid": "c486b999_716bf723",
       "revId": "297f00ad6a0de5e0313f5bf0cf4a958a090128c1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61514ff8_fd8a4f64",
+        "filename": "spm/common/sp_debug.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-11T19:25:58Z",
+      "side": 1,
+      "message": "As you mentioned, all the partitions are supported only in 64bit mode. Hence, preferred 64-bit ABI. Feel free to ignore.\n\nIf you plan to add support for putting multiple characters at a time just like dlog interface in hafnium CI, may be 64 bit ABI could come in handy.",
+      "parentUuid": "b8060cfe_e6fb6e42",
+      "revId": "297f00ad6a0de5e0313f5bf0cf4a958a090128c1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
