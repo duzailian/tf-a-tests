@@ -20,6 +20,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4fd73348_521f8836",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-04-12T08:10:00Z",
+      "side": 1,
+      "message": "should be SMC_CALL_AS_STDOUT",
+      "range": {
+        "startLine": 298,
+        "startChar": 16,
+        "endLine": 298,
+        "endChar": 34
+      },
+      "revId": "297f00ad6a0de5e0313f5bf0cf4a958a090128c1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c317d2c_afa7754e",
+        "filename": "spm/common/sp_debug.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-04-12T08:10:00Z",
+      "side": 1,
+      "message": "suggest putc_smccall",
+      "range": {
+        "startLine": 16,
+        "startChar": 11,
+        "endLine": 16,
+        "endChar": 23
+      },
+      "revId": "297f00ad6a0de5e0313f5bf0cf4a958a090128c1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c486b999_716bf723",
         "filename": "spm/common/sp_debug.c",
         "patchSetId": 1
@@ -67,6 +113,98 @@
       "side": 1,
       "message": "As you mentioned, all the partitions are supported only in 64bit mode. Hence, preferred 64-bit ABI. Feel free to ignore.\n\nIf you plan to add support for putting multiple characters at a time just like dlog interface in hafnium CI, may be 64 bit ABI could come in handy.",
       "parentUuid": "b8060cfe_e6fb6e42",
+      "revId": "297f00ad6a0de5e0313f5bf0cf4a958a090128c1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a02d930_537de022",
+        "filename": "spm/common/sp_debug.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-04-12T08:10:00Z",
+      "side": 1,
+      "message": "SMC",
+      "range": {
+        "startLine": 40,
+        "startChar": 6,
+        "endLine": 40,
+        "endChar": 9
+      },
+      "revId": "297f00ad6a0de5e0313f5bf0cf4a958a090128c1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba16aa7c_1128fbba",
+        "filename": "spm/common/sp_debug.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-04-12T08:10:00Z",
+      "side": 1,
+      "message": "I\u0027m not convinced this is the right approach. I assume this change breaks the Ivy SEL0 SP support (w/ VHE and no shim layer), because a SEL0 SP can only emit SVCs.\nThis enum should describe the conduit to be used for emitting FFA_CONSOLE_LOG (formerly HF_DEBUG_LOG).\nIt should be ok to drop HVC_CALL_AS_STDOUT, but it should remain:\n PL011_AS_STDOUT\n SVC_CALL_AS_STDOUT\n SMC_CALL_AS_STDOUT",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 3
+      },
+      "revId": "297f00ad6a0de5e0313f5bf0cf4a958a090128c1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ecd250c2_7482b20e",
+        "filename": "spm/ivy/app/ivy_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-04-12T08:10:00Z",
+      "side": 1,
+      "message": "keep SVC",
+      "range": {
+        "startLine": 27,
+        "startChar": 15,
+        "endLine": 27,
+        "endChar": 18
+      },
+      "revId": "297f00ad6a0de5e0313f5bf0cf4a958a090128c1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53375ef8_767831dd",
+        "filename": "spm/ivy/shim/shim_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-04-12T08:10:00Z",
+      "side": 1,
+      "message": "SMC",
+      "range": {
+        "startLine": 95,
+        "startChar": 15,
+        "endLine": 95,
+        "endChar": 18
+      },
       "revId": "297f00ad6a0de5e0313f5bf0cf4a958a090128c1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
