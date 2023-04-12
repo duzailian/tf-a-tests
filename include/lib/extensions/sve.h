@@ -8,6 +8,7 @@
 #define SVE_H
 
 #include <arch.h>
+#include <lib/extensions/aarch64/sve_helpers.h>
 
 #define fill_sve_helper(num) "ldr z"#num", [%0, #"#num", MUL VL];"
 #define read_sve_helper(num) "str z"#num", [%0, #"#num", MUL VL];"

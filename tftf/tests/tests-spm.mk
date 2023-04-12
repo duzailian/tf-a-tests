@@ -21,7 +21,6 @@ TESTS_SOURCES	+=							\
 		test_spm_cpu_features.c					\
 		test_spm_smmu.c						\
 		test_ffa_exceptions.c					\
-		sve_operations_cactus.S					\
 	)
 
 TESTS_SOURCES	+=							\
@@ -29,3 +28,10 @@ TESTS_SOURCES	+=							\
 		host_realm_rmi.c					\
 		host_realm_helper.c					\
 	)
+
+ifeq (${ARCH},aarch64)
+TESTS_SOURCES	+=							\
+	$(addprefix lib/extensions/,					\
+		sve/${ARCH}/sve_helpers.S				\
+	)
+endif
