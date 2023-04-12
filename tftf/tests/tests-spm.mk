@@ -21,7 +21,6 @@ TESTS_SOURCES	+=							\
 		test_spm_cpu_features.c					\
 		test_spm_smmu.c						\
 		test_ffa_exceptions.c					\
-		sve_operations_cactus.S					\
 	)
 
 TESTS_SOURCES	+=							\

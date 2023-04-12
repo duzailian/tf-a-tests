@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021-2022, Arm Limited. All rights reserved.
+ * Copyright (c) 2021-2023, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -8,16 +8,13 @@
 #include <ffa_endpoints.h>
 #include <ffa_helpers.h>
 #include <test_helpers.h>
+#include <lib/extensions/sve.h>
 
 #define SENDER HYP_ID
 #define RECEIVER SP_ID(1)
 #define SVE_TEST_ITERATIONS	100
-#define SVE_ARRAYSIZE		1024
 
 static const struct ffa_uuid expected_sp_uuids[] = { {PRIMARY_UUID} };
-
-extern void sve_subtract_interleaved_smc(int *difference, const int *sve_op_1,
-				       const int *sve_op_2);
 
 static test_result_t fp_vector_compare(uint8_t *a, uint8_t *b,
 	size_t vector_size, uint8_t vectors_num)
@@ -29,10 +26,11 @@ static test_result_t fp_vector_compare(uint8_t *a, uint8_t *b,
 }
 
 #ifdef __aarch64__
+#define NS_SVE_OP_ARRAYSIZE		1024
 static sve_vector_t sve_vectors_input[SVE_NUM_VECTORS] __aligned(16);
 static sve_vector_t sve_vectors_output[SVE_NUM_VECTORS] __aligned(16);
-static int sve_op_1[SVE_ARRAYSIZE];
-static int sve_op_2[SVE_ARRAYSIZE];
+static int sve_op_1[NS_SVE_OP_ARRAYSIZE];
+static int sve_op_2[NS_SVE_OP_ARRAYSIZE];
 #endif
 
 /*
@@ -145,6 +143,29 @@ test_result_t test_sve_vectors_preserved(void)
 }
 
 /*
+ * Sends SIMD fill command to Cactus SP
+ * Returns:
+ *	false - On success
+ *	true  - On failure
+ */
+#ifdef __aarch64__
+static bool callback_enter_cactus_sp(void)
+{
+	struct ffa_value ret = cactus_req_simd_fill_send_cmd(SENDER, RECEIVER);
+
+	if (!is_ffa_direct_response(ret)) {
+		return true;
+	}
+
+	if (cactus_get_response(ret) == CACTUS_ERROR) {
+		return true;
+	}
+
+	return false;
+}
+#endif /* __aarch64__ */
+
+/*
  * Tests that SVE vector operations in normal world are not affected by context
  * switches between normal world and the secure world.
  */
@@ -162,7 +183,7 @@ test_result_t test_sve_vectors_operations(void)
 
 	val = 2 * SVE_TEST_ITERATIONS;
 
-	for (unsigned int i = 0; i < SVE_ARRAYSIZE; i++) {
+	for (unsigned int i = 0; i < NS_SVE_OP_ARRAYSIZE; i++) {
 		sve_op_1[i] = val;
 		sve_op_2[i] = 1;
 	}
@@ -173,11 +194,13 @@ test_result_t test_sve_vectors_operations(void)
 
 	for (unsigned int i = 0; i < SVE_TEST_ITERATIONS; i++) {
 		/* Perform SVE operations with intermittent calls to Swd. */
-		sve_subtract_interleaved_smc(sve_op_1, sve_op_1, sve_op_2);
+		sve_subtract_arrays_interleaved(sve_op_1, sve_op_1,
+						sve_op_2, NS_SVE_OP_ARRAYSIZE,
+						&callback_enter_cactus_sp);
 	}
 
 	/* Check result of SVE operations. */
-	for (unsigned int i = 0; i < SVE_ARRAYSIZE; i++) {
+	for (unsigned int i = 0; i < NS_SVE_OP_ARRAYSIZE; i++) {
 		if (sve_op_1[i] != (val - SVE_TEST_ITERATIONS)) {
 			return TEST_RESULT_FAIL;
 		}
