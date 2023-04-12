@@ -11,6 +11,10 @@
 #include <host_realm_sve.h>
 #include <host_shared_data.h>
 
+static int rl_sve_op_1[SVE_OP_ARRAYSIZE];
+static int rl_sve_op_2[SVE_OP_ARRAYSIZE];
+#define SVE_TEST_ITERATIONS		4
+
 bool realm_sve_rdvl(void)
 {
 	host_shared_data_t *sd = realm_get_shared_structure();
@@ -51,6 +55,36 @@ bool realm_sve_probe_vl(void)
 
 	/* Probe all VLs */
 	output->vl_bitmap = sve_probe_vl(SVE_VQ_ARCH_MAX);
+
+	return true;
+}
+
+bool realm_sve_ops(void)
+{
+	unsigned int val;
+
+	val = 2 * SVE_TEST_ITERATIONS;
+	for (unsigned int i = 0; i < SVE_OP_ARRAYSIZE; i++) {
+		rl_sve_op_1[i] = val;
+		rl_sve_op_2[i] = 1;
+	}
+
+	for (unsigned int i = 0; i < SVE_TEST_ITERATIONS; i++) {
+		/* Config Realm with random SVE length */
+		sve_config_vq(SVE_GET_RANDOM_VQ);
+
+		/* Perform SVE operations, without world switch */
+		sve_subtract_interleaved_world_switch(rl_sve_op_1, rl_sve_op_1,
+						      rl_sve_op_2, NULL);
+	}
+
+	/* Check result of SVE operations. */
+	for (unsigned int i = 0; i < SVE_OP_ARRAYSIZE; i++) {
+		if (rl_sve_op_1[i] != (val - SVE_TEST_ITERATIONS)) {
+			realm_printf("Realm: SVE ops failed\n");
+			return false;
+		}
+	}
 
 	return true;
 }

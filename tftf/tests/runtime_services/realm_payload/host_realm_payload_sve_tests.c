@@ -16,6 +16,10 @@
 #include <host_realm_sve.h>
 #include <host_shared_data.h>
 
+static int ns_sve_op_1[SVE_OP_ARRAYSIZE];
+static int ns_sve_op_2[SVE_OP_ARRAYSIZE];
+#define SVE_TEST_ITERATIONS		50
+
 /*
  * Skip test if SVE is not supported in H/W. If SVE is present in H/W then it
  * must be enabled for NS world and for RMM, so fail test if SVE is supported
@@ -320,6 +324,75 @@ test_result_t host_sve_realm_cmd_probe_vl(void)
 	}
 
 rm_realm:
+	if (!host_destroy_realm()) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return rc;
+}
+
+/*
+ * Sends command to Realm to do SVE operations, while NS is also doing SVE
+ * operations.
+ * Returns:
+ *	false - On success
+ *	true  - On failure
+ */
+static bool callback_enter_realm(void)
+{
+	test_result_t rc;
+
+	rc = host_enter_realm_execute(REALM_SVE_OPS, NULL);
+	if (rc != TEST_RESULT_SUCCESS) {
+		return true;
+	}
+
+	return false;
+}
+
+/* Intermittently switch to Realm while doing NS SVE ops */
+test_result_t host_sve_realm_check_vectors_preserved(void)
+{
+	u_register_t rmi_feat_reg0;
+	test_result_t rc;
+	uint8_t sve_vq;
+	unsigned int val;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	CHECK_SVE_SUPPORT_IN_HW_AND_IN_RMI(rmi_feat_reg0);
+
+	sve_vq = EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL, rmi_feat_reg0);
+
+	rc = host_create_sve_realm_payload(true, sve_vq);
+	if (rc != TEST_RESULT_SUCCESS) {
+		return rc;
+	}
+
+	val = 2 * SVE_TEST_ITERATIONS;
+	for (unsigned int i = 0; i < SVE_OP_ARRAYSIZE; i++) {
+		ns_sve_op_1[i] = val;
+		ns_sve_op_2[i] = 1;
+	}
+
+	for (unsigned int i = 0; i < SVE_TEST_ITERATIONS; i++) {
+		/* Config NS world with random SVE length */
+		sve_config_vq(SVE_GET_RANDOM_VQ);
+
+		/* Perform SVE operations with intermittent calls to Realm */
+		sve_subtract_interleaved_world_switch(ns_sve_op_1, ns_sve_op_1,
+						      ns_sve_op_2,
+						      &callback_enter_realm);
+	}
+
+	/* Check result of SVE operations. */
+	rc = TEST_RESULT_SUCCESS;
+	for (unsigned int i = 0; i < SVE_OP_ARRAYSIZE; i++) {
+		if (ns_sve_op_1[i] != (val - SVE_TEST_ITERATIONS)) {
+			rc = TEST_RESULT_FAIL;
+		}
+	}
+
 	if (!host_destroy_realm()) {
 		return TEST_RESULT_FAIL;
 	}
