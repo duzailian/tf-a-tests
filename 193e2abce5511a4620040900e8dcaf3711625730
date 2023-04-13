@@ -46,6 +46,30 @@
       },
       "revId": "193e2abce5511a4620040900e8dcaf3711625730",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4a1bee7_c923f14d",
+        "filename": "tools/generate_json/generate_json.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-04-13T16:00:10Z",
+      "side": 1,
+      "message": "If there is the physical-load-address in the json file use it. If not, retrieve.\nWould this suffice?",
+      "parentUuid": "cacba99c_bbe7f211",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 48
+      },
+      "revId": "193e2abce5511a4620040900e8dcaf3711625730",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
