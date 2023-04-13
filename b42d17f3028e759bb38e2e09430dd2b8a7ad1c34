@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "640f8679_70449d60",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-04-13T12:26:20Z",
+      "side": 1,
+      "message": "CI+2 fails because the CI doesn\u0027t sync to the appropriate Hafnium change from the same topic https://review.trustedfirmware.org/c/hafnium/hafnium/+/17399\n\nApplying Verified+1 with the manual run passing:\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/34809/",
+      "revId": "b42d17f3028e759bb38e2e09430dd2b8a7ad1c34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
