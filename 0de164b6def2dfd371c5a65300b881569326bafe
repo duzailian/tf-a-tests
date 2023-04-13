@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8849ecc1_656718b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-04-13T16:32:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb685f60_7d417c76",
+      "range": {
+        "startLine": 10,
+        "startChar": 46,
+        "endLine": 10,
+        "endChar": 50
+      },
+      "revId": "0de164b6def2dfd371c5a65300b881569326bafe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e1665a74_2c1bdeea",
@@ -70,6 +94,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "93e3ca73_13108fb7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-04-13T16:32:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26550685_c9f9ae1d",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 12,
+        "endChar": 16
+      },
+      "revId": "0de164b6def2dfd371c5a65300b881569326bafe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ef64ec9_c2e39ee7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-04-13T16:32:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e1665a74_2c1bdeea",
+      "range": {
+        "startLine": 12,
+        "startChar": 27,
+        "endLine": 12,
+        "endChar": 37
+      },
+      "revId": "0de164b6def2dfd371c5a65300b881569326bafe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9ca640da_606b2be7",
@@ -93,6 +165,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc836262_2cfe692b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-04-13T16:32:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ca640da_606b2be7",
+      "range": {
+        "startLine": 13,
+        "startChar": 41,
+        "endLine": 13,
+        "endChar": 45
+      },
+      "revId": "0de164b6def2dfd371c5a65300b881569326bafe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7f24a8ae_3d1330e1",
@@ -106,6 +202,30 @@
       "writtenOn": "2023-04-07T13:38:20Z",
       "side": 1,
       "message": "This shouldn\u0027t be defined in this generic header, if this relates to the test implementation ?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 45
+      },
+      "revId": "0de164b6def2dfd371c5a65300b881569326bafe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d50fdc7f_d7278420",
+        "filename": "include/lib/extensions/sme.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-04-13T16:32:12Z",
+      "side": 1,
+      "message": "Yes. They are related and only used for testing the instructions.\nI will place them in the respective testing source files, as they need not be public.\nThanks for pointing it Olivier.",
+      "parentUuid": "7f24a8ae_3d1330e1",
       "range": {
         "startLine": 13,
         "startChar": 0,
