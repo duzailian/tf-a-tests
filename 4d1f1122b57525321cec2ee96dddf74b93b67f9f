@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d8b9d5e_fc9ead79",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-14T19:41:30Z",
+      "side": 1,
+      "message": "Fixed the static check fail. Test passes now:\nhttps://ci.trustedfirmware.org/job/tf-a-static-checks/4329/",
+      "revId": "4d1f1122b57525321cec2ee96dddf74b93b67f9f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
