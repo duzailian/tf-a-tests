@@ -16,6 +16,23 @@
       "message": "Fixed the static check fail. Test passes now:\nhttps://ci.trustedfirmware.org/job/tf-a-static-checks/4329/",
       "revId": "4d1f1122b57525321cec2ee96dddf74b93b67f9f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72220b92_6d89609d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2023-04-16T09:09:24Z",
+      "side": 1,
+      "message": "\nWho is the Code owner for cactus? If there is nobody else I\u0027ll give the CO review but I don\u0027t claim to be that familiar with Cactus.",
+      "revId": "4d1f1122b57525321cec2ee96dddf74b93b67f9f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
