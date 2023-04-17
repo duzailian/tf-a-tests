@@ -74,6 +74,124 @@ test_result_t host_test_realm_create_enter(void)
 
 	return host_cmp_result();
 }
+
+/*
+ * @Test_Aim@ Test PAuth in realm
+ */
+test_result_t host_realm_enable_pauth(void)
+{
+        bool ret1, ret2;
+        u_register_t retrmm;
+	uint64_t key_lo;
+	uint64_t key_hi;
+
+        if (get_armv9_2_feat_rme_support() == 0U) {
+                INFO("platform doesn't support RME\n");
+                return TEST_RESULT_SKIPPED;
+        }
+
+        host_rmi_init_cmp_result();
+
+        retrmm = host_rmi_version();
+        VERBOSE("RMM version is: %lu.%lu\n",
+                        RMI_ABI_VERSION_GET_MAJOR(retrmm),
+                        RMI_ABI_VERSION_GET_MINOR(retrmm));
+        /*
+         * Skip the test if RMM is TRP, TRP version is always null.
+         */
+        if (retrmm == 0UL) {
+                INFO("Test case not supported for TRP as RMM\n");
+                return TEST_RESULT_SKIPPED;
+        }
+
+	key_lo = read_apiakeylo_el1();
+	key_hi = read_apiakeyhi_el1();
+
+        if (!host_create_realm_payload((u_register_t)REALM_IMAGE_BASE,
+                        (u_register_t)PAGE_POOL_BASE,
+                        (u_register_t)(PAGE_POOL_MAX_SIZE +
+                        NS_REALM_SHARED_MEM_SIZE),
+                        (u_register_t)PAGE_POOL_MAX_SIZE,
+                        0UL)) {
+                return TEST_RESULT_FAIL;
+        }
+        if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+                        NS_REALM_SHARED_MEM_SIZE)) {
+                return TEST_RESULT_FAIL;
+        }
+
+        ret1 = host_enter_realm_execute(REALM_PAUTH_CMD, NULL);
+        ret2 = host_destroy_realm();
+
+        if (!ret1) {
+                ERROR("%s(): enter=%d destroy=%d\n",
+                __func__, ret1, ret2);
+                return TEST_RESULT_FAIL;
+        }
+
+	/*Check if PAuth keys are preserved. */
+	if ((key_lo != read_apiakeylo_el1()) ||
+	    (key_hi != read_apiakeyhi_el1())) {
+		ERROR("%s(): NS PAuth keys not preserved\n",
+				__func__);
+		return TEST_RESULT_FAIL;
+	}
+
+        return host_cmp_result();
+}
+
+/*
+ * @Test_Aim@ Test PAuth fault in Realm
+ */
+test_result_t host_realm_pauth_fault(void)
+{
+        bool ret1, ret2;
+        u_register_t retrmm;
+
+        if (get_armv9_2_feat_rme_support() == 0U) {
+                INFO("platform doesn't support RME\n");
+                return TEST_RESULT_SKIPPED;
+        }
+
+        host_rmi_init_cmp_result();
+
+        retrmm = host_rmi_version();
+        VERBOSE("RMM version is: %lu.%lu\n",
+                        RMI_ABI_VERSION_GET_MAJOR(retrmm),
+                        RMI_ABI_VERSION_GET_MINOR(retrmm));
+        /*
+         * Skip the test if RMM is TRP, TRP version is always null.
+         */
+        if (retrmm == 0UL) {
+                INFO("Test case not supported for TRP as RMM\n");
+                return TEST_RESULT_SKIPPED;
+        }
+
+        if (!host_create_realm_payload((u_register_t)REALM_IMAGE_BASE,
+                        (u_register_t)PAGE_POOL_BASE,
+                        (u_register_t)(PAGE_POOL_MAX_SIZE +
+                        NS_REALM_SHARED_MEM_SIZE),
+                        (u_register_t)PAGE_POOL_MAX_SIZE,
+                        0UL)) {
+                return TEST_RESULT_FAIL;
+        }
+        if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+                        NS_REALM_SHARED_MEM_SIZE)) {
+                return TEST_RESULT_FAIL;
+        }
+
+        ret1 = host_enter_realm_execute(REALM_PAUTH_FAULT, NULL);
+        ret2 = host_destroy_realm();
+
+        if (!ret1) {
+                ERROR("%s(): enter=%d destroy=%d\n",
+                __func__, ret1, ret2);
+                return TEST_RESULT_FAIL;
+        }
+
+        return host_cmp_result();
+}
+
 /*
  * This function is called on REC exit due to IRQ.
  * By checking Realm PMU state in RecExit object this finction
