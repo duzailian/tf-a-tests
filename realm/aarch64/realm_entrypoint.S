@@ -55,6 +55,8 @@ endfunc realm_entrypoint
 
 /* Initialize architectural state. */
 func arch_init
+	stp	x29, x30, [sp, #-16]!
+
 	/* Set the exception vectors. */
 	adr	x0, realm_vector
 	add	x1, x1, :lo12:realm_vector
@@ -65,6 +67,9 @@ func arch_init
 	mov_imm	x0, (SCTLR_EL1_RES1 | SCTLR_I_BIT | SCTLR_A_BIT | SCTLR_SA_BIT)
 	msr	sctlr_el1, x0
 
+	/* Enable PAuth. */
+	bl	pauth_init_enable
+
 	/*
 	 * Set CPACR_EL1.FPEN=11 no EL1/0 trapping of
 	 * SVE/Adv. SIMD/FP instructions.
@@ -74,6 +79,7 @@ func arch_init
 	orr	x0, x0, x1
 	msr	cpacr_el1, x0
 	isb
+	ldp	x29, x30, [sp], #16
 
 	ret
 endfunc arch_init

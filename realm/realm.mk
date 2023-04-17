@@ -4,8 +4,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-include branch_protection.mk
-
 REALM_INCLUDES :=							\
 	-Itftf/framework/include					\
 	-Iinclude							\
@@ -48,6 +46,12 @@ REALM_SOURCES	+=							\
 	tftf/framework/${ARCH}/exception_report.c
 
 REALM_LINKERFILE:=	realm/realm.ld.S
+
+# ARMv8.3 Pointer Authentication support files
+REALM_SOURCES +=	lib/extensions/pauth/aarch64/pauth.c            \
+			lib/extensions/pauth/aarch64/pauth_helpers.S
+
+REALM_INCLUDES +=	-Iinclude/lib/extensions
 
 REALM_DEFINES:=
 $(eval $(call add_define,REALM_DEFINES,ARM_ARCH_MAJOR))
