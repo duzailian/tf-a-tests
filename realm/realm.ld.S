@@ -70,6 +70,7 @@ SECTIONS
     .bss (NOLOAD) : {
         . = ALIGN(PAGE_SIZE);
         __REALM_BSS_START__ = .;
+	*(.bss.stacks)
         *(SORT_BY_ALIGNMENT(.bss*))
         *(COMMON)
         . = NEXT(PAGE_SIZE);
