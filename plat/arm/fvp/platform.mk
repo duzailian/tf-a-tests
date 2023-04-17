@@ -116,4 +116,9 @@ FIRMWARE_UPDATE := 1
 
 PLAT_TESTS_SKIP_LIST	:=	plat/arm/fvp/fvp_tests_to_skip.txt
 
+ifeq (${ARCH},aarch64)
+	BRANCH_PROTECTION       := 1
+  include branch_protection.mk
+endif
+
 include plat/arm/common/arm_common.mk
