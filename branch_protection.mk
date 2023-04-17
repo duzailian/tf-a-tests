@@ -11,7 +11,11 @@
 # value by then.
 
 # Select the branch protection features to use.
+ifeq (${ARCH}-${PLAT},aarch64-fvp)
+BRANCH_PROTECTION       := 2
+else
 BRANCH_PROTECTION	:= 0
+endif
 
 # Flag to enable Branch Target Identification in the TFTF.
 # Internal flag not meant for direct setting.
