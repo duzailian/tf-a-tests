@@ -30,5 +30,9 @@
 	  function="host_realm_pmuv3_overflow_interrupt" />
 	  <testcase name="Test Secure interrupt can preempt Realm EL1"
 	  function="test_sec_interrupt_can_preempt_rl" />
+	  <testcase name="Realm enable PAuth"
+	  function="host_realm_enable_pauth" />
+	  <testcase name="Realm PAuth Fault"
+	  function="host_realm_pauth_fault" />
   </testsuite>
 </testsuites>

@@ -65,6 +65,9 @@ func arch_init
 	mov_imm	x0, (SCTLR_EL1_RES1 | SCTLR_I_BIT | SCTLR_A_BIT | SCTLR_SA_BIT)
 	msr	sctlr_el1, x0
 
+	/* Enable PAuth. */
+	b pauth_init_enable
+
 	/*
 	 * Set CPACR_EL1.FPEN=11 no EL1/0 trapping of
 	 * SVE/Adv. SIMD/FP instructions.
