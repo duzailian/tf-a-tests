@@ -28,5 +28,9 @@
 	  function="host_realm_pmuv3_rmm_preserves" />
 	  <testcase name="PMUv3 overflow interrupt"
 	  function="host_realm_pmuv3_overflow_interrupt" />
+          <testcase name="Realm enable PAuth"
+          function="host_realm_enable_pauth" />
+          <testcase name="Realm PAuth Fault"
+          function="host_realm_pauth_fault" />
   </testsuite>
 </testsuites>

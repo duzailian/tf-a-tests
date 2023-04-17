@@ -7,14 +7,18 @@
 
 #include <stdio.h>
 
+#include <arch_features.h>
 #include <debug.h>
 #include <host_realm_helper.h>
 #include <host_shared_data.h>
+#include <pauth.h>
 #include "realm_def.h"
 #include <realm_rsi.h>
 #include <realm_tests.h>
 #include <tftf_lib.h>
+#include <sync.h>
 
+static volatile bool sync_exception_triggered;
 /*
  * This function reads sleep time in ms from shared buffer and spins PE
  * in a loop for that time period.
@@ -25,6 +29,63 @@ static void realm_sleep_cmd(void)
 
 	realm_printf("Realm: going to sleep for %llums\n", sleep);
 	waitms(sleep);
+}
+
+static bool exception_handler(void)
+{
+	sync_exception_triggered = true;
+	pauth_disable();
+	u_register_t lr = read_elr_el1();
+	/* Check for PAuth exception. */
+	if (lr & 0xF000000000000000U) {
+		rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD);
+	}
+	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
+	/*Does not return. */
+	return false;
+}
+
+void dummy_func(void)
+{
+	realm_printf("Realm: shouldn't reach here. \n");
+	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
+}
+
+bool realm_pauth_fault(void)
+{
+        u_register_t ptr = (u_register_t)&dummy_func;        /* Overwrite LR and trigger PAuth Fault exception. */
+	register_custom_sync_exception_handler(exception_handler);
+	pauth_init_enable();
+	realm_printf("Realm: overwrite LR to generate fault.\n");
+        __asm__("mov x17, x30; "
+                "mov x30, %0; "       /* Overwite LR. */
+                "isb; "
+                "autiasp; "
+                "ret; "               /* Fault on return.  */
+                :
+		: "r"(ptr));
+	/* Returns after exception handler is run. */
+	return sync_exception_triggered;
+}
+
+static bool realm_pauth_cmd(void)
+{
+	uint64_t key_lo;
+	uint64_t key_hi;
+	uint64_t id_aa64isar1_el1;
+
+	pauth_init_enable();
+	write_apiakeylo_el1(0xABCDU);
+	write_apiakeyhi_el1(0xABCDU);
+        key_lo = read_apiakeylo_el1();
+        key_hi = read_apiakeyhi_el1();
+	if ((key_lo != 0xABCDU) || (key_hi != 0xABCDU)) {
+		return false;
+	}
+	id_aa64isar1_el1 = read_id_aa64isar1_el1(); //ToDO check why PAuth bits are not set
+	realm_printf("Realm: apiakeylo_el1=0x%llx apiakeyhi_el1=0x%llx id_aa64isar1_el1=0x%llx  \n",
+			key_lo, key_hi, id_aa64isar1_el1);
+	return true;
 }
 
 /*
@@ -68,6 +129,16 @@ void realm_payload_main(void)
 		case REALM_SLEEP_CMD:
 			realm_sleep_cmd();
 			test_succeed = true;
+			break;
+                case REALM_PAUTH_CMD:
+			if (is_armv8_3_pauth_present()) {
+				test_succeed = false;
+				break;
+			}
+                        test_succeed = realm_pauth_cmd();
+                        break;
+		case REALM_PAUTH_FAULT:
+			test_succeed = realm_pauth_fault();
 			break;
 		case REALM_GET_RSI_VERSION:
 			realm_get_rsi_version();
