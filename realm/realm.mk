@@ -49,6 +49,16 @@ REALM_SOURCES	+=							\
 
 REALM_LINKERFILE:=	realm/realm.ld.S
 
+ifeq (${ENABLE_PAUTH},0)
+$(error RMM tests need BRANCH_PROTECTION set to 2)
+endif
+
+# ARMv8.3 Pointer Authentication support files
+REALM_SOURCES +=	lib/extensions/pauth/aarch64/pauth.c            \
+			lib/extensions/pauth/aarch64/pauth_helpers.S
+
+REALM_INCLUDES +=	-Iinclude/lib/extensions
+
 REALM_DEFINES:=
 $(eval $(call add_define,REALM_DEFINES,ARM_ARCH_MAJOR))
 $(eval $(call add_define,REALM_DEFINES,ARM_ARCH_MINOR))

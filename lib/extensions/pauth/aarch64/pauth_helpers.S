@@ -19,9 +19,8 @@
 func pauth_init_enable
 	stp	x29, x30, [sp, #-16]!
 
-	/* Initialize platform key */
-	bl	init_apkey
-
+	mrs	x0, rndr
+	mrs	x1, rndr
 	/*
 	 * Program instruction key A used by
 	 * the Trusted Firmware Test Framework
