@@ -11,7 +11,7 @@
 # value by then.
 
 # Select the branch protection features to use.
-BRANCH_PROTECTION	:= 0
+BRANCH_PROTECTION	:= 2
 
 # Flag to enable Branch Target Identification in the TFTF.
 # Internal flag not meant for direct setting.
