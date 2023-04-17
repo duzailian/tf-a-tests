@@ -23,6 +23,9 @@ ARM_ARCH_MINOR		:= 0
 # Base commit to perform code check on
 BASE_COMMIT		:= origin/master
 
+# Select the branch protection features to use.
+BRANCH_PROTECTION      := 0
+
 # Debug/Release build
 DEBUG			:= 0
 
