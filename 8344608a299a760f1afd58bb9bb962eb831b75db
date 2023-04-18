@@ -16,6 +16,24 @@
       "message": "This series need to rebased on https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/20024 as a lot of refactoring is being done in that patch",
       "revId": "8344608a299a760f1afd58bb9bb962eb831b75db",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6541f39_98e13a82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-18T09:01:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4d41d4e_d80c4834",
+      "revId": "8344608a299a760f1afd58bb9bb962eb831b75db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
