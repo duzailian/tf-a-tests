@@ -8,12 +8,15 @@
 #include <stdio.h>
 
 #include <debug.h>
+#include <fpu.h>
 #include <host_realm_helper.h>
 #include <host_shared_data.h>
 #include "realm_def.h"
 #include <realm_rsi.h>
 #include <realm_tests.h>
 #include <tftf_lib.h>
+
+static fpu_reg_state_t fpu_temp_rl;
 
 /*
  * This function reads sleep time in ms from shared buffer and spins PE
@@ -84,6 +87,13 @@ void realm_payload_main(void)
 			break;
 		case REALM_PMU_INTERRUPT:
 			test_succeed = test_pmuv3_overflow_interrupt();
+			break;
+		case REALM_REQ_FPU_FILL_CMD:
+			fpu_state_write_template(&fpu_temp_rl);
+			test_succeed = true;
+			break;
+		case REALM_REQ_FPU_CMP_CMD:
+			test_succeed = fpu_state_compare_template(&fpu_temp_rl);
 			break;
 		default:
 			realm_printf("%s() invalid cmd %u\n", __func__, cmd);
