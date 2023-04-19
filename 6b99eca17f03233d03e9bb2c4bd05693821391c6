@@ -16,6 +16,24 @@
       "message": "would prefer to preserve SP tests if possible.",
       "revId": "6b99eca17f03233d03e9bb2c4bd05693821391c6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "81855ce9_7408ec4d",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "28f6ccd2_cfb6b950",
+      "revId": "6b99eca17f03233d03e9bb2c4bd05693821391c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }

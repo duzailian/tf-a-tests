@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8019aaa1_3e5a9c40",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 27
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f274b6d_f5a4706a",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 5
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec5987c2_d1383771",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-03-30T13:41:33Z",
       "side": 1,
       "message": "This can be done in C.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 58
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c782b03_a100c157",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 27
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec5987c2_d1383771",
       "range": {
         "startLine": 44,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "df5b701b_99ca2816",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 27
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "this api does memcpm and dumps register if mismatched",
+      "parentUuid": "d914867e_dc1f31f9",
+      "range": {
+        "startLine": 53,
+        "startChar": 5,
+        "endLine": 53,
+        "endChar": 31
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c47da4a_1bcb66e5",
@@ -83,6 +155,24 @@
       "writtenOn": "2023-04-04T15:18:08Z",
       "side": 1,
       "message": "This function is not used. can be removed?",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c45a2f9_1e53de45",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c47da4a_1bcb66e5",
       "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -104,6 +194,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5bee6b5_3473d2e9",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1cdd875_aefe6bc2",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f8d09a33_59cf4e82",
@@ -117,6 +225,24 @@
       "writtenOn": "2023-04-04T15:18:08Z",
       "side": 1,
       "message": "Can this function be renamed to write_fpu_state_registers()?\nso that it matches the counterpart read_fpu_state_registers()",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7d2bb26_c8024d5f",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f8d09a33_59cf4e82",
       "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -144,6 +270,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecb48a33_dd177869",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e429b27f_e8860f41",
+      "range": {
+        "startLine": 47,
+        "startChar": 49,
+        "endLine": 47,
+        "endChar": 61
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bbef4092_4fa5464b",
@@ -157,6 +307,24 @@
       "writtenOn": "2023-03-30T13:41:33Z",
       "side": 1,
       "message": "Would prefer to SP is a separate patch.",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ff79836_bcfd6876",
+        "filename": "spm/cactus/cactus_tests/cactus_test_cpu_features.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bbef4092_4fa5464b",
       "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -178,6 +346,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3beebf25_98f800db",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21e40ec2_4a48d871",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8dc79574_d1cb0bcd",
@@ -191,6 +377,30 @@
       "writtenOn": "2023-03-30T13:41:33Z",
       "side": 1,
       "message": "this value can be random.",
+      "range": {
+        "startLine": 17,
+        "startChar": 24,
+        "endLine": 17,
+        "endChar": 29
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e45d5e0_2b5fd9ff",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8dc79574_d1cb0bcd",
       "range": {
         "startLine": 17,
         "startChar": 24,
@@ -224,6 +434,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "20b0ad80_bed0fe4f",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1d3c1687_7b84dcef",
+      "range": {
+        "startLine": 24,
+        "startChar": 13,
+        "endLine": 24,
+        "endChar": 28
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "af2351e1_da211cba",
@@ -241,6 +475,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb9f22b1_c0da0058",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "af2351e1_da211cba",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3f067270_fa146cec",
@@ -254,6 +506,30 @@
       "writtenOn": "2023-04-04T15:18:08Z",
       "side": 1,
       "message": "This function name is misleading to be concurrent, instead this could be like:\nfpu_access_in_rl_ns_se",
+      "range": {
+        "startLine": 275,
+        "startChar": 14,
+        "endLine": 275,
+        "endChar": 40
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35034be8_1b00ae0c",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f067270_fa146cec",
       "range": {
         "startLine": 275,
         "startChar": 14,
@@ -287,6 +563,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "82ce2cc7_de58d324",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "01db2150_7dd667a0",
+      "range": {
+        "startLine": 290,
+        "startChar": 1,
+        "endLine": 290,
+        "endChar": 41
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1830e23c_ce10c5a5",
@@ -310,6 +610,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "521301ff_2f30c375",
+        "filename": "tftf/tests/runtime_services/realm_payload/test_realm_spm.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1830e23c_ce10c5a5",
+      "range": {
+        "startLine": 339,
+        "startChar": 33,
+        "endLine": 339,
+        "endChar": 55
+      },
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3485817b_7fa1e3c4",
@@ -323,6 +647,24 @@
       "writtenOn": "2023-03-30T13:41:33Z",
       "side": 1,
       "message": "would avoid doing changes to SPM tests",
+      "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d3d47f1_2e92f538",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 27
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-04-19T17:11:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3485817b_7fa1e3c4",
       "revId": "cdfe2b099374d57c1f0d5e212b4cc052a59240f4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
