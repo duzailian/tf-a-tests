@@ -29,3 +29,5 @@ TESTS_SOURCES	+=							\
 		host_realm_rmi.c					\
 		host_realm_helper.c					\
 	)
+
+TESTS_SOURCES   += lib/extensions/fpu/fpu.c

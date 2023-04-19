@@ -7,6 +7,7 @@
 #include <cactus_test_cmds.h>
 #include <ffa_endpoints.h>
 #include <ffa_helpers.h>
+#include <fpu.h>
 #include <test_helpers.h>
 
 #define SENDER HYP_ID
@@ -33,6 +34,7 @@ static sve_vector_t sve_vectors_input[SVE_NUM_VECTORS] __aligned(16);
 static sve_vector_t sve_vectors_output[SVE_NUM_VECTORS] __aligned(16);
 static int sve_op_1[SVE_ARRAYSIZE];
 static int sve_op_2[SVE_ARRAYSIZE];
+fpu_reg_state_t g_fpu_template;
 #endif
 
 /*
@@ -48,16 +50,7 @@ test_result_t test_simd_vectors_preserved(void)
 	 **********************************************************************/
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 
-	simd_vector_t simd_vectors_send[SIMD_NUM_VECTORS],
-		      simd_vectors_receive[SIMD_NUM_VECTORS];
-
-	/* 0x11 is just a dummy value to be distinguished from the value in the
-	 * secure world. */
-	for (unsigned int num = 0U; num < SIMD_NUM_VECTORS; num++) {
-		memset(simd_vectors_send[num], 0x11 * (num+1), sizeof(simd_vector_t));
-	}
-	fill_simd_vector_regs(simd_vectors_send);
-
+	fpu_state_write_template(&g_fpu_template);
 	struct ffa_value ret = cactus_req_simd_fill_send_cmd(SENDER, RECEIVER);
 
 	if (!is_ffa_direct_response(ret)) {
@@ -68,11 +61,9 @@ test_result_t test_simd_vectors_preserved(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	read_simd_vector_regs(simd_vectors_receive);
-
-	return fp_vector_compare((uint8_t *)simd_vectors_send,
-				 (uint8_t *)simd_vectors_receive,
-				 sizeof(simd_vector_t), SIMD_NUM_VECTORS);
+	/* Normal world verify its FPU/SIMD state registers data */
+	return fpu_state_compare_template(&g_fpu_template) ? TEST_RESULT_SUCCESS :
+		TEST_RESULT_FAIL;
 }
 
 /*
