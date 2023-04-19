@@ -9,6 +9,7 @@
 #include <cactus_test_cmds.h>
 #include <ffa_endpoints.h>
 #include <ffa_helpers.h>
+#include <fpu.h>
 #include <host_realm_helper.h>
 #include <host_realm_mem_layout.h>
 #include <host_shared_data.h>
@@ -20,13 +21,24 @@
 static const struct ffa_uuid expected_sp_uuids[] = { {PRIMARY_UUID} };
 static struct mailbox_buffers mb;
 static bool secure_mailbox_initialised;
+static fpu_reg_state_t fpu_temp_ns;
+
+typedef enum test_rl_sec_fp_cmd {
+	CMD_SIMD_NS_FILL = 0U,
+	CMD_SIMD_NS_CMP,
+	CMD_SIMD_SEC_FILL,
+	CMD_SIMD_SEC_CMP,
+	CMD_SIMD_RL_FILL,
+	CMD_SIMD_RL_CMP,
+	CMD_MAX_COUNT
+} realm_test_cmd_t;
 
 /*
  * This function helps to Initialise secure_mailbox, creates realm payload and
  * shared memory to be used between Host and Realm.
  * Skip test if RME is not supported or not the right RMM version is begin used
  */
-test_result_t init_test(void)
+static test_result_t init_test(void)
 {
 	u_register_t retrmm;
 
@@ -85,6 +97,49 @@ static bool host_realm_handle_fiq_exit(struct realm *realm_ptr)
 		return true;
 	}
 	return false;
+}
+
+/* Send request to SP to fill FPU/SIMD regs with secure template values */
+static bool fpu_fill_sec(void)
+{
+	struct ffa_value ret = cactus_req_simd_fill_send_cmd(SENDER, RECEIVER);
+
+	if (!is_ffa_direct_response(ret)) {
+		ERROR("%s failed %d\n", __func__, __LINE__);
+		return false;
+	}
+	if (cactus_get_response(ret) == CACTUS_ERROR) {
+		ERROR("%s failed %d\n", __func__, __LINE__);
+		return false;
+	}
+	return true;
+}
+
+/* Send request to SP to compare FPU/SIMD regs with secure template values */
+static bool fpu_cmp_sec(void)
+{
+	struct ffa_value ret = cactus_req_simd_compare_send_cmd(SENDER, RECEIVER);
+
+	if (!is_ffa_direct_response(ret)) {
+		ERROR("%s failed %d\n", __func__, __LINE__);
+		return false;
+	}
+	if (cactus_get_response(ret) == CACTUS_ERROR) {
+		ERROR("%s failed %d\n", __func__, __LINE__);
+		return false;
+	}
+	return true;
+}
+
+
+/* Send request to Realm to fill FPU/SIMD regs with realm template values */
+static bool fpu_fill_rl(void)
+{
+	if (!host_enter_realm_execute(REALM_REQ_FPU_FILL_CMD, NULL)) {
+		ERROR("%s failed %d\n", __func__, __LINE__);
+		return false;
+	}
+	return true;
 }
 
 /*
@@ -197,3 +252,97 @@ test_result_t test_sec_interrupt_can_preempt_rl(void)
 
 	return TEST_RESULT_SUCCESS;
 }
+
+/*
+ * Test that FPU/SIMD state are preserved during a randomly context switch
+ * between secure/non-secure/realm(R-EL1)worlds.
+ * FPU/SIMD state consist of the 32 SIMD vectors, FPCR and FPSR registers,
+ * the test runs for 1000 iterations with random combination of:
+ * SECURE_FILL_FPU, SECURE_READ_FPU, REALM_FILL_FPU, REALM_READ_FPU,
+ * NONSECURE_FILL_FPU, NONSECURE_READ_FPU commands,to test all possible situations
+ * of synchronous context switch between worlds, while the content of those registers
+ * is being used.
+ */
+test_result_t host_realm_fpu_access_in_rl_ns_se(void)
+{
+	int cmd = -1, old_cmd  = -1;
+	test_result_t res;
+
+	res = init_test();
+	if (res != TEST_RESULT_SUCCESS) {
+		return res;
+	}
+
+	/*
+	 * Fill all 3 world's FPU/SIMD state regs with some known values in the
+	 * beginning to have something later to compare to.
+	 */
+	fpu_state_write_template(&fpu_temp_ns);
+	if (!fpu_fill_sec()) {
+		ERROR("fpu_fill_sec error\n");
+		goto destroy_realm;
+	}
+	if (!fpu_fill_rl()) {
+		ERROR("fpu_fill_rl error\n");
+		goto destroy_realm;
+	}
+
+	for (uint32_t i = 0; i < 1000; i++) {
+		cmd = rand() % CMD_MAX_COUNT;
+		if (cmd == old_cmd) {
+			continue;
+		}
+		old_cmd = cmd;
+
+		switch (cmd) {
+		case CMD_SIMD_NS_FILL:
+			/* Non secure world fill FPU/SIMD state registers */
+			fpu_state_write_template(&fpu_temp_ns);
+			break;
+		case CMD_SIMD_NS_CMP:
+			/* Normal world verify its FPU/SIMD state registers data */
+			if (!fpu_state_compare_template(&fpu_temp_ns)) {
+				ERROR("%s failed %d\n", __func__, __LINE__);
+				goto destroy_realm;
+			}
+			break;
+		case CMD_SIMD_SEC_FILL:
+			/* secure world fill FPU/SIMD state registers */
+			if (!fpu_fill_sec()) {
+				goto destroy_realm;
+			}
+			break;
+		case CMD_SIMD_SEC_CMP:
+			/* Secure world verify its FPU/SIMD state registers data */
+			if (!fpu_cmp_sec()) {
+				goto destroy_realm;
+			}
+			break;
+		case CMD_SIMD_RL_FILL:
+			/* Realm R-EL1 world fill FPU/SIMD state registers */
+			if (!fpu_fill_rl()) {
+				goto destroy_realm;
+			}
+			break;
+		case CMD_SIMD_RL_CMP:
+			/* Realm R-EL1 world verify its FPU/SIMD state registers data */
+			if (!host_enter_realm_execute(REALM_REQ_FPU_CMP_CMD, NULL)) {
+				ERROR("%s failed %d\n", __func__, __LINE__);
+				goto destroy_realm;
+			}
+			break;
+		default:
+			break;
+		}
+	}
+
+	if (!host_destroy_realm()) {
+		ERROR("host_destroy_realm error\n");
+		return TEST_RESULT_FAIL;
+	}
+	return TEST_RESULT_SUCCESS;
+destroy_realm:
+	host_destroy_realm();
+	return TEST_RESULT_FAIL;
+}
+
