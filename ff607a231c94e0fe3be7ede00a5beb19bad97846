@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c293a5c4_dd93a18a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-04-19T11:31:01Z",
+      "side": 1,
+      "message": "Check results of the tests:\nhttp://jenkins.oss.arm.com:8080/job/tf-ci-gateway/127672/",
+      "revId": "ff607a231c94e0fe3be7ede00a5beb19bad97846",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
