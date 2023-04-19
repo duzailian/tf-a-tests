@@ -18,14 +18,22 @@ TESTS_SOURCES	+=							\
 		test_ffa_memory_sharing.c				\
 		test_ffa_setup_and_discovery.c				\
 		test_ffa_notifications.c				\
-		test_spm_cpu_features.c					\
 		test_spm_smmu.c						\
 		test_ffa_exceptions.c					\
-		sve_operations_cactus.S					\
 	)
+
+ifeq (${ARCH},aarch64)
+TESTS_SOURCES   +=                                                      \
+        $(addprefix tftf/tests/runtime_services/secure_service/,        \
+	test_spm_cpu_features.c						\
+	sve_operations_cactus.S
+)
 
 TESTS_SOURCES	+=							\
 	$(addprefix tftf/tests/runtime_services/host_realm_managment/,	\
 		host_realm_rmi.c					\
 		host_realm_helper.c					\
 	)
+
+TESTS_SOURCES   += lib/extensions/fpu/fpu.c
+endif

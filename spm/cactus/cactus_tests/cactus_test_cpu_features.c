@@ -7,23 +7,30 @@
 #include "cactus_message_loop.h"
 #include "cactus_test_cmds.h"
 #include "spm_common.h"
+#include <fpu.h>
 
+fpu_reg_state_t g_fpu_temp;
 /*
  * Fill SIMD vectors from secure world side with a unique value.
- * 0x22 is just a dummy value to be distinguished from the value
- * in the normal world.
  */
 CACTUS_CMD_HANDLER(req_simd_fill, CACTUS_REQ_SIMD_FILL_CMD)
 {
-	simd_vector_t simd_vectors[SIMD_NUM_VECTORS];
-
-	for (unsigned int num = 0U; num < SIMD_NUM_VECTORS; num++) {
-		memset(simd_vectors[num], 0x22 * num, sizeof(simd_vector_t));
-	}
-
-	fill_simd_vector_regs(simd_vectors);
-
+	fpu_state_write_template(&g_fpu_temp);
 	return cactus_response(ffa_dir_msg_dest(*args),
 			       ffa_dir_msg_source(*args),
 			       CACTUS_SUCCESS);
+}
+
+/*
+ * compare FPU state(SIMD vectors, FPCR, FPSR) from secure world side with the previous
+ * SIMD_SECURE_VALUE unique value.
+ */
+CACTUS_CMD_HANDLER(req_simd_compare, CACTUS_CMP_SIMD_VALUE_CMD)
+{
+	bool test_succeed = false;
+
+	test_succeed = fpu_state_compare_template(&g_fpu_temp);
+	return cactus_response(ffa_dir_msg_dest(*args),
+			ffa_dir_msg_source(*args),
+			test_succeed ? CACTUS_SUCCESS : CACTUS_ERROR);
 }
