@@ -283,6 +283,20 @@ static inline struct ffa_value cactus_req_simd_fill_send_cmd(
 }
 
 /**
+ * Request to compare FPU state(SIMD vectors, FPCR, FPSR) content
+ * with previous template values to check a save/restore routine during the
+ * context switches between secure world and normal world.
+ */
+#define CACTUS_CMP_SIMD_VALUE_CMD (CACTUS_REQ_SIMD_FILL_CMD + 1)
+
+static inline struct ffa_value cactus_req_simd_compare_send_cmd(
+	ffa_id_t source, ffa_id_t dest)
+{
+	return cactus_send_cmd(source, dest, CACTUS_CMP_SIMD_VALUE_CMD, 0, 0, 0,
+			       0);
+}
+
+/**
  * Command to request cactus to sleep for the given time in ms
  *
  * The command id is the hex representation of string "sleep"
