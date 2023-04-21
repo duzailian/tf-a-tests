@@ -16,6 +16,57 @@
       "message": "Triggered on the top patch.\nPassed here: [ https://ci.trustedfirmware.org/job/tf-a-tftf-gerrit-tforg-l2/182/ ]",
       "revId": "454ba99d4b140b3ddc35b1c396696466ec44609b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a733942f_be0f2883",
+        "filename": "lib/extensions/sme/aarch64/sme.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2023-04-21T12:51:04Z",
+      "side": 1,
+      "message": "isb? Same in smstop",
+      "revId": "454ba99d4b140b3ddc35b1c396696466ec44609b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ddd5183_e3cbc75e",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2023-04-21T12:51:04Z",
+      "side": 1,
+      "message": "\"This register has no effect if the PE is not in Streaming SVE mode\", but it\u0027s still accessible just fine. I think this is a NOP here.",
+      "revId": "454ba99d4b140b3ddc35b1c396696466ec44609b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "752e081e_e852d6ae",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2023-04-21T12:51:04Z",
+      "side": 1,
+      "message": "how valid is this test? The way I understand it is tftf wants to test if EL3 has done its job correctly. EL3 is only meant to \"unblock\" the feature so to speak. However, this and the few lines below test the SVCR and SMCR_EL2 register which sounds like a hardware test to me. So wouldn\u0027t a simple \"can we access the ZA array\" test be sufficient? A more important test would be \"does a secure world call preserve these registers?\"",
+      "revId": "454ba99d4b140b3ddc35b1c396696466ec44609b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
