@@ -282,6 +282,30 @@
       },
       "revId": "e0866b27cd62dbe99ffd35b05ddcdf4ca7e2669a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c49be5f1_f77b3170",
+        "filename": "tftf/tests/extensions/sme/test_sme2.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2023-04-21T13:29:49Z",
+      "side": 1,
+      "message": "The architecture permits system register updates to not have an effect until a context synchronization event, which are an isb or exceptions. Since smcr_el2 is a system register, that would be allowed without an isb. The fvp has an option to exercise this \"cluster0.has_delayed_sysreg\u003d1\". Unless I have a gap in my understanding, the fvp is not exercising this change with that option. I suspect the same was true for the original sme and it got \"fixed\" at some point, requiring the patch above.",
+      "parentUuid": "d70b94cd_da06589a",
+      "range": {
+        "startLine": 46,
+        "startChar": 1,
+        "endLine": 46,
+        "endChar": 7
+      },
+      "revId": "e0866b27cd62dbe99ffd35b05ddcdf4ca7e2669a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
