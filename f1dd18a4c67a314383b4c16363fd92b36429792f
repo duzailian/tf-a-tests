@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f84b1d0d_26c4bbc3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-04-21T20:24:55Z",
+      "side": 1,
+      "message": "It seems the test is doing more than this. In line 236 of the test source file, tftf is donating a memory segment named \"consecutive_donate_page\" and in the next step(line 245), it is donating a different memory segment(named \"share_page\").\n\nPerhaps, I might have misunderstood the test.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 62
+      },
+      "revId": "f1dd18a4c67a314383b4c16363fd92b36429792f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
