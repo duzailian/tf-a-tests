@@ -12,7 +12,6 @@
 #include <sp_helpers.h>
 #include <spm_helpers.h>
 #include <spm_common.h>
-
 #include <lib/libc/string.h>
 
 /* FFA version test helpers */
@@ -22,7 +21,7 @@
 static uint32_t spm_version;
 
 static const struct ffa_uuid sp_uuids[] = {
-		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}, {IVY_UUID}
+		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}, {IVY_UUID}, {EL3_SPMD_LP_UUID}
 	};
 
 static const struct ffa_partition_info ffa_expected_partition_info[] = {
@@ -64,7 +63,15 @@ static const struct ffa_partition_info ffa_expected_partition_info[] = {
 			       FFA_PARTITION_DIRECT_REQ_RECV |
 			       FFA_PARTITION_DIRECT_REQ_SEND),
 		.uuid = sp_uuids[3]
-	}
+	},
+	/* EL3 SPMD logical partition */
+	{
+		.id = SP_ID(0x7FC0),
+		.exec_context = EL3_SPMD_LP_EXEC_CTX_COUNT,
+		.properties = (FFA_PARTITION_AARCH64_EXEC |
+			       FFA_PARTITION_DIRECT_REQ_SEND),
+		.uuid = sp_uuids[4]
+	},
 };
 
 /*
@@ -118,6 +125,62 @@ static void ffa_partition_info_wrong_test(void)
 	announce_test_end(test_wrong_uuid);
 }
 
+static void ffa_partition_info_get_regs_test(void)
+{
+	const char *test_partition_info_regs = "FFA Partition info regs interface";
+	struct ffa_value ret = { 0 };
+
+	announce_test_section_start(test_partition_info_regs);
+	ret = ffa_version(MAKE_FFA_VERSION(1, 1));
+	uint32_t version = ret.fid;
+
+	if (version == FFA_ERROR_NOT_SUPPORTED) {
+		ERROR("FFA_VERSION 1.1 not supported, skipping"
+			" FFA_PARTITION_INFO_GET_REGS test.\n");
+		return;
+	}
+
+	ret = ffa_features(FFA_PARTITION_INFO_GET_REGS_SMC64);
+	if (ffa_func_id(ret) != FFA_SUCCESS_SMC32) {
+		ERROR("FFA_PARTITION_INFO_GET_REGS not supported skipping tests.\n");
+		return;
+	}
+
+	expect(ffa_partition_info_regs_helper(sp_uuids[2],
+		&ffa_expected_partition_info[2], 1), true);
+	expect(ffa_partition_info_regs_helper(sp_uuids[1],
+		&ffa_expected_partition_info[1], 1), true);
+	expect(ffa_partition_info_regs_helper(sp_uuids[0],
+		&ffa_expected_partition_info[0], 1), true);
+
+	/*
+	 * Check partition information if there is support for SPMD EL3
+	 * partitions. calling partition_info_get_regs with the SPMD EL3
+	 * UUID successfully, indicates the presence of it (there is no
+	 * spec defined way to discover presence of el3 spmd logical
+	 * partitions). If the call fails with a not supported error,
+	 * we assume they dont exist and skip further tests to avoid
+	 * failures on platforms without el3 spmd logical partitions.
+	 */
+	ret = ffa_partition_info_get_regs(sp_uuids[4], 0, 0);
+	if ((ffa_func_id(ret) == FFA_ERROR) &&
+	    ((ffa_error_code(ret) == FFA_ERROR_NOT_SUPPORTED) ||
+	    (ffa_error_code(ret) == FFA_ERROR_INVALID_PARAMETER))) {
+		INFO("Skipping register based EL3 SPMD Logical partition"
+				" discovery\n");
+		expect(ffa_partition_info_regs_helper(NULL_UUID,
+			ffa_expected_partition_info,
+			(ARRAY_SIZE(ffa_expected_partition_info) - 1)), true);
+	} else {
+		expect(ffa_partition_info_regs_helper(sp_uuids[4],
+			&ffa_expected_partition_info[4], 1), true);
+		expect(ffa_partition_info_regs_helper(NULL_UUID,
+			ffa_expected_partition_info,
+			ARRAY_SIZE(ffa_expected_partition_info)), true);
+	}
+	announce_test_section_end(test_partition_info_regs);
+}
+
 static void ffa_partition_info_get_test(struct mailbox_buffers *mb)
 {
 	const char *test_partition_info = "FFA Partition info interface";
@@ -133,9 +196,14 @@ static void ffa_partition_info_get_test(struct mailbox_buffers *mb)
 	expect(ffa_partition_info_helper(mb, sp_uuids[0],
 		&ffa_expected_partition_info[0], 1), true);
 
+	/*
+	 * TODO: ffa_partition_info_get_regs returns EL3 SPMD LP information
+	 * but partition_info_get does not. Ignore the last entry, that is
+	 * assumed to be the EL3 SPMD LP information.
+	 */
 	expect(ffa_partition_info_helper(mb, NULL_UUID,
 		ffa_expected_partition_info,
-		ARRAY_SIZE(ffa_expected_partition_info)), true);
+		(ARRAY_SIZE(ffa_expected_partition_info) - 1)), true);
 
 	ffa_partition_info_wrong_test();
 
@@ -217,6 +285,7 @@ void ffa_tests(struct mailbox_buffers *mb)
 	ffa_spm_id_get_test();
 	ffa_console_log_test();
 	ffa_partition_info_get_test(mb);
+	ffa_partition_info_get_regs_test();
 
 	announce_test_section_end(test_ffa);
 }

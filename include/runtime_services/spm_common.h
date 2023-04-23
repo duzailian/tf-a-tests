@@ -155,4 +155,7 @@ bool ffa_partition_info_helper(struct mailbox_buffers *mb,
 			const struct ffa_partition_info *expected,
 			const uint16_t expected_size);
 
+bool ffa_partition_info_regs_helper(const struct ffa_uuid uuid,
+		       const struct ffa_partition_info *expected,
+		       const uint16_t expected_size);
 #endif /* SPM_COMMON_H */
