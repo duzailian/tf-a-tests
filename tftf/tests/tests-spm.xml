@@ -61,7 +61,8 @@
 
      <testcase name="FF-A Request SP-to-SP direct messaging deadlock"
            function="test_ffa_sp_to_sp_deadlock" />
-
+         <testcase name="EL3 SPMD FF-A direct messaging"
+           function="test_ffa_el3_spmd_direct_messaging" />
   </testsuite>
 
   <testsuite name="FF-A Group0 interrupts"
