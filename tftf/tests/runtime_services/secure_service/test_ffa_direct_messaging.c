@@ -51,6 +51,18 @@ static test_result_t send_cactus_echo_cmd(ffa_id_t sender,
 	return TEST_RESULT_SUCCESS;
 }
 
+test_result_t test_ffa_el3_spmd_direct_messaging(void)
+{
+	smc_ret_values ret = { 0 };
+	smc_args args = { 0 };
+
+	args.fid  = 0x8200ff04;
+
+	ret = tftf_smc(&args);
+	tftf_testcase_printf("%s:%d: ret = 0x%lx 0x%lx", __func__, __LINE__, ret.ret0, ret.ret2);
+	return TEST_RESULT_SUCCESS;
+}
+
 test_result_t test_ffa_direct_messaging(void)
 {
 	test_result_t result;
