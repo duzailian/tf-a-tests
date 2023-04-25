@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69faf309_16bce2d1",
+        "filename": "include/runtime_services/errata_abi.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-25T20:25:59Z",
+      "side": 1,
+      "message": "I limited to 5 here since I wanted to add and test rest of the errata\u0027s in the unit test cases.",
+      "parentUuid": "9313a0b8_03c7288a",
+      "range": {
+        "startLine": 40,
+        "startChar": 8,
+        "endLine": 40,
+        "endChar": 26
+      },
+      "revId": "2f231a3b6c6fdba81de95e7559e671b488c04529",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19ee2981_7171b53f",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-04-05T21:50:39Z",
       "side": 1,
       "message": "Can you check all these includes are required? Check the rest too.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 16
+      },
+      "revId": "2f231a3b6c6fdba81de95e7559e671b488c04529",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c90f611_deb2f9f0",
+        "filename": "lib/errata_abi/errata_abi.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-25T20:25:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "19ee2981_7171b53f",
       "range": {
         "startLine": 10,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4019d4a4_4dec8482",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-25T20:25:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "02fae99a_1497c485",
+      "range": {
+        "startLine": 300,
+        "startChar": 7,
+        "endLine": 300,
+        "endChar": 11
+      },
+      "revId": "2f231a3b6c6fdba81de95e7559e671b488c04529",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "58fec3dd_88e5d15b",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-04-05T21:50:39Z",
       "side": 1,
       "message": "MIDR. Same for all below instances in the INFO. \n\nBe consistent and use either \"MIDR matches\" or \"MIDR value matches\". Replace instance for \"MIDR val matches\" with one of the first two as this is a third variant.",
+      "range": {
+        "startLine": 315,
+        "startChar": 11,
+        "endLine": 315,
+        "endChar": 15
+      },
+      "revId": "2f231a3b6c6fdba81de95e7559e671b488c04529",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b105bb9_b163ae34",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-25T20:25:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "58fec3dd_88e5d15b",
       "range": {
         "startLine": 315,
         "startChar": 11,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "57230e7c_b4b06516",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-25T20:25:59Z",
+      "side": 1,
+      "message": "Ack, yes did this for other neoverse cpus too",
+      "parentUuid": "392a7492_84a4335e",
+      "range": {
+        "startLine": 381,
+        "startChar": 28,
+        "endLine": 381,
+        "endChar": 35
+      },
+      "revId": "2f231a3b6c6fdba81de95e7559e671b488c04529",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e9da60b_7d606070",
@@ -129,6 +249,30 @@
       "writtenOn": "2023-04-05T21:50:39Z",
       "side": 1,
       "message": "Same as above.",
+      "range": {
+        "startLine": 321,
+        "startChar": 0,
+        "endLine": 441,
+        "endChar": 38
+      },
+      "revId": "2f231a3b6c6fdba81de95e7559e671b488c04529",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e333a2ce_96360e18",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-04-25T20:25:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3e9da60b_7d606070",
       "range": {
         "startLine": 321,
         "startChar": 0,
