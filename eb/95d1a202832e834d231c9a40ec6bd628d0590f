@@ -1,0 +1,10 @@
+Maintainer-Review+1: Soby Mathew <soby.mathew@arm.com>
+Maintainer-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Verified+1: Soby Mathew <soby.mathew@arm.com>
+Code-Owner-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Review+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Tue, 25 Apr 2023 15:11:24 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/17621
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
