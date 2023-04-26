@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "406cc03b_d150e9db",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-04-26T11:04:27Z",
+      "side": 1,
+      "message": "TYPO: circumvent",
+      "range": {
+        "startLine": 10,
+        "startChar": 52,
+        "endLine": 10,
+        "endChar": 62
+      },
+      "revId": "5e1c9e05ce46097a9a1faf0d487ee875c419bb71",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
