@@ -119,6 +119,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8630a17_1844bf13",
+        "filename": "lib/extensions/sme/aarch64/sme2.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-04-26T22:16:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8c00623_2545e2b7",
+      "range": {
+        "startLine": 48,
+        "startChar": 5,
+        "endLine": 48,
+        "endChar": 15
+      },
+      "revId": "e0866b27cd62dbe99ffd35b05ddcdf4ca7e2669a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "04dd63f9_b5682713",
@@ -346,6 +370,30 @@
       "side": 1,
       "message": "Unless you pass `-C cluster0.has_delayed_sysreg\u003d1` in which case it is... It\u0027s a useful debug option too, even though not 100% guaranteed to work",
       "parentUuid": "360d0ee6_4e593447",
+      "range": {
+        "startLine": 46,
+        "startChar": 1,
+        "endLine": 46,
+        "endChar": 7
+      },
+      "revId": "e0866b27cd62dbe99ffd35b05ddcdf4ca7e2669a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d87da0b8_adb6542e",
+        "filename": "tftf/tests/extensions/sme/test_sme2.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-04-26T22:16:41Z",
+      "side": 1,
+      "message": "So as per this discussion, we agree on to adding isb() after a write to an system register.",
+      "parentUuid": "7e05ef26_9215ae9e",
       "range": {
         "startLine": 46,
         "startChar": 1,
