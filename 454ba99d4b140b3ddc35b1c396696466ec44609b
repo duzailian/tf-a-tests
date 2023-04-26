@@ -16,6 +16,24 @@
       "message": "why not keep in sme_helpers.S? Same with sme.c. They could be divided with a comment and I think would be nicer to read",
       "revId": "454ba99d4b140b3ddc35b1c396696466ec44609b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8faa4e4d_4a981939",
+        "filename": "lib/extensions/sme/aarch64/sme2_helpers.S",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-04-26T22:21:51Z",
+      "side": 0,
+      "message": "I believe it\u0027s easy to maintain them by having them in separate files.\nWe don\u0027t have any pattern as such here nor do I see any issues. So would prefer to retain them in this way.\nThanks!",
+      "parentUuid": "c31a4183_78ac65f7",
+      "revId": "454ba99d4b140b3ddc35b1c396696466ec44609b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
