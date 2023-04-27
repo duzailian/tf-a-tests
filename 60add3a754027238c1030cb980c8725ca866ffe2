@@ -16,6 +16,24 @@
       "message": "There seems to be some problem with L3 TC0 test ?\n\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/34905/\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/34918/",
       "revId": "60add3a754027238c1030cb980c8725ca866ffe2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "adcda2d9_3833aa8a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2023-04-27T23:38:46Z",
+      "side": 1,
+      "message": "There was an issue with Ivy shim needing to use HVC during boot phase so that has been added back in. This was affecting any test using Ivy without VHE\n\nTC0 test still fails locally, need to examine logs",
+      "parentUuid": "08f4a8af_1a196bfa",
+      "revId": "60add3a754027238c1030cb980c8725ca866ffe2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
