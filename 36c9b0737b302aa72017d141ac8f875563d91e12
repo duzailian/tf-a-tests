@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22c9fcd8_052c29d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-04-27T15:37:29Z",
+      "side": 1,
+      "message": "The failure is because the work part of this topic now makes the design of the invalid access test leverage an illegal operation.\nPushed a patch to circumvent that for the time being.\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/20753/1",
+      "revId": "36c9b0737b302aa72017d141ac8f875563d91e12",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
