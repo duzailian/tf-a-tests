@@ -88,6 +88,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce955fd4_4b3c5b44",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-04-27T23:46:05Z",
+      "side": 1,
+      "message": "After analysing in detail, its clear that smcr_el2 could be accessed even when the PE is not in streaming SVE mode. I dont see any crash when register is accessed ( when not in streaming SVE mode).\nHence this portion is removed.",
+      "parentUuid": "39b5b86d_7151e502",
+      "revId": "454ba99d4b140b3ddc35b1c396696466ec44609b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "752e081e_e852d6ae",
