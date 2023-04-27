@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37527503_a92af386",
+        "filename": "realm/realm_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-27T13:48:26Z",
+      "side": 1,
+      "message": "nit: 512U",
+      "range": {
+        "startLine": 15,
+        "startChar": 29,
+        "endLine": 15,
+        "endChar": 32
+      },
+      "revId": "affb75b7877788099fc6b1bf23d4fcf18289efea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec284928_afd22ce6",
+        "filename": "realm/realm_sve.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-27T13:48:26Z",
+      "side": 1,
+      "message": "nit: 4U, and maybe add this below the definition for RL_SV_OP_ARRAYSIZE and leave an empty line between the definitions and the declarations, just for readability.",
+      "range": {
+        "startLine": 18,
+        "startChar": 29,
+        "endLine": 18,
+        "endChar": 30
+      },
+      "revId": "affb75b7877788099fc6b1bf23d4fcf18289efea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "205cce61_138ca520",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_sve_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-04-27T13:48:26Z",
+      "side": 1,
+      "message": "same comments as on realm_sve.c",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 31
+      },
+      "revId": "affb75b7877788099fc6b1bf23d4fcf18289efea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
