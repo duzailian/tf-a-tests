@@ -16,6 +16,24 @@
       "message": "nit: Leave an empty line between the variable declaration and the rest of the code",
       "revId": "9475722610e9745fde283816691ff6b178b032d6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "beb5a5fe_f81139a6",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-28T10:30:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4197a302_5004ff61",
+      "revId": "9475722610e9745fde283816691ff6b178b032d6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
