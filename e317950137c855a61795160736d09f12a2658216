@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4e3e8f0_b7373368",
+        "filename": "include/lib/extensions/sve.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-28T10:32:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3af57740_ccd5e8d4",
+      "range": {
+        "startLine": 25,
+        "startChar": 32,
+        "endLine": 25,
+        "endChar": 63
+      },
+      "revId": "e317950137c855a61795160736d09f12a2658216",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e1e35d8_acaccca7",
@@ -37,6 +61,24 @@
       "writtenOn": "2023-04-27T12:23:00Z",
       "side": 1,
       "message": "((vq + 1U) \u003c\u003c 7U)? Also, same comment as above about magic numbers",
+      "revId": "e317950137c855a61795160736d09f12a2658216",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01b18813_111b2c46",
+        "filename": "include/lib/extensions/sve.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-28T10:32:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e1e35d8_acaccca7",
       "revId": "e317950137c855a61795160736d09f12a2658216",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe28206f_060cbea4",
+        "filename": "include/runtime_services/host_realm_managment/host_shared_data.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-28T10:32:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b497b50f_17acb76d",
+      "range": {
+        "startLine": 16,
+        "startChar": 30,
+        "endLine": 16,
+        "endChar": 34
+      },
+      "revId": "e317950137c855a61795160736d09f12a2658216",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f6f0df3c_0c8f80ed",
@@ -77,6 +143,30 @@
       "writtenOn": "2023-04-27T12:23:00Z",
       "side": 1,
       "message": "shouldn\u0027t the name of these tests start with \"test_\" for consistency?",
+      "range": {
+        "startLine": 15,
+        "startChar": 1,
+        "endLine": 17,
+        "endChar": 30
+      },
+      "revId": "e317950137c855a61795160736d09f12a2658216",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5f73bd1_4c068cfb",
+        "filename": "realm/include/realm_tests.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-28T10:32:09Z",
+      "side": 1,
+      "message": "Done\nyes, added test_ prefix",
+      "parentUuid": "f6f0df3c_0c8f80ed",
       "range": {
         "startLine": 15,
         "startChar": 1,
@@ -112,6 +202,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b75ec379_cd69b571",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_sve_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-28T10:32:09Z",
+      "side": 1,
+      "message": "yes, many macros in test_helpers.h change the flow.\nI wanted to add SKIP_OR_FAIL_ as a prefix to this macro, but that results in long name",
+      "parentUuid": "410d600c_d8054eac",
+      "range": {
+        "startLine": 31,
+        "startChar": 3,
+        "endLine": 31,
+        "endChar": 27
+      },
+      "revId": "e317950137c855a61795160736d09f12a2658216",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6aad9eb2_8fccb37b",
         "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_sve_tests.c",
         "patchSetId": 4
@@ -123,6 +237,30 @@
       "writtenOn": "2023-04-27T12:23:00Z",
       "side": 1,
       "message": "nit: \"(...) it must be the (...)\"",
+      "range": {
+        "startLine": 72,
+        "startChar": 48,
+        "endLine": 72,
+        "endChar": 59
+      },
+      "revId": "e317950137c855a61795160736d09f12a2658216",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09ddaa53_9efd59b4",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_sve_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-04-28T10:32:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6aad9eb2_8fccb37b",
       "range": {
         "startLine": 72,
         "startChar": 48,
