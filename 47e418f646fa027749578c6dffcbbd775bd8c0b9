@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca485227_ebddbfe5",
+        "filename": "include/runtime_services/errata_abi.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-05-01T21:12:44Z",
+      "side": 1,
+      "message": "Do we use this? Couldn\u0027t find it being used.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 25
+      },
+      "revId": "47e418f646fa027749578c6dffcbbd775bd8c0b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49d357e8_cdce0670",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-05-01T21:12:44Z",
+      "side": 1,
+      "message": "If you are including all CPUs, can do add comment indicating that or if excluding specific CPUs or specific erratum for a specific CPU, mention that. Over time it might get out of sync and might confuse, but atleast capture it in comments so we have this clarified.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 27
+      },
+      "revId": "47e418f646fa027749578c6dffcbbd775bd8c0b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
