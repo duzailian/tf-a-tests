@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65ef1320_446b7004",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-03T12:33:54Z",
+      "side": 1,
+      "message": "minor nits.",
+      "revId": "ecee0a1b6c77014d674b58c79cfb96581cac4cc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bfbb338_5be42bb6",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-03T12:33:54Z",
+      "side": 1,
+      "message": "\"...with random values and copy the values of regs to the template parameter.\"",
+      "range": {
+        "startLine": 35,
+        "startChar": 54,
+        "endLine": 36,
+        "endChar": 33
+      },
+      "revId": "ecee0a1b6c77014d674b58c79cfb96581cac4cc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9e49817_f8813463",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-03T12:33:54Z",
+      "side": 1,
+      "message": "prefer to have a naming convention with a prefix corresponding to the module. In this case fpu_state_ can be the prefix.\n\nfpu_state_fill_regs_and_template()",
+      "range": {
+        "startLine": 38,
+        "startChar": 5,
+        "endLine": 38,
+        "endChar": 43
+      },
+      "revId": "ecee0a1b6c77014d674b58c79cfb96581cac4cc6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
