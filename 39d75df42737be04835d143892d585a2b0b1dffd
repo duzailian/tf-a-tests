@@ -47,6 +47,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c61e152_ab882039",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-03T05:46:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78d7d6f2_7baeafc0",
+      "range": {
+        "startLine": 11,
+        "startChar": 66,
+        "endLine": 11,
+        "endChar": 67
+      },
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "863dc012_127f4696",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-03T05:46:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c34b884b_4869875e",
+      "range": {
+        "startLine": 11,
+        "startChar": 22,
+        "endLine": 11,
+        "endChar": 41
+      },
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a1c2ccaf_455be528",
@@ -60,6 +108,30 @@
       "writtenOn": "2023-05-03T04:11:29Z",
       "side": 1,
       "message": "fpu_state_fill_and_get_state()  as name ?",
+      "range": {
+        "startLine": 58,
+        "startChar": 5,
+        "endLine": 58,
+        "endChar": 29
+      },
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9573e1da_70cab696",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-03T05:46:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1c2ccaf_455be528",
       "range": {
         "startLine": 58,
         "startChar": 5,
@@ -87,6 +159,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b0d992e_26e91821",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-03T05:46:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4dc04986_6a61c8f7",
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a129e84_c20cc879",
@@ -100,6 +190,24 @@
       "writtenOn": "2023-05-03T04:11:29Z",
       "side": 1,
       "message": "The only issue with a global variable is that this test must run the complete sequence on a single CPU. That limitation can be mentioned in a comment and also enforced via another CPUid variable stored globally.",
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f269d282_736b8364",
+        "filename": "spm/cactus/cactus_tests/cactus_test_cpu_features.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-03T05:46:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a129e84_c20cc879",
       "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -127,6 +235,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c6040f9_ba70937d",
+        "filename": "spm/cactus/cactus_tests/cactus_test_cpu_features.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-03T05:46:33Z",
+      "side": 1,
+      "message": "Added now, also used by realm tests",
+      "parentUuid": "c8ed3731_9d5f3ec9",
+      "range": {
+        "startLine": 28,
+        "startChar": 19,
+        "endLine": 28,
+        "endChar": 35
+      },
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "69b45304_616aa5f2",
@@ -140,6 +272,30 @@
       "writtenOn": "2023-05-03T04:11:29Z",
       "side": 1,
       "message": "random",
+      "range": {
+        "startLine": 41,
+        "startChar": 31,
+        "endLine": 41,
+        "endChar": 37
+      },
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "082f12d0_9303b3dc",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-03T05:46:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "69b45304_616aa5f2",
       "range": {
         "startLine": 41,
         "startChar": 31,
