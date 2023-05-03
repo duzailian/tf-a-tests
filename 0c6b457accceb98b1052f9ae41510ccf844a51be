@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e1b4899_698efba9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 36
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-03T12:39:19Z",
+      "side": 1,
+      "message": "looks good, minor suggestion to allow running with just NS-RL worlds.",
+      "revId": "0c6b457accceb98b1052f9ae41510ccf844a51be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee3e53bf_7df1d058",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_spm.c",
+        "patchSetId": 36
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-03T12:39:19Z",
+      "side": 1,
+      "message": "One issue of this test is it needs all 3 worlds to run (S/NS/RL). If this test can be scaled for 2 worlds (NS/RL) or another test for that, it would be ideal.",
+      "revId": "0c6b457accceb98b1052f9ae41510ccf844a51be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
