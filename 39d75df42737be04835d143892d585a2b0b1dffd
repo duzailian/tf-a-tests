@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78d7d6f2_7baeafc0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-03T04:11:29Z",
+      "side": 1,
+      "message": "nit : remove white space.",
+      "range": {
+        "startLine": 11,
+        "startChar": 66,
+        "endLine": 11,
+        "endChar": 67
+      },
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c34b884b_4869875e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-03T04:11:29Z",
+      "side": 1,
+      "message": "The commit message needs to be improved and needs to reflect the test sequence correctly.",
+      "range": {
+        "startLine": 11,
+        "startChar": 22,
+        "endLine": 11,
+        "endChar": 41
+      },
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1c2ccaf_455be528",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-03T04:11:29Z",
+      "side": 1,
+      "message": "fpu_state_fill_and_get_state()  as name ?",
+      "range": {
+        "startLine": 58,
+        "startChar": 5,
+        "endLine": 58,
+        "endChar": 29
+      },
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4dc04986_6a61c8f7",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-03T04:11:29Z",
+      "side": 1,
+      "message": "we should be able to set some valid bits (even a fixed pattern will do).",
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a129e84_c20cc879",
+        "filename": "spm/cactus/cactus_tests/cactus_test_cpu_features.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-03T04:11:29Z",
+      "side": 1,
+      "message": "The only issue with a global variable is that this test must run the complete sequence on a single CPU. That limitation can be mentioned in a comment and also enforced via another CPUid variable stored globally.",
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8ed3731_9d5f3ec9",
+        "filename": "spm/cactus/cactus_tests/cactus_test_cpu_features.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-03T04:11:29Z",
+      "side": 1,
+      "message": "This is not invoked in the test as far as I can see.",
+      "range": {
+        "startLine": 28,
+        "startChar": 19,
+        "endLine": 28,
+        "endChar": 35
+      },
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69b45304_616aa5f2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-03T04:11:29Z",
+      "side": 1,
+      "message": "random",
+      "range": {
+        "startLine": 41,
+        "startChar": 31,
+        "endLine": 41,
+        "endChar": 37
+      },
+      "revId": "39d75df42737be04835d143892d585a2b0b1dffd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
