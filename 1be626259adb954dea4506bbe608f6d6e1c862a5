@@ -58,6 +58,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2bbf340_890c695c",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_spm.c",
+        "patchSetId": 35
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-03T05:46:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db41c078_ce2d3ac7",
+      "range": {
+        "startLine": 329,
+        "startChar": 9,
+        "endLine": 329,
+        "endChar": 33
+      },
+      "revId": "1be626259adb954dea4506bbe608f6d6e1c862a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a9824257_908056b0",
@@ -71,6 +95,30 @@
       "writtenOn": "2023-05-03T04:26:17Z",
       "side": 1,
       "message": "this line is repeated.",
+      "range": {
+        "startLine": 33,
+        "startChar": 13,
+        "endLine": 33,
+        "endChar": 52
+      },
+      "revId": "1be626259adb954dea4506bbe608f6d6e1c862a5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4185ca9d_0dba0346",
+        "filename": "tftf/tests/tests-realm-payload.xml",
+        "patchSetId": 35
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-03T05:46:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9824257_908056b0",
       "range": {
         "startLine": 33,
         "startChar": 13,
