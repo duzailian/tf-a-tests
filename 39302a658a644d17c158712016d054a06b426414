@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c05ada9_bb612f3e",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-04T22:19:38Z",
+      "side": 1,
+      "message": "nitpick:\nI find Q confusing. Can you rename to FPU_REGISTER_SIZE",
+      "range": {
+        "startLine": 11,
+        "startChar": 12,
+        "endLine": 11,
+        "endChar": 13
+      },
+      "revId": "39302a658a644d17c158712016d054a06b426414",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f58158b6_1030314d",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-04T22:19:38Z",
+      "side": 1,
+      "message": "nitpick: FPU_REGISTER_COUNT",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 12,
+        "endChar": 19
+      },
+      "revId": "39302a658a644d17c158712016d054a06b426414",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8bdec4b8_ba892fc6",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-04T22:19:38Z",
+      "side": 1,
+      "message": "nitpic: FPU_OFFSET_REGISTERS",
+      "range": {
+        "startLine": 15,
+        "startChar": 8,
+        "endLine": 15,
+        "endChar": 20
+      },
+      "revId": "39302a658a644d17c158712016d054a06b426414",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd9f139b_609259bb",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-04T22:19:38Z",
+      "side": 1,
+      "message": "nitpick: registers",
+      "range": {
+        "startLine": 24,
+        "startChar": 9,
+        "endLine": 24,
+        "endChar": 10
+      },
+      "revId": "39302a658a644d17c158712016d054a06b426414",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
