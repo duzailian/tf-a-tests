@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "95df365b_900fd690",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-04T15:51:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "561d32ab_90cb1395",
+      "revId": "f4aa9726026bb4df258102e12e14a4bb48b64b73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8e02df46_353747d2",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-04-24T18:29:14Z",
       "side": 1,
       "message": "nitpick: 2023\nacross other files as well",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "f4aa9726026bb4df258102e12e14a4bb48b64b73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00168323_47c888ea",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-04T15:51:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e02df46_353747d2",
       "range": {
         "startLine": 2,
         "startChar": 22,
@@ -102,6 +144,30 @@
       "side": 1,
       "message": "I think the rename can be taken up later. Using the name FPU is an accepted convention for these registers. AdvSIMD/SIMD is usually used to refer to the instructions operating on the regs.",
       "parentUuid": "9fd53d0c_18b360db",
+      "range": {
+        "startLine": 51,
+        "startChar": 1,
+        "endLine": 51,
+        "endChar": 43
+      },
+      "revId": "f4aa9726026bb4df258102e12e14a4bb48b64b73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b40dc3c_17a33cbc",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-04T15:51:06Z",
+      "side": 1,
+      "message": "changed testcase description to reflect FPU registers.\nrenaming can be taken up later if needed.",
+      "parentUuid": "5be74daf_521bbe27",
       "range": {
         "startLine": 51,
         "startChar": 1,
