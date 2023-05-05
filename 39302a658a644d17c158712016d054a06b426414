@@ -95,6 +95,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ae4908b_c8ca678f",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-05T13:05:32Z",
+      "side": 1,
+      "message": "rework later with other coments",
+      "parentUuid": "aa9a5669_fb26d8f9",
+      "range": {
+        "startLine": 12,
+        "startChar": 8,
+        "endLine": 12,
+        "endChar": 19
+      },
+      "revId": "39302a658a644d17c158712016d054a06b426414",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8bdec4b8_ba892fc6",
@@ -142,6 +166,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "77992fe9_1752360a",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-05T13:05:32Z",
+      "side": 1,
+      "message": "rework later with other coments",
+      "parentUuid": "82375384_91d876e8",
+      "range": {
+        "startLine": 15,
+        "startChar": 8,
+        "endLine": 15,
+        "endChar": 20
+      },
+      "revId": "39302a658a644d17c158712016d054a06b426414",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd9f139b_609259bb",
@@ -179,6 +227,30 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "bd9f139b_609259bb",
+      "range": {
+        "startLine": 24,
+        "startChar": 9,
+        "endLine": 24,
+        "endChar": 10
+      },
+      "revId": "39302a658a644d17c158712016d054a06b426414",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "170cf8fe_da699faa",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-05-05T13:05:32Z",
+      "side": 1,
+      "message": "rework later with other coments",
+      "parentUuid": "3d73e4d4_6a5860c2",
       "range": {
         "startLine": 24,
         "startChar": 9,
