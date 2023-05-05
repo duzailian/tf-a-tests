@@ -223,6 +223,11 @@ COMMON_CFLAGS		+=	-nostdinc -ffreestanding -Wall	-Werror 	\
 				-std=gnu99 -Os
 COMMON_CFLAGS		+=	-ffunction-sections -fdata-sections
 
+# https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105523
+ifneq ($(findstring 12.,$(shell $(CC) --version 2>/dev/null)),)
+COOMON_CFLAGS		+=	--param=min-pagesize=0
+endif
+
 # Get the content of CFLAGS user defined value last so they are appended after
 # the options defined in the Makefile
 COMMON_CFLAGS 		+=	${CFLAGS} ${INCLUDES}
