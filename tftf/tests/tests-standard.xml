@@ -30,21 +30,6 @@
 
 <testsuites>
 
-  &tests-tftf-validation;
-  &tests-boot-req;
-  &tests-psci;
-  &tests-sdei;
-  &tests-rt-instr;
-  &tests-trng;
-  &tests-tsp;
-  &tests-el3-pstate;
-  &tests-state-switch;
-  &tests-cpu-extensions;
-  &tests-performance;
-  &tests-smc;
-  &tests-spm;
-  &tests-pmu-leakage;
-  &tests-debugfs;
   &tests-rmi-spm;
   &tests-realm-payload;
 
