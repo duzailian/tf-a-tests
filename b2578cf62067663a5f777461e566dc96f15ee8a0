@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8576ccd_3b6b9c61",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2023-05-05T12:12:01Z",
+      "side": 1,
+      "message": "up to here, this test does exactly what the other two do. So why have the other two? They\u0027re redundant",
+      "revId": "b2578cf62067663a5f777461e566dc96f15ee8a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17125cdc_b2226609",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2023-05-05T12:12:01Z",
+      "side": 1,
+      "message": "at a glance this test will fail on at least the A65AE and A76AE as there are no entries for them, as well as any aarch32 cpus as there is no aarch64 check at the top. It will also fail on any new/unexpected (denver?) cpu this test is run on. This does not sound correct to me. The test failing to recognise a cpu is not the test failing to me. At the very least this should be test skipped.",
+      "revId": "b2578cf62067663a5f777461e566dc96f15ee8a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8640add8_95e23cf8",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2023-05-05T12:12:01Z",
+      "side": 1,
+      "message": "I want to challenge the approach of this test in general. I don\u0027t see the struct above to encode what each erratum is expected to return. So how does tftf decide any one of these is the correct return value? I don\u0027t see a comment explaining this either. Is the goal to test _ALL_ errata? That doesn\u0027t seem sustainable (and is also slow, no?) as this list will need updating on every single new erratum. What about different _valid_ builds of tf-a?",
+      "revId": "b2578cf62067663a5f777461e566dc96f15ee8a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
