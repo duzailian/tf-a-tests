@@ -74,6 +74,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "4519f6ee_40f4ff88",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-05-05T14:45:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3421c8e9_08b86b69",
+      "range": {
+        "startLine": 13,
+        "startChar": 57,
+        "endLine": 14,
+        "endChar": 6
+      },
+      "revId": "fd7eaa37d0a24a35b4e3cc9c4b3fa8528c194d28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "489d6c93_31413d3f",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 3
@@ -390,6 +414,30 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "a3f6f7fc_23169681",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 28
+      },
+      "revId": "fd7eaa37d0a24a35b4e3cc9c4b3fa8528c194d28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "87518abd_813a1d72",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-05-05T14:45:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32e571c4_137f2d72",
       "range": {
         "startLine": 19,
         "startChar": 8,

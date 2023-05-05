@@ -89,6 +89,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "63601eec_add761d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-05-05T14:45:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "765a5c23_eff0f4e1",
+      "revId": "b1153024f9880b5e9b335a612e4be62682ecb0be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d330f346_cde3dd27",
@@ -126,6 +144,30 @@
       "side": 1,
       "message": "sure. will wait for you to get back on how to refactor. i\u0027m out of ideas :)",
       "parentUuid": "d330f346_cde3dd27",
+      "range": {
+        "startLine": 312,
+        "startChar": 0,
+        "endLine": 312,
+        "endChar": 40
+      },
+      "revId": "b1153024f9880b5e9b335a612e4be62682ecb0be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eee6e4bf_de4a920c",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-05-05T14:45:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de29112f_6683e06b",
       "range": {
         "startLine": 312,
         "startChar": 0,
