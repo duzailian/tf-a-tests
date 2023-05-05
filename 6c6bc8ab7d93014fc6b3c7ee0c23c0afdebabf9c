@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60e47363_92f5aff5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-05T19:49:18Z",
+      "side": 1,
+      "message": "build verified locally. The CI is taking too long so giving a manual score for the simple fix.",
+      "revId": "6c6bc8ab7d93014fc6b3c7ee0c23c0afdebabf9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
