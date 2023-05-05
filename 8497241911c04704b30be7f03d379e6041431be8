@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "884513f3_76d769ec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-05T11:53:52Z",
+      "side": 1,
+      "message": "Just minor comments, otherwise LGTM",
+      "revId": "8497241911c04704b30be7f03d379e6041431be8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0dca0600_e99d8c1a",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-05T11:53:52Z",
+      "side": 1,
+      "message": "also add:\n\n\"Returns a bitmap corresponding to each support VL\"",
+      "revId": "8497241911c04704b30be7f03d379e6041431be8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44b80767_1e2460e1",
+        "filename": "realm/realm_sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-05T11:53:52Z",
+      "side": 1,
+      "message": "We could read ID reg to make sure there is SVE support present as a good measure. Else the assert in sve_config_vq() will fire.\n\nOr is the intention to test Instr Abort if SVE is not present ? (We need to add test to test this as well if not done already).",
+      "revId": "8497241911c04704b30be7f03d379e6041431be8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d12bacf0_65c2bcf9",
+        "filename": "realm/realm_sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-05T11:53:52Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "8497241911c04704b30be7f03d379e6041431be8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97d41565_a438d337",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_sve_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-05T11:53:52Z",
+      "side": 1,
+      "message": "We need not assume RMM implementation for the test. It is legal for RMM to not  expose SVE capability for Realms, so the test can be skipped I think.",
+      "range": {
+        "startLine": 37,
+        "startChar": 10,
+        "endLine": 37,
+        "endChar": 26
+      },
+      "revId": "8497241911c04704b30be7f03d379e6041431be8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
