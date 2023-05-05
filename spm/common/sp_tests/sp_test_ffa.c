@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+#include "ffa_helpers.h"
 #include <assert.h>
 #include <debug.h>
 #include <errno.h>
@@ -72,7 +73,6 @@ static const struct ffa_partition_info ffa_expected_partition_info[] = {
  */
 static void ffa_features_test(void)
 {
-	const char *test_features = "FFA Features interface";
 	struct ffa_value ffa_ret;
 	unsigned int expected_ret;
 	const struct ffa_features_test *ffa_feature_test_target;
@@ -80,28 +80,32 @@ static void ffa_features_test(void)
 		get_ffa_feature_test_target(&ffa_feature_test_target);
 	struct ffa_features_test test_target;
 
-
-	announce_test_section_start(test_features);
-
 	for (i = 0U; i < test_target_size; i++) {
 		test_target = ffa_feature_test_target[i];
 
-		announce_test_start(test_target.test_name);
-
-		ffa_ret = ffa_features_with_input_property(test_target.feature, test_target.param);
+		ffa_ret = ffa_features_with_input_property(test_target.feature,
+							   test_target.param);
 		expected_ret = FFA_VERSION_COMPILED
 				>= test_target.version_added ?
 				test_target.expected_ret : FFA_ERROR;
 
-		expect(ffa_func_id(ffa_ret), expected_ret);
-		if (expected_ret == FFA_ERROR) {
-			expect(ffa_error_code(ffa_ret), FFA_ERROR_NOT_SUPPORTED);
+		if (ffa_func_id(ffa_ret) != expected_ret) {
+			ERROR("Unexpected return: %x (expected %x)."
+			      " FFA_FEATURES test: %s.\n",
+			      ffa_func_id(ffa_ret), expected_ret,
+			      test_target.test_name);
 		}
 
-		announce_test_end(test_target.test_name);
+		if (expected_ret == FFA_ERROR) {
+			if (ffa_error_code(ffa_ret) !=
+			    FFA_ERROR_NOT_SUPPORTED) {
+				ERROR("Unexpected error code: %x (expected %x)."
+				      " FFA_FEATURES test: %s.\n",
+				      ffa_error_code(ffa_ret), expected_ret,
+				      test_target.test_name);
+			}
+		}
 	}
-
-	announce_test_section_end(test_features);
 }
 
 static void ffa_partition_info_wrong_test(void)
