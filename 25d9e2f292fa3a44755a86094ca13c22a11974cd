@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7226a27_8a9891ad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-05-05T11:18:25Z",
+      "side": 1,
+      "message": "LGTM\nIf we are waiting for Verified+1, will follow up and add vote accordingly.",
+      "revId": "25d9e2f292fa3a44755a86094ca13c22a11974cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
