@@ -33,6 +33,23 @@
       "message": "TF-A Tests are passing here [ https://ci.trustedfirmware.org/job/tf-a-tftf-gerrit-tforg-l1/451/] ",
       "revId": "25d9e2f292fa3a44755a86094ca13c22a11974cd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2253960d_7b20e2c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-05T12:52:24Z",
+      "side": 1,
+      "message": "Merging this, given that the TFTF build is passing.",
+      "revId": "25d9e2f292fa3a44755a86094ca13c22a11974cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
