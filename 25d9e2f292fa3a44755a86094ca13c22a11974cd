@@ -16,6 +16,23 @@
       "message": "LGTM\nIf we are waiting for Verified+1, will follow up and add vote accordingly.",
       "revId": "25d9e2f292fa3a44755a86094ca13c22a11974cd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "481fa80d_959deb6d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-05-05T12:48:10Z",
+      "side": 1,
+      "message": "TF-A Tests are passing here [ https://ci.trustedfirmware.org/job/tf-a-tftf-gerrit-tforg-l1/451/] ",
+      "revId": "25d9e2f292fa3a44755a86094ca13c22a11974cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
