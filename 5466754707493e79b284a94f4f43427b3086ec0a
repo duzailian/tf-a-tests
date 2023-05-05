@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8513149_538f889f",
+        "filename": "Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-05T15:23:15Z",
+      "side": 1,
+      "message": "Could define a helper macro similar to `ld_option`",
+      "range": {
+        "startLine": 227,
+        "startChar": 0,
+        "endLine": 229,
+        "endChar": 5
+      },
+      "revId": "5466754707493e79b284a94f4f43427b3086ec0a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
