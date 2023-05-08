@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b19e6666_00102027",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-08T18:31:26Z",
+      "side": 1,
+      "message": "Applying COR+1 vote that got lost due to rebase conflict.",
+      "revId": "cbd8989c93c56bd992cf4998226ed6b247d32954",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
