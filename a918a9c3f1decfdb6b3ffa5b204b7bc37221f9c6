@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "157e0af0_35890f0c",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2023-05-08T22:21:24Z",
+      "side": 1,
+      "message": "this should also skip if version return is not supported 😊\n\nyou need:\n\n[..]\n\tif (version_return \u003d\u003d EM_NOT_SUPPORTED)\n\t\treturn TEST_RESULT_SKIPPED;\n[..]",
+      "revId": "a918a9c3f1decfdb6b3ffa5b204b7bc37221f9c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
