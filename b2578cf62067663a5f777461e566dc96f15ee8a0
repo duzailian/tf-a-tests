@@ -53,6 +53,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "11e5b0b2_faf4dfc7",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-08T22:36:57Z",
+      "side": 1,
+      "message": "These are required and serve as the discovery mechanism as per section 1.4 of the spec.",
+      "parentUuid": "4ffb6a35_5f55ad1b",
+      "revId": "b2578cf62067663a5f777461e566dc96f15ee8a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "17125cdc_b2226609",
