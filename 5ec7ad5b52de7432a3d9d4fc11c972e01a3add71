@@ -16,6 +16,24 @@
       "message": "Based on the failing tests, I believe there is an issue with the patch. The secure interrupt tests need to be skipped for non-spm based test configs.",
       "revId": "5ec7ad5b52de7432a3d9d4fc11c972e01a3add71",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "03a7a009_bdca64e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-05-09T23:22:53Z",
+      "side": 1,
+      "message": "Hi Madhu, any suggestions on how i can do this? Do i detect if SPM is present and skip based on that?",
+      "parentUuid": "7ea95cd3_61903e5f",
+      "revId": "5ec7ad5b52de7432a3d9d4fc11c972e01a3add71",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
