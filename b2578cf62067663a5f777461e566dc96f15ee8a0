@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e90e61ca_ff8f3a44",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-05-09T21:41:51Z",
+      "side": 1,
+      "message": "Ack, Thanks Madhu, will take a look at this.",
+      "parentUuid": "d78483df_d5b4ac7e",
+      "revId": "b2578cf62067663a5f777461e566dc96f15ee8a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c8576ccd_3b6b9c61",
@@ -67,6 +85,24 @@
       "side": 1,
       "message": "These are required and serve as the discovery mechanism as per section 1.4 of the spec.",
       "parentUuid": "4ffb6a35_5f55ad1b",
+      "revId": "b2578cf62067663a5f777461e566dc96f15ee8a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "231c0fbc_13203cdd",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-05-09T21:41:51Z",
+      "side": 1,
+      "message": "Ack, I have added back this piece of code.",
+      "parentUuid": "11e5b0b2_faf4dfc7",
       "revId": "b2578cf62067663a5f777461e566dc96f15ee8a0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },

@@ -16,6 +16,24 @@
       "message": "this should also skip if version return is not supported 😊\n\nyou need:\n\n[..]\n\tif (version_return \u003d\u003d EM_NOT_SUPPORTED)\n\t\treturn TEST_RESULT_SKIPPED;\n[..]",
       "revId": "a918a9c3f1decfdb6b3ffa5b204b7bc37221f9c6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "485da40d_bd4ea849",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-05-09T21:41:51Z",
+      "side": 1,
+      "message": "Ack, thanks for checking @Govind. I have added the change, CI failure was because of this missing code.",
+      "parentUuid": "157e0af0_35890f0c",
+      "revId": "a918a9c3f1decfdb6b3ffa5b204b7bc37221f9c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
