@@ -1,0 +1,10 @@
+Allow-CI+2: Sona Mathew <SonaRebecca.Mathew@arm.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Maintainer-Review+1: Bipin Ravi <bipin.ravi@arm.com>
+Code-Owner-Review+1: Lauren Wehrmeister <lauren.wehrmeister@arm.com>
+Verified+1: Sona Mathew <SonaRebecca.Mathew@arm.com>
+Submitted-by: Bipin Ravi <bipin.ravi@arm.com>
+Submitted-at: Wed, 10 May 2023 22:16:15 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/20279
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
