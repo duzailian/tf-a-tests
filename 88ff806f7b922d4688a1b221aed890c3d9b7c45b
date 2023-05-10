@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ca7e8a3_e1ad88b4",
+        "filename": "tftf/tests/misc_tests/test_single_fault.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-10T16:50:49Z",
+      "side": 1,
+      "message": "why is this operation needed?",
+      "range": {
+        "startLine": 56,
+        "startChar": 2,
+        "endLine": 56,
+        "endChar": 9
+      },
+      "revId": "88ff806f7b922d4688a1b221aed890c3d9b7c45b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
