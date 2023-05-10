@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a15de35a_4e368d6e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-10T14:39:06Z",
+      "side": 1,
+      "message": "It is agreed that there is a scope for improvement in this test. Given the time constraint with upcoming code freeze, Sona agreed to take up the improvement tasks in future sprints. I plan to merge the patch such that CI has at least some tests for ERRATA ABI framework.",
+      "revId": "073842171ae9d91b3bdc2031905faafabc7abe57",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
