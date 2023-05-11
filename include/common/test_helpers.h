@@ -367,6 +367,11 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 			return TEST_RESULT_SKIPPED;				\
 		}								\
 										\
+		if (!is_feat_52b_on_4k_2_supported()) {				\
+			tftf_testcase_printf("LPA2 not available for realms\n");\
+			return TEST_RESULT_SKIPPED;				\
+		}								\
+										\
 		host_rmi_init_cmp_result();					\
 		retrmm = host_rmi_version();					\
 										\
