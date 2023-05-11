@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1990cd71_400f31f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-11T03:39:41Z",
+      "side": 1,
+      "message": "The failing tests are all related to OP-TEE setup and unrelated to this patch.",
+      "revId": "353a6cebde2586a866142f7dfbc6b8df644d03cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
