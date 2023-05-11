@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2023, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -448,4 +448,83 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 	}
 
 	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t test_hypervisor_memory_retrieve(void) {
+        struct ffa_memory_region_constituent constituents[] = {
+            {(void *)share_page, 1, 1}};
+        const uint32_t constituents_count =
+            sizeof(constituents) / sizeof(struct ffa_memory_region_constituent);
+        struct mailbox_buffers mb;
+        ffa_memory_handle_t handle;
+        struct ffa_value ret;
+
+        ffa_id_t hypervisor = HYP_ID;
+        ffa_id_t sp = SP_ID(1);
+
+        CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
+
+        GET_TFTF_MAILBOX(mb);
+
+        // 1. Share
+        handle = memory_init_and_send(
+            (struct ffa_memory_region *)mb.send, MAILBOX_SIZE, hypervisor, sp,
+            constituents, constituents_count, FFA_MEM_SHARE_SMC32, &ret);
+
+        if (handle == FFA_MEMORY_HANDLE_INVALID) {
+                ERROR("Memory share failed: %d\n", ffa_error_code(ret));
+                return TEST_RESULT_FAIL;
+        }
+
+        VERBOSE("Memory has been shared!\n");
+
+        // 2. Retrieve
+        ffa_memory_retrieve_request_init(mb.send, handle, hypervisor, 0, 0, 0,
+                                         0, 0, 0, 0, 0);
+        ((struct ffa_memory_region *)mb.send)->receiver_count = 0;
+        ret = ffa_mem_retrieve_req(sizeof(struct ffa_memory_region),
+                                   sizeof(struct ffa_memory_region));
+
+        if (ffa_func_id(ret) != FFA_MEM_RETRIEVE_RESP) {
+                ERROR("Memory retrieve failed: (FID = %lu, error = %d)\n",
+                      ret.fid, ffa_error_code(ret));
+                return false;
+        }
+
+        // 2.5. Verify
+        struct ffa_memory_region *region = mb.recv;
+
+        INFO("\nregion = {\n"
+             "\tsender = %d,\n"
+             "\tattributes = %d,\n"
+             "\tflags = %d,\n"
+             "\thandle = %llu,\n"
+             "\ttag = %llu,\n"
+             "\treciever_count = %d,\n"
+             "}\n",
+             region->sender, region->attributes, region->flags, region->handle,
+             region->tag, region->receiver_count);
+
+        ffa_memory_attributes_t attributes = 0;
+        ffa_set_memory_type_attr(&attributes, FFA_MEMORY_NORMAL_MEM);
+        ffa_set_memory_cacheability_attr(&attributes,
+                                         FFA_MEMORY_CACHE_WRITE_BACK);
+        ffa_set_memory_shareability_attr(&attributes,
+                                         FFA_MEMORY_INNER_SHAREABLE);
+
+        assert(region->sender == hypervisor);
+        assert(region->attributes == attributes);
+        assert(region->flags == 8); // TODO: where does this value come from?
+        assert(region->handle == handle);
+        assert(region->tag == 0);
+        assert(region->receiver_count == 1);
+
+        // 3. Reclaim
+        ret = ffa_mem_reclaim(handle, 0);
+        if (is_ffa_call_error(ret)) {
+                ERROR("Memory reclaim failed: %d\n", ffa_error_code(ret));
+                return TEST_RESULT_FAIL;
+        }
+
+        return TEST_RESULT_SUCCESS;
 }
