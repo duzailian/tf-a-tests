@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2023, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -331,6 +331,10 @@ test_result_t test_req_mem_share_sp_to_sp(void)
 {
 	return test_req_mem_send_sp_to_sp(FFA_MEM_SHARE_SMC32, SP_ID(3),
 					  SP_ID(2), false);
+}
+
+test_result_t test_req_mem_share_vm_to_sp(void) {
+	return test_req_mem_send_sp_to_sp(FFA_MEM_SHARE_SMC32, HYP_ID, SP_ID(1), false);
 }
 
 test_result_t test_req_ns_mem_share_sp_to_sp(void)

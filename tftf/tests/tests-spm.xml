@@ -90,6 +90,8 @@
                function="test_mem_donate_sp"/>
      <testcase name="Request Share Memory SP-to-SP"
                function="test_req_mem_share_sp_to_sp" />
+     <testcase name="Request Share Memory VM-to-SP"
+               function="test_req_mem_share_vm_to_sp" />
      <testcase name="Request Lend Memory SP-to-SP"
                function="test_req_mem_lend_sp_to_sp" />
      <testcase name="Request Donate Memory SP-to-SP"
