@@ -45,6 +45,30 @@
       },
       "revId": "c4dddc4a8935b3e1c324c450082d13cbf245f343",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3083cc4_416446c9",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-05-11T13:58:18Z",
+      "side": 1,
+      "message": "Hmmm, yes, you might be right. However, in this case, TGRAN4 only applies to 4K granularity, so \u0027SUPPORTED\u0027, in this context, indicates that 4K granularity is supported, and \u002752B_SUPPORTED\u0027 indicates the same with support for 52 bits. The same goes for the rest of \u0027TGRANx\u0027 fields.\n\nI think adding another prefix to the name will make it too long and redundant, as the \u0027TGRANx\u0027 already gives us information of the granularity affected by the field.",
+      "parentUuid": "8bd8612a_d7eb0d12",
+      "range": {
+        "startLine": 271,
+        "startChar": 8,
+        "endLine": 271,
+        "endChar": 41
+      },
+      "revId": "c4dddc4a8935b3e1c324c450082d13cbf245f343",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
