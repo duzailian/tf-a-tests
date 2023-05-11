@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2019, ARM Limited and Contributors. All rights reserved.
+ * Copyright (c) 2017-2023, ARM Limited and Contributors. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -20,20 +20,15 @@
  */
 bool xlat_arch_is_granule_size_supported(size_t size)
 {
-	u_register_t id_aa64mmfr0_el1 = read_id_aa64mmfr0_el1();
+	u_register_t tgran4 = get_id_aa64mmfr0_el0_tgran4();
 
 	if (size == PAGE_SIZE_4KB) {
-		return ((id_aa64mmfr0_el1 >> ID_AA64MMFR0_EL1_TGRAN4_SHIFT) &
-			 ID_AA64MMFR0_EL1_TGRAN4_MASK) ==
-			 ID_AA64MMFR0_EL1_TGRAN4_SUPPORTED;
+		return (tgran4 == ID_AA64MMFR0_EL1_TGRAN4_SUPPORTED) ||
+		       (tgran4 == ID_AA64MMFR0_EL1_TGRAN4_52B_SUPPORTED);
 	} else if (size == PAGE_SIZE_16KB) {
-		return ((id_aa64mmfr0_el1 >> ID_AA64MMFR0_EL1_TGRAN16_SHIFT) &
-			 ID_AA64MMFR0_EL1_TGRAN16_MASK) ==
-			 ID_AA64MMFR0_EL1_TGRAN16_SUPPORTED;
+		return get_id_aa64mmfr0_el0_tgran16() == ID_AA64MMFR0_EL1_TGRAN16_SUPPORTED;
 	} else if (size == PAGE_SIZE_64KB) {
-		return ((id_aa64mmfr0_el1 >> ID_AA64MMFR0_EL1_TGRAN64_SHIFT) &
-			 ID_AA64MMFR0_EL1_TGRAN64_MASK) ==
-			 ID_AA64MMFR0_EL1_TGRAN64_SUPPORTED;
+		return get_id_aa64mmfr0_el0_tgran64() == ID_AA64MMFR0_EL1_TGRAN64_SUPPORTED;
 	} else {
 		return 0;
 	}
