@@ -1,0 +1,9 @@
+Allow-CI+1: Raghu K <raghu.ncstate@gmail.com>
+Verified+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Owner-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Thu, 11 May 2023 05:42:05 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/18833
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
