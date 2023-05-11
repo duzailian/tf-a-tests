@@ -80,6 +80,8 @@
 
   <testsuite name="FF-A Memory Sharing"
              description="Test FF-A Memory Sharing ABIs" >
+     <testcase name="Foo"
+               function="test_foo" />
      <testcase name="Lend Memory to Secure World"
                function="test_mem_lend_sp" />
      <testcase name="Lend memory, clear flag set"
