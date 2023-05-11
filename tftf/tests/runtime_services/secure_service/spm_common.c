@@ -345,7 +345,7 @@ bool memory_retrieve(struct mailbox_buffers *mb,
 	*retrieved = (struct ffa_memory_region *)mb->recv;
 
 	if ((*retrieved)->receiver_count > MAX_MEM_SHARE_RECIPIENTS) {
-		VERBOSE("SPMC memory sharing operations support max of %u "
+		ERROR("SPMC memory sharing operations support max of %u "
 			"receivers!\n", MAX_MEM_SHARE_RECIPIENTS);
 		return false;
 	}
@@ -407,7 +407,7 @@ ffa_memory_handle_t memory_send(
 	}
 
 	if (is_ffa_call_error(*ret)) {
-		VERBOSE("Failed to send memory to: %x\n",
+		ERROR("Failed to send memory to: %x\n",
 			memory_region->receivers[0]
 					.receiver_permissions
 					.receiver);
