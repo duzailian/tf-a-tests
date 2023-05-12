@@ -16,6 +16,24 @@
       "message": "Just to tell my hunch why the test is failing, It seems the Interrupt is being targeted to a CPU which is not ON. The test logic in Cactus may need to account for CPUs which are currently online.",
       "revId": "ae1bd6f29d62f0b0b3bdc637a7b80d776220cb33",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a06586d_719de4a3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-05-12T17:51:51Z",
+      "side": 1,
+      "message": "Not sure thats possible. The test uses spm_run_multi_core_test which does a CPU on before running the function on a particular core.\nSo it looks like host_realm_spm.c attempts to enable the watchdog timer. in host_realm_sec_interrupt_can_preempt_rl it seems like we are using the watchdog timer and cactus has configured the MPIDR to target a CPU that is off. I think we have to update that test to run on the different core.\nIs that acceptable to you ?",
+      "parentUuid": "7b2ac1e9_3a5651c3",
+      "revId": "ae1bd6f29d62f0b0b3bdc637a7b80d776220cb33",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
