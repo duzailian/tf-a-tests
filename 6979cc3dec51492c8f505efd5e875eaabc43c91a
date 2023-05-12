@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d76cf02_8df42597",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-12T10:49:26Z",
+      "side": 1,
+      "message": "Might want to add a reason why this is being reverted. \n\n\"\nThe Realm payload tests when executed with Cactus SP is causing the cactus SP to panic() with this patch. The following is the output of the test:\n\n\nSMC_RMM_VERSION               \u003e 380000\nRMM version is: 56.0\n\u003e Executing \u0027Realm payload multi CPU request\u0027\nSMC_RMM_VERSION               \u003e 380000\nINFO:    Booting\nSMC_RMM_VERSION               \u003e 380000\nINFO:    Powering off\nINFO:    Booting\nSMC_RMM_VERSION               \u003e 380000\nINFO:    Powering off\nINFO:    Booting\nSMC_RMM_VERSION               \u003e 380000\nINFO:    Powering off\nINFO:    Booting\nSMC_RMM_VERSION               \u003e 380000\nINFO:    Powering off\nINFO:    Booting\nSMC_RMM_VERSION               \u003e 380000\nINFO:    Powering off\nINFO:    Booting\nSMC_RMM_VERSION               \u003e 380000\nINFO:    Powering off\nERROR:   Error: fffffffa\nPANIC in file: spm/cactus/cactus_main.c line: 108\n\n\"",
+      "revId": "6979cc3dec51492c8f505efd5e875eaabc43c91a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "5ee34f8a_080c0f37",
