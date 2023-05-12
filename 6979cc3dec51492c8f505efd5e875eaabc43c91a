@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ee34f8a_080c0f37",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2023-05-12T10:47:33Z",
+      "side": 1,
+      "message": "Reverting due to breaking RMM as part of Newmore Infra STP platform testing. Not critical for the release so will be addressed after.\n\nHas been manually verifies by RMMM team (Shruti)) as addressing the issue.",
+      "revId": "6979cc3dec51492c8f505efd5e875eaabc43c91a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
