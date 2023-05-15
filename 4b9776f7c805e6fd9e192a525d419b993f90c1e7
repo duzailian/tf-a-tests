@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "278e5c8f_d69cd7f6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-05-15T20:21:26Z",
+      "side": 1,
+      "message": "nit: nit: ubuntu 22.04, updating docs to reflect that.",
+      "range": {
+        "startLine": 9,
+        "startChar": 56,
+        "endLine": 10,
+        "endChar": 6
+      },
+      "revId": "4b9776f7c805e6fd9e192a525d419b993f90c1e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
