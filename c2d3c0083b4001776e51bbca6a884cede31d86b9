@@ -20,6 +20,92 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0896f633_2d8a5a52",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-16T20:21:52Z",
+      "side": 1,
+      "message": "Move to Miscellaneous section",
+      "revId": "c2d3c0083b4001776e51bbca6a884cede31d86b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4fd16a82_81a4b8f2",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-16T20:21:52Z",
+      "side": 1,
+      "message": "this does not add much value to the change log. I think it can be removed.",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 37
+      },
+      "revId": "c2d3c0083b4001776e51bbca6a884cede31d86b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "414fb5b4_757e6f42",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-16T20:21:52Z",
+      "side": 1,
+      "message": "this does not add much value to the change log. I think it can be removed.",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 35
+      },
+      "revId": "c2d3c0083b4001776e51bbca6a884cede31d86b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "377090ec_201687f4",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-16T20:21:52Z",
+      "side": 1,
+      "message": "this is not a tftf issue but was put in place to workaround an issue/limitation of GCC12 toolchain. Please remove.",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 50
+      },
+      "revId": "c2d3c0083b4001776e51bbca6a884cede31d86b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4add07d4_cc43d8ae",
         "filename": "docs/change-log.rst",
         "patchSetId": 2
