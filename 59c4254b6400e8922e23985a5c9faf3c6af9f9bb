@@ -1,0 +1,329 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "915eaf3b_24062a7a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "fault",
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9bcb3636_bd73d05b",
+        "filename": "lib/extensions/pauth/aarch64/pauth_helpers.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "See Soby\u0027s comment for RMM patch about reading RNDR register.",
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd13382f_276d6b67",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "variable declarations should precede code and followed by a blank line.",
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5985826e_e5f5144e",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "add new line",
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "955c7fda_237840c7",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "Fix the comment",
+      "range": {
+        "startLine": 55,
+        "startChar": 1,
+        "endLine": 55,
+        "endChar": 22
+      },
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3460b1f_dd76650a",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "\u0026 is not needed",
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18fb64af_3ca7214c",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "fix alignment",
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d727e9b5_47ce8a8c",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "/* overwite LR */",
+      "range": {
+        "startLine": 82,
+        "startChar": 25,
+        "endLine": 82,
+        "endChar": 40
+      },
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7915c69_fcc83215",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "/* fault on return */",
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4b4c262_48782e34",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "(void)memset",
+      "range": {
+        "startLine": 120,
+        "startChar": 1,
+        "endLine": 120,
+        "endChar": 7
+      },
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "104bba9e_5cbffdb9",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "If APGAKey_EL1 will be used in the future, can we use the same general logic as for other keys, instead of this assumption?",
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0fdea670_2bea0a38",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "(void)memset",
+      "range": {
+        "startLine": 198,
+        "startChar": 1,
+        "endLine": 198,
+        "endChar": 7
+      },
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c92ecb8_e9444d56",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "add {} and extra new line",
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2fd4e730_01834c1f",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "while (true)",
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff61e23b_3eb47481",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "uint64_t key_lo, key_hi;",
+      "range": {
+        "startLine": 67,
+        "startChar": 1,
+        "endLine": 67,
+        "endChar": 16
+      },
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4d455c4_7af960fa",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "/* Check if PAuth keys are preserved */",
+      "range": {
+        "startLine": 97,
+        "startChar": 1,
+        "endLine": 97,
+        "endChar": 40
+      },
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "293047ba_b08e550e",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-17T14:55:40Z",
+      "side": 1,
+      "message": "align with line above",
+      "revId": "59c4254b6400e8922e23985a5c9faf3c6af9f9bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
