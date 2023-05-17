@@ -70,23 +70,10 @@ test_result_t test_simd_vectors_preserved(void)
 	return TEST_RESULT_SUCCESS;
 }
 
-/*
- * Tests that SVE vectors are preserved during the context switches between
- * normal world and the secure world.
- * Fills the SVE vectors with known values, requests SP to fill the vectors
- * with a different values, checks that the context is restored on return.
- */
-test_result_t test_sve_vectors_preserved(void)
+static test_result_t test_sve_vectors_preserved_impl(uint64_t vl)
 {
-	uint64_t vl;
 	uint8_t *sve_vector;
-
-	SKIP_TEST_IF_SVE_NOT_SUPPORTED();
-
-	/**********************************************************************
-	 * Verify that FF-A is there and that it has the correct version.
-	 **********************************************************************/
-	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
+	uint64_t vl2;
 
 	/*
 	 * Clear SVE vectors buffers used to compare the SVE state before calling
@@ -95,12 +82,10 @@ test_result_t test_sve_vectors_preserved(void)
 	memset(sve_vectors_input, 0, sizeof(sve_vectors_input));
 	memset(sve_vectors_output, 0, sizeof(sve_vectors_output));
 
-	/* Set ZCR_EL2.LEN to implemented VL (constrained by EL3). */
-	write_zcr_el2(0xf);
+	vl2 = (vl / 16) - 1;
+	NOTICE("Setting VL %llu bytes reg %llu.\n", vl, vl2);
+	write_zcr_el2(vl2);
 	isb();
-
-	/* Get the implemented VL. */
-	vl = sve_rdvl_1();
 
 	/* Fill each vector for the VL size with a fixed pattern. */
 	sve_vector = (uint8_t *) sve_vectors_input;
@@ -126,12 +111,61 @@ test_result_t test_sve_vectors_preserved(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	/* Check ZCR_EL2 was preserved. */
+	assert((read_zcr_el2() & 0xf) == vl2);
+
 	/* Get the SVE vectors state after returning to normal world. */
 	sve_z_regs_read(&sve_vectors_output);
 
 	/* Compare to state before calling into secure world. */
 	if (sve_z_regs_compare(&sve_vectors_input, &sve_vectors_output) != 0UL) {
 		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * Tests that SVE vectors are preserved during the context switches between
+ * normal world and the secure world.
+ * Fills the SVE vectors with known values, requests SP to fill the vectors
+ * with a different values, checks that the context is restored on return.
+ */
+test_result_t test_sve_vectors_preserved(void)
+{
+	uint64_t vl;
+	test_result_t ret;
+
+	SKIP_TEST_IF_SVE_NOT_SUPPORTED();
+
+	/**********************************************************************
+	 * Verify that FF-A is there and that it has the correct version.
+	 **********************************************************************/
+	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
+
+	/* Set ZCR_EL2.LEN to max. implemented VL (constrained by EL3). */
+	write_zcr_el2(0xf);
+	isb();
+
+	/* Get the max. implemented VL in bytes. */
+	vl = sve_rdvl_1();
+
+	ret = test_sve_vectors_preserved_impl(vl);
+	if (ret != TEST_RESULT_SUCCESS) {
+		return ret;
+	}
+
+	/* Set 128b vector length. */
+	write_zcr_el2(0);
+	isb();
+
+	/* Get the VL in bytes. */
+	vl = sve_rdvl_1();
+	assert(vl == (128 / 8));
+
+	ret = test_sve_vectors_preserved_impl(vl);
+	if (ret != TEST_RESULT_SUCCESS) {
+		return ret;
 	}
 
 	return TEST_RESULT_SUCCESS;
