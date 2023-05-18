@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf19897b_e5dfae91",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2023-05-18T23:07:09Z",
+      "side": 1,
+      "message": "Guess that explains when reviewing I could not find the rendered artefacts? I assume the docs build of TFTF did not save them....",
+      "revId": "b1193f9ef403f5dfb8d73b5d28f7cbdf21a77f9a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
