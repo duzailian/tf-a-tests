@@ -39,6 +39,30 @@
       },
       "revId": "54899b011b6afd5d278542bbbd34194f2b928843",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cf94890_d144ce62",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_sve_tests.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-05-18T17:22:21Z",
+      "side": 1,
+      "message": "\u003e I think this can be removed\nyes, this is removed in the latest revision",
+      "parentUuid": "6778114a_b1150312",
+      "range": {
+        "startLine": 171,
+        "startChar": 1,
+        "endLine": 171,
+        "endChar": 9
+      },
+      "revId": "54899b011b6afd5d278542bbbd34194f2b928843",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
