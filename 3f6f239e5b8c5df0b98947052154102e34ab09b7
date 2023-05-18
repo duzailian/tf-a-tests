@@ -181,6 +181,92 @@
       "message": "%u",
       "revId": "3f6f239e5b8c5df0b98947052154102e34ab09b7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c28a7763_49358ab0",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_sve_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-18T15:00:58Z",
+      "side": 1,
+      "message": "if (!realm_rc)",
+      "range": {
+        "startLine": 305,
+        "startChar": 1,
+        "endLine": 305,
+        "endChar": 22
+      },
+      "revId": "3f6f239e5b8c5df0b98947052154102e34ab09b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b164bc9_6b2462cc",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_sve_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-18T15:00:58Z",
+      "side": 1,
+      "message": "0U",
+      "revId": "3f6f239e5b8c5df0b98947052154102e34ab09b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b3f83fe_8a55e2c4",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_sve_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-18T15:00:58Z",
+      "side": 1,
+      "message": "if (!realm_rc)",
+      "range": {
+        "startLine": 366,
+        "startChar": 2,
+        "endLine": 366,
+        "endChar": 23
+      },
+      "revId": "3f6f239e5b8c5df0b98947052154102e34ab09b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7685082c_3f76ac19",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_sve_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-05-18T15:00:58Z",
+      "side": 1,
+      "message": "return !host_enter_realm_execute(REALM_SVE_OPS, NULL,\n\t\t\t         RMI_EXIT_HOST_CALL);\n?",
+      "range": {
+        "startLine": 398,
+        "startChar": 12,
+        "endLine": 399,
+        "endChar": 29
+      },
+      "revId": "3f6f239e5b8c5df0b98947052154102e34ab09b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
