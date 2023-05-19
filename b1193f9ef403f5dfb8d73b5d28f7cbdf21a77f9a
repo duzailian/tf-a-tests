@@ -33,6 +33,42 @@
       "message": "Although I still cannot find them. I\u0027m guessing this tuft docs build does not save them?",
       "revId": "b1193f9ef403f5dfb8d73b5d28f7cbdf21a77f9a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c2ddd7d_cc1b0235",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-19T13:59:33Z",
+      "side": 1,
+      "message": "Yes. The CI job that invokes the readthedocs job passes but the later fails.",
+      "parentUuid": "cf19897b_e5dfae91",
+      "revId": "b1193f9ef403f5dfb8d73b5d28f7cbdf21a77f9a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14d752b1_29e566f4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-19T13:59:33Z",
+      "side": 1,
+      "message": "As soon as this patch got merged, the ci job[1] got triggered and further triggered the readthedocs build[2]. I noticed the build is failing and I am not sure why. I was able to build the tf-a-test docs locally without any issue. I will investigate this today.\n\n[1] https://ci.trustedfirmware.org/view/TF-A/job/tf-a-tftf-docs-watcher/96/console\n[2] https://readthedocs.org/projects/trustedfirmware-a-tests/builds/20752521/",
+      "parentUuid": "cc63a5aa_216f35a4",
+      "revId": "b1193f9ef403f5dfb8d73b5d28f7cbdf21a77f9a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
