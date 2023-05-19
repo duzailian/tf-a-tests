@@ -1,0 +1,10 @@
+Allow-CI+1: Juan Pablo Conde <juanpablo.conde@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Owner-Review+1: Joanna Farley <joanna.farley@arm.com>
+Code-Review+1: Sona Mathew <SonaRebecca.Mathew@arm.com>
+Maintainer-Review+1: Bipin Ravi <bipin.ravi@arm.com>
+Submitted-by: Bipin Ravi <bipin.ravi@arm.com>
+Submitted-at: Fri, 19 May 2023 07:20:01 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/21032
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
