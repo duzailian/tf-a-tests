@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69ad3514_114b125f",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-05-19T13:15:34Z",
+      "side": 0,
+      "message": "Simplified even further.\n\nCurrent log output:\n\nVM 8004: INFO:    \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nVM 8004: INFO:    Starting FF-A setup and discovery tests\nVM 8004: INFO:    \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nVM 8004: INFO:    Test FFA_FEATURES.\nVM 8004: INFO:    Test FFA_VERSION. Return 1.1; Compatible: 1\nVM 8004: INFO:    Test FFA_SPM_ID_GET. Return: 0x8000\nVM 8004: INFO:    Test FFA_PARTITION_INFO_GET.\nVM 8004: INFO:    \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nVM 8004: INFO:    End of FF-A setup and discovery tests\nVM 8004: INFO:    \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\nVerbose builds might show extra things, and in case there are failures as well.\nReopen if there are further suggestions/recommendations.",
+      "parentUuid": "87df8d5d_9929993e",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 44
+      },
+      "revId": "27479ee85d80268db99f77eea033a691a0bfda56",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8b09f288_dc30f43f",
@@ -61,6 +85,24 @@
       "writtenOn": "2023-05-05T18:49:56Z",
       "side": 0,
       "message": "Thanks for the patch, Joao! I agree there is not much value in announcing test start and end. Similar to this, can we remove it from other functions as well? Such as lines 112/118, 125/142 etc.",
+      "revId": "27479ee85d80268db99f77eea033a691a0bfda56",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f534e056_cbea6ff2",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-05-19T13:15:34Z",
+      "side": 0,
+      "message": "Done. Check the example log, in the comments thread with Olivier and Kathleen.",
+      "parentUuid": "8b09f288_dc30f43f",
       "revId": "27479ee85d80268db99f77eea033a691a0bfda56",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
