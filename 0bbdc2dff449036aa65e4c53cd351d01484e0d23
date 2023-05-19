@@ -16,6 +16,24 @@
       "message": "nit: do we need \tassert(is_armv8_2_sve_present());\nhere?",
       "revId": "0bbdc2dff449036aa65e4c53cd351d01484e0d23",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8079df2f_1ceb645b",
+        "filename": "realm/realm_sve.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-05-19T14:38:12Z",
+      "side": 1,
+      "message": "not required, as this test can be called by sve or non-sve realms. (comment at #35)",
+      "parentUuid": "c24e9c4e_09d5ef89",
+      "revId": "0bbdc2dff449036aa65e4c53cd351d01484e0d23",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
