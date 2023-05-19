@@ -762,21 +762,23 @@ u_register_t host_realm_create(struct realm *realm)
 	/* Populate params */
 	params->s2sz = EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
 				realm->rmm_feat_reg0);
-	params->sve_vl = EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL,
-				realm->rmm_feat_reg0);
-	params->num_bps = EXTRACT(RMI_FEATURE_REGISTER_0_NUM_BPS,
-				realm->rmm_feat_reg0);
-	params->num_wps = EXTRACT(RMI_FEATURE_REGISTER_0_NUM_WPS,
-				realm->rmm_feat_reg0);
+	params->num_bps = realm->num_bps;
+	params->num_wps = realm->num_wps;
+
+	/* SVE enable and vector length */
+	if ((realm->rmm_feat_reg0 & RMI_FEATURE_REGISTER_0_SVE_EN) != 0UL) {
+		params->flags = RMI_REALM_FLAGS_SVE;
+		params->sve_vl = realm->sve_vl;
+	} else {
+		params->flags = 0UL;
+		params->sve_vl = 0U;
+	}
 
 	/* PMU enable and number of event counters */
 	if ((realm->rmm_feat_reg0 & RMI_FEATURE_REGISTER_0_PMU_EN) != 0UL) {
-		params->flags = INPLACE(RMI_REALM_FLAGS_PMU, RMI_FEATURE_TRUE);
-		params->pmu_num_ctrs = EXTRACT(
-					RMI_FEATURE_REGISTER_0_PMU_NUM_CTRS,
-					realm->rmm_feat_reg0);
+		params->flags |= RMI_REALM_FLAGS_PMU;
+		params->pmu_num_ctrs = realm->pmu_num_ctrs;
 	} else {
-		params->flags = INPLACE(RMI_REALM_FLAGS_PMU, RMI_FEATURE_FALSE);
 		params->pmu_num_ctrs = 0U;
 	}
 
