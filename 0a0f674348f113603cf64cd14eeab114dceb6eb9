@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bef48a07_79225ae2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2023-05-19T08:29:55Z",
+      "side": 1,
+      "message": "I give the code owner review on content and that this has been seen to render correctly. I see the build job has completed successfully but can someone confirm they have seen the rendered version.",
+      "revId": "0a0f674348f113603cf64cd14eeab114dceb6eb9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
