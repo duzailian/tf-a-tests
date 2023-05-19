@@ -90,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5dc4dd1b_a6b5e714",
+        "filename": "realm/realm_sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-05-19T13:49:55Z",
+      "side": 1,
+      "message": "If this test is not added, \nAdd a JIRA to the backlog to add a test which will fault on non-SVE enabled Realm and TFTF can check for INSTR_ABORT as exit reason.",
+      "parentUuid": "c1407cde_941376c8",
+      "revId": "8497241911c04704b30be7f03d379e6041431be8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d12bacf0_65c2bcf9",
         "filename": "realm/realm_sve.c",
         "patchSetId": 6
