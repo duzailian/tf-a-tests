@@ -1,0 +1,9 @@
+Allow-CI+1: Harrison Mutai <harrison.mutai@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Owner-Review+1: Joanna Farley <joanna.farley@arm.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-by: Joanna Farley <joanna.farley@arm.com>
+Submitted-at: Mon, 22 May 2023 12:14:03 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/21057
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
