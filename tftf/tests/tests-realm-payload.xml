@@ -53,5 +53,12 @@
 	  function="host_sve_realm_check_vectors_leaked" />
 	  <testcase name="Check if Realm gets undefined abort if it access SVE"
 	  function="host_non_sve_realm_check_undef_abort" />
+	  <!-- Test Realm for SME -->
+	  <testcase name="Create Realm and test SME ID registers"
+	  function="host_realm_check_sme_id_registers" />
+	  <testcase name="Check if Realm gets undefined abort when it access SME"
+	  function="host_realm_check_sme_undef_abort" />
+	  <testcase name="Check whether RMM preserves NS SME configurations"
+	  function="host_realm_check_sme_configs" />
   </testsuite>
 </testsuites>
