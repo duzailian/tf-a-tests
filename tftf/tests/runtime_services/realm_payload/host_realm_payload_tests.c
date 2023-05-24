@@ -37,7 +37,7 @@ test_result_t host_test_realm_create_enter(void)
 			(u_register_t)(PAGE_POOL_MAX_SIZE +
 			NS_REALM_SHARED_MEM_SIZE),
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL)) {
+			RMI_FEATURE_REGISTER_0_LPA2)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
@@ -129,7 +129,8 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 			(u_register_t)(PAGE_POOL_MAX_SIZE +
 			NS_REALM_SHARED_MEM_SIZE),
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			RMI_FEATURE_REGISTER_0_PMU_EN)) {
+			(RMI_FEATURE_REGISTER_0_LPA2 |
+			 RMI_FEATURE_REGISTER_0_PMU_EN))) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,

@@ -45,13 +45,13 @@ static sve_vector_t ns_sve_vectors_read[SVE_NUM_VECTORS] __aligned(16);
 
 static test_result_t host_create_sve_realm_payload(bool sve_en, uint8_t sve_vq)
 {
-	u_register_t rmi_feat_reg0;
+	u_register_t rmi_feat_reg0 = RMI_FEATURE_REGISTER_0_LPA2;
 
 	if (sve_en == true) {
-		rmi_feat_reg0 = INPLACE(RMI_FEATURE_REGISTER_0_SVE_EN, true);
+		rmi_feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_SVE_EN, true);
 		rmi_feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_SVE_VL, sve_vq);
 	} else {
-		rmi_feat_reg0 = INPLACE(RMI_FEATURE_REGISTER_0_SVE_EN, false);
+		rmi_feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_SVE_EN, false);
 	}
 
 	/* Initialise Realm payload */
