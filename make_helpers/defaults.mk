@@ -51,3 +51,6 @@ BRANCH_PROTECTION	:= 0
 
 # Build RME stack
 ENABLE_REALM_PAYLOAD_TESTS	:= 0
+
+# SPM tests with RME.
+SPM_ENABLE_RME := 0
