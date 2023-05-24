@@ -37,7 +37,8 @@ test_result_t host_test_realm_create_enter(void)
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)(PAGE_POOL_MAX_SIZE +
 			NS_REALM_SHARED_MEM_SIZE),
-			(u_register_t)PAGE_POOL_MAX_SIZE, 0UL)) {
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			RMI_FEATURE_REGISTER_0_LPA2)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
@@ -76,7 +77,7 @@ test_result_t host_realm_enable_pauth(void)
 				(u_register_t)(PAGE_POOL_MAX_SIZE +
 					NS_REALM_SHARED_MEM_SIZE),
 				(u_register_t)PAGE_POOL_MAX_SIZE,
-				0UL)) {
+				RMI_FEATURE_REGISTER_0_LPA2)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -127,7 +128,7 @@ test_result_t host_realm_pauth_fault(void)
 				(u_register_t)(PAGE_POOL_MAX_SIZE +
 					NS_REALM_SHARED_MEM_SIZE),
 				(u_register_t)PAGE_POOL_MAX_SIZE,
-				0UL)) {
+				RMI_FEATURE_REGISTER_0_LPA2)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
@@ -216,7 +217,8 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 	host_set_pmu_state();
 
 	feature_flag = RMI_FEATURE_REGISTER_0_PMU_EN |
-			INPLACE(FEATURE_PMU_NUM_CTRS, (unsigned long long)(-1));
+			INPLACE(FEATURE_PMU_NUM_CTRS, (unsigned long long)(-1)) |
+			RMI_FEATURE_REGISTER_0_LPA2;
 
 	if (!host_create_realm_payload((u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,

@@ -186,6 +186,7 @@ bool host_create_realm_payload(u_register_t realm_payload_adr,
 				u_register_t feature_flag)
 {
 	int8_t value;
+	uint8_t s2sz;
 
 	if (realm_payload_adr == TFTF_BASE) {
 		ERROR("realm_payload_adr should be grater then TFTF_BASE\n");
@@ -269,6 +270,41 @@ bool host_create_realm_payload(u_register_t realm_payload_adr,
 				       INPLACE(RMI_FEATURE_REGISTER_0_SVE_VL,
 				       EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL,
 						feature_flag));
+	}
+
+	/*
+	 * Disable LPA2 if not required and setup the
+	 * default stage 2 start level
+	 */
+	if ((feature_flag & RMI_FEATURE_REGISTER_0_LPA2) == 0ULL) {
+		realm.rmm_feat_reg0 &= ~RMI_FEATURE_REGISTER_0_LPA2;
+		realm.s2sl = 0L;
+	} else {
+		realm.s2sl = (is_feat_52b_on_4k_2_supported() == true) ? -1L : 0L;
+	}
+
+	s2sz = (uint8_t)EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, feature_flag);
+	if (s2sz == RMM_OVERWRITE_S2SL) {
+		/*
+		 * We use an invalid value on S2SZ (AKA RMM_OVERWRITE_S2SL)
+		 * to indicate that we want to overwrite the stage 2
+		 * starting level.
+		 *
+		 * The starting level is overriden in the following way:
+		 *	* New value set to 0 if current value == -1
+		 *	* New value set to -1 if current value == 0
+		 *	* Ignored otherwise.
+		 */
+		if (realm.s2sl == -1L) {
+			realm.s2sl = 0L;
+		} else if (realm.s2sl == 0L) {
+			realm.s2sl = -1L;
+		}
+	} else if (s2sz > 0U) {
+		/* Overwrite S2SZ if needed. Value of 0 means not override */
+		realm.rmm_feat_reg0 &= ~MASK(RMI_FEATURE_REGISTER_0_S2SZ);
+		realm.rmm_feat_reg0 |=
+			INPLACE(RMI_FEATURE_REGISTER_0_S2SZ, s2sz);
 	}
 
 	/* Create Realm */
