@@ -676,7 +676,6 @@ u_register_t host_rmi_version(void)
 u_register_t host_realm_create(struct realm *realm)
 {
 	struct rmi_realm_params *params;
-	bool lpa2_enabled;
 	u_register_t ret;
 
 	realm->par_size = REALM_MAX_LOAD_IMG_SIZE;
@@ -730,8 +729,7 @@ u_register_t host_realm_create(struct realm *realm)
 
 	/* Populate params */
 	params->features_0 = realm->rmm_feat_reg0;
-	lpa2_enabled = EXTRACT(RMM_FEATURE_REGISTER_0_LPA2, params->features_0);
-	params->rtt_level_start = (lpa2_enabled == true) ? -1L : 0L;
+	params->rtt_level_start = realm->s2sl;
 	params->rtt_num_start = 1U;
 	params->rtt_base = realm->rtt_addr;
 	params->vmid = vmid++;
