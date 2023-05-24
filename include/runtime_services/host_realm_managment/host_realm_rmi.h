@@ -261,6 +261,16 @@
 #define RMM_FEATURE_REGISTER_0_LPA2_SHIFT	8UL
 #define RMM_FEATURE_REGISTER_0_LPA2_WIDTH	1UL
 
+/*
+ * For some tests, we need to overwrite RMM_FEATURE_REGISTER_S2SZ as well
+ * well as the stage 2 starting level, both independenly one of the other.
+ * RMM_FEATURE_REGISTER_0_S2SZ is easy to overwrite through feature_register_0
+ * but for the stage 2 starting level there is no clear way to indicate that
+ * we want to overwrite, so as a workaround, use an invalid S2SZ value to
+ * indicate we want to overwrite the stage 2 starting level.
+ */
+#define RMM_OVERWRITE_S2SL			(U(0xFF))
+
 /* RmiStatusCode types */
 /*
  * Status codes which can be returned from RMM commands.
@@ -486,6 +496,7 @@ struct realm {
 	u_register_t ipa_ns_buffer;
 	u_register_t ns_buffer_size;
 	u_register_t aux_pages[REC_PARAMS_AUX_GRANULES];
+	long s2sl;
 	enum realm_state state;
 };
 
