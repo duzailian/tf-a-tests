@@ -498,7 +498,8 @@ u_register_t host_rmi_realm_destroy(u_register_t rd);
 u_register_t host_rmi_features(u_register_t index, u_register_t *features);
 
 /* Realm management */
-u_register_t host_realm_create(struct realm *realm);
+u_register_t host_realm_create(struct realm *realm,
+			       u_register_t realm_params_override);
 u_register_t host_realm_map_payload_image(struct realm *realm,
 					  u_register_t realm_payload_adr);
 u_register_t host_realm_map_ns_shared(struct realm *realm,
