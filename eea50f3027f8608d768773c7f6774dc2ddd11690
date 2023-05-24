@@ -66,6 +66,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "30365c2e_64d27627",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-24T18:11:22Z",
+      "side": 1,
+      "message": "FFA_SUCCESS_SMC64",
+      "range": {
+        "startLine": 144,
+        "startChar": 25,
+        "endLine": 144,
+        "endChar": 42
+      },
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89a52c00_d7183e13",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-24T18:11:22Z",
+      "side": 1,
+      "message": "any reason why Ivy partition info is not being checked",
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e81e7b40_5704d119",
         "filename": "spm/common/sp_tests/sp_test_ffa.c",
         "patchSetId": 1
@@ -152,6 +192,63 @@
         "endLine": 562,
         "endChar": 35
       },
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbf1e4a6_b7eef5e6",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-24T18:11:22Z",
+      "side": 1,
+      "message": "nitpick: can be put in one line\n\n\tffa_uuid_equal(uuid, NULL_UUID) ? expected-\u003euuid : NULL_UUID;",
+      "range": {
+        "startLine": 583,
+        "startChar": 0,
+        "endLine": 585,
+        "endChar": 12
+      },
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf4ba13e_10e4e390",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-24T18:11:22Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f87535d9_5d501ade",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-05-24T18:11:22Z",
+      "side": 1,
+      "message": "nitpick: https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#conditional-statement-bodies",
       "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
