@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "78c99b29_dba696f6",
+        "filename": "lib/extensions/sve/aarch64/sve_helpers.S",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-05-24T12:49:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97b18ac2_37d10625",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "6b2ed46be656b955194008f6a0dd07c3846a2810",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4b9be503_9181c198",
@@ -64,6 +88,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed125aea_d9a5f6ba",
+        "filename": "lib/extensions/sve/aarch64/sve_helpers.S",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-05-24T12:49:38Z",
+      "side": 1,
+      "message": "Done.\nreplaced armv8.2-a+crc+fp16+sve with .arch_extension sve\nin this function and in sve_subtract_arrays",
+      "parentUuid": "4b9be503_9181c198",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 28
+      },
+      "revId": "6b2ed46be656b955194008f6a0dd07c3846a2810",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "55d0c895_3d05a2ba",
@@ -77,6 +125,30 @@
       "writtenOn": "2023-05-24T10:09:19Z",
       "side": 1,
       "message": "move at top?",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 33
+      },
+      "revId": "6b2ed46be656b955194008f6a0dd07c3846a2810",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fccf3295_e814aa5d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-05-24T12:49:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55d0c895_3d05a2ba",
       "range": {
         "startLine": 29,
         "startChar": 0,
