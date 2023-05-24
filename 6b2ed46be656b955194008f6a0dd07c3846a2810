@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a62d93a4_3e681e82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-05-24T10:09:19Z",
+      "side": 1,
+      "message": "Nice refactoring!",
+      "revId": "6b2ed46be656b955194008f6a0dd07c3846a2810",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97b18ac2_37d10625",
+        "filename": "lib/extensions/sve/aarch64/sve_helpers.S",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-05-24T10:09:19Z",
+      "side": 1,
+      "message": "nit: 2023? I appreciate it derived from other files but it is different enough to justify this is actually a new source file (not just a rename)?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "6b2ed46be656b955194008f6a0dd07c3846a2810",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b9be503_9181c198",
+        "filename": "lib/extensions/sve/aarch64/sve_helpers.S",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-05-24T10:09:19Z",
+      "side": 1,
+      "message": "I wonder if it would read better with\n.arch_extension sve\nand\n.arch_extension nosve\nat epilogue.\n\nWhat justifies claiming crc and fp16 extensions?",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 28
+      },
+      "revId": "6b2ed46be656b955194008f6a0dd07c3846a2810",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55d0c895_3d05a2ba",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_cpu_features.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-05-24T10:09:19Z",
+      "side": 1,
+      "message": "move at top?",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 33
+      },
+      "revId": "6b2ed46be656b955194008f6a0dd07c3846a2810",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
