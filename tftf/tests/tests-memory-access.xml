@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  Copyright (c) 2023, Arm Limited. All rights reserved.
+  Copyright (c) 2024, Arm Limited. All rights reserved.
 
   SPDX-License-Identifier: BSD-3-Clause
 -->
 
+<!-- External references to all individual tests files. -->
+<!DOCTYPE testsuites [
+  <!ENTITY tests-ffa-memory-sharing SYSTEM "tests-ffa-memory-sharing.xml">
+]>
+
 <testsuites>
+
+  &tests-ffa-memory-sharing;
+
   <testsuite name="Invalid memory access" description="Invalid memory access">
       <testcase name="Access EL3 memory from NS world"
                 function="el3_memory_cannot_be_accessed_in_ns" />
@@ -25,4 +33,5 @@
       <testcase name="Share memory to an SP from a Root region"
                 function="rt_memory_cannot_be_accessed_in_s" />
   </testsuite>
+
 </testsuites>
