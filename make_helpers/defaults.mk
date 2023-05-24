@@ -55,3 +55,6 @@ ENABLE_REALM_PAYLOAD_TESTS	:= 0
 # Use the Firmware Handoff framework to receive configurations from preceding
 # bootloader.
 TRANSFER_LIST		:= 0
+
+# SPM tests with RME.
+SPM_ENABLE_RME := 0

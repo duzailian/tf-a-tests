@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
+$(eval $(call add_define,TFTF_DEFINES,SPM_ENABLE_RME))
+
 TFTF_INCLUDES +=							\
 	-Iinclude/runtime_services/host_realm_managment
 
