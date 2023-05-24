@@ -669,10 +669,13 @@ u_register_t host_rmi_version(void)
 	return host_rmi_handler(&(smc_args){RMI_VERSION}, 1U).ret0;
 }
 
-u_register_t host_realm_create(struct realm *realm)
+u_register_t host_realm_create(struct realm *realm,
+			       u_register_t realm_params_override)
 {
 	struct rmi_realm_params *params;
 	u_register_t ret;
+	long rtt_level_start;
+	unsigned int ipa_size_override;
 
 	realm->par_size = REALM_MAX_LOAD_IMG_SIZE;
 
@@ -723,9 +726,28 @@ u_register_t host_realm_create(struct realm *realm)
 		goto err_undelegate_rtt;
 	}
 
+	/*
+	 * Override any parameters if necessary
+	 */
+	if ((realm_params_override & REALM_PARAMS_OVERRIDE_SL_EN_MASK) != 0UL) {
+		rtt_level_start = (long)(int8_t)(EXTRACT(
+					REALM_PARAMS_OVERRIDE_SL,
+					realm_params_override));
+	} else {
+		rtt_level_start = MIN_LVL_BLOCK_DESC;
+	}
+
+	ipa_size_override = EXTRACT(REALM_PARAMS_OVERRIDE_IPA_SIZE,
+				    realm_params_override);
+	if (ipa_size_override > 0U) {
+		realm->rmm_feat_reg0 &= ~RMI_FEATURE_REGISTER_0_S2SZ;
+		realm->rmm_feat_reg0 |= INPLACE(RMM_FEATURE_REGISTER_0_S2SZ,
+						ipa_size_override);
+	}
+
 	/* Populate params */
 	params->features_0 = realm->rmm_feat_reg0;
-	params->rtt_level_start = -1L;
+	params->rtt_level_start = rtt_level_start;
 	params->rtt_num_start = 1U;
 	params->rtt_base = realm->rtt_addr;
 	params->vmid = vmid++;

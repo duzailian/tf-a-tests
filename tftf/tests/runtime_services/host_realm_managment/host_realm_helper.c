@@ -183,7 +183,8 @@ bool host_create_realm_payload(u_register_t realm_payload_adr,
 				u_register_t plat_mem_pool_adr,
 				u_register_t plat_mem_pool_size,
 				u_register_t realm_pages_size,
-				u_register_t feature_flag)
+				u_register_t feature_flag,
+				u_register_t realm_params_override)
 {
 	if (realm_payload_adr == TFTF_BASE) {
 		ERROR("realm_payload_adr should be grater then TFTF_BASE\n");
@@ -234,9 +235,14 @@ bool host_create_realm_payload(u_register_t realm_payload_adr,
 	realm.rmm_feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_SVE_VL,
 				       EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL,
 					       feature_flag));
+	/* Disable LPA2 if not required */
+	if ((feature_flag & RMI_FEATURE_REGISTER_0_LPA2) == 0ULL) {
+		realm.rmm_feat_reg0 &= ~RMI_FEATURE_REGISTER_0_LPA2;
+	}
 
 	/* Create Realm */
-	if (host_realm_create(&realm) != REALM_SUCCESS) {
+	if (host_realm_create(&realm,
+			      realm_params_override) != REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_create");
 		goto destroy_realm;
 	}
