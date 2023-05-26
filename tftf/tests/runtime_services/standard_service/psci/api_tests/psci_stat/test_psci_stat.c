@@ -30,12 +30,14 @@ typedef struct psci_stat_data {
 	u_register_t residency;
 } psci_stat_data_t;
 
-/* Assuming 3 power levels as maximum */
+/* Assuming 4 power levels as maximum */
 #define MAX_STAT_STATES (PLAT_MAX_PWR_STATES_PER_LVL *	\
+			PLAT_MAX_PWR_STATES_PER_LVL *	\
 			PLAT_MAX_PWR_STATES_PER_LVL *	\
 			PLAT_MAX_PWR_STATES_PER_LVL)
 
-CASSERT(PLAT_MAX_PWR_LEVEL <= 2, assert_maximum_defined_stat_array_size_exceeded);
+/* Based on PSCI_MAX_PWR_LVL in tf-a */
+CASSERT(PLAT_MAX_PWR_LEVEL <= 3, assert_maximum_defined_stat_array_size_exceeded);
 
 /*
  * The data structure holding stat information as queried by each CPU.
