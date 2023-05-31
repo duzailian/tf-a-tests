@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a7f0200_eabd97ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1001020
+      },
+      "writtenOn": "2023-05-31T08:03:26Z",
+      "side": 1,
+      "message": "I\u0027m not sure why this is just getting noticed now. I assume it\u0027s just because no one has run TF-A-Tests on a platform with more than 2 power levels. Yes, this change follows the max power level from [1]. I added a reference, but a full link would be better.\n\nThe consequence is that this PSCI stats test in TF-A tests can\u0027t support a platform with more than 2 power levels. Other tests handle more power states correctly because they follow PLAT_MAX_PWR_LEVEL. I think the only reason that this test can\u0027t do this is that that would require more compile time programming than can be done with C. Maybe some fancy macros could do pow(PLAT_MAX_PWR_STATES_PER_LVL, PLAT_MAX_PWR_LEVEL + 1) at compile time but why bother when the max PLAT_MAX_PWR_LEVEL is known.\n\nBut it\u0027s possible I\u0027m missing something - I tried to grok what exactly this test was doing and I\u0027ll confess that I\u0027m not 100% sure I get it, so it\u0027s possible there\u0027s more to the PLAT_MAX_PWR_LEVEL of 2 than just the size of the buffers.",
+      "parentUuid": "8e0582e6_028650a3",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 38
+      },
+      "revId": "b796687a72ff6be3e784d5fe78e163a154538073",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "39f3d3d6_6bac7dc3",
