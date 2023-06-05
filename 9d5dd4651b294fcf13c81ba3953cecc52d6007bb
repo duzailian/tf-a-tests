@@ -49,6 +49,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6bfa021c_6c02327b",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1001020
+      },
+      "writtenOn": "2023-06-05T23:13:07Z",
+      "side": 1,
+      "message": "Couldn\u0027t agree more!\n\nThe reason I did this is because one of our presubmit machines within Google still uses an ancient version of python3 for some reason (pre-fstrings)... that\u0027s actually the reason for a bunch of other python anachronisms in this code...\n\nUltimately I think that if you all want to require python 3.6+ then that\u0027s your decision. Just want to give you some of my context.",
+      "parentUuid": "36dedb59_c3d1c523",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "9d5dd4651b294fcf13c81ba3953cecc52d6007bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1d03e02e_775406ed",
         "filename": "tools/generate_test_list/generate_test_list.py",
         "patchSetId": 1
@@ -60,6 +84,30 @@
       "writtenOn": "2023-05-30T11:40:21Z",
       "side": 1,
       "message": "Do you have any other use cases for these classes, other than as data containers? If not, we could get rid of some boilerplate by declaring these dataclasses.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 5
+      },
+      "revId": "9d5dd4651b294fcf13c81ba3953cecc52d6007bb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3694323a_31410fa6",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1001020
+      },
+      "writtenOn": "2023-06-05T23:13:07Z",
+      "side": 1,
+      "message": "Ya, this would be a good use of dataclasses. Would require python 3.7.",
+      "parentUuid": "1d03e02e_775406ed",
       "range": {
         "startLine": 28,
         "startChar": 0,
