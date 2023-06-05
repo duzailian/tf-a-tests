@@ -22,6 +22,30 @@
       },
       "revId": "19e81388202a0b80127a66247124557f076d1978",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78f4da35_0e2f5224",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-05T16:18:06Z",
+      "side": 1,
+      "message": "Yes, I considered that but since RMI tests should never build for aarch32 in the first place and the changes were too small, I decided to merge that into this patch as well, to avoid having more patches in the queue. I can split it, though, if you think it is necessary.",
+      "parentUuid": "778e711c_e0235573",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 21
+      },
+      "revId": "19e81388202a0b80127a66247124557f076d1978",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
