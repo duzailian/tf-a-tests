@@ -11,6 +11,7 @@
 	.globl	realm_entrypoint
 
 .section .bss.stacks
+.align 4
 	.fill	REALM_STACK_SIZE
 stacks_end:
 
