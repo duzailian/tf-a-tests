@@ -110,7 +110,7 @@ test_result_t test_sme_support(void)
 		write_smcr_el2(reg);
 
 		/* Compute current and requested vector lengths in bits. */
-		current_vector_len = ((unsigned int)sme_rdvl_1() * 8U);
+		current_vector_len = ((unsigned int)sme_rdsvl_1() * 8U);
 		requested_vector_len = (i+1U)*128U;
 
 		/*
