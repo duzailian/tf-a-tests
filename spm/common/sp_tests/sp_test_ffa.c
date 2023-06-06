@@ -35,7 +35,7 @@ static const struct ffa_partition_info ffa_expected_partition_info[] = {
 			       FFA_PARTITION_DIRECT_REQ_RECV |
 			       FFA_PARTITION_DIRECT_REQ_SEND |
 			       FFA_PARTITION_NOTIFICATION),
-		.uuid = sp_uuids[0]
+		.uuid = {PRIMARY_UUID}
 	},
 	/* Secondary partition info */
 	{
@@ -45,7 +45,7 @@ static const struct ffa_partition_info ffa_expected_partition_info[] = {
 			       FFA_PARTITION_DIRECT_REQ_RECV |
 			       FFA_PARTITION_DIRECT_REQ_SEND |
 			       FFA_PARTITION_NOTIFICATION),
-		.uuid = sp_uuids[1]
+		.uuid = {SECONDARY_UUID}
 	},
 	/* Tertiary partition info */
 	{
@@ -55,7 +55,7 @@ static const struct ffa_partition_info ffa_expected_partition_info[] = {
 			       FFA_PARTITION_DIRECT_REQ_RECV |
 			       FFA_PARTITION_DIRECT_REQ_SEND |
 			       FFA_PARTITION_NOTIFICATION),
-		.uuid = sp_uuids[2]
+		.uuid = {TERTIARY_UUID}
 	},
 	/* Ivy partition info */
 	{
@@ -64,7 +64,7 @@ static const struct ffa_partition_info ffa_expected_partition_info[] = {
 		.properties = (FFA_PARTITION_AARCH64_EXEC |
 			       FFA_PARTITION_DIRECT_REQ_RECV |
 			       FFA_PARTITION_DIRECT_REQ_SEND),
-		.uuid = sp_uuids[3]
+		.uuid = {IVY_UUID}
 	}
 };
 
