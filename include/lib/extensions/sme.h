@@ -7,9 +7,15 @@
 #ifndef SME_H
 #define SME_H
 
+#include <stdlib.h> /* for rand() */
+
 #define MAX_VL			(512)
 #define MAX_VL_B		(MAX_VL / 8)
 #define SME_SMCR_LEN_MAX	U(0x1FF)
+#define SME_SVQ_ARCH_MAX	((1 << SMCR_ELX_LEN_WIDTH) - 1)
+
+/* get a random Streaming SVE VQ b/w 0 to SME_SVQ_ARCH_MAX */
+#define SME_GET_RANDOM_SVQ	(rand() % (SME_SVQ_ARCH_MAX + 1))
 
 typedef enum {
 	SMSTART,	/* enters streaming sve mode and enables SME ZA array */
@@ -34,5 +40,10 @@ void sme_vector_to_ZA(const uint64_t *input_vector);
 void sme_ZA_to_vector(const uint64_t *output_vector);
 void sme2_load_zt0_instruction(const uint64_t *inputbuf);
 void sme2_store_zt0_instruction(const uint64_t *outputbuf);
+void sme_config_svq(uint8_t svq);
+void sme_enable_fa64(void);
+void sme_disable_fa64(void);
+bool sme_smstat_sm(void);
+bool sme_feat_fa64_enabled(void);
 
 #endif /* SME_H */
