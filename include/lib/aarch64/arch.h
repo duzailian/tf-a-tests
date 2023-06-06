@@ -976,6 +976,7 @@
 
 /* SMCR_ELx definitions */
 #define SMCR_ELX_LEN_SHIFT		U(0)
+#define SMCR_ELX_LEN_WIDTH		U(4)
 #define SMCR_ELX_LEN_MASK		U(0x1ff)
 #define SMCR_ELX_EZT0_BIT		(U(1) << 30)
 #define SMCR_ELX_FA64_BIT		(U(1) << 31)
