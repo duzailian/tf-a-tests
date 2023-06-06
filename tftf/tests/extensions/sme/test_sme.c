@@ -17,9 +17,9 @@
 #ifdef __aarch64__
 
 /* Global buffers*/
-static uint64_t ZA_In_vector[8] = {0xaaff, 0xbbff, 0xccff, 0xddff, 0xeeff,
+static uint64_t ZA_In_vector[8] __aligned(16) = {0xaaff, 0xbbff, 0xccff, 0xddff, 0xeeff,
 					0xffff, 0xff00, 0xff00};
-static uint64_t ZA_Out_vector[8] = {0};
+static uint64_t ZA_Out_vector[8] __aligned(16) = {0};
 
 
 /**
@@ -111,7 +111,7 @@ test_result_t test_sme_support(void)
 		write_smcr_el2(reg);
 
 		/* Compute current and requested vector lengths in bits. */
-		current_vector_len = ((unsigned int)sme_rdvl_1() * 8U);
+		current_vector_len = ((unsigned int)sme_rdsvl_1() * 8U);
 		requested_vector_len = (i+1U)*128U;
 
 		/*
