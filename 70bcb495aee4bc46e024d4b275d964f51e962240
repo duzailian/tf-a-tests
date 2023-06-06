@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af2f9783_b7f31829",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-06-06T16:39:57Z",
+      "side": 1,
+      "message": "create_realm()@host_setup.c calls host_rmi_rtt_destroy() and host_rmi_data_destroy(), which are wrappers for RMI_DATA_DESTROY and RMI_RTT_DESTROY respectively, so the former needs to be updated as well.",
+      "revId": "70bcb495aee4bc46e024d4b275d964f51e962240",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
