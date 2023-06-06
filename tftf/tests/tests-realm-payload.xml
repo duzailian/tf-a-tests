@@ -60,5 +60,7 @@
 	  function="host_realm_check_sme_undef_abort" />
 	  <testcase name="Check whether RMM preserves NS SME configurations"
 	  function="host_realm_check_sme_configs" />
+	  <testcase name="Intermittently switch to Realm while NS doing SSVE ops"
+	  function="host_sve_realm_check_streaming_vectors_operations" />
   </testsuite>
 </testsuites>
