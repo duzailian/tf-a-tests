@@ -405,23 +405,15 @@ static bool callback_enter_realm(void)
 	return false;
 }
 
-/* Intermittently switch to Realm while doing NS SVE ops */
-test_result_t host_sve_realm_check_vectors_operations(void)
+static test_result_t run_sve_vectors_operations(bool ssve_mode,
+						uint8_t realm_sve_vq)
 {
-	u_register_t rmi_feat_reg0;
 	test_result_t rc;
-	uint8_t sve_vq;
 	bool cb_err;
 	unsigned int i;
 	int val;
 
-	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
-
-	CHECK_SVE_SUPPORT_IN_HW_AND_IN_RMI(rmi_feat_reg0);
-
-	sve_vq = EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL, rmi_feat_reg0);
-
-	rc = host_create_sve_realm_payload(true, sve_vq);
+	rc = host_create_sve_realm_payload(true, realm_sve_vq);
 	if (rc != TEST_RESULT_SUCCESS) {
 		return rc;
 	}
@@ -434,8 +426,13 @@ test_result_t host_sve_realm_check_vectors_operations(void)
 	}
 
 	for (i = 0U; i < SVE_TEST_ITERATIONS; i++) {
-		/* Config NS world with random SVE length */
-		sve_config_vq(SVE_GET_RANDOM_VQ);
+		if (!ssve_mode) {
+			/* Config NS world with random SVE length */
+			sve_config_vq(SVE_GET_RANDOM_VQ);
+		} else {
+			/* Config NS world with random Streaming SVE length */
+			sme_config_svq(SME_GET_RANDOM_SVQ);
+		}
 
 		/* Perform SVE operations with intermittent calls to Realm */
 		cb_err = sve_subtract_arrays_interleaved(ns_sve_op_1,
@@ -454,8 +451,8 @@ test_result_t host_sve_realm_check_vectors_operations(void)
 	rc = TEST_RESULT_SUCCESS;
 	for (i = 0U; i < NS_SVE_OP_ARRAYSIZE; i++) {
 		if (ns_sve_op_1[i] != (val - i - SVE_TEST_ITERATIONS)) {
-			ERROR("SVE op failed at idx: %u, expected: 0x%x "
-			      "received: 0x%x\n", i,
+			ERROR("%s op failed at idx: %u, expected: 0x%x "
+			      "received: 0x%x\n", ssve_mode ? "SSVE" : "SVE", i,
 			      (val - i - SVE_TEST_ITERATIONS), ns_sve_op_1[i]);
 			rc = TEST_RESULT_FAIL;
 		}
@@ -465,6 +462,53 @@ rm_realm:
 	if (!host_destroy_realm()) {
 		return TEST_RESULT_FAIL;
 	}
+
+	return rc;
+}
+
+/*
+ * Intermittently switch to Realm while doing NS is doing SVE ops in Normal
+ * SVE mode
+ */
+test_result_t host_sve_realm_check_vectors_operations(void)
+{
+	u_register_t rmi_feat_reg0;
+	uint8_t sve_vq;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+	CHECK_SVE_SUPPORT_IN_HW_AND_IN_RMI(rmi_feat_reg0);
+
+	sve_vq = EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL, rmi_feat_reg0);
+
+	/* Run SVE operations in Normal SVE mode */
+	return run_sve_vectors_operations(false, sve_vq);
+}
+
+/*
+ * Intermittently switch to Realm while doing NS is doing SVE ops in Streaming
+ * SVE mode
+ */
+test_result_t host_sve_realm_check_streaming_vectors_operations(void)
+{
+	u_register_t rmi_feat_reg0;
+	test_result_t rc;
+	uint8_t sve_vq;
+
+	SKIP_TEST_IF_SME_NOT_SUPPORTED();
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+	CHECK_SVE_SUPPORT_IN_HW_AND_IN_RMI(rmi_feat_reg0);
+
+	sve_vq = EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL, rmi_feat_reg0);
+
+	/* Enable SME for NS world and enter Streaming SVE mode */
+	sme_enable();
+	sme_smstart(SMSTART_SM);
+
+	/* Run SVE operations in Streaming SVE mode */
+	rc = run_sve_vectors_operations(true, sve_vq);
+
+	/* Exit Streaming SVE mode */
+	sme_smstop(SMSTOP_SM);
 
 	return rc;
 }
