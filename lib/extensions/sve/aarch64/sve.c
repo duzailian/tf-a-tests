@@ -86,7 +86,10 @@ uint32_t sve_probe_vl(uint8_t sve_max_vq)
 	return vl_bitmap;
 }
 
-/* Write SVE Z[0-31] registers passed in 'z_regs' */
+/*
+ * Write SVE Z[0-31] registers passed in 'z_regs' for Normal SVE or Streaming
+ * SVE mode
+ */
 void sve_z_regs_write(const sve_z_regs_t *z_regs)
 {
 	__asm__ volatile(
@@ -127,7 +130,9 @@ void sve_z_regs_write(const sve_z_regs_t *z_regs)
 		: : "r" (z_regs));
 }
 
-/* Read SVE Z[0-31] and store it in 'zregs' */
+/*
+ * Read SVE Z[0-31] and store it in 'zregs' for Normal SVE or Streaming SVE mode
+ */
 void sve_z_regs_read(sve_z_regs_t *z_regs)
 {
 	__asm__ volatile(
@@ -168,7 +173,10 @@ void sve_z_regs_read(sve_z_regs_t *z_regs)
 		: : "r" (z_regs));
 }
 
-/* Write SVE P[0-15] registers passed in 'p_regs' */
+/*
+ * Write SVE P[0-15] registers passed in 'p_regs' for Normal SVE or Streaming
+ * SVE mode
+ */
 void sve_p_regs_write(const sve_p_regs_t *p_regs)
 {
 	__asm__ volatile(
@@ -193,7 +201,10 @@ void sve_p_regs_write(const sve_p_regs_t *p_regs)
 		: : "r" (p_regs));
 }
 
-/* Read SVE P[0-15] registers and store it in 'p_regs' */
+/*
+ * Read SVE P[0-15] registers and store it in 'p_regs' for Normal SVE or
+ * Streaming SVE mode
+ */
 void sve_p_regs_read(sve_p_regs_t *p_regs)
 {
 	__asm__ volatile(
@@ -218,7 +229,10 @@ void sve_p_regs_read(sve_p_regs_t *p_regs)
 		: : "r" (p_regs));
 }
 
-/* Write SVE FFR registers passed in 'ffr_regs' */
+/*
+ * Write SVE FFR registers passed in 'ffr_regs' for Normal SVE or Streaming SVE
+ * mode
+ */
 void sve_ffr_regs_write(const sve_ffr_regs_t *ffr_regs)
 {
 	uint8_t sve_p_reg[SVE_P_REG_LEN_BYTES];
@@ -236,7 +250,10 @@ void sve_ffr_regs_write(const sve_ffr_regs_t *ffr_regs)
 		: "memory");
 }
 
-/* Read SVE FFR registers and store it in 'ffr_regs' */
+/*
+ * Read SVE FFR registers and store it in 'ffr_regs' for Normal SVE or Streaming
+ * SVE mode
+ */
 void sve_ffr_regs_read(sve_ffr_regs_t *ffr_regs)
 {
 	uint8_t sve_p_reg[SVE_P_REG_LEN_BYTES];
@@ -256,7 +273,7 @@ void sve_ffr_regs_read(sve_ffr_regs_t *ffr_regs)
 
 /*
  * Generate random values and write it to 'z_regs', then write it to SVE Z
- * registers.
+ * registers for Normal SVE or Streaming SVE mode.
  */
 void sve_z_regs_write_rand(sve_z_regs_t *z_regs)
 {
@@ -279,7 +296,7 @@ void sve_z_regs_write_rand(sve_z_regs_t *z_regs)
 
 /*
  * Generate random values and write it to 'p_regs', then write it to SVE P
- * registers.
+ * registers for Normal SVE or Streaming SVE mode.
  */
 void sve_p_regs_write_rand(sve_p_regs_t *p_regs)
 {
@@ -302,7 +319,7 @@ void sve_p_regs_write_rand(sve_p_regs_t *p_regs)
 
 /*
  * Generate random values and write it to 'ffr_regs', then write it to SVE FFR
- * registers.
+ * registers for Normal SVE or Streaming SVE mode.
  */
 void sve_ffr_regs_write_rand(sve_ffr_regs_t *ffr_regs)
 {
@@ -324,6 +341,7 @@ void sve_ffr_regs_write_rand(sve_ffr_regs_t *ffr_regs)
 
 /*
  * Compare Z registers passed in 's1' (old values) with 's2' (new values).
+ * This routine works for Normal SVE or Streaming SVE mode.
  *
  * Returns:
  * 0		: All Z[0-31] registers in 's1' and 's2' are equal
@@ -333,9 +351,19 @@ uint64_t sve_z_regs_compare(const sve_z_regs_t *s1, const sve_z_regs_t *s2)
 {
 	uint32_t z_size;
 	uint64_t cmp_bitmap = 0UL;
-	bool sve_hint = tftf_get_smc_sve_hint();
+	bool sve_hint;
 
+	/*
+	 * 'rdvl' returns Streaming SVE VL if PSTATE.SM=1 else returns normal
+	 * SVE VL
+	 */
 	z_size = (uint32_t)sve_rdvl_1();
+
+	/* Ignore sve_hint for Streaming SVE mode */
+	if (is_feat_sme_supported() && sme_smstat_sm())
+		sve_hint = false;
+	else
+		sve_hint = tftf_get_smc_sve_hint();
 
 	for (uint32_t i = 0U; i < SVE_NUM_VECTORS; i++) {
 		uint8_t *s1_z = (uint8_t *)s1 + (i * z_size);
@@ -363,6 +391,7 @@ uint64_t sve_z_regs_compare(const sve_z_regs_t *s1, const sve_z_regs_t *s2)
 
 /*
  * Compare P registers passed in 's1' (old values) with 's2' (new values).
+ * This routine works for Normal SVE or Streaming SVE mode.
  *
  * Returns:
  * 0		: All P[0-15] registers in 's1' and 's2' are equal
@@ -372,9 +401,19 @@ uint64_t sve_p_regs_compare(const sve_p_regs_t *s1, const sve_p_regs_t *s2)
 {
 	uint32_t p_size;
 	uint64_t cmp_bitmap = 0UL;
-	bool sve_hint = tftf_get_smc_sve_hint();
+	bool sve_hint;
 
+	/*
+	 * 'rdvl' returns Streaming SVE VL if PSTATE.SM=1 else returns normal
+	 * SVE VL
+	 */
 	p_size = (uint32_t)sve_rdvl_1() / 8;
+
+	/* Ignore sve_hint for Streaming SVE mode */
+	if (is_feat_sme_supported() && sme_smstat_sm())
+		sve_hint = false;
+	else
+		sve_hint = tftf_get_smc_sve_hint();
 
 	for (uint32_t i = 0U; i < SVE_NUM_P_REGS; i++) {
 		uint8_t *s1_p = (uint8_t *)s1 + (i * p_size);
@@ -398,6 +437,7 @@ uint64_t sve_p_regs_compare(const sve_p_regs_t *s1, const sve_p_regs_t *s2)
 
 /*
  * Compare FFR registers passed in 's1' (old values) with 's2' (new values).
+ * This routine works for Normal SVE or Streaming SVE mode.
  *
  * Returns:
  * 0		: FFR registers in 's1' and 's2' are equal
@@ -407,9 +447,19 @@ uint64_t sve_ffr_regs_compare(const sve_ffr_regs_t *s1, const sve_ffr_regs_t *s2
 {
 	uint32_t ffr_size;
 	uint64_t cmp_bitmap = 0UL;
-	bool sve_hint = tftf_get_smc_sve_hint();
+	bool sve_hint;
 
+	/*
+	 * 'rdvl' returns Streaming SVE VL if PSTATE.SM=1 else returns normal
+	 * SVE VL
+	 */
 	ffr_size = (uint32_t)sve_rdvl_1() / 8;
+
+	/* Ignore sve_hint for Streaming SVE mode */
+	if (is_feat_sme_supported() && sme_smstat_sm())
+		sve_hint = false;
+	else
+		sve_hint = tftf_get_smc_sve_hint();
 
 	for (uint32_t i = 0U; i < SVE_NUM_FFR_REGS; i++) {
 		uint8_t *s1_ffr = (uint8_t *)s1 + (i * ffr_size);
