@@ -10,6 +10,7 @@
 #include <arch.h>
 #include <arch_features.h>
 #include <arch_helpers.h>
+#include <assert.h>
 #include <debug.h>
 #include <lib/extensions/sme.h>
 
@@ -20,6 +21,8 @@
 void sme_enable(void)
 {
 	u_register_t reg;
+
+	assert(is_feat_sme_supported());
 
 	/*
 	 * Make sure SME accesses don't cause traps by setting appropriate
@@ -52,6 +55,8 @@ void sme_enable(void)
 void sme_smstart(smestart_instruction_type_t smstart_type)
 {
 	u_register_t svcr = 0ULL;
+
+	assert(is_feat_sme_supported());
 
 	switch (smstart_type) {
 	case SMSTART:
@@ -89,6 +94,8 @@ void sme_smstop(smestop_instruction_type_t smstop_type)
 {
 	u_register_t svcr = 0ULL;
 
+	assert(is_feat_sme_supported());
+
 	switch (smstop_type) {
 	case SMSTOP:
 		svcr = (~SVCR_SM_BIT) & (~SVCR_ZA_BIT);
@@ -109,4 +116,63 @@ void sme_smstop(smestop_instruction_type_t smstop_type)
 	write_svcr(read_svcr() & svcr);
 
 	isb();
+}
+
+/* Set the Streaming SVE vector length (SVL) in the SMCR_EL2 register */
+void sme_config_svq(uint8_t svq)
+{
+	u_register_t smcr_el2_val;
+
+	assert(is_feat_sme_supported());
+
+	/* cap svq to arch supported max value */
+	if (svq > SME_SVQ_ARCH_MAX) {
+		svq = SME_SVQ_ARCH_MAX;
+	}
+
+	smcr_el2_val = read_smcr_el2();
+
+	smcr_el2_val &= ~(MASK(SMCR_ELX_LEN));
+	smcr_el2_val |= INPLACE(SMCR_ELX_LEN, svq);
+
+	write_smcr_el2(smcr_el2_val);
+	isb();
+}
+
+static void set_smcr_fa64(bool enable)
+{
+	if (enable) {
+		write_smcr_el2(read_smcr_el2() | SMCR_ELX_FA64_BIT);
+	} else {
+		write_smcr_el2(read_smcr_el2() & ~SMCR_ELX_FA64_BIT);
+	}
+	isb();
+}
+
+/*
+ * Enable FEAT_SME_FA64, This control causes all implemented A64 instructions
+ * to be treated as legal in Streaming SVE mode at EL2, if they are treated as
+ * legal at EL3.
+ */
+void sme_enable_fa64(void)
+{
+	assert(is_feat_sme_supported());
+	return set_smcr_fa64(true);
+}
+
+/*
+ * Disable FEAT_SME_FA64, This control does not cause any instruction to be
+ * treated as legal in Streaming SVE mode.
+ */
+void sme_disable_fa64(void)
+{
+	assert(is_feat_sme_supported());
+	return set_smcr_fa64(false);
+}
+
+/* Returns 'true' if the CPU is in Streaming SVE mode */
+bool sme_smstat_sm(void)
+{
+	assert(is_feat_sme_supported());
+	return ((read_svcr() & SVCR_SM_BIT) != 0U);
 }
