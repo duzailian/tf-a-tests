@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8f0fee3_a2149245",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001020
+      },
+      "writtenOn": "2023-06-07T00:32:32Z",
+      "side": 1,
+      "message": "Thanks everyone for your comments! Apologies for the delay. I think I\u0027ve addressed everyone\u0027s comments - I added a requirement for Python 3.7 to the docs as well.",
+      "revId": "0561d37948ccfab012833bfa12717d026a24aa1f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
