@@ -16,6 +16,29 @@
       "message": "Thanks everyone for your comments! Apologies for the delay. I think I\u0027ve addressed everyone\u0027s comments - I added a requirement for Python 3.7 to the docs as well.",
       "revId": "0561d37948ccfab012833bfa12717d026a24aa1f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfddf709_698e8186",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-06-07T09:35:15Z",
+      "side": 1,
+      "message": "typo\n\nThis is what I believe is making the static checks fail in the CI.",
+      "range": {
+        "startLine": 3,
+        "startChar": 2,
+        "endLine": 3,
+        "endChar": 12
+      },
+      "revId": "0561d37948ccfab012833bfa12717d026a24aa1f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
