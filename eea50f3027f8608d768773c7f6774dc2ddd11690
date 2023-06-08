@@ -64,6 +64,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8741166_2e5a1553",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-06-08T05:35:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a8f96df1_b88b64de",
+      "range": {
+        "startLine": 133,
+        "startChar": 1,
+        "endLine": 133,
+        "endChar": 28
+      },
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "30365c2e_64d27627",
@@ -77,6 +101,30 @@
       "writtenOn": "2023-05-24T18:11:22Z",
       "side": 1,
       "message": "FFA_SUCCESS_SMC64",
+      "range": {
+        "startLine": 144,
+        "startChar": 25,
+        "endLine": 144,
+        "endChar": 42
+      },
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58cd42ae_36a029e4",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-06-08T05:35:36Z",
+      "side": 1,
+      "message": "actually this is correct. Hafnium returns FFA_SUCCESS_SMC32..",
+      "parentUuid": "30365c2e_64d27627",
       "range": {
         "startLine": 144,
         "startChar": 25,
@@ -104,6 +152,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b584b677_58daad0e",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-06-08T05:35:36Z",
+      "side": 1,
+      "message": "i dont believe ivy is there in all builds so can cause failures.",
+      "parentUuid": "89a52c00_d7183e13",
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e81e7b40_5704d119",
@@ -117,6 +183,30 @@
       "writtenOn": "2023-05-23T13:02:35Z",
       "side": 1,
       "message": "Worth to add note describing why that is, for the sake of documenting it?",
+      "range": {
+        "startLine": 200,
+        "startChar": 3,
+        "endLine": 201,
+        "endChar": 36
+      },
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e69cbec_72fa7aba",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-06-08T05:35:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e81e7b40_5704d119",
       "range": {
         "startLine": 200,
         "startChar": 3,
@@ -173,6 +263,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "28d51dca_44fd1567",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-06-08T05:35:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e93a666a_c720d924",
+      "range": {
+        "startLine": 541,
+        "startChar": 4,
+        "endLine": 541,
+        "endChar": 5
+      },
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6178b605_7ae03fbb",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-06-08T05:35:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e049a6c_ffd08fae",
+      "range": {
+        "startLine": 541,
+        "startChar": 44,
+        "endLine": 541,
+        "endChar": 45
+      },
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e0db3742_fca25121",
@@ -186,6 +324,30 @@
       "writtenOn": "2023-05-23T13:02:35Z",
       "side": 1,
       "message": "nitpick: OxFFFFU \nAnd all masks below",
+      "range": {
+        "startLine": 562,
+        "startChar": 29,
+        "endLine": 562,
+        "endChar": 35
+      },
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f74bbd3_1ef143d2",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-06-08T05:35:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0db3742_fca25121",
       "range": {
         "startLine": 562,
         "startChar": 29,
@@ -219,6 +381,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "80cb8f00_972bf92b",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-06-08T05:35:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbf1e4a6_b7eef5e6",
+      "range": {
+        "startLine": 583,
+        "startChar": 0,
+        "endLine": 585,
+        "endChar": 12
+      },
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bf4ba13e_10e4e390",
@@ -236,6 +422,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a8ad9fc_0b762d08",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-06-08T05:35:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf4ba13e_10e4e390",
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f87535d9_5d501ade",
@@ -249,6 +453,24 @@
       "writtenOn": "2023-05-24T18:11:22Z",
       "side": 1,
       "message": "nitpick: https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#conditional-statement-bodies",
+      "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d37b0134_e14e22ff",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-06-08T05:35:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f87535d9_5d501ade",
       "revId": "eea50f3027f8608d768773c7f6774dc2ddd11690",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
