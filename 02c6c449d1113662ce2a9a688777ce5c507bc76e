@@ -16,6 +16,29 @@
       "message": "The related test passed here https://ci.trustedfirmware.org/job/tf-a-ci-gateway/40519/",
       "revId": "02c6c449d1113662ce2a9a688777ce5c507bc76e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "756383aa_2f0bb493",
+        "filename": "lib/exceptions/aarch64/serror.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2023-06-12T14:30:03Z",
+      "side": 1,
+      "message": "2023?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "02c6c449d1113662ce2a9a688777ce5c507bc76e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
