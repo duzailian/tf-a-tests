@@ -70,6 +70,30 @@
       },
       "revId": "ce263345138884c0446513f0ffc862618ca14e7d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "977e8bc6_37f60c6c",
+        "filename": "tftf/tests/misc_tests/test_single_fault.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2023-06-12T15:34:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a3cf273c_0213ec27",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 36
+      },
+      "revId": "ce263345138884c0446513f0ffc862618ca14e7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
