@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ac2dbff_1248ce03",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-06-13T13:53:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "293389e2_7da40b15",
+      "range": {
+        "startLine": 469,
+        "startChar": 0,
+        "endLine": 469,
+        "endChar": 19
+      },
+      "revId": "1c9e076effd9c2f5b81195c4bfb4ba29430f332a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4641d100_4cb51116",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-06-02T13:46:34Z",
       "side": 1,
       "message": "Better document: Send Hypervisor Retrieve request accoring to section x of FF-A \u003cversion\u003e specification.",
+      "range": {
+        "startLine": 481,
+        "startChar": 14,
+        "endLine": 481,
+        "endChar": 22
+      },
+      "revId": "1c9e076effd9c2f5b81195c4bfb4ba29430f332a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84949f45_b9657b6a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-06-13T13:53:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4641d100_4cb51116",
       "range": {
         "startLine": 481,
         "startChar": 14,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f92c8a92_7688d2ce",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-06-13T13:53:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7691a4b6_628a53af",
+      "range": {
+        "startLine": 494,
+        "startChar": 0,
+        "endLine": 494,
+        "endChar": 22
+      },
+      "revId": "1c9e076effd9c2f5b81195c4bfb4ba29430f332a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "851c0c8e_9e3f40ae",
@@ -93,6 +165,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b725d181_3052e1f8",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-06-13T13:53:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "851c0c8e_9e3f40ae",
+      "range": {
+        "startLine": 495,
+        "startChar": 0,
+        "endLine": 495,
+        "endChar": 51
+      },
+      "revId": "1c9e076effd9c2f5b81195c4bfb4ba29430f332a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dacca678_bdf6e1b5",
@@ -106,6 +202,30 @@
       "writtenOn": "2023-06-02T13:46:34Z",
       "side": 1,
       "message": "Better Document: Reclaim for the SPMC to deallocate any data related with the referred handle.",
+      "range": {
+        "startLine": 503,
+        "startChar": 0,
+        "endLine": 503,
+        "endChar": 21
+      },
+      "revId": "1c9e076effd9c2f5b81195c4bfb4ba29430f332a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a53929c3_f4fe3077",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-06-13T13:53:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dacca678_bdf6e1b5",
       "range": {
         "startLine": 503,
         "startChar": 0,
