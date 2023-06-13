@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9ad18a1_601a56d1",
+        "filename": "tftf/tests/misc_tests/inject_ras_error.S",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-06-13T08:58:54Z",
+      "side": 1,
+      "message": "nit: receiving? Not really related to your change but good to fix this typo as a part of this patch. Also, IMO this can be rephrased as below:\n\"Wait until the handler sets serror_received, which is set when the event is received\".",
+      "range": {
+        "startLine": 66,
+        "startChar": 40,
+        "endLine": 66,
+        "endChar": 48
+      },
+      "revId": "c97b35ecfd75568c8f16618bf03fcfc1dfee7e44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
