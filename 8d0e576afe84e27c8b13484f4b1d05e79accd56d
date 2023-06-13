@@ -49,6 +49,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3289f6ed_2264ee16",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-13T16:55:42Z",
+      "side": 1,
+      "message": "Assertion needs to be similar to the sent in the memory_init_send operation.\n\nIt needs to include:\n- the structure ffa_memory_access -\u003e permissions to the target SP is as expected.\n- the structure ffa_composite_memory_region -\u003e constituent count and page count are correct.\n- the structure ffa_memory_constituent -\u003e the memory addresses align with those sent to the SPMC in memory_init_and_send.\n\nLook for the structures in our code base for more detail about the fields they both have.",
+      "range": {
+        "startLine": 498,
+        "startChar": 5,
+        "endLine": 521,
+        "endChar": 44
+      },
+      "revId": "8d0e576afe84e27c8b13484f4b1d05e79accd56d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1854db5e_dbaad917",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
         "patchSetId": 7
