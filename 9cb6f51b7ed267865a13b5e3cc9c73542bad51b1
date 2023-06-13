@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44bb943d_876a9234",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2023-06-13T10:39:08Z",
+      "side": 1,
+      "message": "Only comment change between previous(which already have CoR) and new version",
+      "revId": "9cb6f51b7ed267865a13b5e3cc9c73542bad51b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
