@@ -71,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c713269_42225b85",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-06-14T14:35:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad932949_3b2fb60d",
+      "range": {
+        "startLine": 522,
+        "startChar": 8,
+        "endLine": 527,
+        "endChar": 69
+      },
+      "revId": "cf6311c9cc8b417d6949e1d6881a48da75ef43d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e60b71e1_c4cdce3b",
@@ -84,6 +108,30 @@
       "writtenOn": "2023-06-14T10:52:18Z",
       "side": 1,
       "message": "This hints at the transaction type:\nhttps://git.trustedfirmware.org/hafnium/hafnium.git/tree/inc/vmapi/hf/ffa.h#n880",
+      "range": {
+        "startLine": 532,
+        "startChar": 19,
+        "endLine": 532,
+        "endChar": 60
+      },
+      "revId": "cf6311c9cc8b417d6949e1d6881a48da75ef43d1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5dce14fc_5b3af5df",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-06-14T14:35:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e60b71e1_c4cdce3b",
       "range": {
         "startLine": 532,
         "startChar": 19,
