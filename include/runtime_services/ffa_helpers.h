@@ -188,6 +188,16 @@ struct ffa_value {
 	u_register_t arg5;
 	u_register_t arg6;
 	u_register_t arg7;
+	u_register_t arg8;
+	u_register_t arg9;
+	u_register_t arg10;
+	u_register_t arg11;
+	u_register_t arg12;
+	u_register_t arg13;
+	u_register_t arg14;
+	u_register_t arg15;
+	u_register_t arg16;
+	u_register_t arg17;
 };
 
 /* Function to make an SMC or SVC service call depending on the exception

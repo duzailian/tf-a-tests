@@ -16,6 +16,11 @@
 	str	x0, [sp, #-16]!
 
 	/* Load the argument values into the appropriate registers. */
+	ldp	x16, x17, [x0, #128]
+	ldp	x14, x15, [x0, #112]
+	ldp	x12, x13, [x0, #96]
+	ldp	x10, x11, [x0, #80]
+	ldp	x8, x9, [x0, #64]
 	ldp	x6, x7, [x0, #48]
 	ldp	x4, x5, [x0, #32]
 	ldp	x2, x3, [x0, #16]
@@ -27,16 +32,21 @@
 	 * Pop the ffa_value structure address from the stack into a
 	 * caller-saved register.
 	 */
-	ldr	x9, [sp], #16
+	ldr	x17, [sp], #16
 
 	/*
 	 * The return values are stored in x0-x7, put them in the ffa_value
 	 * return structure.
 	 */
-	stp	x0, x1, [x9, #0]
-	stp	x2, x3, [x9, #16]
-	stp	x4, x5, [x9, #32]
-	stp	x6, x7, [x9, #48]
+	stp	x0, x1, [x17, #0]
+	stp	x2, x3, [x17, #16]
+	stp	x4, x5, [x17, #32]
+	stp	x6, x7, [x17, #48]
+	stp	x8, x9, [x17, #64]
+	stp	x10, x11, [x17, #80]
+	stp	x12, x13, [x17, #96]
+	stp	x14, x15, [x17, #112]
+	stp	x16, x17, [x17, #128]
 
 	.endm
 
