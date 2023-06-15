@@ -22,6 +22,30 @@
       },
       "revId": "3d7ab2fac844b13e70ae3e66dc0bcec7cb6e4c65",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bcddeb26_3dc1a5a5",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-06-15T13:30:09Z",
+      "side": 0,
+      "message": "Just sharing my understanding to avoid confusion and get others\u0027 opinions as well. \n\nAs per the spec, we need to set the SMCR_Elx with the max value (0x1ff) to figure out the supported Effective streaming SVL at a given ELx.\nSo we have SME_SMCR_LEN_MAX (0x1ff) in sme. h.\n\nOnce we write this into the SMCR_ELx register, we could calculate the overall supported Streaming SVL count.\nAfter this, we write into the SMCR_Elx.LEN field( iteratively from 0 to count value), we calculated from the previous step to evaluate the SVL value for each iteration.\nSo in a way, SMCR_ELX_LEN_MASK should be (0xf) precisely, as the LEN field is 4 bits, even though setting  SMCR_Elx_LEN_MASK \u003d(0x1ff), had not harmed it.\nSo I agree with this change.",
+      "parentUuid": "7401813a_4bf5481c",
+      "range": {
+        "startLine": 927,
+        "startChar": 27,
+        "endLine": 927,
+        "endChar": 35
+      },
+      "revId": "3d7ab2fac844b13e70ae3e66dc0bcec7cb6e4c65",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
