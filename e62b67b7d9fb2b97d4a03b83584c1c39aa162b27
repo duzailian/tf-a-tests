@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fbaff6c_e8b0e9ad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2023-06-15T08:11:18Z",
+      "side": 1,
+      "message": "Only change between version 12/13 is changing Copyright year\n",
+      "revId": "e62b67b7d9fb2b97d4a03b83584c1c39aa162b27",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
