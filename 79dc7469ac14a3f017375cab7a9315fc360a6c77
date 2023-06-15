@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4aeb016_92e54aea",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-06-15T14:03:11Z",
+      "side": 1,
+      "message": "this is already resolved in olivier\u0027s patch.\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/21504/1/tftf/tests/extensions/sme/test_sme.c",
+      "revId": "79dc7469ac14a3f017375cab7a9315fc360a6c77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
