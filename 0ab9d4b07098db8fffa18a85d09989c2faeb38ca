@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "741a4417_5c118c59",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-15T15:42:44Z",
+      "side": 1,
+      "message": "nitpick: insert newline",
+      "range": {
+        "startLine": 551,
+        "startChar": 9,
+        "endLine": 551,
+        "endChar": 11
+      },
+      "revId": "0ab9d4b07098db8fffa18a85d09989c2faeb38ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a44c5e9_68981627",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-15T15:42:44Z",
+      "side": 1,
+      "message": "And here.",
+      "range": {
+        "startLine": 566,
+        "startChar": 10,
+        "endLine": 566,
+        "endChar": 11
+      },
+      "revId": "0ab9d4b07098db8fffa18a85d09989c2faeb38ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
