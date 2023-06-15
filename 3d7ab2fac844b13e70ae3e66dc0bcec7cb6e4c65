@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7401813a_4bf5481c",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-15T11:35:04Z",
+      "side": 0,
+      "message": "Boyan shared this might have been done on purpose because top bits are RES0.",
+      "range": {
+        "startLine": 927,
+        "startChar": 27,
+        "endLine": 927,
+        "endChar": 35
+      },
+      "revId": "3d7ab2fac844b13e70ae3e66dc0bcec7cb6e4c65",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
