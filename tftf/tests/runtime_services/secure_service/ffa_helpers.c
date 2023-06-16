@@ -4,6 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 #include <assert.h>
+#include "string.h"
+
+#include "utils_def.h"
 
 #include <ffa_endpoints.h>
 #include <ffa_helpers.h>
@@ -301,6 +304,17 @@ uint32_t ffa_memory_retrieve_request_init(
 
 	return sizeof(struct ffa_memory_region) +
 	       memory_region->receiver_count * sizeof(struct ffa_memory_access);
+}
+
+/**
+ * Configure `region` for a hypervisor retrieve request - ie all fields except
+ * `handle` are initialized to 0.
+ */
+void ffa_hypervisor_retrieve_request_init(struct ffa_memory_region *region,
+					  ffa_memory_handle_t handle)
+{
+	memset(region, 0, sizeof(struct ffa_memory_region));
+	region->handle = handle;
 }
 
 /*
