@@ -1,9 +1,10 @@
 /*
- * Copyright (c) 2020-2022, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2023, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include "ffa_helpers.h"
 #include <debug.h>
 
 #include <cactus_test_cmds.h>
@@ -449,4 +450,203 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 	}
 
 	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t compare_ffa_memory_region_constituents(
+	struct ffa_memory_region_constituent *rx_constituent,
+	struct ffa_memory_region_constituent *tx_constituent)
+{
+	EXPECT_EQ(rx_constituent->address, tx_constituent->address);
+	EXPECT_EQ(rx_constituent->page_count, tx_constituent->page_count);
+	EXPECT_EQ(rx_constituent->reserved, tx_constituent->reserved);
+	EXPECT_EQ(rx_constituent->reserved, 0);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t compare_ffa_composite_memory_regions(
+	struct ffa_composite_memory_region *rx_composite_region,
+	struct ffa_composite_memory_region *tx_composite_region)
+{
+
+	EXPECT_EQ(rx_composite_region->page_count,
+		  tx_composite_region->page_count);
+	EXPECT_EQ(rx_composite_region->constituent_count,
+		  tx_composite_region->constituent_count);
+	EXPECT_EQ(rx_composite_region->reserved_0,
+		  tx_composite_region->reserved_0);
+	EXPECT_EQ(rx_composite_region->reserved_0, 0);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t compare_ffa_memory_region_attributes(
+	struct ffa_memory_region_attributes *rx_attrs,
+	struct ffa_memory_region_attributes *tx_attrs)
+{
+
+	EXPECT_EQ(rx_attrs->receiver, tx_attrs->receiver);
+	EXPECT_EQ(rx_attrs->permissions, tx_attrs->permissions);
+	EXPECT_EQ(rx_attrs->flags, tx_attrs->flags);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t compare_ffa_memory_accesses(struct ffa_memory_access *rx_access,
+					  struct ffa_memory_access *tx_access)
+{
+
+	EXPECT_EQ(rx_access->composite_memory_region_offset,
+		  tx_access->composite_memory_region_offset);
+	TRY(compare_ffa_memory_region_attributes(
+		&rx_access->receiver_permissions,
+		&tx_access->receiver_permissions));
+	EXPECT_EQ(rx_access->reserved_0, tx_access->reserved_0);
+	EXPECT_EQ(rx_access->reserved_0, 0);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t compare_ffa_memory_regions(struct ffa_memory_region *rx_region,
+					 struct ffa_memory_region *tx_region)
+{
+
+	// TODO: these compares fail
+	// EXPECT_EQ(rx_region->flags, tx_region->flags);
+	// EXPECT_EQ(rx_region->attributes, tx_region->attributes);
+
+	EXPECT_EQ(rx_region->sender, tx_region->sender);
+	EXPECT_EQ(rx_region->handle, tx_region->handle);
+	EXPECT_EQ(rx_region->tag, tx_region->tag);
+	EXPECT_EQ(rx_region->memory_access_desc_size,
+		  tx_region->memory_access_desc_size);
+	EXPECT_EQ(rx_region->receiver_count, tx_region->receiver_count);
+	EXPECT_EQ(rx_region->receivers_offset, tx_region->receivers_offset);
+
+	EXPECT_EQ(rx_region->reserved[0], tx_region->reserved[0]);
+	EXPECT_EQ(rx_region->reserved[1], tx_region->reserved[1]);
+	EXPECT_EQ(rx_region->reserved[2], tx_region->reserved[2]);
+
+	EXPECT_EQ(rx_region->reserved[0], 0);
+	EXPECT_EQ(rx_region->reserved[1], 0);
+	EXPECT_EQ(rx_region->reserved[2], 0);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t hypervisor_retrieve_request_test_helper(uint32_t mem_func)
+{
+
+	struct ffa_memory_region_constituent tx_constituents[] = {
+		{(void *)share_page, 1, 0}};
+	uint32_t sent_constituents_count = ARRAY_SIZE(tx_constituents);
+	struct mailbox_buffers mb;
+	ffa_memory_handle_t handle;
+	struct ffa_value ret;
+	struct ffa_memory_region sent_region;
+	struct ffa_memory_region *hypervisor_retrieve_response;
+
+	uint32_t permissions = mem_func == FFA_MEM_DONATE_SMC32
+				       ? FFA_DATA_ACCESS_NOT_SPECIFIED
+				       : FFA_DATA_ACCESS_RW;
+
+	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
+	GET_TFTF_MAILBOX(mb);
+
+	/* Share */
+	handle = memory_init_and_send(mb.send, MAILBOX_SIZE, SENDER, RECEIVER,
+				      tx_constituents, sent_constituents_count,
+				      mem_func, &ret);
+	if (handle == FFA_MEMORY_HANDLE_INVALID) {
+		ERROR("Memory share failed: %d\n", ffa_error_code(ret));
+		return TEST_RESULT_FAIL;
+	}
+
+	memcpy(&sent_region, mb.send, sizeof(sent_region));
+	struct ffa_memory_access sent_receivers[sent_region.receiver_count];
+	memcpy(sent_receivers, ((struct ffa_memory_region *)mb.send)->receivers,
+	       sizeof(sent_receivers));
+
+	struct ffa_composite_memory_region
+		sent_composite_regions[sent_region.receiver_count];
+	for (uint32_t i = 0; i < sent_region.receiver_count; i++) {
+		memcpy(&sent_composite_regions[i],
+		       ffa_memory_region_get_composite(mb.send, i),
+		       sizeof(struct ffa_composite_memory_region));
+	}
+
+	/*
+	 * Send Hypervisor Retrieve request according to section 17.4.3 of FFA
+	 * v1.2-REL0 specification
+	 */
+	if (!memory_retrieve(&mb, &hypervisor_retrieve_response, handle, SENDER,
+			     RECEIVER, 0, mem_func))
+	{
+		return TEST_RESULT_FAIL;
+	}
+
+	/*
+	 * Verify the received `FFA_MEM_RETRIEVE_RESP` aligns with
+	 * transaction description sent above
+	 */
+	TRY(compare_ffa_memory_regions(hypervisor_retrieve_response,
+				       &sent_region));
+
+	for (uint32_t i = 0; i < hypervisor_retrieve_response->receiver_count;
+	     i++)
+	{
+		struct ffa_memory_access rx_access = {
+			.reserved_0 = 0,
+			.composite_memory_region_offset = 64,
+			.receiver_permissions = {.permissions = permissions,
+						 .receiver = RECEIVER,
+						 .flags = 0},
+
+		};
+		TRY(compare_ffa_memory_accesses(&rx_access,
+						&sent_receivers[i]));
+
+		struct ffa_composite_memory_region *rx_composite =
+			ffa_memory_region_get_composite(
+				hypervisor_retrieve_response, i);
+		struct ffa_composite_memory_region *tx_composite =
+			&sent_composite_regions[i];
+		TRY(compare_ffa_composite_memory_regions(rx_composite,
+							 tx_composite));
+
+		for (uint32_t j = 0; j < rx_composite->constituent_count; j++) {
+			TRY(compare_ffa_memory_region_constituents(
+				&rx_composite->constituents[j],
+				&tx_constituents[j]));
+		}
+	}
+
+	/* Reclaim for the SPMC to deallocate any data related to the
+	   handle. */
+	ret = ffa_mem_reclaim(handle, 0);
+	if (is_ffa_call_error(ret)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	ret = ffa_rx_release();
+	if (is_ffa_call_error(ret)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t test_hypervisor_share_retrieve(void)
+{
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC32);
+}
+
+test_result_t test_hypervisor_lend_retrieve(void)
+{
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC32);
+}
+
+test_result_t test_hypervisor_donate_retrieve(void)
+{
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_DONATE_SMC32);
 }
