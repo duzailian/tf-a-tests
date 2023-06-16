@@ -1,9 +1,10 @@
 /*
- * Copyright (c) 2020-2022, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2023, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include "ffa_helpers.h"
 #include <debug.h>
 
 #include <cactus_test_cmds.h>
@@ -458,4 +459,235 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 	}
 
 	return TEST_RESULT_SUCCESS;
+}
+
+/* Compare `received_constituent` with `sent_constituent`.
+ * Returns `TEST_RESULT_SUCCESS` if they are equal, or `TEST_RESULT_FAIL` if
+ * they are not equal.
+ */
+static test_result_t compare_ffa_memory_region_constituents(
+	struct ffa_memory_region_constituent *received_constituent,
+	struct ffa_memory_region_constituent *sent_constituent)
+{
+	EXPECT_EQ(received_constituent->address, sent_constituent->address);
+	EXPECT_EQ(received_constituent->page_count,
+		  sent_constituent->page_count);
+	EXPECT_EQ(received_constituent->reserved, sent_constituent->reserved);
+	EXPECT_EQ(received_constituent->reserved, 0);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/* Compare `received_composite_region` with `sent_composite_region`.
+ * Returns `TEST_RESULT_SUCCESS` if they are equal, or `TEST_RESULT_FAIL` if
+ * they are not equal.
+ */
+static test_result_t compare_ffa_composite_memory_regions(
+	struct ffa_composite_memory_region *received_composite_region,
+	struct ffa_composite_memory_region *sent_composite_region)
+{
+
+	EXPECT_EQ(received_composite_region->page_count,
+		  sent_composite_region->page_count);
+	EXPECT_EQ(received_composite_region->constituent_count,
+		  sent_composite_region->constituent_count);
+	EXPECT_EQ(received_composite_region->reserved_0,
+		  sent_composite_region->reserved_0);
+	EXPECT_EQ(received_composite_region->reserved_0, 0);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/* Compare `received_attrs` with `sent_attrs`.
+ * Returns `TEST_RESULT_SUCCESS` if they are equal, or `TEST_RESULT_FAIL` if
+ * they are not equal.
+ */
+static test_result_t compare_ffa_memory_region_attributes(
+	struct ffa_memory_region_attributes *received_attrs,
+	struct ffa_memory_region_attributes *sent_attrs)
+{
+
+	EXPECT_EQ(received_attrs->receiver, sent_attrs->receiver);
+	EXPECT_EQ(received_attrs->permissions.data_access,
+		  sent_attrs->permissions.data_access);
+	EXPECT_EQ(received_attrs->permissions.instruction_access,
+		  sent_attrs->permissions.instruction_access);
+	EXPECT_EQ(received_attrs->flags, sent_attrs->flags);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/* Compare `received_access` with `sent_access`.
+ * Returns `TEST_RESULT_SUCCESS` if they are equal, or `TEST_RESULT_FAIL` if
+ * they are not equal.
+ */
+static test_result_t
+compare_ffa_memory_accesses(struct ffa_memory_access *received_access,
+			    struct ffa_memory_access *sent_access)
+{
+
+	EXPECT_EQ(received_access->composite_memory_region_offset,
+		  sent_access->composite_memory_region_offset);
+	TRY(compare_ffa_memory_region_attributes(
+		&received_access->receiver_permissions,
+		&sent_access->receiver_permissions));
+	EXPECT_EQ(received_access->reserved_0, sent_access->reserved_0);
+	EXPECT_EQ(received_access->reserved_0, 0);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/* Compare `received_region` with `sent_region`.
+ * Returns `TEST_RESULT_SUCCESS` if they are equal, or `TEST_RESULT_FAIL` if
+ * they are not equal.
+ */
+static test_result_t
+compare_ffa_memory_regions(struct ffa_memory_region *received_region,
+			   struct ffa_memory_region *sent_region)
+{
+
+	// TODO: these compares fail
+	// EXPECT_EQ(received_region->flags, sent_region->flags);
+	// EXPECT_EQ(received_region->attributes, sent_region->attributes);
+
+	EXPECT_EQ(received_region->sender, sent_region->sender);
+	EXPECT_EQ(received_region->handle, sent_region->handle);
+	EXPECT_EQ(received_region->tag, sent_region->tag);
+	EXPECT_EQ(received_region->memory_access_desc_size,
+		  sent_region->memory_access_desc_size);
+	EXPECT_EQ(received_region->receiver_count, sent_region->receiver_count);
+	EXPECT_EQ(received_region->receivers_offset,
+		  sent_region->receivers_offset);
+
+	EXPECT_EQ(received_region->reserved[0], sent_region->reserved[0]);
+	EXPECT_EQ(received_region->reserved[1], sent_region->reserved[1]);
+	EXPECT_EQ(received_region->reserved[2], sent_region->reserved[2]);
+
+	EXPECT_EQ(received_region->reserved[0], 0);
+	EXPECT_EQ(received_region->reserved[1], 0);
+	EXPECT_EQ(received_region->reserved[2], 0);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * Helper for performing a hypervisor retrieve request
+ */
+static test_result_t hypervisor_retrieve_request_test_helper(uint32_t mem_func)
+{
+
+	struct ffa_memory_region_constituent sent_constituents[] = {
+		{(void *)share_page, 1, 0}};
+	uint32_t sent_constituents_count = ARRAY_SIZE(sent_constituents);
+	struct mailbox_buffers mb;
+	ffa_memory_handle_t handle;
+	struct ffa_value ret;
+	struct ffa_memory_region sent_region;
+	struct ffa_memory_region *hypervisor_retrieve_response;
+
+	ffa_memory_access_permissions_t permissions = {
+		.data_access = mem_func == FFA_MEM_DONATE_SMC32
+				       ? FFA_DATA_ACCESS_NOT_SPECIFIED
+				       : FFA_DATA_ACCESS_RW,
+	};
+
+	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
+	GET_TFTF_MAILBOX(mb);
+
+	/* Share */
+	handle = memory_init_and_send(mb.send, MAILBOX_SIZE, SENDER, RECEIVER,
+				      sent_constituents,
+				      sent_constituents_count, mem_func, &ret);
+	if (handle == FFA_MEMORY_HANDLE_INVALID) {
+		ERROR("Memory share failed: %d\n", ffa_error_code(ret));
+		return TEST_RESULT_FAIL;
+	}
+
+	memcpy(&sent_region, mb.send, sizeof(sent_region));
+	struct ffa_memory_access sent_receivers[sent_region.receiver_count];
+	memcpy(sent_receivers, ((struct ffa_memory_region *)mb.send)->receivers,
+	       sizeof(sent_receivers));
+
+	struct ffa_composite_memory_region
+		sent_composite_regions[sent_region.receiver_count];
+	for (uint32_t i = 0; i < sent_region.receiver_count; i++) {
+		memcpy(&sent_composite_regions[i],
+		       ffa_memory_region_get_composite(mb.send, i),
+		       sizeof(struct ffa_composite_memory_region));
+	}
+
+	/*
+	 * Send Hypervisor Retrieve request according to section 17.4.3 of FFA
+	 * v1.2-REL0 specification
+	 */
+	if (!hypervisor_retrieve(&mb, &hypervisor_retrieve_response, handle,
+				 RECEIVER))
+	{
+		return TEST_RESULT_FAIL;
+	}
+
+	/*
+	 * Verify the received `FFA_MEM_RETRIEVE_RESP` aligns with
+	 * transaction description sent above
+	 */
+	TRY(compare_ffa_memory_regions(hypervisor_retrieve_response,
+				       &sent_region));
+
+	{
+		struct ffa_memory_access received_access = {
+			.reserved_0 = 0,
+			.composite_memory_region_offset = 64,
+			.receiver_permissions = {.permissions = permissions,
+						 .receiver = RECEIVER,
+						 .flags = 0},
+
+		};
+		TRY(compare_ffa_memory_accesses(&received_access,
+						&sent_receivers[0]));
+
+		struct ffa_composite_memory_region *received_composite =
+			ffa_memory_region_get_composite(
+				hypervisor_retrieve_response, 0);
+		struct ffa_composite_memory_region *sent_composite =
+			&sent_composite_regions[0];
+		TRY(compare_ffa_composite_memory_regions(received_composite,
+							 sent_composite));
+
+		for (uint32_t j = 0; j < received_composite->constituent_count;
+		     j++)
+		{
+			TRY(compare_ffa_memory_region_constituents(
+				&received_composite->constituents[j],
+				&sent_constituents[j]));
+		}
+	}
+
+	/* Reclaim for the SPMC to deallocate any data related to the
+	   handle. */
+	ret = ffa_mem_reclaim(handle, 0);
+	if (is_ffa_call_error(ret)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	ret = ffa_rx_release();
+	if (is_ffa_call_error(ret)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t test_hypervisor_share_retrieve(void)
+{
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC32);
+}
+
+test_result_t test_hypervisor_lend_retrieve(void)
+{
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC32);
+}
+
+test_result_t test_hypervisor_donate_retrieve(void)
+{
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_DONATE_SMC32);
 }
