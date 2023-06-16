@@ -16,6 +16,24 @@
       "message": "Similar fix is required in test_sme2.c as well\n\n/* Global buffers */                                                              \nstatic uint64_t sme2_input_buffer[SME2_ARRAYSIZE] __aligned(16) \u003d {0};            \nstatic uint64_t sme2_output_buffer[SME2_ARRAYSIZE] __aligned(16) \u003d {0};           \n                                                                         \n\n",
       "revId": "3d7ab2fac844b13e70ae3e66dc0bcec7cb6e4c65",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12da5b15_4fd142ba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-16T07:22:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31370a46_54a3c6a4",
+      "revId": "3d7ab2fac844b13e70ae3e66dc0bcec7cb6e4c65",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
