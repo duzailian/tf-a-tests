@@ -1,10 +1,11 @@
 /*
- * Copyright (c) 2020-2022, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2023, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
 #include <debug.h>
+#include "ffa_helpers.h"
 
 #include <cactus_test_cmds.h>
 #include <ffa_endpoints.h>
@@ -449,4 +450,236 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 	}
 
 	return TEST_RESULT_SUCCESS;
+}
+
+void print_region(struct ffa_memory_region *region)
+{
+	VERBOSE("\n{\n"
+		"\tsender = %d,\n"
+		"\tattributes = %d,\n"
+		"\tflags = %d,\n"
+		"\thandle = %llu,\n"
+		"\ttag = %llu,\n"
+		"\tmemory_access_desc_size = %d,\n"
+		"\treciever_count = %d,\n"
+		"\trecievers_offset = %d,\n"
+		"}\n",
+		region->sender, region->attributes, region->flags,
+		region->handle, region->tag, region->memory_access_desc_size,
+		region->receiver_count, region->receivers_offset);
+}
+
+void print_memory_access(struct ffa_memory_access *access)
+{
+	VERBOSE("\n{\n"
+	     "\treceiver_permissions.receiver = %d,\n"
+	     "\treceiver_permissions.permissions = %d,\n"
+	     "\treceiver_permissions.flags = %d,\n"
+	     "\tcomposite_memory_region_offset = %d,\n"
+	     "\treserved_0 = %llu,\n"
+	     "}\n",
+	     access->receiver_permissions.receiver,
+	     access->receiver_permissions.permissions,
+	     access->receiver_permissions.flags,
+	     access->composite_memory_region_offset, access->reserved_0);
+}
+
+void print_composite_region(struct ffa_composite_memory_region *region)
+{
+	VERBOSE("\n{\n"
+		"\tpage_count = %d,\n"
+		"\tconstituent_count = %d,\n"
+		"\treserved_0 = %llu,\n"
+		"}\n",
+		region->page_count, region->constituent_count,
+		region->reserved_0);
+}
+
+void print_constituent(struct ffa_memory_region_constituent *constituent)
+{
+	VERBOSE("\n{\n"
+		"\taddress = %p,\n"
+		"\tpage_count = %d,\n"
+		"\treserved = %u,\n"
+		"}\n",
+		constituent->address, constituent->page_count,
+		constituent->reserved);
+}
+
+test_result_t share_retrieve_helper(uint32_t mem_func,
+				    uint32_t expected_region_type,
+				    uint32_t expected_data_access)
+{
+
+	struct ffa_memory_region_constituent sent_constituents[] = {
+		{(void *)share_page, 1, 0}};
+	const uint32_t sent_constituents_count =
+		sizeof(sent_constituents) /
+		sizeof(struct ffa_memory_region_constituent);
+	struct mailbox_buffers mb;
+	ffa_memory_handle_t handle;
+	struct ffa_value ret;
+	struct ffa_memory_region sent_region;
+	struct ffa_memory_region *received_region;
+
+	ffa_id_t hypervisor = HYP_ID;
+	ffa_id_t sp = SP_ID(1);
+
+	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
+
+	GET_TFTF_MAILBOX(mb);
+
+	/* Share */
+	handle = memory_init_and_send(mb.send, MAILBOX_SIZE, hypervisor, sp,
+				      sent_constituents,
+				      sent_constituents_count, mem_func, &ret);
+
+	if (handle == FFA_MEMORY_HANDLE_INVALID) {
+		ERROR("Memory share failed: %d\n", ffa_error_code(ret));
+		return TEST_RESULT_FAIL;
+	}
+
+	memcpy(&sent_region, mb.send, sizeof(sent_region));
+
+	struct ffa_memory_access sent_receivers[sent_region.receiver_count];
+
+	memcpy(sent_receivers, ((struct ffa_memory_region *)mb.send)->receivers,
+	       sizeof(sent_receivers));
+
+	struct ffa_composite_memory_region
+		sent_composite_regions[sent_region.receiver_count];
+	for (uint32_t i = 0; i < sent_region.receiver_count; i++) {
+		memcpy(&sent_composite_regions[i],
+		       ffa_memory_region_get_composite(mb.send, i),
+		       sizeof(struct ffa_composite_memory_region));
+	}
+
+	INFO("sent_region:\n");
+	print_region(&sent_region);
+
+	VERBOSE("Memory has been shared!\n");
+
+	/*
+	 * Send Hypervisor Retrieve request according to section 16.4.3 of
+	 * FFA v1.1-REL0 specification
+	 */
+	ffa_memory_retrieve_request_init(mb.send, handle, hypervisor, 0, 0, 0,
+					 0, 0, 0, 0, 0);
+	((struct ffa_memory_region *)mb.send)->receiver_count = 0;
+	ret = ffa_mem_retrieve_req(sizeof(struct ffa_memory_region),
+				   sizeof(struct ffa_memory_region));
+
+	if (ffa_func_id(ret) != FFA_MEM_RETRIEVE_RESP) {
+		ERROR("Memory retrieve failed: (FID = %lu, error = %d)\n",
+		      ret.fid, ffa_error_code(ret));
+		return false;
+	}
+
+	/*
+	 * Verify the received `FFA_MEM_RETRIEVE_RESP` aligns with
+	 * transaction description sent above
+	 */
+	received_region = mb.recv;
+	INFO("recieved_region:\n");
+	print_region(received_region);
+
+	assert(received_region->sender == sent_region.sender);
+	assert(received_region->flags == expected_region_type);
+	assert(received_region->handle == sent_region.handle);
+	assert(received_region->tag == sent_region.tag);
+	assert(received_region->memory_access_desc_size ==
+	       sent_region.memory_access_desc_size);
+	assert(received_region->receiver_count == sent_region.receiver_count);
+	assert(received_region->receivers_offset ==
+	       sent_region.receivers_offset);
+	for (uint32_t i = 0; i < received_region->receiver_count; i++) {
+		struct ffa_memory_access received_access =
+			received_region->receivers[i];
+		INFO("received_access:\n");
+		print_memory_access(&received_access);
+
+		struct ffa_memory_access sent_access = sent_receivers[i];
+
+		INFO("sent_access:\n");
+		print_memory_access(&sent_access);
+
+		assert(sent_access.receiver_permissions.receiver == sp);
+		assert(sent_access.receiver_permissions.permissions ==
+		       expected_data_access);
+		assert(sent_access.receiver_permissions.flags == 0);
+
+		struct ffa_composite_memory_region *received_composite_region =
+			ffa_memory_region_get_composite(received_region, i);
+		INFO("recieved_composite_region:\n");
+		print_composite_region(received_composite_region);
+
+		struct ffa_composite_memory_region *sent_composite_region =
+			&sent_composite_regions[i];
+		INFO("sent_composite_region:\n");
+		print_composite_region(sent_composite_region);
+
+		assert(received_composite_region->page_count ==
+		       sent_composite_region->page_count);
+		assert(received_composite_region->constituent_count ==
+		       sent_composite_region->constituent_count);
+
+		for (uint32_t j = 0;
+		     j < received_composite_region->constituent_count; j++)
+		{
+			struct ffa_memory_region_constituent
+				received_constituent =
+					received_composite_region
+						->constituents[j];
+			INFO("received_constituent:\n");
+			print_constituent(&received_constituent);
+
+			struct ffa_memory_region_constituent sent_constituent =
+				sent_constituents[j];
+			INFO("sent_constituent:\n");
+			print_constituent(&sent_constituent);
+
+			assert(sent_constituent.address ==
+			       received_constituent.address);
+			assert(sent_constituent.page_count ==
+			       received_constituent.page_count);
+			assert(sent_constituent.reserved ==
+			       received_constituent.reserved);
+		}
+	}
+
+	/* Reclaim for the SPMC to deallocate any data related to the handle. */
+	ret = ffa_mem_reclaim(handle, 0);
+	if (is_ffa_call_error(ret)) {
+		ERROR("Memory reclaim failed: %d\n", ffa_error_code(ret));
+		return TEST_RESULT_FAIL;
+	}
+
+	ret = ffa_rx_release();
+	if (is_ffa_call_error(ret)) {
+		ERROR("rx release failed: %d\n", ffa_error_code(ret));
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t test_hypervisor_share_retrieve(void)
+{
+	return share_retrieve_helper(FFA_MEM_SHARE_SMC32,
+				     FFA_MEMORY_REGION_TRANSACTION_TYPE_SHARE,
+				     FFA_DATA_ACCESS_RW);
+}
+
+test_result_t test_hypervisor_lend_retrieve(void)
+{
+	return share_retrieve_helper(FFA_MEM_LEND_SMC32,
+				     FFA_MEMORY_REGION_TRANSACTION_TYPE_LEND,
+				     FFA_DATA_ACCESS_RW);
+}
+
+test_result_t test_hypervisor_donate_retrieve(void)
+{
+	return share_retrieve_helper(FFA_MEM_DONATE_SMC32,
+				     FFA_MEMORY_REGION_TRANSACTION_TYPE_DONATE,
+				     FFA_DATA_ACCESS_NOT_SPECIFIED);
 }
