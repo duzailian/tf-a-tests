@@ -1,9 +1,10 @@
 /*
- * Copyright (c) 2020-2022, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2023, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include "ffa_helpers.h"
 #include <debug.h>
 
 #include <cactus_test_cmds.h>
@@ -449,4 +450,229 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 	}
 
 	return TEST_RESULT_SUCCESS;
+}
+
+#define TRY(e)                                                                 \
+	do {                                                                   \
+		if ((e) != TEST_RESULT_SUCCESS) {                              \
+			return TEST_RESULT_FAIL;                               \
+		}                                                              \
+	} while (0)
+
+#define EXPECT_EQ(a, b)                                                        \
+	do {                                                                   \
+		if ((a) != (b)) {                                              \
+			ERROR("%s:%d\nEXPECT_EQ failed: " #a " != " #b         \
+			      "\nlhs = %llu\nrhs = %llu\n",                    \
+			      __FILE__, __LINE__, (uint64_t)(a),               \
+			      (uint64_t)(b));                                  \
+			return TEST_RESULT_FAIL;                               \
+		}                                                              \
+	} while (0)
+
+test_result_t
+compare_constituents(struct ffa_memory_region_constituent *rx_constituent,
+		     struct ffa_memory_region_constituent *tx_constituent)
+{
+
+	EXPECT_EQ(rx_constituent->address, tx_constituent->address);
+	EXPECT_EQ(rx_constituent->page_count, tx_constituent->page_count);
+	EXPECT_EQ(rx_constituent->reserved, tx_constituent->reserved);
+	EXPECT_EQ(rx_constituent->reserved, 0);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t compare_composite_regions(
+	struct ffa_composite_memory_region *rx_composite_region,
+	struct ffa_composite_memory_region *tx_composite_region)
+{
+
+	EXPECT_EQ(rx_composite_region->page_count,
+		  tx_composite_region->page_count);
+	EXPECT_EQ(rx_composite_region->constituent_count,
+		  tx_composite_region->constituent_count);
+	EXPECT_EQ(rx_composite_region->reserved_0,
+		  tx_composite_region->reserved_0);
+	EXPECT_EQ(rx_composite_region->reserved_0, 0);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t
+compare_memory_region_attributes(struct ffa_memory_region_attributes *rx_attrs,
+				 struct ffa_memory_region_attributes *tx_attrs)
+{
+
+	EXPECT_EQ(rx_attrs->receiver, tx_attrs->receiver);
+	EXPECT_EQ(rx_attrs->permissions, tx_attrs->permissions);
+	EXPECT_EQ(rx_attrs->flags, tx_attrs->flags);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t compare_memory_accesses(struct ffa_memory_access *rx_access,
+				      struct ffa_memory_access *tx_access)
+{
+
+	EXPECT_EQ(rx_access->composite_memory_region_offset,
+		  tx_access->composite_memory_region_offset);
+	TRY(compare_memory_region_attributes(&rx_access->receiver_permissions,
+					     &tx_access->receiver_permissions));
+	EXPECT_EQ(rx_access->reserved_0, tx_access->reserved_0);
+	EXPECT_EQ(rx_access->reserved_0, 0);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t compare_regions(struct ffa_memory_region *rx_region,
+			      struct ffa_memory_region *tx_region,
+			      uint32_t expected_flags)
+{
+
+	EXPECT_EQ(rx_region->flags, expected_flags);
+
+	EXPECT_EQ(rx_region->sender, rx_region->sender);
+	EXPECT_EQ(rx_region->attributes, rx_region->attributes);
+	EXPECT_EQ(rx_region->handle, rx_region->handle);
+	EXPECT_EQ(rx_region->tag, rx_region->tag);
+	EXPECT_EQ(rx_region->memory_access_desc_size,
+		  rx_region->memory_access_desc_size);
+	EXPECT_EQ(rx_region->receiver_count, rx_region->receiver_count);
+	EXPECT_EQ(rx_region->receivers_offset, rx_region->receivers_offset);
+
+	EXPECT_EQ(rx_region->reserved[0], tx_region->reserved[0]);
+	EXPECT_EQ(rx_region->reserved[1], tx_region->reserved[1]);
+	EXPECT_EQ(rx_region->reserved[2], tx_region->reserved[2]);
+
+	EXPECT_EQ(rx_region->reserved[0], 0);
+	EXPECT_EQ(rx_region->reserved[1], 0);
+	EXPECT_EQ(rx_region->reserved[2], 0);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t share_retrieve_helper(uint32_t mem_func, uint32_t region_type,
+				    uint32_t permissions)
+{
+
+	struct ffa_memory_region_constituent tx_constituents[] = {
+		{(void *)share_page, 1, 0}};
+	const uint32_t sent_constituents_count = ARRAY_SIZE(tx_constituents);
+	struct mailbox_buffers mb;
+	ffa_memory_handle_t handle;
+	struct ffa_value ret;
+	struct ffa_memory_region tx_region;
+	struct ffa_memory_region *rx_region;
+
+	ffa_id_t hypervisor = HYP_ID;
+	ffa_id_t sp = SP_ID(1);
+
+	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
+	GET_TFTF_MAILBOX(mb);
+
+	/* Share */
+	handle = memory_init_and_send(mb.send, MAILBOX_SIZE, hypervisor, sp,
+				      tx_constituents, sent_constituents_count,
+				      mem_func, &ret);
+	if (handle == FFA_MEMORY_HANDLE_INVALID) {
+		ERROR("Memory share failed: %d\n", ffa_error_code(ret));
+		return TEST_RESULT_FAIL;
+	}
+
+	memcpy(&tx_region, mb.send, sizeof(tx_region));
+	struct ffa_memory_access tx_receivers[tx_region.receiver_count];
+	memcpy(tx_receivers, ((struct ffa_memory_region *)mb.send)->receivers,
+	       sizeof(tx_receivers));
+
+	struct ffa_composite_memory_region
+		tx_composite_regions[tx_region.receiver_count];
+	for (uint32_t i = 0; i < tx_region.receiver_count; i++) {
+		memcpy(&tx_composite_regions[i],
+		       ffa_memory_region_get_composite(mb.send, i),
+		       sizeof(struct ffa_composite_memory_region));
+	}
+
+	/*
+	 * Send Hypervisor Retrieve request according to section 16.4.3 of
+	 * FFA v1.1-REL0 specification
+	 */
+	ffa_memory_retrieve_request_init(mb.send, handle, hypervisor, 0, 0, 0,
+					 0, 0, 0, 0, 0);
+	((struct ffa_memory_region *)mb.send)->receiver_count = 0;
+
+	ret = ffa_mem_retrieve_req(sizeof(struct ffa_memory_region),
+				   sizeof(struct ffa_memory_region));
+	if (ffa_func_id(ret) != FFA_MEM_RETRIEVE_RESP) {
+		ERROR("Memory retrieve failed: (FID = %lu, error = %d)\n",
+		      ret.fid, ffa_error_code(ret));
+		return TEST_RESULT_FAIL;
+	}
+
+	/*
+	 * Verify the received `FFA_MEM_RETRIEVE_RESP` aligns with
+	 * transaction description sent above
+	 */
+	rx_region = mb.recv;
+	TRY(compare_regions(rx_region, &tx_region, region_type));
+
+	for (uint32_t i = 0; i < rx_region->receiver_count; i++) {
+		struct ffa_memory_access rx_access = {
+			.reserved_0 = 0,
+			.composite_memory_region_offset = 64,
+			.receiver_permissions = {.permissions = permissions,
+						 .receiver = sp,
+						 .flags = 0},
+
+		};
+		struct ffa_memory_access tx_access = tx_receivers[i];
+		TRY(compare_memory_accesses(&rx_access, &tx_access));
+
+		struct ffa_composite_memory_region *rx_composite =
+			ffa_memory_region_get_composite(rx_region, i);
+		struct ffa_composite_memory_region *tx_composite =
+			&tx_composite_regions[i];
+		TRY(compare_composite_regions(rx_composite, tx_composite));
+
+		for (uint32_t j = 0; j < rx_composite->constituent_count; j++) {
+			TRY(compare_constituents(&rx_composite->constituents[j],
+						 &tx_constituents[j]));
+		}
+	}
+
+	/* Reclaim for the SPMC to deallocate any data related to the handle. */
+	ret = ffa_mem_reclaim(handle, 0);
+	if (is_ffa_call_error(ret)) {
+		ERROR("Memory reclaim failed: %d\n", ffa_error_code(ret));
+		return TEST_RESULT_FAIL;
+	}
+
+	ret = ffa_rx_release();
+	if (is_ffa_call_error(ret)) {
+		ERROR("rx release failed: %d\n", ffa_error_code(ret));
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t test_hypervisor_share_retrieve(void)
+{
+	return share_retrieve_helper(FFA_MEM_SHARE_SMC32,
+				     FFA_MEMORY_REGION_TRANSACTION_TYPE_SHARE,
+				     FFA_DATA_ACCESS_RW);
+}
+
+test_result_t test_hypervisor_lend_retrieve(void)
+{
+	return share_retrieve_helper(FFA_MEM_LEND_SMC32,
+				     FFA_MEMORY_REGION_TRANSACTION_TYPE_LEND,
+				     FFA_DATA_ACCESS_RW);
+}
+
+test_result_t test_hypervisor_donate_retrieve(void)
+{
+	return share_retrieve_helper(FFA_MEM_DONATE_SMC32,
+				     FFA_MEMORY_REGION_TRANSACTION_TYPE_DONATE,
+				     FFA_DATA_ACCESS_NOT_SPECIFIED);
 }
