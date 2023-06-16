@@ -80,6 +80,8 @@
 
   <testsuite name="FF-A Memory Sharing"
              description="Test FF-A Memory Sharing ABIs" >
+     <testcase name="Hypervisor memory retrieve request"
+               function="test_hypervisor_memory_retrieve" />
      <testcase name="Lend Memory to Secure World"
                function="test_mem_lend_sp" />
      <testcase name="Lend memory, clear flag set"
