@@ -3,6 +3,7 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+#include "string.h"
 #include <assert.h>
 
 #include <ffa_endpoints.h>
@@ -265,6 +266,18 @@ uint32_t ffa_memory_region_init(
 }
 
 /**
+ * Copy the memory region at `src` to `dst`, including the trailing
+ * `ffa_memory_access`s
+ */
+void ffa_memory_region_copy(struct ffa_memory_region *dst,
+			    struct ffa_memory_region *src)
+{
+	memcpy(dst, src,
+	       sizeof(struct ffa_memory_region) +
+		       src->receiver_count * sizeof(struct ffa_memory_access));
+}
+
+/**
  * Initialises the given `ffa_memory_region` to be used for an
  * `FFA_MEM_RETRIEVE_REQ` by the receiver of a memory transaction.
  *
@@ -301,6 +314,17 @@ uint32_t ffa_memory_retrieve_request_init(
 
 	return sizeof(struct ffa_memory_region) +
 	       memory_region->receiver_count * sizeof(struct ffa_memory_access);
+}
+
+/**
+ * Configure `region` for a hypervisor retrieve request - ie all fields except
+ * `handle` are initialized to 0.
+ */
+void ffa_hypervisor_retrieve_request_init(struct ffa_memory_region *region,
+					  ffa_memory_handle_t handle)
+{
+	memset(region, 0, sizeof(struct ffa_memory_region));
+	region->handle = handle;
 }
 
 /*
