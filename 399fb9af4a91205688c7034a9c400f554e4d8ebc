@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0414a075_0f8827d0",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-06-19T17:13:03Z",
+      "side": 1,
+      "message": "Class names normally follow the CapWords convention.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 29
+      },
+      "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f74b85ab_6db082c3",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-06-19T17:13:03Z",
+      "side": 1,
+      "message": "Its common convention for function names to be lowercase, with words separated by underscores as necessary. This makes the names more readable. We should only really use other cases in contexts where that’s already the prevailing style, to retain backwards compatibility.",
+      "range": {
+        "startLine": 96,
+        "startChar": 4,
+        "endLine": 96,
+        "endChar": 31
+      },
+      "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef23959e_6a3c56ca",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-06-19T17:13:03Z",
+      "side": 1,
+      "message": "Wouldn\u0027t we be better served by representing this function as a class and extracting these as private members of that class? This pattern is not one I\u0027m familiar but the alternative seems cleaner and more readable.",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 137,
+        "endChar": 61
+      },
+      "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93845e0d_d0d2db2a",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-06-19T17:13:03Z",
+      "side": 1,
+      "message": "A type hint here and in other functions would be useful for maintainability, and same comment as above with respect to lower case convention for function names.",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 1
+      },
+      "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38aa979b_90d03336",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-06-19T17:13:03Z",
+      "side": 1,
+      "message": "What is the motivation for representing this in this way? The function exclusively mutates data in the `Testsuite` class, would it not be betterthis and other related functions in the class for better encapsulation? This would create a consistent interface for manipulating test suites.",
+      "range": {
+        "startLine": 184,
+        "startChar": 0,
+        "endLine": 227,
+        "endChar": 25
+      },
+      "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e67596d_4aa8cf17",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-06-19T17:13:03Z",
+      "side": 1,
+      "message": "Can this validation happen earlier i.e. at line 84? It would avoid going through the entire script before falling over at this late stage.",
+      "range": {
+        "startLine": 264,
+        "startChar": 8,
+        "endLine": 265,
+        "endChar": 99
+      },
+      "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
