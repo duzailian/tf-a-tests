@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f84bcb2_b9e288d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-22T11:47:54Z",
+      "side": 1,
+      "message": "tc",
+      "range": {
+        "startLine": 10,
+        "startChar": 14,
+        "endLine": 10,
+        "endChar": 17
+      },
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "586883b1_90a3113f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-22T11:47:54Z",
+      "side": 1,
+      "message": "LGTM just a few nits.",
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c53e4c4e_419897a8",
+        "filename": "plat/arm/tc/platform.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-22T11:47:54Z",
+      "side": 1,
+      "message": "nit: actually in the git history this should have been renamed from plat/arm/tc0/platform.mk",
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37ae9dce_c6c4a797",
+        "filename": "plat/arm/tc/tc_mem_prot.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-22T11:47:54Z",
+      "side": 1,
+      "message": "nit: this should have been renamed from plat/arm/tc0/tc0_mem_prot.c",
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "868be555_9d5a2097",
+        "filename": "spm/cactus/plat/arm/tc/platform.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-22T11:47:54Z",
+      "side": 1,
+      "message": "renamed from spm/cactus/plat/arm/tc0/platform.mk ?",
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd7995a6_f9c06fb6",
+        "filename": "spm/ivy/app/plat/arm/tc/platform.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-22T11:47:54Z",
+      "side": 1,
+      "message": "renamed from spm/ivy/app/plat/arm/tc0/platform.mk ?",
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
