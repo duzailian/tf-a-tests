@@ -100,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cb48d85_2ca5a7b2",
+        "filename": "plat/arm/tc/platform.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-22T13:30:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9c1bfe8d_cfbc270e",
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37ae9dce_c6c4a797",
@@ -131,6 +149,24 @@
       "side": 1,
       "message": "The renaming for tc0 -\u003e tc along for some of the variables in this means git doesn\u0027t see it as a rename as the file was also edited.",
       "parentUuid": "37ae9dce_c6c4a797",
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a12cdad_d47b5028",
+        "filename": "plat/arm/tc/tc_mem_prot.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-22T13:30:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "657de575_2ef775dd",
       "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -170,6 +206,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e887310_5e3778f5",
+        "filename": "spm/cactus/plat/arm/tc/platform.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-22T13:30:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b176df2a_9aa2d601",
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cd7995a6_f9c06fb6",
@@ -201,6 +255,24 @@
       "side": 1,
       "message": "The renaming for tc0 -\u003e tc along for some of the variables in this means git doesn\u0027t see it as a rename as the file was also edited.",
       "parentUuid": "cd7995a6_f9c06fb6",
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "799da3a2_5d5e926a",
+        "filename": "spm/ivy/app/plat/arm/tc/platform.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-22T13:30:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b3654e87_5cb5f17c",
       "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
