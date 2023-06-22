@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "50effbee_4f60bf2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-06-22T12:45:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f84bcb2_b9e288d3",
+      "range": {
+        "startLine": 10,
+        "startChar": 14,
+        "endLine": 10,
+        "endChar": 17
+      },
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "586883b1_90a3113f",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 3
@@ -60,6 +84,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9c1bfe8d_cfbc270e",
+        "filename": "plat/arm/tc/platform.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-06-22T12:45:39Z",
+      "side": 1,
+      "message": "I think because I have changed the some of the paths from tc0 -\u003e tc git won\u0027t class it as a move",
+      "parentUuid": "c53e4c4e_419897a8",
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "37ae9dce_c6c4a797",
         "filename": "plat/arm/tc/tc_mem_prot.c",
         "patchSetId": 3
@@ -71,6 +113,24 @@
       "writtenOn": "2023-06-22T11:47:54Z",
       "side": 1,
       "message": "nit: this should have been renamed from plat/arm/tc0/tc0_mem_prot.c",
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "657de575_2ef775dd",
+        "filename": "plat/arm/tc/tc_mem_prot.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-06-22T12:45:39Z",
+      "side": 1,
+      "message": "The renaming for tc0 -\u003e tc along for some of the variables in this means git doesn\u0027t see it as a rename as the file was also edited.",
+      "parentUuid": "37ae9dce_c6c4a797",
       "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -94,6 +154,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b176df2a_9aa2d601",
+        "filename": "spm/cactus/plat/arm/tc/platform.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-06-22T12:45:39Z",
+      "side": 1,
+      "message": "The renaming for tc0 -\u003e tc along for some of the variables in this means git doesn\u0027t see it as a rename as the file was also edited.",
+      "parentUuid": "868be555_9d5a2097",
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cd7995a6_f9c06fb6",
         "filename": "spm/ivy/app/plat/arm/tc/platform.mk",
         "patchSetId": 3
@@ -105,6 +183,24 @@
       "writtenOn": "2023-06-22T11:47:54Z",
       "side": 1,
       "message": "renamed from spm/ivy/app/plat/arm/tc0/platform.mk ?",
+      "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3654e87_5cb5f17c",
+        "filename": "spm/ivy/app/plat/arm/tc/platform.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-06-22T12:45:39Z",
+      "side": 1,
+      "message": "The renaming for tc0 -\u003e tc along for some of the variables in this means git doesn\u0027t see it as a rename as the file was also edited.",
+      "parentUuid": "cd7995a6_f9c06fb6",
       "revId": "ce67518be7727943b7788b783226940e10d5a0c9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
