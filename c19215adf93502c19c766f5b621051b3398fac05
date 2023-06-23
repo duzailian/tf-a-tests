@@ -46,6 +46,30 @@
       },
       "revId": "c19215adf93502c19c766f5b621051b3398fac05",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e589ef04_0e7e4970",
+        "filename": "plat/arm/tc/platform.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-06-23T22:21:17Z",
+      "side": 1,
+      "message": "Yeah, this can be taken up independent of this patch.",
+      "parentUuid": "bd5f92bd_3bbfbee8",
+      "range": {
+        "startLine": 23,
+        "startChar": 3,
+        "endLine": 23,
+        "endChar": 27
+      },
+      "revId": "c19215adf93502c19c766f5b621051b3398fac05",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
