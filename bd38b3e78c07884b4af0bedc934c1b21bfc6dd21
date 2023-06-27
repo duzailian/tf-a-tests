@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfe09a48_e256ac33",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001020
+      },
+      "writtenOn": "2023-06-27T09:02:39Z",
+      "side": 1,
+      "message": "Just as a warning if there\u0027s silence from me soon: I\u0027ll be going on vacation June 30-July 13.",
+      "revId": "bd38b3e78c07884b4af0bedc934c1b21bfc6dd21",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
