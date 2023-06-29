@@ -1,0 +1,279 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "493f1609_b239b763",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-29T12:50:21Z",
+      "side": 1,
+      "message": "Small comments.",
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ea0c133_a03f86dc",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-29T12:50:21Z",
+      "side": 1,
+      "message": "align",
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b24fb474_b073afb9",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-29T12:50:21Z",
+      "side": 1,
+      "message": "enclose in curly brackets. I believe this is a requirement for TF-A/TF-A-Tests.",
+      "range": {
+        "startLine": 408,
+        "startChar": 32,
+        "endLine": 408,
+        "endChar": 33
+      },
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17d93964_10e7da2d",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-29T12:50:21Z",
+      "side": 1,
+      "message": "Declare at the top of the scope in which this is used.",
+      "range": {
+        "startLine": 414,
+        "startChar": 0,
+        "endLine": 414,
+        "endChar": 30
+      },
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "add28bd9_e3c2bea7",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-29T12:50:21Z",
+      "side": 1,
+      "message": "Provide pointers to FF-A specification to where these are defined?",
+      "range": {
+        "startLine": 419,
+        "startChar": 1,
+        "endLine": 426,
+        "endChar": 0
+      },
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66269c60_22538ca6",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-29T12:50:21Z",
+      "side": 1,
+      "message": "nitpick: align function arguments, or do like function in line 393.",
+      "range": {
+        "startLine": 430,
+        "startChar": 12,
+        "endLine": 430,
+        "endChar": 38
+      },
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69d4d393_6087e7a8",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-29T12:50:21Z",
+      "side": 1,
+      "message": "nitpick: \"Validating against expected results shall be done ...\"",
+      "range": {
+        "startLine": 479,
+        "startChar": 52,
+        "endLine": 480,
+        "endChar": 34
+      },
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "febe27c8_adee016a",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-29T12:50:21Z",
+      "side": 1,
+      "message": "delete empty line.",
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af95345c_679e1b58",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-29T12:50:21Z",
+      "side": 1,
+      "message": "nitpick: replace with %s and add __func__ argument?",
+      "range": {
+        "startLine": 492,
+        "startChar": 9,
+        "endLine": 492,
+        "endChar": 25
+      },
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ce05677_8cb46613",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-29T12:50:21Z",
+      "side": 1,
+      "message": "nitpick: Would it help to code alignment to check if code ret !\u003d FFA_SUCCESS return false. That would remove a level of tabs below, and aid resolving alignment nitpicks below.",
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32e9060d_ba9b6008",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-29T12:50:21Z",
+      "side": 1,
+      "message": "nitpick: align with above expression. as done in line 510.",
+      "range": {
+        "startLine": 501,
+        "startChar": 4,
+        "endLine": 501,
+        "endChar": 7
+      },
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ede93eda_52a80b46",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-29T12:50:21Z",
+      "side": 1,
+      "message": "nitpick: align strings.",
+      "range": {
+        "startLine": 503,
+        "startChar": 3,
+        "endLine": 503,
+        "endChar": 4
+      },
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "300fbeeb_7dffcf67",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-06-29T12:50:21Z",
+      "side": 1,
+      "message": "Fix the alignment of the curly bracket.",
+      "range": {
+        "startLine": 522,
+        "startChar": 4,
+        "endLine": 522,
+        "endChar": 7
+      },
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
