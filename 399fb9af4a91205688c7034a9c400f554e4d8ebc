@@ -236,6 +236,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7f4dad8_b808fa12",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-06-29T14:42:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c8cfb352_c4264644",
+      "range": {
+        "startLine": 184,
+        "startChar": 0,
+        "endLine": 227,
+        "endChar": 25
+      },
+      "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e67596d_4aa8cf17",
@@ -278,6 +302,53 @@
         "startChar": 8,
         "endLine": 265,
         "endChar": 99
+      },
+      "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2971d1c8_750d9ca3",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-06-29T14:42:57Z",
+      "side": 1,
+      "message": "Right - I think in that case we could probably add a layer of abstraction here so the application code isn\u0027t eclipsed by this type of error handling. We should consider abstracting this block into its own function so that there\u0027s a clear logical data flow at the top level and the implementation details are slightly obscured.",
+      "parentUuid": "60dada11_16481e8b",
+      "range": {
+        "startLine": 264,
+        "startChar": 8,
+        "endLine": 265,
+        "endChar": 99
+      },
+      "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63b02f4b_a280810a",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-06-29T14:42:57Z",
+      "side": 1,
+      "message": "Considering we raise an unhandled error here, what\u0027s the point of creating a set of test suites and test cases? Presumably the set will always be the same as the input data. I\u0027m also wondering whether we might be better suited storing our data in dictionaries, then we don\u0027t have to check for duplicates and get the bonus of constant time accesses for test suites and test cases!",
+      "range": {
+        "startLine": 267,
+        "startChar": 0,
+        "endLine": 281,
+        "endChar": 42
       },
       "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
