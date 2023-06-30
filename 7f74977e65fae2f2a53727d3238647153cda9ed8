@@ -49,6 +49,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6bf5da85_5870a494",
+        "filename": "tftf/tests/runtime_services/secure_service/aarch64/ffa_arch_helpers.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-30T15:58:14Z",
+      "side": 1,
+      "message": "I guess we\u0027re only interested by the return values when considering ffa partition info get regs. On input it remains with 8 regs.\nI\u0027d say if we want to make it future proof (FFA_MSG_SEND_DIRECT_REQ2), yes we should fork this function to adopt 18 registers on input and output.",
+      "parentUuid": "17457230_17fe4320",
+      "range": {
+        "startLine": 23,
+        "startChar": 1,
+        "endLine": 28,
+        "endChar": 0
+      },
+      "revId": "7f74977e65fae2f2a53727d3238647153cda9ed8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c09beffc_aee0b83d",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
         "patchSetId": 4
