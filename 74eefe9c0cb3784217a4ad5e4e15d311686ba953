@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "81caeaac_bc61ec24",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-06-30T16:30:35Z",
+      "side": 1,
+      "message": "Can\u0027t recall the conclusion (I will look after it), but did we say we\u0027d better not exposing EL3 LSPs to the normal world?",
+      "range": {
+        "startLine": 11,
+        "startChar": 33,
+        "endLine": 14,
+        "endChar": 11
+      },
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "493f1609_b239b763",
