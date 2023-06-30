@@ -331,6 +331,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cb23d1b_f49604c8",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1001020
+      },
+      "writtenOn": "2023-06-30T06:52:04Z",
+      "side": 1,
+      "message": "Makes sense",
+      "parentUuid": "2971d1c8_750d9ca3",
+      "range": {
+        "startLine": 264,
+        "startChar": 8,
+        "endLine": 265,
+        "endChar": 99
+      },
+      "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "63b02f4b_a280810a",
@@ -344,6 +368,30 @@
       "writtenOn": "2023-06-29T14:42:57Z",
       "side": 1,
       "message": "Considering we raise an unhandled error here, what\u0027s the point of creating a set of test suites and test cases? Presumably the set will always be the same as the input data. I\u0027m also wondering whether we might be better suited storing our data in dictionaries, then we don\u0027t have to check for duplicates and get the bonus of constant time accesses for test suites and test cases!",
+      "range": {
+        "startLine": 267,
+        "startChar": 0,
+        "endLine": 281,
+        "endChar": 42
+      },
+      "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dd4c86f_d212b208",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1001020
+      },
+      "writtenOn": "2023-06-30T06:52:04Z",
+      "side": 1,
+      "message": "Really the only point in creating the sets is to check whether there are two names that are the same, which is presumably a mistake from the test writer. IMO that kind of mistake should be surfaced to the user.\n\nThere are other ways to write this code - for example using collections.Counter - but I don\u0027t think it\u0027s fundamentally more clear.\n\nNot sure if I follow the idea of using dictionaries? What\u0027s the advantage there?",
+      "parentUuid": "63b02f4b_a280810a",
       "range": {
         "startLine": 267,
         "startChar": 0,
