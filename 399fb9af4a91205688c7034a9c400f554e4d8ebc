@@ -424,6 +424,30 @@
       },
       "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e4e44a0_27368cb3",
+        "filename": "tools/generate_test_list/generate_test_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-07-03T07:27:29Z",
+      "side": 1,
+      "message": "I believe this comment can be marked as resolved now.",
+      "parentUuid": "6abf7f7a_42f988ea",
+      "range": {
+        "startLine": 267,
+        "startChar": 0,
+        "endLine": 281,
+        "endChar": 42
+      },
+      "revId": "399fb9af4a91205688c7034a9c400f554e4d8ebc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }

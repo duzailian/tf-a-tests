@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b47c902_954bae00",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-07-03T07:27:29Z",
+      "side": 1,
+      "message": "Upgrading Harrison\u0027s vote into a COR+1.",
+      "revId": "7ba27bf9b56fe5981317b4434525633a678329b8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
