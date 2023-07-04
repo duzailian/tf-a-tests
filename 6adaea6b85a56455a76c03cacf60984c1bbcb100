@@ -16,6 +16,23 @@
       "message": "Action on me to come back on the unresolved comment. Bear with me.",
       "revId": "6adaea6b85a56455a76c03cacf60984c1bbcb100",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ef1e1f5_6e64b750",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-07-04T14:38:05Z",
+      "side": 1,
+      "message": "WIP",
+      "revId": "6adaea6b85a56455a76c03cacf60984c1bbcb100",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
