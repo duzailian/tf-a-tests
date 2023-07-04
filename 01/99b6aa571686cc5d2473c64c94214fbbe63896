@@ -1,0 +1,9 @@
+Allow-CI+2: Harrison Mutai <harrison.mutai@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Maintainer-Review+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Code-Owner-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Tue, 04 Jul 2023 09:20:14 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/21801
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
