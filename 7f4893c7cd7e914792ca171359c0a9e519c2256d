@@ -33,6 +33,23 @@
       "message": "Similar fix is done by https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/21309\n\nBut I think its good to have this change as well.",
       "revId": "7f4893c7cd7e914792ca171359c0a9e519c2256d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d27e37ed_82a7f619",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-06T15:54:31Z",
+      "side": 1,
+      "message": "I think we can abandon this patch as Arun\u0027s patch should take care of alignment.",
+      "revId": "7f4893c7cd7e914792ca171359c0a9e519c2256d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
