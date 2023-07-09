@@ -193,6 +193,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9e493bfc_b50c0cd2",
+        "filename": "tftf/tests/runtime_services/secure_service/aarch64/ffa_arch_helpers.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-07-09T23:45:00Z",
+      "side": 1,
+      "message": "Hi Joao, sorry for the delay, patch to fix this comment is here:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/21873/1",
+      "parentUuid": "f888b062_d009b2e8",
+      "range": {
+        "startLine": 23,
+        "startChar": 1,
+        "endLine": 28,
+        "endChar": 0
+      },
+      "revId": "7f74977e65fae2f2a53727d3238647153cda9ed8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c09beffc_aee0b83d",
         "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
         "patchSetId": 4
