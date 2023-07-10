@@ -24,6 +24,12 @@ TESTS_SOURCES	+=							\
 		test_ffa_group0_interrupts.c				\
 	)
 
+TESTS_SOURCES	+=							\
+	$(addprefix tftf/tests/runtime_services/secure_service/,	\
+		test_ffa_smccc.c						\
+		test_ffa_smccc_asm.S						\
+	)
+
 ifeq (${ARCH},aarch64)
 TESTS_SOURCES   +=                                                      \
         $(addprefix tftf/tests/runtime_services/secure_service/,        \
