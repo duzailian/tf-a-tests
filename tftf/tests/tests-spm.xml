@@ -21,6 +21,10 @@
      <testcase name="Smaller FFA version than SPM"
                function="test_ffa_version_smaller" />
 
+     <testcase name="FF-A callee preserves GP register set per SMCCC"
+               function="test_smccc_callee_preserved" />
+     <testcase name="FF-A callee preserves extended GP register set per SMCCC"
+               function="test_smccc_ext_callee_preserved" />
      <testcase name="FF-A RXTX Map API success"
                function="test_ffa_rxtx_map_success" />
      <testcase name="FF-A RXTX Map API consecutive"
