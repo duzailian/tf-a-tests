@@ -14,6 +14,13 @@
 #include <tftf_lib.h>
 #include <xlat_tables_defs.h>
 
+#define expect_eq(expr, value)				\
+	do {						\
+		if ((expr) != (value)) {		\
+			panic();			\
+		}					\
+	} while (0);
+
 static bool should_skip_version_test;
 
 static struct mailbox_buffers mb;
@@ -472,4 +479,73 @@ test_result_t test_ffa_partition_info_v1_0(void)
 		result = TEST_RESULT_FAIL;
 	}
 	return result;
+}
+
+static struct ffa_value test_ffa_smc(uint32_t func, uint64_t arg0, uint64_t arg1,
+				 uint64_t arg2, uint64_t arg3, uint64_t arg4,
+				 uint64_t arg5, uint64_t arg6)
+{
+	register uint64_t r0 __asm__("x0") = func;
+	register uint64_t r1 __asm__("x1") = arg0;
+	register uint64_t r2 __asm__("x2") = arg1;
+	register uint64_t r3 __asm__("x3") = arg2;
+	register uint64_t r4 __asm__("x4") = arg3;
+	register uint64_t r5 __asm__("x5") = arg4;
+	register uint64_t r6 __asm__("x6") = arg5;
+	register uint64_t r7 __asm__("x7") = arg6;
+	register uint64_t r8 __asm__("x8") = 0xa8;
+	register uint64_t r9 __asm__("x9") = 0xa9;
+	register uint64_t r10 __asm__("x10") = 0xa10;
+	register uint64_t r11 __asm__("x11") = 0xa11;
+	register uint64_t r12 __asm__("x12") = 0xa12;
+	register uint64_t r13 __asm__("x13") = 0xa13;
+	register uint64_t r14 __asm__("x14") = 0xa14;
+
+	__asm__ volatile(
+		"smc #0"
+		: /* Output registers, also used as inputs ('+' constraint). */
+		"+r"(r0), "+r"(r1), "+r"(r2), "+r"(r3), "+r"(r4), "+r"(r5),
+		"+r"(r6), "+r"(r7), "+r"(r8), "+r"(r9), "+r"(r10), "+r"(r11),
+		"+r"(r12), "+r"(r13), "+r"(r14));
+
+	expect_eq(r8, 0xa8);
+	expect_eq(r9, 0xa9);
+	expect_eq(r10, 0xa10);
+	expect_eq(r11, 0xa11);
+	expect_eq(r12, 0xa12);
+	expect_eq(r13, 0xa13);
+	expect_eq(r14, 0xa14);
+
+	return (struct ffa_value){.fid = r0,
+				  .arg1 = r1,
+				  .arg2 = r2,
+				  .arg3 = r3,
+				  .arg4 = r4,
+				  .arg5 = r5,
+				  .arg6 = r6,
+				  .arg7 = r7};
+}
+
+
+/**
+ * An FF-A service call is emitted at the NS physical FF-A instance.
+ * The service does not require results in registers beyond x7, hence per
+ * SMCCCv1.2 ensure GP registers beyond x7 are preserved by callee.
+ */
+test_result_t test_smccc_callee_preserved(void)
+{
+	struct ffa_value ret;
+
+	ret = test_ffa_smc(FFA_VERSION, 0x10001, 0, 0, 0, 0, 0, 0);
+
+	expect_eq(ret.fid, 0x10001);
+	expect_eq(ret.arg1, 0);
+	expect_eq(ret.arg2, 0);
+	expect_eq(ret.arg3, 0);
+	expect_eq(ret.arg4, 0);
+	expect_eq(ret.arg5, 0);
+	expect_eq(ret.arg6, 0);
+	expect_eq(ret.arg7, 0);
+
+	return TEST_RESULT_SUCCESS;
 }
