@@ -14,6 +14,13 @@
 #include <tftf_lib.h>
 #include <xlat_tables_defs.h>
 
+#define expect_eq(expr, value)				\
+	do {						\
+		if ((expr) != (value)) {		\
+			ERROR("expect failed %s:%u\n", __FILE__, __LINE__); \
+		}					\
+	} while (0);
+
 static bool should_skip_version_test;
 
 static struct mailbox_buffers mb;
