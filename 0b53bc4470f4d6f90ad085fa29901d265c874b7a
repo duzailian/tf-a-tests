@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "2e70ceec_8f6fe8c4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-10T13:00:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f219d8f4_1c019b09",
+      "range": {
+        "startLine": 9,
+        "startChar": 18,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "0b53bc4470f4d6f90ad085fa29901d265c874b7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "1d79fe80_0bb6b0e8",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 12
@@ -64,6 +88,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3966a461_94f42448",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-10T13:00:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "abdba381_0aed9a41",
+      "range": {
+        "startLine": 24,
+        "startChar": 24,
+        "endLine": 24,
+        "endChar": 25
+      },
+      "revId": "0b53bc4470f4d6f90ad085fa29901d265c874b7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "044702cf_80b37585",
@@ -77,6 +125,30 @@
       "writtenOn": "2023-06-06T14:23:25Z",
       "side": 1,
       "message": "nit: would \"lr \u0026 (OxFU \u003c\u003c 60U)\" be easier to read?",
+      "range": {
+        "startLine": 52,
+        "startChar": 5,
+        "endLine": 52,
+        "endChar": 29
+      },
+      "revId": "0b53bc4470f4d6f90ad085fa29901d265c874b7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a400fb1b_114f6145",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-10T13:00:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "044702cf_80b37585",
       "range": {
         "startLine": 52,
         "startChar": 5,
@@ -104,6 +176,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "919784bd_3138b9dd",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-10T13:00:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a43d86ee_97757bfa",
+      "revId": "0b53bc4470f4d6f90ad085fa29901d265c874b7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ca0e52b_333c5cfa",
@@ -123,6 +213,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "74326144_a4796f14",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-10T13:00:12Z",
+      "side": 1,
+      "message": "when custom exception handler is registered, it handles the fault gracefully and tries to jump to next instruction which caused fault ELR+4, \ntftf_sync_exception_handler",
+      "parentUuid": "8ca0e52b_333c5cfa",
+      "revId": "0b53bc4470f4d6f90ad085fa29901d265c874b7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ddeedb79_c4ea63fd",
         "filename": "realm/realm_payload_main.c",
         "patchSetId": 12
@@ -134,6 +242,30 @@
       "writtenOn": "2023-06-06T14:23:25Z",
       "side": 1,
       "message": "nit: 0U, and add a \u0027U\u0027 type modifier for all the unsigned values below",
+      "range": {
+        "startLine": 99,
+        "startChar": 23,
+        "endLine": 99,
+        "endChar": 24
+      },
+      "revId": "0b53bc4470f4d6f90ad085fa29901d265c874b7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9baeb192_8036ab83",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-10T13:00:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ddeedb79_c4ea63fd",
       "range": {
         "startLine": 99,
         "startChar": 23,
