@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0cd88096_237bf3e5",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-07-10T12:04:30Z",
+      "side": 1,
+      "message": "Check if we want to generalize this macro.\nI preferred using this macro rather than \u0027assert\u0027 which is removed on debug builds.\n\nWe could also make it common with:\nhttps://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/spm/common/sp_helpers.c#n33",
+      "revId": "1905be5b6a1e90af5105fbd637f894df61436807",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "070f0eb2_b23f0eef",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-07-10T12:04:30Z",
+      "side": 1,
+      "message": "GCC doesn\u0027t permit adding more registers for some reason.\nBut actually this pattern is enough to prove the SMCCC breakage we have with the SPMD.",
+      "revId": "1905be5b6a1e90af5105fbd637f894df61436807",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
