@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "861310bc_f6a4ead3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-07-11T10:38:55Z",
+      "side": 1,
+      "message": "I think this patch stack is missing changes to platform-ci project to make sure the tests in test-spm.xml are referring to a TF-A binary with the necessary build options to include the SPMD LSPs work.\n",
+      "revId": "9adc607be07d964b6aa5a77e8e5dae01f0af7750",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
