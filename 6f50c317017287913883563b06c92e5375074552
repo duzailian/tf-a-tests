@@ -22,6 +22,63 @@
       },
       "revId": "6f50c317017287913883563b06c92e5375074552",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9767b0c_d821da38",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_smccc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-07-11T17:10:47Z",
+      "side": 1,
+      "message": "is the following missing?\nreturn TEST_RESULT_FAIL;",
+      "revId": "6f50c317017287913883563b06c92e5375074552",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1d73502_d3a0560e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_smccc_asm.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-07-11T17:10:47Z",
+      "side": 1,
+      "message": "Please add doc comments explaining what is the expectation from the function that is called and the callee.",
+      "revId": "6f50c317017287913883563b06c92e5375074552",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4ba17f3_1c3f89e5",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_smccc_asm.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-07-11T17:10:47Z",
+      "side": 1,
+      "message": "nitpick: why not use the mov flavor with appropriate constant?\nmov x9, #0xa9",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 15
+      },
+      "revId": "6f50c317017287913883563b06c92e5375074552",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
