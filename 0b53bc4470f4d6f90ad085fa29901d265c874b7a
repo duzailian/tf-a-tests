@@ -229,6 +229,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "87b62cf7_97a262cd",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-11T13:09:22Z",
+      "side": 1,
+      "message": "Sorry about this comment, control does not reach back here, we return to host after executing the custom exception handler added for this testcase.\nTFTF framework however gives ability to return back to exception point after handling exception.",
+      "parentUuid": "74326144_a4796f14",
+      "revId": "0b53bc4470f4d6f90ad085fa29901d265c874b7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ddeedb79_c4ea63fd",
