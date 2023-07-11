@@ -122,6 +122,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "ccbb4fa2_f16e6518",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-07-11T20:38:45Z",
+      "side": 1,
+      "message": "Yes, added to list of tech debt. will do it after this patch series merges.",
+      "parentUuid": "ead68a88_14817cb8",
+      "range": {
+        "startLine": 11,
+        "startChar": 33,
+        "endLine": 14,
+        "endChar": 11
+      },
+      "revId": "74eefe9c0cb3784217a4ad5e4e15d311686ba953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "493f1609_b239b763",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 4
