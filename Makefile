@@ -106,6 +106,11 @@ msg_start:
 	@echo "Building ${PLAT}"
 	@echo "Selected set of tests: ${TESTS}"
 
+# Set flags for Realm Payload Tests
+ifeq (${ENABLE_REALM_PAYLOAD_TESTS},1)
+BRANCH_PROTECTION := 2
+endif
+
 # Include test images makefiles.
 include tftf/framework/framework.mk
 include tftf/tests/tests.mk
@@ -148,6 +153,8 @@ $(eval $(call assert_boolean,FIRMWARE_UPDATE))
 $(eval $(call assert_boolean,FWU_BL_TEST))
 $(eval $(call assert_boolean,NEW_TEST_SESSION))
 $(eval $(call assert_boolean,USE_NVM))
+$(eval $(call assert_numeric,BRANCH_PROTECTION))
+$(eval $(call assert_boolean,ENABLE_REALM_PAYLOAD_TESTS))
 
 ################################################################################
 # Process build options
@@ -537,8 +544,6 @@ ifeq ($(SMC_FUZZING), 1)
 	--redefine-sym _binary___build_$(PLAT)_$(BUILD_TYPE)_smcf_dtb_end=_binary___dtb_end
 endif
 
-$(eval $(call MAKE_IMG,tftf))
-
 ifeq ($(FIRMWARE_UPDATE), 1)
   $(eval $(call MAKE_IMG,ns_bl1u))
   $(eval $(call MAKE_IMG,ns_bl2u))
@@ -548,11 +553,25 @@ ifeq (${ARCH}-${PLAT},aarch64-fvp)
   $(eval $(call MAKE_IMG,cactus_mm))
   $(eval $(call MAKE_IMG,cactus))
   $(eval $(call MAKE_IMG,ivy))
+endif
+
+ifeq (${ENABLE_REALM_PAYLOAD_TESTS},1)
   $(eval $(call MAKE_IMG,realm))
+endif
+
+.PHONY : tftf
+  $(eval $(call MAKE_IMG,tftf))
+
+ifeq (${ENABLE_REALM_PAYLOAD_TESTS},1)
+tftf: realm
+	@echo "  PACK REALM PAYLOAD"
+	$(shell dd if=$(BUILD_PLAT)/realm.bin of=$(BUILD_PLAT)/tftf.bin obs=1 \
+	seek=$(TFTF_MAX_IMAGE_SIZE))
 endif
 
 ifeq (${ARCH}-${PLAT},aarch64-fvp)
 .PHONY : pack_realm
+$(eval $(call MAKE_IMG,realm))
 pack_realm: realm tftf
 	@echo "  PACK REALM PAYLOAD"
 	$(shell dd if=$(BUILD_PLAT)/realm.bin of=$(BUILD_PLAT)/tftf.bin obs=1 \
@@ -599,6 +618,7 @@ help:
 	echo ""
 	echo "PLAT is used to specify which platform you wish to build."
 	echo "If no platform is specified, PLAT defaults to: ${DEFAULT_PLAT}"
+	echo "Use ENABLE_REALM_PAYLOAD_TESTS=1 for Realm payload tests."
 	echo ""
 	echo "Supported Targets:"
 	echo "  all            Build all supported binaries for this platform"
@@ -607,7 +627,7 @@ help:
 	echo "  ns_bl1u        Build the NS_BL1U image"
 	echo "  ns_bl2u        Build the NS_BL2U image"
 	echo "  realm          Build the Realm image (Test R-EL1 payload)."
-	echo "  pack_realm     Pack the realm image to tftf.bin."
+	echo "  pack_realm     Pack the realm image to tftf.bin. (Deprecated)"
 	echo "  cactus         Build the Cactus image (FF-A S-EL1 test payload)."
 	echo "  cactus_mm      Build the Cactus-MM image (SPM-MM S-EL0 test payload)."
 	echo "  ivy            Build the Ivy image (FF-A S-EL0 test payload)."
