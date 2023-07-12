@@ -45,3 +45,11 @@ USE_NVM			:= 0
 
 # Build verbosity
 V			:= 0
+
+# Select the branch protection features to use.
+BRANCH_PROTECTION	:= 0
+$(eval $(call assert_numeric,BRANCH_PROTECTION))
+
+# Build RME stack
+ENABLE_REALM_PAYLOAD_TESTS		:= 0
+$(eval $(call assert_boolean,ENABLE_REALM_PAYLOAD_TESTS))
