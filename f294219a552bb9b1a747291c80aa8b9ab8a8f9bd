@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b0d86a8_e8d5a3f1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_smccc_asm.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-07-12T13:35:13Z",
+      "side": 1,
+      "message": "I see that in patchset6 you are using cinc instruction instead of bne(in patchset2). This means the comparison failures are accumulated rather than exiting on the first fail. I am curious what is the rational behind it.",
+      "revId": "f294219a552bb9b1a747291c80aa8b9ab8a8f9bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
