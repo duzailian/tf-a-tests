@@ -107,6 +107,9 @@ payload, whose simplistic build system is mostly independent.
 -  ``V``: Verbose build. If assigned anything other than 0, the build commands
    are printed. Default is 0.
 
+-  ``ENABLE_REALM_PAYLOAD_TESTS``: This option builds and packs Realm payload tests for
+   RME Enabled stack.
+
 Arm FVP Platform Specific Build Options
 ---------------------------------------
 
