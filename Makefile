@@ -118,6 +118,9 @@ SECURE_PARTITIONS	:=
 # Only platform fvp supports cactus_mm
 ifeq (${ARCH}-${PLAT},aarch64-fvp)
 include spm/cactus_mm/cactus_mm.mk
+endif
+
+ifeq (${ENABLE_RME},1)
 include realm/realm.mk
 endif
 
@@ -155,6 +158,9 @@ $(eval $(call assert_boolean,USE_NVM))
 
 # Process BRANCH_PROTECTION value and set
 # Pointer Authentication and Branch Target Identification flags
+ifeq (${ENABLE_RME},1)
+BRANCH_PROTECTION := 2
+endif
 include branch_protection.mk
 
 ################################################################################
@@ -388,11 +394,6 @@ cactus_mm:
 realm:
 	@echo "ERROR: $@ is supported only on AArch64 FVP."
 	@exit 1
-
-.PHONY: pack_realm
-pack_realm:
-	@echo "Nothing to be done"
-	@exit 1
 endif
 
 ifneq (${ARCH}-${PLAT},$(filter ${ARCH}-${PLAT},aarch64-fvp aarch64-tc))
@@ -548,12 +549,12 @@ ifeq (${ARCH}-${PLAT},aarch64-fvp)
   $(eval $(call MAKE_IMG,cactus_mm))
   $(eval $(call MAKE_IMG,cactus))
   $(eval $(call MAKE_IMG,ivy))
-  $(eval $(call MAKE_IMG,realm))
 endif
 
-ifeq (${ARCH}-${PLAT},aarch64-fvp)
-.PHONY : pack_realm
-pack_realm: realm tftf
+ifeq (${ENABLE_RME},1)
+  $(eval $(call MAKE_IMG,realm))
+.PHONY : realm
+realm: tftf
 	@echo "  PACK REALM PAYLOAD"
 	$(shell dd if=$(BUILD_PLAT)/realm.bin of=$(BUILD_PLAT)/tftf.bin obs=1 \
 	seek=$(TFTF_MAX_IMAGE_SIZE))
@@ -595,7 +596,7 @@ cscope:
 .SILENT: help
 help:
 	echo "usage: ${MAKE} PLAT=<${PLATFORMS}> \
-<all|tftf|ns_bl1u|ns_bl2u|cactus|ivy|realm|pack_realm|el3_payload|distclean|clean|checkcodebase|checkpatch|help_tests>"
+<all|tftf|ns_bl1u|ns_bl2u|cactus|ivy|realm|el3_payload|distclean|clean|checkcodebase|checkpatch|help_tests>"
 	echo ""
 	echo "PLAT is used to specify which platform you wish to build."
 	echo "If no platform is specified, PLAT defaults to: ${DEFAULT_PLAT}"
@@ -606,8 +607,7 @@ help:
 	echo "  tftf           Build the TFTF image"
 	echo "  ns_bl1u        Build the NS_BL1U image"
 	echo "  ns_bl2u        Build the NS_BL2U image"
-	echo "  realm          Build the Realm image (Test R-EL1 payload)."
-	echo "  pack_realm     Pack the realm image to tftf.bin."
+	echo "  realm          Build and pack the Realm image (Test R-EL1 payload) to tftf.bin."
 	echo "  cactus         Build the Cactus image (FF-A S-EL1 test payload)."
 	echo "  cactus_mm      Build the Cactus-MM image (SPM-MM S-EL0 test payload)."
 	echo "  ivy            Build the Ivy image (FF-A S-EL0 test payload)."
