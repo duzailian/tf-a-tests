@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c62f3e6_327c1071",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-07-12T08:55:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "054f5be5_6ec54d00",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 13
+      },
+      "revId": "6f50c317017287913883563b06c92e5375074552",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b9767b0c_d821da38",
@@ -37,6 +61,24 @@
       "writtenOn": "2023-07-11T17:10:47Z",
       "side": 1,
       "message": "is the following missing?\nreturn TEST_RESULT_FAIL;",
+      "revId": "6f50c317017287913883563b06c92e5375074552",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30085a2c_3bbeffb1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_smccc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-07-12T08:55:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b9767b0c_d821da38",
       "revId": "6f50c317017287913883563b06c92e5375074552",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
