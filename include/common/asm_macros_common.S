@@ -9,10 +9,6 @@
 
 #include <lib/utils_def.h>
 
-#if ENABLE_BTI && !ARM_ARCH_AT_LEAST(8, 5)
-#error Branch Target Identification requires ARM_ARCH_MINOR >= 5
-#endif
-
 	/*
 	 * This macro is used to create a function label and place the
 	 * code into a separate text section based on the function name
