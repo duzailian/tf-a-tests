@@ -12,13 +12,25 @@
 #include <fpu.h>
 #include <host_realm_helper.h>
 #include <host_shared_data.h>
+#include <lib/xlat_tables/xlat_tables_v2.h>
 #include <pauth.h>
+#include <platform_def.h>
 #include "realm_def.h"
 #include <realm_rsi.h>
 #include <realm_tests.h>
 #include <tftf_lib.h>
 
 static fpu_reg_state_t fpu_temp_rl;
+
+IMPORT_SYM(uintptr_t, __REALM_TEXT_START__, REALM_TEXT_START);
+IMPORT_SYM(uintptr_t, __REALM_DATA_START__, REALM_DATA_START);
+IMPORT_SYM(uintptr_t, __REALM_BSS_START__, REALM_BSS_START);
+IMPORT_SYM(uintptr_t, __REALM_RODATA_START__, REALM_RODATA_START);
+IMPORT_SYM(uintptr_t, __REALM_TEXT_END__, REALM_TEXT_END);
+IMPORT_SYM(uintptr_t, __REALM_DATA_END__, REALM_DATA_END);
+IMPORT_SYM(uintptr_t, __REALM_BSS_END__, REALM_BSS_END);
+IMPORT_SYM(uintptr_t, __REALM_RODATA_END__, REALM_RODATA_END);
+
 /*
  * This function reads sleep time in ms from shared buffer and spins PE
  * in a loop for that time period.
@@ -51,6 +63,27 @@ static void realm_get_rsi_version(void)
 	RSI_ABI_VERSION_GET_MINOR(RSI_ABI_VERSION));
 }
 
+void realm_configure_mmu(void)
+{
+	mmap_add_region(REALM_TEXT_START,
+			REALM_TEXT_START,
+			REALM_TEXT_END - REALM_TEXT_START,
+			MT_CODE);
+	mmap_add_region(REALM_RODATA_START,
+			REALM_RODATA_START,
+			REALM_RODATA_END - REALM_RODATA_START,
+			MT_RO_DATA);
+	mmap_add_region(REALM_DATA_START,
+			REALM_DATA_START,
+			REALM_DATA_END - REALM_DATA_START,
+			MT_RW_DATA);
+	mmap_add_region(REALM_BSS_START,
+			REALM_BSS_START,
+			REALM_BSS_END - REALM_BSS_START,
+			MT_RW_DATA);
+	init_xlat_tables();
+}
+
 /*
  * This is the entry function for Realm payload, it first requests the shared buffer
  * IPA address from Host using HOST_CALL/RSI, it reads the command to be executed,
@@ -62,10 +95,22 @@ static void realm_get_rsi_version(void)
 void realm_payload_main(void)
 {
 	bool test_succeed = false;
+	static host_shared_data_t *ptr;
 
-	realm_set_shared_structure((host_shared_data_t *)rsi_get_ns_buffer());
+	if (ptr == NULL) {
+		ptr = (host_shared_data_t *)rsi_get_ns_buffer();
+		realm_set_shared_structure(ptr);
+
+		/* Map NS Shared Buffer. */
+		mmap_add_dynamic_region((unsigned long long)ptr, (unsigned long long)ptr,
+				round_up(sizeof(host_shared_data_t), PAGE_SIZE), MT_RW_DATA);
+		enable_mmu_el1(0);
+
+		realm_set_shared_structure((host_shared_data_t *)rsi_get_ns_buffer());
+	}
+
 	if (realm_get_shared_structure() != NULL) {
-		uint8_t cmd = realm_shared_data_get_realm_cmd();
+			uint8_t cmd = realm_shared_data_get_realm_cmd();
 
 		switch (cmd) {
 		case REALM_SLEEP_CMD:
