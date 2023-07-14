@@ -49,6 +49,7 @@ pie_fixup:
 	mov	x1, REALM_MAX_LOAD_IMG_SIZE
 	add	x1, x1, x0
 	bl	fixup_gdt_reloc
+	bl	realm_configure_mmu
 
 	/* And jump to the C entrypoint. */
 	b	realm_payload_main
