@@ -156,7 +156,8 @@ $(eval $(call assert_boolean,USE_NVM))
 # Process BRANCH_PROTECTION value and set
 # Pointer Authentication and Branch Target Identification flags
 ifeq (${ENABLE_REALM_PAYLOAD_TESTS},1)
-BRANCH_PROTECTION := 2
+ARM_ARCH_MINOR := 5
+BRANCH_PROTECTION := 1
 endif
 include branch_protection.mk
 
@@ -311,6 +312,7 @@ IVY_ASFLAGS		+= ${COMMON_ASFLAGS}
 IVY_LDFLAGS		+= ${COMMON_LDFLAGS} $(PIE_LDFLAGS)
 
 REALM_SOURCES		+= ${LIBC_SRCS}
+REALM_SOURCES		+= ${XLAT_TABLES_LIB_SRCS}
 REALM_CFLAGS		+= ${COMMON_CFLAGS} -fpie
 REALM_ASFLAGS		+= ${COMMON_ASFLAGS}
 REALM_LDFLAGS		+= ${COMMON_LDFLAGS} $(PIE_LDFLAGS)
