@@ -122,7 +122,11 @@ msg_start:
 # Set flags for Realm Payload Tests
 ifeq (${ENABLE_REALM_PAYLOAD_TESTS},1)
 ARM_ARCH_MINOR := 5
+<<<<<<< PATCH SET (1f0ed4 test(bti): enable stage 1 translation)
+BRANCH_PROTECTION := 1
+=======
 BRANCH_PROTECTION := 2
+>>>>>>> BASE      (ea9473 Merge changes from topic "km/test_hypervisor_retrieve_reques)
 endif
 
 # Include test images makefiles.
@@ -359,6 +363,7 @@ IVY_ASFLAGS		+= ${COMMON_ASFLAGS}
 IVY_LDFLAGS		+= ${COMMON_LDFLAGS} $(PIE_LDFLAGS)
 
 REALM_SOURCES		+= ${LIBC_SRCS}
+REALM_SOURCES		+= ${XLAT_TABLES_LIB_SRCS}
 REALM_CFLAGS		+= ${COMMON_CFLAGS} -fpie
 REALM_ASFLAGS		+= ${COMMON_ASFLAGS}
 REALM_LDFLAGS		+= ${COMMON_LDFLAGS} $(PIE_LDFLAGS)
