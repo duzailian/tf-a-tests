@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "93f3450e_0075f336",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-18T14:31:05Z",
+      "side": 1,
+      "message": "Suggested a different name for the flag.",
+      "range": {
+        "startLine": 9,
+        "startChar": 25,
+        "endLine": 9,
+        "endChar": 36
+      },
+      "revId": "48979b9b6028997cfde91724ae4208a642358e4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "a2bae4bb_bb86ade2",
@@ -14,6 +37,46 @@
       "writtenOn": "2023-07-14T13:33:45Z",
       "side": 1,
       "message": "looks in the right direction.",
+      "revId": "48979b9b6028997cfde91724ae4208a642358e4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a9026c1_e97f128e",
+        "filename": "Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-18T14:31:05Z",
+      "side": 1,
+      "message": "Move the PAuth patch as the first patch. I have made a suggestion to skip tests if PAuth is disabled during compilation.\n\nTo ease integration of this breaking, suggest the following approach.\n\n\n1st step: introduce the new build flag , which will set BRANCH_PROTECTION. It should also do the packing. At the same time, the previous `pack_realm` should keep the previous behaviour.\n\n2nd step , remove the support for `pack_realm` command.",
+      "revId": "48979b9b6028997cfde91724ae4208a642358e4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "705c7c07_0d1af05c",
+        "filename": "make_helpers/defaults.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-18T14:31:05Z",
+      "side": 1,
+      "message": "suggest: \"ENABLE_REALM_PAYLOAD_TESTS\"",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 12
+      },
       "revId": "48979b9b6028997cfde91724ae4208a642358e4c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
