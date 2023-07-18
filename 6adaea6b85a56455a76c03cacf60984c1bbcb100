@@ -33,6 +33,23 @@
       "message": "WIP",
       "revId": "6adaea6b85a56455a76c03cacf60984c1bbcb100",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5602c1ce_56e8fe4c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-07-18T12:49:03Z",
+      "side": 1,
+      "message": "WIP",
+      "revId": "6adaea6b85a56455a76c03cacf60984c1bbcb100",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
