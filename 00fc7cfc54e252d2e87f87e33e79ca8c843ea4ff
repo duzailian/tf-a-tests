@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "224c7246_093f596f",
+        "filename": "include/common/asm_macros_common.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-18T14:36:26Z",
+      "side": 0,
+      "message": "TFTF should set this flag for Realm tests.",
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
