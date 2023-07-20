@@ -139,6 +139,30 @@
       },
       "revId": "6f50c317017287913883563b06c92e5375074552",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d12a6b7_384ae43c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_smccc_asm.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-07-20T12:58:28Z",
+      "side": 1,
+      "message": "Well this is just one of multiple ways to write it. I did that to define an arbitrary start value into the single x8 register and increment this value for other registers, looked less error prone to me. But I will change it if you really think it\u0027s worth.",
+      "parentUuid": "c4ba17f3_1c3f89e5",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 15
+      },
+      "revId": "6f50c317017287913883563b06c92e5375074552",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
