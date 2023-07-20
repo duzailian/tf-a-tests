@@ -163,6 +163,30 @@
       },
       "revId": "6f50c317017287913883563b06c92e5375074552",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f8855e5_81c80e48",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_smccc_asm.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-07-20T14:27:41Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7d12a6b7_384ae43c",
+      "range": {
+        "startLine": 27,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 15
+      },
+      "revId": "6f50c317017287913883563b06c92e5375074552",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
