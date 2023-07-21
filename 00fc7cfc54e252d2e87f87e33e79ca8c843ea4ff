@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "15694c95_0f6abe6a",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 20
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4179aa1a_e1b11b79",
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b819077c_b44bfa2f",
@@ -35,6 +53,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "607a4e88_996baaa7",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 20
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b819077c_b44bfa2f",
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b53f3328_c30f7b4d",
@@ -48,6 +84,24 @@
       "writtenOn": "2023-07-18T14:21:05Z",
       "side": 1,
       "message": "All PAuth related code (except the call to the functions from  realm_payload_main()) should be in a different file.",
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "138c8ee6_aac5401f",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b53f3328_c30f7b4d",
       "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -75,6 +129,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c09f5b39_c6104199",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "yes I can skip enabled check",
+      "parentUuid": "d7adadcc_82f8d1ac",
+      "range": {
+        "startLine": 78,
+        "startChar": 36,
+        "endLine": 78,
+        "endChar": 73
+      },
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e586636_44d68d6e",
@@ -88,6 +166,30 @@
       "writtenOn": "2023-07-18T14:21:05Z",
       "side": 1,
       "message": "return",
+      "range": {
+        "startLine": 92,
+        "startChar": 13,
+        "endLine": 92,
+        "endChar": 20
+      },
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77886216_e27fe8e1",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e586636_44d68d6e",
       "range": {
         "startLine": 92,
         "startChar": 13,
@@ -123,6 +225,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "33cf69e5_b17f6172",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "if we rewrite pauth key it might cause crash, we will have to disable pauth or add branch-protection\u003dnone attribute to all c functions before this call.",
+      "parentUuid": "0725ff20_6845e50f",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 10
+      },
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8688de3d_e06ae7ce",
         "filename": "realm/realm_payload_main.c",
         "patchSetId": 20
@@ -134,6 +260,30 @@
       "writtenOn": "2023-07-18T14:21:05Z",
       "side": 1,
       "message": "why is a different variant used  to check Arch feature ? Is is_armv8_3_pauth_present() not sufficient ?",
+      "range": {
+        "startLine": 202,
+        "startChar": 5,
+        "endLine": 202,
+        "endChar": 42
+      },
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48345376_2c7693db",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "it should be enough",
+      "parentUuid": "8688de3d_e06ae7ce",
       "range": {
         "startLine": 202,
         "startChar": 5,
@@ -169,6 +319,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "db7d0311_49f3f2a8",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "pauth key at boot time, needs to be preserved.",
+      "parentUuid": "97a98b8d_99746ed0",
+      "range": {
+        "startLine": 246,
+        "startChar": 1,
+        "endLine": 246,
+        "endChar": 21
+      },
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a52a92f4_d4ebd995",
         "filename": "realm/realm_payload_main.c",
         "patchSetId": 20
@@ -180,6 +354,30 @@
       "writtenOn": "2023-07-18T14:21:05Z",
       "side": 1,
       "message": "This should be the first check. This will not trap to RMM since RMM enabled PAuth always.",
+      "range": {
+        "startLine": 249,
+        "startChar": 0,
+        "endLine": 251,
+        "endChar": 2
+      },
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0f1a214_1169a128",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "I meant that reading ID_AA64ISAR1_EL1 causes trap to RMM, but this probably is not needed.\nI will alter test code to return to host and issue compare command to re-enter",
+      "parentUuid": "a52a92f4_d4ebd995",
       "range": {
         "startLine": 249,
         "startChar": 0,
@@ -203,6 +401,30 @@
       "writtenOn": "2023-07-18T14:21:05Z",
       "side": 1,
       "message": "This should be a different cmd : REALM_PAUTH_CHECK_CMD. See next file for related comments.",
+      "range": {
+        "startLine": 252,
+        "startChar": 0,
+        "endLine": 254,
+        "endChar": 29
+      },
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85331ba2_461cfa79",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca24ac6f_b1bedf4c",
       "range": {
         "startLine": 252,
         "startChar": 0,
@@ -238,6 +460,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "05e88835_1e31b34f",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "in realm_entrypoint we will still need loop to call main again, for cases when we renter realm from host - after 1 iteration of main finishes.",
+      "parentUuid": "1a58084c_eced60a7",
+      "range": {
+        "startLine": 285,
+        "startChar": 0,
+        "endLine": 285,
+        "endChar": 25
+      },
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e37282f4_24faaaad",
         "filename": "realm/realm_payload_main.c",
         "patchSetId": 20
@@ -249,6 +495,30 @@
       "writtenOn": "2023-07-18T14:21:05Z",
       "side": 1,
       "message": "we should be able to remove this while loop as well.",
+      "range": {
+        "startLine": 290,
+        "startChar": 1,
+        "endLine": 290,
+        "endChar": 15
+      },
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "959d3a3c_62d2144e",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "loop is needed for serving multiple commands from host.",
+      "parentUuid": "e37282f4_24faaaad",
       "range": {
         "startLine": 290,
         "startChar": 1,
@@ -276,6 +546,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c24bc67_9612c4ae",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4e848f3_e9fbf18b",
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2e408381_706866c3",
@@ -289,6 +577,24 @@
       "writtenOn": "2023-07-18T14:21:05Z",
       "side": 1,
       "message": "set all the other PAuth regsiters.",
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e4f4a05_22dba984",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e408381_706866c3",
       "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -333,6 +639,48 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "774602c2_56dd8f80",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "012d6f7b_ff90217f",
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "096c4494_2ca16b6b",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fb0a4af_bdd0d482",
+      "range": {
+        "startLine": 87,
+        "startChar": 33,
+        "endLine": 87,
+        "endChar": 48
+      },
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a5c6b577_40ddb7aa",
@@ -346,6 +694,24 @@
       "writtenOn": "2023-07-18T14:21:05Z",
       "side": 1,
       "message": "Check if all PAuth Registers are preserved from Host side.",
+      "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c6e3508_9909b857",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-21T14:52:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5c6b577_40ddb7aa",
       "revId": "00fc7cfc54e252d2e87f87e33e79ca8c843ea4ff",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
