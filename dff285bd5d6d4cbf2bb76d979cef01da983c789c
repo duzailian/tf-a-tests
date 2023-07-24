@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e2ac9c6_ef4b48af",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-07-24T15:44:13Z",
+      "side": 1,
+      "message": "According to Misra, better to have explicit boolean expression:\n\n_feat_check() !\u003d 0",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 17
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b336045_2dac545b",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-07-24T15:44:13Z",
+      "side": 1,
+      "message": "is_init_val_set(_reg, _REG ## _INIT_VAL,\t\t\t\\\n\t\t_REG ## _ ## FEAT_ ## _FEAT ## _MASK) \u003d\u003d 0",
+      "range": {
+        "startLine": 20,
+        "startChar": 6,
+        "endLine": 21,
+        "endChar": 39
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "516ce5a2_d01bbcec",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-07-24T15:44:13Z",
+      "side": 1,
+      "message": "_feat_check() \t\t\t\t\t\t\t\\\n\t_op _feat2_check() !\u003d 0",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 29,
+        "endChar": 19
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "677b1774_9fd120ca",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-07-24T15:44:13Z",
+      "side": 1,
+      "message": "is_init_val_set(_reg, _REG ## _INIT_VAL,\t\t\t\\\n\t\t_REG ## _ ## FEAT_ ## _FEAT ## _ ## _FEAT2 ## _MASK) \u003d\u003d 0",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 31,
+        "endChar": 54
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02a3c4e9_e349774a",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-07-24T15:44:13Z",
+      "side": 1,
+      "message": "is_init_val_set(hfgitr_el2, HFGITR_EL2_INIT_VAL,\n\t\tHFGITR_EL2_NON_FEAT_DEPENDENT_MASK) \u003d\u003d 0",
+      "range": {
+        "startLine": 73,
+        "startChar": 6,
+        "endLine": 74,
+        "endChar": 37
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb7fe828_50cc37ee",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-07-24T15:44:13Z",
+      "side": 1,
+      "message": "is_init_val_set(hfgrtr_el2, HFGRTR_EL2_INIT_VAL,\n\t\tHFGRTR_EL2_NON_FEAT_DEPENDENT_MASK) \u003d\u003d 0",
+      "range": {
+        "startLine": 95,
+        "startChar": 6,
+        "endLine": 96,
+        "endChar": 37
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4602c494_6e32c102",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-07-24T15:44:13Z",
+      "side": 1,
+      "message": "is_init_val_set(hfgwtr_el2, HFGWTR_EL2_INIT_VAL,\t\t\\\n\t\tHFGWTR_EL2_NON_FEAT_DEPENDENT_MASK) \u003d\u003d 0",
+      "range": {
+        "startLine": 117,
+        "startChar": 6,
+        "endLine": 118,
+        "endChar": 37
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
