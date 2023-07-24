@@ -34,6 +34,24 @@
       "parentUuid": "0c247638_4fc86f16",
       "revId": "bc4b7dfb685d1bb8d992bbbc0ae9e389f53b953a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e976de65_2359d916",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-07-24T13:33:23Z",
+      "side": 1,
+      "message": "This prevents logging errors when SPs init, when we legitimately use ENABLE_SPMD_LP\u003d0:\nhttps://ci-builds.trustedfirmware.org/static-files/ngeWLLwftXPAzQyMho6Z9T8PFI88iuq5iMKmLYJ9oNsxNjkwMjA1NDE3OTk2Ojc6b2RlcHJlejpqb2IvdGYtYS1idWlsZGVyLzIzMTUwMDgvYXJ0aWZhY3Q\u003d/lava-uart0.log\n\n ERROR: Invalid parameters. vm_count \u003d 0 (must not be zero or \u003e 32)\n NOTICE: Initialized VM: 0x8001, boot_order: 0\n VM 8002: NOTICE:  Booting Secure Partition (ID: 8002)\n VM 8002: Built : 16:21:54, Jul 19 2023\n VM 8002: v2.9(fvp,release):v2.9.0-32-g12cb1ab\n ERROR: Invalid parameters. vm_count \u003d 0 (must not be zero or \u003e 32)\n NOTICE: Initialized VM: 0x8002, boot_order: 1\n VM 8003: NOTICE:  Booting Secure Partition (ID: 8003)\n VM 8003: Built : 16:21:54, Jul 19 2023\n VM 8003: v2.9(fvp,release):v2.9.0-32-g12cb1ab\n ERROR: Invalid parameters. vm_count \u003d 0 (must not be zero or \u003e 32)\n NOTICE: Initialized VM: 0x8003, boot_order: 2\n VM 8004: NOTICE:  Booting Secure Partition (ID: 8004)\n VM 8004: NOTICE:  Built : 16:22:01, Jul 19 2023\n VM 8004: NOTICE:  v2.9(fvp,release):v2.9.0-32-g12cb1ab\n ERROR: Invalid parameters. vm_count \u003d 0 (must not be zero or \u003e 32)\n NOTICE: Initialized VM: 0x8004, boot_order: 3",
+      "parentUuid": "21016d11_e9450304",
+      "revId": "bc4b7dfb685d1bb8d992bbbc0ae9e389f53b953a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
