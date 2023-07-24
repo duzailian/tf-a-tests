@@ -100,6 +100,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8dfd4345_a103f150",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T13:43:30Z",
+      "side": 1,
+      "message": "I see why the loop is necessary. Perhaps the entry code in asm should be :\n\nloop:\n\t/* And jump to the C entrypoint. */\n\tbl\trealm_payload_main\n        b       loop\n\n\nSo we can remove the loop inside and the  __no_return attribute.",
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a027a6d2_51ffceb3",
         "filename": "realm/realm_payload_main.c",
         "patchSetId": 24
