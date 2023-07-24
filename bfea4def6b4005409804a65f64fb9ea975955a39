@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "277029aa_d91c50b2",
+        "filename": "include/lib/extensions/pauth.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-24T17:54:10Z",
+      "side": 1,
+      "message": "nit: 2019-2023\n\nSame on some other files in this patch",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3b75d485_b83d1efa",
         "filename": "include/lib/extensions/pauth.h",
         "patchSetId": 24
@@ -100,6 +123,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "785a354a_d47a200b",
+        "filename": "realm/realm_pauth.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-24T17:54:10Z",
+      "side": 1,
+      "message": "I agree with Soby. I don\u0027t think sync_exception_triggered is needed at all.",
+      "parentUuid": "f6fbb538_63d2ae4e",
+      "range": {
+        "startLine": 61,
+        "startChar": 1,
+        "endLine": 61,
+        "endChar": 8
+      },
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8dfd4345_a103f150",
         "filename": "realm/realm_payload_main.c",
         "patchSetId": 24
@@ -128,6 +175,29 @@
       "writtenOn": "2023-07-24T13:37:35Z",
       "side": 1,
       "message": "Should be done in assembly just before call to realm_payload_main.",
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9cfb4f6_f1f88893",
+        "filename": "tftf/tests/tests-realm-payload.xml",
+        "patchSetId": 24
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-07-24T17:54:10Z",
+      "side": 1,
+      "message": "nit: Add a small description of what the test does.",
+      "range": {
+        "startLine": 56,
+        "startChar": 18,
+        "endLine": 56,
+        "endChar": 35
+      },
       "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
