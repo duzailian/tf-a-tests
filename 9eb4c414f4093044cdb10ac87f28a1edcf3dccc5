@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6c7d29c_b9824a16",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T13:45:23Z",
+      "side": 1,
+      "message": "looks good, add another patch on top to remove the pack_realm command and make this proper.",
+      "revId": "9eb4c414f4093044cdb10ac87f28a1edcf3dccc5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
