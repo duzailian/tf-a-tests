@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c784d0e4_77b26a51",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T13:37:35Z",
+      "side": 1,
+      "message": "minor comments",
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b75d485_b83d1efa",
+        "filename": "include/lib/extensions/pauth.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T13:37:35Z",
+      "side": 1,
+      "message": "We usually dont have test specific helpers in the PAuth library.\n\nSince we have them here, we need to have a description for them (functionality + usage). Plus differentiate them from Arch helpers by adding a prefix to their names.\n\nSuggest to add \"pauth_test_lib_xxx\" as a prefix to all the below functions. Some suggested names:\n\npauth_test_lib_compare_keys()\n\npauth_test_lib_set_store_keys()\n\npauth_test_lib_read_keys()\n\npauth_test_lib_test_intrs()\n\n\nUsually when these are made generic libs, we need to harden it by ensure that sequence is followed, but since this is TFTF , we can forgo that.",
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "766fb12c_922afbea",
+        "filename": "realm/realm_pauth.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T13:37:35Z",
+      "side": 1,
+      "message": "why is PAuth being disabled ? Need a comment for the reason.",
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8eeb212c_bb61e296",
+        "filename": "realm/realm_pauth.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T13:37:35Z",
+      "side": 1,
+      "message": "This is interesting. how does dummy function always have this address ? Should we check lr \u003d\u003d ptr ?",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 25
+      },
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6fbb538_63d2ae4e",
+        "filename": "realm/realm_pauth.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T13:37:35Z",
+      "side": 1,
+      "message": "return false \n\nis enough ?",
+      "range": {
+        "startLine": 61,
+        "startChar": 1,
+        "endLine": 61,
+        "endChar": 8
+      },
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a027a6d2_51ffceb3",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-07-24T13:37:35Z",
+      "side": 1,
+      "message": "Should be done in assembly just before call to realm_payload_main.",
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
