@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b42421b_bf4ef35b",
+        "filename": "make_helpers/defaults.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T11:02:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7de12c28_51e4b4e8",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 17
+      },
+      "revId": "9194d7347be76faf7d371bcc5bacf3a147842fdb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3fd8494b_54c8fc15",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-07-13T20:25:10Z",
       "side": 1,
       "message": "assert this as a boolean option using assert_boolean",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 10
+      },
+      "revId": "9194d7347be76faf7d371bcc5bacf3a147842fdb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a99bfa94_cdaada48",
+        "filename": "make_helpers/defaults.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T11:02:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fd8494b_54c8fc15",
       "range": {
         "startLine": 53,
         "startChar": 0,

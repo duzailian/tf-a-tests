@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f6f0f37_3a40abc6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T11:02:44Z",
+      "side": 1,
+      "message": "CI failure can be ignored.\n\njunk char printed\nNOTICE:  TSP:�Built : 14:53:21, Jul 24 2023\n\u003c\u003cnot found: \"TSP: Built\"\u003e\u003e",
+      "revId": "52f86169f9a6b3c2cd5a1eab522ec8c872be651e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
