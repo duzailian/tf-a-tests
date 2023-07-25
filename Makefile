@@ -395,11 +395,6 @@ cactus_mm:
 realm:
 	@echo "ERROR: $@ is supported only on AArch64 FVP."
 	@exit 1
-
-.PHONY: pack_realm
-pack_realm:
-	@echo "Nothing to be done"
-	@exit 1
 endif
 
 ifneq (${ARCH}-${PLAT},$(filter ${ARCH}-${PLAT},aarch64-fvp aarch64-tc))
@@ -564,15 +559,6 @@ endif
 
 ifeq (${ENABLE_REALM_PAYLOAD_TESTS},1)
 tftf: realm
-	@echo "  PACK REALM PAYLOAD"
-	$(shell dd if=$(BUILD_PLAT)/realm.bin of=$(BUILD_PLAT)/tftf.bin obs=1 \
-	seek=$(TFTF_MAX_IMAGE_SIZE))
-endif
-
-ifeq (${ARCH}-${PLAT},aarch64-fvp)
-.PHONY : pack_realm
-$(eval $(call MAKE_IMG,realm))
-pack_realm: realm tftf
 	@echo "  PACK REALM PAYLOAD"
 	$(shell dd if=$(BUILD_PLAT)/realm.bin of=$(BUILD_PLAT)/tftf.bin obs=1 \
 	seek=$(TFTF_MAX_IMAGE_SIZE))
