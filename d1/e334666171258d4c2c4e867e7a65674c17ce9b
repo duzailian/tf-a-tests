@@ -1,0 +1,9 @@
+Maintainer-Review+1: Varun Wadekar <vwadekar@nvidia.com>
+Code-Owner-Review+1: Lauren Wehrmeister <lauren.wehrmeister@arm.com>
+Allow-CI+1: Paul Sokolovsky <paul.sokolovsky@linaro.org>
+Verified+1: Lauren Wehrmeister <lauren.wehrmeister@arm.com>
+Submitted-by: Lauren Wehrmeister <lauren.wehrmeister@arm.com>
+Submitted-at: Tue, 25 Jul 2023 22:10:02 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/20990
+Project: TF-A/tf-a-tests
+Branch: refs/heads/lts-v2.8
