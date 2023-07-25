@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "75d42450_a902e38f",
+        "filename": "include/lib/extensions/pauth.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T11:01:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "277029aa_d91c50b2",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3b75d485_b83d1efa",
@@ -54,6 +78,24 @@
       "writtenOn": "2023-07-24T13:37:35Z",
       "side": 1,
       "message": "We usually dont have test specific helpers in the PAuth library.\n\nSince we have them here, we need to have a description for them (functionality + usage). Plus differentiate them from Arch helpers by adding a prefix to their names.\n\nSuggest to add \"pauth_test_lib_xxx\" as a prefix to all the below functions. Some suggested names:\n\npauth_test_lib_compare_keys()\n\npauth_test_lib_set_store_keys()\n\npauth_test_lib_read_keys()\n\npauth_test_lib_test_intrs()\n\n\nUsually when these are made generic libs, we need to harden it by ensure that sequence is followed, but since this is TFTF , we can forgo that.",
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "567a3355_6eedd606",
+        "filename": "include/lib/extensions/pauth.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T11:01:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b75d485_b83d1efa",
       "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -75,6 +117,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a57d8863_1f83e136",
+        "filename": "realm/realm_pauth.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T11:01:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "766fb12c_922afbea",
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8eeb212c_bb61e296",
@@ -88,6 +148,30 @@
       "writtenOn": "2023-07-24T13:37:35Z",
       "side": 1,
       "message": "This is interesting. how does dummy function always have this address ? Should we check lr \u003d\u003d ptr ?",
+      "range": {
+        "startLine": 26,
+        "startChar": 4,
+        "endLine": 26,
+        "endChar": 25
+      },
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf9e5007_ae1015a7",
+        "filename": "realm/realm_pauth.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T11:01:49Z",
+      "side": 1,
+      "message": "Pauth uses bit 60-64 for encoding LR, in case of PAuth Fault one of this bit would be set, later causing instruction abort.",
+      "parentUuid": "8eeb212c_bb61e296",
       "range": {
         "startLine": 26,
         "startChar": 4,
@@ -145,6 +229,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "35f447a3_eda99825",
+        "filename": "realm/realm_pauth.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T11:01:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "785a354a_d47a200b",
+      "range": {
+        "startLine": 61,
+        "startChar": 1,
+        "endLine": 61,
+        "endChar": 8
+      },
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8dfd4345_a103f150",
@@ -158,6 +266,24 @@
       "writtenOn": "2023-07-24T13:43:30Z",
       "side": 1,
       "message": "I see why the loop is necessary. Perhaps the entry code in asm should be :\n\nloop:\n\t/* And jump to the C entrypoint. */\n\tbl\trealm_payload_main\n        b       loop\n\n\nSo we can remove the loop inside and the  __no_return attribute.",
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "739e08ef_fa9d84e8",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T11:01:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8dfd4345_a103f150",
       "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -179,6 +305,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5462dfe0_4c25c7e6",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T11:01:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a027a6d2_51ffceb3",
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a9cfb4f6_f1f88893",
@@ -192,6 +336,30 @@
       "writtenOn": "2023-07-24T17:54:10Z",
       "side": 1,
       "message": "nit: Add a small description of what the test does.",
+      "range": {
+        "startLine": 56,
+        "startChar": 18,
+        "endLine": 56,
+        "endChar": 35
+      },
+      "revId": "bfea4def6b4005409804a65f64fb9ea975955a39",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de7e6600_97302c18",
+        "filename": "tftf/tests/tests-realm-payload.xml",
+        "patchSetId": 24
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-07-25T11:01:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9cfb4f6_f1f88893",
       "range": {
         "startLine": 56,
         "startChar": 18,
