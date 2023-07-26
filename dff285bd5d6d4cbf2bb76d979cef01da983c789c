@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0204338e_552ef0ec",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-07-26T22:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e2ac9c6_ef4b48af",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 17
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3b336045_2dac545b",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-07-24T15:44:13Z",
       "side": 1,
       "message": "is_init_val_set(_reg, _REG ## _INIT_VAL,\t\t\t\\\n\t\t_REG ## _ ## FEAT_ ## _FEAT ## _MASK) \u003d\u003d 0",
+      "range": {
+        "startLine": 20,
+        "startChar": 6,
+        "endLine": 21,
+        "endChar": 39
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "114ddfa7_a8b37c79",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-07-26T22:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b336045_2dac545b",
       "range": {
         "startLine": 20,
         "startChar": 6,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cb615ef_ebcb6e40",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-07-26T22:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "516ce5a2_d01bbcec",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 29,
+        "endChar": 19
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "677b1774_9fd120ca",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-07-24T15:44:13Z",
       "side": 1,
       "message": "is_init_val_set(_reg, _REG ## _INIT_VAL,\t\t\t\\\n\t\t_REG ## _ ## FEAT_ ## _FEAT ## _ ## _FEAT2 ## _MASK) \u003d\u003d 0",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 31,
+        "endChar": 54
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10ed0072_60aa1ec6",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-07-26T22:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "677b1774_9fd120ca",
       "range": {
         "startLine": 30,
         "startChar": 6,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3af15992_b3320671",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-07-26T22:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02a3c4e9_e349774a",
+      "range": {
+        "startLine": 73,
+        "startChar": 6,
+        "endLine": 74,
+        "endChar": 37
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cb7fe828_50cc37ee",
@@ -139,6 +259,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "337c4885_038894da",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-07-26T22:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb7fe828_50cc37ee",
+      "range": {
+        "startLine": 95,
+        "startChar": 6,
+        "endLine": 96,
+        "endChar": 37
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4602c494_6e32c102",
@@ -152,6 +296,30 @@
       "writtenOn": "2023-07-24T15:44:13Z",
       "side": 1,
       "message": "is_init_val_set(hfgwtr_el2, HFGWTR_EL2_INIT_VAL,\t\t\\\n\t\tHFGWTR_EL2_NON_FEAT_DEPENDENT_MASK) \u003d\u003d 0",
+      "range": {
+        "startLine": 117,
+        "startChar": 6,
+        "endLine": 118,
+        "endChar": 37
+      },
+      "revId": "dff285bd5d6d4cbf2bb76d979cef01da983c789c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7763cf2f_7e768243",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-07-26T22:24:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4602c494_6e32c102",
       "range": {
         "startLine": 117,
         "startChar": 6,
