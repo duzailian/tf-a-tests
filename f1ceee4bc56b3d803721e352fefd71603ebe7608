@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc55a4df_b0f51407",
+        "filename": "make_helpers/defaults.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-07-26T12:33:47Z",
+      "side": 1,
+      "message": "nit: better move this to the Makefile [1] by creating separate section for asserting numeric build options.\n\n[1]: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/21926/9/Makefile#156",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 48
+      },
+      "revId": "f1ceee4bc56b3d803721e352fefd71603ebe7608",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49f411cc_bcd8f73f",
+        "filename": "make_helpers/defaults.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-07-26T12:33:47Z",
+      "side": 1,
+      "message": "nit: move this to the Makefile [1].\n\n[1]: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/21926/9/Makefile#156",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 57
+      },
+      "revId": "f1ceee4bc56b3d803721e352fefd71603ebe7608",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
