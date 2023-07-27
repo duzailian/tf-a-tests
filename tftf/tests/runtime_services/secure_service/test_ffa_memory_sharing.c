@@ -5,7 +5,9 @@
  */
 
 #include "arch_features.h"
+#include "cdefs.h"
 #include "ffa_svc.h"
+#include "stdint.h"
 #include <debug.h>
 #include <sync.h>
 
@@ -30,6 +32,7 @@ static const struct ffa_uuid expected_sp_uuids[] = {
 static __aligned(PAGE_SIZE) uint8_t share_page[PAGE_SIZE];
 static __aligned(PAGE_SIZE) uint8_t consecutive_donate_page[PAGE_SIZE];
 static __aligned(PAGE_SIZE) uint8_t four_share_pages[PAGE_SIZE * 4];
+
 static bool gpc_abort_triggered;
 
 static bool check_written_words(uint32_t *ptr, uint32_t word, uint32_t wcount)
@@ -175,14 +178,6 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 		register_custom_sync_exception_handler(data_abort_handler);
 	}
 
-	if (constituents_count != 1) {
-		WARN("Test expects constituents_count to be 1\n");
-	}
-
-	for (size_t i = 0; i < constituents_count; i++) {
-		VERBOSE("TFTF - Address: %p\n", constituents[0].address);
-	}
-
 	handle = memory_init_and_send((struct ffa_memory_region *)mb.send,
 					MAILBOX_SIZE, SENDER, borrower,
 					constituents, constituents_count,
@@ -224,14 +219,19 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 			return TEST_RESULT_FAIL;
 		}
 
-		/*
-		 * Check that borrower used the memory as expected for this
-		 * test, after it has relinquished, and reclaiming memory
-		 * to the NWd.
-		 */
-		if (!check_written_words(ptr, mem_func, nr_words_to_write)) {
-			ERROR("Fail because of state of memory.\n");
-			return TEST_RESULT_FAIL;
+		for (uint32_t i = 0; i < constituents_count; i++) {
+			ptr = constituents[i].address;
+
+			/*
+			 * Check that borrower used the memory as expected for this
+			 * test, after it has relinquished, and reclaiming memory
+			 * to the NWd.
+			 */
+			if (!check_written_words(ptr, mem_func,
+						 nr_words_to_write)) {
+				ERROR("Fail because of state of memory.\n");
+				return TEST_RESULT_FAIL;
+			}
 		}
 	}
 
@@ -262,6 +262,7 @@ test_result_t test_mem_share_sp(void)
 test_result_t test_mem_lend_sp(void)
 {
 	struct ffa_memory_region_constituent constituents[] = {
+		{(void *)four_share_pages, 4, 0},
 		{(void *)share_page, 1, 0}
 	};
 
