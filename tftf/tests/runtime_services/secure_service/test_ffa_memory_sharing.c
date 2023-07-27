@@ -5,7 +5,9 @@
  */
 
 #include "arch_features.h"
+#include "cdefs.h"
 #include "ffa_svc.h"
+#include "stdint.h"
 #include <debug.h>
 #include <sync.h>
 
@@ -29,6 +31,8 @@ static const struct ffa_uuid expected_sp_uuids[] = {
 /* Memory section to be used for memory share operations */
 static __aligned(PAGE_SIZE) uint8_t share_page[PAGE_SIZE];
 static __aligned(PAGE_SIZE) uint8_t consecutive_donate_page[PAGE_SIZE];
+static __aligned(PAGE_SIZE) uint8_t four_share_pages[PAGE_SIZE * 4];
+
 static bool gpc_abort_triggered;
 
 static bool check_written_words(uint32_t *ptr, uint32_t word, uint32_t wcount)
@@ -257,6 +261,7 @@ test_result_t test_mem_share_sp(void)
 test_result_t test_mem_lend_sp(void)
 {
 	struct ffa_memory_region_constituent constituents[] = {
+		{(void *)four_share_pages, 4, 0},
 		{(void *)share_page, 1, 0}
 	};
 
