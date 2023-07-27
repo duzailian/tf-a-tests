@@ -11,6 +11,7 @@
 #include <ffa_helpers.h>
 #include <sp_helpers.h>
 #include "sp_tests.h"
+#include "stdint.h"
 #include <xlat_tables_defs.h>
 #include <lib/xlat_tables/xlat_tables_v2.h>
 #include <sync.h>
@@ -70,7 +71,7 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 {
 	struct ffa_memory_region *m;
 	struct ffa_composite_memory_region *composite;
-	int ret;
+	int ret = -1;
 	unsigned int mem_attrs;
 	uint32_t *ptr;
 	ffa_id_t source = ffa_dir_msg_source(*args);
@@ -105,11 +106,17 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 		mem_attrs |= MT_NS;
 	}
 
-	ret = mmap_add_dynamic_region(
-			(uint64_t)composite->constituents[0].address,
-			(uint64_t)composite->constituents[0].address,
-			composite->constituents[0].page_count * PAGE_SIZE,
+	for (uint32_t i = 0; i < composite->constituent_count; i++) {
+		ret = mmap_add_dynamic_region(
+			(uint64_t)composite->constituents[i].address,
+			(uint64_t)composite->constituents[i].address,
+			composite->constituents[i].page_count * PAGE_SIZE,
 			mem_attrs);
+
+		if (ret != 0) {
+			break;
+		}
+	}
 
 	if (ret != 0) {
 		ERROR("Failed to map received memory region(%d)!\n", ret);
@@ -123,14 +130,18 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 	/* Check that memory has been cleared by the SPMC before using it. */
 	if ((retrv_flags & FFA_MEMORY_REGION_FLAG_CLEAR) != 0U) {
 		VERBOSE("Check if memory has been cleared!\n");
-		for (uint32_t i = 0; i < words_to_write; i++) {
-			if (ptr[i] != 0) {
-				/*
-				 * If it hasn't been cleared, shouldn't be used.
-				 */
-				ERROR("Memory should have been cleared!\n");
-				return cactus_error_resp(
-					vm_id, source, CACTUS_ERROR_TEST);
+		for (uint32_t i = 0; i < composite->constituent_count; i++) {
+			for (uint32_t j = 0; j < words_to_write; j++) {
+				if (ptr[i] != 0) {
+					/*
+					 * If it hasn't been cleared, shouldn't
+					 * be used.
+					 */
+					ERROR("Memory NOT cleared!\n");
+					return cactus_error_resp(
+						vm_id, source,
+						CACTUS_ERROR_TEST);
+				}
 			}
 		}
 	}
@@ -151,9 +162,15 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 	 * relinquish is needed.
 	 */
 	if (mem_func != FFA_MEM_DONATE_SMC32) {
-		ret = mmap_remove_dynamic_region(
-			(uint64_t)composite->constituents[0].address,
-			composite->constituents[0].page_count * PAGE_SIZE);
+		for (uint32_t i = 0; i < composite->constituent_count; i++) {
+			ret = mmap_remove_dynamic_region(
+				(uint64_t)composite->constituents[i].address,
+				composite->constituents[i].page_count * PAGE_SIZE);
+
+			if (ret != 0) {
+				break;
+			}
+		}
 
 		if (ret != 0) {
 			ERROR("Failed to unmap received memory region(%d)!\n", ret);
