@@ -22,6 +22,30 @@
       },
       "revId": "1f428f98ebd7b6641f2e84c1e8583f43bee3be0d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e43994e6_6ffaf3ac",
+        "filename": "tftf/tests/aarch32_tests_to_skip.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-07-31T17:07:58Z",
+      "side": 1,
+      "message": "I have made it so they are not build for AArch32 but in test-standard.xml I can\u0027t see how to not include tests if we are building for AArch32 into the tests list so I think I still need to add the test to this file",
+      "parentUuid": "e8348221_6462336f",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 18
+      },
+      "revId": "1f428f98ebd7b6641f2e84c1e8583f43bee3be0d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
