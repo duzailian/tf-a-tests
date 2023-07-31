@@ -46,6 +46,30 @@
       },
       "revId": "1f428f98ebd7b6641f2e84c1e8583f43bee3be0d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fad4f8fb_8340387d",
+        "filename": "tftf/tests/aarch32_tests_to_skip.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-07-31T17:22:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e43994e6_6ffaf3ac",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 18
+      },
+      "revId": "1f428f98ebd7b6641f2e84c1e8583f43bee3be0d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
