@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19fa0730_5ac2d450",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-08-01T11:58:47Z",
+      "side": 1,
+      "message": "as discussed the command to build and pack realm payload should be:\nmake ENABLE_REALM_PAYLOAD_TESTS\u003d1 tftf",
+      "revId": "53dff675265f5d369e6ffbfde3e128ec773826f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
