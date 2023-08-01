@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39daf5c4_ba20101c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-08-01T14:02:01Z",
+      "side": 1,
+      "message": "Tested by https://ci.trustedfirmware.org/job/tf-a-ci-gateway/44721/\nThe measured boot tf config failure is a separate issue.",
+      "revId": "60de7acf24476f976ce6a9e712148990b42cb544",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
