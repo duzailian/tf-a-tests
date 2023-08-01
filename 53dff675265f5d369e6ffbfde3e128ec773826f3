@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "79418150_a14faab4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-01T12:45:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d6020fbe_023bb086",
+      "revId": "53dff675265f5d369e6ffbfde3e128ec773826f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "19fa0730_5ac2d450",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 10
@@ -52,6 +70,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6ed0b72_069c688f",
+        "filename": "Makefile",
+        "patchSetId": 10
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-01T12:45:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffe40f59_ef69db41",
+      "revId": "53dff675265f5d369e6ffbfde3e128ec773826f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "912b8c83_7f575b56",
@@ -69,6 +105,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b56c84e5_3f318f44",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-01T12:45:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "912b8c83_7f575b56",
+      "revId": "53dff675265f5d369e6ffbfde3e128ec773826f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e6e4e2da_3840c9e1",
@@ -82,6 +136,24 @@
       "writtenOn": "2023-08-01T12:07:51Z",
       "side": 1,
       "message": "remove trailing .",
+      "revId": "53dff675265f5d369e6ffbfde3e128ec773826f3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0162dd1a_7331cb4c",
+        "filename": "make_helpers/defaults.mk",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-01T12:45:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e6e4e2da_3840c9e1",
       "revId": "53dff675265f5d369e6ffbfde3e128ec773826f3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
