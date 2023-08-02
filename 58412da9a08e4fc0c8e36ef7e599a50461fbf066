@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7b965b3_1382216d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-02T10:05:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0801acc9_55fb09d8",
+      "range": {
+        "startLine": 13,
+        "startChar": 2,
+        "endLine": 13,
+        "endChar": 32
+      },
+      "revId": "58412da9a08e4fc0c8e36ef7e599a50461fbf066",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1fbf029f_bfa29b5b",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-08-01T13:48:03Z",
       "side": 1,
       "message": "remove these as well.",
+      "range": {
+        "startLine": 617,
+        "startChar": 37,
+        "endLine": 617,
+        "endChar": 53
+      },
+      "revId": "58412da9a08e4fc0c8e36ef7e599a50461fbf066",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79d08705_98c5ec40",
+        "filename": "Makefile",
+        "patchSetId": 12
+      },
+      "lineNbr": 617,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-02T10:05:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1fbf029f_bfa29b5b",
       "range": {
         "startLine": 617,
         "startChar": 37,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ee094e3_3ee69de3",
+        "filename": "Makefile",
+        "patchSetId": 12
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-02T10:05:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3e05bb3_68aaafdb",
+      "range": {
+        "startLine": 621,
+        "startChar": 0,
+        "endLine": 621,
+        "endChar": 65
+      },
+      "revId": "58412da9a08e4fc0c8e36ef7e599a50461fbf066",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "363e98d1_7550dee5",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-08-01T13:46:55Z",
       "side": 1,
       "message": "can remove this line and below line in this patch I think.",
+      "range": {
+        "startLine": 629,
+        "startChar": 0,
+        "endLine": 629,
+        "endChar": 68
+      },
+      "revId": "58412da9a08e4fc0c8e36ef7e599a50461fbf066",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7f84236_fa518428",
+        "filename": "Makefile",
+        "patchSetId": 12
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-02T10:05:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "363e98d1_7550dee5",
       "range": {
         "startLine": 629,
         "startChar": 0,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4ac93fb_e18dab27",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-02T10:05:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec154d4e_74a48634",
+      "range": {
+        "startLine": 111,
+        "startChar": 20,
+        "endLine": 111,
+        "endChar": 21
+      },
+      "revId": "58412da9a08e4fc0c8e36ef7e599a50461fbf066",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9dd65c0c_471157ee",
@@ -133,6 +253,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e185c92_1c78e83b",
+        "filename": "docs/getting_started/build.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-02T10:05:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9dd65c0c_471157ee",
+      "revId": "58412da9a08e4fc0c8e36ef7e599a50461fbf066",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc632975_5164c480",
@@ -146,6 +284,30 @@
       "writtenOn": "2023-08-01T13:46:55Z",
       "side": 1,
       "message": "remove this extra tab.",
+      "range": {
+        "startLine": 53,
+        "startChar": 27,
+        "endLine": 53,
+        "endChar": 28
+      },
+      "revId": "58412da9a08e4fc0c8e36ef7e599a50461fbf066",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6519c6a0_0d273a66",
+        "filename": "make_helpers/defaults.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-02T10:05:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc632975_5164c480",
       "range": {
         "startLine": 53,
         "startChar": 27,
