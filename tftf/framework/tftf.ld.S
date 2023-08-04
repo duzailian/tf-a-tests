@@ -7,10 +7,13 @@
 #include <platform_def.h>
 #include <xlat_tables_defs.h>
 
+#ifdef ENABLE_REALM_PAYLOAD_TESTS
+#include <realm_def.h>
+#endif
+
 OUTPUT_FORMAT(PLATFORM_LINKER_FORMAT)
 OUTPUT_ARCH(PLATFORM_LINKER_ARCH)
 ENTRY(tftf_entrypoint)
-
 #ifndef TFTF_MAX_IMAGE_SIZE
 #define TFTF_MAX_IMAGE_SIZE DRAM_SIZE
 #endif
@@ -49,14 +52,25 @@ SECTIONS
     .data : {
         __DATA_START__ = .;
         *(.data*)
+        . = NEXT(PAGE_SIZE);
         __DATA_END__ = .;
     } >RAM
 
-    stacks (NOLOAD) : {
-        __STACKS_START__ = .;
-        *(tftf_normal_stacks)
-        __STACKS_END__ = .;
+#ifdef ENABLE_REALM_PAYLOAD_TESTS
+   /*Memory for Realm Image. */
+   realm_payload . : {
+        __REALM_PAYLOAD_START__ = .;
+        . = __REALM_PAYLOAD_START__ + REALM_MAX_LOAD_IMG_SIZE;
+        __REALM_PAYLOAD_END__ = .;
     } >RAM
+
+   /*Memory for Realm Heap. */
+   realm_pool (NOLOAD)  : ALIGN(PAGE_SIZE) {
+        __REALM_POOL_START__ = .;
+        . = __REALM_POOL_START__ + NS_REALM_SHARED_MEM_SIZE + PAGE_POOL_MAX_SIZE;
+        __REALM_POOL_END__ = .;
+    } >RAM
+#endif
 
     /*
      * The .bss section gets initialised to 0 at runtime.
@@ -67,6 +81,13 @@ SECTIONS
         *(SORT_BY_ALIGNMENT(.bss*))
         *(COMMON)
         __BSS_END__ = .;
+    } >RAM
+
+    stacks (NOLOAD) : {
+        __STACKS_START__ = .;
+        *(tftf_normal_stacks)
+        __STACKS_END__ = .;
+        . = NEXT(0x100000);
     } >RAM
 
     /*
@@ -109,9 +130,6 @@ SECTIONS
     __COHERENT_RAM_UNALIGNED_SIZE__ =
         __COHERENT_RAM_END_UNALIGNED__ - __COHERENT_RAM_START__;
 
-
     __TFTF_END__ = .;
-
     __BSS_SIZE__ = SIZEOF(.bss);
-
 }
