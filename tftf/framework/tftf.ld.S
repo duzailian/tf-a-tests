@@ -10,7 +10,6 @@
 OUTPUT_FORMAT(PLATFORM_LINKER_FORMAT)
 OUTPUT_ARCH(PLATFORM_LINKER_ARCH)
 ENTRY(tftf_entrypoint)
-
 #ifndef TFTF_MAX_IMAGE_SIZE
 #define TFTF_MAX_IMAGE_SIZE DRAM_SIZE
 #endif
@@ -109,9 +108,12 @@ SECTIONS
     __COHERENT_RAM_UNALIGNED_SIZE__ =
         __COHERENT_RAM_END_UNALIGNED__ - __COHERENT_RAM_START__;
 
-
     __TFTF_END__ = .;
-
     __BSS_SIZE__ = SIZEOF(.bss);
+   .text.realm  : ALIGN(PAGE_SIZE) {
+        __REALM_PAYLOAD_START__ = .;
+        . = NEXT(0x100000);
+        __REALM_PAYLOAD_END__ = .;
+    } >RAM
 
 }

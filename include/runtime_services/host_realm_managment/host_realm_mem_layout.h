@@ -44,7 +44,8 @@
 /* 3MB of memory used as a pool for realm's objects creation */
  #define PAGE_POOL_MAX_SIZE		U(0x300000)
 /* Base address of each section */
- #define REALM_IMAGE_BASE		(TFTF_BASE + TFTF_MAX_IMAGE_SIZE)
+// #define REALM_IMAGE_BASE		(TFTF_BASE + TFTF_MAX_IMAGE_SIZE)
+IMPORT_SYM(uintptr_t,		__REALM_PAYLOAD_START__,		REALM_IMAGE_BASE);
  #define PAGE_POOL_BASE			(REALM_IMAGE_BASE + REALM_MAX_LOAD_IMG_SIZE)
  #define NS_REALM_SHARED_MEM_BASE	(PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE)
 #else

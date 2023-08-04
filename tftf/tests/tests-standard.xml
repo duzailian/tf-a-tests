@@ -30,7 +30,7 @@
 ]>
 
 <testsuites>
-
+  &tests-realm-payload;
   &tests-tftf-validation;
   &tests-boot-req;
   &tests-psci;
@@ -48,6 +48,5 @@
   &tests-pmu-leakage;
   &tests-debugfs;
   &tests-rmi-spm;
-  &tests-realm-payload;
 
 </testsuites>

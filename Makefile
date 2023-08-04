@@ -58,7 +58,7 @@ export Q
 ifneq (${DEBUG}, 0)
 	BUILD_TYPE	:=	debug
 	# Use LOG_LEVEL_INFO by default for debug builds
-	LOG_LEVEL       :=      40
+	LOG_LEVEL       :=      60
 else
 	BUILD_TYPE	:=	release
 	# Use LOG_LEVEL_ERROR by default for release builds
@@ -259,7 +259,7 @@ TFTF_SOURCES		:= ${FRAMEWORK_SOURCES}	${TESTS_SOURCES} ${PLAT_SOURCES} ${LIBC_SR
 TFTF_INCLUDES		+= ${PLAT_INCLUDES}
 TFTF_CFLAGS		+= ${COMMON_CFLAGS}
 TFTF_ASFLAGS		+= ${COMMON_ASFLAGS}
-TFTF_LDFLAGS		+= ${COMMON_LDFLAGS}
+TFTF_LDFLAGS		+= ${COMMON_LDFLAGS} 
 TFTF_EXTRA_OBJS 	:=
 
 ifneq (${BP_OPTION},none)
@@ -565,17 +565,16 @@ endif
 ifeq (${ENABLE_REALM_PAYLOAD_TESTS},1)
 tftf: realm
 	@echo "  PACK REALM PAYLOAD"
-	$(shell dd if=$(BUILD_PLAT)/realm.bin of=$(BUILD_PLAT)/tftf.bin obs=1 \
-	seek=$(TFTF_MAX_IMAGE_SIZE))
+	$(OC) --verbose --set-section-flags .text.realm=contents,alloc,code,load ${BUILD_PLAT}/tftf/tftf.elf
+	$(OC) --verbose --update-section .text.realm=${BUILD_PLAT}/realm.bin ${BUILD_PLAT}/tftf/tftf.elf ${BUILD_PLAT}/tftf/tftf2.elf
+	$(OC) -O elf64-littleaarch64 -B aarch64 $(BUILD_PLAT)/tftf/tftf2.elf  $(BUILD_PLAT)/tftf.bin
+	$(OD) -dx $(BUILD_PLAT)/tftf/tftf2.elf > $(BUILD_PLAT)/tftf/tftf_realm.dump
 endif
 
 ifeq (${ARCH}-${PLAT},aarch64-fvp)
 .PHONY : pack_realm
-$(eval $(call MAKE_IMG,realm))
 pack_realm: realm tftf
 	@echo "  PACK REALM PAYLOAD"
-	$(shell dd if=$(BUILD_PLAT)/realm.bin of=$(BUILD_PLAT)/tftf.bin obs=1 \
-	seek=$(TFTF_MAX_IMAGE_SIZE))
 endif
 
 ifeq (${ARCH}-${PLAT},aarch64-tc)
