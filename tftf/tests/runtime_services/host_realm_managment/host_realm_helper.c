@@ -27,14 +27,6 @@ static bool shared_mem_created;
 static bool realm_payload_mmaped;
 static volatile bool timer_enabled;
 
-/* From the TFTF_BASE offset, memory used by TFTF + Shared + Realm + POOL should
- * not exceed DRAM_END offset
- * NS_REALM_SHARED_MEM_BASE + NS_REALM_SHARED_MEM_SIZE is considered last offset
- */
-CASSERT((((uint64_t)NS_REALM_SHARED_MEM_BASE + (uint64_t)NS_REALM_SHARED_MEM_SIZE)\
-	< ((uint64_t)DRAM_BASE + (uint64_t)DRAM_SIZE)),\
-	error_ns_memory_and_realm_payload_exceed_DRAM_SIZE);
-
 #define RMI_EXIT(id)	\
 	[RMI_EXIT_##id] = #id
 

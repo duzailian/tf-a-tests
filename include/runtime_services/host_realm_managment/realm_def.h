@@ -12,6 +12,17 @@
 
 /* 1MB for Realm payload as a default value */
 #define REALM_MAX_LOAD_IMG_SIZE		U(0x100000)
+
+#ifdef ENABLE_REALM_PAYLOAD_TESTS
+ /* 1MB for shared buffer between Realm and Host */
+ #define NS_REALM_SHARED_MEM_SIZE       U(0x100000)
+ /* 3MB of memory used as a pool for realm's objects creation */
+ #define PAGE_POOL_MAX_SIZE             U(0x300000)
+#else
+ #define NS_REALM_SHARED_MEM_SIZE       U(0x0)
+ #define PAGE_POOL_MAX_SIZE             U(0x0)
+#endif
+
 #define REALM_STACK_SIZE		0x1000U
 #define DATA_PATTERN_1			0x12345678U
 #define DATA_PATTERN_2			0x11223344U
