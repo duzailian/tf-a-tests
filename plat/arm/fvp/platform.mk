@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-# If not specified as build arguments, set default to 10 MB
-TFTF_MAX_IMAGE_SIZE:=10485760
+# If not specified as build arguments, set default to DRAM_SIZE
+TFTF_MAX_IMAGE_SIZE:=0x80000000
 
 # Default number of threads per CPU on FVP
 FVP_MAX_PE_PER_CPU		:= 1

@@ -17,8 +17,8 @@
  *
  * +--------------------------+     +---------------------------+
  * |                          |     | Host Image                |
- * |    TFTF                  |     | (TFTF_MAX_IMAGE_SIZE)     |
- * | Normal World             | ==> +---------------------------+
+ * |    TFTF                  |     |                           |
+ * | Normal World             | ==> +                           +
  * |    Image                 |     | Realm Image               |
  * | (MAX_NS_IMAGE_SIZE)      |     | (REALM_MAX_LOAD_IMG_SIZE  |
  * +--------------------------+     +---------------------------+
@@ -39,22 +39,15 @@
  */
 
 #ifdef TFTF_MAX_IMAGE_SIZE
-/* 1MB for shared buffer between Realm and Host */
- #define NS_REALM_SHARED_MEM_SIZE	U(0x100000)
-/* 3MB of memory used as a pool for realm's objects creation */
- #define PAGE_POOL_MAX_SIZE		U(0x300000)
-/* Base address of each section */
- #define REALM_IMAGE_BASE		(TFTF_BASE + TFTF_MAX_IMAGE_SIZE)
- #define PAGE_POOL_BASE			(REALM_IMAGE_BASE + REALM_MAX_LOAD_IMG_SIZE)
- #define NS_REALM_SHARED_MEM_BASE	(PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE)
+IMPORT_SYM(uintptr_t,          __REALM_PAYLOAD_START__,                REALM_IMAGE_BASE);
+ #define PAGE_POOL_BASE                        (REALM_IMAGE_BASE + REALM_MAX_LOAD_IMG_SIZE)
+ #define NS_REALM_SHARED_MEM_BASE      (PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE)
 #else
- #define NS_REALM_SHARED_MEM_SIZE	0U
- #define PAGE_POOL_MAX_SIZE		0U
- #define TFTF_MAX_IMAGE_SIZE		DRAM_SIZE
-/* Base address of each section */
+ /* Base address of each section */
  #define REALM_IMAGE_BASE		0U
  #define PAGE_POOL_BASE			0U
  #define NS_REALM_SHARED_MEM_BASE	0U
+
 #endif
 
 #endif /* HOST_REALM_MEM_LAYOUT_H */

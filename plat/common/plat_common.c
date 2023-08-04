@@ -35,6 +35,8 @@ IMPORT_SYM(uintptr_t,		__RODATA_END__,		IMAGE_RODATA_END);
 
 #define IMAGE_RW_BASE		IMAGE_RODATA_END
 IMPORT_SYM(uintptr_t,		__TFTF_END__,		IMAGE_RW_END);
+IMPORT_SYM(uintptr_t,           __DATA_END__,           IMAGE_DATA_END);
+IMPORT_SYM(uintptr_t,           __BSS_START__,          IMAGE_BSS_START);
 
 IMPORT_SYM(uintptr_t,		__COHERENT_RAM_START__,	COHERENT_RAM_START);
 IMPORT_SYM(uintptr_t,		__COHERENT_RAM_END__,	COHERENT_RAM_END);
@@ -94,14 +96,22 @@ void tftf_plat_configure_mmu(void)
 	mmap_add_region(IMAGE_RODATA_BASE, IMAGE_RODATA_BASE,
 			IMAGE_RODATA_END - IMAGE_RODATA_BASE, MT_RO_DATA | MT_NS);
 
-	/* Data + BSS */
-	mmap_add_region(IMAGE_RW_BASE, IMAGE_RW_BASE,
-			IMAGE_RW_END - IMAGE_RW_BASE, MT_RW_DATA | MT_NS);
-
 #if IMAGE_TFTF
+	/* Data */
+	mmap_add_region(IMAGE_RW_BASE, IMAGE_RW_BASE,
+			IMAGE_DATA_END - IMAGE_RW_BASE, MT_RW_DATA | MT_NS);
+
+	/* BSS */
+	mmap_add_region(IMAGE_BSS_START, IMAGE_BSS_START,
+			IMAGE_RW_END - IMAGE_BSS_START, MT_RW_DATA | MT_NS);
+
 	mmap_add_region(COHERENT_RAM_START, COHERENT_RAM_START,
 			COHERENT_RAM_END - COHERENT_RAM_START,
 			MT_DEVICE | MT_RW | MT_NS);
+#else
+	/* Data + BSS */
+	mmap_add_region(IMAGE_RW_BASE, IMAGE_RW_BASE,
+			IMAGE_RW_END - IMAGE_RW_BASE, MT_RW_DATA | MT_NS);
 #endif
 
 	mmap_add(tftf_platform_get_mmap());
