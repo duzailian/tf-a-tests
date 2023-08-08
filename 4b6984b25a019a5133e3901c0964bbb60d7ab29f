@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6743a81_5b5f324c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-08-08T20:24:43Z",
+      "side": 1,
+      "message": "Manually assigning Verified+1 as patch on top of stack passed.",
+      "revId": "4b6984b25a019a5133e3901c0964bbb60d7ab29f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
