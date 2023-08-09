@@ -7,6 +7,7 @@
 TFTF_INCLUDES +=							\
 	-Iinclude/runtime_services/host_realm_managment
 
+ifeq (${ARCH},aarch64)
 TESTS_SOURCES	+=							\
 	$(addprefix tftf/tests/runtime_services/secure_service/,	\
 		${ARCH}/ffa_arch_helpers.S				\
@@ -24,7 +25,6 @@ TESTS_SOURCES	+=							\
 		test_ffa_group0_interrupts.c				\
 	)
 
-ifeq (${ARCH},aarch64)
 TESTS_SOURCES   +=                                                      \
         $(addprefix tftf/tests/runtime_services/secure_service/,        \
 	  test_spm_cpu_features.c					\
