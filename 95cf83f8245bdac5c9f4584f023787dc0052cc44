@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "4298c9e9_379afea9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-08-10T10:31:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc1a5af7_a49f3c0f",
+      "range": {
+        "startLine": 15,
+        "startChar": 16,
+        "endLine": 15,
+        "endChar": 19
+      },
+      "revId": "95cf83f8245bdac5c9f4584f023787dc0052cc44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "0692acb2_d716c98f",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2
@@ -82,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d362e825_889d9d8f",
+        "filename": "Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-08-10T10:31:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f3ccadd4_fbead0f3",
+      "range": {
+        "startLine": 227,
+        "startChar": 0,
+        "endLine": 227,
+        "endChar": 1
+      },
+      "revId": "95cf83f8245bdac5c9f4584f023787dc0052cc44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3b224cb4_b81e0ecd",
@@ -95,6 +143,30 @@
       "writtenOn": "2023-08-10T09:02:03Z",
       "side": 1,
       "message": "nit: do we need this?",
+      "range": {
+        "startLine": 229,
+        "startChar": 1,
+        "endLine": 229,
+        "endChar": 6
+      },
+      "revId": "95cf83f8245bdac5c9f4584f023787dc0052cc44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fc75606_715edcce",
+        "filename": "Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-08-10T10:31:04Z",
+      "side": 1,
+      "message": "Just to be explicit and make it easy for new users/readers.",
+      "parentUuid": "3b224cb4_b81e0ecd",
       "range": {
         "startLine": 229,
         "startChar": 1,
@@ -122,6 +194,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "127a673f_1a446843",
+        "filename": "Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-08-10T10:31:04Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "cccb268e_bc5d86ec",
+      "revId": "95cf83f8245bdac5c9f4584f023787dc0052cc44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "64f281ac_fd9d0b5c",
@@ -135,6 +225,30 @@
       "writtenOn": "2023-08-10T09:02:03Z",
       "side": 1,
       "message": "Do we need  this delimiter?",
+      "range": {
+        "startLine": 672,
+        "startChar": 0,
+        "endLine": 672,
+        "endChar": 80
+      },
+      "revId": "95cf83f8245bdac5c9f4584f023787dc0052cc44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "38407826_3765e3ca",
+        "filename": "Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-08-10T10:31:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "64f281ac_fd9d0b5c",
       "range": {
         "startLine": 672,
         "startChar": 0,
