@@ -154,7 +154,13 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 	ffa_memory_handle_t handle;
 	uint32_t *ptr;
 	struct mailbox_buffers mb;
-	unsigned int rme_supported = get_armv9_2_feat_rme_support();
+#ifdef SPM_ENABLE_RME
+	unsigned int rme_supported = validate_rme
+					? get_armv9_2_feat_rme_support()
+					: 0U;
+#else
+	unsigned int rme_supported = 0U;
+#endif
 
 	/* Arbitrarily write 5 words after using memory. */
 	const uint32_t nr_words_to_write = 5;

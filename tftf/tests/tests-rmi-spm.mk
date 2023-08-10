@@ -6,6 +6,8 @@
 
 ifeq (${ARCH},aarch64)
 
+$(eval $(call add_define,TFTF_DEFINES,SPM_ENABLE_RME))
+
 TFTF_INCLUDES +=							\
 	-Iinclude/runtime_services/host_realm_managment
 
