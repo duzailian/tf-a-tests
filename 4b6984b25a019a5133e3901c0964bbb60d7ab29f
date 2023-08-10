@@ -52,6 +52,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "802bf63b_7586ff26",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-08-10T22:07:32Z",
+      "side": 1,
+      "message": "Sure. For some reason, I forgot about doing it with this one.",
+      "parentUuid": "39eaaa19_1407bbeb",
+      "revId": "4b6984b25a019a5133e3901c0964bbb60d7ab29f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "56583e41_a7482adb",
@@ -65,6 +83,24 @@
       "writtenOn": "2023-08-09T10:50:04Z",
       "side": 1,
       "message": "nit: can we move this to a place, wherein all the DEFINE_RENAME_* related macros are defined ? To keep in align with the existing work.\n( 533 to 622, has related macros) append at the end here.",
+      "revId": "4b6984b25a019a5133e3901c0964bbb60d7ab29f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78bce18e_919b8b4c",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-08-10T22:07:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56583e41_a7482adb",
       "revId": "4b6984b25a019a5133e3901c0964bbb60d7ab29f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
