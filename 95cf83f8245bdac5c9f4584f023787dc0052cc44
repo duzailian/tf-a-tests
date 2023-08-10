@@ -214,6 +214,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3627b17e_9bf58e61",
+        "filename": "Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-08-10T10:58:05Z",
+      "side": 1,
+      "message": "If only el3_payload is not building properly with Clang then please mention it in the commit message providing the reasoning behind it. I believe other targets are building fine with Clang.",
+      "range": {
+        "startLine": 615,
+        "startChar": 0,
+        "endLine": 615,
+        "endChar": 42
+      },
+      "revId": "95cf83f8245bdac5c9f4584f023787dc0052cc44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "64f281ac_fd9d0b5c",
         "filename": "Makefile",
         "patchSetId": 2

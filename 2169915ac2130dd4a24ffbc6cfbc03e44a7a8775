@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97984d32_81d31c63",
+        "filename": "Makefile",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-08-10T10:58:05Z",
+      "side": 1,
+      "message": "Is it possible to use the COMMON_CFLAGS notion for both Clang and GCC? Look like it is currently getting used in both cases.",
+      "range": {
+        "startLine": 239,
+        "startChar": 0,
+        "endLine": 239,
+        "endChar": 14
+      },
+      "revId": "2169915ac2130dd4a24ffbc6cfbc03e44a7a8775",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
