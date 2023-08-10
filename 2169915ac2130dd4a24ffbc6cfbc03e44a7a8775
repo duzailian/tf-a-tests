@@ -22,6 +22,30 @@
       },
       "revId": "2169915ac2130dd4a24ffbc6cfbc03e44a7a8775",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed0ca641_40d420f1",
+        "filename": "Makefile",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-08-10T15:54:23Z",
+      "side": 1,
+      "message": "Just putting what we discussed offline -\nThe common flags for GCC and Clang should be put under COMMON_CFLAGS, which should be amended with the explicit flags for GCC (something like GCC_CFLAGS) and Clang (something like CLANG_CFLAGS) separately.",
+      "parentUuid": "97984d32_81d31c63",
+      "range": {
+        "startLine": 239,
+        "startChar": 0,
+        "endLine": 239,
+        "endChar": 14
+      },
+      "revId": "2169915ac2130dd4a24ffbc6cfbc03e44a7a8775",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
