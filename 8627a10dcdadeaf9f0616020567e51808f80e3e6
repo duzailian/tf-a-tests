@@ -33,6 +33,24 @@
       "message": "failure seems unrelated..",
       "revId": "8627a10dcdadeaf9f0616020567e51808f80e3e6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9026f74a_6c5b625e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-08-12T03:47:59Z",
+      "side": 1,
+      "message": "not sure how measured boot test fails, looks like bl31 is exceeding prog bits and this is for tf-a tests change..not sure what can be done here.",
+      "parentUuid": "648a333a_7b86a556",
+      "revId": "8627a10dcdadeaf9f0616020567e51808f80e3e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
