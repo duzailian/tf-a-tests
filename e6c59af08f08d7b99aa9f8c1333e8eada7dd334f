@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "677cbea9_725168c6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-08-14T16:31:13Z",
+      "side": 1,
+      "message": "There are failures in the spm l2 boot tests group, which are valid.",
+      "revId": "e6c59af08f08d7b99aa9f8c1333e8eada7dd334f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
