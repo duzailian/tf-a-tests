@@ -16,6 +16,24 @@
       "message": "@Paul do we still need this change, is it related to this ticket: https://linaro.atlassian.net/browse/TFC-475? ",
       "revId": "1991b92dfe83f20ee4466d36ffea32bce89472a4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2c9d4d1_35de2b07",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000709
+      },
+      "writtenOn": "2023-08-14T04:46:15Z",
+      "side": 1,
+      "message": "No, it\u0027s useful on its own, I\u0027d suggest to merge it, as it makes easier to submit patches against the branch for everyone. (Though as you can see, I also used this patch to test things for TFC-475, and it reminds me there\u0027re still things to look into there.)",
+      "parentUuid": "44e802be_f21b6158",
+      "revId": "1991b92dfe83f20ee4466d36ffea32bce89472a4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
