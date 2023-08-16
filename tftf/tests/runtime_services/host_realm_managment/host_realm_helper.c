@@ -150,7 +150,7 @@ static test_result_t host_mmap_realm_payload(u_register_t realm_payload_adr,
 }
 
 static bool host_enter_realm(u_register_t *exit_reason,
-				unsigned int *host_call_result)
+			     unsigned int *host_call_result, unsigned int rec_num)
 {
 	u_register_t ret;
 
@@ -164,7 +164,7 @@ static bool host_enter_realm(u_register_t *exit_reason,
 	}
 
 	/* Enter Realm */
-	ret = host_realm_rec_enter(&realm, exit_reason, host_call_result);
+	ret = host_realm_rec_enter(&realm, exit_reason, host_call_result, rec_num);
 	if (ret != REALM_SUCCESS) {
 		ERROR("%s() failed, ret=%lx\n", "host_realm_rec_enter", ret);
 
@@ -183,7 +183,9 @@ bool host_create_realm_payload(u_register_t realm_payload_adr,
 				u_register_t plat_mem_pool_adr,
 				u_register_t plat_mem_pool_size,
 				u_register_t realm_pages_size,
-				u_register_t feature_flag)
+				u_register_t feature_flag,
+				const u_register_t *rec_flag,
+				unsigned int rec_count)
 {
 	int8_t value;
 
@@ -271,6 +273,21 @@ bool host_create_realm_payload(u_register_t realm_payload_adr,
 						feature_flag));
 	}
 
+	if (realm.rec_count > MAX_REC_COUNT) {
+		ERROR("Invalid Rec Count\n");
+		return false;
+	}
+	realm.rec_count = rec_count;
+	for (unsigned int i = 0U; i < rec_count; i++) {
+		if (rec_flag[i] == RMI_RUNNABLE ||
+				rec_flag[i] == RMI_NOT_RUNNABLE) {
+			realm.rec_flag[i] = rec_flag[i];
+		} else {
+			ERROR("Invalid Rec Flag\n");
+			return false;
+		}
+	}
+
 	/* Create Realm */
 	if (host_realm_create(&realm) != REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_create");
@@ -354,13 +371,14 @@ bool host_destroy_realm(void)
 	return true;
 }
 
-bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr, int test_exit_reason)
+bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr,
+		int test_exit_reason, unsigned int rec_num)
 {
 	u_register_t exit_reason = RMI_EXIT_INVALID;
 	unsigned int host_call_result = TEST_RESULT_FAIL;
 
 	realm_shared_data_set_realm_cmd(cmd);
-	if (!host_enter_realm(&exit_reason, &host_call_result)) {
+	if (!host_enter_realm(&exit_reason, &host_call_result, rec_num)) {
 		return false;
 	}
 
