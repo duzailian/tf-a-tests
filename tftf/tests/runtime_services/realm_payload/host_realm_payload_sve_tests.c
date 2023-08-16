@@ -60,7 +60,7 @@ static test_result_t host_create_sve_realm_payload(bool sve_en, uint8_t sve_vq)
 				       (u_register_t)(PAGE_POOL_MAX_SIZE +
 						      NS_REALM_SHARED_MEM_SIZE),
 				       (u_register_t)PAGE_POOL_MAX_SIZE,
-				       rmi_feat_reg0)) {
+				       rmi_feat_reg0, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -129,7 +129,7 @@ test_result_t host_sve_realm_cmd_rdvl(void)
 	}
 
 	realm_rc = host_enter_realm_execute(REALM_SVE_RDVL, NULL,
-					    RMI_EXIT_HOST_CALL);
+					    RMI_EXIT_HOST_CALL, 0U);
 	if (realm_rc != true) {
 		rc = TEST_RESULT_FAIL;
 		goto rm_realm;
@@ -212,7 +212,7 @@ static test_result_t _host_sve_realm_check_id_registers(bool sve_en)
 	}
 
 	realm_rc = host_enter_realm_execute(REALM_SVE_ID_REGISTERS, NULL,
-					    RMI_EXIT_HOST_CALL);
+					    RMI_EXIT_HOST_CALL, 0U);
 	if (!realm_rc) {
 		rc = TEST_RESULT_FAIL;
 		goto rm_realm;
@@ -301,7 +301,7 @@ test_result_t host_sve_realm_cmd_probe_vl(void)
 	vl_bitmap_expected = sve_probe_vl(sve_vq);
 
 	realm_rc = host_enter_realm_execute(REALM_SVE_PROBE_VL, NULL,
-					    RMI_EXIT_HOST_CALL);
+					    RMI_EXIT_HOST_CALL, 0U);
 	if (!realm_rc) {
 		rc = TEST_RESULT_FAIL;
 		goto rm_realm;
@@ -362,7 +362,7 @@ test_result_t host_sve_realm_check_config_register(void)
 
 		/* Call Realm to run SVE command */
 		realm_rc = host_enter_realm_execute(REALM_SVE_RDVL, NULL,
-						    RMI_EXIT_HOST_CALL);
+						    RMI_EXIT_HOST_CALL, 0U);
 		if (!realm_rc) {
 			ERROR("Realm command REALM_SVE_RDVL failed\n");
 			rc = TEST_RESULT_FAIL;
@@ -396,7 +396,7 @@ static bool callback_enter_realm(void)
 	bool realm_rc;
 
 	realm_rc = host_enter_realm_execute(REALM_SVE_OPS, NULL,
-					    RMI_EXIT_HOST_CALL);
+					    RMI_EXIT_HOST_CALL, 0U);
 	if (realm_rc != true) {
 		return true;
 	}
@@ -518,7 +518,7 @@ test_result_t host_sve_realm_check_vectors_leaked(void)
 
 	/* 4. Call Realm to fill in Z registers */
 	realm_rc = host_enter_realm_execute(REALM_SVE_FILL_REGS, NULL,
-					    RMI_EXIT_HOST_CALL);
+					    RMI_EXIT_HOST_CALL, 0U);
 	if (!realm_rc) {
 		rc = TEST_RESULT_FAIL;
 		goto rm_realm;
