@@ -17,6 +17,7 @@
 #define DATA_PATTERN_2			0x11223344U
 #define REALM_SUCCESS			0U
 #define REALM_ERROR			1U
+#define MAX_REC_COUNT			8U
 
 /* Only support 4KB at the moment */
 
