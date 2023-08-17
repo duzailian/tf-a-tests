@@ -235,6 +235,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a18877d_97b818fa",
+        "filename": "Makefile",
+        "patchSetId": 2
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-08-17T13:45:33Z",
+      "side": 1,
+      "message": "el3_payload has a separate independent build system.\nI have added a comment (ToDo) to get it done.",
+      "parentUuid": "3627b17e_9bf58e61",
+      "range": {
+        "startLine": 615,
+        "startChar": 0,
+        "endLine": 615,
+        "endChar": 42
+      },
+      "revId": "95cf83f8245bdac5c9f4584f023787dc0052cc44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "64f281ac_fd9d0b5c",
