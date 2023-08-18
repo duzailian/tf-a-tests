@@ -87,6 +87,11 @@
 /* For both RME & non-RME case top 2MB will be EL3 memory */
 #define EL3_MEMORY_ACCESS_ADDR			U(0xFFE00000)
 #define SECURE_MEMORY_ACCESS_ADDR		U(0xFD000000)
+/*******************************************************************************
+ * Base address and size for the FIP that contains images.
+ ******************************************************************************/
+#define PLAT_ARM_FIP_BASE		(FLASH_BASE)
+#define PLAT_ARM_FIP_SIZE		(0x100000)
 
 /*******************************************************************************
  * Base address and size for the FIP that contains FWU images.
