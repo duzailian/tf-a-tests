@@ -26,6 +26,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "061c3410_addb2443",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 1328,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-08-18T19:21:08Z",
+      "side": 1,
+      "message": "nitpick:\nPFR0_EL1 - Definitions for AArch32 Processor Feature Register 0",
+      "range": {
+        "startLine": 1328,
+        "startChar": 3,
+        "endLine": 1328,
+        "endChar": 23
+      },
+      "revId": "4a52cc53ee4d08e800d383960f37d3977e203f0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8080a30_19efd404",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 1338,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-08-18T19:21:08Z",
+      "side": 1,
+      "message": "nitpick:\nPFR2_EL1 - Definitions for AArch32 Processor Feature Register 2",
+      "revId": "4a52cc53ee4d08e800d383960f37d3977e203f0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7522e8a7_45e2edcf",
         "filename": "include/lib/aarch64/arch_features.h",
         "patchSetId": 3
