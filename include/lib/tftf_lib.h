@@ -38,6 +38,19 @@ typedef enum {
 #define TEST_RESULT_IS_VALID(result) \
 	((result >= TEST_RESULT_MIN) && (result < TEST_RESULT_MAX))
 
+#define TEST_ASSERT(must_be_true) \
+	if (!(must_be_true)) { \
+		tftf_testcase_printf("Failed at %s:%d\n", __FILE__, __LINE__); \
+		return TEST_RESULT_FAIL;\
+	}
+
+#define TEST_ASSERT_SKIP(must_be_true) \
+	if (!(must_be_true)) { \
+		tftf_testcase_printf("Failed at %s:%d\n", __FILE__, __LINE__); \
+		return TEST_RESULT_SKIPPED;\
+	}
+
+
 /*
  * PSCI Function Wrappers
  *
