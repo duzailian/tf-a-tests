@@ -326,7 +326,7 @@ bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr,
 	u_register_t exit_reason = RMI_EXIT_INVALID;
 	unsigned int host_call_result = TEST_RESULT_FAIL;
 
-	realm_shared_data_set_realm_cmd(cmd);
+	realm_shared_data_set_realm_cmd(cmd, rec_num);
 	if (!host_enter_realm(&exit_reason, &host_call_result, rec_num)) {
 		return false;
 	}

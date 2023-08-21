@@ -30,7 +30,7 @@ bool test_realm_sve_rdvl(void)
 
 	assert(is_armv8_2_sve_present());
 
-	output = (struct sve_cmd_rdvl *)sd->realm_cmd_output_buffer;
+	output = (struct sve_cmd_rdvl *)sd->realm_cmd_output_buffer[0];
 	memset((void *)output, 0, sizeof(struct sve_cmd_rdvl));
 
 	sve_config_vq(SVE_VQ_ARCH_MAX);
@@ -48,7 +48,7 @@ bool test_realm_sve_read_id_registers(void)
 	host_shared_data_t *sd = realm_get_shared_structure();
 	struct sve_cmd_id_regs *output;
 
-	output = (struct sve_cmd_id_regs *)sd->realm_cmd_output_buffer;
+	output = (struct sve_cmd_id_regs *)sd->realm_cmd_output_buffer[0];
 	memset((void *)output, 0, sizeof(struct sve_cmd_id_regs));
 
 	realm_printf("Realm: reading ID registers: ID_AA64PFR0_EL1, "
@@ -70,7 +70,7 @@ bool test_realm_sve_probe_vl(void)
 
 	assert(is_armv8_2_sve_present());
 
-	output = (struct sve_cmd_probe_vl *)&sd->realm_cmd_output_buffer;
+	output = (struct sve_cmd_probe_vl *)&sd->realm_cmd_output_buffer[0];
 	memset((void *)output, 0, sizeof(struct sve_cmd_probe_vl));
 
 	/* Probe all VLs */
