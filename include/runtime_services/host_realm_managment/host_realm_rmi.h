@@ -507,6 +507,7 @@ struct realm {
 	u_register_t rtt_addr;
 	u_register_t rec[MAX_REC_COUNT];
 	u_register_t run[MAX_REC_COUNT];
+	u_register_t mpidr[MAX_REC_COUNT];
 	u_register_t num_aux;
 	u_register_t rmm_feat_reg0;
 	u_register_t ipa_ns_buffer;
@@ -535,6 +536,7 @@ u_register_t host_realm_map_ns_shared(struct realm *realm,
 					u_register_t ns_shared_mem_adr,
 					u_register_t ns_shared_mem_size);
 u_register_t host_realm_rec_create(struct realm *realm, u_register_t *rec_flag);
+unsigned int host_realm_find_rec_by_mpidr(unsigned int mpidr, struct realm *realm);
 u_register_t host_realm_activate(struct realm *realm);
 u_register_t host_realm_destroy(struct realm *realm);
 u_register_t host_realm_rec_enter(struct realm *realm,
@@ -543,6 +545,7 @@ u_register_t host_realm_rec_enter(struct realm *realm,
 					unsigned int rec_num);
 u_register_t host_realm_init_ipa_state(struct realm *realm, u_register_t level,
 					u_register_t start, uint64_t end);
+u_register_t host_rmi_psci_complete(u_register_t calling_rec, u_register_t target_rec);
 void host_rmi_init_cmp_result(void);
 bool host_rmi_get_cmp_result(void);
 
