@@ -34,16 +34,18 @@ host_shared_data_t *realm_get_shared_structure(void)
 /*
  * Return Host's data at index
  */
-u_register_t realm_shared_data_get_host_val(uint8_t index)
+u_register_t realm_shared_data_get_host_val(unsigned int rec_num, uint8_t index)
 {
-	return guest_shared_data->host_param_val[(index >= MAX_DATA_SIZE) ?
+	return guest_shared_data->host_param_val[rec_num > MAX_REC_COUNT ?
+		0 : rec_num][(index >= MAX_DATA_SIZE) ?
 		(MAX_DATA_SIZE - 1) : index];
 }
 
 /*
  * Get command sent from Host to realm
  */
-uint8_t realm_shared_data_get_realm_cmd(void)
+uint8_t realm_shared_data_get_realm_cmd(unsigned int rec_num)
 {
-	return guest_shared_data->realm_cmd;
+	return guest_shared_data->realm_cmd[rec_num > MAX_REC_COUNT ?
+		0 : rec_num];
 }
