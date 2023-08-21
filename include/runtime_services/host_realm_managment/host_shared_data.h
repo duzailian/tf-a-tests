@@ -7,6 +7,7 @@
 #ifndef HOST_SHARED_DATA_H
 #define HOST_SHARED_DATA_H
 
+#include <host_realm_rmi.h>
 #include <stdint.h>
 #include <spinlock.h>
 
@@ -19,9 +20,8 @@
  * This structure maps the shared memory to be used between the Host and Realm
  * payload
  */
-typedef struct host_shared_data {
-	/* Buffer used from Realm for logging */
-	uint8_t log_buffer[MAX_BUF_SIZE];
+
+typedef struct {
 
 	/* Command set from Host and used by Realm */
 	uint8_t realm_cmd;
@@ -34,9 +34,16 @@ typedef struct host_shared_data {
 
 	/* Buffer to save Realm command results */
 	uint8_t realm_cmd_output_buffer[REALM_CMD_BUFFER_SIZE];
+} host_rec_shared_data_t;
+
+typedef struct host_rec_shared_data {
+	/* Buffer used from Realm for logging */
+	uint8_t log_buffer[MAX_BUF_SIZE];
 
 	/* Lock to avoid concurrent accesses to log_buffer */
 	spinlock_t printf_lock;
+
+	host_rec_shared_data_t data[MAX_REC_COUNT];
 } host_shared_data_t;
 
 /*
@@ -79,11 +86,12 @@ enum host_call_cmd {
  * Return shared buffer pointer mapped as host_shared_data_t structure
  */
 host_shared_data_t *host_get_shared_structure(void);
+host_rec_shared_data_t *host_get_rec_shared_structure(unsigned int rec_num);
 
 /*
  * Set data to be shared from Host to realm
  */
-void realm_shared_data_set_host_val(uint8_t index, u_register_t val);
+void realm_shared_data_set_host_val(unsigned int rec_num, uint8_t index, u_register_t val);
 
 /*
  * Set guest mapped shared buffer pointer
@@ -94,21 +102,21 @@ void realm_set_shared_structure(host_shared_data_t *ptr);
  * Get guest mapped shared buffer pointer
  */
 host_shared_data_t *realm_get_shared_structure(void);
-
+host_rec_shared_data_t *realm_get_rec_shared_structure(unsigned int rec_num);
 /*
  * Set data to be shared from Realm to Host
  */
-void realm_shared_data_set_realm_val(uint8_t index, u_register_t val);
+void realm_shared_data_set_realm_val(unsigned int rec_num, uint8_t index, u_register_t val);
 
 /*
  * Return Host's data at index
  */
-u_register_t realm_shared_data_get_host_val(uint8_t index);
+u_register_t realm_shared_data_get_host_val(unsigned int rec_num, uint8_t index);
 
 /*
  * Return Realm's data at index
  */
-u_register_t realm_shared_data_get_realm_val(uint8_t index);
+u_register_t realm_shared_data_get_realm_val(unsigned int rec_num, uint8_t index);
 
 /*
  * Clear shared realm data
@@ -118,16 +126,16 @@ void realm_shared_data_clear_realm_val(void);
 /*
  * Clear shared Host data
  */
-void realm_shared_data_clear_host_val(void);
+void realm_shared_data_clear_host_val(unsigned int rec_num);
 
 /*
  * Get command sent from Host to realm
  */
-uint8_t realm_shared_data_get_realm_cmd(void);
+uint8_t realm_shared_data_get_realm_cmd(unsigned int rec_num);
 
 /*
  * Set command to be send from Host to realm
  */
-void realm_shared_data_set_realm_cmd(uint8_t cmd);
+void realm_shared_data_set_realm_cmd(uint8_t cmd, unsigned int rec_num);
 
 #endif /* HOST_SHARED_DATA_H */
