@@ -102,6 +102,11 @@ bool host_rmi_get_cmp_result(void)
 {
 	return rmi_cmp_result;
 }
+u_register_t host_rmi_psci_complete(u_register_t calling_rec, u_register_t target_rec)
+{
+	return (host_rmi_handler(&(smc_args) {RMI_PSCI_COMPLETE, calling_rec,
+				target_rec}, 3U)).ret0;
+}
 
 static inline u_register_t host_rmi_data_create(bool unknown,
 						u_register_t rd,
@@ -1005,6 +1010,7 @@ u_register_t host_realm_rec_create(struct realm *realm)
 	for (i = 0; i < realm->rec_count; i++) {
 		realm->run[i] = 0U;
 		realm->rec[i] = 0U;
+		realm->mpidr[i] = 0U;
 	}
 	(void)memset(realm->aux_pages, 0x0, sizeof(u_register_t)*realm->num_aux*realm->rec_count);
 
@@ -1053,6 +1059,7 @@ u_register_t host_realm_rec_create(struct realm *realm)
 		rec_params->flags = RMI_RUNNABLE;
 		rec_params->mpidr = (u_register_t)i;
 		rec_params->num_aux = realm->num_aux;
+		realm->mpidr[i] = (u_register_t)i;
 
 		/* Create REC  */
 		ret = host_rmi_rec_create(realm->rec[i], realm->rd, (u_register_t)rec_params);
@@ -1193,6 +1200,16 @@ undo_from_new_state:
 	return REALM_SUCCESS;
 }
 
+unsigned int host_realm_find_rec_by_mpidr(unsigned int mpidr, struct realm *realm)
+{
+	for (unsigned int i = 0U; i < MAX_REC_COUNT; i++) {
+		if (realm->run[i] != 0U && realm->mpidr[i] == mpidr) {
+			return i;
+		}
+	}
+	return MAX_REC_COUNT;
+}
+
 u_register_t host_realm_rec_enter(struct realm *realm,
 				  u_register_t *exit_reason,
 				  unsigned int *host_call_result,
@@ -1206,9 +1223,9 @@ u_register_t host_realm_rec_enter(struct realm *realm,
 		re_enter_rec = false;
 		ret = host_rmi_handler(&(smc_args) {RMI_REC_ENTER,
 					realm->rec[rec_num], realm->run[rec_num]}, 3U).ret0;
-		VERBOSE("%s() run->exit.exit_reason=%lu "
+		VERBOSE("%s() ret=%lu run->exit.exit_reason=%lu "
 			"run->exit.esr=0x%lx EC_BITS=%u ISS_DFSC_MASK=0x%lx\n",
-			__func__, run->exit.exit_reason, run->exit.esr,
+			__func__, ret, run->exit.exit_reason, run->exit.esr,
 			((EC_BITS(run->exit.esr) == EC_DABORT_CUR_EL)),
 			(ISS_BITS(run->exit.esr) & ISS_DFSC_MASK));
 
