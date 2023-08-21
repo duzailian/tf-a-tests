@@ -500,6 +500,7 @@ u_register_t host_realm_rec_enter(struct realm *realm, u_register_t *exit_reason
 		unsigned int *host_call_result, unsigned int rec_num);
 u_register_t host_realm_init_ipa_state(struct realm *realm, u_register_t level,
 					u_register_t start, uint64_t end);
+u_register_t host_rmi_psci_complete(u_register_t calling_rec, u_register_t target_rec);
 void host_rmi_init_cmp_result(void);
 bool host_rmi_get_cmp_result(void);
 

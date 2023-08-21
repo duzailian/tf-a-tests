@@ -102,6 +102,10 @@ bool host_rmi_get_cmp_result(void)
 {
 	return rmi_cmp_result;
 }
+u_register_t host_rmi_psci_complete(u_register_t calling_rec, u_register_t target_rec)
+{
+	return (host_rmi_handler(&(smc_args) {RMI_PSCI_COMPLETE, calling_rec, target_rec}, 3U)).ret0;
+}
 
 static inline u_register_t host_rmi_data_create(bool unknown, u_register_t data,
 			u_register_t rd, u_register_t map_addr, u_register_t src)
@@ -1119,9 +1123,9 @@ u_register_t host_realm_rec_enter(struct realm *realm,
 		re_enter_rec = false;
 		ret = host_rmi_handler(&(smc_args){RMI_REC_ENTER,
 					realm->rec[rec_num], realm->run[rec_num]}, 3U).ret0;
-		VERBOSE("%s() run->exit.exit_reason=%lu "
+		VERBOSE("%s() ret=%lu run->exit.exit_reason=%lu "
 			"run->exit.esr=0x%lx EC_BITS=%u ISS_DFSC_MASK=0x%lx\n",
-			__func__, run->exit.exit_reason, run->exit.esr,
+			__func__, ret, run->exit.exit_reason, run->exit.esr,
 			((EC_BITS(run->exit.esr) == EC_DABORT_CUR_EL)),
 			(ISS_BITS(run->exit.esr) & ISS_DFSC_MASK));
 
