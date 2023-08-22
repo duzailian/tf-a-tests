@@ -30,6 +30,7 @@ REALM_SOURCES:=								\
 	realm_interrupt.c						\
 	realm_pauth.c							\
 	realm_payload_main.c						\
+	realm_multiple_rec.c						\
 	realm_pmuv3.c							\
 	realm_rsi.c							\
 	realm_shared_data.c						\
