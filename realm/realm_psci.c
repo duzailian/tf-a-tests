@@ -74,19 +74,18 @@ u_register_t realm_psci_features(uint32_t psci_func_id)
 
 void realm_secondary_entrypoint(u_register_t cxt_id)
 {
-	u_register_t my_mpidr;
+	u_register_t my_mpidr, id;
 	secondary_ep_t ep;
 
 	my_mpidr = read_mpidr_el1() & MPID_MASK;
-	realm_printf("Realm: Booting CPU = 0x%lx\n", my_mpidr);
 	ep = entrypoint[my_mpidr];
+	id = context_id[my_mpidr];
 	if (ep != NULL) {
 		entrypoint[my_mpidr] = NULL;
 		context_id[my_mpidr] = 0;
-		(ep)(context_id[my_mpidr]);
+		(ep)(id);
 	} else {
 		panic();
 	}
-	realm_printf("Realm: Powering off CPU = 0x%lx\n", my_mpidr);
 	realm_cpu_off();
 }
