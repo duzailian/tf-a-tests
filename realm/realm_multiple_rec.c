@@ -67,3 +67,48 @@ bool test_realm_multiple_rec_psci_denied_cmd(void)
 	}
 	return true;
 }
+
+bool test_realm_multiple_rec_multiple_cpu_cmd(void)
+{
+	unsigned int i = 1U, rec_count;
+	u_register_t ret;
+
+	realm_printf("Realm: running on CPU = 0x%lx\n", read_mpidr_el1() & MPID_MASK);
+	rec_count = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
+
+	/* Check CPU_ON is supported */
+	ret = realm_psci_features(SMC_PSCI_CPU_ON);
+	if (ret != PSCI_E_SUCCESS) {
+		realm_printf("SMC_PSCI_CPU_ON not supported\n");
+		return false;
+	}
+
+	for (unsigned int j = 1U; j < rec_count; j++) {
+		ret = realm_cpu_on(j, (uintptr_t)rec1_handler, CXT_ID_MAGIC + j);
+		if (ret != PSCI_E_SUCCESS) {
+			realm_printf("SMC_PSCI_CPU_ON failed %d.\n", j);
+			return false;
+		}
+	}
+
+	/* Exit to host to allow host to run all CPUs */
+	rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD);
+	/* wait for all CPUs to come up */
+	while (is_secondary_cpu_booted != rec_count - 1U) {
+		waitms(200);
+	}
+
+	/* wait for all CPUs to turn off */
+	while (i < rec_count) {
+		ret = realm_psci_affinity_info(i, MPIDR_AFFLVL0);
+		if (ret != PSCI_STATE_OFF) {
+			/* wait and query again */
+			realm_printf(" CPU %d is not off\n", i);
+			waitms(200);
+			continue;
+		}
+		i++;
+	}
+	realm_printf("All CPU are off\n");
+	return true;
+}
