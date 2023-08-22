@@ -13,6 +13,8 @@
 #include <drivers/arm/arm_gic.h>
 #include <drivers/arm/gic_v3.h>
 #include <pauth.h>
+#include <power_management.h>
+#include <psci.h>
 #include <test_helpers.h>
 
 #include <host_realm_helper.h>
@@ -23,6 +25,9 @@
 #define SLEEP_TIME_MS	200U
 
 extern const char *rmi_exit[];
+static volatile int is_secondary_cpu_on;
+static spinlock_t counter_lock;
+
 
 /*
  * @Test_Aim@ Test realm payload creation and execution
@@ -51,6 +56,106 @@ test_result_t host_test_realm_create_enter(void)
 	ret2 = host_destroy_realm();
 
 	if (!ret1 || !ret2) {
+		ERROR("%s(): enter=%d destroy=%d\n",
+		__func__, ret1, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return host_cmp_result();
+}
+
+static void cpu_on_handler(void)
+{
+	unsigned int i;
+
+	spin_lock(&counter_lock);
+	i = ++is_secondary_cpu_on;
+	spin_unlock(&counter_lock);
+	host_enter_realm_execute(REALM_MULTIPLE_REC_CMD, NULL, RMI_EXIT_PSCI, i);
+}
+
+test_result_t host_realm_multi_rec(void)
+{
+	struct realm *realm_ptr;
+	bool ret1, ret2;
+	int ret;
+	u_register_t rec_num, i = 1U;
+	u_register_t other_mpidr, my_mpidr;
+	struct rmi_rec_run *run;
+	unsigned int host_call_result;
+	u_register_t exit_reason;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!host_create_realm_payload((u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)(PAGE_POOL_MAX_SIZE +
+			NS_REALM_SHARED_MEM_SIZE),
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, 8U)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	init_spinlock(&counter_lock);
+	my_mpidr = read_mpidr_el1() & MPID_MASK;
+	ret1 = host_enter_realm_execute(REALM_MULTIPLE_REC_CMD, &realm_ptr, RMI_EXIT_PSCI, 0U);
+	do {
+		run = (struct rmi_rec_run *)realm_ptr->run[0];
+		if (run->exit.gprs[0] == SMC_PSCI_CPU_ON_AARCH64) {
+			rec_num = host_realm_find_rec_by_mpidr(run->exit.gprs[1], realm_ptr);
+			if (rec_num >= MAX_REC_COUNT) {
+				ERROR("Invalid mpidr requested\n");
+				ret1 = REALM_ERROR;
+				goto destroy_realm;
+			}
+			ret1 = host_rmi_psci_complete(realm_ptr->rec[0], realm_ptr->rec[rec_num]);
+			if (ret1 == 0) {
+retry_another_cpu:
+				other_mpidr = tftf_find_random_cpu_other_than(my_mpidr);
+				if (other_mpidr == INVALID_MPID) {
+					ERROR("Couldn't find a valid other CPU\n");
+					ret1 = REALM_ERROR;
+					goto destroy_realm;
+				}
+				/* Power on the other CPU */
+				ret = tftf_cpu_on(other_mpidr, (uintptr_t)cpu_on_handler, 0);
+				if (ret != PSCI_E_SUCCESS) {
+					goto retry_another_cpu;
+				}
+				ret1 = host_realm_rec_enter(realm_ptr, &exit_reason,
+					&host_call_result, 0U);
+			} else {
+				ERROR("host_rmi_psci_complete failed\n");
+				ret1 = REALM_ERROR;
+				goto destroy_realm;
+			}
+		} else {
+			ERROR("Host did not receive CPU ON request\n");
+			ret1 = REALM_ERROR;
+			goto destroy_realm;
+		}
+	} while (++i < MAX_REC_COUNT);
+
+	for (i = 1U; i < MAX_REC_COUNT; i++) {
+		if ((run->exit.gprs[0] == SMC_PSCI_AFFINITY_INFO_AARCH64)) {
+			rec_num = host_realm_find_rec_by_mpidr(run->exit.gprs[1], realm_ptr);
+			if (rec_num >= MAX_REC_COUNT) {
+				ERROR("Invalid mpidr requested\n");
+				goto destroy_realm;
+			}
+			ret1 = host_rmi_psci_complete(realm_ptr->rec[0], realm_ptr->rec[rec_num]);
+			ret1 = host_realm_rec_enter(realm_ptr, &exit_reason, &host_call_result, 0U);
+		}
+	}
+
+destroy_realm:
+	ret2 = host_destroy_realm();
+
+	if ((ret1 != REALM_SUCCESS) || !ret2) {
 		ERROR("%s(): enter=%d destroy=%d\n",
 		__func__, ret1, ret2);
 		return TEST_RESULT_FAIL;

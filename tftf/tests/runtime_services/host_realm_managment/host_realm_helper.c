@@ -167,12 +167,6 @@ static bool host_enter_realm(u_register_t *exit_reason,
 	ret = host_realm_rec_enter(&realm, exit_reason, host_call_result, rec_num);
 	if (ret != REALM_SUCCESS) {
 		ERROR("%s() failed, ret=%lx\n", "host_realm_rec_enter", ret);
-
-		/* Free test resources */
-		if (host_realm_destroy(&realm) != REALM_SUCCESS) {
-			ERROR("%s() failed\n", "host_realm_destroy");
-		}
-		realm_payload_created = false;
 		return false;
 	}
 
