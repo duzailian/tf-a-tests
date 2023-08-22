@@ -278,3 +278,209 @@ destroy_realm:
 
 	return host_cmp_result();
 }
+
+
+static test_result_t cpu_on_handler(void)
+{
+	bool ret;
+	struct rmi_rec_run *run;
+	unsigned int i;
+
+	spin_lock(&secondary_cpu_lock);
+	i = ++is_secondary_cpu_on;
+	spin_unlock(&secondary_cpu_lock);
+	ret = host_enter_realm_execute(&realm, REALM_MULTIPLE_REC_MULTIPLE_CPU_CMD,
+			RMI_EXIT_PSCI, i);
+	if (ret) {
+		run = (struct rmi_rec_run *)realm.run[i];
+		if (run->exit.gprs[0] == SMC_PSCI_CPU_OFF) {
+			return TEST_RESULT_SUCCESS;
+		}
+	}
+	ERROR("Rec %d failed\n", i);
+	return TEST_RESULT_FAIL;
+}
+
+/*
+ * test tries to create MAX recs
+ * Renter REC0 for each of the CPU_ON to complete the PSCI Call.
+ * This is done for all the CPU_ON calls.
+ * Turn ON secondary CPUs upto a max of MAX_REC_COUNT
+ * Each of the secondary then enters Realm with a different REC
+ * and executes the test REALM_MULTIPLE_REC_MULTIPLE_CPU_CMD in Realm payload.
+ * It is expected that the REC will exit with RMI_EXIT_PSCI as exit reason and the PSCI
+ * and PSCI command corresponds to PSCI_CPU_OFF.
+ * Rec0 checks if all other CPUs are off, request CPU_ON for rec2
+ * Host calls PSCI complete and enters rec2 from CPU0
+ * Host tries to re-enter rec after CPU OFF, expects error
+ */
+test_result_t host_realm_multi_rec_multiple_cpu(void)
+{
+	bool ret1, ret2;
+	test_result_t ret3 = TEST_RESULT_FAIL;
+	int ret = RMI_ERROR_INPUT;
+	u_register_t rec_num;
+	u_register_t other_mpidr, my_mpidr;
+	struct rmi_rec_run *run;
+	unsigned int host_call_result;
+	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE,
+		RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE,
+		RMI_NOT_RUNNABLE};
+	u_register_t exit_reason;
+	int cpu_node;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+	SKIP_TEST_IF_LESS_THAN_N_CPUS(MAX_REC_COUNT);
+
+	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, rec_flag, MAX_REC_COUNT)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	is_secondary_cpu_on = 0U;
+	init_spinlock(&secondary_cpu_lock);
+	my_mpidr = read_mpidr_el1() & MPID_MASK;
+	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, MAX_REC_COUNT);
+	ret1 = host_enter_realm_execute(&realm, REALM_MULTIPLE_REC_MULTIPLE_CPU_CMD,
+			RMI_EXIT_PSCI, 0U);
+	if (!ret1) {
+		ERROR("Host did not receive CPU ON request\n");
+		goto destroy_realm;
+	}
+	while (true) {
+		run = (struct rmi_rec_run *)realm.run[0];
+		if (run->exit.gprs[0] != SMC_PSCI_CPU_ON_AARCH64) {
+			ERROR("Host2 did not receive CPU ON request\n");
+			goto destroy_realm;
+		}
+		rec_num = host_realm_find_rec_by_mpidr(run->exit.gprs[1], &realm);
+		if (rec_num >= MAX_REC_COUNT) {
+			ERROR("Invalid mpidr requested\n");
+			goto destroy_realm;
+		}
+		ret = host_rmi_psci_complete(realm.rec[0], realm.rec[rec_num],
+				(unsigned long)PSCI_E_SUCCESS);
+		if (ret == RMI_SUCCESS) {
+			/* Re-enter REC0 complete CPU_ON */
+			ret = host_realm_rec_enter(&realm, &exit_reason,
+				&host_call_result, 0U);
+			if (ret != RMI_SUCCESS || exit_reason != RMI_EXIT_PSCI) {
+				break;
+			}
+		} else {
+			ERROR("host_rmi_psci_complete failed\n");
+			goto destroy_realm;
+		}
+	}
+
+	/* Iterates all CPUs, change logic if rec_count != MAX_CPU */
+	/* Turn on all CPUs */
+	for_each_cpu(cpu_node) {
+		other_mpidr = tftf_get_mpidr_from_node(cpu_node);
+		if (other_mpidr == my_mpidr) {
+			continue;
+		}
+		/* Power on the other CPU */
+		ret = tftf_try_cpu_on(other_mpidr, (uintptr_t)cpu_on_handler, 0);
+		if (ret != PSCI_E_SUCCESS) {
+			goto destroy_realm;
+		}
+	}
+
+	ret = host_realm_rec_enter(&realm, &exit_reason,
+			&host_call_result, 0U);
+	if (ret != RMI_SUCCESS || exit_reason != RMI_EXIT_PSCI) {
+		ERROR("Host err did not receive PSCI_AFFINITY_INFO request\n");
+		goto destroy_realm;
+	}
+	while (true) {
+		if (run->exit.gprs[0] == SMC_PSCI_AFFINITY_INFO_AARCH64) {
+			rec_num = host_realm_find_rec_by_mpidr(run->exit.gprs[1], &realm);
+			if (rec_num >= MAX_REC_COUNT) {
+				ERROR("Invalid mpidr requested\n");
+				goto destroy_realm;
+			}
+			ret = host_rmi_psci_complete(realm.rec[0], realm.rec[rec_num],
+					(unsigned long)PSCI_E_SUCCESS);
+
+			if (ret != RMI_SUCCESS) {
+				ERROR("host_rmi_psci_complete failed\n");
+				goto destroy_realm;
+			}
+
+			/* Re-enter REC0 complete PSCI_AFFINITY_INFO */
+			ret = host_realm_rec_enter(&realm, &exit_reason, &host_call_result, 0U);
+			if (ret != RMI_SUCCESS || exit_reason != RMI_EXIT_PSCI) {
+				ERROR("Rec0 re-enter failed\n");
+				goto destroy_realm;
+			}
+		} else {
+			break;
+		}
+	}
+
+	/* Try enter REC2 on different CPU */
+	if (run->exit.gprs[0] == SMC_PSCI_CPU_ON_AARCH64) {
+		rec_num = host_realm_find_rec_by_mpidr(run->exit.gprs[1], &realm);
+		if (rec_num != 2U) {
+			ERROR("Invalid mpidr requested\n");
+			goto destroy_realm;
+		}
+
+		/* pass wrong target_rec, expect error */
+		ret = host_rmi_psci_complete(realm.rec[0], realm.rec[rec_num + 1U],
+			(unsigned long)PSCI_E_SUCCESS);
+		if (ret == RMI_SUCCESS) {
+			ERROR("host_rmi_psci_complete wrong target_rec didn't fail ret=%x\n",
+					ret);
+			goto destroy_realm;
+		}
+		ret = host_rmi_psci_complete(realm.rec[0], realm.rec[2],
+			(unsigned long)PSCI_E_SUCCESS);
+		if (ret != RMI_SUCCESS) {
+			ERROR("host_rmi_psci_complete failed\n");
+			goto destroy_realm;
+		}
+
+		ret = host_realm_rec_enter(&realm, &exit_reason,
+			&host_call_result, 2U);
+
+		if (ret != RMI_SUCCESS) {
+			ERROR("Re-enter REC2 failed\n");
+			goto destroy_realm;
+		}
+	}
+
+	/* Try to run Rec3(CPU OFF/NOT_RUNNABLE), expect error */
+	ret = host_realm_rec_enter(&realm, &exit_reason,
+			&host_call_result, 3U);
+
+	if (ret == RMI_SUCCESS) {
+		ERROR("Expected error\n");
+		goto destroy_realm;
+	}
+
+	/* Re-enter REC0 complete CPU_ON */
+	ret = host_realm_rec_enter(&realm, &exit_reason,
+			&host_call_result, 0U);
+	if (ret == RMI_SUCCESS) {
+		ret3 = TEST_RESULT_SUCCESS;
+	}
+destroy_realm:
+	ret2 = host_destroy_realm(&realm);
+
+	if ((ret != RMI_SUCCESS) || !ret2) {
+		ERROR("%s(): enter=%d destroy=%d\n",
+		__func__, ret, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return ret3;
+}
+

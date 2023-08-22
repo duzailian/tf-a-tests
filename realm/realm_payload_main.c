@@ -207,6 +207,8 @@ void realm_payload_main(void)
 			break;
 		case REALM_MULTIPLE_REC_PSCI_DENIED_CMD:
 			test_succeed = test_realm_multiple_rec_psci_denied_cmd();
+		case REALM_MULTIPLE_REC_MULTIPLE_CPU_CMD:
+			test_succeed = test_realm_multiple_rec_multiple_cpu_cmd();
 			break;
 		case REALM_INSTR_FETCH_CMD:
 			test_succeed = test_realm_inst_fetch_unassigned_cmd();
