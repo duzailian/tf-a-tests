@@ -32,6 +32,7 @@ REALM_SOURCES:=								\
 	realm_payload_main.c						\
 	realm_pmuv3.c							\
 	realm_psci.c							\
+	realm_multiple_rec.c						\
 	realm_rsi.c							\
 	realm_shared_data.c						\
 	realm_sve.c							\
