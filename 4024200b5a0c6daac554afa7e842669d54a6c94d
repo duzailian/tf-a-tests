@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d545896_4a708f1d",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_helper.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-23T15:59:17Z",
+      "side": 1,
+      "message": "nit: Align with comments on previous line",
+      "revId": "4024200b5a0c6daac554afa7e842669d54a6c94d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64f5da9d_6078bb26",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-23T15:59:17Z",
+      "side": 1,
+      "message": "nit: try to align with comments in previous line",
+      "revId": "4024200b5a0c6daac554afa7e842669d54a6c94d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d66ab834_380849f9",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 881,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-23T15:59:17Z",
+      "side": 1,
+      "message": "I would suggest giving this parameter a more descriptive name",
+      "range": {
+        "startLine": 881,
+        "startChar": 50,
+        "endLine": 881,
+        "endChar": 51
+      },
+      "revId": "4024200b5a0c6daac554afa7e842669d54a6c94d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63990f49_f2abb9cb",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-23T15:59:17Z",
+      "side": 1,
+      "message": "unsigned int",
+      "range": {
+        "startLine": 912,
+        "startChar": 1,
+        "endLine": 912,
+        "endChar": 4
+      },
+      "revId": "4024200b5a0c6daac554afa7e842669d54a6c94d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "065dc4cc_56dc0a6b",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 919,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-23T15:59:17Z",
+      "side": 1,
+      "message": "0U",
+      "range": {
+        "startLine": 919,
+        "startChar": 10,
+        "endLine": 919,
+        "endChar": 11
+      },
+      "revId": "4024200b5a0c6daac554afa7e842669d54a6c94d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7096e245_f6d14dab",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 934,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-23T15:59:17Z",
+      "side": 1,
+      "message": "nit: Leave an empty line before this line",
+      "revId": "4024200b5a0c6daac554afa7e842669d54a6c94d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
