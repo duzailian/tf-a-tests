@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5db788fc_dab9cb02",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-23T18:00:26Z",
+      "side": 1,
+      "message": "I might be wrong, so just to clarify, by reading the previous patches, the secondary code will enter to \"test_realm_multiple_rec_cmd()\" rather than on \"secondary_cpu()\", right? On entrypoint.S, realm_payload_main is executed on the warm boot path.",
+      "range": {
+        "startLine": 70,
+        "startChar": 12,
+        "endLine": 70,
+        "endChar": 25
+      },
+      "revId": "b468bb4f2466e0d7d8c1d1f797b360cd65f7a7d9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "367efb99_5ffc2c11",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-23T18:00:26Z",
+      "side": 1,
+      "message": "nit: Add an indentation level for better readability",
+      "range": {
+        "startLine": 68,
+        "startChar": 1,
+        "endLine": 71,
+        "endChar": 7
+      },
+      "revId": "b468bb4f2466e0d7d8c1d1f797b360cd65f7a7d9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d2e2691_b01e4fb6",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-23T18:00:26Z",
+      "side": 1,
+      "message": "Shouldn\u0027t you add another delay here to ensure that the secondary PE has been powered OFF before trying to power it ON again?",
+      "revId": "b468bb4f2466e0d7d8c1d1f797b360cd65f7a7d9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44ddaedb_a320c641",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-08-23T18:00:26Z",
+      "side": 1,
+      "message": "static?",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 4
+      },
+      "revId": "b468bb4f2466e0d7d8c1d1f797b360cd65f7a7d9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
