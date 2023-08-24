@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df0303df_5366a925",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-08-24T13:34:06Z",
+      "side": 1,
+      "message": "It seems this changes aggregates a number of changes already merged.\nCan you tell if it should be kept or abandoned? Thanks.",
+      "revId": "42b9b9888406f1e18608a962b7b2f3f3087d5d21",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
