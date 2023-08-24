@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdaeb798_8ba40ce4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-08-24T17:04:47Z",
+      "side": 1,
+      "message": "Patch on top of stack passed CI, so giving manual Verified+1",
+      "revId": "c94fb400ec40a8550a89cd484bd1137dca029336",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
