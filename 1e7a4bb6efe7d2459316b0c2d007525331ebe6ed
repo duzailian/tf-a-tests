@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "812ce1ac_a2f88e60",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-29T12:26:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95b6ceac_89d35414",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 30,
+        "endChar": 30
+      },
+      "revId": "1e7a4bb6efe7d2459316b0c2d007525331ebe6ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac1aa0c8_68107216",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdb05907_9a3d1965",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-29T12:26:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac1aa0c8_68107216",
+      "range": {
+        "startLine": 28,
+        "startChar": 49,
+        "endLine": 28,
+        "endChar": 51
+      },
+      "revId": "1e7a4bb6efe7d2459316b0c2d007525331ebe6ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2927afc4_d35c1777",
@@ -60,6 +108,30 @@
       "writtenOn": "2023-08-23T17:06:21Z",
       "side": 1,
       "message": "shouldn\u0027t you check the boundaries for rec_num here as well?",
+      "range": {
+        "startLine": 102,
+        "startChar": 37,
+        "endLine": 102,
+        "endChar": 44
+      },
+      "revId": "1e7a4bb6efe7d2459316b0c2d007525331ebe6ed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d8efe60_be1681a1",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_shared_data.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-08-29T12:26:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2927afc4_d35c1777",
       "range": {
         "startLine": 102,
         "startChar": 37,
