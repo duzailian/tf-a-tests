@@ -8,6 +8,7 @@
 
 .global	sve_subtract_arrays_interleaved
 .global	sve_subtract_arrays
+.global sve_rdvl_1
 
 #if __GNUC__ > 8 || (__GNUC__ == 8 && __GNUC_MINOR__ > 0)
 
@@ -101,5 +102,20 @@ func sve_subtract_arrays
 	ret
 .arch_extension nosve
 endfunc sve_subtract_arrays
+
+/*
+ * uint64_t sve_rdvl_1(void)
+ *
+ * Run rdvl instruction with imm #1.
+ *
+ * Returns:
+ *   Return the length of one vector register in bytes
+ */
+func sve_rdvl_1
+.arch_extension sve
+	rdvl	x0, #1
+	ret
+.arch_extension nosve
+endfunc sve_rdvl_1
 
 #endif /* __GNUC__ > 8 || (__GNUC__ == 8 && __GNUC_MINOR__ > 0) */
