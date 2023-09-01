@@ -23,6 +23,7 @@ do {									\
 	if (_feat_check() != 0) {					\
 		if (is_init_val_set(_reg, _REG ## _INIT_VAL,		\
 			_REG ## _ ## FEAT_ ## _FEAT ## _MASK) == 0) {	\
+			INFO("test failing: feat: " #_FEAT ", reg: " #_REG "\n"); \
 			return TEST_RESULT_FAIL;			\
 		}							\
 	}								\
@@ -35,6 +36,7 @@ do {									\
 		if (is_init_val_set(_reg, _REG ## _INIT_VAL, _REG ## _	\
 			## FEAT_ ## _FEAT ## _ ## _FEAT2 ## _MASK)	\
 			== 0) {						\
+			INFO("test failing: feat: " #_FEAT ", feat2: " #_FEAT2 ", reg: " #_REG "\n"); \
 			return TEST_RESULT_FAIL;			\
 		}							\
 	}								\
