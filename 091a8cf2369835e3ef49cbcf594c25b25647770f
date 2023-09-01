@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1065bdb_685516ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2023-09-01T12:30:43Z",
+      "side": 1,
+      "message": "The static annals test failure is real and looks to be a simple style failure.\n\nhttps://ci.trustedfirmware.org/job/tf-a-static-checks/6077/\n\nThe other issues are unrelated to this patch. Something in another patch already merged looks to have evaded CI checking....",
+      "revId": "091a8cf2369835e3ef49cbcf594c25b25647770f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
