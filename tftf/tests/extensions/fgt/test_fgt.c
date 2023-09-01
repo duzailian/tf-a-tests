@@ -23,6 +23,7 @@ do {									\
 	if (_feat_check() != 0) {					\
 		if (is_init_val_set(_reg, _REG ## _INIT_VAL,		\
 			_REG ## _ ## FEAT_ ## _FEAT ## _MASK) == 0) {	\
+			INFO("test failing: feat: " #_FEAT ", reg: " #_REG "\n"); \
 			return TEST_RESULT_FAIL;			\
 		}							\
 	}								\
@@ -35,6 +36,7 @@ do {									\
 		if (is_init_val_set(_reg, _REG ## _INIT_VAL, _REG ## _	\
 			## FEAT_ ## _FEAT ## _ ## _FEAT2 ## _MASK)	\
 			== 0) {						\
+			INFO("test failing: feat: " #_FEAT ", feat2: " #_FEAT2 ", reg: " #_REG "\n"); \
 			return TEST_RESULT_FAIL;			\
 		}							\
 	}								\
@@ -49,6 +51,7 @@ do {									\
  */
 test_result_t test_fgt_enabled(void)
 {
+	INFO("Test starts\n");
 	SKIP_TEST_IF_AARCH32();
 
 #ifdef __aarch64__
@@ -58,12 +61,16 @@ test_result_t test_fgt_enabled(void)
 	u_register_t hfgrtr_el2 = read_hfgrtr_el2();
 	u_register_t hfgwtr_el2 = read_hfgwtr_el2();
 
+	INFO("Regs read\n");
+
 	/*
 	 * The following registers are not supposed to be consumed, but
 	 * are read to test their presence when FEAT_FGT is supported.
 	 */
 	read_hdfgrtr_el2();
 	read_hdfgwtr_el2();
+
+	INFO("Extra regs read\n");
 
 	CHECK_FEAT_TRAP_INITIALIZED(hfgitr_el2, HFGITR_EL2,		\
 		get_feat_brbe_support, BRBE)
