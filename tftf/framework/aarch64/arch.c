@@ -5,6 +5,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <arch_features.h>
 #include <arch_helpers.h>
 #include <arch_features.h>
 #include <tftf_lib.h>
@@ -25,15 +26,24 @@ void tftf_arch_setup(void)
 		write_hcr_el2(HCR_TGE_BIT);
 
 		/*
-		 * Disable trap of SVE instructions to EL2.
+		 * Disable trap of SVE, SME instructions to EL2.
 		 * The fields of the CPTR_EL2 register reset to an
 		 * architecturally UNKNOWN value.
 		 */
-		write_cptr_el2(CPTR_EL2_RES1);
+		write_cptr_el2(CPTR_EL2_RESET_VAL);
 		isb();
 
 		/* Clear SVE hint bit */
 		if (is_armv8_2_sve_present())
 			tftf_update_smc_sve_hint(false);
+
+		/*
+		 * Enable access to ZT0 storage when FEAT_SME2 is implemented
+		 * and enable FA64 when FEAT_SME_FA64 is implemented
+		 */
+		if (is_feat_sme_supported()) {
+			write_smcr_el2(SMCR_EL2_RESET_VAL);
+			isb();
+		}
 	}
 }
