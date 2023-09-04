@@ -33,7 +33,7 @@ REALM_SOURCES:=								\
 	realm_pmuv3.c							\
 	realm_rsi.c							\
 	realm_shared_data.c						\
-	realm_sve.c							\
+	realm_simd.c							\
 	)
 
 REALM_SOURCES += lib/${ARCH}/cache_helpers.S				\
