@@ -8,7 +8,11 @@
 #include <arch_helpers.h>
 #include <assert.h>
 #include <debug.h>
+#include <lib/extensions/fpu.h>
 #include <lib/extensions/sve.h>
+#include <tftf_lib.h>
+
+static uint8_t zero_mem[512];
 
 static inline uint64_t sve_read_zcr_elx(void)
 {
@@ -329,6 +333,7 @@ uint64_t sve_z_regs_compare(const sve_z_regs_t *s1, const sve_z_regs_t *s2)
 {
 	uint32_t z_size;
 	uint64_t cmp_bitmap = 0UL;
+	bool sve_hint = tftf_get_smc_sve_hint();
 
 	z_size = (uint32_t)sve_rdvl_1();
 
@@ -336,7 +341,17 @@ uint64_t sve_z_regs_compare(const sve_z_regs_t *s1, const sve_z_regs_t *s2)
 		uint8_t *s1_z = (uint8_t *)s1 + (i * z_size);
 		uint8_t *s2_z = (uint8_t *)s2 + (i * z_size);
 
-		if ((memcmp(s1_z, s2_z, z_size) == 0))
+		/*
+		 * For Z register the comparison is successful when
+		 * 1. whole Z register of 's1' and 's2' is equal or
+		 * 2. sve_hint is set and the lower 128 bits of 's1' and 's2' is
+		 *    equal and remaining upper bits of 's2' is zero
+		 */
+		if ((memcmp(s1_z, s2_z, z_size) == 0) ||
+		    (sve_hint && (z_size > FPU_Q_SIZE) &&
+		     (memcmp(s1_z, s2_z, FPU_Q_SIZE) == 0) &&
+		     (memcmp(s2_z + FPU_Q_SIZE, zero_mem,
+			     z_size - FPU_Q_SIZE) == 0)))
 			continue;
 
 		cmp_bitmap |= BIT_64(i);
@@ -357,6 +372,7 @@ uint64_t sve_p_regs_compare(const sve_p_regs_t *s1, const sve_p_regs_t *s2)
 {
 	uint32_t p_size;
 	uint64_t cmp_bitmap = 0UL;
+	bool sve_hint = tftf_get_smc_sve_hint();
 
 	p_size = (uint32_t)sve_rdvl_1() / 8;
 
@@ -364,7 +380,13 @@ uint64_t sve_p_regs_compare(const sve_p_regs_t *s1, const sve_p_regs_t *s2)
 		uint8_t *s1_p = (uint8_t *)s1 + (i * p_size);
 		uint8_t *s2_p = (uint8_t *)s2 + (i * p_size);
 
-		if ((memcmp(s1_p, s2_p, p_size) == 0))
+		/*
+		 * For P register the comparison is successful when
+		 * 1. whole P register of 's1' and 's2' is equal or
+		 * 2. sve_hint is set and the P register of 's2' is zero
+		 */
+		if ((memcmp(s1_p, s2_p, p_size) == 0) ||
+		    (sve_hint && (memcmp(s2_p, zero_mem, p_size) == 0)))
 			continue;
 
 		cmp_bitmap |= BIT_64(i);
@@ -385,6 +407,7 @@ uint64_t sve_ffr_regs_compare(const sve_ffr_regs_t *s1, const sve_ffr_regs_t *s2
 {
 	uint32_t ffr_size;
 	uint64_t cmp_bitmap = 0UL;
+	bool sve_hint = tftf_get_smc_sve_hint();
 
 	ffr_size = (uint32_t)sve_rdvl_1() / 8;
 
@@ -392,7 +415,13 @@ uint64_t sve_ffr_regs_compare(const sve_ffr_regs_t *s1, const sve_ffr_regs_t *s2
 		uint8_t *s1_ffr = (uint8_t *)s1 + (i * ffr_size);
 		uint8_t *s2_ffr = (uint8_t *)s2 + (i * ffr_size);
 
-		if ((memcmp(s1_ffr, s2_ffr, ffr_size) == 0))
+		/*
+		 * For FFR register the comparison is successful when
+		 * 1. whole FFR register of 's1' and 's2' is equal or
+		 * 2. sve_hint is set and the FFR register of 's2' is zero
+		 */
+		if ((memcmp(s1_ffr, s2_ffr, ffr_size) == 0) ||
+		    (sve_hint && (memcmp(s2_ffr, zero_mem, ffr_size) == 0)))
 			continue;
 
 		cmp_bitmap |= BIT_64(i);
