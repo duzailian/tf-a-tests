@@ -26,6 +26,7 @@ REALM_SOURCES:=								\
 	$(addprefix realm/,						\
 	aarch64/realm_entrypoint.S					\
 	aarch64/realm_exceptions.S					\
+	aarch64/plat_helpers.S						\
 	realm_debug.c							\
 	realm_interrupt.c						\
 	realm_pauth.c							\
