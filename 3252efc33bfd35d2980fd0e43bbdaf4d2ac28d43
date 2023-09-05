@@ -34,6 +34,24 @@
       "parentUuid": "b8662efb_019c88c1",
       "revId": "3252efc33bfd35d2980fd0e43bbdaf4d2ac28d43",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c32c0bc_72df2492",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-05T18:04:31Z",
+      "side": 1,
+      "message": "agree. not sure if i can simply implement a sip call (like the one Madhu did for espi interrupt testing) and if yes, would be good to agree on the ID, and i can clean up the patch to send a direct message to echo contents back?\nany other suggestions welcome.",
+      "parentUuid": "2621df59_0a861fa7",
+      "revId": "3252efc33bfd35d2980fd0e43bbdaf4d2ac28d43",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
