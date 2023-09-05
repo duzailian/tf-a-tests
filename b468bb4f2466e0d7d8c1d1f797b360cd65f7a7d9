@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e236afe_a0afb4ff",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-09-05T09:22:14Z",
+      "side": 1,
+      "message": "yes execution will start with realm_entrypoint, pc rewritten by host.\ni modified entrypoint for now",
+      "parentUuid": "5db788fc_dab9cb02",
+      "range": {
+        "startLine": 70,
+        "startChar": 12,
+        "endLine": 70,
+        "endChar": 25
+      },
+      "revId": "b468bb4f2466e0d7d8c1d1f797b360cd65f7a7d9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "367efb99_5ffc2c11",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-08-23T18:00:26Z",
       "side": 1,
       "message": "nit: Add an indentation level for better readability",
+      "range": {
+        "startLine": 68,
+        "startChar": 1,
+        "endLine": 71,
+        "endChar": 7
+      },
+      "revId": "b468bb4f2466e0d7d8c1d1f797b360cd65f7a7d9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe8d359c_3411f867",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-09-05T09:22:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "367efb99_5ffc2c11",
       "range": {
         "startLine": 68,
         "startChar": 1,
@@ -64,6 +112,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9783ec65_a53a3dc4",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-09-05T09:22:14Z",
+      "side": 1,
+      "message": "host will be trying to switch on different PE for each rec,\nalso added psci_affinity_info to check if cpu is off",
+      "parentUuid": "5d2e2691_b01e4fb6",
+      "revId": "b468bb4f2466e0d7d8c1d1f797b360cd65f7a7d9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "44ddaedb_a320c641",
@@ -77,6 +143,30 @@
       "writtenOn": "2023-08-23T18:00:26Z",
       "side": 1,
       "message": "static?",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 4
+      },
+      "revId": "b468bb4f2466e0d7d8c1d1f797b360cd65f7a7d9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b803583_45d4a957",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-09-05T09:22:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44ddaedb_a320c641",
       "range": {
         "startLine": 65,
         "startChar": 0,
