@@ -52,6 +52,24 @@
       "parentUuid": "2621df59_0a861fa7",
       "revId": "3252efc33bfd35d2980fd0e43bbdaf4d2ac28d43",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e6c0842_dd625a0d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-09-05T21:48:42Z",
+      "side": 1,
+      "message": "would it be possible to extend this idea further? i.e. NWd(tftf) sends dir msg to SPMD LSP. Further, SPMD LSP forwards it to SP1(8001). This message is echoed back to SPMD LSP which echoes back to tftf. this way we are involving hafnium in the code path related saving and restoring of general purpose registers as part of calling convention.",
+      "parentUuid": "3c32c0bc_72df2492",
+      "revId": "3252efc33bfd35d2980fd0e43bbdaf4d2ac28d43",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
