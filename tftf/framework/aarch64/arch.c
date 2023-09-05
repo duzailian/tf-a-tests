@@ -6,6 +6,8 @@
  */
 
 #include <arch_helpers.h>
+#include <arch_features.h>
+#include <tftf_lib.h>
 
 void tftf_arch_setup(void)
 {
@@ -29,5 +31,9 @@ void tftf_arch_setup(void)
 		 */
 		write_cptr_el2(CPTR_EL2_RES1);
 		isb();
+
+		/* Clear SVE hint bit */
+		if (is_armv8_2_sve_present())
+			tftf_update_smc_sve_hint(false);
 	}
 }
