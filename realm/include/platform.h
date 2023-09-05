@@ -8,13 +8,6 @@
 #ifndef PLATFORM_H
 #define PLATFORM_H
 
-/*
- * Helper that returns a linear core ID from a MPID
- * Need to provide a RSI_HOST_CALL to request this from Host platform.
- */
-unsigned int platform_get_core_pos(u_register_t mpid)
-{
-	return 0U;
-}
+unsigned int platform_get_core_pos(u_register_t mpid);
 
 #endif /* PLATFORM_H */
