@@ -658,8 +658,9 @@ static void ns_simd_print_cmd_config(bool cmd, simd_test_t type)
 	char __unused *cstr = cmd ? "write rand" : "read and compare";
 
 	if (type == TEST_SVE) {
-		INFO("TFTF: NS [%s] %s. Config: zcr: 0x%llx\n", tstr, cstr,
-		     (uint64_t)read_zcr_el2());
+		INFO("TFTF: NS [%s] %s. Config: zcr: 0x%llx, sve_hint: %d\n",
+		     tstr, cstr, (uint64_t)read_zcr_el2(),
+		     tftf_get_smc_sve_hint());
 	} else {
 		INFO("TFTF: NS [%s] %s\n", tstr, cstr);
 	}
@@ -667,7 +668,7 @@ static void ns_simd_print_cmd_config(bool cmd, simd_test_t type)
 
 /*
  * Randomly select TEST_SVE or TEST_FPU. For TEST_SVE, configure zcr_el2 with
- * random vector length
+ * random vector length and randomly enable or disable SMC SVE hint bit.
  */
 static simd_test_t ns_sve_select_random_config(void)
 {
@@ -675,6 +676,11 @@ static simd_test_t ns_sve_select_random_config(void)
 
 	if (rand() % 2) {
 		sve_config_vq(SVE_GET_RANDOM_VQ);
+		if (rand() % 2) {
+			tftf_update_smc_sve_hint(true);
+		} else {
+			tftf_update_smc_sve_hint(false);
+		}
 		type = TEST_SVE;
 	} else {
 		type = TEST_FPU;
@@ -692,6 +698,11 @@ static simd_test_t ns_sve_select_random_config(void)
 static simd_test_t ns_simd_select_random_config(void)
 {
 	simd_test_t type;
+
+	/* Cleanup old config */
+	if (is_armv8_2_sve_present()) {
+		tftf_update_smc_sve_hint(false);
+	}
 
 	if (is_armv8_2_sve_present()) {
 		type = ns_sve_select_random_config();
@@ -893,6 +904,11 @@ test_result_t host_and_realm_check_simd(void)
 
 	rc = TEST_RESULT_SUCCESS;
 rm_realm:
+	/* Cleanup old config */
+	if (is_armv8_2_sve_present()) {
+		tftf_update_smc_sve_hint(false);
+	}
+
 	if (!host_destroy_realm()) {
 		return TEST_RESULT_FAIL;
 	}
