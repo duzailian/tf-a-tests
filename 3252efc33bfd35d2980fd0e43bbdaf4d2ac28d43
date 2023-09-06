@@ -70,6 +70,24 @@
       "parentUuid": "3c32c0bc_72df2492",
       "revId": "3252efc33bfd35d2980fd0e43bbdaf4d2ac28d43",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "617c1551_d51303ad",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-06T13:37:48Z",
+      "side": 1,
+      "message": "Hi Madhu, if i remember the spec right (unless it has changed recently) normal world cannot send a message to the SPDM LSP. Has that changed? If yes, then we can extend the test to have NWD send a message to SPMD LSP.\n\nI think even without that, the hafnium save/restore path is involved right? not sure i follow how it is not involved? The entry is a synchronous entry and EL3 saves restores registers, and so does hafnium via the other world loop..\nLet me know if im missing something.",
+      "parentUuid": "2e6c0842_dd625a0d",
+      "revId": "3252efc33bfd35d2980fd0e43bbdaf4d2ac28d43",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
