@@ -88,6 +88,24 @@
       "parentUuid": "2e6c0842_dd625a0d",
       "revId": "3252efc33bfd35d2980fd0e43bbdaf4d2ac28d43",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3937c8de_3c7c638d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-09-06T15:51:14Z",
+      "side": 1,
+      "message": "Sorry for the confusion. Since the SiP call is translated to a FF-A direct message, I simply referred it to as dir req msg between tftf and SPMD LSP. \nAlso, you are right. I referred to the implementation of the function \"spmd_el3_ffa_msg_direct_req\" and found that the LSP constructs a direct request to SP 8001.",
+      "parentUuid": "617c1551_d51303ad",
+      "revId": "3252efc33bfd35d2980fd0e43bbdaf4d2ac28d43",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
