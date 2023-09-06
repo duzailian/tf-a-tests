@@ -106,6 +106,24 @@
       "parentUuid": "617c1551_d51303ad",
       "revId": "3252efc33bfd35d2980fd0e43bbdaf4d2ac28d43",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2be8af5a_8aeaccae",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_direct_messaging.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-06T19:57:36Z",
+      "side": 1,
+      "message": "No worries Madhu. Happy to make any other enhancements for this patch..please let me know. I will clean up the patch to make it look better, but would like alignment on what we want the patch/test to do :)",
+      "parentUuid": "3937c8de_3c7c638d",
+      "revId": "3252efc33bfd35d2980fd0e43bbdaf4d2ac28d43",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
