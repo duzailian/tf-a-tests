@@ -471,6 +471,7 @@ struct realm {
 	u_register_t rec[MAX_REC_COUNT];
 	u_register_t run[MAX_REC_COUNT];
 	u_register_t mpidr[MAX_REC_COUNT];
+	u_register_t host_mpidr[MAX_REC_COUNT];
 	u_register_t num_aux;
 	u_register_t rmm_feat_reg0;
 	u_register_t ipa_ns_buffer;

@@ -1133,6 +1133,7 @@ u_register_t host_realm_rec_enter(struct realm *realm,
 	u_register_t ret;
 	bool re_enter_rec;
 
+	realm->host_mpidr[rec_num] = read_mpidr_el1();
 	do {
 		re_enter_rec = false;
 		ret = host_rmi_handler(&(smc_args){RMI_REC_ENTER,

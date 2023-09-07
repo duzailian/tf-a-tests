@@ -37,6 +37,13 @@ static void realm_sleep_cmd(void)
 	waitms(sleep);
 }
 
+static void realm_loop_cmd(void)
+{
+	while (true) {
+        	waitms(500);
+	}
+}
+
 /*
  * This function requests RSI/ABI version from RMM.
  */
@@ -64,6 +71,14 @@ static void secondary_cpu(void)
 	spin_lock(&counter_lock);
 	is_secondary_cpu_booted++;
 	spin_unlock(&counter_lock);
+	tftf_smc(&args);
+	return;
+}
+
+static void realm_cpu_off_cmd()
+{
+	smc_args args = { SMC_PSCI_CPU_OFF };
+	realm_printf("CPU OFF \n");
 	tftf_smc(&args);
 	return;
 }
@@ -137,6 +152,13 @@ void realm_payload_main(void)
 		case REALM_SLEEP_CMD:
 			realm_sleep_cmd();
 			test_succeed = true;
+			break;
+		case REALM_LOOP_CMD:
+			realm_loop_cmd();
+			test_succeed = true;
+			break;
+		case REALM_CPU_OFF_CMD:
+			realm_cpu_off_cmd();
 			break;
 		case REALM_MULTIPLE_REC_CMD:
 			test_succeed = test_realm_multiple_rec_cmd();

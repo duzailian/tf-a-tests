@@ -357,3 +357,12 @@ test_result_t host_cmp_result(void)
 	return TEST_RESULT_FAIL;
 }
 
+unsigned int host_realm_find_rec_by_host_mpidr(unsigned int mpidr)
+{
+	for (unsigned int i = 0U; i < MAX_REC_COUNT; i++) {
+		if (realm.run[i] != 0U && realm.host_mpidr[i] == mpidr) {
+			return i;
+		}
+	}
+	return MAX_REC_COUNT;
+}
