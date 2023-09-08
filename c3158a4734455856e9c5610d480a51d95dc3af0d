@@ -16,6 +16,24 @@
       "message": "update docs(versal_net) to docs(versal-net)",
       "revId": "c3158a4734455856e9c5610d480a51d95dc3af0d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb73b987_bf4e175f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000469
+      },
+      "writtenOn": "2023-09-08T07:13:31Z",
+      "side": 1,
+      "message": "FYI: You can edit commit message.",
+      "parentUuid": "3e95af9e_f5fe407b",
+      "revId": "c3158a4734455856e9c5610d480a51d95dc3af0d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
