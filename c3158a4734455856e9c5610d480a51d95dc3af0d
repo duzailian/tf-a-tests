@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e95af9e_f5fe407b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000811
+      },
+      "writtenOn": "2023-09-08T07:11:59Z",
+      "side": 1,
+      "message": "update docs(versal_net) to docs(versal-net)",
+      "revId": "c3158a4734455856e9c5610d480a51d95dc3af0d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
