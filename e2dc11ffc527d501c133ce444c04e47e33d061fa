@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8597379_00ac6a00",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T17:29:46Z",
+      "side": 1,
+      "message": "so by decrementing \u0027i\u0027 here on the next iteration you effectively try again on the same CPU until it is OFF, and only after that you move to the next one, right?\n\nIf that is the intention, I don\u0027t like much incrementing and decrementing the counter variable in different places. Instead, I think it would be better if you:\n\n- Don\u0027t increment the counter in the for() declaration, instead just increment it once ret_vals.ret0 \u003d\u003d PSCI_STATE_OFF (which would effectively mean that you replace the for() loop with a while(i \u003c MAX_REC_COUNT) one OR\n- you add a while() loop inside the for() one which would iterate until the current CPU is off.",
+      "range": {
+        "startLine": 113,
+        "startChar": 3,
+        "endLine": 113,
+        "endChar": 7
+      },
+      "revId": "e2dc11ffc527d501c133ce444c04e47e33d061fa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "454993be_d0b7f6fe",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-08T17:29:46Z",
+      "side": 1,
+      "message": "Would it be possible to replace this with a do..while() loop? I don\u0027t see any more jumps to \"retry_another_cpu\"",
+      "range": {
+        "startLine": 127,
+        "startChar": 5,
+        "endLine": 127,
+        "endChar": 28
+      },
+      "revId": "e2dc11ffc527d501c133ce444c04e47e33d061fa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
