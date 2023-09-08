@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "391282ec_03bee98a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-09-08T12:48:22Z",
+      "side": 1,
+      "message": "Static analysis failed , Other tests have passed in CI.",
+      "revId": "973c388265dd6f0251fc7abe747556532bb18861",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
