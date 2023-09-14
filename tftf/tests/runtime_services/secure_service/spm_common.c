@@ -277,6 +277,70 @@ bool memory_retrieve(struct mailbox_buffers *mb,
 	return true;
 }
 
+bool hypervisor_retrieve_multiple_receivers(
+	struct mailbox_buffers *mb, struct ffa_memory_region **retrieved,
+	uint64_t handle, struct ffa_memory_access receivers[],
+	uint32_t receiver_count)
+{
+	struct ffa_value ret;
+	uint32_t fragment_size;
+	uint32_t total_size;
+
+	if (retrieved == NULL || mb == NULL) {
+		ERROR("Invalid parameters!\n");
+		return false;
+	}
+
+	ffa_memory_retrieve_request_init_multiple_receivers(
+		mb->send, handle, 0, receivers, receiver_count, 0, 0, 0, 0, 0,
+		0, 0);
+	((struct ffa_memory_region *)mb->send)->receiver_count = 0;
+
+	ret = ffa_mem_retrieve_req(sizeof(struct ffa_memory_region),
+				   sizeof(struct ffa_memory_region));
+
+	if (ffa_func_id(ret) != FFA_MEM_RETRIEVE_RESP) {
+		ERROR("Couldn't retrieve the memory page. Error: %x\n",
+		      ffa_error_code(ret));
+		return false;
+	}
+
+	/*
+	 * Following total_size and fragment_size are useful to keep track
+	 * of the state of transaction. When the sum of all fragment_size of all
+	 * fragments is equal to total_size, the memory transaction has been
+	 * completed.
+	 * This is a simple test with only one segment. As such, upon
+	 * successful ffa_mem_retrieve_req, total_size must be equal to
+	 * fragment_size.
+	 */
+	total_size = ret.arg1;
+	fragment_size = ret.arg2;
+
+	if (total_size != fragment_size) {
+		ERROR("Only expect one memory segment to be sent!\n");
+		return false;
+	}
+
+	if (fragment_size > PAGE_SIZE) {
+		ERROR("Fragment should be smaller than RX buffer!\n");
+		return false;
+	}
+
+	*retrieved = (struct ffa_memory_region *)mb->recv;
+
+	if ((*retrieved)->receiver_count > MAX_MEM_SHARE_RECIPIENTS) {
+		VERBOSE("SPMC memory sharing operations support max of %u "
+			"receivers!\n",
+			MAX_MEM_SHARE_RECIPIENTS);
+		return false;
+	}
+
+	VERBOSE("Memory Retrieved!\n");
+
+	return true;
+}
+
 bool hypervisor_retrieve(struct mailbox_buffers *mb,
 			 struct ffa_memory_region **retrieved, uint64_t handle,
 			 ffa_id_t receiver)
@@ -406,7 +470,7 @@ ffa_memory_handle_t memory_send(
  * configuration is statically defined and is implementation specific. However,
  * doing it in this file for simplicity and for testing purposes.
  */
-ffa_memory_handle_t memory_init_and_send(
+ffa_memory_handle_t memory_init_and_send_single_receiver(
 	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
 	ffa_id_t sender, ffa_id_t receiver,
 	const struct ffa_memory_region_constituent *constituents,
@@ -426,13 +490,12 @@ ffa_memory_handle_t memory_init_and_send(
 	 * share, for memory lend and memory donate these shall remain
 	 * unspecified.
 	 */
-	remaining_constituent_count = ffa_memory_region_init(
-		memory_region, memory_region_max_size, sender, receiver, constituents,
-		constituents_count, 0, 0, data_access,
+	remaining_constituent_count = ffa_memory_region_init_single_receiver(
+		memory_region, memory_region_max_size, sender, receiver,
+		constituents, constituents_count, 0, 0, data_access,
 		FFA_INSTRUCTION_ACCESS_NOT_SPECIFIED,
-		mem_func == FFA_MEM_SHARE_SMC32
-			? FFA_MEMORY_NORMAL_MEM
-			: FFA_MEMORY_NOT_SPECIFIED_MEM,
+		mem_func == FFA_MEM_SHARE_SMC32 ? FFA_MEMORY_NORMAL_MEM
+						: FFA_MEMORY_NOT_SPECIFIED_MEM,
 		FFA_MEMORY_CACHE_WRITE_BACK, FFA_MEMORY_INNER_SHAREABLE,
 		&total_length, &fragment_length);
 
@@ -447,6 +510,42 @@ ffa_memory_handle_t memory_init_and_send(
 
 	return memory_send(memory_region, mem_func, fragment_length,
 			       total_length, ret);
+}
+
+ffa_memory_handle_t memory_init_and_send_multiple_receivers(
+	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
+	ffa_id_t sender, struct ffa_memory_access receivers[],
+	uint32_t receiver_count,
+	const struct ffa_memory_region_constituent *constituents,
+	uint32_t constituents_count, uint32_t mem_func, struct ffa_value *ret)
+{
+	uint32_t remaining_constituent_count;
+	uint32_t total_length;
+	uint32_t fragment_length;
+
+	/*
+	 * Initialize memory region structure for the respective memory send
+	 * operation. Note that memory type shall only be specified for memory
+	 * share, for memory lend and memory donate these shall remain
+	 * unspecified.
+	 */
+	remaining_constituent_count = ffa_memory_region_init(
+		memory_region, memory_region_max_size, sender, receivers,
+		receiver_count, constituents, constituents_count, 0, 0,
+		FFA_MEMORY_NORMAL_MEM, FFA_MEMORY_CACHE_WRITE_BACK,
+		FFA_MEMORY_INNER_SHAREABLE, &total_length, &fragment_length);
+
+	/*
+	 * For simplicity of the test, and at least for the time being,
+	 * the following condition needs to be true.
+	 */
+	if (remaining_constituent_count != 0U) {
+		ERROR("Remaining constituent should be 0\n");
+		return FFA_MEMORY_HANDLE_INVALID;
+	}
+
+	return memory_send(memory_region, mem_func, fragment_length,
+			   total_length, ret);
 }
 
 static bool ffa_uuid_equal(const struct ffa_uuid uuid1,
