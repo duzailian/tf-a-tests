@@ -94,6 +94,7 @@
                function="test_hypervisor_lend_retrieve" />
      <testcase name="Hypervisor donate + memory retrieve request"
                function="test_hypervisor_donate_retrieve" />
+
      <testcase name="Lend Memory to Secure World"
                function="test_mem_lend_sp" />
      <testcase name="Lend memory, clear flag set"
