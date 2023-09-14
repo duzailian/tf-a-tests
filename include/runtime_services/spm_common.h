@@ -118,12 +118,14 @@ unsigned int get_ffa_feature_test_target(const struct ffa_features_test **test_t
  */
 bool memory_retrieve(struct mailbox_buffers *mb,
 		     struct ffa_memory_region **retrieved, uint64_t handle,
-		     ffa_id_t sender, ffa_id_t receiver,
-		     ffa_memory_region_flags_t flags, uint32_t mem_func);
+		     ffa_id_t sender, struct ffa_memory_access *receivers,
+		     uint32_t receiver_count, ffa_memory_region_flags_t flags,
+		     uint32_t mem_func);
 
 bool hypervisor_retrieve(struct mailbox_buffers *mb,
 			 struct ffa_memory_region **retrieved, uint64_t handle,
-			 ffa_id_t receiver);
+			 struct ffa_memory_access receivers[],
+			 uint32_t receiver_count);
 
 /**
  * Helper to conduct a memory relinquish. The caller is usually the receiver,
@@ -138,8 +140,9 @@ ffa_memory_handle_t memory_send(
 
 ffa_memory_handle_t memory_init_and_send(
 	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
-	ffa_id_t sender, ffa_id_t receiver,
-	const struct ffa_memory_region_constituent* constituents,
+	ffa_id_t sender, struct ffa_memory_access receivers[],
+	uint32_t receiver_count,
+	const struct ffa_memory_region_constituent *constituents,
 	uint32_t constituents_count, uint32_t mem_func, struct ffa_value *ret);
 
 bool ffa_partition_info_helper(struct mailbox_buffers *mb,
@@ -152,4 +155,7 @@ bool disable_trusted_wdog_interrupt(ffa_id_t source, ffa_id_t dest);
 bool ffa_partition_info_regs_helper(const struct ffa_uuid uuid,
 		       const struct ffa_partition_info *expected,
 		       const uint16_t expected_size);
+
+struct ffa_memory_access make_reciever(uint32_t mem_func, ffa_id_t receiver);
+
 #endif /* SPM_COMMON_H */
