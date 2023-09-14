@@ -54,14 +54,18 @@ static bool test_memory_send_expect_denied(uint32_t mem_func,
 					};
 	ffa_memory_handle_t handle;
 
-	const uint32_t constituents_count = sizeof(constituents) /
-			sizeof(struct ffa_memory_region_constituent);
+	const uint32_t constituents_count =
+		sizeof(constituents) /
+		sizeof(struct ffa_memory_region_constituent);
+
+	struct ffa_memory_access receiver =
+		init_receiver_from_mem_func(borrower, mem_func);
+
 	GET_TFTF_MAILBOX(mb);
 
-	handle = memory_init_and_send((struct ffa_memory_region *)mb.send,
-					MAILBOX_SIZE, SENDER, borrower,
-					constituents, constituents_count,
-					mem_func, &ret);
+	handle = memory_init_and_send(
+		(struct ffa_memory_region *)mb.send, MAILBOX_SIZE, SENDER,
+		&receiver, 1, constituents, constituents_count, mem_func, &ret);
 
 	if (handle != FFA_MEMORY_HANDLE_INVALID) {
 		ERROR("Received a valid FF-A memory handle, and that isn't"
@@ -134,6 +138,9 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 	/* Arbitrarily write 5 words after using memory. */
 	const uint32_t nr_words_to_write = 5;
 
+	struct ffa_memory_access receiver =
+		init_receiver_from_mem_func(borrower, mem_func);
+
 	/***********************************************************************
 	 * Check if SPMC has ffa_version and expected FFA endpoints are deployed.
 	 **********************************************************************/
@@ -149,10 +156,9 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 		VERBOSE("TFTF - Address: %p\n", constituents[0].address);
 	}
 
-	handle = memory_init_and_send((struct ffa_memory_region *)mb.send,
-					MAILBOX_SIZE, SENDER, borrower,
-					constituents, constituents_count,
-					mem_func, &ret);
+	handle = memory_init_and_send(
+		(struct ffa_memory_region *)mb.send, MAILBOX_SIZE, SENDER,
+		&receiver, 1, constituents, constituents_count, mem_func, &ret);
 
 	if (handle == FFA_MEMORY_HANDLE_INVALID) {
 		return TEST_RESULT_FAIL;
@@ -404,16 +410,18 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 	/* Arbitrarily write 10 words after using shared memory. */
 	const uint32_t nr_words_to_write = 10U;
 
+	struct ffa_memory_access receiver =
+		init_receiver_from_mem_func(RECEIVER, FFA_MEM_LEND_SMC32);
+
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 
 	GET_TFTF_MAILBOX(mb);
 
 	remaining_constituent_count = ffa_memory_region_init(
 		(struct ffa_memory_region *)mb.send, MAILBOX_SIZE, SENDER,
-		RECEIVER, constituents, constituents_count, 0,
-		FFA_MEMORY_REGION_FLAG_CLEAR, FFA_DATA_ACCESS_RW,
-		FFA_INSTRUCTION_ACCESS_NOT_SPECIFIED,
-		FFA_MEMORY_NOT_SPECIFIED_MEM, 0, 0,
+		&receiver, 1, constituents, constituents_count, 0,
+		FFA_MEMORY_REGION_FLAG_CLEAR, FFA_MEMORY_NOT_SPECIFIED_MEM,
+		FFA_MEMORY_CACHE_RESERVED, FFA_MEMORY_SHARE_NON_SHAREABLE,
 		&total_length, &fragment_length);
 
 	if (remaining_constituent_count != 0) {
@@ -573,8 +581,7 @@ static bool verify_composite(struct ffa_composite_memory_region *composite,
 	return true;
 }
 
-static bool verify_constituent(struct ffa_memory_region_constituent *constituent,
-		   uint32_t page_count) {
+static bool verify_constituent(struct ffa_memory_region_constituent *constituent, uint32_t page_count) {
 	if (constituent->page_count != page_count) {
 		ERROR("constituent.page_count=%d, expected %d\n",
 		      constituent->page_count, page_count);
@@ -591,17 +598,18 @@ static bool verify_constituent(struct ffa_memory_region_constituent *constituent
 /*
  * Helper for performing a hypervisor retrieve request
  */
-static test_result_t hypervisor_retrieve_request_test_helper(uint32_t mem_func)
-{
+static test_result_t hypervisor_retrieve_request_test_helper(uint32_t mem_func, bool multiple_receivers) {
 
-	struct ffa_memory_region_constituent sent_constituents[] = {
-		{(void *)share_page, 1, 0}};
+	struct ffa_memory_region_constituent sent_constituents[] = {{
+		.address = (void *)share_page,
+		.page_count = 1,
+		.reserved = 0,
+	}};
 	uint32_t sent_constituents_count = ARRAY_SIZE(sent_constituents);
 	struct mailbox_buffers mb;
+	struct ffa_memory_region *hypervisor_retrieve_response;
 	ffa_memory_handle_t handle;
 	struct ffa_value ret;
-	struct ffa_memory_region sent_region;
-	struct ffa_memory_region *hypervisor_retrieve_response;
 
 	uint32_t expected_flags = 0;
 	switch (mem_func) {
@@ -623,43 +631,36 @@ static test_result_t hypervisor_retrieve_request_test_helper(uint32_t mem_func)
 		.cacheability = FFA_MEMORY_CACHE_WRITE_BACK,
 		.shareability = FFA_MEMORY_INNER_SHAREABLE,
 		.security = FFA_MEMORY_SECURITY_NON_SECURE,
-		.type = (mem_func != FFA_MEM_SHARE_SMC32)
+		.type = (!multiple_receivers && mem_func != FFA_MEM_SHARE_SMC32)
 				? FFA_MEMORY_NOT_SPECIFIED_MEM
 				: FFA_MEMORY_NORMAL_MEM,
 	};
+
+	struct ffa_memory_access receivers[2] = {
+		init_receiver_from_mem_func(SP_ID(1), mem_func),
+		init_receiver_from_mem_func(SP_ID(2), mem_func),
+	};
+
+	uint32_t receiver_count =
+		multiple_receivers ? ARRAY_SIZE(receivers) : 1;
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 	GET_TFTF_MAILBOX(mb);
 
 	/* Share */
-	handle = memory_init_and_send(mb.send, MAILBOX_SIZE, SENDER, RECEIVER,
-				      sent_constituents,
+	handle = memory_init_and_send(mb.send, MAILBOX_SIZE, SENDER, receivers,
+				      receiver_count, sent_constituents,
 				      sent_constituents_count, mem_func, &ret);
 	if (handle == FFA_MEMORY_HANDLE_INVALID) {
 		ERROR("Memory share failed: %d\n", ffa_error_code(ret));
 		return TEST_RESULT_FAIL;
 	}
 
-	memcpy(&sent_region, mb.send, sizeof(sent_region));
-	struct ffa_memory_access sent_receivers[sent_region.receiver_count];
-	memcpy(sent_receivers, ((struct ffa_memory_region *)mb.send)->receivers,
-	       sizeof(sent_receivers));
-
-	struct ffa_composite_memory_region
-		sent_composite_regions[sent_region.receiver_count];
-	for (uint32_t i = 0; i < sent_region.receiver_count; i++) {
-		memcpy(&sent_composite_regions[i],
-		       ffa_memory_region_get_composite(mb.send, i),
-		       sizeof(struct ffa_composite_memory_region));
-	}
-
 	/*
 	 * Send Hypervisor Retrieve request according to section 17.4.3 of FFA
 	 * v1.2-REL0 specification
 	 */
-	if (!hypervisor_retrieve(&mb, &hypervisor_retrieve_response, handle,
-				 RECEIVER))
-	{
+	if (!hypervisor_retrieve(&mb, &hypervisor_retrieve_response, handle, receivers, receiver_count)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -672,8 +673,7 @@ static test_result_t hypervisor_retrieve_request_test_helper(uint32_t mem_func)
 	if (!verify_retrieve_reponse(
 		    hypervisor_retrieve_response, SENDER, expected_attrs,
 		    expected_flags, handle, 0, sizeof(struct ffa_memory_access),
-		    1, offsetof(struct ffa_memory_region, receivers)))
-	{
+		    1, offsetof(struct ffa_memory_region, receivers))) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -687,9 +687,7 @@ static test_result_t hypervisor_retrieve_request_test_helper(uint32_t mem_func)
 			return TEST_RESULT_FAIL;
 		}
 
-		if (!verify_composite(composite, sent_constituents_count,
-				      sent_constituents_count))
-		{
+		if (!verify_composite(composite, sent_constituents_count, sent_constituents_count)) {
 			return TEST_RESULT_FAIL;
 		}
 
@@ -722,15 +720,30 @@ static test_result_t hypervisor_retrieve_request_test_helper(uint32_t mem_func)
 
 test_result_t test_hypervisor_share_retrieve(void)
 {
-	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC32);
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC32,
+						       false);
 }
 
 test_result_t test_hypervisor_lend_retrieve(void)
 {
-	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC32);
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC32,
+						       false);
 }
 
 test_result_t test_hypervisor_donate_retrieve(void)
 {
-	return hypervisor_retrieve_request_test_helper(FFA_MEM_DONATE_SMC32);
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_DONATE_SMC32,
+						       false);
+}
+
+test_result_t test_hypervisor_share_retrieve_multiple_receivers(void)
+{
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC32,
+						       true);
+}
+
+test_result_t test_hypervisor_lend_retrieve_multiple_receivers(void)
+{
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC32,
+						       true);
 }
