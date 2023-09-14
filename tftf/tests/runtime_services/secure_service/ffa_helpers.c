@@ -171,6 +171,95 @@ static void ffa_memory_region_init_header(
 	memset(memory_region->reserved, 0, sizeof(memory_region->reserved));
 }
 
+void ffa_copy_memory_region_constituents(
+	struct ffa_memory_region_constituent *dest,
+	const struct ffa_memory_region_constituent *src)
+{
+	dest->address = src->address;
+	dest->page_count = src->page_count;
+	dest->reserved = 0;
+}
+
+/**
+ * Copies as many as possible of the given constituents to the respective
+ * memory region and sets the respective offset.
+ *
+ * Returns the number of constituents remaining which wouldn't fit, and (via
+ * return parameters) the size in bytes of the first fragment of data copied to
+ * `memory_region` (attributes, constituents and memory region header size), and
+ * the total size of the memory sharing message including all constituents.
+ */
+static uint32_t ffa_memory_region_init_constituents(
+	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
+	const struct ffa_memory_region_constituent constituents[],
+	uint32_t constituent_count, uint32_t *total_length,
+	uint32_t *fragment_length)
+{
+	struct ffa_composite_memory_region *composite_memory_region;
+	uint32_t fragment_max_constituents;
+	uint32_t constituents_offset;
+	uint32_t count_to_copy;
+
+	/*
+	 * Note that `sizeof(struct_ffa_memory_region)` and `sizeof(struct
+	 * ffa_memory_access)` must both be multiples of 16 (as verified by the
+	 * asserts in `ffa_memory.c`, so it is guaranteed that the offset we
+	 * calculate here is aligned to a 64-bit boundary and so 64-bit values
+	 * can be copied without alignment faults.
+	 * If there are multiple receiver endpoints, their respective access
+	 * structure should point to the same offset value.
+	 */
+	for (uint32_t i = 0; i < memory_region->receiver_count; i++) {
+		memory_region->receivers[i].composite_memory_region_offset =
+			sizeof(struct ffa_memory_region) +
+			memory_region->receiver_count *
+				sizeof(struct ffa_memory_access);
+	}
+
+	composite_memory_region =
+		ffa_memory_region_get_composite(memory_region, 0);
+	composite_memory_region->page_count = 0;
+	composite_memory_region->constituent_count = constituent_count;
+	composite_memory_region->reserved_0 = 0;
+
+	constituents_offset =
+		memory_region->receivers[0].composite_memory_region_offset +
+		sizeof(struct ffa_composite_memory_region);
+	fragment_max_constituents =
+		(memory_region_max_size - constituents_offset) /
+		sizeof(struct ffa_memory_region_constituent);
+
+	count_to_copy = constituent_count;
+	if (count_to_copy > fragment_max_constituents) {
+		count_to_copy = fragment_max_constituents;
+	}
+
+	for (uint32_t i = 0; i < constituent_count; i++) {
+		if (i < count_to_copy) {
+			ffa_copy_memory_region_constituents(
+				&composite_memory_region->constituents[i],
+				&constituents[i]);
+		}
+		composite_memory_region->page_count +=
+			constituents[i].page_count;
+	}
+
+	if (total_length != NULL) {
+		*total_length =
+			constituents_offset +
+			composite_memory_region->constituent_count *
+				sizeof(struct ffa_memory_region_constituent);
+	}
+	if (fragment_length != NULL) {
+		*fragment_length =
+			constituents_offset +
+			count_to_copy *
+				sizeof(struct ffa_memory_region_constituent);
+	}
+
+	return composite_memory_region->constituent_count - count_to_copy;
+}
+
 /**
  * Initialises the given `ffa_memory_region` and copies as many as possible of
  * the given constituents to it.
@@ -193,11 +282,6 @@ uint32_t ffa_memory_region_init(
 {
 	ffa_memory_access_permissions_t permissions = 0;
 	ffa_memory_attributes_t attributes = 0;
-	struct ffa_composite_memory_region *composite_memory_region;
-	uint32_t fragment_max_constituents;
-	uint32_t count_to_copy;
-	uint32_t i;
-	uint32_t constituents_offset;
 
 	/* Set memory region's permissions. */
 	ffa_set_data_access_attr(&permissions, data_access);
@@ -210,59 +294,10 @@ uint32_t ffa_memory_region_init(
 
 	ffa_memory_region_init_header(memory_region, sender, attributes, flags,
 				      0, tag, receiver, permissions);
-	/*
-	 * Note that `sizeof(struct_ffa_memory_region)` and `sizeof(struct
-	 * ffa_memory_access)` must both be multiples of 16 (as verified by the
-	 * asserts in `ffa_memory.c`, so it is guaranteed that the offset we
-	 * calculate here is aligned to a 64-bit boundary and so 64-bit values
-	 * can be copied without alignment faults.
-	 */
-	memory_region->receivers[0].composite_memory_region_offset =
-		sizeof(struct ffa_memory_region) +
-		memory_region->receiver_count *
-			sizeof(struct ffa_memory_access);
 
-	composite_memory_region =
-		ffa_memory_region_get_composite(memory_region, 0);
-	composite_memory_region->page_count = 0;
-	composite_memory_region->constituent_count = constituent_count;
-	composite_memory_region->reserved_0 = 0;
-
-	constituents_offset =
-		memory_region->receivers[0].composite_memory_region_offset +
-		sizeof(struct ffa_composite_memory_region);
-	fragment_max_constituents =
-		(memory_region_max_size - constituents_offset) /
-		sizeof(struct ffa_memory_region_constituent);
-
-	count_to_copy = constituent_count;
-	if (count_to_copy > fragment_max_constituents) {
-		count_to_copy = fragment_max_constituents;
-	}
-
-	for (i = 0; i < constituent_count; ++i) {
-		if (i < count_to_copy) {
-			composite_memory_region->constituents[i] =
-				constituents[i];
-		}
-		composite_memory_region->page_count +=
-			constituents[i].page_count;
-	}
-
-	if (total_length != NULL) {
-		*total_length =
-			constituents_offset +
-			composite_memory_region->constituent_count *
-				sizeof(struct ffa_memory_region_constituent);
-	}
-	if (fragment_length != NULL) {
-		*fragment_length =
-			constituents_offset +
-			count_to_copy *
-				sizeof(struct ffa_memory_region_constituent);
-	}
-
-	return composite_memory_region->constituent_count - count_to_copy;
+	return ffa_memory_region_init_constituents(
+		memory_region, memory_region_max_size, constituents,
+		constituent_count, total_length, fragment_length);
 }
 
 /**
