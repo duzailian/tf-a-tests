@@ -668,6 +668,15 @@ static inline uint32_t ffa_mem_relinquish_init(
 	return sizeof(struct ffa_mem_relinquish) + sizeof(ffa_id_t);
 }
 
+uint32_t ffa_memory_retrieve_request_init_multiple_receivers(
+	struct ffa_memory_region *memory_region, ffa_memory_handle_t handle,
+	ffa_id_t sender, struct ffa_memory_access receivers[],
+	uint32_t receiver_count, uint32_t tag, ffa_memory_region_flags_t flags,
+	enum ffa_data_access data_access,
+	enum ffa_instruction_access instruction_access,
+	enum ffa_memory_type type, enum ffa_memory_cacheability cacheability,
+	enum ffa_memory_shareability shareability);
+
 uint32_t ffa_memory_retrieve_request_init(
 	struct ffa_memory_region *memory_region, ffa_memory_handle_t handle,
 	ffa_id_t sender, ffa_id_t receiver, uint32_t tag,
@@ -676,7 +685,7 @@ uint32_t ffa_memory_retrieve_request_init(
 	enum ffa_memory_type type, enum ffa_memory_cacheability cacheability,
 	enum ffa_memory_shareability shareability);
 
-uint32_t ffa_memory_region_init(
+uint32_t ffa_memory_region_init_single_receiver(
 	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
 	ffa_id_t sender, ffa_id_t receiver,
 	const struct ffa_memory_region_constituent constituents[],
@@ -684,6 +693,17 @@ uint32_t ffa_memory_region_init(
 	ffa_memory_region_flags_t flags, enum ffa_data_access data_access,
 	enum ffa_instruction_access instruction_access,
 	enum ffa_memory_type type, enum ffa_memory_cacheability cacheability,
+	enum ffa_memory_shareability shareability, uint32_t *total_length,
+	uint32_t *fragment_length);
+
+uint32_t ffa_memory_region_init(
+	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
+	ffa_id_t sender, struct ffa_memory_access receivers[],
+	uint32_t receiver_count,
+	const struct ffa_memory_region_constituent constituents[],
+	uint32_t constituent_count, uint32_t tag,
+	ffa_memory_region_flags_t flags, enum ffa_memory_type type,
+	enum ffa_memory_cacheability cacheability,
 	enum ffa_memory_shareability shareability, uint32_t *total_length,
 	uint32_t *fragment_length);
 
