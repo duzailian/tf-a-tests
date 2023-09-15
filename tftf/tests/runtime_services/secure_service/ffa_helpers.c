@@ -142,6 +142,23 @@ struct ffa_value ffa_msg_send_direct_resp32(ffa_id_t source_id,
 	return ffa_service_call(&args);
 }
 
+void ffa_memory_region_init_header_multiple_receivers(
+	struct ffa_memory_region *memory_region, ffa_id_t sender,
+	ffa_memory_attributes_t attributes, ffa_memory_region_flags_t flags,
+	ffa_memory_handle_t handle, uint32_t tag, uint32_t receiver_count)
+{
+	memory_region->sender = sender;
+	memory_region->attributes = attributes;
+	memory_region->flags = flags;
+	memory_region->handle = handle;
+	memory_region->tag = tag;
+	memory_region->memory_access_desc_size =
+		sizeof(struct ffa_memory_access);
+	memory_region->receiver_count = receiver_count;
+	memory_region->receivers_offset =
+		offsetof(struct ffa_memory_region, receivers);
+	memset(memory_region->reserved, 0, sizeof(memory_region->reserved));
+}
 
 /**
  * Initialises the header of the given `ffa_memory_region`, not including the
@@ -258,6 +275,36 @@ static uint32_t ffa_memory_region_init_constituents(
 	}
 
 	return composite_memory_region->constituent_count - count_to_copy;
+}
+
+uint32_t ffa_memory_region_init_multiple_receivers(
+	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
+	ffa_id_t sender, struct ffa_memory_access receivers[],
+	uint32_t receiver_count,
+	const struct ffa_memory_region_constituent constituents[],
+	uint32_t constituent_count, uint32_t tag,
+	ffa_memory_region_flags_t flags, enum ffa_memory_type type,
+	enum ffa_memory_cacheability cacheability,
+	enum ffa_memory_shareability shareability, uint32_t *total_length,
+	uint32_t *fragment_length)
+{
+	ffa_memory_attributes_t attributes = 0;
+
+	/* Set memory region's page attributes. */
+	ffa_set_memory_type_attr(&attributes, type);
+	ffa_set_memory_cacheability_attr(&attributes, cacheability);
+	ffa_set_memory_shareability_attr(&attributes, shareability);
+
+	ffa_memory_region_init_header_multiple_receivers(memory_region, sender,
+							 attributes, flags, 0,
+							 tag, receiver_count);
+
+	memcpy(memory_region->receivers, receivers,
+	       receiver_count * sizeof(struct ffa_memory_access));
+
+	return ffa_memory_region_init_constituents(
+		memory_region, memory_region_max_size, constituents,
+		constituent_count, total_length, fragment_length);
 }
 
 /**
