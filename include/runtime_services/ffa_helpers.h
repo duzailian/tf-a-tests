@@ -687,6 +687,17 @@ uint32_t ffa_memory_region_init(
 	enum ffa_memory_shareability shareability, uint32_t *total_length,
 	uint32_t *fragment_length);
 
+uint32_t ffa_memory_region_init_multiple_receivers(
+	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
+	ffa_id_t sender, struct ffa_memory_access receivers[],
+	uint32_t receiver_count,
+	const struct ffa_memory_region_constituent constituents[],
+	uint32_t constituent_count, uint32_t tag,
+	ffa_memory_region_flags_t flags, enum ffa_memory_type type,
+	enum ffa_memory_cacheability cacheability,
+	enum ffa_memory_shareability shareability, uint32_t *total_length,
+	uint32_t *fragment_length);
+
 static inline ffa_id_t ffa_dir_msg_dest(struct ffa_value val) {
 	return (ffa_id_t)val.arg1 & U(0xFFFF);
 }
