@@ -636,6 +636,126 @@ test_result_t hypervisor_retrieve_request_test_helper(uint32_t mem_func)
 	return TEST_RESULT_SUCCESS;
 }
 
+test_result_t
+hypervisor_retrieve_request_multiple_receivers_test_helper(uint32_t mem_func)
+{
+	struct ffa_memory_region_constituent tx_constituents[] = {
+		{(void *)share_page, 1, 0}};
+	const uint32_t sent_constituents_count = ARRAY_SIZE(tx_constituents);
+	struct mailbox_buffers mb;
+	ffa_memory_handle_t handle;
+	struct ffa_value ret;
+	struct ffa_memory_region tx_region;
+	struct ffa_memory_region *hypervisor_retrieve_response;
+
+	uint32_t permissions = mem_func == FFA_MEM_DONATE_SMC32
+				       ? FFA_DATA_ACCESS_NOT_SPECIFIED
+				       : FFA_DATA_ACCESS_RW;
+
+	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
+	GET_TFTF_MAILBOX(mb);
+
+	struct ffa_memory_access receivers[2] = {
+		{
+			.receiver_permissions = {.permissions = permissions,
+						 .receiver = SP_ID(1),
+						 .flags = 0},
+			.reserved_0 = 0,
+		},
+		{
+			.receiver_permissions = {.permissions = permissions,
+						 .receiver = SP_ID(2),
+						 .flags = 0},
+			.reserved_0 = 0,
+		}};
+
+	/* Share */
+	handle = memory_init_and_send_multiple_receivers(
+		mb.send, MAILBOX_SIZE, SENDER, receivers, ARRAY_SIZE(receivers),
+		tx_constituents, sent_constituents_count, mem_func, &ret);
+	if (handle == FFA_MEMORY_HANDLE_INVALID) {
+		ERROR("Memory share failed: %d\n", ffa_error_code(ret));
+		return TEST_RESULT_FAIL;
+	}
+
+	memcpy(&tx_region, mb.send, sizeof(tx_region));
+	struct ffa_memory_access tx_receivers[tx_region.receiver_count];
+	memcpy(tx_receivers, ((struct ffa_memory_region *)mb.send)->receivers,
+	       sizeof(tx_receivers));
+
+	struct ffa_composite_memory_region
+		tx_composite_regions[tx_region.receiver_count];
+	for (uint32_t i = 0; i < tx_region.receiver_count; i++) {
+		memcpy(&tx_composite_regions[i],
+		       ffa_memory_region_get_composite(mb.send, i),
+		       sizeof(struct ffa_composite_memory_region));
+	}
+
+	/*
+	 * Send Hypervisor Retrieve request according to section 16.4.3 of
+	 * FFA v1.1-REL0 specification
+	 */
+	if (!hypervisor_retrieve(&mb, &hypervisor_retrieve_response, handle,
+				 RECEIVER))
+	{
+		return TEST_RESULT_FAIL;
+	}
+
+	/*
+	 * Verify the received `FFA_MEM_RETRIEVE_RESP` aligns with
+	 * transaction description sent above
+	 */
+	hypervisor_retrieve_response = mb.recv;
+	TRY(compare_ffa_memory_regions(hypervisor_retrieve_response,
+				       &tx_region));
+
+	for (uint32_t i = 0; i < hypervisor_retrieve_response->receiver_count;
+	     i++)
+	{
+		struct ffa_memory_access rx_access = {
+			.reserved_0 = 0,
+			/* sizeof(ffa_memory_region) + receiver_count *
+			   sizeof(ffa_memory_access), */
+			.composite_memory_region_offset = 80,
+			.receiver_permissions = {.permissions = permissions,
+						 .receiver = RECEIVER,
+						 .flags = 0},
+
+		};
+		struct ffa_memory_access tx_access = tx_receivers[i];
+		TRY(compare_ffa_memory_accesses(&rx_access, &tx_access));
+
+		struct ffa_composite_memory_region *rx_composite =
+			ffa_memory_region_get_composite(
+				hypervisor_retrieve_response, i);
+		struct ffa_composite_memory_region *tx_composite =
+			&tx_composite_regions[i];
+		TRY(compare_ffa_composite_memory_regions(rx_composite,
+							 tx_composite));
+
+		for (uint32_t j = 0; j < rx_composite->constituent_count; j++) {
+			TRY(compare_ffa_memory_region_constituents(
+				&rx_composite->constituents[j],
+				&tx_constituents[j]));
+		}
+	}
+
+	/* Reclaim for the SPMC to deallocate any data related to the handle. */
+	ret = ffa_mem_reclaim(handle, 0);
+	if (is_ffa_call_error(ret)) {
+		ERROR("Memory reclaim failed: %d\n", ffa_error_code(ret));
+		return TEST_RESULT_FAIL;
+	}
+
+	ret = ffa_rx_release();
+	if (is_ffa_call_error(ret)) {
+		ERROR("rx release failed: %d\n", ffa_error_code(ret));
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
 test_result_t test_hypervisor_share_retrieve(void)
 {
 	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC32);
@@ -649,4 +769,16 @@ test_result_t test_hypervisor_lend_retrieve(void)
 test_result_t test_hypervisor_donate_retrieve(void)
 {
 	return hypervisor_retrieve_request_test_helper(FFA_MEM_DONATE_SMC32);
+}
+
+test_result_t test_hypervisor_share_retrieve_multiple_receivers(void)
+{
+	return hypervisor_retrieve_request_multiple_receivers_test_helper(
+		FFA_MEM_SHARE_SMC32);
+}
+
+test_result_t test_hypervisor_lend_retrieve_multiple_receivers(void)
+{
+	return hypervisor_retrieve_request_multiple_receivers_test_helper(
+		FFA_MEM_LEND_SMC32);
 }

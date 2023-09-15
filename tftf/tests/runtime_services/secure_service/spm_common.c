@@ -449,6 +449,42 @@ ffa_memory_handle_t memory_init_and_send(
 			       total_length, ret);
 }
 
+ffa_memory_handle_t memory_init_and_send_multiple_receivers(
+	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
+	ffa_id_t sender, struct ffa_memory_access receivers[],
+	uint32_t receiver_count,
+	const struct ffa_memory_region_constituent *constituents,
+	uint32_t constituents_count, uint32_t mem_func, struct ffa_value *ret)
+{
+	uint32_t remaining_constituent_count;
+	uint32_t total_length;
+	uint32_t fragment_length;
+
+	/*
+	 * Initialize memory region structure for the respective memory send
+	 * operation. Note that memory type shall only be specified for memory
+	 * share, for memory lend and memory donate these shall remain
+	 * unspecified.
+	 */
+	remaining_constituent_count = ffa_memory_region_init_multiple_receivers(
+		memory_region, memory_region_max_size, sender, receivers,
+		receiver_count, constituents, constituents_count, 0, 0,
+		FFA_MEMORY_NORMAL_MEM, FFA_MEMORY_CACHE_WRITE_BACK,
+		FFA_MEMORY_INNER_SHAREABLE, &total_length, &fragment_length);
+
+	/*
+	 * For simplicity of the test, and at least for the time being,
+	 * the following condition needs to be true.
+	 */
+	if (remaining_constituent_count != 0U) {
+		ERROR("Remaining constituent should be 0\n");
+		return FFA_MEMORY_HANDLE_INVALID;
+	}
+
+	return memory_send(memory_region, mem_func, fragment_length,
+			   total_length, ret);
+}
+
 static bool ffa_uuid_equal(const struct ffa_uuid uuid1,
 			   const struct ffa_uuid uuid2)
 {
