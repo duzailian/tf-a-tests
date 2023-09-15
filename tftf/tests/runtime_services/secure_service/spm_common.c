@@ -364,13 +364,12 @@ ffa_memory_handle_t memory_init_and_send(
 	 * share, for memory lend and memory donate these shall remain
 	 * unspecified.
 	 */
-	remaining_constituent_count = ffa_memory_region_init(
-		memory_region, memory_region_max_size, sender, receiver, constituents,
-		constituents_count, 0, 0, data_access,
+	remaining_constituent_count = ffa_memory_region_init_single_receiver(
+		memory_region, memory_region_max_size, sender, receiver,
+		constituents, constituents_count, 0, 0, data_access,
 		FFA_INSTRUCTION_ACCESS_NOT_SPECIFIED,
-		mem_func == FFA_MEM_SHARE_SMC32
-			? FFA_MEMORY_NORMAL_MEM
-			: FFA_MEMORY_NOT_SPECIFIED_MEM,
+		mem_func == FFA_MEM_SHARE_SMC32 ? FFA_MEMORY_NORMAL_MEM
+						: FFA_MEMORY_NOT_SPECIFIED_MEM,
 		FFA_MEMORY_CACHE_WRITE_BACK, FFA_MEMORY_INNER_SHAREABLE,
 		&total_length, &fragment_length);
 
@@ -404,7 +403,7 @@ ffa_memory_handle_t memory_init_and_send_multiple_receivers(
 	 * share, for memory lend and memory donate these shall remain
 	 * unspecified.
 	 */
-	remaining_constituent_count = ffa_memory_region_init_multiple_receivers(
+	remaining_constituent_count = ffa_memory_region_init(
 		memory_region, memory_region_max_size, sender, receivers,
 		receiver_count, constituents, constituents_count, 0, 0,
 		FFA_MEMORY_NORMAL_MEM, FFA_MEMORY_CACHE_WRITE_BACK,
