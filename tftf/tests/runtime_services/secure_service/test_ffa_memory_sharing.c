@@ -57,10 +57,9 @@ static bool test_memory_send_expect_denied(uint32_t mem_func,
 			sizeof(struct ffa_memory_region_constituent);
 	GET_TFTF_MAILBOX(mb);
 
-	handle = memory_init_and_send((struct ffa_memory_region *)mb.send,
-					MAILBOX_SIZE, SENDER, borrower,
-					constituents, constituents_count,
-					mem_func, &ret);
+	handle = memory_init_and_send_single_receiver(
+		(struct ffa_memory_region *)mb.send, MAILBOX_SIZE, SENDER,
+		borrower, constituents, constituents_count, mem_func, &ret);
 
 	if (handle != FFA_MEMORY_HANDLE_INVALID) {
 		ERROR("Received a valid FF-A memory handle, and that isn't"
@@ -148,10 +147,9 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 		VERBOSE("TFTF - Address: %p\n", constituents[0].address);
 	}
 
-	handle = memory_init_and_send((struct ffa_memory_region *)mb.send,
-					MAILBOX_SIZE, SENDER, borrower,
-					constituents, constituents_count,
-					mem_func, &ret);
+	handle = memory_init_and_send_single_receiver(
+		(struct ffa_memory_region *)mb.send, MAILBOX_SIZE, SENDER,
+		borrower, constituents, constituents_count, mem_func, &ret);
 
 	if (handle == FFA_MEMORY_HANDLE_INVALID) {
 		return TEST_RESULT_FAIL;
@@ -398,13 +396,13 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 
 	GET_TFTF_MAILBOX(mb);
 
-	remaining_constituent_count = ffa_memory_region_init(
+	remaining_constituent_count = ffa_memory_region_init_single_receiver(
 		(struct ffa_memory_region *)mb.send, MAILBOX_SIZE, SENDER,
 		RECEIVER, constituents, constituents_count, 0,
 		FFA_MEMORY_REGION_FLAG_CLEAR, FFA_DATA_ACCESS_RW,
 		FFA_INSTRUCTION_ACCESS_NOT_SPECIFIED,
-		FFA_MEMORY_NOT_SPECIFIED_MEM, 0, 0,
-		&total_length, &fragment_length);
+		FFA_MEMORY_NOT_SPECIFIED_MEM, 0, 0, &total_length,
+		&fragment_length);
 
 	if (remaining_constituent_count != 0) {
 		ERROR("Transaction descriptor initialization failed!\n");
@@ -554,9 +552,9 @@ test_result_t hypervisor_retrieve_request_test_helper(uint32_t mem_func)
 	GET_TFTF_MAILBOX(mb);
 
 	/* Share */
-	handle = memory_init_and_send(mb.send, MAILBOX_SIZE, SENDER, RECEIVER,
-				      tx_constituents, sent_constituents_count,
-				      mem_func, &ret);
+	handle = memory_init_and_send_single_receiver(
+		mb.send, MAILBOX_SIZE, SENDER, RECEIVER, tx_constituents,
+		sent_constituents_count, mem_func, &ret);
 	if (handle == FFA_MEMORY_HANDLE_INVALID) {
 		ERROR("Memory share failed: %d\n", ffa_error_code(ret));
 		return TEST_RESULT_FAIL;
