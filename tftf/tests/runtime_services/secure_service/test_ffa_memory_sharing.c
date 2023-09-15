@@ -398,13 +398,13 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 
 	GET_TFTF_MAILBOX(mb);
 
-	remaining_constituent_count = ffa_memory_region_init(
+	remaining_constituent_count = ffa_memory_region_init_single_receiver(
 		(struct ffa_memory_region *)mb.send, MAILBOX_SIZE, SENDER,
 		RECEIVER, constituents, constituents_count, 0,
 		FFA_MEMORY_REGION_FLAG_CLEAR, FFA_DATA_ACCESS_RW,
 		FFA_INSTRUCTION_ACCESS_NOT_SPECIFIED,
-		FFA_MEMORY_NOT_SPECIFIED_MEM, 0, 0,
-		&total_length, &fragment_length);
+		FFA_MEMORY_NOT_SPECIFIED_MEM, 0, 0, &total_length,
+		&fragment_length);
 
 	if (remaining_constituent_count != 0) {
 		ERROR("Transaction descriptor initialization failed!\n");
@@ -580,7 +580,7 @@ test_result_t hypervisor_retrieve_request_test_helper(uint32_t mem_func)
 	 * v1.2-REL0 specification
 	 */
 	if (!memory_retrieve(&mb, &hypervisor_retrieve_response, handle, SENDER,
-			     RECEIVER, 0))
+			     RECEIVER, 0, mem_func))
 	{
 		return TEST_RESULT_FAIL;
 	}
