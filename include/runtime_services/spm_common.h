@@ -121,6 +121,11 @@ bool memory_retrieve(struct mailbox_buffers *mb,
 		     ffa_id_t sender, ffa_id_t receiver,
 		     ffa_memory_region_flags_t flags, uint32_t mem_func);
 
+bool hypervisor_retrieve_multiple_receivers(
+	struct mailbox_buffers *mb, struct ffa_memory_region **retrieved,
+	uint64_t handle, struct ffa_memory_access receivers[],
+	uint32_t receiver_count);
+
 bool hypervisor_retrieve(struct mailbox_buffers *mb,
 			 struct ffa_memory_region **retrieved, uint64_t handle,
 			 ffa_id_t receiver);
@@ -140,6 +145,13 @@ ffa_memory_handle_t memory_init_and_send(
 	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
 	ffa_id_t sender, ffa_id_t receiver,
 	const struct ffa_memory_region_constituent* constituents,
+	uint32_t constituents_count, uint32_t mem_func, struct ffa_value *ret);
+
+ffa_memory_handle_t memory_init_and_send_multiple_receivers(
+	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
+	ffa_id_t sender, struct ffa_memory_access receivers[],
+	uint32_t receiver_count,
+	const struct ffa_memory_region_constituent *constituents,
 	uint32_t constituents_count, uint32_t mem_func, struct ffa_value *ret);
 
 bool ffa_partition_info_helper(struct mailbox_buffers *mb,

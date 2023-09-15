@@ -387,6 +387,37 @@ uint32_t ffa_memory_retrieve_request_init(
 	       memory_region->receiver_count * sizeof(struct ffa_memory_access);
 }
 
+uint32_t ffa_memory_retrieve_request_init_multiple_receivers(
+	struct ffa_memory_region *memory_region, ffa_memory_handle_t handle,
+	ffa_id_t sender, struct ffa_memory_access receivers[],
+	uint32_t receiver_count, uint32_t tag, ffa_memory_region_flags_t flags,
+	enum ffa_data_access data_access,
+	enum ffa_instruction_access instruction_access,
+	enum ffa_memory_type type, enum ffa_memory_cacheability cacheability,
+	enum ffa_memory_shareability shareability)
+{
+	ffa_memory_attributes_t attributes = 0;
+
+	/* Set memory region's page attributes. */
+	ffa_set_memory_type_attr(&attributes, type);
+	ffa_set_memory_cacheability_attr(&attributes, cacheability);
+	ffa_set_memory_shareability_attr(&attributes, shareability);
+
+	ffa_memory_region_init_header(memory_region, sender, attributes, flags,
+				      handle, tag, receiver_count);
+
+	memcpy(memory_region->receivers, receivers,
+	       receiver_count * sizeof(struct ffa_memory_access));
+
+	for (uint32_t i = 0; i < receiver_count; i++) {
+		memory_region->receivers[i].composite_memory_region_offset = 0;
+		memory_region->receivers[i].reserved_0 = 0;
+	}
+
+	return sizeof(struct ffa_memory_region) +
+	       memory_region->receiver_count * sizeof(struct ffa_memory_access);
+}
+
 /*
  * FFA Version ABI helper.
  * Version fields:
