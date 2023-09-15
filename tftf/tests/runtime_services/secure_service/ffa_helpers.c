@@ -142,10 +142,12 @@ struct ffa_value ffa_msg_send_direct_resp32(ffa_id_t source_id,
 	return ffa_service_call(&args);
 }
 
-void ffa_memory_region_init_header_multiple_receivers(
-	struct ffa_memory_region *memory_region, ffa_id_t sender,
-	ffa_memory_attributes_t attributes, ffa_memory_region_flags_t flags,
-	ffa_memory_handle_t handle, uint32_t tag, uint32_t receiver_count)
+void ffa_memory_region_init_header(struct ffa_memory_region *memory_region,
+				   ffa_id_t sender,
+				   ffa_memory_attributes_t attributes,
+				   ffa_memory_region_flags_t flags,
+				   ffa_memory_handle_t handle, uint32_t tag,
+				   uint32_t receiver_count)
 {
 	memory_region->sender = sender;
 	memory_region->attributes = attributes;
@@ -164,7 +166,7 @@ void ffa_memory_region_init_header_multiple_receivers(
  * Initialises the header of the given `ffa_memory_region`, not including the
  * composite memory region offset.
  */
-static void ffa_memory_region_init_header(
+static void ffa_memory_region_init_header_single_reciever(
 	struct ffa_memory_region *memory_region, ffa_id_t sender,
 	ffa_memory_attributes_t attributes, ffa_memory_region_flags_t flags,
 	ffa_memory_handle_t handle, uint32_t tag, ffa_id_t receiver,
@@ -277,7 +279,7 @@ static uint32_t ffa_memory_region_init_constituents(
 	return composite_memory_region->constituent_count - count_to_copy;
 }
 
-uint32_t ffa_memory_region_init_multiple_receivers(
+uint32_t ffa_memory_region_init(
 	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
 	ffa_id_t sender, struct ffa_memory_access receivers[],
 	uint32_t receiver_count,
@@ -295,9 +297,8 @@ uint32_t ffa_memory_region_init_multiple_receivers(
 	ffa_set_memory_cacheability_attr(&attributes, cacheability);
 	ffa_set_memory_shareability_attr(&attributes, shareability);
 
-	ffa_memory_region_init_header_multiple_receivers(memory_region, sender,
-							 attributes, flags, 0,
-							 tag, receiver_count);
+	ffa_memory_region_init_header(memory_region, sender, attributes, flags,
+				      0, tag, receiver_count);
 
 	memcpy(memory_region->receivers, receivers,
 	       receiver_count * sizeof(struct ffa_memory_access));
@@ -316,7 +317,7 @@ uint32_t ffa_memory_region_init_multiple_receivers(
  * `memory_region` (attributes, constituents and memory region header size), and
  * the total size of the memory sharing message including all constituents.
  */
-uint32_t ffa_memory_region_init(
+uint32_t ffa_memory_region_init_single_receiver(
 	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
 	ffa_id_t sender, ffa_id_t receiver_id,
 	const struct ffa_memory_region_constituent constituents[],
@@ -339,7 +340,7 @@ uint32_t ffa_memory_region_init(
 	receiver.receiver_permissions.flags = flags;
 	receiver.reserved_0 = 0;
 
-	return ffa_memory_region_init_multiple_receivers(
+	return ffa_memory_region_init(
 		memory_region, memory_region_max_size, sender, &receiver, 1,
 		constituents, constituent_count, tag, flags, type, cacheability,
 		shareability, total_length, fragment_length);
@@ -371,8 +372,9 @@ uint32_t ffa_memory_retrieve_request_init(
 	ffa_set_memory_cacheability_attr(&attributes, cacheability);
 	ffa_set_memory_shareability_attr(&attributes, shareability);
 
-	ffa_memory_region_init_header(memory_region, sender, attributes, flags,
-					handle, tag, receiver, permissions);
+	ffa_memory_region_init_header_single_reciever(
+		memory_region, sender, attributes, flags, handle, tag, receiver,
+		permissions);
 	/*
 	 * Offset 0 in this case means that the hypervisor should allocate the
 	 * address ranges. This is the only configuration supported by Hafnium,
