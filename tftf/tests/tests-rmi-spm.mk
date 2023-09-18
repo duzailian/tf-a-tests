@@ -6,8 +6,6 @@
 
 ifeq (${ARCH},aarch64)
 
-$(eval $(call add_define,TFTF_DEFINES,SPM_ENABLE_RME))
-
 TFTF_INCLUDES +=							\
 	-Iinclude/runtime_services/host_realm_managment
 
@@ -23,7 +21,6 @@ TESTS_SOURCES	+=							\
 		${ARCH}/ffa_arch_helpers.S				\
 		ffa_helpers.c						\
 		spm_common.c						\
-		test_ffa_memory_sharing.c				\
 		spm_test_helpers.c					\
 	)
 

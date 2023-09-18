@@ -7,6 +7,34 @@
 -->
 
 <testsuites>
+  <testsuite name="FF-A Memory Sharing (RME)"
+             description="Test FF-A Memory Sharing ABIs" >
+     <testcase name="Lend Memory to Secure World"
+               function="test_mem_lend_sp" />
+     <testcase name="Lend memory, clear flag set"
+               function="test_mem_share_to_sp_clear_memory"/>
+     <testcase name="Share Memory with Secure World"
+               function="test_mem_share_sp" />
+     <testcase name="Donate Memory to Secure World"
+               function="test_mem_donate_sp"/>
+     <testcase name="Request Share Memory SP-to-SP"
+               function="test_req_mem_share_sp_to_sp" />
+     <testcase name="Request Lend Memory SP-to-SP"
+               function="test_req_mem_lend_sp_to_sp" />
+     <testcase name="Request Donate Memory SP-to-SP"
+               function="test_req_mem_donate_sp_to_sp" />
+     <testcase name="Request Share NS Memory (large PA) SP-to-SP"
+               function="test_req_ns_mem_share_sp_to_sp" />
+     <testcase name="Request Share Memory SP-to-VM"
+               function="test_req_mem_share_sp_to_vm" />
+     <testcase name="Request Lend Memory SP-to-VM"
+               function="test_req_mem_lend_sp_to_vm" />
+     <testcase name="Share forbidden memory with SP"
+               function="test_share_forbidden_ranges" />
+     <testcase name="Donate consecutively"
+               function="test_consecutive_donate" />
+  </testsuite>
+
   <testsuite name="Invalid memory access" description="Invalid memory access">
       <testcase name="Access EL3 memory from NS world"
                 function="el3_memory_cannot_be_accessed_in_ns" />
@@ -25,4 +53,5 @@
       <testcase name="Share memory to an SP from a Root region"
                 function="rt_memory_cannot_be_accessed_in_s" />
   </testsuite>
+
 </testsuites>
