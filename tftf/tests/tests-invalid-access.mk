@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
+SPM_ENABLE_RME := 1
+$(eval $(call add_define,TFTF_DEFINES,SPM_ENABLE_RME))
 TFTF_INCLUDES +=							\
 	-Iinclude/runtime_services/host_realm_managment
 
@@ -24,6 +26,7 @@ TESTS_SOURCES	+=							\
 		${ARCH}/ffa_arch_helpers.S				\
 		ffa_helpers.c						\
 		spm_common.c						\
+		test_ffa_memory_sharing.c				\
 		test_ffa_setup_and_discovery.c				\
 		spm_test_helpers.c					\
 )
