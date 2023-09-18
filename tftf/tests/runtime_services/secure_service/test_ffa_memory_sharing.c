@@ -154,7 +154,7 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 	ffa_memory_handle_t handle;
 	uint32_t *ptr;
 	struct mailbox_buffers mb;
-#ifdef SPM_ENABLE_RME
+#if SPM_ENABLE_RME
 	unsigned int rme_supported = get_armv9_2_feat_rme_support();
 #else
 	unsigned int rme_supported = 0U;
