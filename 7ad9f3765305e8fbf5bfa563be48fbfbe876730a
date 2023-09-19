@@ -26,6 +26,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5ba0b8f6_eebae39e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-09-19T15:51:38Z",
+      "side": 1,
+      "message": "nit: actually this isn\u0027t about a \u0027command\u0027 but a makefile build target?",
+      "range": {
+        "startLine": 7,
+        "startChar": 34,
+        "endLine": 7,
+        "endChar": 41
+      },
+      "revId": "7ad9f3765305e8fbf5bfa563be48fbfbe876730a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5fa103e8_2c4bf9d7",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 8
