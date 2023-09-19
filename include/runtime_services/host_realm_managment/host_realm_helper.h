@@ -18,6 +18,8 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 		u_register_t plat_mem_pool_adr,
 		u_register_t realm_pages_size,
 		u_register_t feature_flag,
+		u_register_t s2sz,
+		long sl,
 		const u_register_t *rec_flag,
 		unsigned int rec_count);
 
@@ -30,6 +32,8 @@ bool host_create_realm_payload(struct realm *realm_ptr,
 		u_register_t plat_mem_pool_adr,
 		u_register_t realm_pages_size,
 		u_register_t feature_flag,
+		u_register_t s2sz,
+		long sl,
 		const u_register_t *rec_flag,
 		unsigned int rec_count);
 
@@ -42,6 +46,8 @@ bool host_create_activate_realm_payload(struct realm *realm_ptr,
 		u_register_t plat_mem_pool_adr,
 		u_register_t realm_pages_size,
 		u_register_t feature_flag,
+		u_register_t s2sz,
+		long sl,
 		const u_register_t *rec_flag,
 		unsigned int rec_count);
 bool host_create_shared_mem(struct realm *realm_ptr,

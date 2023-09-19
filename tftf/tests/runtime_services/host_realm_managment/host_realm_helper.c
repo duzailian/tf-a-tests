@@ -106,12 +106,14 @@ static bool host_enter_realm(struct realm *realm_ptr,
 }
 
 bool host_prepare_realm_payload(struct realm *realm_ptr,
-				u_register_t realm_payload_adr,
-				u_register_t plat_mem_pool_adr,
-				u_register_t realm_pages_size,
-				u_register_t feature_flag,
-				const u_register_t *rec_flag,
-				unsigned int rec_count)
+			       u_register_t realm_payload_adr,
+			       u_register_t plat_mem_pool_adr,
+			       u_register_t realm_pages_size,
+			       u_register_t feature_flag,
+			       u_register_t s2sz,
+			       long sl,
+			       const u_register_t *rec_flag,
+			       unsigned int rec_count)
 {
 	int8_t value;
 
@@ -244,6 +246,24 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 		}
 	}
 
+	/*
+	 * Force FEAT_LPA2 to the selected configuration.
+	 */
+	if ((feature_flag & RMI_FEATURE_REGISTER_0_LPA2) == 0ULL) {
+		realm_ptr->rmm_feat_reg0 &= ~RMI_FEATURE_REGISTER_0_LPA2;
+	} else {
+		realm_ptr->rmm_feat_reg0 |= RMI_FEATURE_REGISTER_0_LPA2;
+	}
+
+	/* If 's2sz' > 0, overwrite it on the realm with the given value */
+	if (s2sz > 0UL) {
+		realm_ptr->rmm_feat_reg0 &= ~MASK(RMI_FEATURE_REGISTER_0_S2SZ);
+		realm_ptr->rmm_feat_reg0 |=
+			INPLACE(RMI_FEATURE_REGISTER_0_S2SZ, s2sz);
+	}
+
+	realm_ptr->start_level = sl;
+
 	/* Create Realm */
 	if (host_realm_create(realm_ptr) != REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_create");
@@ -276,6 +296,8 @@ bool host_create_realm_payload(struct realm *realm_ptr,
 			       u_register_t plat_mem_pool_adr,
 			       u_register_t realm_pages_size,
 			       u_register_t feature_flag,
+			       u_register_t s2sz,
+			       long sl,
 			       const u_register_t *rec_flag,
 			       unsigned int rec_count)
 {
@@ -286,6 +308,8 @@ bool host_create_realm_payload(struct realm *realm_ptr,
 			plat_mem_pool_adr,
 			realm_pages_size,
 			feature_flag,
+			s2sz,
+			sl,
 			rec_flag,
 			rec_count);
 	if (!ret) {
@@ -297,8 +321,8 @@ bool host_create_realm_payload(struct realm *realm_ptr,
 			goto destroy_realm;
 		}
 
-		if (host_realm_init_ipa_state(realm_ptr, 0U, 0U, 1ULL << 32)
-			!= RMI_SUCCESS) {
+		if (host_realm_init_ipa_state(realm_ptr, realm_ptr->start_level,
+					      0U, 1ULL << 32) != RMI_SUCCESS) {
 			ERROR("%s() failed\n", "host_realm_init_ipa_state");
 			goto destroy_realm;
 		}
@@ -318,6 +342,8 @@ bool host_create_activate_realm_payload(struct realm *realm_ptr,
 			u_register_t plat_mem_pool_adr,
 			u_register_t realm_pages_size,
 			u_register_t feature_flag,
+			u_register_t s2sz,
+			long sl,
 			const u_register_t *rec_flag,
 			unsigned int rec_count)
 
@@ -329,6 +355,8 @@ bool host_create_activate_realm_payload(struct realm *realm_ptr,
 			plat_mem_pool_adr,
 			realm_pages_size,
 			feature_flag,
+			s2sz,
+			sl,
 			rec_flag,
 			rec_count);
 	if (!ret) {
