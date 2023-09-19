@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc1d3faa_5623e032",
+        "filename": "include/runtime_services/cactus_test_cmds.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-09-19T01:05:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57da57e3_34642d4a",
+      "range": {
+        "startLine": 618,
+        "startChar": 15,
+        "endLine": 618,
+        "endChar": 21
+      },
+      "revId": "242cc66404612b1ee81a22a0c8118f6538b79586",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b7ed5b15_78ee0505",
@@ -72,6 +96,54 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "78d56d83_11bc9df3",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-09-19T01:05:36Z",
+      "side": 1,
+      "message": "Its used as part of cactus_response in line 266. Hence, int might be appropriate here.",
+      "parentUuid": "1309260b_941d1fe0",
+      "range": {
+        "startLine": 232,
+        "startChar": 7,
+        "endLine": 232,
+        "endChar": 10
+      },
+      "revId": "242cc66404612b1ee81a22a0c8118f6538b79586",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6dcfab52_cfcf1216",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-09-19T01:05:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7ed5b15_78ee0505",
+      "range": {
+        "startLine": 232,
+        "startChar": 0,
+        "endLine": 232,
+        "endChar": 29
+      },
+      "revId": "242cc66404612b1ee81a22a0c8118f6538b79586",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4907ca5c_1f1e5bbf",
         "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
         "patchSetId": 2
@@ -83,6 +155,30 @@
       "writtenOn": "2023-09-15T16:57:01Z",
       "side": 1,
       "message": "Is this strictly required? I gather the interrupt would trap as soon as returning from the smc call?",
+      "range": {
+        "startLine": 262,
+        "startChar": 1,
+        "endLine": 262,
+        "endChar": 14
+      },
+      "revId": "242cc66404612b1ee81a22a0c8118f6538b79586",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6854dc6c_abc90c78",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-09-19T01:05:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4907ca5c_1f1e5bbf",
       "range": {
         "startLine": 262,
         "startChar": 1,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "563c0436_958da9c7",
+        "filename": "spm/common/sp_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-09-19T01:05:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c788d596_e198c750",
+      "range": {
+        "startLine": 16,
+        "startChar": 16,
+        "endLine": 16,
+        "endChar": 19
+      },
+      "revId": "242cc66404612b1ee81a22a0c8118f6538b79586",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5073a02b_001666ed",
@@ -139,6 +259,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "92f6168d_f9cb6ead",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-09-19T01:05:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5073a02b_001666ed",
+      "range": {
+        "startLine": 442,
+        "startChar": 20,
+        "endLine": 442,
+        "endChar": 24
+      },
+      "revId": "242cc66404612b1ee81a22a0c8118f6538b79586",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "913c6e4e_4e5bbb3f",
@@ -152,6 +296,30 @@
       "writtenOn": "2023-09-15T16:57:01Z",
       "side": 1,
       "message": "Similarly to above.",
+      "range": {
+        "startLine": 455,
+        "startChar": 20,
+        "endLine": 455,
+        "endChar": 24
+      },
+      "revId": "242cc66404612b1ee81a22a0c8118f6538b79586",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab6333eb_94992fc5",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-09-19T01:05:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "913c6e4e_4e5bbb3f",
       "range": {
         "startLine": 455,
         "startChar": 20,
