@@ -8,6 +8,8 @@
 #include <assert.h>
 #include <string.h>
 
+#include <arch_features.h>
+
 #include <debug.h>
 #include <heap/page_alloc.h>
 #include <test_helpers.h>
@@ -18,6 +20,7 @@
 #include <plat/common/platform.h>
 #include <realm_def.h>
 #include <tftf_lib.h>
+#include <utils_def.h>
 
 #define SET_ARG(_n) {			\
 	case _n:			\
@@ -294,7 +297,7 @@ static inline u_register_t host_rmi_rtt_unmap_unprotected(u_register_t rd,
 
 static inline u_register_t host_rtt_level_mapsize(u_register_t level)
 {
-	if (level > RTT_MAX_LEVEL) {
+	if ((int)level > RTT_MAX_LEVEL) {
 		return PAGE_SIZE;
 	}
 
@@ -311,16 +314,19 @@ static inline u_register_t host_realm_rtt_create(struct realm *realm,
 						 u_register_t level,
 						 u_register_t phys)
 {
-	addr = ALIGN_DOWN(addr, host_rtt_level_mapsize(level - 1U));
+	addr = ALIGN_DOWN(addr, host_rtt_level_mapsize(level - 1));
 	return host_rmi_rtt_create(realm->rd, phys, addr, level);
 }
 
 static u_register_t host_rmi_create_rtt_levels(struct realm *realm,
 						u_register_t map_addr,
-						u_register_t level,
-						u_register_t max_level)
+						u_register_t ulevel,
+						u_register_t umax_level)
 {
 	u_register_t rtt, ret;
+
+	int level = (int)ulevel;
+	int max_level = (int)umax_level;
 
 	while (level++ < max_level) {
 		rtt = (u_register_t)page_alloc(PAGE_SIZE);
@@ -368,7 +374,7 @@ static u_register_t host_realm_fold_rtt(u_register_t rd, u_register_t addr,
 		return REALM_ERROR;
 	}
 
-	ret = host_rmi_rtt_fold(rd, addr, level + 1U, &pa);
+	ret = host_rmi_rtt_fold(rd, addr, level + 1, &pa);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, addr=0x%lx ret=0x%lx\n",
 			"host_rmi_rtt_fold", addr, ret);
@@ -388,7 +394,8 @@ u_register_t host_realm_map_protected_data(bool unknown,
 					   u_register_t src_pa)
 {
 	u_register_t rd = realm->rd;
-	u_register_t map_level, level;
+	u_register_t map_level;
+	int8_t level;
 	u_register_t ret = 0UL;
 	u_register_t size = 0UL;
 	u_register_t phys = target_pa;
@@ -442,7 +449,8 @@ u_register_t host_realm_map_protected_data(bool unknown,
 		if (RMI_RETURN_STATUS(ret) == RMI_ERROR_RTT) {
 			/* Create missing RTTs and retry */
 			level = RMI_RETURN_INDEX(ret);
-			ret = host_rmi_create_rtt_levels(realm, map_addr, level,
+			ret = host_rmi_create_rtt_levels(realm, map_addr,
+							 (u_register_t)level,
 							 map_level);
 			if (ret != RMI_SUCCESS) {
 				ERROR("%s() failed, ret=0x%lx line=%u\n",
@@ -511,7 +519,9 @@ u_register_t host_realm_map_unprotected(struct realm *realm,
 					u_register_t map_size)
 {
 	u_register_t rd = realm->rd;
-	u_register_t map_level, level;
+	u_register_t map_level;
+	u_register_t desc;
+	int8_t level;
 	u_register_t ret = 0UL;
 	u_register_t phys = ns_pa;
 	u_register_t map_addr = ns_pa |
@@ -534,14 +544,21 @@ u_register_t host_realm_map_unprotected(struct realm *realm,
 		return REALM_ERROR;
 	}
 
-	u_register_t desc = phys | S2TTE_ATTR_FWB_WB_RW;
+	if ((realm->rmm_feat_reg0 & RMI_FEATURE_REGISTER_0_LPA2) != 0L) {
+		desc = (phys & ~OA_MSB_MASK) |
+				INPLACE(TTE_OA_MSB, EXTRACT(OA_MSB, phys));
+		desc |= S2TTE_ATTR_FWB_WB_RW_LPA2;
+	} else {
+		desc = phys | S2TTE_ATTR_FWB_WB_RW;
+	}
 
 	ret = host_rmi_rtt_mapunprotected(rd, map_addr, map_level, desc);
 
 	if (RMI_RETURN_STATUS(ret) == RMI_ERROR_RTT) {
 		/* Create missing RTTs and retry */
 		level = RMI_RETURN_INDEX(ret);
-		ret = host_rmi_create_rtt_levels(realm, map_addr, level,
+		ret = host_rmi_create_rtt_levels(realm, map_addr,
+						 (u_register_t)level,
 						 map_level);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, ret=0x%lx line=%u\n",
@@ -630,10 +647,11 @@ static u_register_t host_realm_destroy_undelegate_range(struct realm *realm,
 }
 
 static u_register_t host_realm_tear_down_rtt_range(struct realm *realm,
-						   u_register_t level,
+						   u_register_t ulevel,
 						   u_register_t start,
 						   u_register_t end)
 {
+	int level = (int)ulevel;
 	u_register_t rd = realm->rd;
 	u_register_t map_size = host_rtt_level_mapsize(level);
 	u_register_t map_addr, next_addr, rtt_out_addr, end_addr, top;
@@ -684,7 +702,7 @@ static u_register_t host_realm_tear_down_rtt_range(struct realm *realm,
 		case RMI_UNASSIGNED:
 			break;
 		case RMI_TABLE:
-			ret = host_realm_tear_down_rtt_range(realm, level + 1U,
+			ret = host_realm_tear_down_rtt_range(realm, level + 1,
 							     map_addr,
 							     end_addr);
 			if (ret != RMI_SUCCESS) {
@@ -695,7 +713,7 @@ static u_register_t host_realm_tear_down_rtt_range(struct realm *realm,
 			}
 
 			ret = host_realm_destroy_free_rtt(realm, map_addr,
-							  level + 1U,
+							  level + 1,
 							  rtt_out_addr);
 			if (ret != RMI_SUCCESS) {
 				ERROR("%s() failed, map_addr=0x%lx ret=0x%lx\n",
@@ -811,10 +829,18 @@ u_register_t host_realm_create(struct realm *realm)
 		params->pmu_num_ctrs = 0U;
 	}
 
+	/* LPA2 enable */
+	if ((realm->rmm_feat_reg0 & RMI_FEATURE_REGISTER_0_LPA2) != 0UL) {
+		params->flags |= RMI_REALM_FLAGS_LPA2;
+		params->rtt_level_start = RTT_MIN_LEVEL_LPA2;
+	} else {
+		params->rtt_level_start = RTT_MIN_LEVEL;
+	}
+	realm->start_level = params->rtt_level_start;
+
 	params->hash_algo = RMI_HASH_SHA_256;
 	params->vmid = vmid++;
 	params->rtt_base = realm->rtt_addr;
-	params->rtt_level_start = 0L;
 	params->rtt_num_start = 1U;
 
 	/* Create Realm */
@@ -893,11 +919,12 @@ u_register_t host_realm_map_payload_image(struct realm *realm,
 	return REALM_SUCCESS;
 }
 
-u_register_t host_realm_init_ipa_state(struct realm *realm, u_register_t level,
+u_register_t host_realm_init_ipa_state(struct realm *realm, u_register_t ulevel,
 					u_register_t start, uint64_t end)
 {
 	u_register_t rd = realm->rd, ret;
 	u_register_t top;
+	int level = (int)ulevel;
 
 	do {
 		if (level > RTT_MAX_LEVEL) {
@@ -906,9 +933,9 @@ u_register_t host_realm_init_ipa_state(struct realm *realm, u_register_t level,
 
 		ret = host_rmi_rtt_init_ripas(rd, start, end, &top);
 		if (RMI_RETURN_STATUS(ret) == RMI_ERROR_RTT) {
-			int cur_level = RMI_RETURN_INDEX(ret);
+			int8_t cur_level = RMI_RETURN_INDEX(ret);
 
-			if (cur_level < level) {
+			if ((int)cur_level < level) {
 				ret = host_rmi_create_rtt_levels(realm,
 								 start,
 								 cur_level,
@@ -1125,6 +1152,7 @@ u_register_t host_realm_activate(struct realm *realm)
 u_register_t host_realm_destroy(struct realm *realm)
 {
 	u_register_t ret;
+	u_register_t rtt_start_level = (u_register_t)realm->start_level;
 
 	if (realm->state == REALM_STATE_NULL) {
 		return REALM_SUCCESS;
@@ -1170,13 +1198,14 @@ u_register_t host_realm_destroy(struct realm *realm)
 	 * using RMI_DATA_DESTROY, RMI_RTT_DESTROY and RMI_GRANULE_UNDELEGATE
 	 * commands.
 	 */
-	if (host_realm_tear_down_rtt_range(realm, 0UL, 0UL,
+	if (host_realm_tear_down_rtt_range(realm, rtt_start_level, 0UL,
 				(1UL << (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
-				realm->rmm_feat_reg0) - 1))) != RMI_SUCCESS) {
+				realm->rmm_feat_reg0) - 1UL))) != RMI_SUCCESS) {
 		ERROR("host_realm_tear_down_rtt_range() line=%u\n", __LINE__);
 		return REALM_ERROR;
 	}
-	if (host_realm_tear_down_rtt_range(realm, 0UL, realm->ipa_ns_buffer,
+	if (host_realm_tear_down_rtt_range(realm, rtt_start_level,
+			realm->ipa_ns_buffer,
 			(realm->ipa_ns_buffer + realm->ns_buffer_size)) !=
 			RMI_SUCCESS) {
 		ERROR("host_realm_tear_down_rtt_range() line=%u\n", __LINE__);

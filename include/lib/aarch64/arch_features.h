@@ -297,21 +297,6 @@ static inline u_register_t get_id_aa64mmfr0_el0_tgran64_2(void)
 	return EXTRACT(ID_AA64MMFR0_EL1_TGRAN64_2, read_id_aa64mmfr0_el1());
 }
 
-static inline bool is_feat_52b_on_4k_supported(void)
-{
-	return (get_id_aa64mmfr0_el0_tgran4() ==
-				ID_AA64MMFR0_EL1_TGRAN4_52B_SUPPORTED);
-}
-
-static inline bool is_feat_52b_on_4k_2_supported(void)
-{
-	u_register_t tgran4_2 = get_id_aa64mmfr0_el0_tgran4_2();
-
-	return ((tgran4_2 == ID_AA64MMFR0_EL1_TGRAN4_2_52B_SUPPORTED) ||
-		((tgran4_2 == ID_AA64MMFR0_EL1_TGRAN4_2_AS_1)
-			&& (is_feat_52b_on_4k_supported() == true)));
-}
-
 static inline bool is_feat_specres_present(void)
 {
 	return EXTRACT(ID_AA64ISAR1_SPECRES, read_id_aa64isar1_el1())

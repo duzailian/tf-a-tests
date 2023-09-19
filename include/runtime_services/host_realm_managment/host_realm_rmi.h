@@ -344,7 +344,9 @@ typedef enum {
 
 #define RMI_RETURN_STATUS(ret)		((ret) & 0xFF)
 #define RMI_RETURN_INDEX(ret)		(((ret) >> 8U) & 0xFF)
-#define RTT_MAX_LEVEL			3U
+#define RTT_MAX_LEVEL			(3L)
+#define RTT_MIN_LEVEL			(0L)
+#define RTT_MIN_LEVEL_LPA2		(-1L)
 #define ALIGN_DOWN(x, a)		((uint64_t)(x) & ~(((uint64_t)(a)) - 1ULL))
 #define IS_ALIGNED(x, a)		(((x) & ((typeof(x))(a)-1U)) == 0U)
 #define PAGE_SHIFT			FOUR_KB_SHIFT
@@ -354,6 +356,19 @@ typedef enum {
 #define REC_CREATE_NR_GPRS		8U
 #define REC_HVC_NR_GPRS			7U
 #define REC_GIC_NUM_LRS			16U
+
+/*
+ * When FEAT_LPA2 is enabled bits [51:50] of the OA are not
+ * contiguous to the rest of the OA.
+ */
+
+#define TTE_OA_MSB_SHIFT		ULL(8)
+#define TTE_OA_MSB_WIDTH		ULL(2)
+
+/* Bitfields for the 2 MSBs on an OA */
+#define OA_MSB_SHIFT			ULL(50)
+#define OA_MSB_WIDTH			TTE_OA_MSB_WIDTH
+#define OA_MSB_MASK			MASK(OA_MSB)
 
 /*
  * The Realm attribute parameters are shared by the Host via
@@ -540,6 +555,7 @@ struct realm {
 	bool             shared_mem_created;
 	unsigned short   vmid;
 	enum realm_state state;
+	long start_level;
 };
 
 /* RMI/SMC */
@@ -565,7 +581,7 @@ u_register_t host_realm_rec_enter(struct realm *realm,
 					u_register_t *exit_reason,
 					unsigned int *host_call_result,
 					unsigned int rec_num);
-u_register_t host_realm_init_ipa_state(struct realm *realm, u_register_t level,
+u_register_t host_realm_init_ipa_state(struct realm *realm, u_register_t ulevel,
 					u_register_t start, uint64_t end);
 u_register_t host_rmi_psci_complete(u_register_t calling_rec, u_register_t target_rec,
 		unsigned long status);

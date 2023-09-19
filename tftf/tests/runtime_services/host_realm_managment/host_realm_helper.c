@@ -221,8 +221,8 @@ bool host_create_realm_payload(struct realm *realm_ptr,
 		return false;
 	}
 
-	if (host_realm_init_ipa_state(realm_ptr, 0U, 0U, 1ULL << 32)
-		!= RMI_SUCCESS) {
+	if (host_realm_init_ipa_state(realm_ptr, realm_ptr->start_level,
+					0U, 1ULL << 32) != RMI_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_init_ipa_state");
 		goto destroy_realm;
 	}
