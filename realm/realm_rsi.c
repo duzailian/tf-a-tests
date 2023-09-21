@@ -14,12 +14,16 @@
 static struct rsi_host_call host_cal __aligned(sizeof(struct rsi_host_call));
 
 /* This function return RSI_ABI_VERSION */
-u_register_t rsi_get_version(void)
+u_register_t rsi_get_version(u_register_t req_ver, u_register_t *impl_ver)
 {
 	smc_ret_values res = {};
 
 	res = tftf_smc(&(smc_args)
-		{RSI_ABI_VERSION, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL});
+		{RSI_ABI_VERSION, req_ver, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL});
+
+	if (res.ret0 == RSI_SUCCESS) {
+		*impl_ver = res.ret1;
+	}
 
 	return res.ret0;
 }
