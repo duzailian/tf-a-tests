@@ -36,10 +36,11 @@ static void realm_sleep_cmd(void)
  */
 static void realm_get_rsi_version(void)
 {
-	u_register_t version;
+	u_register_t ret, version;
 
-	version = rsi_get_version();
-	if (version == (u_register_t)SMC_UNKNOWN) {
+	ret = rsi_get_version(RSI_ABI_VERSION_VAL, &version);
+	if (version == (u_register_t)SMC_UNKNOWN ||
+			ret != RSI_SUCCESS) {
 		realm_printf("SMC_RSI_ABI_VERSION failed (%ld)", (long)version);
 		return;
 	}
@@ -47,8 +48,8 @@ static void realm_get_rsi_version(void)
 	realm_printf("RSI ABI version %u.%u (expected: %u.%u)",
 	RSI_ABI_VERSION_GET_MAJOR(version),
 	RSI_ABI_VERSION_GET_MINOR(version),
-	RSI_ABI_VERSION_GET_MAJOR(RSI_ABI_VERSION),
-	RSI_ABI_VERSION_GET_MINOR(RSI_ABI_VERSION));
+	RSI_ABI_VERSION_GET_MAJOR(RSI_ABI_VERSION_VAL),
+	RSI_ABI_VERSION_GET_MINOR(RSI_ABI_VERSION_VAL));
 }
 
 /*
