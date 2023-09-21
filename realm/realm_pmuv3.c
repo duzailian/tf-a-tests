@@ -203,6 +203,7 @@ bool test_pmuv3_event_works_realm(void)
 bool test_pmuv3_rmm_preserves(void)
 {
 	u_register_t ctr_start[MAX_COUNTERS] = {0};
+	u_register_t __unused  ret;
 	u_register_t ctr_cfg_start[MAX_COUNTERS] = {0};
 	u_register_t pmu_cfg_start[3];
 	u_register_t ctr_end[MAX_COUNTERS] = {0};
@@ -227,7 +228,7 @@ bool test_pmuv3_rmm_preserves(void)
 	read_all_pmu_configs(pmu_cfg_start);
 
 	/* Give RMM a chance to scramble everything */
-	(void)rsi_get_version();
+	(void)rsi_get_version(RSI_ABI_VERSION_VAL, &ret);
 
 	/* Get after reading */
 	read_all_counters(ctr_end, impl_ev_ctrs);
