@@ -168,6 +168,7 @@ $(eval $(call assert_boolean,NEW_TEST_SESSION))
 $(eval $(call assert_boolean,USE_NVM))
 $(eval $(call assert_numeric,BRANCH_PROTECTION))
 $(eval $(call assert_boolean,ENABLE_REALM_PAYLOAD_TESTS))
+$(eval $(call assert_boolean,TRANSFER_LIST))
 
 ################################################################################
 # Process build options
