@@ -21,6 +21,7 @@ TFTF_INCLUDES	:= 					\
 	-Iinclude/lib/extensions			\
 	-Iinclude/lib/utils				\
 	-Iinclude/lib/xlat_tables			\
+	-Iinclude/lib/handoff				\
 	-Iinclude/plat/common				\
 	-Iinclude/runtime_services			\
 	-Iinclude/runtime_services/secure_el0_payloads	\
