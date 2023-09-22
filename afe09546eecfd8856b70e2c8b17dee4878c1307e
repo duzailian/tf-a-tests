@@ -165,6 +165,30 @@
       },
       "revId": "afe09546eecfd8856b70e2c8b17dee4878c1307e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "009b7dfd_3ff0d77d",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-09-22T18:51:23Z",
+      "side": 1,
+      "message": "@Varun, let me know your opinion.",
+      "parentUuid": "a00ae1ed_646eec8b",
+      "range": {
+        "startLine": 122,
+        "startChar": 5,
+        "endLine": 122,
+        "endChar": 17
+      },
+      "revId": "afe09546eecfd8856b70e2c8b17dee4878c1307e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
