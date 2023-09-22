@@ -89,6 +89,7 @@ $(eval $(call add_define,NS_BL1U_DEFINES,PA_SIZE))
 $(eval $(call add_define,NS_BL2U_DEFINES,PA_SIZE))
 $(eval $(call add_define,TFTF_DEFINES,PA_SIZE))
 $(eval $(call add_define,REALM_DEFINES,PA_SIZE))
+$(eval $(call add_define,TFTF_DEFINES,TRANSFER_LIST))
 
 PLAT_INCLUDES	+=	-Iplat/arm/fvp/include/
 
