@@ -278,6 +278,30 @@
       },
       "revId": "afe09546eecfd8856b70e2c8b17dee4878c1307e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "efe1f840_0b0d20db",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-25T15:21:11Z",
+      "side": 1,
+      "message": "agree, was giving an example where we have a dummy memory region that is really in memory like DRAM/SRAM/TCM, but not a real device, and we associate an interrupt with it. I\u0027m curious (and off topic) why we want to force memory sharing primitives and why we dont want to share memory using manifests. I dont see any harm in that. did we add a check for this recently (vaguely remember we did)?\nI will check internally again, but i\u0027m pretty sure we are doing this to share memory between SPs instead of using mem sharing primitives (which are complicated IMO).",
+      "parentUuid": "c396c8d9_002d108e",
+      "range": {
+        "startLine": 122,
+        "startChar": 5,
+        "endLine": 122,
+        "endChar": 17
+      },
+      "revId": "afe09546eecfd8856b70e2c8b17dee4878c1307e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
