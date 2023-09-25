@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e25299a1_7917a55a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-25T14:51:54Z",
+      "side": 1,
+      "message": "Generally looks okay to me except for the location where interrupt is declared..",
+      "revId": "afe09546eecfd8856b70e2c8b17dee4878c1307e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c4e1c913_18629b8f",
@@ -205,6 +222,30 @@
       "side": 1,
       "message": "I think there is value is separating the PPI from the WDT node. Due to the restriction Madhu described, we will have to introduce a dummy node.",
       "parentUuid": "009b7dfd_3ff0d77d",
+      "range": {
+        "startLine": 122,
+        "startChar": 5,
+        "endLine": 122,
+        "endChar": 17
+      },
+      "revId": "afe09546eecfd8856b70e2c8b17dee4878c1307e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2b49564_ad66b2b7",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-25T14:51:54Z",
+      "side": 1,
+      "message": "i sort of agree with Varun. it is misleading to put the interrupt with the sec_wdog. We need a way to declare an interrupt without it being tied to a device and having to declare dummy base address or pages etc. I think that can be a follow on patch, but i can see legitimate use cases where a SW component wants to trigger an interrupt.\nPerhaps this can be a shared region of memory between 2 SPs (so in this cactus case, we reserve a region accessible between different cactus instances) and associate an interrupt with it.",
+      "parentUuid": "e21df81d_ac42e0f1",
       "range": {
         "startLine": 122,
         "startChar": 5,
