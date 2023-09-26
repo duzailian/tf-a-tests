@@ -326,6 +326,30 @@
       },
       "revId": "afe09546eecfd8856b70e2c8b17dee4878c1307e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09612799_afa8b15e",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2023-09-26T15:27:58Z",
+      "side": 1,
+      "message": "Hi Madhu, sorry for not being clear. I was asking if we can create a node like follows:\nespi_fake_device_node {\n\t\t\t/* Fake region, reserved for test purposes */\n\t\t\tbase-address \u003d \u003c0x00000000 0x(some address in TZSRAM)\u003e;\n\t\t\tpages-count \u003d \u003c1\u003e; /* 1 4K Page */\n\t\t\tattributes \u003d \u003c0x3\u003e; /* read-write */\n\t\t\tinterrupts \u003d \u003c5000 0x900\u003e\n};\n\nWhy wont hafnium allow such nodes? Hafnium would just map that base address as device memory (when in fact it is really normal memory). You are wasting one page of memory the test, but do we care? It is for a test, and it provides clarity and avoids confusion.",
+      "parentUuid": "15a46235_3501bd0f",
+      "range": {
+        "startLine": 122,
+        "startChar": 5,
+        "endLine": 122,
+        "endChar": 17
+      },
+      "revId": "afe09546eecfd8856b70e2c8b17dee4878c1307e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
