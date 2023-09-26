@@ -302,6 +302,30 @@
       },
       "revId": "afe09546eecfd8856b70e2c8b17dee4878c1307e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15a46235_3501bd0f",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-09-26T14:14:31Z",
+      "side": 1,
+      "message": "I appreciate the feedback but looks like it is moving in a tangential direction with respect to the feature we are looking to exercise.\nCurrently, Hafnium SPMC does not allow declaring dummy nodes in device region in any partition manifest. I cannot create a dedicated device region node to list the ESPI 5000 interrupt.",
+      "parentUuid": "efe1f840_0b0d20db",
+      "range": {
+        "startLine": 122,
+        "startChar": 5,
+        "endLine": 122,
+        "endChar": 17
+      },
+      "revId": "afe09546eecfd8856b70e2c8b17dee4878c1307e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
