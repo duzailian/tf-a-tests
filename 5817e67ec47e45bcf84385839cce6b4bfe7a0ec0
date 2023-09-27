@@ -47,6 +47,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d91efb83_bfbea672",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-09-27T16:54:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a831ceb2_cf65f80c",
+      "range": {
+        "startLine": 659,
+        "startChar": 14,
+        "endLine": 659,
+        "endChar": 54
+      },
+      "revId": "5817e67ec47e45bcf84385839cce6b4bfe7a0ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fca3db8d_791289c0",
@@ -60,6 +84,24 @@
       "writtenOn": "2023-09-25T11:17:12Z",
       "side": 1,
       "message": "delete empty line",
+      "revId": "5817e67ec47e45bcf84385839cce6b4bfe7a0ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "797e6e60_b938f759",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-09-27T16:54:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fca3db8d_791289c0",
       "revId": "5817e67ec47e45bcf84385839cce6b4bfe7a0ec0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -110,6 +152,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "86050c88_07f1d7c8",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-09-27T16:54:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5cd39cc_41ddab93",
+      "range": {
+        "startLine": 684,
+        "startChar": 0,
+        "endLine": 684,
+        "endChar": 42
+      },
+      "revId": "5817e67ec47e45bcf84385839cce6b4bfe7a0ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c435a67_ef500e38",
@@ -146,6 +212,24 @@
       "writtenOn": "2023-09-25T11:17:12Z",
       "side": 1,
       "message": "This test doesn\u0027t really make sense as part of this work, and hence shall be deleted.",
+      "revId": "5817e67ec47e45bcf84385839cce6b4bfe7a0ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62cb49ca_e4b72fbb",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-09-27T16:54:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5cfa31d_19e43ebd",
       "revId": "5817e67ec47e45bcf84385839cce6b4bfe7a0ec0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
