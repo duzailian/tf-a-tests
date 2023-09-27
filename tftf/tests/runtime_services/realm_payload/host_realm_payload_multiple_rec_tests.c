@@ -46,7 +46,7 @@ test_result_t host_realm_multi_rec_multiple_cpu(void)
 	unsigned int host_call_result;
 	u_register_t rec_flag[MAX_REC_COUNT] = {RMI_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE,
 		RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE,
-		RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE};
+		RMI_NOT_RUNNABLE};
 	u_register_t exit_reason;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
@@ -129,4 +129,46 @@ destroy_realm:
 	}
 
 	return host_cmp_result();
+}
+
+
+test_result_t host_realm_multi_rec_single_cpu(void)
+{
+	bool ret1, ret2;
+	u_register_t rec_flag[MAX_REC_COUNT] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
+	RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE};
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!host_create_realm_payload((u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)(PAGE_POOL_MAX_SIZE +
+			NS_REALM_SHARED_MEM_SIZE),
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, rec_flag, MAX_REC_COUNT)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	for (unsigned int i = 0; i < MAX_REC_COUNT; i++) {
+		realm_shared_data_set_host_val(i, HOST_SLEEP_INDEX, 100);
+		ret1 = host_enter_realm_execute(REALM_SLEEP_CMD, NULL,
+				RMI_EXIT_HOST_CALL, i);
+		if (!ret1) {
+			break;
+		}
+	}
+
+	ret2 = host_destroy_realm();
+
+	if (!ret1 || !ret2) {
+		ERROR("%s(): enter=%d destroy=%d\n",
+		__func__, ret1, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
 }
