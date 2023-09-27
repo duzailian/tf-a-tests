@@ -22,7 +22,7 @@ host_rec_shared_data_t *host_get_rec_shared_structure(unsigned int rec_num)
 	return &host_shared_data->data[rec_num];
 }
 
-host_shared_data_t *host_get_shared_structure(unsigned int rec_num)
+host_shared_data_t *host_get_shared_structure(void)
 {
 	return host_shared_data;
 }
