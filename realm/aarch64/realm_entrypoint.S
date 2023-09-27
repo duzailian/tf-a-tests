@@ -58,7 +58,6 @@ pie_fixup:
 	add	x1, x1, x0
 	bl	fixup_gdt_reloc
 
-realm_warmboot_endpoint:
 #if ENABLE_PAUTH
 	bl	pauth_init_enable
 #endif
@@ -67,6 +66,12 @@ loop:
 	/* And jump to the C entrypoint. */
 	bl	realm_payload_main
 	b	loop
+
+realm_warmboot_endpoint:
+#if ENABLE_PAUTH
+	bl	pauth_init_enable
+#endif
+	b	realm_secondary_entrypoint
 endfunc realm_entrypoint
 
 /* Initialize architectural state. */
