@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15c4c9d3_2ad1784e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-28T13:26:28Z",
+      "side": 1,
+      "message": "In general LGTM, just few minor things.",
+      "revId": "fbded7fd31ec48d7dd83d4d0bbc96caf14c811dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aad4f0b6_a062ec3c",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-28T13:26:28Z",
+      "side": 1,
+      "message": "nit: Not 100% sure, but I think you might need to add \"__unused\" to retrmm definition or otherwise you might have static check errors as this variable is never read (and technically never assigned either). And the same on other files as well.",
+      "range": {
+        "startLine": 297,
+        "startChar": 15,
+        "endLine": 297,
+        "endChar": 21
+      },
+      "revId": "fbded7fd31ec48d7dd83d4d0bbc96caf14c811dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7c0b6fb_7cc56c8f",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-28T13:26:28Z",
+      "side": 1,
+      "message": "I think you should easier to read and maintain if you define the major and minor and then define RMI_ABI_VERSION as derived from them. Something similar as done in https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/23473/2/realm/include/realm_rsi.h#37",
+      "revId": "fbded7fd31ec48d7dd83d4d0bbc96caf14c811dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a6a587d_4e5ff784",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-28T13:26:28Z",
+      "side": 1,
+      "message": "nit: You might need to initialize this variable with a value, otherwise you might get static check errors on lines 42 and 44 stating that the variable might have been used without initializing. And the same in other files below where the retrieved version is used.",
+      "range": {
+        "startLine": 39,
+        "startChar": 19,
+        "endLine": 39,
+        "endChar": 26
+      },
+      "revId": "fbded7fd31ec48d7dd83d4d0bbc96caf14c811dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06625ada_52d73c75",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-28T13:26:28Z",
+      "side": 1,
+      "message": "nit: maybe it would be better for debugging purposes to print this as major.minor or at least on hexadecimal?",
+      "range": {
+        "startLine": 44,
+        "startChar": 51,
+        "endLine": 44,
+        "endChar": 64
+      },
+      "revId": "fbded7fd31ec48d7dd83d4d0bbc96caf14c811dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f507982b_302ad047",
+        "filename": "realm/realm_pmuv3.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-09-28T13:26:28Z",
+      "side": 1,
+      "message": "nit: Not 100% sure, but I think you might need to add \"__unused\" to this definition or otherwise you might have static check errors as this variable is never read (and technically never assigned either).",
+      "revId": "fbded7fd31ec48d7dd83d4d0bbc96caf14c811dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
