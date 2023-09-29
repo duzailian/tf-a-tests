@@ -122,13 +122,14 @@ bool check_spmc_execution_level(void)
 
 	/*
 	 * Send a first OP-TEE-defined protocol message through
-	 * FFA direct message. Expect it to implement either v1.0 or v1.1.
+	 * FFA direct message. Expect it to implement from at least v1.0 up to
+	 * v1.<FFA_VERSION_MINOR>.
 	 */
 	ret_values = ffa_msg_send_direct_req32(HYP_ID, SP_ID(1),
 					       OPTEE_FFA_GET_API_VERSION, 0,
 					       0, 0, 0);
 	if (ret_values.arg3 == 1 &&
-	    (ret_values.arg4 == 0 || ret_values.arg4 == 1)) {
+	    (ret_values.arg4 >= 0 && ret_values.arg4 <= FFA_VERSION_MINOR)) {
 		is_optee_spmc_criteria++;
 	}
 
