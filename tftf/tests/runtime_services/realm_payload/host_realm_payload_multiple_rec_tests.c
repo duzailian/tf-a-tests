@@ -5,9 +5,12 @@
  */
 
 #include <stdlib.h>
+#include <drivers/arm/arm_gic.h>
 #include <debug.h>
+#include <platform.h>
 #include <power_management.h>
 #include <psci.h>
+#include <sgi.h>
 #include <test_helpers.h>
 
 #include <host_realm_helper.h>
@@ -238,6 +241,80 @@ destroy_realm:
 	ret2 = host_destroy_realm();
 
 	if ((ret1 != REALM_SUCCESS) || !ret2) {
+		ERROR("%s(): enter=%d destroy=%d\n",
+		__func__, ret1, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return host_cmp_result();
+}
+
+static test_result_t cpu_on_handler2(void)
+{
+	unsigned int i;
+	int ret;
+
+	spin_lock(&counter_lock);
+	i = ++is_secondary_cpu_on;
+	spin_unlock(&counter_lock);
+	ret = host_enter_realm_execute(REALM_LOOP_CMD, NULL, RMI_EXIT_IRQ, i);
+	if (!ret) {
+		return TEST_RESULT_FAIL;
+	}
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t host_realm_multi_rec_exit_irq(void)
+{
+	bool ret1, ret2;
+	int ret;
+	u_register_t other_mpidr, my_mpidr;
+	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
+		RMI_RUNNABLE};
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!host_create_realm_payload((u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)(PAGE_POOL_MAX_SIZE +
+			NS_REALM_SHARED_MEM_SIZE),
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, rec_flag, 4U)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	is_secondary_cpu_on = 0U;
+	my_mpidr = read_mpidr_el1() & MPID_MASK;
+	ret1 = host_enter_realm_execute(REALM_GET_RSI_VERSION, NULL, RMI_EXIT_HOST_CALL, 0U);
+	for (unsigned int i = 1U; i < 4U; i++) {
+		do {
+			other_mpidr = tftf_find_random_cpu_other_than(my_mpidr);
+			if (other_mpidr == INVALID_MPID) {
+				ERROR("Couldn't find a valid other CPU\n");
+				ret1 = REALM_ERROR;
+				goto destroy_realm;
+			}
+			/* Power on the other CPU */
+			ret = tftf_cpu_on(other_mpidr, (uintptr_t)cpu_on_handler2, 0);
+		} while (ret != PSCI_E_SUCCESS);
+	}
+
+	while (is_secondary_cpu_on != 3U) {
+		waitms(200);
+	}
+
+destroy_realm:
+	tftf_irq_enable(IRQ_NS_SGI_7, GIC_HIGHEST_NS_PRIORITY);
+	for (unsigned int i = 1U; i < 4U; i++) {
+		INFO("Raising NS IRQ for rec %d\n", i);
+		host_rec_force_exit(IRQ_NS_SGI_7, i);
+	}
+	ret2 = host_destroy_realm();
+	if (!ret1 || !ret2) {
 		ERROR("%s(): enter=%d destroy=%d\n",
 		__func__, ret1, ret2);
 		return TEST_RESULT_FAIL;
