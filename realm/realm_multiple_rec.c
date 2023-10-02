@@ -77,3 +77,22 @@ bool test_realm_multiple_rec_multiple_cpu_cmd(void)
 	}
 	return true;
 }
+
+bool test_realm_multiple_rec_psci_denied_cmd(void)
+{
+	u_register_t ret;
+
+	ret = realm_cpu_on(1U, (uintptr_t)secondary_cpu, 0x100);
+	if (ret != PSCI_E_DENIED) {
+		return false;
+	}
+
+	ret = realm_psci_affinity_info(1U, 0U);
+	if (ret != PSCI_STATE_OFF) {
+		realm_printf("CPU 1 should have been off\n");
+		return false;
+	}
+
+	ret = realm_cpu_on(2U, (uintptr_t)secondary_cpu, 0x102);
+	return true;
+}
