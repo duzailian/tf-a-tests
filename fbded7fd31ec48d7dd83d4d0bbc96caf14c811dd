@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "405abcb4_b785ced4",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-02T11:07:27Z",
+      "side": 1,
+      "message": "used on line 312",
+      "parentUuid": "aad4f0b6_a062ec3c",
+      "range": {
+        "startLine": 297,
+        "startChar": 15,
+        "endLine": 297,
+        "endChar": 21
+      },
+      "revId": "fbded7fd31ec48d7dd83d4d0bbc96caf14c811dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a7c0b6fb_7cc56c8f",
@@ -58,6 +82,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "49ae1509_5e4a8df3",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-02T11:07:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7c0b6fb_7cc56c8f",
+      "revId": "fbded7fd31ec48d7dd83d4d0bbc96caf14c811dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4a6a587d_4e5ff784",
@@ -71,6 +113,30 @@
       "writtenOn": "2023-09-28T13:26:28Z",
       "side": 1,
       "message": "nit: You might need to initialize this variable with a value, otherwise you might get static check errors on lines 42 and 44 stating that the variable might have been used without initializing. And the same in other files below where the retrieved version is used.",
+      "range": {
+        "startLine": 39,
+        "startChar": 19,
+        "endLine": 39,
+        "endChar": 26
+      },
+      "revId": "fbded7fd31ec48d7dd83d4d0bbc96caf14c811dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "653979ea_2f21853d",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-02T11:07:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a6a587d_4e5ff784",
       "range": {
         "startLine": 39,
         "startChar": 19,
@@ -104,6 +170,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "64c5fc93_f500eff7",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-02T11:07:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06625ada_52d73c75",
+      "range": {
+        "startLine": 44,
+        "startChar": 51,
+        "endLine": 44,
+        "endChar": 64
+      },
+      "revId": "fbded7fd31ec48d7dd83d4d0bbc96caf14c811dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f507982b_302ad047",
@@ -117,6 +207,24 @@
       "writtenOn": "2023-09-28T13:26:28Z",
       "side": 1,
       "message": "nit: Not 100% sure, but I think you might need to add \"__unused\" to this definition or otherwise you might have static check errors as this variable is never read (and technically never assigned either).",
+      "revId": "fbded7fd31ec48d7dd83d4d0bbc96caf14c811dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ef9d196_e4c88d21",
+        "filename": "realm/realm_pmuv3.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-02T11:07:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f507982b_302ad047",
       "revId": "fbded7fd31ec48d7dd83d4d0bbc96caf14c811dd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
