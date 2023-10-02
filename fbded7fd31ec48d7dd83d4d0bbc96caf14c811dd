@@ -65,6 +65,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "29bcf149_84286300",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-02T17:08:42Z",
+      "side": 1,
+      "message": "Ohh yes, missed that.",
+      "parentUuid": "405abcb4_b785ced4",
+      "range": {
+        "startLine": 297,
+        "startChar": 15,
+        "endLine": 297,
+        "endChar": 21
+      },
+      "revId": "fbded7fd31ec48d7dd83d4d0bbc96caf14c811dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a7c0b6fb_7cc56c8f",
