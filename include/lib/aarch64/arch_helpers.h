@@ -674,4 +674,24 @@ static inline uint64_t virtualcounter_read(void)
 	return read_cntvct_el0();
 }
 
+#if ARM_ARCH_AT_LEAST(8, 1)
+/*
+* Atomically adds @val to the 64-bit value stored at memory location @loc.
+* Stores to memory.
+* Returns the old value.
+*/
+static inline unsigned long atomic_add_64(uint64_t *loc, long val)
+{
+	unsigned long old_val;
+
+	asm volatile(
+	"	ldadd %[val], %[old_val], %[loc]\n"
+	: [loc] "+Q" (*loc),
+	[old_val] "=r" (old_val)
+	: [val] "r" (val)
+	: "memory");
+
+	return old_val;
+}
+#endif
 #endif /* ARCH_HELPERS_H */
