@@ -21,6 +21,8 @@ bool host_create_shared_mem(
 		u_register_t ns_shared_mem_adr,
 		u_register_t ns_shared_mem_size);
 bool host_destroy_realm(void);
+void host_rec_force_exit(unsigned int sgi, unsigned int rec_num);
+unsigned int host_realm_find_core_pos_by_rec(unsigned int rec_num);
 bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr,
 		int test_exit_reason, unsigned int rec_num);
 test_result_t host_cmp_result(void);
