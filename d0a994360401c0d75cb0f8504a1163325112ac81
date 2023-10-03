@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eacbafff_2d29f991",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-03T16:36:35Z",
+      "side": 1,
+      "message": "I think this might cause coverity errors. should be if (ret !\u003d0). Same for other similar checks on previous patches, now that I think about that.",
+      "range": {
+        "startLine": 297,
+        "startChar": 5,
+        "endLine": 297,
+        "endChar": 9
+      },
+      "revId": "d0a994360401c0d75cb0f8504a1163325112ac81",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9837106e_2fd9b937",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-03T16:36:35Z",
+      "side": 1,
+      "message": "Just a question: Where is this return value checked? Is it done internally by the framework?",
+      "revId": "d0a994360401c0d75cb0f8504a1163325112ac81",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
