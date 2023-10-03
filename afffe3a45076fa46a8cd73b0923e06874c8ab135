@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8ba95fe_6958bede",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-03T12:44:22Z",
+      "side": 1,
+      "message": "If the mem_func is FFA_MEM_LEND, the instruction access permissions depends on the borrower count. Do we have to take that into account here?",
+      "revId": "afffe3a45076fa46a8cd73b0923e06874c8ab135",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
