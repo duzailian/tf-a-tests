@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2de4eb0_3b60f742",
+        "filename": "realm/realm_multiple_rec.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-10-03T16:05:56Z",
+      "side": 1,
+      "message": "I think this test should also check that the secondary cpu was effectively never turned on by RMM.\n\nWhat if, in addition to check the ret value, you set is_secondary_cpu_booted to \u00270\u0027 before calling realm_cpu_on() (or get a copy of it for later), wait for some time and then verify that is_secondary_cpu_booted has not been altered and that psci_affinity_info() for the secondary CPU returns PSCI_STATE_OFF? I think that would give reassurance that RMM never woke the secondary CPU up.",
+      "revId": "8cb34f7d0ac349fe368f596ca509f77c440a4cc5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
