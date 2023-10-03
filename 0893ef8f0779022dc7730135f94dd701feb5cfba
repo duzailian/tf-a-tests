@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "56a98865_35db7030",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-03T16:20:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57a3a8c9_a8efc95f",
+      "revId": "0893ef8f0779022dc7730135f94dd701feb5cfba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "703f91e5_dc43c9cb",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-10-03T15:53:17Z",
       "side": 1,
       "message": "Wouldn\u0027t it be good to check that CPU2 has been powered off again?",
+      "revId": "0893ef8f0779022dc7730135f94dd701feb5cfba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cbe96b7_5863c2b8",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-03T16:20:22Z",
+      "side": 1,
+      "message": "skipped this check as I ran rec2 on primary cpu,  \nwe know we have exited from rec, should be ok to destroy realm.",
+      "parentUuid": "703f91e5_dc43c9cb",
       "revId": "0893ef8f0779022dc7730135f94dd701feb5cfba",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
