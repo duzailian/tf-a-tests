@@ -1,0 +1,289 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f1a44e3_24f05415",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_helper.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "\u0027const u_register_t *rec_flag\u0027 to mention it is a input argument",
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea42b3cc_f5aa1c01",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_helper.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "unsigned int",
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c62b0e0c_7258397e",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "This can be \u0027unsigned_int\u0027 to match parameter of \u0027rec_num\u0027 in host_realm_rec_enter() api",
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b8508c5_dc061b24",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "suggest \u0027aux_pages_all_recs\u0027 or something similar to differentiate it from aux_pages of one rec.",
+      "range": {
+        "startLine": 517,
+        "startChar": 14,
+        "endLine": 517,
+        "endChar": 23
+      },
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c76796c_a5b90b59",
+        "filename": "include/runtime_services/host_realm_managment/realm_def.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "2022-2023",
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff8a255a_b7bb7ad8",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "To support multiple rec, can this api take one extra parameter \u0027rec_count\u0027 and always use RMI_RUNNABLE as flag?\nor are there plans to use RMI_NOT_RUNNABLE later?\n\nIf we decide to keep \u0027rec_flag\u0027 this routine must validate \u0027rec_flag\u0027 parameter.\n\nrec_count can be \u0027unsigned int\u0027.",
+      "range": {
+        "startLine": 174,
+        "startChar": 0,
+        "endLine": 180,
+        "endChar": 27
+      },
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa25629f_111f8b23",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "nit: line break",
+      "range": {
+        "startLine": 966,
+        "startChar": 0,
+        "endLine": 968,
+        "endChar": 1
+      },
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd30a53c_ef4da074",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "nit: line break",
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c2af797_b23de433",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 990,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "In case of error, are the pages allocated for aux freed twice, at line 990 and 1069?",
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91d4f0e6_de52dcc1",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "nit: line break",
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3fee57e_acd28a64",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1005,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "0U",
+      "range": {
+        "startLine": 1005,
+        "startChar": 10,
+        "endLine": 1005,
+        "endChar": 12
+      },
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8dcbeeb0_124b5235",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "nit: space between \u0027*\u0027 and line break",
+      "range": {
+        "startLine": 1009,
+        "startChar": 37,
+        "endLine": 1009,
+        "endChar": 91
+      },
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4eeb110f_9b9677a3",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "nit: line break at 80c",
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d7cd02f_e052611a",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1058,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "nit: line break",
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "073b3b96_10ff5e74",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-04T17:00:10Z",
+      "side": 1,
+      "message": "nit: line break",
+      "revId": "646b08663ea178fb1e4a2b684a00623906cccf08",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
