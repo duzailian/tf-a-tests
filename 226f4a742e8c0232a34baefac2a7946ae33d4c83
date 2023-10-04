@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a368ce5_b69a0cf6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2023-10-04T16:45:23Z",
+      "side": 1,
+      "message": "Hi team,\nKindly review this tiny patch and add your votes.\nToolchain has been explicitly tested in the staging area. All the CI test_configs have passed with build.\nhttps://ci.staging.trustedfirmware.org/job/jayanthdc-arm-tf-a-main/3/",
+      "revId": "226f4a742e8c0232a34baefac2a7946ae33d4c83",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
