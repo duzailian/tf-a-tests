@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0851386_310a0c1f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-04T15:12:10Z",
+      "side": 1,
+      "message": "I believe this has to be slightly reworded?",
+      "range": {
+        "startLine": 11,
+        "startChar": 50,
+        "endLine": 12,
+        "endChar": 26
+      },
+      "revId": "3b7a7d5e58d67b4f9c07fb9f8736d9535747600f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40842951_76f61bfe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-04T15:12:10Z",
+      "side": 1,
+      "message": "Would you add Signed-off-by: Madhu... ?",
+      "revId": "3b7a7d5e58d67b4f9c07fb9f8736d9535747600f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e50ae23_1f632fa9",
+        "filename": "include/plat/common/platform.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-04T15:12:10Z",
+      "side": 1,
+      "message": "nit: 2023",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "3b7a7d5e58d67b4f9c07fb9f8736d9535747600f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0277ec5_1c62a04e",
+        "filename": "include/plat/common/platform.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-04T15:12:10Z",
+      "side": 1,
+      "message": "As this is a common platform header file, I wonder that the define name should be a bit more explicit about being related to SPM / Cactus framework. Or perhaps moved to cactus related platform\u0027s headers, or moved locally to the TFTF test case? Not a strong opinion though!",
+      "range": {
+        "startLine": 28,
+        "startChar": 8,
+        "endLine": 28,
+        "endChar": 27
+      },
+      "revId": "3b7a7d5e58d67b4f9c07fb9f8736d9535747600f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f92cb91d_e76533a9",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-04T15:12:10Z",
+      "side": 1,
+      "message": "bool ?\n\nShould it ideally be volatile as being modified in an interrupt context?\nThe trouble might be for the code residing in the cmd handler as it might be optimised with the compiler thinking the variable is never touched.",
+      "range": {
+        "startLine": 21,
+        "startChar": 7,
+        "endLine": 21,
+        "endChar": 10
+      },
+      "revId": "3b7a7d5e58d67b4f9c07fb9f8736d9535747600f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72aeac71_5b170ed8",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-04T15:12:10Z",
+      "side": 1,
+      "message": "Specify in the comment that the base address is arbitrary/irrelevant?",
+      "revId": "3b7a7d5e58d67b4f9c07fb9f8736d9535747600f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5aacddd_30c1dc4d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-04T15:12:10Z",
+      "side": 1,
+      "message": "nit: %u",
+      "range": {
+        "startLine": 459,
+        "startChar": 20,
+        "endLine": 459,
+        "endChar": 22
+      },
+      "revId": "3b7a7d5e58d67b4f9c07fb9f8736d9535747600f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
