@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4ed5c7d_b2a3ab84",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-10-05T15:49:20Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "20ab7eee_412eeb8d",
+      "revId": "d270eea127761a5096605ecc9b9147915ba9b26c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c498c28b_1ce69661",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-10-02T14:54:09Z",
       "side": 1,
       "message": "https://trustedfirmware-a.readthedocs.io/en/latest/process/coding-style.html#conditional-statement-bodies",
+      "revId": "d270eea127761a5096605ecc9b9147915ba9b26c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f50a03e_7d64e9fc",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-10-05T15:49:20Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c498c28b_1ce69661",
       "revId": "d270eea127761a5096605ecc9b9147915ba9b26c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -52,6 +88,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6695b4d_0121e952",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 638,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-10-05T15:49:20Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "54bb15c9_63134433",
+      "revId": "d270eea127761a5096605ecc9b9147915ba9b26c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9f20eb35_dc8aabff",
@@ -65,6 +119,30 @@
       "writtenOn": "2023-10-02T14:54:09Z",
       "side": 1,
       "message": "I think this should be TEST_RESULT_FAIL",
+      "range": {
+        "startLine": 653,
+        "startChar": 10,
+        "endLine": 653,
+        "endChar": 29
+      },
+      "revId": "d270eea127761a5096605ecc9b9147915ba9b26c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec766d72_4cf6f15d",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2023-10-05T15:49:20Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "9f20eb35_dc8aabff",
       "range": {
         "startLine": 653,
         "startChar": 10,
