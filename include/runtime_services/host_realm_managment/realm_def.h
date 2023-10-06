@@ -12,6 +12,7 @@
 
 /* 1MB for Realm payload as a default value */
 #define REALM_MAX_LOAD_IMG_SIZE		U(0x100000)
+
 #define REALM_STACK_SIZE		0x1000U
 #define DATA_PATTERN_1			0x12345678U
 #define DATA_PATTERN_2			0x11223344U
