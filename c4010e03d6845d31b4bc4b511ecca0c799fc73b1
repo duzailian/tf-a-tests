@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40de477a_581bbe45",
+        "filename": "realm/realm_sve.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-06T16:20:32Z",
+      "side": 1,
+      "message": "nit: accesses",
+      "revId": "c4010e03d6845d31b4bc4b511ecca0c799fc73b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
