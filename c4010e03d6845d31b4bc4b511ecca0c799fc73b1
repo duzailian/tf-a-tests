@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b059fcb2_c4b95ae6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-06T16:23:52Z",
+      "side": 1,
+      "message": "nit: it is possible to use an arbitrary commit type but conventional commits guidance says\n\ntypes other than fix: and feat: are allowed, [...] recommends build:, chore:, ci:, docs:, style:, refactor:, perf:, test:, and others.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "c4010e03d6845d31b4bc4b511ecca0c799fc73b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "40de477a_581bbe45",
         "filename": "realm/realm_sve.c",
         "patchSetId": 7
