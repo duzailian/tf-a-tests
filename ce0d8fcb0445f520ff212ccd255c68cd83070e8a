@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "500e0efc_dd74764a",
+        "filename": "include/lib/extensions/sve.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-06T16:33:02Z",
+      "side": 1,
+      "message": "nit: it\u0027s ok to move to an assembly file but please consider the TF-A coding rule https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/docs/process/coding-guidelines.rst#n452 for future.",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 26
+      },
+      "revId": "ce0d8fcb0445f520ff212ccd255c68cd83070e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
