@@ -343,7 +343,7 @@ test_result_t host_realm_multi_rec_multiple_cpu(void)
 	init_spinlock(&counter_lock);
 	is_secondary_cpu_on = 0U;
 	my_mpidr = read_mpidr_el1() & MPID_MASK;
-	realm_shared_data_set_host_val(0U, HOST_ARG1_INDEX, MAX_REC_COUNT);
+	host_shared_data_set_host_val(0U, HOST_ARG1_INDEX, MAX_REC_COUNT);
 	ret1 = host_enter_realm_execute(REALM_MULTIPLE_REC_MULTIPLE_CPU_CMD, &realm_ptr,
 			RMI_EXIT_PSCI, 0U);
 	do {
