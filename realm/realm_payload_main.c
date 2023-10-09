@@ -41,21 +41,23 @@ static void realm_loop_cmd(void)
 }
 
 /*
- * This function requests RSI/ABI version from RMM.
+ * This function requests RSI ABI version from RMM.
  */
 static void realm_get_rsi_version(void)
 {
-	u_register_t ret, version = 0U;
+	u_register_t ret, lower_ver, higher_ver;
 
-	ret = rsi_get_version(RSI_ABI_VERSION_VAL, &version);
-	if (version == (u_register_t)SMC_UNKNOWN ||
-			ret != RSI_SUCCESS) {
+	ret = rsi_get_version(RSI_ABI_VERSION_VAL, &lower_ver, &higher_ver);
+	if (lower_ver == (u_register_t)SMC_UNKNOWN ||
+		ret != RSI_SUCCESS) {
 		realm_printf("SMC_RSI_ABI_VERSION failed\n");
 	}
 
-	realm_printf("RSI ABI version %u.%u (expected: %u.%u)\n",
-	RSI_ABI_VERSION_GET_MAJOR(version),
-	RSI_ABI_VERSION_GET_MINOR(version),
+	realm_printf("RSI ABI version %u.%u : %u.%u (expected: %u.%u)\n",
+	RSI_ABI_VERSION_GET_MAJOR(lower_ver),
+	RSI_ABI_VERSION_GET_MINOR(lower_ver),
+	RSI_ABI_VERSION_GET_MAJOR(higher_ver),
+	RSI_ABI_VERSION_GET_MINOR(higher_ver),
 	RSI_ABI_VERSION_GET_MAJOR(RSI_ABI_VERSION_VAL),
 	RSI_ABI_VERSION_GET_MINOR(RSI_ABI_VERSION_VAL));
 }
