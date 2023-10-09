@@ -6,7 +6,8 @@
 
 ifeq (${ARCH},aarch64)
 TFTF_INCLUDES +=							\
-	-Iinclude/runtime_services/host_realm_managment
+	-Iinclude/runtime_services/host_realm_managment			\
+	-Irealm/include
 
 TESTS_SOURCES	+=							\
 	$(addprefix tftf/tests/runtime_services/realm_payload/,		\
