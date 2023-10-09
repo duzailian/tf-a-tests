@@ -529,6 +529,12 @@ struct realm {
 u_register_t host_rmi_version(u_register_t req_ver);
 u_register_t host_rmi_granule_delegate(u_register_t addr);
 u_register_t host_rmi_granule_undelegate(u_register_t addr);
+
+u_register_t host_data_destroy_undelegate_range(struct realm *realm,
+		u_register_t ipa,
+		u_register_t adr,
+		u_register_t size);
+
 u_register_t host_rmi_realm_create(u_register_t rd, u_register_t params_ptr);
 u_register_t host_rmi_realm_destroy(u_register_t rd);
 u_register_t host_rmi_features(u_register_t index, u_register_t *features);
@@ -554,5 +560,15 @@ u_register_t host_rmi_psci_complete(u_register_t calling_rec, u_register_t targe
 		unsigned long status);
 void host_rmi_init_cmp_result(void);
 bool host_rmi_get_cmp_result(void);
+u_register_t host_realm_map_protected_data(bool unknown,
+				struct realm *realm,
+				u_register_t target_pa,
+				u_register_t map_size,
+				u_register_t src_pa);
+u_register_t host_rmi_rtt_set_ripas(u_register_t rd,
+				  u_register_t rec,
+				  u_register_t start,
+				  u_register_t end,
+				  u_register_t *top);
 
 #endif /* HOST_REALM_RMI_H */

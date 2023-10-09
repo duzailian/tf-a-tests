@@ -12,6 +12,7 @@
 #include <irq.h>
 #include <drivers/arm/arm_gic.h>
 #include <drivers/arm/gic_v3.h>
+#include <heap/page_alloc.h>
 #include <pauth.h>
 #include <test_helpers.h>
 
@@ -19,6 +20,7 @@
 #include <host_realm_mem_layout.h>
 #include <host_realm_pmu.h>
 #include <host_shared_data.h>
+#include <realm_rsi.h>
 
 #define SLEEP_TIME_MS	200U
 
@@ -346,4 +348,82 @@ test_result_t host_realm_pmuv3_overflow_interrupt(void)
 
 	tftf_irq_enable(PMU_PPI, GIC_HIGHEST_NS_PRIORITY);
 	return host_test_realm_pmuv3(REALM_PMU_INTERRUPT);
+}
+
+/*
+ * Test set_ripas functionality in Realm
+ */
+test_result_t host_realm_set_ripas(void)
+{
+	bool ret1, ret2;
+	u_register_t ret, top_base, new_base, exit_reason;
+	unsigned int host_call_result;
+	struct realm *realm_ptr;
+	struct rmi_rec_run *run;
+	u_register_t rec_flag[1] = {RMI_RUNNABLE};
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!host_create_realm_payload((u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)(PAGE_POOL_MAX_SIZE +
+			NS_REALM_SHARED_MEM_SIZE),
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, rec_flag, 1U)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	host_shared_data_set_host_val(0U, HOST_ARG1_INDEX, 10U);
+	ret1 = host_enter_realm_execute(REALM_SLEEP_CMD, &realm_ptr, RMI_EXIT_HOST_CALL, 0U);
+	top_base = (u_register_t)page_alloc(PAGE_SIZE * 3U);
+	for (unsigned int i = 0U; i < 3U; i++) {
+		ret = host_realm_map_protected_data(true, realm_ptr, top_base +
+				(PAGE_SIZE * i), PAGE_SIZE, (1ULL << 48U) | (top_base + (PAGE_SIZE * i)));
+		if (ret != REALM_SUCCESS) {
+			ERROR("host_realm_map_protected_data failed\n");
+			goto destroy_realm;
+		}
+	}
+	host_shared_data_set_host_val(0U, HOST_ARG1_INDEX, top_base);
+	host_shared_data_set_host_val(0U, HOST_ARG2_INDEX, (top_base + (PAGE_SIZE * 3U)));
+	ret1 = host_enter_realm_execute(REALM_SET_RIPAS_CMD, &realm_ptr, RMI_EXIT_RIPAS_CHANGE, 0U);
+	if (ret1) {
+		run = (struct rmi_rec_run *)realm_ptr->run[0U];
+		while (run->exit.ripas_base <= top_base + (PAGE_SIZE * 4U)) {
+			INFO("host_rmi_rtt_set_ripas exit.ripas_base=0x%lx\n", run->exit.ripas_base);
+			ret = host_rmi_rtt_set_ripas(realm_ptr->rd,
+						     realm_ptr->rec[0U],
+						     run->exit.ripas_base,
+						     run->exit.ripas_base + PAGE_SIZE,
+						     &new_base);
+			if (ret == RMI_SUCCESS) {
+				run->entry.gprs[0] = RMI_SUCCESS;
+				run->entry.gprs[1] = new_base;
+				run->entry.gprs[2] = RSI_ACCEPT;
+				ret = host_realm_rec_enter(realm_ptr,
+					&exit_reason, &host_call_result, 0U);
+				if ( ret != RMI_SUCCESS || exit_reason != RMI_EXIT_RIPAS_CHANGE) {
+					break;
+				}
+			} else {
+				ERROR("host_rmi_rtt_set_ripas failed ret = 0x%lx\n", ret);
+			}
+		}
+	} else {
+		ERROR("Rec enter failed\n");
+	}
+destroy_realm:
+	ret2 = host_destroy_realm();
+
+	if (!ret1 || !ret2) {
+		ERROR("%s(): enter=%d destroy=%d\n",
+		__func__, ret1, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return host_cmp_result();
 }
