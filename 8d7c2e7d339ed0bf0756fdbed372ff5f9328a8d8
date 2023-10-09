@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "95d12e0e_5232ac61",
+        "filename": "tftf/framework/tftf.ld.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-09T10:58:24Z",
+      "side": 1,
+      "message": "probably it should be limited. Currently it is allowed to use the entire DRAM, so we would need to introduce a limit and cause all platforms to adhere to it.",
+      "parentUuid": "5c6dfbe0_4b41c379",
+      "range": {
+        "startLine": 17,
+        "startChar": 44,
+        "endLine": 17,
+        "endChar": 53
+      },
+      "revId": "8d7c2e7d339ed0bf0756fdbed372ff5f9328a8d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "67df7816_26a930e1",
         "filename": "tftf/framework/tftf.ld.S",
         "patchSetId": 7
