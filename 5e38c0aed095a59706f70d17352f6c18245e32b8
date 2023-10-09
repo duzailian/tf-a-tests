@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b59af33_bdeca0e3",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 1086,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-09T11:00:47Z",
+      "side": 1,
+      "message": "nit: spaces around */+",
+      "revId": "5e38c0aed095a59706f70d17352f6c18245e32b8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
