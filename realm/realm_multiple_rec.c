@@ -29,7 +29,7 @@ static void secondary_cpu(u_register_t cxt_id)
 			read_mpidr_el1() & MPID_MASK, cxt_id);
 	if (cxt_id < CXT_ID_MAGIC || cxt_id > CXT_ID_MAGIC + MAX_REC_COUNT) {
 		realm_printf("Realm: Wrong cxt_id\n");
-		rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD, read_mpidr_el1() & MPID_MASK);
+		rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
 	}
 	spin_lock(&counter_lock);
 	is_secondary_cpu_booted++;
