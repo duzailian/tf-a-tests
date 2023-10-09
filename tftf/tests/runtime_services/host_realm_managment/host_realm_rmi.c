@@ -110,11 +110,11 @@ u_register_t host_rmi_psci_complete(u_register_t calling_rec, u_register_t targe
 				target_rec, status}, 4U)).ret0;
 }
 
-static inline u_register_t host_rmi_data_create(bool unknown,
-						u_register_t rd,
-						u_register_t data,
-						u_register_t map_addr,
-						u_register_t src)
+u_register_t host_rmi_data_create(bool unknown,
+				u_register_t rd,
+				u_register_t data,
+				u_register_t map_addr,
+				u_register_t src)
 {
 	if (unknown) {
 		return host_rmi_handler(&(smc_args) {RMI_DATA_CREATE_UNKNOWN,
@@ -240,7 +240,7 @@ static inline u_register_t host_rmi_rec_aux_count(u_register_t rd,
 	return rets.ret0;
 }
 
-static inline u_register_t host_rmi_rtt_set_ripas(u_register_t rd,
+u_register_t host_rmi_rtt_set_ripas(u_register_t rd,
 						  u_register_t rec,
 						  u_register_t start,
 						  u_register_t end,
