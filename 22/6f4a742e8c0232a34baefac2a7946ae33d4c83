@@ -1,0 +1,12 @@
+Code-Review+1: Bipin Ravi <bipin.ravi@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Allow-CI+1: jayanthchidanand-arm <jayanthdodderi.chidanand@arm.com>
+Code-Review+1: Juan Pablo Conde <juanpablo.conde@arm.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Owner-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Mon, 09 Oct 2023 15:19:12 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/23758
+Comments-Total: 1
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
