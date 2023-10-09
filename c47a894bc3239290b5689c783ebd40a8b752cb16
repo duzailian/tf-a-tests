@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abfa7466_e673c7cc",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T15:38:17Z",
+      "side": 1,
+      "message": "I wonder if we should use same pattern here, as in https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/21363/9/lib/extensions/sme/aarch64/sme.c#100\n\nSMCR_ELX_LEN_MASK defines 9 bits\nwhereas MASK(SMCR_ELX_LEN) defines 4 bits\n\nBits 4:8 are RAZ/WI but this doesn\u0027t say if they shall be forced to 0 from now e.g. to support future uses.\nSee some rationale here https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/21505/1/include/lib/aarch64/arch.h#b927\n\nEventually SMCR_ELX_LEN_MASK definition may go away if using MASK macro.",
+      "range": {
+        "startLine": 110,
+        "startChar": 2,
+        "endLine": 111,
+        "endChar": 35
+      },
+      "revId": "c47a894bc3239290b5689c783ebd40a8b752cb16",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
