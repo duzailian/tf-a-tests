@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf7e0c46_d2befb7b",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-09T10:22:11Z",
+      "side": 1,
+      "message": "host_enter_realm_execute returns bool, changed ret to bool",
+      "parentUuid": "eacbafff_2d29f991",
+      "range": {
+        "startLine": 297,
+        "startChar": 5,
+        "endLine": 297,
+        "endChar": 9
+      },
+      "revId": "d0a994360401c0d75cb0f8504a1163325112ac81",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9837106e_2fd9b937",
@@ -37,6 +61,24 @@
       "writtenOn": "2023-10-03T16:36:35Z",
       "side": 1,
       "message": "Just a question: Where is this return value checked? Is it done internally by the framework?",
+      "revId": "d0a994360401c0d75cb0f8504a1163325112ac81",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9dcbc797_be8cee43",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-09T10:22:11Z",
+      "side": 1,
+      "message": "yes, by TFTF framework, run_tests",
+      "parentUuid": "9837106e_2fd9b937",
       "revId": "d0a994360401c0d75cb0f8504a1163325112ac81",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
