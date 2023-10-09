@@ -554,5 +554,10 @@ u_register_t host_rmi_psci_complete(u_register_t calling_rec, u_register_t targe
 		unsigned long status);
 void host_rmi_init_cmp_result(void);
 bool host_rmi_get_cmp_result(void);
+u_register_t host_rmi_rtt_set_ripas(u_register_t rd,
+				  u_register_t rec,
+				  u_register_t start,
+				  u_register_t end,
+				  u_register_t *top);
 
 #endif /* HOST_REALM_RMI_H */

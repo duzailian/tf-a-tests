@@ -240,7 +240,7 @@ static inline u_register_t host_rmi_rec_aux_count(u_register_t rd,
 	return rets.ret0;
 }
 
-static inline u_register_t host_rmi_rtt_set_ripas(u_register_t rd,
+u_register_t host_rmi_rtt_set_ripas(u_register_t rd,
 						  u_register_t rec,
 						  u_register_t start,
 						  u_register_t end,
