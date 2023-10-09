@@ -65,6 +65,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "98a8f5d5_fa373192",
+        "filename": "tftf/framework/tftf.ld.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-09T10:48:15Z",
+      "side": 1,
+      "message": "The comment need to be corrected to PAGE_SIZE.",
+      "parentUuid": "c205bd28_fbe7a89f",
+      "range": {
+        "startLine": 80,
+        "startChar": 32,
+        "endLine": 80,
+        "endChar": 39
+      },
+      "revId": "8d7c2e7d339ed0bf0756fdbed372ff5f9328a8d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "657bc551_4ddc2aaf",
@@ -125,6 +149,30 @@
       "writtenOn": "2023-10-09T10:48:13Z",
       "side": 1,
       "message": "Acknowledged, Thanks!",
+      "parentUuid": "105402af_2b3075f9",
+      "range": {
+        "startLine": 82,
+        "startChar": 5,
+        "endLine": 82,
+        "endChar": 27
+      },
+      "revId": "8d7c2e7d339ed0bf0756fdbed372ff5f9328a8d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05dd9ff1_6a93dc38",
+        "filename": "tftf/framework/tftf.ld.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-09T10:48:15Z",
+      "side": 1,
+      "message": "Actually , even though bss had an alignment of 16 specified, the linker was aligning it to PAGE size for some reason. So this is correcting an inconsistency in what the compiler is doing vs alignment specified. Perhaps Shruti can confirm this again ?",
       "parentUuid": "105402af_2b3075f9",
       "range": {
         "startLine": 82,
