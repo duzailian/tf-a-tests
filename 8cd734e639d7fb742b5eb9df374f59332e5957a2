@@ -1,0 +1,251 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce78548d_3d586447",
+        "filename": "include/lib/extensions/sve.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T12:55:49Z",
+      "side": 1,
+      "message": "nit: there is actually only one FFR register so comment might be \"Max. size of FFR register\"",
+      "range": {
+        "startLine": 30,
+        "startChar": 3,
+        "endLine": 30,
+        "endChar": 31
+      },
+      "revId": "8cd734e639d7fb742b5eb9df374f59332e5957a2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aae72416_b582c30b",
+        "filename": "include/lib/extensions/sve.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T12:55:49Z",
+      "side": 1,
+      "message": "Not sure this is really required as a single register exists?",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 27
+      },
+      "revId": "8cd734e639d7fb742b5eb9df374f59332e5957a2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84df180f_c27e47a5",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T12:55:49Z",
+      "side": 1,
+      "message": "Curious why removing brackets?\nPer MISRA coding rules applied to TF-A, brackets are required even in single line if/for statements. I admit this is all test code here, but better enforcing everywhere beyond TF-A?",
+      "revId": "8cd734e639d7fb742b5eb9df374f59332e5957a2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc88705a_8801142b",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T12:55:49Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 126,
+        "startChar": 24,
+        "endLine": 126,
+        "endChar": 30
+      },
+      "revId": "8cd734e639d7fb742b5eb9df374f59332e5957a2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d28a8943_3e741fa4",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T12:55:49Z",
+      "side": 1,
+      "message": "nit: 0U",
+      "range": {
+        "startLine": 268,
+        "startChar": 19,
+        "endLine": 268,
+        "endChar": 20
+      },
+      "revId": "8cd734e639d7fb742b5eb9df374f59332e5957a2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b86a95c_ad19ef58",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T12:55:49Z",
+      "side": 1,
+      "message": "0U",
+      "range": {
+        "startLine": 291,
+        "startChar": 19,
+        "endLine": 291,
+        "endChar": 20
+      },
+      "revId": "8cd734e639d7fb742b5eb9df374f59332e5957a2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d8a670f_30a76ab6",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T12:55:49Z",
+      "side": 1,
+      "message": "0U",
+      "range": {
+        "startLine": 313,
+        "startChar": 19,
+        "endLine": 313,
+        "endChar": 20
+      },
+      "revId": "8cd734e639d7fb742b5eb9df374f59332e5957a2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f2897c3_02b839f2",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T12:55:49Z",
+      "side": 1,
+      "message": "%u",
+      "range": {
+        "startLine": 343,
+        "startChar": 17,
+        "endLine": 343,
+        "endChar": 19
+      },
+      "revId": "8cd734e639d7fb742b5eb9df374f59332e5957a2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "070eda57_4054f99c",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T12:55:49Z",
+      "side": 1,
+      "message": "%u",
+      "range": {
+        "startLine": 371,
+        "startChar": 17,
+        "endLine": 371,
+        "endChar": 19
+      },
+      "revId": "8cd734e639d7fb742b5eb9df374f59332e5957a2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8523716b_0102efde",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T12:55:49Z",
+      "side": 1,
+      "message": "practically this is only one possible bit",
+      "range": {
+        "startLine": 382,
+        "startChar": 13,
+        "endLine": 382,
+        "endChar": 67
+      },
+      "revId": "8cd734e639d7fb742b5eb9df374f59332e5957a2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61f7cb2a_dc1c5cad",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T12:55:49Z",
+      "side": 1,
+      "message": "%u",
+      "range": {
+        "startLine": 399,
+        "startChar": 19,
+        "endLine": 399,
+        "endChar": 21
+      },
+      "revId": "8cd734e639d7fb742b5eb9df374f59332e5957a2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
