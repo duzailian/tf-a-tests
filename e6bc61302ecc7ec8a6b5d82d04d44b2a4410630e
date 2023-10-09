@@ -26,6 +26,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "89bbd4c3_a16ec8f7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-09T22:16:50Z",
+      "side": 1,
+      "message": "nitpick: I wonder if fix(rme) is appropriate here. You are fixing a test case and reintroducing it through xml. And moreover, the SPMC is the one that is being exercised here as we expect it to deny the memory sharing operation.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "e6bc61302ecc7ec8a6b5d82d04d44b2a4410630e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "394d205f_767b09d4",
         "filename": "/COMMIT_MSG",
         "patchSetId": 9
