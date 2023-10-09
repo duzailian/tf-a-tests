@@ -22,6 +22,30 @@
       },
       "revId": "ce0d8fcb0445f520ff212ccd255c68cd83070e8a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80f33acd_8829bb65",
+        "filename": "include/lib/extensions/sve.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-09T11:12:53Z",
+      "side": 1,
+      "message": "\u003e  it\u0027s ok to move to an assembly file but please consider the TF-A coding rule\n\nReverted the changes from .S file but retained the change in function name to sve_rdvl_1",
+      "parentUuid": "500e0efc_dd74764a",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 26
+      },
+      "revId": "ce0d8fcb0445f520ff212ccd255c68cd83070e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
