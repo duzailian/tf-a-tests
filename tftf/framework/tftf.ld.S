@@ -69,6 +69,12 @@ SECTIONS
         __REALM_POOL_END__ = .;
     } >RAM
 
+    realm_test_buf (NOLOAD) : {
+        __REALM_TEST_BUF_START__ = .;
+        . = __REALM_TEST_BUF_START__ + NS_REALM_SHARED_MEM_SIZE;
+        __REALM_TEST_BUF_END__ = .;
+    } >RAM
+
     stacks (NOLOAD) : ALIGN(16) {
         __STACKS_START__ = .;
         *(tftf_normal_stacks)

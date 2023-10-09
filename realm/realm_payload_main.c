@@ -18,6 +18,7 @@
 #include <realm_tests.h>
 #include <tftf_lib.h>
 
+void realm_entrypoint(void);
 static fpu_reg_state_t fpu_temp_rl;
 /*
  * This function reads sleep time in ms from shared buffer and spins PE
@@ -57,6 +58,36 @@ static void realm_get_rsi_version(void)
 	RSI_ABI_VERSION_GET_MINOR(version),
 	RSI_ABI_VERSION_GET_MAJOR(RSI_ABI_VERSION_VAL),
 	RSI_ABI_VERSION_GET_MINOR(RSI_ABI_VERSION_VAL));
+}
+
+bool test_realm_set_ripas(void)
+{
+	u_register_t ret, base, new_base;
+	rsi_ripas_respose_type response;
+	rsi_ripas_type ripas;
+
+	base = realm_shared_data_get_host_val((read_mpidr_el1() & MPID_MASK),
+                                HOST_SLEEP_INDEX);
+	ret = rsi_ipa_state_get(base, &ripas);
+	realm_printf("ripas = 0x%lx\n", ripas);
+	if (ripas == RSI_EMPTY) {
+		ret = rsi_ipa_state_set(base, base + PAGE_SIZE, RSI_RAM,
+			RSI_NO_CHANGE_DESTROYED, &new_base, &response);
+		if (ret == RSI_SUCCESS && response == RSI_ACCEPT) {
+			realm_printf("rsi_ipa_state_set passed response = %d\n", response);
+			ret = rsi_ipa_state_get(base, &ripas);
+			realm_printf("new ripas = 0x%lx\n", ripas);
+			if (ret == RSI_SUCCESS && ripas == RSI_RAM) {
+				realm_printf("rsi_ipa_state_get passed ripas = %d\n", ripas);
+			} else {
+				return false;
+			}
+			return true;
+		} else {
+			return false;
+		}
+	}
+	return false;
 }
 
 /*
@@ -120,6 +151,9 @@ void realm_payload_main(void)
 			break;
 		case REALM_REQ_FPU_CMP_CMD:
 			test_succeed = fpu_state_compare_template(&fpu_temp_rl);
+			break;
+		case REALM_SET_RIPAS_CMD:
+			test_succeed = test_realm_set_ripas();
 			break;
 		case REALM_SVE_RDVL:
 			test_succeed = test_realm_sve_rdvl();
