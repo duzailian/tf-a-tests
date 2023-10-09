@@ -155,6 +155,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "076236b5_c9ee6f9a",
+        "filename": "tftf/framework/tftf.ld.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-09T12:24:16Z",
+      "side": 1,
+      "message": "reverted back to DRAM_SIZE",
+      "parentUuid": "d9a835d5_3e067387",
+      "range": {
+        "startLine": 17,
+        "startChar": 44,
+        "endLine": 17,
+        "endChar": 53
+      },
+      "revId": "8d7c2e7d339ed0bf0756fdbed372ff5f9328a8d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "67df7816_26a930e1",
