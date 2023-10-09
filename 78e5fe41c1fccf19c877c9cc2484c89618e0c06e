@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fe4076f_98ea2bdf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-09T15:12:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f7cf59c_bc1c74ba",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 73
+      },
+      "revId": "78e5fe41c1fccf19c877c9cc2484c89618e0c06e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cc89ba68_debd160d",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-10-09T13:07:48Z",
       "side": 1,
       "message": "The implementation doesn\u0027t match this description.",
+      "range": {
+        "startLine": 12,
+        "startChar": 15,
+        "endLine": 12,
+        "endChar": 51
+      },
+      "revId": "78e5fe41c1fccf19c877c9cc2484c89618e0c06e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14289979_bcc30f7c",
+        "filename": "realm/aarch64/plat_helpers.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-09T15:12:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc89ba68_debd160d",
       "range": {
         "startLine": 12,
         "startChar": 15,
