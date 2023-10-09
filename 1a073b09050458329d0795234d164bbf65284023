@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3041d46_418dfca2",
+        "filename": "lib/power_management/suspend/aarch64/asm_tftf_suspend.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T15:38:21Z",
+      "side": 1,
+      "message": "nit: 2023",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "1a073b09050458329d0795234d164bbf65284023",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25a999fc_b9b270fa",
+        "filename": "lib/power_management/suspend/suspend_private.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T15:38:21Z",
+      "side": 1,
+      "message": "nit: 2023",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "1a073b09050458329d0795234d164bbf65284023",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e7242af_3f552d67",
+        "filename": "tftf/tests/extensions/sme/test_sme2.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T15:38:21Z",
+      "side": 1,
+      "message": "Is this platform dependent?",
+      "range": {
+        "startLine": 59,
+        "startChar": 21,
+        "endLine": 59,
+        "endChar": 28
+      },
+      "revId": "1a073b09050458329d0795234d164bbf65284023",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
