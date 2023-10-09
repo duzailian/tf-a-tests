@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9a3966e_21fe56f9",
+        "filename": "lib/smc/aarch64/smc.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T15:39:16Z",
+      "side": 1,
+      "message": "I wonder if it\u0027s the right condition as later with SME the same hint bit serves for hinting about the SSVE state? e.g. to support the theoritical case of SME implemented and SVE not implemented.",
+      "range": {
+        "startLine": 33,
+        "startChar": 1,
+        "endLine": 33,
+        "endChar": 32
+      },
+      "revId": "262e9305229981fe09441286fa31721127c34546",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
