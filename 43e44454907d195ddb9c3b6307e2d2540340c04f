@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e8c5859_5804049c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-09T15:11:45Z",
+      "side": 1,
+      "message": "Thanks Olivier for your comments in the patch stack",
+      "revId": "43e44454907d195ddb9c3b6307e2d2540340c04f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b63786f7_417608cd",
@@ -26,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6a229d50_f8079f85",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-09T15:11:45Z",
+      "side": 1,
+      "message": "\u003e just curious why not using same pattern as sve helpers with using *q_regs instead of passing an array\n\nIn case of FPU the Q registers has fixed width of 128 bits. And also the type \u0027fpu_q_reg_t\u0027 represents one register. In case of SVE it is of type \u0027sve_z_regs_t\u0027 (the whole Z vectors with space allocated for 32*2048 bits).\n\nThere is no strong reason to keep it like this and it can be changed. We have to define a new type \n\n\ntypedef uint8_t fpu_q_regs_t[FPU_Q_SIZE * FPU_Q_COUNT] __aligned(16);\n\n\nvoid fpu_q_regs_write_rand(fpu_q_regs_t *q_regs);\n\nLet me know if the new api changes are ok? so that it aligns with SVE helpers.",
+      "parentUuid": "b63786f7_417608cd",
+      "range": {
+        "startLine": 35,
+        "startChar": 39,
+        "endLine": 35,
+        "endChar": 58
+      },
+      "revId": "43e44454907d195ddb9c3b6307e2d2540340c04f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a1b0fb77_582fe2e9",
         "filename": "lib/extensions/fpu/fpu.c",
         "patchSetId": 5
@@ -37,6 +78,30 @@
       "writtenOn": "2023-10-09T12:35:34Z",
       "side": 1,
       "message": "nit: q regs?",
+      "range": {
+        "startLine": 141,
+        "startChar": 18,
+        "endLine": 141,
+        "endChar": 27
+      },
+      "revId": "43e44454907d195ddb9c3b6307e2d2540340c04f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd9942f7_85cc06dd",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-09T15:11:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1b0fb77_582fe2e9",
       "range": {
         "startLine": 141,
         "startChar": 18,
