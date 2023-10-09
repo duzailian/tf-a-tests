@@ -110,6 +110,30 @@
       },
       "revId": "8d7c2e7d339ed0bf0756fdbed372ff5f9328a8d8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69ed95cd_e1cc380c",
+        "filename": "tftf/framework/tftf.ld.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2023-10-09T10:48:13Z",
+      "side": 1,
+      "message": "Acknowledged, Thanks!",
+      "parentUuid": "105402af_2b3075f9",
+      "range": {
+        "startLine": 82,
+        "startChar": 5,
+        "endLine": 82,
+        "endChar": 27
+      },
+      "revId": "8d7c2e7d339ed0bf0756fdbed372ff5f9328a8d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
