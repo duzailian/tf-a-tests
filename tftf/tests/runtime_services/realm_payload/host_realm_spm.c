@@ -55,15 +55,14 @@ static test_result_t init_sp(void)
 
 static test_result_t init_realm(void)
 {
-	u_register_t retrmm = 0U, ret;
+	u_register_t ret, ret1, ret2;
 	u_register_t rec_flag[1] = {RMI_RUNNABLE};
 
 	if (get_armv9_2_feat_rme_support() == 0U) {
 		return TEST_RESULT_SKIPPED;
 	}
 
-	ret = host_rmi_version(RMI_ABI_VERSION_VAL, &retrmm);
-
+	ret = host_rmi_version(RMI_ABI_VERSION_VAL, &ret1, &ret2);
 	if (ret != RMI_SUCCESS) {
 		return TEST_RESULT_FAIL;
 	}
@@ -71,7 +70,7 @@ static test_result_t init_realm(void)
 	/*
 	 * Skip test if RMM is TRP, TRP version is always null.
 	 */
-	if (retrmm == 0UL) {
+	if (ret1 == 0UL) {
 		return TEST_RESULT_SKIPPED;
 	}
 

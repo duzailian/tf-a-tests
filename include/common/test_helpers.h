@@ -294,7 +294,7 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 
 #define SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP()				\
 	do {									\
-		u_register_t retrmm = 0U, ret;					\
+		u_register_t ret, ret1, ret2;					\
 										\
 		if (!get_armv9_2_feat_rme_support()) {				\
 			tftf_testcase_printf("FEAT_RME not supported\n");	\
@@ -302,22 +302,23 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 		}								\
 										\
 		host_rmi_init_cmp_result();					\
-		ret = host_rmi_version(RMI_ABI_VERSION_VAL, &retrmm);		\
-										\
+		ret = host_rmi_version(RMI_ABI_VERSION_VAL, &ret1, &ret2);	\
 		if (ret != RMI_SUCCESS) {					\
 			return TEST_RESULT_SKIPPED;				\
 		}								\
 										\
-		VERBOSE("RMM version is: %lu.%lu\n",				\
-			RMI_ABI_VERSION_GET_MAJOR(retrmm),			\
-			RMI_ABI_VERSION_GET_MINOR(retrmm));			\
+		VERBOSE("RMM version is: %lu.%lu : %lu.%lu\n",			\
+			RMI_ABI_VERSION_GET_MAJOR(ret1),			\
+			RMI_ABI_VERSION_GET_MINOR(ret1),			\
+			RMI_ABI_VERSION_GET_MAJOR(ret2),			\
+			RMI_ABI_VERSION_GET_MINOR(ret2));			\
 										\
 		/*								\
 		 * TODO: Remove this once SMC_RMM_REALM_CREATE is implemented	\
 		 * in TRP. For the moment skip the test if RMM is TRP, TRP	\
 		 * version is always 0.						\
 		 */								\
-		if (retrmm == 0U) {						\
+		if (ret1 == 0U) {						\
 			tftf_testcase_printf("RMM is TRP\n");			\
 			return TEST_RESULT_SKIPPED;				\
 		}								\
