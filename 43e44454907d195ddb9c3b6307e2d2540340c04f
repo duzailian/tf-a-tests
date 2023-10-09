@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b63786f7_417608cd",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T12:35:34Z",
+      "side": 1,
+      "message": "just curious why not using same pattern as sve helpers with using *q_regs instead of passing an array\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/23089/6/include/lib/extensions/sve.h#61",
+      "range": {
+        "startLine": 35,
+        "startChar": 39,
+        "endLine": 35,
+        "endChar": 58
+      },
+      "revId": "43e44454907d195ddb9c3b6307e2d2540340c04f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1b0fb77_582fe2e9",
+        "filename": "lib/extensions/fpu/fpu.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-09T12:35:34Z",
+      "side": 1,
+      "message": "nit: q regs?",
+      "range": {
+        "startLine": 141,
+        "startChar": 18,
+        "endLine": 141,
+        "endChar": 27
+      },
+      "revId": "43e44454907d195ddb9c3b6307e2d2540340c04f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
