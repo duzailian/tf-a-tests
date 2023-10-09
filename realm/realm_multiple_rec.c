@@ -79,7 +79,7 @@ bool test_realm_multiple_rec_multiple_cpu_cmd(void)
 	realm_printf("Realm: running on CPU = 0x%lx\n", read_mpidr_el1() & MPID_MASK);
 	init_spinlock(&counter_lock);
 
-	rec_count = realm_shared_data_get_host_val(0U, HOST_ARG1_INDEX);
+	rec_count = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
 
 	/* Check CPU_ON is supported */
 	ret = realm_psci_features(SMC_PSCI_CPU_ON);
