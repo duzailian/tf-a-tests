@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c0d3c25_c7a52a0c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-09T11:12:37Z",
+      "side": 1,
+      "message": "\u003e recommends build:, chore:, ci:, docs:, style:, refactor:, perf:, test:, and others.\n\nModified the commit message to align with conventional commits guidance.",
+      "parentUuid": "b059fcb2_c4b95ae6",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "c4010e03d6845d31b4bc4b511ecca0c799fc73b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "40de477a_581bbe45",
@@ -37,6 +61,24 @@
       "writtenOn": "2023-10-06T16:20:32Z",
       "side": 1,
       "message": "nit: accesses",
+      "revId": "c4010e03d6845d31b4bc4b511ecca0c799fc73b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69712969_e2cbbf1e",
+        "filename": "realm/realm_sve.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-09T11:12:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40de477a_581bbe45",
       "revId": "c4010e03d6845d31b4bc4b511ecca0c799fc73b1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
