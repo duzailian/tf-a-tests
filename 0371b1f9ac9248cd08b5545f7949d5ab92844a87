@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a342122_808a176e",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T08:57:46Z",
+      "side": 1,
+      "message": "check the retrmm. RMM should return a valid version and TRP should return 0. Ignore the `ret` as TFTF is in sync with RMM implementation and it does not really care about RMM version.\n\nNote: TRP should be modified for this change.",
+      "range": {
+        "startLine": 305,
+        "startChar": 47,
+        "endLine": 306,
+        "endChar": 4
+      },
+      "revId": "0371b1f9ac9248cd08b5545f7949d5ab92844a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "89cf2908_908f945a",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T08:57:46Z",
+      "side": 1,
+      "message": "encode Major as 1. Minor can be 0.",
+      "range": {
+        "startLine": 30,
+        "startChar": 34,
+        "endLine": 30,
+        "endChar": 38
+      },
+      "revId": "0371b1f9ac9248cd08b5545f7949d5ab92844a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dba1f6dd_271b1f36",
+        "filename": "realm/include/realm_rsi.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T08:57:46Z",
+      "side": 1,
+      "message": "the version can be 1.0",
+      "range": {
+        "startLine": 29,
+        "startChar": 31,
+        "endLine": 29,
+        "endChar": 34
+      },
+      "revId": "0371b1f9ac9248cd08b5545f7949d5ab92844a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "876b89f2_8b615265",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T08:57:46Z",
+      "side": 1,
+      "message": "ignore ret or it can be printed along with other details below.",
+      "range": {
+        "startLine": 43,
+        "startChar": 2,
+        "endLine": 43,
+        "endChar": 3
+      },
+      "revId": "0371b1f9ac9248cd08b5545f7949d5ab92844a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4bd6ff3b_98864252",
+        "filename": "realm/realm_rsi.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T08:57:46Z",
+      "side": 1,
+      "message": "ignore ret0.",
+      "range": {
+        "startLine": 24,
+        "startChar": 9,
+        "endLine": 24,
+        "endChar": 13
+      },
+      "revId": "0371b1f9ac9248cd08b5545f7949d5ab92844a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52c2f483_dcefc28c",
+        "filename": "realm/realm_rsi.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T08:57:46Z",
+      "side": 1,
+      "message": "return ret1",
+      "range": {
+        "startLine": 28,
+        "startChar": 16,
+        "endLine": 28,
+        "endChar": 17
+      },
+      "revId": "0371b1f9ac9248cd08b5545f7949d5ab92844a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7032193_ec8ffcc3",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_spm.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T08:57:46Z",
+      "side": 1,
+      "message": "should not return failure. If the purpose is to detect TRP, then the std macro for this can be used.",
+      "revId": "0371b1f9ac9248cd08b5545f7949d5ab92844a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3a107da_cc70041f",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_spm.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-10T08:57:46Z",
+      "side": 1,
+      "message": "use the standardized macro for detecting TRP",
+      "range": {
+        "startLine": 70,
+        "startChar": 1,
+        "endLine": 75,
+        "endChar": 2
+      },
+      "revId": "0371b1f9ac9248cd08b5545f7949d5ab92844a87",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
