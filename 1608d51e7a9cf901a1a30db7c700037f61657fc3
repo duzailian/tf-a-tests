@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96b46030_bf6b8ce8",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_spm.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-10T08:52:59Z",
+      "side": 1,
+      "message": "nit: should this be moved to init_realm?\n\nOr move SKIP_TEST_IF_FFA_VERSION_LESS_THAN() from init_sp to host_realm_fpu_access_in_rl_ns_se/host_realm_sec_interrupt_can_preempt_rl ?\nThis to skip tests as early as possible if any of RME/SPM is unsupported and prevent starting to initialise realm or Swd if one of both misses?",
+      "range": {
+        "startLine": 317,
+        "startChar": 1,
+        "endLine": 317,
+        "endChar": 48
+      },
+      "revId": "1608d51e7a9cf901a1a30db7c700037f61657fc3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
