@@ -46,6 +46,30 @@
       },
       "revId": "c47a894bc3239290b5689c783ebd40a8b752cb16",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fffdaf0a_30328a58",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-10T11:49:56Z",
+      "side": 1,
+      "message": "\u003e Yes, we can do this. I will replace line 109-113 with sme_config_svq() as part this patch\n\nAfter looking at this code again, I feel replacing with sme_config_svq() must not be done as this function trying to enumerate all the possible SVQ from 0 to architecture limit. So iterating \u0027len_max\u0027 can go beyond 0xf it architecture supports any value beyond it.\n\nProbably, thinking to replace SME_SMCR_LEN_MAX with\n/*\n* SMCR_EL2_RAZ_LEN is defined to find the architecturally permitted SVL. This\n* is a combination of RAZ and LEN bit fields.\n*/\n#define SMCR_EL2_RAZ_LEN_SHIFT          UL(0)                                     \n#define SMCR_EL2_RAZ_LEN_WIDTH          UL(9)",
+      "parentUuid": "3aded5fe_13bb69e2",
+      "range": {
+        "startLine": 110,
+        "startChar": 2,
+        "endLine": 111,
+        "endChar": 35
+      },
+      "revId": "c47a894bc3239290b5689c783ebd40a8b752cb16",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
