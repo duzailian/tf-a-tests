@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b00d9bf_79e615bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-11T10:28:07Z",
+      "side": 1,
+      "message": "Good test",
+      "revId": "5e81d717354d0ecc737b65e5d3d7a093e778b36d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26694b32_a0a977ff",
+        "filename": "realm/realm_multiple_rec.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-11T10:28:07Z",
+      "side": 1,
+      "message": "the function signature should take an argument here (context_id).",
+      "range": {
+        "startLine": 25,
+        "startChar": 26,
+        "endLine": 25,
+        "endChar": 30
+      },
+      "revId": "5e81d717354d0ecc737b65e5d3d7a093e778b36d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ceca01c2_19baea5b",
+        "filename": "realm/realm_multiple_rec.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-11T10:28:07Z",
+      "side": 1,
+      "message": "can we get the num_of_recs from host somehow ? Not sure if the cmd buffer can send as argument along with the next test to execute.",
+      "range": {
+        "startLine": 32,
+        "startChar": 46,
+        "endLine": 32,
+        "endChar": 50
+      },
+      "revId": "5e81d717354d0ecc737b65e5d3d7a093e778b36d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d956853_55b4698b",
+        "filename": "realm/realm_multiple_rec.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-11T10:28:07Z",
+      "side": 1,
+      "message": "is this just a random number to pass as context_id ?",
+      "range": {
+        "startLine": 47,
+        "startChar": 50,
+        "endLine": 47,
+        "endChar": 59
+      },
+      "revId": "5e81d717354d0ecc737b65e5d3d7a093e778b36d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72f39b9e_1b164c2e",
+        "filename": "realm/realm_multiple_rec.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-11T10:28:07Z",
+      "side": 1,
+      "message": "this is fragile as time is not predictable for Realms.\n\nSuggest to keep a infinite loop here and inside the loop do a WFE. this will cause and exit to Host and Host can decide whether to keep this primary REC running or not.\n\nP.S: RmiRecEnterFlags has a bit to enable trapping of WFE by Rec. This will let host control number of primary rec here.\n\nWe can discuss this logic further.",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 2
+      },
+      "revId": "5e81d717354d0ecc737b65e5d3d7a093e778b36d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "389ef8ad_b2ddfd26",
+        "filename": "realm/realm_multiple_rec.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-11T10:28:07Z",
+      "side": 1,
+      "message": "Try a random CPU based on rec_num received from Host.",
+      "range": {
+        "startLine": 72,
+        "startChar": 1,
+        "endLine": 77,
+        "endChar": 2
+      },
+      "revId": "5e81d717354d0ecc737b65e5d3d7a093e778b36d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
