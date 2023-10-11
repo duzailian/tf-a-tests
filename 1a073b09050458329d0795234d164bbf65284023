@@ -116,6 +116,30 @@
       },
       "revId": "1a073b09050458329d0795234d164bbf65284023",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fee5b00b_820ba4f6",
+        "filename": "tftf/tests/extensions/sme/test_sme2.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-11T14:24:47Z",
+      "side": 1,
+      "message": "\u003e Is this platform dependent?\n\n\nNo, its a fixed register size of 512 bits.",
+      "parentUuid": "0e7242af_3f552d67",
+      "range": {
+        "startLine": 59,
+        "startChar": 21,
+        "endLine": 59,
+        "endChar": 28
+      },
+      "revId": "1a073b09050458329d0795234d164bbf65284023",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
