@@ -22,6 +22,30 @@
       },
       "revId": "9f47ab44f34e61939dd9d038c85a1371aef2ae57",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74e896b1_6b88b7fb",
+        "filename": "include/lib/extensions/sme.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-11T14:25:06Z",
+      "side": 1,
+      "message": "\u003e Is this equivalent to MASK(SMCR_ELX_LEN) ?\n\nYes in this case, as SMCR_ELX_LEN_SHIFT is 0 otherwise the value will differ. We can do something like:\n\n#define SME_SVQ_ARCH_MAX\t(MASK(SMCR_ELX_LEN) \u003e\u003e SMCR_ELX_LEN_SHIFT)",
+      "parentUuid": "9e9cba92_d2e906e4",
+      "range": {
+        "startLine": 15,
+        "startChar": 25,
+        "endLine": 15,
+        "endChar": 56
+      },
+      "revId": "9f47ab44f34e61939dd9d038c85a1371aef2ae57",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
