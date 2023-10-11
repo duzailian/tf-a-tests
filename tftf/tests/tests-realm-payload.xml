@@ -69,6 +69,8 @@
 	  function="host_non_sve_realm_check_undef_abort" />
 	  <testcase name="Check various SIMD state preserved across NS/RL switch"
 	  function="host_and_realm_check_simd" />
+	  <testcase name="Check various SIMD state preserved across NS/RL/S switch"
+	  function="host_realm_swd_check_simd" />
 	  <!-- Test Realm for SME -->
 	  <testcase name="Create Realm and test SME ID registers"
 	  function="host_realm_check_sme_id_registers" />
