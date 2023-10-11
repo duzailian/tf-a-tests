@@ -290,12 +290,11 @@ uint32_t ffa_memory_region_init(
 	enum ffa_memory_shareability shareability, uint32_t *total_length,
 	uint32_t *fragment_length)
 {
-	ffa_memory_attributes_t attributes = 0;
-
-	/* Set memory region's page attributes. */
-	ffa_set_memory_type_attr(&attributes, type);
-	ffa_set_memory_cacheability_attr(&attributes, cacheability);
-	ffa_set_memory_shareability_attr(&attributes, shareability);
+	ffa_memory_attributes_t attributes = {
+		.type = type,
+		.cacheability = cacheability,
+		.shareability = shareability,
+	};
 
 	ffa_memory_region_init_header(memory_region, sender, attributes, flags,
 				      0, tag, receiver_count);
@@ -328,11 +327,10 @@ uint32_t ffa_memory_region_init_single_receiver(
 	enum ffa_memory_shareability shareability, uint32_t *total_length,
 	uint32_t *fragment_length)
 {
-	ffa_memory_access_permissions_t permissions = 0;
-
-	/* Set memory region's permissions. */
-	ffa_set_data_access_attr(&permissions, data_access);
-	ffa_set_instruction_access_attr(&permissions, instruction_access);
+	ffa_memory_access_permissions_t permissions = {
+		.data_access = data_access,
+		.instruction_access = instruction_access,
+	};
 
 	struct ffa_memory_access receiver_access = {
 		.reserved_0 = 0,
@@ -361,17 +359,16 @@ uint32_t ffa_memory_retrieve_request_init(
 	enum ffa_memory_type type, enum ffa_memory_cacheability cacheability,
 	enum ffa_memory_shareability shareability)
 {
-	ffa_memory_access_permissions_t permissions = 0;
-	ffa_memory_attributes_t attributes = 0;
+	ffa_memory_access_permissions_t permissions = {
+		.data_access = data_access,
+		.instruction_access = instruction_access,
+	};
 
-	/* Set memory region's permissions. */
-	ffa_set_data_access_attr(&permissions, data_access);
-	ffa_set_instruction_access_attr(&permissions, instruction_access);
-
-	/* Set memory region's page attributes. */
-	ffa_set_memory_type_attr(&attributes, type);
-	ffa_set_memory_cacheability_attr(&attributes, cacheability);
-	ffa_set_memory_shareability_attr(&attributes, shareability);
+	ffa_memory_attributes_t attributes = {
+		.type = type,
+		.cacheability = cacheability,
+		.shareability = shareability,
+	};
 
 	ffa_memory_region_init_header_single_reciever(
 		memory_region, sender, attributes, flags, handle, tag, receiver,
@@ -397,12 +394,11 @@ uint32_t ffa_memory_retrieve_request_init_multiple_receivers(
 	enum ffa_memory_type type, enum ffa_memory_cacheability cacheability,
 	enum ffa_memory_shareability shareability)
 {
-	ffa_memory_attributes_t attributes = 0;
-
-	/* Set memory region's page attributes. */
-	ffa_set_memory_type_attr(&attributes, type);
-	ffa_set_memory_cacheability_attr(&attributes, cacheability);
-	ffa_set_memory_shareability_attr(&attributes, shareability);
+	ffa_memory_attributes_t attributes = {
+		.type = type,
+		.cacheability = cacheability,
+		.shareability = shareability,
+	};
 
 	ffa_memory_region_init_header(memory_region, sender, attributes, flags,
 				      handle, tag, receiver_count);

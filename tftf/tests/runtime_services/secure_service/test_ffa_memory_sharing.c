@@ -484,7 +484,10 @@ static test_result_t compare_ffa_memory_region_attributes(
 {
 
 	EXPECT_EQ(rx_attrs->receiver, tx_attrs->receiver);
-	EXPECT_EQ(rx_attrs->permissions, tx_attrs->permissions);
+	EXPECT_EQ(rx_attrs->permissions.data_access,
+		  tx_attrs->permissions.data_access);
+	EXPECT_EQ(rx_attrs->permissions.instruction_access,
+		  tx_attrs->permissions.instruction_access);
 	EXPECT_EQ(rx_attrs->flags, tx_attrs->flags);
 
 	return TEST_RESULT_SUCCESS;
@@ -549,9 +552,11 @@ static test_result_t hypervisor_retrieve_request_test_helper(uint32_t mem_func)
 	struct ffa_memory_region sent_region;
 	struct ffa_memory_region *hypervisor_retrieve_response;
 
-	uint32_t permissions = mem_func == FFA_MEM_DONATE_SMC32
+	ffa_memory_access_permissions_t permissions = {
+		.data_access = mem_func == FFA_MEM_DONATE_SMC32
 				       ? FFA_DATA_ACCESS_NOT_SPECIFIED
-				       : FFA_DATA_ACCESS_RW;
+				       : FFA_DATA_ACCESS_RW,
+	};
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 	GET_TFTF_MAILBOX(mb);
@@ -651,9 +656,11 @@ hypervisor_retrieve_request_multiple_receivers_test_helper(uint32_t mem_func)
 	struct ffa_memory_region tx_region;
 	struct ffa_memory_region *hypervisor_retrieve_response;
 
-	uint32_t permissions = mem_func == FFA_MEM_DONATE_SMC32
+	ffa_memory_access_permissions_t permissions = {
+		.data_access = mem_func == FFA_MEM_DONATE_SMC32
 				       ? FFA_DATA_ACCESS_NOT_SPECIFIED
-				       : FFA_DATA_ACCESS_RW;
+				       : FFA_DATA_ACCESS_RW,
+	};
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 	GET_TFTF_MAILBOX(mb);
