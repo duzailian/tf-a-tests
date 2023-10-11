@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac5e2825_ce5c7d82",
+        "filename": "realm/realm_multiple_rec.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-11T13:02:40Z",
+      "side": 1,
+      "message": "use macro here. There should be one corresponding to power level.",
+      "range": {
+        "startLine": 90,
+        "startChar": 36,
+        "endLine": 90,
+        "endChar": 38
+      },
+      "revId": "e4611be1c5ffd58d8ebd03db29cea5ba79849551",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5a7e31c_fb368a34",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-11T13:02:40Z",
+      "side": 1,
+      "message": "Give a brief description of the test sequence here.",
+      "revId": "e4611be1c5ffd58d8ebd03db29cea5ba79849551",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c12174a1_86079e1e",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-11T13:02:40Z",
+      "side": 1,
+      "message": "give comments here, \"Create 3 recs and rec1 is created as not runnable.\"",
+      "revId": "e4611be1c5ffd58d8ebd03db29cea5ba79849551",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8dd263bc_7ae4bebe",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-11T13:02:40Z",
+      "side": 1,
+      "message": "This code can written this way.\n\n\nif  (run-\u003eexit.gprs[0] !\u003d SMC_PSCI_CPU_ON_AARCH64) {\n\n  // destroy realm\n}\n\n/* the rest. of sequence */ \n\n\nif (run-\u003eexit.gprs[0] !\u003d SMC_PSCI_AFFINITY_INFO_AARCH64) {\n   //destroy realm\n}\n\n/* rest of code */",
+      "revId": "e4611be1c5ffd58d8ebd03db29cea5ba79849551",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdc76c83_593f8b3d",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-11T13:02:40Z",
+      "side": 1,
+      "message": "rec_num should be 1 ?",
+      "range": {
+        "startLine": 256,
+        "startChar": 2,
+        "endLine": 256,
+        "endChar": 10
+      },
+      "revId": "e4611be1c5ffd58d8ebd03db29cea5ba79849551",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be20c2bf_1d21cc8e",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-11T13:02:40Z",
+      "side": 1,
+      "message": "should we check rec_num \u003d\u003d 1 ?",
+      "range": {
+        "startLine": 262,
+        "startChar": 58,
+        "endLine": 262,
+        "endChar": 65
+      },
+      "revId": "e4611be1c5ffd58d8ebd03db29cea5ba79849551",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
