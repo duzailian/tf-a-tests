@@ -1,0 +1,10 @@
+Allow-CI+2: Shruti Gupta <shruti.gupta@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Owner-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Maintainer-Review+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-at: Wed, 11 Oct 2023 11:03:27 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/22546
+Comments-Total: 21
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
