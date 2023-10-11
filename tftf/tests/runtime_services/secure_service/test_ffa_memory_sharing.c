@@ -386,7 +386,10 @@ test_result_t test_req_mem_lend_sp_to_vm(void)
 test_result_t test_mem_share_to_sp_clear_memory(void)
 {
 	struct ffa_memory_region_constituent constituents[] = {
-						{(void *)share_page, 1, 1}};
+		{(void *)four_share_pages, 4, 0},
+		{(void *)share_page, 1, 0}
+	};
+
 	const uint32_t constituents_count = sizeof(constituents) /
 			sizeof(struct ffa_memory_region_constituent);
 	struct mailbox_buffers mb;
