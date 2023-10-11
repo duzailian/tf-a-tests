@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2023, Arm Limited. All rights reserved.
+ * Copyright (c) 2022-2024, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -15,6 +15,9 @@
 #include <host_shared_data.h>
 #include <spm_test_helpers.h>
 #include <test_helpers.h>
+#include <tftf_lib.h>
+
+#include "host_realm_common.h"
 
 #define REALM_TIME_SLEEP	300U
 #define SENDER HYP_ID
@@ -25,14 +28,26 @@ static bool secure_mailbox_initialised;
 
 static fpu_state_t ns_fpu_state_write;
 static fpu_state_t ns_fpu_state_read;
+
 static struct realm realm;
 
-typedef enum security_state {
-	NONSECURE_WORLD = 0U,
-	REALM_WORLD,
-	SECURE_WORLD,
-	SECURITY_STATE_MAX
-} security_state_t;
+#define NS_SVE_OP_ARRAYSIZE		1024U
+#define SVE_TEST_ITERATIONS		50U
+
+/* Min test iteration count for 'host_and_realm_check_simd' test */
+#define TEST_ITERATIONS_MIN	(16U)
+
+/* Number of FPU configs: none */
+#define NUM_FPU_CONFIGS		(0U)
+
+/* Number of SVE configs: SVE_VL, SVE hint */
+#define NUM_SVE_CONFIGS		(2U)
+
+/* Number of SME configs: SVE_SVL, FEAT_FA64, Streaming mode */
+#define NUM_SME_CONFIGS		(3U)
+
+#define NS_NORMAL_SVE			0x1U
+#define NS_STREAMING_SVE		0x2U
 
 /*
  * This function helps to Initialise secure_mailbox, creates realm payload and
@@ -410,4 +425,170 @@ test_result_t host_realm_fpu_access_in_rl_ns_se(void)
 destroy_realm:
 	host_destroy_realm(&realm);
 	return TEST_RESULT_FAIL;
+}
+
+test_result_t host_realm_swd_check_simd(void)
+{
+	u_register_t rmi_feat_reg0;
+	test_result_t rc;
+	uint8_t sve_vq;
+	bool sve_en;
+	security_state_t sec_state;
+	simd_test_t ns_simd_type, rl_simd_type;
+	unsigned int test_iterations;
+	unsigned int num_simd_types;
+	unsigned int num_simd_configs;
+	bool is_sp_present;
+	test_result_t res;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	/* Verify that FF-A is there and that it has the correct version. */
+	SKIP_TEST_IF_FFA_VERSION_LESS_THAN(1, 1);
+
+	if (host_rmi_features(0UL, &rmi_feat_reg0) != REALM_SUCCESS) {
+		ERROR("Failed to get RMI feat_reg0\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	sve_en = rmi_feat_reg0 & RMI_FEATURE_REGISTER_0_SVE_EN;
+	sve_vq = EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL, rmi_feat_reg0);
+
+	/* Create Realm with SVE enabled if RMI features supports it */
+	INFO("TFTF: create realm sve_en/sve_vq: %d/%d\n", sve_en, sve_vq);
+	rc = host_create_sve_realm_payload(&realm, sve_en, sve_vq);
+	if (rc != TEST_RESULT_SUCCESS) {
+		return rc;
+	}
+
+	/*
+	 * Randomly select and configure NS simd context to test. And fill it
+	 * with random values.
+	 */
+	ns_simd_type = ns_simd_write_rand();
+
+	/*
+	 * Randomly select and configure Realm simd context to test. Enter realm
+	 * and fill simd context with random values.
+	 */
+	rl_simd_type = rl_simd_write_rand(&realm, sve_en);
+	sec_state = REALM_WORLD;
+
+	/* Fill FPU registers in Secure world if present */
+	res = init_sp();
+	if (res == TEST_RESULT_SUCCESS) {
+		if (!fpu_fill_sec()) {
+			ERROR("fpu_fill_sec error\n");
+			return TEST_RESULT_FAIL;
+		}
+
+		sec_state = SECURE_WORLD;
+		is_sp_present = true;
+	} else {
+		is_sp_present = false;
+	}
+
+	/*
+	 * Find out test iterations based on if SVE is enabled and the number of
+	 * configurations available in the SVE.
+	 */
+
+	/* FPU is always available */
+	num_simd_types = 1U;
+	num_simd_configs = NUM_FPU_CONFIGS;
+
+	if (is_armv8_2_sve_present()) {
+		num_simd_types += 1;
+		num_simd_configs += NUM_SVE_CONFIGS;
+	}
+
+	if (is_feat_sme_supported()) {
+		num_simd_types += 1;
+		num_simd_configs += NUM_SME_CONFIGS;
+	}
+
+	if (num_simd_configs) {
+		test_iterations = TEST_ITERATIONS_MIN * num_simd_types *
+			num_simd_configs;
+	} else {
+		test_iterations = TEST_ITERATIONS_MIN * num_simd_types;
+	}
+
+	for (uint32_t i = 0U; i < test_iterations; i++) {
+		sec_state = get_random_security_state(sec_state, is_sp_present);
+
+		switch (sec_state) {
+		case NONSECURE_WORLD:
+			/*
+			 * Read NS simd context and compare it with last written
+			 * context.
+			 */
+			rc = ns_simd_read_and_compare(ns_simd_type);
+			if (rc != TEST_RESULT_SUCCESS) {
+				rc = TEST_RESULT_FAIL;
+				goto rm_realm;
+			}
+
+			/*
+			 * Randomly select and configure NS simd context. And
+			 * fill it with random values for the next compare.
+			 */
+			ns_simd_type = ns_simd_write_rand();
+			break;
+		case REALM_WORLD:
+			/*
+			 * Enter Realm and read the simd context and compare it
+			 * with last written context.
+			 */
+			if (!rl_simd_read_and_compare(&realm, rl_simd_type)) {
+				ERROR("%s failed %d\n", __func__, __LINE__);
+				rc = TEST_RESULT_FAIL;
+				goto rm_realm;
+			}
+
+			/*
+			 * Randomly select and configure Realm simd context to
+			 * test. Enter realm and fill simd context with random
+			 * values for the next compare.
+			 */
+			rl_simd_type = rl_simd_write_rand(&realm, sve_en);
+			break;
+		case SECURE_WORLD:
+			INFO("TFTF: S [FPU] read and compare\n");
+			/* Secure world verify its FPU/SIMD state registers */
+			if (!fpu_cmp_sec()) {
+				rc = TEST_RESULT_FAIL;
+				goto rm_realm;
+			}
+
+			INFO("TFTF: S [FPU] write random\n");
+			/* Fill FPU state with new random values in SP */
+			if (!fpu_fill_sec()) {
+				rc = TEST_RESULT_FAIL;
+				goto rm_realm;
+			}
+			break;
+		default:
+			break;
+		}
+	}
+
+	rc = TEST_RESULT_SUCCESS;
+rm_realm:
+	/* Cleanup old config */
+	if (is_feat_sme_supported()) {
+		sme_smstop(SMSTOP_SM);
+		sme_enable_fa64();
+	}
+
+	/* Cleanup old config */
+	if (is_armv8_2_sve_present()) {
+		tftf_smc_set_sve_hint(false);
+	}
+
+	if (!host_destroy_realm(&realm)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return rc;
 }
