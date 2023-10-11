@@ -49,6 +49,54 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "59f3d3e6_5025070f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-11T10:10:11Z",
+      "side": 1,
+      "message": "I am not sure I understand what action I should to resolve the comment.\n\nRME -\u003e real management extension\nIt is the feature ID in the architecture.\nSPM can be present in a system with RME.\n\nThe test is checking that the SPMC doesn\u0027t allow for the memory that is assigned to Realm to be used in the memory sharing.\n\nPriorly there was a similar test, though leveraging the memory sharing mechanics to test exceptions due to GPC.\n\nThe test, as it was, is not valid anymore. However, we can still validate the same sort of intention. By simply checking that the realm memory is not shared via FF-A ABIs.\n\nThere will be more tests with RME and memory sharing to be part of the top of the rest of the patch stack.\n\nAll this context provided... I hope it helps understand why I did it this way. If I missed the point, please let me know what is the suggested action.",
+      "parentUuid": "89bbd4c3_a16ec8f7",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "e6bc61302ecc7ec8a6b5d82d04d44b2a4410630e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7aa6e95d_86c3160a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-11T10:10:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "091e03f0_dbe31856",
+      "range": {
+        "startLine": 7,
+        "startChar": 10,
+        "endLine": 7,
+        "endChar": 23
+      },
+      "revId": "e6bc61302ecc7ec8a6b5d82d04d44b2a4410630e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "394d205f_767b09d4",
         "filename": "/COMMIT_MSG",
         "patchSetId": 9
@@ -60,6 +108,30 @@
       "writtenOn": "2023-10-09T21:53:22Z",
       "side": 1,
       "message": "typo",
+      "range": {
+        "startLine": 15,
+        "startChar": 11,
+        "endLine": 15,
+        "endChar": 26
+      },
+      "revId": "e6bc61302ecc7ec8a6b5d82d04d44b2a4410630e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe909c91_790049d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-11T10:10:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "394d205f_767b09d4",
       "range": {
         "startLine": 15,
         "startChar": 11,
