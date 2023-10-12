@@ -9,9 +9,17 @@
 #include <ffa_helpers.h>
 #include <ffa_svc.h>
 #include <smccc.h>
+#include <tftf_lib.h>
 
 struct ffa_value ffa_service_call(struct ffa_value *args)
 {
+#if IMAGE_TFTF
+	bool hint = tftf_smc_get_sve_hint();
+	if (hint) {
+		args->fid |= (1UL << 16);
+	}
+#endif
+
 #if IMAGE_IVY
 	ffa_svc(args);
 #else
