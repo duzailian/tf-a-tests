@@ -55,21 +55,13 @@ static test_result_t init_sp(void)
 
 static test_result_t init_realm(void)
 {
-	u_register_t retrmm;
-	u_register_t rec_flag[1] = {RMI_RUNNABLE};
+	u_register_t rec_flag[] = {RMI_RUNNABLE};
 
 	if (get_armv9_2_feat_rme_support() == 0U) {
 		return TEST_RESULT_SKIPPED;
 	}
 
-	retrmm = host_rmi_version();
-
-	/*
-	 * Skip test if RMM is TRP, TRP version is always null.
-	 */
-	if (retrmm == 0UL) {
-		return TEST_RESULT_SKIPPED;
-	}
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
 	/*
 	 * Initialise Realm payload
