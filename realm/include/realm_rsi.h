@@ -26,7 +26,7 @@
  * The major version number of the RSI implementation.  Increase this whenever
  * the binary format or semantics of the SMC calls change.
  */
-#define RSI_ABI_VERSION_MAJOR		12U
+#define RSI_ABI_VERSION_MAJOR		14U
 
 /*
  * The minor version number of the RSI implementation.  Increase this when
@@ -102,7 +102,7 @@ struct rsi_host_call {
 #define RSI_REALM_CONFIG	SMC_RSI_FID(6U)
 
 /* This function return RSI_ABI_VERSION */
-u_register_t rsi_get_version(void);
+u_register_t rsi_get_version(u_register_t req_ver);
 
 /* This function will call the Host to request IPA of the NS shared buffer */
 u_register_t rsi_get_ns_buffer(void);
