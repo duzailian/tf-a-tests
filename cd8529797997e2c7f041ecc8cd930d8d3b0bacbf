@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c78d397_7c647981",
+        "filename": "include/runtime_services/host_realm_managment/host_shared_data.h",
+        "patchSetId": 13
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T17:45:48Z",
+      "side": 1,
+      "message": "Done, will evaluate if print buffer also can be separated, but most likely it will be better to keep common buffer to preserve chronology",
+      "parentUuid": "e1adf22b_595470ff",
+      "revId": "cd8529797997e2c7f041ecc8cd930d8d3b0bacbf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3329f774_4d1b418d",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-10-11T09:38:47Z",
       "side": 1,
       "message": "align 16 is better.",
+      "range": {
+        "startLine": 14,
+        "startChar": 7,
+        "endLine": 14,
+        "endChar": 8
+      },
+      "revId": "cd8529797997e2c7f041ecc8cd930d8d3b0bacbf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "538b0d5a_576235d4",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 13
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T17:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3329f774_4d1b418d",
       "range": {
         "startLine": 14,
         "startChar": 7,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a250199c_c4c2bc27",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 13
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T17:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3da6010c_269571c3",
+      "range": {
+        "startLine": 15,
+        "startChar": 23,
+        "endLine": 15,
+        "endChar": 24
+      },
+      "revId": "cd8529797997e2c7f041ecc8cd930d8d3b0bacbf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5b797a6e_9855f786",
@@ -77,6 +143,24 @@
       "writtenOn": "2023-10-11T09:38:47Z",
       "side": 1,
       "message": "make this a small function like realm_setup_my_stack()",
+      "revId": "cd8529797997e2c7f041ecc8cd930d8d3b0bacbf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c23bae5_929b9068",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 13
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T17:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5b797a6e_9855f786",
       "revId": "cd8529797997e2c7f041ecc8cd930d8d3b0bacbf",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -98,6 +182,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e64c25ce_abd8a81a",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 13
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T17:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3531a9d8_6596cda4",
+      "revId": "cd8529797997e2c7f041ecc8cd930d8d3b0bacbf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "abc10604_9d8753de",
@@ -111,6 +213,24 @@
       "writtenOn": "2023-10-11T09:38:47Z",
       "side": 1,
       "message": "move arch_init to after realm_warmboot_endpoint as this is needed for every CPU.",
+      "revId": "cd8529797997e2c7f041ecc8cd930d8d3b0bacbf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36d4de7a_40bd278f",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 13
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T17:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "abc10604_9d8753de",
       "revId": "cd8529797997e2c7f041ecc8cd930d8d3b0bacbf",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -138,6 +258,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a58eb7a4_a999cc9c",
+        "filename": "realm/realm_sve.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T17:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "929173f6_24d251af",
+      "range": {
+        "startLine": 48,
+        "startChar": 26,
+        "endLine": 48,
+        "endChar": 52
+      },
+      "revId": "cd8529797997e2c7f041ecc8cd930d8d3b0bacbf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "79362f7e_7743e814",
@@ -151,6 +295,24 @@
       "writtenOn": "2023-10-11T09:38:47Z",
       "side": 1,
       "message": "we should assert rec_num here. same comments for below.",
+      "revId": "cd8529797997e2c7f041ecc8cd930d8d3b0bacbf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "03f2b24d_b239c08c",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_shared_data.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T17:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79362f7e_7743e814",
       "revId": "cd8529797997e2c7f041ecc8cd930d8d3b0bacbf",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
