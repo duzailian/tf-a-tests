@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4776225_0cf36d58",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T16:08:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "64e92331_e564ed72",
+      "revId": "5e38c0aed095a59706f70d17352f6c18245e32b8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "63dd624e_9a877925",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-10-10T11:23:56Z",
       "side": 1,
       "message": "Is it better to copy the rec_flag also into realm structure , this way we have one contained structure for all the info.",
+      "revId": "5e38c0aed095a59706f70d17352f6c18245e32b8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a955b67_157a1fb1",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T16:08:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63dd624e_9a877925",
       "revId": "5e38c0aed095a59706f70d17352f6c18245e32b8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -75,6 +111,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6556bcd0_bf132603",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 992,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T16:08:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "897bce8f_81fea035",
+      "range": {
+        "startLine": 992,
+        "startChar": 32,
+        "endLine": 992,
+        "endChar": 40
+      },
+      "revId": "5e38c0aed095a59706f70d17352f6c18245e32b8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b1b79ca_15871180",
@@ -88,6 +148,30 @@
       "writtenOn": "2023-10-10T11:23:56Z",
       "side": 1,
       "message": "this should be err_free_aux I think.",
+      "range": {
+        "startLine": 1066,
+        "startChar": 8,
+        "endLine": 1066,
+        "endChar": 20
+      },
+      "revId": "5e38c0aed095a59706f70d17352f6c18245e32b8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67492a2a_95f9c54d",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 1066,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T16:08:32Z",
+      "side": 1,
+      "message": "moved check to realm_create",
+      "parentUuid": "1b1b79ca_15871180",
       "range": {
         "startLine": 1066,
         "startChar": 8,
@@ -134,6 +218,48 @@
         "endLine": 1086,
         "endChar": 71
       },
+      "revId": "5e38c0aed095a59706f70d17352f6c18245e32b8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72ff2540_bef77a25",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 1086,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T16:08:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bc176c1_554908f1",
+      "range": {
+        "startLine": 1086,
+        "startChar": 64,
+        "endLine": 1086,
+        "endChar": 71
+      },
+      "revId": "5e38c0aed095a59706f70d17352f6c18245e32b8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1503e17e_f1489794",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 1086,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-12T16:08:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b59af33_bdeca0e3",
       "revId": "5e38c0aed095a59706f70d17352f6c18245e32b8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
