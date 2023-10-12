@@ -267,6 +267,7 @@ bool host_create_shared_mem(u_register_t ns_shared_mem_adr,
 	for (unsigned int i = 0U; i < realm.rec_count; i++) {
 		realm_shared_data_clear_realm_val(i);
 	}
+	realm_shared_data_set_host_val(0U, HOST_NUM_REC_INDEX, realm.rec_count);
 	shared_mem_created = true;
 
 	return shared_mem_created;
