@@ -243,3 +243,130 @@ test_result_t test_sve_vectors_operations(void)
 
 	return TEST_RESULT_SUCCESS;
 }
+
+/*
+ * SME enter SPMC with SSVE enabled.
+ */
+test_result_t test_sme_streaming_sve(void)
+{
+	uint64_t vl;
+
+	SKIP_TEST_IF_AARCH32();
+
+	/* Skip the test if SME is not supported. */
+	SKIP_TEST_IF_SME_NOT_SUPPORTED();
+
+	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
+
+#ifdef __aarch64__
+	/* Enable SME for use at NS EL2. */
+	sme_enable_fa64();
+
+	/* Enter Streaming SVE mode. */
+	sme_smstart(SMSTART_SM);
+
+	write_smcr_el2(0xf);
+	isb();
+
+	/* Get the implemented VL. */
+	vl = sme_rdsvl_1();
+
+	cactus_echo_send_cmd(0x0, 0x8001, 0x55aa55aa);
+
+	if (vl != sme_rdsvl_1()) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Exit Streaming SVE mode. */
+	sme_smstop(SMSTOP_SM);
+#endif
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * SME enter SPMC with ZA enabled.
+ */
+test_result_t test_sme_za(void)
+{
+	uint64_t vl;
+
+	SKIP_TEST_IF_AARCH32();
+
+	/* Skip the test if SME is not supported. */
+	SKIP_TEST_IF_SME_NOT_SUPPORTED();
+
+	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
+
+#ifdef __aarch64__
+	/* Enable SME for use at NS EL2. */
+	sme_enable_fa64();
+
+	/* Get the implemented VL. */
+	vl = sve_rdvl_1();
+
+	/* Enable SME ZA Array Storage */
+	sme_smstart(SMSTART_ZA);
+
+	cactus_echo_send_cmd(0x0, 0x8001, 0x66bb66bb);
+
+	if (vl != sve_rdvl_1()) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Disable the SME ZA array storage. */
+	sme_smstop(SMSTOP_ZA);
+#endif
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * SME enter SPMC with SSVE+ZA enabled.
+ */
+test_result_t test_sme_streaming_sve_za(void)
+{
+	uint64_t vl;
+
+	SKIP_TEST_IF_AARCH32();
+
+	/* Skip the test if SME is not supported. */
+	SKIP_TEST_IF_SME_NOT_SUPPORTED();
+
+	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
+
+#ifdef __aarch64__
+	/* Enable SME for use at NS EL2. */
+	sme_enable_fa64();
+
+	/* Enable SME ZA Array Storage */
+	sme_smstart(SMSTART_ZA);
+
+	/* Enter Streaming SVE mode. */
+	sme_smstart(SMSTART_SM);
+
+	write_smcr_el2(0xf);
+	isb();
+
+	/* Get the implemented VL. */
+	vl = sme_rdsvl_1();
+
+	cactus_echo_send_cmd(0x0, 0x8001, 0x77cc77cc);
+
+	if (read_smcr_el2() != 0xf) {
+		return TEST_RESULT_FAIL;
+	}
+
+	if (vl != sme_rdsvl_1()) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Exit Streaming SVE mode. */
+	sme_smstop(SMSTOP_SM);
+
+	/* Disable the SME ZA array storage. */
+	sme_smstop(SMSTOP_ZA);
+#endif
+
+	return TEST_RESULT_SUCCESS;
+}
