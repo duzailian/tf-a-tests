@@ -243,3 +243,172 @@ test_result_t test_sve_vectors_operations(void)
 
 	return TEST_RESULT_SUCCESS;
 }
+
+/*
+ * SME enter SPMC with SSVE enabled.
+ *
+ * Check Streaming SVE is preserved on a normal/secure world switch.
+ *
+ */
+test_result_t test_sme_streaming_sve(void)
+{
+	struct ffa_value ret;
+
+	SKIP_TEST_IF_AARCH32();
+
+	/* Skip the test if SME is not supported. */
+	SKIP_TEST_IF_SME_NOT_SUPPORTED();
+
+	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
+
+#ifdef __aarch64__
+	/* Enable SME FA64 if implemented. */
+	if (is_feat_sme_fa64_supported()) {
+		sme_enable_fa64();
+	}
+
+	/* Enter Streaming SVE mode. */
+	sme_smstart(SMSTART_SM);
+
+	/* Configure SVQ to max. implemented SVL. */
+	sme_config_svq(0xf);
+
+	ret = cactus_req_simd_fill_send_cmd(SENDER, RECEIVER);
+	if (!is_ffa_direct_response(ret)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	if (cactus_get_response(ret) == CACTUS_ERROR) {
+		return TEST_RESULT_FAIL;
+	}
+
+	if (is_feat_sme_fa64_supported()) {
+		if (!sme_feat_fa64_enabled()) {
+			ERROR("FA64 trap bit disabled, expected enabled.\n");
+			return TEST_RESULT_FAIL;
+		}
+	}
+
+	/* Expect Streaming SVE to be active. */
+	if (!sme_smstat_sm()) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Exit Streaming SVE mode. */
+	sme_smstop(SMSTOP_SM);
+#endif
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * SME enter SPMC with ZA enabled.
+ *
+ * Check ZA array enabled is preserved on a normal/secure world switch.
+ */
+test_result_t test_sme_za(void)
+{
+	struct ffa_value ret;
+
+	SKIP_TEST_IF_AARCH32();
+
+	/* Skip the test if SME is not supported. */
+	SKIP_TEST_IF_SME_NOT_SUPPORTED();
+
+	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
+
+#ifdef __aarch64__
+	/* Enable SME FA64 if implemented. */
+	if (is_feat_sme_fa64_supported()) {
+		sme_enable_fa64();
+	}
+
+	/* Enable SME ZA Array Storage */
+	sme_smstart(SMSTART_ZA);
+
+	/* Configure SVQ to max. implemented SVL. */
+	sme_config_svq(0xf);
+
+	ret = cactus_req_simd_fill_send_cmd(SENDER, RECEIVER);
+	if (!is_ffa_direct_response(ret)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	if (cactus_get_response(ret) == CACTUS_ERROR) {
+		return TEST_RESULT_FAIL;
+	}
+
+	if (is_feat_sme_fa64_supported()) {
+		if (!sme_feat_fa64_enabled()) {
+			ERROR("FA64 trap bit disabled, expected enabled.\n");
+			return TEST_RESULT_FAIL;
+		}
+	}
+
+	/* Expect Streaming SVE to be inactive. */
+	if (sme_smstat_sm()) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Disable SME ZA array storage. */
+	sme_smstop(SMSTOP_ZA);
+#endif
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * SME enter SPMC with SSVE+ZA enabled.
+ *
+ * Check Streaming SVE and ZA array enabled are preserved on a
+ * normal/secure world switch.
+ */
+test_result_t test_sme_streaming_sve_za(void)
+{
+	struct ffa_value ret;
+
+	SKIP_TEST_IF_AARCH32();
+
+	/* Skip the test if SME is not supported. */
+	SKIP_TEST_IF_SME_NOT_SUPPORTED();
+
+	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
+
+#ifdef __aarch64__
+	/* Enable SME FA64 if implemented. */
+	if (is_feat_sme_fa64_supported()) {
+		sme_enable_fa64();
+	}
+
+	/* Enable SME SSVE + ZA. */
+	sme_smstart(SMSTART);
+
+	/* Configure SVQ to max. implemented SVL. */
+	sme_config_svq(0xf);
+
+	ret = cactus_req_simd_fill_send_cmd(SENDER, RECEIVER);
+	if (!is_ffa_direct_response(ret)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	if (cactus_get_response(ret) == CACTUS_ERROR) {
+		return TEST_RESULT_FAIL;
+	}
+
+	if (is_feat_sme_fa64_supported()) {
+		if (!sme_feat_fa64_enabled()) {
+			return TEST_RESULT_FAIL;
+		}
+	}
+
+	/* Expect Streaming SVE to be active. */
+	if (!sme_smstat_sm()) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Disable SSVE + ZA. */
+	sme_smstop(SMSTOP);
+#endif
+
+	return TEST_RESULT_SUCCESS;
+}
