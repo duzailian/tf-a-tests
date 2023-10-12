@@ -1,0 +1,146 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "227067a6_0e7c212f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2023-10-12T16:20:53Z",
+      "side": 1,
+      "message": "Added a few comments.",
+      "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9338641_14b64edd",
+        "filename": "tftf/framework/aarch64/entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2023-10-12T16:20:53Z",
+      "side": 1,
+      "message": "Needs to update the comment lines.",
+      "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36bef2ac_341d9456",
+        "filename": "tftf/framework/aarch64/entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2023-10-12T16:20:53Z",
+      "side": 1,
+      "message": "Needs to update the comment lines.",
+      "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c704cda7_27fc417e",
+        "filename": "tftf/framework/aarch64/entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2023-10-12T16:20:53Z",
+      "side": 1,
+      "message": "Needs to update the comment lines.",
+      "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ca50b4e_19378dbb",
+        "filename": "tftf/framework/aarch64/entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2023-10-12T16:20:53Z",
+      "side": 1,
+      "message": "Before copying from x3, better to have a few sanity checks on x0, x1 and x2.\nAccording to the spec, for aarch64:\nx0 should be 0 or the base address of FDT (if it exists)\nx1 should be `(1 \u003c\u003c 24) | TRANSFER_LIST_SIGNATURE`\nx2 should be 0",
+      "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e3a7dc2_c7d37534",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2023-10-12T16:20:53Z",
+      "side": 1,
+      "message": "Shall we use the lib API `transfer_list_check_header()` instead?",
+      "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81984d9a_a459dfdf",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2023-10-12T16:20:53Z",
+      "side": 1,
+      "message": "Replace with the macro `TRANSFER_LIST_SIGNATURE`",
+      "range": {
+        "startLine": 23,
+        "startChar": 22,
+        "endLine": 23,
+        "endChar": 30
+      },
+      "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8f2d0420_f6054174",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2023-10-12T16:20:53Z",
+      "side": 1,
+      "message": "Shall we use the lib API `transfer_list_find()` and `transfer_list_entry_data()` instead?",
+      "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
