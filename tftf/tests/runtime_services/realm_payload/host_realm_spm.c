@@ -51,7 +51,6 @@ static test_result_t init_sp(void)
 static test_result_t init_realm(void)
 {
 	u_register_t rec_flag[1] = {RMI_RUNNABLE};
-
 	/*
 	 * Initialise Realm payload
 	 */

@@ -24,7 +24,6 @@ bool test_realm_sve_cmp_regs(void);
 bool test_realm_sve_undef_abort(void);
 bool test_realm_multiple_rec_multiple_cpu_cmd(void);
 bool test_realm_multiple_rec_psci_denied_cmd(void);
->>>>>>> test(rmm-eac4): add testcase for CPU_ON denied
 
 #endif /* REALM_TESTS_H */
 
