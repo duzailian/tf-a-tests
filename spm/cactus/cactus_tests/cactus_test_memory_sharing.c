@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <sp_def.h>
 #include "cactus_message_loop.h"
 #include "cactus_test_cmds.h"
+#include "sp_tests.h"
 #include <debug.h>
 #include <ffa_helpers.h>
-#include <sp_helpers.h>
-#include "sp_tests.h"
-#include <xlat_tables_defs.h>
 #include <lib/xlat_tables/xlat_tables_v2.h>
+#include <sp_def.h>
+#include <sp_helpers.h>
 #include <sync.h>
+#include <xlat_tables_defs.h>
 
 static volatile uint32_t data_abort_gpf_triggered;
 
@@ -89,7 +89,7 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 		0);
 
 	expect(memory_retrieve(mb, &m, handle, source, &receiver, 1,
-			       retrv_flags, mem_func),
+			       retrv_flags),
 	       true);
 
 	composite = ffa_memory_region_get_composite(m, 0);
@@ -232,10 +232,9 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 					 CACTUS_ERROR_TEST);
 	}
 
-	handle = memory_init_and_send((struct ffa_memory_region *)mb->send,
-				      PAGE_SIZE, vm_id, &receiver, 1,
-				      constituents, constituents_count,
-				      mem_func, &ffa_ret);
+	handle = memory_init_and_send(mb->send, PAGE_SIZE, vm_id, &receiver, 1,
+				       constituents, constituents_count,
+				       mem_func, &ffa_ret);
 
 	/*
 	 * If returned an invalid handle, we should break the test.
