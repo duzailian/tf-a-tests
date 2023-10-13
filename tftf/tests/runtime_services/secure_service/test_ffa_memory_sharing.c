@@ -20,12 +20,21 @@
 #define SENDER HYP_ID
 #define RECEIVER SP_ID(1)
 
+/*
+ * A number of pages that is large enough that it must take two fragments to
+ * share.
+ */
+#define FRAGMENTED_SHARE_PAGE_COUNT                                            \
+	(sizeof(struct ffa_memory_region) /                                    \
+	 sizeof(struct ffa_memory_region_constituent))
+
 static const struct ffa_uuid expected_sp_uuids[] = {
 		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}
 	};
 
 /* Memory section to be used for memory share operations */
-static __aligned(PAGE_SIZE) uint8_t share_page[PAGE_SIZE];
+static __aligned(PAGE_SIZE) uint8_t
+	share_page[PAGE_SIZE * FRAGMENTED_SHARE_PAGE_COUNT];
 static __aligned(PAGE_SIZE) uint8_t consecutive_donate_page[PAGE_SIZE];
 static __aligned(PAGE_SIZE) uint8_t four_share_pages[PAGE_SIZE * 4];
 
@@ -69,8 +78,8 @@ static bool test_memory_send_expect_denied(uint32_t mem_func,
 					mem_func, &ret);
 
 	if (handle != FFA_MEMORY_HANDLE_INVALID) {
-		ERROR("Received a valid FF-A memory handle, and that isn't"
-		       " expected.\n");
+		ERROR("Received a valid FF-A memory handle, and that isn't "
+		      "expected.\n");
 		return false;
 	}
 
@@ -433,8 +442,9 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	handle = memory_send(mb.send, FFA_MEM_LEND_SMC32, fragment_length,
-			     total_length, &ret);
+	handle = memory_send(mb.send, FFA_MEM_LEND_SMC32, constituents,
+			     constituents_count, remaining_constituent_count,
+			     fragment_length, total_length, &ret);
 
 	if (handle == FFA_MEMORY_HANDLE_INVALID) {
 		ERROR("Memory Share failed!\n");
@@ -629,13 +639,10 @@ static test_result_t
 hypervisor_retrieve_request_test_helper(uint32_t mem_func,
 					bool multiple_receivers)
 {
+	static struct ffa_memory_region_constituent
+		sent_constituents[FRAGMENTED_SHARE_PAGE_COUNT];
+	uint32_t sent_constituents_count = 1;
 
-	struct ffa_memory_region_constituent sent_constituents[] = {{
-		.address = (void *)share_page,
-		.page_count = 1,
-		.reserved = 0,
-	}};
-	uint32_t sent_constituents_count = ARRAY_SIZE(sent_constituents);
 	__aligned(PAGE_SIZE) static uint8_t page[PAGE_SIZE * 2] = {0};
 	struct ffa_memory_region *hypervisor_retrieve_response =
 		(struct ffa_memory_region *)page;
@@ -668,6 +675,12 @@ hypervisor_retrieve_request_test_helper(uint32_t mem_func,
 	 */
 	uint32_t receiver_count =
 		multiple_receivers ? ARRAY_SIZE(receivers) : 1;
+
+	for (uint32_t i = 0; i < sent_constituents_count; i++) {
+		sent_constituents[i].address = share_page + i * PAGE_SIZE;
+		sent_constituents[i].page_count = 1;
+		sent_constituents[i].reserved = 0;
+	}
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 	GET_TFTF_MAILBOX(mb);
@@ -727,7 +740,7 @@ hypervisor_retrieve_request_test_helper(uint32_t mem_func,
 			return TEST_RESULT_FAIL;
 		}
 
-		if (!verify_composite(composite, 0, 0)) {
+		if (!verify_composite(composite, 1, 1)) {
 			return TEST_RESULT_FAIL;
 		}
 
@@ -747,12 +760,6 @@ hypervisor_retrieve_request_test_helper(uint32_t mem_func,
 	ret = ffa_mem_reclaim(handle, 0);
 	if (is_ffa_call_error(ret)) {
 		ERROR("Memory reclaim failed: %d\n", ffa_error_code(ret));
-		return TEST_RESULT_FAIL;
-	}
-
-	ret = ffa_rx_release();
-	if (is_ffa_call_error(ret)) {
-		ERROR("rx release failed: %d\n", ffa_error_code(ret));
 		return TEST_RESULT_FAIL;
 	}
 
