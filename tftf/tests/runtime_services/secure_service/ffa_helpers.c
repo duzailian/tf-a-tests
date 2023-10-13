@@ -288,6 +288,34 @@ uint32_t ffa_memory_region_init(
 		constituent_count, total_length, fragment_length);
 }
 
+uint32_t ffa_memory_fragment_init(
+	struct ffa_memory_region_constituent *fragment,
+	size_t fragment_max_size,
+	const struct ffa_memory_region_constituent constituents[],
+	uint32_t constituent_count, uint32_t *fragment_length)
+{
+	const uint32_t fragment_max_constituents =
+		fragment_max_size /
+		sizeof(struct ffa_memory_region_constituent);
+
+	uint32_t count_to_copy = constituent_count;
+	if (count_to_copy > fragment_max_constituents) {
+		count_to_copy = fragment_max_constituents;
+	}
+
+	for (uint32_t i = 0; i < count_to_copy; ++i) {
+		ffa_copy_memory_region_constituents(&fragment[i],
+						    &constituents[i]);
+	}
+
+	if (fragment_length != NULL) {
+		*fragment_length = count_to_copy *
+				   sizeof(struct ffa_memory_region_constituent);
+	}
+
+	return constituent_count - count_to_copy;
+}
+
 /**
  * Initialises the given `ffa_memory_region` to be used for an
  * `FFA_MEM_RETRIEVE_REQ` by the receiver of a memory transaction.
@@ -565,6 +593,17 @@ struct ffa_value ffa_mem_reclaim(uint64_t handle, uint32_t flags)
 	};
 
 	return ffa_service_call(&args);
+}
+
+struct ffa_value ffa_mem_frag_tx(ffa_memory_handle_t handle,
+				 uint32_t fragment_length)
+{
+	/* Note that sender MBZ at virtual instance. */
+	return ffa_service_call(
+		&((struct ffa_value){.fid = FFA_MEM_FRAG_TX,
+				     .arg1 = (uint32_t)handle,
+				     .arg2 = (uint32_t)(handle >> 32),
+				     .arg3 = fragment_length}));
 }
 
 /** Create Notifications Bitmap for the given VM */
