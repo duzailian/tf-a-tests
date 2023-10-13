@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0993e6da_98a9fa73",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-13T10:55:43Z",
+      "side": 1,
+      "message": "we need the loop to cater retry into rec for new host cmd,\nwe are skipping pie fixup and bss zeroing for warmboot",
+      "parentUuid": "706effb3_e86ecc72",
+      "revId": "b0e5c18fb6f10db4b5fcb0f3d9911486d22b0f2b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b8a9152b_f2e93612",
         "filename": "realm/realm_psci.c",
         "patchSetId": 10
@@ -31,6 +49,30 @@
       "writtenOn": "2023-10-11T09:52:57Z",
       "side": 1,
       "message": "hope this will not pull in platform_def.h and other dependencies from TFTF. I thikn we can invoke asm_tftf_smc64 from lib arch but better not import TFTF header.",
+      "range": {
+        "startLine": 11,
+        "startChar": 10,
+        "endLine": 11,
+        "endChar": 18
+      },
+      "revId": "b0e5c18fb6f10db4b5fcb0f3d9911486d22b0f2b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7650d66_318ce22d",
+        "filename": "realm/realm_psci.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-13T10:55:43Z",
+      "side": 1,
+      "message": "realm_rsi.h seems to be including tftf_lib.h, I can add separate patch to move smc_args  struct to smccc.h",
+      "parentUuid": "b8a9152b_f2e93612",
       "range": {
         "startLine": 11,
         "startChar": 10,
@@ -66,6 +108,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5b5fd5f3_ec4c1f52",
+        "filename": "realm/realm_psci.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-13T10:55:43Z",
+      "side": 1,
+      "message": "this can happen if host directly enters rec without cpu on, rec was created runnable",
+      "parentUuid": "74c1876c_53d8acd6",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 18
+      },
+      "revId": "b0e5c18fb6f10db4b5fcb0f3d9911486d22b0f2b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6997954c_c4a4b4e0",
         "filename": "realm/realm_psci.c",
         "patchSetId": 10
@@ -77,6 +143,24 @@
       "writtenOn": "2023-10-11T09:52:57Z",
       "side": 1,
       "message": "Let\u0027s this done by the test and not by framework. Pass the context_id as arg to the entrypoint (which is done already) and then you can write 0 to context_id and entrypoint here to clear it.",
+      "revId": "b0e5c18fb6f10db4b5fcb0f3d9911486d22b0f2b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9fb7506_2b88cd3b",
+        "filename": "realm/realm_psci.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-13T10:55:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6997954c_c4a4b4e0",
       "revId": "b0e5c18fb6f10db4b5fcb0f3d9911486d22b0f2b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
