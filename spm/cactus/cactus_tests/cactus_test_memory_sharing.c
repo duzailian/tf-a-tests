@@ -214,8 +214,8 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 	VERBOSE("%x requested to send memory to %x (func: %x), page: %llx\n",
 		source, receiver, mem_func, (uint64_t)share_page_addr);
 
-	const struct ffa_memory_region_constituent constituents[] = {
-		{share_page_addr, 1, 0}
+	struct ffa_memory_region_constituent constituents[] = {
+		{share_page_addr, 1, 0},
 	};
 
 	const uint32_t constituents_count = (sizeof(constituents) /
