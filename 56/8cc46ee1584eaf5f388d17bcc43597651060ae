@@ -1,0 +1,10 @@
+Code-Owner-Review+1: Daniel Boulby <daniel.boulby@arm.com>
+Code-Review+1: Sona Mathew <SonaRebecca.Mathew@arm.com>
+Allow-CI+2: Karl Meakin <karl.meakin@ARM.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Fri, 13 Oct 2023 15:10:41 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/24059
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
