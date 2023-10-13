@@ -329,24 +329,6 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 		(tftf_get_psci_feature_info(SMC_PSCI_STAT_COUNT)		\
 					== PSCI_E_SUCCESS)
 
-#define TRY(e)                                                                 \
-	do {                                                                   \
-		if ((e) != TEST_RESULT_SUCCESS) {                              \
-			return TEST_RESULT_FAIL;                               \
-		}                                                              \
-	} while (0)
-
-#define EXPECT_EQ(a, b)                                                        \
-	do {                                                                   \
-		if ((a) != (b)) {                                              \
-			ERROR("%s:%d\nEXPECT_EQ failed: " #a " != " #b         \
-			      "\nlhs = %llu\nrhs = %llu\n",                    \
-			      __FILE__, __LINE__, (uint64_t)(a),               \
-			      (uint64_t)(b));                                  \
-			return TEST_RESULT_FAIL;                               \
-		}                                                              \
-	} while (0)
-
 /*
  * Helper function to verify the system state is ready for system
  * suspend. i.e., a single CPU is running and all other CPUs are powered off.
