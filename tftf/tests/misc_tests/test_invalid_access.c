@@ -288,9 +288,9 @@ test_result_t rt_memory_cannot_be_accessed_in_s(void)
 			(void *)test_address, 1, 0
 		}
 	};
-	const uint32_t constituents_count = sizeof(constituents) /
+	const uint32_t constituents_count =
+		sizeof(constituents) /
 		sizeof(struct ffa_memory_region_constituent);
-	ffa_memory_handle_t handle;
 	struct mailbox_buffers mb;
 	struct ffa_value ret;
 
@@ -306,12 +306,11 @@ test_result_t rt_memory_cannot_be_accessed_in_s(void)
 
 	GET_TFTF_MAILBOX(mb);
 
-	handle = memory_init_and_send((struct ffa_memory_region *)mb.send,
-				      PAGE_SIZE, SENDER, &receiver, 1,
-				      constituents, constituents_count,
-				      FFA_MEM_SHARE_SMC32, &ret);
+	ret = memory_init_and_send(mb.send, PAGE_SIZE, SENDER, &receiver, 1,
+				   constituents, constituents_count,
+				   FFA_MEM_SHARE_SMC32);
 
-	if (handle == FFA_MEMORY_HANDLE_INVALID) {
+	if (is_ffa_call_error(ret)) {
 		return TEST_RESULT_SUCCESS;
 	}
 
