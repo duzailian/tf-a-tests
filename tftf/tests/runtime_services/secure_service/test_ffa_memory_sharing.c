@@ -20,12 +20,21 @@
 #define SENDER HYP_ID
 #define RECEIVER SP_ID(1)
 
+/*
+ * A number of pages that is large enough that it must take two fragments to
+ * share.
+ */
+#define FRAGMENTED_SHARE_PAGE_COUNT                                            \
+	(sizeof(struct ffa_memory_region) /                                    \
+	 sizeof(struct ffa_memory_region_constituent))
+
 static const struct ffa_uuid expected_sp_uuids[] = {
 		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}
 	};
 
 /* Memory section to be used for memory share operations */
-static __aligned(PAGE_SIZE) uint8_t share_page[PAGE_SIZE];
+static __aligned(PAGE_SIZE) uint8_t
+	share_page[PAGE_SIZE * FRAGMENTED_SHARE_PAGE_COUNT];
 static __aligned(PAGE_SIZE) uint8_t consecutive_donate_page[PAGE_SIZE];
 static __aligned(PAGE_SIZE) uint8_t four_share_pages[PAGE_SIZE * 4];
 
@@ -50,9 +59,8 @@ static bool test_memory_send_expect_denied(uint32_t mem_func,
 	struct ffa_value ret;
 	struct mailbox_buffers mb;
 	struct ffa_memory_region_constituent constituents[] = {
-						{(void *)mem_ptr, 1, 0}
-					};
-	ffa_memory_handle_t handle;
+		{(void *)mem_ptr, 1, 0},
+	};
 
 	const uint32_t constituents_count =
 		sizeof(constituents) /
@@ -63,15 +71,8 @@ static bool test_memory_send_expect_denied(uint32_t mem_func,
 
 	GET_TFTF_MAILBOX(mb);
 
-	handle = memory_init_and_send(
-		(struct ffa_memory_region *)mb.send, MAILBOX_SIZE, SENDER,
-		&receiver, 1, constituents, constituents_count, mem_func, &ret);
-
-	if (handle != FFA_MEMORY_HANDLE_INVALID) {
-		ERROR("Received a valid FF-A memory handle, and that isn't"
-		       " expected.\n");
-		return false;
-	}
+	ret = memory_init_and_send(mb.send, MAILBOX_SIZE, SENDER, &receiver, 1,
+				   constituents, constituents_count, mem_func);
 
 	if (!is_expected_ffa_error(ret, FFA_ERROR_DENIED)) {
 		return false;
@@ -156,11 +157,11 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 		VERBOSE("TFTF - Address: %p\n", constituents[0].address);
 	}
 
-	handle = memory_init_and_send(
-		(struct ffa_memory_region *)mb.send, MAILBOX_SIZE, SENDER,
-		&receiver, 1, constituents, constituents_count, mem_func, &ret);
+	ret = memory_init_and_send(mb.send, MAILBOX_SIZE, SENDER, &receiver, 1,
+				   constituents, constituents_count, mem_func);
+	handle = ffa_mem_success_handle(ret);
 
-	if (handle == FFA_MEMORY_HANDLE_INVALID) {
+	if (is_ffa_call_error(ret)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -429,10 +430,12 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	handle = memory_send(mb.send, FFA_MEM_LEND_SMC32, fragment_length,
-			     total_length, &ret);
+	ret = memory_send(mb.send, FFA_MEM_LEND_SMC32, constituents,
+			  constituents_count, remaining_constituent_count,
+			  fragment_length, total_length);
+	handle = ffa_mem_success_handle(ret);
 
-	if (handle == FFA_MEMORY_HANDLE_INVALID) {
+	if (is_ffa_call_error(ret)) {
 		ERROR("Memory Share failed!\n");
 		return TEST_RESULT_FAIL;
 	}
@@ -587,16 +590,11 @@ static bool verify_composite(struct ffa_composite_memory_region *composite,
 /**
  * Helper for performing a hypervisor retrieve request
  */
-static test_result_t
-hypervisor_retrieve_request_test_helper(uint32_t mem_func,
-					bool multiple_receivers)
+static test_result_t hypervisor_retrieve_request_test_helper(
+	uint32_t mem_func, bool multiple_receivers, bool fragmented)
 {
-
-	struct ffa_memory_region_constituent sent_constituents[] = {{
-		.address = (void *)share_page,
-		.page_count = 1,
-		.reserved = 0,
-	}};
+	static struct ffa_memory_region_constituent
+		sent_constituents[FRAGMENTED_SHARE_PAGE_COUNT];
 
 	__aligned(PAGE_SIZE) static uint8_t page[PAGE_SIZE * 2] = {0};
 	struct ffa_memory_region *hypervisor_retrieve_response =
@@ -605,7 +603,6 @@ hypervisor_retrieve_request_test_helper(uint32_t mem_func,
 	struct mailbox_buffers mb;
 	ffa_memory_handle_t handle;
 	struct ffa_value ret;
-
 	uint32_t expected_flags = 0;
 	switch (mem_func) {
 	case FFA_MEM_SHARE_SMC32:
@@ -636,19 +633,28 @@ hypervisor_retrieve_request_test_helper(uint32_t mem_func,
 		init_receiver_from_mem_func(SP_ID(2), mem_func),
 	};
 
-	uint32_t sent_constituents_count = ARRAY_SIZE(sent_constituents);
+	uint32_t sent_constituents_count =
+		fragmented ? ARRAY_SIZE(sent_constituents) : 1;
 
 	uint32_t receiver_count =
 		multiple_receivers ? ARRAY_SIZE(receivers) : 1;
+
+	for (uint32_t i = 0; i < sent_constituents_count; i++) {
+		sent_constituents[i].address = share_page + i * PAGE_SIZE;
+		sent_constituents[i].page_count = 1;
+		sent_constituents[i].reserved = 0;
+	}
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 	GET_TFTF_MAILBOX(mb);
 
 	/* Share/lend/donate */
-	handle = memory_init_and_send(mb.send, MAILBOX_SIZE, SENDER, receivers,
-				      receiver_count, sent_constituents,
-				      sent_constituents_count, mem_func, &ret);
-	if (handle == FFA_MEMORY_HANDLE_INVALID) {
+	ret = memory_init_and_send(mb.send, MAILBOX_SIZE, SENDER, receivers,
+				   receiver_count, sent_constituents,
+				   sent_constituents_count, mem_func);
+	handle = ffa_mem_success_handle(ret);
+
+	if (is_ffa_call_error(ret)) {
 		ERROR("Memory share failed: %d\n", ffa_error_code(ret));
 		return TEST_RESULT_FAIL;
 	}
@@ -674,8 +680,7 @@ hypervisor_retrieve_request_test_helper(uint32_t mem_func,
 		return TEST_RESULT_FAIL;
 	}
 
-	uint32_t i = 0;
-	{
+	for (uint32_t i = 0; i < hypervisor_retrieve_response->receiver_count; i++) {
 		struct ffa_composite_memory_region *composite =
 			ffa_memory_region_get_composite(
 				hypervisor_retrieve_response, i);
@@ -703,11 +708,10 @@ hypervisor_retrieve_request_test_helper(uint32_t mem_func,
 		return TEST_RESULT_FAIL;
 	}
 
-	ret = ffa_rx_release();
-	if (is_ffa_call_error(ret)) {
-		ERROR("rx release failed: %d\n", ffa_error_code(ret));
-		return TEST_RESULT_FAIL;
-	}
+	/*
+	 * `rx_release()` is no longer necessary because `hypervisor_retrieve()`
+	 * does it for us.
+	 */
 
 	return TEST_RESULT_SUCCESS;
 }
@@ -715,29 +719,41 @@ hypervisor_retrieve_request_test_helper(uint32_t mem_func,
 test_result_t test_hypervisor_share_retrieve(void)
 {
 	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC32,
-						       false);
+						       false, false);
 }
 
 test_result_t test_hypervisor_lend_retrieve(void)
 {
 	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC32,
-						       false);
+						       false, false);
 }
 
 test_result_t test_hypervisor_donate_retrieve(void)
 {
 	return hypervisor_retrieve_request_test_helper(FFA_MEM_DONATE_SMC32,
-						       false);
+						       false, false);
 }
 
 test_result_t test_hypervisor_share_retrieve_multiple_receivers(void)
 {
 	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC32,
-						       true);
+						       true, false);
 }
 
 test_result_t test_hypervisor_lend_retrieve_multiple_receivers(void)
 {
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC32, true,
+						       false);
+}
+
+test_result_t test_hypervisor_share_retrieve_fragmented(void)
+{
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC32,
+						       false, true);
+}
+
+test_result_t test_hypervisor_lend_retrieve_fragmented(void)
+{
 	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC32,
-						       true);
+						       false, true);
 }
