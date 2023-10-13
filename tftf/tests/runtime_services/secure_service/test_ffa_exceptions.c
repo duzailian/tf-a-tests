@@ -62,8 +62,7 @@ test_result_t rl_memory_cannot_be_accessed_in_s(void)
 
 	GET_TFTF_MAILBOX(mb);
 
-	handle = memory_init_and_send((struct ffa_memory_region *)mb.send,
-				      PAGE_SIZE, SENDER, &receiver, 1,
+	handle = memory_init_and_send(&mb, PAGE_SIZE, SENDER, &receiver, 1,
 				      constituents, constituents_count,
 				      FFA_MEM_SHARE_SMC32, &ret);
 

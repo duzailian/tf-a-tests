@@ -5,6 +5,7 @@
  */
 
 #include "ffa_helpers.h"
+#include <assert.h>
 #include <cactus_test_cmds.h>
 #include <debug.h>
 #include <ffa_endpoints.h>
@@ -277,7 +278,6 @@ bool hypervisor_retrieve(struct mailbox_buffers *mb,
 {
 	struct ffa_value ret;
 	uint32_t fragment_size;
-	uint32_t total_size;
 
 	if (retrieved == NULL || mb == NULL) {
 		ERROR("Invalid parameters!\n");
@@ -305,17 +305,8 @@ bool hypervisor_retrieve(struct mailbox_buffers *mb,
 	 * of the state of transaction. When the sum of all fragment_size of all
 	 * fragments is equal to total_size, the memory transaction has been
 	 * completed.
-	 * This is a simple test with only one segment. As such, upon
-	 * successful ffa_mem_retrieve_req, total_size must be equal to
-	 * fragment_size.
 	 */
-	total_size = ret.arg1;
 	fragment_size = ret.arg2;
-
-	if (total_size != fragment_size) {
-		ERROR("Only expect one memory segment to be sent!\n");
-		return false;
-	}
 
 	if (fragment_size > PAGE_SIZE) {
 		ERROR("Fragment should be smaller than RX buffer!\n");
@@ -353,21 +344,70 @@ bool memory_relinquish(struct ffa_mem_relinquish *m, uint64_t handle,
 	return true;
 }
 
+void send_fragmented_memory_region(
+	struct mailbox_buffers *mb,
+	struct ffa_memory_region_constituent constituents[],
+	uint32_t constituent_count, uint32_t remaining_constituent_count,
+	uint32_t sent_length, uint32_t total_length,
+	ffa_memory_handle_t *handle, uint64_t allocator_mask,
+	struct ffa_value *send_ret)
+{
+	ffa_memory_handle_t fragment_handle = FFA_MEMORY_HANDLE_INVALID;
+	uint32_t fragment_length;
+
+	/* Send the remaining fragments. */
+	while (remaining_constituent_count != 0) {
+		VERBOSE("%s: %d constituents left to send.\n", __func__,
+			remaining_constituent_count);
+		assert(send_ret->fid == FFA_MEM_FRAG_RX);
+		if (fragment_handle == FFA_MEMORY_HANDLE_INVALID) {
+			fragment_handle = ffa_frag_handle(*send_ret);
+		} else {
+			assert(ffa_frag_handle(*send_ret) == fragment_handle);
+		}
+		assert(send_ret->arg3 == sent_length);
+
+		remaining_constituent_count = ffa_memory_fragment_init(
+			mb->send, PAGE_SIZE,
+			constituents + constituent_count -
+				remaining_constituent_count,
+			remaining_constituent_count, &fragment_length);
+
+		*send_ret = ffa_mem_frag_tx(fragment_handle, fragment_length);
+		sent_length += fragment_length;
+	}
+
+	*handle = ffa_mem_success_handle(*send_ret);
+
+	assert(sent_length == total_length);
+	assert(send_ret->fid == FFA_SUCCESS_SMC32);
+	// assert((*handle & FFA_MEMORY_HANDLE_ALLOCATOR_MASK) ==
+	// allocator_mask);
+	if (fragment_handle != FFA_MEMORY_HANDLE_INVALID) {
+		assert(*handle == fragment_handle);
+	}
+}
+
 /**
  * Helper to call memory send function whose func id is passed as a parameter.
  * Returns a valid handle in case of successful operation or
  * FFA_MEMORY_HANDLE_INVALID if something goes wrong. Populates *ret with a
  * resulting smc value to handle the error higher in the test chain.
- *
- * TODO: Do memory send with 'ffa_memory_region' taking multiple segments
  */
-ffa_memory_handle_t memory_send(
-	struct ffa_memory_region *memory_region, uint32_t mem_func,
-	uint32_t fragment_length, uint32_t total_length, struct ffa_value *ret)
+ffa_memory_handle_t
+memory_send(struct mailbox_buffers *mb, uint32_t mem_func,
+	    struct ffa_memory_region_constituent *constituents,
+	    uint32_t constituent_count, uint32_t remaining_constituent_count,
+	    uint32_t fragment_length, uint32_t total_length,
+	    struct ffa_value *ret)
 {
-	if (fragment_length != total_length) {
-		ERROR("For now, fragment_length and total_length need to be"
-		      " equal");
+	ffa_memory_handle_t handle;
+
+	if (remaining_constituent_count == 0 && fragment_length != total_length)
+	{
+		ERROR("%s: fragment_length and total_length need "
+		      "to be equal (fragment_length = %d, total_length = %d)\n",
+		      __func__, fragment_length, total_length);
 		return FFA_MEMORY_HANDLE_INVALID;
 	}
 
@@ -383,19 +423,25 @@ ffa_memory_handle_t memory_send(
 		break;
 	default:
 		*ret = (struct ffa_value){0};
-		ERROR("TFTF - Invalid func id %x!\n", mem_func);
+		ERROR("%s: Invalid func id %#x!\n", __func__, mem_func);
 		return FFA_MEMORY_HANDLE_INVALID;
 	}
 
 	if (is_ffa_call_error(*ret)) {
-		VERBOSE("Failed to send memory to: %x\n",
+		VERBOSE("%s: Failed to send memory to: %#x\n", __func__,
 			memory_region->receivers[0]
-					.receiver_permissions
-					.receiver);
+				.receiver_permissions.receiver);
 		return FFA_MEMORY_HANDLE_INVALID;
 	}
 
-	return ffa_mem_success_handle(*ret);
+	handle = ffa_mem_success_handle(*ret);
+
+	send_fragmented_memory_region(
+		mb, constituents, constituent_count,
+		remaining_constituent_count, fragment_length, total_length,
+		&handle, FFA_MEMORY_HANDLE_ALLOCATOR_HYPERVISOR, ret);
+
+	return handle;
 }
 
 /**
@@ -403,12 +449,14 @@ ffa_memory_handle_t memory_send(
  * configuration is statically defined and is implementation specific. However,
  * doing it in this file for simplicity and for testing purposes.
  */
-ffa_memory_handle_t memory_init_and_send(
-	struct ffa_memory_region *memory_region, size_t memory_region_max_size,
-	ffa_id_t sender, struct ffa_memory_access receivers[],
-	uint32_t receiver_count,
-	const struct ffa_memory_region_constituent *constituents,
-	uint32_t constituents_count, uint32_t mem_func, struct ffa_value *ret)
+ffa_memory_handle_t
+memory_init_and_send(struct mailbox_buffers *mb, size_t memory_region_max_size,
+		     ffa_id_t sender, struct ffa_memory_access receivers[],
+		     uint32_t receiver_count,
+		     struct ffa_memory_region_constituent *constituents,
+		     uint32_t constituents_count, uint32_t mem_func,
+		     struct ffa_value *ret)
+
 {
 	uint32_t remaining_constituent_count;
 	uint32_t total_length;
@@ -420,21 +468,13 @@ ffa_memory_handle_t memory_init_and_send(
 			: FFA_MEMORY_NORMAL_MEM;
 
 	remaining_constituent_count = ffa_memory_region_init(
-		memory_region, memory_region_max_size, sender, receivers,
+		mb->send, memory_region_max_size, sender, receivers,
 		receiver_count, constituents, constituents_count, 0, 0, type,
 		FFA_MEMORY_CACHE_WRITE_BACK, FFA_MEMORY_INNER_SHAREABLE,
 		&total_length, &fragment_length);
 
-	/*
-	 * For simplicity of the test, and at least for the time being,
-	 * the following condition needs to be true.
-	 */
-	if (remaining_constituent_count != 0U) {
-		ERROR("Remaining constituent should be 0\n");
-		return FFA_MEMORY_HANDLE_INVALID;
-	}
-
-	return memory_send(memory_region, mem_func, fragment_length,
+	return memory_send(mb, mem_func, constituents, constituents_count,
+			   remaining_constituent_count, fragment_length,
 			   total_length, ret);
 }
 
