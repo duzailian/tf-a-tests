@@ -1,0 +1,9 @@
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Maintainer-Review+1: Soby Mathew <soby.mathew@arm.com>
+Code-Review+1: Soby Mathew <soby.mathew@arm.com>
+Code-Owner-Review+1: Shruti Gupta <shruti.gupta@arm.com>
+Submitted-by: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-at: Mon, 16 Oct 2023 18:36:56 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/22764
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
