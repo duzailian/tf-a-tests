@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c5d4704f_461a83c9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-16T16:39:16Z",
+      "side": 1,
+      "message": "Not yet. Will drop this argument if not used for anything else.\nConsidering to add INVALID_PARAMETERS.",
+      "parentUuid": "91c6b591_591e828a",
+      "range": {
+        "startLine": 532,
+        "startChar": 38,
+        "endLine": 532,
+        "endChar": 48
+      },
+      "revId": "ac94b5f864944091531cf00da92a6a2b47c97e0f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3b9d9ebe_205d4703",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
         "patchSetId": 7
@@ -37,6 +61,30 @@
       "writtenOn": "2023-10-16T15:48:24Z",
       "side": 1,
       "message": "same?",
+      "range": {
+        "startLine": 586,
+        "startChar": 30,
+        "endLine": 586,
+        "endChar": 35
+      },
+      "revId": "ac94b5f864944091531cf00da92a6a2b47c97e0f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c085e225_759a2548",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-16T16:39:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b9d9ebe_205d4703",
       "range": {
         "startLine": 586,
         "startChar": 30,
@@ -60,6 +108,30 @@
       "writtenOn": "2023-10-16T15:48:24Z",
       "side": 1,
       "message": "Why do we reregister the exception handler here?",
+      "range": {
+        "startLine": 607,
+        "startChar": 1,
+        "endLine": 607,
+        "endChar": 39
+      },
+      "revId": "ac94b5f864944091531cf00da92a6a2b47c97e0f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c52c898a_f4423d29",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-16T16:39:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39b9b96b_fced3328",
       "range": {
         "startLine": 607,
         "startChar": 1,
