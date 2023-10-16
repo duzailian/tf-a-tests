@@ -16,6 +16,29 @@
       "message": "CI failure likely due to fact CI is using current version of hafnium (ff-a v1.1) and therefore rejects the tf-a-tests manifests that report 1.2\n\nLava logs show \"Panic: Could not parse manifest: Hypervisor manifest entry not compatible with Hafnium.\"\n\nNeed to rerun CI for tf-a-tests after merging hafnium 1.2 patch",
       "revId": "a8e8a40291707b48b21b539a3c99fedbfcb81e5c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "557103ca_99ff6ca1",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-16T14:34:05Z",
+      "side": 1,
+      "message": "Isn\u0027t this check redundant?",
+      "range": {
+        "startLine": 132,
+        "startChar": 6,
+        "endLine": 132,
+        "endChar": 26
+      },
+      "revId": "a8e8a40291707b48b21b539a3c99fedbfcb81e5c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
