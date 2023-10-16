@@ -39,9 +39,9 @@ u_register_t rsi_get_ns_buffer(void)
 }
 
 /* This function call Host and request to exit Realm with proper exit code */
-void rsi_exit_to_host(enum host_call_cmd exit_code)
+void rsi_exit_to_host(enum host_call_cmd exit_code, unsigned int rec_num)
 {
 	host_cal.imm = exit_code;
 	tftf_smc(&(smc_args) {RSI_HOST_CALL, (u_register_t)&host_cal,
-		0UL, 0UL, 0UL, 0UL, 0UL, 0UL});
+		rec_num, 0UL, 0UL, 0UL, 0UL, 0UL});
 }

@@ -24,10 +24,10 @@ static bool exception_handler(void)
 	/* Check for PAuth exception. */
 	/* Note- PAuth decode instruction clobbers PAC Fields[63:56] in case of error. */
 	if (lr & (0xFFULL << 56U)) {
-		rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD);
+		rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD, 0U);
 	}
 
-	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
+	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD, 0U);
 
 	/* Does not return. */
 	return false;
@@ -36,7 +36,7 @@ static bool exception_handler(void)
 void dummy_func(void)
 {
 	realm_printf("Realm: shouldn't reach here.\n");
-	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
+	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD, 0U);
 }
 
 bool test_realm_pauth_fault(void)

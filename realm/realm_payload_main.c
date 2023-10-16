@@ -127,8 +127,10 @@ void realm_payload_main(void)
 	}
 
 	if (test_succeed) {
-		rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD);
+		rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD,
+				read_mpidr_el1() & MPID_MASK);
 	} else {
-		rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
+		rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD,
+				read_mpidr_el1() & MPID_MASK);
 	}
 }
