@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c86f6a07_efb5ce98",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-10-16T14:20:44Z",
+      "side": 1,
+      "message": "NIT: I think it would be useful to expand this acronym in the description so it is a bit clearer what GPC is without having to look at the code",
+      "range": {
+        "startLine": 11,
+        "startChar": 42,
+        "endLine": 11,
+        "endChar": 46
+      },
+      "revId": "261ecbb254e11f6b309f5dd19e886cc4dfafb6d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
