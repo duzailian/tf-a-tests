@@ -108,6 +108,6 @@ u_register_t rsi_get_version(void);
 u_register_t rsi_get_ns_buffer(void);
 
 /* This function call Host and request to exit Realm with proper exit code */
-void rsi_exit_to_host(enum host_call_cmd exit_code);
+void rsi_exit_to_host(enum host_call_cmd exit_code, unsigned int rec_num);
 
 #endif /* REALM_RSI_H */
