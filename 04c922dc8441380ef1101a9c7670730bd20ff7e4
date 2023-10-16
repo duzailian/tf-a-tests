@@ -177,6 +177,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eec720d5_648969ad",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-16T11:23:01Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "562e0d86_67d89f2c",
+      "range": {
+        "startLine": 265,
+        "startChar": 10,
+        "endLine": 265,
+        "endChar": 36
+      },
+      "revId": "04c922dc8441380ef1101a9c7670730bd20ff7e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cedef86d_c6b2e858",
@@ -214,6 +238,30 @@
       "side": 1,
       "message": "Though it appears redundant, it is infact helping to validate the virtual interrupt signaling model of the SPMC. Consider the case where an SPMC didnt inject the ESPi interrupt into SP immediately due to a bug.\n\nIf we dont check the return value now, and later tftf sends a direct req message to check the last serviced interrupt, we are inadvertently allocating CPU cycles and SPMC could now inject the pending interrupt. As soon as the vcpu is resumed, the ESPI will be services and the direct response will return the expected value. Essentially, we missed discovering a bug in SPMC. \n\nI feel there is no harm in keeping this. Please let me know if you disagree.",
       "parentUuid": "cedef86d_c6b2e858",
+      "range": {
+        "startLine": 476,
+        "startChar": 1,
+        "endLine": 479,
+        "endChar": 2
+      },
+      "revId": "04c922dc8441380ef1101a9c7670730bd20ff7e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4619aa81_bfaa7198",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_secure_interrupts.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-16T11:23:01Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e4f47b87_26d6c893",
       "range": {
         "startLine": 476,
         "startChar": 1,
