@@ -153,6 +153,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6933242b_5b808ccf",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-10-16T14:09:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ccf619be_52a96324",
+      "range": {
+        "startLine": 455,
+        "startChar": 0,
+        "endLine": 471,
+        "endChar": 12
+      },
+      "revId": "7e2234939ccf05dc5d20ce8056111393990cd2c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f88f501c_bc693389",
@@ -694,6 +718,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d042266a_ce53cd51",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-10-16T14:09:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9d17b72_dee81732",
+      "range": {
+        "startLine": 584,
+        "startChar": 8,
+        "endLine": 584,
+        "endChar": 25
+      },
+      "revId": "7e2234939ccf05dc5d20ce8056111393990cd2c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b8029c2e_8423cf01",
@@ -778,6 +826,30 @@
       "side": 1,
       "message": "Also VLA so needs to be defined here",
       "parentUuid": "e0559fc4_9ec8ae23",
+      "range": {
+        "startLine": 588,
+        "startChar": 0,
+        "endLine": 588,
+        "endChar": 35
+      },
+      "revId": "7e2234939ccf05dc5d20ce8056111393990cd2c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07991da7_8994e163",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-10-16T14:09:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a8f812b_3229758d",
       "range": {
         "startLine": 588,
         "startChar": 0,
@@ -919,6 +991,30 @@
       "side": 1,
       "message": "Consult the specification for the description of the layout of these structures to make a decision about this check.",
       "parentUuid": "441eed8c_def0ac9b",
+      "range": {
+        "startLine": 622,
+        "startChar": 0,
+        "endLine": 622,
+        "endChar": 40
+      },
+      "revId": "7e2234939ccf05dc5d20ce8056111393990cd2c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8f33eee_04fea7b3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-10-16T14:09:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f5cd851_27068b59",
       "range": {
         "startLine": 622,
         "startChar": 0,
