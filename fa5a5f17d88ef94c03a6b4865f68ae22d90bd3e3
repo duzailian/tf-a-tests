@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b395ddbb_6e46b7cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-16T16:40:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e927a99e_1a04ff36",
+      "revId": "fa5a5f17d88ef94c03a6b4865f68ae22d90bd3e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00543c93_a69d8588",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-10-16T15:53:53Z",
       "side": 1,
       "message": "New line",
+      "range": {
+        "startLine": 70,
+        "startChar": 92,
+        "endLine": 70,
+        "endChar": 93
+      },
+      "revId": "fa5a5f17d88ef94c03a6b4865f68ae22d90bd3e3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6380c51a_eee8ae94",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-16T16:40:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00543c93_a69d8588",
       "range": {
         "startLine": 70,
         "startChar": 92,
