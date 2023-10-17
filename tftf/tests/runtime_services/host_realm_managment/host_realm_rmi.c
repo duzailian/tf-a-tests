@@ -591,7 +591,7 @@ static u_register_t host_realm_destroy_free_rtt(struct realm *realm,
 	return REALM_SUCCESS;
 }
 
-static u_register_t host_realm_destroy_undelegate_range(struct realm *realm,
+u_register_t host_realm_destroy_undelegate_range(struct realm *realm,
 							u_register_t ipa,
 							u_register_t addr,
 							u_register_t size)

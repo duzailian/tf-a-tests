@@ -414,3 +414,73 @@ test_result_t host_realm_set_ripas(void)
 
 	return host_cmp_result();
 }
+
+
+u_register_t host_realm_destroy_undelegate_range(struct realm *realm,
+                                                        u_register_t ipa,
+                                                        u_register_t addr,
+                                                        u_register_t size);
+test_result_t host_realm_reject_set_ripas(void)
+{
+	bool ret1, ret2;
+	u_register_t ret, exit_reason;
+	unsigned int host_call_result;
+	struct realm *realm_ptr;
+	struct rmi_rec_run *run;
+	u_register_t rec_flag[1] = {RMI_RUNNABLE};
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!host_create_realm_payload((u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)(PAGE_POOL_MAX_SIZE +
+			NS_REALM_SHARED_MEM_SIZE),
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, rec_flag, 1U)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	realm_shared_data_set_host_val(0U, HOST_SLEEP_INDEX, 10U);
+	ret1 = host_enter_realm_execute(REALM_SLEEP_CMD, &realm_ptr, RMI_EXIT_HOST_CALL, 0U);
+	ret = host_realm_map_protected_data(true, realm_ptr, REALM_TEST_BUF_BASE, PAGE_SIZE,
+			REALM_TEST_BUF_BASE);
+	if (ret != REALM_SUCCESS) {
+		ERROR("host_realm_map_protected_data failed\n");
+	}
+
+	realm_shared_data_set_host_val(0U, HOST_SLEEP_INDEX, REALM_TEST_BUF_BASE);
+	ret1 = host_enter_realm_execute(REALM_REJECT_SET_RIPAS_CMD, &realm_ptr, RMI_EXIT_RIPAS_CHANGE, 0U);
+
+	if (ret1) {
+		run = (struct rmi_rec_run *)realm_ptr->run[0];
+
+		INFO("gprs[0]=%ld, exit.ripas_base=0x%lx\n", run->exit.gprs[0],
+				run->exit.ripas_base);
+		if (true) {
+			run->entry.flags = REC_ENTRY_FLAG_RIPAS_RESPONSE_REJECT;
+			ret = host_realm_rec_enter(realm_ptr, &exit_reason, &host_call_result, 0U);
+			if (ret != RMI_SUCCESS || exit_reason != RMI_EXIT_HOST_CALL) {
+				ERROR("Re-enter rec failed exit_reason=0x%lx", exit_reason);
+			}
+			INFO("re-enter passed\n");
+		}
+	}
+	host_realm_destroy_undelegate_range(realm_ptr,
+			REALM_TEST_BUF_BASE,
+			REALM_TEST_BUF_BASE,
+			PAGE_SIZE);
+	ret2 = host_destroy_realm();
+
+	if (!ret1 || !ret2) {
+		ERROR("%s(): enter=%d destroy=%d\n",
+		__func__, ret1, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return host_cmp_result();
+}
+
