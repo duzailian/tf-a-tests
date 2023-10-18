@@ -160,6 +160,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0c146c08_eca5dbe3",
+        "filename": "tftf/framework/aarch64/entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2023-10-18T14:45:19Z",
+      "side": 1,
+      "message": "Unless I have misunderstanding, `test_handoff_header` is checking the header which is part of the TL itself passed via x3. But it does not check x{0-2}.",
+      "parentUuid": "8219faf6_0fc8e072",
+      "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9e3a7dc2_c7d37534",
         "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
         "patchSetId": 1
@@ -289,6 +307,24 @@
       "side": 1,
       "message": "The intent of TFTF is to test TF-A, I believe duplicating these APIs would be out of scope for TFTF testing. I believe there is an ongoing discussion about a common implementation of the framework. When this is done we can import the library into TFTF and use these APIs then?",
       "parentUuid": "8f2d0420_f6054174",
+      "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91dc91c5_5cb1bf40",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1001070
+      },
+      "writtenOn": "2023-10-18T14:45:19Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "2f2d70fd_fa42cebd",
       "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
