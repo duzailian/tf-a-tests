@@ -142,6 +142,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8219faf6_0fc8e072",
+        "filename": "tftf/framework/aarch64/entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-18T10:12:39Z",
+      "side": 1,
+      "message": "I\u0027ve deffered this check to test code in test_firmware_handoff.c (see test_handoff_header). Let me know if you think there\u0027s a strong reason to have it here instead.",
+      "parentUuid": "5ca50b4e_19378dbb",
+      "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9e3a7dc2_c7d37534",
         "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
         "patchSetId": 1
@@ -216,6 +234,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8759e81_69bbd8de",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-18T10:12:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81984d9a_a459dfdf",
+      "range": {
+        "startLine": 23,
+        "startChar": 22,
+        "endLine": 23,
+        "endChar": 30
+      },
+      "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f2d0420_f6054174",
@@ -229,6 +271,24 @@
       "writtenOn": "2023-10-12T16:20:53Z",
       "side": 1,
       "message": "Shall we use the lib API `transfer_list_find()` and `transfer_list_entry_data()` instead?",
+      "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f2d70fd_fa42cebd",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-18T10:12:39Z",
+      "side": 1,
+      "message": "The intent of TFTF is to test TF-A, I believe duplicating these APIs would be out of scope for TFTF testing. I believe there is an ongoing discussion about a common implementation of the framework. When this is done we can import the library into TFTF and use these APIs then?",
+      "parentUuid": "8f2d0420_f6054174",
       "revId": "bdbe852a878585bcb2f805a2cefe78f44e0899c7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
