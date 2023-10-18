@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e18518d0_0b42ec77",
+        "filename": "smc_fuzz/dts/top.dts",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-10-18T18:53:27Z",
+      "side": 1,
+      "message": "Anything magic about bias 30?",
+      "range": {
+        "startLine": 15,
+        "startChar": 9,
+        "endLine": 15,
+        "endChar": 13
+      },
+      "revId": "416739c171941d9553c25920159214d809aff866",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2df75f70_5047a8ae",
+        "filename": "smc_fuzz/src/runtestfunction.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-10-18T18:53:27Z",
+      "side": 1,
+      "message": "Could these be defines?",
+      "range": {
+        "startLine": 18,
+        "startChar": 40,
+        "endLine": 18,
+        "endChar": 41
+      },
+      "revId": "416739c171941d9553c25920159214d809aff866",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20db7fd8_a66238c8",
+        "filename": "smc_fuzz/src/runtestfunction.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-10-18T18:53:27Z",
+      "side": 1,
+      "message": "Should we check specifically for -1?",
+      "range": {
+        "startLine": 36,
+        "startChar": 5,
+        "endLine": 36,
+        "endChar": 14
+      },
+      "revId": "416739c171941d9553c25920159214d809aff866",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05b633cd_3bec91da",
+        "filename": "smc_fuzz/src/runtestfunction.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-10-18T18:53:27Z",
+      "side": 1,
+      "message": "Could these indicate what the values mean?",
+      "range": {
+        "startLine": 75,
+        "startChar": 2,
+        "endLine": 76,
+        "endChar": 20
+      },
+      "revId": "416739c171941d9553c25920159214d809aff866",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
