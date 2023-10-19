@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0352a7af_c0c39f7a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T11:21:12Z",
+      "side": 1,
+      "message": "do we remove the timer interrupt mechanism for flushing the print as well ?",
+      "revId": "0ff2e9ce3042ab55ceb5559c78ea95391f4cf9f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
