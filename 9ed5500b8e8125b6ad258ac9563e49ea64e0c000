@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be57424f_30d5aa68",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T13:16:25Z",
+      "side": 1,
+      "message": "Some doubts on tests, otherwise looks good.",
+      "revId": "9ed5500b8e8125b6ad258ac9563e49ea64e0c000",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d70a927_7c1b32c5",
+        "filename": "realm/realm_multiple_rec.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T13:16:25Z",
+      "side": 1,
+      "message": "should wait till the is_secondary_cpu_booted !\u003d 0 and then check another flag which wil be set if CPU1 booted is not altered.\n\nAlso wait while for CPU 2 to be OFF before returning back.",
+      "revId": "9ed5500b8e8125b6ad258ac9563e49ea64e0c000",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
