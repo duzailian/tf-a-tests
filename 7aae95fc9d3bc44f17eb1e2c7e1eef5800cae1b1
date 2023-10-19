@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e393f28_4e330ca4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T11:19:37Z",
+      "side": 1,
+      "message": "just minor comments...",
+      "revId": "7aae95fc9d3bc44f17eb1e2c7e1eef5800cae1b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2befe9d4_a2704de8",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 946,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T11:19:37Z",
+      "side": 1,
+      "message": "REC_PARAMS_AUX_GRANULES",
+      "range": {
+        "startLine": 946,
+        "startChar": 62,
+        "endLine": 946,
+        "endChar": 64
+      },
+      "revId": "7aae95fc9d3bc44f17eb1e2c7e1eef5800cae1b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce4b33fe_b2b3731c",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 950,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T11:19:37Z",
+      "side": 1,
+      "message": "add assert(num_aux \u003c REC_PARAMS_AUX_GRANULES) and rec_num \u003c MAX_REC_COUNT",
+      "revId": "7aae95fc9d3bc44f17eb1e2c7e1eef5800cae1b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "011cdc11_24baadb3",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 969,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T11:19:37Z",
+      "side": 1,
+      "message": "add assert for MAX_REC_COUNT.",
+      "revId": "7aae95fc9d3bc44f17eb1e2c7e1eef5800cae1b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
