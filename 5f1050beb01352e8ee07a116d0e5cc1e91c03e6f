@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79afa031_b838a63b",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T17:14:40Z",
+      "side": 1,
+      "message": "Better to have an error value of  (unsigned int)(-1)...\n\nDocument when this API is expected to work correctly",
+      "range": {
+        "startLine": 350,
+        "startChar": 8,
+        "endLine": 350,
+        "endChar": 21
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c6fcbc2_a7fd6ab2",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T17:14:40Z",
+      "side": 1,
+      "message": "perhaps this can be called host_rec_send_sgi() which also has the effect of forcing an exit.\n\nSGI is a useful capability to have hence the comment to rename.\n\nAlso document when this API is expected to work correctly.",
+      "range": {
+        "startLine": 353,
+        "startChar": 5,
+        "endLine": 353,
+        "endChar": 24
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef4608ef_1d619168",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T17:14:40Z",
+      "side": 1,
+      "message": "this can be an increment followed by dsb(), no need for the spin_lock",
+      "range": {
+        "startLine": 194,
+        "startChar": 1,
+        "endLine": 196,
+        "endChar": 28
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02124a2d_ee4ea680",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T17:14:40Z",
+      "side": 1,
+      "message": "check there atleast 5 CPUS in the test else skip the test. There is a macro for this.",
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1ba7b1d_a2f86b2e",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T17:14:40Z",
+      "side": 1,
+      "message": "it may be a problem is the same secondary CPU is returned. It is better to iterate 4 other CPUs consecutively.\n\n\nyou could scale the tests if the number of CPUs is \u003c\u003d 4 but greater than 2.",
+      "range": {
+        "startLine": 232,
+        "startChar": 17,
+        "endLine": 232,
+        "endChar": 48
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7bcfa72_07212e0b",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T17:14:40Z",
+      "side": 1,
+      "message": "if the test is skipped is NUM of cpus \u003c 5 then this error should not happen.",
+      "range": {
+        "startLine": 233,
+        "startChar": 3,
+        "endLine": 237,
+        "endChar": 4
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d40026d_6e56d7d9",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T17:14:40Z",
+      "side": 1,
+      "message": "wait for is_secondary_cpu_on variable to be number of CPUs turned ON or better safe way:\n\npoll the rec 0 to return the count of CPUs in Realm world and when it reaches 4, you can proceed.",
+      "range": {
+        "startLine": 244,
+        "startChar": 1,
+        "endLine": 244,
+        "endChar": 13
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
