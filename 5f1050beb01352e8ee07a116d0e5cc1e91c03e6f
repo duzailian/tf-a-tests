@@ -72,6 +72,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4f465da0_fa691ebe",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T17:39:52Z",
+      "side": 1,
+      "message": "ignore, I see this can be executed by multiple CPUs.",
+      "parentUuid": "ef4608ef_1d619168",
+      "range": {
+        "startLine": 194,
+        "startChar": 1,
+        "endLine": 196,
+        "endChar": 28
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "02124a2d_ee4ea680",
         "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
         "patchSetId": 22
@@ -146,6 +170,30 @@
       "writtenOn": "2023-10-19T17:14:40Z",
       "side": 1,
       "message": "wait for is_secondary_cpu_on variable to be number of CPUs turned ON or better safe way:\n\npoll the rec 0 to return the count of CPUs in Realm world and when it reaches 4, you can proceed.",
+      "range": {
+        "startLine": 244,
+        "startChar": 1,
+        "endLine": 244,
+        "endChar": 13
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a072998a_ee676aec",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T17:39:52Z",
+      "side": 1,
+      "message": "I think 2nd way is more fool proof. All delays based logic will fail in CI at some point or another.",
+      "parentUuid": "5d40026d_6e56d7d9",
       "range": {
         "startLine": 244,
         "startChar": 1,
