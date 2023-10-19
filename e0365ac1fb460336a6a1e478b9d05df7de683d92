@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "641b4e57_e14ef83b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T14:06:08Z",
+      "side": 1,
+      "message": "EAC5 changes need to be incorporated here. https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/23953",
+      "revId": "e0365ac1fb460336a6a1e478b9d05df7de683d92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
