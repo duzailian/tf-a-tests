@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5b5f3d1_44eba0d6",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_smccc.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-19T09:01:21Z",
+      "side": 1,
+      "message": "struct ffa_value now holds 18 registers.\nRedefined struct ffa_value8 for the sole purpose of this test.",
+      "parentUuid": "621e0071_b5c14652",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 2
+      },
+      "revId": "f294219a552bb9b1a747291c80aa8b9ab8a8f9bd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "74e5c40c_2628c74b",
