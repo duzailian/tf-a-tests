@@ -18,6 +18,46 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "450e9671_5014f3dc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T16:07:10Z",
+      "side": 1,
+      "message": "minor tweaks to test logic.",
+      "revId": "9ed5500b8e8125b6ad258ac9563e49ea64e0c000",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e293b32a_66bca78d",
+        "filename": "realm/realm_multiple_rec.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T16:07:10Z",
+      "side": 1,
+      "message": "use a different function for rec 1 and rec 2. \n\nrec 1 function should never run, so it should always return HOST_CALL_FAILED. And set a flag for rec1_run \u003d 1;\n\nThe rec0 can check this flag before affity_info call and return error.\n\nSee below for rec2.",
+      "range": {
+        "startLine": 46,
+        "startChar": 35,
+        "endLine": 46,
+        "endChar": 48
+      },
+      "revId": "9ed5500b8e8125b6ad258ac9563e49ea64e0c000",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3d70a927_7c1b32c5",
@@ -31,6 +71,156 @@
       "writtenOn": "2023-10-19T13:16:25Z",
       "side": 1,
       "message": "should wait till the is_secondary_cpu_booted !\u003d 0 and then check another flag which wil be set if CPU1 booted is not altered.\n\nAlso wait while for CPU 2 to be OFF before returning back.",
+      "revId": "9ed5500b8e8125b6ad258ac9563e49ea64e0c000",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7167a3d_c8a64ae3",
+        "filename": "realm/realm_multiple_rec.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T16:07:10Z",
+      "side": 1,
+      "message": "This should return with PSCI_E_ALREADY_ON . Add check for this as well.\n\nSince rec2 is not scheduled by Host, we can add dummy function which will run and return failed back to Host.",
+      "parentUuid": "3d70a927_7c1b32c5",
+      "revId": "9ed5500b8e8125b6ad258ac9563e49ea64e0c000",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e308a090_969ac9a9",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T16:07:10Z",
+      "side": 1,
+      "message": "rec 1.",
+      "range": {
+        "startLine": 65,
+        "startChar": 31,
+        "endLine": 65,
+        "endChar": 33
+      },
+      "revId": "9ed5500b8e8125b6ad258ac9563e49ea64e0c000",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "470c5728_07c0d631",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T16:07:10Z",
+      "side": 1,
+      "message": "try running rec 1 here and we should fail.\nRe-enter rec0 and Rec 0 then checks for CPU_ON is denied.",
+      "range": {
+        "startLine": 66,
+        "startChar": 33,
+        "endLine": 66,
+        "endChar": 48
+      },
+      "revId": "9ed5500b8e8125b6ad258ac9563e49ea64e0c000",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "493da320_9729d192",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T16:07:10Z",
+      "side": 1,
+      "message": "2",
+      "range": {
+        "startLine": 68,
+        "startChar": 32,
+        "endLine": 68,
+        "endChar": 33
+      },
+      "revId": "9ed5500b8e8125b6ad258ac9563e49ea64e0c000",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "683909a2_7e2a10e5",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T16:07:10Z",
+      "side": 1,
+      "message": "This call may return error as REC is runnable ?",
+      "range": {
+        "startLine": 69,
+        "startChar": 1,
+        "endLine": 69,
+        "endChar": 39
+      },
+      "revId": "9ed5500b8e8125b6ad258ac9563e49ea64e0c000",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3646dab4_0e7049ed",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T16:07:10Z",
+      "side": 1,
+      "message": "Try running REC1 from here and should get failure.",
+      "revId": "9ed5500b8e8125b6ad258ac9563e49ea64e0c000",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fea27ac6_fa5eafd4",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T16:07:10Z",
+      "side": 1,
+      "message": "could use host_enter_realm_execute() here ?",
+      "range": {
+        "startLine": 121,
+        "startChar": 8,
+        "endLine": 121,
+        "endChar": 28
+      },
       "revId": "9ed5500b8e8125b6ad258ac9563e49ea64e0c000",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
