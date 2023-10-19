@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3406106_e469e66b",
+        "filename": "include/runtime_services/host_realm_managment/host_shared_data.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-19T12:48:10Z",
+      "side": 1,
+      "message": "This is better to be implemented as a proper HOST_CALL_GET_MAX_REC_CMD.",
+      "revId": "9f64d83a38aa9ecb6f7dc538189e75b35fe0b7ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
