@@ -101,6 +101,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e6dabec_5c2d0a23",
+        "filename": "realm/realm_psci.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-20T12:07:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7650d66_318ce22d",
+      "range": {
+        "startLine": 11,
+        "startChar": 10,
+        "endLine": 11,
+        "endChar": 18
+      },
+      "revId": "b0e5c18fb6f10db4b5fcb0f3d9911486d22b0f2b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "74c1876c_53d8acd6",
@@ -138,6 +162,30 @@
       "side": 1,
       "message": "this can happen if host directly enters rec without cpu on, rec was created runnable",
       "parentUuid": "74c1876c_53d8acd6",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 18
+      },
+      "revId": "b0e5c18fb6f10db4b5fcb0f3d9911486d22b0f2b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3d9c7c8_546f8a0c",
+        "filename": "realm/realm_psci.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-20T12:07:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5b5fd5f3_ec4c1f52",
       "range": {
         "startLine": 83,
         "startChar": 0,

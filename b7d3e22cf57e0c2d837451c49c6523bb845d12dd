@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbf93e7c_ddd5c127",
+        "filename": "realm/include/realm_psci.h",
+        "patchSetId": 21
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-20T12:07:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5d90e684_8031563d",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 21
+      },
+      "revId": "b7d3e22cf57e0c2d837451c49c6523bb845d12dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4dc9f079_98f92594",
@@ -41,6 +65,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d52b8d6_fcbebd07",
+        "filename": "realm/realm_psci.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-20T12:07:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4dc9f079_98f92594",
+      "revId": "b7d3e22cf57e0c2d837451c49c6523bb845d12dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3cfcea0d_103fb61e",
@@ -54,6 +96,30 @@
       "writtenOn": "2023-10-19T12:38:52Z",
       "side": 1,
       "message": "should we panic on this else{} case ?",
+      "range": {
+        "startLine": 86,
+        "startChar": 3,
+        "endLine": 86,
+        "endChar": 8
+      },
+      "revId": "b7d3e22cf57e0c2d837451c49c6523bb845d12dd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e58e70ca_a42d42b7",
+        "filename": "realm/realm_psci.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-20T12:07:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3cfcea0d_103fb61e",
       "range": {
         "startLine": 86,
         "startChar": 3,
