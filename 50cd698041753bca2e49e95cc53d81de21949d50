@@ -22,6 +22,30 @@
       },
       "revId": "50cd698041753bca2e49e95cc53d81de21949d50",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d47be0dd_9ee9e8d5",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-20T14:43:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "384ab52e_bbb30d58",
+      "range": {
+        "startLine": 22,
+        "startChar": 36,
+        "endLine": 22,
+        "endChar": 45
+      },
+      "revId": "50cd698041753bca2e49e95cc53d81de21949d50",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
