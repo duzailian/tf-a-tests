@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15a3a391_8b52c76c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-20T12:09:30Z",
+      "side": 1,
+      "message": "we dont need platform core pos in Realm world. The mpidr will be a linear sequential index programmed by RMM which can used by the tests.\n\nIdeally Realm payload should not make a call to plat_get_core_pos()",
+      "revId": "f8468482f82cefaa0dc4da6f2a105fabd9482106",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
