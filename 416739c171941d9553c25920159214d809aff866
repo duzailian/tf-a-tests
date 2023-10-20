@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a7a0275_619ab011",
+        "filename": "smc_fuzz/dts/top.dts",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-10-20T19:56:16Z",
+      "side": 1,
+      "message": "Created comment to state that this is purely arbitrary where each SMC call has an equal chance of seleciton.",
+      "parentUuid": "e18518d0_0b42ec77",
+      "range": {
+        "startLine": 15,
+        "startChar": 9,
+        "endLine": 15,
+        "endChar": 13
+      },
+      "revId": "416739c171941d9553c25920159214d809aff866",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2df75f70_5047a8ae",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-10-18T18:53:27Z",
       "side": 1,
       "message": "Could these be defines?",
+      "range": {
+        "startLine": 18,
+        "startChar": 40,
+        "endLine": 18,
+        "endChar": 41
+      },
+      "revId": "416739c171941d9553c25920159214d809aff866",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8cb07430_a2150aa5",
+        "filename": "smc_fuzz/src/runtestfunction.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-10-20T19:56:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2df75f70_5047a8ae",
       "range": {
         "startLine": 18,
         "startChar": 40,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebb5c51a_b6b334ab",
+        "filename": "smc_fuzz/src/runtestfunction.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-10-20T19:56:16Z",
+      "side": 1,
+      "message": "According to spec there are a range of values for error return so the check for negative here is appropriate.  There are plans to add more intelligence to the fuzzer output so a more refined error message will be forthcoming in the future.",
+      "parentUuid": "20db7fd8_a66238c8",
+      "range": {
+        "startLine": 36,
+        "startChar": 5,
+        "endLine": 36,
+        "endChar": 14
+      },
+      "revId": "416739c171941d9553c25920159214d809aff866",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "05b633cd_3bec91da",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-10-18T18:53:27Z",
       "side": 1,
       "message": "Could these indicate what the values mean?",
+      "range": {
+        "startLine": 75,
+        "startChar": 2,
+        "endLine": 76,
+        "endChar": 20
+      },
+      "revId": "416739c171941d9553c25920159214d809aff866",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f41d1955_1bdeb246",
+        "filename": "smc_fuzz/src/runtestfunction.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-10-20T19:56:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05b633cd_3bec91da",
       "range": {
         "startLine": 75,
         "startChar": 2,
