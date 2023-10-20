@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c8875e3_11a530a3",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-20T16:26:23Z",
+      "side": 1,
+      "message": "it is a good practice to free the allocated pages so far on error.",
+      "revId": "97baa121ec8e934f4137e39ea8ea5bb9596af5aa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
