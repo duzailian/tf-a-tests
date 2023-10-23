@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b205070c_c6d5e294",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-23T16:23:00Z",
+      "side": 1,
+      "message": "nitpick: docs",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "681e562e86d33512f1a0e48e772c621df0c87c1c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07a51df4_2df24fd6",
+        "filename": "spm/cactus/cactus_tests/SMMUv3TestEngine.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-23T16:23:00Z",
+      "side": 1,
+      "message": "there is already another file with somewhat similar name. Also, since this file is strictly for documentation purposes, can you move it to suitable sub-directory within docs directory?",
+      "revId": "681e562e86d33512f1a0e48e772c621df0c87c1c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
