@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c04a691f_5cd576e2",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-23T18:16:17Z",
+      "side": 1,
+      "message": "nitpick: run_testengine",
+      "range": {
+        "startLine": 27,
+        "startChar": 12,
+        "endLine": 27,
+        "endChar": 15
+      },
+      "revId": "d2c3a57cb0196e13787629a9c5de49d8d6b93e63",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d1952013_dd76bf67",
         "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
         "patchSetId": 15
@@ -31,6 +54,69 @@
       "writtenOn": "2023-10-23T16:28:07Z",
       "side": 1,
       "message": "nitpick:\nBefore line 182, could you put an error message:\n\nERROR(\"Unsupported operation issued for SMMUv3TestEngine\\n\");",
+      "revId": "d2c3a57cb0196e13787629a9c5de49d8d6b93e63",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c36c1cc_691a8c7d",
+        "filename": "spm/cactus/plat/arm/fvp/include/sp_platform_def.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-23T18:16:17Z",
+      "side": 1,
+      "message": "This macro has to be defined for TC platform as well.",
+      "range": {
+        "startLine": 29,
+        "startChar": 8,
+        "endLine": 29,
+        "endChar": 41
+      },
+      "revId": "d2c3a57cb0196e13787629a9c5de49d8d6b93e63",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "885c40e9_76932c4e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-23T18:16:17Z",
+      "side": 1,
+      "message": "Please split this patch further into two smaller patches: first which refactors and adds support for RAND48 operation. Another for this realm test.",
+      "revId": "d2c3a57cb0196e13787629a9c5de49d8d6b93e63",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "075a4624_5f17949f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-23T18:16:17Z",
+      "side": 1,
+      "message": "I was curious if this address range has to be mapped in tftf translation tables",
+      "range": {
+        "startLine": 95,
+        "startChar": 49,
+        "endLine": 95,
+        "endChar": 80
+      },
       "revId": "d2c3a57cb0196e13787629a9c5de49d8d6b93e63",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
