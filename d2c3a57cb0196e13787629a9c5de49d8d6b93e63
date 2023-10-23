@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1952013_dd76bf67",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-23T16:28:07Z",
+      "side": 1,
+      "message": "since this error message is same as line 85, could you make it unique? Perhaps soemthing like:\n\n\"SMMUv3: test failed after multiple attempts\\n\"",
+      "revId": "d2c3a57cb0196e13787629a9c5de49d8d6b93e63",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b29bed52_8fb350ae",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-23T16:28:07Z",
+      "side": 1,
+      "message": "nitpick:\nBefore line 182, could you put an error message:\n\nERROR(\"Unsupported operation issued for SMMUv3TestEngine\\n\");",
+      "revId": "d2c3a57cb0196e13787629a9c5de49d8d6b93e63",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
