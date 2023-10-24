@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b076a974_04dc8b0b",
+        "filename": "realm/realm_multiple_rec.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T15:37:40Z",
+      "side": 1,
+      "message": "could do an atomic increment. Else we need to use the spin lock when being read at line 57.",
+      "range": {
+        "startLine": 35,
+        "startChar": 1,
+        "endLine": 37,
+        "endChar": 27
+      },
+      "revId": "5818b3384c6755f3168afd47c90091b2ebb50fba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
