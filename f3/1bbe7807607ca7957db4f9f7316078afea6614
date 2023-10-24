@@ -1,0 +1,11 @@
+Allow-CI+2: Soby Mathew <soby.mathew@arm.com>
+Code-Owner-Review+1: Soby Mathew <soby.mathew@arm.com>
+Allow-CI+2: Shruti Gupta <shruti.gupta@arm.com>
+Maintainer-Review+1: Soby Mathew <soby.mathew@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Tue, 24 Oct 2023 16:35:30 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/23612
+Comments-Total: 2
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
