@@ -410,7 +410,7 @@ struct rand_smc_node *createsmctree(int *casz,
 /*
  * Function executes a single SMC fuzz test instance with a supplied seed.
  */
-test_result_t init_smc_fuzzing()
+test_result_t init_smc_fuzzing(void)
 {
 	/*
 	 * Setting up malloc block parameters
@@ -496,7 +496,7 @@ test_result_t smc_fuzzing_instance(uint32_t seed)
 /*
  * free memory after fuzzing is complete
  */
-test_result_t smc_fuzzing_deinit()
+test_result_t smc_fuzzing_deinit(void)
 {
 	/*
 	 * End of test SMC selection and freeing of nodes
@@ -579,8 +579,10 @@ test_result_t smc_fuzzer_execute(void)
 /*
  * Top level of fuzzing module
  */
-test_result_t smc_fuzzing_top(void) {
+test_result_t smc_fuzzing_top(void) 
+{
 	test_result_t result = TEST_RESULT_SUCCESS;
+
 	init_smc_fuzzing();
 #ifdef MULTI_CPU_SMC_FUZZER
 	u_register_t lead_mpid, target_mpid;
