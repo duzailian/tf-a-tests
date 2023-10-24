@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a68c5a1_72a82623",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 30
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T15:49:44Z",
+      "side": 1,
+      "message": "just a comment to change from random mpidr to an iterator to power ON 3 other CPUs.",
+      "revId": "e4de3b0c5b4d1855970fc23c8cdb01d1edfcee3f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

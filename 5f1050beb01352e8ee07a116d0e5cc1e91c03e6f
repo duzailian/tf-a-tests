@@ -94,6 +94,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4101a91e_f2bd6c08",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T15:49:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f465da0_fa691ebe",
+      "range": {
+        "startLine": 194,
+        "startChar": 1,
+        "endLine": 196,
+        "endChar": 28
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "02124a2d_ee4ea680",
@@ -111,6 +135,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f0ff73a_54619134",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T15:49:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02124a2d_ee4ea680",
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1ba7b1d_a2f86b2e",
@@ -124,6 +166,30 @@
       "writtenOn": "2023-10-19T17:14:40Z",
       "side": 1,
       "message": "it may be a problem is the same secondary CPU is returned. It is better to iterate 4 other CPUs consecutively.\n\n\nyou could scale the tests if the number of CPUs is \u003c\u003d 4 but greater than 2.",
+      "range": {
+        "startLine": 232,
+        "startChar": 17,
+        "endLine": 232,
+        "endChar": 48
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e24ed1a6_4cecb22e",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T15:49:44Z",
+      "side": 1,
+      "message": "ah you are re-trying in a loop, so if the same MPIDR is retrieved, you just end up retrying. \n\nOr you could simply use an iterate over 4 CPUs in the system. Use the below sequence :\n\n\t/* Power on all CPUs */\n\tfor_each_cpu(cpu_node) {\n\t    cpu_mpid \u003d tftf_get_mpidr_from_node(cpu_node);\n\n            //break out of this loop once 3 other CPUs are powered ON\n        }",
+      "parentUuid": "d1ba7b1d_a2f86b2e",
       "range": {
         "startLine": 232,
         "startChar": 17,
@@ -194,6 +260,30 @@
       "side": 1,
       "message": "I think 2nd way is more fool proof. All delays based logic will fail in CI at some point or another.",
       "parentUuid": "5d40026d_6e56d7d9",
+      "range": {
+        "startLine": 244,
+        "startChar": 1,
+        "endLine": 244,
+        "endChar": 13
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7dec76c_9efa278a",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-24T15:49:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a072998a_ee676aec",
       "range": {
         "startLine": 244,
         "startChar": 1,
