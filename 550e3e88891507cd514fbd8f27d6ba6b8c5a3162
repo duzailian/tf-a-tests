@@ -22,6 +22,30 @@
       },
       "revId": "550e3e88891507cd514fbd8f27d6ba6b8c5a3162",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9facc6cf_1d9cdb31",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-24T10:26:40Z",
+      "side": 1,
+      "message": "needed for MAX_REC_COUNT",
+      "parentUuid": "ae2bf353_cbbb87cb",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 22
+      },
+      "revId": "550e3e88891507cd514fbd8f27d6ba6b8c5a3162",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
