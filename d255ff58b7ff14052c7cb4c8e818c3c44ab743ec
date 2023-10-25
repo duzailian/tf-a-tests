@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78838070_78ae6565",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-10-25T12:16:47Z",
+      "side": 1,
+      "message": "TC includes SMMUv3 tests in it\u0027s tests_to_skip.txt file so I think it is best to just include this code for PLAT_fvp",
+      "range": {
+        "startLine": 89,
+        "startChar": 16,
+        "endLine": 89,
+        "endChar": 23
+      },
+      "revId": "d255ff58b7ff14052c7cb4c8e818c3c44ab743ec",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
