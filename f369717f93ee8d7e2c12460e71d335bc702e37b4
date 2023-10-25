@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98c2ec72_b5d93acc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-25T17:08:43Z",
+      "side": 1,
+      "message": "All the build tests have passed in CI. The CI +2 passed prior to code style rework. Hence merging this stack.",
+      "revId": "f369717f93ee8d7e2c12460e71d335bc702e37b4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
