@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1be61a0_9141f516",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-25T10:20:35Z",
+      "side": 1,
+      "message": "nitpick: Align arguments",
+      "range": {
+        "startLine": 28,
+        "startChar": 2,
+        "endLine": 28,
+        "endChar": 7
+      },
+      "revId": "2b5babaddf2f5d64d38d6402e859899e7453e3e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c355696b_2ab18850",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-25T10:20:35Z",
+      "side": 1,
+      "message": "Do we follow the rule one variable declaration per-line?",
+      "range": {
+        "startLine": 31,
+        "startChar": 1,
+        "endLine": 32,
+        "endChar": 30
+      },
+      "revId": "2b5babaddf2f5d64d38d6402e859899e7453e3e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc519940_7845c90c",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-25T10:20:35Z",
+      "side": 1,
+      "message": "nitpick: align arguments",
+      "range": {
+        "startLine": 122,
+        "startChar": 22,
+        "endLine": 123,
+        "endChar": 16
+      },
+      "revId": "2b5babaddf2f5d64d38d6402e859899e7453e3e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00e76aae_6e42d4f1",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-25T10:20:35Z",
+      "side": 1,
+      "message": "Shouldn\u0027t the memory used to be the target of this operation be mapped as device memory?\nIn doing so, the memory is non-cacheable, and would not require data cache maintenance operations.\n\nIIUC, this opens up to the possibility of having a stale entry in the Data cache, that might overwrite a newer value at the bus, updated by the device.\n\nLet me know what you think.",
+      "range": {
+        "startLine": 130,
+        "startChar": 2,
+        "endLine": 131,
+        "endChar": 46
+      },
+      "revId": "2b5babaddf2f5d64d38d6402e859899e7453e3e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
