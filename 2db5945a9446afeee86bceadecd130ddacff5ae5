@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ce5fed7_a30d1891",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-25T10:38:20Z",
+      "side": 1,
+      "message": "Adding this file makes static checks fail. Not sure what\u0027s the best course, either fix the file (but makes later updates more complex), or move the file somewhere in documentation as initially suggested by Madhu.",
+      "revId": "2db5945a9446afeee86bceadecd130ddacff5ae5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
