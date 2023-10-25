@@ -140,6 +140,30 @@
       },
       "revId": "1a073b09050458329d0795234d164bbf65284023",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52363a63_d30eb271",
+        "filename": "tftf/tests/extensions/sme/test_sme2.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-25T13:15:28Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "fee5b00b_820ba4f6",
+      "range": {
+        "startLine": 59,
+        "startChar": 21,
+        "endLine": 59,
+        "endChar": 28
+      },
+      "revId": "1a073b09050458329d0795234d164bbf65284023",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
