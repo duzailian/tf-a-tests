@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c56d02d2_864973b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-25T10:33:40Z",
+      "side": 1,
+      "message": "could you detail how the failure would manifest itself?",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 29
+      },
+      "revId": "09ccaad21dce4d61394a1269661832330f5b8bff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06887abd_75be81ca",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-25T10:33:40Z",
+      "side": 1,
+      "message": "Similarly to what asked in the previous patch...\nShouldn\u0027t this be defined as device memory?",
+      "range": {
+        "startLine": 92,
+        "startChar": 2,
+        "endLine": 97,
+        "endChar": 4
+      },
+      "revId": "09ccaad21dce4d61394a1269661832330f5b8bff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb51c826_c68c0bb2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-10-25T10:33:40Z",
+      "side": 1,
+      "message": "nitpick: align.\nline 104 bigger than line 110, even if you add the variable there.",
+      "range": {
+        "startLine": 111,
+        "startChar": 2,
+        "endLine": 111,
+        "endChar": 3
+      },
+      "revId": "09ccaad21dce4d61394a1269661832330f5b8bff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
