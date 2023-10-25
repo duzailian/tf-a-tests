@@ -41,6 +41,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "555aa19b_e923421f",
+        "filename": "plat/arm/fvp/platform.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-25T16:31:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad4c1a59_56442da6",
+      "revId": "3b5adcfc363327e911bb5484c33710d54b7dc703",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "27c84e50_b33a2570",
@@ -54,6 +72,24 @@
       "writtenOn": "2023-10-25T14:00:26Z",
       "side": 1,
       "message": "0U instead?",
+      "revId": "3b5adcfc363327e911bb5484c33710d54b7dc703",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25d84f14_64d5d3cb",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-25T16:31:48Z",
+      "side": 1,
+      "message": "Is this really necessary? From what I understand, its fairly uncommon to use this type of type specification with size_t. The compiler treats 0 as an integer literal that is implicitly converted to size_t, which is an unsigned integer type.",
+      "parentUuid": "27c84e50_b33a2570",
       "revId": "3b5adcfc363327e911bb5484c33710d54b7dc703",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -88,6 +124,24 @@
       "writtenOn": "2023-10-25T14:00:26Z",
       "side": 1,
       "message": "braces around for loop?",
+      "revId": "3b5adcfc363327e911bb5484c33710d54b7dc703",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb1dfb12_6e7d2e2f",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-25T16:31:48Z",
+      "side": 1,
+      "message": "Ah - interesting, I know our code style documentation mandates this as well. However, the static checks contradict this:\n\ntftf/tests/misc_tests/test_firmware_handoff.c:34: WARNING: braces {} are not necessary for single statement blocks\n+\tfor (size_t i \u003d 0; i \u003c tl-\u003esize; i++) {\n+\t\tbyte_sum +\u003d b[i];\n+\t}\n\nThis seems like something we ought to clarify: https://ci.trustedfirmware.org/job/tf-a-static-checks/6680/.",
+      "parentUuid": "f5fcdbf5_949839b7",
       "revId": "3b5adcfc363327e911bb5484c33710d54b7dc703",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
