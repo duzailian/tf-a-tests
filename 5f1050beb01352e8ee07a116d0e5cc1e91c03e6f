@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5c06e99_7cceb025",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-25T15:14:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79afa031_b838a63b",
+      "range": {
+        "startLine": 350,
+        "startChar": 8,
+        "endLine": 350,
+        "endChar": 21
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c6fcbc2_a7fd6ab2",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-10-19T17:14:40Z",
       "side": 1,
       "message": "perhaps this can be called host_rec_send_sgi() which also has the effect of forcing an exit.\n\nSGI is a useful capability to have hence the comment to rename.\n\nAlso document when this API is expected to work correctly.",
+      "range": {
+        "startLine": 353,
+        "startChar": 5,
+        "endLine": 353,
+        "endChar": 24
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78c4f8e5_8b1c0b0b",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-25T15:14:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c6fcbc2_a7fd6ab2",
       "range": {
         "startLine": 353,
         "startChar": 5,
@@ -118,6 +166,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "80e33047_d45b2020",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-25T15:14:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f465da0_fa691ebe",
+      "range": {
+        "startLine": 194,
+        "startChar": 1,
+        "endLine": 196,
+        "endChar": 28
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "02124a2d_ee4ea680",
@@ -146,6 +218,24 @@
         "id": 1000056
       },
       "writtenOn": "2023-10-24T15:49:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02124a2d_ee4ea680",
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9b48d0b_143a6add",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-25T15:14:51Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "02124a2d_ee4ea680",
@@ -200,6 +290,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a60bc4c9_cfd8e9ac",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-25T15:14:51Z",
+      "side": 1,
+      "message": "if cpu is already on, we loop again",
+      "parentUuid": "d1ba7b1d_a2f86b2e",
+      "range": {
+        "startLine": 232,
+        "startChar": 17,
+        "endLine": 232,
+        "endChar": 48
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c7bcfa72_07212e0b",
@@ -213,6 +327,30 @@
       "writtenOn": "2023-10-19T17:14:40Z",
       "side": 1,
       "message": "if the test is skipped is NUM of cpus \u003c 5 then this error should not happen.",
+      "range": {
+        "startLine": 233,
+        "startChar": 3,
+        "endLine": 237,
+        "endChar": 4
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bab1daf_d1e51f1a",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-25T15:14:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7bcfa72_07212e0b",
       "range": {
         "startLine": 233,
         "startChar": 3,
@@ -281,6 +419,30 @@
         "id": 1000056
       },
       "writtenOn": "2023-10-24T15:49:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a072998a_ee676aec",
+      "range": {
+        "startLine": 244,
+        "startChar": 1,
+        "endLine": 244,
+        "endChar": 13
+      },
+      "revId": "5f1050beb01352e8ee07a116d0e5cc1e91c03e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32d3f3ac_98013e06",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-25T15:14:51Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "a072998a_ee676aec",
