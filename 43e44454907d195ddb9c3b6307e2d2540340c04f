@@ -89,6 +89,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37016887_faa8b4f4",
+        "filename": "include/lib/extensions/fpu.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-25T14:09:28Z",
+      "side": 1,
+      "message": "As FPU register are of fixed size, we can keep the existing typedef fpu_q_reg_t. Later if there is a need we can consider changing the typedef.",
+      "parentUuid": "8d6de5a3_95375cdc",
+      "range": {
+        "startLine": 35,
+        "startChar": 39,
+        "endLine": 35,
+        "endChar": 58
+      },
+      "revId": "43e44454907d195ddb9c3b6307e2d2540340c04f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a1b0fb77_582fe2e9",
