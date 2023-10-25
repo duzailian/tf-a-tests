@@ -649,7 +649,10 @@ static u_register_t host_realm_tear_down_rtt_range(struct realm *realm,
 
 		switch (rtt.state) {
 		case RMI_ASSIGNED:
-			if (rtt.ripas == RMI_EMPTY) {
+			if ((map_addr & (1UL <<
+			(EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
+			realm->rmm_feat_reg0) - 1UL)))) {
+
 				ret = host_rmi_rtt_unmap_unprotected(
 								rd,
 								map_addr,
