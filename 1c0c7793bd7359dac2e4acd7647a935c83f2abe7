@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30b53767_7a2adb78",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 30
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-26T09:50:35Z",
+      "side": 1,
+      "message": "rmm-eac5",
+      "revId": "1c0c7793bd7359dac2e4acd7647a935c83f2abe7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7364c746_b90814cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 30
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-26T09:50:35Z",
+      "side": 1,
+      "message": "both should be 1",
+      "revId": "1c0c7793bd7359dac2e4acd7647a935c83f2abe7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b1313e1_f42b3d49",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 30
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-10-26T09:50:35Z",
+      "side": 1,
+      "message": "Take a look at\nhttps://gerrit.oss.arm.com/c/trusted-firmware/tf-a-tests/+/272538/2\nwhich is used for EAC5 tests",
+      "revId": "1c0c7793bd7359dac2e4acd7647a935c83f2abe7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
