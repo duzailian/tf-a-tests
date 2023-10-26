@@ -94,6 +94,30 @@
       },
       "revId": "e756556a52618a5f62115251243d37299272082d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "113ca806_803a04d4",
+        "filename": "include/lib/extensions/sme.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-26T15:18:28Z",
+      "side": 1,
+      "message": "Ignore that, this is called in one of the child patches in the series. Regardless issue with rand() should be taken up separately. I think srand is being invoked by other tests in the test suite and hence it works here. \n\nEventually srand() can be called in TFTF framework and can be done on behalf of TFTF initialization on the system. This will relieve the tests of the reponsibility.",
+      "parentUuid": "c21db2ba_1c4922c0",
+      "range": {
+        "startLine": 10,
+        "startChar": 27,
+        "endLine": 10,
+        "endChar": 31
+      },
+      "revId": "e756556a52618a5f62115251243d37299272082d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
