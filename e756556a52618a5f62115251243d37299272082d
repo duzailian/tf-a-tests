@@ -70,6 +70,30 @@
       },
       "revId": "e756556a52618a5f62115251243d37299272082d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c21db2ba_1c4922c0",
+        "filename": "include/lib/extensions/sme.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-26T13:12:10Z",
+      "side": 1,
+      "message": "The SME_GET_RANDOM_SVQ\tis not being used in any of the tests at the moment. So we can remove this macro and avoid calling rand().",
+      "parentUuid": "4e8764c9_ba247689",
+      "range": {
+        "startLine": 10,
+        "startChar": 27,
+        "endLine": 10,
+        "endChar": 31
+      },
+      "revId": "e756556a52618a5f62115251243d37299272082d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
