@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d090f84d_84f367f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-26T14:44:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "641b4e57_e14ef83b",
+      "revId": "e0365ac1fb460336a6a1e478b9d05df7de683d92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d9e0558c_ccc5d526",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-10-19T14:12:27Z",
       "side": 1,
       "message": "This API needs to take 2 args as per EAC5. \n\nThe version is returned in the args and this is what needs to be printed.",
+      "range": {
+        "startLine": 305,
+        "startChar": 11,
+        "endLine": 305,
+        "endChar": 27
+      },
+      "revId": "e0365ac1fb460336a6a1e478b9d05df7de683d92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "132382cd_9520f2c6",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-26T14:44:30Z",
+      "side": 1,
+      "message": "adjusted helper",
+      "parentUuid": "d9e0558c_ccc5d526",
       "range": {
         "startLine": 305,
         "startChar": 11,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2874104e_604d87d3",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-26T14:44:30Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "0440bb16_a20838fb",
+      "range": {
+        "startLine": 316,
+        "startChar": 6,
+        "endLine": 316,
+        "endChar": 18
+      },
+      "revId": "e0365ac1fb460336a6a1e478b9d05df7de683d92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dbefbe82_05d0c46c",
@@ -87,6 +153,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bf11fa6_da71f3d9",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-26T14:44:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dbefbe82_05d0c46c",
+      "range": {
+        "startLine": 31,
+        "startChar": 32,
+        "endLine": 31,
+        "endChar": 39
+      },
+      "revId": "e0365ac1fb460336a6a1e478b9d05df7de683d92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e05b61e2_77691587",
@@ -100,6 +190,30 @@
       "writtenOn": "2023-10-19T14:12:27Z",
       "side": 1,
       "message": "1.0 for EAC5",
+      "range": {
+        "startLine": 29,
+        "startChar": 31,
+        "endLine": 29,
+        "endChar": 34
+      },
+      "revId": "e0365ac1fb460336a6a1e478b9d05df7de683d92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c3bf380_7e6f3c49",
+        "filename": "realm/include/realm_rsi.h",
+        "patchSetId": 18
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-26T14:44:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e05b61e2_77691587",
       "range": {
         "startLine": 29,
         "startChar": 31,
@@ -217,6 +331,30 @@
       "writtenOn": "2023-10-19T14:12:27Z",
       "side": 1,
       "message": "this would be one of the returned arg.",
+      "range": {
+        "startLine": 55,
+        "startChar": 27,
+        "endLine": 55,
+        "endChar": 34
+      },
+      "revId": "e0365ac1fb460336a6a1e478b9d05df7de683d92",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17517ce9_f101142f",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-10-26T14:44:30Z",
+      "side": 1,
+      "message": "version is returned lower version",
+      "parentUuid": "95659c25_d8d809b8",
       "range": {
         "startLine": 55,
         "startChar": 27,
