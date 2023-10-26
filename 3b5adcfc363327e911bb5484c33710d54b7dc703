@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "15a98b8c_957d84ce",
+        "filename": "include/lib/handoff/transfer_list.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-26T14:42:59Z",
+      "side": 1,
+      "message": "Yes, it could be, however, I\u0027m reusing the definitions from the main implementation. I have no objection making this a packed structure but would presume it\u0027s necessary to have it be consistent.",
+      "parentUuid": "8c271fe8_4ddcb61a",
+      "range": {
+        "startLine": 18,
+        "startChar": 7,
+        "endLine": 18,
+        "endChar": 27
+      },
+      "revId": "3b5adcfc363327e911bb5484c33710d54b7dc703",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ad4c1a59_56442da6",
         "filename": "plat/arm/fvp/platform.mk",
         "patchSetId": 9
@@ -114,6 +138,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fdf37ded_6973af80",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-26T14:42:59Z",
+      "side": 1,
+      "message": "My mistake, I think the type specifier might actually be useful here. FYI I\u0027ve moved some of the logic into a separate library with the same interfaces as the main library (transfer_lists.c). Long term we should hopefully be able to replace this with a generic implementation of the framework.",
+      "parentUuid": "99219f0c_78ed5d83",
+      "revId": "3b5adcfc363327e911bb5484c33710d54b7dc703",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3cc4d9c5_2c4af0ea",
         "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
         "patchSetId": 9
@@ -184,6 +226,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d63e8b56_d7e08e1e",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-26T14:42:59Z",
+      "side": 1,
+      "message": "As it turns out, TFTF uses the Linux code style [1](https://trustedfirmware-a-tests.readthedocs.io/en/latest/process/style.html#checking-source-code-style) which does allow un-braced single statement blocks. I\u0027ve made the change anyway following your suggestion, let me know what you think.",
+      "parentUuid": "6ab8d202_dd28b178",
+      "revId": "3b5adcfc363327e911bb5484c33710d54b7dc703",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0ace7fbd_31f25b5f",
         "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
         "patchSetId": 9
@@ -195,6 +255,24 @@
       "writtenOn": "2023-10-25T14:00:26Z",
       "side": 1,
       "message": "braces around \u0027if\u0027",
+      "revId": "3b5adcfc363327e911bb5484c33710d54b7dc703",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f65e5b4f_221efeeb",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-26T14:42:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ace7fbd_31f25b5f",
       "revId": "3b5adcfc363327e911bb5484c33710d54b7dc703",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -216,6 +294,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f67b811a_109fa616",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-26T14:42:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a76a45e_f0296fa7",
+      "revId": "3b5adcfc363327e911bb5484c33710d54b7dc703",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "99d843e2_081bbba1",
@@ -229,6 +325,30 @@
       "writtenOn": "2023-10-25T14:00:26Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 1
+      },
+      "revId": "3b5adcfc363327e911bb5484c33710d54b7dc703",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44fbd5c2_bcb09dad",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-26T14:42:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99d843e2_081bbba1",
       "range": {
         "startLine": 55,
         "startChar": 0,
