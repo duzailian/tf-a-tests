@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "38d89b9c_07bd8984",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-26T15:44:32Z",
+      "side": 1,
+      "message": "minor suggestions to remove dependancy on random number generated in TFTF.",
+      "revId": "5f9e2d3d511a6cfae63b288f7378a49f3bd02419",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4628d58a_0aecb662",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_simd_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 836,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-26T15:44:32Z",
+      "side": 1,
+      "message": "there is too much randomness in these tests that I worry we may miss testing some code paths.\n\nHow about having a static counter for this condition and every time this is invoked based on bit[1] % 2 go into one of the conditions.\n\n\nFor the check at line 844, based on bit[0] % 2 select one of the conditions.\n\nIncrement the counter before exiting the function.",
+      "range": {
+        "startLine": 836,
+        "startChar": 5,
+        "endLine": 836,
+        "endChar": 12
+      },
+      "revId": "5f9e2d3d511a6cfae63b288f7378a49f3bd02419",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a851c57_151e682f",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_simd_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 893,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-26T15:44:32Z",
+      "side": 1,
+      "message": "similar comment as above.",
+      "range": {
+        "startLine": 893,
+        "startChar": 6,
+        "endLine": 893,
+        "endChar": 10
+      },
+      "revId": "5f9e2d3d511a6cfae63b288f7378a49f3bd02419",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bef398a_8b0861bf",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_simd_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 1087,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-10-26T15:44:32Z",
+      "side": 1,
+      "message": "this can be atleast bit[4] in i is flipped twice ... 0 -\u003e 1 -\u003e 0.",
+      "range": {
+        "startLine": 1087,
+        "startChar": 27,
+        "endLine": 1087,
+        "endChar": 42
+      },
+      "revId": "5f9e2d3d511a6cfae63b288f7378a49f3bd02419",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
