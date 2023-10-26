@@ -22,6 +22,30 @@
       },
       "revId": "d255ff58b7ff14052c7cb4c8e818c3c44ab743ec",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4b10253_1275b9ee",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-26T07:23:08Z",
+      "side": 1,
+      "message": "I thought about this but then figured out that spm/cactus/cactus_tests/cactus_tests_smmuv3.c is compiled for TC.\nSo if we exclude TC from here we\u0027d have a half baked support for SMMU tests (empty stub in TFTF and cactus SP implementing the SMMU commands).\nMoreover I still have hopes we could enable SMMU tests on TC some day (the IP is actually present in the model but not fully wired!) hence thought better to keep it built in for a later enablement... Let me know what you think.",
+      "parentUuid": "78838070_78ae6565",
+      "range": {
+        "startLine": 89,
+        "startChar": 16,
+        "endLine": 89,
+        "endChar": 23
+      },
+      "revId": "d255ff58b7ff14052c7cb4c8e818c3c44ab743ec",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }

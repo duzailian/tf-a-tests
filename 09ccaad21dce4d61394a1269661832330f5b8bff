@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4c77d03d_237a8796",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-26T07:23:08Z",
+      "side": 1,
+      "message": "The visible criterion is that the engine fails the operation:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/24315/6/tftf/tests/runtime_services/secure_service/test_spm_smmu.c#130\n\nThen when looking at SMMU logs in lava.log it should report a GPC check fail:\nhttps://ci-builds.trustedfirmware.org/static-files/m9rHI9DOHmXU89IJO67dThBevmAspKI7tdPkJKWxeHAxNjk4MjUyNjQ0ODY2Ojc6b2RlcHJlejpqb2IvdGYtYS1idWlsZGVyLzI3NDIyNzMvYXJ0aWZhY3Q\u003d/lava.log\nIdeally we\u0027d parse this log with an expect script but I\u0027m unsure if this is possible (not a monitored uart log).\n\nHowever I miss to find the GPC check error reported there, so I suspect the test is no longer behaving properly! It was worth asking!\n\nI\u0027m turning the change to WIP while looking at what\u0027s going on.",
+      "parentUuid": "c56d02d2_864973b7",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 29
+      },
+      "revId": "09ccaad21dce4d61394a1269661832330f5b8bff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "06887abd_75be81ca",
         "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
         "patchSetId": 6
@@ -108,6 +132,30 @@
       "writtenOn": "2023-10-25T10:33:40Z",
       "side": 1,
       "message": "nitpick: align.\nline 104 bigger than line 110, even if you add the variable there.",
+      "range": {
+        "startLine": 111,
+        "startChar": 2,
+        "endLine": 111,
+        "endChar": 3
+      },
+      "revId": "09ccaad21dce4d61394a1269661832330f5b8bff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9313068_9d9ba6f7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-26T07:23:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb51c826_c68c0bb2",
       "range": {
         "startLine": 111,
         "startChar": 2,
