@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34e28cfb_e680a9c5",
+        "filename": "spm/ivy/app/plat/arm/tc/fdts/ivy-sel0.dts",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-26T19:10:01Z",
+      "side": 1,
+      "message": "2022-2023",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "63c2ee0f1bd6dc3305354bd8a85beb928468a7c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
