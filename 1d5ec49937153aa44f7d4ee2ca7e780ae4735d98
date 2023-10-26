@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19c151d1_4511c086",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-26T19:01:10Z",
+      "side": 1,
+      "message": "Is is possible to get away from use these macros? I wonder why the upstream master does not need it within the test_smmu_spm function.",
+      "revId": "1d5ec49937153aa44f7d4ee2ca7e780ae4735d98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
