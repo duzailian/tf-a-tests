@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e023238b_334fbab3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2023-10-26T09:27:11Z",
+      "side": 1,
+      "message": "This can be extended for context mgmt testing in future as well. Its a good starting point.",
+      "revId": "5563de011a3aeda175bfc40e2fc094044c6a1ab9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
