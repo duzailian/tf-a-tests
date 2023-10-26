@@ -34,6 +34,24 @@
       "parentUuid": "aa2b763b_0a07d241",
       "revId": "5e41f039e2274a23fab9624e7a837e38fedd8376",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63cfe809_a5305bd8",
+        "filename": "plat/arm/fvp/fvp_tests_to_skip.txt",
+        "patchSetId": 17
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-26T07:23:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "62109a84_336a1c8a",
+      "revId": "5e41f039e2274a23fab9624e7a837e38fedd8376",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
