@@ -34,6 +34,24 @@
       "parentUuid": "19c151d1_4511c086",
       "revId": "1d5ec49937153aa44f7d4ee2ca7e780ae4735d98",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47bf7d6f_b693727f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-10-27T14:15:32Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "cdc01c2e_cc698e65",
+      "revId": "1d5ec49937153aa44f7d4ee2ca7e780ae4735d98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
