@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "83efc718_d1ff34fc",
+        "filename": "lib/transfer_list/transfer_list.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-27T09:39:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ebf856ff_c27d3f3d",
+      "range": {
+        "startLine": 37,
+        "startChar": 5,
+        "endLine": 37,
+        "endChar": 8
+      },
+      "revId": "039fe947f25190bab0ca84190263a204b3fc1760",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0e4bad9a_9840b400",
@@ -58,6 +82,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c92fa37b_8eb49a7a",
+        "filename": "make_helpers/defaults.mk",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-27T09:39:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e4bad9a_9840b400",
+      "revId": "039fe947f25190bab0ca84190263a204b3fc1760",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cfcefb3f_0bab621c",
@@ -71,6 +113,30 @@
       "writtenOn": "2023-10-27T09:20:28Z",
       "side": 1,
       "message": "nit: remove extra space?",
+      "range": {
+        "startLine": 217,
+        "startChar": 0,
+        "endLine": 217,
+        "endChar": 1
+      },
+      "revId": "039fe947f25190bab0ca84190263a204b3fc1760",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "148d62ec_3befeb38",
+        "filename": "tftf/framework/aarch64/entrypoint.S",
+        "patchSetId": 11
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-27T09:39:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cfcefb3f_0bab621c",
       "range": {
         "startLine": 217,
         "startChar": 0,
@@ -104,6 +170,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea64407a_f352e24d",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-27T09:39:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "149a1722_67e246aa",
+      "range": {
+        "startLine": 42,
+        "startChar": 5,
+        "endLine": 42,
+        "endChar": 8
+      },
+      "revId": "039fe947f25190bab0ca84190263a204b3fc1760",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e07af4e_2280c689",
@@ -117,6 +207,30 @@
       "writtenOn": "2023-10-27T09:20:28Z",
       "side": 1,
       "message": "nit: put a braces around each condition in this `if` statement",
+      "range": {
+        "startLine": 49,
+        "startChar": 33,
+        "endLine": 49,
+        "endChar": 70
+      },
+      "revId": "039fe947f25190bab0ca84190263a204b3fc1760",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4431ffc_b6158b71",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-27T09:39:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e07af4e_2280c689",
       "range": {
         "startLine": 49,
         "startChar": 33,
