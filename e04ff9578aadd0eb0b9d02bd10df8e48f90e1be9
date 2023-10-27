@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0da6da06_cc1bc70f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-27T13:03:35Z",
+      "side": 1,
+      "message": "nit: sorry to be pedantic but can you rewrite this in the imperative. Also for consistency with other commits please make the title all lower case.",
+      "range": {
+        "startLine": 7,
+        "startChar": 23,
+        "endLine": 7,
+        "endChar": 29
+      },
+      "revId": "e04ff9578aadd0eb0b9d02bd10df8e48f90e1be9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae3894c5_1bc9772a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2023-10-27T13:03:35Z",
+      "side": 1,
+      "message": "Minor comment, otherwise LGTM",
+      "revId": "e04ff9578aadd0eb0b9d02bd10df8e48f90e1be9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
