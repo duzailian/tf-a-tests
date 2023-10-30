@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "5fb90a6a_12d16ea1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-10-30T21:39:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0da6da06_cc1bc70f",
+      "range": {
+        "startLine": 7,
+        "startChar": 23,
+        "endLine": 7,
+        "endChar": 29
+      },
+      "revId": "e04ff9578aadd0eb0b9d02bd10df8e48f90e1be9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "ae3894c5_1bc9772a",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 3
@@ -54,6 +78,30 @@
       "writtenOn": "2023-10-27T13:13:44Z",
       "side": 1,
       "message": "As part of this cleanup exercise, I wonder if we could reconcile this logic into a single helper to avoid duplicating it for every test case?",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 27,
+        "endChar": 2
+      },
+      "revId": "e04ff9578aadd0eb0b9d02bd10df8e48f90e1be9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd9704cc_84017db2",
+        "filename": "smc_fuzz/src/runtestfunction.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-10-30T21:39:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23dfa353_0c1aa034",
       "range": {
         "startLine": 19,
         "startChar": 1,
