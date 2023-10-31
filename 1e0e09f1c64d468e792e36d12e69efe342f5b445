@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "608b71c3_5179296d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-31T15:30:48Z",
+      "side": 1,
+      "message": "Hi Soby, Alexei, is this change left over for coming TF-A release?",
+      "revId": "1e0e09f1c64d468e792e36d12e69efe342f5b445",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
