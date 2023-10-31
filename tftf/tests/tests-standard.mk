@@ -28,8 +28,13 @@ TESTS_MAKEFILE := $(addprefix tftf/tests/,	\
 ifeq (${ARCH},aarch64)
 TESTS_MAKEFILE += $(addprefix tftf/tests/,	\
 	tests-spm.mk				\
-	tests-realm-payload.mk			\
-	tests-rmi-spm.mk			\
+)
+endif
+
+ifeq ($(shell test $(ARM_ARCH_MINOR) -ge 5; echo $$?),0)
+TESTS_MAKEFILE += $(addprefix tftf/tests/,      \
+		  tests-realm-payload.mk	\
+		  tests-rmi-spm.mk		\
 )
 endif
 

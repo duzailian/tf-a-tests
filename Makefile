@@ -136,7 +136,9 @@ SECURE_PARTITIONS	:=
 # Only platform fvp supports cactus_mm
 ifeq (${ARCH}-${PLAT},aarch64-fvp)
 include spm/cactus_mm/cactus_mm.mk
+ifeq ($(shell test $(ARM_ARCH_MINOR) -ge 5; echo $$?),0)
 include realm/realm.mk
+endif
 endif
 
 # cactus and ivy are supported on platforms: fvp, tc
@@ -168,6 +170,7 @@ $(eval $(call assert_boolean,NEW_TEST_SESSION))
 $(eval $(call assert_boolean,USE_NVM))
 $(eval $(call assert_numeric,BRANCH_PROTECTION))
 $(eval $(call assert_boolean,ENABLE_REALM_PAYLOAD_TESTS))
+$(eval $(call assert_boolean,TRANSFER_LIST))
 
 ################################################################################
 # Process build options
@@ -193,6 +196,7 @@ $(eval $(call add_define,TFTF_DEFINES,NEW_TEST_SESSION))
 $(eval $(call add_define,TFTF_DEFINES,PLAT_${PLAT}))
 $(eval $(call add_define,TFTF_DEFINES,USE_NVM))
 $(eval $(call add_define,TFTF_DEFINES,ENABLE_REALM_PAYLOAD_TESTS))
+$(eval $(call add_define,TFTF_DEFINES,TRANSFER_LIST))
 
 ################################################################################
 
@@ -568,6 +572,10 @@ ifeq (${ARCH},aarch32)
         ARCH_TESTS_SKIP_LIST    := tftf/tests/aarch32_tests_to_skip.txt
 endif
 
+ifeq ($(shell test $(ARM_ARCH_MINOR) -lt 5; echo $$?),0)
+	ARCH_TESTS_SKIP_LIST    := tftf/tests/aarch64_lt_8.5_tests_to_skip.txt
+endif
+
 $(AUTOGEN_DIR):
 	$(Q)mkdir -p "$@"
 
@@ -596,27 +604,35 @@ ifeq (${ARCH}-${PLAT},aarch64-fvp)
   $(eval $(call MAKE_IMG,ivy))
 endif
 
-ifeq (${ENABLE_REALM_PAYLOAD_TESTS},1)
-  $(eval $(call MAKE_IMG,realm))
-endif
-
 .PHONY : tftf
   $(eval $(call MAKE_IMG,tftf))
 
+# Build flag 'ENABLE_REALM_PAYLOAD_TESTS=1' builds and pack Realm Payload Tests
+# (preferred method). The else part contains the deprecated `pack_realm` build
+# target and it will be removed in future commit.
 ifeq (${ENABLE_REALM_PAYLOAD_TESTS},1)
+  $(eval $(call MAKE_IMG,realm))
+
+# This forces to rebuild tftf.bin. For incremental build this re-creates tftf.bin
+# and removes the old realm payload packed by the last build.
+.PHONY : $(BUILD_PLAT)/tftf.bin
+
 tftf: realm
 	@echo "  PACK REALM PAYLOAD"
 	$(shell dd if=$(BUILD_PLAT)/realm.bin of=$(BUILD_PLAT)/tftf.bin obs=1 \
 	oflag=append conv=notrunc)
-endif
-
-ifeq (${ARCH}-${PLAT},aarch64-fvp)
+else ifeq (${ARCH}-${PLAT},aarch64-fvp)
+ifeq ($(shell test $(ARM_ARCH_MINOR) -ge 5; echo $$?),0)
 .PHONY : pack_realm
-$(eval $(call MAKE_IMG,realm))
+  $(eval $(call MAKE_IMG,realm))
+
+.PHONY : $(BUILD_PLAT)/tftf.bin
+
 pack_realm: realm tftf
-	@echo "  PACK REALM PAYLOAD"
+	@echo "  PACK REALM PAYLOAD (pack_realm method deprecated)"
 	$(shell dd if=$(BUILD_PLAT)/realm.bin of=$(BUILD_PLAT)/tftf.bin obs=1 \
 	oflag=append conv=notrunc)
+endif
 endif
 
 ifeq (${ARCH}-${PLAT},aarch64-tc)
@@ -687,3 +703,4 @@ help:
 	echo ""
 	echo "example: build all targets for the FVP platform:"
 	echo "  CROSS_COMPILE=aarch64-none-elf- make PLAT=fvp all"
+
