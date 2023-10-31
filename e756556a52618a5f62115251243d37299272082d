@@ -118,6 +118,30 @@
       },
       "revId": "e756556a52618a5f62115251243d37299272082d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22549378_eeec1d6b",
+        "filename": "include/lib/extensions/sme.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-31T16:38:38Z",
+      "side": 1,
+      "message": "I see rand used in many tests but srand called at a single place within PSCI test suite:\n./tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c:\tsrand(counter_lo);\nI agree this observation is beyond scope of current change so let\u0027s take it separately.",
+      "parentUuid": "113ca806_803a04d4",
+      "range": {
+        "startLine": 10,
+        "startChar": 27,
+        "endLine": 10,
+        "endChar": 31
+      },
+      "revId": "e756556a52618a5f62115251243d37299272082d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
