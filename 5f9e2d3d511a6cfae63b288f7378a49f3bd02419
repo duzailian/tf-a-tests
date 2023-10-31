@@ -41,6 +41,47 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6dc6fbc_a2175934",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_simd_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 836,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-31T17:02:21Z",
+      "side": 1,
+      "message": "\u003e here is too much randomness in these tests that I worry we may miss testing some code paths.\n\nAgree, as most of the time the branch selection has to hit 837, I have replaced rand() with a static counter.",
+      "parentUuid": "4628d58a_0aecb662",
+      "range": {
+        "startLine": 836,
+        "startChar": 5,
+        "endLine": 836,
+        "endChar": 12
+      },
+      "revId": "5f9e2d3d511a6cfae63b288f7378a49f3bd02419",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95f314c8_a6da6290",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_simd_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-31T17:02:21Z",
+      "side": 1,
+      "message": "As most of the time the branch selection has to hit 867, I have replaced rand() with a static counter.",
+      "revId": "5f9e2d3d511a6cfae63b288f7378a49f3bd02419",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9a851c57_151e682f",
@@ -64,6 +105,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e419b1b_d08e5514",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_simd_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 893,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-31T17:02:21Z",
+      "side": 1,
+      "message": "Done\nAs discussed, using rand to select sve or sme",
+      "parentUuid": "9a851c57_151e682f",
+      "range": {
+        "startLine": 893,
+        "startChar": 6,
+        "endLine": 893,
+        "endChar": 10
+      },
+      "revId": "5f9e2d3d511a6cfae63b288f7378a49f3bd02419",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2bef398a_8b0861bf",
@@ -77,6 +142,30 @@
       "writtenOn": "2023-10-26T15:44:32Z",
       "side": 1,
       "message": "this can be atleast bit[4] in i is flipped twice ... 0 -\u003e 1 -\u003e 0.",
+      "range": {
+        "startLine": 1087,
+        "startChar": 27,
+        "endLine": 1087,
+        "endChar": 42
+      },
+      "revId": "5f9e2d3d511a6cfae63b288f7378a49f3bd02419",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "697841b0_f3987b41",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_simd_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 1087,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-10-31T17:02:21Z",
+      "side": 1,
+      "message": "Done\nCalculating \u0027test_iteration\u0027 do not use rand() and its based on num of simd_types the cpu supports and config options within each simd_type.",
+      "parentUuid": "2bef398a_8b0861bf",
       "range": {
         "startLine": 1087,
         "startChar": 27,
