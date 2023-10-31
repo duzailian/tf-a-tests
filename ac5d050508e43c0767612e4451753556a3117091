@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f2f4815e_e2bf9874",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 31
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-10-31T17:02:05Z",
+      "side": 1,
+      "message": "We tend to use init over make in this code base so I think init_receiver would be better",
+      "range": {
+        "startLine": 150,
+        "startChar": 25,
+        "endLine": 150,
+        "endChar": 38
+      },
+      "revId": "ac5d050508e43c0767612e4451753556a3117091",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cebf0de1_ba18e2a8",
         "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
         "patchSetId": 31
