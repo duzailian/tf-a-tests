@@ -70,6 +70,30 @@
       },
       "revId": "c47a894bc3239290b5689c783ebd40a8b752cb16",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d35123e_f5e471fd",
+        "filename": "tftf/tests/extensions/sme/test_sme.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-10-31T16:20:07Z",
+      "side": 1,
+      "message": "Thanks for investigating. Closing this comment as this is non blocking and actually beyond scope of current change.",
+      "parentUuid": "fffdaf0a_30328a58",
+      "range": {
+        "startLine": 110,
+        "startChar": 2,
+        "endLine": 111,
+        "endChar": 35
+      },
+      "revId": "c47a894bc3239290b5689c783ebd40a8b752cb16",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
