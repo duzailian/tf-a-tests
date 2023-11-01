@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "43d5bd5f_f1731e64",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 31
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-01T15:03:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f2f4815e_e2bf9874",
+      "range": {
+        "startLine": 150,
+        "startChar": 25,
+        "endLine": 150,
+        "endChar": 38
+      },
+      "revId": "ac5d050508e43c0767612e4451753556a3117091",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cebf0de1_ba18e2a8",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-10-31T17:00:23Z",
       "side": 1,
       "message": "typo: receiver",
+      "range": {
+        "startLine": 665,
+        "startChar": 31,
+        "endLine": 665,
+        "endChar": 38
+      },
+      "revId": "ac5d050508e43c0767612e4451753556a3117091",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48984afa_20b6ab3b",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-01T15:03:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cebf0de1_ba18e2a8",
       "range": {
         "startLine": 665,
         "startChar": 31,
@@ -87,6 +135,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "012120ed_0e2c46b3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-01T15:03:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c248d93a_4a167f83",
+      "range": {
+        "startLine": 412,
+        "startChar": 1,
+        "endLine": 423,
+        "endChar": 1
+      },
+      "revId": "ac5d050508e43c0767612e4451753556a3117091",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0c21bc8b_403fbf98",
@@ -100,6 +172,30 @@
       "writtenOn": "2023-10-31T17:00:23Z",
       "side": 1,
       "message": "You can use make_receiver here",
+      "range": {
+        "startLine": 577,
+        "startChar": 2,
+        "endLine": 588,
+        "endChar": 4
+      },
+      "revId": "ac5d050508e43c0767612e4451753556a3117091",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8527d002_1a230e2b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-01T15:03:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c21bc8b_403fbf98",
       "range": {
         "startLine": 577,
         "startChar": 2,
@@ -147,6 +243,30 @@
       "side": 1,
       "message": "I have no memory of why I made this change. Will revert",
       "parentUuid": "4f24b5ba_ac1ce1a3",
+      "range": {
+        "startLine": 623,
+        "startChar": 58,
+        "endLine": 624,
+        "endChar": 17
+      },
+      "revId": "ac5d050508e43c0767612e4451753556a3117091",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56afbed7_fff521d2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-01T15:03:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7abb062c_22e443c3",
       "range": {
         "startLine": 623,
         "startChar": 58,
