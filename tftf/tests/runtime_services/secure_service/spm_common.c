@@ -610,3 +610,20 @@ bool disable_trusted_wdog_interrupt(ffa_id_t source, ffa_id_t dest)
 {
 	return configure_trusted_wdog_interrupt(source, dest, false);
 }
+
+struct ffa_memory_access init_receiver(uint32_t mem_func, ffa_id_t receiver)
+{
+	ffa_memory_access_permissions_t permissions = {
+		.instruction_access = FFA_INSTRUCTION_ACCESS_NOT_SPECIFIED,
+		.data_access = (mem_func == FFA_MEM_DONATE_SMC32)
+				       ? FFA_DATA_ACCESS_NOT_SPECIFIED
+				       : FFA_DATA_ACCESS_RW,
+	};
+	return (struct ffa_memory_access){
+		.reserved_0 = 0,
+		.composite_memory_region_offset = 0,
+		.receiver_permissions = {.receiver = receiver,
+					 .permissions = permissions,
+					 .flags = 0},
+	};
+}
