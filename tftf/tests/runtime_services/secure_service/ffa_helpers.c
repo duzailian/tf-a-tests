@@ -703,3 +703,37 @@ struct ffa_value ffa_console_log(const char *message, size_t char_count)
 
 	return ffa_service_call(&args);
 }
+
+struct ffa_memory_access init_receiver(ffa_id_t receiver,
+				       enum ffa_data_access data_access,
+				       enum ffa_instruction_access instruction_access)
+{
+	return (struct ffa_memory_access){
+		.reserved_0 = 0,
+		.composite_memory_region_offset = 0,
+		.receiver_permissions =
+			{.receiver = receiver,
+			 .permissions = {.data_access = data_access,
+					 .instruction_access =
+						 instruction_access},
+			 .flags = 0},
+	};
+}
+
+struct ffa_memory_access init_receiver_from_mem_func(ffa_id_t receiver,
+						     uint32_t mem_func)
+{
+	ffa_memory_access_permissions_t permissions = {
+		.instruction_access = FFA_INSTRUCTION_ACCESS_NOT_SPECIFIED,
+		.data_access = (mem_func == FFA_MEM_DONATE_SMC32)
+				       ? FFA_DATA_ACCESS_NOT_SPECIFIED
+				       : FFA_DATA_ACCESS_RW,
+	};
+	return (struct ffa_memory_access){
+		.reserved_0 = 0,
+		.composite_memory_region_offset = 0,
+		.receiver_permissions = {.receiver = receiver,
+					 .permissions = permissions,
+					 .flags = 0},
+	};
+}
