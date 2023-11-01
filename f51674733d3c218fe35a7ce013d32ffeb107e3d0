@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4404d9ec_5be39575",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-01T14:58:40Z",
+      "side": 1,
+      "message": "Any callers using tftf_smc() will have SVE hint bit set in SMC FID if the CPU supports SVE and SVE traps are enabled in trap register (cptr_el2 for EL2 payload and cpacr_el1 for EL1 payload).\n\nThis change breaks four world testing, on SVE enabled config. Cactus SP runs with cpacr_el1.zen\u003d0, and some code path in Cactus uses tftf_smc, and this set SVE hint bit. The ffa_handler() in Hafnium currently doesn\u0027t discard SVE hint bit in SMC FID as part of the function identification and this causes the boot to fail.\n\nThis needs investigation if tftf_smc used in Cactus can be replaced with ffa_smc or ffa_service_call.",
+      "revId": "f51674733d3c218fe35a7ce013d32ffeb107e3d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
