@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "03767374_d9b88b65",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-01T15:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea3d8cf8_ab955c81",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "82b0aaa563da1110a3f0272a9d572fe6c43798e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eef8b50c_c30bcbf6",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-11-01T15:22:49Z",
       "side": 1,
       "message": "2023",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "82b0aaa563da1110a3f0272a9d572fe6c43798e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bfe25fb_fcfc11c0",
+        "filename": "include/runtime_services/ffa_svc.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-01T15:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eef8b50c_c30bcbf6",
       "range": {
         "startLine": 2,
         "startChar": 22,
@@ -93,6 +141,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65bee61b_2e0fbb73",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-01T15:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "85131b82_689cac5c",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "82b0aaa563da1110a3f0272a9d572fe6c43798e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ccb778e1_25efb4a8",
@@ -116,6 +188,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "53de8ac8_df1f9890",
+        "filename": "tftf/tests/misc_tests/test_invalid_access.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-01T15:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ccb778e1_25efb4a8",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "82b0aaa563da1110a3f0272a9d572fe6c43798e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cb7f2919_69bb30c4",
@@ -129,6 +225,30 @@
       "writtenOn": "2023-11-01T15:22:49Z",
       "side": 1,
       "message": "2023",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "82b0aaa563da1110a3f0272a9d572fe6c43798e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7febf44_2e7786ad",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-01T15:59:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb7f2919_69bb30c4",
       "range": {
         "startLine": 2,
         "startChar": 22,
