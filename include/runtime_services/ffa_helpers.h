@@ -728,6 +728,7 @@ struct ffa_value ffa_console_log(const char* message, size_t char_count);
 struct ffa_value ffa_partition_info_get_regs(const struct ffa_uuid uuid,
 					     const uint16_t start_index,
 					     const uint16_t tag);
+
 #endif /* __ASSEMBLY__ */
 
 #endif /* FFA_HELPERS_H */

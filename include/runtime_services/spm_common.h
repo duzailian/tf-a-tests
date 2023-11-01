@@ -139,4 +139,14 @@ bool disable_trusted_wdog_interrupt(ffa_id_t source, ffa_id_t dest);
 bool ffa_partition_info_regs_helper(const struct ffa_uuid uuid,
 		       const struct ffa_partition_info *expected,
 		       const uint16_t expected_size);
+
+struct ffa_memory_access ffa_memory_access_init_permissions(
+	ffa_id_t receiver_id, enum ffa_data_access data_access,
+	enum ffa_instruction_access instruction_access,
+	ffa_memory_receiver_flags_t flags);
+
+struct ffa_memory_access ffa_memory_access_init_permissions_from_mem_func(
+	ffa_id_t receiver_id,
+	uint32_t mem_func);
+
 #endif /* SPM_COMMON_H */
