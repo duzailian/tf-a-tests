@@ -728,6 +728,14 @@ struct ffa_value ffa_console_log(const char* message, size_t char_count);
 struct ffa_value ffa_partition_info_get_regs(const struct ffa_uuid uuid,
 					     const uint16_t start_index,
 					     const uint16_t tag);
+
+struct ffa_memory_access init_receiver(ffa_id_t receiver,
+				       enum ffa_data_access data_access,
+				       enum ffa_instruction_access instruction_access);
+
+struct ffa_memory_access init_receiver_from_mem_func(ffa_id_t receiver,
+						     uint32_t mem_func);
+
 #endif /* __ASSEMBLY__ */
 
 #endif /* FFA_HELPERS_H */
