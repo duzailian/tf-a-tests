@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3a04bc64_938de430",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-11-02T13:35:13Z",
+      "side": 1,
+      "message": "\u003e some code path in Cactus uses tftf_smc\n\nyes this looks a bit inconsistent, maybe we can fix this as you mentioned\n\n\u003e and this set SVE hint bit.\n\nHum, I wonder why this is the case.\nFirst problem hafnium returns SVE supported from ID regs when it shouldn\u0027t (known issue).\nThen I miss the point of using trap control to represent the SVE hint bit. I assume we want to test cases where SVE hint bit is set OR not set? It seems like with this approach we can only test one of such case.",
+      "parentUuid": "ddae3b35_83f94d8e",
+      "revId": "f51674733d3c218fe35a7ce013d32ffeb107e3d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "700f469f_7cc2860a",
         "filename": "lib/extensions/sve/aarch64/sve.c",
         "patchSetId": 11
