@@ -376,6 +376,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9705f397_3beda91b",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-02T17:52:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2997c97_6ea6febf",
+      "range": {
+        "startLine": 287,
+        "startChar": 1,
+        "endLine": 287,
+        "endChar": 61
+      },
+      "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "258368e2_0e8fa858",
@@ -389,6 +413,24 @@
       "writtenOn": "2023-11-02T12:08:44Z",
       "side": 1,
       "message": "nitpick: Braces after closing parenthesis.",
+      "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89108f0d_16dc2d52",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-02T17:52:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "258368e2_0e8fa858",
       "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
