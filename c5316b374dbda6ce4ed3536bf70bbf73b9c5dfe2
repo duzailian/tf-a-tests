@@ -16,6 +16,24 @@
       "message": "Could you define helper similar to:\nhttps://git.trustedfirmware.org/hafnium/hafnium.git/tree/inc/vmapi/hf/ffa.h#n1209\n\nAnd place it in ffa_helpers.h/c",
       "revId": "c5316b374dbda6ce4ed3536bf70bbf73b9c5dfe2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58215fa3_00c2d477",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-02T16:15:50Z",
+      "side": 1,
+      "message": "I would prefer to return the struct directly. It is more convenient for the caller than creating an uninitalized variable and passing a pointer to the function.",
+      "parentUuid": "8b084fd7_93453007",
+      "revId": "c5316b374dbda6ce4ed3536bf70bbf73b9c5dfe2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
