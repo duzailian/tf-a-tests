@@ -1,0 +1,326 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10dcfa80_3a7dc44d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "drop reference to rx/tx to avoid confusions.\nUse wording: sent/retrieved instead.\nAnd add comments explaining each function. on a small header.\"\n\nAnd to all the functions that follow.",
+      "range": {
+        "startLine": 465,
+        "startChar": 39,
+        "endLine": 465,
+        "endChar": 53
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5499334_594b1f9f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "drop mention to rx/tx buffers. to avoid confusion.\n\nUse retrieved/sent instead?\n\nAdd doc comment to function.",
+      "range": {
+        "startLine": 508,
+        "startChar": 54,
+        "endLine": 508,
+        "endChar": 63
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da18dba9_9505590d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "Add doc comment describing.",
+      "range": {
+        "startLine": 523,
+        "startChar": 0,
+        "endLine": 525,
+        "endChar": 42
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8dd3a841_208a7ee9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "address todo.",
+      "range": {
+        "startLine": 528,
+        "startChar": 1,
+        "endLine": 530,
+        "endChar": 60
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "377034c8_ec18bc82",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "Declare at the top of the scope in which these are defined.\nNumber of receivers is know at the top of the test. Seems there is only one for now.\nBut shall be known at the top of the scope anyway, as this scope it is where the hypervisor retrieve request is defined.",
+      "range": {
+        "startLine": 585,
+        "startChar": 1,
+        "endLine": 585,
+        "endChar": 69
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a202eddc_80016fed",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "There is only one composite. All receivers shall point to the same, else there is an error.",
+      "range": {
+        "startLine": 589,
+        "startChar": 1,
+        "endLine": 595,
+        "endChar": 2
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "184e9bcd_7861a554",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "braces after closing parenthesis.",
+      "range": {
+        "startLine": 602,
+        "startChar": 1,
+        "endLine": 603,
+        "endChar": 2
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8294c98f_bb864bf0",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "made this a loop, but then line 617 it is implied the loop it is not needed, given it is a single receiver at this point.",
+      "range": {
+        "startLine": 614,
+        "startChar": 1,
+        "endLine": 614,
+        "endChar": 71
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "994a0fe2_4a2fd5d7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "and here",
+      "range": {
+        "startLine": 615,
+        "startChar": 1,
+        "endLine": 616,
+        "endChar": 2
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e09e49bf_4f2eb6f3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "can it be read from the sent_region?",
+      "range": {
+        "startLine": 617,
+        "startChar": 2,
+        "endLine": 624,
+        "endChar": 4
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef5e7366_5fc99452",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "declare at the top of the scope.",
+      "range": {
+        "startLine": 628,
+        "startChar": 38,
+        "endLine": 628,
+        "endChar": 50
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25a29018_db718763",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "here too.",
+      "range": {
+        "startLine": 631,
+        "startChar": 2,
+        "endLine": 631,
+        "endChar": 52
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9233afce_bfee266e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 632,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "there should only be one composite. The composite offset in the receivers structures should point to the same one.",
+      "range": {
+        "startLine": 632,
+        "startChar": 3,
+        "endLine": 632,
+        "endChar": 29
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a79ae0a2_22ad0b24",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 49
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:29:42Z",
+      "side": 1,
+      "message": "Fix comment format.",
+      "range": {
+        "startLine": 643,
+        "startChar": 1,
+        "endLine": 644,
+        "endChar": 14
+      },
+      "revId": "4c4db3c7364888a185a9241e5401e5f9f5ece196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
