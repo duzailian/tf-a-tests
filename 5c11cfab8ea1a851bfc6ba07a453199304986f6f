@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00745939_a2a4bf78",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:52:20Z",
+      "side": 1,
+      "message": "init_receiver function seems it doesn\u0027t help much in this case...",
+      "range": {
+        "startLine": 91,
+        "startChar": 1,
+        "endLine": 97,
+        "endChar": 3
+      },
+      "revId": "5c11cfab8ea1a851bfc6ba07a453199304986f6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1ab22da_d7615f85",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:52:20Z",
+      "side": 1,
+      "message": "simplify: receiver_count !\u003d 1 \u0026\u0026 receive_count !\u003d 2",
+      "range": {
+        "startLine": 567,
+        "startChar": 5,
+        "endLine": 567,
+        "endChar": 50
+      },
+      "revId": "5c11cfab8ea1a851bfc6ba07a453199304986f6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb4924cc_9ec4245d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T11:52:20Z",
+      "side": 1,
+      "message": "is this still relevant in the multiple borrower test?",
+      "range": {
+        "startLine": 618,
+        "startChar": 2,
+        "endLine": 622,
+        "endChar": 4
+      },
+      "revId": "5c11cfab8ea1a851bfc6ba07a453199304986f6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
