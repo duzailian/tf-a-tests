@@ -1,0 +1,239 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c1fbcef_de149afb",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T12:08:44Z",
+      "side": 1,
+      "message": "Why does this function need the full mailbox structure?\nCould you make it such only receives the send buffer.",
+      "range": {
+        "startLine": 126,
+        "startChar": 30,
+        "endLine": 126,
+        "endChar": 56
+      },
+      "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb1f6676_49ea17c6",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T12:08:44Z",
+      "side": 1,
+      "message": "Likewise...",
+      "range": {
+        "startLine": 132,
+        "startChar": 39,
+        "endLine": 132,
+        "endChar": 65
+      },
+      "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8020965_ad5b2313",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T12:08:44Z",
+      "side": 1,
+      "message": "necessary?",
+      "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb1ce838_61520eff",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T12:08:44Z",
+      "side": 1,
+      "message": "and here?",
+      "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "858b345b_cf606cc7",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T12:08:44Z",
+      "side": 1,
+      "message": "why deleted const and log?",
+      "range": {
+        "startLine": 215,
+        "startChar": 1,
+        "endLine": 217,
+        "endChar": 3
+      },
+      "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ade8e49_966f47d0",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T12:08:44Z",
+      "side": 1,
+      "message": "nitpick: newline between variable declaration and code.",
+      "range": {
+        "startLine": 291,
+        "startChar": 10,
+        "endLine": 291,
+        "endChar": 23
+      },
+      "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2b338a0_ec295d72",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T12:08:44Z",
+      "side": 1,
+      "message": "could you follow style as in the same helpers above?",
+      "range": {
+        "startLine": 591,
+        "startChar": 1,
+        "endLine": 595,
+        "endChar": 36
+      },
+      "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aea61a9d_d1195442",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T12:08:44Z",
+      "side": 1,
+      "message": "here also.",
+      "range": {
+        "startLine": 601,
+        "startChar": 1,
+        "endLine": 606,
+        "endChar": 36
+      },
+      "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2997c97_6ea6febf",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T12:08:44Z",
+      "side": 1,
+      "message": "comments must be  /* ... */",
+      "range": {
+        "startLine": 287,
+        "startChar": 1,
+        "endLine": 287,
+        "endChar": 61
+      },
+      "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "258368e2_0e8fa858",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T12:08:44Z",
+      "side": 1,
+      "message": "nitpick: Braces after closing parenthesis.",
+      "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9a7f95b_fb768c6e",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T12:08:44Z",
+      "side": 1,
+      "message": "address",
+      "range": {
+        "startLine": 440,
+        "startChar": 1,
+        "endLine": 442,
+        "endChar": 20
+      },
+      "revId": "8feba7e3f1650e915b6e4b232d3a22fdc14f4bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

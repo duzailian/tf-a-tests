@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54808527_a327fc51",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-02T12:08:44Z",
+      "side": 0,
+      "message": "These macros were inserted in this patch stack, could you please squash the changes affecting these macros onto those changes?",
+      "range": {
+        "startLine": 332,
+        "startChar": 0,
+        "endLine": 348,
+        "endChar": 12
+      },
+      "revId": "5c11cfab8ea1a851bfc6ba07a453199304986f6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
