@@ -584,3 +584,350 @@ destroy_realm:
 	return host_call_result;
 }
 
+/*
+ * Test aims to generate REALM Exit due to instruction abort
+ * when access page with RIPAS=DESTOYED
+ * Host maps a protected page (calls init_ripas, data_create) when realm is in new state
+ * initial state of PAGE is RIPAS=RAM HIPAS=ASSIGNED
+ * Host calls data_destroy new state HIPAS=UNASSIGNED RIPAS=DESTROYED
+ * Enter Realm and access the page
+ * Realm should trigger an Instr abort, and will exit to Host.
+ * The Host verifies exit reason is instruction abort
+ */
+test_result_t host_realm_inst_fetch_unassigned_destroyed(void)
+{
+	bool ret1, ret2;
+	test_result_t res = TEST_RESULT_FAIL;
+	u_register_t ret, data, top;
+	struct realm realm;
+	struct rmi_rec_run *run;
+	struct rtt_entry rtt;
+	u_register_t rec_flag[1] = {RMI_RUNNABLE}, base;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, rec_flag, 1U)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	base = (u_register_t)page_alloc(PAGE_SIZE);
+
+	run = (struct rmi_rec_run *)realm.run[0];
+	ret = host_realm_map_protected_data(true, &realm, base, PAGE_SIZE, base);
+	if (ret != RMI_SUCCESS) {
+		ERROR("host_realm_map_protected_data failede\n");
+		goto destroy_realm;
+	}
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (rtt.state != RMI_ASSIGNED ||
+			(rtt.ripas != RMI_RAM)) {
+		ERROR("wrong initial state\n");
+		goto destroy_realm;
+	}
+	INFO("Initial state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
+			base, rtt.state, rtt.ripas);
+	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
+
+	ret = host_rmi_data_destroy(realm.rd, base, &data, &top);
+	if (ret != RMI_SUCCESS || data != base) {
+		ERROR("host_rmi_data_destroy failed\n");
+		goto destroy_realm;
+	}
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
+			rtt.ripas != RMI_DESTROYED) {
+		ERROR("Wrong state after host_rmi_data_destroy\n");
+		goto destroy_realm;
+	}
+
+	INFO("New state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
+			base, rtt.state, rtt.ripas);
+
+	if (host_realm_activate(&realm) != REALM_SUCCESS) {
+		ERROR("%s() failed\n", "host_realm_activate");
+		goto undelegate_destroy;
+	}
+	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
+		RMI_EXIT_SYNC, 0U);
+	if (!ret1 || (run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT)) {
+		ERROR("Re-enter rec failed\n");
+		goto destroy_realm;
+	}
+	INFO("FAR=0x%lx, HPFAR=0x%lx\n", run->exit.far, run->exit.hpfar);
+	res = TEST_RESULT_SUCCESS;
+undelegate_destroy:
+	ret = host_rmi_granule_undelegate(base);
+destroy_realm:
+	ret2 = host_destroy_realm(&realm);
+
+	if (!ret2) {
+		ERROR("%s(): destroy=%d\n",
+		__func__, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return res;
+}
+
+/*
+ * Test aims to generate REALM Exit due to instruction abort
+ * when access page with RIPAS=RAM HIPAS=UNASSIGNED
+ * Host allocates a PAGE, calls init_ripas when realm is in new state
+ * initial state of PAGE is RIPAS=RAM HIPAS=UNASSIGNED
+ * Realm accesses the page
+ * Realm should trigger an Instr abort, and will exit to Host.
+ * Host verifies exit reason is instruction abort.
+ */
+test_result_t host_realm_inst_fetch_unassigned_ram(void)
+{
+	bool ret1, ret2;
+	u_register_t ret, top;
+	struct realm realm;
+	struct rmi_rec_run *run;
+	struct rtt_entry rtt;
+	test_result_t res = TEST_RESULT_FAIL;
+	u_register_t rec_flag[1] = {RMI_RUNNABLE}, base;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, rec_flag, 1U)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* This is dummy allocation to get a base address */
+	base = (u_register_t)page_alloc(PAGE_SIZE);
+
+	run = (struct rmi_rec_run *)realm.run[0];
+
+	/* Set RIPAS of PAGE to RAM */
+	ret = host_rmi_rtt_init_ripas(realm.rd, base, base + PAGE_SIZE, &top);
+	if (ret != RMI_SUCCESS) {
+		ERROR("%s() failed, ret=0x%lx line=%u\n",
+			"host_rmi_rtt_init_ripas", ret, __LINE__);
+		goto destroy_realm;
+	}
+	if (host_realm_activate(&realm) != REALM_SUCCESS) {
+		ERROR("%s() failed\n", "host_realm_activate");
+		goto undelegate_destroy;
+	}
+
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (rtt.state != RMI_UNASSIGNED ||
+			(rtt.ripas != RMI_RAM)) {
+		ERROR("wrong initial state\n");
+		goto undelegate_destroy;
+	}
+	INFO("Initial state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
+			base, rtt.state, rtt.ripas);
+	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
+
+	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
+			RMI_EXIT_SYNC, 0U);
+	if (!ret1 || ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT))) {
+		ERROR("Rec did not fault\n");
+		goto undelegate_destroy;
+	}
+	INFO("FAR=0x%lx, HPFAR=0x%lx\n", run->exit.far, run->exit.hpfar);
+	res = TEST_RESULT_SUCCESS;
+
+undelegate_destroy:
+	ret = host_rmi_granule_undelegate(base);
+destroy_realm:
+	ret2 = host_destroy_realm(&realm);
+
+	if (!ret2) {
+		ERROR("%s(): destroy=%d\n",
+		__func__, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return res;
+}
+
+/*
+ * Test aims to generate REALM Exit due to dataabort
+ * when access page with RIPAS=DESTOYED
+ * Host maps a protected page (calls init_ripas, data_create) when realm is in new state
+ * initial state of PAGE is RIPAS=RAM HIPAS=ASSIGNED
+ * Host calls data_destroy new state HIPAS=UNASSIGNED RIPAS=DESTROYED
+ * Enter Realm and access the page
+ * Realm should trigger an Data abort, and will exit to Host.
+ * The Host verifies exit reason is instruction abort
+ */
+test_result_t host_realm_data_abort_unassigned_destroyed(void)
+{
+	bool ret1, ret2;
+	test_result_t res = TEST_RESULT_FAIL;
+	u_register_t ret, data, top;
+	struct realm realm;
+	struct rmi_rec_run *run;
+	struct rtt_entry rtt;
+	u_register_t rec_flag[1] = {RMI_RUNNABLE}, base;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, rec_flag, 1U)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	base = (u_register_t)page_alloc(PAGE_SIZE);
+
+	run = (struct rmi_rec_run *)realm.run[0];
+	ret = host_realm_map_protected_data(true, &realm, base, PAGE_SIZE, base);
+	if (ret != RMI_SUCCESS) {
+		ERROR("host_realm_map_protected_data failede\n");
+		goto destroy_realm;
+	}
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (rtt.state != RMI_ASSIGNED ||
+			(rtt.ripas != RMI_RAM)) {
+		ERROR("wrong initial state\n");
+		goto destroy_realm;
+	}
+	INFO("Initial state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
+			base, rtt.state, rtt.ripas);
+	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
+
+	ret = host_rmi_data_destroy(realm.rd, base, &data, &top);
+	if (ret != RMI_SUCCESS || data != base) {
+		ERROR("host_rmi_data_destroy failed\n");
+		goto destroy_realm;
+	}
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
+			rtt.ripas != RMI_DESTROYED) {
+		ERROR("Wrong state after host_rmi_data_destroy\n");
+		goto destroy_realm;
+	}
+
+	INFO("New state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
+			base, rtt.state, rtt.ripas);
+
+	if (host_realm_activate(&realm) != REALM_SUCCESS) {
+		ERROR("%s() failed\n", "host_realm_activate");
+		goto undelegate_destroy;
+	}
+	ret1 = host_enter_realm_execute(&realm, REALM_DATA_ACCESS_CMD,
+		RMI_EXIT_SYNC, 0U);
+	if (!ret1 || (run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT)) {
+		ERROR("Re-enter rec failed\n");
+		goto destroy_realm;
+	}
+	INFO("FAR=0x%lx, HPFAR=0x%lx\n", run->exit.far, run->exit.hpfar);
+	res = TEST_RESULT_SUCCESS;
+undelegate_destroy:
+	ret = host_rmi_granule_undelegate(base);
+destroy_realm:
+	ret2 = host_destroy_realm(&realm);
+
+	if (!ret2) {
+		ERROR("%s(): destroy=%d\n",
+		__func__, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return res;
+}
+
+/*
+ * Test aims to generate REALM Exit due to data abort
+ * when access page with RIPAS=RAM HIPAS=UNASSIGNED
+ * Host allocates a PAGE, calls init_ripas when realm is in new state
+ * initial state of PAGE is RIPAS=RAM HIPAS=UNASSIGNED
+ * Realm accesses the page
+ * Realm should trigger an data abort, and will exit to Host.
+ * Host verifies exit reason is instruction abort.
+ */
+test_result_t host_realm_data_abort_unassigned_ram(void)
+{
+	bool ret1, ret2;
+	u_register_t ret, top;
+	struct realm realm;
+	struct rmi_rec_run *run;
+	struct rtt_entry rtt;
+	test_result_t res = TEST_RESULT_FAIL;
+	u_register_t rec_flag[1] = {RMI_RUNNABLE}, base;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, rec_flag, 1U)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* This is dummy allocation to get a base address */
+	base = (u_register_t)page_alloc(PAGE_SIZE);
+
+	run = (struct rmi_rec_run *)realm.run[0];
+
+	/* Set RIPAS of PAGE to RAM */
+	ret = host_rmi_rtt_init_ripas(realm.rd, base, base + PAGE_SIZE, &top);
+	if (ret != RMI_SUCCESS) {
+		ERROR("%s() failed, ret=0x%lx line=%u\n",
+			"host_rmi_rtt_init_ripas", ret, __LINE__);
+		goto destroy_realm;
+	}
+	if (host_realm_activate(&realm) != REALM_SUCCESS) {
+		ERROR("%s() failed\n", "host_realm_activate");
+		goto undelegate_destroy;
+	}
+
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (rtt.state != RMI_UNASSIGNED ||
+			(rtt.ripas != RMI_RAM)) {
+		ERROR("wrong initial state\n");
+		goto undelegate_destroy;
+	}
+	INFO("Initial state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
+			base, rtt.state, rtt.ripas);
+	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
+
+	ret1 = host_enter_realm_execute(&realm, REALM_DATA_ACCESS_CMD,
+			RMI_EXIT_SYNC, 0U);
+	if (!ret1 || ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT))) {
+		ERROR("Rec did not fault\n");
+		goto undelegate_destroy;
+	}
+	INFO("FAR=0x%lx, HPFAR=0x%lx\n", run->exit.far, run->exit.hpfar);
+	res = TEST_RESULT_SUCCESS;
+
+undelegate_destroy:
+	ret = host_rmi_granule_undelegate(base);
+destroy_realm:
+	ret2 = host_destroy_realm(&realm);
+
+	if (!ret2) {
+		ERROR("%s(): destroy=%d\n",
+		__func__, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return res;
+}
