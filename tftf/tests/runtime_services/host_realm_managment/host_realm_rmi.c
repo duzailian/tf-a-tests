@@ -142,10 +142,10 @@ u_register_t host_rmi_realm_destroy(u_register_t rd)
 	return host_rmi_handler(&(smc_args) {RMI_REALM_DESTROY, rd}, 2U).ret0;
 }
 
-static inline u_register_t host_rmi_data_destroy(u_register_t rd,
-						 u_register_t map_addr,
-						 u_register_t *data,
-						 u_register_t *top)
+u_register_t host_rmi_data_destroy(u_register_t rd,
+				   u_register_t map_addr,
+				   u_register_t *data,
+				   u_register_t *top)
 {
 	smc_ret_values rets;
 
@@ -179,11 +179,11 @@ static inline u_register_t host_rmi_rtt_create(u_register_t rd,
 				rd, rtt, map_addr, level}, 5U).ret0;
 }
 
-static inline u_register_t host_rmi_rtt_destroy(u_register_t rd,
-						u_register_t map_addr,
-						u_register_t level,
-						u_register_t *rtt,
-						u_register_t *top)
+u_register_t host_rmi_rtt_destroy(u_register_t rd,
+				  u_register_t map_addr,
+				  u_register_t level,
+				  u_register_t *rtt,
+				  u_register_t *top)
 {
 	smc_ret_values rets;
 
@@ -263,10 +263,10 @@ static inline u_register_t host_rmi_rtt_mapunprotected(u_register_t rd,
 				rd, map_addr, level, ns_pa}, 5U).ret0;
 }
 
-static u_register_t host_rmi_rtt_readentry(u_register_t rd,
-					   u_register_t map_addr,
-					   u_register_t level,
-					   struct rtt_entry *rtt)
+u_register_t host_rmi_rtt_readentry(u_register_t rd,
+				   u_register_t map_addr,
+				   u_register_t level,
+				   struct rtt_entry *rtt)
 {
 	smc_ret_values rets;
 
@@ -292,7 +292,7 @@ static inline u_register_t host_rmi_rtt_unmap_unprotected(u_register_t rd,
 	return rets.ret0;
 }
 
-static inline u_register_t host_rtt_level_mapsize(u_register_t level)
+u_register_t host_rtt_level_mapsize(u_register_t level)
 {
 	if (level > RTT_MAX_LEVEL) {
 		return PAGE_SIZE;
