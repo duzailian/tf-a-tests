@@ -142,10 +142,10 @@ u_register_t host_rmi_realm_destroy(u_register_t rd)
 	return host_rmi_handler(&(smc_args) {RMI_REALM_DESTROY, rd}, 2U).ret0;
 }
 
-static inline u_register_t host_rmi_data_destroy(u_register_t rd,
-						 u_register_t map_addr,
-						 u_register_t *data,
-						 u_register_t *top)
+u_register_t host_rmi_data_destroy(u_register_t rd,
+				   u_register_t map_addr,
+				   u_register_t *data,
+				   u_register_t *top)
 {
 	smc_ret_values rets;
 

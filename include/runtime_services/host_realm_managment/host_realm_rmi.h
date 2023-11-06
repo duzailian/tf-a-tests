@@ -557,6 +557,10 @@ u_register_t host_realm_rec_create(struct realm *realm);
 unsigned int host_realm_find_rec_by_mpidr(unsigned int mpidr, struct realm *realm);
 u_register_t host_realm_activate(struct realm *realm);
 u_register_t host_realm_destroy(struct realm *realm);
+u_register_t host_rmi_data_destroy(u_register_t rd,
+				   u_register_t map_addr,
+				   u_register_t *data,
+				   u_register_t *top);
 u_register_t host_realm_rec_enter(struct realm *realm,
 					u_register_t *exit_reason,
 					unsigned int *host_call_result,
