@@ -1,0 +1,9 @@
+Maintainer-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Allow-CI+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Tue, 07 Nov 2023 10:30:26 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/24747
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
