@@ -248,17 +248,17 @@ CACTUS_CMD_HANDLER(trigger_espi_cmd, CACTUS_TRIGGER_ESPI_CMD)
 	 * The SiP function ID 0x82000100 must have been added to the SMC
 	 * whitelist of the Cactus SP that invokes it.
 	 */
-	smc_args plat_sip_call = {
+	struct ffa_value plat_sip_call = {
 			.fid = 0x82000100,
 			.arg1 = espi_id,
 	};
-	smc_ret_values ret;
+	struct ffa_value ret;
 
 	sp_register_interrupt_handler(sec_interrupt_test_espi_handled,
 				      espi_id);
-	ret = tftf_smc(&plat_sip_call);
+	ret = ffa_service_call(&plat_sip_call);
 
-	if (ret.ret0 == SMC_UNKNOWN) {
+	if (ret.fid == SMC_UNKNOWN) {
 		ERROR("SiP SMC call not supported\n");
 		return cactus_error_resp(ffa_dir_msg_dest(*args),
 				ffa_dir_msg_source(*args),
