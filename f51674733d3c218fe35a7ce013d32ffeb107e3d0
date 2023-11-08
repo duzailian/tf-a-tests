@@ -74,6 +74,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "092d2372_45d029b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-08T11:22:23Z",
+      "side": 1,
+      "message": "\u003e I assume we want to test cases where SVE hint bit is set OR not set? It seems like with this approach we can only test one of such case.\n\nYes, now control register SVE field represent the SVE hint bit. I have added more comments related to this logic at:https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/23093/comment/e15b9838_03a5f573/\n\n\n\u003e I think as a workaround you could do:\n\n\u003e     +#if IMAGE_TFTF\n\u003e     +\n\u003e            if (tftf_smc_get_sve_hint()) {\n\u003e                    fid |\u003d MASK(FUNCID_SVE_HINT);\n\u003e            } else {\n\u003e                    fid \u0026\u003d ~MASK(FUNCID_SVE_HINT);\n\u003e            }\n\u003e     +#endif\n\nThanks for the suggestion. I will look at adding this option, as the realm payload also uses tftf_smc() I may have to add an extra build flag.",
+      "parentUuid": "372b346e_5932ed3b",
+      "revId": "f51674733d3c218fe35a7ce013d32ffeb107e3d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "700f469f_7cc2860a",
         "filename": "lib/extensions/sve/aarch64/sve.c",
         "patchSetId": 11
@@ -118,6 +136,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd05806b_7097624f",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-08T11:22:23Z",
+      "side": 1,
+      "message": "\u003e Unnecessary.\n\nRemoved",
+      "parentUuid": "2731e476_96174f60",
+      "range": {
+        "startLine": 40,
+        "startChar": 7,
+        "endLine": 40,
+        "endChar": 13
+      },
+      "revId": "f51674733d3c218fe35a7ce013d32ffeb107e3d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e40dbe2_4c40f5ab",
@@ -141,6 +183,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fac47a7c_53c4dab4",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-08T11:22:23Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "3e40dbe2_4c40f5ab",
+      "range": {
+        "startLine": 45,
+        "startChar": 7,
+        "endLine": 45,
+        "endChar": 13
+      },
+      "revId": "f51674733d3c218fe35a7ce013d32ffeb107e3d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e15b9838_03a5f573",
@@ -154,6 +220,30 @@
       "writtenOn": "2023-11-02T13:33:59Z",
       "side": 1,
       "message": "I don\u0027t really understand this logic.\nWhy do we directly associate the SVE hint bit passed through SMC to the trap control?\nAs we can have traps disabled and SVE hint bit set OR not set?",
+      "range": {
+        "startLine": 63,
+        "startChar": 2,
+        "endLine": 65,
+        "endChar": 33
+      },
+      "revId": "f51674733d3c218fe35a7ce013d32ffeb107e3d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "41689291_67cd66c1",
+        "filename": "lib/smc/aarch64/smc.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-08T11:22:23Z",
+      "side": 1,
+      "message": "\u003e Why do we directly associate the SVE hint bit passed through SMC to the trap control?\n\nThanks for your comments.\n\nThe previous design used a global array of sve hint flag and indexed using the cpu id. This had dependencies on platform macros and helpers. We wanted to remove platform dependencies in realm payload. So the current design removes the global array and uses the SVE field in control register to represent SVE hint bit. \n\nOn a SVE capable CPU, if SVE is disabled in control register then SVE hint bit set to 1 else set to 0. If the CPU do not support SVE, then sve hint bit is set to 0.\n\n\u003e As we can have traps disabled and SVE hint bit set OR not set?\n\nWith the new logic, we can\u0027t have traps disabled and SVE hint bit set combination.",
+      "parentUuid": "e15b9838_03a5f573",
       "range": {
         "startLine": 63,
         "startChar": 2,
