@@ -22,6 +22,30 @@
       },
       "revId": "64bde3406392ba63b359458319a2c1b00825890a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e9e7ac6_237dba77",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_simd_tests.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-08T17:34:31Z",
+      "side": 1,
+      "message": "\u003e Remove the `__unused` ..\n\nFor release build or if LOG_LEVEL \u003c LOG_LEVEL_INFO, these variables are \u0027unused\u0027, removing the annotation will cause build failure.",
+      "parentUuid": "b07ca950_0c60e5fa",
+      "range": {
+        "startLine": 801,
+        "startChar": 6,
+        "endLine": 801,
+        "endChar": 14
+      },
+      "revId": "64bde3406392ba63b359458319a2c1b00825890a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
