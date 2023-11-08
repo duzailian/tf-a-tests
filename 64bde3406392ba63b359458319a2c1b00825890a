@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b07ca950_0c60e5fa",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_simd_tests.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-08T14:08:20Z",
+      "side": 1,
+      "message": "Remove the `__unused` annotation from these variables since they are used",
+      "range": {
+        "startLine": 801,
+        "startChar": 6,
+        "endLine": 801,
+        "endChar": 14
+      },
+      "revId": "64bde3406392ba63b359458319a2c1b00825890a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
