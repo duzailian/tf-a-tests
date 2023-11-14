@@ -7,6 +7,33 @@ Firmware-A version for simplicity. At any point in time, TF-A Tests version
 Tests are not guaranteed to be compatible. This also means that a version
 upgrade on the TF-A-Tests side might not necessarily introduce any new feature.
 
+Version 2.10
+------------
+
+TFTF
+~~~~
+
+- FF-A testing:
+
+   - Fixing FF-A version tests and expected error codes.
+   - Decouple SPM tests from Aarch32 builds.
+   - Support extended set of registers with FF-A calls.
+   - Fix use of instruction permissions in FF-A memory sharing tests.
+   - Extend memory sharing tests that use the clear memory flags.
+   - Test that memory from Root World/Realm can't be shared.
+   - Test the compliance to SMCCC at the non-secure physical instance.
+   - Exercise secure eSPI interrupt handling.
+
+Cactus (Secure-EL1 test partition)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- FF-A testing:
+
+   - Test descovery of EL3 SPMD managed SPs from Cactus SP.
+   - Configure partitions load-address from SP layout file.
+   - Use the non-secure memory attribute in descriptor obtain from
+     FFA_MEM_RETRIEVE_RESP.
+
 Version 2.9
 -----------
 
