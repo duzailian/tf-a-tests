@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de9956d7_ebe127db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-14T17:15:48Z",
+      "side": 1,
+      "message": "Squashed onto change:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/24929",
+      "revId": "3c9b58b26cb105b412519449aefedd76d8c9e552",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
