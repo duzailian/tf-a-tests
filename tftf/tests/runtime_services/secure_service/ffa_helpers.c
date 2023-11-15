@@ -151,7 +151,8 @@ static void ffa_memory_region_init_header(
 	struct ffa_memory_region *memory_region, ffa_id_t sender,
 	ffa_memory_attributes_t attributes, ffa_memory_region_flags_t flags,
 	ffa_memory_handle_t handle, uint32_t tag, ffa_id_t receiver,
-	ffa_memory_access_permissions_t permissions)
+	ffa_memory_access_permissions_t permissions,
+	struct ffa_memory_access_impdef *impdef_val)
 {
 	memory_region->sender = sender;
 	memory_region->attributes = attributes;
@@ -165,6 +166,8 @@ static void ffa_memory_region_init_header(
 	memory_region->receivers[0].receiver_permissions.permissions =
 		permissions;
 	memory_region->receivers[0].receiver_permissions.flags = 0;
+	memory_region->receivers[0].impdef = impdef_val != NULL ?
+		*impdef_val : (struct ffa_memory_access_impdef){{0ULL, 0ULL}};
 	memory_region->receivers[0].reserved_0 = 0;
 	/* Receivers at the end of the `ffa_memory_region` structure. */
 	memory_region->receivers_offset = sizeof(struct ffa_memory_region);
@@ -209,7 +212,7 @@ uint32_t ffa_memory_region_init(
 	ffa_set_memory_shareability_attr(&attributes, shareability);
 
 	ffa_memory_region_init_header(memory_region, sender, attributes, flags,
-				      0, tag, receiver, permissions);
+				0, tag, receiver, permissions, NULL);
 	/*
 	 * Note that `sizeof(struct_ffa_memory_region)` and `sizeof(struct
 	 * ffa_memory_access)` must both be multiples of 16 (as verified by the
@@ -292,7 +295,7 @@ uint32_t ffa_memory_retrieve_request_init(
 	ffa_set_memory_shareability_attr(&attributes, shareability);
 
 	ffa_memory_region_init_header(memory_region, sender, attributes, flags,
-					handle, tag, receiver, permissions);
+				handle, tag, receiver, permissions, NULL);
 	/*
 	 * Offset 0 in this case means that the hypervisor should allocate the
 	 * address ranges. This is the only configuration supported by Hafnium,
