@@ -141,6 +141,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7499b6f7_316d0f0d",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-15T09:26:21Z",
+      "side": 1,
+      "message": "\u0027manifests.\u0027 belongs to the bullet that starts in line 115.",
+      "parentUuid": "5e38ef38_6ed49697",
+      "range": {
+        "startLine": 117,
+        "startChar": 77,
+        "endLine": 118,
+        "endChar": 15
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "37b11bda_04784300",
         "filename": "docs/change-log.rst",
         "patchSetId": 3
