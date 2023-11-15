@@ -49,6 +49,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "406e6a5d_34ef7d3d",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-11-15T16:46:56Z",
+      "side": 1,
+      "message": "nitpick: Streaming SVE",
+      "range": {
+        "startLine": 83,
+        "startChar": 67,
+        "endLine": 83,
+        "endChar": 72
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8b2e1a68_334b30b9",
         "filename": "docs/change-log.rst",
         "patchSetId": 3
@@ -95,6 +118,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "81fffc12_595e6863",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-11-15T16:46:56Z",
+      "side": 1,
+      "message": "PSCI API",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 19
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6a41b120_b00382f1",
         "filename": "docs/change-log.rst",
         "patchSetId": 3
@@ -111,6 +157,29 @@
         "startChar": 30,
         "endLine": 103,
         "endChar": 35
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0efcf8b_8b928656",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-11-15T16:46:56Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 111,
+        "startChar": 10,
+        "endLine": 111,
+        "endChar": 20
       },
       "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
@@ -182,6 +251,23 @@
         "endLine": 132,
         "endChar": 49
       },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ec134c9_1dd81acd",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-11-15T16:46:56Z",
+      "side": 1,
+      "message": "Please move it to Miscellaneous section above",
       "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
