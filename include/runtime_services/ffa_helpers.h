@@ -586,6 +586,7 @@ struct ffa_memory_access {
 	 * an `ffa_composite_memory_region` struct.
 	 */
 	uint32_t composite_memory_region_offset;
+	uint64_t impdef[2];
 	uint64_t reserved_0;
 };
 

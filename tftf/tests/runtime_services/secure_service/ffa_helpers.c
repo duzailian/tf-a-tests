@@ -165,6 +165,8 @@ static void ffa_memory_region_init_header(
 	memory_region->receivers[0].receiver_permissions.permissions =
 		permissions;
 	memory_region->receivers[0].receiver_permissions.flags = 0;
+	memory_region->receivers[0].impdef[0] = 0;
+	memory_region->receivers[0].impdef[1] = 0;
 	memory_region->receivers[0].reserved_0 = 0;
 	/* Receivers at the end of the `ffa_memory_region` structure. */
 	memory_region->receivers_offset = sizeof(struct ffa_memory_region);
