@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a966749d_34d79536",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-11-15T21:31:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e472a802_ee0389db",
+      "range": {
+        "startLine": 45,
+        "startChar": 46,
+        "endLine": 45,
+        "endChar": 49
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "92d4dda9_aca90cdb",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-11-14T23:46:52Z",
       "side": 1,
       "message": "nit: SVE",
+      "range": {
+        "startLine": 75,
+        "startChar": 49,
+        "endLine": 75,
+        "endChar": 52
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb3595d5_848e18ac",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-11-15T21:31:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92d4dda9_aca90cdb",
       "range": {
         "startLine": 75,
         "startChar": 49,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d59d4889_e4fbc179",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-11-15T21:31:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "406e6a5d_34ef7d3d",
+      "range": {
+        "startLine": 83,
+        "startChar": 67,
+        "endLine": 83,
+        "endChar": 72
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8b2e1a68_334b30b9",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-11-14T23:46:52Z",
       "side": 1,
       "message": "Is this a standard acronym in RME? I see it in few lines below as well. Might be good to clarify.",
+      "range": {
+        "startLine": 90,
+        "startChar": 23,
+        "endLine": 90,
+        "endChar": 26
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f0be6a2_70d24355",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-11-15T21:31:00Z",
+      "side": 1,
+      "message": "Seems to be an acronym. Widely used in #oss-rmm-dev channel. I converted all occurrences to uppercase. Done.",
+      "parentUuid": "8b2e1a68_334b30b9",
       "range": {
         "startLine": 90,
         "startChar": 23,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "48c511ef_fecf46aa",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-11-15T21:31:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c110c154_fbcf209c",
+      "range": {
+        "startLine": 94,
+        "startChar": 70,
+        "endLine": 94,
+        "endChar": 75
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "81fffc12_595e6863",
@@ -129,6 +249,30 @@
       "writtenOn": "2023-11-15T16:46:56Z",
       "side": 1,
       "message": "PSCI API",
+      "range": {
+        "startLine": 99,
+        "startChar": 11,
+        "endLine": 99,
+        "endChar": 19
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6fde6fc_f9438004",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-11-15T21:31:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81fffc12_595e6863",
       "range": {
         "startLine": 99,
         "startChar": 11,
@@ -162,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "da43a15d_208af8c2",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-11-15T21:31:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a41b120_b00382f1",
+      "range": {
+        "startLine": 103,
+        "startChar": 30,
+        "endLine": 103,
+        "endChar": 35
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b0efcf8b_8b928656",
@@ -175,6 +343,30 @@
       "writtenOn": "2023-11-15T16:46:56Z",
       "side": 1,
       "message": "typo",
+      "range": {
+        "startLine": 111,
+        "startChar": 10,
+        "endLine": 111,
+        "endChar": 20
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4535b6a_e16e9219",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-11-15T21:31:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0efcf8b_8b928656",
       "range": {
         "startLine": 111,
         "startChar": 10,
@@ -232,6 +424,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8fdeab71_aa950bae",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-11-15T21:31:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7499b6f7_316d0f0d",
+      "range": {
+        "startLine": 117,
+        "startChar": 77,
+        "endLine": 118,
+        "endChar": 15
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37b11bda_04784300",
@@ -255,6 +471,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5c5bd30_eb18bbf8",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-11-15T21:31:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37b11bda_04784300",
+      "range": {
+        "startLine": 132,
+        "startChar": 42,
+        "endLine": 132,
+        "endChar": 49
+      },
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5ec134c9_1dd81acd",
@@ -268,6 +508,24 @@
       "writtenOn": "2023-11-15T16:46:56Z",
       "side": 1,
       "message": "Please move it to Miscellaneous section above",
+      "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7644725_d7809c69",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-11-15T21:31:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ec134c9_1dd81acd",
       "revId": "4a7fd726b4f1ef51be71f015b7a8a3b95d155e98",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
