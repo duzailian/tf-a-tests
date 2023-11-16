@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef5f531a_42950707",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-11-16T22:48:29Z",
+      "side": 1,
+      "message": "nit: changelog",
+      "range": {
+        "startLine": 7,
+        "startChar": 15,
+        "endLine": 7,
+        "endChar": 25
+      },
+      "revId": "bf3eb7d99a68ace5f1e29aea91c89abba1b58166",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8884691a_97486b82",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-11-16T22:48:29Z",
+      "side": 1,
+      "message": "nit: AArch32",
+      "range": {
+        "startLine": 30,
+        "startChar": 27,
+        "endLine": 30,
+        "endChar": 34
+      },
+      "revId": "bf3eb7d99a68ace5f1e29aea91c89abba1b58166",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
