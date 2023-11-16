@@ -259,6 +259,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fc3bc2c_0af25b38",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-11-16T20:27:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78388f78_1e5d5754",
+      "range": {
+        "startLine": 35,
+        "startChar": 5,
+        "endLine": 35,
+        "endChar": 13
+      },
+      "revId": "5c758cdf58184b4768bc437653a512fd03133844",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d641e04c_ce7d8998",
