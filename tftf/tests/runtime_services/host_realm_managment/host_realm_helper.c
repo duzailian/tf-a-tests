@@ -291,6 +291,16 @@ bool host_destroy_realm(void)
 	return true;
 }
 
+/*
+ * Enter Realm and run command passed in 'cmd' and compare the exit reason with
+ * 'test_exit_reason'.
+ *
+ * Returns:
+ *	true:  On success. 'test_exit_reason' matches Realm exit reason. For
+ *	       RMI_EXIT_HOST_CALL exit reason, the 'host_call_result' is
+ *	       TEST_RESULT_SUCCESS.
+ *	false: On error.
+ */
 bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr,
 		int test_exit_reason, unsigned int rec_num)
 {
@@ -314,8 +324,9 @@ bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr,
 		return true;
 	}
 
-	if (test_exit_reason == exit_reason) {
-		 return true;
+	if ((exit_reason != RMI_EXIT_HOST_CALL) &&
+	    (test_exit_reason == exit_reason)) {
+		return true;
 	}
 
 	if (exit_reason <= RMI_EXIT_SERROR) {
