@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d06de3c_26252ed8",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-20T19:31:18Z",
+      "side": 1,
+      "message": "Is this part of this patch?",
+      "range": {
+        "startLine": 414,
+        "startChar": 0,
+        "endLine": 422,
+        "endChar": 45
+      },
+      "revId": "4188b6a44f2129f1870648c7f70f0c1ac68a0ad1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
