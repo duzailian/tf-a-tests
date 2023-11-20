@@ -291,11 +291,27 @@ bool host_destroy_realm(void)
 	return true;
 }
 
+/*
+ * Enter Realm and run command passed in 'cmd' and compare the exit reason with
+ * 'test_exit_reason'.
+ *
+ * Returns:
+ *	true:  On success. 'test_exit_reason' matches Realm exit reason. For
+ *	       RMI_EXIT_HOST_CALL exit reason, the 'host_call_result' is
+ *	       TEST_RESULT_SUCCESS.
+ *	false: On error.
+ */
 bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr,
-		int test_exit_reason, unsigned int rec_num)
+			      unsigned int test_exit_reason,
+			      unsigned int rec_num)
 {
 	u_register_t exit_reason = RMI_EXIT_INVALID;
 	unsigned int host_call_result = TEST_RESULT_FAIL;
+
+	if (test_exit_reason >= RMI_EXIT_INVALID) {
+		ERROR("Invalid RmiRecExitReason\n");
+		return false;
+	}
 
 	if (rec_num >= realm.rec_count) {
 		ERROR("Invalid Rec Count\n");
@@ -310,12 +326,14 @@ bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr,
 		*realm_ptr = &realm;
 	}
 
-	if ((exit_reason == RMI_EXIT_HOST_CALL) && (host_call_result == TEST_RESULT_SUCCESS)) {
+	if ((exit_reason == RMI_EXIT_HOST_CALL) &&
+	    (host_call_result == TEST_RESULT_SUCCESS)) {
 		return true;
 	}
 
-	if (test_exit_reason == exit_reason) {
-		 return true;
+	if ((exit_reason != RMI_EXIT_HOST_CALL) &&
+	    (test_exit_reason == exit_reason)) {
+		return true;
 	}
 
 	if (exit_reason <= RMI_EXIT_SERROR) {
