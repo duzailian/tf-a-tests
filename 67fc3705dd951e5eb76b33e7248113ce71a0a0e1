@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a84bb22_e0c0e8c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2023-11-20T16:15:43Z",
+      "side": 1,
+      "message": "Giving Verified+1 as the failed test passed after manual re-trigger.",
+      "revId": "67fc3705dd951e5eb76b33e7248113ce71a0a0e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
