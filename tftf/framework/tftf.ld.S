@@ -65,7 +65,7 @@ SECTIONS
     /* Memory pool for Realm payload tests. */
     realm_pool (NOLOAD)  : ALIGN(PAGE_SIZE) {
         __REALM_POOL_START__ = .;
-        . = __REALM_POOL_START__ + NS_REALM_SHARED_MEM_SIZE + PAGE_POOL_MAX_SIZE;
+        . = __REALM_POOL_START__ + (NS_REALM_SHARED_MEM_SIZE * 2) + (PAGE_POOL_MAX_SIZE * 2);
         __REALM_POOL_END__ = .;
     } >RAM
 
