@@ -522,6 +522,8 @@ struct realm {
 	uint8_t      num_bps;
 	uint8_t      num_wps;
 	uint8_t      pmu_num_ctrs;
+	bool payload_created;
+	bool shared_mem_created;
 	enum realm_state state;
 };
 
