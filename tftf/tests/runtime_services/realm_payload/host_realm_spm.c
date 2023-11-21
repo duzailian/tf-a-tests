@@ -67,7 +67,7 @@ static test_result_t init_realm(void)
 	/*
 	 * Create shared memory between Host and Realm
 	 */
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -219,7 +219,7 @@ test_result_t host_realm_sec_interrupt_can_preempt_rl(void)
 	 * Spin Realm payload for REALM_TIME_SLEEP ms, This ensures secure wdog
 	 * timer triggers during this time.
 	 */
-	host_shared_data_set_host_val(0U, HOST_ARG1_INDEX, REALM_TIME_SLEEP);
+	host_shared_data_set_host_val(realm_ptr, 0U, HOST_ARG1_INDEX, REALM_TIME_SLEEP);
 	host_enter_realm_execute(REALM_SLEEP_CMD, realm_ptr, RMI_EXIT_FIQ, 0U);
 
 	/*
@@ -250,7 +250,7 @@ test_result_t host_realm_sec_interrupt_can_preempt_rl(void)
 		goto destroy_realm;
 	}
 
-	if (!host_destroy_realm()) {
+	if (!host_destroy_realm(realm_ptr)) {
 		ERROR("host_destroy_realm error\n");
 		return TEST_RESULT_FAIL;
 	}
@@ -258,7 +258,7 @@ test_result_t host_realm_sec_interrupt_can_preempt_rl(void)
 	return TEST_RESULT_SUCCESS;
 
 destroy_realm:
-	host_destroy_realm();
+	host_destroy_realm(realm_ptr);
 	return TEST_RESULT_FAIL;
 }
 
@@ -404,12 +404,12 @@ test_result_t host_realm_fpu_access_in_rl_ns_se(void)
 		}
 	}
 
-	if (!host_destroy_realm()) {
+	if (!host_destroy_realm(realm_ptr)) {
 		ERROR("host_destroy_realm error\n");
 		return TEST_RESULT_FAIL;
 	}
 	return TEST_RESULT_SUCCESS;
 destroy_realm:
-	host_destroy_realm();
+	host_destroy_realm(realm_ptr);
 	return TEST_RESULT_FAIL;
 }

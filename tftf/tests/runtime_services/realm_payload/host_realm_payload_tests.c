@@ -44,14 +44,14 @@ test_result_t host_test_realm_create_enter(void)
 			0UL, rec_flag, 1U, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
-	host_shared_data_set_host_val(0U, HOST_ARG1_INDEX, SLEEP_TIME_MS);
+	host_shared_data_set_host_val(realm_ptr, 0U, HOST_ARG1_INDEX, SLEEP_TIME_MS);
 	ret1 = host_enter_realm_execute(REALM_SLEEP_CMD, realm_ptr, RMI_EXIT_HOST_CALL, 0U);
-	ret2 = host_destroy_realm();
+	ret2 = host_destroy_realm(realm_ptr);
 
 	if (!ret1 || !ret2) {
 		ERROR("%s(): enter=%d destroy=%d\n",
@@ -81,13 +81,13 @@ test_result_t host_test_realm_rsi_version(void)
 			0UL, rec_flag, 1U, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	ret1 = host_enter_realm_execute(REALM_GET_RSI_VERSION, realm_ptr, RMI_EXIT_HOST_CALL, 0U);
-	ret2 = host_destroy_realm();
+	ret2 = host_destroy_realm(realm_ptr);
 
 	if (!ret1 || !ret2) {
 		ERROR("%s(): enter=%d destroy=%d\n",
@@ -122,7 +122,7 @@ test_result_t host_realm_enable_pauth(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 				NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -135,7 +135,7 @@ test_result_t host_realm_enable_pauth(void)
 				RMI_EXIT_HOST_CALL, 0U);
 	}
 
-	ret2 = host_destroy_realm();
+	ret2 = host_destroy_realm(realm_ptr);
 
 	if (!ret1) {
 		ERROR("%s(): enter=%d destroy=%d\n",
@@ -175,13 +175,13 @@ test_result_t host_realm_pauth_fault(void)
 				0UL, rec_flag, 1U, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 				NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	ret1 = host_enter_realm_execute(REALM_PAUTH_FAULT, realm_ptr, RMI_EXIT_HOST_CALL, 0U);
-	ret2 = host_destroy_realm();
+	ret2 = host_destroy_realm(realm_ptr);
 
 	if (!ret1) {
 		ERROR("%s(): enter=%d destroy=%d\n",
@@ -273,7 +273,7 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 			feature_flag, rec_flag, 1U, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -286,7 +286,7 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 	ret1 = host_realm_handle_irq_exit(realm_ptr, 0U);
 
 test_exit:
-	ret2 = host_destroy_realm();
+	ret2 = host_destroy_realm(realm_ptr);
 	if (!ret1 || !ret2) {
 		ERROR("%s() enter=%u destroy=%u\n", __func__, ret1, ret2);
 		return TEST_RESULT_FAIL;
@@ -375,16 +375,16 @@ test_result_t host_realm_set_ripas(void)
 			0UL, rec_flag, 1U, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
-	host_shared_data_set_host_val(0U, HOST_ARG1_INDEX, 10U);
+	host_shared_data_set_host_val(realm_ptr, 0U, HOST_ARG1_INDEX, 10U);
 	ret1 = host_enter_realm_execute(REALM_SLEEP_CMD, realm_ptr, RMI_EXIT_HOST_CALL, 0U);
 	base = (u_register_t)page_alloc(PAGE_SIZE * 3U);
-	host_shared_data_set_host_val(0U, HOST_ARG1_INDEX, base);
-	host_shared_data_set_host_val(0U, HOST_ARG2_INDEX, base + (PAGE_SIZE * 3U));
+	host_shared_data_set_host_val(realm_ptr, 0U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(realm_ptr, 0U, HOST_ARG2_INDEX, base + (PAGE_SIZE * 3U));
 
 	for (unsigned int i = 0U; i < 3U; i++) {
 		ret = host_realm_map_protected_data(true, realm_ptr,
@@ -421,7 +421,7 @@ test_result_t host_realm_set_ripas(void)
 		ERROR("Rec enter failed\n");
 	}
 destroy_realm:
-	ret2 = host_destroy_realm();
+	ret2 = host_destroy_realm(realm_ptr);
 
 	if (!ret1 || !ret2) {
 		ERROR("%s(): enter=%d destroy=%d\n",
@@ -452,7 +452,7 @@ test_result_t host_realm_reject_set_ripas(void)
 			0UL, rec_flag, 1U, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -464,7 +464,7 @@ test_result_t host_realm_reject_set_ripas(void)
 		ERROR("host_realm_map_protected_data failede\n");
 		goto destroy_realm;
 	}
-	host_shared_data_set_host_val(0U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(realm_ptr, 0U, HOST_ARG1_INDEX, base);
 	ret1 = host_enter_realm_execute(REALM_REJECT_SET_RIPAS_CMD, realm_ptr,
 			RMI_EXIT_RIPAS_CHANGE, 0U);
 
@@ -482,7 +482,7 @@ test_result_t host_realm_reject_set_ripas(void)
 	}
 
 destroy_realm:
-	ret2 = host_destroy_realm();
+	ret2 = host_destroy_realm(realm_ptr);
 
 	if (!ret2) {
 		ERROR("%s(): destroy=%d\n",
@@ -513,7 +513,7 @@ test_result_t host_realm_inst_fetch_unassigned(void)
 			0UL, rec_flag, 1U, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -534,7 +534,7 @@ test_result_t host_realm_inst_fetch_unassigned(void)
 	}
 	INFO("Initial state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
 			base, rtt.state, rtt.ripas);
-	host_shared_data_set_host_val(0U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(realm_ptr, 0U, HOST_ARG1_INDEX, base);
 	ret1 = host_enter_realm_execute(REALM_INSTR_FETCH_CMD, realm_ptr,
 			RMI_EXIT_RIPAS_CHANGE, 0U);
 
@@ -586,7 +586,7 @@ test_result_t host_realm_inst_fetch_unassigned(void)
 	}
 	ret = host_rmi_granule_undelegate(base);
 destroy_realm:
-	ret2 = host_destroy_realm();
+	ret2 = host_destroy_realm(realm_ptr);
 
 	if (!ret2) {
 		ERROR("%s(): destroy=%d\n",

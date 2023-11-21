@@ -109,7 +109,7 @@ static test_result_t host_create_sve_realm_payload(bool sve_en, uint8_t sve_vq)
 	}
 
 	/* Create shared memory between Host and Realm */
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 				    NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -180,7 +180,7 @@ test_result_t host_sve_realm_cmd_rdvl(void)
 	}
 
 	/* Check if rdvl matches the SVE VL created */
-	sd = host_get_shared_structure(0U);
+	sd = host_get_shared_structure(realm_ptr, 0U);
 	rl_output = (struct sve_cmd_rdvl *)sd->realm_cmd_output_buffer;
 	rl_max_sve_vq = SVE_VL_TO_VQ(rl_output->rdvl);
 	if (sve_vq == rl_max_sve_vq) {
@@ -193,7 +193,7 @@ test_result_t host_sve_realm_cmd_rdvl(void)
 	}
 
 rm_realm:
-	if (!host_destroy_realm()) {
+	if (!host_destroy_realm(realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -220,7 +220,7 @@ test_result_t host_sve_realm_test_invalid_vl(void)
 	rc = host_create_sve_realm_payload(true, (sve_vq + 1));
 	if (rc == TEST_RESULT_SUCCESS) {
 		ERROR("Error: Realm created with invalid SVE VL %u\n", (sve_vq + 1));
-		host_destroy_realm();
+		host_destroy_realm(realm_ptr);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -255,7 +255,7 @@ static test_result_t _host_sve_realm_check_id_registers(bool sve_en)
 		goto rm_realm;
 	}
 
-	sd = host_get_shared_structure(0U);
+	sd = host_get_shared_structure(realm_ptr, 0U);
 	r_regs = (struct sve_cmd_id_regs *)sd->realm_cmd_output_buffer;
 
 	/* Check ID register SVE flags */
@@ -282,7 +282,7 @@ static test_result_t _host_sve_realm_check_id_registers(bool sve_en)
 	}
 
 rm_realm:
-	host_destroy_realm();
+	host_destroy_realm(realm_ptr);
 	return rc;
 }
 
@@ -342,7 +342,7 @@ test_result_t host_sve_realm_cmd_probe_vl(void)
 		goto rm_realm;
 	}
 
-	sd = host_get_shared_structure(0U);
+	sd = host_get_shared_structure(realm_ptr, 0U);
 	rl_output = (struct sve_cmd_probe_vl *)sd->realm_cmd_output_buffer;
 
 	INFO("Supported SVE vector length in bits (expected):\n");
@@ -358,7 +358,7 @@ test_result_t host_sve_realm_cmd_probe_vl(void)
 	}
 
 rm_realm:
-	if (!host_destroy_realm()) {
+	if (!host_destroy_realm(realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -412,7 +412,7 @@ test_result_t host_sve_realm_check_config_register(void)
 		}
 	}
 
-	if (!host_destroy_realm()) {
+	if (!host_destroy_realm(realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -509,7 +509,7 @@ static test_result_t run_sve_vectors_operations(bool realm_sve_en,
 	}
 
 rm_realm:
-	if (!host_destroy_realm()) {
+	if (!host_destroy_realm(realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -650,7 +650,7 @@ test_result_t host_sve_realm_check_vectors_leaked(void)
 	}
 
 rm_realm:
-	if (!host_destroy_realm()) {
+	if (!host_destroy_realm(realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -683,7 +683,7 @@ test_result_t host_non_sve_realm_check_undef_abort(void)
 		rc = TEST_RESULT_SUCCESS;
 	}
 
-	if (!host_destroy_realm()) {
+	if (!host_destroy_realm(realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -1148,7 +1148,7 @@ rm_realm:
 		sme_enable_fa64();
 	}
 
-	if (!host_destroy_realm()) {
+	if (!host_destroy_realm(realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -1181,7 +1181,7 @@ test_result_t host_realm_check_sme_id_registers(void)
 		goto rm_realm;
 	}
 
-	sd = host_get_shared_structure(0U);
+	sd = host_get_shared_structure(realm_ptr, 0U);
 	r_regs = (struct sme_cmd_id_regs *)sd->realm_cmd_output_buffer;
 
 	/* Check ID register SME flags */
@@ -1197,7 +1197,7 @@ test_result_t host_realm_check_sme_id_registers(void)
 	}
 
 rm_realm:
-	host_destroy_realm();
+	host_destroy_realm(realm_ptr);
 	return rc;
 }
 
@@ -1226,7 +1226,7 @@ test_result_t host_realm_check_sme_undef_abort(void)
 		rc = TEST_RESULT_SUCCESS;
 	}
 
-	host_destroy_realm();
+	host_destroy_realm(realm_ptr);
 	return rc;
 }
 
@@ -1334,7 +1334,7 @@ test_result_t host_realm_check_sme_configs(void)
 		sme_smstop(SMSTOP_SM);
 	}
 
-	if (!host_destroy_realm()) {
+	if (!host_destroy_realm(realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
 

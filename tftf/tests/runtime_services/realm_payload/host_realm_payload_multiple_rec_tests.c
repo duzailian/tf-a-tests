@@ -42,13 +42,13 @@ test_result_t host_realm_multi_rec_single_cpu(void)
 			0UL, rec_flag, MAX_REC_COUNT, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	for (unsigned int i = 0; i < MAX_REC_COUNT; i++) {
-		host_shared_data_set_host_val(i, HOST_ARG1_INDEX, 10U);
+		host_shared_data_set_host_val(realm_ptr, i, HOST_ARG1_INDEX, 10U);
 		ret1 = host_enter_realm_execute(REALM_SLEEP_CMD, realm_ptr,
 				RMI_EXIT_HOST_CALL, i);
 		if (!ret1) {
@@ -56,7 +56,7 @@ test_result_t host_realm_multi_rec_single_cpu(void)
 		}
 	}
 
-	ret2 = host_destroy_realm();
+	ret2 = host_destroy_realm(realm_ptr);
 
 	if (!ret1 || !ret2) {
 		ERROR("%s(): enter=%d destroy=%d\n",
@@ -101,7 +101,7 @@ test_result_t host_realm_multi_rec_psci_denied(void)
 			0UL, rec_flag, 3U, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -193,7 +193,7 @@ test_result_t host_realm_multi_rec_psci_denied(void)
 	}
 
 destroy_realm:
-	ret2 = host_destroy_realm();
+	ret2 = host_destroy_realm(realm_ptr);
 
 	if (!ret1 || !ret2) {
 		ERROR("%s(): enter=%d destroy=%d\n",
@@ -244,7 +244,7 @@ test_result_t host_realm_multi_rec_exit_irq(void)
 			0UL, rec_flag, rec_count, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -273,10 +273,10 @@ destroy_realm:
 	tftf_irq_enable(IRQ_NS_SGI_7, GIC_HIGHEST_NS_PRIORITY);
 	for (unsigned int i = 1U; i < rec_count; i++) {
 		INFO("Raising NS IRQ for rec %d\n", i);
-		host_rec_send_sgi(IRQ_NS_SGI_7, i);
+		host_rec_send_sgi(IRQ_NS_SGI_7, realm_ptr, i);
 	}
 	tftf_irq_disable(IRQ_NS_SGI_7);
-	ret2 = host_destroy_realm();
+	ret2 = host_destroy_realm(realm_ptr);
 	if (!ret1 || !ret2) {
 		ERROR("%s(): enter=%d destroy=%d\n",
 		__func__, ret1, ret2);
@@ -346,7 +346,7 @@ test_result_t host_realm_multi_rec_multiple_cpu(void)
 			0UL, rec_flag, MAX_REC_COUNT, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
-	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(realm_ptr, NS_REALM_SHARED_MEM_BASE,
 			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -354,7 +354,7 @@ test_result_t host_realm_multi_rec_multiple_cpu(void)
 	is_secondary_cpu_on = 0U;
 	init_spinlock(&secondary_cpu_lock);
 	my_mpidr = read_mpidr_el1() & MPID_MASK;
-	host_shared_data_set_host_val(0U, HOST_ARG1_INDEX, MAX_REC_COUNT);
+	host_shared_data_set_host_val(realm_ptr, 0U, HOST_ARG1_INDEX, MAX_REC_COUNT);
 	ret1 = host_enter_realm_execute(REALM_MULTIPLE_REC_MULTIPLE_CPU_CMD, realm_ptr,
 			RMI_EXIT_PSCI, 0U);
 	if (!ret1) {
@@ -479,7 +479,7 @@ test_result_t host_realm_multi_rec_multiple_cpu(void)
 	ret = host_realm_rec_enter(realm_ptr, &exit_reason,
 			&host_call_result, 0U);
 destroy_realm:
-	ret2 = host_destroy_realm();
+	ret2 = host_destroy_realm(realm_ptr);
 
 	if ((ret != RMI_SUCCESS) || !ret2) {
 		ERROR("%s(): enter=%d destroy=%d\n",

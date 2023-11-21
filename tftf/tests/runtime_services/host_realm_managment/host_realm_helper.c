@@ -23,10 +23,7 @@
 #include <test_helpers.h>
 #include <xlat_tables_v2.h>
 
-static struct realm realm;
-static bool realm_payload_created;
-static bool shared_mem_created;
-static volatile bool timer_enabled;
+static struct realm realm[MAX_REALM_COUNT];
 
 #define RMI_EXIT(id)	\
 	[RMI_EXIT_##id] = #id
@@ -46,10 +43,10 @@ const char *rmi_exit[] = {
  * The function handler to print the Realm logged buffer,
  * executed by the secondary core
  */
-void realm_print_handler(unsigned int rec_num)
+void realm_print_handler(struct realm *realm_ptr, unsigned int rec_num)
 {
 	size_t str_len = 0UL;
-	host_shared_data_t *host_shared_data = host_get_shared_structure(rec_num);
+	host_shared_data_t *host_shared_data = host_get_shared_structure(realm_ptr, rec_num);
 	char *log_buffer = (char *)host_shared_data->log_buffer;
 
 	str_len = strlen((const char *)log_buffer);
@@ -61,7 +58,7 @@ void realm_print_handler(unsigned int rec_num)
 	if (str_len != 0UL) {
 		/* Avoid memory overflow */
 		log_buffer[MAX_BUF_SIZE - 1] = 0U;
-		mp_printf("Rec%u: %s", rec_num, log_buffer);
+		mp_printf("VMID: %u Rec%u: %s", realm_ptr->vmid, rec_num, log_buffer);
 		(void)memset((char *)log_buffer, 0, MAX_BUF_SIZE);
 	}
 }
@@ -71,12 +68,12 @@ void realm_print_handler(unsigned int rec_num)
  * and try to find another CPU other than the lead one to
  * handle the Realm message logging.
  */
-static void host_init_realm_print_buffer(void)
+static void host_init_realm_print_buffer(struct realm *realm_ptr)
 {
 	host_shared_data_t *host_shared_data;
 
-	for (unsigned int i = 0U; i < realm.rec_count; i++) {
-		host_shared_data = host_get_shared_structure(i);
+	for (unsigned int i = 0U; i < realm_ptr->rec_count; i++) {
+		host_shared_data = host_get_shared_structure(realm_ptr, i);
 		(void)memset((char *)host_shared_data, 0, sizeof(host_shared_data_t));
 	}
 }
@@ -88,11 +85,11 @@ static bool host_enter_realm(struct realm *realm_ptr,
 {
 	u_register_t ret;
 
-	if (!realm_payload_created) {
+	if (!realm_ptr->realm_payload_created) {
 		ERROR("%s() failed\n", "realm_payload_created");
 		return false;
 	}
-	if (!shared_mem_created) {
+	if (!realm_ptr->shared_mem_created) {
 		ERROR("%s() failed\n", "shared_mem_created");
 		return false;
 	}
@@ -117,6 +114,7 @@ bool host_prepare_realm_payload(u_register_t realm_payload_adr,
 			       struct realm **realm_ptr)
 {
 	int8_t value;
+	unsigned int realm_index;
 
 	if (realm_payload_adr == TFTF_BASE) {
 		ERROR("realm_payload_adr should be grater then TFTF_BASE\n");
@@ -131,7 +129,21 @@ bool host_prepare_realm_payload(u_register_t realm_payload_adr,
 		return false;
 	}
 
-	INFO("Realm base adr=0x%lx\n", realm_payload_adr);
+	if (plat_mem_pool_adr == PAGE_POOL_BASE) {
+		realm_index = 0U;
+	} else if (plat_mem_pool_adr == PAGE_POOL_BASE2) {
+		realm_index = 1U;
+	} else {
+		ERROR("plat_mem_pool_size is incorrect\n");
+		return false;
+	}
+
+	if (realm[realm_index].realm_payload_created == true) {
+		ERROR("payload is already created\n");
+		return false;
+	}
+
+	INFO("Realm start adr=0x%lx\n", plat_mem_pool_adr);
 	/* Initialize  Host NS heap memory to be used in Realm creation*/
 	if (page_pool_init(plat_mem_pool_adr, realm_pages_size)
 		!= HEAP_INIT_SUCCESS) {
@@ -140,71 +152,71 @@ bool host_prepare_realm_payload(u_register_t realm_payload_adr,
 	}
 
 	/* Read Realm Feature Reg 0 */
-	if (host_rmi_features(0UL, &realm.rmm_feat_reg0) != REALM_SUCCESS) {
+	if (host_rmi_features(0UL, &realm[realm_index].rmm_feat_reg0) != REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_rmi_features");
 		return false;
 	}
 
 	/* Disable PMU if not required */
 	if ((feature_flag & RMI_FEATURE_REGISTER_0_PMU_EN) == 0UL) {
-		realm.rmm_feat_reg0 &= ~RMI_FEATURE_REGISTER_0_PMU_EN;
-		realm.pmu_num_ctrs = 0U;
+		realm[realm_index].rmm_feat_reg0 &= ~RMI_FEATURE_REGISTER_0_PMU_EN;
+		realm[realm_index].pmu_num_ctrs = 0U;
 	} else {
 		value = EXTRACT(FEATURE_PMU_NUM_CTRS, feature_flag);
 		if (value != -1) {
-			realm.pmu_num_ctrs = (unsigned int)value;
+			realm[realm_index].pmu_num_ctrs = (unsigned int)value;
 		} else {
-			realm.pmu_num_ctrs =
+			realm[realm_index].pmu_num_ctrs =
 				EXTRACT(RMI_FEATURE_REGISTER_0_PMU_NUM_CTRS,
-					realm.rmm_feat_reg0);
+					realm[realm_index].rmm_feat_reg0);
 		}
 	}
 
 	/* Disable SVE if not required */
 	if ((feature_flag & RMI_FEATURE_REGISTER_0_SVE_EN) == 0UL) {
-		realm.rmm_feat_reg0 &= ~RMI_FEATURE_REGISTER_0_SVE_EN;
-		realm.sve_vl = 0U;
+		realm[realm_index].rmm_feat_reg0 &= ~RMI_FEATURE_REGISTER_0_SVE_EN;
+		realm[realm_index].sve_vl = 0U;
 	} else {
-		realm.sve_vl = EXTRACT(FEATURE_SVE_VL, feature_flag);
+		realm[realm_index].sve_vl = EXTRACT(FEATURE_SVE_VL, feature_flag);
 	}
 
 	/* Requested number of breakpoints */
 	value = EXTRACT(FEATURE_NUM_BPS, feature_flag);
 	if (value != -1) {
-		realm.num_bps = (unsigned int)value;
+		realm[realm_index].num_bps = (unsigned int)value;
 	} else {
-		realm.num_bps = EXTRACT(RMI_FEATURE_REGISTER_0_NUM_BPS,
-					realm.rmm_feat_reg0);
+		realm[realm_index].num_bps = EXTRACT(RMI_FEATURE_REGISTER_0_NUM_BPS,
+					realm[realm_index].rmm_feat_reg0);
 	}
 
 	/* Requested number of watchpoints */
 	value = EXTRACT(FEATURE_NUM_WPS, feature_flag);
 	if (value != -1) {
-		realm.num_wps = (unsigned int)value;
+		realm[realm_index].num_wps = (unsigned int)value;
 	} else {
-		realm.num_wps = EXTRACT(RMI_FEATURE_REGISTER_0_NUM_WPS,
-					realm.rmm_feat_reg0);
+		realm[realm_index].num_wps = EXTRACT(RMI_FEATURE_REGISTER_0_NUM_WPS,
+					realm[realm_index].rmm_feat_reg0);
 	}
 
 	/* Set SVE bits from feature_flag */
-	realm.rmm_feat_reg0 &= ~(RMI_FEATURE_REGISTER_0_SVE_EN |
+	realm[realm_index].rmm_feat_reg0 &= ~(RMI_FEATURE_REGISTER_0_SVE_EN |
 				 MASK(RMI_FEATURE_REGISTER_0_SVE_VL));
 	if ((feature_flag & RMI_FEATURE_REGISTER_0_SVE_EN) != 0UL) {
-		realm.rmm_feat_reg0 |= RMI_FEATURE_REGISTER_0_SVE_EN |
+		realm[realm_index].rmm_feat_reg0 |= RMI_FEATURE_REGISTER_0_SVE_EN |
 				       INPLACE(RMI_FEATURE_REGISTER_0_SVE_VL,
 				       EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL,
 						feature_flag));
 	}
 
-	if (realm.rec_count > MAX_REC_COUNT) {
+	if (realm[realm_index].rec_count > MAX_REC_COUNT) {
 		ERROR("Invalid Rec Count\n");
 		return false;
 	}
-	realm.rec_count = rec_count;
+	realm[realm_index].rec_count = rec_count;
 	for (unsigned int i = 0U; i < rec_count; i++) {
 		if (rec_flag[i] == RMI_RUNNABLE ||
 				rec_flag[i] == RMI_NOT_RUNNABLE) {
-			realm.rec_flag[i] = rec_flag[i];
+			realm[realm_index].rec_flag[i] = rec_flag[i];
 		} else {
 			ERROR("Invalid Rec Flag\n");
 			return false;
@@ -212,45 +224,45 @@ bool host_prepare_realm_payload(u_register_t realm_payload_adr,
 	}
 
 	/* Create Realm */
-	if (host_realm_create(&realm) != REALM_SUCCESS) {
+	if (host_realm_create(&realm[realm_index]) != REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_create");
 		return false;
 	}
 
-	if (host_realm_init_ipa_state(&realm, 0U, 0U, 1ULL << 32)
+	if (host_realm_init_ipa_state(&realm[realm_index], 0U, 0U, 1ULL << 32)
 		!= RMI_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_init_ipa_state");
 		goto destroy_realm;
 	}
 
 	/* RTT map Realm image */
-	if (host_realm_map_payload_image(&realm, realm_payload_adr) !=
+	if (host_realm_map_payload_image(&realm[realm_index], realm_payload_adr) !=
 			REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_map_payload_image");
 		goto destroy_realm;
 	}
 
 	/* Create REC */
-	if (host_realm_rec_create(&realm) != REALM_SUCCESS) {
+	if (host_realm_rec_create(&realm[realm_index]) != REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_rec_create");
 		goto destroy_realm;
 	}
 
-	realm_payload_created = true;
+	realm[realm_index].realm_payload_created = true;
 	if (realm_ptr != NULL) {
-		*realm_ptr = &realm;
+		*realm_ptr = &realm[realm_index];
 	}
 
-	return realm_payload_created;
+	return true;
 
 	/* Free test resources */
 destroy_realm:
-	if (host_realm_destroy(&realm) != REALM_SUCCESS) {
+	if (host_realm_destroy(&realm[realm_index]) != REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_destroy");
 	}
-	realm_payload_created = false;
+	realm[realm_index].realm_payload_created = false;
 
-	return realm_payload_created;
+	return false;
 }
 
 
@@ -283,45 +295,46 @@ bool host_create_realm_payload(u_register_t realm_payload_adr,
 
 	/* Free test resources */
 destroy_realm:
-	if (host_realm_destroy(&realm) != REALM_SUCCESS) {
+	if (host_realm_destroy(*realm_ptr) != REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_destroy");
 	}
-	realm_payload_created = false;
+	(*realm_ptr)->realm_payload_created = false;
 
-	return realm_payload_created;
+	return false;
 }
 
-bool host_create_shared_mem(u_register_t ns_shared_mem_adr,
-	u_register_t ns_shared_mem_size)
+bool host_create_shared_mem(struct realm *realm_ptr,
+			    u_register_t ns_shared_mem_adr,
+			    u_register_t ns_shared_mem_size)
 {
 	/* RTT map NS shared region */
-	if (host_realm_map_ns_shared(&realm, ns_shared_mem_adr,
+	if (host_realm_map_ns_shared(realm_ptr, ns_shared_mem_adr,
 				ns_shared_mem_size) != REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_map_ns_shared");
-		shared_mem_created = false;
+		realm_ptr->shared_mem_created = false;
 		return false;
 	}
 
 	memset((void *)ns_shared_mem_adr, 0, (size_t)ns_shared_mem_size);
-	host_init_realm_print_buffer();
-	shared_mem_created = true;
+	realm_ptr->host_shared_data = ns_shared_mem_adr;
+	host_init_realm_print_buffer(realm_ptr);
+	realm_ptr->shared_mem_created = true;
 
-	return shared_mem_created;
+	return true;
 }
 
-bool host_destroy_realm(void)
+bool host_destroy_realm(struct realm *realm_ptr)
 {
 	/* Free test resources */
-	timer_enabled = false;
 	page_pool_reset();
 
-	if (!realm_payload_created) {
+	if (!realm_ptr->realm_payload_created) {
 		ERROR("%s() failed\n", "realm_payload_created");
 		return false;
 	}
 
-	realm_payload_created = false;
-	if (host_realm_destroy(&realm) != REALM_SUCCESS) {
+	realm_ptr->realm_payload_created = false;
+	if (host_realm_destroy(realm_ptr) != REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_destroy");
 		return false;
 	}
@@ -343,7 +356,7 @@ bool host_enter_realm_execute(uint8_t cmd, struct realm *realm_ptr,
 		ERROR("Invalid Rec Count\n");
 		return false;
 	}
-	host_shared_data_set_realm_cmd(cmd, rec_num);
+	host_shared_data_set_realm_cmd(realm_ptr, cmd, rec_num);
 	if (!host_enter_realm(realm_ptr, &exit_reason, &host_call_result, rec_num)) {
 		return false;
 	}
@@ -380,10 +393,11 @@ test_result_t host_cmp_result(void)
  * Returns Host core position for specified Rec
  * Host mpidr is saved on every rec enter
  */
-static unsigned int host_realm_find_core_pos_by_rec(unsigned int rec_num)
+static unsigned int host_realm_find_core_pos_by_rec(struct realm *realm_ptr,
+		unsigned int rec_num)
 {
-	if (rec_num < MAX_REC_COUNT && realm.run[rec_num] != 0U) {
-		return platform_get_core_pos(realm.host_mpidr[rec_num]);
+	if (rec_num < MAX_REC_COUNT && realm_ptr->run[rec_num] != 0U) {
+		return platform_get_core_pos(realm_ptr->host_mpidr[rec_num]);
 	}
 	return (unsigned int)-1;
 }
@@ -392,9 +406,9 @@ static unsigned int host_realm_find_core_pos_by_rec(unsigned int rec_num)
  * Send SGI on core running specified Rec
  * API can be used to forcefully exit from Realm
  */
-void host_rec_send_sgi(unsigned int sgi, unsigned int rec_num)
+void host_rec_send_sgi(unsigned int sgi, struct realm *realm_ptr, unsigned int rec_num)
 {
-	unsigned int core_pos = host_realm_find_core_pos_by_rec(rec_num);
+	unsigned int core_pos = host_realm_find_core_pos_by_rec(realm_ptr, rec_num);
 	if (core_pos < PLATFORM_CORE_COUNT) {
 		tftf_send_sgi(sgi, core_pos);
 	}
