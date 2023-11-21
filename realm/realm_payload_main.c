@@ -34,6 +34,7 @@ static void realm_sleep_cmd(void)
 
 static void realm_loop_cmd(void)
 {
+	realm_printf("Looping\n");
 	while (true) {
 		waitms(500);
 	}
