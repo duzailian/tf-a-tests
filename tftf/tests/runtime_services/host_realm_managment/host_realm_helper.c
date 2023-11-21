@@ -81,8 +81,10 @@ static void host_init_realm_print_buffer(void)
 	}
 }
 
-static bool host_enter_realm(u_register_t *exit_reason,
-		unsigned int *host_call_result, unsigned int rec_num)
+static bool host_enter_realm(struct realm *realm_ptr,
+			     u_register_t *exit_reason,
+			     unsigned int *host_call_result,
+			     unsigned int rec_num)
 {
 	u_register_t ret;
 
@@ -96,7 +98,7 @@ static bool host_enter_realm(u_register_t *exit_reason,
 	}
 
 	/* Enter Realm */
-	ret = host_realm_rec_enter(&realm, exit_reason, host_call_result, rec_num);
+	ret = host_realm_rec_enter(realm_ptr, exit_reason, host_call_result, rec_num);
 	if (ret != REALM_SUCCESS) {
 		ERROR("%s() failed, ret=%lx\n", "host_realm_rec_enter", ret);
 		return false;
@@ -106,12 +108,13 @@ static bool host_enter_realm(u_register_t *exit_reason,
 }
 
 bool host_create_realm_payload(u_register_t realm_payload_adr,
-				u_register_t plat_mem_pool_adr,
-				u_register_t plat_mem_pool_size,
-				u_register_t realm_pages_size,
-				u_register_t feature_flag,
-				const u_register_t *rec_flag,
-				unsigned int rec_count)
+			       u_register_t plat_mem_pool_adr,
+			       u_register_t plat_mem_pool_size,
+			       u_register_t realm_pages_size,
+			       u_register_t feature_flag,
+			       const u_register_t *rec_flag,
+			       unsigned int rec_count,
+			       struct realm **realm_ptr)
 {
 	int8_t value;
 
@@ -240,6 +243,9 @@ bool host_create_realm_payload(u_register_t realm_payload_adr,
 	}
 
 	realm_payload_created = true;
+	if (realm_ptr != NULL) {
+		*realm_ptr = &realm;
+	}
 
 	return realm_payload_created;
 
@@ -291,23 +297,23 @@ bool host_destroy_realm(void)
 	return true;
 }
 
-bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr,
+bool host_enter_realm_execute(uint8_t cmd, struct realm *realm_ptr,
 		int test_exit_reason, unsigned int rec_num)
 {
 	u_register_t exit_reason = RMI_EXIT_INVALID;
 	unsigned int host_call_result = TEST_RESULT_FAIL;
 
-	if (rec_num >= realm.rec_count) {
+	if (realm_ptr == NULL) {
+		return false;
+	}
+
+	if (rec_num >= realm_ptr->rec_count) {
 		ERROR("Invalid Rec Count\n");
 		return false;
 	}
 	host_shared_data_set_realm_cmd(cmd, rec_num);
-	if (!host_enter_realm(&exit_reason, &host_call_result, rec_num)) {
+	if (!host_enter_realm(realm_ptr, &exit_reason, &host_call_result, rec_num)) {
 		return false;
-	}
-
-	if (realm_ptr != NULL) {
-		*realm_ptr = &realm;
 	}
 
 	if ((exit_reason == RMI_EXIT_HOST_CALL) && (host_call_result == TEST_RESULT_SUCCESS)) {
