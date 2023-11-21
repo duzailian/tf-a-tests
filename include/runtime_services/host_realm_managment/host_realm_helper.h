@@ -16,13 +16,15 @@ bool host_create_realm_payload(u_register_t realm_payload_adr,
 		u_register_t realm_pages_size,
 		u_register_t feature_flag,
 		const u_register_t *rec_flag,
-		unsigned int rec_count);
-bool host_create_shared_mem(
+		unsigned int rec_count,
+		struct realm *realm_ptr);
+bool host_create_shared_mem(struct realm *realm_ptr,
 		u_register_t ns_shared_mem_adr,
 		u_register_t ns_shared_mem_size);
-bool host_destroy_realm(void);
-void host_rec_send_sgi(unsigned int sgi, unsigned int rec_num);
-bool host_enter_realm_execute(uint8_t cmd, struct realm **realm_ptr,
+bool host_destroy_realm(struct realm *realm_ptr);
+void host_rec_send_sgi(struct realm *realm_ptr,
+		unsigned int sgi, unsigned int rec_num);
+bool host_enter_realm_execute(uint8_t cmd, struct realm *realm_ptr,
 		int test_exit_reason, unsigned int rec_num);
 test_result_t host_cmp_result(void);
 void realm_print_handler(unsigned int rec_num);
