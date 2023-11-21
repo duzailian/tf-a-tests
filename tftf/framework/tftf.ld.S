@@ -69,6 +69,13 @@ SECTIONS
         __REALM_POOL_END__ = .;
     } >RAM
 
+    /* Memory pool2 for Realm payload tests. */
+    realm_pool2 (NOLOAD)  : ALIGN(PAGE_SIZE) {
+        __REALM_POOL_START2__ = .;
+        . = __REALM_POOL_START2__ + NS_REALM_SHARED_MEM_SIZE + PAGE_POOL_MAX_SIZE;
+        __REALM_POOL_END2__ = .;
+    } >RAM
+
     stacks (NOLOAD) : ALIGN(16) {
         __STACKS_START__ = .;
         *(tftf_normal_stacks)

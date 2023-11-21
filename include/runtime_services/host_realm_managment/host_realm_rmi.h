@@ -516,6 +516,10 @@ enum realm_state {
 };
 
 struct realm {
+	bool realm_payload_created;
+	bool shared_mem_created;
+	unsigned short vmid;
+	u_register_t host_shared_data;
 	unsigned int rec_count;
 	u_register_t par_base;
 	u_register_t par_size;

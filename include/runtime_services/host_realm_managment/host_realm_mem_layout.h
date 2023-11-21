@@ -32,7 +32,15 @@
  * |                          |     | Shared Region             |
  * |                          |     | (NS_REALM_SHARED_MEM_SIZE)|
  * +--------------------------+     +---------------------------+
- *
+ * +--------------------------+     +---------------------------+
+ * |  Memory Pool2            |     | Heap Memory2              |
+ * | (NS_REALM_SHARED_MEM_SIZE|     | (PAGE_POOL_MAX_SIZE)      |
+ * |  + PAGE_POOL_MAX_SIZE)   | ==> |                           |
+ * |                          |     |                           |
+ * |                          |     +---------------------------+
+ * |                          |     | Shared Region             |
+ * |                          |     | (NS_REALM_SHARED_MEM_SIZE)|
+ * +--------------------------+     +---------------------------+*
  * Refer to tftf.lds for the layout.
  */
 
@@ -40,7 +48,9 @@
  /* Base address of each section */
  IMPORT_SYM(uintptr_t, __REALM_PAYLOAD_START__, REALM_IMAGE_BASE);
  IMPORT_SYM(uintptr_t, __REALM_POOL_START__, PAGE_POOL_BASE);
+ IMPORT_SYM(uintptr_t, __REALM_POOL_START2__, PAGE_POOL_BASE2);
  #define NS_REALM_SHARED_MEM_BASE	(PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE)
+ #define NS_REALM_SHARED_MEM_BASE2	(PAGE_POOL_BASE2 + PAGE_POOL_MAX_SIZE)
 #endif
 
 #ifdef ENABLE_REALM_PAYLOAD_TESTS
