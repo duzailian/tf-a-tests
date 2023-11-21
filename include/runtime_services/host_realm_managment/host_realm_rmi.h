@@ -503,6 +503,7 @@ enum realm_state {
 };
 
 struct realm {
+	u_register_t host_shared_data;
 	unsigned int rec_count;
 	u_register_t par_base;
 	u_register_t par_size;
@@ -524,6 +525,7 @@ struct realm {
 	uint8_t      pmu_num_ctrs;
 	bool payload_created;
 	bool shared_mem_created;
+	unsigned short vmid;
 	enum realm_state state;
 };
 
