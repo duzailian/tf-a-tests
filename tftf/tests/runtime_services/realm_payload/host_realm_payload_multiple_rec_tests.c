@@ -20,6 +20,8 @@
 #include <host_shared_data.h>
 
 static uint64_t is_secondary_cpu_on;
+static struct realm *realm_ptr;
+
 /*
  * Test tries to create max Rec
  * Enters all Rec from single CPU
@@ -37,7 +39,7 @@ test_result_t host_realm_multi_rec_single_cpu(void)
 			(u_register_t)(PAGE_POOL_MAX_SIZE +
 			NS_REALM_SHARED_MEM_SIZE),
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, MAX_REC_COUNT)) {
+			0UL, rec_flag, MAX_REC_COUNT, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
@@ -47,7 +49,7 @@ test_result_t host_realm_multi_rec_single_cpu(void)
 
 	for (unsigned int i = 0; i < MAX_REC_COUNT; i++) {
 		host_shared_data_set_host_val(i, HOST_ARG1_INDEX, 10U);
-		ret1 = host_enter_realm_execute(REALM_SLEEP_CMD, NULL,
+		ret1 = host_enter_realm_execute(REALM_SLEEP_CMD, realm_ptr,
 				RMI_EXIT_HOST_CALL, i);
 		if (!ret1) {
 			break;
@@ -96,7 +98,7 @@ test_result_t host_realm_multi_rec_psci_denied(void)
 			(u_register_t)(PAGE_POOL_MAX_SIZE +
 			NS_REALM_SHARED_MEM_SIZE),
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 3U)) {
+			0UL, rec_flag, 3U, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
@@ -104,7 +106,7 @@ test_result_t host_realm_multi_rec_psci_denied(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	ret1 = host_enter_realm_execute(REALM_MULTIPLE_REC_PSCI_DENIED_CMD, &realm_ptr,
+	ret1 = host_enter_realm_execute(REALM_MULTIPLE_REC_PSCI_DENIED_CMD, realm_ptr,
 			RMI_EXIT_PSCI, 0U);
 	run = (struct rmi_rec_run *)realm_ptr->run[0];
 
@@ -213,7 +215,8 @@ static test_result_t cpu_on_handler2(void)
 	is_secondary_cpu_on++;
 	spin_unlock(&secondary_cpu_lock);
 
-	ret = host_enter_realm_execute(REALM_LOOP_CMD, NULL, RMI_EXIT_IRQ, is_secondary_cpu_on);
+	ret = host_enter_realm_execute(REALM_LOOP_CMD, realm_ptr,
+			RMI_EXIT_IRQ, is_secondary_cpu_on);
 	if (!ret) {
 		return TEST_RESULT_FAIL;
 	}
@@ -238,7 +241,7 @@ test_result_t host_realm_multi_rec_exit_irq(void)
 			(u_register_t)(PAGE_POOL_MAX_SIZE +
 			NS_REALM_SHARED_MEM_SIZE),
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, rec_count)) {
+			0UL, rec_flag, rec_count, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(NS_REALM_SHARED_MEM_BASE,
@@ -248,7 +251,7 @@ test_result_t host_realm_multi_rec_exit_irq(void)
 
 	is_secondary_cpu_on = 0U;
 	my_mpidr = read_mpidr_el1() & MPID_MASK;
-	ret1 = host_enter_realm_execute(REALM_GET_RSI_VERSION, NULL, RMI_EXIT_HOST_CALL, 0U);
+	ret1 = host_enter_realm_execute(REALM_GET_RSI_VERSION, realm_ptr, RMI_EXIT_HOST_CALL, 0U);
 	for_each_cpu(cpu_node) {
 		other_mpidr = tftf_get_mpidr_from_node(cpu_node);
 		if (other_mpidr == my_mpidr) {

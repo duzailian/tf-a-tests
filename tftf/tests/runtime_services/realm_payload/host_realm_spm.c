@@ -25,6 +25,7 @@ static bool secure_mailbox_initialised;
 
 static fpu_state_t ns_fpu_state_write;
 static fpu_state_t ns_fpu_state_read;
+static struct realm *realm_ptr;
 
 typedef enum security_state {
 	NONSECURE_WORLD = 0U,
@@ -59,7 +60,7 @@ static test_result_t init_realm(void)
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)(PAGE_POOL_MAX_SIZE +
 			NS_REALM_SHARED_MEM_SIZE),
-			(u_register_t)PAGE_POOL_MAX_SIZE, 0UL, rec_flag, 1U)) {
+			(u_register_t)PAGE_POOL_MAX_SIZE, 0UL, rec_flag, 1U, &realm_ptr)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -120,7 +121,7 @@ static bool fpu_cmp_sec(void)
 /* Send request to Realm to fill FPU/SIMD regs with realm template values */
 static bool fpu_fill_rl(void)
 {
-	if (!host_enter_realm_execute(REALM_REQ_FPU_FILL_CMD, NULL, RMI_EXIT_HOST_CALL, 0U)) {
+	if (!host_enter_realm_execute(REALM_REQ_FPU_FILL_CMD, realm_ptr, RMI_EXIT_HOST_CALL, 0U)) {
 		ERROR("%s failed %d\n", __func__, __LINE__);
 		return false;
 	}
@@ -130,7 +131,7 @@ static bool fpu_fill_rl(void)
 /* Send request to Realm to compare FPU/SIMD regs with previous realm template values */
 static bool fpu_cmp_rl(void)
 {
-	if (!host_enter_realm_execute(REALM_REQ_FPU_CMP_CMD, NULL, RMI_EXIT_HOST_CALL, 0U)) {
+	if (!host_enter_realm_execute(REALM_REQ_FPU_CMP_CMD, realm_ptr, RMI_EXIT_HOST_CALL, 0U)) {
 		ERROR("%s failed %d\n", __func__, __LINE__);
 		return false;
 	}
@@ -180,7 +181,6 @@ static bool fpu_cmp_rl(void)
  */
 test_result_t host_realm_sec_interrupt_can_preempt_rl(void)
 {
-	struct realm *realm_ptr;
 	struct ffa_value ret_values;
 	test_result_t res;
 
@@ -220,7 +220,7 @@ test_result_t host_realm_sec_interrupt_can_preempt_rl(void)
 	 * timer triggers during this time.
 	 */
 	host_shared_data_set_host_val(0U, HOST_ARG1_INDEX, REALM_TIME_SLEEP);
-	host_enter_realm_execute(REALM_SLEEP_CMD, &realm_ptr, RMI_EXIT_FIQ, 0U);
+	host_enter_realm_execute(REALM_SLEEP_CMD, realm_ptr, RMI_EXIT_FIQ, 0U);
 
 	/*
 	 * Check if Realm exit reason is FIQ.
