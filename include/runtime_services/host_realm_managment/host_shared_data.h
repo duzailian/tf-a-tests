@@ -9,6 +9,7 @@
 
 #include <stdint.h>
 #include <spinlock.h>
+#include <host_realm_rmi.h>
 
 #define MAX_BUF_SIZE		10240U
 #define MAX_DATA_SIZE		5U
@@ -86,17 +87,19 @@ enum host_call_cmd {
 /*
  * Return shared buffer pointer mapped as host_shared_data_t structure
  */
-host_shared_data_t *host_get_shared_structure(unsigned int rec_num);
+host_shared_data_t *host_get_shared_structure(struct realm *realm_ptr, unsigned int rec_num);
 
 /*
  * Set data to be shared from Host to realm
  */
-void host_shared_data_set_host_val(unsigned int rec_num, uint8_t index, u_register_t val);
+void host_shared_data_set_host_val(struct realm *realm_ptr,
+		unsigned int rec_num, uint8_t index, u_register_t val);
 
 /*
  * Set command to be send from Host to realm
  */
-void host_shared_data_set_realm_cmd(uint8_t cmd, unsigned int rec_num);
+void host_shared_data_set_realm_cmd(struct realm *realm_ptr, uint8_t cmd,
+		unsigned int rec_num);
 
 
 /****************************************
