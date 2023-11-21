@@ -10,6 +10,14 @@
 #include <host_realm_rmi.h>
 #include <tftf_lib.h>
 
+bool host_prepare_realm_payload(u_register_t realm_payload_adr,
+		u_register_t plat_mem_pool_adr,
+		u_register_t plat_mem_pool_size,
+		u_register_t realm_pages_size,
+		u_register_t feature_flag,
+		const u_register_t *rec_flag,
+		unsigned int rec_count,
+		struct realm **realm_ptr);
 bool host_create_realm_payload(u_register_t realm_payload_adr,
 		u_register_t plat_mem_pool_adr,
 		u_register_t plat_mem_pool_size,
