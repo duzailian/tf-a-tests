@@ -1,0 +1,187 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e1722ef_6fb6b1a0",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-23T12:05:53Z",
+      "side": 1,
+      "message": "I think by having a large pool and calculating the layout according with a realm ID or similar might make this more scalable in the future?",
+      "revId": "29420015b972b1e25ec813f8e7449f44a3fae397",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7de41b9c_d2a170fe",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-23T12:05:53Z",
+      "side": 1,
+      "message": "nit: I think we can simplify the naming by removing the \u0027realm_\u0027 prefix here. Feels redundant to me.",
+      "range": {
+        "startLine": 519,
+        "startChar": 6,
+        "endLine": 519,
+        "endChar": 12
+      },
+      "revId": "29420015b972b1e25ec813f8e7449f44a3fae397",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6edf5b7_5f203281",
+        "filename": "tftf/framework/tftf.ld.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-23T12:05:53Z",
+      "side": 1,
+      "message": "I think it would be more scalable to combine the memory pools altogether and calculate the start address depending on the Realm ID (or similar)",
+      "revId": "29420015b972b1e25ec813f8e7449f44a3fae397",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f44b5341_03baf817",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-23T12:05:53Z",
+      "side": 1,
+      "message": "should we assert that realm_ptr is not NULL?",
+      "range": {
+        "startLine": 46,
+        "startChar": 39,
+        "endLine": 46,
+        "endChar": 48
+      },
+      "revId": "29420015b972b1e25ec813f8e7449f44a3fae397",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28155b31_1b92030d",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-23T12:05:53Z",
+      "side": 1,
+      "message": "plat_mem_pool_addr",
+      "range": {
+        "startLine": 137,
+        "startChar": 9,
+        "endLine": 137,
+        "endChar": 27
+      },
+      "revId": "29420015b972b1e25ec813f8e7449f44a3fae397",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f84cf968_149730d7",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-23T12:05:53Z",
+      "side": 1,
+      "message": "nit: Leave a line before comments for better readability",
+      "revId": "29420015b972b1e25ec813f8e7449f44a3fae397",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28350ba5_3f4a9958",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-23T12:05:53Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be inside the \u0027if\u0027 block and only be made \u0027false\u0027 when the realm has been effectively destroyed?",
+      "revId": "29420015b972b1e25ec813f8e7449f44a3fae397",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d93b3dff_708ff2a0",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_shared_data.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-23T12:05:53Z",
+      "side": 1,
+      "message": "Address/Remove?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 35
+      },
+      "revId": "29420015b972b1e25ec813f8e7449f44a3fae397",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de622e48_f0f6c801",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_shared_data.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2023-11-23T12:05:53Z",
+      "side": 1,
+      "message": "Should we assert that realm_ptr is not NULL?",
+      "range": {
+        "startLine": 26,
+        "startChar": 60,
+        "endLine": 26,
+        "endChar": 69
+      },
+      "revId": "29420015b972b1e25ec813f8e7449f44a3fae397",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
