@@ -52,6 +52,24 @@
       "parentUuid": "58215fa3_00c2d477",
       "revId": "c5316b374dbda6ce4ed3536bf70bbf73b9c5dfe2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75322466_34764534",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-24T14:56:33Z",
+      "side": 1,
+      "message": "Could you make the function receive all the values it needs to fulfill its purpose through the arguments and place it in ffa_helpers.h?",
+      "parentUuid": "a388359a_632e5f0d",
+      "revId": "c5316b374dbda6ce4ed3536bf70bbf73b9c5dfe2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
