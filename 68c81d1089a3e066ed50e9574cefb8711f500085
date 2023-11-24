@@ -16,6 +16,24 @@
       "message": "descriptive commit body",
       "revId": "68c81d1089a3e066ed50e9574cefb8711f500085",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34f37848_2dad2023",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 42
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-24T16:11:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0748d43_1c595917",
+      "revId": "68c81d1089a3e066ed50e9574cefb8711f500085",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
