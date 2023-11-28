@@ -115,6 +115,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8645bb56_efc03cec",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T17:11:11Z",
+      "side": 1,
+      "message": "I guess this is local to the file and used within the local scope, I dont have any opinion either way. I guess these kind of operations are traditionally macros in linux kernel and hence the pattern here (eg: spin_lock_irqsave ). Will leave to this to Arun\u0027s preference.",
+      "parentUuid": "700f469f_7cc2860a",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 0
+      },
+      "revId": "f51674733d3c218fe35a7ce013d32ffeb107e3d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2731e476_96174f60",
         "filename": "lib/extensions/sve/aarch64/sve.c",
         "patchSetId": 11
@@ -244,6 +268,30 @@
       "side": 1,
       "message": "\u003e Why do we directly associate the SVE hint bit passed through SMC to the trap control?\n\nThanks for your comments.\n\nThe previous design used a global array of sve hint flag and indexed using the cpu id. This had dependencies on platform macros and helpers. We wanted to remove platform dependencies in realm payload. So the current design removes the global array and uses the SVE field in control register to represent SVE hint bit. \n\nOn a SVE capable CPU, if SVE is disabled in control register then SVE hint bit set to 1 else set to 0. If the CPU do not support SVE, then sve hint bit is set to 0.\n\n\u003e As we can have traps disabled and SVE hint bit set OR not set?\n\nWith the new logic, we can\u0027t have traps disabled and SVE hint bit set combination.",
       "parentUuid": "e15b9838_03a5f573",
+      "range": {
+        "startLine": 63,
+        "startChar": 2,
+        "endLine": 65,
+        "endChar": 33
+      },
+      "revId": "f51674733d3c218fe35a7ce013d32ffeb107e3d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9846527_d31e4a4c",
+        "filename": "lib/smc/aarch64/smc.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T17:11:11Z",
+      "side": 1,
+      "message": "I  agree, there is no testing requirement to keep SVE enabled and SVE hint bit set. So this coupling seems logical. If there is a future requirement to decouple, we can do the necessary change.",
+      "parentUuid": "41689291_67cd66c1",
       "range": {
         "startLine": 63,
         "startChar": 2,
