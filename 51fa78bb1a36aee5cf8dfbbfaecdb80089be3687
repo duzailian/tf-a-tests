@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c354d9c5_3570a69e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T12:12:14Z",
+      "side": 1,
+      "message": "Give reasoning and also capitalize this.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 1
+      },
+      "revId": "51fa78bb1a36aee5cf8dfbbfaecdb80089be3687",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0f2c3767_7b04505e",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2
