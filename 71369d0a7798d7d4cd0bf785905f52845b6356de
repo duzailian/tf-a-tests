@@ -118,6 +118,30 @@
       },
       "revId": "71369d0a7798d7d4cd0bf785905f52845b6356de",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7ad51ac_10d29f4e",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T17:20:04Z",
+      "side": 1,
+      "message": "Or the other alternative is introduce another tftf helper \"tftf_smc_base()\" just for the purpose of this failing case and once hafnium fixes the issue, this can be removed. \n\n\nPlease let us know of your preference.",
+      "parentUuid": "cd7f1aba_ebc2153b",
+      "range": {
+        "startLine": 259,
+        "startChar": 1,
+        "endLine": 259,
+        "endChar": 40
+      },
+      "revId": "71369d0a7798d7d4cd0bf785905f52845b6356de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
