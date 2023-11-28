@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24295b63_a075fc9b",
+        "filename": "realm/realm_exception_report.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T17:18:11Z",
+      "side": 1,
+      "message": "perhaps HOST_CALL with FAILURE ?",
+      "range": {
+        "startLine": 47,
+        "startChar": 1,
+        "endLine": 49,
+        "endChar": 2
+      },
+      "revId": "0879e76b5e3df707481d714390b7ce91f0fdfe2c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
