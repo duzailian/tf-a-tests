@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffa0e2b6_dc7786ef",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T14:38:33Z",
+      "side": 1,
+      "message": "Need a description of the test case.",
+      "revId": "661248ac00da64c7e8238552e1d0464fdabdc71d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28d43c5a_521532ba",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T14:38:33Z",
+      "side": 1,
+      "message": "need to handle the else case for the above if()\n\nOr follow the pattern for checks above where in the failure is checked and realm is destroyed in fail case.",
+      "revId": "661248ac00da64c7e8238552e1d0464fdabdc71d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20154518_82dc7148",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T14:38:33Z",
+      "side": 1,
+      "message": "didnt see the need for RIPAS_CHANGE call here, couldn\u0027t the realm access the destroyed IPA and take an instr abort ?",
+      "revId": "661248ac00da64c7e8238552e1d0464fdabdc71d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
