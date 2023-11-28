@@ -94,6 +94,30 @@
       },
       "revId": "71369d0a7798d7d4cd0bf785905f52845b6356de",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd7f1aba_ebc2153b",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-28T17:17:25Z",
+      "side": 1,
+      "message": "\u003e ... This is a platform specific SMC call and not an FF-A ABI.\n\nI had to add this fix to progress on SVE hint bit support patches. As with the SVE hint support, tftf_smc will set SMC.FID[16] to 1 if CPU supports SVE and SVE traps are set in CPTR_EL2/CPACR_EL1 register to denote absence of live sve state.\n\nUsing tftf_smc, this failure is seen\n\n\u003e Executing \u0027Test ESPI Secure interrupt handling\u0027\nNOTICE: SMC 0x82010100 attempted from VM 0x8001, blocked\u003d1\nERROR:   Interrupt 5000 not serviced by SP\n  TEST COMPLETE                                                 Failed\n\nNow it looks like the best place to fix this is in Hafnium, to discard sve hint bit as part of function identification.\n\n``` c\n+++ b/src/arch/aarch64/hypervisor/handler.c\n@@ -829,6 +829,13 @@ static struct vcpu *smc_handler(struct vcpu *vcpu)\n       struct ffa_value args \u003d arch_regs_get_args(\u0026vcpu-\u003eregs);\n       struct vcpu *next \u003d NULL;\n\n+       /*\n+        * Discard SVE hint bit from function identification. We don\u0027t have to\n+        * preserve this flag as Secure partitions do not support SVE.\n+        */\n+       args.func \u0026\u003d ~(1 \u003c\u003c 16);\n+\n       if (hvc_smc_handler(args, vcpu, \u0026next)) {\n\n``` c\n\nLet me know your thoughts?",
+      "parentUuid": "b3f26094_7af400db",
+      "range": {
+        "startLine": 259,
+        "startChar": 1,
+        "endLine": 259,
+        "endChar": 40
+      },
+      "revId": "71369d0a7798d7d4cd0bf785905f52845b6356de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
