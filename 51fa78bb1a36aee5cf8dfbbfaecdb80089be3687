@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f2c3767_7b04505e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T12:11:43Z",
+      "side": 1,
+      "message": "Would be good to state the reasoning for the change in the commit message.",
+      "revId": "51fa78bb1a36aee5cf8dfbbfaecdb80089be3687",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1be7ba58_6d5b66d1",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T12:11:43Z",
+      "side": 1,
+      "message": "Take *realm_ptr as input from caller and use that to create the realm.",
+      "revId": "51fa78bb1a36aee5cf8dfbbfaecdb80089be3687",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10badfc4_b55321ea",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T12:11:43Z",
+      "side": 1,
+      "message": "Need some way for the helpers to know that the `realm` struct is initialized correctly, We could use a flag after create() to ensure this. The flag can be reset after destroy(). \n\nBtw, it would be good to have a test to create -\u003e run -\u003e destroy -\u003e create() --\u003e .. \n(iterate once).",
+      "revId": "51fa78bb1a36aee5cf8dfbbfaecdb80089be3687",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
