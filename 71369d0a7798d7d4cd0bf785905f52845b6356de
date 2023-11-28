@@ -183,6 +183,30 @@
       },
       "revId": "71369d0a7798d7d4cd0bf785905f52845b6356de",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1c42250_abd7a812",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T21:06:45Z",
+      "side": 1,
+      "message": "From SMCCCv1.3:\nHint bit denoting the absence of SVE specific live state.\nIf set to 1, the caller asserts that the registers P0-P15, FFR and the bits with\nindex greater than 127 in the Z0-Z31 registers do not contain any live state.\nThis bit is not part of the function identification. \n\nThe SMCCC implementation must disregard this bit and consider it to be 0 for the purpose of function identification.\n\n\nBefore SMCCCv1.3:\nMust be zero (MBZ)\n\nSo , one could say that it is not wrong for SMC calls on a SMCCCv1.3+ complaint system to set the SVE hint bit even if they dont support SVE.",
+      "parentUuid": "5e0fdbff_03291a08",
+      "range": {
+        "startLine": 259,
+        "startChar": 1,
+        "endLine": 259,
+        "endChar": 40
+      },
+      "revId": "71369d0a7798d7d4cd0bf785905f52845b6356de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
