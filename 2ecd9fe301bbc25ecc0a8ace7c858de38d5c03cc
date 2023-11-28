@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "558996a4_17abbed3",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 58
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-11-28T17:19:21Z",
+      "side": 1,
+      "message": "Should be 0",
+      "range": {
+        "startLine": 293,
+        "startChar": 55,
+        "endLine": 293,
+        "endChar": 63
+      },
+      "revId": "2ecd9fe301bbc25ecc0a8ace7c858de38d5c03cc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "308fe654_2949e2d8",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 58
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-11-28T17:19:21Z",
+      "side": 1,
+      "message": "Is this meant to be a loop?",
+      "range": {
+        "startLine": 680,
+        "startChar": 1,
+        "endLine": 680,
+        "endChar": 16
+      },
+      "revId": "2ecd9fe301bbc25ecc0a8ace7c858de38d5c03cc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
