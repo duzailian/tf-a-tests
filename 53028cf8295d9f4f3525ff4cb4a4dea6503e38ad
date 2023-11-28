@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e613b313_1c49cb44",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-28T14:04:47Z",
+      "side": 1,
+      "message": "create a helper macro for this.",
+      "range": {
+        "startLine": 652,
+        "startChar": 19,
+        "endLine": 654,
+        "endChar": 31
+      },
+      "revId": "53028cf8295d9f4f3525ff4cb4a4dea6503e38ad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
