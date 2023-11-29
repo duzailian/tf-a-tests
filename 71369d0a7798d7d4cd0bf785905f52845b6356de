@@ -207,6 +207,30 @@
       },
       "revId": "71369d0a7798d7d4cd0bf785905f52845b6356de",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85ec9c4f_b3c21e49",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-11-29T09:18:56Z",
+      "side": 1,
+      "message": "Generally agree with the above, we\u0027ll add an Hafnium fix for cleanliness.\nHowever, I believe there is an unclear assumption about the coupling of the SMC hint bit value to the SVE trap state.\nBeyond the debatable assumption, this creates an unnecessary overhead within secure partitions for each SMC call (SVE feature should always show as disabled).\nCurrently the emulated SVE feature id returns as enabled (fixed in the Hafnium SME patch stack under review) and hence as a side effect because of the coupling the SMC hint bit is set and triggers the Hafnium error return that Arun mentioned.\nAs an alternative I suggested that this overhead is only added to the TFTF image (and perhaps to Realm payload is necessary) by enclosing it with an IMAGE_TFTF condition.",
+      "parentUuid": "c1c42250_abd7a812",
+      "range": {
+        "startLine": 259,
+        "startChar": 1,
+        "endLine": 259,
+        "endChar": 40
+      },
+      "revId": "71369d0a7798d7d4cd0bf785905f52845b6356de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
