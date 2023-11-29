@@ -348,6 +348,30 @@
       },
       "revId": "f51674733d3c218fe35a7ce013d32ffeb107e3d0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd7f25c4_0943a7bb",
+        "filename": "lib/smc/aarch64/smc.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T12:29:19Z",
+      "side": 1,
+      "message": "Hmm, the SVE helpers need to have some assumptions to build a useful abstraction for the tests to use. Relying on the Trap status of SVE is a useful way of figuring out the test intent (btw, the linux kernel also does this coupling). So as such the coupling is not a problem.\n\nThe trouble is that the abstraction also tries to figure whether SVE is present or not and also tries to enable SVE hint based the detection. This is detection is architectural.\n\nBoth TFTF and Realm payload are able to do the right detection architecturally and hence have the abstraction work seamlessly. \n\nAlternate designs has use of per-CPU arrays and indexing which does not work work in Realm case as PLATFORM_CORE_COUNT and my_core_pos() do not work for Realm. \n\nOne more alternative was considered wherein SVE hint was passed as an argument but this required invasive changes to all SMC calls in TFTF and associated wrappers.\n\nThis abstraction works well based on assumptions which are architectural and is known precedence in other software environments.\n\nNow the reason why the assumptions break down for SPs is because the architectural detection does not work in SPs (SVE feature is not masked by Hafnium) . The only case this SMC is used for testing of platform specific API and rest of FFA APIs go via specific ffa_smc() helper.\n\nGiven that the current abstraction works for the current TFTF test excluding the exception as mentioned above, I think we should favor the current solution and come up with a more elaborate design if we have a need to test SVE hint bit wherein the SVE traps are enabled (which I do not see).\n\nThe tests in TFTF are trying to check",
+      "parentUuid": "9ae7ecb0_e967d735",
+      "range": {
+        "startLine": 63,
+        "startChar": 2,
+        "endLine": 65,
+        "endChar": 33
+      },
+      "revId": "f51674733d3c218fe35a7ce013d32ffeb107e3d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }

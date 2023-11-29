@@ -68,6 +68,30 @@
       },
       "revId": "c623b9a3f3849441f1deca10449723dafe776c8d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0386a2b1_93d41acc",
+        "filename": "lib/smc/aarch64/smc.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-11-29T12:29:19Z",
+      "side": 1,
+      "message": "Please see my suggestion in the previous reply. The solution would be for the platform FFA SP call to use a different wrapper.",
+      "parentUuid": "ec72be20_7f406e2c",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 2
+      },
+      "revId": "c623b9a3f3849441f1deca10449723dafe776c8d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
