@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5730909a_0ecc8e56",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-29T13:34:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34827f0e_73f4f816",
+      "range": {
+        "startLine": 143,
+        "startChar": 0,
+        "endLine": 144,
+        "endChar": 11
+      },
+      "revId": "71d91c95f27ad756bc6d63072814833dc8b30d28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "afa0ffb5_6c815953",
@@ -64,6 +88,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc1b7ee3_580e9fed",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-29T13:34:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "afa0ffb5_6c815953",
+      "range": {
+        "startLine": 614,
+        "startChar": 0,
+        "endLine": 615,
+        "endChar": 12
+      },
+      "revId": "71d91c95f27ad756bc6d63072814833dc8b30d28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3f919433_1a797853",
@@ -77,6 +125,30 @@
       "writtenOn": "2023-11-28T18:03:26Z",
       "side": 1,
       "message": "These function names aren\u0027t clear enough on how they are different. Both are initialising a receiver just from different values. Maybe \ninit_receiver\nand\ninit_receiver_from_mem_func\nWould be better, is init_access every used though?",
+      "range": {
+        "startLine": 630,
+        "startChar": 25,
+        "endLine": 630,
+        "endChar": 38
+      },
+      "revId": "71d91c95f27ad756bc6d63072814833dc8b30d28",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba3a60fc_a17457a7",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 630,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-11-29T13:34:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f919433_1a797853",
       "range": {
         "startLine": 630,
         "startChar": 25,
