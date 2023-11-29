@@ -45,6 +45,63 @@
       },
       "revId": "4e8c925b4abecf275476149d359110453ac04fb7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ec171d5_6633b65b",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 53
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-11-29T10:43:12Z",
+      "side": 1,
+      "message": "Don\u0027t think receivers and receiver_count are needed for hypervisor retrieve requests. There should be no receivers if I understand the spec correctly",
+      "range": {
+        "startLine": 276,
+        "startChar": 13,
+        "endLine": 276,
+        "endChar": 27
+      },
+      "revId": "4e8c925b4abecf275476149d359110453ac04fb7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4941419d_9ab3f37c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 53
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-11-29T10:43:12Z",
+      "side": 1,
+      "message": "Move to new line",
+      "revId": "4e8c925b4abecf275476149d359110453ac04fb7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c7f6259_94e4b35b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 53
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-11-29T10:43:12Z",
+      "side": 1,
+      "message": "New line",
+      "revId": "4e8c925b4abecf275476149d359110453ac04fb7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
