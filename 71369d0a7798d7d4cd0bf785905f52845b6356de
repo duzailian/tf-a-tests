@@ -255,6 +255,30 @@
       },
       "revId": "71369d0a7798d7d4cd0bf785905f52845b6356de",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67d9f75e_b20e9eeb",
+        "filename": "spm/cactus/cactus_tests/cactus_test_interrupts.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-11-29T20:23:37Z",
+      "side": 1,
+      "message": "\u003e Shall we submit a rework of the patch wherein this API calls a tftf_smc_core() ? [1]\n\u003e I think the solution here is for cactus framework to have its own tftf_smc for Platform calls. [2]\n\nI think we agree with that we need a separate helper.\nDo you mean that [1] former tftf_smc would be renamed tftf_smc_core, and tftf_smc as in current change would call tftf_smc_core? cactus partitions would use tftf_smc_core in place of tftf_smc?\n\nOr other option [2], copy former tftf_smc locally into cactus framework omitting the logic around SVE hint bit and traps?\n\nEither way is ok to me.",
+      "parentUuid": "149ae040_1f9f9d8e",
+      "range": {
+        "startLine": 259,
+        "startChar": 1,
+        "endLine": 259,
+        "endChar": 40
+      },
+      "revId": "71369d0a7798d7d4cd0bf785905f52845b6356de",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
