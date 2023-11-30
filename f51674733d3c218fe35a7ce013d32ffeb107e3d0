@@ -90,6 +90,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "21f17739_bc766d94",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-30T16:22:45Z",
+      "side": 1,
+      "message": "As discussed earlier in this review, using \u0027#if IMAGE_TFTF\u0027 will make this logic only work for NS-EL2 payload and we need this logic for Realm payload as well.",
+      "parentUuid": "092d2372_45d029b3",
+      "revId": "f51674733d3c218fe35a7ce013d32ffeb107e3d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "700f469f_7cc2860a",

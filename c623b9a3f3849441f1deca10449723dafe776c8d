@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6355c181_960df999",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-30T16:22:45Z",
+      "side": 1,
+      "message": "\u003e nit: remove unneeded space here.\n\nDone. removed space and aligned the line.",
+      "parentUuid": "1b061b76_71edc378",
+      "range": {
+        "startLine": 395,
+        "startChar": 1,
+        "endLine": 395,
+        "endChar": 2
+      },
+      "revId": "c623b9a3f3849441f1deca10449723dafe776c8d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8d872613_79f83cfe",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-11-29T09:12:39Z",
       "side": 1,
       "message": "Is this mandated by SMCCC?",
+      "range": {
+        "startLine": 501,
+        "startChar": 1,
+        "endLine": 503,
+        "endChar": 19
+      },
+      "revId": "c623b9a3f3849441f1deca10449723dafe776c8d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "83e5b0df_7014e37c",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-30T16:22:45Z",
+      "side": 1,
+      "message": "\u003e Is this mandated by SMCCC?\n\nSMCCC doesn\u0027t mention to consider SVE hint bit when CPU is in streaming sve mode. PSTATE.SM provides that hint is SVE is used in streaming mode.",
+      "parentUuid": "8d872613_79f83cfe",
       "range": {
         "startLine": 501,
         "startChar": 1,
@@ -132,6 +180,30 @@
       "side": 1,
       "message": "Yes. or export the asm helper for SP to use.",
       "parentUuid": "675e1345_d254abb5",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 2
+      },
+      "revId": "c623b9a3f3849441f1deca10449723dafe776c8d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78d8f326_d5b8cb7b",
+        "filename": "lib/smc/aarch64/smc.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-30T16:22:45Z",
+      "side": 1,
+      "message": "\u003e Yes. or export the asm helper for SP to use.\n\nExported existing asm_tftf_smc64 and used it in cactus to make platform SiP call.",
+      "parentUuid": "e19e42b5_7efbcdc3",
       "range": {
         "startLine": 99,
         "startChar": 0,

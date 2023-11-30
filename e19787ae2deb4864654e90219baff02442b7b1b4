@@ -22,6 +22,30 @@
       },
       "revId": "e19787ae2deb4864654e90219baff02442b7b1b4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69b7cf15_49ea9083",
+        "filename": "lib/extensions/sve/aarch64/sve.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-30T16:22:45Z",
+      "side": 1,
+      "message": "\u003e Why return `uint64_t` instead of `bool`?\n\nAs mentioned in the comment, sve_z_regs_compare returns a non-zero value on error. For each bit set in the error value corresponds to the Zn register that failed comparison.",
+      "parentUuid": "6241615a_091572a8",
+      "range": {
+        "startLine": 489,
+        "startChar": 0,
+        "endLine": 489,
+        "endChar": 8
+      },
+      "revId": "e19787ae2deb4864654e90219baff02442b7b1b4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
