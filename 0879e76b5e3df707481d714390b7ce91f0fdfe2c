@@ -22,6 +22,30 @@
       },
       "revId": "0879e76b5e3df707481d714390b7ce91f0fdfe2c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d73a5cce_520d62cb",
+        "filename": "realm/realm_exception_report.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-11-30T17:00:32Z",
+      "side": 1,
+      "message": "\u003e perhaps HOST_CALL with FAILURE ?\n\nwfi should exit to host with RMI_EXIT_SYNC. Currently this is not trapped in HCR_EL2 in RMM. There is a fix pending for this exception. Let me know if we need to explicitly make a HOST_CALL to represent a unhandled exception in EL1?",
+      "parentUuid": "24295b63_a075fc9b",
+      "range": {
+        "startLine": 47,
+        "startChar": 1,
+        "endLine": 49,
+        "endChar": 2
+      },
+      "revId": "0879e76b5e3df707481d714390b7ce91f0fdfe2c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
