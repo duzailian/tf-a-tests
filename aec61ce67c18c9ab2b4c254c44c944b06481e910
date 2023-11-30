@@ -16,6 +16,24 @@
       "message": "The CI was failing to synchronise SPM repo.\nCheck the CI job:\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/55714/ has passed.",
       "revId": "aec61ce67c18c9ab2b4c254c44c944b06481e910",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b98025c_bcf2eefa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2023-11-30T21:50:28Z",
+      "side": 1,
+      "message": "https://ci.trustedfirmware.org/job/tf-a-ci-gateway/55749/\n\nCI job ran with \nhafnium patch: https://review.trustedfirmware.org/c/hafnium/hafnium/+/23713\ntf-a patch: https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/23854\nand this tf-a-tests patch\n\npassed",
+      "parentUuid": "d6772d4c_f56f7a31",
+      "revId": "aec61ce67c18c9ab2b4c254c44c944b06481e910",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
