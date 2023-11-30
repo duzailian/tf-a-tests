@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6772d4c_f56f7a31",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-11-30T15:58:40Z",
+      "side": 1,
+      "message": "The CI was failing to synchronise SPM repo.\nCheck the CI job:\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/55714/ has passed.",
+      "revId": "aec61ce67c18c9ab2b4c254c44c944b06481e910",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
