@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58dfee8a_0aa656e5",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2023-12-01T14:55:11Z",
+      "side": 1,
+      "message": "if (realm_exit_reason !\u003d RMI_EXIT_HOST_CALL) {\n\t\treturn true;\n\t} else if (host_call_result \u003d\u003d TEST_RESULT_SUCCESS) {\n\t\treturn true;\n\t}",
+      "revId": "566c6d1b15e179b61764b3a79abdbfe5958703e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
