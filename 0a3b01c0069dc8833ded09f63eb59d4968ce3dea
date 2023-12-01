@@ -1,0 +1,377 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c2fa557_92afaa5c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 62
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "Here the message is actually to the SPMC. The SPs are not involved in your tests. Their existence just permits the processing of the lend/share/donate operation within the SPMC.\nThe operation targets an SP as the receiver, but the message targets the SPMC.",
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c286db5c_b36cc07c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 62
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "Here you should state the message is form tftf target. Which is a kin to the hypervisor in the testing setup.",
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f7a8830_b1090bc7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 62
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "Reclaim doesn\u0027t have a \"message\", it is just an \"SMC Call\".\nHere sate:\n \"Invoke reclaim interface for SPMC to free ...\"",
+      "range": {
+        "startLine": 18,
+        "startChar": 11,
+        "endLine": 18,
+        "endChar": 26
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71bb867d_fef4f3f7",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "drop this comment, and add a proper doc comment to the function.\nSomething like:\n This function configures the memory region descriptors to fulfil the hypervisor retrieve request.\n\nUse the same comment style format that is seen in the other functions, next to the function signature.",
+      "range": {
+        "startLine": 310,
+        "startChar": 1,
+        "endLine": 311,
+        "endChar": 15
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d06cc03_def0f598",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "Before copying make sure the fragment can be fit inside out, by checking \"out_size\"",
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df268606_ffcd06f3",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "comment these lines with the intent.",
+      "range": {
+        "startLine": 327,
+        "startChar": 1,
+        "endLine": 327,
+        "endChar": 64
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6308bfae_173569bd",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "Could this be a copy to the whole fragment?\nInstead of being broken in two steps, with assert in the middle?",
+      "range": {
+        "startLine": 327,
+        "startChar": 1,
+        "endLine": 331,
+        "endChar": 71
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9970a61f_80ae523e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "/**",
+      "range": {
+        "startLine": 464,
+        "startChar": 0,
+        "endLine": 464,
+        "endChar": 2
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "585cd7e1_3ba943ac",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "curly brackets in a new line.",
+      "range": {
+        "startLine": 467,
+        "startChar": 66,
+        "endLine": 467,
+        "endChar": 67
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1519f5b3_74695009",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "put the curly brackets in a new line.",
+      "range": {
+        "startLine": 492,
+        "startChar": 33,
+        "endLine": 492,
+        "endChar": 35
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c610bec1_180b8671",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "likewise",
+      "range": {
+        "startLine": 557,
+        "startChar": 57,
+        "endLine": 557,
+        "endChar": 58
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1aa96099_98bbd4aa",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 576,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "/**",
+      "range": {
+        "startLine": 575,
+        "startChar": 0,
+        "endLine": 576,
+        "endChar": 2
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb84e830_3afc0557",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "use lower letters.\nIn these code bases capital are reserved for Macros.",
+      "range": {
+        "startLine": 588,
+        "startChar": 37,
+        "endLine": 588,
+        "endChar": 41
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e28aba2b_7612e8de",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "could panic, as this would be a bug in the test, rather than an actual test failure.",
+      "range": {
+        "startLine": 607,
+        "startChar": 2,
+        "endLine": 607,
+        "endChar": 7
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be7d101c_2bc5074a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "Declare at the top of the scope in which this is defined.",
+      "range": {
+        "startLine": 611,
+        "startChar": 25,
+        "endLine": 611,
+        "endChar": 39
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdf89cdc_c0b65880",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "Nitpick: Share/Lend/Donate",
+      "range": {
+        "startLine": 623,
+        "startChar": 4,
+        "endLine": 623,
+        "endChar": 9
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c00fac12_7174ca90",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:58:48Z",
+      "side": 1,
+      "message": "Curly brackets in the same line as the if statement.",
+      "range": {
+        "startLine": 650,
+        "startChar": 1,
+        "endLine": 650,
+        "endChar": 2
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
