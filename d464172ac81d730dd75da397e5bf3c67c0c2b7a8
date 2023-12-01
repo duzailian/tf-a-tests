@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d8fd912_f0c17d9c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-01T14:59:45Z",
+      "side": 1,
+      "message": "typo.\nI would prefer using the same naming as in the hafnium codebase.\nCould you use the name of the equivalent function?",
+      "range": {
+        "startLine": 7,
+        "startChar": 27,
+        "endLine": 7,
+        "endChar": 40
+      },
+      "revId": "d464172ac81d730dd75da397e5bf3c67c0c2b7a8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
