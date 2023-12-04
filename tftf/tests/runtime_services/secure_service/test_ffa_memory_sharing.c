@@ -9,6 +9,7 @@
 #include "cdefs.h"
 #include "ffa_helpers.h"
 #include "ffa_svc.h"
+#include "stddef_.h"
 #include "stdint.h"
 #include "utils_def.h"
 #include <debug.h>
@@ -192,6 +193,14 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 		register_custom_sync_exception_handler(data_abort_handler);
 	}
 
+	for (size_t i = 0; i < constituents_count; i++) {
+		VERBOSE("Sharing Address: %p\n", constituents[i].address);
+		ptr = (uint32_t *)constituents[i].address;
+		for (size_t j = 0; j < nr_words_to_write; j++) {
+			ptr[j] = mem_func;
+		}
+	}
+
 	handle = memory_init_and_send((struct ffa_memory_region *)mb.send,
 					MAILBOX_SIZE, SENDER, borrower,
 					constituents, constituents_count,
@@ -236,10 +245,13 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 
 			/*
 			 * Check that borrower used the memory as expected for this
-			 * test, after it has relinquished, and reclaiming memory
-			 * to the NWd.
+			 * test.
+			 * If the RME is supported, then the memory is not
+			 * expected to be preserved.
 			 */
-			if (!check_written_words(ptr, mem_func,
+			if (rme_supported == 0U &&
+			    !check_written_words(ptr,
+						 mem_func + 0xFFAU,
 						 nr_words_to_write)) {
 				ERROR("Fail because of state of memory.\n");
 				return TEST_RESULT_FAIL;
@@ -517,7 +529,8 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 	ptr = (uint32_t *)constituents[0].address;
 
 	/* Check that borrower used the memory as expected for this test. */
-	if (!check_written_words(ptr, FFA_MEM_LEND_SMC32, nr_words_to_write)) {
+	if (!check_written_words(ptr, FFA_MEM_LEND_SMC32 + 0xFFA,
+				 nr_words_to_write)) {
 		ERROR("Words written to shared memory, not as expected.\n");
 		return TEST_RESULT_FAIL;
 	}
