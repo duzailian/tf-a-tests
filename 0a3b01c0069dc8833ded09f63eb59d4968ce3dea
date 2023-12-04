@@ -35,6 +35,42 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "09350bb5_97ba6511",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 62
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-04T19:34:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c2fa557_92afaa5c",
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "201e4428_216d8226",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 62
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-04T19:34:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c286db5c_b36cc07c",
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1f7a8830_b1090bc7",
@@ -58,6 +94,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b5756ad_73beb7ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 62
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-04T19:34:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f7a8830_b1090bc7",
+      "range": {
+        "startLine": 18,
+        "startChar": 11,
+        "endLine": 18,
+        "endChar": 26
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "71bb867d_fef4f3f7",
@@ -71,6 +131,30 @@
       "writtenOn": "2023-12-01T14:58:48Z",
       "side": 1,
       "message": "drop this comment, and add a proper doc comment to the function.\nSomething like:\n This function configures the memory region descriptors to fulfil the hypervisor retrieve request.\n\nUse the same comment style format that is seen in the other functions, next to the function signature.",
+      "range": {
+        "startLine": 310,
+        "startChar": 1,
+        "endLine": 311,
+        "endChar": 15
+      },
+      "revId": "0a3b01c0069dc8833ded09f63eb59d4968ce3dea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b70510ba_7f4eb487",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 62
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-04T19:34:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71bb867d_fef4f3f7",
       "range": {
         "startLine": 310,
         "startChar": 1,
