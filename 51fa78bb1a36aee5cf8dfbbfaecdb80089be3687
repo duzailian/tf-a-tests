@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "15648197_4b54839b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-04T23:07:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c354d9c5_3570a69e",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 1
+      },
+      "revId": "51fa78bb1a36aee5cf8dfbbfaecdb80089be3687",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0f2c3767_7b04505e",
@@ -37,6 +61,24 @@
       "writtenOn": "2023-11-28T12:11:43Z",
       "side": 1,
       "message": "Would be good to state the reasoning for the change in the commit message.",
+      "revId": "51fa78bb1a36aee5cf8dfbbfaecdb80089be3687",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48c28a5b_329090ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-04T23:07:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f2c3767_7b04505e",
       "revId": "51fa78bb1a36aee5cf8dfbbfaecdb80089be3687",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -58,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6119c61c_6920beaa",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-04T23:07:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1be7ba58_6d5b66d1",
+      "revId": "51fa78bb1a36aee5cf8dfbbfaecdb80089be3687",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "10badfc4_b55321ea",
@@ -71,6 +131,24 @@
       "writtenOn": "2023-11-28T12:11:43Z",
       "side": 1,
       "message": "Need some way for the helpers to know that the `realm` struct is initialized correctly, We could use a flag after create() to ensure this. The flag can be reset after destroy(). \n\nBtw, it would be good to have a test to create -\u003e run -\u003e destroy -\u003e create() --\u003e .. \n(iterate once).",
+      "revId": "51fa78bb1a36aee5cf8dfbbfaecdb80089be3687",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75c47bd4_3b6a07d8",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-04T23:07:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10badfc4_b55321ea",
       "revId": "51fa78bb1a36aee5cf8dfbbfaecdb80089be3687",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
