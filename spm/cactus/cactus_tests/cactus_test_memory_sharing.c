@@ -11,6 +11,7 @@
 #include <ffa_helpers.h>
 #include <sp_helpers.h>
 #include "sp_tests.h"
+#include "spm_common.h"
 #include "stdint.h"
 #include <xlat_tables_defs.h>
 #include <lib/xlat_tables/xlat_tables_v2.h>
@@ -145,18 +146,52 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 
 	VERBOSE("Memory has been mapped\n");
 
-	/* Check that memory has been cleared by the SPMC before using it. */
-	if ((retrv_flags & FFA_MEMORY_REGION_FLAG_CLEAR) != 0U) {
-		VERBOSE("Check if memory has been cleared!\n");
-		for (uint32_t i = 0; i < composite->constituent_count; i++) {
-			ptr = (uint32_t *) composite->constituents[i].address;
-			for (uint32_t j = 0; j < words_to_write; j++) {
+	for (uint32_t i = 0; i < composite->constituent_count; i++) {
+		ptr = (uint32_t *) composite->constituents[i].address;
+
+		for (uint32_t j = 0; j < words_to_write; j++) {
+
+			/**
+			 * Check that memory has been cleared by the SPMC
+			 * before using it.
+			 */
+			if ((retrv_flags & FFA_MEMORY_REGION_FLAG_CLEAR) != 0U) {
+				VERBOSE("Check if memory has been cleared.\n");
 				if (ptr[i] != 0) {
 					/*
 					 * If it hasn't been cleared, shouldn't
 					 * be used.
 					 */
 					ERROR("Memory NOT cleared!\n");
+					cactus_mem_relinquish(composite,
+							      mb->send,
+							      handle, vm_id);
+					ffa_rx_release();
+					return cactus_error_resp(
+						vm_id, source,
+						CACTUS_ERROR_TEST);
+				}
+			} else {
+				/*
+				 * Only on FFA_MEM_SHARE from the NWd to SWd the
+				 * SP shall expect valid data in the memory.
+				 */
+				if (mem_func != FFA_MEM_SHARE_SMC32 ||
+				    !IS_SP_ID(m->sender)) {
+					continue;
+				}
+
+				VERBOSE("Check memory contents. Expect %u "
+					"words of %x\n",
+					words_to_write,
+					mem_func);
+
+				if (ptr[i] != mem_func) {
+					/*
+					 * If it hasn't been cleared, shouldn't
+					 * be used.
+					 */
+					ERROR("Memory content NOT as expected!\n");
 					cactus_mem_relinquish(composite,
 							      mb->send,
 							      handle, vm_id);
@@ -176,7 +211,7 @@ CACTUS_CMD_HANDLER(mem_send_cmd, CACTUS_MEM_SEND_CMD)
 	for (uint32_t i = 0; i < composite->constituent_count; i++) {
 		ptr = (uint32_t *) composite->constituents[i].address;
 		for (uint32_t j = 0; j < words_to_write; j++) {
-			ptr[j] = mem_func;
+			ptr[j] = mem_func + 0xFFA;
 		}
 	}
 
