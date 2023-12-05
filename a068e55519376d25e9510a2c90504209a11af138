@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a351dfcd_3d347fe7",
+        "filename": "smc_fuzz/include/sdei_fuzz_helper.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2023-12-05T18:31:39Z",
+      "side": 1,
+      "message": "minor nit \u0027{\u0027 should be in next new line ?",
+      "range": {
+        "startLine": 13,
+        "startChar": 69,
+        "endLine": 13,
+        "endChar": 70
+      },
+      "revId": "a068e55519376d25e9510a2c90504209a11af138",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b00c7d2_74cc48eb",
+        "filename": "smc_fuzz/include/tsp_fuzz_helper.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2023-12-05T18:31:39Z",
+      "side": 1,
+      "message": "nit: should be next new line?",
+      "range": {
+        "startLine": 13,
+        "startChar": 55,
+        "endLine": 13,
+        "endChar": 56
+      },
+      "revId": "a068e55519376d25e9510a2c90504209a11af138",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
