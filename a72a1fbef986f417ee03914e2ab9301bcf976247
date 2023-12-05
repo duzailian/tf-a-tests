@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6235d0fa_6bac9f82",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-12-05T09:56:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7f71206_318318d7",
+      "revId": "a72a1fbef986f417ee03914e2ab9301bcf976247",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3636a24d_32eda6f6",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-12-04T17:03:30Z",
       "side": 1,
       "message": "just curious, isn\u0027t this enforced by the linker script that the vector base address is properly aligned?",
+      "range": {
+        "startLine": 96,
+        "startChar": 1,
+        "endLine": 96,
+        "endChar": 6
+      },
+      "revId": "a72a1fbef986f417ee03914e2ab9301bcf976247",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce4dd9e5_860798af",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-12-05T09:56:13Z",
+      "side": 1,
+      "message": "\u003e just curious, isn\u0027t this enforced by the linker script that the vector base address is properly aligned?\n\nThe linker script doesn\u0027t enforces any alignment but the the macro \u0027vector_base\u0027 aligns \u0027realm_vector\u0027 to 2KB boundary. And macro vector_entry aligns each vector to 128 byte boundary.",
+      "parentUuid": "3636a24d_32eda6f6",
       "range": {
         "startLine": 96,
         "startChar": 1,
