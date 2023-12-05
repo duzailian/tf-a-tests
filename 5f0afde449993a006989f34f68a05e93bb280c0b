@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "214cb8b1_323f2638",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2023-12-05T13:30:49Z",
+      "side": 1,
+      "message": "\u003e \"Build Failed\n\u003e \n\u003e http://ci.trustedfirmware.org/job/tf-a-tftf-gerrit-tforg-l2/367/ \n\u003e FAILURE\"\n\nLooks like an CI infra issue\nhttps://ci.trustedfirmware.org/job/tf-a-builder/2915519/console\n\nThis run config failed:\n\"fvp tftf fip.tftf aemv8a.assymetric\"\n\n12:15:52 + cp -a -f /srv/shared/tf-a-tftf-gerrit-tforg-l2/367/spm /home/buildslave/workspace/tf-a-builder/spm\n12:21:56 cp: cannot create regular file \u0027/home/buildslave/workspace/tf-a-builder/spm/third_party/linux/drivers/gpu/drm/amd/include/vega10_ip_offset.h\u0027: No space left on device\n12:21:56 cp: cannot create regular file \u0027/home/buildslave/workspace/tf-a-builder/spm/third_party/linux/drivers/gpu/drm/amd/include/vi_structs.h\u0027: No space left on device\n12:21:56 cp: cannot create directory \u0027/home/buildslave/workspace/tf-a-builder/spm/third_party/linux/drivers/gpu/drm/amd/include/ivsrcid\u0027: No space left on device",
+      "revId": "5f0afde449993a006989f34f68a05e93bb280c0b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
