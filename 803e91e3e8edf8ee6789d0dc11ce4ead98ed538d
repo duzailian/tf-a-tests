@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "051b550c_98c5c91e",
+        "filename": "smc_fuzz/dts/top.dts",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-12-05T23:03:44Z",
+      "side": 1,
+      "message": "Does this specific top level bias has any significance on the output smc calls?",
+      "range": {
+        "startLine": 18,
+        "startChar": 2,
+        "endLine": 18,
+        "endChar": 14
+      },
+      "revId": "803e91e3e8edf8ee6789d0dc11ce4ead98ed538d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75b3d6c4_c5ff2afe",
+        "filename": "smc_fuzz/src/runtestfunction.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-12-05T23:03:44Z",
+      "side": 1,
+      "message": "nitpick: could you name the file helpers.c as I believe we might have to add more helpers in the future as the framework grows",
+      "revId": "803e91e3e8edf8ee6789d0dc11ce4ead98ed538d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47384620_735ccd42",
+        "filename": "smc_fuzz/src/runtestfunction.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-12-05T23:03:44Z",
+      "side": 1,
+      "message": "nitpick:\nInvoke the SMC call based on the function name specified.",
+      "revId": "803e91e3e8edf8ee6789d0dc11ce4ead98ed538d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
