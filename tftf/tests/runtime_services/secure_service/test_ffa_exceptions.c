@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include "ffa_helpers.h"
 #include <arch_helpers.h>
+#include "ffa_helpers.h"
 #include <cactus_test_cmds.h>
 #include <debug.h>
 #include <ffa_endpoints.h>
