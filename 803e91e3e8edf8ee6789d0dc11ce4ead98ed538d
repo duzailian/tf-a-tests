@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db06e908_c27831c4",
+        "filename": "smc_fuzz/dts/top.dts",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-12-06T21:25:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f59ec48c_3469045d",
+      "range": {
+        "startLine": 9,
+        "startChar": 52,
+        "endLine": 9,
+        "endChar": 54
+      },
+      "revId": "803e91e3e8edf8ee6789d0dc11ce4ead98ed538d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "17890b5c_96258b2a",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-12-06T13:20:33Z",
       "side": 1,
       "message": "Nit: Double space",
+      "range": {
+        "startLine": 10,
+        "startChar": 68,
+        "endLine": 10,
+        "endChar": 70
+      },
+      "revId": "803e91e3e8edf8ee6789d0dc11ce4ead98ed538d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4ed5fde_97d3933f",
+        "filename": "smc_fuzz/dts/top.dts",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-12-06T21:25:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17890b5c_96258b2a",
       "range": {
         "startLine": 10,
         "startChar": 68,
@@ -72,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "278f8e69_db5ac4db",
+        "filename": "smc_fuzz/dts/top.dts",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-12-06T21:25:29Z",
+      "side": 1,
+      "message": "Not in this case since it is the only node at the top level specified.  It will have significance with addition nodes are added.",
+      "parentUuid": "051b550c_98c5c91e",
+      "range": {
+        "startLine": 18,
+        "startChar": 2,
+        "endLine": 18,
+        "endChar": 14
+      },
+      "revId": "803e91e3e8edf8ee6789d0dc11ce4ead98ed538d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "75b3d6c4_c5ff2afe",
         "filename": "smc_fuzz/src/runtestfunction.c",
         "patchSetId": 4
@@ -83,6 +155,24 @@
       "writtenOn": "2023-12-05T23:03:44Z",
       "side": 1,
       "message": "nitpick: could you name the file helpers.c as I believe we might have to add more helpers in the future as the framework grows",
+      "revId": "803e91e3e8edf8ee6789d0dc11ce4ead98ed538d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6195051f_67bb2b26",
+        "filename": "smc_fuzz/src/runtestfunction.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-12-06T21:25:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75b3d6c4_c5ff2afe",
       "revId": "803e91e3e8edf8ee6789d0dc11ce4ead98ed538d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -100,6 +190,24 @@
       "writtenOn": "2023-12-05T23:03:44Z",
       "side": 1,
       "message": "nitpick:\nInvoke the SMC call based on the function name specified.",
+      "revId": "803e91e3e8edf8ee6789d0dc11ce4ead98ed538d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f293cc70_9c7e305f",
+        "filename": "smc_fuzz/src/runtestfunction.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-12-06T21:25:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "47384620_735ccd42",
       "revId": "803e91e3e8edf8ee6789d0dc11ce4ead98ed538d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
