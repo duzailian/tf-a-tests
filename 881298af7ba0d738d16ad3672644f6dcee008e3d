@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06df07a6_8356d83a",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-12-07T16:34:13Z",
+      "side": 1,
+      "message": "Cant it be 1 bit to accommodate S/NS?",
+      "range": {
+        "startLine": 430,
+        "startChar": 21,
+        "endLine": 430,
+        "endChar": 22
+      },
+      "revId": "881298af7ba0d738d16ad3672644f6dcee008e3d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
