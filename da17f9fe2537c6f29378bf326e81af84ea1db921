@@ -22,6 +22,23 @@
       },
       "revId": "da17f9fe2537c6f29378bf326e81af84ea1db921",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04509705_8f851228",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 74
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-07T15:07:07Z",
+      "side": 1,
+      "message": "drop the change to this file from this patch.",
+      "revId": "da17f9fe2537c6f29378bf326e81af84ea1db921",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
