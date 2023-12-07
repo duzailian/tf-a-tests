@@ -33,6 +33,24 @@
       "message": "Please add a one line description about this function",
       "revId": "751d9ddf60bacbe32b1b7a82426ce285b338c531",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee6b476e_bec1b601",
+        "filename": "smc_fuzz/src/randsmcmod.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-12-07T00:24:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b86a88a9_c2edcae1",
+      "revId": "751d9ddf60bacbe32b1b7a82426ce285b338c531",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
