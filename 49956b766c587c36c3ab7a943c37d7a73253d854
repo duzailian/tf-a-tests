@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ec203d5d_c24dd79e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-07T09:58:26Z",
+      "side": 1,
+      "message": "I need to rewrite this...\n\nThe specification states the SWd must explicitly do any scrubbing:\n- It states the software must scrub memory transition to NS state.\n- On transitions from S to NS, it seems the specification doesn\u0027t make it mandatory. We can avoid the scrubbing from SWd, to propagate the Data to the Secure state.\n\nWhen MPE is in the picture, there is no scrubbing. But there is no propagation of the contents to the Secure PAS.\n\nWe are not using this feature in the enabled feature.",
+      "parentUuid": "3b801108_72c4628d",
+      "range": {
+        "startLine": 10,
+        "startChar": 9,
+        "endLine": 10,
+        "endChar": 36
+      },
+      "revId": "49956b766c587c36c3ab7a943c37d7a73253d854",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "52c3b491_46ab617f",
         "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
         "patchSetId": 1
@@ -37,6 +61,30 @@
       "writtenOn": "2023-12-06T07:29:42Z",
       "side": 1,
       "message": "Actually, just to be clear, you checked that when MPE is present this assertion doesn\u0027t hold, right?",
+      "range": {
+        "startLine": 179,
+        "startChar": 9,
+        "endLine": 180,
+        "endChar": 39
+      },
+      "revId": "49956b766c587c36c3ab7a943c37d7a73253d854",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8bebff7_e6ba8813",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-07T09:58:26Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "52c3b491_46ab617f",
       "range": {
         "startLine": 179,
         "startChar": 9,
