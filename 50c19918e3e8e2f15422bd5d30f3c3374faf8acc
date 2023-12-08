@@ -128,6 +128,30 @@
       },
       "revId": "50c19918e3e8e2f15422bd5d30f3c3374faf8acc",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ebacdd2_5988673a",
+        "filename": "smc_fuzz/include/tsp_fuzz_helper.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2023-12-08T21:53:38Z",
+      "side": 1,
+      "message": "Do you intend to keep the printf or was it more for local debug?",
+      "parentUuid": "00eab731_2153371b",
+      "range": {
+        "startLine": 28,
+        "startChar": 2,
+        "endLine": 28,
+        "endChar": 8
+      },
+      "revId": "50c19918e3e8e2f15422bd5d30f3c3374faf8acc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
