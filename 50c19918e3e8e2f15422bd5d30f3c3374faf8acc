@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5b1337b1_b36eb769",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-12-08T20:41:00Z",
+      "side": 1,
+      "message": "The SDEI calls were in the first patch when the fuzzer was first introduced.",
+      "parentUuid": "5b32327b_9071ca9f",
+      "revId": "50c19918e3e8e2f15422bd5d30f3c3374faf8acc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "09355202_d1c56e28",
         "filename": "smc_fuzz/include/sdei_fuzz_helper.h",
         "patchSetId": 6
@@ -31,6 +49,30 @@
       "writtenOn": "2023-12-05T19:55:10Z",
       "side": 1,
       "message": "not sure if accidental white spaces were added here? moving { down\n\nthere are couple for places to check in patch",
+      "range": {
+        "startLine": 13,
+        "startChar": 68,
+        "endLine": 13,
+        "endChar": 69
+      },
+      "revId": "50c19918e3e8e2f15422bd5d30f3c3374faf8acc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19c825ff_e32ef9c1",
+        "filename": "smc_fuzz/include/sdei_fuzz_helper.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-12-08T20:41:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "09355202_d1c56e28",
       "range": {
         "startLine": 13,
         "startChar": 68,
@@ -54,6 +96,30 @@
       "writtenOn": "2023-12-06T17:07:08Z",
       "side": 1,
       "message": "Since you have added mutli cpu support, is printf multi-thread safe?",
+      "range": {
+        "startLine": 28,
+        "startChar": 2,
+        "endLine": 28,
+        "endChar": 8
+      },
+      "revId": "50c19918e3e8e2f15422bd5d30f3c3374faf8acc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00eab731_2153371b",
+        "filename": "smc_fuzz/include/tsp_fuzz_helper.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-12-08T20:41:00Z",
+      "side": 1,
+      "message": "The prints are not currently thread safe but that will occur in a later patch.  My thought is to remove from multi thread operations all prints.  I can make this modification.",
+      "parentUuid": "d46cc28f_aa8defd0",
       "range": {
         "startLine": 28,
         "startChar": 2,
