@@ -26,6 +26,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8ddb4e45_026f79ad",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 74
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-12-08T12:02:15Z",
+      "side": 1,
+      "message": "Can you extend ffa_memory_access_init_permissions_from_mem_func to set the instruction access according to this condition?",
+      "range": {
+        "startLine": 86,
+        "startChar": 2,
+        "endLine": 89,
+        "endChar": 5
+      },
+      "revId": "da17f9fe2537c6f29378bf326e81af84ea1db921",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4930480_45c23793",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 74
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-12-08T12:02:15Z",
+      "side": 1,
+      "message": "Nit: Add a new line here like line 416",
+      "range": {
+        "startLine": 635,
+        "startChar": 36,
+        "endLine": 635,
+        "endChar": 37
+      },
+      "revId": "da17f9fe2537c6f29378bf326e81af84ea1db921",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "04509705_8f851228",
         "filename": "tftf/tests/tests-spm.xml",
         "patchSetId": 74
