@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7b11771_98904b7d",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-11T00:45:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "daa08a71_8b039900",
+      "range": {
+        "startLine": 525,
+        "startChar": 5,
+        "endLine": 525,
+        "endChar": 6
+      },
+      "revId": "64211bc9b29b565a603f549754d642adb1ccc157",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d127c265_95cfe70e",
@@ -41,6 +65,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d083995_23c3881f",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-11T00:45:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d127c265_95cfe70e",
+      "revId": "64211bc9b29b565a603f549754d642adb1ccc157",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2b07b4a4_6ab570e6",
@@ -54,6 +96,30 @@
       "writtenOn": "2023-12-05T11:32:27Z",
       "side": 1,
       "message": "it would be good to have consistency in the position of this argument in all the related Herlpers. Keeping this as the first argument is useful.",
+      "range": {
+        "startLine": 293,
+        "startChar": 57,
+        "endLine": 293,
+        "endChar": 66
+      },
+      "revId": "64211bc9b29b565a603f549754d642adb1ccc157",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5daef790_2d05b888",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-11T00:45:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b07b4a4_6ab570e6",
       "range": {
         "startLine": 293,
         "startChar": 57,
