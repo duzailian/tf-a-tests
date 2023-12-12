@@ -832,12 +832,9 @@ u_register_t host_realm_create(struct realm *realm)
 	/* LPA2 enable */
 	if ((realm->rmm_feat_reg0 & RMI_FEATURE_REGISTER_0_LPA2) != 0UL) {
 		params->flags |= RMI_REALM_FLAGS_LPA2;
-		params->rtt_level_start = RTT_MIN_LEVEL_LPA2;
-	} else {
-		params->rtt_level_start = RTT_MIN_LEVEL;
 	}
-	realm->start_level = params->rtt_level_start;
 
+	params->rtt_level_start = realm->start_level;
 	params->hash_algo = RMI_HASH_SHA_256;
 	params->vmid = vmid++;
 	params->rtt_base = realm->rtt_addr;

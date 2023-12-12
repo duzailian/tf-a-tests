@@ -40,7 +40,7 @@ test_result_t host_test_realm_create_enter(void)
 		if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 				(u_register_t)PAGE_POOL_BASE,
 				(u_register_t)PAGE_POOL_MAX_SIZE,
-				0UL, rec_flag, 1U)) {
+				RMI_FEATURE_REGISTER_0_LPA2, rec_flag, 1U)) {
 			return TEST_RESULT_FAIL;
 		}
 		if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -76,7 +76,7 @@ test_result_t host_test_realm_rsi_version(void)
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 1U)) {
+			RMI_FEATURE_REGISTER_0_LPA2, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -114,7 +114,7 @@ test_result_t host_realm_enable_pauth(void)
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 				(u_register_t)PAGE_POOL_BASE,
 				(u_register_t)PAGE_POOL_MAX_SIZE,
-				0UL, rec_flag, 1U)) {
+				RMI_FEATURE_REGISTER_0_LPA2, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -166,7 +166,7 @@ test_result_t host_realm_pauth_fault(void)
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 				(u_register_t)PAGE_POOL_BASE,
 				(u_register_t)PAGE_POOL_MAX_SIZE,
-				0UL, rec_flag, 1U)) {
+				RMI_FEATURE_REGISTER_0_LPA2, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -257,7 +257,8 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 	host_set_pmu_state();
 
 	feature_flag = RMI_FEATURE_REGISTER_0_PMU_EN |
-			INPLACE(FEATURE_PMU_NUM_CTRS, (unsigned long long)(-1));
+			INPLACE(FEATURE_PMU_NUM_CTRS, (unsigned long long)(-1)) |
+			RMI_FEATURE_REGISTER_0_LPA2;
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
@@ -365,7 +366,7 @@ test_result_t host_test_multiple_realm_create_enter(void)
 	if (!host_create_activate_realm_payload(&realm1, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 1U)) {
+			RMI_FEATURE_REGISTER_0_LPA2, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -373,7 +374,7 @@ test_result_t host_test_multiple_realm_create_enter(void)
 	if (!host_create_activate_realm_payload(&realm2, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 1U)) {
+			RMI_FEATURE_REGISTER_0_LPA2, rec_flag, 1U)) {
 		ret2 = host_destroy_realm(&realm1);
 		return TEST_RESULT_FAIL;
 	}
@@ -538,7 +539,7 @@ test_result_t host_realm_reject_set_ripas(void)
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 1U)) {
+			RMI_FEATURE_REGISTER_0_LPA2, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,

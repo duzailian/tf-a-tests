@@ -114,6 +114,7 @@ bool host_create_realm_payload(struct realm *realm_ptr,
 			       unsigned int rec_count)
 {
 	int8_t value;
+	uint8_t s2sz;
 
 	if (realm_payload_adr == TFTF_BASE) {
 		ERROR("realm_payload_adr should be grater then TFTF_BASE\n");
@@ -213,6 +214,47 @@ bool host_create_realm_payload(struct realm *realm_ptr,
 			ERROR("Invalid Rec Flag\n");
 			return false;
 		}
+	}
+
+	/*
+	 * Disable LPA2 if not required and setup the default stage 2
+	 * start level.
+	 */
+	if ((feature_flag & RMI_FEATURE_REGISTER_0_LPA2) == 0ULL) {
+		realm_ptr->rmm_feat_reg0 &= ~RMI_FEATURE_REGISTER_0_LPA2;
+		realm_ptr->start_level = RTT_MIN_LEVEL;
+	} else {
+		realm_ptr->start_level =
+			(is_feat_52b_on_4k_2_supported() == true) ?
+				RTT_MIN_LEVEL_LPA2 : RTT_MIN_LEVEL;
+	}
+
+	s2sz = (uint8_t)EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, feature_flag);
+	if (s2sz == RMM_OVERWRITE_S2SL) {
+		/*
+		 * We use an invalid value on S2SZ (AKA RMM_OVERWRITE_S2SL)
+		 * to indicate that we want to overwrite the stage 2 starting
+		 * level.
+		 *
+		 * The starting level is overriden in the following way:
+		 * Current value == 'RTT_MIN_LEVEL_LPA2' then
+		 *	new value = 'RTT_MIN_LEVEL'.
+		 *
+		 * Current value == 'RTT_MIN_LEVEL' then
+		 * 	new value = 'RTT_MIN_LEVEL_LPA2'.
+		 *
+		 * Other values -> Leave it as is.
+		 */
+		if (realm_ptr->start_level == RTT_MIN_LEVEL_LPA2) {
+			realm_ptr->start_level = RTT_MIN_LEVEL;
+		} else if (realm_ptr->start_level == RTT_MIN_LEVEL) {
+			realm_ptr->start_level = RTT_MIN_LEVEL_LPA2;
+		}
+	} else if (s2sz > 0U) {
+		/* Overwrite S2SZ if needed. Value of 0 means not override */
+		realm_ptr->rmm_feat_reg0 &= ~MASK(RMI_FEATURE_REGISTER_0_S2SZ);
+		realm_ptr->rmm_feat_reg0 |=
+			INPLACE(RMI_FEATURE_REGISTER_0_S2SZ, s2sz);
 	}
 
 	/* Create Realm */
