@@ -65,6 +65,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2a00ae6_1f956f12",
+        "filename": "smc_fuzz/include/tsp_fuzz_helper.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-12-12T20:11:10Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3884bb7b_d68504e6",
+      "range": {
+        "startLine": 40,
+        "startChar": 1,
+        "endLine": 40,
+        "endChar": 2
+      },
+      "revId": "35b638da584f3ba691dceea3949e1283029db938",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e2662b88_c78af5db",
@@ -102,6 +126,30 @@
       "side": 1,
       "message": "This was suggested by Bipin to avoid numbers in comparison for string operations.  Provides clarity...",
       "parentUuid": "e2662b88_c78af5db",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "35b638da584f3ba691dceea3949e1283029db938",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f07fb885_cbfb3002",
+        "filename": "smc_fuzz/src/runtestfunction_helpers.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2023-12-12T20:11:10Z",
+      "side": 1,
+      "message": "I meant this macro is not needed in this file. It is already defined in corresponding source/header files.",
+      "parentUuid": "93bd2d9e_787b0f06",
       "range": {
         "startLine": 7,
         "startChar": 0,
