@@ -33,14 +33,21 @@ test_result_t host_test_realm_create_enter(void)
 	bool ret1, ret2;
 	u_register_t rec_flag[1] = {RMI_RUNNABLE};
 	struct realm realm;
+	u_register_t feature_flag = 0UL;
+	long sl = RTT_MIN_LEVEL;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
 
 	for (unsigned int i = 0U; i < 5U; i++) {
 		if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 				(u_register_t)PAGE_POOL_BASE,
 				(u_register_t)PAGE_POOL_MAX_SIZE,
-				0UL, rec_flag, 1U)) {
+				feature_flag, 0UL, sl, rec_flag, 1U)) {
 			return TEST_RESULT_FAIL;
 		}
 		if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -70,13 +77,20 @@ test_result_t host_test_realm_rsi_version(void)
 	bool ret1, ret2;
 	u_register_t rec_flag[] = {RMI_RUNNABLE};
 	struct realm realm;
+	u_register_t feature_flag = 0U;
+	long sl = RTT_MIN_LEVEL;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 1U)) {
+			feature_flag, 0UL, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -107,14 +121,21 @@ test_result_t host_realm_enable_pauth(void)
 	bool ret1, ret2;
 	u_register_t rec_flag[1] = {RMI_RUNNABLE};
 	struct realm realm;
+	u_register_t feature_flag = 0U;
+	long sl = RTT_MIN_LEVEL;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
 
 	pauth_test_lib_fill_regs_and_template();
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 				(u_register_t)PAGE_POOL_BASE,
 				(u_register_t)PAGE_POOL_MAX_SIZE,
-				0UL, rec_flag, 1U)) {
+				feature_flag, 0UL, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -161,12 +182,19 @@ test_result_t host_realm_pauth_fault(void)
 	bool ret1, ret2;
 	u_register_t rec_flag[1] = {RMI_RUNNABLE};
 	struct realm realm;
+	u_register_t feature_flag = 0U;
+	long sl = RTT_MIN_LEVEL;
+
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 				(u_register_t)PAGE_POOL_BASE,
 				(u_register_t)PAGE_POOL_MAX_SIZE,
-				0UL, rec_flag, 1U)) {
+				feature_flag, 0UL, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -249,6 +277,7 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 {
 	struct realm realm;
 	u_register_t feature_flag;
+	long sl = RTT_MIN_LEVEL;
 	u_register_t rec_flag[1] = {RMI_RUNNABLE};
 	bool ret1, ret2;
 
@@ -259,10 +288,16 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 	feature_flag = RMI_FEATURE_REGISTER_0_PMU_EN |
 			INPLACE(FEATURE_PMU_NUM_CTRS, (unsigned long long)(-1));
 
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag |= RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
+
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, rec_flag, 1U)) {
+			feature_flag, 0UL, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -359,13 +394,20 @@ test_result_t host_test_multiple_realm_create_enter(void)
 	bool ret1, ret2, ret3;
 	u_register_t rec_flag[1] = {RMI_RUNNABLE};
 	struct realm realm1, realm2;
+	u_register_t feature_flag = 0U;
+	long sl = RTT_MIN_LEVEL;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
 
 	if (!host_create_activate_realm_payload(&realm1, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 1U)) {
+			feature_flag, 0UL, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -373,7 +415,7 @@ test_result_t host_test_multiple_realm_create_enter(void)
 	if (!host_create_activate_realm_payload(&realm2, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 1U)) {
+			feature_flag, 0UL, sl, rec_flag, 1U)) {
 		ret2 = host_destroy_realm(&realm1);
 		return TEST_RESULT_FAIL;
 	}
@@ -434,13 +476,20 @@ test_result_t host_realm_set_ripas(void)
 	struct rmi_rec_run *run;
 	u_register_t rec_flag[1] = {RMI_RUNNABLE};
 	u_register_t test_page_num = 3U;
+	u_register_t feature_flag = 0U;
+	long sl = RTT_MIN_LEVEL;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 1U)) {
+			feature_flag, 0UL, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -532,13 +581,20 @@ test_result_t host_realm_reject_set_ripas(void)
 	struct realm realm;
 	struct rmi_rec_run *run;
 	u_register_t rec_flag[1] = {RMI_RUNNABLE}, base;
+	u_register_t feature_flag = 0U;
+	long sl = RTT_MIN_LEVEL;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 1U)) {
+			feature_flag, 0UL, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -602,14 +658,21 @@ test_result_t host_realm_abort_unassigned_destroyed(void)
 	struct realm realm;
 	struct rmi_rec_run *run;
 	struct rtt_entry rtt;
+	u_register_t feature_flag = 0UL;
+	long sl = RTT_MIN_LEVEL;
 	u_register_t rec_flag[2U] = {RMI_RUNNABLE, RMI_RUNNABLE}, base;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
+
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 2U)) {
+			feature_flag, 0UL, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -726,15 +789,22 @@ test_result_t host_realm_abort_unassigned_ram(void)
 	struct realm realm;
 	struct rmi_rec_run *run;
 	struct rtt_entry rtt;
+	u_register_t feature_flag = 0UL;
+	long sl = RTT_MIN_LEVEL;
 	test_result_t res = TEST_RESULT_FAIL;
 	u_register_t rec_flag[2U] = {RMI_RUNNABLE, RMI_RUNNABLE}, base;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
+
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 2U)) {
+			feature_flag, 0UL, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -835,14 +905,21 @@ test_result_t host_realm_abort_assigned_destroyed(void)
 	struct realm realm;
 	struct rmi_rec_run *run;
 	struct rtt_entry rtt;
+	u_register_t feature_flag = 0UL;
+	long sl = RTT_MIN_LEVEL;
 	u_register_t rec_flag[2U] = {RMI_RUNNABLE, RMI_RUNNABLE}, base;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
+
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 2U)) {
+			feature_flag, 0UL, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -969,14 +1046,21 @@ test_result_t host_realm_sea_empty(void)
 	u_register_t ret, base, esr;
 	struct realm realm;
 	struct rtt_entry rtt;
+	u_register_t feature_flag = 0UL;
+	long sl = RTT_MIN_LEVEL;
 	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE};
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 4U)) {
+			feature_flag, 0UL, sl, rec_flag, 4U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -1110,14 +1194,21 @@ test_result_t host_realm_sea_unprotected(void)
 	struct realm realm;
 	struct rtt_entry rtt;
 	struct rmi_rec_run *run;
+	u_register_t feature_flag = 0UL;
+	long sl = RTT_MIN_LEVEL;
 	u_register_t rec_flag[2U] = {RMI_RUNNABLE, RMI_RUNNABLE};
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 2U)) {
+			feature_flag, 0UL, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
