@@ -60,7 +60,8 @@ static test_result_t init_realm(void)
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)(PAGE_POOL_MAX_SIZE +
 			NS_REALM_SHARED_MEM_SIZE),
-			(u_register_t)PAGE_POOL_MAX_SIZE, 0UL, rec_flag, 1U)) {
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			RMI_FEATURE_REGISTER_0_LPA2, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 

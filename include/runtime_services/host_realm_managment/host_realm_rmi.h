@@ -301,6 +301,16 @@
 #define FEATURE_PMU_NUM_CTRS_SHIFT			56UL
 #define FEATURE_PMU_NUM_CTRS_WIDTH			8UL
 
+/*
+ * For some tests, we need to overwrite RMI_FEATURE_REGISTER_S2SZ as well
+ * as the stage 2 starting level, both independenly one of the other.
+ * RMI_FEATURE_REGISTER_0_S2SZ is easy to overwrite through feature_register_0
+ * but for the stage 2 starting level there is no clear way to indicate that
+ * we want to overwrite, so as a workaround, use an invalid S2SZ value to
+ * indicate we want to overwrite the stage 2 starting level.
+ */
+#define RMM_OVERWRITE_S2SL			(U(0xFF))
+
 /* RmiStatusCode types */
 /*
  * Status codes which can be returned from RMM commands.
