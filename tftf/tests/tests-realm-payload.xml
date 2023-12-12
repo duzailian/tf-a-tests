@@ -97,5 +97,9 @@
 	  function="host_realm_enable_pauth" />
 	  <testcase name="Generate PAuth Fault by overwriting LR"
 	  function="host_realm_pauth_fault" />
+	  <testcase name="Test realm creation with no LPA2 and -1 RTT starting level"
+	  function="host_test_realm_no_lpa2_invalid_sl" />
+	  <testcase name="Test realm creation with no LPA2 and S2SZ > 48 bits"
+	  function="host_test_realm_no_lpa2_invalid_s2sz" />
   </testsuite>
 </testsuites>
