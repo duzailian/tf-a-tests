@@ -31,13 +31,18 @@ test_result_t host_realm_multi_rec_single_cpu(void)
 	bool ret1, ret2;
 	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
 	RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE};
+	u_register_t feature_flag = 0U;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, MAX_REC_COUNT)) {
+			feature_flag, rec_flag, MAX_REC_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -85,15 +90,20 @@ test_result_t host_realm_multi_rec_psci_denied(void)
 	u_register_t exit_reason;
 	unsigned int rec_num;
 	struct rmi_rec_run *run;
+	u_register_t feature_flag = 0U;
 	/* Create 3 rec Rec 0 and 2 are runnable, Rec 1 in not runnable */
 	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_NOT_RUNNABLE, RMI_RUNNABLE};
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 3U)) {
+			feature_flag, rec_flag, 3U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -224,6 +234,7 @@ test_result_t host_realm_multi_rec_exit_irq(void)
 	unsigned int rec_count = MAX_REC_COUNT;
 	u_register_t other_mpidr, my_mpidr, ret;
 	int cpu_node;
+	u_register_t feature_flag = 0U;
 	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
 		RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
 		RMI_RUNNABLE};
@@ -231,10 +242,14 @@ test_result_t host_realm_multi_rec_exit_irq(void)
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 	SKIP_TEST_IF_LESS_THAN_N_CPUS(rec_count);
 
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, rec_count)) {
+			feature_flag, rec_flag, rec_count)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -326,14 +341,19 @@ test_result_t host_realm_multi_rec_multiple_cpu(void)
 		RMI_NOT_RUNNABLE};
 	u_register_t exit_reason;
 	int cpu_node;
+	u_register_t feature_flag = 0U;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 	SKIP_TEST_IF_LESS_THAN_N_CPUS(MAX_REC_COUNT);
 
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, MAX_REC_COUNT)) {
+			feature_flag, rec_flag, MAX_REC_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -456,6 +476,7 @@ test_result_t host_realm_multi_rec_multiple_cpu2(void)
 	struct rmi_rec_run *run;
 	unsigned int host_call_result;
 	struct realm realm2;
+	u_register_t feature_flag = 0U;
 	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE,
 		RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE,
 		RMI_NOT_RUNNABLE};
@@ -463,17 +484,21 @@ test_result_t host_realm_multi_rec_multiple_cpu2(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, MAX_REC_COUNT)) {
+			feature_flag, rec_flag, MAX_REC_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	if (!host_create_activate_realm_payload(&realm2, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 1U)) {
+			feature_flag, rec_flag, 1U)) {
 		ret2 = host_destroy_realm(&realm);
 		return TEST_RESULT_FAIL;
 	}
