@@ -39,7 +39,7 @@ test_result_t host_realm_multi_rec_single_cpu(void)
 			(u_register_t)(PAGE_POOL_MAX_SIZE +
 			NS_REALM_SHARED_MEM_SIZE),
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, MAX_REC_COUNT)) {
+			RMI_FEATURE_REGISTER_0_LPA2, rec_flag, MAX_REC_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -97,7 +97,7 @@ test_result_t host_realm_multi_rec_psci_denied(void)
 			(u_register_t)(PAGE_POOL_MAX_SIZE +
 			NS_REALM_SHARED_MEM_SIZE),
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, 3U)) {
+			RMI_FEATURE_REGISTER_0_LPA2, rec_flag, 3U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
@@ -240,7 +240,7 @@ test_result_t host_realm_multi_rec_exit_irq(void)
 			(u_register_t)(PAGE_POOL_MAX_SIZE +
 			NS_REALM_SHARED_MEM_SIZE),
 			(u_register_t)PAGE_POOL_MAX_SIZE,
-			0UL, rec_flag, rec_count)) {
+			RMI_FEATURE_REGISTER_0_LPA2, rec_flag, rec_count)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
