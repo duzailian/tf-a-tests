@@ -245,11 +245,13 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 	ffa_memory_handle_t handle;
 	ffa_id_t vm_id = ffa_dir_msg_dest(*args);
 	ffa_id_t source = ffa_dir_msg_source(*args);
+	uint32_t *ptr;
 	bool non_secure = cactus_req_mem_send_get_non_secure(*args);
 	void *share_page_addr =
 		non_secure ? share_page_non_secure(vm_id) : share_page(vm_id);
 	unsigned int mem_attrs;
 	int ret;
+	const uint32_t words_to_write = 10;
 
 	VERBOSE("%x requested to send memory to %x (func: %x), page: %llx\n",
 		source, receiver, mem_func, (uint64_t)share_page_addr);
@@ -279,6 +281,18 @@ CACTUS_CMD_HANDLER(req_mem_send_cmd, CACTUS_REQ_MEM_SEND_CMD)
 		      ret);
 		return cactus_error_resp(vm_id, source,
 					 CACTUS_ERROR_TEST);
+	}
+
+	/* Write to memory before sharing to SP. */
+	if (IS_SP_ID(receiver)) {
+		for (size_t i = 0; i < constituents_count; i++) {
+			VERBOSE("Sharing Address: %p\n",
+					constituents[i].address);
+			ptr = (uint32_t *)constituents[i].address;
+			for (size_t j = 0; j < words_to_write; j++) {
+				ptr[j] = mem_func;
+			}
+		}
 	}
 
 	handle = memory_init_and_send(
