@@ -158,6 +158,30 @@
       },
       "revId": "35b638da584f3ba691dceea3949e1283029db938",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e33cc3d9_a6172f62",
+        "filename": "smc_fuzz/src/runtestfunction_helpers.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2023-12-14T16:13:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f07fb885_cbfb3002",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "35b638da584f3ba691dceea3949e1283029db938",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
