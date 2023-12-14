@@ -117,6 +117,30 @@
       },
       "revId": "49956b766c587c36c3ab7a943c37d7a73253d854",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1be4eb13_300ca8c5",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-14T15:36:53Z",
+      "side": 1,
+      "message": "Refactored the tests to only check the contents of the memory on a memory share operation and not on lend/donate.",
+      "parentUuid": "c8bebff7_e6ba8813",
+      "range": {
+        "startLine": 179,
+        "startChar": 9,
+        "endLine": 180,
+        "endChar": 39
+      },
+      "revId": "49956b766c587c36c3ab7a943c37d7a73253d854",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
