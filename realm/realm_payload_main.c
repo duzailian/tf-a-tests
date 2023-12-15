@@ -155,6 +155,26 @@ static bool test_realm_inst_fetch_unassigned_cmd(void)
 	return false;
 }
 
+static bool test_realm_inst_fetch_unassigned_ram_cmd(void)
+{
+	u_register_t base;
+	void (*func_ptr)(void);
+	rsi_ripas_type ripas;
+
+	base = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
+	rsi_ipa_state_get(base, &ripas);
+	realm_printf("Initial ripas=0x%lx\n", ripas);
+	if (ripas == RSI_RAM) {
+		/* causes instruction abort */
+		realm_printf("Generate Instruction Abort\n");
+		func_ptr = (void (*)(void))base;
+		func_ptr();
+		/* should not return */
+		return false;
+	}
+	return false;
+}
+
 /*
  * This is the entry function for Realm payload, it first requests the shared buffer
  * IPA address from Host using HOST_CALL/RSI, it reads the command to be executed,
@@ -185,6 +205,9 @@ void realm_payload_main(void)
 			break;
 		case REALM_INSTR_FETCH_CMD:
 			test_succeed = test_realm_inst_fetch_unassigned_cmd();
+			break;
+		case REALM_INSTR_FETCH_RAM_CMD:
+			test_succeed = test_realm_inst_fetch_unassigned_ram_cmd();
 			break;
 		case REALM_PAUTH_SET_CMD:
 			test_succeed = test_realm_pauth_set_cmd();

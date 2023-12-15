@@ -12,6 +12,8 @@
 	  function="host_test_realm_create_enter" />
 	  <testcase name="Multiple Realm EL1 creation and execution test"
 	  function="host_test_multiple_realm_create_enter" />
+	  <testcase name="Realm Inst Fetch Unassigned RAM"
+	  function="host_realm_inst_fetch_unassigned_ram" />
 	  <testcase name="Realm Inst Fetch Unassigned"
 	  function="host_realm_inst_fetch_unassigned" />
 	  <testcase name="Realm payload multi rec single cpu"
