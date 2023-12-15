@@ -417,6 +417,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b5a540a_dc8910ed",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 72
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-15T13:59:16Z",
+      "side": 1,
+      "message": "It is written that way to reduce the diff in the later commit when it is used in a for loop",
+      "parentUuid": "9a26ccfa_7cb08428",
+      "range": {
+        "startLine": 656,
+        "startChar": 1,
+        "endLine": 656,
+        "endChar": 16
+      },
+      "revId": "508aaade2e715d5e22d877edf1fed45fbe6804c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "de4a3248_cda1efa9",
