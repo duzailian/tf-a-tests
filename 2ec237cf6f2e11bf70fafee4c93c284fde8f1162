@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "698d56c9_cefbd323",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-15T16:03:53Z",
+      "side": 1,
+      "message": "Instr abort when RIPAS is destroyed.",
+      "range": {
+        "startLine": 7,
+        "startChar": 11,
+        "endLine": 7,
+        "endChar": 45
+      },
+      "revId": "2ec237cf6f2e11bf70fafee4c93c284fde8f1162",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8099893a_0050b007",
         "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
         "patchSetId": 12
