@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e04f28fb_a27e6298",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-15T16:22:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c20dc9f_1e6e91c7",
+      "revId": "2f3330e95eb16d40f86bcc6dc8ae017f5d155cdf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3099fc12_48a2f028",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-12-15T15:29:59Z",
       "side": 1,
       "message": "this argument maynot be needed, so comment in previous patch.",
+      "range": {
+        "startLine": 369,
+        "startChar": 3,
+        "endLine": 370,
+        "endChar": 29
+      },
+      "revId": "2f3330e95eb16d40f86bcc6dc8ae017f5d155cdf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ff8f0fb_5ea72dd7",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-15T16:22:52Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "3099fc12_48a2f028",
       "range": {
         "startLine": 369,
         "startChar": 3,
