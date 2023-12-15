@@ -133,6 +133,42 @@
       "message": "drop the change to this file from this patch.",
       "revId": "da17f9fe2537c6f29378bf326e81af84ea1db921",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf72179b_2e2becb0",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 74
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-15T15:18:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "04509705_8f851228",
+      "revId": "da17f9fe2537c6f29378bf326e81af84ea1db921",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "517d9ec3_649f35f5",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 74
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-15T15:18:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "04509705_8f851228",
+      "revId": "da17f9fe2537c6f29378bf326e81af84ea1db921",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
