@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfa9936b_740b0802",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-15T03:18:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffa0e2b6_dc7786ef",
+      "revId": "661248ac00da64c7e8238552e1d0464fdabdc71d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28d43c5a_521532ba",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-11-28T14:38:33Z",
       "side": 1,
       "message": "didnt see the need for RIPAS_CHANGE call here, couldn\u0027t the realm access the destroyed IPA and take an instr abort ?",
+      "revId": "661248ac00da64c7e8238552e1d0464fdabdc71d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a87eae6_3c30b90f",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-15T03:18:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "20154518_82dc7148",
       "revId": "661248ac00da64c7e8238552e1d0464fdabdc71d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
