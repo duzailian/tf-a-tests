@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb26218b_cb349773",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-15T03:17:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87c305cb_e900a9b7",
+      "range": {
+        "startLine": 28,
+        "startChar": 45,
+        "endLine": 28,
+        "endChar": 63
+      },
+      "revId": "91f947f842feac730074b26d8569fe551e501d3f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8fe8177d_d82f6206",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-12-11T19:31:45Z",
       "side": 1,
       "message": "Avoid using magic numbers if possible. I think you could reinstate \u0027MAX_REALM_COUNT`?",
+      "range": {
+        "startLine": 43,
+        "startChar": 74,
+        "endLine": 43,
+        "endChar": 76
+      },
+      "revId": "91f947f842feac730074b26d8569fe551e501d3f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "55206cff_fbb2e560",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_mem_layout.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-15T03:17:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8fe8177d_d82f6206",
       "range": {
         "startLine": 43,
         "startChar": 74,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "18821ebd_5a2194f4",
+        "filename": "include/runtime_services/host_realm_managment/host_shared_data.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-15T03:17:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4822db4f_9edf4791",
+      "range": {
+        "startLine": 12,
+        "startChar": 10,
+        "endLine": 12,
+        "endChar": 24
+      },
+      "revId": "91f947f842feac730074b26d8569fe551e501d3f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec0ae447_dbd8c1ba",
@@ -83,6 +155,30 @@
       "writtenOn": "2023-12-11T19:31:45Z",
       "side": 1,
       "message": "I think this should be a constant rather than a magic number. What about \u0027MAX_REALM_COUNT\u0027 that you originally added and then removed?",
+      "range": {
+        "startLine": 68,
+        "startChar": 63,
+        "endLine": 68,
+        "endChar": 64
+      },
+      "revId": "91f947f842feac730074b26d8569fe551e501d3f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d268b4e_1649cb48",
+        "filename": "tftf/framework/tftf.ld.S",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-15T03:17:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ec0ae447_dbd8c1ba",
       "range": {
         "startLine": 68,
         "startChar": 63,
