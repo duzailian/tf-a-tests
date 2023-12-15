@@ -203,10 +203,10 @@ u_register_t host_rmi_features(u_register_t index, u_register_t *features)
 	return rets.ret0;
 }
 
-static inline u_register_t host_rmi_rtt_init_ripas(u_register_t rd,
-						   u_register_t start,
-						   u_register_t end,
-						   u_register_t *top)
+u_register_t host_rmi_rtt_init_ripas(u_register_t rd,
+				   u_register_t start,
+				   u_register_t end,
+				   u_register_t *top)
 
 {
 	smc_ret_values rets;
@@ -315,10 +315,10 @@ static inline u_register_t host_realm_rtt_create(struct realm *realm,
 	return host_rmi_rtt_create(realm->rd, phys, addr, level);
 }
 
-static u_register_t host_rmi_create_rtt_levels(struct realm *realm,
-						u_register_t map_addr,
-						u_register_t level,
-						u_register_t max_level)
+u_register_t host_rmi_create_rtt_levels(struct realm *realm,
+					u_register_t map_addr,
+					u_register_t level,
+					u_register_t max_level)
 {
 	u_register_t rtt, ret;
 
