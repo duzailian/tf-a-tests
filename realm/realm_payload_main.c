@@ -131,32 +131,18 @@ bool test_realm_reject_set_ripas(void)
 
 static bool test_realm_inst_fetch_unassigned_cmd(void)
 {
-	u_register_t ret, base, new_base;
+	u_register_t base;
 	void (*func_ptr)(void);
-	rsi_ripas_respose_type response;
 	rsi_ripas_type ripas;
 
 	base = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
-	ret = rsi_ipa_state_get(base, &ripas);
+	rsi_ipa_state_get(base, &ripas);
 	realm_printf("Initial ripas=0x%lx\n", ripas);
-	if (ripas == RSI_EMPTY) {
-		ret = rsi_ipa_state_set(base, base + PAGE_SIZE, RSI_RAM,
-			RSI_NO_CHANGE_DESTROYED, &new_base, &response);
-		if (ret == RSI_SUCCESS) {
-			realm_printf("rsi_ipa_state_set passed response = %d new_base=0x%lx\n",
-					response, new_base);
-			ret = rsi_ipa_state_get(base, &ripas);
-			realm_printf("new ripas=0x%lx\n", ripas);
-			if (ripas == RSI_DESTROYED) {
-				/* causes instruction abort */
-				realm_printf("Generate Instruction Abort\n");
-				func_ptr = (void (*)(void))base;
-				func_ptr();
-				/* should not return */
-				return false;
-			}
-		}
-	}
+	/* causes instruction abort */
+	realm_printf("Generate Instruction Abort\n");
+	func_ptr = (void (*)(void))base;
+	func_ptr();
+	/* should not return */
 	return false;
 }
 
