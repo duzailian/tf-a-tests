@@ -480,6 +480,30 @@
       },
       "revId": "508aaade2e715d5e22d877edf1fed45fbe6804c7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f746f9d_ec3d39da",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 72
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-18T14:34:14Z",
+      "side": 1,
+      "message": "My mistake, I forgot to copy the composites and constituents",
+      "parentUuid": "de4a3248_cda1efa9",
+      "range": {
+        "startLine": 670,
+        "startChar": 2,
+        "endLine": 673,
+        "endChar": 5
+      },
+      "revId": "508aaade2e715d5e22d877edf1fed45fbe6804c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
