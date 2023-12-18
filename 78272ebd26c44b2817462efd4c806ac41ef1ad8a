@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e06f3d9b_f8ed1eb0",
+        "filename": "include/runtime_services/cactus_test_cmds.h",
+        "patchSetId": 22
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-12-18T11:32:41Z",
+      "side": 1,
+      "message": "Chose attributes for conciseness.",
+      "parentUuid": "672c51ba_00a21a77",
+      "range": {
+        "startLine": 398,
+        "startChar": 40,
+        "endLine": 398,
+        "endChar": 47
+      },
+      "revId": "78272ebd26c44b2817462efd4c806ac41ef1ad8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b80668c4_4fd4cc92",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d628020d_1d6983be",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-12-18T11:32:41Z",
+      "side": 1,
+      "message": "Removed the check.",
+      "parentUuid": "b80668c4_4fd4cc92",
+      "range": {
+        "startLine": 59,
+        "startChar": 6,
+        "endLine": 59,
+        "endChar": 17
+      },
+      "revId": "78272ebd26c44b2817462efd4c806ac41ef1ad8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d9d60479_5e5c5cf9",
@@ -60,6 +108,24 @@
       "writtenOn": "2023-11-28T23:51:11Z",
       "side": 1,
       "message": "missing ;",
+      "revId": "78272ebd26c44b2817462efd4c806ac41ef1ad8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a6d5701_394d82d6",
+        "filename": "spm/cactus/cactus_tests/cactus_tests_smmuv3.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-12-18T11:32:41Z",
+      "side": 1,
+      "message": "Hummm, good spot!",
+      "parentUuid": "d9d60479_5e5c5cf9",
       "revId": "78272ebd26c44b2817462efd4c806ac41ef1ad8a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
