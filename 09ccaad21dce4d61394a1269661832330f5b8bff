@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2941b77a_15305092",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-12-18T11:36:05Z",
+      "side": 1,
+      "message": "Fixed now.\n\nOn GPC failure, the SMMU generic trace emits:\n\n    pci_smmuv3.mmu.verbose_commentary: output\u003d\"Final PA of transaction failed its GPT checks:-\"\n    pci_smmuv3.mmu.verbose_commentary: output\u003d\"    0x0000000090000000 ns-irawaWB-orawaWB-ish-DU\"\n    pci_smmuv3.mmu.verbose_commentary: output\u003d\"    GPF-SMMU_ROOT_GPF_FAR:[ FPAS:ns FADDR_51_12:0x0000090000[000] SYN_11_0:gpfsyn_transaction ]-ns-irawaWB-orawaWB-\"\n\nThis isn\u0027t a log we can catch with an expect script unfortunately (but can be checked visually from the CI logs).\nI\u0027m preparing an additional change added on top, to retrieve the SMMU_ROOT_GPF_FAR register from EL3 and check it matches to fault recorded from within the partition.",
+      "parentUuid": "4c77d03d_237a8796",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 29
+      },
+      "revId": "09ccaad21dce4d61394a1269661832330f5b8bff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "06887abd_75be81ca",
         "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
         "patchSetId": 6
