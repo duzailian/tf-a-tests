@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "50747d1f_bed9bf47",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 34
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-18T12:39:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2057e763_900cec69",
+      "range": {
+        "startLine": 65,
+        "startChar": 35,
+        "endLine": 65,
+        "endChar": 43
+      },
+      "revId": "e658dddb02485e20b88b29d113a1e1e60778a88c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "198fb2a9_08f4241e",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-12-15T15:51:36Z",
       "side": 1,
       "message": "attempt to change RIPAS outside requested range, verifies..",
+      "range": {
+        "startLine": 429,
+        "startChar": 27,
+        "endLine": 429,
+        "endChar": 43
+      },
+      "revId": "e658dddb02485e20b88b29d113a1e1e60778a88c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c99a75b_50fbab23",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 34
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-18T12:39:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "198fb2a9_08f4241e",
       "range": {
         "startLine": 429,
         "startChar": 27,
@@ -87,6 +135,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e1ac3bb_c702fd4b",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 34
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-18T12:39:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80c7dd7b_2a984550",
+      "range": {
+        "startLine": 443,
+        "startChar": 14,
+        "endLine": 443,
+        "endChar": 24
+      },
+      "revId": "e658dddb02485e20b88b29d113a1e1e60778a88c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "abcf8a86_ad8b9707",
@@ -100,6 +172,30 @@
       "writtenOn": "2023-12-15T15:51:36Z",
       "side": 1,
       "message": "\"out of requested range\"",
+      "range": {
+        "startLine": 483,
+        "startChar": 28,
+        "endLine": 483,
+        "endChar": 44
+      },
+      "revId": "e658dddb02485e20b88b29d113a1e1e60778a88c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b8c6993_0dd90984",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 34
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-18T12:39:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "abcf8a86_ad8b9707",
       "range": {
         "startLine": 483,
         "startChar": 28,
