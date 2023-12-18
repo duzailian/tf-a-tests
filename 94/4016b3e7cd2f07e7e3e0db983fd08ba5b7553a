@@ -1,0 +1,9 @@
+Maintainer-Review+1: Soby Mathew <soby.mathew@arm.com>
+Code-Owner-Review+1: Soby Mathew <soby.mathew@arm.com>
+Verified+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Mon, 18 Dec 2023 10:53:25 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/25067
+Comments-Total: 6
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
