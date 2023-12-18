@@ -74,6 +74,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "df01d279_a7f2f374",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-12-18T14:08:49Z",
+      "side": 1,
+      "message": "You can search for \"Final PA of transaction failed its GPT checks\" from the lava log:\nhttps://ci-builds.trustedfirmware.org/static-files/5LYOfYT0iD6PYs4mQTIsDuT9mDgKNyI-5RkKThdJBHgxNzAyOTA4NDIxNzIzOjk6YW5vbnltb3VzOmpvYi90Zi1hLWJ1aWxkZXIvMjk2NjcxOC9hcnRpZmFjdA\u003d\u003d/lava.log",
+      "parentUuid": "2941b77a_15305092",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 29
+      },
+      "revId": "09ccaad21dce4d61394a1269661832330f5b8bff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "06887abd_75be81ca",
         "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
         "patchSetId": 6
