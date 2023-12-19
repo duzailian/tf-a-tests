@@ -29,32 +29,33 @@ static struct realm realm;
 test_result_t host_realm_multi_rec_single_cpu(void)
 {
 	bool ret1, ret2;
+	struct realm realm1;
 	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
 	RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE};
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+	if (!host_create_activate_realm_payload(&realm1, (u_register_t)REALM_IMAGE_BASE,
 			(u_register_t)PAGE_POOL_BASE,
 			(u_register_t)PAGE_POOL_MAX_SIZE,
 			0UL, rec_flag, MAX_REC_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
+	if (!host_create_shared_mem(&realm1, NS_REALM_SHARED_MEM_BASE,
 			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	for (unsigned int i = 0; i < MAX_REC_COUNT; i++) {
-		host_shared_data_set_host_val(&realm, i, HOST_ARG1_INDEX, 10U);
-		ret1 = host_enter_realm_execute(&realm, REALM_SLEEP_CMD,
+		host_shared_data_set_host_val(&realm1, i, HOST_ARG1_INDEX, 10U);
+		ret1 = host_enter_realm_execute(&realm1, REALM_SLEEP_CMD,
 				RMI_EXIT_HOST_CALL, i);
 		if (!ret1) {
 			break;
 		}
 	}
 
-	ret2 = host_destroy_realm(&realm);
+	ret2 = host_destroy_realm(&realm1);
 
 	if (!ret1 || !ret2) {
 		ERROR("%s(): enter=%d destroy=%d\n",
@@ -301,6 +302,48 @@ static test_result_t cpu_on_handler(void)
 	return TEST_RESULT_FAIL;
 }
 
+static bool host_realm_handle_psci_exit(struct realm *realm_ptr,
+		unsigned int rec_num, u_register_t psci_func)
+{
+
+	struct rmi_rec_run *run;
+	unsigned int host_call_result;
+	u_register_t exit_reason;
+	int ret = RMI_ERROR_INPUT;
+	u_register_t rec_num2;
+
+	run = (struct rmi_rec_run *)realm.run[rec_num];
+	while (true) {
+		run = (struct rmi_rec_run *)realm.run[rec_num];
+                if (run->exit.gprs[0] != psci_func) {
+                        ERROR("Host2 did not receive CPU ON request\n");
+                        return false;
+                }
+                rec_num2 = host_realm_find_rec_by_mpidr(run->exit.gprs[1], &realm);
+                if (rec_num2 >= MAX_REC_COUNT) {
+                        ERROR("Invalid mpidr requested\n");
+                        return false;
+		}
+		ret = host_rmi_psci_complete(realm.rec[rec_num], realm.rec[rec_num2],
+                                (unsigned long)PSCI_E_SUCCESS);
+		if (ret != RMI_SUCCESS) {
+			ERROR("host_rmi_psci_complete failed\n");
+			return false;
+                }
+                
+                /* Re-enter REC0 complete CPU_ON */
+                ret = host_realm_rec_enter(&realm, &exit_reason,
+                                &host_call_result, rec_num);
+                if (ret != RMI_SUCCESS) {
+                       return false;
+                }
+		if (exit_reason != RMI_EXIT_PSCI) {
+			break;
+		}
+        }
+	return true;
+}
+
 /*
  * The test creates a realm with MAX recs
  * On receiving PSCI_CPU_ON call from REC0 for all other recs,
@@ -317,9 +360,7 @@ test_result_t host_realm_multi_rec_multiple_cpu(void)
 	bool ret1, ret2;
 	test_result_t ret3 = TEST_RESULT_FAIL;
 	int ret = RMI_ERROR_INPUT;
-	u_register_t rec_num;
 	u_register_t other_mpidr, my_mpidr;
-	struct rmi_rec_run *run;
 	unsigned int host_call_result;
 	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE,
 		RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE,
@@ -351,32 +392,12 @@ test_result_t host_realm_multi_rec_multiple_cpu(void)
 		ERROR("Host did not receive CPU ON request\n");
 		goto destroy_realm;
 	}
-	while (true) {
-		run = (struct rmi_rec_run *)realm.run[0];
-		if (run->exit.gprs[0] != SMC_PSCI_CPU_ON_AARCH64) {
-			ERROR("Host2 did not receive CPU ON request\n");
-			goto destroy_realm;
-		}
-		rec_num = host_realm_find_rec_by_mpidr(run->exit.gprs[1], &realm);
-		if (rec_num >= MAX_REC_COUNT) {
-			ERROR("Invalid mpidr requested\n");
-			goto destroy_realm;
-		}
-		ret = host_rmi_psci_complete(realm.rec[0], realm.rec[rec_num],
-				(unsigned long)PSCI_E_SUCCESS);
-		if (ret == RMI_SUCCESS) {
-			/* Re-enter REC0 complete CPU_ON */
-			ret = host_realm_rec_enter(&realm, &exit_reason,
-				&host_call_result, 0U);
-			if (ret != RMI_SUCCESS || exit_reason != RMI_EXIT_PSCI) {
-				break;
-			}
-		} else {
-			ERROR("host_rmi_psci_complete failed\n");
-			goto destroy_realm;
-		}
-	}
 
+	ret1 = host_realm_handle_psci_exit(&realm, 0U, SMC_PSCI_CPU_ON_AARCH64);
+	if(!ret1) {
+		ERROR("CPU ON failed\n");
+		goto destroy_realm;
+	}
 	/* Iterates all CPUs, change logic if rec_count != MAX_CPU */
 	/* Turn on all CPUs */
 	for_each_cpu(cpu_node) {
@@ -397,34 +418,9 @@ test_result_t host_realm_multi_rec_multiple_cpu(void)
 		ERROR("Host err did not receive PSCI_AFFINITY_INFO request\n");
 		goto destroy_realm;
 	}
-	while (true) {
-		if (run->exit.gprs[0] == SMC_PSCI_AFFINITY_INFO_AARCH64) {
-			rec_num = host_realm_find_rec_by_mpidr(run->exit.gprs[1], &realm);
-			if (rec_num >= MAX_REC_COUNT) {
-				ERROR("Invalid mpidr requested\n");
-				goto destroy_realm;
-			}
-			ret = host_rmi_psci_complete(realm.rec[0], realm.rec[rec_num],
-					(unsigned long)PSCI_E_SUCCESS);
-
-			if (ret != RMI_SUCCESS) {
-				ERROR("host_rmi_psci_complete failed\n");
-				goto destroy_realm;
-			}
-
-			/* Re-enter REC0 complete PSCI_AFFINITY_INFO */
-			ret = host_realm_rec_enter(&realm, &exit_reason, &host_call_result, 0U);
-			if (ret != RMI_SUCCESS) {
-				ERROR("Rec0 re-enter failed\n");
-				goto destroy_realm;
-			}
-		} else {
-			break;
-		}
-	}
-
-	if (ret == RMI_SUCCESS && exit_reason == RMI_EXIT_HOST_CALL) {
-		ret3 = host_call_result;
+	ret1 = host_realm_handle_psci_exit(&realm, 0U, SMC_PSCI_AFFINITY_INFO_AARCH64);
+	if (ret1) {
+		ret3 = TEST_RESULT_SUCCESS;
 	}
 destroy_realm:
 	ret2 = host_destroy_realm(&realm);
@@ -438,3 +434,75 @@ destroy_realm:
 	return ret3;
 }
 
+test_result_t host_realm_multi_rec_multiple_cpu2(void)
+{
+	bool ret1, ret2;
+	test_result_t ret3 = TEST_RESULT_FAIL;
+	int ret = RMI_ERROR_INPUT;
+	u_register_t rec_count = 3U;
+	u_register_t other_mpidr, my_mpidr;
+	unsigned int host_call_result;
+	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE};
+	u_register_t exit_reason;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+	SKIP_TEST_IF_LESS_THAN_N_CPUS(MAX_REC_COUNT);
+
+	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, rec_flag, rec_count)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	is_secondary_cpu_on = 0U;
+	init_spinlock(&secondary_cpu_lock);
+	my_mpidr = read_mpidr_el1() & MPID_MASK;
+	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, rec_count);
+	ret1 = host_enter_realm_execute(&realm, REALM_MULTIPLE_REC_MULTIPLE_CPU_CMD,
+			RMI_EXIT_PSCI, 0U);
+	if (!ret1) {
+		ERROR("Host did not receive CPU ON request\n");
+		goto destroy_realm;
+	}
+	host_call_result = host_realm_handle_psci_exit(&realm, 0U, SMC_PSCI_CPU_ON);
+
+	/* Iterates all CPUs, change logic if rec_count != MAX_CPU */
+	/* Turn on all CPUs */
+	for (unsigned int i = 1U; i < rec_count; i++)
+	{
+		while (true) {
+			other_mpidr = tftf_find_random_cpu_other_than(my_mpidr);
+			/* Power on the other CPU */
+			ret = tftf_try_cpu_on(other_mpidr, (uintptr_t)cpu_on_handler, 0);
+			if (ret == PSCI_E_SUCCESS) {
+				break;
+			}
+		}
+	}
+
+	ret = host_realm_rec_enter(&realm, &exit_reason,
+			&host_call_result, 0U);
+	if (ret != RMI_SUCCESS || exit_reason != RMI_EXIT_PSCI) {
+		ERROR("Host err did not receive PSCI_AFFINITY_INFO request\n");
+		goto destroy_realm;
+	}
+	ret1 = host_realm_handle_psci_exit(&realm, 0U, SMC_PSCI_AFFINITY_INFO_AARCH64);
+	if (ret1) {
+		ret3 = host_call_result;
+	}
+destroy_realm:
+	ret2 = host_destroy_realm(&realm);
+
+	if ((ret != RMI_SUCCESS) || !ret2) {
+		ERROR("%s(): enter=%d destroy=%d\n",
+		__func__, ret, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return ret3;
+}
