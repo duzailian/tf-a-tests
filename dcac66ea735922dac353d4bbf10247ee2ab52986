@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86e6d7e3_6aeece56",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 19
+      },
+      "lineNbr": 739,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-19T18:35:52Z",
+      "side": 1,
+      "message": "This is test specific. Please move this out of ffa_helpers.c/h",
+      "range": {
+        "startLine": 737,
+        "startChar": 0,
+        "endLine": 739,
+        "endChar": 20
+      },
+      "revId": "dcac66ea735922dac353d4bbf10247ee2ab52986",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22fc250f_0db2dea2",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 745,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2023-12-19T18:35:52Z",
+      "side": 1,
+      "message": "This is test-specific. Place this in the test source file.\nffa_helpers.c/h should be as generic as possible.",
+      "range": {
+        "startLine": 727,
+        "startChar": 1,
+        "endLine": 745,
+        "endChar": 1
+      },
+      "revId": "dcac66ea735922dac353d4bbf10247ee2ab52986",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
