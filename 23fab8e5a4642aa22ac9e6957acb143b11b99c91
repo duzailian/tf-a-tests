@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc5ac193_44bf4d3a",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-19T12:11:37Z",
+      "side": 1,
+      "message": "free the allocated page.",
+      "revId": "23fab8e5a4642aa22ac9e6957acb143b11b99c91",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
