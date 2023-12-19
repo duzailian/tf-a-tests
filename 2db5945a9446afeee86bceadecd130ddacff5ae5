@@ -70,6 +70,24 @@
       "parentUuid": "375526c5_89f343e1",
       "revId": "2db5945a9446afeee86bceadecd130ddacff5ae5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f70af834_14dc2a79",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-12-19T17:04:26Z",
+      "side": 1,
+      "message": "This change is mainly to help with ML queries like:\nhttps://lists.trustedfirmware.org/archives/list/tf-a-tests@lists.trustedfirmware.org/message/FYIQ2CLAY7OU5OWQBXZP3F6PV4TIYLRB/\n\nIt has no other functional purpose. I assume we could action to refresh regularly based on latest version of this file.\n\u003e That said, what is the likelihood of this being looked at by other streams of work in the Firmware team?\n\nWhat is the intent? Would you want to move it to a higher level include directory beyond cactus perhaps?",
+      "parentUuid": "d87c98a3_64bda7c6",
+      "revId": "2db5945a9446afeee86bceadecd130ddacff5ae5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
