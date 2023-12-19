@@ -16,6 +16,24 @@
       "message": "free the allocated page.",
       "revId": "23fab8e5a4642aa22ac9e6957acb143b11b99c91",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6452465e_ac55bd93",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-19T13:08:02Z",
+      "side": 1,
+      "message": "Not required , as the destroy realm is resetting the memory pool.",
+      "parentUuid": "bc5ac193_44bf4d3a",
+      "revId": "23fab8e5a4642aa22ac9e6957acb143b11b99c91",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
