@@ -39,6 +39,30 @@
       },
       "revId": "b5006a141caf725b95c37db4b49e943269444f12",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54cb51d6_f4f50267",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 33
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-19T13:07:23Z",
+      "side": 1,
+      "message": "After discussing with Shruti, since destroy realm is resetting the memory pool, this is not essential. Also every realm is having its own memory pool.",
+      "parentUuid": "aa8147f7_6a7d619f",
+      "range": {
+        "startLine": 549,
+        "startChar": 22,
+        "endLine": 549,
+        "endChar": 32
+      },
+      "revId": "b5006a141caf725b95c37db4b49e943269444f12",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
