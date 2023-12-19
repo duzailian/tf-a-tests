@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2e1b46f_aaf587fb",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-19T15:30:51Z",
+      "side": 1,
+      "message": "this can go into previous patch.\n\ntest_realm_instr_fetch_cmd()",
+      "range": {
+        "startLine": 132,
+        "startChar": 12,
+        "endLine": 132,
+        "endChar": 48
+      },
+      "revId": "c11ad6b9597b8c2af4ae47b25ec7c8cfdfff89bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd3dbcdd_681d180e",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-19T15:30:51Z",
+      "side": 1,
+      "message": "initial state of PAGE is ....",
+      "revId": "c11ad6b9597b8c2af4ae47b25ec7c8cfdfff89bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4be45c1d_c8b2ed77",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-19T15:30:51Z",
+      "side": 1,
+      "message": "Put a comment here to say this is dummy allocation to get a base address.",
+      "revId": "c11ad6b9597b8c2af4ae47b25ec7c8cfdfff89bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70e9f98e_1cbbc726",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-19T15:30:51Z",
+      "side": 1,
+      "message": "/* Set RIPAS of this `base` addr to RAM */",
+      "revId": "c11ad6b9597b8c2af4ae47b25ec7c8cfdfff89bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4754de08_e6030e76",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2023-12-19T15:30:51Z",
+      "side": 1,
+      "message": "this is not necessary.",
+      "range": {
+        "startLine": 720,
+        "startChar": 0,
+        "endLine": 725,
+        "endChar": 2
+      },
+      "revId": "c11ad6b9597b8c2af4ae47b25ec7c8cfdfff89bf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
