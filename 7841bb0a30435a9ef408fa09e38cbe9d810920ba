@@ -200,6 +200,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "88d2633e_421ab829",
+        "filename": "tftf/tests/tbb-tests/tbb_test_infra.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-12-20T15:16:01Z",
+      "side": 1,
+      "message": "Sorry, my bad, I got confused. Thanks for adding the right comment.",
+      "parentUuid": "782a87e6_c6c1b2c8",
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3b60ef0c_89914fa6",
@@ -442,6 +460,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0ef23133_8f8e82ae",
+        "filename": "tftf/tests/tbb-tests/tbb_test_infra.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-12-20T15:16:01Z",
+      "side": 1,
+      "message": "Sorry I don\u0027t see it being \"done\" in patch set 2... There might be a misunderstanding: I was not requesting a final backslash at the end of the macro (which I think is unneeded) but rather a newline character at the end of the \"Failed at...\" message.",
+      "parentUuid": "85194d08_7c8cf24a",
+      "range": {
+        "startLine": 8,
+        "startChar": 36,
+        "endLine": 8,
+        "endChar": 39
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1843243f_ca74451c",
         "filename": "tftf/tests/tbb-tests/tbb_test_infra.h",
         "patchSetId": 1
@@ -477,6 +519,30 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "1843243f_ca74451c",
+      "range": {
+        "startLine": 14,
+        "startChar": 38,
+        "endLine": 14,
+        "endChar": 40
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04e9c4b7_7796f88d",
+        "filename": "tftf/tests/tbb-tests/tbb_test_infra.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-12-20T15:16:01Z",
+      "side": 1,
+      "message": "Ditto.",
+      "parentUuid": "e08f9394_effe6731",
       "range": {
         "startLine": 14,
         "startChar": 38,

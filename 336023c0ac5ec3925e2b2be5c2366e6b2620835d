@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8684a4c4_83205033",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2023-12-20T15:16:01Z",
+      "side": 1,
+      "message": "(minor) typo",
+      "range": {
+        "startLine": 19,
+        "startChar": 3,
+        "endLine": 19,
+        "endChar": 10
+      },
+      "revId": "336023c0ac5ec3925e2b2be5c2366e6b2620835d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
