@@ -71,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "286edaff_411d22d4",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 82
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-20T13:43:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1188f357_a2439e14",
+      "range": {
+        "startLine": 310,
+        "startChar": 58,
+        "endLine": 310,
+        "endChar": 60
+      },
+      "revId": "edca38f5ea8dfd433de8d6d2aa1dbea8a1b98faa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "52fbcd28_ed243def",
@@ -84,6 +108,30 @@
       "writtenOn": "2023-12-19T18:42:41Z",
       "side": 1,
       "message": "Why part of this change?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 24
+      },
+      "revId": "edca38f5ea8dfd433de8d6d2aa1dbea8a1b98faa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e4679c4_6d2a5242",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_exceptions.c",
+        "patchSetId": 82
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-20T13:43:59Z",
+      "side": 1,
+      "message": "Same reason: CI static checks asked me to change the order of includes",
+      "parentUuid": "52fbcd28_ed243def",
       "range": {
         "startLine": 8,
         "startChar": 0,
@@ -111,6 +159,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c19569cd_8dc800c5",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 82
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-20T13:43:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87250220_0cc4d5f5",
+      "revId": "edca38f5ea8dfd433de8d6d2aa1dbea8a1b98faa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e438e8ff_f1a04cd3",
@@ -124,6 +190,30 @@
       "writtenOn": "2023-12-19T18:42:41Z",
       "side": 1,
       "message": "top of the scope.",
+      "range": {
+        "startLine": 691,
+        "startChar": 1,
+        "endLine": 691,
+        "endChar": 16
+      },
+      "revId": "edca38f5ea8dfd433de8d6d2aa1dbea8a1b98faa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d4218e9_b435e646",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 82
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-20T13:43:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e438e8ff_f1a04cd3",
       "range": {
         "startLine": 691,
         "startChar": 1,
