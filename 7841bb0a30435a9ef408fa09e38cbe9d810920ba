@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e500764_6c756f44",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "578ea795_cdbf354c",
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9ab59149_14e8669d",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-12-20T10:08:51Z",
       "side": 1,
       "message": "(minor) I would drop that part of the comment. I found it more confusing than it helps.",
+      "range": {
+        "startLine": 91,
+        "startChar": 37,
+        "endLine": 91,
+        "endChar": 57
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17adb7e4_f8adeb64",
+        "filename": "plat/arm/fvp/include/platform_def.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ab59149_14e8669d",
       "range": {
         "startLine": 91,
         "startChar": 37,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "74167760_86cf4ee3",
+        "filename": "tftf/tests/tbb-tests/tbb_test_infra.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2e92587_ffce8d39",
+      "range": {
+        "startLine": 12,
+        "startChar": 14,
+        "endLine": 12,
+        "endChar": 35
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "128414ae_fa9762ee",
@@ -77,6 +143,24 @@
       "writtenOn": "2023-12-20T10:08:51Z",
       "side": 1,
       "message": "Suggest adding the following comment:\n\n```\n/* FIP successfully repaired by EL3 firmware. */\n```",
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "261c529d_b4d2fa87",
+        "filename": "tftf/tests/tbb-tests/tbb_test_infra.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "128414ae_fa9762ee",
       "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -98,6 +182,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "782a87e6_c6c1b2c8",
+        "filename": "tftf/tests/tbb-tests/tbb_test_infra.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "This is not what the following code does. Done.",
+      "parentUuid": "ac74cd27_5d86ef18",
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3b60ef0c_89914fa6",
@@ -111,6 +213,24 @@
       "writtenOn": "2023-12-20T10:08:51Z",
       "side": 1,
       "message": "Let\u0027s add another comment, such as:\n\n```\n/*\n * Now reboot the system.\n * On the next boot, EL3 firmware should figure out that the FIP is corrupted\n * and attempt to repair it before re-entering TFTF.\n */\n ```",
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3778628_8ce096ab",
+        "filename": "tftf/tests/tbb-tests/tbb_test_infra.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b60ef0c_89914fa6",
       "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -138,6 +258,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4330492_cafe60b1",
+        "filename": "tftf/tests/tbb-tests/tbb_test_infra.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f71de0af_d7dad5e2",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 26
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "df368179_aab17e2c",
@@ -151,6 +295,30 @@
       "writtenOn": "2023-12-20T10:08:51Z",
       "side": 1,
       "message": "As per TFTF coding style, the header guard name should be `TBB_TEST_INFRA_H`.",
+      "range": {
+        "startLine": 1,
+        "startChar": 8,
+        "endLine": 1,
+        "endChar": 33
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1c650c6_8cc8a04c",
+        "filename": "tftf/tests/tbb-tests/tbb_test_infra.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df368179_aab17e2c",
       "range": {
         "startLine": 1,
         "startChar": 8,
@@ -224,6 +392,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db72fc1d_698d58a4",
+        "filename": "tftf/tests/tbb-tests/tbb_test_infra.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66082fa5_9109431c",
+      "range": {
+        "startLine": 8,
+        "startChar": 2,
+        "endLine": 8,
+        "endChar": 22
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85194d08_7c8cf24a",
+        "filename": "tftf/tests/tbb-tests/tbb_test_infra.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ddab446e_afe86531",
+      "range": {
+        "startLine": 8,
+        "startChar": 36,
+        "endLine": 8,
+        "endChar": 39
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1843243f_ca74451c",
@@ -237,6 +453,30 @@
       "writtenOn": "2023-12-20T10:08:51Z",
       "side": 1,
       "message": "Add a final \\n?",
+      "range": {
+        "startLine": 14,
+        "startChar": 38,
+        "endLine": 14,
+        "endChar": 40
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e08f9394_effe6731",
+        "filename": "tftf/tests/tbb-tests/tbb_test_infra.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1843243f_ca74451c",
       "range": {
         "startLine": 14,
         "startChar": 38,
@@ -270,6 +510,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "45690668_1394ba29",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2534b2fe_dd8d4dad",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6799a4f8_6fe27d3a",
@@ -283,6 +547,24 @@
       "writtenOn": "2023-12-20T10:08:51Z",
       "side": 1,
       "message": "Add some function documentation, such as:\n\n```\n/*\n * Get the offset (relative to the base of the FIP) of the image identified\n * by the specified UUID, or 0 if it cannot be found.\n */\n```\n\nBy the way, what happens if we call this function with the UUID of the first image in the FIP? Would it not return offset 0, which would be undistinguishable from the error code returned when the image is not found?\n\nWhichever the answer is, please mention it in the function documentation.",
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "85e16183_29219d0e",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6799a4f8_6fe27d3a",
       "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -333,6 +615,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "78a48683_56b525bd",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75afbf95_a71c5312",
+      "range": {
+        "startLine": 14,
+        "startChar": 30,
+        "endLine": 14,
+        "endChar": 42
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc4a47a4_e179080f",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9521cff8_0b642384",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 43
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1d241fd_f1e0cdac",
@@ -356,6 +686,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1a3ea09_3364950f",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1d241fd_f1e0cdac",
+      "range": {
+        "startLine": 15,
+        "startChar": 1,
+        "endLine": 15,
+        "endChar": 30
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1022be58_2d9bcc30",
@@ -369,6 +723,30 @@
       "writtenOn": "2023-12-20T10:08:51Z",
       "side": 1,
       "message": "2023",
+      "range": {
+        "startLine": 2,
+        "startChar": 16,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28097a73_894a90fd",
+        "filename": "tftf/tests/tests-tbb.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1022be58_2d9bcc30",
       "range": {
         "startLine": 2,
         "startChar": 16,
@@ -432,6 +810,54 @@
       "writtenOn": "2023-12-20T10:08:51Z",
       "side": 1,
       "message": "Perhaps the scope of the testsuite could be broaden to include all sorts of FIP corruption test cases? I imagine we\u0027ll add more tests like `test_tbb_tkey_cert_header` in the future.",
+      "range": {
+        "startLine": 11,
+        "startChar": 2,
+        "endLine": 11,
+        "endChar": 139
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5d1d55d_412c2383",
+        "filename": "tftf/tests/tests-tbb.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb324f10_de33b0c4",
+      "range": {
+        "startLine": 11,
+        "startChar": 80,
+        "endLine": 11,
+        "endChar": 92
+      },
+      "revId": "7841bb0a30435a9ef408fa09e38cbe9d810920ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67b52d57_db0e0c68",
+        "filename": "tftf/tests/tests-tbb.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2023-12-20T14:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c90da16d_ae3689b3",
       "range": {
         "startLine": 11,
         "startChar": 2,
