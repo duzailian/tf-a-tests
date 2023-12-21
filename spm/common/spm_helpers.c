@@ -56,3 +56,10 @@ int64_t spm_interrupt_deactivate(uint32_t vint_id)
 
 	return (int64_t)ret.ret0;
 }
+
+unsigned int spm_get_my_core_pos(void)
+{
+	uint64_t mpidr = read_mpidr_el1();
+
+	return (unsigned int)MPIDR_AFFLVL0_VAL(mpidr);
+}
