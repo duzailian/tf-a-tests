@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b96c03e1_6ee8bbc2",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-22T15:00:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "113bff33_33bd2cba",
+      "revId": "986e9686428d29588a30666301fdef9d768dcbab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a2c6ae6a_081c74b3",
@@ -41,6 +59,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "95704cc8_887f9919",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-22T15:00:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2c6ae6a_081c74b3",
+      "range": {
+        "startLine": 597,
+        "startChar": 36,
+        "endLine": 597,
+        "endChar": 46
+      },
+      "revId": "986e9686428d29588a30666301fdef9d768dcbab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "07a9f6e3_d4b9447d",
@@ -54,6 +96,30 @@
       "writtenOn": "2023-12-19T15:41:50Z",
       "side": 1,
       "message": "could remove init_ripas from map_protected_data.",
+      "range": {
+        "startLine": 623,
+        "startChar": 7,
+        "endLine": 623,
+        "endChar": 36
+      },
+      "revId": "986e9686428d29588a30666301fdef9d768dcbab",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c453f7b_6af0693d",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2023-12-22T15:00:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07a9f6e3_d4b9447d",
       "range": {
         "startLine": 623,
         "startChar": 7,
