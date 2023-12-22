@@ -22,6 +22,30 @@
       },
       "revId": "078f401c65223bfa30aa9928f9070ea430ac8c6f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fee044a7_bf613b35",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2023-12-22T09:32:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d7ae98f_5aa3bdb7",
+      "range": {
+        "startLine": 109,
+        "startChar": 29,
+        "endLine": 109,
+        "endChar": 30
+      },
+      "revId": "078f401c65223bfa30aa9928f9070ea430ac8c6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
