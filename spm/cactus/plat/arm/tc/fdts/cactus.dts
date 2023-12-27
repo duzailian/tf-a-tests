@@ -73,8 +73,8 @@
 
 	device-regions {
 		compatible = "arm,ffa-manifest-device-regions";
-		uart2 {
-			base-address = <0x00000000 0x7FF80000>;
+		ap_s_uart {
+			base-address = <0x00000000 0x2A410000>;
 			pages-count = <1>;
 			attributes = <0x3>; /* read-write */
 		};
