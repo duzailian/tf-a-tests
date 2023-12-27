@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c48fdd7_488be432",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 82
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-27T18:37:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a133cd37_0b57a7b8",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 17
+      },
+      "revId": "edca38f5ea8dfd433de8d6d2aa1dbea8a1b98faa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1188f357_a2439e14",
@@ -156,6 +180,30 @@
       "side": 1,
       "message": "But this file isn\u0027t affected by this patch.\nThe static checks show the commit hash that introduced the regression.\nTry to squash these refactoring in those patches.",
       "parentUuid": "9e4679c4_6d2a5242",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 24
+      },
+      "revId": "edca38f5ea8dfd433de8d6d2aa1dbea8a1b98faa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5899fba3_f40f8546",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_exceptions.c",
+        "patchSetId": 82
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2023-12-27T18:37:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4458b01f_5eeab863",
       "range": {
         "startLine": 8,
         "startChar": 0,
