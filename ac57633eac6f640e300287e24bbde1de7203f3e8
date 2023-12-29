@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31f5c785_ebf4c081",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 90
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-12-29T09:50:46Z",
+      "side": 1,
+      "message": "Please be consistent with the syntax. Either *receivers for all the arguments or receivers[]. \nI think you\u0027ve used receivers[] everywhere else",
+      "range": {
+        "startLine": 112,
+        "startChar": 49,
+        "endLine": 112,
+        "endChar": 59
+      },
+      "revId": "ac57633eac6f640e300287e24bbde1de7203f3e8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
