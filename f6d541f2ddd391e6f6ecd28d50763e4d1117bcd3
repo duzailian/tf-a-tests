@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2725c317_0ba4acf3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 93
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-12-29T10:13:06Z",
+      "side": 1,
+      "message": "Looks good to me, just a small comment",
+      "revId": "f6d541f2ddd391e6f6ecd28d50763e4d1117bcd3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75cccb52_85530ec9",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 93
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2023-12-29T10:13:06Z",
+      "side": 1,
+      "message": "I think other than FFA_MEM_FRAG_TX the only other response would be FFA_ERROR so could we used the ffa_error_code function here in the print?",
+      "range": {
+        "startLine": 351,
+        "startChar": 9,
+        "endLine": 351,
+        "endChar": 16
+      },
+      "revId": "f6d541f2ddd391e6f6ecd28d50763e4d1117bcd3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
