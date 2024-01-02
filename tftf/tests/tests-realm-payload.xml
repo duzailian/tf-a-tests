@@ -12,6 +12,12 @@
 	  function="host_test_realm_create_enter" />
 	  <testcase name="Multiple Realm EL1 creation and execution test"
 	  function="host_test_multiple_realm_create_enter" />
+	  <testcase name="Realm SEA Empty"
+	  function="host_realm_sea_empty" />
+	  <testcase name="Realm SEA Unprotected"
+	  function="host_realm_sea_unprotected" />
+	  <testcase name="Realm SEA Adr Fault"
+	  function="host_realm_sea_adr_fault" />
 	  <testcase name="Realm Abort Unassigned RAM"
 	  function="host_realm_abort_unassigned_ram" />
 	  <testcase name="Realm Abort Unassigned Destroyed"
