@@ -49,6 +49,8 @@ enum realm_cmd {
 	REALM_GET_RSI_VERSION,
 	REALM_INSTR_FETCH_CMD,
 	REALM_DATA_ACCESS_CMD,
+	REALM_INSTR_FETCH_SEA_CMD,
+	REALM_DATA_ACCESS_SEA_CMD,
 	REALM_PMU_CYCLE,
 	REALM_PMU_EVENT,
 	REALM_PMU_PRESERVE,
@@ -101,6 +103,12 @@ host_shared_data_t *host_get_shared_structure(struct realm *realm_ptr, unsigned 
  */
 void host_shared_data_set_host_val(struct realm *realm_ptr,
 		unsigned int rec_num, uint8_t index, u_register_t val);
+
+/*
+ * Get data shared from realm to Host
+ */
+u_register_t host_shared_data_get_realm_val(struct realm *realm_ptr,
+		unsigned int rec_num, uint8_t index);
 
 /*
  * Set command to be send from Host to realm
