@@ -16,6 +16,7 @@
 #include "realm_def.h"
 #include <realm_rsi.h>
 #include <realm_tests.h>
+#include <sync.h>
 #include <tftf_lib.h>
 
 static fpu_state_t rl_fpu_state_write;
@@ -161,6 +162,57 @@ static bool test_realm_data_access_cmd(void)
 	return false;
 }
 
+static bool sea_exception_handler(void)
+{
+	u_register_t base, far;
+
+	base = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
+	far = read_far_el1();
+	realm_printf("Realm Abort FAR=0x%lx, base=0x%lx\n", far, base);
+	if (far == base) {
+		rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD);
+	}
+	realm_printf("Realm Abort fail incorrect FAR=0x%lx\n", far);
+	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
+
+	/* Should not return. */
+	return false;
+}
+
+static bool test_realm_inst_fetch_sea_cmd(void)
+{
+	u_register_t base;
+	void (*func_ptr)(void);
+	rsi_ripas_type ripas;
+
+	register_custom_sync_exception_handler(sea_exception_handler);
+	base = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
+	rsi_ipa_state_get(base, &ripas);
+	realm_printf("Initial ripas=0x%lx\n", ripas);
+	/* causes instruction abort */
+	realm_printf("Generate Instruction Abort\n");
+	func_ptr = (void (*)(void))base;
+	func_ptr();
+	/* should not return */
+	return false;
+}
+
+static bool test_realm_data_access_sea_cmd(void)
+{
+	u_register_t base;
+	rsi_ripas_type ripas;
+
+	register_custom_sync_exception_handler(sea_exception_handler);
+	base = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
+	rsi_ipa_state_get(base, &ripas);
+	realm_printf("Initial ripas=0x%lx\n", ripas);
+	/* causes data abort */
+	realm_printf("Generate Data Abort\n");
+	*((volatile uint64_t *)base);
+	/* should not return */
+	return false;
+}
+
 /*
  * This is the entry function for Realm payload, it first requests the shared buffer
  * IPA address from Host using HOST_CALL/RSI, it reads the command to be executed,
@@ -194,6 +246,12 @@ void realm_payload_main(void)
 			break;
 		case REALM_DATA_ACCESS_CMD:
 			test_succeed = test_realm_data_access_cmd();
+			break;
+		case REALM_INSTR_FETCH_SEA_CMD:
+			test_succeed = test_realm_inst_fetch_sea_cmd();
+			break;
+		case REALM_DATA_ACCESS_SEA_CMD:
+			test_succeed = test_realm_data_access_sea_cmd();
 			break;
 		case REALM_PAUTH_SET_CMD:
 			test_succeed = test_realm_pauth_set_cmd();
