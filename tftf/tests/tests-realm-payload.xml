@@ -12,6 +12,10 @@
 	  function="host_test_realm_create_enter" />
 	  <testcase name="Multiple Realm EL1 creation and execution test"
 	  function="host_test_multiple_realm_create_enter" />
+	  <testcase name="New Realm PAS transition"
+	  function="host_realm_pas_transition_new" />
+          <testcase name="Active Realm PAS transition"
+          function="host_realm_pas_transition_active" />
 	  <testcase name="Realm SEA Empty"
 	  function="host_realm_sea_empty" />
 	  <testcase name="Realm SEA Unprotected"
