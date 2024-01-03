@@ -1107,7 +1107,7 @@ test_result_t host_realm_sea_empty(void)
 	/* DATA_CREATE_UNKNOWN */
 	ret = host_realm_delegate_map_protected_data(true, &realm, base, PAGE_SIZE, 0U);
 	if (ret != RMI_SUCCESS) {
-		ERROR("host_realm_map_protected_data failed\n");
+		ERROR("host_realm_delegate_map_protected_data failed\n");
 		goto destroy_realm;
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
@@ -1393,4 +1393,336 @@ test_result_t host_realm_enable_dit(void)
 	}
 
 	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * Test initial state of page is unassigned empty
+ * Call INIT_RIPAS to move state to unassigned ram
+ * Call RTT_DESTROY
+ * Check new state is unassigned destroyed
+ */
+test_result_t test_rtt_destroy_ram(struct realm *realm)
+{
+	u_register_t ret, top, out_rtt, base;
+	struct rtt_entry rtt;
+
+	/* TFTF creates initial L1-L2 entries for range 0-1<<32 choose any adr excluding this */
+	base = (u_register_t)(1UL << 34);
+	ret = host_rmi_rtt_readentry(realm->rd, base, 3U, &rtt);
+	if (ret != RMI_SUCCESS || rtt.walk_level != 1U
+			|| rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_EMPTY)) {
+		ERROR("Initial realm table creation changed\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Create RTT entries */
+	ret = host_rmi_create_rtt_levels(realm, base, rtt.walk_level, 3U);
+	if (ret != RMI_SUCCESS) {
+		ERROR("host_rmi_create_rtt_levels failed ret=0x%lx\n", ret);
+		return TEST_RESULT_FAIL;
+	}
+	ret = host_rmi_rtt_readentry(realm->rd, base, 3U, &rtt);
+	if (rtt.walk_level != 3U) {
+		ERROR("host_rmi_create_rtt_levels failed ret=0x%lx\n", ret);
+		return TEST_RESULT_FAIL;
+	}
+
+	ret = host_rmi_rtt_init_ripas(realm->rd, base, base + PAGE_SIZE, &top);
+	if (ret != RMI_SUCCESS) {
+		ERROR("%s() failed, ret=0x%lx line=%u\n",
+			"host_rmi_rtt_init_ripas", ret, __LINE__);
+		return TEST_RESULT_FAIL;
+	}
+	ret = host_rmi_rtt_readentry(realm->rd, base, 3U, &rtt);
+	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
+			(rtt.ripas != RMI_RAM)) {
+		ERROR("wrong state after INIT_RIPAS\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Destroy newly created rtt, there should be only 1 entry */
+	ret = host_rmi_rtt_destroy(realm->rd, base, 3U, &out_rtt, &top);
+	if (ret != RMI_SUCCESS) {
+		ERROR("host_rmi_rtt_destroy failed ret=0x%lx\n", ret);
+		return TEST_RESULT_FAIL;
+	}
+	ret = host_rmi_granule_undelegate(out_rtt);
+
+	ret = host_rmi_rtt_readentry(realm->rd, base, 3U, &rtt);
+	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
+			rtt.ripas != RMI_DESTROYED) {
+		ERROR("Wrong state after host_rmi_rtt_destroy\n");
+		return TEST_RESULT_FAIL;
+	}
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * Test initial state of page is unassigned empty
+ * Call RTT_DESTROY
+ * Check new state is unassigned destroyed
+ */
+test_result_t test_rtt_destroy_empty(struct realm *realm)
+{
+	u_register_t base, ret, top, out_rtt;
+	struct rtt_entry rtt;
+
+	/* TFTF creates initial L1-L2 entries for range 0-1<<32 choose any adr excluding this */
+	base = (u_register_t)(1UL << 33);
+	ret = host_rmi_rtt_readentry(realm->rd, base, 3U, &rtt);
+	if (ret != RMI_SUCCESS || rtt.walk_level != 1U
+			|| rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_EMPTY)) {
+		ERROR("Initial realm table creation changed\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Create RTT entries */
+	ret = host_rmi_create_rtt_levels(realm, base, rtt.walk_level, 2U);
+	if (ret != RMI_SUCCESS) {
+		ERROR("host_rmi_create_rtt_levels failed ret=0x%lx\n", ret);
+		return TEST_RESULT_FAIL;
+	}
+	ret = host_rmi_rtt_readentry(realm->rd, base, 3U, &rtt);
+	if (rtt.walk_level != 2U) {
+		ERROR("host_rmi_create_rtt_levels failed ret=0x%lx\n", ret);
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Destroy newly created rtt, there should be only 1 entry */
+	ret = host_rmi_rtt_destroy(realm->rd, base, 2U, &out_rtt, &top);
+	if (ret != RMI_SUCCESS) {
+		ERROR("host_rmi_rtt_destroy failed ret=0x%lx\n", ret);
+		return TEST_RESULT_FAIL;
+	}
+	ret = host_rmi_granule_undelegate(out_rtt);
+
+	ret = host_rmi_rtt_readentry(realm->rd, base, 3U, &rtt);
+	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
+			rtt.ripas != RMI_DESTROYED) {
+		ERROR("Wrong state after host_rmi_rtt_destroy\n");
+		return TEST_RESULT_FAIL;
+	}
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * Test aims to test PAS transitions
+ * when realm is in new state
+ * 1. Test initial state of PAGE is Unassigned Empty
+ * 2. Test DATA_CREATE moves initial state to Assigned Ram
+ * a. Test DATA_DESTROY moves state to Unaasigned Destroyed
+ * b. Test DATA_CREATE_UNKNOWN moves state to Assigned Destroyed
+ * c. Test DATA_DESTROY moves state to Unaasigned Destroyed
+ * 3. Test DATA_CREATE_UNKNOWN moves initial state to Assigned Empty
+ *    Test DATA_DESTROY moves state to Unaasigned Empty
+ * 4. Test INIT_RIPAS moves initial state to Unassigned RAM
+ *    Test DATA_CREATE_UNKNOWN moves state to Assigned Ram
+ * 5. Test RTT_DESTROY moves initial state to Unaasigned Destroyed
+ * 6. Test RTT_DESTROY moves state unassigned ram to Unaasigned Destroyed
+ *
+ */
+test_result_t host_realm_pas_transition_new(void)
+{
+	bool ret1;
+	test_result_t res = TEST_RESULT_FAIL;
+	u_register_t ret, data, top;
+	struct realm realm;
+	struct rtt_entry rtt;
+	u_register_t rec_flag[2U] = {RMI_RUNNABLE, RMI_RUNNABLE}, base;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, rec_flag, 2U)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		goto destroy_realm;
+	}
+
+	INFO("Test 1\n");
+	base = (u_register_t)page_alloc(PAGE_SIZE);
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (rtt.state != RMI_UNASSIGNED ||
+			(rtt.ripas != RMI_EMPTY)) {
+		ERROR("wrong initial state\n");
+		goto destroy_realm;
+	}
+
+	/* 2. DATA_CREATE */
+	INFO("Test 2\n");
+	ret = host_realm_delegate_map_protected_data(false, &realm, base, PAGE_SIZE, TFTF_BASE);
+	if (ret != RMI_SUCCESS) {
+		ERROR("host_realm_delegate_map_protected_data failed\n");
+		goto destroy_realm;
+	}
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (rtt.state != RMI_ASSIGNED ||
+			(rtt.ripas != RMI_RAM)) {
+		ERROR("wrong state after DATA_CRATE_UNKNOWN\n");
+		goto undelegate_destroy;
+	}
+
+	/* 2a DATA_DESTROY*/
+	ret = host_rmi_data_destroy(realm.rd, base, &data, &top);
+	if (ret != RMI_SUCCESS || data != base) {
+		ERROR("host_rmi_data_destroy failed\n");
+		goto undelegate_destroy;
+	}
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
+			rtt.ripas != RMI_DESTROYED) {
+		ERROR("Wrong state after host_rmi_data_destroy\n");
+		goto undelegate_destroy;
+	}
+
+	host_rmi_granule_undelegate(base);
+	/*2b DATA_CREATE_UNKNOWN */
+	ret = host_realm_delegate_map_protected_data(true, &realm, base, PAGE_SIZE, 0U);
+	if (ret != RMI_SUCCESS) {
+		ERROR("host_realm_delegate_map_protected_data failed\n");
+		goto undelegate_destroy;
+	}
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (rtt.state != RMI_ASSIGNED ||
+			(rtt.ripas != RMI_DESTROYED)) {
+		ERROR("wrong state after DATA_CRATE_UNKNOWN\n");
+		goto undelegate_destroy;
+	}
+
+	/* 2c DATA_DESTROY*/
+	ret = host_rmi_data_destroy(realm.rd, base, &data, &top);
+	if (ret != RMI_SUCCESS || data != base) {
+		ERROR("host_rmi_data_destroy failed\n");
+		goto undelegate_destroy;
+	}
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
+			rtt.ripas != RMI_DESTROYED) {
+		ERROR("Wrong state after host_rmi_data_destroy\n");
+		goto undelegate_destroy;
+	}
+
+	host_rmi_granule_undelegate(base);
+
+	/*3. start with new page */
+	INFO("Test 3\n");
+	base = (u_register_t)page_alloc(PAGE_SIZE);
+	ret = host_realm_delegate_map_protected_data(true, &realm, base, PAGE_SIZE, 0U);
+	if (ret != RMI_SUCCESS) {
+		ERROR("host_realm_delegate_map_protected_data failed\n");
+		goto destroy_realm;
+	}
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (rtt.state != RMI_ASSIGNED ||
+			(rtt.ripas != RMI_EMPTY)) {
+		ERROR("wrong state after DATA_CRATE_UNKNOWN\n");
+		goto undelegate_destroy;
+	}
+	ret = host_rmi_data_destroy(realm.rd, base, &data, &top);
+	if (ret != RMI_SUCCESS || data != base) {
+		ERROR("host_rmi_data_destroy failed\n");
+		goto undelegate_destroy;
+	}
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
+			rtt.ripas != RMI_EMPTY) {
+		ERROR("Wrong state after host_rmi_data_destroy\n");
+		goto undelegate_destroy;
+	}
+	host_rmi_granule_undelegate(base);
+
+	/* 4. start with new page*/
+	INFO("Test 4\n");
+	base = (u_register_t)page_alloc(PAGE_SIZE);
+	ret = host_rmi_rtt_init_ripas(realm.rd, base, base + PAGE_SIZE, &top);
+	if (ret != RMI_SUCCESS) {
+		ERROR("%s() failed, ret=0x%lx line=%u\n",
+			"host_rmi_rtt_init_ripas", ret, __LINE__);
+		goto destroy_realm;
+	}
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (rtt.state != RMI_UNASSIGNED ||
+			(rtt.ripas != RMI_RAM)) {
+		ERROR("wrong state after INIT_RIPAS\n");
+		goto undelegate_destroy;
+	}
+	/* DATA__CREATE_UNKNOWN */
+	ret = host_realm_delegate_map_protected_data(true, &realm, base, PAGE_SIZE, 0U);
+	if (ret != RMI_SUCCESS) {
+		ERROR("host_realm_delegate_map_protected_data failed\n");
+		goto destroy_realm;
+	}
+	ret = host_rmi_rtt_readentry(realm.rd, base, 3U, &rtt);
+	if (rtt.state != RMI_ASSIGNED ||
+			(rtt.ripas != RMI_RAM)) {
+		ERROR("wrong state after DATA_CRATE_UNKNOWN\n");
+		goto undelegate_destroy;
+	}
+	host_rmi_granule_undelegate(base);
+
+	/* 5. start with new page */
+	INFO("Test 5\n");
+	res = test_rtt_destroy_empty(&realm);
+	if (res != TEST_RESULT_SUCCESS) {
+		ERROR("Test 5 failed\n");
+		goto destroy_realm;
+	}
+
+	/* 6. start with new page */
+	res = test_rtt_destroy_ram(&realm);
+	goto destroy_realm;
+
+undelegate_destroy:
+	ret = host_rmi_granule_undelegate(base);
+	if (ret != RMI_SUCCESS) {
+		ERROR("host_rmi_granule_undelegate failed base=0x%lx ret=0x%lx\n", base, ret);
+	}
+destroy_realm:
+	ret1 = host_destroy_realm(&realm);
+	if (!ret1) {
+		ERROR("%s(): destroy=%d\n",
+		__func__, ret1);
+		return TEST_RESULT_FAIL;
+	}
+	return res;
+}
+
+/*
+ * Test aim is to test RTT_DESTROY
+ * for active realm
+ * Test initial state of page is unassigned empty
+ * after RTT_DESTROY verify state is unassigned destroyed
+ */
+test_result_t host_realm_pas_transition_active(void)
+{
+	bool ret;
+	test_result_t res;
+	u_register_t rec_flag[] = {RMI_RUNNABLE};
+	struct realm realm;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, rec_flag, 1U)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	res = test_rtt_destroy_empty(&realm);
+	ret = host_destroy_realm(&realm);
+
+	if (!ret) {
+		ERROR("%s(): destroy=%d\n", __func__, ret);
+		return TEST_RESULT_FAIL;
+	}
+	return res;
 }
