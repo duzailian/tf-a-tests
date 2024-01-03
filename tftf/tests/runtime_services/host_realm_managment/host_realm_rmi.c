@@ -863,7 +863,7 @@ u_register_t host_realm_map_payload_image(struct realm *realm,
 						src_pa + i * PAGE_SIZE);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, par_base=0x%lx ret=0x%lx\n",
-				"host_realm_map_protected_data",
+				"host_realm_delegate_map_protected_data",
 				realm->par_base, ret);
 			return REALM_ERROR;
 		}
