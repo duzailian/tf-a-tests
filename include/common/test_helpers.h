@@ -224,6 +224,14 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 		}								\
 	} while (false)
 
+#define SKIP_TEST_IF_MPAM_NOT_SUPPORTED()                                     \
+      do {                                                                    \
+              if(!is_feat_mpam_supported()){                                  \
+                      tftf_testcase_printf("ARMv8.4-mpam not supported\n");   \
+                      return TEST_RESULT_SKIPPED;                             \
+              }                                                               \
+      } while (false)
+
 #ifdef __aarch64__
 #define SKIP_TEST_IF_PA_SIZE_LESS_THAN(n)					\
 	do {									\
