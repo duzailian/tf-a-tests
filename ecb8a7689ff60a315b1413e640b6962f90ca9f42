@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30ee1fc1_faba8c60",
+        "filename": "el3_payload/Makefile",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-01-04T14:07:00Z",
+      "side": 1,
+      "message": "nit: a space here ?",
+      "range": {
+        "startLine": 36,
+        "startChar": 29,
+        "endLine": 36,
+        "endChar": 30
+      },
+      "revId": "ecb8a7689ff60a315b1413e640b6962f90ca9f42",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
