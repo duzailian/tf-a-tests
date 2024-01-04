@@ -212,6 +212,14 @@ static inline bool is_feat_rng_trap_present(void)
 			== ID_AA64PFR1_EL1_RNG_TRAP_SUPPORTED);
 }
 
+static inline bool is_feat_mpam_supported(void){
+
+      return (((((read_id_aa64pfr0_el1() >>
+              ID_AA64PFR0_MPAM_SHIFT) & ID_AA64PFR0_MPAM_MASK) << 4) |
+                              ((read_id_aa64pfr1_el1() >>
+              ID_AA64PFR1_MPAM_FRAC_SHIFT) & ID_AA64PFR1_MPAM_FRAC_MASK)) != 0U);
+}
+
 static inline unsigned int spe_get_version(void)
 {
 	return (unsigned int)((read_id_aa64dfr0_el1() >> ID_AA64DFR0_PMS_SHIFT) &
