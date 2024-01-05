@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "83406684_403ea7e0",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-01-05T17:10:18Z",
+      "side": 1,
+      "message": "I can\u0027t see any use for INVALID_PARAMETERS so I think this can probably be dropped for now",
+      "parentUuid": "c5d4704f_461a83c9",
+      "range": {
+        "startLine": 532,
+        "startChar": 38,
+        "endLine": 532,
+        "endChar": 48
+      },
+      "revId": "ac94b5f864944091531cf00da92a6a2b47c97e0f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3b9d9ebe_205d4703",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
         "patchSetId": 7
