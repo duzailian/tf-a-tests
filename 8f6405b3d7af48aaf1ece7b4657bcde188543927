@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32f7cfc7_3ba6ddac",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-05T20:02:00Z",
+      "side": 1,
+      "message": "nitpick: would it be also useful to print the address and size of the memory region that could not be mapped successfully?",
+      "revId": "8f6405b3d7af48aaf1ece7b4657bcde188543927",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ecbcf99_f931ec6b",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-05T20:02:00Z",
+      "side": 1,
+      "message": "should this be \"j\"",
+      "range": {
+        "startLine": 129,
+        "startChar": 12,
+        "endLine": 129,
+        "endChar": 13
+      },
+      "revId": "8f6405b3d7af48aaf1ece7b4657bcde188543927",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39a25de0_8d7b34cc",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-05T20:02:00Z",
+      "side": 1,
+      "message": "nitpick: Could you print to console the address \u0026 size that failed to be unmapped?",
+      "revId": "8f6405b3d7af48aaf1ece7b4657bcde188543927",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fdced50_c0e6193b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-05T20:02:00Z",
+      "side": 1,
+      "message": "why is this needed in this change",
+      "revId": "8f6405b3d7af48aaf1ece7b4657bcde188543927",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
