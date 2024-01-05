@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b849c67_cf3dad2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-05T22:50:16Z",
+      "side": 1,
+      "message": "nitpick: the explanation in this paragraph is valuable insight into how the tests are being moulded. Could you capture it in any of the test source files?",
+      "revId": "efa87f1f907ca1cb44c5e77433b135fdb9ab2196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9af0e80c_510678c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-05T22:50:16Z",
+      "side": 1,
+      "message": "what does shadowed mean",
+      "range": {
+        "startLine": 11,
+        "startChar": 30,
+        "endLine": 11,
+        "endChar": 38
+      },
+      "revId": "efa87f1f907ca1cb44c5e77433b135fdb9ab2196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba29462c_ebd8390b",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-05T22:50:16Z",
+      "side": 1,
+      "message": "Is this comment accurate?",
+      "range": {
+        "startLine": 191,
+        "startChar": 8,
+        "endLine": 192,
+        "endChar": 16
+      },
+      "revId": "efa87f1f907ca1cb44c5e77433b135fdb9ab2196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f6f627f_664a8867",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-05T22:50:16Z",
+      "side": 1,
+      "message": "is it needed?",
+      "revId": "efa87f1f907ca1cb44c5e77433b135fdb9ab2196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
