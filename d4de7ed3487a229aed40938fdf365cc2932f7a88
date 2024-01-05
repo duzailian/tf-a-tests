@@ -22,6 +22,30 @@
       },
       "revId": "d4de7ed3487a229aed40938fdf365cc2932f7a88",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e9a48ae_135ffb7b",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-05T17:21:56Z",
+      "side": 1,
+      "message": "I too had the same idea but Olivier suggested to keep it simple. Also, this trick is already employed in multiple places currently. I believe there are rarely any changes in the system configuration of Cactus partitions in our test setup.\n\nhttps://discord.com/channels/1106321706588577904/1106322198593011793/1183903272159936582",
+      "parentUuid": "b880b4e6_12acd544",
+      "range": {
+        "startLine": 321,
+        "startChar": 5,
+        "endLine": 321,
+        "endChar": 36
+      },
+      "revId": "d4de7ed3487a229aed40938fdf365cc2932f7a88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
