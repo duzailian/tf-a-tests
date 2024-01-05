@@ -1,0 +1,284 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53afdcd4_a17c1755",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 38
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "I think we need some unification of naming of functions. \n\nhost_rmi_ can be used if the helper maps 1:1 to a RMI command\n\nhost_realm_ can be used if the helper is an abstraction that does not map 1:1 to a single RMI command. This cleanup can be a separate patch.",
+      "range": {
+        "startLine": 564,
+        "startChar": 18,
+        "endLine": 564,
+        "endChar": 21
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8963e7b_a5033ed8",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "\"instr\"",
+      "range": {
+        "startLine": 132,
+        "startChar": 23,
+        "endLine": 132,
+        "endChar": 27
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ffc4a190_51be3baa",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "nit: \"Initial\"",
+      "range": {
+        "startLine": 591,
+        "startChar": 2,
+        "endLine": 591,
+        "endChar": 4
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fe39846_69a6faf1",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "effectively this is copying contents from TFTF_BASE page to the newly created page. Would be useful to mention to have a comment as we just need a dummy content to copy and we just use TFTF_BASE as convenience.\n\nAlso add comment that we do 1:1 mapping for IPA to PA.",
+      "range": {
+        "startLine": 625,
+        "startChar": 69,
+        "endLine": 625,
+        "endChar": 78
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "301e1547_666387c9",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "you could check `esr` to ensure that this is an instruction abort.",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3492ec6f_ae94f074",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "After we return from instruction fault, I think we will retry the same instruction on this realm execute here. \n\nTo do this properly, the rec needs to be destroyed and created again. Another test case for Data abort will be better perhaps.",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b01fcf4f_bda5f77a",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "could check `esr` to ensure that this is a data abort.",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b0588d5_874c5280",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "lines 700 - 749 seems to be very similar to previous test case. Can have a helper to modularize the common part.",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "510a0da5_6a12d20c",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 751,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "same comments as for previous test.",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f0f040a_66347adf",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 851,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "Quite curious to know how this worked. The base is an undelegated page , or may be the undelegate has failed ?",
+      "range": {
+        "startLine": 851,
+        "startChar": 7,
+        "endLine": 851,
+        "endChar": 36
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75752319_54089ea8",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 871,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "same comments as above.",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00c1bdab_c240cb41",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "is it unassgined_ns?",
+      "range": {
+        "startLine": 897,
+        "startChar": 31,
+        "endLine": 897,
+        "endChar": 42
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6368c06_79b28b69",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "We can have any address for IPA in unprotected space. So a comment will be good.",
+      "range": {
+        "startLine": 925,
+        "startChar": 8,
+        "endLine": 925,
+        "endChar": 17
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f613be1_6dc8e5e6",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-05T12:52:34Z",
+      "side": 1,
+      "message": "try to read RTT entry and verify that the PAGE is unassigned NS.",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
