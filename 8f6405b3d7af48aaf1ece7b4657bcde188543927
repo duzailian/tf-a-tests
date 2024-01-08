@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "82b190fe_00fbf248",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T11:44:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32f7cfc7_3ba6ddac",
+      "revId": "8f6405b3d7af48aaf1ece7b4657bcde188543927",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4ecbcf99_f931ec6b",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-01-05T20:02:00Z",
       "side": 1,
       "message": "should this be \"j\"",
+      "range": {
+        "startLine": 129,
+        "startChar": 12,
+        "endLine": 129,
+        "endChar": 13
+      },
+      "revId": "8f6405b3d7af48aaf1ece7b4657bcde188543927",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94ffdd0d_d2f1a719",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T11:44:07Z",
+      "side": 1,
+      "message": "good catch. thanks",
+      "parentUuid": "4ecbcf99_f931ec6b",
       "range": {
         "startLine": 129,
         "startChar": 12,
@@ -58,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb245f7d_bec4fd22",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T11:44:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39a25de0_8d7b34cc",
+      "revId": "8f6405b3d7af48aaf1ece7b4657bcde188543927",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7fdced50_c0e6193b",
@@ -71,6 +131,24 @@
       "writtenOn": "2024-01-05T20:02:00Z",
       "side": 1,
       "message": "why is this needed in this change",
+      "revId": "8f6405b3d7af48aaf1ece7b4657bcde188543927",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed9b5987_44987252",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 26
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T11:44:07Z",
+      "side": 1,
+      "message": "Done\nMy editor is doing these automatically for me.\nIt is not working well, need to disable this.",
+      "parentUuid": "7fdced50_c0e6193b",
       "revId": "8f6405b3d7af48aaf1ece7b4657bcde188543927",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
