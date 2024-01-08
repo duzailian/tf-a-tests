@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fd4355b_a9a476cb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T12:32:29Z",
+      "side": 1,
+      "message": "Added this to the relevant bits in the testing.",
+      "parentUuid": "5b849c67_cf3dad2b",
+      "revId": "efa87f1f907ca1cb44c5e77433b135fdb9ab2196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9af0e80c_510678c0",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-01-05T22:50:16Z",
       "side": 1,
       "message": "what does shadowed mean",
+      "range": {
+        "startLine": 11,
+        "startChar": 30,
+        "endLine": 11,
+        "endChar": 38
+      },
+      "revId": "efa87f1f907ca1cb44c5e77433b135fdb9ab2196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c1e346b_ff10757b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T12:32:29Z",
+      "side": 1,
+      "message": "This means there are two Physical instances of this.\nLike this, the NS/S PAS never have leakage of data from worlds.\nLet me know if you still have questions.",
+      "parentUuid": "9af0e80c_510678c0",
       "range": {
         "startLine": 11,
         "startChar": 30,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "754fe99a_6754a567",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T12:32:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a294f8c_3d0c4189",
+      "range": {
+        "startLine": 17,
+        "startChar": 11,
+        "endLine": 17,
+        "endChar": 21
+      },
+      "revId": "efa87f1f907ca1cb44c5e77433b135fdb9ab2196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e4ca03e_0c6d400c",
@@ -77,6 +143,30 @@
       "writtenOn": "2024-01-08T11:36:29Z",
       "side": 1,
       "message": "The comment says we only expect valid data for NWd -\u003e SWd so shouldn\u0027t we continue if the sender is an SP not if it is not?",
+      "range": {
+        "startLine": 180,
+        "startChar": 8,
+        "endLine": 180,
+        "endChar": 28
+      },
+      "revId": "efa87f1f907ca1cb44c5e77433b135fdb9ab2196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e942dd5_28b55a29",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T12:32:29Z",
+      "side": 1,
+      "message": "Rewrote the comment and fixed the condition.\nGood catch.\nCheers",
+      "parentUuid": "7e4ca03e_0c6d400c",
       "range": {
         "startLine": 180,
         "startChar": 8,
@@ -110,6 +200,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3fbdb93_af0d5875",
+        "filename": "spm/cactus/cactus_tests/cactus_test_memory_sharing.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T12:32:29Z",
+      "side": 1,
+      "message": "Left-overs from earlier versions.\nDropped the comment.",
+      "parentUuid": "ba29462c_ebd8390b",
+      "range": {
+        "startLine": 191,
+        "startChar": 8,
+        "endLine": 192,
+        "endChar": 16
+      },
+      "revId": "efa87f1f907ca1cb44c5e77433b135fdb9ab2196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1f6f627f_664a8867",
@@ -123,6 +237,24 @@
       "writtenOn": "2024-01-05T22:50:16Z",
       "side": 1,
       "message": "is it needed?",
+      "revId": "efa87f1f907ca1cb44c5e77433b135fdb9ab2196",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db5d4d95_d93265c7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T12:32:29Z",
+      "side": 1,
+      "message": "dropped.",
+      "parentUuid": "1f6f627f_664a8867",
       "revId": "efa87f1f907ca1cb44c5e77433b135fdb9ab2196",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
