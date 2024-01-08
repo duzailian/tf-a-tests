@@ -47,6 +47,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "327facf6_a58ab88e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T12:15:56Z",
+      "side": 1,
+      "message": "The tests are about SPM functionality.\n\nThe SPM is leveraging the dynamic PAS update functionality, on memory lend/donate from NWd to SP. The tests are to make sure the SPM is operating correctly.r",
+      "parentUuid": "718e13bb_13e222a1",
+      "range": {
+        "startLine": 7,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "6e585240468c894653b6cf350b97020f0f5f775d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "358d2f9d_22545e43",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T12:15:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b77a4463_8a33d9e0",
+      "range": {
+        "startLine": 7,
+        "startChar": 11,
+        "endLine": 7,
+        "endChar": 18
+      },
+      "revId": "6e585240468c894653b6cf350b97020f0f5f775d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "69b2c3e7_34c95826",
@@ -60,6 +108,24 @@
       "writtenOn": "2024-01-05T20:22:10Z",
       "side": 1,
       "message": "could you please add a high level description of steps performed in this helper utility?",
+      "revId": "6e585240468c894653b6cf350b97020f0f5f775d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cdd8f102_5a9a47fa",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T12:15:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "69b2c3e7_34c95826",
       "revId": "6e585240468c894653b6cf350b97020f0f5f775d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -87,6 +153,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f2d8770_69e2b0ac",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T12:15:56Z",
+      "side": 1,
+      "message": "Yes.\nRewritten the comment to make it clear.",
+      "parentUuid": "37d45106_738765d7",
+      "range": {
+        "startLine": 593,
+        "startChar": 36,
+        "endLine": 593,
+        "endChar": 43
+      },
+      "revId": "6e585240468c894653b6cf350b97020f0f5f775d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9f414038_be638545",
@@ -100,6 +190,24 @@
       "writtenOn": "2024-01-05T20:22:10Z",
       "side": 1,
       "message": "If its not too much trouble, please provide a brief description of how this test is different from the previous test(line 616), as a comment.",
+      "revId": "6e585240468c894653b6cf350b97020f0f5f775d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "edf1af70_28cc5a86",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T12:15:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f414038_be638545",
       "revId": "6e585240468c894653b6cf350b97020f0f5f775d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
