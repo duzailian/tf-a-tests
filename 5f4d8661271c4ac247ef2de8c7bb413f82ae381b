@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ba0a24c_3313580a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-08T20:36:02Z",
+      "side": 1,
+      "message": "nitpick: can be dropped",
+      "range": {
+        "startLine": 600,
+        "startChar": 61,
+        "endLine": 600,
+        "endChar": 63
+      },
+      "revId": "5f4d8661271c4ac247ef2de8c7bb413f82ae381b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a85c9bfa_129fe57d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-08T20:36:02Z",
+      "side": 1,
+      "message": "repeated",
+      "range": {
+        "startLine": 672,
+        "startChar": 3,
+        "endLine": 672,
+        "endChar": 5
+      },
+      "revId": "5f4d8661271c4ac247ef2de8c7bb413f82ae381b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
