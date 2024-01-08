@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4290da2_cbbb5928",
+        "filename": "tftf/tests/tests-memory-access.xml",
+        "patchSetId": 23
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T11:20:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c17b19e_bc908e90",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "f4853fa8b8eda25602951fc759987851103aca86",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b1e53f6d_25d560a2",
@@ -41,6 +65,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf23fa6e_d68783e7",
+        "filename": "tftf/tests/tests-memory-access.xml",
+        "patchSetId": 23
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T11:20:24Z",
+      "side": 1,
+      "message": "Done\nThanks for this suggestion, didn\u0027t realize this was possible.\nCheers",
+      "parentUuid": "b1e53f6d_25d560a2",
+      "revId": "f4853fa8b8eda25602951fc759987851103aca86",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ae98f7bd_676be385",
@@ -54,6 +96,24 @@
       "writtenOn": "2024-01-05T16:49:00Z",
       "side": 1,
       "message": "Nit: Think this was added by mistake",
+      "revId": "f4853fa8b8eda25602951fc759987851103aca86",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1389f71e_cb60259e",
+        "filename": "tftf/tests/tests-rmi-spm.xml",
+        "patchSetId": 23
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-08T11:20:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae98f7bd_676be385",
       "revId": "f4853fa8b8eda25602951fc759987851103aca86",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
