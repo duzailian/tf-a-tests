@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15d14155_cb1a100f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 89
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-09T15:57:16Z",
+      "side": 1,
+      "message": "Only small comments",
+      "revId": "be4798031fdf8fa5e3e2d8eb0ef9a03616f67ee1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "163bab4e_95b3c749",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 89
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-09T15:57:16Z",
+      "side": 1,
+      "message": "nitpick: i.e.",
+      "range": {
+        "startLine": 307,
+        "startChar": 58,
+        "endLine": 307,
+        "endChar": 60
+      },
+      "revId": "be4798031fdf8fa5e3e2d8eb0ef9a03616f67ee1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bcdbb1bb_be3d4a83",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 89
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-09T15:57:16Z",
+      "side": 1,
+      "message": "nitpick: \"Output buffer ...\"",
+      "range": {
+        "startLine": 328,
+        "startChar": 9,
+        "endLine": 328,
+        "endChar": 12
+      },
+      "revId": "be4798031fdf8fa5e3e2d8eb0ef9a03616f67ee1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "865cb94e_7e763b23",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 89
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-09T15:57:16Z",
+      "side": 1,
+      "message": "Could you add this to the if condition?\nI think it will be more productive for the testing framework.",
+      "range": {
+        "startLine": 340,
+        "startChar": 0,
+        "endLine": 340,
+        "endChar": 41
+      },
+      "revId": "be4798031fdf8fa5e3e2d8eb0ef9a03616f67ee1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b721d1e8_c6c2d529",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 89
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-09T15:57:16Z",
+      "side": 1,
+      "message": "Drop the log. This is misleading due to distinction we have with normal retrieve request and the hypervisor retrieve request.",
+      "range": {
+        "startLine": 349,
+        "startChar": 0,
+        "endLine": 349,
+        "endChar": 32
+      },
+      "revId": "be4798031fdf8fa5e3e2d8eb0ef9a03616f67ee1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63a5c514_a4f4526f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 89
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-09T15:57:16Z",
+      "side": 1,
+      "message": "change to: 2",
+      "range": {
+        "startLine": 642,
+        "startChar": 29,
+        "endLine": 642,
+        "endChar": 30
+      },
+      "revId": "be4798031fdf8fa5e3e2d8eb0ef9a03616f67ee1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc100a42_9643b79f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 89
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-09T15:57:16Z",
+      "side": 1,
+      "message": "nitpick: drop comment.",
+      "range": {
+        "startLine": 660,
+        "startChar": 0,
+        "endLine": 660,
+        "endChar": 24
+      },
+      "revId": "be4798031fdf8fa5e3e2d8eb0ef9a03616f67ee1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "438544a4_94e55f27",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 89
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-09T15:57:16Z",
+      "side": 1,
+      "message": "nitpick:rename function hypervisor_retrieve_request",
+      "range": {
+        "startLine": 673,
+        "startChar": 6,
+        "endLine": 673,
+        "endChar": 25
+      },
+      "revId": "be4798031fdf8fa5e3e2d8eb0ef9a03616f67ee1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
