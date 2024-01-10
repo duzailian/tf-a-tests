@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fc85180_f70a5fff",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-01-10T11:24:32Z",
+      "side": 1,
+      "message": "Add tabs to align with the defines above",
+      "range": {
+        "startLine": 421,
+        "startChar": 37,
+        "endLine": 421,
+        "endChar": 45
+      },
+      "revId": "cd11f233435b3b24e7a92097e33617ff7a05778e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97873541_a459ee26",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-01-10T11:24:32Z",
+      "side": 1,
+      "message": "Could you break this nested condition up into separate variables, and comment on what each bitfield represents?",
+      "range": {
+        "startLine": 217,
+        "startChar": 1,
+        "endLine": 220,
+        "endChar": 69
+      },
+      "revId": "cd11f233435b3b24e7a92097e33617ff7a05778e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2ddc69c_2397b937",
+        "filename": "tftf/tests/extensions/mpam/test_mpam.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-01-10T11:24:32Z",
+      "side": 1,
+      "message": "Is this include needed?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "cd11f233435b3b24e7a92097e33617ff7a05778e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
