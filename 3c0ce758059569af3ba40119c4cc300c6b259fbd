@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "284ed0cc_bea1cc17",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-10T18:53:31Z",
+      "side": 1,
+      "message": "nitpick:\nThe spec states that the impdef value must be 16bytes in size. What was the reason behind making it an array of 64bit fields? Could we declare it as an array of 16bit fields?",
+      "revId": "3c0ce758059569af3ba40119c4cc300c6b259fbd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
