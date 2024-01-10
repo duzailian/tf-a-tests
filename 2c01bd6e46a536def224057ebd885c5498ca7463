@@ -94,6 +94,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4174fa19_186d42a5",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 98
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-01-10T11:18:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba62221d_19d5e256",
+      "range": {
+        "startLine": 422,
+        "startChar": 0,
+        "endLine": 422,
+        "endChar": 37
+      },
+      "revId": "2c01bd6e46a536def224057ebd885c5498ca7463",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "314d65a0_c9e11850",
@@ -107,6 +131,30 @@
       "writtenOn": "2024-01-09T16:12:06Z",
       "side": 1,
       "message": "Add doc comment stating that you are adding a page per constituent. Because you want to exhaust the page, for the sake of testing.\nIn a real world scenario, the whole contiguous region could be described in a single constituent.",
+      "range": {
+        "startLine": 679,
+        "startChar": 1,
+        "endLine": 679,
+        "endChar": 57
+      },
+      "revId": "2c01bd6e46a536def224057ebd885c5498ca7463",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9004567_8c5776f1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 98
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-01-10T11:18:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "314d65a0_c9e11850",
       "range": {
         "startLine": 679,
         "startChar": 1,
