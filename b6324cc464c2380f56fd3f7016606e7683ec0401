@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bdc76fe_3fe67b9b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 93
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-10T15:59:11Z",
+      "side": 1,
+      "message": "nitpick: create a const struct variable, and pass reference to the function?\nWould make it easier to read?",
+      "range": {
+        "startLine": 694,
+        "startChar": 5,
+        "endLine": 705,
+        "endChar": 10
+      },
+      "revId": "b6324cc464c2380f56fd3f7016606e7683ec0401",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
