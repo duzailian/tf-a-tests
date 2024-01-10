@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a4c178c_1a637566",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 103
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-10T16:03:36Z",
+      "side": 1,
+      "message": "avoid using gotos in this way.\nThe use of gotos in Hafnium is tied to the freeing of common resources.\nWhere there is a \"goto error\", simply return an error.",
+      "range": {
+        "startLine": 512,
+        "startChar": 0,
+        "endLine": 517,
+        "endChar": 12
+      },
+      "revId": "ef49145a5fe57514acad01b5bbdcb553eece7a14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
