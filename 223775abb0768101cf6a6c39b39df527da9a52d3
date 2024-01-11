@@ -46,6 +46,30 @@
       },
       "revId": "223775abb0768101cf6a6c39b39df527da9a52d3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58d300f5_d4a31619",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-01-11T13:42:48Z",
+      "side": 1,
+      "message": "Ok",
+      "parentUuid": "1cc8a2a2_5b72245e",
+      "range": {
+        "startLine": 557,
+        "startChar": 26,
+        "endLine": 557,
+        "endChar": 30
+      },
+      "revId": "223775abb0768101cf6a6c39b39df527da9a52d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
