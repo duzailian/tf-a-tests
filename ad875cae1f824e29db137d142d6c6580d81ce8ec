@@ -22,6 +22,30 @@
       },
       "revId": "ad875cae1f824e29db137d142d6c6580d81ce8ec",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0de12d33_3f09959a",
+        "filename": "spm/cactus/plat/arm/tc/include/sp_platform_def.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-01-11T10:40:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cded639c_5ae1d93e",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 39
+      },
+      "revId": "ad875cae1f824e29db137d142d6c6580d81ce8ec",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
