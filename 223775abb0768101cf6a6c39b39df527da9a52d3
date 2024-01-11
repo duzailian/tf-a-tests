@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8394b91a_a47e9db9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-01-11T13:31:28Z",
+      "side": 1,
+      "message": "Sorry to be pedantic but I prefer using the macros here so we test on the latest version in the future without having to update",
+      "range": {
+        "startLine": 557,
+        "startChar": 26,
+        "endLine": 557,
+        "endChar": 30
+      },
+      "revId": "223775abb0768101cf6a6c39b39df527da9a52d3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
