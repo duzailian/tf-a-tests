@@ -22,6 +22,30 @@
       },
       "revId": "ef49145a5fe57514acad01b5bbdcb553eece7a14",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04c61bbf_bc1bd74e",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 103
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-01-11T11:38:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0a4c178c_1a637566",
+      "range": {
+        "startLine": 512,
+        "startChar": 0,
+        "endLine": 517,
+        "endChar": 12
+      },
+      "revId": "ef49145a5fe57514acad01b5bbdcb553eece7a14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
