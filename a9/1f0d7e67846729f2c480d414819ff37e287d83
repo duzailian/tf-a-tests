@@ -1,0 +1,10 @@
+Allow-CI+1: Olivier Deprez <olivier.deprez@arm.com>
+Verified+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Thu, 11 Jan 2024 15:16:16 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/24315
+Comments-Total: 20
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
