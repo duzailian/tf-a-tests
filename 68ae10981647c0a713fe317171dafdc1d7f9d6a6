@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31439d39_b991b147",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-01-11T13:17:53Z",
+      "side": 1,
+      "message": "typo: performs",
+      "range": {
+        "startLine": 529,
+        "startChar": 20,
+        "endLine": 529,
+        "endChar": 27
+      },
+      "revId": "68ae10981647c0a713fe317171dafdc1d7f9d6a6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72c7cb33_17d2133e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-01-11T13:17:53Z",
+      "side": 1,
+      "message": "nit: the operation",
+      "range": {
+        "startLine": 530,
+        "startChar": 50,
+        "endLine": 530,
+        "endChar": 59
+      },
+      "revId": "68ae10981647c0a713fe317171dafdc1d7f9d6a6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b114caf7_f2fdfc41",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-01-11T13:17:53Z",
+      "side": 1,
+      "message": "Use FFA_VERSION_MAJOR, FFA_VERSION_MINOR here",
+      "range": {
+        "startLine": 557,
+        "startChar": 26,
+        "endLine": 557,
+        "endChar": 31
+      },
+      "revId": "68ae10981647c0a713fe317171dafdc1d7f9d6a6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
