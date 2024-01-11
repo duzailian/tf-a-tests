@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f751a7a_6c48cb35",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 38
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d41fe670_b067ab87",
+      "range": {
+        "startLine": 564,
+        "startChar": 18,
+        "endLine": 564,
+        "endChar": 21
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e8963e7b_a5033ed8",
@@ -61,6 +85,30 @@
       "writtenOn": "2024-01-05T12:52:34Z",
       "side": 1,
       "message": "\"instr\"",
+      "range": {
+        "startLine": 132,
+        "startChar": 23,
+        "endLine": 132,
+        "endChar": 27
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2fd037b_fd9f0a84",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8963e7b_a5033ed8",
       "range": {
         "startLine": 132,
         "startChar": 23,
@@ -94,6 +142,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfba1d29_f6aa9b48",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffc4a190_51be3baa",
+      "range": {
+        "startLine": 591,
+        "startChar": 2,
+        "endLine": 591,
+        "endChar": 4
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9fe39846_69a6faf1",
@@ -107,6 +179,30 @@
       "writtenOn": "2024-01-05T12:52:34Z",
       "side": 1,
       "message": "effectively this is copying contents from TFTF_BASE page to the newly created page. Would be useful to mention to have a comment as we just need a dummy content to copy and we just use TFTF_BASE as convenience.\n\nAlso add comment that we do 1:1 mapping for IPA to PA.",
+      "range": {
+        "startLine": 625,
+        "startChar": 69,
+        "endLine": 625,
+        "endChar": 78
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2163bd2_1f0ee10d",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fe39846_69a6faf1",
       "range": {
         "startLine": 625,
         "startChar": 69,
@@ -134,6 +230,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "19ccd9aa_b7b2b276",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "301e1547_666387c9",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3492ec6f_ae94f074",
@@ -147,6 +261,24 @@
       "writtenOn": "2024-01-05T12:52:34Z",
       "side": 1,
       "message": "After we return from instruction fault, I think we will retry the same instruction on this realm execute here. \n\nTo do this properly, the rec needs to be destroyed and created again. Another test case for Data abort will be better perhaps.",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3fd284f_93fd70d2",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "using 2 different rec for data and instr abort",
+      "parentUuid": "3492ec6f_ae94f074",
       "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -168,6 +300,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "570a36be_e179dbec",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b01fcf4f_bda5f77a",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7b0588d5_874c5280",
@@ -185,6 +335,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "92dc2df4_584a9f9b",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "each test have slightly different variation, some activating realm at beginning some are not",
+      "parentUuid": "7b0588d5_874c5280",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "510a0da5_6a12d20c",
@@ -198,6 +366,24 @@
       "writtenOn": "2024-01-05T12:52:34Z",
       "side": 1,
       "message": "same comments as for previous test.",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18e7a290_7367cc79",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 751,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "2 different rec",
+      "parentUuid": "510a0da5_6a12d20c",
       "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -249,6 +435,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c423a491_9c9cfa24",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 851,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78c976fb_0d0cfa03",
+      "range": {
+        "startLine": 851,
+        "startChar": 7,
+        "endLine": 851,
+        "endChar": 36
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "75752319_54089ea8",
@@ -266,6 +476,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5cd918c_95a77b82",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 871,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75752319_54089ea8",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00c1bdab_c240cb41",
@@ -279,6 +507,30 @@
       "writtenOn": "2024-01-05T12:52:34Z",
       "side": 1,
       "message": "is it unassgined_ns?",
+      "range": {
+        "startLine": 897,
+        "startChar": 31,
+        "endLine": 897,
+        "endChar": 42
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2417aea_6769a774",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00c1bdab_c240cb41",
       "range": {
         "startLine": 897,
         "startChar": 31,
@@ -312,6 +564,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2453dd1d_050423c8",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 925,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6368c06_79b28b69",
+      "range": {
+        "startLine": 925,
+        "startChar": 8,
+        "endLine": 925,
+        "endChar": 17
+      },
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3f613be1_6dc8e5e6",
@@ -325,6 +601,24 @@
       "writtenOn": "2024-01-05T12:52:34Z",
       "side": 1,
       "message": "try to read RTT entry and verify that the PAGE is unassigned NS.",
+      "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d112a95_74c0f6a5",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 38
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-01-11T12:27:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f613be1_6dc8e5e6",
       "revId": "aa872d4f84e6620fbab74832daa9abe71bb17229",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
