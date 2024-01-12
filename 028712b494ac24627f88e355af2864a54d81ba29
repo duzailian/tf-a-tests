@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbba748b_98825083",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 36
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-12T13:48:59Z",
+      "side": 1,
+      "message": "The failure is on level 1 tests, and it is not related with these changes.",
+      "revId": "028712b494ac24627f88e355af2864a54d81ba29",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
