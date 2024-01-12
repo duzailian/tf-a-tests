@@ -16,6 +16,24 @@
       "message": "nitpick:\nThe spec states that the impdef value must be 16bytes in size. What was the reason behind making it an array of 64bit fields? Could we declare it as an array of 16bit fields?",
       "revId": "3c0ce758059569af3ba40119c4cc300c6b259fbd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "458e3d22_c355fcb8",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-12T14:00:03Z",
+      "side": 1,
+      "message": "64bit are two word sizes which makes it easier to use.\nSee the impdef field use in the SPM implementation patches for further details.\nIt is currently being used like a tag specific to the receiver.",
+      "parentUuid": "284ed0cc_bea1cc17",
+      "revId": "3c0ce758059569af3ba40119c4cc300c6b259fbd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
