@@ -348,6 +348,99 @@ test_result_t host_realm_pmuv3_overflow_interrupt(void)
 }
 
 /*
+ * Create REC with lesser PMU counter than available
+ * Test PMU counters available to each REC
+ * Test rec creation failure if host requests
+ * more PMU counter than available
+ */
+test_result_t host_realm_pmuv3_mul_rec(void)
+{
+	struct realm realm;
+	u_register_t feature_flag;
+	u_register_t rec_flag[8U] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
+		RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE};
+	bool ret1 = 0U, ret2;
+	unsigned int num_cnts;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	num_cnts = GET_CNT_NUM;
+	host_set_pmu_state();
+
+	feature_flag = RMI_FEATURE_REGISTER_0_PMU_EN |
+			INPLACE(FEATURE_PMU_NUM_CTRS, num_cnts + 1U);
+
+
+	/* Request more PMU counter than total, expect failure */
+	if (host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			feature_flag, rec_flag, 1U)) {
+		ERROR("Realm create should have failed\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Request 0 PMU counter */
+	feature_flag = RMI_FEATURE_REGISTER_0_PMU_EN |
+			INPLACE(FEATURE_PMU_NUM_CTRS, 0U);
+
+	ret1 = host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+				(u_register_t)PAGE_POOL_BASE,
+				(u_register_t)PAGE_POOL_MAX_SIZE,
+				feature_flag, rec_flag, 1U);
+
+	if (!get_feat_hpmn0_supported()) {
+		if (ret1) {
+			ERROR("Realm create with 0 PMU Counter should have failed\n");
+			return TEST_RESULT_FAIL;
+		}
+	} else {
+		if (!ret1) {
+			ERROR("Realm create with 0 PMU Counter should not have failed\n");
+			return TEST_RESULT_FAIL;
+		}
+		host_destroy_realm(&realm);
+	}
+
+	/* Test with lesser num of PMU counters */
+	feature_flag = RMI_FEATURE_REGISTER_0_PMU_EN |
+			INPLACE(FEATURE_PMU_NUM_CTRS, num_cnts - 1U);
+
+	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			feature_flag, rec_flag, MAX_REC_COUNT)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		goto test_exit;
+	}
+
+	INFO("MAX PMU Counter=%d\n", num_cnts);
+	for (unsigned int i = 0U; i < MAX_REC_COUNT; i++) {
+		host_shared_data_set_host_val(&realm, i, HOST_ARG1_INDEX, num_cnts - 1U);
+		ret1 = host_enter_realm_execute(&realm, REALM_PMU_COUNTER, RMI_EXIT_HOST_CALL, i);
+		if (!ret1) {
+			goto test_exit;
+		}
+	}
+
+test_exit:
+	ret2 = host_destroy_realm(&realm);
+	if (!ret1 || !ret2) {
+		ERROR("%s() enter=%u destroy=%u\n", __func__, ret1, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	if (!host_check_pmu_state()) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
  * Test aim to create, enter and destroy 2 realms
  * Host created 2 realms with 1 rec each
  * Host enters both rec sequentially
