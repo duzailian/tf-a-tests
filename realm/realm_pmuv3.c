@@ -166,7 +166,7 @@ bool test_pmuv3_cycle_works_realm(void)
 bool test_pmuv3_counter(void)
 {
 	uint64_t num_cnts, num_cnts_host;
-	
+
 	num_cnts_host = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
 	num_cnts = GET_CNT_NUM;
 	realm_printf("num_cnts=%ld num_cnts_host=%ld\n", num_cnts, num_cnts_host);
