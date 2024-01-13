@@ -13,6 +13,8 @@
 #include <tsp.h>
 #include <string.h>
 
+static uint128_t pauth_keys_before[NUM_KEYS];
+static uint128_t pauth_keys_after[NUM_KEYS];
 /*
  * TF-A is expected to allow access to key registers from lower EL's,
  * reading the keys excercises this, on failure this will trap to
@@ -23,7 +25,7 @@ test_result_t test_pauth_reg_access(void)
 	SKIP_TEST_IF_AARCH32();
 #ifdef __aarch64__
 	SKIP_TEST_IF_PAUTH_NOT_SUPPORTED();
-	pauth_test_lib_read_keys();
+	pauth_test_lib_read_keys(pauth_keys_before);
 	return TEST_RESULT_SUCCESS;
 #endif	/* __aarch64__ */
 }
@@ -37,11 +39,11 @@ test_result_t test_pauth_leakage(void)
 	SKIP_TEST_IF_AARCH32();
 #ifdef __aarch64__
 	SKIP_TEST_IF_PAUTH_NOT_SUPPORTED();
-	pauth_test_lib_read_keys();
+	pauth_test_lib_read_keys(pauth_keys_before);
 
 	tftf_get_psci_version();
 
-	return pauth_test_lib_compare_template();
+	return pauth_test_lib_compare_template(pauth_keys_before, pauth_keys_after);
 #endif	/* __aarch64__ */
 }
 
@@ -84,7 +86,7 @@ test_result_t test_pauth_leakage_tsp(void)
 	SKIP_TEST_IF_PAUTH_NOT_SUPPORTED();
 	SKIP_TEST_IF_TSP_NOT_PRESENT();
 
-	pauth_test_lib_fill_regs_and_template();
+	pauth_test_lib_fill_regs_and_template(pauth_keys_before);
 
 	/* Standard SMC to ADD two numbers */
 	tsp_svc_params.fid = TSP_STD_FID(TSP_ADD);
@@ -106,6 +108,6 @@ test_result_t test_pauth_leakage_tsp(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	return pauth_test_lib_compare_template();
+	return pauth_test_lib_compare_template(pauth_keys_before, pauth_keys_after);
 #endif	/* __aarch64__ */
 }
