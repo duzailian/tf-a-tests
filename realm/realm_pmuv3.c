@@ -162,6 +162,20 @@ bool test_pmuv3_cycle_works_realm(void)
 	return false;
 }
 
+/* Test if max counter available is same as that programmed by host */
+bool test_pmuv3_counter(void)
+{
+	uint64_t num_cnts, num_cnts_host;
+
+	num_cnts_host = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
+	num_cnts = GET_CNT_NUM;
+	realm_printf("num_cnts=%lu num_cnts_host=%lu\n", num_cnts, num_cnts_host);
+	if (num_cnts == num_cnts_host) {
+		return true;
+	}
+	return false;
+}
+
 /*
  * Try an event counter with some NOPs to see if it works.
  */

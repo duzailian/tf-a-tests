@@ -544,3 +544,140 @@ destroy_realm:
 	}
 	return ret3;
 }
+
+static test_result_t cpu_on_handler_pmu(void)
+{
+	bool ret1;
+	unsigned int i;
+
+	spin_lock(&secondary_cpu_lock);
+	i = is_secondary_cpu_on++;
+	spin_unlock(&secondary_cpu_lock);
+	INFO("Enter rec %u\n", i);
+	ret1 = host_enter_realm_execute(&realm, REALM_PMU_COUNTER, RMI_EXIT_HOST_CALL, i);
+	if (ret1) {
+		return TEST_RESULT_SUCCESS;
+	}
+	return TEST_RESULT_FAIL;
+}
+
+/*
+ * Create REC with lesser PMU counter than available
+ * Test PMU counters available to each REC
+ * Test rec creation failure if host requests
+ * more PMU counter than available
+ */
+test_result_t host_realm_pmuv3_mul_rec(void)
+{
+	u_register_t feature_flag;
+	u_register_t rec_flag[8U] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
+		RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE};
+	bool ret1 = 0U, ret2;
+	unsigned int num_cnts, i = 0U;
+	u_register_t other_mpidr, my_mpidr, ret;
+	int cpu_node;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	num_cnts = GET_CNT_NUM;
+	host_set_pmu_state();
+	is_secondary_cpu_on = 0;
+	my_mpidr = read_mpidr_el1() & MPID_MASK;
+
+	feature_flag = RMI_FEATURE_REGISTER_0_PMU_EN |
+			INPLACE(FEATURE_PMU_NUM_CTRS, num_cnts + 1U);
+
+
+	/* Request more PMU counter than total, expect failure */
+	if (host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			feature_flag, rec_flag, 1U)) {
+		ERROR("Realm create should have failed\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Request 0 PMU counter */
+	feature_flag = RMI_FEATURE_REGISTER_0_PMU_EN |
+			INPLACE(FEATURE_PMU_NUM_CTRS, 0U);
+
+	ret1 = host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+				(u_register_t)PAGE_POOL_BASE,
+				(u_register_t)PAGE_POOL_MAX_SIZE,
+				feature_flag, rec_flag, 1U);
+
+	if (!get_feat_hpmn0_supported()) {
+		if (ret1) {
+			ERROR("Realm create with 0 PMU Counter should have failed\n");
+			return TEST_RESULT_FAIL;
+		}
+	} else {
+		if (!ret1) {
+			ERROR("Realm create with 0 PMU Counter should not have failed\n");
+			return TEST_RESULT_FAIL;
+		}
+		host_destroy_realm(&realm);
+	}
+
+	/* Test with lesser num of PMU counters */
+	feature_flag = RMI_FEATURE_REGISTER_0_PMU_EN |
+			INPLACE(FEATURE_PMU_NUM_CTRS, num_cnts - 1U);
+
+	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			feature_flag, rec_flag, MAX_REC_COUNT)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		goto test_exit;
+	}
+
+	INFO("MAX PMU Counter=%u\n", num_cnts);
+	for (unsigned int i = 0U; i < MAX_REC_COUNT; i++) {
+		host_shared_data_set_host_val(&realm, i, HOST_ARG1_INDEX, num_cnts - 1U);
+	}
+
+	ret1 = host_enter_realm_execute(&realm, REALM_PMU_COUNTER, RMI_EXIT_HOST_CALL, i);
+	if (!ret1) {
+		goto test_exit;
+	}
+
+	/* Turn on all CPUs */
+	for_each_cpu(cpu_node) {
+		if (i == (MAX_REC_COUNT - 1U)) {
+			break;
+		}
+		other_mpidr = tftf_get_mpidr_from_node(cpu_node);
+		if (other_mpidr == my_mpidr) {
+			continue;
+		}
+
+		/* Power on the other CPU */
+		ret = tftf_try_cpu_on(other_mpidr, (uintptr_t)cpu_on_handler_pmu, 0);
+		if (ret != PSCI_E_SUCCESS) {
+			ERROR("TFTF CPU ON failed\n");
+			goto test_exit;
+		}
+		i++;
+	}
+
+	/* Wait for all CPU to come up */
+	while (is_secondary_cpu_on != MAX_REC_COUNT - 1U) {
+		waitms(100);
+	}
+test_exit:
+	waitms(100);
+	ret2 = host_destroy_realm(&realm);
+	if (!ret1 || !ret2) {
+		ERROR("%s() enter=%u destroy=%u\n", __func__, ret1, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	if (!host_check_pmu_state()) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
