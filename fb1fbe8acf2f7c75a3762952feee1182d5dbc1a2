@@ -22,6 +22,30 @@
       },
       "revId": "fb1fbe8acf2f7c75a3762952feee1182d5dbc1a2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfb7ee2b_cd9381a1",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-01-17T17:01:20Z",
+      "side": 1,
+      "message": "Happy to change it back but I don\u0027t think init_permissions is a suitable name since it now initialises a lot more of the memory_access struct. The name was changed in spm recently as part of the v1.2 emad changes there",
+      "parentUuid": "99f57187_b321fa69",
+      "range": {
+        "startLine": 759,
+        "startChar": 25,
+        "endLine": 759,
+        "endChar": 47
+      },
+      "revId": "fb1fbe8acf2f7c75a3762952feee1182d5dbc1a2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
