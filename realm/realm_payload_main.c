@@ -130,89 +130,16 @@ bool test_realm_reject_set_ripas(void)
 	return false;
 }
 
-static bool test_realm_instr_fetch_cmd(void)
+bool test_realm_dit_check_cmd(void)
 {
-	u_register_t base;
-	void (*func_ptr)(void);
-	rsi_ripas_type ripas;
-
-	base = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
-	rsi_ipa_state_get(base, &ripas);
-	realm_printf("Initial ripas=0x%lx\n", ripas);
-	/* causes instruction abort */
-	realm_printf("Generate Instruction Abort\n");
-	func_ptr = (void (*)(void))base;
-	func_ptr();
-	/* should not return */
-	return false;
-}
-
-static bool test_realm_data_access_cmd(void)
-{
-	u_register_t base;
-	rsi_ripas_type ripas;
-
-	base = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
-	rsi_ipa_state_get(base, &ripas);
-	realm_printf("Initial ripas=0x%lx\n", ripas);
-	/* causes data abort */
-	realm_printf("Generate Data Abort\n");
-	*((volatile uint64_t *)base);
-	/* should not return */
-	return false;
-}
-
-static bool sea_exception_handler(void)
-{
-	u_register_t base, far, esr;
-
-	base = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
-	far = read_far_el1();
-	esr = read_esr_el1();
-
-	if (far == base) {
-		/* return ESR to Host */
-		realm_shared_data_set_my_realm_val(HOST_ARG2_INDEX, esr);
-		rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD);
+	if (is_armv8_4_dit_present()) {
+		write_dit(DIT_BIT);
+		realm_printf("Testing DIT=0x%lx\n", read_dit());
+		/* Test if DIT is preserved after HOST_CALL */
+		if (read_dit() == DIT_BIT) {
+			return true;
+		}
 	}
-	realm_printf("Realm Abort fail incorrect FAR=0x%lx ESR+0x%lx\n", far, esr);
-	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
-
-	/* Should not return. */
-	return false;
-}
-
-static bool test_realm_instr_fetch_sea_cmd(void)
-{
-	u_register_t base;
-	void (*func_ptr)(void);
-	rsi_ripas_type ripas;
-
-	register_custom_sync_exception_handler(sea_exception_handler);
-	base = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
-	rsi_ipa_state_get(base, &ripas);
-	realm_printf("Initial base=0x%lx ripas=0x%lx\n", base, ripas);
-	/* causes instruction abort */
-	realm_printf("Generate Instruction Abort\n");
-	func_ptr = (void (*)(void))base;
-	func_ptr();
-	/* should not return */
-	return false;
-}
-
-static bool test_realm_data_access_sea_cmd(void)
-{
-	u_register_t base;
-	rsi_ripas_type ripas;
-
-	register_custom_sync_exception_handler(sea_exception_handler);
-	base = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
-	rsi_ipa_state_get(base, &ripas);
-	realm_printf("Initial ripas=0x%lx\n", ripas);
-	/* causes data abort */
-	realm_printf("Generate Data Abort\n");
-	*((volatile uint64_t *)base);
-	/* should not return */
 	return false;
 }
 
@@ -247,18 +174,6 @@ void realm_payload_main(void)
 		case REALM_MULTIPLE_REC_MULTIPLE_CPU_CMD:
 			test_succeed = test_realm_multiple_rec_multiple_cpu_cmd();
 			break;
-		case REALM_INSTR_FETCH_CMD:
-			test_succeed = test_realm_instr_fetch_cmd();
-			break;
-		case REALM_DATA_ACCESS_CMD:
-			test_succeed = test_realm_data_access_cmd();
-			break;
-		case REALM_INSTR_FETCH_SEA_CMD:
-			test_succeed = test_realm_instr_fetch_sea_cmd();
-			break;
-		case REALM_DATA_ACCESS_SEA_CMD:
-			test_succeed = test_realm_data_access_sea_cmd();
-			break;
 		case REALM_PAUTH_SET_CMD:
 			test_succeed = test_realm_pauth_set_cmd();
 			break;
@@ -267,6 +182,9 @@ void realm_payload_main(void)
 			break;
 		case REALM_PAUTH_FAULT:
 			test_succeed = test_realm_pauth_fault();
+			break;
+		case REALM_DIT_CHECK_CMD:
+			test_succeed = test_realm_dit_check_cmd();
 			break;
 		case REALM_GET_RSI_VERSION:
 			test_succeed = realm_get_rsi_version();
