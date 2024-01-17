@@ -11,7 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "fifo3d.h"
 
 #define TOTALMEMORYSIZE (0x10000)
 #define BLKSPACEDIV (4)
