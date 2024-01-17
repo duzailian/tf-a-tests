@@ -129,6 +129,19 @@ bool test_realm_reject_set_ripas(void)
 	return false;
 }
 
+bool test_realm_dit_check_cmd(void)
+{
+	if (is_armv8_4_dit_present()) {
+		write_dit(DIT_BIT);
+		realm_printf("Testing DIT=0x%lx\n", read_dit());
+		/* Test if DIT is preserved after HOST_CALL */
+		if (read_dit() == DIT_BIT) {
+			return true;
+		}
+	}
+	return false;
+}
+
 /*
  * This is the entry function for Realm payload, it first requests the shared buffer
  * IPA address from Host using HOST_CALL/RSI, it reads the command to be executed,
@@ -167,6 +180,9 @@ void realm_payload_main(void)
 			break;
 		case REALM_PAUTH_FAULT:
 			test_succeed = test_realm_pauth_fault();
+			break;
+		case REALM_DIT_CHECK_CMD:
+			test_succeed = test_realm_dit_check_cmd();
 			break;
 		case REALM_GET_RSI_VERSION:
 			test_succeed = realm_get_rsi_version();
