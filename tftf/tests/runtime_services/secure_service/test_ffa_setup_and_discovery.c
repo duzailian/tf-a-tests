@@ -252,6 +252,118 @@ test_result_t test_ffa_rxtx_map_fail(void)
 	return test_ffa_rxtx_map(FFA_ERROR);
 }
 
+/**
+ * Test to verify that call to FFA_RXTX_MAP should fail when using
+ * secure memory.
+ */
+test_result_t test_ffa_rxtx_map_secure_memory_fail(void)
+{
+	SKIP_TEST_IF_FFA_VERSION_LESS_THAN(1, 2);
+	struct ffa_value ret;
+
+	uintptr_t send = 0x7200000;
+	uintptr_t recv = send + PAGE_SIZE;
+
+	reset_tftf_mailbox();
+
+	ret = ffa_rxtx_map(send, recv, 1);
+	if (!is_expected_ffa_error(ret, FFA_ERROR_INVALID_PARAMETER)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/**
+ * Test to verify that call to FFA_RXTX_MAP should fail when using
+ * non-secure memory outside the regions specified in the SPMC nodes.
+ */
+test_result_t test_ffa_rxtx_map_nonsecure_memory_fail(void)
+{
+	SKIP_TEST_IF_FFA_VERSION_LESS_THAN(1, 2);
+	struct ffa_value ret;
+
+	uintptr_t send = 0x0000880080001000;
+	uintptr_t recv = send + PAGE_SIZE;
+
+	reset_tftf_mailbox();
+
+	ret = ffa_rxtx_map(send, recv, 1);
+	if (!is_expected_ffa_error(ret, FFA_ERROR_INVALID_PARAMETER)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/**
+ * Test to verify that calls to memory sharing functions should fail when the
+ * ranges have been mapped by FFA_RXTX_MAP.
+ */
+test_result_t test_ffa_rxtx_map_memory_share_fail(void)
+{
+	SKIP_TEST_IF_FFA_VERSION_LESS_THAN(1, 2);
+	CONFIGURE_MAILBOX(mb, PAGE_SIZE);
+
+	struct ffa_value ret;
+	struct ffa_memory_region_constituent constituent = {
+		.address = mb.send,
+		.page_count = 1,
+		.reserved = 0,
+	};
+	uint32_t mem_funcs[] = {
+		FFA_MEM_LEND_SMC32,
+		FFA_MEM_SHARE_SMC32,
+		FFA_MEM_DONATE_SMC32,
+	};
+
+	reset_tftf_mailbox();
+
+	ret = ffa_rxtx_map((uintptr_t)mb.send, (uintptr_t)mb.recv, 1);
+	if (is_ffa_call_error(ret)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	for (uint32_t i = 0; i < ARRAY_SIZE(mem_funcs); i++) {
+		uint32_t mem_func = mem_funcs[i];
+		struct ffa_memory_access receiver =
+			ffa_memory_access_init_permissions_from_mem_func(
+				SP_ID(1), mem_func);
+		memory_init_and_send(mb.send, PAGE_SIZE, HYP_ID, &receiver, 1,
+				     &constituent, 1, mem_func, &ret);
+		if (!is_expected_ffa_error(ret, FFA_ERROR_DENIED)) {
+			return TEST_RESULT_FAIL;
+		}
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/**
+ * Test to verify that call to FFA_RXTX_UNMAP should fail when using a
+ * nonexistent VM ID.
+ */
+test_result_t test_ffa_rxtx_unmap_nonexistent_vm_id_fail(void)
+{
+	SKIP_TEST_IF_FFA_VERSION_LESS_THAN(1, 2);
+	CONFIGURE_MAILBOX(mb, PAGE_SIZE);
+	struct ffa_value ret;
+
+	reset_tftf_mailbox();
+
+	ret = ffa_rxtx_map((uintptr_t)mb.send, (uintptr_t)mb.recv, 1);
+	if (is_ffa_call_error(ret)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	ret = ffa_rxtx_unmap_with_id(HYP_ID + 1);
+	if (!is_expected_ffa_error(ret, FFA_ERROR_INVALID_PARAMETER)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
 static test_result_t test_ffa_rxtx_unmap(uint32_t expected_return)
 {
 	struct ffa_value ret;
@@ -320,23 +432,11 @@ test_result_t test_ffa_rxtx_map_unmapped_success(void)
 test_result_t test_ffa_rxtx_unmap_fail_if_sp(void)
 {
 	struct ffa_value ret;
-	struct ffa_value args;
 
 	CHECK_SPMC_TESTING_SETUP(1, 1, sp_uuids);
 
 	/* Invoked FFA_RXTX_UNMAP, providing the ID of an SP in w1. */
-	args = (struct ffa_value) {
-		.fid = FFA_RXTX_UNMAP,
-		.arg1 = SP_ID(1) << 16,
-		.arg2 = FFA_PARAM_MBZ,
-		.arg3 = FFA_PARAM_MBZ,
-		.arg4 = FFA_PARAM_MBZ,
-		.arg5 = FFA_PARAM_MBZ,
-		.arg6 = FFA_PARAM_MBZ,
-		.arg7 = FFA_PARAM_MBZ
-	};
-
-	ret = ffa_service_call(&args);
+	ret = ffa_rxtx_unmap_with_id(SP_ID(1));
 
 	if (!is_expected_ffa_error(ret, FFA_ERROR_INVALID_PARAMETER)) {
 		return TEST_RESULT_FAIL;
