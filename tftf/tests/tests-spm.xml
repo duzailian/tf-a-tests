@@ -25,6 +25,14 @@
                function="test_ffa_rxtx_map_success" />
      <testcase name="FF-A RXTX Map API consecutive"
                function="test_ffa_rxtx_map_fail" />
+     <testcase name="FF-A RXTX Map API secure memory"
+               function="test_ffa_rxtx_map_secure_memory_fail"/>
+     <testcase name="FF-A RXTX Map API non-secure memory"
+               function="test_ffa_rxtx_map_nonsecure_memory_fail"/>
+     <testcase name="FF-A RXTX Map API memory sharing"
+               function="test_ffa_rxtx_map_memory_share_fail"/>
+     <testcase name="FF-A RXTX Unmap API ID nonexistent"
+               function="test_ffa_rxtx_unmap_nonexistent_vm_id_fail"/>
      <testcase name="FF-A RXTX Unmap API success"
 	       function="test_ffa_rxtx_unmap_success" />
      <testcase name="FF-A RXTX Unmap API consecutive"
