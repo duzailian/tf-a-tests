@@ -493,17 +493,21 @@ struct ffa_value ffa_rxtx_map(uintptr_t send, uintptr_t recv, uint32_t pages)
 }
 
 /* Unmap the RXTX buffer allocated by the given FF-A component */
-struct ffa_value ffa_rxtx_unmap(void)
+struct ffa_value ffa_rxtx_unmap(void) {
+	return ffa_rxtx_unmap_with_id(0);
+}
+
+struct ffa_value ffa_rxtx_unmap_with_id(uint32_t id)
 {
 	struct ffa_value args = {
 		.fid = FFA_RXTX_UNMAP,
-		.arg1 = FFA_PARAM_MBZ,
+		.arg1 = id << 16,
 		.arg2 = FFA_PARAM_MBZ,
 		.arg3 = FFA_PARAM_MBZ,
 		.arg4 = FFA_PARAM_MBZ,
 		.arg5 = FFA_PARAM_MBZ,
 		.arg6 = FFA_PARAM_MBZ,
-		.arg7 = FFA_PARAM_MBZ
+		.arg7 = FFA_PARAM_MBZ,
 	};
 
 	return ffa_service_call(&args);
