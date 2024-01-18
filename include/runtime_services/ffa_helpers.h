@@ -722,6 +722,7 @@ struct ffa_value ffa_features_with_input_property(uint32_t feature,
 struct ffa_value ffa_partition_info_get(const struct ffa_uuid uuid);
 struct ffa_value ffa_rx_release(void);
 struct ffa_value ffa_rxtx_map(uintptr_t send, uintptr_t recv, uint32_t pages);
+struct ffa_value ffa_rxtx_unmap_with_id(uint32_t id);
 struct ffa_value ffa_rxtx_unmap(void);
 struct ffa_value ffa_mem_donate(uint32_t descriptor_length,
 				uint32_t fragment_length);
