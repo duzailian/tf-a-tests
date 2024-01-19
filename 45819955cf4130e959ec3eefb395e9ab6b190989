@@ -1,0 +1,158 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f6eaf83_27f037a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T14:56:47Z",
+      "side": 1,
+      "message": "It is not clear what code patch in EA are being tested and which are not. Need further differentiation of various cases (there are handful of different cases).",
+      "revId": "45819955cf4130e959ec3eefb395e9ab6b190989",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba4bbe2b_bbcf22dd",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T14:56:47Z",
+      "side": 1,
+      "message": "I think the 2nd one should be the fault. The other ones are not EAs",
+      "range": {
+        "startLine": 194,
+        "startChar": 4,
+        "endLine": 194,
+        "endChar": 55
+      },
+      "revId": "45819955cf4130e959ec3eefb395e9ab6b190989",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e57b5a4e_f6bfedfa",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T14:56:47Z",
+      "side": 1,
+      "message": "too many magic numbers, Need macros.",
+      "range": {
+        "startLine": 200,
+        "startChar": 7,
+        "endLine": 200,
+        "endChar": 81
+      },
+      "revId": "45819955cf4130e959ec3eefb395e9ab6b190989",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b84a6a6_2e34e87a",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 993,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T14:56:47Z",
+      "side": 1,
+      "message": "Explain the need for 4 RECs",
+      "revId": "45819955cf4130e959ec3eefb395e9ab6b190989",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8cba9647_5433d4bc",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T14:56:47Z",
+      "side": 1,
+      "message": "same code comments needed here wrt TFTF_BASE",
+      "revId": "45819955cf4130e959ec3eefb395e9ab6b190989",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c11bdf2d_996d8d3b",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 1119,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T14:56:47Z",
+      "side": 1,
+      "message": "nit: new line here.",
+      "revId": "45819955cf4130e959ec3eefb395e9ab6b190989",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c080f7bb_04218a07",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 1122,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T14:56:47Z",
+      "side": 1,
+      "message": "nit: New line",
+      "revId": "45819955cf4130e959ec3eefb395e9ab6b190989",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d743b8ca_90f24711",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 1123,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-19T14:56:47Z",
+      "side": 1,
+      "message": "Is this correct ?",
+      "range": {
+        "startLine": 1123,
+        "startChar": 3,
+        "endLine": 1123,
+        "endChar": 21
+      },
+      "revId": "45819955cf4130e959ec3eefb395e9ab6b190989",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
