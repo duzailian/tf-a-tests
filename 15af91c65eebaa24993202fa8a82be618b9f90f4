@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f146949c_d3a92327",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-01-22T11:07:14Z",
+      "side": 1,
+      "message": "This change and https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/25692 are duplicates.\nAlso note this is additionally required:\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/25972",
+      "revId": "15af91c65eebaa24993202fa8a82be618b9f90f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
