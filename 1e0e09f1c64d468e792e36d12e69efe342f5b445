@@ -16,6 +16,24 @@
       "message": "Hi Soby, Alexei, is this change left over for coming TF-A release?",
       "revId": "1e0e09f1c64d468e792e36d12e69efe342f5b445",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f84cee4_6faae25d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-01-22T12:17:12Z",
+      "side": 1,
+      "message": "Hi can you advise if this change is still required? Thanks.",
+      "parentUuid": "608b71c3_5179296d",
+      "revId": "1e0e09f1c64d468e792e36d12e69efe342f5b445",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
