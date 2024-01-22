@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f072b87a_2f9fa95a",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-22T18:57:31Z",
+      "side": 1,
+      "message": "In what scenario would memory_access_desc_size be less than sizeof(struct ffa_memory_access)",
+      "revId": "8454e3d8f59f95863e79d15983d96631eb5a35c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
