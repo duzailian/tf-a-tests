@@ -34,6 +34,24 @@
       "parentUuid": "f072b87a_2f9fa95a",
       "revId": "8454e3d8f59f95863e79d15983d96631eb5a35c5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ea0ecad_84d17a7a",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-01-23T14:57:21Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "3535c279_a51a42e1",
+      "revId": "8454e3d8f59f95863e79d15983d96631eb5a35c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
