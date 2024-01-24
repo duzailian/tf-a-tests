@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb7045b7_82438aeb",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-24T17:37:57Z",
+      "side": 1,
+      "message": "This is missing in the new tests added below.",
+      "range": {
+        "startLine": 211,
+        "startChar": 0,
+        "endLine": 211,
+        "endChar": 51
+      },
+      "revId": "b2330714483244e6b0b3ab0470965edcfc8bafed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd423824_e410f48e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-24T17:37:57Z",
+      "side": 1,
+      "message": "I think there could be a check here to the full register smcr_el2 and other registers as well. In this and other tests.",
+      "range": {
+        "startLine": 274,
+        "startChar": 0,
+        "endLine": 274,
+        "endChar": 27
+      },
+      "revId": "b2330714483244e6b0b3ab0470965edcfc8bafed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
