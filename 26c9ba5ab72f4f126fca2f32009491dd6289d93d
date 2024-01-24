@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "12687ee2_a8357c49",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2024-01-24T13:28:59Z",
+      "side": 1,
+      "message": "Regarding the CI failures:\n\n- The doc build failure can be ignored, as it\u0027s known issue being worked on right now.\n\n- However, **the static checks failures need fixing** please.",
+      "revId": "26c9ba5ab72f4f126fca2f32009491dd6289d93d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f0a2ba07_992cde33",
         "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
         "patchSetId": 3
