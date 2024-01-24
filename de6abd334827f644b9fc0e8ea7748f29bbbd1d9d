@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1afbae6e_32ba607e",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-24T17:41:54Z",
+      "side": 1,
+      "message": "Use the shift and mask from smccc.h",
+      "range": {
+        "startLine": 19,
+        "startChar": 15,
+        "endLine": 19,
+        "endChar": 26
+      },
+      "revId": "de6abd334827f644b9fc0e8ea7748f29bbbd1d9d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
