@@ -16,6 +16,23 @@
       "message": "CI build error is issue with building doc. \nhttps://ci.trustedfirmware.org/job/tf-a-builder/3112146/console\n11:09:17 Sphinx version error:\n11:09:17 The alabaster extension used by this project needs at least Sphinx v3.4; it therefore cannot be built with this version.\n\nWhen newer Sphinx version is used there is different issue related to our platforms which is fixed by https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/26034.\n\nBut error is not related to this patch that\u0027s why adding tags there.",
       "revId": "dbb6634fa8a3b32c377db68d3e4de2ca99bcaf7f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a853f599_2145777b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2024-01-24T07:56:12Z",
+      "side": 1,
+      "message": "Read the docs build us a known issue.",
+      "revId": "dbb6634fa8a3b32c377db68d3e4de2ca99bcaf7f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
