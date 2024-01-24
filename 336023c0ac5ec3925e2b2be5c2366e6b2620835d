@@ -205,6 +205,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "26643464_347c1a61",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2024-01-24T08:01:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8684a4c4_83205033",
+      "range": {
+        "startLine": 19,
+        "startChar": 3,
+        "endLine": 19,
+        "endChar": 10
+      },
+      "revId": "336023c0ac5ec3925e2b2be5c2366e6b2620835d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cb501fb9_63663fb7",
@@ -277,6 +301,30 @@
       "side": 1,
       "message": "Agreed with the non-failure; updated.\n\nIf you\u0027re asking to change test_corrupt_boot_fip to accept a UUID, I don\u0027t think we should do that, as I will be writing more tests that corrupt something other than the header of the TKey cert, such as the TKey cert\u0027s hash.",
       "parentUuid": "deba1462_4a7210e1",
+      "range": {
+        "startLine": 34,
+        "startChar": 30,
+        "endLine": 34,
+        "endChar": 57
+      },
+      "revId": "336023c0ac5ec3925e2b2be5c2366e6b2620835d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f7aa090_d7efd78e",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2024-01-24T08:01:20Z",
+      "side": 1,
+      "message": "\u003e If you\u0027re asking to change test_corrupt_boot_fip to accept a UUID, I don\u0027t think we should do that, as I will be writing more tests that corrupt something other than the header of the TKey cert, such as the TKey cert\u0027s hash.\n\nI agree with Jimmy. Besides, we might want to write tests which corrupt the very beginning of the FIP image, thus making `test_corrupt_boot_fip(0)` a perfectly valid use case. I believe that some of the existing FWU test cases would fall under this use case.",
+      "parentUuid": "871cf018_6dc3b456",
       "range": {
         "startLine": 34,
         "startChar": 30,

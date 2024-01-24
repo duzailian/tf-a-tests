@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e91d56c_134520a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2024-01-24T08:01:20Z",
+      "side": 1,
+      "message": "Just a minor comment on line [34](https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/25572/comment/f0a2ba07_992cde33/). If Manish has nothing else to add, making my comment the only thing to fix, don\u0027t feel obliged to do it.",
+      "revId": "26c9ba5ab72f4f126fca2f32009491dd6289d93d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0a2ba07_992cde33",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2024-01-24T08:01:20Z",
+      "side": 1,
+      "message": "Suggest adding a comment above this line to explain why we assume `find_offset_in_fip()` will never return offset 0 in this case. Something like:\n\n```\nA FIP always starts with a header, thus no image ever lives at offset 0.\n```",
+      "range": {
+        "startLine": 34,
+        "startChar": 1,
+        "endLine": 34,
+        "endChar": 37
+      },
+      "revId": "26c9ba5ab72f4f126fca2f32009491dd6289d93d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
