@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4dcfd5ec_69ac048d",
+        "filename": "spm/cactus/cactus_tests/cactus_test_direct_messaging.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-01-24T17:10:12Z",
+      "side": 1,
+      "message": "nitpick: capital",
+      "range": {
+        "startLine": 122,
+        "startChar": 16,
+        "endLine": 122,
+        "endChar": 19
+      },
+      "revId": "1e8c25b479ff2919d6b529ac5faabcd3ce56048f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
