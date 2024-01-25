@@ -1,0 +1,8 @@
+Code-Owner-Review+1: Karl Meakin <karl.meakin@ARM.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Verified+1: Joao Alves <joao.alves@arm.com>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Thu, 25 Jan 2024 17:50:53 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/26000
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
