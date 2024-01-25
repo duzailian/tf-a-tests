@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "644c188e_09bfdf22",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 885,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-25T19:19:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7afc07c_69a4be2c",
+      "range": {
+        "startLine": 885,
+        "startChar": 24,
+        "endLine": 885,
+        "endChar": 27
+      },
+      "revId": "e8c20afbe7158af1947bd46072a24b1bbde6505a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7f941c95_5793cadd",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-01-22T22:26:26Z",
       "side": 1,
       "message": "Do you plan to exercise the test case with both LEND and DONATE functions as stated in comments(line 977 and 1016)?",
+      "range": {
+        "startLine": 1001,
+        "startChar": 3,
+        "endLine": 1001,
+        "endChar": 21
+      },
+      "revId": "e8c20afbe7158af1947bd46072a24b1bbde6505a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54652ba6_b3b5828d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-25T19:19:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f941c95_5793cadd",
       "range": {
         "startLine": 1001,
         "startChar": 3,
