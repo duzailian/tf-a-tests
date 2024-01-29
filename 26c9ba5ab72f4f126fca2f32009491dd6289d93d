@@ -92,6 +92,30 @@
       },
       "revId": "26c9ba5ab72f4f126fca2f32009491dd6289d93d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "647a65ed_95f727eb",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000272
+      },
+      "writtenOn": "2024-01-29T19:13:19Z",
+      "side": 1,
+      "message": "I think this is best stated in the comment above `find_offset_in_fip`. Reiterating it here seems sill, as it\u0027s stated ~20 lines up.",
+      "parentUuid": "f0a2ba07_992cde33",
+      "range": {
+        "startLine": 34,
+        "startChar": 1,
+        "endLine": 34,
+        "endChar": 37
+      },
+      "revId": "26c9ba5ab72f4f126fca2f32009491dd6289d93d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
