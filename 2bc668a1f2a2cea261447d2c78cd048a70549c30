@@ -22,6 +22,30 @@
       },
       "revId": "2bc668a1f2a2cea261447d2c78cd048a70549c30",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be7e4bf3_56bf0b80",
+        "filename": "spm/common/spm_helpers.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-01-29T10:06:14Z",
+      "side": 1,
+      "message": "Those bitfields refer to the VMPIDR_EL2 layout (Arm ARM section D19.2.160 VMPIDR_EL2, Virtualization Multiprocessor ID Register).\nArchitecturally VMPIDR_EL2 defines those bitfields similarly (or 1:1) to how they are defined for MPIDR_EL1.\nOne evidence for this is e.g. Bit 31 is RES1 and cannot be zeroed by the choice of the Hypervisor.\nThe fact that an Hypervisor only uses the lower bits (the case of Hafnium) is an implementation choice.\nAll that said I think it\u0027s preferable to keep this comment for the sake of clarifying the VMPIDR_EL2 bitfield encoding.",
+      "parentUuid": "291c146c_45d01399",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 38
+      },
+      "revId": "2bc668a1f2a2cea261447d2c78cd048a70549c30",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
