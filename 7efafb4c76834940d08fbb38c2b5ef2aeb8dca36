@@ -16,6 +16,178 @@
       "message": "rmm-main all TFTF passed - https://jenkins.openci.aws.arm.com/job/rmm-main/520/",
       "revId": "7efafb4c76834940d08fbb38c2b5ef2aeb8dca36",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d000a65_503bd6fe",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 1030,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T16:41:22Z",
+      "side": 1,
+      "message": "nit: Rec",
+      "range": {
+        "startLine": 1030,
+        "startChar": 3,
+        "endLine": 1030,
+        "endChar": 4
+      },
+      "revId": "7efafb4c76834940d08fbb38c2b5ef2aeb8dca36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1474f285_b3c6cb55",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 1158,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T16:41:22Z",
+      "side": 1,
+      "message": "\"by executing instructions in unprotected IPA - Rec0\n\nIn Rec 1 , when HIPAS\u003dUNASSIGNED_NS, we expect to get a Data abort. Then Host will inject SEA to realm.",
+      "range": {
+        "startLine": 1158,
+        "startChar": 41,
+        "endLine": 1158,
+        "endChar": 50
+      },
+      "revId": "7efafb4c76834940d08fbb38c2b5ef2aeb8dca36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f734b2bb_a96b2373",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 1164,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T16:41:22Z",
+      "side": 1,
+      "message": "this is overlapping host_realm_data_abort_unassigned_ns test. Prefer to remove the other one and retain this ?",
+      "range": {
+        "startLine": 1164,
+        "startChar": 14,
+        "endLine": 1164,
+        "endChar": 40
+      },
+      "revId": "7efafb4c76834940d08fbb38c2b5ef2aeb8dca36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25134d0f_c981e1d9",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 1223,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T16:41:22Z",
+      "side": 1,
+      "message": "when HIPAS is UNASSIGNED_NS",
+      "range": {
+        "startLine": 1223,
+        "startChar": 56,
+        "endLine": 1223,
+        "endChar": 58
+      },
+      "revId": "7efafb4c76834940d08fbb38c2b5ef2aeb8dca36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01594df3_cf7fd4c9",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 1227,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T16:41:22Z",
+      "side": 1,
+      "message": "could add esr check for this.",
+      "revId": "7efafb4c76834940d08fbb38c2b5ef2aeb8dca36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4666130_510a3465",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 1267,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T16:41:22Z",
+      "side": 1,
+      "message": "realm IPA space.",
+      "range": {
+        "startLine": 1267,
+        "startChar": 31,
+        "endLine": 1267,
+        "endChar": 36
+      },
+      "revId": "7efafb4c76834940d08fbb38c2b5ef2aeb8dca36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96d2233e_6b737751",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 1268,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T16:41:22Z",
+      "side": 1,
+      "message": "tries to create Data Abort to realm\n\nREC1 will create a Instruction abort to Realm.",
+      "range": {
+        "startLine": 1268,
+        "startChar": 8,
+        "endLine": 1268,
+        "endChar": 10
+      },
+      "revId": "7efafb4c76834940d08fbb38c2b5ef2aeb8dca36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa701f20_8ff8f18e",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 1296,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-01-30T16:41:22Z",
+      "side": 1,
+      "message": "could read back S2SZ and set an address larger than that.",
+      "revId": "7efafb4c76834940d08fbb38c2b5ef2aeb8dca36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
