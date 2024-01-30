@@ -49,6 +49,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ddd75426_02453a20",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-01-30T14:56:59Z",
+      "side": 1,
+      "message": "This is really good coverage.\nThe FFA_RXTX_MAP interface can be used differently when it is forwarded from Hypervisor to SPMC.\nCheck:\nhttps://git.trustedfirmware.org/hafnium/hafnium.git/tree/src/arch/aarch64/plat/ffa/hypervisor.c#n691\n\nCould you recreate the same use in tftf, and check that if you provide two different IDs (non-zero) to the same pair of addresses it fails to map?\nOther to check that after sequence with map/unmap providing the an ID in the first call, and a different one after results in successful use of those buffers?\n\nThe memory sharing test could be extended also to have another rxtx_map call providing another pair of buffers for another VM ID, and check that neither can be used as a constituent to the memory sharing operation?\n\nI think some of it you accomplished already but it will go well for completeness.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 0
+      },
+      "revId": "b2df6d2a6fcaf1d224d5052890dc8b3a0f9c106c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "06fe5f45_0c38f4a0",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
         "patchSetId": 1
