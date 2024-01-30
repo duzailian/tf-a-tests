@@ -175,6 +175,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "035f4655_bd26298e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-01-30T17:51:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93ae900d_01bd6917",
+      "range": {
+        "startLine": 268,
+        "startChar": 1,
+        "endLine": 272,
+        "endChar": 2
+      },
+      "revId": "b2df6d2a6fcaf1d224d5052890dc8b3a0f9c106c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e63244a8_aa2543d2",
@@ -246,6 +270,30 @@
       "writtenOn": "2024-01-30T14:52:10Z",
       "side": 1,
       "message": "Consider the above comments here also.",
+      "range": {
+        "startLine": 294,
+        "startChar": 0,
+        "endLine": 298,
+        "endChar": 2
+      },
+      "revId": "b2df6d2a6fcaf1d224d5052890dc8b3a0f9c106c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efd146f4_704d4a2a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-01-30T17:51:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a521cf16_56693993",
       "range": {
         "startLine": 294,
         "startChar": 0,
