@@ -116,6 +116,30 @@
       },
       "revId": "26c9ba5ab72f4f126fca2f32009491dd6289d93d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4215d4e_6a801d2f",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2024-01-30T10:53:30Z",
+      "side": 1,
+      "message": "Fair enough.",
+      "parentUuid": "647a65ed_95f727eb",
+      "range": {
+        "startLine": 34,
+        "startChar": 1,
+        "endLine": 34,
+        "endChar": 37
+      },
+      "revId": "26c9ba5ab72f4f126fca2f32009491dd6289d93d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
