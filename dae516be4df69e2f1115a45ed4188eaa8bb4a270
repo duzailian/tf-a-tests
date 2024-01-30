@@ -88,6 +88,24 @@
       "parentUuid": "aa615acb_f384dcef",
       "revId": "dae516be4df69e2f1115a45ed4188eaa8bb4a270",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c1c4533_147e46d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-01-30T14:15:58Z",
+      "side": 1,
+      "message": "\u003e  We don\u0027t really use cactus/ivy (well tftf really) so I don\u0027t mind any of this.\n\nWe need to take care of this as we have spm test config with cactus in OpenCI for TC2 platform.\n\nI already abandoned my patches (note those are WIP and not posted for review). Indeed will go with the author\u0027s patches. Below are abandoned patches-\nhttps://review.trustedfirmware.org/c/hafnium/hafnium/+/25690\nhttps://review.trustedfirmware.org/c/hafnium/project/reference/+/25691\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/25692",
+      "parentUuid": "3e9a97fa_47d18252",
+      "revId": "dae516be4df69e2f1115a45ed4188eaa8bb4a270",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
