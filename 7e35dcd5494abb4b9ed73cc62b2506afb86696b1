@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fbad5862_240208eb",
+        "filename": "tftf/tests/misc_tests/test_undef_injection.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-01-30T21:16:41Z",
+      "side": 1,
+      "message": "Arbitrary choice?  Not sure how many registers could be used here and perhaps fuzzing this would be a possbility?",
+      "range": {
+        "startLine": 39,
+        "startChar": 5,
+        "endLine": 39,
+        "endChar": 16
+      },
+      "revId": "7e35dcd5494abb4b9ed73cc62b2506afb86696b1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
