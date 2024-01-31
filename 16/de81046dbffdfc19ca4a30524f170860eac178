@@ -1,0 +1,10 @@
+Code-Owner-Review+1: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Maintainer-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Allow-CI+2: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-by: Sandrine Bailleux <sandrine.bailleux@arm.com>
+Submitted-at: Wed, 31 Jan 2024 08:48:35 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/25572
+Comments-Total: 73
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
