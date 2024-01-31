@@ -1,6 +1,167 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bd99dac_0191e368",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-01-31T00:00:03Z",
+      "side": 1,
+      "message": "nit: remove space",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 2
+      },
+      "revId": "6d6656180df83fcedf4bb33a1e5e42a2a61235e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2eaf3689_6718ab67",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-01-31T00:00:03Z",
+      "side": 1,
+      "message": "nit: with the changes to the CI where the script",
+      "range": {
+        "startLine": 11,
+        "startChar": 41,
+        "endLine": 11,
+        "endChar": 53
+      },
+      "revId": "6d6656180df83fcedf4bb33a1e5e42a2a61235e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b434694_e75a4c1f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-01-31T00:00:03Z",
+      "side": 1,
+      "message": "nit: remove extra space",
+      "range": {
+        "startLine": 11,
+        "startChar": 14,
+        "endLine": 11,
+        "endChar": 16
+      },
+      "revId": "6d6656180df83fcedf4bb33a1e5e42a2a61235e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "235208a9_0c64f665",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-01-31T00:00:03Z",
+      "side": 1,
+      "message": "typo \"additional\"",
+      "range": {
+        "startLine": 12,
+        "startChar": 21,
+        "endLine": 12,
+        "endChar": 30
+      },
+      "revId": "6d6656180df83fcedf4bb33a1e5e42a2a61235e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12e7d40f_9d34d6ec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-01-31T00:00:03Z",
+      "side": 1,
+      "message": "nit: not sure if this has an additional space",
+      "range": {
+        "startLine": 12,
+        "startChar": 54,
+        "endLine": 12,
+        "endChar": 56
+      },
+      "revId": "6d6656180df83fcedf4bb33a1e5e42a2a61235e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "979c419f_3d9fefb8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-01-31T00:00:03Z",
+      "side": 1,
+      "message": "nit: have\n\"Modifications\"",
+      "range": {
+        "startLine": 13,
+        "startChar": 25,
+        "endLine": 13,
+        "endChar": 28
+      },
+      "revId": "6d6656180df83fcedf4bb33a1e5e42a2a61235e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2ca47c6_b1e5cb55",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-01-31T00:00:03Z",
+      "side": 1,
+      "message": "nit: with the function names",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 15
+      },
+      "revId": "6d6656180df83fcedf4bb33a1e5e42a2a61235e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "29908a2f_741fac1b",
@@ -14,6 +175,121 @@
       "writtenOn": "2024-01-30T23:47:06Z",
       "side": 1,
       "message": "The failure is the documentation issue with sphinx... not related to functionality of the patch.",
+      "revId": "6d6656180df83fcedf4bb33a1e5e42a2a61235e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83c24ce2_95d2f7fe",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-01-31T00:00:03Z",
+      "side": 1,
+      "message": "nit: into the",
+      "range": {
+        "startLine": 28,
+        "startChar": 29,
+        "endLine": 28,
+        "endChar": 37
+      },
+      "revId": "6d6656180df83fcedf4bb33a1e5e42a2a61235e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1727539d_0b2cbd32",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-01-31T00:00:03Z",
+      "side": 1,
+      "message": "nit: into the",
+      "range": {
+        "startLine": 33,
+        "startChar": 18,
+        "endLine": 33,
+        "endChar": 27
+      },
+      "revId": "6d6656180df83fcedf4bb33a1e5e42a2a61235e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a685237c_7817b549",
+        "filename": "smc_fuzz/include/fifo3d.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-01-31T00:00:03Z",
+      "side": 1,
+      "message": "nit: same as above",
+      "range": {
+        "startLine": 38,
+        "startChar": 30,
+        "endLine": 38,
+        "endChar": 38
+      },
+      "revId": "6d6656180df83fcedf4bb33a1e5e42a2a61235e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5307629_2ad1b7b2",
+        "filename": "smc_fuzz/include/smcmalloc.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-01-31T00:00:03Z",
+      "side": 1,
+      "message": "nit: 2024",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "6d6656180df83fcedf4bb33a1e5e42a2a61235e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "621fd06e_aa8dd876",
+        "filename": "smc_fuzz/src/fifo3d.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-01-31T00:00:03Z",
+      "side": 1,
+      "message": "Should we add bit more details into what the the different fifos are and what controls the size of it? More like a light documentation for what is being done here functionally than details of the individual loops or mallocs.",
+      "range": {
+        "startLine": 89,
+        "startChar": 5,
+        "endLine": 89,
+        "endChar": 31
+      },
       "revId": "6d6656180df83fcedf4bb33a1e5e42a2a61235e0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
