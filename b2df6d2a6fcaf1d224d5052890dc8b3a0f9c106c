@@ -443,6 +443,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9df19a13_e05c9f47",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-02-01T15:17:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75d89fe1_9398bfdd",
+      "range": {
+        "startLine": 365,
+        "startChar": 1,
+        "endLine": 375,
+        "endChar": 0
+      },
+      "revId": "b2df6d2a6fcaf1d224d5052890dc8b3a0f9c106c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3a1c5b14_9157ac75",
