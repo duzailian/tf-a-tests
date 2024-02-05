@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5373ad4_50b9dc50",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2024-02-05T09:40:44Z",
+      "side": 1,
+      "message": "I successfully built the documentation on my local machine. Hence overriding the VR-1 score, which is due to an issue with the Sphinx version installed on the CI servers.",
+      "revId": "a404b851f4fc008d3dde50bc872449e3e4489e29",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
