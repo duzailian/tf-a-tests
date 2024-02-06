@@ -149,6 +149,11 @@ bool host_create_realm_payload(struct realm *realm_ptr,
 		return false;
 	}
 
+	realm_ptr->rmm_feat_reg0 &= 0xFFFFFF00;
+	realm_ptr->rmm_feat_reg0 |= 0x2cU;
+	INFO("try 44 bit ipa width rmm_feat_reg0=0x%lx s2sz=%lld\n", realm_ptr->rmm_feat_reg0,EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
+				realm_ptr->rmm_feat_reg0));
+
 	/* Disable PMU if not required */
 	if ((feature_flag & RMI_FEATURE_REGISTER_0_PMU_EN) == 0UL) {
 		realm_ptr->rmm_feat_reg0 &= ~RMI_FEATURE_REGISTER_0_PMU_EN;
