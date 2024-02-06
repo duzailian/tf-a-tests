@@ -16,6 +16,24 @@
       "message": "Pending merge the RMM support.",
       "revId": "1ec65e60f75070afa250707babf1eafc7a6cd18a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4f24e91_956df706",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-02-06T13:50:08Z",
+      "side": 1,
+      "message": "Pending merge the RMM support\nhttps://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/23437",
+      "parentUuid": "0d2f8fd1_2e4ea67f",
+      "revId": "1ec65e60f75070afa250707babf1eafc7a6cd18a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
