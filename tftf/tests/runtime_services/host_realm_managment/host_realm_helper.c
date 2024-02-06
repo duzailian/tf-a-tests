@@ -149,6 +149,18 @@ bool host_create_realm_payload(struct realm *realm_ptr,
 		return false;
 	}
 
+	if (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, feature_flag) >
+			EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, realm_ptr->rmm_feat_reg0)) {
+		ERROR("%s() failed\n", "Invalid s2sz");
+		return false;
+	} else if (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, feature_flag) != 0U) {
+		INFO("rmm_feat_reg0=0x%lx", realm_ptr->rmm_feat_reg0);
+		realm_ptr->rmm_feat_reg0 &= ~MASK(RMI_FEATURE_REGISTER_0_S2SZ);
+		realm_ptr->rmm_feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_S2SZ,
+				EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, feature_flag));
+		INFO("rmm_feat_reg0=0x%lx", realm_ptr->rmm_feat_reg0);
+	}
+
 	/* Disable PMU if not required */
 	if ((feature_flag & RMI_FEATURE_REGISTER_0_PMU_EN) == 0UL) {
 		realm_ptr->rmm_feat_reg0 &= ~RMI_FEATURE_REGISTER_0_PMU_EN;
