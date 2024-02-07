@@ -70,6 +70,30 @@
       },
       "revId": "94a4278668619d78ee5b4840834c5c5bcf732562",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "789bedb4_ab4ed744",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-02-07T18:22:06Z",
+      "side": 1,
+      "message": "Pushed a fix here: https://review.trustedfirmware.org/c/ci/tf-a-ci-scripts/+/26427",
+      "parentUuid": "577c4052_0c99f44e",
+      "range": {
+        "startLine": 161,
+        "startChar": 2,
+        "endLine": 161,
+        "endChar": 39
+      },
+      "revId": "94a4278668619d78ee5b4840834c5c5bcf732562",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
