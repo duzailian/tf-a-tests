@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d15f6932_c2bef9b6",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_smmu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-02-07T10:10:40Z",
+      "side": 1,
+      "message": "I believe the test fails because:\n* the operation added line #100 results in a successful translation for PLAT_CACTUS_NS_MEMCPY_BASE address with a given set of attributes and are cached into the SMMU TLB.\n* the second operation line 157 uses different attributes for the same destination address but SMMU re-uses attributes that were cached in the TLB.\n\nMoreover the PAS change at line 143 using TLBI by PA should be broadcasted to the SMMU which isn\u0027t done with default FVP options. Using -C cci550.force_on_from_start\u003d1 setups the interconnect such that TBLI by PA operations are broadcasted. Using this option effectively makes the test pass.",
+      "range": {
+        "startLine": 161,
+        "startChar": 2,
+        "endLine": 161,
+        "endChar": 39
+      },
+      "revId": "94a4278668619d78ee5b4840834c5c5bcf732562",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
