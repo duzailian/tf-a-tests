@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7cb394d_ce28d0bb",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-07T15:02:27Z",
+      "side": 1,
+      "message": "We could reuse test_realm_instr_fetch_cmd and test_realm_data_access_cmd(). The only difference here is installation of exception handler. \n\nThis can be done for the previous functions so for some tests we expect Exception handler to be called and others it will remain unused.\n\nThe name of handler can be made more generic, like realm_exception_handler()",
+      "revId": "7c27e6dfe87206cf5f1d0f8241ae7a12fa359124",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
