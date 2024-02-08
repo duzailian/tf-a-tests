@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4a34a6a_7a0e3e31",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-08T15:22:40Z",
+      "side": 1,
+      "message": "destroy realm before failure ? Same comment for all failure returns below.",
+      "revId": "3061a4ab43c5b6688816aeffa918f30c248a779a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ceb1c91_8e77b89d",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-08T15:22:40Z",
+      "side": 1,
+      "message": "The pmu count is not decremented I think. Or this is testing with same PMU count ?",
+      "range": {
+        "startLine": 640,
+        "startChar": 33,
+        "endLine": 640,
+        "endChar": 41
+      },
+      "revId": "3061a4ab43c5b6688816aeffa918f30c248a779a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a370834_bb51319f",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 646,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-08T15:22:40Z",
+      "side": 1,
+      "message": "need ERROR log to indicate the reason for test failure (like above prints).",
+      "revId": "3061a4ab43c5b6688816aeffa918f30c248a779a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c31e8c27_9ee93f1e",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-08T15:22:40Z",
+      "side": 1,
+      "message": "need comment here.",
+      "revId": "3061a4ab43c5b6688816aeffa918f30c248a779a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a020bcb_cc066680",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-08T15:22:40Z",
+      "side": 1,
+      "message": "This is not scalable if num_cnts is \u003c 4. rework the test such that there is a loop invoking the PMU test decrementing the count 1 by 1 till it reaches 0 (in case of HPM0) or 1 otherwise.",
+      "range": {
+        "startLine": 654,
+        "startChar": 44,
+        "endLine": 654,
+        "endChar": 46
+      },
+      "revId": "3061a4ab43c5b6688816aeffa918f30c248a779a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d20f66e7_c40a1c5f",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-08T15:22:40Z",
+      "side": 1,
+      "message": "not sure what is being tested in these calls. Need comments.",
+      "range": {
+        "startLine": 673,
+        "startChar": 0,
+        "endLine": 691,
+        "endChar": 2
+      },
+      "revId": "3061a4ab43c5b6688816aeffa918f30c248a779a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
