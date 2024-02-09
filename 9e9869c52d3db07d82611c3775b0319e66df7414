@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3c610828_83a34752",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-09T15:28:29Z",
+      "side": 1,
+      "message": "Need to discuss regarding the test for detecting the bug as fixed by https://github.com/TF-RMM/tf-rmm/commit/7f841c02bfd32f6635f8ff623832d3b1142d18e2",
+      "revId": "9e9869c52d3db07d82611c3775b0319e66df7414",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6e559592_1931dc83",
         "filename": "lib/extensions/pauth/aarch64/pauth.c",
         "patchSetId": 15
