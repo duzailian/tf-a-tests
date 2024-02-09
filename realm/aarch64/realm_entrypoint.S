@@ -61,6 +61,7 @@ pie_fixup:
 #if ENABLE_PAUTH
 	bl	pauth_init_enable
 #endif
+	bl	realm_configure_mmu
 
 loop:
 	/* And jump to the C entrypoint. */
