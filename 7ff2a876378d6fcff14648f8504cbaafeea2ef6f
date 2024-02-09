@@ -45,6 +45,30 @@
       },
       "revId": "7ff2a876378d6fcff14648f8504cbaafeea2ef6f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f355d3b_91ea0586",
+        "filename": "plat/arm/common/arm_fwu_io_storage.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-02-09T15:26:34Z",
+      "side": 1,
+      "message": "\u003e  So the image id you passed corresponded to an empty entry within the array bounds? Or was the issue encountered with an image id beyond the array bounds with a release build, hence you did not have this assertion as a safeguard?\n\nAs far as I understand, it addresses both cases. \nHowever, we typically use \u0027assert\u0027 for programmatic errors, assuming they will never occur. However, I have reservations about relying solely on this assert, as it only verifies the bound without confirming whether the entry is null or not.\nMay be adding extra assert will be helpful instead of if check as below, just checking?\n\n``\nassert(policy-\u003echeck !\u003d NULL)\n``",
+      "parentUuid": "9de2c3de_731ec047",
+      "range": {
+        "startLine": 157,
+        "startChar": 1,
+        "endLine": 157,
+        "endChar": 41
+      },
+      "revId": "7ff2a876378d6fcff14648f8504cbaafeea2ef6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
