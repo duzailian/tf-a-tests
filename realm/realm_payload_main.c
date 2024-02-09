@@ -12,12 +12,23 @@
 #include <fpu.h>
 #include <host_realm_helper.h>
 #include <host_shared_data.h>
+#include <lib/xlat_tables/xlat_tables_v2.h>
 #include <pauth.h>
+#include <platform_def.h>
 #include "realm_def.h"
 #include <realm_rsi.h>
 #include <realm_tests.h>
 #include <sync.h>
 #include <tftf_lib.h>
+
+IMPORT_SYM(uintptr_t, __REALM_TEXT_START__, REALM_TEXT_START);
+IMPORT_SYM(uintptr_t, __REALM_DATA_START__, REALM_DATA_START);
+IMPORT_SYM(uintptr_t, __REALM_BSS_START__, REALM_BSS_START);
+IMPORT_SYM(uintptr_t, __REALM_RODATA_START__, REALM_RODATA_START);
+IMPORT_SYM(uintptr_t, __REALM_TEXT_END__, REALM_TEXT_END);
+IMPORT_SYM(uintptr_t, __REALM_DATA_END__, REALM_DATA_END);
+IMPORT_SYM(uintptr_t, __REALM_BSS_END__, REALM_BSS_END);
+IMPORT_SYM(uintptr_t, __REALM_RODATA_END__, REALM_RODATA_END);
 
 static fpu_state_t rl_fpu_state_write;
 static fpu_state_t rl_fpu_state_read;
@@ -147,12 +158,32 @@ bool test_realm_dit_check_cmd(void)
 static bool test_realm_instr_fetch_cmd(void)
 {
 	u_register_t base;
+	int rc;
 	void (*func_ptr)(void);
 	rsi_ripas_type ripas;
 
 	base = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
 	rsi_ipa_state_get(base, &ripas);
 	realm_printf("Initial ripas=0x%lx\n", ripas);
+
+	/* Map in stage 1 if IPA is in range, else disable MMU */
+	if (base < PLAT_VIRT_ADDR_SPACE_SIZE) {
+		/* map adr */
+		rc = mmap_add_dynamic_region(base, base, PAGE_SIZE, MT_CODE);
+		if (rc != 0) {
+			/* retry after unmap */
+			mmap_remove_dynamic_region(base, PAGE_SIZE);
+			rc = mmap_add_dynamic_region(base, base, PAGE_SIZE, MT_CODE);
+			if (rc != 0) {
+				realm_printf("mmap failed\n");
+				return false;
+			}
+		}
+	} else {
+		/*Disable mmu */
+		disable_mmu();
+	}
+
 	/* causes instruction abort */
 	realm_printf("Generate Instruction Abort\n");
 	func_ptr = (void (*)(void))base;
@@ -165,10 +196,30 @@ static bool test_realm_data_access_cmd(void)
 {
 	u_register_t base;
 	rsi_ripas_type ripas;
+	int rc;
 
 	base = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
 	rsi_ipa_state_get(base, &ripas);
 	realm_printf("Initial ripas=0x%lx\n", ripas);
+
+	/* Map in Stage1 if IPA is in range, else disable MMU */
+	if (base < PLAT_VIRT_ADDR_SPACE_SIZE) {
+		/* map adr */
+		rc = mmap_add_dynamic_region(base, base, PAGE_SIZE, MT_RW_DATA);
+		if (rc != 0) {
+			/* retry after unmap */
+			mmap_remove_dynamic_region(base, PAGE_SIZE);
+			rc = mmap_add_dynamic_region(base, base, PAGE_SIZE, MT_RW_DATA);
+			if (rc != 0) {
+				realm_printf("mmap failed\n");
+				return false;
+			}
+		}
+	} else {
+		/*Disable mmu */
+		disable_mmu();
+	}
+
 	/* causes data abort */
 	realm_printf("Generate Data Abort\n");
 	*((volatile uint64_t *)base);
@@ -196,6 +247,34 @@ static bool realm_exception_handler(void)
 	return false;
 }
 
+void realm_configure_mmu(void)
+{
+	host_shared_data_t *ptr;
+
+	mmap_add_region(REALM_TEXT_START,
+			REALM_TEXT_START,
+			REALM_TEXT_END - REALM_TEXT_START,
+			MT_CODE);
+	mmap_add_region(REALM_RODATA_START,
+			REALM_RODATA_START,
+			REALM_RODATA_END - REALM_RODATA_START,
+			MT_RO_DATA);
+	mmap_add_region(REALM_DATA_START,
+			REALM_DATA_START,
+			REALM_BSS_END - REALM_DATA_START,
+			MT_RW_DATA);
+
+	ptr = (host_shared_data_t *)rsi_get_ns_buffer();
+	realm_set_shared_structure(ptr);
+
+	/* Map NS Shared Buffer. */
+	mmap_add_region((unsigned long long)ptr, (unsigned long long)ptr,
+			round_up(sizeof(host_shared_data_t) * MAX_REC_COUNT, PAGE_SIZE),
+			MT_RW_DATA);
+	init_xlat_tables();
+	enable_mmu_el1(0);
+}
+
 /*
  * This is the entry function for Realm payload, it first requests the shared buffer
  * IPA address from Host using HOST_CALL/RSI, it reads the command to be executed,
@@ -209,7 +288,6 @@ void realm_payload_main(void)
 	bool test_succeed = false;
 
 	register_custom_sync_exception_handler(realm_exception_handler);
-	realm_set_shared_structure((host_shared_data_t *)rsi_get_ns_buffer());
 	if (realm_get_my_shared_structure() != NULL) {
 		uint8_t cmd = realm_shared_data_get_my_realm_cmd();
 
