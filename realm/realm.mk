@@ -59,6 +59,7 @@ REALM_SOURCES +=	lib/extensions/pauth/aarch64/pauth.c            \
 			lib/extensions/pauth/aarch64/pauth_helpers.S
 
 REALM_INCLUDES +=	-Iinclude/lib/extensions
+PLAT_XLAT_TABLES_DYNAMIC := 1
 
 REALM_DEFINES:=
 $(eval $(call add_define,REALM_DEFINES,ARM_ARCH_MAJOR))
@@ -67,3 +68,5 @@ $(eval $(call add_define,REALM_DEFINES,ENABLE_BTI))
 $(eval $(call add_define,REALM_DEFINES,ENABLE_PAUTH))
 $(eval $(call add_define,REALM_DEFINES,LOG_LEVEL))
 $(eval $(call add_define,REALM_DEFINES,IMAGE_REALM))
+$(eval $(call add_define,REALM_DEFINES,PLAT_XLAT_TABLES_DYNAMIC))
+
