@@ -61,6 +61,7 @@ pie_fixup:
 #if ENABLE_PAUTH
 	bl	pauth_init_enable
 #endif
+	bl	realm_configure_mmu
 
 loop:
 	/* And jump to the C entrypoint. */
@@ -73,6 +74,9 @@ realm_warmboot_endpoint:
 #if ENABLE_PAUTH
 	bl	pauth_init_enable
 #endif
+	/* Enable MMU */
+	mov	x0, #0
+	bl	enable_mmu_el1
 	mov	x0, x20
 	b	realm_secondary_entrypoint
 endfunc realm_entrypoint
