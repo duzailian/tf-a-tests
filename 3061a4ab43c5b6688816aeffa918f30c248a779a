@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "12ab9585_cfc46898",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-02-12T13:59:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4a34a6a_7a0e3e31",
+      "revId": "3061a4ab43c5b6688816aeffa918f30c248a779a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3ceb1c91_8e77b89d",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-02-08T15:22:40Z",
       "side": 1,
       "message": "The pmu count is not decremented I think. Or this is testing with same PMU count ?",
+      "range": {
+        "startLine": 640,
+        "startChar": 33,
+        "endLine": 640,
+        "endChar": 41
+      },
+      "revId": "3061a4ab43c5b6688816aeffa918f30c248a779a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c3a4152_b338a011",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-02-12T13:59:00Z",
+      "side": 1,
+      "message": "added comments, first realm created with 8 counters, second with lesser",
+      "parentUuid": "3ceb1c91_8e77b89d",
       "range": {
         "startLine": 640,
         "startChar": 33,
@@ -58,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8fea609_26c8ad75",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 646,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-02-12T13:59:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a370834_bb51319f",
+      "revId": "3061a4ab43c5b6688816aeffa918f30c248a779a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c31e8c27_9ee93f1e",
@@ -71,6 +131,24 @@
       "writtenOn": "2024-02-08T15:22:40Z",
       "side": 1,
       "message": "need comment here.",
+      "revId": "3061a4ab43c5b6688816aeffa918f30c248a779a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6df39c7e_32b974c6",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-02-12T13:59:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c31e8c27_9ee93f1e",
       "revId": "3061a4ab43c5b6688816aeffa918f30c248a779a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -98,6 +176,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f76ef108_ae8fb9c5",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-02-12T13:59:00Z",
+      "side": 1,
+      "message": "intentions is to create realm2 with lesser pmu counter than realm1, modified to -1",
+      "parentUuid": "9a020bcb_cc066680",
+      "range": {
+        "startLine": 654,
+        "startChar": 44,
+        "endLine": 654,
+        "endChar": 46
+      },
+      "revId": "3061a4ab43c5b6688816aeffa918f30c248a779a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d20f66e7_c40a1c5f",
@@ -111,6 +213,30 @@
       "writtenOn": "2024-02-08T15:22:40Z",
       "side": 1,
       "message": "not sure what is being tested in these calls. Need comments.",
+      "range": {
+        "startLine": 673,
+        "startChar": 0,
+        "endLine": 691,
+        "endChar": 2
+      },
+      "revId": "3061a4ab43c5b6688816aeffa918f30c248a779a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84ce762e_f17f8bb5",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-02-12T13:59:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d20f66e7_c40a1c5f",
       "range": {
         "startLine": 673,
         "startChar": 0,
