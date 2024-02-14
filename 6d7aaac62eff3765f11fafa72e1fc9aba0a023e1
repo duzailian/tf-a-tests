@@ -96,6 +96,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e5728759_51f13f71",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 1286,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-02-14T15:54:18Z",
+      "side": 1,
+      "message": "tftf realm tests do not access anything outside 1G boundary, so I think we can pick any random adr outside 1GB",
+      "parentUuid": "5c50cf8e_30fd3b3e",
+      "range": {
+        "startLine": 1285,
+        "startChar": 0,
+        "endLine": 1286,
+        "endChar": 34
+      },
+      "revId": "6d7aaac62eff3765f11fafa72e1fc9aba0a023e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "26ea81e5_05d9b3ff",
         "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
         "patchSetId": 24
@@ -527,6 +551,30 @@
       "writtenOn": "2024-02-13T16:39:44Z",
       "side": 1,
       "message": "this is not correct description.",
+      "range": {
+        "startLine": 1396,
+        "startChar": 6,
+        "endLine": 1396,
+        "endChar": 66
+      },
+      "revId": "6d7aaac62eff3765f11fafa72e1fc9aba0a023e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0ada40f_c2077c61",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 1396,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-02-14T15:54:18Z",
+      "side": 1,
+      "message": "i meant unassigned empty to unassigned destroyed here",
+      "parentUuid": "f88dad7f_49c748b5",
       "range": {
         "startLine": 1396,
         "startChar": 6,
