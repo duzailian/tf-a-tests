@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac163a75_d03e4f4a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-02-14T15:37:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0c3d276_475c548a",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 52
+      },
+      "revId": "45e8d21990982ed4fe102bdaded0300fa954ec41",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be440e12_f4b7eba5",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-02-13T16:43:01Z",
       "side": 1,
       "message": "need comment\n\nalso it is wierd programming pattern as the else if condition is repeat of first condition ? Can be written in a better way.",
+      "revId": "45e8d21990982ed4fe102bdaded0300fa954ec41",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cd61633_b8de7fb3",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-02-14T15:37:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be440e12_f4b7eba5",
       "revId": "45e8d21990982ed4fe102bdaded0300fa954ec41",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
