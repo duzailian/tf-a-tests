@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4b81e2b_3be20a3f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-02-15T09:52:47Z",
+      "side": 1,
+      "message": "This topic is verified using:\n\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/63463/\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/63461/",
+      "revId": "4f35ce6fcbb68fc1f2fb48df7f66ad0fd494a061",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
