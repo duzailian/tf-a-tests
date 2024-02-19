@@ -8,6 +8,7 @@
 #include <debug.h>
 #include <errno.h>
 
+#include <arch_features.h>
 #include <sp_def.h>
 #include <ffa_endpoints.h>
 #include <sp_helpers.h>
@@ -211,7 +212,7 @@ static void ffa_partition_info_get_test(struct mailbox_buffers *mb)
 	ffa_partition_info_wrong_test();
 }
 
-void ffa_version_test(void)
+static void ffa_version_test(void)
 {
 	struct ffa_value ret = ffa_version(MAKE_FFA_VERSION(FFA_MAJOR,
 							    FFA_MINOR));
@@ -230,7 +231,7 @@ void ffa_version_test(void)
 	expect((int)ffa_version_compatible, (int)true);
 }
 
-void ffa_spm_id_get_test(void)
+static void ffa_spm_id_get_test(void)
 {
 	if (spm_version >= MAKE_FFA_VERSION(1, 1)) {
 		struct ffa_value ret = ffa_spm_id_get();
@@ -252,11 +253,51 @@ void ffa_spm_id_get_test(void)
 	}
 }
 
+static void cpu_check_id_regs(void)
+{
+	/* ID_AA64PFR0_EL1 */
+
+	// EL0/1/2/3
+	expect(is_feat_advsimd_present(), true);
+	expect(is_feat_fp_present(), true);
+	// GIC
+	// RAS
+	expect(is_armv8_2_sve_present(), false);
+	// SEL2
+	// MPAM
+	// AMU
+	// DIT
+	// RME
+	// CSV2
+	// CSV3
+
+	/* ID_AA64PFR1_EL1 */
+
+	// BT
+	// SSBS
+	// MTE
+	// RAS_frac
+	// MPAM_frac
+	expect(is_feat_sme_supported(), false);
+	// RNDR_trap
+	// CSV2_frac
+	// NMI
+}
+
+void cpu_tests(void)
+{
+	const char *test_cpu_str = "CPU tests";
+
+	announce_test_section_start(test_cpu_str);
+	cpu_check_id_regs();
+	announce_test_section_end(test_cpu_str);
+}
+
 void ffa_tests(struct mailbox_buffers *mb)
 {
-	const char *test_ffa = "FF-A setup and discovery";
+	const char *test_ffa_str = "FF-A setup and discovery";
 
-	announce_test_section_start(test_ffa);
+	announce_test_section_start(test_ffa_str);
 
 	ffa_features_test();
 	ffa_version_test();
@@ -264,5 +305,5 @@ void ffa_tests(struct mailbox_buffers *mb)
 	ffa_partition_info_get_test(mb);
 	ffa_partition_info_get_regs_test();
 
-	announce_test_section_end(test_ffa);
+	announce_test_section_end(test_ffa_str);
 }
