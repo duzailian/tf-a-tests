@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9189026e_379a1009",
+        "filename": "plat/arm/neoverse_rd/common/include/nrd_soc_css_def_v2.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000793
+      },
+      "writtenOn": "2024-02-19T13:45:59Z",
+      "side": 1,
+      "message": "This is a new file, Please change it to the current year. Please do the same at other places.",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "cac32e9262ee8e0e23d2e3b6551227767297717f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
