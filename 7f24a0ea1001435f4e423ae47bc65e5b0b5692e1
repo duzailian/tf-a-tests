@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a106fd0_d8d4f279",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-02-20T12:21:53Z",
+      "side": 1,
+      "message": "Can you add one line of rationale for the change?",
+      "revId": "7f24a0ea1001435f4e423ae47bc65e5b0b5692e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0de7b67_39a0352e",
+        "filename": "tftf/tests/misc_tests/test_undef_injection.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-02-20T12:21:53Z",
+      "side": 1,
+      "message": "nitpick: 2024",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "7f24a0ea1001435f4e423ae47bc65e5b0b5692e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e6a3c72_f689fe0f",
+        "filename": "tftf/tests/misc_tests/test_undef_injection.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-02-20T12:21:53Z",
+      "side": 1,
+      "message": "VERBOSE",
+      "range": {
+        "startLine": 22,
+        "startChar": 2,
+        "endLine": 22,
+        "endChar": 22
+      },
+      "revId": "7f24a0ea1001435f4e423ae47bc65e5b0b5692e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ea77109_5d003197",
+        "filename": "tftf/tests/misc_tests/test_undef_injection.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-02-20T12:21:53Z",
+      "side": 1,
+      "message": "This assumes TF-A\u0027s build option ENABLE_FEAT_FGT\u003d0 leading to EL3 trapping on system register read, good to add a comment stating this?",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 47
+      },
+      "revId": "7f24a0ea1001435f4e423ae47bc65e5b0b5692e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f407260_5dca2a87",
+        "filename": "tftf/tests/misc_tests/test_undef_injection.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-02-20T12:21:53Z",
+      "side": 1,
+      "message": "nitpick: add braces",
+      "range": {
+        "startLine": 39,
+        "startChar": 1,
+        "endLine": 41,
+        "endChar": 1
+      },
+      "revId": "7f24a0ea1001435f4e423ae47bc65e5b0b5692e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87d83bf1_091942be",
+        "filename": "tftf/tests/misc_tests/test_undef_injection.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-02-20T12:21:53Z",
+      "side": 1,
+      "message": "nitpick: add local variable declarations at top",
+      "range": {
+        "startLine": 45,
+        "startChar": 1,
+        "endLine": 46,
+        "endChar": 24
+      },
+      "revId": "7f24a0ea1001435f4e423ae47bc65e5b0b5692e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ab6e6bb_888ac223",
+        "filename": "tftf/tests/misc_tests/test_undef_injection.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-02-20T12:21:53Z",
+      "side": 1,
+      "message": "VERBOSE",
+      "range": {
+        "startLine": 51,
+        "startChar": 1,
+        "endLine": 51,
+        "endChar": 21
+      },
+      "revId": "7f24a0ea1001435f4e423ae47bc65e5b0b5692e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa8a5011_26d367d8",
+        "filename": "tftf/tests/tests-undef-injection.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-02-20T12:21:53Z",
+      "side": 1,
+      "message": "nitpick: 2024",
+      "range": {
+        "startLine": 2,
+        "startChar": 16,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "7f24a0ea1001435f4e423ae47bc65e5b0b5692e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f0e2ef0_74364317",
+        "filename": "tftf/tests/tests-undef-injection.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-02-20T12:21:53Z",
+      "side": 1,
+      "message": "nitpick: 2024",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "7f24a0ea1001435f4e423ae47bc65e5b0b5692e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
