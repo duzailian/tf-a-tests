@@ -339,17 +339,17 @@ u_register_t host_rmi_create_rtt_levels(struct realm *realm,
 	return REALM_SUCCESS;
 }
 
-static u_register_t host_realm_fold_rtt(u_register_t rd, u_register_t addr,
-					u_register_t level)
+u_register_t host_realm_fold_rtt(u_register_t rd, u_register_t addr,
+				 u_register_t level)
 {
 	struct rtt_entry rtt;
 	u_register_t pa, ret;
 
-	ret = host_rmi_rtt_readentry(rd, addr, level, &rtt);
+	ret = host_rmi_rtt_readentry(rd, addr, level - 1U, &rtt);
 
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, level=0x%lx addr=0x%lx ret=0x%lx\n",
-			"host_rmi_rtt_readentry", level, addr, ret);
+			"host_rmi_rtt_readentry", level - 1U, addr, ret);
 		return REALM_ERROR;
 	}
 
@@ -359,13 +359,19 @@ static u_register_t host_realm_fold_rtt(u_register_t rd, u_register_t addr,
 		return REALM_ERROR;
 	}
 
-	ret = host_rmi_rtt_fold(rd, addr, level + 1U, &pa);
+	ret = host_rmi_rtt_fold(rd, addr, level, &pa);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, addr=0x%lx ret=0x%lx\n",
 			"host_rmi_rtt_fold", addr, ret);
 		return REALM_ERROR;
 	}
 
+	ret = host_rmi_granule_undelegate(pa);
+	if (ret != RMI_SUCCESS) {
+		ERROR("%s() failed, rtt=0x%lx ret=0x%lx\n",
+			"host_rmi_granule_undelegate", pa, ret);
+		return REALM_ERROR;
+	}
 	page_free(rtt.out_addr);
 
 	return REALM_SUCCESS;
@@ -439,7 +445,7 @@ u_register_t host_realm_delegate_map_protected_data(bool unknown,
 	}
 
 	if (map_size == RTT_L2_BLOCK_SIZE) {
-		ret = host_realm_fold_rtt(rd, target_pa, map_level);
+		ret = host_realm_fold_rtt(rd, target_pa, map_level - 1U);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, ret=0x%lx\n",
 				"host_realm_fold_rtt", ret);
