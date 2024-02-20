@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be0c1a11_f66c899d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-02-20T17:47:45Z",
+      "side": 1,
+      "message": "f",
+      "revId": "68837e18b738dd275c7be12cc2ad7a5bb487effb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76b0c92d_aa8d530e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-02-20T17:47:45Z",
+      "side": 1,
+      "message": "declare varaibles at the top of the scope in which they are defined.\n\nand all other functions in this file.",
+      "revId": "68837e18b738dd275c7be12cc2ad7a5bb487effb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
