@@ -46,6 +46,30 @@
       },
       "revId": "cac32e9262ee8e0e23d2e3b6551227767297717f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63ddd7c2_af6d5e34",
+        "filename": "plat/arm/neoverse_rd/common/include/nrd_soc_css_def_v2.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000774
+      },
+      "writtenOn": "2024-02-22T11:22:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d09e8213_4a504b87",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "cac32e9262ee8e0e23d2e3b6551227767297717f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
