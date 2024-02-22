@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba89901a_3ff2a564",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000774
+      },
+      "writtenOn": "2024-02-22T11:33:07Z",
+      "side": 1,
+      "message": "Manually overriding as CI on relation chain passed.",
+      "revId": "8836f620855c8a7ed650b262e7704c54be5d2c0a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
