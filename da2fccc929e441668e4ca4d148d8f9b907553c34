@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e92ef57_33109900",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-23T14:12:17Z",
+      "side": 1,
+      "message": "There was an issue for LPA2 case now that RMM support 52 bit PA. This is worked around, so would be worth rebasing this patch stack.",
+      "revId": "da2fccc929e441668e4ca4d148d8f9b907553c34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
