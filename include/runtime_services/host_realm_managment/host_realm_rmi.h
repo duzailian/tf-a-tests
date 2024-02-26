@@ -350,6 +350,7 @@ typedef enum {
 #define PAGE_SHIFT			FOUR_KB_SHIFT
 #define RTT_LEVEL_SHIFT(l)		XLAT_ADDR_SHIFT(l)
 #define RTT_L2_BLOCK_SIZE		(1UL << RTT_LEVEL_SHIFT(2U))
+#define RTT_L1_BLOCK_SIZE		(1UL << RTT_LEVEL_SHIFT(1U))
 
 #define REC_CREATE_NR_GPRS		8U
 #define REC_HVC_NR_GPRS			7U
@@ -608,6 +609,10 @@ u_register_t host_realm_delegate_map_protected_data(bool unknown,
 					   u_register_t src_pa);
 u_register_t host_realm_map_unprotected(struct realm *realm, u_register_t ns_pa,
 					u_register_t map_size);
+u_register_t host_rmi_rtt_mapunprotected(u_register_t rd,
+					u_register_t map_addr,
+					u_register_t level,
+					u_register_t ns_pa);
 u_register_t host_rtt_level_mapsize(u_register_t level);
 u_register_t host_realm_fold_rtt(u_register_t rd, u_register_t addr, u_register_t level);
 
