@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023, Arm Limited. All rights reserved.
+ * Copyright (c) 2023-2024, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -11,6 +11,7 @@
 #include <arch_helpers.h>
 #include <lib/extensions/sme.h>
 #include <test_helpers.h>
+#include <tftf.h>
 #include <tftf_lib.h>
 
 #ifdef __aarch64__
@@ -54,7 +55,7 @@ test_result_t test_sme2_support(void)
 #ifdef __aarch64__
 	/* Skip the test if SME2 is not supported. */
 	SKIP_TEST_IF_SME2_NOT_SUPPORTED();
-
+        tftf_arch_setup();
 	/*
 	 * FEAT_SME2 adds a 512 BIT architectural register ZT0 to support
 	 * the lookup-table feature.
