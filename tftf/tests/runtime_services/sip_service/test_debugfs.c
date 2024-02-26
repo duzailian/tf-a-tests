@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019, Arm Limited. All rights reserved.
+ * Copyright (c) 2019-2024, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -13,7 +13,7 @@
 #define SMC_OK			(0)
 
 #define DEBUGFS_VERSION		(0x00000001)
-#define DEBUGFS_SMC_64		(0xC2000030)
+#define DEBUGFS_SMC_64		(0xC7000020)
 #define MAX_PATH_LEN		(256)
 
 /* DebugFS shared buffer area */
