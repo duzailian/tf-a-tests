@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be523eeb_9ac70f73",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000811
+      },
+      "writtenOn": "2024-02-27T04:54:36Z",
+      "side": 1,
+      "message": "for Versal Platform",
+      "range": {
+        "startLine": 16,
+        "startChar": 11,
+        "endLine": 16,
+        "endChar": 39
+      },
+      "revId": "85f3e9cd6973a721ae6d6e89ae9b277826561c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b92ae850_76824c69",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000811
+      },
+      "writtenOn": "2024-02-27T04:54:36Z",
+      "side": 1,
+      "message": "I think this is for different patch",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 16
+      },
+      "revId": "85f3e9cd6973a721ae6d6e89ae9b277826561c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
