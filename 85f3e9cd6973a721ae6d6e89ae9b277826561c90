@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "769971bc_4deb83e2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001033
+      },
+      "writtenOn": "2024-02-27T06:23:41Z",
+      "side": 1,
+      "message": "Addressed",
+      "parentUuid": "be523eeb_9ac70f73",
+      "range": {
+        "startLine": 16,
+        "startChar": 11,
+        "endLine": 16,
+        "endChar": 39
+      },
+      "revId": "85f3e9cd6973a721ae6d6e89ae9b277826561c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b92ae850_76824c69",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-02-27T04:54:36Z",
       "side": 1,
       "message": "I think this is for different patch",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 16
+      },
+      "revId": "85f3e9cd6973a721ae6d6e89ae9b277826561c90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98d019dc_6780a486",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001033
+      },
+      "writtenOn": "2024-02-27T06:23:41Z",
+      "side": 1,
+      "message": "For Versal NET created separate patch.",
+      "parentUuid": "b92ae850_76824c69",
       "range": {
         "startLine": 19,
         "startChar": 1,
