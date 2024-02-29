@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "635cf055_24863dc1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-02-29T19:42:00Z",
+      "side": 1,
+      "message": "Please break the patch into smaller patches. For example, you could introduce the support of CPU X3 and A520 in different patches.",
+      "revId": "3e8c4b28c5427f322da7b5b53835d0f2e4314a6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
