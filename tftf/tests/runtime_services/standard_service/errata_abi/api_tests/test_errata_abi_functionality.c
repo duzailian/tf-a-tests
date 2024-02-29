@@ -408,6 +408,22 @@ em_cpu_t neoverse_V2_errata_list = {
 	},
 };
 
+em_cpu_t cortex_X3_errata_list = {
+	.cpu_pn = 0xD4E,
+	.cpu_errata = {
+		{2070301, 0x00, 0x12},
+		{2266875, 0x00, 0x10},
+		{2302506, 0x00, 0x11},
+		{2313909, 0x00, 0x10},
+		{2615812, 0x00, 0x11},
+		{2641945, 0x00, 0x10},
+		{2701951, 0x00, 0x11},
+		{2742421, 0x00, 0x11},
+		{2743088, 0x00, 0x11},
+		{2779509, 0x00, 0x11},
+		{-1}
+	},
+};
 
 /*
  * Test function checks for the em_version implemented
@@ -590,6 +606,12 @@ test_result_t test_em_cpu_features(void)
 	{
 		VERBOSE("MIDR matches A78_AE -> %x\n", midr_val);
 		cpu_ptr = &cortex_A78_AE_errata_list;
+		break;
+	}
+	case 0xD4E:
+	{
+		VERBOSE("MIDR matches X3 -> %x\n", midr_val);
+		cpu_ptr = &cortex_X3_errata_list;
 		break;
 	}
 	default:
