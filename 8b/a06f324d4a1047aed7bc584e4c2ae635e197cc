@@ -1,0 +1,13 @@
+Allow-CI+1: Akshay Belsare <Akshay.Belsare@amd.com>
+Allow-CI+1: Chris Kay <chris.kay@arm.com>
+Code-Owner-Review+1: Chris Kay <chris.kay@arm.com>
+Maintainer-Review+1: Joanna Farley <joanna.farley@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Review+1: Akshay Belsare <Akshay.Belsare@amd.com>
+Code-Owner-Review+1: Michal Šimek <michal.simek@amd.com>
+Allow-CI+1: Michal Šimek <michal.simek@amd.com>
+Submitted-by: Joanna Farley <joanna.farley@arm.com>
+Submitted-at: Thu, 29 Feb 2024 11:27:28 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/26034
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
