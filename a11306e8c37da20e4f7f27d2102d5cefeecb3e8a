@@ -1,0 +1,366 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f04ea81d_f2e8bdcc",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 31
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "this does not depend on any RMI call. can be a simple macro\n\n#define RTT_MAP_SIZE(level) (1UL \u003c\u003c RTT_LEVEL_SHIFT(level))",
+      "range": {
+        "startLine": 611,
+        "startChar": 13,
+        "endLine": 611,
+        "endChar": 35
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73dc193e_6ce092b4",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 1279,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "reformat this sentence to convey the \"what\" and \"how\" of the function correctly. see comment below.",
+      "range": {
+        "startLine": 1278,
+        "startChar": 3,
+        "endLine": 1279,
+        "endChar": 50
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9151415_94785c7c",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "same comment as below.",
+      "range": {
+        "startLine": 1295,
+        "startChar": 11,
+        "endLine": 1295,
+        "endChar": 18
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c13372d_8b057301",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 1360,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "Helper to test whether RTT_DESTROY will change state of unassigned empty page to Unassigned Destroy",
+      "range": {
+        "startLine": 1359,
+        "startChar": 3,
+        "endLine": 1360,
+        "endChar": 19
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fcceb21d_94fbe3e2",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 1369,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "\"an\"",
+      "range": {
+        "startLine": 1369,
+        "startChar": 9,
+        "endLine": 1369,
+        "endChar": 12
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e76332be_74c80d3b",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 1375,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "Magic number. need macro for this or use RTT_MAP_SIZE macro.",
+      "range": {
+        "startLine": 1375,
+        "startChar": 10,
+        "endLine": 1375,
+        "endChar": 18
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6cdb29a_fa3bc7a7",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 1403,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "check for this ret.",
+      "range": {
+        "startLine": 1403,
+        "startChar": 1,
+        "endLine": 1403,
+        "endChar": 5
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31b163af_f8618e34",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 1478,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "I didn\u0027t understand why NS Host heap to be used will be mapped in Realm payload. It seems that the Realm payload is mapped and assigned. I dont see code to map the generic memory pool. This could be a coincidence and may fail in future.",
+      "range": {
+        "startLine": 1478,
+        "startChar": 16,
+        "endLine": 1478,
+        "endChar": 84
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05d8200a_7286c62c",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 1586,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "nit: 4a DATA_CREATE_UNKNOWN",
+      "range": {
+        "startLine": 1586,
+        "startChar": 4,
+        "endLine": 1586,
+        "endChar": 24
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5bd591aa_afdf62d4",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 1600,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "this comment does seem relevant ?",
+      "range": {
+        "startLine": 1600,
+        "startChar": 0,
+        "endLine": 1600,
+        "endChar": 29
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3c38f9b_02fb910f",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 1608,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "this comment does not seem relevant.",
+      "range": {
+        "startLine": 1608,
+        "startChar": 1,
+        "endLine": 1608,
+        "endChar": 29
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86d998b5_855cb0d2",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 1609,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "Print Not consistent with other tests.\nAdd INFO(\"Test 6\\n\");",
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72b9c381_bd5c9769",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 1631,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "nit: start sentence with Caps for first alphabet.",
+      "range": {
+        "startLine": 1631,
+        "startChar": 3,
+        "endLine": 1631,
+        "endChar": 4
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a88c658_19cdb514",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 1659,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "test result",
+      "range": {
+        "startLine": 1659,
+        "startChar": 1,
+        "endLine": 1659,
+        "endChar": 5
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3fbb19e_0e09cfda",
+        "filename": "tftf/tests/tests-realm-payload.xml",
+        "patchSetId": 31
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "...validation",
+      "range": {
+        "startLine": 19,
+        "startChar": 43,
+        "endLine": 19,
+        "endChar": 44
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19f3d898_5c57b29e",
+        "filename": "tftf/tests/tests-realm-payload.xml",
+        "patchSetId": 31
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-02-29T17:13:06Z",
+      "side": 1,
+      "message": "..validation",
+      "range": {
+        "startLine": 21,
+        "startChar": 53,
+        "endLine": 21,
+        "endChar": 54
+      },
+      "revId": "a11306e8c37da20e4f7f27d2102d5cefeecb3e8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
