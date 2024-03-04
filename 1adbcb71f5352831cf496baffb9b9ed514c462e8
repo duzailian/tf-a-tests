@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3118beb_941a30f4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-03-04T19:28:49Z",
+      "side": 1,
+      "message": "nitpick:\nrefactor: make debugfs and pmf as vendor el3 services",
+      "revId": "1adbcb71f5352831cf496baffb9b9ed514c462e8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
