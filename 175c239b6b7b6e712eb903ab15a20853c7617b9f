@@ -26,6 +26,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f62a1f25_96b16fc0",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_spm.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-03-05T13:45:13Z",
+      "side": 1,
+      "message": "In the current tf-a-ci-scripts, I see that the CI run_config uses TRP as RMM payload, in that case this test will be skipped.\n\nBut this testcase is a good coverage for 3 world config\nNS+Secure world. So the presence of Realm world can be made optional.",
+      "revId": "175c239b6b7b6e712eb903ab15a20853c7617b9f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c7555626_fcd7330b",
         "filename": "tftf/tests/runtime_services/realm_payload/host_realm_spm.c",
         "patchSetId": 11
