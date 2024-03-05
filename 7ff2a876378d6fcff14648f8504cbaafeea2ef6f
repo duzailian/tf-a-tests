@@ -24,6 +24,23 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7edcb071_afdad01f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-03-05T15:25:06Z",
+      "side": 1,
+      "message": "Review comments look fairly easy to resolve. Ok to fix / rebase and proceed with merging? Thanks.",
+      "revId": "7ff2a876378d6fcff14648f8504cbaafeea2ef6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9de2c3de_731ec047",
