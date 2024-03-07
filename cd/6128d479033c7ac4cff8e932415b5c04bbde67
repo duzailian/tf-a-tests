@@ -1,0 +1,9 @@
+Allow-CI+1: Bipin Ravi <bipin.ravi@arm.com>
+Maintainer-Review+1: Lauren Wehrmeister <lauren.wehrmeister@arm.com>
+Code-Owner-Review+1: Bipin Ravi <bipin.ravi@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Submitted-by: Bipin Ravi <bipin.ravi@arm.com>
+Submitted-at: Thu, 07 Mar 2024 16:16:33 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/27005
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
