@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d51fab4_951cfe19",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-03-07T22:16:26Z",
+      "side": 1,
+      "message": "nit: 2024",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "e747ce63eea67b16067e83b50475de38ac4642da",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5f07fa0_70bca42f",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-03-07T22:16:26Z",
+      "side": 1,
+      "message": "nit: Cortex-X3 ?",
+      "range": {
+        "startLine": 627,
+        "startChar": 24,
+        "endLine": 627,
+        "endChar": 26
+      },
+      "revId": "e747ce63eea67b16067e83b50475de38ac4642da",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
