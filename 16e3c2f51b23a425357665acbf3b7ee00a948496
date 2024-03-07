@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ad1ca01_20aeb13f",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-03-07T01:57:19Z",
+      "side": 1,
+      "message": "On tftf side, we still have a combined list for errata incl CPU and system?",
+      "range": {
+        "startLine": 196,
+        "startChar": 2,
+        "endLine": 196,
+        "endChar": 24
+      },
+      "revId": "16e3c2f51b23a425357665acbf3b7ee00a948496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb52bd17_82c92b84",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-03-07T01:57:19Z",
+      "side": 1,
+      "message": "Order in ascending order",
+      "range": {
+        "startLine": 198,
+        "startChar": 2,
+        "endLine": 198,
+        "endChar": 24
+      },
+      "revId": "16e3c2f51b23a425357665acbf3b7ee00a948496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
