@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cc04ea5f_d1fcb198",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-03-07T17:35:51Z",
+      "side": 1,
+      "message": "Is SPAN bit set or cleared? See line 153.",
+      "range": {
+        "startLine": 206,
+        "startChar": 45,
+        "endLine": 206,
+        "endChar": 60
+      },
+      "revId": "be6718b67fe07168d6dd2637bfbf3ac3a14ad62b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
