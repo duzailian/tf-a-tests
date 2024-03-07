@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf1a007c_64fbc1e2",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-03-07T20:06:17Z",
+      "side": 1,
+      "message": "Hi Bipin, \nYes, because we are only using TFTF to query TF-A and find the return value from TF-A. For Cortex X4 there is a patch that I have added separately.\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/27005.",
+      "parentUuid": "55830393_2b0bc02e",
+      "range": {
+        "startLine": 196,
+        "startChar": 2,
+        "endLine": 196,
+        "endChar": 24
+      },
+      "revId": "16e3c2f51b23a425357665acbf3b7ee00a948496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bb52bd17_82c92b84",
@@ -61,6 +85,30 @@
       "writtenOn": "2024-03-07T01:57:19Z",
       "side": 1,
       "message": "Order in ascending order",
+      "range": {
+        "startLine": 198,
+        "startChar": 2,
+        "endLine": 198,
+        "endChar": 24
+      },
+      "revId": "16e3c2f51b23a425357665acbf3b7ee00a948496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb196a4b_b5b4e71a",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-03-07T20:06:17Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "bb52bd17_82c92b84",
       "range": {
         "startLine": 198,
         "startChar": 2,
