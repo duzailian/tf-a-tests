@@ -22,6 +22,30 @@
       },
       "revId": "be6718b67fe07168d6dd2637bfbf3ac3a14ad62b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b015c6b_630bc2ff",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2024-03-07T20:53:19Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "cc04ea5f_d1fcb198",
+      "range": {
+        "startLine": 206,
+        "startChar": 45,
+        "endLine": 206,
+        "endChar": 60
+      },
+      "revId": "be6718b67fe07168d6dd2637bfbf3ac3a14ad62b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
