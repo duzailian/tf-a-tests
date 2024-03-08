@@ -244,22 +244,9 @@ test_result_t test_sve_vectors_operations(void)
 	return TEST_RESULT_SUCCESS;
 }
 
-/*
- * SME enter SPMC with SSVE enabled.
- *
- * Check Streaming SVE is preserved on a normal/secure world switch.
- *
- */
-test_result_t test_sme_streaming_sve(void)
+static test_result_t do_test_sme_streaming_sve(uint64_t svq)
 {
 	struct ffa_value ret;
-
-	SKIP_TEST_IF_AARCH32();
-
-	/* Skip the test if SME is not supported. */
-	SKIP_TEST_IF_SME_NOT_SUPPORTED();
-
-	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
 
 #ifdef __aarch64__
 	/* Enable SME FA64 if implemented. */
@@ -270,8 +257,8 @@ test_result_t test_sme_streaming_sve(void)
 	/* Enter Streaming SVE mode. */
 	sme_smstart(SMSTART_SM);
 
-	/* Configure SVQ to max. implemented SVL. */
-	sme_config_svq(0xf);
+	/* Configure SVQ. */
+	sme_config_svq(svq);
 
 	ret = cactus_req_simd_fill_send_cmd(SENDER, RECEIVER);
 	if (!is_ffa_direct_response(ret)) {
@@ -295,19 +282,25 @@ test_result_t test_sme_streaming_sve(void)
 
 	/* Exit Streaming SVE mode. */
 	sme_smstop(SMSTOP_SM);
-#endif
 
 	return TEST_RESULT_SUCCESS;
+#else
+	return TEST_RESULT_SKIPPED;
+#endif
+
 }
 
 /*
- * SME enter SPMC with ZA enabled.
+ * SME enter SPMC with SSVE enabled.
  *
- * Check ZA array enabled is preserved on a normal/secure world switch.
+ * Check Streaming SVE is preserved on a normal/secure world switch.
+ *
  */
-test_result_t test_sme_za(void)
+test_result_t test_sme_streaming_sve(void)
 {
-	struct ffa_value ret;
+	uint32_t svl_bitmap;
+	uint32_t svq;
+	test_result_t ret;
 
 	SKIP_TEST_IF_AARCH32();
 
@@ -315,6 +308,31 @@ test_result_t test_sme_za(void)
 	SKIP_TEST_IF_SME_NOT_SUPPORTED();
 
 	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
+
+#ifdef __aarch64__
+	svl_bitmap = sme_probe_svl(SME_SVQ_ARCH_MAX);
+	svq = 0;
+	for (uint32_t bitmap = svl_bitmap; bitmap; bitmap >>= 1) {
+		if ((bitmap & 1) != 0) {
+			VERBOSE("Test SVL %u bits.\n", SVE_VQ_TO_BITS(svq));
+			ret = do_test_sme_streaming_sve(svq);
+			if (ret != TEST_RESULT_SUCCESS) {
+				return ret;
+			}
+		}
+
+		svq++;
+	}
+
+	return TEST_RESULT_SUCCESS;
+#else
+	return TEST_RESULT_SKIPPED;
+#endif
+}
+
+test_result_t do_test_sme_za(uint64_t svq)
+{
+	struct ffa_value ret;
 
 #ifdef __aarch64__
 	/* Enable SME FA64 if implemented. */
@@ -326,7 +344,7 @@ test_result_t test_sme_za(void)
 	sme_smstart(SMSTART_ZA);
 
 	/* Configure SVQ to max. implemented SVL. */
-	sme_config_svq(0xf);
+	sme_config_svq(svq);
 
 	ret = cactus_req_simd_fill_send_cmd(SENDER, RECEIVER);
 	if (!is_ffa_direct_response(ret)) {
@@ -356,14 +374,15 @@ test_result_t test_sme_za(void)
 }
 
 /*
- * SME enter SPMC with SSVE+ZA enabled.
+ * SME enter SPMC with ZA enabled.
  *
- * Check Streaming SVE and ZA array enabled are preserved on a
- * normal/secure world switch.
+ * Check ZA array enabled is preserved on a normal/secure world switch.
  */
-test_result_t test_sme_streaming_sve_za(void)
+test_result_t test_sme_za(void)
 {
-	struct ffa_value ret;
+	uint32_t svl_bitmap;
+	uint32_t svq;
+	test_result_t ret;
 
 	SKIP_TEST_IF_AARCH32();
 
@@ -371,6 +390,31 @@ test_result_t test_sme_streaming_sve_za(void)
 	SKIP_TEST_IF_SME_NOT_SUPPORTED();
 
 	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
+
+#ifdef __aarch64__
+	svl_bitmap = sme_probe_svl(SME_SVQ_ARCH_MAX);
+	svq = 0;
+	for (uint32_t bitmap = svl_bitmap; bitmap; bitmap >>= 1) {
+		if ((bitmap & 1) != 0) {
+			VERBOSE("Test SVL %u bits.\n", SVE_VQ_TO_BITS(svq));
+			ret = do_test_sme_za(svq);
+			if (ret != TEST_RESULT_SUCCESS) {
+				return ret;
+			}
+		}
+
+		svq++;
+	}
+
+	return TEST_RESULT_SUCCESS;
+#else
+	return TEST_RESULT_SKIPPED;
+#endif
+}
+
+test_result_t do_test_sme_streaming_sve_za(uint64_t svq)
+{
+	struct ffa_value ret;
 
 #ifdef __aarch64__
 	/* Enable SME FA64 if implemented. */
@@ -382,7 +426,7 @@ test_result_t test_sme_streaming_sve_za(void)
 	sme_smstart(SMSTART);
 
 	/* Configure SVQ to max. implemented SVL. */
-	sme_config_svq(0xf);
+	sme_config_svq(svq);
 
 	ret = cactus_req_simd_fill_send_cmd(SENDER, RECEIVER);
 	if (!is_ffa_direct_response(ret)) {
@@ -409,4 +453,44 @@ test_result_t test_sme_streaming_sve_za(void)
 #endif
 
 	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * SME enter SPMC with SSVE+ZA enabled.
+ *
+ * Check Streaming SVE and ZA array enabled are preserved on a
+ * normal/secure world switch.
+ */
+test_result_t test_sme_streaming_sve_za(void)
+{
+	uint32_t svl_bitmap;
+	uint32_t svq;
+	test_result_t ret;
+
+	SKIP_TEST_IF_AARCH32();
+
+	/* Skip the test if SME is not supported. */
+	SKIP_TEST_IF_SME_NOT_SUPPORTED();
+
+	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
+
+#ifdef __aarch64__
+	svl_bitmap = sme_probe_svl(SME_SVQ_ARCH_MAX);
+	svq = 0;
+	for (uint32_t bitmap = svl_bitmap; bitmap; bitmap >>= 1) {
+		if ((bitmap & 1) != 0) {
+			VERBOSE("Test SVL %u bits.\n", SVE_VQ_TO_BITS(svq));
+			ret = do_test_sme_streaming_sve_za(svq);
+			if (ret != TEST_RESULT_SUCCESS) {
+				return ret;
+			}
+		}
+
+		svq++;
+	}
+
+	return TEST_RESULT_SUCCESS;
+#else
+	return TEST_RESULT_SKIPPED;
+#endif
 }
