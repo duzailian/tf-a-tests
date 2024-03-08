@@ -145,3 +145,25 @@ bool sme_feat_fa64_enabled(void)
 {
 	return ((read_smcr_el2() & SMCR_ELX_FA64_BIT) != 0U);
 }
+
+uint32_t sme_probe_svl(uint8_t sme_max_svq)
+{
+	uint32_t svl_bitmap = 0;
+	uint8_t svq, rdsvl_vq;
+
+	/* cap vq to arch supported max value */
+	if (sme_max_svq > SME_SVQ_ARCH_MAX) {
+		sme_max_svq = SME_SVQ_ARCH_MAX;
+	}
+
+	for (svq = 0; svq <= sme_max_svq; svq++) {
+		sme_config_svq(svq);
+		rdsvl_vq = SME_SVL_TO_SVQ(sme_rdsvl_1());
+		if (svl_bitmap & BIT_32(rdsvl_vq)) {
+			continue;
+		}
+		svl_bitmap |= BIT_32(rdsvl_vq);
+	}
+
+	return svl_bitmap;
+}
