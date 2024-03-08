@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a190a1c9_73a5b791",
+        "filename": "tftf/tests/extensions/sme/test_sme2.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-03-08T14:34:40Z",
+      "side": 1,
+      "message": "We shouldn\u0027t have a scenario to make tftf_arch_setup() from a test case.\n\ntftf_arch_setup() must be called before calling any testcase.\n\nCan you please explain the need for this call made from here? If there is an issue in programming the proper value in cptr_el2 or smcr_el2, then that must be fixed in relevant code path like cpu on/suspend/resume.",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 26
+      },
+      "revId": "63a17c9b45e2b2b00fc4b8247727fd481caff8e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
