@@ -1,0 +1,10 @@
+Code-Owner-Review+1: Michal Šimek <michal.simek@amd.com>
+Maintainer-Review+1: Joanna Farley <joanna.farley@arm.com>
+Verified+1: Joanna Farley <joanna.farley@arm.com>
+Code-Review+1: Akshay Belsare <Akshay.Belsare@amd.com>
+Submitted-by: Joanna Farley <joanna.farley@arm.com>
+Submitted-at: Fri, 08 Mar 2024 11:50:08 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/26680
+Comments-Total: 4
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
