@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d007b68_97468886",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2024-03-08T22:55:24Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c6111a72_e4d6f3a0",
+      "range": {
+        "startLine": 133,
+        "startChar": 2,
+        "endLine": 133,
+        "endChar": 23
+      },
+      "revId": "16e3c2f51b23a425357665acbf3b7ee00a948496",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4ad1ca01_20aeb13f",
