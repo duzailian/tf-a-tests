@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8fc8c666_6f65737e",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2024-03-12T15:29:44Z",
+      "side": 1,
+      "message": "That\u0027s a good catch. I looked into this and I\u0027m not sure if the first SPSR should be assumed to have it\u0027s SPAN bit to be set to 1. On reset it is supposed to have an unknown state and I don\u0027t see SPAN bit being set to 1 on startup. \n\nIt makes sense to think that the first if block checks for PAN maintenance and is maintained irrespective of the SPAN bit state and the second if block is checked after manually setting SPAN bit to 0.\n\nI can move the comment in 104 to 157 and add a generic comment like \"Check if PAN bit is maintained when FEAT_PAN is present\" in 104, since SPAN bit status is not known at that point. \nDaniel, what are your thoughts on this?",
+      "parentUuid": "8b21cbf0_72220fa6",
+      "revId": "083f5467588b644b53def94f788f350211fb5e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8c5be67c_aa885a93",
         "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
         "patchSetId": 3
@@ -49,6 +67,30 @@
       "writtenOn": "2024-03-12T13:53:56Z",
       "side": 1,
       "message": "expected_pan \u003d 0;\nwrite_pan(expected_pan); ?",
+      "range": {
+        "startLine": 158,
+        "startChar": 3,
+        "endLine": 158,
+        "endChar": 20
+      },
+      "revId": "083f5467588b644b53def94f788f350211fb5e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ebee609_7d66a506",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2024-03-12T15:29:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c5be67c_aa885a93",
       "range": {
         "startLine": 158,
         "startChar": 3,
@@ -82,6 +124,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcee1c29_d23edc19",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2024-03-12T15:29:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "050c9bec_e329324c",
+      "range": {
+        "startLine": 182,
+        "startChar": 3,
+        "endLine": 182,
+        "endChar": 26
+      },
+      "revId": "083f5467588b644b53def94f788f350211fb5e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "397d2cc8_f0ee66e1",
@@ -95,6 +161,30 @@
       "writtenOn": "2024-03-12T13:53:56Z",
       "side": 1,
       "message": "nit: \nCould you combine both of these comments in one block?",
+      "range": {
+        "startLine": 205,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 19
+      },
+      "revId": "083f5467588b644b53def94f788f350211fb5e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f9c9c2b_cbff7356",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2024-03-12T15:29:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "397d2cc8_f0ee66e1",
       "range": {
         "startLine": 205,
         "startChar": 0,
