@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2022-2023, Arm Limited. All rights reserved.
+# Copyright (c) 2022-2025, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -13,6 +13,7 @@ REALM_INCLUDES :=							\
 	-Iinclude/common/${ARCH}					\
 	-Iinclude/lib							\
 	-Iinclude/lib/extensions					\
+	-Iinclude/lib/self_hosted_debug					\
 	-Iinclude/lib/${ARCH}						\
 	-Iinclude/lib/utils						\
 	-Iinclude/lib/xlat_tables					\
@@ -43,6 +44,7 @@ REALM_SOURCES:=								\
 	realm_simd.c							\
 	realm_mpam.c							\
 	realm_brbe_tests.c						\
+	realm_self_hosted_debug.c					\
 	)
 
 REALM_SOURCES += lib/${ARCH}/cache_helpers.S				\
@@ -58,7 +60,8 @@ REALM_SOURCES += lib/${ARCH}/cache_helpers.S				\
 	lib/extensions/sve/aarch64/sve.c				\
 	lib/extensions/sve/aarch64/sve_helpers.S			\
 	lib/extensions/sme/aarch64/sme.c				\
-	lib/extensions/sme/aarch64/sme_helpers.S
+	lib/extensions/sme/aarch64/sme_helpers.S			\
+	lib/self_hosted_debug/self_hosted_debug_helpers.c
 
 REALM_LINKERFILE:=	realm/realm.ld.S
 
