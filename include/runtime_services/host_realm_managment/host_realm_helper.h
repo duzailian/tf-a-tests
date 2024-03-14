@@ -41,6 +41,7 @@ bool host_create_activate_realm_payload(struct realm *realm_ptr,
 		long sl,
 		const u_register_t *rec_flag,
 		unsigned int rec_count);
+bool host_create_shared_mem(struct realm *realm_ptr);
 bool host_destroy_realm(struct realm *realm_ptr);
 void host_rec_send_sgi(struct realm *realm_ptr,
 		unsigned int sgi, unsigned int rec_num);

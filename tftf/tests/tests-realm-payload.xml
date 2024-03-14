@@ -140,5 +140,10 @@
 	  <!-- Invoke RMI calls related to PDEV management -->
 	  <testcase name="Invoke RMI PDEV calls "
 	  function="host_test_rmi_pdev_calls" />
+	  <!-- Test cases related to self-hosted debug -->
+	  <testcase name="Check that Realm has the correct number of BPs/WPs available"
+	  function="host_test_realm_num_bps_wps" />
+	  <testcase name="Check if self-hosted debug registers are preserved across NS/RL switch"
+	  function="host_realm_test_debug_save_restore" />
   </testsuite>
 </testsuites>
