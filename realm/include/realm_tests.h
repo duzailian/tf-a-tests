@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
  * Copyright (c) 2023-2025, Arm Limited. All rights reserved.
+=======
+ * Copyright (c) 2024, Arm Limited. All rights reserved.
+>>>>>>> 42eb9cc7... test: add tests for self-hosted debug
  *
  * SPDX-License-Identifier: BSD-3-Clause
  *
@@ -31,6 +35,9 @@ bool test_realm_sctlr2_ease(void);
 bool test_realm_attestation(void);
 bool test_realm_attestation_fault(void);
 bool test_realm_mpam_undef_abort(void);
+bool test_realm_debug_num_bps_wps(void);
+void test_realm_debug_fill_regs(void);
+bool test_realm_debug_cmp_regs(void);
 
 #endif /* REALM_TESTS_H */
 
