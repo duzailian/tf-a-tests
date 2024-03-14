@@ -19,6 +19,7 @@ TESTS_SOURCES	+=							\
 		host_realm_mpam_tests.c					\
 		host_realm_brbe_tests.c					\
 		host_realm_mec_tests.c					\
+		host_realm_payload_debug_tests.c			\
 	)
 
 TESTS_SOURCES	+=							\
@@ -64,6 +65,11 @@ TESTS_SOURCES	+=		\
 		pcie.c		\
 		pcie_doe.c	\
 		pcie_dvsec_rmeda.c	\
+	)
+
+TESTS_SOURCES	+=							\
+	$(addprefix lib/self_hosted_debug/,				\
+		self_hosted_debug_helpers.c				\
 	)
 
 ifeq (${ENABLE_REALM_PAYLOAD_TESTS},1)

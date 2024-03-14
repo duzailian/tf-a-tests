@@ -683,6 +683,16 @@ void realm_payload_main(void)
 		case REALM_TEST_FEAT_TCR2:
 			test_succeed = test_realm_feat_tcr2();
 			break;
+		case REALM_DEBUG_CHECK_NUM_BPS_WPS:
+			test_succeed = test_realm_debug_num_bps_wps();
+			break;
+		case REALM_DEBUG_FILL_REGS:
+			test_realm_debug_fill_regs();
+			test_succeed = true;
+			break;
+		case REALM_DEBUG_CMP_REGS:
+			test_succeed = test_realm_debug_cmp_regs();
+			break;
 		default:
 			realm_printf("%s() invalid cmd %u\n", __func__, cmd);
 			break;

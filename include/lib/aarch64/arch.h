@@ -236,7 +236,7 @@
 
 /* ID_AA64DFR0_EL1.DEBUG definitions */
 #define ID_AA64DFR0_DEBUG_SHIFT			U(0)
-#define ID_AA64DFR0_DEBUG_LENGTH		U(4)
+#define ID_AA64DFR0_DEBUG_WIDTH			U(4)
 #define ID_AA64DFR0_DEBUG_MASK			ULL(0xf)
 #define ID_AA64DFR0_DEBUG_BITS			(ID_AA64DFR0_DEBUG_MASK << \
 						 ID_AA64DFR0_DEBUG_SHIFT)
@@ -278,6 +278,22 @@
 #define ID_AA64DFR0_TRACEVER_SHIFT		U(4)
 #define ID_AA64DFR0_TRACEVER_MASK		ULL(0xf)
 #define ID_AA64DFR0_TRACEVER_SUPPORTED		ULL(1)
+
+/* ID_AA64DFR0_EL1.BRPs definitions */
+#define ID_AA64DFR0_BRPs_SHIFT			U(12)
+#define ID_AA64DFR0_BRPs_WIDTH			U(4)
+
+/* ID_AA64DFR0_EL1.WRPs definitions */
+#define ID_AA64DFR0_WRPs_SHIFT			U(20)
+#define ID_AA64DFR0_WRPs_WIDTH			U(4)
+
+/* ID_AA64DFR1_EL1.BRPs definitions */
+#define ID_AA64DFR1_BRPs_SHIFT			U(8)
+#define ID_AA64DFR1_BRPs_WIDTH			U(8)
+
+/* ID_AA64DFR1_EL1.WRPs definitions */
+#define ID_AA64DFR1_WRPs_SHIFT			U(16)
+#define ID_AA64DFR1_WRPs_WIDTH			U(8)
 
 #define EL_IMPL_NONE		ULL(0)
 #define EL_IMPL_A64ONLY		ULL(1)
@@ -761,6 +777,11 @@
 #define HSTR_EL2_RESET_VAL	U(0x0)
 #define HSTR_EL2_T_MASK		U(0xff)
 
+/* MDSCR_EL1 definitions */
+#define MDSCR_EL1_TDCC_BIT	(UL(1) << 12)
+#define MDSCR_EL1_KDE_BIT	(UL(1) << 13)
+#define MDSCR_EL1_MDE_BIT	(UL(1) << 15)
+
 /* CNTHP_CTL_EL2 definitions */
 #define CNTHP_CTL_ENABLE_BIT	(U(1) << 0)
 #define CNTHP_CTL_RESET_VAL	U(0x0)
@@ -1232,6 +1253,40 @@
 
 /* PMU event counter ID definitions */
 #define PMU_EV_PC_WRITE_RETIRED		U(0x000C)
+
+/* Self-hosted debug register definitions */
+#define DBGBCR_EL1_SSCE_BIT		(U(1) << 29)
+#define DBGBCR_EL1_BT_SHIFT		U(20)
+#define DBGBCR_EL1_BT_WIDTH		U(4)
+#define DBGBCR_EL1_SSC_SHIFT		U(14)
+#define DBGBCR_EL1_SSC_WIDTH		U(2)
+#define DBGBCR_EL1_BAS_SHIFT		U(5)
+#define DBGBCR_EL1_BAS_WIDTH		U(4)
+#define DBGBCR_EL1_HMC_BIT		(U(1) << 13)
+#define DBGBCR_EL1_PMC_SHIFT		U(1)
+#define DBGBCR_EL1_PMC_WIDTH		U(2)
+#define DBGBCR_EL1_E_BIT		(U(1) << 0)
+
+#define DBGBVR_EL1_VA_SHIFT		U(2)
+#define DBGBVR_EL1_VA_WIDTH		U(47)
+
+#define DBGWCR_EL1_SSCE_BIT		(U(1) << 29)
+#define DBGWCR_EL1_MASK_SHIFT		U(24)
+#define DBGWCR_EL1_MASK_WIDTH		U(5)
+#define DBGWCR_EL1_WT_BIT		(U(1) << 20)
+#define DBGWCR_EL1_SSC_SHIFT		U(14)
+#define DBGWCR_EL1_SSC_WIDTH		U(2)
+#define DBGWCR_EL1_HMC_BIT		(U(1) << 13)
+#define DBGWCR_EL1_BAS_SHIFT		U(5)
+#define DBGWCR_EL1_BAS_WIDTH		U(8)
+#define DBGWCR_EL1_LSC_SHIFT		U(3)
+#define DBGWCR_EL1_LSC_WIDTH		U(2)
+#define DBGWCR_EL1_PAC_SHIFT		U(1)
+#define DBGWCR_EL1_PAC_WIDTH		U(2)
+#define DBGWCR_EL1_E_BIT		(U(1) << 0)
+
+#define DBGWVR_EL1_VA_SHIFT		U(2)
+#define DBGWVR_EL1_VA_WIDTH		U(47)
 
 /*******************************************************************************
  * Definitions for system register interface to SVE
