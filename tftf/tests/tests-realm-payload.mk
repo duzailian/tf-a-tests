@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2021-2024, Arm Limited. All rights reserved.
+# Copyright (c) 2021-2025, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -18,6 +18,7 @@ TESTS_SOURCES	+=							\
 		host_realm_lpa2_tests.c					\
 		host_realm_mpam_tests.c					\
 		host_realm_brbe_tests.c					\
+		host_realm_payload_debug_tests.c			\
 	)
 
 TESTS_SOURCES	+=							\
@@ -59,6 +60,11 @@ TESTS_SOURCES	+=		\
 	$(addprefix lib/pcie/,	\
 		pcie.c		\
 		pcie_doe.c	\
+	)
+
+TESTS_SOURCES	+=							\
+	$(addprefix lib/self_hosted_debug/,				\
+		self_hosted_debug_helpers.c				\
 	)
 
 include lib/ext_mbedtls/mbedtls.mk
