@@ -109,7 +109,7 @@ static bool host_enter_realm(struct realm *realm_ptr,
 	return true;
 }
 
-static bool host_create_shared_mem(struct realm *realm_ptr)
+bool host_create_shared_mem(struct realm *realm_ptr)
 {
 	u_register_t ns_shared_mem_adr = (u_register_t)page_alloc(NS_REALM_SHARED_MEM_SIZE);
 
