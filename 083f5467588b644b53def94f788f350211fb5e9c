@@ -54,6 +54,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c6942fb_4b506112",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_pstate.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2024-03-14T15:17:12Z",
+      "side": 1,
+      "message": "Modified testcase after discussion with Daniel",
+      "parentUuid": "8fc8c666_6f65737e",
+      "revId": "083f5467588b644b53def94f788f350211fb5e9c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8c5be67c_aa885a93",
