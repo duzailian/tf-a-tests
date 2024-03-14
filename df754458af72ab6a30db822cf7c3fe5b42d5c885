@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7746846d_c7286675",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-03-14T16:59:14Z",
+      "side": 1,
+      "message": "Not sure, CI+1 covers this testcase.",
+      "revId": "df754458af72ab6a30db822cf7c3fe5b42d5c885",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
