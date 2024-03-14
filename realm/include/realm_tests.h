@@ -31,6 +31,9 @@ bool test_realm_sctlr2_ease(void);
 bool test_realm_attestation(void);
 bool test_realm_attestation_fault(void);
 bool test_realm_mpam_undef_abort(void);
+bool test_realm_debug_num_bps_wps(void);
+void test_realm_debug_fill_regs(void);
+bool test_realm_debug_cmp_regs(void);
 
 #endif /* REALM_TESTS_H */
 
