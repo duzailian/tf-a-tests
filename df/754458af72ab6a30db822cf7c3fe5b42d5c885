@@ -1,0 +1,12 @@
+Code-Owner-Review+1: jayanthchidanand-arm <jayanthdodderi.chidanand@arm.com>
+Allow-CI+1: Arvind Ram Prakash <arvind.ramprakash@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Review+1: Daniel Boulby <daniel.boulby@arm.com>
+Allow-CI+2: jayanthchidanand-arm <jayanthdodderi.chidanand@arm.com>
+Maintainer-Review+1: Lauren Wehrmeister <lauren.wehrmeister@arm.com>
+Submitted-by: Lauren Wehrmeister <lauren.wehrmeister@arm.com>
+Submitted-at: Thu, 14 Mar 2024 21:18:47 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/26981
+Comments-Total: 18
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
