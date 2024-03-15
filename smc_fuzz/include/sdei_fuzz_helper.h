@@ -10,6 +10,7 @@
 #include <test_helpers.h>
 #include <tftf_lib.h>
 #include <timer.h>
+#include "smcmalloc.h"
 
 #ifndef sdei_version_funcid
 #define sdei_version_funcid 0
@@ -36,4 +37,4 @@
 
 void tftf_test_sdei_noarg(int64_t (*sdei_func)(void), char *funcstr);
 void tftf_test_sdei_singlearg(int64_t (*sdei_func)(uint64_t), char *funcstr);
-void run_sdei_fuzz(int funcid);
+void run_sdei_fuzz(int funcid, struct memmod *mmod);
