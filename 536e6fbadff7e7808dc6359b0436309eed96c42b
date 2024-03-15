@@ -16,6 +16,24 @@
       "message": "I am seeing the following build failure message\n\n22:48:56   BUILD DOCUMENTATION\n22:48:56 make --no-print-directory -C docs html\n22:48:56 Running Sphinx v2.0.1\n22:48:56 WARNING: while setting up extension sphinx.addnodes: node class \u0027meta\u0027 is already registered, its visitors will be overridden\n22:48:56 \n22:48:56 Sphinx version error:\n22:48:56 The sphinxcontrib.applehelp extension used by this project needs at least Sphinx v5.0; it therefore cannot be built with this version.\n22:48:56 make[1]: *** [Makefile:25: html] Error 2\n22:48:56 make: *** [Makefile:585: doc] Error 2",
       "revId": "536e6fbadff7e7808dc6359b0436309eed96c42b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2fef954_4576792a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-03-15T23:15:23Z",
+      "side": 1,
+      "message": "https://review.trustedfirmware.org/c/ci/dockerfiles/+/27275\nWill rerun once in master",
+      "parentUuid": "9d7e325c_eae54be3",
+      "revId": "536e6fbadff7e7808dc6359b0436309eed96c42b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
