@@ -41,6 +41,10 @@
 			bias = <30>;
 			functionname = "sdei_shared_reset_funcid";
 		};
+                sdei_interrupt_bind {
+                        bias = <30>;
+                        functionname = "sdei_interrupt_bind_funcid";
+                };
 	};
 
 };
