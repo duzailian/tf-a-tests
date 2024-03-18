@@ -22,6 +22,30 @@
       },
       "revId": "63a17c9b45e2b2b00fc4b8247727fd481caff8e1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "140c2c6f_22e9c042",
+        "filename": "tftf/tests/extensions/sme/test_sme2.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1001237
+      },
+      "writtenOn": "2024-03-18T17:02:06Z",
+      "side": 1,
+      "message": "You are right. The issue is when cpu suspend and resume, the scmr_el2 is not saved and restored. The new patch is to save and restore smcr_el2.",
+      "parentUuid": "a190a1c9_73a5b791",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 26
+      },
+      "revId": "63a17c9b45e2b2b00fc4b8247727fd481caff8e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
