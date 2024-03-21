@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b6eca95_b9333748",
+        "filename": "lib/power_management/suspend/aarch64/asm_tftf_suspend.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-03-21T10:20:21Z",
+      "side": 1,
+      "message": "In this comment https://review.trustedfirmware.org/plugins/gitiles/TF-A/tf-a-tests/+/refs/heads/master/lib/power_management/suspend/suspend_private.h#11 can you add smcr_el2 to the list.\n\n\nCan you please let us know on which platform (as on FVP we don\u0027t hit this problem) you see this issue? Because there are other registers to consider like smcr_el1, zcr_el2, zcr_el1. Worth adding a comment here stating on need basis these registers can be included in tftf_suspend_context.",
+      "revId": "13ee87a1f018b9d498800cbc42c6682906d54105",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
