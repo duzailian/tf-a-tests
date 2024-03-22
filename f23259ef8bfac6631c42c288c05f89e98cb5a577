@@ -329,6 +329,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5507fffb_46e21517",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-03-22T18:08:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a4bdee5_2e358639",
+      "range": {
+        "startLine": 411,
+        "startChar": 0,
+        "endLine": 411,
+        "endChar": 22
+      },
+      "revId": "f23259ef8bfac6631c42c288c05f89e98cb5a577",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a3c7c6c3_7511d913",
@@ -377,6 +401,30 @@
       "writtenOn": "2024-03-22T12:54:17Z",
       "side": 1,
       "message": "optimize the use of CONFIGURE_MAILBOX/reset_tftf_mailbox.",
+      "range": {
+        "startLine": 427,
+        "startChar": 14,
+        "endLine": 427,
+        "endChar": 58
+      },
+      "revId": "f23259ef8bfac6631c42c288c05f89e98cb5a577",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d413f2b8_558ca72c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-03-22T18:08:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "272413c6_efd35020",
       "range": {
         "startLine": 427,
         "startChar": 14,
