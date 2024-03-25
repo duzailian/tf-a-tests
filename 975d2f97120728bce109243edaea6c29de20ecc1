@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3cca2f01_ba2e144f",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 21
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-03-25T17:00:04Z",
+      "side": 1,
+      "message": "Curly bracket in the next line to make the static checks happy.",
+      "range": {
+        "startLine": 496,
+        "startChar": 38,
+        "endLine": 496,
+        "endChar": 39
+      },
+      "revId": "975d2f97120728bce109243edaea6c29de20ecc1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
