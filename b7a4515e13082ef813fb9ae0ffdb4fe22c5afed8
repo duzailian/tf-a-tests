@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c67c6466_000c0af0",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 20
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-03-25T16:49:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b3e51810_269e8a39",
+      "range": {
+        "startLine": 521,
+        "startChar": 20,
+        "endLine": 521,
+        "endChar": 36
+      },
+      "revId": "b7a4515e13082ef813fb9ae0ffdb4fe22c5afed8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e2a03539_3adb1931",
