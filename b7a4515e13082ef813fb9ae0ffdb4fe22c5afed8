@@ -71,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "87e21792_2d884cef",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-03-26T12:11:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2a03539_3adb1931",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 61
+      },
+      "revId": "b7a4515e13082ef813fb9ae0ffdb4fe22c5afed8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "85a28ac5_d5ebe4b6",
@@ -84,6 +108,30 @@
       "writtenOn": "2024-03-25T16:43:29Z",
       "side": 1,
       "message": "non-secure regions",
+      "range": {
+        "startLine": 285,
+        "startChar": 22,
+        "endLine": 285,
+        "endChar": 29
+      },
+      "revId": "b7a4515e13082ef813fb9ae0ffdb4fe22c5afed8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b403269_0d78d2b9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-03-26T12:11:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "85a28ac5_d5ebe4b6",
       "range": {
         "startLine": 285,
         "startChar": 22,
@@ -117,6 +165,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1559d99_fdae13d0",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-03-26T12:11:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8a67ad8_4861d3a1",
+      "range": {
+        "startLine": 369,
+        "startChar": 14,
+        "endLine": 369,
+        "endChar": 47
+      },
+      "revId": "b7a4515e13082ef813fb9ae0ffdb4fe22c5afed8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3ee91e69_113c7f66",
@@ -130,6 +202,30 @@
       "writtenOn": "2024-03-25T16:43:29Z",
       "side": 1,
       "message": "Could you add an unmap operation at the end of the test?",
+      "range": {
+        "startLine": 385,
+        "startChar": 7,
+        "endLine": 385,
+        "endChar": 19
+      },
+      "revId": "b7a4515e13082ef813fb9ae0ffdb4fe22c5afed8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "703e6f17_dd933581",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-03-26T12:11:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ee91e69_113c7f66",
       "range": {
         "startLine": 385,
         "startChar": 7,
@@ -180,6 +276,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "abf4db82_2bee9510",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-03-26T12:11:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ed365e9c_d66ef5d7",
+      "revId": "b7a4515e13082ef813fb9ae0ffdb4fe22c5afed8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93637878_91b93182",
@@ -203,6 +317,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "44579abe_9ff2a5fd",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-03-26T12:11:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93637878_91b93182",
+      "range": {
+        "startLine": 447,
+        "startChar": 23,
+        "endLine": 447,
+        "endChar": 31
+      },
+      "revId": "b7a4515e13082ef813fb9ae0ffdb4fe22c5afed8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "35cbd146_932f2e36",
@@ -216,6 +354,30 @@
       "writtenOn": "2024-03-25T16:43:29Z",
       "side": 1,
       "message": "I think it is a good idea to do the whole sequence inside this test, and not rely on other tests in the same suite.\ncould you do the whole sequence described within this same test?",
+      "range": {
+        "startLine": 448,
+        "startChar": 8,
+        "endLine": 448,
+        "endChar": 36
+      },
+      "revId": "b7a4515e13082ef813fb9ae0ffdb4fe22c5afed8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0a6b8d0_9bfabf1d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-03-26T12:11:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35cbd146_932f2e36",
       "range": {
         "startLine": 448,
         "startChar": 8,
@@ -262,6 +424,30 @@
       "writtenOn": "2024-03-25T16:43:29Z",
       "side": 1,
       "message": "Similarly, use the same sequence.\nDo the mapping of the buffers in this test, and unmap at the end of the sequence.",
+      "range": {
+        "startLine": 480,
+        "startChar": 14,
+        "endLine": 480,
+        "endChar": 57
+      },
+      "revId": "b7a4515e13082ef813fb9ae0ffdb4fe22c5afed8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb920dbd_0a094792",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 20
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-03-26T12:11:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da66a729_eca2319e",
       "range": {
         "startLine": 480,
         "startChar": 14,
