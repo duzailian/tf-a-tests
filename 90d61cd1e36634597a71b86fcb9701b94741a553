@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59d2af7d_cdbb0ab2",
+        "filename": "lib/power_management/suspend/aarch64/asm_tftf_suspend.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-03-26T16:23:53Z",
+      "side": 0,
+      "message": "https://ci.trustedfirmware.org/job/tf-a-tftf-gerrit-tforg-l2/482/\n\nPlease look at the CI logs. can you verify your changes in TC or FVP platform without SME enabled? you will have to check if SME enabled in ID register before saving/restoring smcr_el2. Like it is done in tftf_arch_setup().",
+      "revId": "90d61cd1e36634597a71b86fcb9701b94741a553",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
