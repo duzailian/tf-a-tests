@@ -16,6 +16,23 @@
       "message": "Unrelated CI failure.",
       "revId": "462b07dc17b74e12a02c66f8135b849e7aea0d52",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b6ab348_f11bb414",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-28T11:45:04Z",
+      "side": 1,
+      "message": "Manually verified on TF-RMM Shruti",
+      "revId": "462b07dc17b74e12a02c66f8135b849e7aea0d52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
