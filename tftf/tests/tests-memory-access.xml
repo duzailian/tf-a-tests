@@ -65,6 +65,8 @@
                 function="test_ffa_mem_lend_sp_realm_memory_separate_constituent" />
       <testcase name="FF-A partition info get after NWd RX is in realm PAS"
                 function="test_ffa_rxtx_to_realm_pas" />
+      <testcase name="FF-A Memory Sharing, NWd TX buffer is in realm PAS"
+                function="test_ffa_mem_share_tx_realm_expect_fail" />
   </testsuite>
 
 </testsuites>
