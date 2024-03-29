@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1d150bb6_f315ba70",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 645,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-29T08:09:28Z",
+      "side": 1,
+      "message": "Need the destroy realm here.",
+      "revId": "b68b752fa334e3beed27185c8f64a8561f38c693",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b640a6e_4ae04f18",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-29T08:09:28Z",
+      "side": 1,
+      "message": "Noticed a problem, there are 2 functions with similar names : host_destroy_realm and host_realm_destroy. It is not clear when one is to be used vs the other. \n\nNeed to avoid 2 variants and have only one function. If 2 are needed, then need better name differentiation between them.\n\nThe error cases within host_create_activate_realm_payload is calling the other variant.\n\nNeed a discussion on how this is planned to be fixed.",
+      "revId": "b68b752fa334e3beed27185c8f64a8561f38c693",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "654d76dd_ec50913e",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 758,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-29T08:09:28Z",
+      "side": 1,
+      "message": "nit: powerup",
+      "range": {
+        "startLine": 758,
+        "startChar": 24,
+        "endLine": 758,
+        "endChar": 28
+      },
+      "revId": "b68b752fa334e3beed27185c8f64a8561f38c693",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f204eb3_b7e0a72b",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 763,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-29T08:09:28Z",
+      "side": 1,
+      "message": "power down",
+      "range": {
+        "startLine": 763,
+        "startChar": 28,
+        "endLine": 763,
+        "endChar": 29
+      },
+      "revId": "b68b752fa334e3beed27185c8f64a8561f38c693",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58821c6c_a11dfa4d",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_multiple_rec_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-03-29T08:09:28Z",
+      "side": 1,
+      "message": "tab.",
+      "revId": "b68b752fa334e3beed27185c8f64a8561f38c693",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
