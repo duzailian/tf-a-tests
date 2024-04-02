@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "543cce59_89cc8395",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-02T14:36:55Z",
+      "side": 1,
+      "message": "Hi Karl\nI am wondering if this test is redundant given that a similar test was added by you recently through https://review.trustedfirmware.org/c/hafnium/hafnium/+/26666",
+      "revId": "f2bb5d0f502955caf58192c6d9c9e0a051817b5d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
