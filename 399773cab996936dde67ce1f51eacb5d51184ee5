@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8943c249_3b15b66f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-02T16:32:13Z",
+      "side": 1,
+      "message": "The xml file still shows testsuite name as \"SIMD,SVE Registers context\". Perhaps I could be missing some background on this change.\nhttps://git.trustedfirmware.org/TF-A/tf-a-tests.git/tree/tftf/tests/tests-spm.xml#n131",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "399773cab996936dde67ce1f51eacb5d51184ee5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
