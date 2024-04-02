@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "26c1a1c9_1a68e184",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-02T18:45:28Z",
+      "side": 1,
+      "message": "nitpick:\nprocessor feature",
+      "range": {
+        "startLine": 7,
+        "startChar": 17,
+        "endLine": 7,
+        "endChar": 19
+      },
+      "revId": "c56b16041722f43adb6d1c7699e6460f7dee43a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a627794_eb7f246c",
+        "filename": "spm/common/sp_tests/sp_test_cpu.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-02T18:45:28Z",
+      "side": 1,
+      "message": "nitpick: could you rename it as cpu_feature_tests",
+      "range": {
+        "startLine": 21,
+        "startChar": 5,
+        "endLine": 21,
+        "endChar": 14
+      },
+      "revId": "c56b16041722f43adb6d1c7699e6460f7dee43a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
