@@ -22,6 +22,30 @@
       },
       "revId": "399773cab996936dde67ce1f51eacb5d51184ee5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b83b871_f5ca297e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-04-03T14:42:15Z",
+      "side": 1,
+      "message": "You\u0027re right. This related to a change upper in the patch stack https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/25347/14/tftf/tests/tests-spm.xml#131\n\nPlease check latest version of this change.",
+      "parentUuid": "8943c249_3b15b66f",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "399773cab996936dde67ce1f51eacb5d51184ee5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
