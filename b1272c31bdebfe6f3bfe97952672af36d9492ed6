@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "655969e7_914323aa",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-04-03T14:41:22Z",
+      "side": 1,
+      "message": "This has changed to use the sve_config_vq helper. Can you check latest patch stack?",
+      "parentUuid": "2a8197ca_fa6b229c",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 21
+      },
+      "revId": "b1272c31bdebfe6f3bfe97952672af36d9492ed6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "629ad74f_9d9eb33d",
         "filename": "tftf/tests/runtime_services/secure_service/test_spm_simd.c",
         "patchSetId": 5
@@ -37,6 +61,30 @@
       "writtenOn": "2024-01-24T17:32:32Z",
       "side": 1,
       "message": "Check the whole register?\nIn case the SWd and NWd configuration are the same for the length, this doesn\u0027t prove that there is a successful context save/restore of the register.\n\nAlso, should there be a check on other registers?\nsvcr and smcr_el2?",
+      "range": {
+        "startLine": 114,
+        "startChar": 1,
+        "endLine": 115,
+        "endChar": 39
+      },
+      "revId": "b1272c31bdebfe6f3bfe97952672af36d9492ed6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b71ed9a0_a7758492",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-04-03T14:41:22Z",
+      "side": 1,
+      "message": "ZCR_EL2 only has 4 significants lower bits. Also moved to using sve_read_zcr_elx helper.\nSVCR and SMCR_EL2 relate to SME, not used in context of this test relating to SVE.",
+      "parentUuid": "629ad74f_9d9eb33d",
       "range": {
         "startLine": 114,
         "startChar": 1,
