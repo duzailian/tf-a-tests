@@ -16,6 +16,23 @@
       "message": "Waiting for the following failure to be resolved.\n\n\"\njuno-tftf-r1 - FAILED, on re-run. (https://ci.trustedfirmware.org/job/tf-a-lts2.8-ci-gateway/4297/)\n\nAssumed at the beginning, it\u0027s because the juno board is OFFLINE as we have seen few cases recently. But a little suspicious because the same test PASSED on lts-v2.10 run as also the rest of the juno tests PASSED in lts-v2.8. This one case FAIL even on re-run. It might be worth looking into this.\n\n\"\n18:56:51 id          : 2394451\n18:56:51 description : tf-juno\n18:56:51 submitter   : ****\n18:56:51 device-type : juno\n18:56:51 device      : None\n18:56:51 health-check: False\n18:56:51 state       : Submitted\n18:56:51 Health      : Unknown\n18:56:51 pipeline    : True\n18:56:51 tags        : [\u0027juno-r1\u0027]\n18:56:51 visibility  : Public\n\"",
       "revId": "776d6deb9035d0a8890c338a35d9e4dee609a875",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c2d7eec_6379c791",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-04-04T20:55:38Z",
+      "side": 1,
+      "message": "Ignoring this fail as the juno r1 board is under maintenance.",
+      "revId": "776d6deb9035d0a8890c338a35d9e4dee609a875",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
