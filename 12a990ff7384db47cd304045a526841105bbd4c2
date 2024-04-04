@@ -16,6 +16,24 @@
       "message": "Shouldn\u0027t this be just:\nSIMD context switch tests\n\nI guess all 3 tests could be skipped",
       "revId": "12a990ff7384db47cd304045a526841105bbd4c2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b587628d_7e2aea7a",
+        "filename": "plat/xilinx/versal_net/tests_to_skip.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-04-04T08:51:45Z",
+      "side": 1,
+      "message": "I can\u0027t tell the original reason for this platform to skip this test only. Perhaps this has some legacy to when the test suite only ran this single test. Anyways I changed it as you advised to skip the whole test suite.",
+      "parentUuid": "8cf9f2c4_f1031107",
+      "revId": "12a990ff7384db47cd304045a526841105bbd4c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
