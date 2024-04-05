@@ -90,6 +90,12 @@
 
   </testsuite>
 
+  <testsuite name="FF-A Indirect Messaging"
+             description="Test FF-A Indirect messaging" >
+  <testcase name="FF-A Indirect Message from SP to VM"
+               function="test_ffa_indirect_message_sp_to_vm" />
+  </testsuite>
+
   <testsuite name="FF-A Group0 interrupts"
              description="Test FF-A Group0 secure interrupt delegation to EL3" >
      <testcase name="FF-A Group0 secure world"

@@ -83,5 +83,19 @@ test_result_t test_ffa_indirect_message_sp_to_vm(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	ret = ffa_notification_bitmap_destroy(vm_id);
+
+	if (!is_expected_ffa_return(ret, FFA_SUCCESS_SMC32)) {
+		ERROR("Failed to destroy bitmap for vm %x\n", vm_id);
+		return TEST_RESULT_FAIL;
+	}
+
+	ret = ffa_rxtx_unmap_with_id(vm_id);
+
+	if (!is_expected_ffa_return(ret, FFA_SUCCESS_SMC32)) {
+		ERROR("Failed to unmap RXTX of vm %x\n", vm_id);
+		return TEST_RESULT_FAIL;
+	}
+
 	return TEST_RESULT_SUCCESS;
 }
