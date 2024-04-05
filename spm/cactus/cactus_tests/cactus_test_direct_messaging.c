@@ -6,6 +6,7 @@
 
 #include "cactus_message_loop.h"
 #include "cactus_test_cmds.h"
+#include "ffa_svc.h"
 #include <debug.h>
 #include <ffa_helpers.h>
 
@@ -63,7 +64,7 @@ static struct ffa_value base_deadlock_handler(ffa_id_t vm_id,
 	 * an FF-A direct message, to the first partition.
 	 */
 	bool is_deadlock_detected = (ffa_func_id(ffa_ret) == FFA_ERROR) &&
-				    (ffa_error_code(ffa_ret) == FFA_ERROR_DENIED);
+				    (ffa_error_code(ffa_ret) == FFA_ERROR_BUSY);
 
 	/*
 	 * Should be true after the deadlock has been detected and after the
