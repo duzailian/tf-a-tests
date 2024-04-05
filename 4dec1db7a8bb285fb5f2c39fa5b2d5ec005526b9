@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95aae76d_7759e7fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-05T15:33:17Z",
+      "side": 1,
+      "message": "CI failures (Juno tests) are unrelated to this patch.",
+      "revId": "4dec1db7a8bb285fb5f2c39fa5b2d5ec005526b9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
