@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93218ba0_b79b5f06",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-04-05T07:08:35Z",
+      "side": 1,
+      "message": "The failing test was due to a board that was under maintenance in the test farm. Applying V+1 vote",
+      "revId": "2162802763be49ffc68a4c23ae2663a67d50e22e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
