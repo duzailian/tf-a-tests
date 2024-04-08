@@ -841,3 +841,114 @@ struct ffa_memory_access ffa_memory_access_init_permissions_from_mem_func(
 	return ffa_memory_access_init(receiver_id, data_access,
 				      instruction_access, 0, NULL);
 }
+
+/**
+ * Receives message for the mailbox, copies it onto the 'buffer', gets the
+ * pending framework notifications and releases the RX buffer.
+ * Returns false if it fails to copy themessage to `buffer`, and true
+ * other wise.
+ */
+bool receive_indirect_message(void *buffer, size_t buffer_size, void *recv,
+			      ffa_id_t *sender, ffa_id_t receiver, ffa_id_t own_id)
+{
+	const struct ffa_partition_msg *message;
+	struct ffa_partition_rxtx_header header;
+	ffa_id_t source_vm_id;
+	const uint32_t *payload;
+	struct ffa_value ret;
+	ffa_notification_bitmap_t fwk_notif;
+
+	if (buffer_size > FFA_MSG_PAYLOAD_MAX) {
+		return false;
+	}
+
+	ret = ffa_notification_get(receiver, 0,
+				   FFA_NOTIFICATIONS_FLAG_BITMAP_SPM);
+	if (is_ffa_call_error(ret)) {
+		return false;
+	}
+
+	fwk_notif = ffa_notification_get_from_framework(ret);
+
+	if (fwk_notif == 0U) {
+		ERROR("Expected Rx buffer full notification.");
+		return false;
+	}
+
+	message = (const struct ffa_partition_msg *)recv;
+	memcpy(&header, message, sizeof(struct ffa_partition_rxtx_header));
+
+	source_vm_id = ffa_rxtx_header_sender(&header);
+
+	if (is_ffa_hyp_buffer_full_notification(fwk_notif)) {
+		if (IS_SP_ID(source_vm_id)) {
+			ERROR("Source is an SP, and received hypervisor "
+			      "framework notification\n");
+			return false;
+		}
+	} else if (is_ffa_spm_buffer_full_notification(fwk_notif)) {
+		if (!IS_SP_ID(source_vm_id)) {
+			ERROR("Source is a VM, and received SPM "
+			      "framework notification\n");
+			return false;
+		}
+	}
+
+	if (header.size > buffer_size) {
+		ERROR("Error in rxtx header. Message size: %#x; "
+		      "buffer size: %lu\n",
+		      header.size, buffer_size);
+		return false;
+	}
+
+	payload = (const uint32_t *)message->payload;
+
+	/* Get message to free the RX buffer. */
+	memcpy(buffer, payload, header.size);
+
+	/* Check receiver ID against own ID. */
+	if (receiver != own_id) {
+		ret = ffa_rx_release_with_id(receiver);
+	} else {
+		ret = ffa_rx_release();
+	}
+
+	if (is_ffa_call_error(ret)) {
+		ERROR("Failed to release the rx buffer\n");
+		return false;
+	}
+
+	if (receiver != ffa_rxtx_header_receiver(&header)) {
+		ERROR("Header receiver: %x different than expected receiver: %x\n",
+		      ffa_rxtx_header_receiver(&header), receiver);
+		return false;
+	}
+
+
+	if (sender != NULL) {
+		*sender = source_vm_id;
+	}
+
+	return true;
+}
+
+/**
+ * Sends an indirect message: initializes the `ffa_rxtx_header`, copies the
+ * payload to the TX buffer.
+ * Uses the `send_flags` if any are provided in the call to FFA_MSG_SEND2.
+ */
+struct ffa_value send_indirect_message(
+		ffa_id_t from, ffa_id_t to, void *send, const void *payload,
+		size_t payload_size, uint32_t send_flags)
+{
+	struct ffa_partition_msg *message = (struct ffa_partition_msg *)send;
+
+	/* Initialize message header. */
+	ffa_rxtx_header_init(from, to, payload_size, &message->header);
+
+	/* Fill TX buffer with payload. */
+	memcpy(message->payload, payload, payload_size);
+
+	/* Send the message. */
+	return ffa_msg_send2(send_flags);
+}
