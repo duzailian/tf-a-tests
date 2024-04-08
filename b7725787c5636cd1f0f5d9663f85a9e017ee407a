@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "6b0c295f_dbb037f1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 28
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-08T16:15:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eaf281c4_813d975e",
+      "range": {
+        "startLine": 9,
+        "startChar": 53,
+        "endLine": 9,
+        "endChar": 62
+      },
+      "revId": "b7725787c5636cd1f0f5d9663f85a9e017ee407a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "cc5cfdf1_37e1edcc",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 28
@@ -54,6 +78,30 @@
       "writtenOn": "2024-04-08T16:03:06Z",
       "side": 1,
       "message": "nit: Most other functions I came across have rxtx whereas this has a slightly inconsistent naming \"rx_tx\". Is this intentional?",
+      "range": {
+        "startLine": 883,
+        "startChar": 14,
+        "endLine": 883,
+        "endChar": 19
+      },
+      "revId": "b7725787c5636cd1f0f5d9663f85a9e017ee407a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a795324_34a0c90e",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 28
+      },
+      "lineNbr": 883,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-08T16:15:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e6d32e82_e6c6c37e",
       "range": {
         "startLine": 883,
         "startChar": 14,
