@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14cc1546_7c2f3300",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 30
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-09T20:11:13Z",
+      "side": 1,
+      "message": "I think this gives a false impression of a need to have a 32 bit wide bit-field while the original requirement is to just have a 32 bit field. Can you replace it with `uint32_t pad;`",
+      "range": {
+        "startLine": 522,
+        "startChar": 1,
+        "endLine": 522,
+        "endChar": 15
+      },
+      "revId": "9c74111f5b068686eadacde9c284b2c4cc01f8eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81b29df8_b37a9b6a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-09T20:11:13Z",
+      "side": 1,
+      "message": "Please provide a comment why this is required similar to how you provided the reason in lines 464-467\n\t/*\n\t * Unmap mailbox to recreate case where hypervisor\u0027s buffers aren\u0027t\n\t * mapped yet.\n\t */",
+      "revId": "9c74111f5b068686eadacde9c284b2c4cc01f8eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "879e4b16_441913e8",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-09T20:11:13Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "9c74111f5b068686eadacde9c284b2c4cc01f8eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "924236bd_e862dba4",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 30
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-09T20:11:13Z",
+      "side": 1,
+      "message": "Does the order in which these tests are run have any significance? i.e. if the tests in the `FF-A Setup and Discovery` test suite are shuffled, would we see any strange failures given that we are mapping and unmapping rxtx buffers intentionally to recreate some negative test scenarios?\nI see that you have taken necessary care to unmap the buffers after negative tests but just wanted to know your thoughts  on this.",
+      "revId": "9c74111f5b068686eadacde9c284b2c4cc01f8eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
