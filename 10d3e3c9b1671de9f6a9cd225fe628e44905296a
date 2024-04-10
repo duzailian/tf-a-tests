@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "069be704_922ab580",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 838,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-10T11:57:45Z",
+      "side": 1,
+      "message": "Document return value",
+      "range": {
+        "startLine": 838,
+        "startChar": 0,
+        "endLine": 838,
+        "endChar": 4
+      },
+      "revId": "10d3e3c9b1671de9f6a9cd225fe628e44905296a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
