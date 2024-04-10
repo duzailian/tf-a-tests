@@ -34,6 +34,24 @@
       "parentUuid": "543cce59_89cc8395",
       "revId": "f2bb5d0f502955caf58192c6d9c9e0a051817b5d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "607a71c4_4e3f238d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-10T09:47:04Z",
+      "side": 1,
+      "message": "Joao requested having a test both in Hafnium and TFTF",
+      "parentUuid": "c9cc6057_e5fe0c79",
+      "revId": "f2bb5d0f502955caf58192c6d9c9e0a051817b5d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
