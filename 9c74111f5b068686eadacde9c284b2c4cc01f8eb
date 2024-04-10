@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d80ca7a9_c66d7094",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 30
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-10T09:42:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13f72e6b_7dfc40e2",
+      "revId": "9c74111f5b068686eadacde9c284b2c4cc01f8eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d39e9102_f1fde464",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-04-09T20:21:56Z",
       "side": 1,
       "message": "nit: RXTX_MAP and RXTX_UNMAP map/unmap instead?\n\nMy bad, I highlighted just the unmap/map earlier. My understanding was RXTX_MAP does the mapping and RXTX_UNMAP does the unmapping. So, the order of using map/unmap against unmap/map was the suggestion inline with the order of \"RXTX_MAP and RXTX_UNMAP\"\n\nNow the sentence looks complicated.",
+      "range": {
+        "startLine": 9,
+        "startChar": 20,
+        "endLine": 10,
+        "endChar": 14
+      },
+      "revId": "9c74111f5b068686eadacde9c284b2c4cc01f8eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ca8299e_4843eb44",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 30
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-10T09:42:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d39e9102_f1fde464",
       "range": {
         "startLine": 9,
         "startChar": 20,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "017859ce_1dd2f070",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 30
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-10T09:42:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14cc1546_7c2f3300",
+      "range": {
+        "startLine": 522,
+        "startChar": 1,
+        "endLine": 522,
+        "endChar": 15
+      },
+      "revId": "9c74111f5b068686eadacde9c284b2c4cc01f8eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "81b29df8_b37a9b6a",
@@ -77,6 +143,24 @@
       "writtenOn": "2024-04-09T20:11:13Z",
       "side": 1,
       "message": "Please provide a comment why this is required similar to how you provided the reason in lines 464-467\n\t/*\n\t * Unmap mailbox to recreate case where hypervisor\u0027s buffers aren\u0027t\n\t * mapped yet.\n\t */",
+      "revId": "9c74111f5b068686eadacde9c284b2c4cc01f8eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f3e569a_8f358985",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-10T09:42:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81b29df8_b37a9b6a",
       "revId": "9c74111f5b068686eadacde9c284b2c4cc01f8eb",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -98,6 +182,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "da6960a9_a9cee1fd",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 30
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-10T09:42:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "879e4b16_441913e8",
+      "revId": "9c74111f5b068686eadacde9c284b2c4cc01f8eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "924236bd_e862dba4",
@@ -111,6 +213,24 @@
       "writtenOn": "2024-04-09T20:11:13Z",
       "side": 1,
       "message": "Does the order in which these tests are run have any significance? i.e. if the tests in the `FF-A Setup and Discovery` test suite are shuffled, would we see any strange failures given that we are mapping and unmapping rxtx buffers intentionally to recreate some negative test scenarios?\nI see that you have taken necessary care to unmap the buffers after negative tests but just wanted to know your thoughts  on this.",
+      "revId": "9c74111f5b068686eadacde9c284b2c4cc01f8eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f88510fc_cfc0cdf0",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 30
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-10T09:42:42Z",
+      "side": 1,
+      "message": "There shouldn\u0027t be any order dependencies, I have taken care to ensure that the state is reset between each test",
+      "parentUuid": "924236bd_e862dba4",
       "revId": "9c74111f5b068686eadacde9c284b2c4cc01f8eb",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
