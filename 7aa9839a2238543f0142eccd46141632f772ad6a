@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7664f504_ca5ff15d",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-11T10:07:32Z",
+      "side": 1,
+      "message": "Split into\n```\nuint16_t sender;\nuint16_t receiver;\n```",
+      "range": {
+        "startLine": 305,
+        "startChar": 1,
+        "endLine": 305,
+        "endChar": 26
+      },
+      "revId": "7aa9839a2238543f0142eccd46141632f772ad6a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
