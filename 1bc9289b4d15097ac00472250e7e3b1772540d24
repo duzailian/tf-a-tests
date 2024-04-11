@@ -39,6 +39,48 @@
       "message": "Can these be defined as variables/enums rather than macros?",
       "revId": "1bc9289b4d15097ac00472250e7e3b1772540d24",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bc3d05c_639ce4ee",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-11T17:43:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2d708897_bd8020e1",
+      "revId": "1bc9289b4d15097ac00472250e7e3b1772540d24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9c407f6_97eca2cc",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-11T17:43:04Z",
+      "side": 1,
+      "message": "Will delete the macro.",
+      "parentUuid": "7d18c481_c755e961",
+      "range": {
+        "startLine": 386,
+        "startChar": 8,
+        "endLine": 386,
+        "endChar": 38
+      },
+      "revId": "1bc9289b4d15097ac00472250e7e3b1772540d24",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
