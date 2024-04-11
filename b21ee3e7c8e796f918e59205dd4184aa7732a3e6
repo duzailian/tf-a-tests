@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c51278e0_96152a89",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_context_mgmt.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-04-11T16:37:01Z",
+      "side": 1,
+      "message": "is_ffa_direct_response(ret) \u003d\u003d 0",
+      "range": {
+        "startLine": 50,
+        "startChar": 3,
+        "endLine": 50,
+        "endChar": 30
+      },
+      "revId": "b21ee3e7c8e796f918e59205dd4184aa7732a3e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
