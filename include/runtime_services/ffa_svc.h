@@ -10,6 +10,7 @@
 #include <lib/utils_def.h>
 #include <smccc.h>
 #include <uuid.h>
+#include <stdbool.h>
 
 /**
  * FFA error codes.
@@ -74,6 +75,34 @@ static inline const char *ffa_error_name(int32_t error)
 	 (((minor) & FFA_VERSION_MINOR_MASK) << FFA_VERSION_MINOR_SHIFT))
 #define FFA_VERSION_COMPILED		MAKE_FFA_VERSION(FFA_VERSION_MAJOR, \
 							  FFA_VERSION_MINOR)
+
+/**
+ * The version number of a Firmware Framework implementation is a 31-bit
+ * unsigned integer, with the upper 15 bits denoting the major revision,
+ * and the lower 16 bits denoting the minor revision.
+ */
+typedef uint32_t ffa_version_t;
+
+static inline uint32_t ffa_version_get_major(ffa_version_t version)
+{
+	return (version >> FFA_VERSION_MAJOR_SHIFT) & FFA_VERSION_MAJOR_MASK;
+}
+
+static inline uint32_t ffa_version_get_minor(ffa_version_t version)
+{
+	return (version >> FFA_VERSION_MINOR_SHIFT) & FFA_VERSION_MINOR_MASK;
+}
+
+/**
+ * Check major versions are equal and the minor version of the caller is
+ * less than or equal to the minor version of the callee.
+ */
+static inline bool ffa_versions_are_compatible(ffa_version_t caller,
+					       ffa_version_t callee)
+{
+	return ffa_version_get_major(caller) == ffa_version_get_major(callee) &&
+	       ffa_version_get_minor(caller) <= ffa_version_get_minor(callee);
+}
 
 /* FFA_MSG_SEND helpers */
 #define FFA_MSG_SEND_ATTRS_BLK_SHIFT	U(0)

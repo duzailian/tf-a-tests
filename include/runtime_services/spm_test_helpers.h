@@ -32,8 +32,8 @@
 		if (version < MAKE_FFA_VERSION(major, minor)) {			\
 			tftf_testcase_printf("FFA_VERSION returned %u.%u\n"	\
 					"The required version is %u.%u\n",	\
-					version >> FFA_VERSION_MAJOR_SHIFT,	\
-					version & FFA_VERSION_MINOR_MASK,	\
+					ffa_version_get_major(version), 	\
+					ffa_version_get_minor(version), 	\
 					major, minor);				\
 			return TEST_RESULT_SKIPPED;				\
 		}								\
