@@ -345,6 +345,7 @@ unsigned int tftf_get_mpidr_from_node(unsigned int cpu_node)
 	assert(topology_setup_done == 1);
 
 	assert(CPU_NODE_IS_VALID(cpu_node));
+	INFO("\nIn line %d func = %s", __LINE__, __func__);
 
 	if (tftf_pd_nodes[cpu_node].is_present)
 		return tftf_pd_nodes[cpu_node].mpidr;

@@ -20,6 +20,8 @@
 #include <debug.h>
 #include <errata_abi.h>
 
+#include <drivers/console.h>
+
 static event_t cpu_has_entered_test[PLATFORM_CORE_COUNT];
 
 /* Forward flag */
@@ -488,13 +490,19 @@ test_result_t test_em_cpu_features(void)
 {
 	test_result_t return_val = TEST_RESULT_FAIL;
 	smc_ret_values ret_val;
+	INFO("\n In line %d func = %s \n", __LINE__, __func__);
 
 	uint32_t midr_val = read_midr();
 	uint16_t rxpx_val_extracted = EXTRACT_REV_VAR(midr_val);
 	midr_val = EXTRACT_PARTNO(midr_val);
 
+	INFO("\n In line %d func = %s \n", __LINE__, __func__);
+
 	u_register_t mpid = read_mpidr_el1() & MPID_MASK;
+	INFO("In line %d func = %s", __LINE__, __func__);
+
 	unsigned int core_pos = platform_get_core_pos(mpid);
+	INFO("In line %d func = %s", __LINE__, __func__);
 
 	INFO("Partnum extracted = %x and rxpx extracted val = %x\n\n", midr_val, \
 							rxpx_val_extracted);
@@ -704,28 +712,47 @@ test_result_t test_errata_abi_features(void)
 	unsigned int cpu_mpid, cpu_node, core_pos;
 	int psci_ret;
 
+
+	INFO("\nIn line %d func = %s", __LINE__, __func__);
+
 	int32_t version_return = tftf_em_abi_version();
+	INFO("\nIn line %d func = %s", __LINE__, __func__);
 
 	SKIP_TEST_IF_LESS_THAN_N_CPUS(1);
+	INFO("\nIn line %d func = %s", __LINE__, __func__);
 
 	if (version_return == EM_NOT_SUPPORTED) {
+		INFO("In line %d func = %s", __LINE__, __func__);
 		return TEST_RESULT_SKIPPED;
 	}
-
+	INFO("\nIn line %d func = %s", __LINE__, __func__);
 	if (!(tftf_em_abi_feature_implemented(EM_CPU_ERRATUM_FEATURES))) {
 		return TEST_RESULT_FAIL;
 	}
+	INFO("\nIn line %d func = %s", __LINE__, __func__);
 
 	lead_mpid = read_mpidr_el1() & MPID_MASK;
 	/* Power on all CPUs */
+	INFO("\nIn line %d func = %s", __LINE__, __func__);
 	for_each_cpu(cpu_node) {
+
+		INFO("\nIn line %d func = %s", __LINE__, __func__);
+
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 
 		/* Skip lead CPU as it is already powered on */
 		if (cpu_mpid == lead_mpid)
 			continue;
 
+
+		console_flush();
+		INFO("\nIn line %d func = %s", __LINE__, __func__);
+
 		psci_ret = tftf_cpu_on(cpu_mpid, (uintptr_t)test_em_cpu_features, 0);
+
+		INFO("\nIn line %d func = %s", __LINE__, __func__);
+
+
 		if (psci_ret != PSCI_E_SUCCESS) {
 			tftf_testcase_printf("Failed to power on CPU 0x%x (%d)\n", \
 			cpu_mpid, psci_ret);
@@ -734,6 +761,8 @@ test_result_t test_errata_abi_features(void)
 
 		core_pos = platform_get_core_pos(cpu_mpid);
 		tftf_wait_for_event(&cpu_has_entered_test[core_pos]);
+	INFO("\nIn line %d func = %s", __LINE__, __func__);
 	}
+	INFO("\nIn line %d func = %s", __LINE__, __func__);
 	return TEST_RESULT_SUCCESS;
 }
