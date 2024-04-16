@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71d8628c_9a6da608",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_simd.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-16T21:24:19Z",
+      "side": 1,
+      "message": "Streaming vector length is encoded using 4 bits in SMCR_EL2 register. Can this be made uint8_t?",
+      "range": {
+        "startLine": 281,
+        "startChar": 47,
+        "endLine": 281,
+        "endChar": 59
+      },
+      "revId": "7907beabfc6f034856a8c6fcf9b80ca89de8cd40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
