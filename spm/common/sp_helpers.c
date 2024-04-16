@@ -30,13 +30,12 @@ uintptr_t bound_rand(uintptr_t min, uintptr_t max)
  * Test framework helpers
  ******************************************************************************/
 
-void expect(int expr, int expected)
-{
-	if (expr != expected) {
-		ERROR("Expected value %i, got %i\n", expected, expr);
-		while (1)
-			continue;
-	}
+void expect_impl(int expr, int expected, const char *file, uint32_t line) {
+  if (expr != expected) {
+    ERROR("%s:%d: Expected value %i, got %i\n", file, line, expected, expr);
+    while (1)
+      continue;
+  }
 }
 
 void announce_test_section_start(const char *test_sect_desc)
