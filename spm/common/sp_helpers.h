@@ -51,7 +51,8 @@ uintptr_t bound_rand(uintptr_t min, uintptr_t max);
  * Check that expr == expected.
  * If not, loop forever.
  */
-void expect(int expr, int expected);
+#define expect(expr, expected) expect_impl(expr, expected, __FILE__, __LINE__)
+void expect_impl(int expr, int expected, const char *file, uint32_t line);
 
 /*
  * Test framework functions
