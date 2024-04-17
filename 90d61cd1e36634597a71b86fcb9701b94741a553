@@ -34,6 +34,24 @@
       "parentUuid": "59d2af7d_cdbb0ab2",
       "revId": "90d61cd1e36634597a71b86fcb9701b94741a553",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28073e55_92f7b22d",
+        "filename": "lib/power_management/suspend/aarch64/asm_tftf_suspend.S",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1001237
+      },
+      "writtenOn": "2024-04-17T13:46:54Z",
+      "side": 0,
+      "message": "The new patch is tested on TC2 and TC4. TC2 does not support SME2, TC4 supports SME2.",
+      "parentUuid": "f1ff1f7c_56abac68",
+      "revId": "90d61cd1e36634597a71b86fcb9701b94741a553",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
