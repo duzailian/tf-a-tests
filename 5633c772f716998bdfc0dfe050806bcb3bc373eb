@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67cb9e27_61a57088",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_indirect_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-23T18:22:00Z",
+      "side": 1,
+      "message": "I think its better to fix it directly in the original patch rather than to fix it here\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/27813/4/tftf/tests/runtime_services/secure_service/test_ffa_indirect_messaging.c#54",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 45
+      },
+      "revId": "5633c772f716998bdfc0dfe050806bcb3bc373eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c540a324_76e55d6b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_indirect_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-23T18:22:00Z",
+      "side": 1,
+      "message": "the term operation is ambiguous here because it could refer to the action of creating the bitmap , while in reality you are referring to the action of SP attempting to send an indirect message to VM1.",
+      "range": {
+        "startLine": 135,
+        "startChar": 52,
+        "endLine": 135,
+        "endChar": 62
+      },
+      "revId": "5633c772f716998bdfc0dfe050806bcb3bc373eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
