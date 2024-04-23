@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac129948_40c4ebe7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_indirect_messaging.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-23T18:33:45Z",
+      "side": 1,
+      "message": "nitpick:\nwhen VM\u0027s TX is in realm world",
+      "range": {
+        "startLine": 200,
+        "startChar": 36,
+        "endLine": 200,
+        "endChar": 56
+      },
+      "revId": "15bdc3d1970d364b9c42d95b011a9f0f2e72fe4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbb9ceaa_67005c54",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_indirect_messaging.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-23T18:33:45Z",
+      "side": 1,
+      "message": "TX",
+      "range": {
+        "startLine": 241,
+        "startChar": 13,
+        "endLine": 241,
+        "endChar": 16
+      },
+      "revId": "15bdc3d1970d364b9c42d95b011a9f0f2e72fe4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0cc86b70_727fbb83",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_indirect_messaging.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-23T18:33:45Z",
+      "side": 1,
+      "message": "send or forward?",
+      "range": {
+        "startLine": 251,
+        "startChar": 30,
+        "endLine": 251,
+        "endChar": 38
+      },
+      "revId": "15bdc3d1970d364b9c42d95b011a9f0f2e72fe4c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
