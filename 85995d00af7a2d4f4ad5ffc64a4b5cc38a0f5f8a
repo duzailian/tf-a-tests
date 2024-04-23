@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ece393e5_e1495cf1",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-23T17:26:01Z",
+      "side": 1,
+      "message": "Similar to line 401, should arg2 and arg3 be explicitly typecasted to uint32_t",
+      "revId": "85995d00af7a2d4f4ad5ffc64a4b5cc38a0f5f8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a278b695_06b1a028",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-23T17:26:01Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "85995d00af7a2d4f4ad5ffc64a4b5cc38a0f5f8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12d51b5f_8d525d98",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-23T17:26:01Z",
+      "side": 1,
+      "message": "0U",
+      "range": {
+        "startLine": 410,
+        "startChar": 63,
+        "endLine": 410,
+        "endChar": 64
+      },
+      "revId": "85995d00af7a2d4f4ad5ffc64a4b5cc38a0f5f8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cf4611c_10b0cb87",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-23T17:26:01Z",
+      "side": 1,
+      "message": "0U",
+      "range": {
+        "startLine": 416,
+        "startChar": 63,
+        "endLine": 416,
+        "endChar": 64
+      },
+      "revId": "85995d00af7a2d4f4ad5ffc64a4b5cc38a0f5f8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
