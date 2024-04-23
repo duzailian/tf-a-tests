@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d94cfa0f_e1b18d11",
+        "filename": "spm/cactus/cactus_tests/cactus_test_indirect_message.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-04-23T17:54:00Z",
+      "side": 1,
+      "message": "Isnt sender same as vm_id in all scenarios? I guess you could optimize the CACTUS_REQ_MSG_SEND_CMD direct message to reduce one parameter",
+      "revId": "c48c697629df3c949d79b4698ab74876cb5439a4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
