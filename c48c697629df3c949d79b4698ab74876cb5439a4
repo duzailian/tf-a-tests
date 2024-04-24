@@ -33,6 +33,24 @@
       "message": "Curious why the manifests of secondary and tertiary Cactus SPs are not updated.",
       "revId": "c48c697629df3c949d79b4698ab74876cb5439a4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1960de01_9ee67b2d",
+        "filename": "spm/cactus/plat/arm/fvp/fdts/cactus.dts",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-24T11:23:14Z",
+      "side": 1,
+      "message": "They were not used to exchange messages.",
+      "parentUuid": "a7a94156_77d8938b",
+      "revId": "c48c697629df3c949d79b4698ab74876cb5439a4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
