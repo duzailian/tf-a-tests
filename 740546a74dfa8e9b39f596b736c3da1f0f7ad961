@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "10214b73_01908395",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-24T11:21:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fc0d0e5c_34d8df27",
+      "range": {
+        "startLine": 846,
+        "startChar": 20,
+        "endLine": 846,
+        "endChar": 24
+      },
+      "revId": "740546a74dfa8e9b39f596b736c3da1f0f7ad961",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f44bb171_5425cf9a",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "efc7a87b_e3b0e76d",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-24T11:21:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f44bb171_5425cf9a",
+      "range": {
+        "startLine": 848,
+        "startChar": 61,
+        "endLine": 848,
+        "endChar": 65
+      },
+      "revId": "740546a74dfa8e9b39f596b736c3da1f0f7ad961",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "66746bc9_c461a4f1",
@@ -60,6 +108,24 @@
       "writtenOn": "2024-04-23T17:34:09Z",
       "side": 1,
       "message": "Also account for FFA_NOTIFICATIONS_FLAG_BITMAP_HYP?",
+      "revId": "740546a74dfa8e9b39f596b736c3da1f0f7ad961",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af6c5c1f_ebb30699",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-24T11:21:08Z",
+      "side": 1,
+      "message": "tftf is deployed at EL2. No notifications from Hypervisor are expected in this case.",
+      "parentUuid": "66746bc9_c461a4f1",
       "revId": "740546a74dfa8e9b39f596b736c3da1f0f7ad961",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
