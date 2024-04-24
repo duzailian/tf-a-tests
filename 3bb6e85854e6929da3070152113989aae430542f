@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5a35c3c_02cdec9e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_exceptions.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-24T11:16:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8f0715d2_b54d6100",
+      "range": {
+        "startLine": 122,
+        "startChar": 25,
+        "endLine": 122,
+        "endChar": 27
+      },
+      "revId": "3bb6e85854e6929da3070152113989aae430542f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9d760f16_36f5f55b",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-04-23T17:12:19Z",
       "side": 1,
       "message": "This test is already part of spm test suite. What is the advantage in adding it to memory-access test suite (xml file )?\n\nIf it is indeed useful, please make the change in a separate patch.",
+      "revId": "3bb6e85854e6929da3070152113989aae430542f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32e0e6ba_52c7ad95",
+        "filename": "tftf/tests/tests-memory-access.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-24T11:16:14Z",
+      "side": 1,
+      "message": "I thought I had deleted it as part of this patch. may have lost it in the rebase.\nI think it is better to move the test into this file. Conceptually aligns with the remaining tests.\nFollowing change will have this slight refactor.",
+      "parentUuid": "9d760f16_36f5f55b",
       "revId": "3bb6e85854e6929da3070152113989aae430542f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
