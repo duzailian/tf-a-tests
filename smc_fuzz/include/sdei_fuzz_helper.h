@@ -37,6 +37,9 @@
 #ifndef sdei_shared_reset_funcid
 #define sdei_shared_reset_funcid 0
 #endif
+#ifndef sdei_interrupt_bind_funcid
+#define sdei_interrupt_bind_funcid 0
+#endif
 
 
 #ifndef sdei_event_register_funcid
