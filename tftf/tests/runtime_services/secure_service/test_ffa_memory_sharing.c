@@ -1331,13 +1331,7 @@ test_result_t test_ffa_memory_retrieve_request_from_vm(void)
 	return TEST_RESULT_SUCCESS;
 }
 
-/**
- * Test that a retrieve request from the hypervisor would fail if the TX buffer
- * was in realm state. This is recreating the situation in which the Hyp doesn't
- * track the state of the operation, and it is forwarding the retrieve request
- * to the SPMC.
- */
-test_result_t test_ffa_memory_retrieve_request_fail_tx_realm(void)
+test_result_t base_ffa_memory_retrieve_request_fail_buffer_realm(bool delegate_rx)
 {
 	struct mailbox_buffers mb;
 	struct ffa_memory_access receivers[2] = {
@@ -1350,8 +1344,11 @@ test_result_t test_ffa_memory_retrieve_request_fail_tx_realm(void)
 	u_register_t ret_rmm;
 	struct ffa_value ret;
 	size_t descriptor_size;
+	void *to_delegate;
 
 	GET_TFTF_MAILBOX(mb);
+
+	to_delegate = delegate_rx ? mb.recv : mb.send;
 
 	if (get_armv9_2_feat_rme_support() == 0U) {
 		return TEST_RESULT_SKIPPED;
@@ -1371,12 +1368,12 @@ test_result_t test_ffa_memory_retrieve_request_fail_tx_realm(void)
 		FFA_MEMORY_NORMAL_MEM, FFA_MEMORY_CACHE_WRITE_BACK,
 		FFA_MEMORY_INNER_SHAREABLE);
 
-	/* Delegate TX buffer to realm. */
-	ret_rmm = host_rmi_granule_delegate((u_register_t)mb.send);
+	/* Delegate buffer to realm. */
+	ret_rmm = host_rmi_granule_delegate((u_register_t)to_delegate);
 
 	if (ret_rmm != 0UL) {
 		INFO("Delegate operation returns %#lx for address %p\n",
-		     ret_rmm, mb.send);
+		     ret_rmm, to_delegate);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -1387,11 +1384,11 @@ test_result_t test_ffa_memory_retrieve_request_fail_tx_realm(void)
 	}
 
 	/* Undelegate to reestablish the same security state for PAS. */
-	ret_rmm = host_rmi_granule_undelegate((u_register_t)mb.send);
+	ret_rmm = host_rmi_granule_undelegate((u_register_t)to_delegate);
 
 	if (ret_rmm != 0UL) {
-		INFO("Undelegate operation returns %#lx for address %p\n",
-		     ret_rmm, (uint64_t)mb.send);
+		INFO("Undelegate operation returns 0x%lx for address %llx\n",
+		     ret_rmm, (uint64_t)to_delegate);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -1404,7 +1401,7 @@ test_result_t test_ffa_memory_retrieve_request_fail_tx_realm(void)
 
 	ffa_rx_release();
 
-	if (!memory_relinquish(mb.send, handle, 1)) {
+	if (!memory_relinquish(to_delegate, handle, 1)) {
 		ERROR("%s: Failed to relinquish.\n", __func__);
 		return TEST_RESULT_FAIL;
 	}
@@ -1415,4 +1412,29 @@ test_result_t test_ffa_memory_retrieve_request_fail_tx_realm(void)
 	}
 
 	return TEST_RESULT_SUCCESS;
+}
+
+/**
+ * Test that a retrieve request from the hypervisor would fail if the TX buffer
+ * was in realm state. This is recreating the situation in which the Hyp doesn't
+ * track the state of the operation, and it is forwarding the retrieve request
+ * to the SPMC.
+ */
+test_result_t test_ffa_memory_retrieve_request_fail_tx_realm(void)
+{
+	return base_ffa_memory_retrieve_request_fail_buffer_realm(false);
+}
+
+/**
+ * Test that a retrieve request from the hypervisor would fail if the RX buffer
+ * was in realm state. This is recreating the situation in which the Hyp doesn't
+ * track the state of the operation, and it is forwarding the retrieve request
+ * to the SPMC. The operation shall fail at the point at which the SPMC is
+ * providing retrieve response. The SPMC should have reverted the change to any
+ * of its share state tracking structures, such that the final reclaim would be
+ * possible.
+ */
+test_result_t test_ffa_memory_retrieve_request_fail_rx_realm(void)
+{
+	return base_ffa_memory_retrieve_request_fail_buffer_realm(true);
 }
