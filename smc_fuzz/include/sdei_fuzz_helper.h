@@ -33,6 +33,9 @@
 #ifndef sdei_shared_reset_funcid
 #define sdei_shared_reset_funcid 0
 #endif
+#ifndef sdei_interrupt_bind_funcid
+#define sdei_interrupt_bind_funcid 0
+#endif
 
 
 void tftf_test_sdei_noarg(int64_t (*sdei_func)(void), char *funcstr);
