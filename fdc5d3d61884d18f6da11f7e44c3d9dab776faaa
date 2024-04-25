@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8c14a0d_104a22a4",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-25T11:23:10Z",
+      "side": 1,
+      "message": "The code style for TFA tests is to leave `{}` brackets out if the block is a single statement",
+      "range": {
+        "startLine": 388,
+        "startChar": 54,
+        "endLine": 388,
+        "endChar": 55
+      },
+      "revId": "fdc5d3d61884d18f6da11f7e44c3d9dab776faaa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
