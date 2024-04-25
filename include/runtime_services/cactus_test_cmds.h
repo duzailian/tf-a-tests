@@ -28,6 +28,32 @@
 #define ECHO_VAL2 U(0xb0b0b0b0)
 #define ECHO_VAL3 U(0xc0c0c0c0)
 
+enum cactus_test_cmd {
+  CACTUS_ECHO_CMD = 1,
+  CACTUS_REQ_ECHO_CMD,
+  CACTUS_DEADLOCK_CMD,
+  CACTUS_REQ_DEADLOCK_CMD,
+  CACTUS_MEM_SEND_CMD,
+  CACTUS_REQ_MEM_SEND_CMD,
+  CACTUS_REQ_SIMD_FILL_CMD,
+  CACTUS_CMP_SIMD_VALUE_CMD,
+  CACTUS_SLEEP_CMD,
+  CACTUS_FWD_SLEEP_CMD,
+  CACTUS_SLEEP_TRIGGER_TWDOG_CMD,
+  CACTUS_INTERRUPT_CMD,
+  CACTUS_DMA_SMMUv3_CMD,
+  CACTUS_NOTIFICATION_BIND_CMD,
+  CACTUS_NOTIFICATION_UNBIND_CMD,
+  CACTUS_NOTIFICATION_GET_CMD,
+  CACTUS_NOTIFICATIONS_SET_CMD,
+  CACTUS_TWDOG_START_CMD,
+  CACTUS_GET_REQ_COUNT_CMD,
+  CACTUS_LAST_INTERRUPT_SERVICED_CMD,
+  CACTUS_RESUME_AFTER_MANAGED_EXIT,
+  CACTUS_TRIGGER_ESPI_CMD,
+  CACTUS_RAS_DELEGATE_CMD,
+};
+
 /**
  * Get command from struct ffa_value.
  */
@@ -108,10 +134,7 @@ static inline uint32_t cactus_error_code(struct ffa_value ret)
 /**
  * With this test command the sender transmits a 64-bit value that it then
  * expects to receive on the respective command response.
- *
- * The id is the hex representation of the string 'echo'.
  */
-#define CACTUS_ECHO_CMD U(0x6563686f)
 
 static inline struct ffa_value cactus_echo_send_cmd(
 	ffa_id_t source, ffa_id_t dest, uint64_t echo_val)
@@ -132,7 +155,6 @@ static inline uint64_t cactus_echo_get_val(struct ffa_value ret)
  * The sender of this command expects to receive CACTUS_SUCCESS if the requested
  * echo interaction happened successfully, or CACTUS_ERROR otherwise.
  */
-#define CACTUS_REQ_ECHO_CMD (CACTUS_ECHO_CMD + 1)
 
 static inline struct ffa_value cactus_req_echo_send_cmd(
 	ffa_id_t source, ffa_id_t dest, ffa_id_t echo_dest,
@@ -153,10 +175,7 @@ static inline ffa_id_t cactus_req_echo_get_echo_dest(struct ffa_value ret)
  * If the deadlock happens, the system will just hang.
  * If the deadlock is prevented, the last partition to use the command will
  * send response CACTUS_SUCCESS.
- *
- * The id is the hex representation of the string 'dead'.
  */
-#define CACTUS_DEADLOCK_CMD U(0x64656164)
 
 static inline struct ffa_value cactus_deadlock_send_cmd(
 	ffa_id_t source, ffa_id_t dest, ffa_id_t next_dest)
@@ -174,7 +193,6 @@ static inline ffa_id_t cactus_deadlock_get_next_dest(struct ffa_value ret)
  * Command to request a sequence CACTUS_DEADLOCK_CMD between the partitions
  * of specified IDs.
  */
-#define CACTUS_REQ_DEADLOCK_CMD (CACTUS_DEADLOCK_CMD + 1)
 
 static inline struct ffa_value cactus_req_deadlock_send_cmd(
 	ffa_id_t source, ffa_id_t dest, ffa_id_t next_dest1,
@@ -193,10 +211,7 @@ static inline ffa_id_t cactus_deadlock_get_next_dest2(struct ffa_value ret)
 /**
  * Command to notify cactus of a memory management operation. The cmd value
  * should be the memory management smc function id.
- *
- * The id is the hex representation of the string "mem"
  */
-#define CACTUS_MEM_SEND_CMD U(0x6d656d)
 
 static inline struct ffa_value cactus_mem_send_cmd(
 	ffa_id_t source, ffa_id_t dest, uint32_t mem_func,
@@ -236,10 +251,7 @@ static inline bool cactus_mem_send_expect_exception(struct ffa_value ret)
  * Command to request a memory management operation. The 'mem_func' argument
  * identifies the operation that is to be performend, and 'receiver' is the id
  * of the partition to receive the memory region.
- *
- * The command id is the hex representation of the string "memory".
  */
-#define CACTUS_REQ_MEM_SEND_CMD U(0x6d656d6f7279)
 
 static inline struct ffa_value cactus_req_mem_send_send_cmd(
 	ffa_id_t source, ffa_id_t dest, uint32_t mem_func,
@@ -268,10 +280,7 @@ static inline bool cactus_req_mem_send_get_non_secure(struct ffa_value ret)
  * Request to fill SIMD vectors with dummy values with purpose to check a
  * save/restore routine during the context switches between secure world and
  * normal world.
- *
- * The command id is the hex representation of the string "SIMD"
  */
-#define CACTUS_REQ_SIMD_FILL_CMD U(0x53494d44)
 
 static inline struct ffa_value cactus_req_simd_fill_send_cmd(
 	ffa_id_t source, ffa_id_t dest)
@@ -285,7 +294,6 @@ static inline struct ffa_value cactus_req_simd_fill_send_cmd(
  * with previous template values to check a save/restore routine during the
  * context switches between secure world and normal world.
  */
-#define CACTUS_CMP_SIMD_VALUE_CMD (CACTUS_REQ_SIMD_FILL_CMD + 1)
 
 static inline struct ffa_value cactus_req_simd_compare_send_cmd(
 	ffa_id_t source, ffa_id_t dest)
@@ -296,10 +304,7 @@ static inline struct ffa_value cactus_req_simd_compare_send_cmd(
 
 /**
  * Command to request cactus to sleep for the given time in ms
- *
- * The command id is the hex representation of string "sleep"
  */
-#define CACTUS_SLEEP_CMD U(0x736c656570)
 
 static inline struct ffa_value cactus_sleep_cmd(
 	ffa_id_t source, ffa_id_t dest, uint32_t sleep_time)
@@ -316,7 +321,6 @@ static inline struct ffa_value cactus_sleep_cmd(
  * Moreover, the sender can send a hint to the destination SP to expect that
  * the forwaded sleep command could be preempted by a non-secure interrupt.
  */
-#define CACTUS_FWD_SLEEP_CMD (CACTUS_SLEEP_CMD + 1)
 
 static inline struct ffa_value cactus_fwd_sleep_cmd(
 	ffa_id_t source, ffa_id_t dest, ffa_id_t fwd_dest,
@@ -366,10 +370,7 @@ static inline uint32_t cactus_get_wdog_trigger_duration(struct ffa_value ret)
 
 /**
  * Command to request cactus to enable/disable an interrupt
- *
- * The command id is the hex representation of string "intr"
  */
-#define CACTUS_INTERRUPT_CMD U(0x696e7472)
 
 static inline struct ffa_value cactus_interrupt_cmd(
 	ffa_id_t source, ffa_id_t dest, uint32_t interrupt_id,
@@ -396,10 +397,7 @@ static inline enum interrupt_pin cactus_get_interrupt_pin(struct ffa_value ret)
 
 /**
  * Request to initiate DMA transaction by upstream peripheral.
- *
- * The command id is the hex representation of the string "SMMU"
  */
-#define CACTUS_DMA_SMMUv3_CMD           (0x534d4d55)
 
 static inline struct ffa_value cactus_send_dma_cmd(
 	ffa_id_t source, ffa_id_t dest, uint32_t operation,
@@ -416,10 +414,7 @@ static inline struct ffa_value cactus_send_dma_cmd(
  * in the response to the command's request. The receiver and sender arguments
  * are propagated through the command's arguments, to allow the test of
  * erroneous uses of the FFA_NOTIFICATION_BIND interface.
- *
- * The command id is the hex representation of the string "bind".
  */
-#define CACTUS_NOTIFICATION_BIND_CMD U(0x62696e64)
 
 static inline struct ffa_value cactus_notification_bind_send_cmd(
 	ffa_id_t source, ffa_id_t dest, ffa_id_t receiver,
@@ -435,10 +430,7 @@ static inline struct ffa_value cactus_notification_bind_send_cmd(
  * response. The receiver and sender arguments are propagated throught the
  * command's arguments, to allow the test of erroneous uses of the
  * FFA_NOTIFICATION_BIND interface.
- *
- * The command id is the hex representation of the string "unbind".
  */
-#define CACTUS_NOTIFICATION_UNBIND_CMD U(0x756e62696e64)
 
 static inline struct ffa_value cactus_notification_unbind_send_cmd(
 	ffa_id_t source, ffa_id_t dest, ffa_id_t receiver,
@@ -469,10 +461,7 @@ static inline ffa_notification_bitmap_t cactus_notification_get_notifications(
  * are propagated on the command to test erroneous uses of the interface.
  * In a successful call to the interface, the SP's response payload should
  * include all bitmaps returned by the SPMC.
- *
- * The command id is the hex representation of the string "getnot".
  */
-#define CACTUS_NOTIFICATION_GET_CMD U(0x6765746e6f74)
 
 static inline struct ffa_value cactus_notification_get_send_cmd(
 	ffa_id_t source, ffa_id_t dest, ffa_id_t receiver,
@@ -523,7 +512,6 @@ static inline bool cactus_notifications_check_npi_handled(struct ffa_value ret)
  * send a CACTUS_ECHO_CMD to the SP specified as `echo_dest`. This should help
  * validate that the SRI is only sent when returning execution to the NWd.
  */
-#define CACTUS_NOTIFICATIONS_SET_CMD U(0x6e6f74736574)
 
 static inline struct ffa_value cactus_notifications_set_send_cmd(
 	ffa_id_t source, ffa_id_t dest, ffa_id_t receiver,
@@ -549,10 +537,7 @@ static inline ffa_id_t cactus_notifications_set_get_sender(struct ffa_value ret)
 
 /**
  * Request to start trusted watchdog timer.
- *
- * The command id is the hex representaton of the string "WDOG"
  */
-#define CACTUS_TWDOG_START_CMD		U(0x57444f47)
 
 static inline struct ffa_value cactus_send_twdog_cmd(
 	ffa_id_t source, ffa_id_t dest, uint64_t time)
@@ -568,10 +553,7 @@ static inline uint32_t cactus_get_wdog_duration(struct ffa_value ret)
 
 /**
  * Request SP to return the current count of handled requests.
- *
- * The command id is the hex representation of the string "getnot".
  */
-#define CACTUS_GET_REQ_COUNT_CMD U(0x726571636f756e74)
 
 static inline struct ffa_value cactus_get_req_count_send_cmd(
 	ffa_id_t source, ffa_id_t dest)
@@ -587,10 +569,7 @@ static inline uint32_t cactus_get_req_count(struct ffa_value ret)
 
 /**
  * Request SP to return the last serviced secure virtual interrupt.
- *
- * The command id is the hex representaton of the string "vINT"
  */
-#define CACTUS_LAST_INTERRUPT_SERVICED_CMD U(0x76494e54)
 
 static inline struct ffa_value cactus_get_last_interrupt_cmd(
 	ffa_id_t source, ffa_id_t dest)
@@ -602,11 +581,7 @@ static inline struct ffa_value cactus_get_last_interrupt_cmd(
 /**
  * Request SP to resume the task requested by current endpoint after managed
  * exit.
- *
- * The command id is the hex representation of the string "RAME" which denotes
- * (R)esume (A)fter (M)anaged (E)xit.
  */
-#define CACTUS_RESUME_AFTER_MANAGED_EXIT U(0x52414d45)
 
 static inline struct ffa_value cactus_resume_after_managed_exit(
 	ffa_id_t source, ffa_id_t dest)
@@ -617,10 +592,7 @@ static inline struct ffa_value cactus_resume_after_managed_exit(
 
 /**
  * Request SP to pend an interrupt in the extended SPI range.
- *
- * The command is the hex representation of the string "espi".
  */
-#define CACTUS_TRIGGER_ESPI_CMD U(0x65737069)
 static inline struct ffa_value cactus_trigger_espi_cmd(
 	ffa_id_t source, ffa_id_t dest, uint32_t espi_id)
 {
@@ -636,11 +608,7 @@ static inline uint32_t cactus_get_espi_id(struct ffa_value ret)
 /*
  * Request SP to mimic handling a RAS error delegated by an EL3 logical secure
  * partition.
- *
- * The command ID is the hex representation of the string 'rase' which
- * denotes RAS Error.
  */
-#define CACTUS_RAS_DELEGATE_CMD U(0x72617365)
 
 static inline struct ffa_value cactus_ras_delegate_send_cmd(
 	ffa_id_t source, ffa_id_t dest, uint64_t event_id)
