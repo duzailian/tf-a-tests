@@ -1332,7 +1332,8 @@ test_result_t test_ffa_memory_retrieve_request_from_vm(void)
 	return TEST_RESULT_SUCCESS;
 }
 
-test_result_t base_ffa_memory_retrieve_request_fail_buffer_realm(bool delegate_rx)
+test_result_t base_ffa_memory_retrieve_request_fail_buffer_realm(bool delegate_rx,
+								 bool is_hypervisor_retrieve_req)
 {
 	struct mailbox_buffers mb;
 	struct ffa_memory_access receivers[2] = {
@@ -1363,11 +1364,17 @@ test_result_t base_ffa_memory_retrieve_request_fail_buffer_realm(bool delegate_r
 		return TEST_RESULT_FAIL;
 	}
 
-	/* Prepare the descriptor before delegating the TX buffer. */
-	descriptor_size = ffa_memory_retrieve_request_init(
-		mb.send, handle, SENDER, receivers, ARRAY_SIZE(receivers), 0, 0,
-		FFA_MEMORY_NORMAL_MEM, FFA_MEMORY_CACHE_WRITE_BACK,
-		FFA_MEMORY_INNER_SHAREABLE);
+	if (is_hypervisor_retrieve_req) {
+		/* Prepare the hypervisor retrieve request. */
+		ffa_hypervisor_retrieve_request_init(mb.send, handle);
+		descriptor_size = sizeof(struct ffa_memory_region);
+	} else {
+		/* Prepare the descriptor before delegating the buffer. */
+		descriptor_size = ffa_memory_retrieve_request_init(
+			mb.send, handle, SENDER, receivers, ARRAY_SIZE(receivers),
+			0, 0, FFA_MEMORY_NORMAL_MEM, FFA_MEMORY_CACHE_WRITE_BACK,
+			FFA_MEMORY_INNER_SHAREABLE);
+	}
 
 	/* Delegate buffer to realm. */
 	ret_rmm = host_rmi_granule_delegate((u_register_t)to_delegate);
@@ -1402,7 +1409,8 @@ test_result_t base_ffa_memory_retrieve_request_fail_buffer_realm(bool delegate_r
 
 	ffa_rx_release();
 
-	if (!memory_relinquish(mb.send, handle, VM_ID(1))) {
+	if (!is_hypervisor_retrieve_req &&
+	    !!memory_relinquish(mb.send, handle, VM_ID(1))) {
 		ERROR("%s: Failed to relinquish.\n", __func__);
 		return TEST_RESULT_FAIL;
 	}
@@ -1423,7 +1431,7 @@ test_result_t base_ffa_memory_retrieve_request_fail_buffer_realm(bool delegate_r
  */
 test_result_t test_ffa_memory_retrieve_request_fail_tx_realm(void)
 {
-	return base_ffa_memory_retrieve_request_fail_buffer_realm(false);
+	return base_ffa_memory_retrieve_request_fail_buffer_realm(false, false);
 }
 
 /**
@@ -1437,7 +1445,7 @@ test_result_t test_ffa_memory_retrieve_request_fail_tx_realm(void)
  */
 test_result_t test_ffa_memory_retrieve_request_fail_rx_realm(void)
 {
-	return base_ffa_memory_retrieve_request_fail_buffer_realm(true);
+	return base_ffa_memory_retrieve_request_fail_buffer_realm(true, false);
 }
 
 /**
@@ -1521,4 +1529,28 @@ test_result_t test_ffa_memory_relinquish_fail_tx_realm(void)
 	}
 
 	return TEST_RESULT_SUCCESS;
+}
+
+/**
+ * Test that a hypervisor retrieve request would fail if the TX buffer
+ * was in realm PAS.
+ * The hypervisor retrieve request normally happens during an FFA_MEM_RECLAIM.
+ * This validates that the SPMC is able to recover from a GPF from accessing the
+ * TX buffer when reading the hypervisor retrieve request message.
+ */
+test_result_t test_ffa_hypervisor_retrieve_request_fail_tx_realm(void)
+{
+	return base_ffa_memory_retrieve_request_fail_buffer_realm(false, true);
+}
+
+/**
+ * Test that a hypervisor retrieve request would fail if the RX buffer
+ * was in realm PAS.
+ * The hypervisor retrieve request normally happens during an FFA_MEM_RECLAIM.
+ * This validates the SPMC is able to recover from a GPF from accessing the RX
+ * buffer when preparing the retrieve response.
+ */
+test_result_t test_ffa_hypervisor_retrieve_request_fail_rx_realm(void)
+{
+	return base_ffa_memory_retrieve_request_fail_buffer_realm(true, true);
 }
