@@ -22,6 +22,30 @@
       },
       "revId": "fdc5d3d61884d18f6da11f7e44c3d9dab776faaa",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44494b7b_2247a3a3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-26T21:11:01Z",
+      "side": 1,
+      "message": "Not strictly enforced.",
+      "parentUuid": "c8c14a0d_104a22a4",
+      "range": {
+        "startLine": 388,
+        "startChar": 54,
+        "endLine": 388,
+        "endChar": 55
+      },
+      "revId": "fdc5d3d61884d18f6da11f7e44c3d9dab776faaa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
