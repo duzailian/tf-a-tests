@@ -146,6 +146,24 @@
       "parentUuid": "af6c5c1f_ebb30699",
       "revId": "740546a74dfa8e9b39f596b736c3da1f0f7ad961",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01783e7e_ffcb9435",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-26T21:08:32Z",
+      "side": 1,
+      "message": "That is a fair catch!\nThanks!\nRewrote that part slightly. It is a bug that a sender is anything other than SP in the context of these tests.\nPlease reopen if there are further considerations.",
+      "parentUuid": "dce2ad2d_9895504e",
+      "revId": "740546a74dfa8e9b39f596b736c3da1f0f7ad961",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
