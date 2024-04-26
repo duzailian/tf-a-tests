@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25e67c3a_4b0b67df",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 1180,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-26T11:54:04Z",
+      "side": 1,
+      "message": "Initialization to 0 is unnecessary",
+      "range": {
+        "startLine": 1180,
+        "startChar": 36,
+        "endLine": 1180,
+        "endChar": 39
+      },
+      "revId": "654086d973732a9fb5471ab9eba85e3011c5f2d6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e5feffe_d2e6750d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-26T11:54:04Z",
+      "side": 1,
+      "message": "%#lx",
+      "range": {
+        "startLine": 1228,
+        "startChar": 37,
+        "endLine": 1228,
+        "endChar": 42
+      },
+      "revId": "654086d973732a9fb5471ab9eba85e3011c5f2d6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c05a0ac_13e5c4a5",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-26T11:54:04Z",
+      "side": 1,
+      "message": "%p",
+      "range": {
+        "startLine": 1228,
+        "startChar": 55,
+        "endLine": 1228,
+        "endChar": 59
+      },
+      "revId": "654086d973732a9fb5471ab9eba85e3011c5f2d6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
