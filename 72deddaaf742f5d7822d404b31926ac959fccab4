@@ -52,6 +52,24 @@
       "parentUuid": "1b8747eb_d12db720",
       "revId": "72deddaaf742f5d7822d404b31926ac959fccab4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5832eca7_f20d9102",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_indirect_messaging.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-26T21:09:39Z",
+      "side": 1,
+      "message": "Patchset 6 has it.\nThere was something off with first rebase.\nCheers",
+      "parentUuid": "b56ad3e6_cd67d0b1",
+      "revId": "72deddaaf742f5d7822d404b31926ac959fccab4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
