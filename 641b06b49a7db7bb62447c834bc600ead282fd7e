@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c528ca1a_467c2c0e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1251,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-26T12:50:17Z",
+      "side": 1,
+      "message": "Use `ARRAY_SIZE` macro",
+      "range": {
+        "startLine": 1250,
+        "startChar": 37,
+        "endLine": 1251,
+        "endChar": 48
+      },
+      "revId": "641b06b49a7db7bb62447c834bc600ead282fd7e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22549fdc_984a7f7d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1276,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-04-26T12:50:17Z",
+      "side": 1,
+      "message": "Should this be `SP_ID(1)` to match `SP_ID(2)` below?",
+      "range": {
+        "startLine": 1276,
+        "startChar": 51,
+        "endLine": 1276,
+        "endChar": 52
+      },
+      "revId": "641b06b49a7db7bb62447c834bc600ead282fd7e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
