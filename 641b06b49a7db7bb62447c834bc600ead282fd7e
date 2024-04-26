@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e353ba48_3410d30f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1251,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-26T21:26:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c528ca1a_467c2c0e",
+      "range": {
+        "startLine": 1250,
+        "startChar": 37,
+        "endLine": 1251,
+        "endChar": 48
+      },
+      "revId": "641b06b49a7db7bb62447c834bc600ead282fd7e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "22549fdc_984a7f7d",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-04-26T12:50:17Z",
       "side": 1,
       "message": "Should this be `SP_ID(1)` to match `SP_ID(2)` below?",
+      "range": {
+        "startLine": 1276,
+        "startChar": 51,
+        "endLine": 1276,
+        "endChar": 52
+      },
+      "revId": "641b06b49a7db7bb62447c834bc600ead282fd7e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4ecd551_2a0ad531",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1276,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-26T21:26:35Z",
+      "side": 1,
+      "message": "No. Should be VM ID 1, for a retrieve request from a VM.",
+      "parentUuid": "22549fdc_984a7f7d",
       "range": {
         "startLine": 1276,
         "startChar": 51,
