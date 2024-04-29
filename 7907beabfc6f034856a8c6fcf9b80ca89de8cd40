@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7037247b_0b6b4779",
+        "filename": "lib/extensions/sme/aarch64/sme.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-29T14:34:54Z",
+      "side": 1,
+      "message": "nitpick: start with capital and full stop.",
+      "range": {
+        "startLine": 154,
+        "startChar": 4,
+        "endLine": 154,
+        "endChar": 38
+      },
+      "revId": "7907beabfc6f034856a8c6fcf9b80ca89de8cd40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "71d8628c_9a6da608",
         "filename": "tftf/tests/runtime_services/secure_service/test_spm_simd.c",
         "patchSetId": 6
