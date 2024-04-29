@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cb2c528_c2e733bd",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_simd.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-04-29T13:57:22Z",
+      "side": 1,
+      "message": "The helper from spm_common.c \u0027is_expected_cactus_response\u0027 would add some logs to this check, in case of failure.",
+      "range": {
+        "startLine": 281,
+        "startChar": 5,
+        "endLine": 281,
+        "endChar": 45
+      },
+      "revId": "d142ab732f6ac95cbddf2739518cf171520cba95",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
