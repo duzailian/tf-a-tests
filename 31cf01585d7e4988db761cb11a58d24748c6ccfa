@@ -16,6 +16,75 @@
       "message": "Failures are unrelated",
       "revId": "31cf01585d7e4988db761cb11a58d24748c6ccfa",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "873de008_f92de043",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_indirect_messaging.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2024-05-06T21:51:52Z",
+      "side": 1,
+      "message": "nit: squash into previous commit?",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 45
+      },
+      "revId": "31cf01585d7e4988db761cb11a58d24748c6ccfa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40ed9107_98f14b69",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_indirect_messaging.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2024-05-06T21:51:52Z",
+      "side": 1,
+      "message": "would message be able to send if there were pending notifications to the VM? is that another potential test case worth adding?",
+      "range": {
+        "startLine": 139,
+        "startChar": 1,
+        "endLine": 142,
+        "endChar": 4
+      },
+      "revId": "31cf01585d7e4988db761cb11a58d24748c6ccfa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd6092dd_11450eb1",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_indirect_messaging.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2024-05-06T21:51:52Z",
+      "side": 1,
+      "message": "nit unmap?",
+      "range": {
+        "startLine": 193,
+        "startChar": 4,
+        "endLine": 193,
+        "endChar": 8
+      },
+      "revId": "31cf01585d7e4988db761cb11a58d24748c6ccfa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
