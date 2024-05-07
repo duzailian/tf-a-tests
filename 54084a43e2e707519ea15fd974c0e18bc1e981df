@@ -116,6 +116,30 @@
       },
       "revId": "54084a43e2e707519ea15fd974c0e18bc1e981df",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92679b85_feffa724",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-07T14:55:17Z",
+      "side": 1,
+      "message": "I know this is flagged as a warning in the static checks, but this is widely used in our tests. I think it is the preferred way.",
+      "parentUuid": "df098754_a8ad32a4",
+      "range": {
+        "startLine": 423,
+        "startChar": 54,
+        "endLine": 423,
+        "endChar": 55
+      },
+      "revId": "54084a43e2e707519ea15fd974c0e18bc1e981df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
