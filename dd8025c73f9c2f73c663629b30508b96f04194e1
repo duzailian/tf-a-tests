@@ -16,6 +16,23 @@
       "message": "https://ci.trustedfirmware.org/job/tf-a-gerrit-tforg-l2/2104/\nhttps://ci.trustedfirmware.org/job/tf-a-main/1168/\n\nFailures in static checks can be ignored its due to a multi-line warning message about deprecating debugfs/pmf in arm-sip range.",
       "revId": "dd8025c73f9c2f73c663629b30508b96f04194e1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39d0dd4f_94c528c7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2024-05-07T08:56:02Z",
+      "side": 1,
+      "message": "Would you please also add a test to run old SMC_FID and get a warning from TF-A\nThat can come as a separate patch",
+      "revId": "dd8025c73f9c2f73c663629b30508b96f04194e1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
