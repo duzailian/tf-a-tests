@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80a8a9da_93737025",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_indirect_messaging.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-05-07T11:49:47Z",
+      "side": 1,
+      "message": "Header not needed",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 19
+      },
+      "revId": "54084a43e2e707519ea15fd974c0e18bc1e981df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1351db0b_2f9feef7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_indirect_messaging.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-05-07T11:49:47Z",
+      "side": 1,
+      "message": "Use `strncmp` and explicitly compare against 0",
+      "range": {
+        "startLine": 80,
+        "startChar": 5,
+        "endLine": 80,
+        "endChar": 11
+      },
+      "revId": "54084a43e2e707519ea15fd974c0e18bc1e981df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df098754_a8ad32a4",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-05-07T11:49:47Z",
+      "side": 1,
+      "message": "Leave out `{}` for single-statement `if` bodies",
+      "range": {
+        "startLine": 423,
+        "startChar": 54,
+        "endLine": 423,
+        "endChar": 55
+      },
+      "revId": "54084a43e2e707519ea15fd974c0e18bc1e981df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
