@@ -44,10 +44,10 @@ static int32_t request_mem_attr_changes(uintptr_t base_address,
 					int pages_count,
 					uint32_t memory_access_controls)
 {
-	INFO("Requesting memory attributes change\n");
-	INFO("  Start address  : %p\n", (void *) base_address);
-	INFO("  Number of pages: %i\n", pages_count);
-	INFO("  Attributes     : 0x%x\n", memory_access_controls);
+	VERBOSE("Requesting memory attributes change\n");
+	VERBOSE("  Start address  : %p\n", (void *) base_address);
+	VERBOSE("  Number of pages: %i\n", pages_count);
+	VERBOSE("  Attributes     : 0x%x\n", memory_access_controls);
 
 	svc_args svc_values = { SP_MEMORY_ATTRIBUTES_SET_AARCH64,
 				base_address,
@@ -62,8 +62,8 @@ static int32_t request_mem_attr_changes(uintptr_t base_address,
  */
 static int32_t request_get_mem_attr(uintptr_t base_address)
 {
-	INFO("Requesting memory attributes\n");
-	INFO("  Base address  : %p\n", (void *) base_address);
+	VERBOSE("Requesting memory attributes\n");
+	VERBOSE("  Base address  : %p\n", (void *) base_address);
 
 	svc_args svc_values = { SP_MEMORY_ATTRIBUTES_GET_AARCH64,
 				base_address };
