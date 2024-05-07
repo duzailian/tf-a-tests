@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb0b2299_875344b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-07T15:14:22Z",
+      "side": 1,
+      "message": "Both sender and retriever are VMs.\nRewrote, have a look and reopen if still is not clear.",
+      "parentUuid": "d6718215_bf6dba75",
+      "range": {
+        "startLine": 10,
+        "startChar": 21,
+        "endLine": 11,
+        "endChar": 42
+      },
+      "revId": "f33b50ba71e02cdee62049e897f629d8aa3b3568",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9cfea018_db3eac27",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-06T22:31:38Z",
       "side": 1,
       "message": "nit \"This patch tests\" or \"This patch adds\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 43,
+        "endLine": 12,
+        "endChar": 4
+      },
+      "revId": "f33b50ba71e02cdee62049e897f629d8aa3b3568",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a157f0f_83ae89e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-07T15:14:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9cfea018_db3eac27",
       "range": {
         "startLine": 11,
         "startChar": 43,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af59ba08_f602c701",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-07T15:14:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "946ac599_c0b60bc3",
+      "range": {
+        "startLine": 12,
+        "startChar": 44,
+        "endLine": 13,
+        "endChar": 6
+      },
+      "revId": "f33b50ba71e02cdee62049e897f629d8aa3b3568",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "23f8f8a9_ee84ce29",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-05-07T13:56:18Z",
       "side": 1,
       "message": "New line",
+      "range": {
+        "startLine": 1240,
+        "startChar": 88,
+        "endLine": 1240,
+        "endChar": 89
+      },
+      "revId": "f33b50ba71e02cdee62049e897f629d8aa3b3568",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be7bd68c_de755beb",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 1240,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-07T15:14:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23f8f8a9_ee84ce29",
       "range": {
         "startLine": 1240,
         "startChar": 88,
