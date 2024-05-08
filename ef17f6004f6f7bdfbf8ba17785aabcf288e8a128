@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35f647c3_660cc45e",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T14:09:46Z",
+      "side": 1,
+      "message": "RMI_RTT_FOLD",
+      "range": {
+        "startLine": 221,
+        "startChar": 3,
+        "endLine": 221,
+        "endChar": 15
+      },
+      "revId": "ef17f6004f6f7bdfbf8ba17785aabcf288e8a128",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0385164e_76e87669",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T14:09:46Z",
+      "side": 1,
+      "message": "This is not useful as a external helper I think. Tests can directly call the RMI.",
+      "revId": "ef17f6004f6f7bdfbf8ba17785aabcf288e8a128",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fef90277_5f7848e9",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T14:09:46Z",
+      "side": 1,
+      "message": "this is wrong as depending on level , there could be multiple pages.  Also it may not be possible to undelegate depending on RIPAS . \n\nI think this code should be removed.",
+      "range": {
+        "startLine": 360,
+        "startChar": 0,
+        "endLine": 366,
+        "endChar": 15
+      },
+      "revId": "ef17f6004f6f7bdfbf8ba17785aabcf288e8a128",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69a58b37_510bba84",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-08T14:09:46Z",
+      "side": 1,
+      "message": "this may be wrong.",
+      "range": {
+        "startLine": 393,
+        "startChar": 0,
+        "endLine": 395,
+        "endChar": 8
+      },
+      "revId": "ef17f6004f6f7bdfbf8ba17785aabcf288e8a128",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
