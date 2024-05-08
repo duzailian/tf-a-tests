@@ -72,6 +72,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "51a7fa23_a13ad17a",
+        "filename": "spm/cactus/cactus_tests/cactus_test_indirect_message.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-08T15:05:46Z",
+      "side": 1,
+      "message": "Closing the comment to progress with change. If there are major concerns we can follow up in a separate patch.",
+      "parentUuid": "2114d65c_e5159c59",
+      "revId": "c48c697629df3c949d79b4698ab74876cb5439a4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a7a94156_77d8938b",
