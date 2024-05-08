@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c7490f4_a638b134",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-05-08T16:46:51Z",
+      "side": 1,
+      "message": "This commit message seems a bit misleading to me. Does the fact the test is last matter? From what I can see all the tests that call bitmap_create also call bitmap_destroy apart from the test in this patch so that seems to be the important thing not that the test is run last in the suite. Let me know if I\u0027m wrong",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 8
+      },
+      "revId": "9e435893191a783d9a8982f012202ad5c337e1f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
