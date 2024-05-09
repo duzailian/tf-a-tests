@@ -47,7 +47,7 @@
 		share-memory-ns {
 			description = "NS share memory";
 			pages-count = <1>;
-			base-address = <0x00008800 0x80001000>;
+			base-address = <0x00000008 0x80001000>;
 			attributes = <0xb>; /* NS / read-write */
 		};
 	};
