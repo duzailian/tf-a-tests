@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ab3758b_12fe8fc8",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 2002,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-09T11:14:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35de5778_75a58860",
+      "range": {
+        "startLine": 2002,
+        "startChar": 4,
+        "endLine": 2002,
+        "endChar": 46
+      },
+      "revId": "d38de829d54c7bb78ef13c4752db3a2160eb1bc9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ec74b510_5821661c",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-08T14:02:49Z",
       "side": 1,
       "message": "unprotected_ipa",
+      "range": {
+        "startLine": 2004,
+        "startChar": 1,
+        "endLine": 2004,
+        "endChar": 6
+      },
+      "revId": "d38de829d54c7bb78ef13c4752db3a2160eb1bc9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7ac3576_93a4cdbb",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 2004,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-09T11:14:43Z",
+      "side": 1,
+      "message": "changed to ns_ipa",
+      "parentUuid": "ec74b510_5821661c",
       "range": {
         "startLine": 2004,
         "startChar": 1,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "20322191_edc7c27a",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 2024,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-09T11:14:43Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "7b791499_573bf196",
+      "range": {
+        "startLine": 2024,
+        "startChar": 1,
+        "endLine": 2024,
+        "endChar": 6
+      },
+      "revId": "d38de829d54c7bb78ef13c4752db3a2160eb1bc9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c8105e1e_a5667bbc",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-05-08T14:02:49Z",
       "side": 1,
       "message": "could use TFTF_END else we cannot be sure if any data will not get added later this marker in future.\n\nAdd comment:\n\n/* Assume we have 2 MB of free DDR space after TFTF_END which can be delegated and mapped in protected IPA space of Realm.",
+      "range": {
+        "startLine": 2117,
+        "startChar": 19,
+        "endLine": 2117,
+        "endChar": 54
+      },
+      "revId": "d38de829d54c7bb78ef13c4752db3a2160eb1bc9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c438e579_d3edcab6",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 2117,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-09T11:14:43Z",
+      "side": 1,
+      "message": "this is adr for second heap, which is not used in this testcase",
+      "parentUuid": "c8105e1e_a5667bbc",
       "range": {
         "startLine": 2117,
         "startChar": 19,
@@ -110,6 +206,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb5dc861_affe8de0",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 2131,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-09T11:14:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b2ce3e2_b3928403",
+      "revId": "d38de829d54c7bb78ef13c4752db3a2160eb1bc9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b2787731_9874e3da",
@@ -123,6 +237,30 @@
       "writtenOn": "2024-05-08T14:02:49Z",
       "side": 1,
       "message": "..  and ..",
+      "range": {
+        "startLine": 2203,
+        "startChar": 32,
+        "endLine": 2203,
+        "endChar": 33
+      },
+      "revId": "d38de829d54c7bb78ef13c4752db3a2160eb1bc9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d127bea_37e0dd10",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 2203,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-09T11:14:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2787731_9874e3da",
       "range": {
         "startLine": 2203,
         "startChar": 32,
