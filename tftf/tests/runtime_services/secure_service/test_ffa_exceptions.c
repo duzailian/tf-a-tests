@@ -81,7 +81,7 @@ test_result_t rl_memory_cannot_be_accessed_in_s(void)
 	/* Delegate the shared page to Realm. */
 	retmm = host_rmi_granule_delegate((u_register_t)&share_page);
 	if (retmm != 0UL) {
-		ERROR("Granule delegate failed, ret=0x%lx\n", retmm);
+		ERROR("Granule delegate failed, ret=%#lx\n", retmm);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -95,7 +95,7 @@ test_result_t rl_memory_cannot_be_accessed_in_s(void)
 	/* Undelegate the shared page. */
 	retmm = host_rmi_granule_undelegate((u_register_t)&share_page);
 	if (retmm != 0UL) {
-		ERROR("Granule undelegate failed, ret=0x%lx\n", retmm);
+		ERROR("Granule undelegate failed, ret=%#lx\n", retmm);
 		return TEST_RESULT_FAIL;
 	}
 
