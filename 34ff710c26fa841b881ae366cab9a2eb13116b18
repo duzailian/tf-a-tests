@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7c8a9fb_62ab6fbc",
+        "filename": "include/runtime_services/ffa_helpers.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-05-09T11:39:21Z",
+      "side": 1,
+      "message": "Document that this field MBZ also",
+      "range": {
+        "startLine": 305,
+        "startChar": 10,
+        "endLine": 305,
+        "endChar": 18
+      },
+      "revId": "34ff710c26fa841b881ae366cab9a2eb13116b18",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
