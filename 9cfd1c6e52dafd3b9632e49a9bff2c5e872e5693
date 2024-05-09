@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e50967ff_42da2e6e",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 1500,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2024-05-09T22:11:05Z",
+      "side": 1,
+      "message": "nit: typo a",
+      "range": {
+        "startLine": 1500,
+        "startChar": 13,
+        "endLine": 1500,
+        "endChar": 16
+      },
+      "revId": "9cfd1c6e52dafd3b9632e49a9bff2c5e872e5693",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fd020a1_ee3dca66",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 1504,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2024-05-09T22:11:05Z",
+      "side": 1,
+      "message": "TX?",
+      "range": {
+        "startLine": 1504,
+        "startChar": 3,
+        "endLine": 1504,
+        "endChar": 6
+      },
+      "revId": "9cfd1c6e52dafd3b9632e49a9bff2c5e872e5693",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cab8f8bc_97db8c43",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 1512,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2024-05-09T22:11:05Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 1512,
+        "startChar": 13,
+        "endLine": 1512,
+        "endChar": 16
+      },
+      "revId": "9cfd1c6e52dafd3b9632e49a9bff2c5e872e5693",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "346f0f63_e4f4d333",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 1515,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2024-05-09T22:11:05Z",
+      "side": 1,
+      "message": "RX?",
+      "range": {
+        "startLine": 1515,
+        "startChar": 76,
+        "endLine": 1515,
+        "endChar": 78
+      },
+      "revId": "9cfd1c6e52dafd3b9632e49a9bff2c5e872e5693",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
