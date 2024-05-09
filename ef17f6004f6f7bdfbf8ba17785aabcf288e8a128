@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf91c4d4_9a25df8c",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-09T11:14:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35f647c3_660cc45e",
+      "range": {
+        "startLine": 221,
+        "startChar": 3,
+        "endLine": 221,
+        "endChar": 15
+      },
+      "revId": "ef17f6004f6f7bdfbf8ba17785aabcf288e8a128",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0385164e_76e87669",
@@ -55,6 +79,42 @@
       "side": 1,
       "message": "we can keep the helper, for destroying the child rtt returned",
       "parentUuid": "0385164e_76e87669",
+      "revId": "ef17f6004f6f7bdfbf8ba17785aabcf288e8a128",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f2c6b3f_8b993556",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-09T11:14:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e06962d_bfea426d",
+      "revId": "ef17f6004f6f7bdfbf8ba17785aabcf288e8a128",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54260abf_91a04ae4",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-09T11:14:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e06962d_bfea426d",
       "revId": "ef17f6004f6f7bdfbf8ba17785aabcf288e8a128",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -143,6 +203,30 @@
       "side": 1,
       "message": "yes this needs tidying up, it is not used directly to create mapping,\nwill change",
       "parentUuid": "69a58b37_510bba84",
+      "range": {
+        "startLine": 393,
+        "startChar": 0,
+        "endLine": 395,
+        "endChar": 8
+      },
+      "revId": "ef17f6004f6f7bdfbf8ba17785aabcf288e8a128",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a11a593_40309ebe",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-09T11:14:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d698061_298fd8fb",
       "range": {
         "startLine": 393,
         "startChar": 0,
