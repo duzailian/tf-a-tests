@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36ab6410_099ae09e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2024-05-09T19:52:49Z",
+      "side": 1,
+      "message": "Providing CoR as the last version has CoR from Karl and there is just comment updated",
+      "revId": "779fba660d61c8d95adbc66cb5b7086d681e1eaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
