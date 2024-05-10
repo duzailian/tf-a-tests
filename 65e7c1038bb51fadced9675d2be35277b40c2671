@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "509fce35_524521fe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 25
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-10T18:28:45Z",
+      "side": 1,
+      "message": "I wonder, should we have negative tests for RTT_FOLD as well?\n\ne.g. create an heterogeneous table, try to fold and verify that it fails as expected.",
+      "revId": "65e7c1038bb51fadced9675d2be35277b40c2671",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
