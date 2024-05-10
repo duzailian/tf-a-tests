@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13443b49_d26043d2",
+        "filename": "realm/include/platform_def.h",
+        "patchSetId": 50
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-10T18:03:37Z",
+      "side": 1,
+      "message": "nit: Are we sure we need such high number of tables and mmap regions? We should have plenty of space, but it might be better to adjust it properly if possible.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 28
+      },
+      "revId": "ed99fb274cb08179f011631835a1a527aab4e6c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
