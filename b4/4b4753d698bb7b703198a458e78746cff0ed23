@@ -1,0 +1,10 @@
+Maintainer-Review+1: Soby Mathew <soby.mathew@arm.com>
+Allow-CI+2: Joao Alves <joao.alves@arm.com>
+Code-Review+1: Soby Mathew <soby.mathew@arm.com>
+Code-Owner-Review+1: Daniel Boulby <daniel.boulby@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Mon, 13 May 2024 15:21:49 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/28799
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
