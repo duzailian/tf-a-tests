@@ -328,7 +328,7 @@ void __dead2 cactus_main(bool primary_cold_boot,
 	register_maintenance_interrupt_handlers();
 
 	/* Invoking Tests */
-	ffa_tests(&mb);
+	ffa_tests(&mb, true);
 
 msg_loop:
 	/* End up to message loop */

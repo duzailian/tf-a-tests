@@ -13,6 +13,6 @@
  * Test functions
  */
 
-void ffa_tests(struct mailbox_buffers *mb);
+void ffa_tests(struct mailbox_buffers *mb, bool el1_partition);
 
 #endif /* CACTUS_TESTS_H */
