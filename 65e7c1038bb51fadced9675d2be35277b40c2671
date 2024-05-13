@@ -16,6 +16,57 @@
       "message": "I wonder, should we have negative tests for RTT_FOLD as well?\n\ne.g. create an heterogeneous table, try to fold and verify that it fails as expected.",
       "revId": "65e7c1038bb51fadced9675d2be35277b40c2671",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f72796e_0b3b1df3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 25
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T13:19:17Z",
+      "side": 1,
+      "message": "minor comments",
+      "revId": "65e7c1038bb51fadced9675d2be35277b40c2671",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71605c49_e42f527f",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T13:19:17Z",
+      "side": 1,
+      "message": "There is an asymmetry between host_realm_delegate_map_protected_data() and host_realm_map_unprotected() in that the latter maps as a block where as the former maps it always at level 3. \n\nIt would be good to align the behaviour else test writers may trip up unintentionally. Could retain the fold for host_realm_delegate_map_protected_data().",
+      "revId": "65e7c1038bb51fadced9675d2be35277b40c2671",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "790a1fdc_71e85cbb",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 2045,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T13:19:17Z",
+      "side": 1,
+      "message": "could add a comment why we are executing the realm even though it is not needed for the base test functionality. Or remove this as well ?",
+      "revId": "65e7c1038bb51fadced9675d2be35277b40c2671",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
