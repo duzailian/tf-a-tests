@@ -22,6 +22,30 @@
       },
       "revId": "dfc4d7f46fb95441443066f60d1b855f7ef9c364",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b715db6a_0773dac5",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T13:25:02Z",
+      "side": 0,
+      "message": "It seems this was added for parity with host_realm_map_unprotected(), in which it makes sense to retain this. See comments on next patch.\n\nAdd a comment at line 441\n\n/* Fold the created data mappings to the requested map_size */",
+      "parentUuid": "f71b65da_3d874f6f",
+      "range": {
+        "startLine": 441,
+        "startChar": 0,
+        "endLine": 453,
+        "endChar": 2
+      },
+      "revId": "dfc4d7f46fb95441443066f60d1b855f7ef9c364",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
