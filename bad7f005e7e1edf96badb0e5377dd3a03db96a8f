@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f12425d2_fad7423a",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 1828,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T13:06:41Z",
+      "side": 1,
+      "message": "describe the test more accurately.\n\nFind an addess which is",
+      "range": {
+        "startLine": 1828,
+        "startChar": 2,
+        "endLine": 1828,
+        "endChar": 44
+      },
+      "revId": "bad7f005e7e1edf96badb0e5377dd3a03db96a8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a58c9308_8a05fbdc",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 1856,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T13:06:41Z",
+      "side": 1,
+      "message": "Is this correct ? It seems we are looking for an address mapped at L0 in S2.\n\nNeed more description. This seems to be a repeating comment which I am giving for your patches and it is taking a lot of effort from my part.\n\nexample:\n\" Find an IPA which is mapped at Level 0 of Stage 2 tables in RMM with HIPAS\u003dx and RIPAS \u003d y \"\n\nWhy is PAGE_POOL_BASE selected here ? Previously we have selected TFTF_BASE. It is not reader friendly to select random symbols in Linker script which may have certain property on FVP. Would rather we stick to one symbol and iterate till we find a match.\n\nIt seems HIPAS\u003dUNASSIGNED and RIPAS_EMPTY being selected. This again needs to be mentioned in test description.",
+      "range": {
+        "startLine": 1856,
+        "startChar": 1,
+        "endLine": 1856,
+        "endChar": 39
+      },
+      "revId": "bad7f005e7e1edf96badb0e5377dd3a03db96a8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bcfdbd03_211f09bb",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 1879,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-13T13:06:41Z",
+      "side": 1,
+      "message": "check RIPAS and HIPAS and ensure it matches with expectation. Else fold will fail.",
+      "range": {
+        "startLine": 1879,
+        "startChar": 47,
+        "endLine": 1879,
+        "endChar": 49
+      },
+      "revId": "bad7f005e7e1edf96badb0e5377dd3a03db96a8f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
