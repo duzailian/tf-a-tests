@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2aaec256_66fc9425",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 28
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T12:45:59Z",
+      "side": 1,
+      "message": "Triggered internal RMM main job : https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-main/651/",
+      "revId": "0c790033596ede7423239de97b93982f7209cdb3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
