@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d78007eb_038e23bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 25
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T11:10:20Z",
+      "side": 1,
+      "message": "good rework, some minor comments.",
+      "revId": "a46aa572328e8ada003f6526f06744757456b847",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25fbd113_d5ed0856",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 1867,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T11:10:20Z",
+      "side": 1,
+      "message": "nit: need an additional tab.",
+      "revId": "a46aa572328e8ada003f6526f06744757456b847",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12f7ae30_f07f6599",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 1879,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T11:10:20Z",
+      "side": 1,
+      "message": "nit: suggest\n\"L3 entry is expected now\"",
+      "range": {
+        "startLine": 1879,
+        "startChar": 13,
+        "endLine": 1879,
+        "endChar": 30
+      },
+      "revId": "a46aa572328e8ada003f6526f06744757456b847",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43455c8b_cff5748e",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 1978,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T11:10:20Z",
+      "side": 1,
+      "message": "nit: unassigned",
+      "range": {
+        "startLine": 1978,
+        "startChar": 38,
+        "endLine": 1978,
+        "endChar": 49
+      },
+      "revId": "a46aa572328e8ada003f6526f06744757456b847",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5bf5981_df42109e",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 2023,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T11:10:20Z",
+      "side": 1,
+      "message": "would be good to verify that top \u003d base + RTT_MAP_SIZE(0)",
+      "range": {
+        "startLine": 2023,
+        "startChar": 73,
+        "endLine": 2023,
+        "endChar": 76
+      },
+      "revId": "a46aa572328e8ada003f6526f06744757456b847",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2333553e_db1deb69",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 25
+      },
+      "lineNbr": 2036,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-05-14T11:10:20Z",
+      "side": 1,
+      "message": "could also verify that walk_level \u003d\u003d 0 .",
+      "range": {
+        "startLine": 2036,
+        "startChar": 24,
+        "endLine": 2036,
+        "endChar": 26
+      },
+      "revId": "a46aa572328e8ada003f6526f06744757456b847",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
