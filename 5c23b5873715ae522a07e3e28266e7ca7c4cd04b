@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "767456a5_5fc6d41a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 27
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-05-14T11:18:59Z",
+      "side": 1,
+      "message": "rmm ci https://jenkins.openci.aws.arm.com/job/rmm-worker/12059/artifact/artefacts/lava-uart0.log",
+      "revId": "5c23b5873715ae522a07e3e28266e7ca7c4cd04b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
