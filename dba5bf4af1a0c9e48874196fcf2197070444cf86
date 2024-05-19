@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20d0c484_ab20a921",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-05-19T20:41:49Z",
+      "side": 1,
+      "message": "Should move above in FF-A testing",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 48
+      },
+      "revId": "dba5bf4af1a0c9e48874196fcf2197070444cf86",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aecc9f87_3853b3d0",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-05-19T20:41:49Z",
+      "side": 1,
+      "message": "We may state \u0027FF-A test partition\u0027 to clarify this test payload serves testing the FF-A implementation.",
+      "range": {
+        "startLine": 163,
+        "startChar": 19,
+        "endLine": 163,
+        "endChar": 33
+      },
+      "revId": "dba5bf4af1a0c9e48874196fcf2197070444cf86",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
