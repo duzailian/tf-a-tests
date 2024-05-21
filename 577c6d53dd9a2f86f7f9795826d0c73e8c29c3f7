@@ -1,0 +1,579 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a51d022b_3313aa1e",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "nitpick: SPM/FF-A testing:",
+      "range": {
+        "startLine": 28,
+        "startChar": 3,
+        "endLine": 28,
+        "endChar": 7
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a26ab5ab_93137fc0",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "Full stop and to all others in this section",
+      "range": {
+        "startLine": 30,
+        "startChar": 70,
+        "endLine": 30,
+        "endChar": 72
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9844d82_6b627be7",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "framework code",
+      "range": {
+        "startLine": 31,
+        "startChar": 29,
+        "endLine": 31,
+        "endChar": 38
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba2b3cad_403d82c3",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "Could you please rewrite:\n\"messaging VMs to SPs; and aborted FFA_MSG_SEND2 call from both SPs and tftf\"",
+      "range": {
+        "startLine": 31,
+        "startChar": 50,
+        "endLine": 32,
+        "endChar": 44
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6694555_74f69be4",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "Test that NWd can\u0027t lend/donate realm memory.",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 49
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8bc36a9_835720a3",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "accesses",
+      "range": {
+        "startLine": 34,
+        "startChar": 21,
+        "endLine": 34,
+        "endChar": 25
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "966debeb_54d169f0",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "all the constituents descriptors",
+      "range": {
+        "startLine": 34,
+        "startChar": 30,
+        "endLine": 34,
+        "endChar": 42
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5df0d65f_ded452d1",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "Rewrite:\n\"... to obtain interrupt IDs for: Notification Pending Interrupt, Schedule Receiver Interrupt and Managed Exit.\"",
+      "range": {
+        "startLine": 36,
+        "startChar": 23,
+        "endLine": 36,
+        "endChar": 41
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb496735_0ec27eb4",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "Increase test coverage for FFA_RXTX_MAP and FFA_RXTX_UNMAP.",
+      "range": {
+        "startLine": 37,
+        "startChar": 5,
+        "endLine": 37,
+        "endChar": 34
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "822242e0_5e41085f",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "drop entry entirely",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 54
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4322fa68_6f496cf7",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "Move next to the bullet in line 31. They are remotely related.",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 41
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46f57185_9b135634",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "Can be dropped as it is part of the framework code mentioned in line 31",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 78
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29e741c6_f2b67efa",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "RX/TX",
+      "range": {
+        "startLine": 43,
+        "startChar": 49,
+        "endLine": 43,
+        "endChar": 53
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a3b987d_4afc6bd3",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "Move next to bullet 40.",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 65
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79eb07ad_a6256bab",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "ffa_memory_access structures",
+      "range": {
+        "startLine": 44,
+        "startChar": 27,
+        "endLine": 44,
+        "endChar": 44
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5cca1cba_cfb27027",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "drop",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 45
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e280bcba_6c6a932a",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "In FFA_MSG_SEND_DIRECT_REQ/FFA_MSG_DRIECT_REQ2 calls return FFA_ERROR(FFA_BUSY), with establishing cycling dependencies.",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 50
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8afac35_5a227aa5",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "drop",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 70
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "710216e1_b6186714",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "drop. This was temporary. They were reestablished later.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 38
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5c6e53c_3d8ac55e",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "split in two:\n- Tests for Hypervisor retrieve request: contents checks, fragmented request, verify receivers.\n- Test RME enabled platform the FFA_MEM_LEND/FFA_MEM_DONATE.",
+      "range": {
+        "startLine": 54,
+        "startChar": 5,
+        "endLine": 55,
+        "endChar": 60
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d32b78b9_2a6e64f2",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "drop, repeated with entry at the beggining.",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 62
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "679b6ef0_9d8d0701",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "Rewrite:\nFix notifications test to clean-up after itself, and destroy bitmap allocated for the VM in the SPMC.",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 69
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a611088a_adee52ae",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "either \"NS\" or \"non-secure\"",
+      "range": {
+        "startLine": 59,
+        "startChar": 49,
+        "endLine": 59,
+        "endChar": 51
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d537eb1_6740692d",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "Drop, IMO can be implied in the DMA isolation.",
+      "range": {
+        "startLine": 60,
+        "startChar": 5,
+        "endLine": 60,
+        "endChar": 48
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80f70033_4be2192c",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-05-21T13:14:13Z",
+      "side": 1,
+      "message": "Drop. This has been described in FF-A/SPM section",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 55
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
