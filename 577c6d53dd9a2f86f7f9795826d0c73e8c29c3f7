@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c155061b_5a55e8b1",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a51d022b_3313aa1e",
+      "range": {
+        "startLine": 28,
+        "startChar": 3,
+        "endLine": 28,
+        "endChar": 7
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a26ab5ab_93137fc0",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-21T13:14:13Z",
       "side": 1,
       "message": "Full stop and to all others in this section",
+      "range": {
+        "startLine": 30,
+        "startChar": 70,
+        "endLine": 30,
+        "endChar": 72
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d9ad690_267b2404",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a26ab5ab_93137fc0",
       "range": {
         "startLine": 30,
         "startChar": 70,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed0f1627_fd9ac987",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b9844d82_6b627be7",
+      "range": {
+        "startLine": 31,
+        "startChar": 29,
+        "endLine": 31,
+        "endChar": 38
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ba2b3cad_403d82c3",
@@ -93,6 +165,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6d23038_e02efc8d",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2b3cad_403d82c3",
+      "range": {
+        "startLine": 31,
+        "startChar": 50,
+        "endLine": 32,
+        "endChar": 44
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e6694555_74f69be4",
@@ -106,6 +202,30 @@
       "writtenOn": "2024-05-21T13:14:13Z",
       "side": 1,
       "message": "Test that NWd can\u0027t lend/donate realm memory.",
+      "range": {
+        "startLine": 33,
+        "startChar": 4,
+        "endLine": 33,
+        "endChar": 49
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22d51239_f62a6d2d",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e6694555_74f69be4",
       "range": {
         "startLine": 33,
         "startChar": 4,
@@ -162,6 +282,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "97d485f0_79aea2b6",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8bc36a9_835720a3",
+      "range": {
+        "startLine": 34,
+        "startChar": 21,
+        "endLine": 34,
+        "endChar": 25
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50a8bea0_d7a76e97",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "966debeb_54d169f0",
+      "range": {
+        "startLine": 34,
+        "startChar": 30,
+        "endLine": 34,
+        "endChar": 42
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5df0d65f_ded452d1",
@@ -175,6 +343,30 @@
       "writtenOn": "2024-05-21T13:14:13Z",
       "side": 1,
       "message": "Rewrite:\n\"... to obtain interrupt IDs for: Notification Pending Interrupt, Schedule Receiver Interrupt and Managed Exit.\"",
+      "range": {
+        "startLine": 36,
+        "startChar": 23,
+        "endLine": 36,
+        "endChar": 41
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec662c31_b8943921",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5df0d65f_ded452d1",
       "range": {
         "startLine": 36,
         "startChar": 23,
@@ -208,6 +400,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be11b28a_d9811c4f",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb496735_0ec27eb4",
+      "range": {
+        "startLine": 37,
+        "startChar": 5,
+        "endLine": 37,
+        "endChar": 34
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "822242e0_5e41085f",
@@ -221,6 +437,30 @@
       "writtenOn": "2024-05-21T13:14:13Z",
       "side": 1,
       "message": "drop entry entirely",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 54
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d63aec6_6831ebaf",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "822242e0_5e41085f",
       "range": {
         "startLine": 40,
         "startChar": 0,
@@ -254,6 +494,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "353372ea_022ac0d4",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4322fa68_6f496cf7",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 41
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "46f57185_9b135634",
@@ -267,6 +531,30 @@
       "writtenOn": "2024-05-21T13:14:13Z",
       "side": 1,
       "message": "Can be dropped as it is part of the framework code mentioned in line 31",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 78
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f3a8fd2_51f01347",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46f57185_9b135634",
       "range": {
         "startLine": 42,
         "startChar": 0,
@@ -323,6 +611,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "64280ebd_98e85f58",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29e741c6_f2b67efa",
+      "range": {
+        "startLine": 43,
+        "startChar": 49,
+        "endLine": 43,
+        "endChar": 53
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ca0d362_9299ffef",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Hmmm... not sure what you meant with this. You told me to drop line 40. Maybe you meant line 37?",
+      "parentUuid": "8a3b987d_4afc6bd3",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 65
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "79eb07ad_a6256bab",
@@ -336,6 +672,30 @@
       "writtenOn": "2024-05-21T13:14:13Z",
       "side": 1,
       "message": "ffa_memory_access structures",
+      "range": {
+        "startLine": 44,
+        "startChar": 27,
+        "endLine": 44,
+        "endChar": 44
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcb611ea_32dcc1fd",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79eb07ad_a6256bab",
       "range": {
         "startLine": 44,
         "startChar": 27,
@@ -369,6 +729,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "afb0a939_343d29b1",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5cca1cba_cfb27027",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 45
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e280bcba_6c6a932a",
@@ -382,6 +766,30 @@
       "writtenOn": "2024-05-21T13:14:13Z",
       "side": 1,
       "message": "In FFA_MSG_SEND_DIRECT_REQ/FFA_MSG_DRIECT_REQ2 calls return FFA_ERROR(FFA_BUSY), with establishing cycling dependencies.",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 50
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d23e812_681ddc05",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e280bcba_6c6a932a",
       "range": {
         "startLine": 50,
         "startChar": 0,
@@ -415,6 +823,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "76b44e83_996342aa",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8afac35_5a227aa5",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 70
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "710216e1_b6186714",
@@ -428,6 +860,30 @@
       "writtenOn": "2024-05-21T13:14:13Z",
       "side": 1,
       "message": "drop. This was temporary. They were reestablished later.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 38
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c668574_0cb636bd",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "710216e1_b6186714",
       "range": {
         "startLine": 52,
         "startChar": 0,
@@ -461,6 +917,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b755c2e5_23478ecd",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5c6e53c_3d8ac55e",
+      "range": {
+        "startLine": 54,
+        "startChar": 5,
+        "endLine": 55,
+        "endChar": 60
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d32b78b9_2a6e64f2",
@@ -474,6 +954,30 @@
       "writtenOn": "2024-05-21T13:14:13Z",
       "side": 1,
       "message": "drop, repeated with entry at the beggining.",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 62
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18130499_26f541bd",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d32b78b9_2a6e64f2",
       "range": {
         "startLine": 56,
         "startChar": 0,
@@ -507,6 +1011,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "59442e52_9b26dd1f",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "679b6ef0_9d8d0701",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 69
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a611088a_adee52ae",
@@ -520,6 +1048,30 @@
       "writtenOn": "2024-05-21T13:14:13Z",
       "side": 1,
       "message": "either \"NS\" or \"non-secure\"",
+      "range": {
+        "startLine": 59,
+        "startChar": 49,
+        "endLine": 59,
+        "endChar": 51
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf5cf55b_961c07c9",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a611088a_adee52ae",
       "range": {
         "startLine": 59,
         "startChar": 49,
@@ -553,6 +1105,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a2c74f7_bfc15330",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d537eb1_6740692d",
+      "range": {
+        "startLine": 60,
+        "startChar": 5,
+        "endLine": 60,
+        "endChar": 48
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80f70033_4be2192c",
@@ -566,6 +1142,30 @@
       "writtenOn": "2024-05-21T13:14:13Z",
       "side": 1,
       "message": "Drop. This has been described in FF-A/SPM section",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 55
+      },
+      "revId": "577c6d53dd9a2f86f7f9795826d0c73e8c29c3f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3b1b918_e7d633e2",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-05-21T17:49:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80f70033_4be2192c",
       "range": {
         "startLine": 129,
         "startChar": 0,
