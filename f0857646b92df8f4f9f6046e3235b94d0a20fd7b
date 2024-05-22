@@ -71,6 +71,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05978844_3160f3ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-05-22T21:20:32Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "8cdc406f_bb132f7f",
+      "revId": "f0857646b92df8f4f9f6046e3235b94d0a20fd7b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f619ec8b_0bb2402b",
@@ -519,6 +537,30 @@
       "side": 1,
       "message": "Hi Bipin, some of them seem to resolve issues but I agree that some others seem more like an improvement. I just followed the format from previous changelogs but can move them somewhere else or create another section for improvements if you think it\u0027s better.",
       "parentUuid": "7a1fa1e7_d8a435f1",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 177,
+        "endChar": 59
+      },
+      "revId": "f0857646b92df8f4f9f6046e3235b94d0a20fd7b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c35e061_b0bf11b9",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-05-22T21:20:32Z",
+      "side": 1,
+      "message": "I would keep this for now as it might need the component owners to distinguish improvement vs fixes. But something to separate out in future releases if it applies.",
+      "parentUuid": "8d82f981_f073a9e8",
       "range": {
         "startLine": 172,
         "startChar": 0,
