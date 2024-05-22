@@ -95,6 +95,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5e74ea24_9d038c3e",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-05-22T17:35:50Z",
+      "side": 1,
+      "message": "Renamed",
+      "range": {
+        "startLine": 47,
+        "startChar": 5,
+        "endLine": 47,
+        "endChar": 12
+      },
+      "revId": "f0857646b92df8f4f9f6046e3235b94d0a20fd7b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4304c766_cef09069",
         "filename": "docs/change-log.rst",
         "patchSetId": 3
@@ -111,6 +134,144 @@
         "startChar": 0,
         "endLine": 53,
         "endChar": 63
+      },
+      "revId": "f0857646b92df8f4f9f6046e3235b94d0a20fd7b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9ba1a52_88ee4140",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-05-22T17:35:50Z",
+      "side": 1,
+      "message": "Tested \nOr \n\nTest to verify FFA_MEM_LEND/FFA_MEM_DONATE in a RME enabled platfrom.",
+      "range": {
+        "startLine": 53,
+        "startChar": 5,
+        "endLine": 53,
+        "endChar": 9
+      },
+      "revId": "f0857646b92df8f4f9f6046e3235b94d0a20fd7b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fe32b21_1069dd8b",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-05-22T17:35:50Z",
+      "side": 1,
+      "message": "Fixed",
+      "range": {
+        "startLine": 54,
+        "startChar": 5,
+        "endLine": 54,
+        "endChar": 8
+      },
+      "revId": "f0857646b92df8f4f9f6046e3235b94d0a20fd7b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1314315_6978c8f3",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-05-22T17:35:50Z",
+      "side": 1,
+      "message": "Something missing? Can you make it more clear?\nRemove \",\" too",
+      "range": {
+        "startLine": 55,
+        "startChar": 39,
+        "endLine": 55,
+        "endChar": 53
+      },
+      "revId": "f0857646b92df8f4f9f6046e3235b94d0a20fd7b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa4f200a_f2fa2615",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-05-22T17:35:50Z",
+      "side": 1,
+      "message": "Refactored",
+      "range": {
+        "startLine": 64,
+        "startChar": 5,
+        "endLine": 64,
+        "endChar": 13
+      },
+      "revId": "f0857646b92df8f4f9f6046e3235b94d0a20fd7b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6397740a_c9b501dc",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-05-22T17:35:50Z",
+      "side": 1,
+      "message": "Tested",
+      "range": {
+        "startLine": 65,
+        "startChar": 5,
+        "endLine": 65,
+        "endChar": 9
+      },
+      "revId": "f0857646b92df8f4f9f6046e3235b94d0a20fd7b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a1fa1e7_d8a435f1",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2024-05-22T17:35:50Z",
+      "side": 1,
+      "message": "Are these all issues? Some sounds like improvements or additions. Asking since the section mentions Issues resolved.",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 177,
+        "endChar": 59
       },
       "revId": "f0857646b92df8f4f9f6046e3235b94d0a20fd7b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
