@@ -1,0 +1,11 @@
+Allow-CI+2: Soby Mathew <soby.mathew@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Maintainer-Review+1: Soby Mathew <soby.mathew@arm.com>
+Code-Review+1: Soby Mathew <soby.mathew@arm.com>
+Code-Owner-Review+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Thu, 23 May 2024 17:51:57 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/26795
+Comments-Total: 23
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
