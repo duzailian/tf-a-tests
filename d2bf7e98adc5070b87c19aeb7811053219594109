@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ecc3c689_49f49281",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_spm.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-05-29T20:03:36Z",
+      "side": 1,
+      "message": "nitpick: initialise",
+      "range": {
+        "startLine": 75,
+        "startChar": 26,
+        "endLine": 75,
+        "endChar": 37
+      },
+      "revId": "d2bf7e98adc5070b87c19aeb7811053219594109",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d67f3df_0dbd3f24",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_spm.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-05-29T20:03:36Z",
+      "side": 1,
+      "message": "!\u003d NULL",
+      "revId": "d2bf7e98adc5070b87c19aeb7811053219594109",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "066d8731_a25189ae",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_spm.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-05-29T20:03:36Z",
+      "side": 1,
+      "message": "Just curious why 4 was used instead of 8 as in ine 458? It increases the probability of FPU being picked right?",
+      "revId": "d2bf7e98adc5070b87c19aeb7811053219594109",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60ac1ccf_12c5ade2",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_spm.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-05-29T20:03:36Z",
+      "side": 1,
+      "message": "nitpick: is it necessary to specify Q register since it is a true subset of Z register?",
+      "range": {
+        "startLine": 684,
+        "startChar": 71,
+        "endLine": 684,
+        "endChar": 78
+      },
+      "revId": "d2bf7e98adc5070b87c19aeb7811053219594109",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf4a4e21_bd5e82f9",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_spm.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-05-29T20:03:36Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 696,
+        "startChar": 31,
+        "endLine": 696,
+        "endChar": 37
+      },
+      "revId": "d2bf7e98adc5070b87c19aeb7811053219594109",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "742addc1_ba5f720b",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_spm.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 760,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-05-29T20:03:36Z",
+      "side": 1,
+      "message": "nitpick:\nif (num_simd_configs \u003e 0U) {",
+      "revId": "d2bf7e98adc5070b87c19aeb7811053219594109",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
