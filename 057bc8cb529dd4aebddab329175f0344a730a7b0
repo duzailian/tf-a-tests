@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "79a93910_256953e1",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 16
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-31T14:23:53Z",
+      "side": 1,
+      "message": "Yes, I miss that. Thanks",
+      "parentUuid": "5ee0e7ec_cffd82ef",
+      "revId": "057bc8cb529dd4aebddab329175f0344a730a7b0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c9a6c763_684f5c2c",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-05-31T10:45:52Z",
       "side": 1,
       "message": "we can remove this utility, code is already using RTT_MAP_SIZE macro",
+      "revId": "057bc8cb529dd4aebddab329175f0344a730a7b0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac345a2d_a94b84ed",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-05-31T14:23:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9a6c763_684f5c2c",
       "revId": "057bc8cb529dd4aebddab329175f0344a730a7b0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
