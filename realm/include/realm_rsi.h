@@ -103,6 +103,32 @@ struct rsi_host_call {
 #define RSI_IPA_STATE_SET	SMC_RSI_FID(7U)
 #define RSI_IPA_STATE_GET	SMC_RSI_FID(8U)
 
+
+/*
+ * Initialize the operation to retrieve an attestation token.
+ * arg1: Challenge value, bytes:  0 -  7
+ * arg2: Challenge value, bytes:  8 - 15
+ * arg3: Challenge value, bytes: 16 - 23
+ * arg4: Challenge value, bytes: 24 - 31
+ * arg5: Challenge value, bytes: 32 - 39
+ * arg6: Challenge value, bytes: 40 - 47
+ * arg7: Challenge value, bytes: 48 - 55
+ * arg8: Challenge value, bytes: 56 - 63
+ * ret0: Status / error
+ * ret1: Upper bound on attestation token size in bytes
+ */
+#define RSI_ATTEST_TOKEN_INIT	SMC_RSI_FID(U(0x4))
+
+/*
+ * Continue the operation to retrieve an attestation token.
+ * arg1: IPA of the Granule to which the token will be written
+ * arg2: Offset within Granule to start of buffer in bytes
+ * arg3: Size of buffer in bytes
+ * ret0: Status / error
+ * ret1: Number of bytes written to buffer
+ */
+#define RSI_ATTEST_TOKEN_CONTINUE	SMC_RSI_FID(U(0x5))
+
 typedef enum {
 	RSI_EMPTY = 0U,
 	RSI_RAM,
@@ -136,5 +162,14 @@ u_register_t rsi_get_ns_buffer(void);
 
 /* This function call Host and request to exit Realm with proper exit code */
 void rsi_exit_to_host(enum host_call_cmd exit_code);
+
+u_register_t rsi_attest_token_init(u_register_t c0, u_register_t c1, u_register_t c2,
+u_register_t c3, u_register_t c4, u_register_t c5, u_register_t c6, u_register_t c7,
+u_register_t *token_size);
+
+u_register_t rsi_attest_token_continue(u_register_t addr,
+			       u_register_t offset,
+			       rsi_ripas_type buf_size,
+			       u_register_t *write_size);
 
 #endif /* REALM_RSI_H */

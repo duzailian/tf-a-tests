@@ -11,6 +11,33 @@
 #include <realm_rsi.h>
 #include <smccc.h>
 
+u_register_t rsi_attest_token_init(u_register_t c0, u_register_t c1, u_register_t c2,
+u_register_t c3, u_register_t c4, u_register_t c5, u_register_t c6, u_register_t c7,
+u_register_t *token_size)
+{
+	smc_ret_values res = {};
+
+	res = tftf_smc(&(smc_args) {RSI_ATTEST_TOKEN_INIT, c0, c1, c2, c3, c4, c5, c6});
+	*token_size = res.ret1;
+	return res.ret0;
+}
+
+
+u_register_t rsi_attest_token_continue(u_register_t addr,
+			       u_register_t offset,
+			       rsi_ripas_type buf_size,
+			       u_register_t *write_size)
+{
+	smc_ret_values res = {};
+
+	res = tftf_smc(&(smc_args)
+			{RSI_ATTEST_TOKEN_CONTINUE, addr, offset, buf_size});
+	if (res.ret0 == RSI_SUCCESS) {
+		*write_size = res.ret1;
+	}
+	return res.ret0;
+}
+
 /* This function return RSI_ABI_VERSION */
 u_register_t rsi_get_version(u_register_t req_ver)
 {

@@ -196,6 +196,38 @@ static bool realm_exception_handler(void)
 	return false;
 }
 
+static bool test_realm_attestation(void)
+{
+	static uint8_t token_buffer[GRANULE_SIZE] __aligned(GRANULE_SIZE);
+	u_register_t token_size = 0, offset = 0, size = 0, write_len = 0;
+	u_register_t ret = rsi_attest_token_init(0x1, 0x2, 0x3, 0x4, 0x5, 0x6, 0x7,
+		0x8, &token_size);
+
+	if (ret != RSI_SUCCESS || token_size > sizeof(token_buffer)) {
+		realm_printf("%s:%dfailed ret=0x%lx, token_size = %lx "
+				"token_buffer = %lx \n",
+				__func__, __LINE__, ret, token_size,
+				sizeof(token_buffer));
+		return false;
+	}
+	realm_printf("rsi_attest_token_init ret=0x%lx token_size=0x%lx\n", ret, token_size);
+
+	do {
+		size = token_size - offset;
+		ret = rsi_attest_token_continue((u_register_t)token_buffer, offset,
+			size, &write_len);
+		offset += write_len;
+	} while (ret == RSI_INCOMPLETE && offset < token_size);
+
+	if (ret != RSI_SUCCESS) {
+		realm_printf("%s: %d failed ret=0x%lx, offset = %lx "
+				" token_size = %lx\n",
+				__func__, __LINE__, ret, offset, token_size);
+		return false;
+	}
+	return true;
+}
+
 /*
  * This is the entry function for Realm payload, it first requests the shared buffer
  * IPA address from Host using HOST_CALL/RSI, it reads the command to be executed,
@@ -305,6 +337,9 @@ void realm_payload_main(void)
 			break;
 		case REALM_SME_UNDEF_ABORT:
 			test_succeed = test_realm_sme_undef_abort();
+			break;
+		case REALM_ATTESTATION_TEST:
+			test_succeed = test_realm_attestation();
 			break;
 		default:
 			realm_printf("%s() invalid cmd %u\n", __func__, cmd);

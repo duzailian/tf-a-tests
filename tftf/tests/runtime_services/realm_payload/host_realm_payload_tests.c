@@ -101,6 +101,37 @@ test_result_t host_test_realm_rsi_version(void)
 	return host_cmp_result();
 }
 
+test_result_t host_test_realm_test_attestation(void)
+{
+	bool ret1, ret2;
+	u_register_t rec_flag[] = {RMI_RUNNABLE};
+	struct realm realm;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			(u_register_t)PAGE_POOL_BASE,
+			(u_register_t)PAGE_POOL_MAX_SIZE,
+			0UL, rec_flag, 1U)) {
+		return TEST_RESULT_FAIL;
+	}
+	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
+			NS_REALM_SHARED_MEM_SIZE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	ret1 = host_enter_realm_execute(&realm, REALM_ATTESTATION_TEST, RMI_EXIT_HOST_CALL, 0U);
+	ret2 = host_destroy_realm(&realm);
+
+	if (!ret1 || !ret2) {
+		ERROR("%s(): enter=%d destroy=%d\n",
+		__func__, ret1, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return host_cmp_result();
+}
+
 /*
  * @Test_Aim@ Create realm with multiple rec
  * Test PAuth registers are preserved for each rec
