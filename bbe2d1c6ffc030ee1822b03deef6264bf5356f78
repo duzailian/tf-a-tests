@@ -24,6 +24,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f525458_08d7184d",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffaa4805_bc2b0190",
+      "range": {
+        "startLine": 367,
+        "startChar": 12,
+        "endLine": 367,
+        "endChar": 15
+      },
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12a4d657_51841bf5",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffaa4805_bc2b0190",
+      "range": {
+        "startLine": 367,
+        "startChar": 12,
+        "endLine": 367,
+        "endChar": 15
+      },
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19a5a489_9ef7dd07",
@@ -37,6 +85,54 @@
       "writtenOn": "2024-06-07T14:16:39Z",
       "side": 1,
       "message": "similarly, this can be \n\nOA_51_50_SHIFT ?",
+      "range": {
+        "startLine": 371,
+        "startChar": 8,
+        "endLine": 371,
+        "endChar": 23
+      },
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "decd4a8f_29e00df7",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19a5a489_9ef7dd07",
+      "range": {
+        "startLine": 371,
+        "startChar": 8,
+        "endLine": 371,
+        "endChar": 23
+      },
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82f84fbd_1f899a8f",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19a5a489_9ef7dd07",
       "range": {
         "startLine": 371,
         "startChar": 8,
@@ -70,6 +166,54 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c743d99_e5ea5b7b",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "036f2a66_fd93d229",
+      "range": {
+        "startLine": 620,
+        "startChar": 73,
+        "endLine": 620,
+        "endChar": 79
+      },
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c11ab85_700033ea",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "036f2a66_fd93d229",
+      "range": {
+        "startLine": 620,
+        "startChar": 73,
+        "endLine": 620,
+        "endChar": 79
+      },
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d4362d2c_03ebb5d0",
@@ -83,6 +227,54 @@
       "writtenOn": "2024-06-07T14:16:39Z",
       "side": 1,
       "message": "this arg can be int/long. Same comment for below arg as well.",
+      "range": {
+        "startLine": 320,
+        "startChar": 0,
+        "endLine": 320,
+        "endChar": 25
+      },
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbe3f0ae_445fcbbb",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4362d2c_03ebb5d0",
+      "range": {
+        "startLine": 320,
+        "startChar": 0,
+        "endLine": 320,
+        "endChar": 25
+      },
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad0d29d6_9e3775a2",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4362d2c_03ebb5d0",
       "range": {
         "startLine": 320,
         "startChar": 0,
@@ -116,6 +308,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b9f4c83_88162d6e",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "As discussed, this is only done here so we don\u0027t need a macro",
+      "parentUuid": "4f784efd_8611822c",
+      "range": {
+        "startLine": 497,
+        "startChar": 17,
+        "endLine": 498,
+        "endChar": 46
+      },
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "66ac41d7_31c57d23",
@@ -135,6 +351,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d804dc08_dc8c60b7",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_lpa2_tests.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "66ac41d7_31c57d23",
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4d5d9be9_1bf2ca6e",
         "filename": "tftf/tests/runtime_services/realm_payload/host_realm_lpa2_tests.c",
         "patchSetId": 17
@@ -146,6 +380,30 @@
       "writtenOn": "2024-06-07T14:16:39Z",
       "side": 1,
       "message": "this doesn\u0027t seem correct ?",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 36
+      },
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5f73e05_65d7db07",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_lpa2_tests.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "Yes. Left behind from a previous revision",
+      "parentUuid": "4d5d9be9_1bf2ca6e",
       "range": {
         "startLine": 25,
         "startChar": 8,
@@ -179,6 +437,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c14fd96_863b1120",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_lpa2_tests.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "This is the start level, which has to be a valid level when FEAT_LPA2 is disabled. There is no \u0027level\u0027 variable used in this function.",
+      "parentUuid": "395d1710_26144eb7",
+      "range": {
+        "startLine": 52,
+        "startChar": 3,
+        "endLine": 52,
+        "endChar": 16
+      },
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8476050a_8739b0a8",
@@ -192,6 +474,30 @@
       "writtenOn": "2024-06-07T14:16:39Z",
       "side": 1,
       "message": "supported on platform.\"",
+      "range": {
+        "startLine": 62,
+        "startChar": 26,
+        "endLine": 62,
+        "endChar": 35
+      },
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b3e21ae_352db0f8",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_lpa2_tests.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8476050a_8739b0a8",
       "range": {
         "startLine": 62,
         "startChar": 26,
@@ -219,6 +525,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "335a12c9_237358b5",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_lpa2_tests.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "I thought about that, but since this test is only meant to check if the realm can be created and FEAT_LPA2 is already enabled on all the RMI tests when the feature is available, I thought it would be easier and simpler to just try to create the realm and nothing else.",
+      "parentUuid": "7b0c0ed0_d3f424ce",
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1d375ab5_77e34bc7",
@@ -232,6 +556,30 @@
       "writtenOn": "2024-06-07T14:16:39Z",
       "side": 1,
       "message": "not supported on platform, but enabled for Realm",
+      "range": {
+        "startLine": 92,
+        "startChar": 59,
+        "endLine": 92,
+        "endChar": 71
+      },
+      "revId": "bbe2d1c6ffc030ee1822b03deef6264bf5356f78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "415d387e_18c7e43e",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_lpa2_tests.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T10:13:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1d375ab5_77e34bc7",
       "range": {
         "startLine": 92,
         "startChar": 59,
