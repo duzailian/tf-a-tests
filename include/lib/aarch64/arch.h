@@ -1285,6 +1285,15 @@
 #define HDFGWTR_EL2		S3_4_C3_C1_5
 
 /*******************************************************************************
+ * Armv8.9 - Fine Grained Virtualization Traps 2 Registers
+ ******************************************************************************/
+#define HFGRTR2_EL2            S3_4_C3_C1_2
+#define HFGWTR2_EL2            S3_4_C3_C1_3
+#define HFGITR2_EL2            S3_4_C3_C1_7
+#define HDFGRTR2_EL2           S3_4_C3_C1_0
+#define HDFGWTR2_EL2           S3_4_C3_C1_1
+
+/*******************************************************************************
  * Armv8.6 - Enhanced Counter Virtualization Registers
  ******************************************************************************/
 #define CNTPOFF_EL2  S3_4_C14_C0_6
