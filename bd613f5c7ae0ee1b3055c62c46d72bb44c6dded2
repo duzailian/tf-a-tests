@@ -16,6 +16,23 @@
       "message": "Current patchset doesn\u0027t change functionality WRT the previous one, so adding V+1 as CI+2 passed before",
       "revId": "bd613f5c7ae0ee1b3055c62c46d72bb44c6dded2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f1d3807_75c54d76",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-06-13T15:28:17Z",
+      "side": 1,
+      "message": "Tested with FEAT_LPA2 enabled through https://jenkins.openci.aws.arm.com/job/rmm-gerrit-tforg-l2/676/",
+      "revId": "bd613f5c7ae0ee1b3055c62c46d72bb44c6dded2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
