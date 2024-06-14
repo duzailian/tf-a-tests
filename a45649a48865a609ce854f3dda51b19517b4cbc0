@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93ce6ad6_54a56fad",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_exceptions.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-06-14T20:45:45Z",
+      "side": 0,
+      "message": "There are numerous other instances of this style of using the 0x prefix in the code base. Any specific reason why only confined to this file?",
+      "revId": "a45649a48865a609ce854f3dda51b19517b4cbc0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
