@@ -46,6 +46,30 @@
       },
       "revId": "8d0861b54a2cd02fc1b5a67ef0be9d9a467e993f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0efd6f98_4259b8fa",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 1379,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-06-17T16:52:35Z",
+      "side": 1,
+      "message": "Sorry for the late reply.\n\nWhen an endpoint uses lend/share/donate ABIs, the SPMC allocates resources to the operation. These are deallocated:\n- On donate: after the retrieve from the receiver.\n- On lend/share: after the sender invokes reclaim. Reclaim succeeds only if no receiver is using the memory.\n\nSo this is a clean-up action.\nAny subsequent attempt to use lend/donate/share using the same addresses would fail.",
+      "parentUuid": "34f16251_491eba5e",
+      "range": {
+        "startLine": 1379,
+        "startChar": 23,
+        "endLine": 1379,
+        "endChar": 38
+      },
+      "revId": "8d0861b54a2cd02fc1b5a67ef0be9d9a467e993f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
