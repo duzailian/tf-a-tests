@@ -16,6 +16,24 @@
       "message": "It might be good to check once we\u0027ve undelegsted the memory the memory share then succeeds if it should.",
       "revId": "a7cf845e39660744636ae2472faa155f3bcf0d8a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23eb7baf_2afec2ed",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-06-17T16:48:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "965b1885_3bcee2de",
+      "revId": "a7cf845e39660744636ae2472faa155f3bcf0d8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
