@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "999dd79a_e08f4a49",
+        "filename": "spm/common/sp_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-06-17T10:32:15Z",
+      "side": 1,
+      "message": "braces around while?",
+      "range": {
+        "startLine": 64,
+        "startChar": 5,
+        "endLine": 64,
+        "endChar": 18
+      },
+      "revId": "a850b559c1573fa13b0c5ac156f0059c4b75ed34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29a2e225_546473bc",
+        "filename": "spm/common/sp_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-06-17T10:32:15Z",
+      "side": 1,
+      "message": "Looks like tab(s) are missing in front of each line?",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 13
+      },
+      "revId": "a850b559c1573fa13b0c5ac156f0059c4b75ed34",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
