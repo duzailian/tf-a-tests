@@ -70,6 +70,30 @@
       },
       "revId": "8d0861b54a2cd02fc1b5a67ef0be9d9a467e993f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60263e6e_2a2074af",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 1379,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2024-06-18T01:52:21Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "0efd6f98_4259b8fa",
+      "range": {
+        "startLine": 1379,
+        "startChar": 23,
+        "endLine": 1379,
+        "endChar": 38
+      },
+      "revId": "8d0861b54a2cd02fc1b5a67ef0be9d9a467e993f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
