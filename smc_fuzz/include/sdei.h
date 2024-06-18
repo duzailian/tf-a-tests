@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2024, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -94,7 +94,6 @@ int64_t sdei_event_complete(uint32_t flags);
 int64_t sdei_event_complete_and_resume(uint64_t addr);
 // added
 int64_t sdei_features(uint32_t feature);
-int64_t sdei_event_get_info(int32_t event, uint32_t info);
 #endif /* __ASSEMBLY__ */
 
 #endif /* __SDEI_H__ */
