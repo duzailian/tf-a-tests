@@ -39,6 +39,24 @@
       "message": "Is this change mergeable now?",
       "revId": "b943b775ab0817e07250dafdf51e545954e86273",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce491f75_159387cb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-06-18T12:14:18Z",
+      "side": 1,
+      "message": "Yes this can be merged now.",
+      "parentUuid": "135ca6f7_166a8bf5",
+      "revId": "b943b775ab0817e07250dafdf51e545954e86273",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
