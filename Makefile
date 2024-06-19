@@ -650,6 +650,13 @@ cscope:
 
 .PHONY: help
 .SILENT: help
+
+# see .clang-format.
+.PHONY: format
+format:
+	@echo "Formatting..."
+	@find . -name \*.c -o -name \*.cc -o -name \*.h | xargs -r clang-format -style file -i
+
 help:
 	echo "usage: ${MAKE} PLAT=<${PLATFORMS}> \
 <all|tftf|ns_bl1u|ns_bl2u|cactus|ivy|el3_payload|distclean|clean|checkcodebase|checkpatch|help_tests>"
@@ -673,6 +680,7 @@ help:
 	echo "  doc            Build html based documentation using Sphinx tool"
 	echo "  clean          Clean the build for the selected platform"
 	echo "  cscope         Generate cscope index"
+	echo "  format         Format source files"
 	echo "  distclean      Remove all build artifacts for all platforms"
 	echo "  help_tests     List all possible sets of tests"
 	echo ""
