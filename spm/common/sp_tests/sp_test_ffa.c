@@ -82,8 +82,7 @@ static void ffa_features_test(void)
 {
 	const struct ffa_features_test *func_id_targets;
 	/* Get common features between tftf and cactus. */
-	unsigned int test_target_size =
-		get_ffa_feature_test_target(&func_id_targets);
+	size_t test_target_size = get_ffa_feature_test_target(&func_id_targets);
 	const struct ffa_features_test feature_id_targets[] = {
 		{"FFA_FEATURE_MEI", FFA_FEATURE_MEI, FFA_SUCCESS_SMC32, 0,
 			MAKE_FFA_VERSION(1, 1)},
