@@ -4,13 +4,14 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include "stdint.h"
+#include <assert.h>
+#include <debug.h>
 
 #include "ffa_helpers.h"
+#include "stdint.h"
+#include "utils_def.h"
 #include <cactus_test_cmds.h>
-#include <debug.h>
 #include <ffa_endpoints.h>
-#include <assert.h>
 #include <ffa_svc.h>
 #include <lib/extensions/sve.h>
 #include <spm_common.h>
@@ -171,10 +172,11 @@ static const struct ffa_features_test ffa_feature_test_target[] = {
 	{"FFA_RXTX_MAP_32", FFA_RXTX_MAP_SMC32, FFA_ERROR},
 	{"FFA_RXTX_MAP_64", FFA_RXTX_MAP_SMC64, FFA_SUCCESS_SMC32},
 	{"FFA_RXTX_UNMAP_32", FFA_RXTX_UNMAP, FFA_SUCCESS_SMC32},
-	{"FFA_PARTITION_INFO_GET_32", FFA_PARTITION_INFO_GET, FFA_SUCCESS_SMC32},
+	{"FFA_PARTITION_INFO_GET_32", FFA_PARTITION_INFO_GET,
+	 FFA_SUCCESS_SMC32},
 	{"FFA_ID_GET_32", FFA_ID_GET, FFA_SUCCESS_SMC32},
 	{"FFA_SPM_ID_GET_32", FFA_SPM_ID_GET, FFA_SUCCESS_SMC32, 0,
-		MAKE_FFA_VERSION(1, 1)},
+	 MAKE_FFA_VERSION(1, 1)},
 	{"FFA_MSG_WAIT_32", FFA_MSG_WAIT, FFA_SUCCESS_SMC32},
 	{"FFA_RUN_32", FFA_RUN, FFA_SUCCESS_SMC32},
 	{"FFA_MEM_DONATE_32", FFA_MEM_DONATE_SMC32, FFA_SUCCESS_SMC32},
@@ -184,25 +186,23 @@ static const struct ffa_features_test ffa_feature_test_target[] = {
 	{"FFA_MEM_LEND_64", FFA_MEM_LEND_SMC64, FFA_SUCCESS_SMC32},
 	{"FFA_MEM_SHARE_64", FFA_MEM_SHARE_SMC64, FFA_SUCCESS_SMC32},
 	{"FFA_MEM_RETRIEVE_REQ_64", FFA_MEM_RETRIEVE_REQ_SMC64,
-	FFA_SUCCESS_SMC32, FFA_FEATURES_MEM_RETRIEVE_REQ_NS_SUPPORT},
+	 FFA_SUCCESS_SMC32, FFA_FEATURES_MEM_RETRIEVE_REQ_NS_SUPPORT},
 	{"FFA_MEM_RETRIEVE_REQ_32", FFA_MEM_RETRIEVE_REQ_SMC32,
-	FFA_SUCCESS_SMC32, FFA_FEATURES_MEM_RETRIEVE_REQ_NS_SUPPORT},
+	 FFA_SUCCESS_SMC32, FFA_FEATURES_MEM_RETRIEVE_REQ_NS_SUPPORT},
 	{"FFA_MEM_RETRIEVE_RESP_32", FFA_MEM_RETRIEVE_RESP, FFA_SUCCESS_SMC32},
 	{"FFA_MEM_RELINQUISH_32", FFA_MEM_RELINQUISH, FFA_SUCCESS_SMC32},
 	{"FFA_MEM_RECLAIM_32", FFA_MEM_RECLAIM, FFA_SUCCESS_SMC32},
-	{"FFA_NOTIFICATION_BITMAP_CREATE_32",
-		FFA_NOTIFICATION_BITMAP_CREATE, FFA_SUCCESS_SMC32},
-	{"FFA_NOTIFICATION_BITMAP_DESTROY_32",
-		FFA_NOTIFICATION_BITMAP_DESTROY, FFA_SUCCESS_SMC32},
-	{"FFA_NOTIFICATION_BIND_32", FFA_NOTIFICATION_BIND,
-		FFA_SUCCESS_SMC32},
+	{"FFA_NOTIFICATION_BITMAP_CREATE_32", FFA_NOTIFICATION_BITMAP_CREATE,
+	 FFA_SUCCESS_SMC32},
+	{"FFA_NOTIFICATION_BITMAP_DESTROY_32", FFA_NOTIFICATION_BITMAP_DESTROY,
+	 FFA_SUCCESS_SMC32},
+	{"FFA_NOTIFICATION_BIND_32", FFA_NOTIFICATION_BIND, FFA_SUCCESS_SMC32},
 	{"FFA_NOTIFICATION_UNBIND_32", FFA_NOTIFICATION_UNBIND,
-		FFA_SUCCESS_SMC32},
-	{"FFA_NOTIFICATION_SET_32", FFA_NOTIFICATION_SET,
-		FFA_SUCCESS_SMC32},
+	 FFA_SUCCESS_SMC32},
+	{"FFA_NOTIFICATION_SET_32", FFA_NOTIFICATION_SET, FFA_SUCCESS_SMC32},
 	{"FFA_NOTIFICATION_INFO_GET_64", FFA_NOTIFICATION_INFO_GET_SMC64,
-		FFA_SUCCESS_SMC32},
-	{"FFA_YIELD_32", FFA_MSG_YIELD, FFA_ERROR},
+	 FFA_SUCCESS_SMC32},
+	{"FFA_YIELD_32", FFA_MSG_YIELD, FFA_SUCCESS_SMC32},
 	{"Check non-existent command", 0xFFFF, FFA_ERROR},
 };
 
@@ -211,15 +211,11 @@ static const struct ffa_features_test ffa_feature_test_target[] = {
  *
  * Returns number of elements in the *test_target.
  */
-unsigned int get_ffa_feature_test_target(
-	const struct ffa_features_test **test_target)
+size_t get_ffa_feature_test_target(const struct ffa_features_test **test_target)
 {
-	if (test_target != NULL) {
-		*test_target = ffa_feature_test_target;
-	}
-
-	return sizeof(ffa_feature_test_target) /
-	       sizeof(struct ffa_features_test);
+	assert(test_target != NULL);
+	*test_target = ffa_feature_test_target;
+	return ARRAY_SIZE(ffa_feature_test_target);
 }
 
 /**
@@ -251,16 +247,14 @@ bool ffa_features_test_targets(const struct ffa_features_test *targets,
 			ret = false;
 		}
 
-		if (expected_ret == FFA_ERROR) {
-			if (ffa_error_code(ffa_ret) !=
-			    FFA_ERROR_NOT_SUPPORTED) {
-				ERROR("Unexpected error code: %s (expected %s)."
-				      " FFA_FEATURES test: %s.\n",
-				      ffa_error_name(ffa_error_code(ffa_ret)),
-				      ffa_error_name(expected_ret),
-				      test_target->test_name);
-				ret = false;
-			}
+		if (expected_ret == FFA_ERROR &&
+		    ffa_error_code(ffa_ret) != FFA_ERROR_NOT_SUPPORTED) {
+			ERROR("Unexpected error code: %s (expected %s)."
+			      " FFA_FEATURES test: %s.\n",
+			      ffa_error_name(ffa_error_code(ffa_ret)),
+			      ffa_error_name(expected_ret),
+			      test_target->test_name);
+			ret = false;
 		}
 	}
 

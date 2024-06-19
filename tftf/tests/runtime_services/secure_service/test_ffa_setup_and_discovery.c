@@ -96,8 +96,7 @@ test_result_t test_ffa_features(void)
 		{"FFA_FEATURE_NPI", FFA_FEATURE_NPI, FFA_ERROR, 0,
 			MAKE_FFA_VERSION(1, 1)},
 	};
-	unsigned int test_target_size =
-		get_ffa_feature_test_target(&func_ids_target);
+	size_t test_target_size = get_ffa_feature_test_target(&func_ids_target);
 
 	SKIP_TEST_IF_FFA_VERSION_LESS_THAN(1, 0);
 
