@@ -15,18 +15,23 @@
  * FFA error codes.
  * Don't forget to update `ffa_error_name` if you add a new one.
  */
-#define FFA_ERROR_NOT_SUPPORTED		-1
-#define FFA_ERROR_INVALID_PARAMETER	-2
-#define FFA_ERROR_NO_MEMORY		-3
-#define FFA_ERROR_BUSY			-4
-#define FFA_ERROR_INTERRUPTED		-5
-#define FFA_ERROR_DENIED		-6
-#define FFA_ERROR_RETRY			-7
-#define FFA_ERROR_ABORTED		-8
-#define FFA_ERROR_NO_DATA		-9
+/* clang-format off */
+enum ffa_error {
+	FFA_ERROR_NOT_SUPPORTED 	= -1,
+	FFA_ERROR_INVALID_PARAMETER 	= -2,
+	FFA_ERROR_NO_MEMORY 		= -3,
+	FFA_ERROR_BUSY 			= -4,
+	FFA_ERROR_INTERRUPTED 		= -5,
+	FFA_ERROR_DENIED 		= -6,
+	FFA_ERROR_RETRY 		= -7,
+	FFA_ERROR_ABORTED 		= -8,
+	FFA_ERROR_NO_DATA 		= -9,
+	FFA_ERROR_NOT_READY 		= -10,
+};
+/* clang-format on */
 
 /* Return the name of the error code. */
-static inline const char *ffa_error_name(int32_t error)
+static inline const char *ffa_error_name(enum ffa_error error)
 {
 	switch (error) {
 	case FFA_ERROR_NOT_SUPPORTED:
@@ -47,9 +52,10 @@ static inline const char *ffa_error_name(int32_t error)
 		return "FFA_ERROR_ABORTED";
 	case FFA_ERROR_NO_DATA:
 		return "FFA_ERROR_NO_DATA";
-	default:
-		return "UNKNOWN";
+	case FFA_ERROR_NOT_READY:
+		return "FFA_ERROR_NOT_READY";
 	}
+	return "UNKNOWN";
 }
 
 /* The macros below are used to identify FFA calls from the SMC function ID */
