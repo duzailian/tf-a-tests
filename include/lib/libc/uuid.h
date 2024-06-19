@@ -40,15 +40,15 @@
 #include <stdint.h>
 
 /* Length of a node address (an IEEE 802 address). */
-#define	_UUID_NODE_LEN		6
+#define _UUID_NODE_LEN 6
 
 struct uuid {
-	uint8_t		time_low[4];
-	uint8_t		time_mid[2];
-	uint8_t		time_hi_and_version[2];
-	uint8_t		clock_seq_hi_and_reserved;
-	uint8_t		clock_seq_low;
-	uint8_t		node[_UUID_NODE_LEN];
+	uint8_t time_low[4];
+	uint8_t time_mid[2];
+	uint8_t time_hi_and_version[2];
+	uint8_t clock_seq_hi_and_reserved;
+	uint8_t clock_seq_low;
+	uint8_t node[_UUID_NODE_LEN];
 };
 
 typedef struct uuid uuid_t;

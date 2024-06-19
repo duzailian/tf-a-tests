@@ -6,6 +6,7 @@
 
 #include <psci.h>
 #include <smccc.h>
+
 #include <tftf_lib.h>
 
 /*
@@ -15,7 +16,7 @@
  */
 test_result_t test_system_reset(void)
 {
-	smc_args args = { SMC_PSCI_SYSTEM_RESET };
+	smc_args args = {SMC_PSCI_SYSTEM_RESET};
 
 	if (tftf_is_rebooted() == 1) {
 		/* Successfully resumed from SYSTEM_RESET */

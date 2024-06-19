@@ -5,6 +5,7 @@
  */
 
 #include <assert.h>
+
 #include <plat_topology.h>
 #include <tftf_lib.h>
 
@@ -13,15 +14,7 @@ static const struct {
 	unsigned int cpu_id;
 } tc_cores[] = {
 	/* Cluster0: 8 cores*/
-	{ 0, 0 },
-	{ 0, 1 },
-	{ 0, 2 },
-	{ 0, 3 },
-	{ 0, 4 },
-	{ 0, 5 },
-	{ 0, 6 },
-	{ 0, 7 }
-};
+	{0, 0}, {0, 1}, {0, 2}, {0, 3}, {0, 4}, {0, 5}, {0, 6}, {0, 7}};
 
 /*
  * The power domain tree descriptor. The cluster power domains are
@@ -35,8 +28,7 @@ const unsigned char tc_pd_tree_desc[] = {
 	/* Number of children for the 1st node */
 	TC_MAX_CPUS_PER_CLUSTER,
 	/* Number of children for the 2nd node */
-	TC_MAX_CPUS_PER_CLUSTER
-};
+	TC_MAX_CPUS_PER_CLUSTER};
 
 const unsigned char *tftf_plat_get_pwr_domain_tree_desc(void)
 {

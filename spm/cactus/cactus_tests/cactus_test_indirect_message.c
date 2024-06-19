@@ -5,10 +5,10 @@
  */
 
 #include "cactus_message_loop.h"
-#include <cactus_test_cmds.h>
 #include "debug.h"
 #include "ffa_helpers.h"
 #include "utils_def.h"
+#include <cactus_test_cmds.h>
 #include <ffa_endpoints.h>
 #include <spm_common.h>
 
@@ -29,9 +29,7 @@ CACTUS_CMD_HANDLER(req_msg_send, CACTUS_REQ_MSG_SEND_CMD)
 
 	if (is_ffa_call_error(ret)) {
 		ERROR("Failed to send indirect message.\n");
-		return cactus_error_resp(vm_id,
-					 source,
-					 ffa_error_code(ret));
+		return cactus_error_resp(vm_id, source, ffa_error_code(ret));
 	}
 
 	return cactus_success_resp(vm_id, source, 0);

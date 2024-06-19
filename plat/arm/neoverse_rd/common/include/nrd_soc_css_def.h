@@ -8,12 +8,12 @@
 #define NRD_SOC_CSS_DEF_H
 
 /* Trusted watchdog (SP805) Interrupt ID */
-#define IRQ_TWDOG_INTID			86
+#define IRQ_TWDOG_INTID 86
 
 /* Maximum SPI */
-#define PLAT_MAX_SPI_OFFSET_ID		64
+#define PLAT_MAX_SPI_OFFSET_ID 64
 
 /* AP_REFCLK Generic Timer, Non-secure. */
-#define IRQ_CNTPSIRQ1			92
+#define IRQ_CNTPSIRQ1 92
 
 #endif /* NRD_SOC_CSS_DEF_H */

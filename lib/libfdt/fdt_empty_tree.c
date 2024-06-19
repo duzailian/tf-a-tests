@@ -3,11 +3,10 @@
  * libfdt - Flat Device Tree manipulation
  * Copyright (C) 2012 David Gibson, IBM Corporation.
  */
-#include "libfdt_env.h"
-
 #include <fdt.h>
 #include <libfdt.h>
 
+#include "libfdt_env.h"
 #include "libfdt_internal.h"
 
 int fdt_create_empty_tree(void *buf, int bufsize)
@@ -26,7 +25,7 @@ int fdt_create_empty_tree(void *buf, int bufsize)
 	if (err)
 		return err;
 
-	err =  fdt_end_node(buf);
+	err = fdt_end_node(buf);
 	if (err)
 		return err;
 

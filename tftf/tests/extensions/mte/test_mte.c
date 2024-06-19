@@ -5,9 +5,10 @@
  */
 
 #include <tftf.h>
-#include <tftf_lib.h>
 #include <tsp.h>
+
 #include <test_helpers.h>
+#include <tftf_lib.h>
 
 test_result_t test_mte_instructions(void)
 {
@@ -24,13 +25,12 @@ test_result_t test_mte_instructions(void)
 	 *
 	 * Execute Memory Tagging Extension instructions.
 	 */
-	__asm__ volatile (
+	__asm__ volatile(
 		".arch	armv8.5-a+memtag\n"
 		"mov	x0, #0xDEAD\n"
 		"irg	x0, x0\n"
 		"addg	x0, x0, #0x0, #0x0\n"
-		"subg	x0, x0, #0x0, #0x0"
-	);
+		"subg	x0, x0, #0x0, #0x0");
 
 	return TEST_RESULT_SUCCESS;
 #endif /* __aarch64__ */

@@ -4,12 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <bl1.h>
 #include <debug.h>
+#include <platform.h>
+
+#include <arch_helpers.h>
 #include <firmware_image_package.h>
 #include <fwu_nvm.h>
-#include <platform.h>
 #include <platform_def.h>
 
 extern const char version_string[];
@@ -55,6 +56,6 @@ void ns_bl2u_main(void)
 	fwu_params.fid = FWU_SMC_UPDATE_DONE;
 	fwu_result = tftf_smc(&fwu_params);
 	ERROR("NS_BL2U: Unexpected return from FWU process (%d)\n",
-			(int)fwu_result.ret0);
+	      (int)fwu_result.ret0);
 	panic();
 }

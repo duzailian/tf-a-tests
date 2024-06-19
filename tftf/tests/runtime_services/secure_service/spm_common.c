@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include "stdint.h"
+#include <assert.h>
+#include <debug.h>
 
 #include "ffa_helpers.h"
+#include "stdint.h"
 #include <cactus_test_cmds.h>
-#include <debug.h>
 #include <ffa_endpoints.h>
-#include <assert.h>
 #include <ffa_svc.h>
 #include <lib/extensions/sve.h>
 #include <spm_common.h>
@@ -96,9 +96,9 @@ bool is_expected_cactus_response(struct ffa_value ret, uint32_t expected_resp,
 	if (cactus_get_response(ret) != expected_resp ||
 	    (uint32_t)ret.arg4 != arg) {
 		VERBOSE("Expected response %x and %x; "
-		      "Obtained %x and %x\n",
-		      expected_resp, arg, cactus_get_response(ret),
-		      (int32_t)ret.arg4);
+			"Obtained %x and %x\n",
+			expected_resp, arg, cactus_get_response(ret),
+			(int32_t)ret.arg4);
 		return false;
 	}
 
@@ -107,15 +107,9 @@ bool is_expected_cactus_response(struct ffa_value ret, uint32_t expected_resp,
 
 void dump_ffa_value(struct ffa_value ret)
 {
-	NOTICE("FF-A value: %lx, %lx, %lx, %lx, %lx, %lx, %lx, %lx\n",
-		ret.fid,
-		ret.arg1,
-		ret.arg2,
-		ret.arg3,
-		ret.arg4,
-		ret.arg5,
-		ret.arg6,
-		ret.arg7);
+	NOTICE("FF-A value: %lx, %lx, %lx, %lx, %lx, %lx, %lx, %lx\n", ret.fid,
+	       ret.arg1, ret.arg2, ret.arg3, ret.arg4, ret.arg5, ret.arg6,
+	       ret.arg7);
 }
 
 /*
@@ -138,9 +132,8 @@ bool check_spmc_execution_level(void)
 	 * Send a first OP-TEE-defined protocol message through
 	 * FFA direct message. Expect it to implement either v1.0 or v1.1.
 	 */
-	ret_values = ffa_msg_send_direct_req32(HYP_ID, SP_ID(1),
-					       OPTEE_FFA_GET_API_VERSION, 0,
-					       0, 0, 0);
+	ret_values = ffa_msg_send_direct_req32(
+		HYP_ID, SP_ID(1), OPTEE_FFA_GET_API_VERSION, 0, 0, 0, 0);
 	if (ret_values.arg3 == 1 &&
 	    (ret_values.arg4 == 0 || ret_values.arg4 == 1)) {
 		is_optee_spmc_criteria++;
@@ -150,9 +143,8 @@ bool check_spmc_execution_level(void)
 	 * Send a second OP-TEE-defined protocol message through
 	 * FFA direct message.
 	 */
-	ret_values = ffa_msg_send_direct_req32(HYP_ID, SP_ID(1),
-					       OPTEE_FFA_GET_OS_VERSION,
-					       0, 0, 0, 0);
+	ret_values = ffa_msg_send_direct_req32(
+		HYP_ID, SP_ID(1), OPTEE_FFA_GET_OS_VERSION, 0, 0, 0, 0);
 	if ((ret_values.arg3 == OPTEE_FFA_GET_OS_VERSION_MAJOR) &&
 	    (ret_values.arg4 == OPTEE_FFA_GET_OS_VERSION_MINOR)) {
 		is_optee_spmc_criteria++;
@@ -171,10 +163,11 @@ static const struct ffa_features_test ffa_feature_test_target[] = {
 	{"FFA_RXTX_MAP_32", FFA_RXTX_MAP_SMC32, FFA_ERROR},
 	{"FFA_RXTX_MAP_64", FFA_RXTX_MAP_SMC64, FFA_SUCCESS_SMC32},
 	{"FFA_RXTX_UNMAP_32", FFA_RXTX_UNMAP, FFA_SUCCESS_SMC32},
-	{"FFA_PARTITION_INFO_GET_32", FFA_PARTITION_INFO_GET, FFA_SUCCESS_SMC32},
+	{"FFA_PARTITION_INFO_GET_32", FFA_PARTITION_INFO_GET,
+	 FFA_SUCCESS_SMC32},
 	{"FFA_ID_GET_32", FFA_ID_GET, FFA_SUCCESS_SMC32},
 	{"FFA_SPM_ID_GET_32", FFA_SPM_ID_GET, FFA_SUCCESS_SMC32, 0,
-		MAKE_FFA_VERSION(1, 1)},
+	 MAKE_FFA_VERSION(1, 1)},
 	{"FFA_MSG_WAIT_32", FFA_MSG_WAIT, FFA_SUCCESS_SMC32},
 	{"FFA_RUN_32", FFA_RUN, FFA_SUCCESS_SMC32},
 	{"FFA_MEM_DONATE_32", FFA_MEM_DONATE_SMC32, FFA_SUCCESS_SMC32},
@@ -184,24 +177,22 @@ static const struct ffa_features_test ffa_feature_test_target[] = {
 	{"FFA_MEM_LEND_64", FFA_MEM_LEND_SMC64, FFA_SUCCESS_SMC32},
 	{"FFA_MEM_SHARE_64", FFA_MEM_SHARE_SMC64, FFA_SUCCESS_SMC32},
 	{"FFA_MEM_RETRIEVE_REQ_64", FFA_MEM_RETRIEVE_REQ_SMC64,
-	FFA_SUCCESS_SMC32, FFA_FEATURES_MEM_RETRIEVE_REQ_NS_SUPPORT},
+	 FFA_SUCCESS_SMC32, FFA_FEATURES_MEM_RETRIEVE_REQ_NS_SUPPORT},
 	{"FFA_MEM_RETRIEVE_REQ_32", FFA_MEM_RETRIEVE_REQ_SMC32,
-	FFA_SUCCESS_SMC32, FFA_FEATURES_MEM_RETRIEVE_REQ_NS_SUPPORT},
+	 FFA_SUCCESS_SMC32, FFA_FEATURES_MEM_RETRIEVE_REQ_NS_SUPPORT},
 	{"FFA_MEM_RETRIEVE_RESP_32", FFA_MEM_RETRIEVE_RESP, FFA_SUCCESS_SMC32},
 	{"FFA_MEM_RELINQUISH_32", FFA_MEM_RELINQUISH, FFA_SUCCESS_SMC32},
 	{"FFA_MEM_RECLAIM_32", FFA_MEM_RECLAIM, FFA_SUCCESS_SMC32},
-	{"FFA_NOTIFICATION_BITMAP_CREATE_32",
-		FFA_NOTIFICATION_BITMAP_CREATE, FFA_SUCCESS_SMC32},
-	{"FFA_NOTIFICATION_BITMAP_DESTROY_32",
-		FFA_NOTIFICATION_BITMAP_DESTROY, FFA_SUCCESS_SMC32},
-	{"FFA_NOTIFICATION_BIND_32", FFA_NOTIFICATION_BIND,
-		FFA_SUCCESS_SMC32},
+	{"FFA_NOTIFICATION_BITMAP_CREATE_32", FFA_NOTIFICATION_BITMAP_CREATE,
+	 FFA_SUCCESS_SMC32},
+	{"FFA_NOTIFICATION_BITMAP_DESTROY_32", FFA_NOTIFICATION_BITMAP_DESTROY,
+	 FFA_SUCCESS_SMC32},
+	{"FFA_NOTIFICATION_BIND_32", FFA_NOTIFICATION_BIND, FFA_SUCCESS_SMC32},
 	{"FFA_NOTIFICATION_UNBIND_32", FFA_NOTIFICATION_UNBIND,
-		FFA_SUCCESS_SMC32},
-	{"FFA_NOTIFICATION_SET_32", FFA_NOTIFICATION_SET,
-		FFA_SUCCESS_SMC32},
+	 FFA_SUCCESS_SMC32},
+	{"FFA_NOTIFICATION_SET_32", FFA_NOTIFICATION_SET, FFA_SUCCESS_SMC32},
 	{"FFA_NOTIFICATION_INFO_GET_64", FFA_NOTIFICATION_INFO_GET_SMC64,
-		FFA_SUCCESS_SMC32},
+	 FFA_SUCCESS_SMC32},
 	{"FFA_YIELD_32", FFA_MSG_YIELD, FFA_ERROR},
 	{"Check non-existent command", 0xFFFF, FFA_ERROR},
 };
@@ -238,9 +229,10 @@ bool ffa_features_test_targets(const struct ffa_features_test *targets,
 
 		ffa_ret = ffa_features_with_input_property(test_target->feature,
 							   test_target->param);
-		expected_ret = FFA_VERSION_COMPILED
-				>= test_target->version_added ?
-				test_target->expected_ret : FFA_ERROR;
+		expected_ret =
+			FFA_VERSION_COMPILED >= test_target->version_added
+				? test_target->expected_ret
+				: FFA_ERROR;
 
 		if (ffa_func_id(ffa_ret) != expected_ret) {
 			ERROR("Unexpected return: %s (expected %s)."
@@ -321,7 +313,8 @@ bool memory_retrieve(struct mailbox_buffers *mb,
 
 	if ((*retrieved)->receiver_count > MAX_MEM_SHARE_RECIPIENTS) {
 		VERBOSE("SPMC memory sharing operations support max of %u "
-			"receivers!\n", MAX_MEM_SHARE_RECIPIENTS);
+			"receivers!\n",
+			MAX_MEM_SHARE_RECIPIENTS);
 		return false;
 	}
 
@@ -492,7 +485,6 @@ bool send_fragmented_memory_region(
 	uint32_t sent_length, uint32_t total_length, bool allocator_is_spmc,
 	struct ffa_value ret)
 {
-
 	uint64_t handle;
 	uint64_t handle_mask;
 	uint64_t expected_handle_mask =
@@ -559,7 +551,8 @@ bool send_fragmented_memory_region(
 		return false;
 	}
 
-	if (fragment_handle != FFA_MEMORY_HANDLE_INVALID && handle != fragment_handle) {
+	if (fragment_handle != FFA_MEMORY_HANDLE_INVALID &&
+	    handle != fragment_handle) {
 		ERROR("%s: fragment handle mismatch: expectd %d, got %llu\n",
 		      __func__, fragment_length, handle);
 		return false;
@@ -575,10 +568,10 @@ ffa_memory_handle_t memory_send(
 	void *send_buffer, uint32_t mem_func,
 	const struct ffa_memory_region_constituent *constituents,
 	uint32_t constituent_count, uint32_t remaining_constituent_count,
-	uint32_t fragment_length, uint32_t total_length,
-	struct ffa_value *ret)
+	uint32_t fragment_length, uint32_t total_length, struct ffa_value *ret)
 {
-	if (remaining_constituent_count == 0 && fragment_length != total_length) {
+	if (remaining_constituent_count == 0 &&
+	    fragment_length != total_length) {
 		ERROR("%s: fragment_length and total_length need "
 		      "to be equal (fragment_length = %d, total_length = %d)\n",
 		      __func__, fragment_length, total_length);
@@ -699,9 +692,8 @@ static bool ffa_partition_info_regs_get_part_info(
 }
 
 static bool ffa_compare_partition_info(
-		const struct ffa_uuid uuid,
-		const struct ffa_partition_info *info,
-		const struct ffa_partition_info *expected)
+	const struct ffa_uuid uuid, const struct ffa_partition_info *info,
+	const struct ffa_partition_info *expected)
 {
 	bool result = true;
 	/*
@@ -712,34 +704,29 @@ static bool ffa_compare_partition_info(
 		ffa_uuid_equal(uuid, NULL_UUID) ? expected->uuid : NULL_UUID;
 
 	if (info->id != expected->id) {
-		ERROR("Wrong ID. Expected %x, got %x\n", expected->id, info->id);
+		ERROR("Wrong ID. Expected %x, got %x\n", expected->id,
+		      info->id);
 		result = false;
 	}
 
 	if (info->exec_context != expected->exec_context) {
 		ERROR("Wrong context. Expected %d, got %d\n",
-		      expected->exec_context,
-		      info->exec_context);
+		      expected->exec_context, info->exec_context);
 		result = false;
 	}
 	if (info->properties != expected->properties) {
 		ERROR("Wrong properties. Expected %d, got %d\n",
-		      expected->properties,
-		      info->properties);
+		      expected->properties, info->properties);
 		result = false;
 	}
 
 	if (!ffa_uuid_equal(info->uuid, expected_uuid)) {
 		ERROR("Wrong UUID. Expected %x %x %x %x, "
 		      "got %x %x %x %x\n",
-		      expected_uuid.uuid[0],
-		      expected_uuid.uuid[1],
-		      expected_uuid.uuid[2],
-		      expected_uuid.uuid[3],
-		      info->uuid.uuid[0],
-		      info->uuid.uuid[1],
-		      info->uuid.uuid[2],
-		      info->uuid.uuid[3]);
+		      expected_uuid.uuid[0], expected_uuid.uuid[1],
+		      expected_uuid.uuid[2], expected_uuid.uuid[3],
+		      info->uuid.uuid[0], info->uuid.uuid[1],
+		      info->uuid.uuid[2], info->uuid.uuid[3]);
 		result = false;
 	}
 
@@ -752,8 +739,8 @@ static bool ffa_compare_partition_info(
  * expected results shall be done by the caller outside the function.
  */
 bool ffa_partition_info_regs_helper(const struct ffa_uuid uuid,
-		       const struct ffa_partition_info *expected,
-		       const uint16_t expected_size)
+				    const struct ffa_partition_info *expected,
+				    const uint16_t expected_size)
 {
 	/*
 	 * TODO: For now, support only one invocation. Can be enhanced easily
@@ -761,8 +748,8 @@ bool ffa_partition_info_regs_helper(const struct ffa_uuid uuid,
 	 */
 	if (expected_size > 5) {
 		ERROR("%s only supports information received in"
-			" one invocation of the ABI (5 partitions)\n",
-			__func__);
+		      " one invocation of the ABI (5 partitions)\n",
+		      __func__);
 		return false;
 	}
 
@@ -772,8 +759,7 @@ bool ffa_partition_info_regs_helper(const struct ffa_uuid uuid,
 		return false;
 	}
 
-	if (ffa_partition_info_regs_partition_count(ret) !=
-	    expected_size) {
+	if (ffa_partition_info_regs_partition_count(ret) != expected_size) {
 		ERROR("Unexpected number of partitions %d (expected %d)\n",
 		      ffa_partition_info_regs_partition_count(ret),
 		      expected_size);
@@ -788,7 +774,7 @@ bool ffa_partition_info_regs_helper(const struct ffa_uuid uuid,
 	}
 
 	for (unsigned int i = 0U; i < expected_size; i++) {
-		struct ffa_partition_info info = { 0 };
+		struct ffa_partition_info info = {0};
 
 		ffa_partition_info_regs_get_part_info(&ret, i, &info);
 		if (!ffa_compare_partition_info(uuid, &info, &expected[i])) {
@@ -827,7 +813,8 @@ bool ffa_partition_info_helper(struct mailbox_buffers *mb,
 			(const struct ffa_partition_info *)(mb->recv);
 
 		for (unsigned int i = 0U; i < expected_size; i++) {
-			if (!ffa_compare_partition_info(uuid, &info[i], &expected[i]))
+			if (!ffa_compare_partition_info(uuid, &info[i],
+							&expected[i]))
 				result = false;
 		}
 	}
@@ -841,16 +828,16 @@ bool ffa_partition_info_helper(struct mailbox_buffers *mb,
 }
 
 static bool configure_trusted_wdog_interrupt(ffa_id_t source, ffa_id_t dest,
-				bool enable)
+					     bool enable)
 {
 	struct ffa_value ret_values;
 
-	ret_values = cactus_interrupt_cmd(source, dest, IRQ_TWDOG_INTID,
-					  enable, INTERRUPT_TYPE_IRQ);
+	ret_values = cactus_interrupt_cmd(source, dest, IRQ_TWDOG_INTID, enable,
+					  INTERRUPT_TYPE_IRQ);
 
 	if (!is_ffa_direct_response(ret_values)) {
 		ERROR("Expected a direct response message while configuring"
-			" TWDOG interrupt\n");
+		      " TWDOG interrupt\n");
 		return false;
 	}
 
@@ -878,7 +865,6 @@ bool disable_trusted_wdog_interrupt(ffa_id_t source, ffa_id_t dest)
 struct ffa_memory_access ffa_memory_access_init_permissions_from_mem_func(
 	ffa_id_t receiver_id, uint32_t mem_func)
 {
-
 	enum ffa_instruction_access instruction_access =
 		FFA_INSTRUCTION_ACCESS_NOT_SPECIFIED;
 	enum ffa_data_access data_access =
@@ -897,7 +883,8 @@ struct ffa_memory_access ffa_memory_access_init_permissions_from_mem_func(
  * otherwise.
  */
 bool receive_indirect_message(void *buffer, size_t buffer_size, void *recv,
-			      ffa_id_t *sender, ffa_id_t receiver, ffa_id_t own_id)
+			      ffa_id_t *sender, ffa_id_t receiver,
+			      ffa_id_t own_id)
 {
 	const struct ffa_partition_msg *message;
 	struct ffa_partition_rxtx_header header;
@@ -960,11 +947,11 @@ bool receive_indirect_message(void *buffer, size_t buffer_size, void *recv,
 	}
 
 	if (receiver != header.receiver) {
-		ERROR("Header receiver: %x different than expected receiver: %x\n",
+		ERROR("Header receiver: %x different than expected receiver: "
+		      "%x\n",
 		      header.receiver, receiver);
 		return false;
 	}
-
 
 	if (sender != NULL) {
 		*sender = source_vm_id;
@@ -978,9 +965,9 @@ bool receive_indirect_message(void *buffer, size_t buffer_size, void *recv,
  * payload to the TX buffer.
  * Uses the `send_flags` if any are provided in the call to FFA_MSG_SEND2.
  */
-struct ffa_value send_indirect_message(
-		ffa_id_t from, ffa_id_t to, void *send, const void *payload,
-		size_t payload_size, uint32_t send_flags)
+struct ffa_value send_indirect_message(ffa_id_t from, ffa_id_t to, void *send,
+				       const void *payload, size_t payload_size,
+				       uint32_t send_flags)
 {
 	struct ffa_partition_msg *message = (struct ffa_partition_msg *)send;
 

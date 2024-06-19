@@ -4,28 +4,29 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <debug.h>
-#include <drivers/arm/arm_gic.h>
-#include <drivers/arm/gic_common.h>
-#include <drivers/arm/gic_v2.h>
 #include <events.h>
 #include <irq.h>
-#include <plat_topology.h>
 #include <platform.h>
-#include <power_management.h>
 #include <sgi.h>
 #include <smccc.h>
 #include <string.h>
+
+#include <arch_helpers.h>
+#include <drivers/arm/arm_gic.h>
+#include <drivers/arm/gic_common.h>
+#include <drivers/arm/gic_v2.h>
+#include <plat_topology.h>
+#include <power_management.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
 
-#define TEST_ITERATIONS_COUNT	1000
+#define TEST_ITERATIONS_COUNT 1000
 
-#define SUSPEND_TIME_1_SEC	1000
+#define SUSPEND_TIME_1_SEC 1000
 
-#define TEST_VALUE_1	4
-#define TEST_VALUE_2	6
+#define TEST_VALUE_1 4
+#define TEST_VALUE_2 6
 
 static event_t cpu_has_entered_test[PLATFORM_CORE_COUNT];
 static event_t cpu_has_finished_test[PLATFORM_CORE_COUNT];
@@ -130,7 +131,8 @@ static int preempt_std_smc_on_this_cpu(void)
 	std_smc_args.arg2 = TEST_VALUE_2;
 	smc_ret = tftf_smc(&std_smc_args);
 	if (smc_ret.ret0 != TSP_SMC_PREEMPTED) {
-		tftf_testcase_printf("SMC @ CPU %d returned 0x%llX.\n", core_pos,
+		tftf_testcase_printf("SMC @ CPU %d returned 0x%llX.\n",
+				     core_pos,
 				     (unsigned long long)smc_ret.ret0);
 		result = TEST_RESULT_FAIL;
 	}
@@ -165,14 +167,15 @@ static int resume_std_smc_on_this_cpu(void)
 	/* Resume the STD SMC. Verify result. */
 	std_smc_args.fid = TSP_FID_RESUME;
 	smc_ret = tftf_smc(&std_smc_args);
-	if ((smc_ret.ret0 != 0) || (smc_ret.ret1 != TEST_VALUE_1 * 2)
-	    || (smc_ret.ret2 != TEST_VALUE_2 * 2)) {
+	if ((smc_ret.ret0 != 0) || (smc_ret.ret1 != TEST_VALUE_1 * 2) ||
+	    (smc_ret.ret2 != TEST_VALUE_2 * 2)) {
 		tftf_testcase_printf(
-			"SMC @ CPU %d returned 0x%llX 0x%llX 0x%llX instead of 0x0 0x%X 0x%X\n",
+			"SMC @ CPU %d returned 0x%llX 0x%llX 0x%llX instead of "
+			"0x0 0x%X 0x%X\n",
 			core_pos, (unsigned long long)smc_ret.ret0,
 			(unsigned long long)smc_ret.ret1,
-			(unsigned long long)smc_ret.ret2,
-			TEST_VALUE_1 * 2, TEST_VALUE_2 * 2);
+			(unsigned long long)smc_ret.ret2, TEST_VALUE_1 * 2,
+			TEST_VALUE_2 * 2);
 		return TEST_RESULT_FAIL;
 	}
 	return TEST_RESULT_SUCCESS;
@@ -195,7 +198,8 @@ static int resume_fail_std_smc_on_this_cpu(void)
 	smc_ret = tftf_smc(&std_smc_args);
 	if (smc_ret.ret0 != SMC_UNKNOWN) {
 		tftf_testcase_printf(
-			"SMC @ CPU %d returned 0x%llX 0x%llX 0x%llX instead of SMC_UNKNOWN\n",
+			"SMC @ CPU %d returned 0x%llX 0x%llX 0x%llX instead of "
+			"SMC_UNKNOWN\n",
 			core_pos, (unsigned long long)smc_ret.ret0,
 			(unsigned long long)smc_ret.ret1,
 			(unsigned long long)smc_ret.ret2);
@@ -217,7 +221,6 @@ static test_result_t test_irq_preempted_std_smc_fn(void)
 	tftf_send_event(&cpu_has_entered_test[core_pos]);
 
 	for (unsigned int i = 0; i < TEST_ITERATIONS_COUNT; i++) {
-
 		if (preempt_std_smc_on_this_cpu() != TEST_RESULT_SUCCESS)
 			return TEST_RESULT_FAIL;
 
@@ -253,7 +256,8 @@ test_result_t test_irq_preempted_std_smc(void)
 	}
 
 	/* Power on all CPUs */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU as it is already powered on */
 		if (cpu_mpid == lead_mpid) {
@@ -262,8 +266,8 @@ test_result_t test_irq_preempted_std_smc(void)
 
 		core_pos = platform_get_core_pos(cpu_mpid);
 
-		psci_ret = tftf_cpu_on(cpu_mpid,
-				(uintptr_t)test_irq_preempted_std_smc_fn, 0);
+		psci_ret = tftf_cpu_on(
+			cpu_mpid, (uintptr_t)test_irq_preempted_std_smc_fn, 0);
 		if (psci_ret != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
 				"Failed to power on CPU %d (rc = %d)\n",
@@ -273,7 +277,8 @@ test_result_t test_irq_preempted_std_smc(void)
 	}
 
 	/* Wait until all CPUs have started the test. */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (cpu_mpid == lead_mpid) {
@@ -308,7 +313,8 @@ static test_result_t test_resume_preempted_std_smc_other_cpus_non_lead_fn(void)
 	smc_ret_values smc_ret = tftf_smc(&std_smc_args);
 	if (smc_ret.ret0 != SMC_UNKNOWN) {
 		tftf_testcase_printf(
-			"SMC @ lead CPU returned 0x%llX 0x%llX 0x%llX instead of SMC_UNKNOWN\n",
+			"SMC @ lead CPU returned 0x%llX 0x%llX 0x%llX instead "
+			"of SMC_UNKNOWN\n",
 			(unsigned long long)smc_ret.ret0,
 			(unsigned long long)smc_ret.ret1,
 			(unsigned long long)smc_ret.ret2);
@@ -363,7 +369,8 @@ test_result_t test_resume_preempted_std_smc_other_cpus(void)
 	}
 
 	/* Power on all CPUs and perform test sequentially. */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU as it's the one with the pre-empted STD SMC. */
 		if (cpu_mpid == lead_mpid) {
@@ -372,8 +379,11 @@ test_result_t test_resume_preempted_std_smc_other_cpus(void)
 
 		core_pos = platform_get_core_pos(cpu_mpid);
 
-		psci_ret = tftf_cpu_on(cpu_mpid,
-			(uintptr_t)test_resume_preempted_std_smc_other_cpus_non_lead_fn, 0);
+		psci_ret = tftf_cpu_on(
+			cpu_mpid,
+			(uintptr_t)
+				test_resume_preempted_std_smc_other_cpus_non_lead_fn,
+			0);
 		if (psci_ret != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
 				"Failed to power on CPU %d (rc = %d)\n",
@@ -381,7 +391,8 @@ test_result_t test_resume_preempted_std_smc_other_cpus(void)
 			return TEST_RESULT_FAIL;
 		}
 
-		/* Wait until the test is finished to begin with the next CPU. */
+		/* Wait until the test is finished to begin with the next CPU.
+		 */
 		tftf_wait_for_event(&cpu_has_finished_test[core_pos]);
 	}
 
@@ -392,8 +403,10 @@ test_result_t test_resume_preempted_std_smc_other_cpus(void)
 	return resume_std_smc_on_this_cpu();
 }
 
-/* Test routine for secondary CPU for test_resume_different_cpu_preempted_std_smc */
-static test_result_t test_resume_different_cpu_preempted_std_smc_non_lead_fn(void)
+/* Test routine for secondary CPU for
+ * test_resume_different_cpu_preempted_std_smc */
+static test_result_t test_resume_different_cpu_preempted_std_smc_non_lead_fn(
+	void)
 {
 	smc_args std_smc_args;
 	smc_ret_values smc_ret;
@@ -433,7 +446,8 @@ static test_result_t test_resume_different_cpu_preempted_std_smc_non_lead_fn(voi
 	smc_ret = tftf_smc(&std_smc_args);
 	if (smc_ret.ret0 != TSP_SMC_PREEMPTED) {
 		tftf_testcase_printf(
-			"SMC @ CPU %d returned 0x%llX instead of TSP_SMC_PREEMPTED.\n",
+			"SMC @ CPU %d returned 0x%llX instead of "
+			"TSP_SMC_PREEMPTED.\n",
 			core_pos, (unsigned long long)smc_ret.ret0);
 		enable_irq();
 		unregister_and_disable_test_sgi_handler();
@@ -460,14 +474,16 @@ static test_result_t test_resume_different_cpu_preempted_std_smc_non_lead_fn(voi
 	/* Resume the STD SMC. Verify result. */
 	std_smc_args.fid = TSP_FID_RESUME;
 	smc_ret = tftf_smc(&std_smc_args);
-	if ((smc_ret.ret0 != 0) || (smc_ret.ret1 != TEST_VALUE_1*TEST_VALUE_1)
-	    || (smc_ret.ret2 != TEST_VALUE_2*TEST_VALUE_2)) {
+	if ((smc_ret.ret0 != 0) ||
+	    (smc_ret.ret1 != TEST_VALUE_1 * TEST_VALUE_1) ||
+	    (smc_ret.ret2 != TEST_VALUE_2 * TEST_VALUE_2)) {
 		tftf_testcase_printf(
-			"SMC @ CPU %d returned 0x%llX 0x%llX 0x%llX instead of 0x0 0x%X 0x%X\n",
+			"SMC @ CPU %d returned 0x%llX 0x%llX 0x%llX instead of "
+			"0x0 0x%X 0x%X\n",
 			core_pos, (unsigned long long)smc_ret.ret0,
 			(unsigned long long)smc_ret.ret1,
-			(unsigned long long)smc_ret.ret2,
-			TEST_VALUE_1*2, TEST_VALUE_2*2);
+			(unsigned long long)smc_ret.ret2, TEST_VALUE_1 * 2,
+			TEST_VALUE_2 * 2);
 		/* Signal to the lead CPU that the calling CPU has finished */
 		tftf_send_event(&cpu_has_finished_test[core_pos]);
 		return TEST_RESULT_FAIL;
@@ -478,7 +494,8 @@ static test_result_t test_resume_different_cpu_preempted_std_smc_non_lead_fn(voi
 	smc_ret = tftf_smc(&std_smc_args);
 	if (smc_ret.ret0 != SMC_UNKNOWN) {
 		tftf_testcase_printf(
-			"SMC @ CPU %d returned 0x%llX 0x%llX 0x%llX instead of SMC_UNKNOWN\n",
+			"SMC @ CPU %d returned 0x%llX 0x%llX 0x%llX instead of "
+			"SMC_UNKNOWN\n",
 			core_pos, (unsigned long long)smc_ret.ret0,
 			(unsigned long long)smc_ret.ret1,
 			(unsigned long long)smc_ret.ret2);
@@ -542,7 +559,8 @@ test_result_t test_resume_different_cpu_preempted_std_smc(void)
 	smc_ret = tftf_smc(&std_smc_args);
 	if (smc_ret.ret0 != TSP_SMC_PREEMPTED) {
 		tftf_testcase_printf(
-			"SMC @ lead CPU returned 0x%llX instead of TSP_SMC_PREEMPTED.\n",
+			"SMC @ lead CPU returned 0x%llX instead of "
+			"TSP_SMC_PREEMPTED.\n",
 			(unsigned long long)smc_ret.ret0);
 		enable_irq();
 		unregister_and_disable_test_sgi_handler();
@@ -574,8 +592,11 @@ test_result_t test_resume_different_cpu_preempted_std_smc(void)
 	core_pos = platform_get_core_pos(cpu_mpid);
 	tftf_init_event(&cpu_has_finished_test[core_pos]);
 
-	psci_ret = tftf_cpu_on(cpu_mpid, (uintptr_t)
-			       test_resume_different_cpu_preempted_std_smc_non_lead_fn, 0);
+	psci_ret = tftf_cpu_on(
+		cpu_mpid,
+		(uintptr_t)
+			test_resume_different_cpu_preempted_std_smc_non_lead_fn,
+		0);
 	if (psci_ret != PSCI_E_SUCCESS) {
 		tftf_testcase_printf("Failed to power on CPU %d (rc = %d)\n",
 				     core_pos, psci_ret);
@@ -594,11 +615,12 @@ test_result_t test_resume_different_cpu_preempted_std_smc(void)
 	if ((smc_ret.ret0 != 0) || (smc_ret.ret1 != TEST_VALUE_1 * 2) ||
 	    (smc_ret.ret2 != TEST_VALUE_2 * 2)) {
 		tftf_testcase_printf(
-			"SMC @ lead CPU returned 0x%llX 0x%llX 0x%llX instead of 0x0 0x%X 0x%X\n",
+			"SMC @ lead CPU returned 0x%llX 0x%llX 0x%llX instead "
+			"of 0x0 0x%X 0x%X\n",
 			(unsigned long long)smc_ret.ret0,
 			(unsigned long long)smc_ret.ret1,
-			(unsigned long long)smc_ret.ret2,
-			TEST_VALUE_1*2, TEST_VALUE_2*2);
+			(unsigned long long)smc_ret.ret2, TEST_VALUE_1 * 2,
+			TEST_VALUE_2 * 2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -691,7 +713,8 @@ test_result_t test_psci_cpu_on_off_preempted_std_smc(void)
 	}
 
 	/* Power on all CPUs */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU as it is already powered on */
 		if (cpu_mpid == lead_mpid) {
@@ -700,17 +723,21 @@ test_result_t test_psci_cpu_on_off_preempted_std_smc(void)
 
 		core_pos = platform_get_core_pos(cpu_mpid);
 
-		psci_ret = tftf_cpu_on(cpu_mpid,
-				(uintptr_t)test_psci_cpu_on_off_preempted_non_lead_fn_1, 0);
+		psci_ret = tftf_cpu_on(
+			cpu_mpid,
+			(uintptr_t)test_psci_cpu_on_off_preempted_non_lead_fn_1,
+			0);
 		if (psci_ret != PSCI_E_SUCCESS) {
-			tftf_testcase_printf("Failed to power on CPU %d (rc = %d)\n",
+			tftf_testcase_printf(
+				"Failed to power on CPU %d (rc = %d)\n",
 				core_pos, psci_ret);
 			return TEST_RESULT_FAIL;
 		}
 	}
 
 	/* Wait for non-lead CPUs to exit the first part of the test */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (cpu_mpid == lead_mpid) {
@@ -725,7 +752,8 @@ test_result_t test_psci_cpu_on_off_preempted_std_smc(void)
 	all_powered_down = 0;
 	while (all_powered_down == 0) {
 		all_powered_down = 1;
-		for_each_cpu(cpu_node) {
+		for_each_cpu(cpu_node)
+		{
 			cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 			if (cpu_mpid == lead_mpid) {
 				continue;
@@ -737,7 +765,8 @@ test_result_t test_psci_cpu_on_off_preempted_std_smc(void)
 	}
 
 	/* Start the second part of the test */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU as it is already powered on */
 		if (cpu_mpid == lead_mpid) {
@@ -746,17 +775,21 @@ test_result_t test_psci_cpu_on_off_preempted_std_smc(void)
 
 		core_pos = platform_get_core_pos(cpu_mpid);
 
-		psci_ret = tftf_cpu_on(cpu_mpid,
-				(uintptr_t)test_psci_cpu_on_off_preempted_non_lead_fn_2, 0);
+		psci_ret = tftf_cpu_on(
+			cpu_mpid,
+			(uintptr_t)test_psci_cpu_on_off_preempted_non_lead_fn_2,
+			0);
 		if (psci_ret != PSCI_E_SUCCESS) {
-			tftf_testcase_printf("Failed to power on CPU 0x%x (rc = %d)\n",
+			tftf_testcase_printf(
+				"Failed to power on CPU 0x%x (rc = %d)\n",
 				core_pos, psci_ret);
 			return TEST_RESULT_FAIL;
 		}
 	}
 
 	/* Wait for non-lead CPUs to finish the second part of the test. */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (cpu_mpid == lead_mpid) {
@@ -793,8 +826,7 @@ test_result_t test_psci_system_suspend_preempted_std_smc(void)
 	SKIP_TEST_IF_TSP_NOT_PRESENT();
 
 	if (!is_psci_sys_susp_supported()) {
-		tftf_testcase_printf(
-			"SYSTEM_SUSPEND is not supported.\n");
+		tftf_testcase_printf("SYSTEM_SUSPEND is not supported.\n");
 		return TEST_RESULT_SKIPPED;
 	}
 

@@ -4,12 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <cdefs.h>
-#include <stdbool.h>
-#include <stdint.h>
 #include <debug.h>
 #include <pauth.h>
+#include <stdbool.h>
+#include <stdint.h>
+
+#include <arch_helpers.h>
 
 /*
  * This is only a toy implementation to generate a seemingly random
@@ -41,7 +42,8 @@ static bool is_pauth_key_enabled(uint64_t key_bit)
 	return false;
 }
 
-bool pauth_test_lib_compare_template(uint128_t *pauth_keys_before, uint128_t *pauth_keys_after)
+bool pauth_test_lib_compare_template(uint128_t *pauth_keys_before,
+				     uint128_t *pauth_keys_after)
 {
 	bool result = true;
 
@@ -49,11 +51,12 @@ bool pauth_test_lib_compare_template(uint128_t *pauth_keys_before, uint128_t *pa
 	for (unsigned int i = 0U; i < NUM_KEYS; ++i) {
 		if (pauth_keys_before[i] != pauth_keys_after[i]) {
 			ERROR("AP%sKey_EL1 read 0x%llx:%llx "
-			"expected 0x%llx:%llx\n", key_name[i],
-			(uint64_t)(pauth_keys_after[i] >> 64U),
-			(uint64_t)(pauth_keys_after[i]),
-			(uint64_t)(pauth_keys_before[i] >> 64U),
-			(uint64_t)(pauth_keys_before[i]));
+			      "expected 0x%llx:%llx\n",
+			      key_name[i],
+			      (uint64_t)(pauth_keys_after[i] >> 64U),
+			      (uint64_t)(pauth_keys_after[i]),
+			      (uint64_t)(pauth_keys_before[i] >> 64U),
+			      (uint64_t)(pauth_keys_before[i]));
 
 			result = false;
 		}
@@ -74,7 +77,7 @@ void pauth_test_lib_fill_regs_and_template(uint128_t *pauth_keys_before)
 	if (is_pauth_key_enabled(SCTLR_EnIA_BIT)) {
 		/* Read APIAKey_EL1 */
 		plat_key = read_apiakeylo_el1() |
-			((uint128_t)(read_apiakeyhi_el1()) << 64U);
+			   ((uint128_t)(read_apiakeyhi_el1()) << 64U);
 		INFO("EnIA is set\n");
 	} else {
 		/* Program APIAKey_EL1 */
@@ -87,7 +90,7 @@ void pauth_test_lib_fill_regs_and_template(uint128_t *pauth_keys_before)
 	if (is_pauth_key_enabled(SCTLR_EnIB_BIT)) {
 		/* Read APIBKey_EL1 */
 		plat_key = read_apibkeylo_el1() |
-			((uint128_t)(read_apibkeyhi_el1()) << 64U);
+			   ((uint128_t)(read_apibkeyhi_el1()) << 64U);
 		INFO("EnIB is set\n");
 	} else {
 		/* Program APIBKey_EL1 */
@@ -100,7 +103,7 @@ void pauth_test_lib_fill_regs_and_template(uint128_t *pauth_keys_before)
 	if (is_pauth_key_enabled(SCTLR_EnDA_BIT)) {
 		/* Read APDAKey_EL1 */
 		plat_key = read_apdakeylo_el1() |
-			((uint128_t)(read_apdakeyhi_el1()) << 64U);
+			   ((uint128_t)(read_apdakeyhi_el1()) << 64U);
 		INFO("EnDA is set\n");
 	} else {
 		/* Program APDAKey_EL1 */
@@ -113,7 +116,7 @@ void pauth_test_lib_fill_regs_and_template(uint128_t *pauth_keys_before)
 	if (is_pauth_key_enabled(SCTLR_EnDB_BIT)) {
 		/* Read APDBKey_EL1 */
 		plat_key = read_apdbkeylo_el1() |
-			((uint128_t)(read_apdbkeyhi_el1()) << 64U);
+			   ((uint128_t)(read_apdbkeyhi_el1()) << 64U);
 		INFO("EnDB is set\n");
 	} else {
 		/* Program APDBKey_EL1 */
@@ -146,32 +149,32 @@ void pauth_test_lib_read_keys(uint128_t *pauth_keys_arr)
 
 	/* Read APIAKey_EL1 */
 	pauth_keys_arr[0] = read_apiakeylo_el1() |
-		((uint128_t)(read_apiakeyhi_el1()) << 64U);
+			    ((uint128_t)(read_apiakeyhi_el1()) << 64U);
 
 	/* Read APIBKey_EL1 */
 	pauth_keys_arr[1] = read_apibkeylo_el1() |
-		((uint128_t)(read_apibkeyhi_el1()) << 64U);
+			    ((uint128_t)(read_apibkeyhi_el1()) << 64U);
 
 	/* Read APDAKey_EL1 */
 	pauth_keys_arr[2] = read_apdakeylo_el1() |
-		((uint128_t)(read_apdakeyhi_el1()) << 64U);
+			    ((uint128_t)(read_apdakeyhi_el1()) << 64U);
 
 	/* Read APDBKey_EL1 */
 	pauth_keys_arr[3] = read_apdbkeylo_el1() |
-		((uint128_t)(read_apdbkeyhi_el1()) << 64U);
+			    ((uint128_t)(read_apdbkeyhi_el1()) << 64U);
 
 	/* Read APGAKey_EL1 */
 	pauth_keys_arr[4] = read_apgakeylo_el1() |
-		((uint128_t)(read_apgakeyhi_el1()) << 64U);
+			    ((uint128_t)(read_apgakeyhi_el1()) << 64U);
 }
 
 /* Test execution of ARMv8.3-PAuth instructions */
 void pauth_test_lib_test_intrs(void)
 {
 	/* Pointer authentication instructions */
-	__asm__ volatile (
-			"paciasp\n"
-			"autiasp\n"
-			"paciasp\n"
-			"xpaclri");
+	__asm__ volatile(
+		"paciasp\n"
+		"autiasp\n"
+		"paciasp\n"
+		"xpaclri");
 }

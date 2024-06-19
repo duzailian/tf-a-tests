@@ -4,8 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <debug.h>
+
+#include <arch_helpers.h>
 #include <host_realm_pmu.h>
 
 /* Realm interrupt handler */

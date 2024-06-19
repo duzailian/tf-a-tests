@@ -4,19 +4,20 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <platform.h>
+
 #include <cactus_test_cmds.h>
 #include <ffa_endpoints.h>
-#include <platform.h>
 #include <spm_test_helpers.h>
 #include <test_helpers.h>
 
-#define SP_SLEEP_TIME	200U
-#define NS_TIME_SLEEP	200U
+#define SP_SLEEP_TIME 200U
+#define NS_TIME_SLEEP 200U
 
-#define SENDER		HYP_ID
-#define RECEIVER	SP_ID(1)
+#define SENDER HYP_ID
+#define RECEIVER SP_ID(1)
 
-static const struct ffa_uuid expected_sp_uuids[] = { {PRIMARY_UUID} };
+static const struct ffa_uuid expected_sp_uuids[] = {{PRIMARY_UUID}};
 
 test_result_t test_ffa_group0_interrupt_sp_running(void)
 {
@@ -65,7 +66,7 @@ test_result_t test_ffa_group0_interrupt_in_nwd(void)
 
 	if (time_lapsed < NS_TIME_SLEEP) {
 		ERROR("Time elapsed less than expected value: %llu vs %u\n",
-				time_lapsed, NS_TIME_SLEEP);
+		      time_lapsed, NS_TIME_SLEEP);
 		return TEST_RESULT_FAIL;
 	}
 

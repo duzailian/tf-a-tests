@@ -4,15 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <debug.h>
 #include <events.h>
+#include <platform.h>
+#include <smccc.h>
+
+#include <arch_helpers.h>
 #include <mm_svc.h>
 #include <plat_topology.h>
-#include <platform.h>
 #include <power_management.h>
 #include <secure_partition.h>
-#include <smccc.h>
 #include <spm_svc.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
@@ -33,12 +34,8 @@ static test_result_t test_secure_partition_secondary_cores_seq_fn(void)
 	INFO("Sending MM_COMMUNICATE_AARCH64 from CPU %u\n",
 	     platform_get_core_pos(read_mpidr_el1() & MPID_MASK));
 
-	smc_args mm_communicate_smc = {
-		MM_COMMUNICATE_AARCH64,
-		0,
-		(u_register_t) sps_request,
-		0
-	};
+	smc_args mm_communicate_smc = {MM_COMMUNICATE_AARCH64, 0,
+				       (u_register_t)sps_request, 0};
 
 	smc_ret_values smc_ret = tftf_smc(&mm_communicate_smc);
 
@@ -71,10 +68,9 @@ test_result_t test_secure_partition_secondary_cores_seq(void)
 
 	VERBOSE("Mapping NS<->SP shared buffer\n");
 
-	int rc = mmap_add_dynamic_region(ARM_SECURE_SERVICE_BUFFER_BASE,
-					 ARM_SECURE_SERVICE_BUFFER_BASE,
-					 ARM_SECURE_SERVICE_BUFFER_SIZE,
-					 MT_MEMORY | MT_RW | MT_NS);
+	int rc = mmap_add_dynamic_region(
+		ARM_SECURE_SERVICE_BUFFER_BASE, ARM_SECURE_SERVICE_BUFFER_BASE,
+		ARM_SECURE_SERVICE_BUFFER_SIZE, MT_MEMORY | MT_RW | MT_NS);
 	if (rc != 0) {
 		tftf_testcase_printf("%d: mmap_add_dynamic_region() = %d\n",
 				     __LINE__, rc);
@@ -86,12 +82,14 @@ test_result_t test_secure_partition_secondary_cores_seq(void)
 
 	INFO("Lead CPU is CPU %u\n", platform_get_core_pos(lead_mpid));
 
-	if (test_secure_partition_secondary_cores_seq_fn() != TEST_RESULT_SUCCESS) {
+	if (test_secure_partition_secondary_cores_seq_fn() !=
+	    TEST_RESULT_SUCCESS) {
 		result = TEST_RESULT_FAIL;
 		goto exit_unmap;
 	}
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU, we have already tested it */
 		if (cpu_mpid == lead_mpid) {
@@ -104,8 +102,10 @@ test_result_t test_secure_partition_secondary_cores_seq(void)
 
 		VERBOSE("Powering on CPU %u\n", core_pos);
 
-		psci_ret = tftf_cpu_on(cpu_mpid,
-			(uintptr_t)test_secure_partition_secondary_cores_seq_fn, 0);
+		psci_ret = tftf_cpu_on(
+			cpu_mpid,
+			(uintptr_t)test_secure_partition_secondary_cores_seq_fn,
+			0);
 		if (psci_ret != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
 				"Failed to power on CPU %d (rc = %d)\n",
@@ -141,12 +141,8 @@ static test_result_t test_secure_partition_secondary_cores_sim_fn(void)
 	secure_partition_request_info_t *sps_request =
 		create_sps_request(SPS_CHECK_ALIVE, NULL, 0);
 
-	smc_args mm_communicate_smc = {
-		MM_COMMUNICATE_AARCH64,
-		0,
-		(u_register_t) sps_request,
-		0
-	};
+	smc_args mm_communicate_smc = {MM_COMMUNICATE_AARCH64, 0,
+				       (u_register_t)sps_request, 0};
 
 	tftf_wait_for_event(&cpu_can_start_test[core_pos]);
 
@@ -187,10 +183,9 @@ test_result_t test_secure_partition_secondary_cores_sim(void)
 
 	VERBOSE("Mapping NS<->SP shared buffer\n");
 
-	int rc = mmap_add_dynamic_region(ARM_SECURE_SERVICE_BUFFER_BASE,
-					 ARM_SECURE_SERVICE_BUFFER_BASE,
-					 ARM_SECURE_SERVICE_BUFFER_SIZE,
-					 MT_MEMORY | MT_RW | MT_NS);
+	int rc = mmap_add_dynamic_region(
+		ARM_SECURE_SERVICE_BUFFER_BASE, ARM_SECURE_SERVICE_BUFFER_BASE,
+		ARM_SECURE_SERVICE_BUFFER_SIZE, MT_MEMORY | MT_RW | MT_NS);
 	if (rc != 0) {
 		tftf_testcase_printf("%d: mmap_add_dynamic_region() = %d\n",
 				     __LINE__, rc);
@@ -202,13 +197,15 @@ test_result_t test_secure_partition_secondary_cores_sim(void)
 
 	INFO("Lead CPU is CPU %u\n", platform_get_core_pos(lead_mpid));
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		core_pos = platform_get_core_pos(cpu_mpid);
 		tftf_init_event(&cpu_can_start_test[core_pos]);
 	}
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU as it is already powered on */
 		if (cpu_mpid == lead_mpid) {
@@ -219,8 +216,10 @@ test_result_t test_secure_partition_secondary_cores_sim(void)
 
 		VERBOSE("Powering on CPU %u\n", core_pos);
 
-		psci_ret = tftf_cpu_on(cpu_mpid,
-				       (uintptr_t)test_secure_partition_secondary_cores_sim_fn, 0);
+		psci_ret = tftf_cpu_on(
+			cpu_mpid,
+			(uintptr_t)test_secure_partition_secondary_cores_sim_fn,
+			0);
 		if (psci_ret != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
 				"Failed to power on CPU %d (rc = %d)\n",
@@ -230,7 +229,8 @@ test_result_t test_secure_partition_secondary_cores_sim(void)
 		}
 	}
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		core_pos = platform_get_core_pos(cpu_mpid);
 		tftf_send_event(&cpu_can_start_test[core_pos]);
@@ -239,7 +239,8 @@ test_result_t test_secure_partition_secondary_cores_sim(void)
 	result = test_secure_partition_secondary_cores_sim_fn();
 
 	/* Wait until all CPUs have finished to unmap the NS<->SP buffer */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		core_pos = platform_get_core_pos(cpu_mpid);
 		tftf_wait_for_event(&cpu_has_finished_test[core_pos]);

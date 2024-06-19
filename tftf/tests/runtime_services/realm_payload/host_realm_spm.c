@@ -4,22 +4,22 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <fpu.h>
 #include <stdlib.h>
 
 #include <cactus_test_cmds.h>
 #include <ffa_endpoints.h>
 #include <ffa_helpers.h>
-#include <fpu.h>
 #include <host_realm_helper.h>
 #include <host_realm_mem_layout.h>
 #include <host_shared_data.h>
 #include <spm_test_helpers.h>
 #include <test_helpers.h>
 
-#define REALM_TIME_SLEEP	300U
+#define REALM_TIME_SLEEP 300U
 #define SENDER HYP_ID
 #define RECEIVER SP_ID(1)
-static const struct ffa_uuid expected_sp_uuids[] = { {PRIMARY_UUID} };
+static const struct ffa_uuid expected_sp_uuids[] = {{PRIMARY_UUID}};
 static struct mailbox_buffers mb;
 static bool secure_mailbox_initialised;
 
@@ -63,10 +63,11 @@ static test_result_t init_realm(void)
 	/*
 	 * Initialise Realm payload
 	 */
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 1U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -74,7 +75,7 @@ static test_result_t init_realm(void)
 	 * Create shared memory between Host and Realm
 	 */
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -82,7 +83,7 @@ static test_result_t init_realm(void)
 }
 
 static bool host_realm_handle_fiq_exit(struct realm *realm_ptr,
-		unsigned int rec_num)
+				       unsigned int rec_num)
 {
 	struct rmi_rec_run *run = (struct rmi_rec_run *)realm_ptr->run[rec_num];
 	if (run->exit.exit_reason == RMI_EXIT_FIQ) {
@@ -110,7 +111,8 @@ static bool fpu_fill_sec(void)
 /* Send request to SP to compare FPU/SIMD regs with secure template values */
 static bool fpu_cmp_sec(void)
 {
-	struct ffa_value ret = cactus_req_simd_compare_send_cmd(SENDER, RECEIVER);
+	struct ffa_value ret =
+		cactus_req_simd_compare_send_cmd(SENDER, RECEIVER);
 
 	if (!is_ffa_direct_response(ret)) {
 		ERROR("%s failed %d\n", __func__, __LINE__);
@@ -123,21 +125,23 @@ static bool fpu_cmp_sec(void)
 	return true;
 }
 
-
 /* Send request to Realm to fill FPU/SIMD regs with realm template values */
 static bool fpu_fill_rl(void)
 {
-	if (!host_enter_realm_execute(&realm, REALM_REQ_FPU_FILL_CMD, RMI_EXIT_HOST_CALL, 0U)) {
+	if (!host_enter_realm_execute(&realm, REALM_REQ_FPU_FILL_CMD,
+				      RMI_EXIT_HOST_CALL, 0U)) {
 		ERROR("%s failed %d\n", __func__, __LINE__);
 		return false;
 	}
 	return true;
 }
 
-/* Send request to Realm to compare FPU/SIMD regs with previous realm template values */
+/* Send request to Realm to compare FPU/SIMD regs with previous realm template
+ * values */
 static bool fpu_cmp_rl(void)
 {
-	if (!host_enter_realm_execute(&realm, REALM_REQ_FPU_CMP_CMD, RMI_EXIT_HOST_CALL, 0U)) {
+	if (!host_enter_realm_execute(&realm, REALM_REQ_FPU_CMP_CMD,
+				      RMI_EXIT_HOST_CALL, 0U)) {
 		ERROR("%s failed %d\n", __func__, __LINE__);
 		return false;
 	}
@@ -145,8 +149,8 @@ static bool fpu_cmp_rl(void)
 }
 
 /*
- * @Test_Aim@ Test secure interrupt handling while Secure Partition is in waiting
- * state and Realm world runs a busy loop at R-EL1.
+ * @Test_Aim@ Test secure interrupt handling while Secure Partition is in
+ * waiting state and Realm world runs a busy loop at R-EL1.
  *
  * 1. Send a direct message request command to first Cactus SP to start the
  *    trusted watchdog timer.
@@ -173,8 +177,8 @@ static bool fpu_cmp_rl(void)
  *
  * 9. TFTF parses REC's exit reason (FIQ in this case).
  *
- * 10. TFTF sends a direct request message to SP to query the ID of last serviced
- *     secure virtual interrupt.
+ * 10. TFTF sends a direct request message to SP to query the ID of last
+ * serviced secure virtual interrupt.
  *
  * 121. Further, TFTF expects SP to return the ID of Trusted Watchdog timer
  *     interrupt through a direct response message.
@@ -214,8 +218,8 @@ test_result_t host_realm_sec_interrupt_can_preempt_rl(void)
 	/*
 	 * Send a message to SP1 through direct messaging.
 	 */
-	ret_values = cactus_send_twdog_cmd(SENDER, RECEIVER,
-					   (REALM_TIME_SLEEP/2));
+	ret_values =
+		cactus_send_twdog_cmd(SENDER, RECEIVER, (REALM_TIME_SLEEP / 2));
 	if (!is_ffa_direct_response(ret_values)) {
 		ERROR("Expected a direct response for starting TWDOG timer\n");
 		goto destroy_realm;
@@ -225,7 +229,8 @@ test_result_t host_realm_sec_interrupt_can_preempt_rl(void)
 	 * Spin Realm payload for REALM_TIME_SLEEP ms, This ensures secure wdog
 	 * timer triggers during this time.
 	 */
-	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, REALM_TIME_SLEEP);
+	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX,
+				      REALM_TIME_SLEEP);
 	host_enter_realm_execute(&realm, REALM_SLEEP_CMD, RMI_EXIT_FIQ, 0U);
 
 	/*
@@ -241,7 +246,7 @@ test_result_t host_realm_sec_interrupt_can_preempt_rl(void)
 
 	if (!is_ffa_direct_response(ret_values)) {
 		ERROR("Expected a direct response for last serviced interrupt"
-			" command\n");
+		      " command\n");
 		goto destroy_realm;
 	}
 
@@ -304,7 +309,8 @@ static security_state_t get_random_security_state(security_state_t current,
 
 /*
  * Test whether FPU/SIMD state (32 SIMD vectors, FPCR and FPSR registers) are
- * preserved during a random context switch between Secure/Non-Secure/Realm world
+ * preserved during a random context switch between Secure/Non-Secure/Realm
+ * world
  *
  * Below steps are performed by this test:
  *
@@ -401,7 +407,6 @@ test_result_t host_realm_fpu_access_in_rl_ns_se(void)
 			/* Fill FPU state with new random values in SP */
 			if (!fpu_fill_sec()) {
 				goto destroy_realm;
-
 			}
 
 			break;

@@ -6,6 +6,7 @@
 
 #include <psci.h>
 #include <smccc.h>
+
 #include <std_svc.h>
 #include <tftf_lib.h>
 #include <uuid_utils.h>
@@ -14,13 +15,12 @@
  * Standard service UUID as returned by the implementation in the Trusted
  * Firmware.
  */
-static const uuid_t armtf_std_svc_uuid = {
-	{0x5b, 0x90, 0x8d, 0x10},
-	{0x63, 0xf8},
-	{0xe8, 0x47},
-	0xae, 0x2d,
-	{0xc0, 0xfb, 0x56, 0x41, 0xf6, 0xe2}
-};
+static const uuid_t armtf_std_svc_uuid = {{0x5b, 0x90, 0x8d, 0x10},
+					  {0x63, 0xf8},
+					  {0xe8, 0x47},
+					  0xae,
+					  0x2d,
+					  {0xc0, 0xfb, 0x56, 0x41, 0xf6, 0xe2}};
 
 /**
  * @Test_Aim@ Query the Standard Service
@@ -47,13 +47,14 @@ test_result_t test_query_std_svc(void)
 	std_svc_args.fid = SMC_STD_SVC_UID;
 	ret = tftf_smc(&std_svc_args);
 
-	make_uuid_from_4words(&std_svc_uuid,
-			ret.ret0, ret.ret1, ret.ret2, ret.ret3);
+	make_uuid_from_4words(&std_svc_uuid, ret.ret0, ret.ret1, ret.ret2,
+			      ret.ret3);
 	if (!uuid_equal(&std_svc_uuid, &armtf_std_svc_uuid)) {
-		tftf_testcase_printf("Wrong UUID: expected %s,\n",
-				uuid_to_str(&armtf_std_svc_uuid, uuid_str));
+		tftf_testcase_printf(
+			"Wrong UUID: expected %s,\n",
+			uuid_to_str(&armtf_std_svc_uuid, uuid_str));
 		tftf_testcase_printf("                 got %s\n",
-				uuid_to_str(&std_svc_uuid, uuid_str));
+				     uuid_to_str(&std_svc_uuid, uuid_str));
 		test_result = TEST_RESULT_FAIL;
 	}
 
@@ -62,12 +63,15 @@ test_result_t test_query_std_svc(void)
 	ret = tftf_smc(&std_svc_args);
 
 	if (ret.ret0 == SMC_UNKNOWN) {
-		tftf_testcase_printf("Querying STD service call count"
-				" failed\n");
+		tftf_testcase_printf(
+			"Querying STD service call count"
+			" failed\n");
 		test_result = TEST_RESULT_FAIL;
 	} else {
-		tftf_testcase_printf("STD Service Call Count reported by firmware:"
-			" %llu\n", (unsigned long long)ret.ret0);
+		tftf_testcase_printf(
+			"STD Service Call Count reported by firmware:"
+			" %llu\n",
+			(unsigned long long)ret.ret0);
 	}
 
 	/* Standard Service Call Revision details */

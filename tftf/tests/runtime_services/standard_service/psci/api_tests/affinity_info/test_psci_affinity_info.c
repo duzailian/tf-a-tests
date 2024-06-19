@@ -5,25 +5,26 @@
  */
 
 #include <arch.h>
-#include <arch_helpers.h>
 #include <assert.h>
-#include <drivers/arm/arm_gic.h>
 #include <events.h>
 #include <irq.h>
-#include <plat_topology.h>
 #include <platform.h>
-#include <power_management.h>
 #include <psci.h>
 #include <sgi.h>
+
+#include <arch_helpers.h>
+#include <drivers/arm/arm_gic.h>
+#include <plat_topology.h>
+#include <power_management.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
 
 /* Special value used to terminate the array of expected return values */
-#define END_OF_EXPECTED_VALUE	0xDEADBEEF
+#define END_OF_EXPECTED_VALUE 0xDEADBEEF
 
 /* TODO: Remove assumption that affinity levels always map to power levels. */
-#define MPIDR_CLUSTER_ID(mpid)	MPIDR_AFF_ID(mpid, 1)
-#define MPIDR_CPU_ID(mpid)	MPIDR_AFF_ID(mpid, 0)
+#define MPIDR_CLUSTER_ID(mpid) MPIDR_AFF_ID(mpid, 1)
+#define MPIDR_CPU_ID(mpid) MPIDR_AFF_ID(mpid, 0)
 
 /*
  * Event used by test test_affinity_info_level0_powerdown() to synchronise
@@ -39,7 +40,8 @@ static unsigned int psci_version;
  * Otherwise, print an error message in the test report and report a test
  * failure.
  */
-static test_result_t get_test_result(const int *expected_values, int actual_value)
+static test_result_t get_test_result(const int *expected_values,
+				     int actual_value)
 {
 	const int *expected_val_list;
 
@@ -52,7 +54,7 @@ static test_result_t get_test_result(const int *expected_values, int actual_valu
 
 	expected_val_list = expected_values;
 	tftf_testcase_printf("Unexpected return value: %i Expected values are:",
-						actual_value);
+			     actual_value);
 	while (*expected_val_list != END_OF_EXPECTED_VALUE) {
 		tftf_testcase_printf("%i ", *expected_val_list);
 		expected_val_list++;
@@ -79,7 +81,8 @@ test_result_t test_affinity_info_level0_on(void)
 }
 
 /*
- * @Test_Aim@ Test PSCI AFFINITY_INFO targeted at affinity level 0 on offline CPU
+ * @Test_Aim@ Test PSCI AFFINITY_INFO targeted at affinity level 0 on offline
+ * CPU
  *
  * Call PSCI AFFINITY_INFO targeted at affinity level 0 on all non-lead CPUs.
  * Expect the PSCI implementation to report that the affinity instances are off.
@@ -96,15 +99,16 @@ test_result_t test_affinity_info_level0_off(void)
 
 	SKIP_TEST_IF_LESS_THAN_N_CPUS(2);
 
-	for_each_cpu(target_node) {
+	for_each_cpu(target_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(target_node);
 		/* Skip lead CPU, as it is powered on */
 		if (target_mpid == lead_mpid)
 			continue;
 
 		aff_info = tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0);
-		if (get_test_result(expected_values, aff_info)
-			== TEST_RESULT_FAIL) {
+		if (get_test_result(expected_values, aff_info) ==
+		    TEST_RESULT_FAIL) {
 			ret = TEST_RESULT_FAIL;
 		}
 	}
@@ -113,7 +117,8 @@ test_result_t test_affinity_info_level0_off(void)
 }
 
 /*
- * @Test_Aim@ Test PSCI AFFINITY_INFO targeted at affinity level 1 on online cluster
+ * @Test_Aim@ Test PSCI AFFINITY_INFO targeted at affinity level 1 on online
+ * cluster
  *
  * Call PSCI AFFINITY_INFO targeted at affinity level 1 on the lead cluster
  * (i.e. the cluster to which the lead CPU belongs to).
@@ -159,7 +164,8 @@ test_result_t test_affinity_info_level1_on(void)
 }
 
 /*
- * @Test_Aim@ Test PSCI AFFINITY_INFO targeted at affinity level 1 on offline cluster
+ * @Test_Aim@ Test PSCI AFFINITY_INFO targeted at affinity level 1 on offline
+ * cluster
  *
  * Call PSCI AFFINITY_INFO targeted at affinity level 1 on a non-lead cluster
  * (i.e. another cluster than the one to which the lead CPU belongs to).
@@ -179,14 +185,12 @@ test_result_t test_affinity_info_level1_off(void)
 
 	SKIP_TEST_IF_LESS_THAN_N_CLUSTERS(2);
 
-	for (cluster_id = 0;
-	     cluster_id < tftf_get_total_clusters_count();
+	for (cluster_id = 0; cluster_id < tftf_get_total_clusters_count();
 	     ++cluster_id) {
 		if (cluster_id != MPIDR_CLUSTER_ID(lead_mpid))
 			break;
 	}
 	assert(cluster_id != tftf_get_total_clusters_count());
-
 
 	/*
 	 * Minimum version of PSCI is 0.2, uses this info to decide if
@@ -249,9 +253,8 @@ test_result_t test_affinity_info_level2(void)
 	if (!psci_version)
 		psci_version = tftf_get_psci_version();
 
-	expected_values[0] = (PLATFORM_MAX_AFFLVL >= 2)
-		? PSCI_STATE_ON
-		: PSCI_E_INVALID_PARAMS;
+	expected_values[0] = (PLATFORM_MAX_AFFLVL >= 2) ? PSCI_STATE_ON
+							: PSCI_E_INVALID_PARAMS;
 
 	/*
 	 * From PSCI version 1.0 onwards, Trusted Firmware-A may or may not
@@ -270,7 +273,8 @@ test_result_t test_affinity_info_level2(void)
 	 * don't correspond to any affinity instance on the platform. The PSCI
 	 * implementation should ignore the affinity 0 & 1 fields.
 	 */
-	target_mpid = read_mpidr_el1() & (MPIDR_AFFLVL_MASK << MPIDR_AFF_SHIFT(2));
+	target_mpid =
+		read_mpidr_el1() & (MPIDR_AFFLVL_MASK << MPIDR_AFF_SHIFT(2));
 	target_mpid |= 0xAB << MPIDR_AFF1_SHIFT;
 	target_mpid |= 0xE1 << MPIDR_AFF0_SHIFT;
 
@@ -305,9 +309,8 @@ test_result_t test_affinity_info_level3(void)
 	if (!psci_version)
 		psci_version = tftf_get_psci_version();
 
-	expected_values[0] = (PLATFORM_MAX_AFFLVL == 3)
-		? PSCI_STATE_ON
-		: PSCI_E_INVALID_PARAMS;
+	expected_values[0] = (PLATFORM_MAX_AFFLVL == 3) ? PSCI_STATE_ON
+							: PSCI_E_INVALID_PARAMS;
 
 	/*
 	 * From PSCI version 1.0 onwards, Trusted Firmware-A may or may not
@@ -327,7 +330,7 @@ test_result_t test_affinity_info_level3(void)
 	 * PSCI implementation should ignore the affinity 0, 1 & 2 fields.
 	 */
 	target_mpid = read_mpidr_el1();
-	target_mpid &= ((uint64_t) MPIDR_AFFLVL_MASK) << MPIDR_AFF_SHIFT(3);
+	target_mpid &= ((uint64_t)MPIDR_AFFLVL_MASK) << MPIDR_AFF_SHIFT(3);
 	target_mpid |= 0xD2 << MPIDR_AFF2_SHIFT;
 	target_mpid |= 0xAB << MPIDR_AFF1_SHIFT;
 	target_mpid |= 0xE1 << MPIDR_AFF0_SHIFT;
@@ -358,7 +361,7 @@ static test_result_t suspend_to_powerdown(void)
 	tftf_irq_enable(IRQ_NS_SGI_0, GIC_HIGHEST_NS_PRIORITY);
 
 	expected_return_val = tftf_psci_make_composite_state_id(
-			PSTATE_AFF_LVL_0, PSTATE_TYPE_POWERDOWN, &stateid);
+		PSTATE_AFF_LVL_0, PSTATE_TYPE_POWERDOWN, &stateid);
 
 	/* Need at least 1 power down state defined at level 0 */
 	if (expected_return_val != PSCI_E_SUCCESS)
@@ -368,8 +371,7 @@ static test_result_t suspend_to_powerdown(void)
 	 * Suspend the calling CPU to the desired affinity level and power state
 	 */
 	power_state = tftf_make_psci_pstate(PSTATE_AFF_LVL_0,
-					  PSTATE_TYPE_POWERDOWN,
-					  stateid);
+					    PSTATE_TYPE_POWERDOWN, stateid);
 
 	/*
 	 * Notify the lead CPU that the calling CPU is about to suspend itself
@@ -419,7 +421,7 @@ test_result_t test_affinity_info_level0_powerdown(void)
 	assert(target_mpid != INVALID_MPID);
 	target_core_pos = platform_get_core_pos(target_mpid);
 
-	psci_ret = tftf_cpu_on(target_mpid, (uintptr_t) suspend_to_powerdown, 0);
+	psci_ret = tftf_cpu_on(target_mpid, (uintptr_t)suspend_to_powerdown, 0);
 	if (psci_ret != PSCI_E_SUCCESS) {
 		tftf_testcase_printf("Failed to power on CPU 0x%x (%d)\n",
 				     target_mpid, psci_ret);

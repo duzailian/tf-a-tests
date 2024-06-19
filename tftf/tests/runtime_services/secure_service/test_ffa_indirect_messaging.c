@@ -3,24 +3,24 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
+#include <debug.h>
+#include <platform.h>
+#include <smccc.h>
+
 #include "ffa_helpers.h"
 #include "spm_common.h"
 #include "tftf_lib.h"
-#include <debug.h>
-#include <smccc.h>
-
 #include <arch_helpers.h>
 #include <cactus_test_cmds.h>
 #include <ffa_endpoints.h>
 #include <ffa_svc.h>
 #include <host_realm_helper.h>
-#include <platform.h>
 #include <spm_test_helpers.h>
 #include <test_helpers.h>
 
 static const struct ffa_uuid expected_sp_uuids[] = {
-		{PRIMARY_UUID},
-	};
+	{PRIMARY_UUID},
+};
 
 const char expected_msg[] = "Testing FF-A message.";
 
@@ -65,21 +65,22 @@ test_result_t test_ffa_indirect_message_sp_to_vm(void)
 	}
 
 	/* Request SP to send message. */
-	ret = cactus_req_ind_msg_send_cmd(
-			HYP_ID, sender, vm_id, sender, 0);
+	ret = cactus_req_ind_msg_send_cmd(HYP_ID, sender, vm_id, sender, 0);
 
 	if (!is_ffa_direct_response(ret) &&
 	    cactus_get_response(ret) != CACTUS_SUCCESS) {
 		return TEST_RESULT_FAIL;
 	}
 
-	if (!receive_indirect_message(&msg, ARRAY_SIZE(msg), (void *)vm1_rx_buffer,
-				      &header_sender, vm_id, 0)) {
+	if (!receive_indirect_message(&msg, ARRAY_SIZE(msg),
+				      (void *)vm1_rx_buffer, &header_sender,
+				      vm_id, 0)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	if (strncmp(msg, expected_msg, ARRAY_SIZE(expected_msg)) != 0) {
-		ERROR("Unexpected message: %s, expected: %s\n", msg, expected_msg);
+		ERROR("Unexpected message: %s, expected: %s\n", msg,
+		      expected_msg);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -160,8 +161,7 @@ test_result_t test_ffa_indirect_message_sp_to_vm_rx_realm_fail(void)
 	}
 
 	/* Request SP to send message. */
-	ret = cactus_req_ind_msg_send_cmd(
-			HYP_ID, sender, vm_id, sender, 0);
+	ret = cactus_req_ind_msg_send_cmd(HYP_ID, sender, vm_id, sender, 0);
 
 	if (!is_ffa_direct_response(ret) &&
 	    cactus_get_response(ret) != FFA_ERROR_ABORTED) {
@@ -178,8 +178,8 @@ test_result_t test_ffa_indirect_message_sp_to_vm_rx_realm_fail(void)
 	}
 
 	/* Expect that attempting to receive message shall fail. */
-	if (receive_indirect_message(&msg, ARRAY_SIZE(msg), (void *)vm1_rx_buffer,
-				     NULL, vm_id, 0)) {
+	if (receive_indirect_message(&msg, ARRAY_SIZE(msg),
+				     (void *)vm1_rx_buffer, NULL, vm_id, 0)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -188,21 +188,22 @@ test_result_t test_ffa_indirect_message_sp_to_vm_rx_realm_fail(void)
 	 * After undelegating, the SPMC should be able to complete the
 	 * operation.
 	 */
-	ret = cactus_req_ind_msg_send_cmd(
-			HYP_ID, sender, vm_id, sender, 0);
+	ret = cactus_req_ind_msg_send_cmd(HYP_ID, sender, vm_id, sender, 0);
 
 	if (!is_ffa_direct_response(ret) &&
 	    cactus_get_response(ret) != CACTUS_SUCCESS) {
 		return TEST_RESULT_FAIL;
 	}
 
-	if (!receive_indirect_message(&msg, ARRAY_SIZE(msg), (void *)vm1_rx_buffer,
-				      &header_sender, vm_id, 0)) {
+	if (!receive_indirect_message(&msg, ARRAY_SIZE(msg),
+				      (void *)vm1_rx_buffer, &header_sender,
+				      vm_id, 0)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	if (strncmp(msg, expected_msg, ARRAY_SIZE(expected_msg)) != 0) {
-		ERROR("Unexpected message: %s, expected: %s\n", msg, expected_msg);
+		ERROR("Unexpected message: %s, expected: %s\n", msg,
+		      expected_msg);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -245,7 +246,8 @@ test_result_t test_ffa_indirect_message_vm_to_sp_tx_realm_fail(void)
 	const ffa_id_t receiver = SP_ID(1);
 	u_register_t ret_rmm;
 	char payload[] = "Poisonous...";
-	struct ffa_partition_msg *message = (struct ffa_partition_msg *)vm1_tx_buffer;
+	struct ffa_partition_msg *message =
+		(struct ffa_partition_msg *)vm1_tx_buffer;
 
 	if (get_armv9_2_feat_rme_support() == 0U) {
 		return TEST_RESULT_SKIPPED;
@@ -269,7 +271,8 @@ test_result_t test_ffa_indirect_message_vm_to_sp_tx_realm_fail(void)
 	}
 
 	/* Initialize message header. */
-	ffa_rxtx_header_init(vm_id, receiver, ARRAY_SIZE(payload), &message->header);
+	ffa_rxtx_header_init(vm_id, receiver, ARRAY_SIZE(payload),
+			     &message->header);
 
 	/* Fill TX buffer with payload. */
 	memcpy(message->payload, payload, ARRAY_SIZE(payload));

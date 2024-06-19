@@ -5,11 +5,12 @@
  */
 
 #include <arch.h>
-#include <arch_helpers.h>
 #include <assert.h>
 #include <debug.h>
-#include <drivers/arm/gic_v2.h>
 #include <stdbool.h>
+
+#include <arch_helpers.h>
+#include <drivers/arm/gic_v2.h>
 
 void arm_gic_enable_interrupts_local(void)
 {
@@ -58,8 +59,7 @@ unsigned int arm_gic_get_intr_priority(unsigned int num)
 	return gicv2_gicd_get_ipriorityr(num);
 }
 
-void arm_gic_set_intr_priority(unsigned int num,
-				unsigned int priority)
+void arm_gic_set_intr_priority(unsigned int num, unsigned int priority)
 {
 	gicv2_gicd_set_ipriorityr(num, priority);
 }
@@ -112,9 +112,7 @@ void arm_gic_end_of_intr(unsigned int raw_iar)
 	gicv2_gicc_write_eoir(raw_iar);
 }
 
-void arm_gic_init(uintptr_t gicc_base,
-		uintptr_t gicd_base,
-		uintptr_t gicr_base)
+void arm_gic_init(uintptr_t gicc_base, uintptr_t gicd_base, uintptr_t gicr_base)
 {
 	gicv2_init(gicc_base, gicd_base);
 	INFO("ARM GIC v2 driver initialized\n");

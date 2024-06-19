@@ -16,7 +16,8 @@
 
 /* Returns: the number of trailing 0-bits  */
 
-#if !defined(__clang__) && (defined(__sparc64__) || defined(__mips64) || defined(__riscv__))
+#if !defined(__clang__) && \
+	(defined(__sparc64__) || defined(__mips64) || defined(__riscv__))
 /* gcc resolves __builtin_ctz -> __ctzdi2 leading to infinite recursion */
 #define __builtin_ctz(a) __ctzsi2(a)
 extern si_int __ctzsi2(si_int);
@@ -24,12 +25,11 @@ extern si_int __ctzsi2(si_int);
 
 /* Precondition: a != 0 */
 
-COMPILER_RT_ABI si_int
-__ctzdi2(di_int a)
+COMPILER_RT_ABI si_int __ctzdi2(di_int a)
 {
-    dwords x;
-    x.all = a;
-    const si_int f = -(x.s.low == 0);
-    return __builtin_ctz((x.s.high & f) | (x.s.low & ~f)) +
-              (f & ((si_int)(sizeof(si_int) * CHAR_BIT)));
+	dwords x;
+	x.all = a;
+	const si_int f = -(x.s.low == 0);
+	return __builtin_ctz((x.s.high & f) | (x.s.low & ~f)) +
+	       (f & ((si_int)(sizeof(si_int) * CHAR_BIT)));
 }

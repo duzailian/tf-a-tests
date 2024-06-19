@@ -4,13 +4,14 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <fwu_nvm.h>
-#include <io_storage.h>
 #include <platform.h>
-#include <platform_def.h>
 #include <psci.h>
 #include <smccc.h>
 #include <status.h>
+
+#include <fwu_nvm.h>
+#include <io_storage.h>
+#include <platform_def.h>
 #include <tftf_lib.h>
 
 /*
@@ -26,16 +27,18 @@ test_result_t test_fwu_auth(void)
 {
 	STATUS status;
 	unsigned int flag;
-	smc_args args = { SMC_PSCI_SYSTEM_RESET };
+	smc_args args = {SMC_PSCI_SYSTEM_RESET};
 	smc_ret_values ret = {0};
 
 	if (tftf_is_rebooted()) {
 		/*
 		 * Check if the FIP update is done.
 		 */
-		status = fwu_nvm_read(FWU_TFTF_TESTCASE_BUFFER_OFFSET,	&flag, 4);
+		status =
+			fwu_nvm_read(FWU_TFTF_TESTCASE_BUFFER_OFFSET, &flag, 4);
 		if (status != STATUS_SUCCESS) {
-			tftf_testcase_printf("Failed to read NVM (%d)\n", status);
+			tftf_testcase_printf("Failed to read NVM (%d)\n",
+					     status);
 			return TEST_RESULT_FAIL;
 		}
 
@@ -63,8 +66,8 @@ test_result_t test_fwu_auth(void)
 	flag = FIP_BKP_ADDRESS;
 	status = fwu_nvm_write(FWU_TFTF_TESTCASE_BUFFER_OFFSET, &flag, 4);
 	if (status != STATUS_SUCCESS) {
-		tftf_testcase_printf("Failed to update backup FIP address (%d)\n",
-				status);
+		tftf_testcase_printf(
+			"Failed to update backup FIP address (%d)\n", status);
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -76,7 +79,7 @@ test_result_t test_fwu_auth(void)
 
 	/* The PSCI SYSTEM_RESET call is not supposed to return */
 	tftf_testcase_printf("System didn't reboot properly (%d)\n",
-			(unsigned int)ret.ret0);
+			     (unsigned int)ret.ret0);
 
 	return TEST_RESULT_FAIL;
 }

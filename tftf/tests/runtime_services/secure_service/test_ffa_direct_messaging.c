@@ -5,6 +5,7 @@
  */
 
 #include <debug.h>
+#include <platform.h>
 #include <smccc.h>
 
 #include <arch_helpers.h>
@@ -13,7 +14,6 @@
 #include <ffa_svc.h>
 #include <lib/events.h>
 #include <lib/power_management.h>
-#include <platform.h>
 #include <spm_test_helpers.h>
 #include <test_helpers.h>
 
@@ -22,13 +22,11 @@
 #define ECHO_VAL3 U(0xc0c0c0c0)
 
 static const struct ffa_uuid expected_sp_uuids[] = {
-		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}
-	};
+	{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}};
 
 static event_t cpu_booted[PLATFORM_CORE_COUNT];
 
-static test_result_t send_cactus_echo_cmd(ffa_id_t sender,
-					  ffa_id_t dest,
+static test_result_t send_cactus_echo_cmd(ffa_id_t sender, ffa_id_t dest,
 					  uint64_t value)
 {
 	struct ffa_value ret;
@@ -92,8 +90,7 @@ test_result_t test_ffa_direct_messaging(void)
  * otherwise.
  * For the CACTUS_SUCCESS response, the test returns TEST_RESULT_SUCCESS.
  */
-static test_result_t send_cactus_req_echo_cmd(ffa_id_t sender,
-					      ffa_id_t dest,
+static test_result_t send_cactus_req_echo_cmd(ffa_id_t sender, ffa_id_t dest,
 					      ffa_id_t echo_dest,
 					      uint64_t value)
 {
@@ -118,8 +115,8 @@ test_result_t test_ffa_sp_to_sp_direct_messaging(void)
 
 	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
 
-	result = send_cactus_req_echo_cmd(HYP_ID, SP_ID(1), SP_ID(2),
-					  ECHO_VAL1);
+	result =
+		send_cactus_req_echo_cmd(HYP_ID, SP_ID(1), SP_ID(2), ECHO_VAL1);
 	if (result != TEST_RESULT_SUCCESS) {
 		return result;
 	}
@@ -149,7 +146,8 @@ test_result_t test_ffa_sp_to_sp_deadlock(void)
 	 **********************************************************************/
 	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
 
-	ret = cactus_req_deadlock_send_cmd(HYP_ID, SP_ID(1), SP_ID(2), SP_ID(3));
+	ret = cactus_req_deadlock_send_cmd(HYP_ID, SP_ID(1), SP_ID(2),
+					   SP_ID(3));
 
 	if (is_ffa_direct_response(ret) == false) {
 		return TEST_RESULT_FAIL;
@@ -191,8 +189,7 @@ static test_result_t cpu_on_handler(void)
 	 */
 	ffa_ret = ffa_run(SP_ID(2), core_pos);
 	if (ffa_func_id(ffa_ret) != FFA_MSG_WAIT) {
-		ERROR("Failed to run SP%x on core %u\n", SP_ID(2),
-				core_pos);
+		ERROR("Failed to run SP%x on core %u\n", SP_ID(2), core_pos);
 		ret = TEST_RESULT_FAIL;
 		goto out;
 	}
@@ -208,8 +205,8 @@ static test_result_t cpu_on_handler(void)
 	}
 
 	/*
-	 * Send a direct message request to SP3 (UP SP) from current physical CPU.
-	 * The SPMC uses the single vCPU migrated to the new physical core.
+	 * Send a direct message request to SP3 (UP SP) from current physical
+	 * CPU. The SPMC uses the single vCPU migrated to the new physical core.
 	 * The single SP vCPU may receive requests from multiple physical CPUs.
 	 * Thus it is possible one message is being processed on one core while
 	 * another (or multiple) cores attempt sending a new direct message
@@ -222,14 +219,15 @@ static test_result_t cpu_on_handler(void)
 		ffa_ret = cactus_echo_send_cmd(HYP_ID, SP_ID(3), ECHO_VAL3);
 		if ((ffa_func_id(ffa_ret) == FFA_ERROR) &&
 		    (ffa_error_code(ffa_ret) == FFA_ERROR_BUSY)) {
-			VERBOSE("%s(%u) trial %u\n", __func__, core_pos, trial_loop);
+			VERBOSE("%s(%u) trial %u\n", __func__, core_pos,
+				trial_loop);
 			waitms(1);
 			continue;
 		}
 
 		if (is_ffa_direct_response(ffa_ret) == true) {
 			if (cactus_get_response(ffa_ret) != CACTUS_SUCCESS ||
-				cactus_echo_get_val(ffa_ret) != ECHO_VAL3) {
+			    cactus_echo_get_val(ffa_ret) != ECHO_VAL3) {
 				ERROR("Echo Failed!\n");
 				ret = TEST_RESULT_FAIL;
 			}

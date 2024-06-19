@@ -21,11 +21,11 @@
 #endif
 
 /* Offsets of the fields in the context structure. Needed by asm code. */
-#define	SUSPEND_CTX_MAIR_OFFSET		0
-#define	SUSPEND_CTX_TTBR0_OFFSET	16
-#define	SUSPEND_CTX_VBAR_OFFSET		32
-#define	SUSPEND_CTX_HCR_OFFSET		48
-#define	SUSPEND_CTX_APIAKEY_OFFSET	64
+#define SUSPEND_CTX_MAIR_OFFSET 0
+#define SUSPEND_CTX_TTBR0_OFFSET 16
+#define SUSPEND_CTX_VBAR_OFFSET 32
+#define SUSPEND_CTX_HCR_OFFSET 48
+#define SUSPEND_CTX_APIAKEY_OFFSET 64
 
 #define SUSPEND_CTX_SP_OFFSET (8 * NR_CTX_REGS)
 #define SUSPEND_CTX_SAVE_SYSTEM_CTX_OFFSET (SUSPEND_CTX_SP_OFFSET + 8)
@@ -38,9 +38,10 @@
 
 #ifndef __ASSEMBLY__
 #include <cassert.h>
-#include <power_management.h>
 #include <stdint.h>
 #include <string.h>
+
+#include <power_management.h>
 
 /*
  * Architectural context to be saved/restored when entering/exiting suspend
@@ -70,11 +71,11 @@ CASSERT(SUSPEND_CTX_SZ == sizeof(tftf_suspend_ctx_t),
 	assert_suspend_context_size_mismatch);
 
 CASSERT(SUSPEND_CTX_SP_OFFSET ==
-	__builtin_offsetof(tftf_suspend_ctx_t, stack_pointer),
+		__builtin_offsetof(tftf_suspend_ctx_t, stack_pointer),
 	assert_stack_pointer_location_mismatch_in_suspend_ctx);
 
 CASSERT(SUSPEND_CTX_SAVE_SYSTEM_CTX_OFFSET ==
-	__builtin_offsetof(tftf_suspend_ctx_t, save_system_context),
+		__builtin_offsetof(tftf_suspend_ctx_t, save_system_context),
 	assert_save_sys_ctx_mismatch_in_suspend_ctx);
 
 /*
@@ -122,6 +123,6 @@ void tftf_restore_system_ctx(tftf_suspend_ctx_t *ctx);
  */
 unsigned int __tftf_cpu_resume_ep(void);
 
-#endif	/* __ASSEMBLY__ */
+#endif /* __ASSEMBLY__ */
 
-#endif	/* __SUSPEND_PRIV_H__ */
+#endif /* __SUSPEND_PRIV_H__ */

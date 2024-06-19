@@ -4,16 +4,17 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <assert.h>
 #include <debug.h>
+#include <errno.h>
 #include <platform.h>
 #include <psci.h>
 #include <smccc.h>
 #include <string.h>
-#include <errno.h>
-#include <tftf_lib.h>
 #include <trng.h>
+
+#include <arch_helpers.h>
+#include <tftf_lib.h>
 
 /*
  * @Test_Aim@ exercise TRNG Version SMC.
@@ -65,7 +66,7 @@ test_result_t test_trng_features(void)
 test_result_t test_trng_rnd(void)
 {
 	smc_ret_values rnd_out;
-	size_t msb_shift = (TRNG_MAX_BITS/3) - U(1);
+	size_t msb_shift = (TRNG_MAX_BITS / 3) - U(1);
 
 	int32_t version = tftf_trng_version();
 
@@ -87,8 +88,8 @@ test_result_t test_trng_rnd(void)
 
 	rnd_out = tftf_trng_rnd(TRNG_MAX_BITS + U(1));
 	if (rnd_out.ret0 != TRNG_E_INVALID_PARAMS) {
-		ERROR("RND 0x%x returned 0x%lx\n",  TRNG_MAX_BITS + U(1),
-				rnd_out.ret0);
+		ERROR("RND 0x%x returned 0x%lx\n", TRNG_MAX_BITS + U(1),
+		      rnd_out.ret0);
 		return TEST_RESULT_FAIL;
 	}
 

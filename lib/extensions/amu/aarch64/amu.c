@@ -5,10 +5,11 @@
  */
 
 #include <amu.h>
-#include <amu_private.h>
 #include <arch.h>
-#include <arch_helpers.h>
 #include <assert.h>
+
+#include <amu_private.h>
+#include <arch_helpers.h>
 
 /*
  * Get AMU version value from aa64pfr0.
@@ -20,7 +21,7 @@
 unsigned int amu_get_version(void)
 {
 	return (unsigned int)(read_id_aa64pfr0_el1() >> ID_AA64PFR0_AMU_SHIFT) &
-		ID_AA64PFR0_AMU_MASK;
+	       ID_AA64PFR0_AMU_MASK;
 }
 
 /* Check if group 1 counters is implemented */
@@ -90,8 +91,8 @@ uint64_t amu_group1_voffset_read(unsigned int idx)
 	assert(amu_get_version() >= ID_AA64PFR0_AMU_V1P1);
 	assert(amu_group1_supported());
 	assert(idx < AMU_GROUP1_NR_COUNTERS);
-	assert(((read_amcg1idr_el0() >> AMCG1IDR_VOFF_SHIFT) &
-		(1U << idx)) != 0U);
+	assert(((read_amcg1idr_el0() >> AMCG1IDR_VOFF_SHIFT) & (1U << idx)) !=
+	       0U);
 
 	return amu_group1_voffset_read_internal(idx);
 }
@@ -106,8 +107,8 @@ void amu_group1_voffset_write(unsigned int idx, uint64_t val)
 	assert(amu_get_version() >= ID_AA64PFR0_AMU_V1P1);
 	assert(amu_group1_supported());
 	assert(idx < AMU_GROUP1_NR_COUNTERS);
-	assert(((read_amcg1idr_el0() >> AMCG1IDR_VOFF_SHIFT) &
-		(1U << idx)) != 0U);
+	assert(((read_amcg1idr_el0() >> AMCG1IDR_VOFF_SHIFT) & (1U << idx)) !=
+	       0U);
 
 	amu_group1_voffset_write_internal(idx, val);
 	isb();

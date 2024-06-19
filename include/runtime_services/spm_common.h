@@ -7,31 +7,29 @@
 #ifndef SPM_COMMON_H
 #define SPM_COMMON_H
 
-#include <plat/common/platform.h>
-
 #include <stdint.h>
 #include <string.h>
 
 #include <ffa_helpers.h>
-
 #include <lib/extensions/sve.h>
+#include <plat/common/platform.h>
 
 /* Hypervisor ID at physical FFA instance */
-#define HYP_ID          (0)
+#define HYP_ID (0)
 /* SPMC ID */
-#define SPMC_ID		U(0x8000)
+#define SPMC_ID U(0x8000)
 
 /* ID for the first Secure Partition. */
-#define SPM_VM_ID_FIRST                 SP_ID(1)
+#define SPM_VM_ID_FIRST SP_ID(1)
 
 /* INTID for the managed exit virtual interrupt. */
-#define MANAGED_EXIT_INTERRUPT_ID	U(4)
+#define MANAGED_EXIT_INTERRUPT_ID U(4)
 
 /* INTID for the notification pending interrupt. */
 #define NOTIFICATION_PENDING_INTERRUPT_INTID 5
 
 /* Interrupt used for testing extended SPI handling. */
-#define IRQ_ESPI_TEST_INTID			5000
+#define IRQ_ESPI_TEST_INTID 5000
 
 /** IRQ/FIQ pin used for signaling a virtual interrupt. */
 enum interrupt_pin {
@@ -47,12 +45,16 @@ enum interrupt_pin {
  * If bit 15 is set partition is an SP; if bit 15 is clear partition is
  * a VM.
  */
-#define SP_ID_MASK	U(1 << 15)
-#define SP_ID(x)	((x) | SP_ID_MASK)
-#define VM_ID(x)	(x & ~SP_ID_MASK)
-#define IS_SP_ID(x)	((x & SP_ID_MASK) != 0U)
+#define SP_ID_MASK U(1 << 15)
+#define SP_ID(x) ((x) | SP_ID_MASK)
+#define VM_ID(x) (x & ~SP_ID_MASK)
+#define IS_SP_ID(x) ((x & SP_ID_MASK) != 0U)
 
-#define NULL_UUID (const struct ffa_uuid) { .uuid = {0} }
+#define NULL_UUID               \
+	(const struct ffa_uuid) \
+	{                       \
+		.uuid = { 0 }   \
+	}
 
 struct ffa_features_test {
 	const char *test_name;
@@ -67,25 +69,23 @@ struct mailbox_buffers {
 	void *send;
 };
 
-#define CONFIGURE_MAILBOX(mb_name, buffers_size) 				\
-	do {									\
-	/* Declare RX/TX buffers at virtual FF-A instance */			\
-	static struct {								\
-			uint8_t rx[buffers_size];				\
-			uint8_t tx[buffers_size];				\
-	} __aligned(PAGE_SIZE) mb_buffers;					\
-	mb_name.recv = (void *)mb_buffers.rx;					\
-	mb_name.send = (void *)mb_buffers.tx;					\
+#define CONFIGURE_MAILBOX(mb_name, buffers_size)                     \
+	do {                                                         \
+		/* Declare RX/TX buffers at virtual FF-A instance */ \
+		static struct {                                      \
+			uint8_t rx[buffers_size];                    \
+			uint8_t tx[buffers_size];                    \
+		} __aligned(PAGE_SIZE) mb_buffers;                   \
+		mb_name.recv = (void *)mb_buffers.rx;                \
+		mb_name.send = (void *)mb_buffers.tx;                \
 	} while (false)
 
-#define CONFIGURE_AND_MAP_MAILBOX(mb_name, buffers_size, smc_ret)		\
-	do {									\
-	CONFIGURE_MAILBOX(mb_name, buffers_size);				\
-	smc_ret = ffa_rxtx_map(							\
-				(uintptr_t)mb_name.send,			\
-				(uintptr_t)mb_name.recv,			\
-				buffers_size / PAGE_SIZE			\
-			);							\
+#define CONFIGURE_AND_MAP_MAILBOX(mb_name, buffers_size, smc_ret) \
+	do {                                                      \
+		CONFIGURE_MAILBOX(mb_name, buffers_size);         \
+		smc_ret = ffa_rxtx_map((uintptr_t)mb_name.send,   \
+				       (uintptr_t)mb_name.recv,   \
+				       buffers_size / PAGE_SIZE); \
 	} while (false)
 
 /**
@@ -102,7 +102,7 @@ void dump_ffa_value(struct ffa_value ret);
 bool check_spmc_execution_level(void);
 
 unsigned int get_ffa_feature_test_target(
-		const struct ffa_features_test **test_target);
+	const struct ffa_features_test **test_target);
 bool ffa_features_test_targets(const struct ffa_features_test *targets,
 			       uint32_t test_target_size);
 
@@ -129,8 +129,7 @@ ffa_memory_handle_t memory_send(
 	void *send_buffer, uint32_t mem_func,
 	const struct ffa_memory_region_constituent *constituents,
 	uint32_t constituent_count, uint32_t remaining_constituent_count,
-	uint32_t fragment_length, uint32_t total_length,
-	struct ffa_value *ret);
+	uint32_t fragment_length, uint32_t total_length, struct ffa_value *ret);
 
 ffa_memory_handle_t memory_init_and_send(
 	void *send_buffer, size_t memory_region_max_size, ffa_id_t sender,
@@ -146,17 +145,16 @@ bool enable_trusted_wdog_interrupt(ffa_id_t source, ffa_id_t dest);
 bool disable_trusted_wdog_interrupt(ffa_id_t source, ffa_id_t dest);
 
 bool ffa_partition_info_regs_helper(const struct ffa_uuid uuid,
-		       const struct ffa_partition_info *expected,
-		       const uint16_t expected_size);
+				    const struct ffa_partition_info *expected,
+				    const uint16_t expected_size);
 
 struct ffa_memory_access ffa_memory_access_init_permissions_from_mem_func(
-	ffa_id_t receiver_id,
-	uint32_t mem_func);
+	ffa_id_t receiver_id, uint32_t mem_func);
 
 bool receive_indirect_message(void *buffer, size_t buffer_size, void *recv,
 			      ffa_id_t *sender, ffa_id_t receiver,
 			      ffa_id_t own_id);
-struct ffa_value send_indirect_message(
-		ffa_id_t from, ffa_id_t to, void *send, const void *payload,
-		size_t payload_size, uint32_t send_flags);
+struct ffa_value send_indirect_message(ffa_id_t from, ffa_id_t to, void *send,
+				       const void *payload, size_t payload_size,
+				       uint32_t send_flags);
 #endif /* SPM_COMMON_H */

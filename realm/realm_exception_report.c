@@ -4,8 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <debug.h>
+
+#include <arch_helpers.h>
 
 /* We save x0-x30. */
 #define GPRS_CNT 31U

@@ -4,18 +4,19 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <assert.h>
 #include <debug.h>
+#include <platform.h>
+#include <string.h>
+
+#include <arch_helpers.h>
 #include <drivers/io/io_driver.h>
 #include <drivers/io/io_fip.h>
 #include <drivers/io/io_memmap.h>
 #include <firmware_image_package.h>
 #include <image_loader.h>
 #include <io_storage.h>
-#include <platform.h>
 #include <platform_def.h>
-#include <string.h>
 #include <tftf_lib.h>
 
 unsigned long get_image_offset(unsigned int image_id)
@@ -32,15 +33,15 @@ unsigned long get_image_offset(unsigned int image_id)
 	io_result = plat_get_image_source(image_id, &dev_handle, &image_spec);
 	if (io_result != IO_SUCCESS) {
 		WARN("Failed to obtain reference to image id=%u (%i)\n",
-			image_id, io_result);
+		     image_id, io_result);
 		return 0;
 	}
 
 	/* Attempt to access the image */
 	io_result = io_open(dev_handle, image_spec, &image_handle);
 	if (io_result != IO_SUCCESS) {
-		WARN("Failed to access image id=%u (%i)\n",
-			image_id, io_result);
+		WARN("Failed to access image id=%u (%i)\n", image_id,
+		     io_result);
 		return 0;
 	}
 
@@ -55,7 +56,6 @@ unsigned long get_image_offset(unsigned int image_id)
 	return img_offset;
 }
 
-
 unsigned long get_image_size(unsigned int image_id)
 {
 	uintptr_t dev_handle;
@@ -68,15 +68,15 @@ unsigned long get_image_size(unsigned int image_id)
 	io_result = plat_get_image_source(image_id, &dev_handle, &image_spec);
 	if (io_result != IO_SUCCESS) {
 		WARN("Failed to obtain reference to image id=%u (%i)\n",
-			image_id, io_result);
+		     image_id, io_result);
 		return 0;
 	}
 
 	/* Attempt to access the image */
 	io_result = io_open(dev_handle, image_spec, &image_handle);
 	if (io_result != IO_SUCCESS) {
-		WARN("Failed to access image id=%u (%i)\n",
-			image_id, io_result);
+		WARN("Failed to access image id=%u (%i)\n", image_id,
+		     io_result);
 		return 0;
 	}
 
@@ -84,14 +84,13 @@ unsigned long get_image_size(unsigned int image_id)
 	io_result = io_size(image_handle, &image_size);
 	if ((io_result != IO_SUCCESS) || (image_size == 0)) {
 		WARN("Failed to determine the size of the image id=%u (%i)\n",
-			image_id, io_result);
+		     image_id, io_result);
 	}
 	io_result = io_close(image_handle);
 	io_result = io_dev_close(dev_handle);
 
 	return image_size;
 }
-
 
 int load_image(unsigned int image_id, uintptr_t image_base)
 {
@@ -106,25 +105,26 @@ int load_image(unsigned int image_id, uintptr_t image_base)
 	io_result = plat_get_image_source(image_id, &dev_handle, &image_spec);
 	if (io_result != IO_SUCCESS) {
 		WARN("Failed to obtain reference to image id=%u (%i)\n",
-			image_id, io_result);
+		     image_id, io_result);
 		return io_result;
 	}
 
 	/* Attempt to access the image */
 	io_result = io_open(dev_handle, image_spec, &image_handle);
 	if (io_result != IO_SUCCESS) {
-		WARN("Failed to access image id=%u (%i)\n",
-			image_id, io_result);
+		WARN("Failed to access image id=%u (%i)\n", image_id,
+		     io_result);
 		return io_result;
 	}
 
-	INFO("Loading image id=%u at address %p\n", image_id, (void *)image_base);
+	INFO("Loading image id=%u at address %p\n", image_id,
+	     (void *)image_base);
 
 	/* Find the size of the image */
 	io_result = io_size(image_handle, &image_size);
 	if ((io_result != IO_SUCCESS) || (image_size == 0)) {
 		WARN("Failed to determine the size of the image id=%u (%i)\n",
-			image_id, io_result);
+		     image_id, io_result);
 		goto exit;
 	}
 
@@ -150,11 +150,8 @@ exit:
 	return io_result;
 }
 
-
-int load_partial_image(unsigned int image_id,
-		uintptr_t image_base,
-		size_t image_size,
-		unsigned int is_last_block)
+int load_partial_image(unsigned int image_id, uintptr_t image_base,
+		       size_t image_size, unsigned int is_last_block)
 {
 	static uintptr_t dev_handle;
 	static uintptr_t image_handle;
@@ -163,24 +160,27 @@ int load_partial_image(unsigned int image_id,
 	int io_result;
 
 	if (!image_handle) {
-		/* Obtain a reference to the image by querying the platform layer */
-		io_result = plat_get_image_source(image_id, &dev_handle, &image_spec);
+		/* Obtain a reference to the image by querying the platform
+		 * layer */
+		io_result = plat_get_image_source(image_id, &dev_handle,
+						  &image_spec);
 		if (io_result != IO_SUCCESS) {
 			WARN("Failed to obtain reference to image id=%u (%i)\n",
-				image_id, io_result);
+			     image_id, io_result);
 			return io_result;
 		}
 
 		/* Attempt to access the image */
 		io_result = io_open(dev_handle, image_spec, &image_handle);
 		if (io_result != IO_SUCCESS) {
-			WARN("Failed to access image id=%u (%i)\n",
-				image_id, io_result);
+			WARN("Failed to access image id=%u (%i)\n", image_id,
+			     io_result);
 			return io_result;
 		}
 	}
 
-	INFO("Loading image id=%u at address %p\n", image_id, (void *)image_base);
+	INFO("Loading image id=%u at address %p\n", image_id,
+	     (void *)image_base);
 
 	io_result = io_read(image_handle, image_base, image_size, &bytes_read);
 	if ((io_result != IO_SUCCESS) || (bytes_read < image_size)) {
@@ -207,4 +207,3 @@ exit:
 	}
 	return io_result;
 }
-

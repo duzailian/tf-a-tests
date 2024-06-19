@@ -15,26 +15,27 @@
  * skipped.
  */
 
-#include <arch_helpers.h>
 #include <debug.h>
 #include <events.h>
+#include <psci.h>
+
+#include <arch_helpers.h>
 #include <plat_topology.h>
 #include <power_management.h>
-#include <psci.h>
 #include <tftf_lib.h>
 
 /* Definitions from TF-A arm_sip_svc.h */
-#define ARM_SIP_SVC_VERSION		0x8200ff03
-#define ARM_SIP_SVC_EXE_STATE_SWITCH	0x82000020
+#define ARM_SIP_SVC_VERSION 0x8200ff03
+#define ARM_SIP_SVC_EXE_STATE_SWITCH 0x82000020
 
 /* State switch error codes from SiP service */
-#define STATE_SW_E_PARAM		(-2)
-#define STATE_SW_E_DENIED		(-3)
+#define STATE_SW_E_PARAM (-2)
+#define STATE_SW_E_DENIED (-3)
 
-#define SIP_VERSION_OK			1
+#define SIP_VERSION_OK 1
 
-#define HI32(val)	(((u_register_t) (val)) >> 32)
-#define LO32(val)	((uint32_t) (u_register_t) (val))
+#define HI32(val) (((u_register_t)(val)) >> 32)
+#define LO32(val) ((uint32_t)(u_register_t)(val))
 
 /* A cookie shared between states for information exchange */
 typedef struct {
@@ -67,8 +68,8 @@ test_result_t test_exec_state_switch_reset_before(void)
 {
 #ifdef __aarch64__
 	int version;
-	smc_args sip_version_smc = { ARM_SIP_SVC_VERSION };
-	smc_args reset = { SMC_PSCI_SYSTEM_RESET };
+	smc_args sip_version_smc = {ARM_SIP_SVC_VERSION};
+	smc_args reset = {SMC_PSCI_SYSTEM_RESET};
 	smc_ret_values smc_ret;
 
 #if NEW_TEST_SESSION
@@ -82,7 +83,8 @@ test_result_t test_exec_state_switch_reset_before(void)
 	 * won't be set to SIP_VERSION_OK, thereby skipping rest of test cases
 	 * as well.
 	 */
-	tftf_testcase_printf("This suite needs TFTF built with NEW_TEST_SESSION=0\n");
+	tftf_testcase_printf(
+		"This suite needs TFTF built with NEW_TEST_SESSION=0\n");
 	return TEST_RESULT_SKIPPED;
 #endif
 
@@ -91,12 +93,13 @@ test_result_t test_exec_state_switch_reset_before(void)
 	 * version 0.2.
 	 */
 	smc_ret = tftf_smc(&sip_version_smc);
-	if (((int) smc_ret.ret0) >= 0) {
+	if (((int)smc_ret.ret0) >= 0) {
 		version = (smc_ret.ret0 << 8) | (smc_ret.ret1 & 0xff);
 		if (version >= 0x02)
 			sip_version_check = SIP_VERSION_OK;
 	} else {
-		tftf_testcase_printf("Test needs SiP service version 0.2 or later\n");
+		tftf_testcase_printf(
+			"Test needs SiP service version 0.2 or later\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -129,13 +132,11 @@ test_result_t test_exec_state_switch_invalid_pc(void)
 #ifdef __aarch64__
 	int ret;
 
-	smc_args args = {
-		.fid = ARM_SIP_SVC_EXE_STATE_SWITCH,
-		.arg1 = (u_register_t) -1,
-		.arg2 = LO32(&state_switch_a32_entry),
-		.arg3 = HI32(&state_switch_cookie),
-		.arg4 = LO32(&state_switch_cookie)
-	};
+	smc_args args = {.fid = ARM_SIP_SVC_EXE_STATE_SWITCH,
+			 .arg1 = (u_register_t)-1,
+			 .arg2 = LO32(&state_switch_a32_entry),
+			 .arg3 = HI32(&state_switch_cookie),
+			 .arg4 = LO32(&state_switch_cookie)};
 
 	if (sip_version_check != SIP_VERSION_OK)
 		return TEST_RESULT_SKIPPED;
@@ -162,13 +163,11 @@ test_result_t test_exec_state_switch_invalid_ctx(void)
 #ifdef __aarch64__
 	int ret;
 
-	smc_args args = {
-		.fid = ARM_SIP_SVC_EXE_STATE_SWITCH,
-		.arg1 = HI32(&state_switch_a32_entry),
-		.arg2 = LO32(&state_switch_a32_entry),
-		.arg3 = -1,
-		.arg4 = LO32(&state_switch_cookie)
-	};
+	smc_args args = {.fid = ARM_SIP_SVC_EXE_STATE_SWITCH,
+			 .arg1 = HI32(&state_switch_a32_entry),
+			 .arg2 = LO32(&state_switch_a32_entry),
+			 .arg3 = -1,
+			 .arg4 = LO32(&state_switch_cookie)};
 
 	if (sip_version_check != SIP_VERSION_OK)
 		return TEST_RESULT_SKIPPED;
@@ -194,20 +193,20 @@ test_result_t test_exec_state_switch_valid(void)
 #ifdef __aarch64__
 	int ret;
 
-	smc_args args = {
-		.fid = ARM_SIP_SVC_EXE_STATE_SWITCH,
-		.arg1 = HI32(&state_switch_a32_entry),
-		.arg2 = LO32(&state_switch_a32_entry),
-		.arg3 = HI32(&state_switch_cookie),
-		.arg4 = LO32(&state_switch_cookie)
-	};
+	smc_args args = {.fid = ARM_SIP_SVC_EXE_STATE_SWITCH,
+			 .arg1 = HI32(&state_switch_a32_entry),
+			 .arg2 = LO32(&state_switch_a32_entry),
+			 .arg3 = HI32(&state_switch_cookie),
+			 .arg4 = LO32(&state_switch_cookie)};
 
 	if (sip_version_check != SIP_VERSION_OK)
 		return TEST_RESULT_SKIPPED;
 
 	/* Make sure that we've a 32-bit PC to enter AArch32 */
 	if (HI32(&state_switch_a32_entry)) {
-		tftf_testcase_printf("AArch32 PC wider than 32 bits. Test skipped; needs re-link\n");
+		tftf_testcase_printf(
+			"AArch32 PC wider than 32 bits. Test skipped; needs "
+			"re-link\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -258,20 +257,20 @@ test_result_t test_exec_state_switch_after_cpu_on(void)
 	u_register_t other_mpidr, my_mpidr;
 	int ret;
 
-	smc_args args = {
-		.fid = ARM_SIP_SVC_EXE_STATE_SWITCH,
-		.arg1 = HI32(&state_switch_a32_entry),
-		.arg2 = LO32(&state_switch_a32_entry),
-		.arg3 = HI32(&state_switch_cookie),
-		.arg4 = LO32(&state_switch_cookie)
-	};
+	smc_args args = {.fid = ARM_SIP_SVC_EXE_STATE_SWITCH,
+			 .arg1 = HI32(&state_switch_a32_entry),
+			 .arg2 = LO32(&state_switch_a32_entry),
+			 .arg3 = HI32(&state_switch_cookie),
+			 .arg4 = LO32(&state_switch_cookie)};
 
 	if (sip_version_check != SIP_VERSION_OK)
 		return TEST_RESULT_SKIPPED;
 
 	/* Make sure that we've a 32-bit PC to enter AArch32 */
 	if (HI32(&state_switch_a32_entry)) {
-		tftf_testcase_printf("AArch32 PC wider than 32 bits. Test skipped; needs re-link\n");
+		tftf_testcase_printf(
+			"AArch32 PC wider than 32 bits. Test skipped; needs "
+			"re-link\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -286,10 +285,10 @@ test_result_t test_exec_state_switch_after_cpu_on(void)
 	}
 
 	/* Power on the other CPU */
-	ret = tftf_cpu_on(other_mpidr, (uintptr_t) cpu_ping, 0);
+	ret = tftf_cpu_on(other_mpidr, (uintptr_t)cpu_ping, 0);
 	if (ret != PSCI_E_SUCCESS) {
-		INFO("powering on %llx failed", (unsigned long long)
-				other_mpidr);
+		INFO("powering on %llx failed",
+		     (unsigned long long)other_mpidr);
 		return TEST_RESULT_FAIL;
 	}
 

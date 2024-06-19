@@ -4,11 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
-#include <arm_arch_svc.h>
 #include <debug.h>
 #include <smccc.h>
 #include <string.h>
+
+#include <arch_helpers.h>
+#include <arm_arch_svc.h>
 #include <tftf_lib.h>
 
 /*
@@ -42,7 +43,7 @@ test_result_t test_smccc_arch_soc_id(void)
 	ret = tftf_smc(&args);
 	if ((int32_t)ret.ret0 < expected_ver) {
 		tftf_testcase_printf("Unexpected SMCCC version: 0x%x\n",
-		       (int)ret.ret0);
+				     (int)ret.ret0);
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -56,12 +57,14 @@ test_result_t test_smccc_arch_soc_id(void)
 		return TEST_RESULT_SKIPPED;
 	}
 
-	/* If the call returns SMC_OK then SMCCC_ARCH_SOC_ID is feature available */
+	/* If the call returns SMC_OK then SMCCC_ARCH_SOC_ID is feature
+	 * available */
 	if ((int)ret.ret0 == SMC_OK) {
 		ret = get_soc_id_param(SMC_GET_SOC_REVISION);
 
 		if ((int)ret.ret0 == SMC_ARCH_CALL_INVAL_PARAM) {
-			tftf_testcase_printf("Invalid param passed to	\
+			tftf_testcase_printf(
+				"Invalid param passed to	\
 					SMCCC_ARCH_SOC_ID\n");
 			return TEST_RESULT_FAIL;
 		} else if ((int)ret.ret0 == SMC_ARCH_CALL_NOT_SUPPORTED) {
@@ -74,7 +77,8 @@ test_result_t test_smccc_arch_soc_id(void)
 		ret = get_soc_id_param(SMC_GET_SOC_VERSION);
 
 		if ((int)ret.ret0 == SMC_ARCH_CALL_INVAL_PARAM) {
-			tftf_testcase_printf("Invalid param passed to	\
+			tftf_testcase_printf(
+				"Invalid param passed to	\
 					SMCCC_ARCH_SOC_ID\n");
 			return TEST_RESULT_FAIL;
 		} else if ((int)ret.ret0 == SMC_ARCH_CALL_NOT_SUPPORTED) {
@@ -86,7 +90,7 @@ test_result_t test_smccc_arch_soc_id(void)
 
 	} else {
 		ERROR("Invalid error during SMCCC_ARCH_FEATURES call = 0x%x\n",
-			(int)ret.ret0);
+		      (int)ret.ret0);
 		return TEST_RESULT_FAIL;
 	}
 

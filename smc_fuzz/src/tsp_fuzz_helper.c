@@ -11,19 +11,19 @@
  */
 void tftf_test_tsp_smc(uint64_t tsp_id, char *funcstr)
 {
-		uint64_t fn_identifier = TSP_FAST_FID(tsp_id);
-		uint64_t arg1 = 4;
-		uint64_t arg2 = 6;
-		smc_args tsp_svc_params = {fn_identifier, arg1, arg2};
-		smc_ret_values tsp_result;
+	uint64_t fn_identifier = TSP_FAST_FID(tsp_id);
+	uint64_t arg1 = 4;
+	uint64_t arg2 = 6;
+	smc_args tsp_svc_params = {fn_identifier, arg1, arg2};
+	smc_ret_values tsp_result;
 
-		tsp_result = tftf_smc(&tsp_svc_params);
+	tsp_result = tftf_smc(&tsp_svc_params);
 
-		if (tsp_result.ret0) {
-			tftf_testcase_printf("TSP operation 0x%x failed, error:0x%x\n",
-					(unsigned int) fn_identifier,
-					(unsigned int) tsp_result.ret0);
-		}
+	if (tsp_result.ret0) {
+		tftf_testcase_printf("TSP operation 0x%x failed, error:0x%x\n",
+				     (unsigned int)fn_identifier,
+				     (unsigned int)tsp_result.ret0);
+	}
 }
 
 /*

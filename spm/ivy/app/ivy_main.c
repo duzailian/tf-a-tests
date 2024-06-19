@@ -7,12 +7,12 @@
 #include <assert.h>
 #include <debug.h>
 #include <errno.h>
-#include <ffa_helpers.h>
-#include <sp_debug.h>
-#include <sp_helpers.h>
 
 #include "ivy.h"
 #include "sp_tests.h"
+#include <ffa_helpers.h>
+#include <sp_debug.h>
+#include <sp_helpers.h>
 
 /* Host machine information injected by the build system in the ELF file. */
 extern const char build_message[];

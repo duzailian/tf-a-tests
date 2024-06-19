@@ -7,6 +7,7 @@
 #include <platform.h>
 #include <psci.h>
 #include <stdlib.h>
+
 #include <test_helpers.h>
 #include <tftf_lib.h>
 
@@ -17,8 +18,8 @@ static test_result_t mem_prot_check(uintptr_t addr, size_t size, int expected)
 	ret = psci_mem_protect_check(addr, size);
 	if (ret != expected) {
 		tftf_testcase_printf("MEM_PROTEC_CHECK failed in (%llx,%llx)\n",
-				     (unsigned long long) addr,
-				     (unsigned long long) size);
+				     (unsigned long long)addr,
+				     (unsigned long long)size);
 		return 0;
 	}
 	return 1;
@@ -64,7 +65,9 @@ test_result_t test_mem_protect_check(void)
 
 	regions = plat_get_prot_regions(&nregions);
 	if (nregions <= 0) {
-		tftf_testcase_printf("Platform doesn't define testcases for MEM_PROTECT_CHECK\n");
+		tftf_testcase_printf(
+			"Platform doesn't define testcases for "
+			"MEM_PROTECT_CHECK\n");
 		return TEST_RESULT_SKIPPED;
 	}
 

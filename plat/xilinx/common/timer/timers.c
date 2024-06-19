@@ -5,44 +5,44 @@
  */
 
 #include <assert.h>
-#include <stddef.h>
-
 #include <debug.h>
 #include <mmio.h>
 #include <platform.h>
-#include <tftf_lib.h>
+#include <stddef.h>
 #include <timer.h>
+
+#include <tftf_lib.h>
 #include <utils_def.h>
 
-#define TTC_OFFSET_TMR_0		U(0)
-#define TTC_OFFSET_TMR_1		U(4)
-#define TTC_OFFSET_TMR_2		U(8)
+#define TTC_OFFSET_TMR_0 U(0)
+#define TTC_OFFSET_TMR_1 U(4)
+#define TTC_OFFSET_TMR_2 U(8)
 
-#define TTC_CLK_CNTRL_OFFSET		U(0x00) /* Clock Control Reg, RW */
-#define TTC_CNT_CNTRL_OFFSET		U(0x0C) /* Counter Control Reg, RW */
-#define TTC_COUNT_VAL_OFFSET		U(0x18) /* Counter Value Reg, RO */
-#define TTC_INTR_VAL_OFFSET		U(0x24) /* Interval Count Reg, RW */
-#define TTC_ISR_OFFSET			U(0x54) /* Interrupt Status Reg, RO */
-#define TTC_IER_OFFSET			U(0x60) /* Interrupt Enable Reg, RW */
+#define TTC_CLK_CNTRL_OFFSET U(0x00) /* Clock Control Reg, RW */
+#define TTC_CNT_CNTRL_OFFSET U(0x0C) /* Counter Control Reg, RW */
+#define TTC_COUNT_VAL_OFFSET U(0x18) /* Counter Value Reg, RO */
+#define TTC_INTR_VAL_OFFSET U(0x24)  /* Interval Count Reg, RW */
+#define TTC_ISR_OFFSET U(0x54)	     /* Interrupt Status Reg, RO */
+#define TTC_IER_OFFSET U(0x60)	     /* Interrupt Enable Reg, RW */
 
-#define TTC_CNT_CNTRL_DISABLE_MASK	BIT(0)
+#define TTC_CNT_CNTRL_DISABLE_MASK BIT(0)
 
-#define TTC_CLK_SEL_MASK		GENMASK(1, 0)
+#define TTC_CLK_SEL_MASK GENMASK(1, 0)
 
-#define TTC_CLK_SEL_PS_REF		BIT(0)
-#define TTC_CLK_SEL_RPU_REF		BIT(4)
+#define TTC_CLK_SEL_PS_REF BIT(0)
+#define TTC_CLK_SEL_RPU_REF BIT(4)
 
-#define RET_SUCCESS			U(0)
+#define RET_SUCCESS U(0)
 
 /*
  * Setup the timers to use pre-scaling, using a fixed value for now that will
  * work across most input frequency, but it may need to be more dynamic
  */
-#define PRESCALE_EXPONENT		U(16) /* 2 ^ PRESCALE_EXPONENT = PRESCALE */
-#define PRESCALE			U(65536) /* The exponent must match this */
-#define CLK_CNTRL_PRESCALE		((PRESCALE_EXPONENT - 1) << 1U)
-#define CLK_CNTRL_PRESCALE_EN		BIT(0)
-#define CNT_CNTRL_RESET			BIT(4)
+#define PRESCALE_EXPONENT U(16) /* 2 ^ PRESCALE_EXPONENT = PRESCALE */
+#define PRESCALE U(65536)	/* The exponent must match this */
+#define CLK_CNTRL_PRESCALE ((PRESCALE_EXPONENT - 1) << 1U)
+#define CLK_CNTRL_PRESCALE_EN BIT(0)
+#define CNT_CNTRL_RESET BIT(4)
 
 /* Resolution obtained as per the input clock and Prescale value
  * Clock Selected : PS_REF_CLK
@@ -85,12 +85,13 @@ static void clocksetup(void)
 	mmio_write_32(LPD_IOU_SLCR + TTC_CLK_SEL_OFFSET, TTC_CLK_SEL_PS_REF);
 
 	VERBOSE("%s TTC_CLK_SEL = 0x%x\n", __func__,
-			mmio_read_32(LPD_IOU_SLCR + TTC_CLK_SEL_OFFSET));
+		mmio_read_32(LPD_IOU_SLCR + TTC_CLK_SEL_OFFSET));
 }
 
 static void setcounts(unsigned long time_out_ms)
 {
-	unsigned long intrvl = (time_out_ms / INTERVAL) + (time_out_ms % INTERVAL);
+	unsigned long intrvl =
+		(time_out_ms / INTERVAL) + (time_out_ms % INTERVAL);
 
 	timer_write_32(TTC_INTR_VAL_OFFSET, intrvl);
 }
@@ -133,13 +134,11 @@ static int handler_timer(void)
 	return RET_SUCCESS;
 }
 
-static const plat_timer_t timers = {
-	.program = program_timer,
-	.cancel = cancel_timer,
-	.handler = handler_timer,
-	.timer_step_value = INTERVAL,
-	.timer_irq = TTC_TIMER_IRQ
-};
+static const plat_timer_t timers = {.program = program_timer,
+				    .cancel = cancel_timer,
+				    .handler = handler_timer,
+				    .timer_step_value = INTERVAL,
+				    .timer_irq = TTC_TIMER_IRQ};
 
 int plat_initialise_timer_ops(const plat_timer_t **timer_ops)
 {

@@ -43,7 +43,8 @@ static inline const char *get_image_name(unsigned int image_id)
 		"Non-Trusted Updater Firmware (NS_BL2U)"
 		"FWU Firmware Image Package",
 	};
-	assert((image_id >= NS_BL1U_IMAGE_ID) && (image_id <= FWU_FIP_IMAGE_ID));
+	assert((image_id >= NS_BL1U_IMAGE_ID) &&
+	       (image_id <= FWU_FIP_IMAGE_ID));
 	return image_names[image_id - NS_BL1U_IMAGE_ID];
 }
 

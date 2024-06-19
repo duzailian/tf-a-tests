@@ -4,16 +4,17 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <debug.h>
-#include <drivers/arm/private_timer.h>
 #include <events.h>
-#include <plat_topology.h>
 #include <platform.h>
-#include <power_management.h>
 #include <sdei.h>
-#include <tftf_lib.h>
 #include <timer.h>
+
+#include <arch_helpers.h>
+#include <drivers/arm/private_timer.h>
+#include <plat_topology.h>
+#include <power_management.h>
+#include <tftf_lib.h>
 
 #define EV_COOKIE 0xDEADBEEF
 #define TIMER_TIMEO_MS 10
@@ -64,13 +65,13 @@ static test_result_t sdei_event(void)
 	wait_for_participating_cpus();
 
 	printf("%s: mpidr = 0x%llx\n", __func__,
-		(unsigned long long)read_mpidr_el1());
+	       (unsigned long long)read_mpidr_el1());
 
 	ret = sdei_event_register(bound_ev, sdei_entrypoint_resume, EV_COOKIE,
-		SDEI_REGF_RM_PE, read_mpidr_el1());
+				  SDEI_REGF_RM_PE, read_mpidr_el1());
 	if (ret < 0) {
 		tftf_testcase_printf("SDEI event register failed: 0x%llx\n",
-			ret);
+				     ret);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -137,26 +138,26 @@ test_result_t test_sdei_event_serial(void)
 	bound_ev = sdei_interrupt_bind(tftf_get_timer_irq(), &intr_ctx);
 	if (bound_ev < 0) {
 		tftf_testcase_printf("SDEI interrupt bind failed: %x\n",
-			bound_ev);
+				     bound_ev);
 		return TEST_RESULT_FAIL;
 	}
 
 	/* use a shared interrupt source for this test-case */
 	private_interrupt = 0;
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node) & MPID_MASK;
 		if (lead_mpid == target_mpid)
 			continue;
-		ret = tftf_cpu_on(target_mpid,
-		    (uintptr_t)sdei_event, 0);
+		ret = tftf_cpu_on(target_mpid, (uintptr_t)sdei_event, 0);
 		if (ret != PSCI_E_SUCCESS) {
 			ERROR("CPU ON failed for 0x0x%llx\n",
-			    (unsigned long long)target_mpid);
+			      (unsigned long long)target_mpid);
 			goto err0;
 		}
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-		    PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			continue;
 		cpu_count--;
 	}
@@ -205,22 +206,22 @@ test_result_t test_sdei_event_parallel(void)
 	bound_ev = sdei_interrupt_bind(IRQ_PCPU_HP_TIMER, &intr_ctx);
 	if (bound_ev < 0) {
 		tftf_testcase_printf("SDEI interrupt bind failed: %x\n",
-			bound_ev);
+				     bound_ev);
 		return TEST_RESULT_FAIL;
 	}
 
 	/* use a private interrupt source for this test-case */
 	private_interrupt = 1;
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node) & MPID_MASK;
 		if (lead_mpid == target_mpid)
 			continue;
-		ret = tftf_cpu_on(target_mpid,
-		    (uintptr_t)sdei_event, 0);
+		ret = tftf_cpu_on(target_mpid, (uintptr_t)sdei_event, 0);
 		if (ret != PSCI_E_SUCCESS) {
 			ERROR("CPU ON failed for 0x0x%llx\n",
-			    (unsigned long long)target_mpid);
+			      (unsigned long long)target_mpid);
 			goto err0;
 		}
 	}
@@ -228,12 +229,13 @@ test_result_t test_sdei_event_parallel(void)
 	if (sdei_event() != TEST_RESULT_SUCCESS)
 		goto err0;
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node) & MPID_MASK;
 		if (lead_mpid == target_mpid)
 			continue;
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-			PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			continue;
 		cpu_count--;
 	}
@@ -258,10 +260,10 @@ static test_result_t sdei_event_signal_self(void)
 	long long ret;
 
 	ret = sdei_event_register(0, sdei_entrypoint_resume, EV_COOKIE,
-		SDEI_REGF_RM_PE, read_mpidr_el1());
+				  SDEI_REGF_RM_PE, read_mpidr_el1());
 	if (ret < 0) {
 		tftf_testcase_printf("SDEI event register failed: 0x%llx\n",
-			ret);
+				     ret);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -314,20 +316,21 @@ test_result_t test_sdei_event_signal_serial(void)
 	}
 
 	disable_irq();
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node) & MPID_MASK;
 		if (lead_mpid == target_mpid)
 			continue;
 		ret = tftf_cpu_on(target_mpid,
-		    (uintptr_t)sdei_event_signal_self, 0);
+				  (uintptr_t)sdei_event_signal_self, 0);
 		if (ret != PSCI_E_SUCCESS) {
 			ERROR("CPU ON failed for 0x0x%llx\n",
-			    (unsigned long long)target_mpid);
+			      (unsigned long long)target_mpid);
 			ret = -1;
 			goto err0;
 		}
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-			PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			continue;
 	}
 
@@ -351,10 +354,10 @@ static test_result_t sdei_wait_for_event_signal(void)
 	long long ret;
 
 	ret = sdei_event_register(0, sdei_entrypoint_resume, EV_COOKIE,
-		SDEI_REGF_RM_PE, read_mpidr_el1());
+				  SDEI_REGF_RM_PE, read_mpidr_el1());
 	if (ret < 0) {
 		tftf_testcase_printf("SDEI event register failed: 0x%llx\n",
-			ret);
+				     ret);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -410,15 +413,16 @@ test_result_t test_sdei_event_signal_all(void)
 	}
 
 	disable_irq();
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node) & MPID_MASK;
 		if (lead_mpid == target_mpid)
 			continue;
 		ret = tftf_cpu_on(target_mpid,
-		    (uintptr_t)sdei_wait_for_event_signal, 0);
+				  (uintptr_t)sdei_wait_for_event_signal, 0);
 		if (ret != PSCI_E_SUCCESS) {
 			ERROR("CPU ON failed for 0x0x%llx\n",
-			    (unsigned long long)target_mpid);
+			      (unsigned long long)target_mpid);
 			ret = -1;
 			goto err0;
 		}
@@ -426,14 +430,15 @@ test_result_t test_sdei_event_signal_all(void)
 		tftf_wait_for_event(&cpu_ready[core_pos]);
 	}
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node) & MPID_MASK;
 		if (lead_mpid == target_mpid)
 			continue;
 		ret = sdei_event_signal(target_mpid);
 		if (ret < 0) {
-			tftf_testcase_printf("SDEI event signal failed: 0x%llx\n",
-				ret);
+			tftf_testcase_printf(
+				"SDEI event signal failed: 0x%llx\n", ret);
 			ret = -1;
 			goto err0;
 		}

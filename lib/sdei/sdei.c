@@ -5,15 +5,16 @@
  */
 
 #include <assert.h>
-#include <drivers/arm/arm_gic.h>
 #include <sdei.h>
 #include <smccc.h>
 #include <stdint.h>
+
+#include <drivers/arm/arm_gic.h>
 #include <tftf_lib.h>
 
 int64_t sdei_version(void)
 {
-	smc_args args = { SDEI_VERSION };
+	smc_args args = {SDEI_VERSION};
 	smc_ret_values ret;
 
 	ret = tftf_smc(&args);
@@ -22,7 +23,7 @@ int64_t sdei_version(void)
 
 int64_t sdei_interrupt_bind(int intr, struct sdei_intr_ctx *intr_ctx)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	assert(intr_ctx);
@@ -46,7 +47,7 @@ int64_t sdei_interrupt_bind(int intr, struct sdei_intr_ctx *intr_ctx)
 
 int64_t sdei_interrupt_release(int ev, const struct sdei_intr_ctx *intr_ctx)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	assert(intr_ctx);
@@ -63,10 +64,10 @@ int64_t sdei_interrupt_release(int ev, const struct sdei_intr_ctx *intr_ctx)
 	return ret.ret0;
 }
 
-int64_t sdei_event_register(int ev, sdei_handler_t *ep,
-	uint64_t ep_arg, int flags, uint64_t mpidr)
+int64_t sdei_event_register(int ev, sdei_handler_t *ep, uint64_t ep_arg,
+			    int flags, uint64_t mpidr)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_EVENT_REGISTER;
@@ -81,7 +82,7 @@ int64_t sdei_event_register(int ev, sdei_handler_t *ep,
 
 int64_t sdei_event_unregister(int ev)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_EVENT_UNREGISTER;
@@ -92,7 +93,7 @@ int64_t sdei_event_unregister(int ev)
 
 int64_t sdei_event_enable(int ev)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_EVENT_ENABLE;
@@ -103,7 +104,7 @@ int64_t sdei_event_enable(int ev)
 
 int64_t sdei_event_disable(int ev)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_EVENT_DISABLE;
@@ -114,7 +115,7 @@ int64_t sdei_event_disable(int ev)
 
 int64_t sdei_pe_mask(void)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_PE_MASK;
@@ -124,7 +125,7 @@ int64_t sdei_pe_mask(void)
 
 int64_t sdei_pe_unmask(void)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_PE_UNMASK;
@@ -134,7 +135,7 @@ int64_t sdei_pe_unmask(void)
 
 int64_t sdei_private_reset(void)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_PRIVATE_RESET;
@@ -144,7 +145,7 @@ int64_t sdei_private_reset(void)
 
 int64_t sdei_shared_reset(void)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_SHARED_RESET;
@@ -154,7 +155,7 @@ int64_t sdei_shared_reset(void)
 
 int64_t sdei_event_signal(uint64_t mpidr)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_EVENT_SIGNAL;
@@ -166,7 +167,7 @@ int64_t sdei_event_signal(uint64_t mpidr)
 
 int64_t sdei_event_status(int32_t ev)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_EVENT_STATUS;
@@ -177,7 +178,7 @@ int64_t sdei_event_status(int32_t ev)
 
 int64_t sdei_event_routing_set(int32_t ev, uint64_t flags)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_EVENT_ROUTING_SET;
@@ -189,7 +190,7 @@ int64_t sdei_event_routing_set(int32_t ev, uint64_t flags)
 
 int64_t sdei_event_context(uint32_t param)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_EVENT_CONTEXT;
@@ -200,7 +201,7 @@ int64_t sdei_event_context(uint32_t param)
 
 int64_t sdei_event_complete(uint32_t flags)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_EVENT_COMPLETE;
@@ -211,7 +212,7 @@ int64_t sdei_event_complete(uint32_t flags)
 
 int64_t sdei_event_complete_and_resume(uint64_t addr)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = SDEI_EVENT_COMPLETE_AND_RESUME;

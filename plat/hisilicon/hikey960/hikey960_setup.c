@@ -6,20 +6,22 @@
 
 #include <arch.h>
 #include <assert.h>
-#include <drivers/console.h>
-#include <drivers/arm/gic_v2.h>
 #include <platform.h>
+
+#include <drivers/arm/gic_v2.h>
+#include <drivers/console.h>
 #include <platform_def.h>
 
-
 static const mmap_region_t mmap[] = {
-	MAP_REGION_FLAT(DRAM_BASE + TFTF_NVM_OFFSET, TFTF_NVM_SIZE, MT_MEMORY | MT_RW | MT_NS),
+	MAP_REGION_FLAT(DRAM_BASE + TFTF_NVM_OFFSET, TFTF_NVM_SIZE,
+			MT_MEMORY | MT_RW | MT_NS),
 	MAP_REGION_FLAT(GIC_BASE, GIC_SIZE, MT_DEVICE | MT_RW | MT_NS),
-	MAP_REGION_FLAT(SP805_WDOG_BASE, SP805_WDOG_SIZE, MT_DEVICE | MT_RW | MT_NS),
+	MAP_REGION_FLAT(SP805_WDOG_BASE, SP805_WDOG_SIZE,
+			MT_DEVICE | MT_RW | MT_NS),
 	MAP_REGION_FLAT(SYS_CNT_BASE1, SYS_CNT_SIZE, MT_DEVICE | MT_RW | MT_NS),
-	MAP_REGION_FLAT(CRASH_CONSOLE_BASE, CRASH_CONSOLE_SIZE, MT_DEVICE | MT_RW | MT_NS),
-	{0}
-};
+	MAP_REGION_FLAT(CRASH_CONSOLE_BASE, CRASH_CONSOLE_SIZE,
+			MT_DEVICE | MT_RW | MT_NS),
+	{0}};
 
 /* Power Domain Tree Descriptor array */
 const unsigned char hikey960_power_domain_tree_desc[] = {
@@ -37,7 +39,6 @@ const unsigned char hikey960_power_domain_tree_desc[] = {
 	/* Number of children for the second cluster node */
 	/* PLATFORM_CORE_COUNT_PER_CLUSTER, */
 };
-
 
 const unsigned char *tftf_plat_get_pwr_domain_tree_desc(void)
 {
@@ -72,8 +73,7 @@ void tftf_plat_arch_setup(void)
 
 void tftf_early_platform_setup(void)
 {
-	console_init(CRASH_CONSOLE_BASE, PL011_UART_CLK_IN_HZ,
-		PL011_BAUDRATE);
+	console_init(CRASH_CONSOLE_BASE, PL011_UART_CLK_IN_HZ, PL011_BAUDRATE);
 }
 
 void tftf_platform_setup(void)

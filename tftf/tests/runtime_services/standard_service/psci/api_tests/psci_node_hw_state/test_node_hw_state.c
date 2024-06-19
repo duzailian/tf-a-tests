@@ -5,34 +5,37 @@
  */
 
 #include <arch.h>
-#include <arch_helpers.h>
 #include <debug.h>
 #include <events.h>
-#include <plat_topology.h>
 #include <platform.h>
+#include <psci.h>
+
+#include <arch_helpers.h>
+#include <plat_topology.h>
 #include <platform_def.h>
 #include <power_management.h>
-#include <psci.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
 
 /* Invoke _func and verifies return value is TEST_RESULT_SUCCESS */
-#define TEST_FUNC(_func) {							\
-	int ret = (_func)();							\
-	if (ret != TEST_RESULT_SUCCESS) {					\
-		INFO("test_node_hw_state: function " #_func " failed!\n");	\
-		return ret;							\
-	}									\
-}
+#define TEST_FUNC(_func)                                            \
+	{                                                           \
+		int ret = (_func)();                                \
+		if (ret != TEST_RESULT_SUCCESS) {                   \
+			INFO("test_node_hw_state: function " #_func \
+			     " failed!\n");                         \
+			return ret;                                 \
+		}                                                   \
+	}
 
 /* Enable messages for debugging purposes */
 #if 0
-# define DBGMSG(...)	INFO(__VA_ARGS__)
+#define DBGMSG(...) INFO(__VA_ARGS__)
 #else
-# define DBGMSG(...)
+#define DBGMSG(...)
 #endif
 
-#define INVALID_POWER_LEVEL	(PLAT_MAX_PWR_LEVEL + 1)
+#define INVALID_POWER_LEVEL (PLAT_MAX_PWR_LEVEL + 1)
 
 static event_t cpu_booted[PLATFORM_CORE_COUNT];
 static event_t cpu_continue[PLATFORM_CORE_COUNT];
@@ -63,7 +66,9 @@ static test_result_t cpu_ping(void)
 static int is_psci_node_hw_state_supported(void)
 {
 	return (tftf_get_psci_feature_info(SMC_PSCI_CPU_HW_STATE64) ==
-			PSCI_E_NOT_SUPPORTED) ? 0 : 1;
+		PSCI_E_NOT_SUPPORTED)
+		       ? 0
+		       : 1;
 }
 
 /*
@@ -153,7 +158,7 @@ static test_result_t test_invalid_mpidr(void)
 static test_result_t test_invalid_power_level(void)
 {
 	if (tftf_psci_node_hw_state(read_mpidr_el1(), INVALID_POWER_LEVEL) !=
-			PSCI_E_INVALID_PARAMS) {
+	    PSCI_E_INVALID_PARAMS) {
 		DBGMSG("%s: failed\n", __func__);
 		return TEST_RESULT_FAIL;
 	} else {
@@ -179,9 +184,9 @@ static test_result_t test_online_all(void)
 
 	DBGMSG("%s: powering cores on...\n", __func__);
 	my_mpidr = read_mpidr_el1() & MPID_MASK;
-	DBGMSG("%s: my mpidr: %llx\n", __func__,
-			(unsigned long long) my_mpidr);
-	for_each_cpu(cpu_node) {
+	DBGMSG("%s: my mpidr: %llx\n", __func__, (unsigned long long)my_mpidr);
+	for_each_cpu(cpu_node)
+	{
 		mpidr = tftf_get_mpidr_from_node(cpu_node);
 		if (mpidr == my_mpidr)
 			continue;
@@ -189,18 +194,19 @@ static test_result_t test_online_all(void)
 		/* Verify that the other CPU is turned off */
 		state = tftf_psci_node_hw_state(mpidr, 0);
 		if (state != PSCI_HW_STATE_OFF) {
-			DBGMSG("%s: before: mpidr %llx: state %u, expected %u\n",
-					__func__, (unsigned long long) mpidr,
-					state, PSCI_HW_STATE_OFF);
+			DBGMSG("%s: before: mpidr %llx: state %u, expected "
+			       "%u\n",
+			       __func__, (unsigned long long)mpidr, state,
+			       PSCI_HW_STATE_OFF);
 			return TEST_RESULT_FAIL;
 		}
 
 		/* Power on the CPU and wait for its event */
 		pos = platform_get_core_pos(mpidr);
-		ret = tftf_cpu_on(mpidr, (uintptr_t) cpu_ping, 0);
+		ret = tftf_cpu_on(mpidr, (uintptr_t)cpu_ping, 0);
 		if (ret != PSCI_E_SUCCESS) {
 			DBGMSG("%s: powering on %llx failed", __func__,
-					(unsigned long long)mpidr);
+			       (unsigned long long)mpidr);
 			return TEST_RESULT_FAIL;
 		}
 		tftf_wait_for_event(&cpu_booted[pos]);
@@ -209,8 +215,8 @@ static test_result_t test_online_all(void)
 		state = tftf_psci_node_hw_state(mpidr, 0);
 		if (state != PSCI_HW_STATE_ON) {
 			DBGMSG("%s: after: mpidr %llx: state %u, expected %u\n",
-					__func__, (unsigned long long)mpidr,
-					state, PSCI_HW_STATE_ON);
+			       __func__, (unsigned long long)mpidr, state,
+			       PSCI_HW_STATE_ON);
 			return TEST_RESULT_FAIL;
 		}
 
@@ -220,19 +226,21 @@ static test_result_t test_online_all(void)
 
 	/* Wait for other CPUs to power down */
 	INFO("%s: waiting for all other CPUs to power down\n", __func__);
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		mpidr = tftf_get_mpidr_from_node(cpu_node);
 		if (mpidr == my_mpidr)
 			continue;
 
 		/* Loop until other CPU is powered down */
 		while (tftf_psci_affinity_info(mpidr, MPIDR_AFFLVL0) !=
-				PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			tftf_timer_sleep(10);
 	}
 
 	/* Now verify that all CPUs have powered off */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		mpidr = tftf_get_mpidr_from_node(cpu_node);
 		if (mpidr == my_mpidr)
 			continue;
@@ -241,8 +249,8 @@ static test_result_t test_online_all(void)
 		state = tftf_psci_node_hw_state(mpidr, 0);
 		if (state != PSCI_HW_STATE_OFF) {
 			DBGMSG("%s: mpidr %llx: state %u, expected %u\n",
-					__func__, (unsigned long long)mpidr,
-					state, PSCI_HW_STATE_OFF);
+			       __func__, (unsigned long long)mpidr, state,
+			       PSCI_HW_STATE_OFF);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -267,7 +275,7 @@ static u_register_t find_peer(int foreign)
 		dmn = tftf_get_next_peer_domain(dmn, foreign);
 		if (foreign) {
 			cpu = tftf_get_next_cpu_in_pwr_domain(dmn,
-					PWR_DOMAIN_INIT);
+							      PWR_DOMAIN_INIT);
 		} else {
 			cpu = dmn;
 		}

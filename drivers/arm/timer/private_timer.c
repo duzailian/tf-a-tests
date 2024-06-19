@@ -5,9 +5,10 @@
  */
 
 #include <arch.h>
-#include <arch_helpers.h>
 #include <assert.h>
 #include <platform.h>
+
+#include <arch_helpers.h>
 
 /*******************************************************************************
  * Data structure to keep track of per-cpu secure generic timer context across
@@ -57,7 +58,7 @@ void private_timer_save(void)
 
 	pcpu_timer_context[linear_id].cval = read_cnthp_cval_el2();
 	pcpu_timer_context[linear_id].ctl = read_cnthp_ctl_el2();
-	flush_dcache_range((uintptr_t) &pcpu_timer_context[linear_id],
+	flush_dcache_range((uintptr_t)&pcpu_timer_context[linear_id],
 			   sizeof(pcpu_timer_context[linear_id]));
 }
 

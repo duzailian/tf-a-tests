@@ -7,6 +7,7 @@
 #include <debug.h>
 #include <psci.h>
 #include <smccc.h>
+
 #include <tftf_lib.h>
 
 /*
@@ -38,13 +39,14 @@ test_result_t test_psci_features(void)
 				continue;
 
 			INFO("%s non-mandatory function is SUPPORTED\n",
-				psci_fn->str);
+			     psci_fn->str);
 		} else {
 			/* Check mandatory PSCI call is supported */
 			if (ret_flag == PSCI_E_NOT_SUPPORTED) {
 				result = TEST_RESULT_FAIL;
 				tftf_testcase_printf(
-					"%s mandatory function is NOT SUPPORTED\n",
+					"%s mandatory function is NOT "
+					"SUPPORTED\n",
 					psci_fn->str);
 				continue;
 			}
@@ -56,7 +58,8 @@ test_result_t test_psci_features(void)
 			if ((ret_flag & ~CPU_SUSPEND_FEAT_VALID_MASK) != 0) {
 				result = TEST_RESULT_FAIL;
 				tftf_testcase_printf(
-					"Invalid feature flags for CPU_SUSPEND: 0x%x\n",
+					"Invalid feature flags for "
+					"CPU_SUSPEND: 0x%x\n",
 					ret_flag);
 			}
 		} else {
@@ -66,8 +69,8 @@ test_result_t test_psci_features(void)
 				tftf_testcase_printf(
 					"Wrong feature flags for %s\n, "
 					"expected 0x%08x, got 0x%08x\n",
-					psci_fn->str,
-					PSCI_FEATURE_FLAGS_ZERO, ret_flag);
+					psci_fn->str, PSCI_FEATURE_FLAGS_ZERO,
+					ret_flag);
 			}
 		}
 	}

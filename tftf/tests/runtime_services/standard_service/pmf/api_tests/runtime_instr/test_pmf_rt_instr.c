@@ -4,26 +4,27 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <debug.h>
-#include <plat_topology.h>
+#include <errno.h>
 #include <platform.h>
 #include <pmf.h>
-#include <power_management.h>
 #include <psci.h>
 #include <smccc.h>
 #include <string.h>
-#include <errno.h>
-#include <tftf_lib.h>
 #include <timer.h>
 
-#define TOTAL_IDS		6
-#define ENTER_PSCI		0
-#define EXIT_PSCI		1
-#define ENTER_HW_LOW_PWR	2
-#define EXIT_HW_LOW_PWR		3
-#define ENTER_CFLUSH		4
-#define EXIT_CFLUSH		5
+#include <arch_helpers.h>
+#include <plat_topology.h>
+#include <power_management.h>
+#include <tftf_lib.h>
+
+#define TOTAL_IDS 6
+#define ENTER_PSCI 0
+#define EXIT_PSCI 1
+#define ENTER_HW_LOW_PWR 2
+#define EXIT_HW_LOW_PWR 3
+#define ENTER_CFLUSH 4
+#define EXIT_CFLUSH 5
 
 static spinlock_t cpu_count_lock;
 static volatile int cpu_count;
@@ -52,7 +53,7 @@ static void wait_for_participating_cpus(void)
  */
 static u_register_t pmf_get_ts(u_register_t tid, u_register_t *v)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = PMF_SMC_GET_TIMESTAMP;
@@ -69,14 +70,13 @@ static u_register_t pmf_get_ts(u_register_t tid, u_register_t *v)
  */
 test_result_t test_check_pmf_version(void)
 {
-	smc_args args = { 0 };
+	smc_args args = {0};
 	smc_ret_values ret;
 
 	args.fid = PMF_SMC_GET_VERSION;
 	ret = tftf_smc(&args);
 
-	if (ret.ret1 != PMF_SMC_VERSION)
-	{
+	if (ret.ret1 != PMF_SMC_VERSION) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -106,14 +106,16 @@ static test_result_t check_pwr_down_ts(void)
 
 	ts = get_core_timestamps();
 	if (!(ts[ENTER_PSCI] <= ts[ENTER_HW_LOW_PWR] &&
-	    ts[ENTER_HW_LOW_PWR] <= ts[EXIT_HW_LOW_PWR] &&
-	    ts[EXIT_HW_LOW_PWR] <= ts[EXIT_PSCI])) {
-		tftf_testcase_printf("PMF timestamps are not correctly ordered\n");
+	      ts[ENTER_HW_LOW_PWR] <= ts[EXIT_HW_LOW_PWR] &&
+	      ts[EXIT_HW_LOW_PWR] <= ts[EXIT_PSCI])) {
+		tftf_testcase_printf(
+			"PMF timestamps are not correctly ordered\n");
 		return TEST_RESULT_FAIL;
 	}
 
 	if (ts[ENTER_CFLUSH] > ts[EXIT_CFLUSH]) {
-		tftf_testcase_printf("PMF timestamps are not correctly ordered\n");
+		tftf_testcase_printf(
+			"PMF timestamps are not correctly ordered\n");
 		return TEST_RESULT_FAIL;
 	}
 
@@ -152,7 +154,8 @@ static int dump_suspend_stats(const char *func_name)
 
 	freq = read_cntfrq_el0();
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node);
 		pos = platform_get_core_pos(target_mpid);
 		assert(pos < PLATFORM_CORE_COUNT);
@@ -179,12 +182,13 @@ static int dump_suspend_stats(const char *func_name)
 			return TEST_RESULT_FAIL;
 		}
 
-		printf("<RT_INSTR:%s\t%llu\t%llu\t%02llu\t%02llu\t%02llu/>\n", func_name,
-		    (unsigned long long)MPIDR_AFF_ID(target_mpid, 1),
-		    (unsigned long long)MPIDR_AFF_ID(target_mpid, 0),
-		    (unsigned long long)period[0],
-		    (unsigned long long)period[1],
-		    (unsigned long long)period[2]);
+		printf("<RT_INSTR:%s\t%llu\t%llu\t%02llu\t%02llu\t%02llu/>\n",
+		       func_name,
+		       (unsigned long long)MPIDR_AFF_ID(target_mpid, 1),
+		       (unsigned long long)MPIDR_AFF_ID(target_mpid, 0),
+		       (unsigned long long)period[0],
+		       (unsigned long long)period[1],
+		       (unsigned long long)period[2]);
 	}
 
 	return TEST_RESULT_SUCCESS;
@@ -201,7 +205,8 @@ static int dump_psci_version_stats(const char *func_name)
 
 	freq = read_cntfrq_el0();
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node);
 		pos = platform_get_core_pos(target_mpid);
 		assert(pos < PLATFORM_CORE_COUNT);
@@ -215,9 +220,9 @@ static int dump_psci_version_stats(const char *func_name)
 		}
 
 		printf("<RT_INSTR:%s\t%llu\t%llu\t%02llu/>\n", func_name,
-		    (unsigned long long)MPIDR_AFF_ID(target_mpid, 1),
-		    (unsigned long long)MPIDR_AFF_ID(target_mpid, 0),
-		    (unsigned long long)period);
+		       (unsigned long long)MPIDR_AFF_ID(target_mpid, 1),
+		       (unsigned long long)MPIDR_AFF_ID(target_mpid, 0),
+		       (unsigned long long)period);
 	}
 
 	return TEST_RESULT_SUCCESS;
@@ -257,7 +262,7 @@ static test_result_t suspend_current_core(void)
 	power_state = tftf_make_psci_pstate(pwrlvl, susp_type, state_id);
 
 	ret = tftf_program_timer_and_suspend(PLAT_SUSPEND_ENTRY_TIME,
-	    power_state, NULL, NULL);
+					     power_state, NULL, NULL);
 	if (ret != 0) {
 		ERROR("Failed to program timer or suspend CPU: 0x%x\n", ret);
 		return TEST_RESULT_FAIL;
@@ -291,8 +296,7 @@ static test_result_t psci_version_entrypoint(void)
 
 	version = tftf_get_psci_version();
 	if (!tftf_is_valid_psci_version(version)) {
-		tftf_testcase_printf(
-			"Wrong PSCI version:0x%08x\n", version);
+		tftf_testcase_printf("Wrong PSCI version:0x%08x\n", version);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -302,7 +306,8 @@ static test_result_t psci_version_entrypoint(void)
 	/* Check timestamp order. */
 	ts = get_core_timestamps();
 	if (ts[ENTER_PSCI] > ts[EXIT_PSCI]) {
-		tftf_testcase_printf("PMF timestamps are not correctly ordered\n");
+		tftf_testcase_printf(
+			"PMF timestamps are not correctly ordered\n");
 		return TEST_RESULT_FAIL;
 	}
 
@@ -339,15 +344,16 @@ static test_result_t test_rt_instr_susp_parallel(const char *func_name)
 	cpu_count = 0;
 
 	/* Power on all the non-lead cores. */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node) & MPID_MASK;
 		if (lead_mpid == target_mpid)
 			continue;
 		ret = tftf_cpu_on(target_mpid,
-		    (uintptr_t)suspend_core_entrypoint, 0);
+				  (uintptr_t)suspend_core_entrypoint, 0);
 		if (ret != PSCI_E_SUCCESS) {
 			ERROR("CPU ON failed for 0x%llx\n",
-			    (unsigned long long)target_mpid);
+			      (unsigned long long)target_mpid);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -356,12 +362,13 @@ static test_result_t test_rt_instr_susp_parallel(const char *func_name)
 		return TEST_RESULT_FAIL;
 
 	/* Wait for the non-lead cores to power down. */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node) & MPID_MASK;
 		if (lead_mpid == target_mpid)
 			continue;
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-		    PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			continue;
 		cpu_count--;
 	}
@@ -394,19 +401,20 @@ static test_result_t test_rt_instr_susp_serial(const char *func_name)
 	cpu_count = 0;
 
 	/* Suspend one core at a time. */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node) & MPID_MASK;
 		if (lead_mpid == target_mpid)
 			continue;
 		ret = tftf_cpu_on(target_mpid,
-		    (uintptr_t)suspend_core_entrypoint, 0);
+				  (uintptr_t)suspend_core_entrypoint, 0);
 		if (ret != PSCI_E_SUCCESS) {
 			ERROR("CPU ON failed for 0x%llx\n",
-			    (unsigned long long)target_mpid);
+			      (unsigned long long)target_mpid);
 			return TEST_RESULT_FAIL;
 		}
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-		    PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			continue;
 		cpu_count--;
 	}
@@ -506,19 +514,19 @@ test_result_t test_rt_instr_cpu_off_serial(void)
 	cpu_count = 0;
 
 	/* Turn core on/off one at a time. */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node);
 		if (lead_mpid == target_mpid)
 			continue;
-		ret = tftf_cpu_on(target_mpid,
-		    (uintptr_t)dummy_entrypoint, 0);
+		ret = tftf_cpu_on(target_mpid, (uintptr_t)dummy_entrypoint, 0);
 		if (ret != PSCI_E_SUCCESS) {
 			ERROR("CPU ON failed for 0x%llx\n",
-			    (unsigned long long)target_mpid);
+			      (unsigned long long)target_mpid);
 			return TEST_RESULT_FAIL;
 		}
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-		    PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			continue;
 		cpu_count--;
 	}
@@ -533,19 +541,20 @@ test_result_t test_rt_instr_cpu_off_serial(void)
 	assert(cpu_count == 0);
 
 	/* Turn core on one at a time and collect timestamps. */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node);
 		if (lead_mpid == target_mpid)
 			continue;
-		ret = tftf_cpu_on(target_mpid,
-		    (uintptr_t)collect_ts_entrypoint, 0);
+		ret = tftf_cpu_on(target_mpid, (uintptr_t)collect_ts_entrypoint,
+				  0);
 		if (ret != PSCI_E_SUCCESS) {
 			ERROR("CPU ON failed for 0x%llx\n",
-			    (unsigned long long)target_mpid);
+			      (unsigned long long)target_mpid);
 			return TEST_RESULT_FAIL;
 		}
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-		    PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			continue;
 		cpu_count--;
 	}
@@ -572,15 +581,16 @@ test_result_t test_rt_instr_psci_version_parallel(void)
 	cpu_count = 0;
 
 	/* Power on all the non-lead cores. */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node);
 		if (lead_mpid == target_mpid)
 			continue;
 		ret = tftf_cpu_on(target_mpid,
-		    (uintptr_t)psci_version_entrypoint, 0);
+				  (uintptr_t)psci_version_entrypoint, 0);
 		if (ret != PSCI_E_SUCCESS) {
 			ERROR("CPU ON failed for 0x%llx\n",
-			    (unsigned long long)target_mpid);
+			      (unsigned long long)target_mpid);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -589,12 +599,13 @@ test_result_t test_rt_instr_psci_version_parallel(void)
 		return TEST_RESULT_FAIL;
 
 	/* Wait for the non-lead cores to power down. */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node);
 		if (lead_mpid == target_mpid)
 			continue;
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-		    PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			continue;
 		cpu_count--;
 	}

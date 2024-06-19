@@ -4,9 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <string.h>
-#include <arch_helpers.h>
 #include <assert.h>
+#include <string.h>
+
+#include <arch_helpers.h>
 #include <host_shared_data.h>
 
 /**
@@ -39,7 +40,8 @@ host_shared_data_t *realm_get_my_shared_structure(void)
 u_register_t realm_shared_data_get_my_host_val(uint8_t index)
 {
 	assert(index < MAX_DATA_SIZE);
-	return guest_shared_data[read_mpidr_el1() & MPID_MASK].host_param_val[index];
+	return guest_shared_data[read_mpidr_el1() & MPID_MASK]
+		.host_param_val[index];
 }
 
 /*
@@ -56,6 +58,6 @@ uint8_t realm_shared_data_get_my_realm_cmd(void)
 void realm_shared_data_set_my_realm_val(uint8_t index, u_register_t val)
 {
 	assert(index < MAX_DATA_SIZE);
-	guest_shared_data[read_mpidr_el1() & MPID_MASK].realm_out_val[index] = val;
+	guest_shared_data[read_mpidr_el1() & MPID_MASK].realm_out_val[index] =
+		val;
 }
-

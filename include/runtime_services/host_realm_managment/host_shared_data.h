@@ -7,15 +7,15 @@
 #ifndef HOST_SHARED_DATA_H
 #define HOST_SHARED_DATA_H
 
+#include <spinlock.h>
 #include <stdint.h>
 
 #include <host_realm_rmi.h>
-#include <spinlock.h>
 
-#define MAX_BUF_SIZE		10240U
-#define MAX_DATA_SIZE		5U
+#define MAX_BUF_SIZE 10240U
+#define MAX_DATA_SIZE 5U
 
-#define REALM_CMD_BUFFER_SIZE	1024U
+#define REALM_CMD_BUFFER_SIZE 1024U
 
 /*
  * This structure maps the shared memory to be used between the Host and Realm
@@ -76,15 +76,11 @@ enum realm_cmd {
 /*
  * Index values for each parameter in the host_param_val array.
  */
-enum host_param_index {
-	HOST_CMD_INDEX = 0U,
-	HOST_ARG1_INDEX,
-	HOST_ARG2_INDEX
-};
+enum host_param_index { HOST_CMD_INDEX = 0U, HOST_ARG1_INDEX, HOST_ARG2_INDEX };
 
 enum host_call_cmd {
-        HOST_CALL_GET_SHARED_BUFF_CMD = 1U,
-        HOST_CALL_EXIT_SUCCESS_CMD,
+	HOST_CALL_GET_SHARED_BUFF_CMD = 1U,
+	HOST_CALL_EXIT_SUCCESS_CMD,
 	HOST_CALL_EXIT_FAILED_CMD,
 	HOST_CALL_EXIT_PRINT_CMD
 };
@@ -96,26 +92,28 @@ enum host_call_cmd {
 /*
  * Return shared buffer pointer mapped as host_shared_data_t structure
  */
-host_shared_data_t *host_get_shared_structure(struct realm *realm_ptr, unsigned int rec_num);
+host_shared_data_t *host_get_shared_structure(struct realm *realm_ptr,
+					      unsigned int rec_num);
 
 /*
  * Set data to be shared from Host to realm
  */
 void host_shared_data_set_host_val(struct realm *realm_ptr,
-		unsigned int rec_num, uint8_t index, u_register_t val);
+				   unsigned int rec_num, uint8_t index,
+				   u_register_t val);
 
 /*
  * Get data shared from realm to Host
  */
 u_register_t host_shared_data_get_realm_val(struct realm *realm_ptr,
-		unsigned int rec_num, uint8_t index);
+					    unsigned int rec_num,
+					    uint8_t index);
 
 /*
  * Set command to be send from Host to realm
  */
 void host_shared_data_set_realm_cmd(struct realm *realm_ptr, uint8_t cmd,
-		unsigned int rec_num);
-
+				    unsigned int rec_num);
 
 /****************************************
  *  APIs to be invoked from Realm side  *

@@ -5,11 +5,12 @@
  */
 
 #include <assert.h>
-#include <drivers/arm/sp804.h>
 #include <platform.h>
-#include <platform_def.h>
 #include <stddef.h>
 #include <timer.h>
+
+#include <drivers/arm/sp804.h>
+#include <platform_def.h>
 
 static const plat_timer_t plat_timers = {
 	.program = sp804_timer_program,

@@ -5,12 +5,13 @@
  */
 
 #include <arch.h>
-#include <arch_helpers.h>
 #include <assert.h>
+#include <mmio.h>
+
+#include <arch_helpers.h>
 #include <drivers/arm/arm_gic.h>
 #include <drivers/arm/gic_v2.h>
 #include <drivers/arm/sp804.h>
-#include <mmio.h>
 
 static unsigned int sp804_freq;
 static uintptr_t sp804_base;

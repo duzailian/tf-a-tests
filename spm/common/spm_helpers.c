@@ -12,9 +12,7 @@
 
 uint32_t spm_interrupt_get(void)
 {
-	hvc_args args = {
-		.fid = SPM_INTERRUPT_GET
-	};
+	hvc_args args = {.fid = SPM_INTERRUPT_GET};
 
 	hvc_ret_values ret = tftf_hvc(&args);
 
@@ -26,14 +24,13 @@ uint32_t spm_interrupt_get(void)
  * int_id value through the IRQ or FIQ vector (pin).
  * Returns 0 on success, or -1 if passing an invalid interrupt id.
  */
-int64_t spm_interrupt_enable(uint32_t int_id, bool enable, enum interrupt_pin pin)
+int64_t spm_interrupt_enable(uint32_t int_id, bool enable,
+			     enum interrupt_pin pin)
 {
-	hvc_args args = {
-		.fid = SPM_INTERRUPT_ENABLE,
-		.arg1 = int_id,
-		.arg2 = enable,
-		.arg3 = pin
-	};
+	hvc_args args = {.fid = SPM_INTERRUPT_ENABLE,
+			 .arg1 = int_id,
+			 .arg2 = enable,
+			 .arg3 = pin};
 
 	hvc_ret_values ret = tftf_hvc(&args);
 
@@ -46,11 +43,9 @@ int64_t spm_interrupt_enable(uint32_t int_id, bool enable, enum interrupt_pin pi
  */
 int64_t spm_interrupt_deactivate(uint32_t vint_id)
 {
-	hvc_args args = {
-		.fid = SPM_INTERRUPT_DEACTIVATE,
-		.arg1 = vint_id, /* pint_id */
-		.arg2 = vint_id
-	};
+	hvc_args args = {.fid = SPM_INTERRUPT_DEACTIVATE,
+			 .arg1 = vint_id, /* pint_id */
+			 .arg2 = vint_id};
 
 	hvc_ret_values ret = tftf_hvc(&args);
 

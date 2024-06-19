@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include "utils_def.h"
 #include <debug.h>
 
+#include "utils_def.h"
 #include <ffa_endpoints.h>
 #include <ffa_helpers.h>
 #include <ffa_svc.h>
@@ -35,46 +35,36 @@ static __aligned(PAGE_SIZE) uint8_t vm2_tx_buffer[PAGE_SIZE];
 static struct mailbox_buffers mb;
 
 static const struct ffa_uuid sp_uuids[] = {
-		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}, {IVY_UUID}
-	};
+	{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}, {IVY_UUID}};
 
 static const struct ffa_partition_info ffa_expected_partition_info[] = {
 	/* Primary partition info */
-	{
-		.id = SP_ID(1),
-		.exec_context = PRIMARY_EXEC_CTX_COUNT,
-		.properties = FFA_PARTITION_AARCH64_EXEC |
-			      FFA_PARTITION_DIRECT_REQ_RECV |
-			      FFA_PARTITION_NOTIFICATION,
-		.uuid = {PRIMARY_UUID}
-	},
+	{.id = SP_ID(1),
+	 .exec_context = PRIMARY_EXEC_CTX_COUNT,
+	 .properties = FFA_PARTITION_AARCH64_EXEC |
+		       FFA_PARTITION_DIRECT_REQ_RECV |
+		       FFA_PARTITION_NOTIFICATION,
+	 .uuid = {PRIMARY_UUID}},
 	/* Secondary partition info */
-	{
-		.id = SP_ID(2),
-		.exec_context = SECONDARY_EXEC_CTX_COUNT,
-		.properties = FFA_PARTITION_AARCH64_EXEC |
-			      FFA_PARTITION_DIRECT_REQ_RECV |
-			      FFA_PARTITION_NOTIFICATION,
-		.uuid = {SECONDARY_UUID}
-	},
+	{.id = SP_ID(2),
+	 .exec_context = SECONDARY_EXEC_CTX_COUNT,
+	 .properties = FFA_PARTITION_AARCH64_EXEC |
+		       FFA_PARTITION_DIRECT_REQ_RECV |
+		       FFA_PARTITION_NOTIFICATION,
+	 .uuid = {SECONDARY_UUID}},
 	/* Tertiary partition info */
-	{
-		.id = SP_ID(3),
-		.exec_context = TERTIARY_EXEC_CTX_COUNT,
-		.properties = FFA_PARTITION_AARCH64_EXEC |
-			      FFA_PARTITION_DIRECT_REQ_RECV |
-			      FFA_PARTITION_NOTIFICATION,
-		.uuid = {TERTIARY_UUID}
-	},
+	{.id = SP_ID(3),
+	 .exec_context = TERTIARY_EXEC_CTX_COUNT,
+	 .properties = FFA_PARTITION_AARCH64_EXEC |
+		       FFA_PARTITION_DIRECT_REQ_RECV |
+		       FFA_PARTITION_NOTIFICATION,
+	 .uuid = {TERTIARY_UUID}},
 	/* Ivy partition info */
-	{
-		.id = SP_ID(4),
-		.exec_context = IVY_EXEC_CTX_COUNT,
-		.properties = FFA_PARTITION_AARCH64_EXEC |
-			      FFA_PARTITION_DIRECT_REQ_RECV,
-		.uuid = {IVY_UUID}
-	}
-};
+	{.id = SP_ID(4),
+	 .exec_context = IVY_EXEC_CTX_COUNT,
+	 .properties =
+		 FFA_PARTITION_AARCH64_EXEC | FFA_PARTITION_DIRECT_REQ_RECV,
+	 .uuid = {IVY_UUID}}};
 
 /*
  * Using FFA version expected for SPM.
@@ -90,11 +80,11 @@ test_result_t test_ffa_features(void)
 	const struct ffa_features_test *func_ids_target;
 	const struct ffa_features_test feature_ids_target[] = {
 		{"FFA_FEATURE_MEI", FFA_FEATURE_MEI, FFA_ERROR, 0,
-			MAKE_FFA_VERSION(1, 1)},
+		 MAKE_FFA_VERSION(1, 1)},
 		{"FFA_FEATURE_SRI", FFA_FEATURE_SRI, FFA_SUCCESS_SMC32, 0,
-			MAKE_FFA_VERSION(1, 1)},
+		 MAKE_FFA_VERSION(1, 1)},
 		{"FFA_FEATURE_NPI", FFA_FEATURE_NPI, FFA_ERROR, 0,
-			MAKE_FFA_VERSION(1, 1)},
+		 MAKE_FFA_VERSION(1, 1)},
 	};
 	unsigned int test_target_size =
 		get_ffa_feature_test_target(&func_ids_target);
@@ -112,7 +102,7 @@ test_result_t test_ffa_features(void)
 	}
 
 	if (!ffa_features_test_targets(feature_ids_target,
-				ARRAY_SIZE(feature_ids_target))) {
+				       ARRAY_SIZE(feature_ids_target))) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -125,7 +115,6 @@ test_result_t test_ffa_features(void)
  */
 test_result_t test_ffa_features_rxtx_map(void)
 {
-
 	struct ffa_value args = {
 		.fid = FFA_FEATURES,
 		.arg1 = FFA_RXTX_MAP_SMC64,
@@ -162,7 +151,7 @@ test_result_t test_ffa_features_rxtx_map(void)
  * Calls FFA Version ABI, and checks if the result as expected.
  */
 static test_result_t test_ffa_version(uint32_t input_version,
-					uint32_t expected_return)
+				      uint32_t expected_return)
 {
 	if (should_skip_version_test)
 		return TEST_RESULT_SKIPPED;
@@ -174,9 +163,10 @@ static test_result_t test_ffa_version(uint32_t input_version,
 	if (spm_version == expected_return)
 		return TEST_RESULT_SUCCESS;
 
-	tftf_testcase_printf("Input Version: 0x%x\n"
-			     "Return: 0x%x\nExpected: 0x%x\n",
-			      input_version, spm_version, expected_return);
+	tftf_testcase_printf(
+		"Input Version: 0x%x\n"
+		"Return: 0x%x\nExpected: 0x%x\n",
+		input_version, spm_version, expected_return);
 
 	return TEST_RESULT_FAIL;
 }
@@ -338,7 +328,6 @@ test_result_t test_ffa_rxtx_map_nonsecure_memory_fail(void)
  */
 test_result_t test_ffa_rxtx_map_memory_share_fail(void)
 {
-
 	struct ffa_memory_region_constituent constituent = {
 		.page_count = 1,
 		.reserved = 0,
@@ -525,7 +514,6 @@ test_result_t test_ffa_rxtx_map_forward_different_ids_fail(void)
  */
 test_result_t test_ffa_rxtx_map_forward_memory_share_fail(void)
 {
-
 	struct ffa_memory_region_constituent constituent = {
 		.page_count = 1,
 		.reserved = 0,
@@ -614,7 +602,7 @@ test_result_t test_ffa_rxtx_unmap_fail(void)
  */
 test_result_t test_ffa_rxtx_map_unmapped_success(void)
 {
-	test_result_t ret =  test_ffa_rxtx_map(FFA_SUCCESS_SMC32);
+	test_result_t ret = test_ffa_rxtx_map(FFA_SUCCESS_SMC32);
 	/*
 	 * Unmapping buffers such that further tests can map and use RXTX
 	 * buffers.
@@ -668,8 +656,8 @@ test_result_t test_ffa_spm_id_get(void)
 	ffa_id_t spm_id = ffa_endpoint_id(ffa_ret);
 
 	if (spm_id != SPMC_ID) {
-		ERROR("Expected SPMC_ID of 0x%x\n received: 0x%x\n",
-			SPMC_ID, spm_id);
+		ERROR("Expected SPMC_ID of 0x%x\n received: 0x%x\n", SPMC_ID,
+		      spm_id);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -687,27 +675,28 @@ test_result_t test_ffa_spm_id_get(void)
 test_result_t test_ffa_partition_info(void)
 {
 	/***********************************************************************
-	 * Check if SPMC has ffa_version and expected FFA endpoints are deployed.
+	 * Check if SPMC has ffa_version and expected FFA endpoints are
+	 *deployed.
 	 **********************************************************************/
 	CHECK_SPMC_TESTING_SETUP(1, 1, sp_uuids);
 
 	GET_TFTF_MAILBOX(mb);
 
 	if (!ffa_partition_info_helper(&mb, sp_uuids[0],
-		&ffa_expected_partition_info[0], 1)) {
+				       &ffa_expected_partition_info[0], 1)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!ffa_partition_info_helper(&mb, sp_uuids[1],
-		&ffa_expected_partition_info[1], 1)) {
+				       &ffa_expected_partition_info[1], 1)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!ffa_partition_info_helper(&mb, sp_uuids[2],
-		&ffa_expected_partition_info[2], 1)) {
+				       &ffa_expected_partition_info[2], 1)) {
 		return TEST_RESULT_FAIL;
 	}
-	if (!ffa_partition_info_helper(&mb, NULL_UUID,
-		ffa_expected_partition_info,
-		ARRAY_SIZE(ffa_expected_partition_info))) {
+	if (!ffa_partition_info_helper(
+		    &mb, NULL_UUID, ffa_expected_partition_info,
+		    ARRAY_SIZE(ffa_expected_partition_info))) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -760,12 +749,12 @@ test_result_t test_ffa_partition_info_v1_0(void)
 			if (info[i].exec_context !=
 			    ffa_expected_partition_info[i].exec_context) {
 				ERROR("Wrong context. Expected %d, got %d\n",
-				      ffa_expected_partition_info[i].exec_context,
+				      ffa_expected_partition_info[i]
+					      .exec_context,
 				      info[i].exec_context);
 				result = TEST_RESULT_FAIL;
 			}
-			if (info[i].properties !=
-			    expected_properties_v1_0) {
+			if (info[i].properties != expected_properties_v1_0) {
 				ERROR("Wrong properties. Expected %d, got %d\n",
 				      expected_properties_v1_0,
 				      info[i].properties);

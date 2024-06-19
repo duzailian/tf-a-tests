@@ -5,12 +5,12 @@
  */
 
 #include <debug.h>
+#include <events.h>
+#include <platform.h>
 
 #include <cactus_message_loop.h>
 #include <cactus_test_cmds.h>
 #include <ffa_helpers.h>
-#include <events.h>
-#include <platform.h>
 #include <spm_helpers.h>
 
 /**
@@ -27,10 +27,9 @@ static uint32_t requests_counter[PLATFORM_CORE_COUNT];
 extern struct cactus_cmd_handler cactus_cmd_handler_begin[];
 extern struct cactus_cmd_handler cactus_cmd_handler_end[];
 
-#define PRINT_CMD(smc_ret)						\
-	VERBOSE("cmd %lx; args: %lx, %lx, %lx, %lx\n",	 		\
-		smc_ret.arg3, smc_ret.arg4, smc_ret.arg5, 		\
-		smc_ret.arg6, smc_ret.arg7)
+#define PRINT_CMD(smc_ret)                                           \
+	VERBOSE("cmd %lx; args: %lx, %lx, %lx, %lx\n", smc_ret.arg3, \
+		smc_ret.arg4, smc_ret.arg5, smc_ret.arg6, smc_ret.arg7)
 
 /* Global FFA_MSG_DIRECT_REQ source ID */
 ffa_id_t g_dir_req_source_id;
@@ -63,8 +62,7 @@ bool cactus_handle_cmd(struct ffa_value *cmd_args, struct ffa_value *ret,
 	in_cmd = cactus_get_cmd(*cmd_args);
 
 	for (struct cactus_cmd_handler *it_cmd = cactus_cmd_handler_begin;
-	     it_cmd < cactus_cmd_handler_end;
-	     it_cmd++) {
+	     it_cmd < cactus_cmd_handler_end; it_cmd++) {
 		if (it_cmd->id == in_cmd) {
 			*ret = it_cmd->fn(cmd_args, mb);
 
@@ -84,13 +82,12 @@ bool cactus_handle_cmd(struct ffa_value *cmd_args, struct ffa_value *ret,
 
 		/* Read value from array. */
 		requests_counter_resp = requests_counter[core_pos];
-		VERBOSE("Requests Counter %u, core: %u\n", requests_counter_resp,
-							   core_pos);
+		VERBOSE("Requests Counter %u, core: %u\n",
+			requests_counter_resp, core_pos);
 
-		*ret = cactus_success_resp(
-			ffa_dir_msg_dest(*cmd_args),
-			ffa_dir_msg_source(*cmd_args),
-			requests_counter_resp);
+		*ret = cactus_success_resp(ffa_dir_msg_dest(*cmd_args),
+					   ffa_dir_msg_source(*cmd_args),
+					   requests_counter_resp);
 		return true;
 	}
 

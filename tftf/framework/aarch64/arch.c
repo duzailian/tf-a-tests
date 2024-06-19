@@ -7,7 +7,6 @@
 
 #include <arch_features.h>
 #include <arch_helpers.h>
-#include <arch_features.h>
 #include <tftf_lib.h>
 
 void tftf_arch_setup(void)

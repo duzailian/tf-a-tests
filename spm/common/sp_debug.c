@@ -15,11 +15,7 @@ static int (*putc_impl)(int);
 
 static int putc_hypcall(int c)
 {
-	hvc_args args = {
-		.fid = FFA_CONSOLE_LOG_SMC32,
-		.arg1 = 1,
-		.arg2 = c
-	};
+	hvc_args args = {.fid = FFA_CONSOLE_LOG_SMC32, .arg1 = 1, .arg2 = c};
 
 	(void)tftf_hvc(&args);
 	return c;
@@ -27,10 +23,7 @@ static int putc_hypcall(int c)
 static int putc_ffacall(int c)
 {
 	struct ffa_value args = {
-		.fid = FFA_CONSOLE_LOG_SMC32,
-		.arg1 = 1,
-		.arg2 = c
-	};
+		.fid = FFA_CONSOLE_LOG_SMC32, .arg1 = 1, .arg2 = c};
 
 	ffa_service_call(&args);
 
@@ -47,7 +40,6 @@ static int putc_uart(int c)
 void set_putc_impl(enum stdout_route route)
 {
 	switch (route) {
-
 	case FFA_HVC_CALL_AS_STDOUT:
 		putc_impl = putc_hypcall;
 		return;

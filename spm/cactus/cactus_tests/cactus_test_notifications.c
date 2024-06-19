@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <debug.h>
+
 #include "cactus_message_loop.h"
 #include "cactus_test_cmds.h"
 #include "sp_tests.h"
-
 #include <ffa_helpers.h>
 #include <spm_helpers.h>
-#include <debug.h>
 
 /* Booleans to keep track of which CPUs handled NPI. */
 static bool npi_handled[PLATFORM_CORE_COUNT];
@@ -41,7 +41,6 @@ void notification_pending_interrupt_handler(void)
 
 	set_npi_handled(core_pos, true);
 }
-
 
 CACTUS_CMD_HANDLER(notifications_bind, CACTUS_NOTIFICATION_BIND_CMD)
 {
@@ -77,7 +76,7 @@ CACTUS_CMD_HANDLER(notifications_unbind, CACTUS_NOTIFICATION_UNBIND_CMD)
 	struct ffa_value ret;
 
 	VERBOSE("Partition %x requested to unbind notifications '%llx' to %x\n",
-	     source, notifications, receiver);
+		source, notifications, receiver);
 
 	ret = ffa_notification_unbind(sender, receiver, notifications);
 
@@ -93,7 +92,7 @@ CACTUS_CMD_HANDLER(notifications_get, CACTUS_NOTIFICATION_GET_CMD)
 	ffa_id_t source = ffa_dir_msg_source(*args);
 	ffa_id_t vm_id = ffa_dir_msg_dest(*args);
 	ffa_id_t notification_receiver =
-				cactus_notification_get_receiver(*args);
+		cactus_notification_get_receiver(*args);
 	uint32_t flags = cactus_notification_get_flags(*args);
 	uint32_t vcpu_id = cactus_notification_get_vcpu(*args);
 	struct ffa_value ret;
@@ -107,14 +106,13 @@ CACTUS_CMD_HANDLER(notifications_get, CACTUS_NOTIFICATION_GET_CMD)
 	}
 
 	VERBOSE("Notifications returned:\n"
-			"   from sp: %llx\n"
-			"   from vm: %llx\n",
+		"   from sp: %llx\n"
+		"   from vm: %llx\n",
 		ffa_notification_get_from_sp(ret),
 		ffa_notification_get_from_vm(ret));
 
 	/* If requested to check the status of NPI, for the respective CPU. */
 	if (cactus_notifications_check_npi_handled(*args)) {
-
 		/* If NPI hasn't been handled return error for this test. */
 		if (!get_npi_handled(vcpu_id)) {
 			return cactus_error_resp(vm_id, source,
@@ -135,7 +133,7 @@ CACTUS_CMD_HANDLER(notifications_set, CACTUS_NOTIFICATIONS_SET_CMD)
 	ffa_id_t source = ffa_dir_msg_source(*args);
 	ffa_id_t vm_id = ffa_dir_msg_dest(*args);
 	ffa_notification_bitmap_t notifications =
-				 cactus_notification_get_notifications(*args);
+		cactus_notification_get_notifications(*args);
 	ffa_id_t receiver = cactus_notifications_set_get_receiver(*args);
 	ffa_id_t sender = cactus_notifications_set_get_sender(*args);
 	ffa_id_t echo_dest = cactus_req_echo_get_echo_dest(*args);
@@ -168,7 +166,8 @@ CACTUS_CMD_HANDLER(notifications_set, CACTUS_NOTIFICATIONS_SET_CMD)
 		}
 	}
 
-	VERBOSE("Set notifications handled (core %u)!\n", get_current_core_id());
+	VERBOSE("Set notifications handled (core %u)!\n",
+		get_current_core_id());
 
 	return cactus_response(vm_id, source, CACTUS_SUCCESS);
 }

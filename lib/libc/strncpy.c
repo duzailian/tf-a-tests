@@ -41,8 +41,7 @@
  * Copy src to dst, truncating or null-padding to always copy n bytes.
  * Return dst.
  */
-char *
-strncpy(char * __restrict dst, const char * __restrict src, size_t n)
+char *strncpy(char *__restrict dst, const char *__restrict src, size_t n)
 {
 	if (n != 0) {
 		char *d = dst;

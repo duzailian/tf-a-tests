@@ -9,23 +9,23 @@
 
 #include <stdlib.h> /* for rand() */
 
-#define MAX_VL			(512)
-#define MAX_VL_B		(MAX_VL / 8)
-#define SME_SVQ_ARCH_MAX	(MASK(SMCR_ELX_LEN) >> SMCR_ELX_LEN_SHIFT)
+#define MAX_VL (512)
+#define MAX_VL_B (MAX_VL / 8)
+#define SME_SVQ_ARCH_MAX (MASK(SMCR_ELX_LEN) >> SMCR_ELX_LEN_SHIFT)
 
 /* get a random Streaming SVE VQ b/w 0 to SME_SVQ_ARCH_MAX */
-#define SME_GET_RANDOM_SVQ	(rand() % (SME_SVQ_ARCH_MAX + 1))
+#define SME_GET_RANDOM_SVQ (rand() % (SME_SVQ_ARCH_MAX + 1))
 
 typedef enum {
-	SMSTART,	/* enters streaming sve mode and enables SME ZA array */
-	SMSTART_SM,	/* enters streaming sve mode only */
-	SMSTART_ZA,	/* enables SME ZA array storage only */
+	SMSTART,    /* enters streaming sve mode and enables SME ZA array */
+	SMSTART_SM, /* enters streaming sve mode only */
+	SMSTART_ZA, /* enables SME ZA array storage only */
 } smestart_instruction_type_t;
 
 typedef enum {
-	SMSTOP,		/* exits streaming sve mode, & disables SME ZA array */
-	SMSTOP_SM,	/* exits streaming sve mode only */
-	SMSTOP_ZA,	/* disables SME ZA array storage only */
+	SMSTOP,	   /* exits streaming sve mode, & disables SME ZA array */
+	SMSTOP_SM, /* exits streaming sve mode only */
+	SMSTOP_ZA, /* disables SME ZA array storage only */
 } smestop_instruction_type_t;
 
 /* SME feature related prototypes. */

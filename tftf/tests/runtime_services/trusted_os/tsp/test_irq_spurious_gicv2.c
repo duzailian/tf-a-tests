@@ -4,15 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <debug.h>
+#include <events.h>
+#include <irq.h>
+#include <platform.h>
+
+#include <arch_helpers.h>
 #include <drivers/arm/arm_gic.h>
 #include <drivers/arm/gic_common.h>
 #include <drivers/arm/gic_v2.h>
-#include <events.h>
-#include <irq.h>
 #include <plat_topology.h>
-#include <platform.h>
 #include <power_management.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
@@ -20,10 +21,10 @@
 #define TEST_VALUE_1 4
 #define TEST_VALUE_2 6
 
-#define TEST_SPURIOUS_ITERATIONS_COUNT	1000000
+#define TEST_SPURIOUS_ITERATIONS_COUNT 1000000
 
-#define TEST_SPI_ID		(MIN_SPI_ID + 2)
-#define CPU_TARGET_FIELD	((1 << PLATFORM_CORE_COUNT) - 1)
+#define TEST_SPI_ID (MIN_SPI_ID + 2)
+#define CPU_TARGET_FIELD ((1 << PLATFORM_CORE_COUNT) - 1)
 
 static event_t cpu_ready[PLATFORM_CORE_COUNT];
 static volatile int requested_irq_received[PLATFORM_CORE_COUNT];
@@ -67,7 +68,6 @@ static test_result_t test_multicore_spurious_interrupt_non_lead_fn(void)
 	tftf_send_event(&cpu_ready[core_pos]);
 
 	while (test_finished_flag == 0) {
-
 		smc_args std_smc_args;
 		smc_ret_values smc_ret;
 
@@ -83,11 +83,16 @@ static test_result_t test_multicore_spurious_interrupt_non_lead_fn(void)
 				if ((smc_ret.ret1 != TEST_VALUE_1 * 2) ||
 				    (smc_ret.ret2 != TEST_VALUE_2 * 2)) {
 					tftf_testcase_printf(
-						"SMC @ CPU %d returned 0x0 0x%llx 0x%llx instead of 0x0 0x%x 0x%x\n",
+						"SMC @ CPU %d returned 0x0 "
+						"0x%llx 0x%llx instead of 0x0 "
+						"0x%x 0x%x\n",
 						core_pos,
-						(unsigned long long)smc_ret.ret1,
-						(unsigned long long)smc_ret.ret2,
-						TEST_VALUE_1 * 2, TEST_VALUE_2 * 2);
+						(unsigned long long)
+							smc_ret.ret1,
+						(unsigned long long)
+							smc_ret.ret2,
+						TEST_VALUE_1 * 2,
+						TEST_VALUE_2 * 2);
 					result = TEST_RESULT_FAIL;
 				} else {
 					/* Correct, exit inner loop */
@@ -101,7 +106,8 @@ static test_result_t test_multicore_spurious_interrupt_non_lead_fn(void)
 			} else {
 				/* Error */
 				tftf_testcase_printf(
-					"SMC @ lead CPU returned 0x%llx 0x%llx 0x%llx\n",
+					"SMC @ lead CPU returned 0x%llx 0x%llx "
+					"0x%llx\n",
 					(unsigned long long)smc_ret.ret0,
 					(unsigned long long)smc_ret.ret1,
 					(unsigned long long)smc_ret.ret2);
@@ -159,7 +165,7 @@ test_result_t test_multicore_spurious_interrupt(void)
 	}
 
 	ret = tftf_irq_register_handler(GIC_SPURIOUS_INTERRUPT,
-					     test_spurious_handler);
+					test_spurious_handler);
 	if (ret != 0) {
 		tftf_testcase_printf(
 			"Failed to register spurious handler. Error = %d\n",
@@ -181,14 +187,18 @@ test_result_t test_multicore_spurious_interrupt(void)
 
 	dsbsy();
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (cpu_mpid == lead_mpid)
 			continue;
 
-		psci_ret = tftf_cpu_on(cpu_mpid,
-			(uintptr_t)test_multicore_spurious_interrupt_non_lead_fn, 0);
+		psci_ret = tftf_cpu_on(
+			cpu_mpid,
+			(uintptr_t)
+				test_multicore_spurious_interrupt_non_lead_fn,
+			0);
 		if (psci_ret != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
 				"Failed to power on CPU 0x%x (%d)\n",
@@ -200,7 +210,8 @@ test_result_t test_multicore_spurious_interrupt(void)
 	}
 
 	/* Wait for non-lead CPUs to enter the test */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (cpu_mpid == lead_mpid)
@@ -218,7 +229,8 @@ test_result_t test_multicore_spurious_interrupt(void)
 	ret = tftf_irq_register_handler(TEST_SPI_ID, test_handler);
 	if (ret != 0) {
 		tftf_testcase_printf(
-			"Failed to register SPI handler @ lead CPU. Error code = %d\n",
+			"Failed to register SPI handler @ lead CPU. Error code "
+			"= %d\n",
 			ret);
 		tftf_irq_unregister_handler(GIC_SPURIOUS_INTERRUPT);
 		test_finished_flag = 1;
@@ -232,7 +244,6 @@ test_result_t test_multicore_spurious_interrupt(void)
 	gicv2_set_itargetsr_value(TEST_SPI_ID, CPU_TARGET_FIELD);
 
 	for (j = 0; j < TEST_SPURIOUS_ITERATIONS_COUNT; j++) {
-
 		/* Clear handled flags. */
 		for (i = 0; i < PLATFORM_CORE_COUNT; i++)
 			requested_irq_received[i] = 0;
@@ -258,7 +269,8 @@ test_result_t test_multicore_spurious_interrupt(void)
 	dsbsy();
 
 	/* Wait for non-lead CPUs to finish the test */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (cpu_mpid == lead_mpid)
@@ -284,19 +296,20 @@ test_result_t test_multicore_spurious_interrupt(void)
 	}
 
 	mp_printf("Count Spurious= %d; Preempted= %d\n", total_spurious_count,
-		total_preempted_count);
+		  total_preempted_count);
 
 	/* Check that the test has tested the behaviour. */
 	if (total_spurious_count == 0) {
-		tftf_testcase_printf("No spurious interrupts were handled.\n"
-			"The TF-A must be compiled with TSP_NS_INTR_ASYNC_PREEMPT = 0\n");
+		tftf_testcase_printf(
+			"No spurious interrupts were handled.\n"
+			"The TF-A must be compiled with "
+			"TSP_NS_INTR_ASYNC_PREEMPT = 0\n");
 		/*
 		 * Don't flag the test as failed in case the TF-A was compiled
 		 * with TSP_NS_INTR_ASYNC_PREEMPT=1.
 		 */
 		return TEST_RESULT_SKIPPED;
 	}
-
 
 	if (total_preempted_count == 0) {
 		tftf_testcase_printf("No preempted STD SMCs.\n");

@@ -4,12 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <sdei.h>
+#include <timer.h>
+
 #include <fuzz_helper.h>
 #include <power_management.h>
-#include <sdei.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
-#include <timer.h>
 
 #ifndef sdei_version_funcid
 #define sdei_version_funcid 0
@@ -32,7 +33,6 @@
 #ifndef sdei_shared_reset_funcid
 #define sdei_shared_reset_funcid 0
 #endif
-
 
 void tftf_test_sdei_noarg(int64_t (*sdei_func)(void), char *funcstr);
 void tftf_test_sdei_singlearg(int64_t (*sdei_func)(uint64_t), char *funcstr);

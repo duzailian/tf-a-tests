@@ -12,9 +12,9 @@
 /*
  * State IDs for local power states on Juno.
  */
-#define JUNO_RUN_STATE_ID		0 /* Valid for CPUs and Clusters */
-#define JUNO_RETENTION_STATE_ID		1 /* Valid for only CPUs */
-#define JUNO_OFF_STATE_ID		2 /* Valid for CPUs and Clusters */
+#define JUNO_RUN_STATE_ID 0	  /* Valid for CPUs and Clusters */
+#define JUNO_RETENTION_STATE_ID 1 /* Valid for only CPUs */
+#define JUNO_OFF_STATE_ID 2	  /* Valid for CPUs and Clusters */
 
 /*
  * Suspend depth definitions for each power state

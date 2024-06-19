@@ -12,7 +12,7 @@ void *memchr(const void *src, int c, size_t len)
 
 	while (len--) {
 		if (*s == (unsigned char)c)
-			return (void *) s;
+			return (void *)s;
 		s++;
 	}
 

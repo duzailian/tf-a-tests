@@ -15,10 +15,10 @@
 #include <uuid.h>
 
 /* Trusted OS Function IDs that fall under Trusted OS call range */
-#define SMC_TOS_CALL_COUNT	0xbf00ff00
-#define SMC_TOS_UID		0xbf00ff01
+#define SMC_TOS_CALL_COUNT 0xbf00ff00
+#define SMC_TOS_UID 0xbf00ff01
 /*				0xbf00ff02 is reserved */
-#define SMC_TOS_REVISION	0xbf00ff03
+#define SMC_TOS_REVISION 0xbf00ff03
 
 /*
  * Detect whether a Trusted OS is present in the software stack.

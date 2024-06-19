@@ -6,9 +6,10 @@
 
 #include <assert.h>
 #include <debug.h>
+#include <string.h>
+
 #include <drivers/io/io_driver.h>
 #include <io_storage.h>
-#include <string.h>
 
 /* As we need to be able to keep state for seek, only one file can be open
  * at a time. Make this a structure and point to the entity->info. When we
@@ -18,9 +19,9 @@ typedef struct {
 	/* Use the 'in_use' flag as any value for base and file_pos could be
 	 * valid.
 	 */
-	int		in_use;
-	uintptr_t	base;
-	size_t		file_pos;
+	int in_use;
+	uintptr_t base;
+	size_t file_pos;
 } file_state_t;
 
 static file_state_t current_file = {0};
@@ -35,8 +36,7 @@ io_type_t device_type_memmap(void)
 static int memmap_dev_open(const uintptr_t dev_spec, io_dev_info_t **dev_info);
 static int memmap_block_open(io_dev_info_t *dev_info, const uintptr_t spec,
 			     io_entity_t *entity);
-static int memmap_block_seek(io_entity_t *entity, int mode,
-			     ssize_t offset);
+static int memmap_block_seek(io_entity_t *entity, int mode, ssize_t offset);
 static int memmap_block_read(io_entity_t *entity, uintptr_t buffer,
 			     size_t length, size_t *length_read);
 static int memmap_block_write(io_entity_t *entity, const uintptr_t buffer,
@@ -44,11 +44,8 @@ static int memmap_block_write(io_entity_t *entity, const uintptr_t buffer,
 static int memmap_block_close(io_entity_t *entity);
 static int memmap_dev_close(io_dev_info_t *dev_info);
 
-
 static const io_dev_connector_t memmap_dev_connector = {
-	.dev_open = memmap_dev_open
-};
-
+	.dev_open = memmap_dev_open};
 
 static const io_dev_funcs_t memmap_dev_funcs = {
 	.type = device_type_memmap,
@@ -62,13 +59,9 @@ static const io_dev_funcs_t memmap_dev_funcs = {
 	.dev_close = memmap_dev_close,
 };
 
-
 /* No state associated with this device so structure can be const */
-static const io_dev_info_t memmap_dev_info = {
-	.funcs = &memmap_dev_funcs,
-	.info = (uintptr_t)NULL
-};
-
+static const io_dev_info_t memmap_dev_info = {.funcs = &memmap_dev_funcs,
+					      .info = (uintptr_t)NULL};
 
 /* Open a connection to the memmap device */
 static int memmap_dev_open(const uintptr_t dev_spec __attribute__((unused)),
@@ -80,8 +73,6 @@ static int memmap_dev_open(const uintptr_t dev_spec __attribute__((unused)),
 	return IO_SUCCESS;
 }
 
-
-
 /* Close a connection to the memmap device */
 static int memmap_dev_close(io_dev_info_t *dev_info)
 {
@@ -89,7 +80,6 @@ static int memmap_dev_close(io_dev_info_t *dev_info)
 	/* TODO: Consider tracking open files and cleaning them up here */
 	return IO_SUCCESS;
 }
-
 
 /* Open a file on the memmap device */
 /* TODO: Can we do any sensible limit checks on requested memory */
@@ -121,7 +111,6 @@ static int memmap_block_open(io_dev_info_t *dev_info, const uintptr_t spec,
 	return result;
 }
 
-
 /* Seek to a particular file offset on the memmap device */
 static int memmap_block_seek(io_entity_t *entity, int mode, ssize_t offset)
 {
@@ -140,7 +129,6 @@ static int memmap_block_seek(io_entity_t *entity, int mode, ssize_t offset)
 
 	return result;
 }
-
 
 /* Read data from a file on the memmap device */
 static int memmap_block_read(io_entity_t *entity, uintptr_t buffer,
@@ -162,7 +150,6 @@ static int memmap_block_read(io_entity_t *entity, uintptr_t buffer,
 
 	return IO_SUCCESS;
 }
-
 
 /* Write data to a file on the memmap device */
 static int memmap_block_write(io_entity_t *entity, const uintptr_t buffer,
@@ -186,7 +173,6 @@ static int memmap_block_write(io_entity_t *entity, const uintptr_t buffer,
 	return IO_SUCCESS;
 }
 
-
 /* Close a file on the memmap device */
 static int memmap_block_close(io_entity_t *entity)
 {
@@ -199,7 +185,6 @@ static int memmap_block_close(io_entity_t *entity)
 
 	return IO_SUCCESS;
 }
-
 
 /* Exported functions */
 

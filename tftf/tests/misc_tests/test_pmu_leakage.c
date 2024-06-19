@@ -44,12 +44,13 @@
  * SPME bits.
  */
 
-#include <drivers/arm/arm_gic.h>
 #include <irq.h>
 #include <platform.h>
-#include <power_management.h>
 #include <sgi.h>
 #include <string.h>
+
+#include <drivers/arm/arm_gic.h>
+#include <power_management.h>
 #include <test_helpers.h>
 
 #define ITERATIONS_CNT 1000
@@ -98,11 +99,10 @@ static inline void configure_pmu_cntr0(const uint32_t event)
 	 * and EL3. This is to ensure maximum accuracy of the results, since we
 	 * are only interested if the secure world is leaking PMU counters.
 	 */
-	write_pmevtyper0_el0(
-		(read_pmevtyper0_el0() | PMEVTYPER_EL0_NSK_BIT |
-		 PMEVTYPER_EL0_SH_BIT) &
-		~(PMEVTYPER_EL0_P_BIT | PMEVTYPER_EL0_NSH_BIT |
-		  PMEVTYPER_EL0_M_BIT));
+	write_pmevtyper0_el0((read_pmevtyper0_el0() | PMEVTYPER_EL0_NSK_BIT |
+			      PMEVTYPER_EL0_SH_BIT) &
+			     ~(PMEVTYPER_EL0_P_BIT | PMEVTYPER_EL0_NSH_BIT |
+			       PMEVTYPER_EL0_M_BIT));
 
 	/*
 	 * Write to the EVTCOUNT bits to tell the counter which event to
@@ -112,8 +112,7 @@ static inline void configure_pmu_cntr0(const uint32_t event)
 		(read_pmevtyper0_el0() & ~PMEVTYPER_EL0_EVTCOUNT_BITS) | event);
 
 	/* Setting the P[n] bit enables counter n */
-	write_pmcntenset_el0(
-		read_pmcntenset_el0() | PMCNTENSET_EL0_P_BIT(0));
+	write_pmcntenset_el0(read_pmcntenset_el0() | PMCNTENSET_EL0_P_BIT(0));
 }
 
 static inline void configure_pmu_cycle_cntr(void)
@@ -133,15 +132,13 @@ static inline void configure_pmu_cycle_cntr(void)
 	 * and EL3. This is to ensure maximum accuracy of the results, since we
 	 * are only interested if the secure world is leaking PMU counters.
 	 */
-	write_pmccfiltr_el0(
-		(read_pmccfiltr_el0() | PMCCFILTR_EL0_NSK_BIT |
-		 PMCCFILTR_EL0_SH_BIT) &
-		~(PMCCFILTR_EL0_P_BIT | PMCCFILTR_EL0_NSH_BIT |
-		  PMCCFILTR_EL0_M_BIT));
+	write_pmccfiltr_el0((read_pmccfiltr_el0() | PMCCFILTR_EL0_NSK_BIT |
+			     PMCCFILTR_EL0_SH_BIT) &
+			    ~(PMCCFILTR_EL0_P_BIT | PMCCFILTR_EL0_NSH_BIT |
+			      PMCCFILTR_EL0_M_BIT));
 
 	/* Setting the C bit enables the cycle counter in the PMU */
-	write_pmcntenset_el0(
-		read_pmcntenset_el0() | PMCNTENSET_EL0_C_BIT);
+	write_pmcntenset_el0(read_pmcntenset_el0() | PMCNTENSET_EL0_C_BIT);
 
 	/*
 	 * Disabling the DP bit makes the cycle counter increment where
@@ -163,7 +160,7 @@ static inline void pmu_enable_counting(void)
 static unsigned long long profile_invalid_smc(u_register_t (*read_cntr_f)(void))
 {
 	unsigned long long evt_cnt;
-	smc_args args = { INVALID_FN };
+	smc_args args = {INVALID_FN};
 
 	evt_cnt = (*read_cntr_f)();
 	tftf_smc(&args);
@@ -178,10 +175,10 @@ static unsigned long long profile_cpu_suspend(u_register_t (*read_cntr_f)(void))
 	unsigned int power_state;
 	unsigned int stateid;
 
-	tftf_psci_make_composite_state_id(MPIDR_AFFLVL0,
-					  PSTATE_TYPE_STANDBY, &stateid);
-	power_state = tftf_make_psci_pstate(MPIDR_AFFLVL0,
-					    PSTATE_TYPE_STANDBY, stateid);
+	tftf_psci_make_composite_state_id(MPIDR_AFFLVL0, PSTATE_TYPE_STANDBY,
+					  &stateid);
+	power_state = tftf_make_psci_pstate(MPIDR_AFFLVL0, PSTATE_TYPE_STANDBY,
+					    stateid);
 
 	tftf_irq_enable(IRQ_NS_SGI_0, GIC_HIGHEST_NS_PRIORITY);
 
@@ -194,7 +191,7 @@ static unsigned long long profile_cpu_suspend(u_register_t (*read_cntr_f)(void))
 
 	/* Configure an SGI to wake-up from suspend  */
 	tftf_send_sgi(IRQ_NS_SGI_0,
-		platform_get_core_pos(read_mpidr_el1() & MPID_MASK));
+		      platform_get_core_pos(read_mpidr_el1() & MPID_MASK));
 
 	evt_cnt = (*read_cntr_f)();
 	tftf_cpu_suspend(power_state);
@@ -209,10 +206,11 @@ static unsigned long long profile_cpu_suspend(u_register_t (*read_cntr_f)(void))
 	return evt_cnt;
 }
 
-static unsigned long long profile_fast_smc_add(u_register_t (*read_cntr_f)(void))
+static unsigned long long profile_fast_smc_add(
+	u_register_t (*read_cntr_f)(void))
 {
 	unsigned long long evt_cnt;
-	smc_args args = { TSP_FAST_FID(TSP_ADD), 4, 6 };
+	smc_args args = {TSP_FAST_FID(TSP_ADD), 4, 6};
 
 	evt_cnt = (*read_cntr_f)();
 	tftf_smc(&args);
@@ -221,9 +219,10 @@ static unsigned long long profile_fast_smc_add(u_register_t (*read_cntr_f)(void)
 	return evt_cnt;
 }
 
-static void measure_event(u_register_t (*read_cntr_func)(void),
-			  unsigned long long (*profile_func)(u_register_t (*read_cntr_f)(void)),
-			  struct pmu_event_info *info)
+static void measure_event(
+	u_register_t (*read_cntr_func)(void),
+	unsigned long long (*profile_func)(u_register_t (*read_cntr_f)(void)),
+	struct pmu_event_info *info)
 {
 	unsigned long long evt_cnt;
 	unsigned long long min_cnt;
@@ -252,10 +251,8 @@ static void measure_event(u_register_t (*read_cntr_func)(void),
 	info->max = max_cnt;
 
 	tftf_testcase_printf(
-		"Average count: %llu (ranging from %llu to %llu)\n",
-		avg_cnt,
-		min_cnt,
-		max_cnt);
+		"Average count: %llu (ranging from %llu to %llu)\n", avg_cnt,
+		min_cnt, max_cnt);
 }
 
 /*

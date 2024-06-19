@@ -5,10 +5,10 @@
  */
 
 #include <string.h>
+#include <tftf.h>
 
 #include <test_helpers.h>
 #include <tftf_lib.h>
-#include <tftf.h>
 
 /*
  * EL3 is expected to allow access to trace control registers from EL2.
@@ -17,7 +17,7 @@
  */
 test_result_t test_trbe_enabled(void)
 {
-        SKIP_TEST_IF_AARCH32();
+	SKIP_TEST_IF_AARCH32();
 
 #ifdef __aarch64__
 	SKIP_TEST_IF_TRBE_NOT_SUPPORTED();
@@ -29,5 +29,5 @@ test_result_t test_trbe_enabled(void)
 	read_trbtrg_el1();
 	read_trbidr_el1();
 	return TEST_RESULT_SUCCESS;
-#endif  /* __aarch64__ */
+#endif /* __aarch64__ */
 }

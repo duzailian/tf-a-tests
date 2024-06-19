@@ -12,9 +12,9 @@
 #include <common/debug.h>
 
 #if ENABLE_ASSERTIONS
-#define assert(e)	((e) ? (void)0 : __assert(__FILE__, __LINE__, #e))
+#define assert(e) ((e) ? (void)0 : __assert(__FILE__, __LINE__, #e))
 #else
-#define assert(e)	((void)0)
+#define assert(e) ((void)0)
 #endif /* ENABLE_ASSERTIONS */
 
 __dead2 void __assert(const char *file, unsigned int line,

@@ -4,12 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <events.h>
-#include <plat_topology.h>
 #include <platform.h>
-#include <power_management.h>
 #include <psci.h>
+
+#include <arch_helpers.h>
+#include <plat_topology.h>
+#include <power_management.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
 
@@ -54,23 +55,25 @@ test_result_t test_template_multi_core(void)
 	SKIP_TEST_IF_LESS_THAN_N_CPUS(2);
 
 	/* Power on all CPUs */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU as it is already powered on */
 		if (cpu_mpid == lead_mpid)
 			continue;
 
-		psci_ret = tftf_cpu_on(cpu_mpid, (uintptr_t) non_lead_cpu_fn, 0);
+		psci_ret = tftf_cpu_on(cpu_mpid, (uintptr_t)non_lead_cpu_fn, 0);
 		if (psci_ret != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
-				"Failed to power on CPU 0x%x (%d)\n",
-				cpu_mpid, psci_ret);
+				"Failed to power on CPU 0x%x (%d)\n", cpu_mpid,
+				psci_ret);
 			return TEST_RESULT_SKIPPED;
 		}
 	}
 
 	/* Wait for non-lead CPUs to enter the test */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (cpu_mpid == lead_mpid)

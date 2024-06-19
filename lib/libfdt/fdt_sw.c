@@ -3,11 +3,10 @@
  * libfdt - Flat Device Tree manipulation
  * Copyright (C) 2006 David Gibson, IBM Corporation.
  */
-#include "libfdt_env.h"
-
 #include <fdt.h>
 #include <libfdt.h>
 
+#include "libfdt_env.h"
 #include "libfdt_internal.h"
 
 static int fdt_sw_probe_(void *fdt)
@@ -22,11 +21,11 @@ static int fdt_sw_probe_(void *fdt)
 	return 0;
 }
 
-#define FDT_SW_PROBE(fdt) \
-	{ \
-		int err; \
+#define FDT_SW_PROBE(fdt)                            \
+	{                                            \
+		int err;                             \
 		if ((err = fdt_sw_probe_(fdt)) != 0) \
-			return err; \
+			return err;                  \
 	}
 
 /* 'memrsv' state:	Initial state after fdt_create()
@@ -46,11 +45,11 @@ static int fdt_sw_probe_memrsv_(void *fdt)
 	return 0;
 }
 
-#define FDT_SW_PROBE_MEMRSV(fdt) \
-	{ \
-		int err; \
+#define FDT_SW_PROBE_MEMRSV(fdt)                            \
+	{                                                   \
+		int err;                                    \
 		if ((err = fdt_sw_probe_memrsv_(fdt)) != 0) \
-			return err; \
+			return err;                         \
 	}
 
 /* 'struct' state:	Enter this state after fdt_finish_reservemap()
@@ -73,11 +72,11 @@ static int fdt_sw_probe_struct_(void *fdt)
 	return 0;
 }
 
-#define FDT_SW_PROBE_STRUCT(fdt) \
-	{ \
-		int err; \
+#define FDT_SW_PROBE_STRUCT(fdt)                            \
+	{                                                   \
+		int err;                                    \
 		if ((err = fdt_sw_probe_struct_(fdt)) != 0) \
-			return err; \
+			return err;                         \
 	}
 
 static inline uint32_t sw_flags(void *fdt)
@@ -96,8 +95,8 @@ static void *fdt_grab_space_(void *fdt, size_t len)
 	int offset = fdt_size_dt_struct(fdt);
 	int spaceleft;
 
-	spaceleft = fdt_totalsize(fdt) - fdt_off_dt_struct(fdt)
-		- fdt_size_dt_strings(fdt);
+	spaceleft = fdt_totalsize(fdt) - fdt_off_dt_struct(fdt) -
+		    fdt_size_dt_strings(fdt);
 
 	if ((offset + len < offset) || (offset + len > spaceleft))
 		return NULL;
@@ -131,7 +130,7 @@ int fdt_create_with_flags(void *buf, int bufsize, uint32_t flags)
 	fdt_set_version(fdt, FDT_LAST_SUPPORTED_VERSION);
 	fdt_set_last_comp_version(fdt, flags);
 
-	fdt_set_totalsize(fdt,  bufsize);
+	fdt_set_totalsize(fdt, bufsize);
 
 	fdt_set_off_mem_rsvmap(fdt, hdrsize);
 	fdt_set_off_dt_struct(fdt, fdt_off_mem_rsvmap(fdt));
@@ -155,8 +154,7 @@ int fdt_resize(void *fdt, void *buf, int bufsize)
 	headsize = fdt_off_dt_struct(fdt) + fdt_size_dt_struct(fdt);
 	tailsize = fdt_size_dt_strings(fdt);
 
-	if (!can_assume(VALID_DTB) &&
-	    headsize + tailsize > fdt_totalsize(fdt))
+	if (!can_assume(VALID_DTB) && headsize + tailsize > fdt_totalsize(fdt))
 		return -FDT_ERR_INTERNAL;
 
 	if ((headsize + tailsize) > bufsize)
@@ -222,7 +220,7 @@ int fdt_begin_node(void *fdt, const char *name)
 
 	namelen = strlen(name) + 1;
 	nh = fdt_grab_space_(fdt, sizeof(*nh) + FDT_TAGALIGN(namelen));
-	if (! nh)
+	if (!nh)
 		return -FDT_ERR_NOSPACE;
 
 	nh->tag = cpu_to_fdt32(FDT_BEGIN_NODE);
@@ -237,7 +235,7 @@ int fdt_end_node(void *fdt)
 	FDT_SW_PROBE_STRUCT(fdt);
 
 	en = fdt_grab_space_(fdt, FDT_TAGSIZE);
-	if (! en)
+	if (!en)
 		return -FDT_ERR_NOSPACE;
 
 	*en = cpu_to_fdt32(FDT_END_NODE);
@@ -306,7 +304,7 @@ int fdt_property_placeholder(void *fdt, const char *name, int len, void **valp)
 		return -FDT_ERR_NOSPACE;
 
 	prop = fdt_grab_space_(fdt, sizeof(*prop) + FDT_TAGALIGN(len));
-	if (! prop) {
+	if (!prop) {
 		if (allocated)
 			fdt_del_last_string_(fdt, name);
 		return -FDT_ERR_NOSPACE;
@@ -343,7 +341,7 @@ int fdt_finish(void *fdt)
 
 	/* Add terminator */
 	end = fdt_grab_space_(fdt, sizeof(*end));
-	if (! end)
+	if (!end)
 		return -FDT_ERR_NOSPACE;
 	*end = cpu_to_fdt32(FDT_END);
 

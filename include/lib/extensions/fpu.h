@@ -8,8 +8,8 @@
 #define FPU_H
 
 /* The FPU and SIMD register bank is 32 quadword (128 bits) Q registers. */
-#define FPU_Q_SIZE		16U
-#define FPU_Q_COUNT		32U
+#define FPU_Q_SIZE 16U
+#define FPU_Q_COUNT 32U
 
 #ifndef __ASSEMBLER__
 
