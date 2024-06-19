@@ -30,15 +30,24 @@ struct memmod {
 	unsigned int checkadd;
 	struct memblk *memptr;
 	struct memblk *memptrend;
-	unsigned int mallocdeladd[((TOTALMEMORYSIZE/BLKSPACEDIV)/sizeof(struct memblk))];
-	struct memblk *precblock[((TOTALMEMORYSIZE/BLKSPACEDIV)/sizeof(struct memblk))];
-	struct memblk *trailblock[((TOTALMEMORYSIZE/BLKSPACEDIV)/sizeof(struct memblk))];
-	struct memblk *memblkqueue[((TOTALMEMORYSIZE/BLKSPACEDIV)/sizeof(struct memblk))];
-	unsigned int memallocsize[((TOTALMEMORYSIZE/BLKSPACEDIV)/sizeof(struct memblk))];
-	unsigned int mallocdeladd_valid[((TOTALMEMORYSIZE/BLKSPACEDIV)/sizeof(struct memblk))];
-	unsigned int mallocdeladd_queue[((TOTALMEMORYSIZE/BLKSPACEDIV)/sizeof(struct memblk))];
-	unsigned int checksa[4*((TOTALMEMORYSIZE/BLKSPACEDIV)/sizeof(struct memblk))];
-	unsigned int checkea[4*((TOTALMEMORYSIZE/BLKSPACEDIV)/sizeof(struct memblk))];
+	unsigned int mallocdeladd[((TOTALMEMORYSIZE / BLKSPACEDIV) /
+				   sizeof(struct memblk))];
+	struct memblk *precblock[((TOTALMEMORYSIZE / BLKSPACEDIV) /
+				  sizeof(struct memblk))];
+	struct memblk *trailblock[((TOTALMEMORYSIZE / BLKSPACEDIV) /
+				   sizeof(struct memblk))];
+	struct memblk *memblkqueue[((TOTALMEMORYSIZE / BLKSPACEDIV) /
+				    sizeof(struct memblk))];
+	unsigned int memallocsize[((TOTALMEMORYSIZE / BLKSPACEDIV) /
+				   sizeof(struct memblk))];
+	unsigned int mallocdeladd_valid[((TOTALMEMORYSIZE / BLKSPACEDIV) /
+					 sizeof(struct memblk))];
+	unsigned int mallocdeladd_queue[((TOTALMEMORYSIZE / BLKSPACEDIV) /
+					 sizeof(struct memblk))];
+	unsigned int checksa[4 * ((TOTALMEMORYSIZE / BLKSPACEDIV) /
+				  sizeof(struct memblk))];
+	unsigned int checkea[4 * ((TOTALMEMORYSIZE / BLKSPACEDIV) /
+				  sizeof(struct memblk))];
 	unsigned int cntdeladd;
 	unsigned int ptrmemblkqueue;
 	unsigned int mallocdeladd_queue_cnt;
@@ -53,8 +62,8 @@ struct peret {
 
 void initmem(void);
 struct peret priorityencoder(unsigned int);
-void *smcmalloc(unsigned int, struct memmod*);
-int smcfree(void*, struct memmod *);
+void *smcmalloc(unsigned int, struct memmod *);
+int smcfree(void *, struct memmod *);
 #ifdef DEBUG_SMC_MALLOC
 void displayblocks(struct memmod *);
 void displaymalloctable(struct memmod *);

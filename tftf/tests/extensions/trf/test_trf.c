@@ -5,10 +5,10 @@
  */
 
 #include <string.h>
+#include <tftf.h>
 
 #include <test_helpers.h>
 #include <tftf_lib.h>
-#include <tftf.h>
 
 /*
  * EL3 is expected to allow access to trace filter control registers from EL2.

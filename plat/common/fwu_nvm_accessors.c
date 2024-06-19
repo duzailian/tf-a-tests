@@ -6,16 +6,16 @@
 
 #include <assert.h>
 #include <debug.h>
+#include <platform.h>
+#include <status.h>
+#include <string.h>
+
 #include <drivers/io/io_fip.h>
 #include <firmware_image_package.h>
 #include <fwu_nvm.h>
 #include <io_storage.h>
-#include <platform.h>
 #include <platform_def.h>
-#include <status.h>
-#include <string.h>
 #include <uuid_utils.h>
-
 
 STATUS fwu_nvm_write(unsigned long long offset, const void *buffer, size_t size)
 {
@@ -35,8 +35,8 @@ STATUS fwu_nvm_write(unsigned long long offset, const void *buffer, size_t size)
 		return STATUS_FAIL;
 
 	/* Write to the given offset. */
-	ret = io_write(nvm_handle, (const uintptr_t)buffer,
-		size, &length_write);
+	ret = io_write(nvm_handle, (const uintptr_t)buffer, size,
+		       &length_write);
 	if ((ret != IO_SUCCESS) || (size != length_write))
 		return STATUS_FAIL;
 
@@ -61,14 +61,12 @@ STATUS fwu_nvm_read(unsigned long long offset, void *buffer, size_t size)
 		return STATUS_FAIL;
 
 	/* Read from the given offset. */
-	ret = io_read(nvm_handle, (const uintptr_t)buffer,
-		size, &length_read);
+	ret = io_read(nvm_handle, (const uintptr_t)buffer, size, &length_read);
 	if ((ret != IO_SUCCESS) || (size != length_read))
 		return STATUS_FAIL;
 
 	return STATUS_SUCCESS;
 }
-
 
 STATUS fwu_update_fip(unsigned long fip_addr)
 {
@@ -85,13 +83,12 @@ STATUS fwu_update_fip(unsigned long fip_addr)
 
 #if FWU_BL_TEST
 	/* Read the address of backup fip.bin for Firmware Update. */
-	ret = io_seek(nvm_handle, IO_SEEK_SET,
-			FWU_TFTF_TESTCASE_BUFFER_OFFSET);
+	ret = io_seek(nvm_handle, IO_SEEK_SET, FWU_TFTF_TESTCASE_BUFFER_OFFSET);
 	if (ret != IO_SUCCESS)
 		return STATUS_FAIL;
 
-	ret = io_read(nvm_handle, (const uintptr_t)&fip_addr,
-			sizeof(bytes), &bytes);
+	ret = io_read(nvm_handle, (const uintptr_t)&fip_addr, sizeof(bytes),
+		      &bytes);
 	if (ret != IO_SUCCESS)
 		return STATUS_FAIL;
 #endif /* FWU_BL_TEST */
@@ -105,7 +102,7 @@ STATUS fwu_update_fip(unsigned long fip_addr)
 
 	/* Check if this FIP is Valid */
 	if ((toc_header->name != TOC_HEADER_NAME) ||
-		(toc_header->serial_number == 0))
+	    (toc_header->serial_number == 0))
 		return STATUS_LOAD_ERROR;
 
 	/* Get to the last NULL TOC entry */
@@ -125,7 +122,7 @@ STATUS fwu_update_fip(unsigned long fip_addr)
 		return STATUS_FAIL;
 
 	ret = io_write(nvm_handle, (const uintptr_t)FIP_IMAGE_TMP_DDR_ADDRESS,
-			fip_size, &bytes);
+		       fip_size, &bytes);
 	if ((ret != IO_SUCCESS) || fip_size != bytes)
 		return STATUS_LOAD_ERROR;
 
@@ -134,8 +131,8 @@ STATUS fwu_update_fip(unsigned long fip_addr)
 	if (ret != IO_SUCCESS)
 		return STATUS_LOAD_ERROR;
 
-	ret = io_read(nvm_handle, (const uintptr_t)&fip_read,
-		sizeof(bytes), &bytes);
+	ret = io_read(nvm_handle, (const uintptr_t)&fip_read, sizeof(bytes),
+		      &bytes);
 	if (ret != IO_SUCCESS)
 		return STATUS_FAIL;
 
@@ -146,13 +143,11 @@ STATUS fwu_update_fip(unsigned long fip_addr)
 #if FWU_BL_TEST
 	unsigned int done_flag = FIP_IMAGE_UPDATE_DONE_FLAG;
 	/* Update the TFTF test case buffer with DONE flag */
-	ret = io_seek(nvm_handle, IO_SEEK_SET,
-			FWU_TFTF_TESTCASE_BUFFER_OFFSET);
+	ret = io_seek(nvm_handle, IO_SEEK_SET, FWU_TFTF_TESTCASE_BUFFER_OFFSET);
 	if (ret != IO_SUCCESS)
 		return STATUS_FAIL;
 
-	ret = io_write(nvm_handle, (const uintptr_t)&done_flag,
-			4, &bytes);
+	ret = io_write(nvm_handle, (const uintptr_t)&done_flag, 4, &bytes);
 	if (ret != IO_SUCCESS)
 		return STATUS_FAIL;
 #endif /* FWU_BL_TEST */
@@ -161,4 +156,3 @@ STATUS fwu_update_fip(unsigned long fip_addr)
 
 	return STATUS_SUCCESS;
 }
-

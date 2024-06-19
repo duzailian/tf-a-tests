@@ -5,13 +5,14 @@
  */
 
 #include <arch.h>
-#include <arch_helpers.h>
 #include <debug.h>
 #include <events.h>
-#include <plat_topology.h>
 #include <platform.h>
-#include <power_management.h>
 #include <psci.h>
+
+#include <arch_helpers.h>
+#include <plat_topology.h>
+#include <power_management.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
 
@@ -30,7 +31,6 @@ static test_result_t test_cpu_booted(void)
 	return TEST_RESULT_SUCCESS;
 }
 
-
 /*
  * @Test_Aim@ Test CPU hotplug support
  *
@@ -46,16 +46,14 @@ test_result_t test_psci_cpu_hotplug(void)
 	int psci_ret;
 
 	/* Power on all CPUs */
-	for_each_cpu(cpu_node) {
-
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU, it is already powered on */
 		if (cpu_mpid == lead_mpid)
 			continue;
 
-		psci_ret = tftf_cpu_on(cpu_mpid,
-				(uintptr_t) test_cpu_booted,
-				0);
+		psci_ret = tftf_cpu_on(cpu_mpid, (uintptr_t)test_cpu_booted, 0);
 		if (psci_ret != PSCI_E_SUCCESS)
 			ret = TEST_RESULT_FAIL;
 	}
@@ -68,7 +66,8 @@ test_result_t test_psci_cpu_hotplug(void)
 	 * this time because none of them have entered the test yet, hence the
 	 * framework will be misled in thinking the test is finished.
 	 */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (cpu_mpid == lead_mpid)
@@ -124,7 +123,8 @@ test_result_t test_context_ids(void)
 		tftf_init_event(&cpu_booted[i]);
 
 	/* Power on all CPUs */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU as it is already powered on */
 		if (cpu_mpid == lead_mpid)
@@ -134,19 +134,20 @@ test_result_t test_context_ids(void)
 
 		/* Pass as context ID something that the CPU can verify */
 		psci_ret = tftf_cpu_on(cpu_mpid,
-				       (uintptr_t) test_context_ids_non_lead_cpu,
+				       (uintptr_t)test_context_ids_non_lead_cpu,
 				       (u_register_t)(cpu_mpid + core_pos));
 
 		if (psci_ret != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
-				"Failed to power on CPU 0x%x (%d)\n",
-				cpu_mpid, psci_ret);
+				"Failed to power on CPU 0x%x (%d)\n", cpu_mpid,
+				psci_ret);
 			return TEST_RESULT_SKIPPED;
 		}
 	}
 
 	/* Wait for non-lead CPUs to enter the test */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (cpu_mpid == lead_mpid)

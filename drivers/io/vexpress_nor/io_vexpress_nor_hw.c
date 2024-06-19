@@ -5,78 +5,81 @@
  */
 
 #include <assert.h>
+#include <cdefs.h>
 #include <debug.h>
 #include <mmio.h>
 #include <string.h>
-#include <cdefs.h>
+
 #include "io_vexpress_nor_internal.h"
 #include "norflash.h"
 
 /* Device Id information */
-#define NOR_DEVICE_ID_LOCK_CONFIGURATION          0x02
-#define NOR_DEVICE_ID_BLOCK_LOCKED                (1 << 0)
-#define NOR_DEVICE_ID_BLOCK_LOCKED_DOWN           (1 << 1)
+#define NOR_DEVICE_ID_LOCK_CONFIGURATION 0x02
+#define NOR_DEVICE_ID_BLOCK_LOCKED (1 << 0)
+#define NOR_DEVICE_ID_BLOCK_LOCKED_DOWN (1 << 1)
 
 /* Status Register Bits */
-#define NOR_SR_BIT_WRITE                          ((1 << 23) | (1 << 7))
-#define NOR_SR_BIT_ERASE                          ((1 << 21) | (1 << 5))
-#define NOR_SR_BIT_PROGRAM                        ((1 << 20) | (1 << 4))
-#define NOR_SR_BIT_VPP                            ((1 << 19) | (1 << 3))
-#define NOR_SR_BIT_BLOCK_LOCKED                   ((1 << 17) | (1 << 1))
+#define NOR_SR_BIT_WRITE ((1 << 23) | (1 << 7))
+#define NOR_SR_BIT_ERASE ((1 << 21) | (1 << 5))
+#define NOR_SR_BIT_PROGRAM ((1 << 20) | (1 << 4))
+#define NOR_SR_BIT_VPP ((1 << 19) | (1 << 3))
+#define NOR_SR_BIT_BLOCK_LOCKED ((1 << 17) | (1 << 1))
 
 /*
  * On chip buffer size for buffered programming operations
  * There are 2 chips, each chip can buffer up to 32 (16-bit)words.
  * Therefore the total size of the buffer is 2 x 32 x 2 = 128 bytes.
  */
-#define NOR_MAX_BUFFER_SIZE_IN_BYTES        128
-#define NOR_MAX_BUFFER_SIZE_IN_WORDS        (NOR_MAX_BUFFER_SIZE_IN_BYTES / 4)
+#define NOR_MAX_BUFFER_SIZE_IN_BYTES 128
+#define NOR_MAX_BUFFER_SIZE_IN_WORDS (NOR_MAX_BUFFER_SIZE_IN_BYTES / 4)
 
 #define MAX_BUFFERED_PROG_ITERATIONS 1000
-#define LOW_16_BITS                  0x0000FFFF
+#define LOW_16_BITS 0x0000FFFF
 #define FOLD_32BIT_INTO_16BIT(value) ((value >> 16) | (value & LOW_16_BITS))
-#define BOUNDARY_OF_32_WORDS         0x7F
+#define BOUNDARY_OF_32_WORDS 0x7F
 
-#define CHECK_VPP_RANGE_ERROR(status_register, address)			\
-		do {							\
-			if ((status_register) & NOR_SR_BIT_VPP) {	\
-				ERROR("%s (address:0x%X): "		\
-				"VPP Range Error\n", __func__, address);\
-				err = IO_FAIL;				\
-			}						\
-		} while (0)
-
-#define CHECK_BLOCK_LOCK_ERROR(status_register, address)		\
-	do {								\
-		if ((status_register) & NOR_SR_BIT_BLOCK_LOCKED) {	\
-			ERROR("%s (address:0x%X): Device Protect "	\
-				"Error\n", __func__, address);		\
-			err = IO_FAIL;					\
-		}							\
+#define CHECK_VPP_RANGE_ERROR(status_register, address) \
+	do {                                            \
+		if ((status_register)&NOR_SR_BIT_VPP) { \
+			ERROR("%s (address:0x%X): "     \
+			      "VPP Range Error\n",      \
+			      __func__, address);       \
+			err = IO_FAIL;                  \
+		}                                       \
 	} while (0)
 
-#define CHECK_BLOCK_ERASE_ERROR(status_register, block_offset)		\
-	do {								\
-		if ((status_register) & NOR_SR_BIT_ERASE) {		\
-			ERROR("%s (block_offset=0x%08x:	"		\
-				"Block Erase Error status_register"	\
-				":0x%x\n",  __func__, block_offset,	\
-				status_register);			\
-			err = IO_FAIL;					\
-		}							\
+#define CHECK_BLOCK_LOCK_ERROR(status_register, address)           \
+	do {                                                       \
+		if ((status_register)&NOR_SR_BIT_BLOCK_LOCKED) {   \
+			ERROR("%s (address:0x%X): Device Protect " \
+			      "Error\n",                           \
+			      __func__, address);                  \
+			err = IO_FAIL;                             \
+		}                                                  \
 	} while (0)
 
-#define CHECK_SR_BIT_PROGRAM_ERROR(status_register, address)		\
-	do {								\
-		if ((status_register) & NOR_SR_BIT_PROGRAM) {		\
-			ERROR("%s(address:0x%X): Program Error\n",	\
-				__func__, address);			\
-			err = IO_FAIL;					\
-		}							\
+#define CHECK_BLOCK_ERASE_ERROR(status_register, block_offset)          \
+	do {                                                            \
+		if ((status_register)&NOR_SR_BIT_ERASE) {               \
+			ERROR("%s (block_offset=0x%08x:	"               \
+			      "Block Erase Error status_register"       \
+			      ":0x%x\n",                                \
+			      __func__, block_offset, status_register); \
+			err = IO_FAIL;                                  \
+		}                                                       \
+	} while (0)
+
+#define CHECK_SR_BIT_PROGRAM_ERROR(status_register, address)                 \
+	do {                                                                 \
+		if ((status_register)&NOR_SR_BIT_PROGRAM) {                  \
+			ERROR("%s(address:0x%X): Program Error\n", __func__, \
+			      address);                                      \
+			err = IO_FAIL;                                       \
+		}                                                            \
 	} while (0)
 
 /* Helper macros to access two flash banks in parallel */
-#define NOR_2X16(d)			((d << 16) | (d & 0xffff))
+#define NOR_2X16(d) ((d << 16) | (d & 0xffff))
 
 static inline void nor_send_cmd(uintptr_t base_addr, unsigned long cmd)
 {
@@ -124,13 +127,12 @@ static int flash_block_is_locked(uint32_t block_offset)
 	return lock_status & NOR_DEVICE_ID_BLOCK_LOCKED;
 }
 
-
 static void flash_perform_lock_operation(const io_nor_flash_spec_t *device,
-						uint32_t block_offset,
-						uint32_t lock_operation)
+					 uint32_t block_offset,
+					 uint32_t lock_operation)
 {
-	assert ((lock_operation == NOR_UNLOCK_BLOCK) ||
-		(lock_operation == NOR_LOCK_BLOCK));
+	assert((lock_operation == NOR_UNLOCK_BLOCK) ||
+	       (lock_operation == NOR_LOCK_BLOCK));
 
 	/* Request a lock setup */
 	nor_send_cmd(block_offset, NOR_CMD_LOCK_UNLOCK);
@@ -146,16 +148,15 @@ static void flash_perform_lock_operation(const io_nor_flash_spec_t *device,
 }
 
 static void flash_unlock_block_if_necessary(const io_nor_flash_spec_t *device,
-						 uint32_t block_offset)
+					    uint32_t block_offset)
 {
 	if (flash_block_is_locked(block_offset) != 0)
 		flash_perform_lock_operation(device, block_offset,
-						NOR_UNLOCK_BLOCK);
+					     NOR_UNLOCK_BLOCK);
 }
 
-
 static int flash_erase_block(const io_nor_flash_spec_t *device,
-					  uint32_t block_offset)
+			     uint32_t block_offset)
 {
 	int err = IO_SUCCESS;
 	uint32_t status_register;
@@ -171,9 +172,10 @@ static int flash_erase_block(const io_nor_flash_spec_t *device,
 	CHECK_VPP_RANGE_ERROR(status_register, block_offset);
 
 	if ((status_register & (NOR_SR_BIT_ERASE | NOR_SR_BIT_PROGRAM)) ==
-				(NOR_SR_BIT_ERASE | NOR_SR_BIT_PROGRAM)) {
+	    (NOR_SR_BIT_ERASE | NOR_SR_BIT_PROGRAM)) {
 		ERROR("%s(block_offset=0x%08x: "
-			  "Command Sequence Error\n", __func__, block_offset);
+		      "Command Sequence Error\n",
+		      __func__, block_offset);
 		err = IO_FAIL;
 	}
 
@@ -209,9 +211,8 @@ static int flash_erase_block(const io_nor_flash_spec_t *device,
  * 32-bit word boundaries.
  */
 static int flash_write_buffer(const io_nor_flash_spec_t *device,
-				uint32_t offset,
-				const uint32_t *buffer,
-				uint32_t buffer_size)
+			      uint32_t offset, const uint32_t *buffer,
+			      uint32_t buffer_size)
 {
 	int err = IO_SUCCESS;
 	uint32_t size_in_words;
@@ -298,8 +299,7 @@ static int flash_write_buffer(const io_nor_flash_spec_t *device,
 
 	if (err != IO_SUCCESS) {
 		/* Clear the Status Register */
-		nor_send_cmd(device->device_address,
-			     NOR_CMD_CLEAR_STATUS_REG);
+		nor_send_cmd(device->device_address, NOR_CMD_CLEAR_STATUS_REG);
 	}
 
 exit:
@@ -310,7 +310,7 @@ exit:
 }
 
 static int flash_write_single_word(const io_nor_flash_spec_t *device,
-				int32_t offset, uint32_t data)
+				   int32_t offset, uint32_t data)
 {
 	int err = IO_SUCCESS;
 	uint32_t status_register;
@@ -337,8 +337,7 @@ static int flash_write_single_word(const io_nor_flash_spec_t *device,
 
 	if (err != IO_SUCCESS)
 		/* Clear the Status Register */
-		nor_send_cmd(device->device_address,
-					NOR_CMD_CLEAR_STATUS_REG);
+		nor_send_cmd(device->device_address, NOR_CMD_CLEAR_STATUS_REG);
 
 	/* Put device back into Read Array mode */
 	nor_send_cmd(device->device_address, NOR_CMD_READ_ARRAY);
@@ -346,8 +345,8 @@ static int flash_write_single_word(const io_nor_flash_spec_t *device,
 	return err;
 }
 
-int flash_block_write(file_state_t *fp, uint32_t offset,
-		const uintptr_t buffer, size_t *written)
+int flash_block_write(file_state_t *fp, uint32_t offset, const uintptr_t buffer,
+		      size_t *written)
 {
 	int ret;
 	uintptr_t buffer_ptr = buffer;
@@ -379,17 +378,17 @@ int flash_block_write(file_state_t *fp, uint32_t offset,
 			buffer_size = remaining & (sizeof(uint32_t) - 1);
 
 		ret = flash_write_buffer(fp->block_spec, flash_pos,
-				(const uint32_t *)buffer_ptr, buffer_size);
+					 (const uint32_t *)buffer_ptr,
+					 buffer_size);
 		flash_pos += buffer_size;
 		remaining -= buffer_size;
 		buffer_ptr += buffer_size;
-
 	}
 
 	/* Write the remaining bytes */
 	while ((remaining > 0) && (ret == IO_SUCCESS)) {
-		ret = flash_write_single_word(fp->block_spec,
-						flash_pos++, buffer_ptr++);
+		ret = flash_write_single_word(fp->block_spec, flash_pos++,
+					      buffer_ptr++);
 		remaining--;
 	}
 
@@ -398,9 +397,8 @@ int flash_block_write(file_state_t *fp, uint32_t offset,
 
 lock_block:
 	/* Lock the block once done */
-	flash_perform_lock_operation(fp->block_spec,
-					block_offset,
-					NOR_LOCK_BLOCK);
+	flash_perform_lock_operation(fp->block_spec, block_offset,
+				     NOR_LOCK_BLOCK);
 
 	return ret;
 }
@@ -409,7 +407,7 @@ lock_block:
 static char block_buffer[NOR_FLASH_BLOCK_SIZE] __aligned(sizeof(uint32_t));
 
 int flash_partial_write(file_state_t *fp, uint32_t offset,
-		const uintptr_t buffer, size_t length, size_t *written)
+			const uintptr_t buffer, size_t length, size_t *written)
 {
 	uintptr_t block_start;
 	uint32_t block_size;
@@ -431,12 +429,12 @@ int flash_partial_write(file_state_t *fp, uint32_t offset,
 	 * Check the buffer fits inside a single block.
 	 * It must not span several blocks
 	 */
-	assert((offset / block_size) ==
-		  ((offset + length - 1) / block_size));
+	assert((offset / block_size) == ((offset + length - 1) / block_size));
 
 	/* Make a copy of the block from flash to a temporary buffer */
-	memcpy(block_buffer, (void *)(fp->block_spec->region_address +
-						block_start), block_size);
+	memcpy(block_buffer,
+	       (void *)(fp->block_spec->region_address + block_start),
+	       block_size);
 
 	/* Calculate the offset of the buffer into the block */
 	block_offset = offset % block_size;
@@ -445,8 +443,8 @@ int flash_partial_write(file_state_t *fp, uint32_t offset,
 	memcpy(block_buffer + block_offset, (void *)buffer, length);
 
 	/* Write the block buffer back */
-	ret = flash_block_write(fp, block_start,
-					(uintptr_t)block_buffer, written);
+	ret = flash_block_write(fp, block_start, (uintptr_t)block_buffer,
+				written);
 	if (ret == IO_SUCCESS)
 		*written = length;
 

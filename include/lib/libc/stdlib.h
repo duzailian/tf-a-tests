@@ -18,7 +18,7 @@
 
 #define _ATEXIT_MAX 1
 
-#define	RAND_MAX	0x7ffffffd
+#define RAND_MAX 0x7ffffffd
 
 extern void abort(void);
 extern int atexit(void (*func)(void));

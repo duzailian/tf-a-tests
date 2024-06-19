@@ -24,7 +24,7 @@ void *memset(void *dst, int val, size_t count);
 size_t strlen(const char *s);
 size_t strnlen(const char *s, size_t maxlen);
 char *strrchr(const char *p, int ch);
-size_t strlcpy(char * dst, const char * src, size_t dsize);
+size_t strlcpy(char *dst, const char *src, size_t dsize);
 char *strncpy(char *dst, const char *src, size_t n);
 
 #endif /* STRING_H */

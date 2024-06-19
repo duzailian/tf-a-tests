@@ -4,14 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include "sp_helpers.h"
+
 #include <debug.h>
 #include <mmio.h>
-#include <platform_def.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include <ffa_svc.h>
 
-#include "sp_helpers.h"
+#include <ffa_svc.h>
+#include <platform_def.h>
 
 spinlock_t sp_handler_lock[NUM_VINT_ID];
 
@@ -23,7 +24,7 @@ uintptr_t bound_rand(uintptr_t min, uintptr_t max)
 	 * This is not ideal as some numbers will never be generated because of
 	 * the integer arithmetic rounding.
 	 */
-	return ((rand() * (UINT64_MAX/RAND_MAX)) % (max - min)) + min;
+	return ((rand() * (UINT64_MAX / RAND_MAX)) % (max - min)) + min;
 }
 
 /*******************************************************************************
@@ -92,11 +93,11 @@ void sp_handler_spin_lock_init(void)
 	}
 }
 
-void sp_register_interrupt_handler(void (*handler)(void),
-			uint32_t interrupt_id)
+void sp_register_interrupt_handler(void (*handler)(void), uint32_t interrupt_id)
 {
 	if (interrupt_id >= NUM_VINT_ID) {
-		ERROR("Cannot register handler for interrupt %u\n", interrupt_id);
+		ERROR("Cannot register handler for interrupt %u\n",
+		      interrupt_id);
 		panic();
 	}
 
@@ -108,7 +109,8 @@ void sp_register_interrupt_handler(void (*handler)(void),
 void sp_unregister_interrupt_handler(uint32_t interrupt_id)
 {
 	if (interrupt_id >= NUM_VINT_ID) {
-		ERROR("Cannot unregister handler for interrupt %u\n", interrupt_id);
+		ERROR("Cannot unregister handler for interrupt %u\n",
+		      interrupt_id);
 		panic();
 	}
 

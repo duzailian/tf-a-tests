@@ -4,10 +4,11 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <test_helpers.h>
-#include <tftf.h>
-#include <tftf_lib.h>
 #include <string.h>
+#include <tftf.h>
+
+#include <test_helpers.h>
+#include <tftf_lib.h>
 
 /*
  * TF-A is expected to allow access to CNTPOFF_EL2 register from EL2.
@@ -23,5 +24,5 @@ test_result_t test_ecv_enabled(void)
 	read_cntpoff_el2();
 
 	return TEST_RESULT_SUCCESS;
-#endif	/* __aarch64__ */
+#endif /* __aarch64__ */
 }

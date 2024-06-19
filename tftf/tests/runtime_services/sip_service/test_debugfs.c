@@ -4,28 +4,26 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include "debugfs.h"
 #include <platform_def.h>
 #include <tftf_lib.h>
 #include <xlat_tables_v2.h>
 
-#include "debugfs.h"
+#define SMC_OK (0)
 
-#define SMC_OK			(0)
-
-#define DEBUGFS_VERSION		(0x00000001)
-#define MAX_PATH_LEN		(256)
+#define DEBUGFS_VERSION (0x00000001)
+#define MAX_PATH_LEN (256)
 
 #ifndef __aarch64__
-#define DEBUGFS_SMC   0x87000010
+#define DEBUGFS_SMC 0x87000010
 #else
-#define DEBUGFS_SMC   0xC7000010
+#define DEBUGFS_SMC 0xC7000010
 #endif
-
 
 /* DebugFS shared buffer area */
 #ifndef PLAT_ARM_DEBUGFS_BASE
-#define PLAT_ARM_DEBUGFS_BASE		(0x81000000)
-#define PLAT_ARM_DEBUGFS_SIZE		(0x1000)
+#define PLAT_ARM_DEBUGFS_BASE (0x81000000)
+#define PLAT_ARM_DEBUGFS_SIZE (0x1000)
 #endif /* PLAT_ARM_DEBUGFS_BASE */
 
 union debugfs_parms {
@@ -56,21 +54,18 @@ typedef struct {
 } dir_expected_t;
 
 static const dir_expected_t root_dir_expected[] = {
-	{ "dev",   0x8001 },
-	{ "blobs", 0x8003 },
-	{ "fip",   0x8002 }
-};
+	{"dev", 0x8001}, {"blobs", 0x8003}, {"fip", 0x8002}};
 
 static unsigned int read_buffer[4096 / sizeof(unsigned int)];
 
-static void *const payload = (void *) PLAT_ARM_DEBUGFS_BASE;
+static void *const payload = (void *)PLAT_ARM_DEBUGFS_BASE;
 
 static int init(unsigned long long phys_addr)
 {
 	smc_ret_values ret;
 	smc_args args;
 
-	args.fid  = DEBUGFS_SMC;
+	args.fid = DEBUGFS_SMC;
 	args.arg1 = INIT;
 	args.arg2 = phys_addr;
 	ret = tftf_smc(&args);
@@ -83,7 +78,7 @@ static int version(void)
 	smc_ret_values ret;
 	smc_args args;
 
-	args.fid  = DEBUGFS_SMC;
+	args.fid = DEBUGFS_SMC;
 	args.arg1 = VERSION;
 	ret = tftf_smc(&args);
 
@@ -98,9 +93,9 @@ static int open(const char *name, int flags)
 
 	strlcpy(parms->open.fname, name, MAX_PATH_LEN);
 
-	args.fid  = DEBUGFS_SMC;
+	args.fid = DEBUGFS_SMC;
 	args.arg1 = OPEN;
-	args.arg2 = (u_register_t) flags;
+	args.arg2 = (u_register_t)flags;
 	ret = tftf_smc(&args);
 
 	return (ret.ret0 == SMC_OK) ? ret.ret1 : -1;
@@ -111,10 +106,10 @@ static int read(int fd, void *buf, size_t size)
 	smc_ret_values ret;
 	smc_args args;
 
-	args.fid  = DEBUGFS_SMC;
+	args.fid = DEBUGFS_SMC;
 	args.arg1 = READ;
-	args.arg2 = (u_register_t) fd;
-	args.arg3 = (u_register_t) size;
+	args.arg2 = (u_register_t)fd;
+	args.arg3 = (u_register_t)size;
 
 	ret = tftf_smc(&args);
 
@@ -131,9 +126,9 @@ static int close(int fd)
 	smc_ret_values ret;
 	smc_args args;
 
-	args.fid  = DEBUGFS_SMC;
+	args.fid = DEBUGFS_SMC;
 	args.arg1 = CLOSE;
-	args.arg2 = (u_register_t) fd;
+	args.arg2 = (u_register_t)fd;
 
 	ret = tftf_smc(&args);
 
@@ -150,7 +145,7 @@ static int mount(char *srv, char *where, char *spec)
 	strlcpy(parms->mount.where, where, MAX_PATH_LEN);
 	strlcpy(parms->mount.spec, spec, MAX_PATH_LEN);
 
-	args.fid  = DEBUGFS_SMC;
+	args.fid = DEBUGFS_SMC;
 	args.arg1 = MOUNT;
 
 	ret = tftf_smc(&args);
@@ -166,7 +161,7 @@ static int stat(const char *name, dir_t *dir)
 
 	strlcpy(parms->stat.path, name, MAX_PATH_LEN);
 
-	args.fid  = DEBUGFS_SMC;
+	args.fid = DEBUGFS_SMC;
 	args.arg1 = STAT;
 
 	ret = tftf_smc(&args);
@@ -184,11 +179,11 @@ static int seek(int fd, long offset, int whence)
 	smc_ret_values ret;
 	smc_args args;
 
-	args.fid  = DEBUGFS_SMC;
+	args.fid = DEBUGFS_SMC;
 	args.arg1 = SEEK;
-	args.arg2 = (u_register_t) fd;
-	args.arg3 = (u_register_t) offset;
-	args.arg4 = (u_register_t) whence;
+	args.arg2 = (u_register_t)fd;
+	args.arg3 = (u_register_t)offset;
+	args.arg4 = (u_register_t)whence;
 
 	ret = tftf_smc(&args);
 
@@ -199,20 +194,17 @@ static bool compare_dir(const dir_expected_t *dir_expected,
 			unsigned int iteration, dir_t *dir)
 {
 	return ((memcmp(dir->name, dir_expected[iteration].name,
-		       strlen(dir_expected[iteration].name)) == 0) &&
+			strlen(dir_expected[iteration].name)) == 0) &&
 		(dir->qid == dir_expected[iteration].qid));
 }
 
 static void dir_print(dir_t *dir)
 {
-	tftf_testcase_printf("name: %s, length: %ld, mode: %d, type: %d, "
-			     "dev: %d, qid: 0x%x\n",
-			     dir->name,
-			     dir->length,
-			     dir->mode,
-			     dir->type,
-			     dir->dev,
-			     dir->qid);
+	tftf_testcase_printf(
+		"name: %s, length: %ld, mode: %d, type: %d, "
+		"dev: %d, qid: 0x%x\n",
+		dir->name, dir->length, dir->mode, dir->type, dir->dev,
+		dir->qid);
 }
 
 /*
@@ -275,8 +267,8 @@ test_result_t test_debugfs(void)
 	iteration = 0;
 	ret = read(fd, &dir, sizeof(dir));
 	while (ret > 0) {
-		if (compare_dir(root_dir_expected, iteration++,
-				&dir) == false) {
+		if (compare_dir(root_dir_expected, iteration++, &dir) ==
+		    false) {
 			dir_print(&dir);
 			return TEST_RESULT_FAIL;
 		}
@@ -329,8 +321,8 @@ test_result_t test_debugfs(void)
 
 	/* Compare first word of bl2 binary */
 	if (read_buffer[0] != 0xaa0003f4) {
-		tftf_testcase_printf("read ret %d, buf[0]: 0x%x\n",
-				     ret, read_buffer[0]);
+		tftf_testcase_printf("read ret %d, buf[0]: 0x%x\n", ret,
+				     read_buffer[0]);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -353,8 +345,10 @@ test_result_t test_debugfs(void)
 	} while (ret);
 
 	if (read_size != dir.length) {
-		tftf_testcase_printf("read size mismatch read_size=%zu "
-				"dir.length=%ld\n", read_size, dir.length);
+		tftf_testcase_printf(
+			"read size mismatch read_size=%zu "
+			"dir.length=%ld\n",
+			read_size, dir.length);
 		return TEST_RESULT_FAIL;
 	}
 

@@ -4,9 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <tftf.h>
+
 #include <test_helpers.h>
 #include <tftf_lib.h>
-#include <tftf.h>
 
 /* EL3 is expected to allow access to MPAM system registers from EL2.
  * Reading these registers will trap to EL3 and crash when EL3 has not

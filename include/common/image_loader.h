@@ -7,9 +7,10 @@
 #ifndef __IMAGE_LOADER_H__
 #define __IMAGE_LOADER_H__
 
-#include <firmware_image_package.h>
 #include <stddef.h>
 #include <stdint.h>
+
+#include <firmware_image_package.h>
 
 /* Generic function to get flash offset of an image */
 unsigned long get_image_offset(unsigned int image_id);
@@ -21,8 +22,7 @@ unsigned long get_image_size(unsigned int image_id);
  * Generic function to load an image at a specific address given an image id
  * Returns 0 on success, a negative error code otherwise.
  */
-int load_image(unsigned int image_id,
-		uintptr_t image_base);
+int load_image(unsigned int image_id, uintptr_t image_base);
 
 /*
  * Generic function to load partial image at a specific address given
@@ -31,10 +31,8 @@ int load_image(unsigned int image_id,
  * devices are closed else they are kept open for partial image loading.
  * Returns 0 on success, a negative error code otherwise.
  */
-int load_partial_image(unsigned int image_id,
-		uintptr_t image_base,
-		size_t image_size,
-		unsigned int is_last_block);
+int load_partial_image(unsigned int image_id, uintptr_t image_base,
+		       size_t image_size, unsigned int is_last_block);
 
 /* This is to keep track of file related data. */
 typedef struct {

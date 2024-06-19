@@ -5,11 +5,12 @@
  */
 
 #include <arch.h>
+#include <smccc.h>
+#include <stdint.h>
+#include <tftf.h>
+
 #include <arch_features.h>
 #include <lib/extensions/sve.h>
-#include <stdint.h>
-#include <smccc.h>
-#include <tftf.h>
 #include <utils_def.h>
 
 static void sve_enable(void)
@@ -93,12 +94,6 @@ smc_ret_values tftf_smc(const smc_args *args)
 		fid &= ~MASK(FUNCID_SVE_HINT);
 	}
 
-	return asm_tftf_smc64(fid,
-			      args->arg1,
-			      args->arg2,
-			      args->arg3,
-			      args->arg4,
-			      args->arg5,
-			      args->arg6,
-			      args->arg7);
+	return asm_tftf_smc64(fid, args->arg1, args->arg2, args->arg3,
+			      args->arg4, args->arg5, args->arg6, args->arg7);
 }

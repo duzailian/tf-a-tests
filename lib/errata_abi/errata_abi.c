@@ -4,11 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <tftf.h>
-#include <arch_helpers.h>
 #include <debug.h>
-#include <errata_abi.h>
 #include <platform.h>
+#include <tftf.h>
+
+#include <arch_helpers.h>
+#include <errata_abi.h>
 #include <tftf_lib.h>
 
 const em_function_t em_functions[TOTAL_ABI_CALLS] = {
@@ -19,7 +20,7 @@ const em_function_t em_functions[TOTAL_ABI_CALLS] = {
 
 int32_t tftf_em_abi_version(void)
 {
-	smc_args args = { EM_VERSION };
+	smc_args args = {EM_VERSION};
 	smc_ret_values ret_vals;
 
 	ret_vals = tftf_smc(&args);
@@ -43,12 +44,8 @@ bool tftf_em_abi_feature_implemented(uint32_t id)
 }
 
 smc_ret_values tftf_em_abi_cpu_feature_implemented(uint32_t cpu_erratum,
-						uint32_t forward_flag)
+						   uint32_t forward_flag)
 {
-	smc_args args = {
-		EM_CPU_ERRATUM_FEATURES,
-		cpu_erratum,
-		forward_flag
-	};
+	smc_args args = {EM_CPU_ERRATUM_FEATURES, cpu_erratum, forward_flag};
 	return tftf_smc(&args);
 }

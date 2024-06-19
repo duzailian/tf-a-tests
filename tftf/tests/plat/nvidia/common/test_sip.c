@@ -4,19 +4,19 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <debug.h>
 #include <smccc.h>
+
+#include <arch_helpers.h>
+#include <platform_def.h>
 #include <tftf_lib.h>
 #include <xlat_tables_v2.h>
-
-#include <platform_def.h>
 
 /*******************************************************************************
  * Common Tegra SiP SMCs
  ******************************************************************************/
-#define TEGRA_SIP_NEW_VIDEOMEM_REGION		0x82000003ULL
-#define TEGRA_SIP_GET_SMMU_PER			0xC200FF00ULL
+#define TEGRA_SIP_NEW_VIDEOMEM_REGION 0x82000003ULL
+#define TEGRA_SIP_GET_SMMU_PER 0xC200FF00ULL
 
 /*
  * @Test_Aim@ Test to issue VideoMem SiP SMC function IDs.
@@ -29,17 +29,20 @@ test_result_t test_sip_videomem_resize(void)
 	uint32_t size_in_bytes = (4U << 20);
 	uint32_t offset = (8U << 20);
 	uint64_t vidmem_base = DRAM_END, mem;
-	uint64_t buf[] = { 0xCAFEBABE, 0xCAFEBABE, 0xCAFEBABE, 0xCAFEBABE };
-	smc_args args = { TEGRA_SIP_NEW_VIDEOMEM_REGION, vidmem_base, size_in_bytes };
+	uint64_t buf[] = {0xCAFEBABE, 0xCAFEBABE, 0xCAFEBABE, 0xCAFEBABE};
+	smc_args args = {TEGRA_SIP_NEW_VIDEOMEM_REGION, vidmem_base,
+			 size_in_bytes};
 	smc_ret_values ret;
 	test_result_t result = TEST_RESULT_SUCCESS;
 	int err;
 
 	/* Map dummy memory region for the test */
-	err = mmap_add_dynamic_region(vidmem_base, vidmem_base, size_in_bytes << 2,
+	err = mmap_add_dynamic_region(
+		vidmem_base, vidmem_base, size_in_bytes << 2,
 		MT_DEVICE | MT_RW | MT_NS | MT_EXECUTE_NEVER);
 	if (err != 0) {
-		tftf_testcase_printf("%s: could not map memory (%d)\n", __func__, err);
+		tftf_testcase_printf("%s: could not map memory (%d)\n",
+				     __func__, err);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -51,7 +54,7 @@ test_result_t test_sip_videomem_resize(void)
 	ret = tftf_smc(&args);
 	if (ret.ret0 != 0UL) {
 		tftf_testcase_printf("%s failed. Expected 0, received %ld\n",
-			__func__, (long int)ret.ret0);
+				     __func__, (long int)ret.ret0);
 		result = TEST_RESULT_FAIL;
 		goto exit;
 	}
@@ -66,7 +69,7 @@ test_result_t test_sip_videomem_resize(void)
 	ret = tftf_smc(&args);
 	if (ret.ret0 != 0UL) {
 		tftf_testcase_printf("%s failed. Expected 0, received %ld\n",
-			__func__, (long int)ret.ret0);
+				     __func__, (long int)ret.ret0);
 		result = TEST_RESULT_FAIL;
 		goto exit;
 	}
@@ -75,7 +78,8 @@ test_result_t test_sip_videomem_resize(void)
 	mem = vidmem_base;
 	for (unsigned int i = 0U; i < (size_in_bytes / 8); i++, mem += 8) {
 		if (*(uint64_t *)(void *)mem != 0ULL) {
-			tftf_testcase_printf("%s failed. Memory is non-zero (%llx:%llx)\n",
+			tftf_testcase_printf(
+				"%s failed. Memory is non-zero (%llx:%llx)\n",
 				__func__, mem, *(uint64_t *)(void *)mem);
 			result = TEST_RESULT_FAIL;
 			goto exit;
@@ -92,7 +96,7 @@ test_result_t test_sip_videomem_resize(void)
 	ret = tftf_smc(&args);
 	if (ret.ret0 != 0UL) {
 		tftf_testcase_printf("%s failed. Expected 0, received %ld\n",
-			__func__, (long int)ret.ret0);
+				     __func__, (long int)ret.ret0);
 		result = TEST_RESULT_FAIL;
 		goto exit;
 	}
@@ -101,7 +105,8 @@ test_result_t test_sip_videomem_resize(void)
 	mem = vidmem_base + offset;
 	for (unsigned int i = 0U; i < (size_in_bytes / 8); i++, mem += 8) {
 		if (*(uint64_t *)(void *)mem != 0U) {
-			tftf_testcase_printf("%s failed. Memory is non-zero (%llx:%llx)\n",
+			tftf_testcase_printf(
+				"%s failed. Memory is non-zero (%llx:%llx)\n",
 				__func__, mem, *(uint64_t *)(void *)mem);
 			result = TEST_RESULT_FAIL;
 			goto exit;
@@ -113,7 +118,7 @@ exit:
 	err = mmap_remove_dynamic_region(vidmem_base, size_in_bytes << 2);
 	if (err != 0) {
 		tftf_testcase_printf("%s: could not unmap memory (%d)\n",
-			__func__, err);
+				     __func__, err);
 		result = TEST_RESULT_FAIL;
 	}
 
@@ -128,14 +133,14 @@ exit:
  */
 test_result_t test_sip_videomem_incorrect_inputs(void)
 {
-	smc_args args = { TEGRA_SIP_NEW_VIDEOMEM_REGION };
+	smc_args args = {TEGRA_SIP_NEW_VIDEOMEM_REGION};
 	smc_ret_values ret;
 
 	/* Issue the SMC with no input parameters and expect error */
 	ret = tftf_smc(&args);
 	if (ret.ret0 == 0UL) {
 		tftf_testcase_printf("%s failed. Expected -1, received %ld\n",
-			__func__, (long int)ret.ret0);
+				     __func__, (long int)ret.ret0);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -146,7 +151,7 @@ test_result_t test_sip_videomem_incorrect_inputs(void)
 	ret = tftf_smc(&args);
 	if (ret.ret0 == 0UL) {
 		tftf_testcase_printf("%s failed. Expected -1, received %ld\n",
-			__func__, (long int)ret.ret0);
+				     __func__, (long int)ret.ret0);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -157,7 +162,7 @@ test_result_t test_sip_videomem_incorrect_inputs(void)
 	ret = tftf_smc(&args);
 	if (ret.ret0 == 0UL) {
 		tftf_testcase_printf("%s failed. Expected -1, received %ld\n",
-			__func__, (long int)ret.ret0);
+				     __func__, (long int)ret.ret0);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -168,7 +173,7 @@ test_result_t test_sip_videomem_incorrect_inputs(void)
 	ret = tftf_smc(&args);
 	if (ret.ret0 == 0UL) {
 		tftf_testcase_printf("%s failed. Expected -1, received %ld\n",
-			__func__, (long int)ret.ret0);
+				     __func__, (long int)ret.ret0);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -179,7 +184,7 @@ test_result_t test_sip_videomem_incorrect_inputs(void)
 	ret = tftf_smc(&args);
 	if (ret.ret0 == 0UL) {
 		tftf_testcase_printf("%s failed. Expected -1, received %ld\n",
-			__func__, (long int)ret.ret0);
+				     __func__, (long int)ret.ret0);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -190,7 +195,7 @@ test_result_t test_sip_videomem_incorrect_inputs(void)
 	ret = tftf_smc(&args);
 	if (ret.ret0 == 0UL) {
 		tftf_testcase_printf("%s failed. Expected -1, received %ld\n",
-			__func__, (long int)ret.ret0);
+				     __func__, (long int)ret.ret0);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -203,7 +208,8 @@ test_result_t test_sip_videomem_incorrect_inputs(void)
  */
 test_result_t test_get_smmu_per(void)
 {
-	smc_args tegra_sip_smc = { TEGRA_SIP_GET_SMMU_PER, 0ULL, 0ULL, 0ULL, 0ULL };
+	smc_args tegra_sip_smc = {TEGRA_SIP_GET_SMMU_PER, 0ULL, 0ULL, 0ULL,
+				  0ULL};
 	smc_ret_values ret;
 
 	tftf_testcase_printf("Tegra SIP GET SMMU PER test\n");
@@ -211,7 +217,8 @@ test_result_t test_get_smmu_per(void)
 	ret = tftf_smc(&tegra_sip_smc);
 
 	if (ret.ret0 != SMC_OK) {
-		tftf_testcase_printf("GET_SMMU_PER test Fail, got %ld\n", (long int)ret.ret0);
+		tftf_testcase_printf("GET_SMMU_PER test Fail, got %ld\n",
+				     (long int)ret.ret0);
 		return TEST_RESULT_FAIL;
 	}
 

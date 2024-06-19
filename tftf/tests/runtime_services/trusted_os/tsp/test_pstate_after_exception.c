@@ -46,9 +46,10 @@ test_result_t tsp_check_pstate_maintained_on_exception(void)
 
 	dit = read_dit();
 	if (dit != dit_bit) {
-		tftf_testcase_printf("DIT bit in TFTF was not maintained.\n"
-				     "Expected: 0x%x, Actual: 0x%x",
-				     (uint32_t) dit_bit, (uint32_t) dit);
+		tftf_testcase_printf(
+			"DIT bit in TFTF was not maintained.\n"
+			"Expected: 0x%x, Actual: 0x%x",
+			(uint32_t)dit_bit, (uint32_t)dit);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -57,17 +58,19 @@ test_result_t tsp_check_pstate_maintained_on_exception(void)
 	tsp_svc_params.arg2 = 0;
 	ret = tftf_smc(&tsp_svc_params);
 	if (ret.ret1 == 0) {
-		tftf_testcase_printf("DIT bit in the TSP was not maintained\n"
-				     "Expected: 0x%x, Actual: 0x%x",
-				     (uint32_t) dit_bit, (uint32_t) ret.ret2);
+		tftf_testcase_printf(
+			"DIT bit in the TSP was not maintained\n"
+			"Expected: 0x%x, Actual: 0x%x",
+			(uint32_t)dit_bit, (uint32_t)ret.ret2);
 		return TEST_RESULT_FAIL;
 	}
 
 	dit = read_dit();
 	if (dit != dit_bit) {
-		tftf_testcase_printf("DIT bit in TFTF was not maintained.\n"
-				     "Expected: 0x%x, Actual: 0x%x",
-				     (uint32_t) dit_bit, (uint32_t) dit);
+		tftf_testcase_printf(
+			"DIT bit in TFTF was not maintained.\n"
+			"Expected: 0x%x, Actual: 0x%x",
+			(uint32_t)dit_bit, (uint32_t)dit);
 		return TEST_RESULT_FAIL;
 	}
 

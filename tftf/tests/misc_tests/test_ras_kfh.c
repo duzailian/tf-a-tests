@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <serror.h>
 
 #include <arch_helpers.h>
-#include <serror.h>
 #include <tftf_lib.h>
 
 #ifdef __aarch64__

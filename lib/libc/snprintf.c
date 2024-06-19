@@ -10,15 +10,16 @@
 
 #include <common/debug.h>
 
-#define get_num_va_args(_args, _lcount)				\
-	(((_lcount) > 1)  ? va_arg(_args, long long int) :	\
-	(((_lcount) == 1) ? va_arg(_args, long int) :		\
-			    va_arg(_args, int)))
+#define get_num_va_args(_args, _lcount)                                \
+	(((_lcount) > 1) ? va_arg(_args, long long int)                \
+			 : (((_lcount) == 1) ? va_arg(_args, long int) \
+					     : va_arg(_args, int)))
 
-#define get_unum_va_args(_args, _lcount)				\
-	(((_lcount) > 1)  ? va_arg(_args, unsigned long long int) :	\
-	(((_lcount) == 1) ? va_arg(_args, unsigned long int) :		\
-			    va_arg(_args, unsigned int)))
+#define get_unum_va_args(_args, _lcount)                                \
+	(((_lcount) > 1)                                                \
+		 ? va_arg(_args, unsigned long long int)                \
+		 : (((_lcount) == 1) ? va_arg(_args, unsigned long int) \
+				     : va_arg(_args, unsigned int)))
 
 static void string_print(char **s, size_t n, size_t *chars_printed,
 			 const char *str)
@@ -35,8 +36,8 @@ static void string_print(char **s, size_t n, size_t *chars_printed,
 }
 
 static void unsigned_num_print(char **s, size_t n, size_t *count,
-			      unsigned long long int unum, unsigned int radix,
-			      char padc, int padn)
+			       unsigned long long int unum, unsigned int radix,
+			       char padc, int padn)
 {
 	/* Just need enough space to store 64 bit decimal integer */
 	char num_buf[20];
@@ -98,7 +99,7 @@ int vsnprintf(char *s, size_t n, const char *fmt, va_list args)
 	int num;
 	unsigned long long int unum;
 	char padc; /* Padding character */
-	int padn; /* Number of characters to pad */
+	int padn;  /* Number of characters to pad */
 	size_t count = 0U;
 
 	if (n == 0U) {
@@ -121,7 +122,7 @@ int vsnprintf(char *s, size_t n, const char *fmt, va_list args)
 		if (*fmt == '%') {
 			fmt++;
 			/* Check the format specifier. */
-loop:
+		loop:
 			switch (*fmt) {
 			case '1':
 			case '2':
@@ -133,7 +134,8 @@ loop:
 			case '8':
 			case '9':
 				padc = ' ';
-				for (padn = 0; *fmt >= '0' && *fmt <= '9'; fmt++)
+				for (padn = 0; *fmt >= '0' && *fmt <= '9';
+				     fmt++)
 					padn = (padn * 10) + (*fmt - '0');
 				if (left)
 					padn = -padn;
@@ -198,7 +200,8 @@ loop:
 				 * Exit on any other format specifier and abort
 				 * when in debug mode.
 				 */
-				WARN("snprintf: specifier with ASCII code '%d' not supported.\n",
+				WARN("snprintf: specifier with ASCII code '%d' "
+				     "not supported.\n",
 				     *fmt);
 				assert(0);
 				return -1;

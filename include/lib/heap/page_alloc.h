@@ -11,11 +11,11 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#define HEAP_NULL_PTR		0U
-#define HEAP_INVALID_LEN	-1
-#define HEAP_OUT_OF_RANGE	-2
-#define HEAP_INIT_FAILED	-3
-#define HEAP_INIT_SUCCESS	0
+#define HEAP_NULL_PTR 0U
+#define HEAP_INVALID_LEN -1
+#define HEAP_OUT_OF_RANGE -2
+#define HEAP_INIT_FAILED -3
+#define HEAP_INIT_SUCCESS 0
 
 /*
  * Initialize the memory heap space to be used

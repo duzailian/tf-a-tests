@@ -56,8 +56,8 @@ int tftf_program_timer(unsigned long milli_secs);
  */
 
 int tftf_program_timer_and_suspend(unsigned long milli_secs,
-				   unsigned int pwr_state,
-				   int *timer_rc, int *suspend_rc);
+				   unsigned int pwr_state, int *timer_rc,
+				   int *suspend_rc);
 
 /*
  * Requests the timer framework to send an interrupt after milli_secs and to
@@ -73,8 +73,8 @@ int tftf_program_timer_and_suspend(unsigned long milli_secs,
  * accepted to discard the return codes.
  * Returns 0 on success and -1 on failure.
  */
-int tftf_program_timer_and_sys_suspend(unsigned long milli_secs,
-					   int *timer_rc, int *suspend_rc);
+int tftf_program_timer_and_sys_suspend(unsigned long milli_secs, int *timer_rc,
+				       int *suspend_rc);
 
 /*
  * Suspends the calling CPU for specified milliseconds.

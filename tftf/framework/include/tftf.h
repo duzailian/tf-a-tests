@@ -10,15 +10,16 @@
 #ifndef __ASSEMBLY__
 #include <status.h>
 #include <stddef.h>
+
 #include <tftf_lib.h>
 
-#define TFTF_WELCOME_STR	"Booting trusted firmware test framework"
+#define TFTF_WELCOME_STR "Booting trusted firmware test framework"
 
 /* Maximum size of test output (in bytes) */
-#define TESTCASE_OUTPUT_MAX_SIZE	1024
+#define TESTCASE_OUTPUT_MAX_SIZE 1024
 
 /* Size of build message used to differentiate different TFTF binaries */
-#define BUILD_MESSAGE_SIZE 		0x20
+#define BUILD_MESSAGE_SIZE 0x20
 
 extern const char build_message[];
 
@@ -26,37 +27,37 @@ typedef test_result_t (*test_function_t)(void);
 
 typedef struct {
 	/* Test result (success, crashed, failed, ...). */
-	test_result_t		result;
-	unsigned long long	duration;
+	test_result_t result;
+	unsigned long long duration;
 	/*
 	 * Offset of test output string from TEST_NVM_RESULT_BUFFER_OFFSET.
 	 * Only relevant if test has an output, i.e. if \a output_size is not
 	 * zero.
 	 */
-	unsigned		output_offset;
+	unsigned output_offset;
 	/* Size of test output string, excluding final \0. */
-	unsigned		output_size;
+	unsigned output_size;
 } TESTCASE_RESULT;
 
 typedef struct {
-	unsigned		index;
-	const char		*name;
-	const char		*description;
-	test_function_t		test;
+	unsigned index;
+	const char *name;
+	const char *description;
+	test_function_t test;
 } test_case_t;
 
 typedef struct {
-	const char		*name;
-	const char		*description;
-	const test_case_t	*testcases;
+	const char *name;
+	const char *description;
+	const test_case_t *testcases;
 } test_suite_t;
 
 /*
  * Reference to a specific test.
  */
 typedef struct {
-	unsigned int		testsuite_idx;
-	unsigned int		testcase_idx;
+	unsigned int testsuite_idx;
+	unsigned int testcase_idx;
 } test_ref_t;
 
 /*
@@ -93,7 +94,7 @@ typedef enum {
 	TEST_PROGRESS_MAX,
 } test_progress_t;
 
-#define TEST_PROGRESS_IS_VALID(_progress)	\
+#define TEST_PROGRESS_IS_VALID(_progress) \
 	((_progress >= TEST_PROGRESS_MIN) && (_progress < TEST_PROGRESS_MAX))
 
 /*
@@ -128,7 +129,8 @@ STATUS tftf_testcase_set_result(const test_case_t *testcase,
 **   \a test_output must be big enough to hold the whole test output.
 **   Test output will be \a TESTCASE_OUTPUT_MAX_SIZE bytes maximum.
 */
-STATUS tftf_testcase_get_result(const test_case_t *testcase, TESTCASE_RESULT *result, char *test_output);
+STATUS tftf_testcase_get_result(const test_case_t *testcase,
+				TESTCASE_RESULT *result, char *test_output);
 
 void print_testsuite_start(const test_suite_t *testsuite);
 void print_test_start(const test_case_t *test);

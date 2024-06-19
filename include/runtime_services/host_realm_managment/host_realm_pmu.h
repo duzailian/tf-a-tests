@@ -11,17 +11,16 @@
 #include <arch_helpers.h>
 
 /* PMU physical interrupt */
-#define PMU_PPI		23UL
+#define PMU_PPI 23UL
 
 /* PMU virtual interrupt */
-#define PMU_VIRQ	PMU_PPI
+#define PMU_VIRQ PMU_PPI
 
 /* Clear bits P0-P30, C and F0 */
-#define PMU_CLEAR_ALL	0x1FFFFFFFF
+#define PMU_CLEAR_ALL 0x1FFFFFFFF
 
 /* Number of event counters implemented */
-#define GET_PMU_CNT	\
-	((read_pmcr_el0() >> PMCR_EL0_N_SHIFT) & PMCR_EL0_N_MASK)
+#define GET_PMU_CNT ((read_pmcr_el0() >> PMCR_EL0_N_SHIFT) & PMCR_EL0_N_MASK)
 
 void host_set_pmu_state(void);
 bool host_check_pmu_state(void);

@@ -5,7 +5,7 @@
  */
 
 #ifndef __SERROR_H__
-#define  __SERROR_H__
+#define __SERROR_H__
 
 typedef bool (*exception_handler_t)(void);
 void register_custom_serror_handler(exception_handler_t handler);

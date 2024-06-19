@@ -5,29 +5,27 @@
  */
 
 #include <assert.h>
-#include <errno.h>
 #include <debug.h>
+#include <errno.h>
 
+#include "cactus.h"
+#include "sp_def.h"
+#include "sp_tests.h"
 #include <cactus_message_loop.h>
 #include <drivers/arm/pl011.h>
 #include <drivers/console.h>
+#include <ffa_helpers.h>
 #include <lib/aarch64/arch_helpers.h>
 #include <lib/tftf_lib.h>
 #include <lib/xlat_tables/xlat_mmu_helpers.h>
 #include <lib/xlat_tables/xlat_tables_v2.h>
-
-#include <ffa_helpers.h>
-#include <plat_arm.h>
 #include <plat/common/platform.h>
+#include <plat_arm.h>
 #include <platform_def.h>
 #include <sp_debug.h>
 #include <sp_helpers.h>
 #include <spm_helpers.h>
 #include <std_svc.h>
-
-#include "sp_def.h"
-#include "sp_tests.h"
-#include "cactus.h"
 
 /* Host machine information injected by the build system in the ELF file. */
 extern const char build_message[];
@@ -53,10 +51,10 @@ static void __dead2 message_loop(ffa_id_t vm_id, struct mailbox_buffers *mb)
 	ffa_id_t destination;
 
 	/*
-	* This initial wait call is necessary to inform SPMD that
-	* SP initialization has completed. It blocks until receiving
-	* a direct message request.
-	*/
+	 * This initial wait call is necessary to inform SPMD that
+	 * SP initialization has completed. It blocks until receiving
+	 * a direct message request.
+	 */
 
 	ffa_ret = ffa_msg_wait();
 
@@ -97,8 +95,8 @@ static void __dead2 message_loop(ffa_id_t vm_id, struct mailbox_buffers *mb)
 
 		destination = ffa_dir_msg_dest(ffa_ret);
 		if (destination != vm_id) {
-			ERROR("%s(%u) invalid vm id 0x%x\n",
-				__func__, vm_id, destination);
+			ERROR("%s(%u) invalid vm id 0x%x\n", __func__, vm_id,
+			      destination);
 			break;
 		}
 
@@ -121,35 +119,33 @@ static const mmap_region_t cactus_mmap[] __attribute__((used)) = {
 	MAP_REGION_FLAT(PLAT_CACTUS_NS_MEMCPY_BASE, PLAT_CACTUS_MEMCPY_RANGE,
 			MT_MEMORY | MT_RW | MT_NS),
 #endif
-	{0}
-};
+	{0}};
 
 static void cactus_print_memory_layout(unsigned int vm_id)
 {
 	INFO("Secure Partition memory layout:\n");
 
-	INFO("  Text region            : %p - %p\n",
-		(void *)CACTUS_TEXT_START, (void *)CACTUS_TEXT_END);
+	INFO("  Text region            : %p - %p\n", (void *)CACTUS_TEXT_START,
+	     (void *)CACTUS_TEXT_END);
 
 	INFO("  Read-only data region  : %p - %p\n",
-		(void *)CACTUS_RODATA_START, (void *)CACTUS_RODATA_END);
+	     (void *)CACTUS_RODATA_START, (void *)CACTUS_RODATA_END);
 
-	INFO("  Data region            : %p - %p\n",
-		(void *)CACTUS_DATA_START, (void *)CACTUS_DATA_END);
+	INFO("  Data region            : %p - %p\n", (void *)CACTUS_DATA_START,
+	     (void *)CACTUS_DATA_END);
 
-	INFO("  BSS region             : %p - %p\n",
-		(void *)CACTUS_BSS_START, (void *)CACTUS_BSS_END);
+	INFO("  BSS region             : %p - %p\n", (void *)CACTUS_BSS_START,
+	     (void *)CACTUS_BSS_END);
 
 	INFO("  RX                     : %p - %p\n",
-		(void *)get_sp_rx_start(vm_id),
-		(void *)get_sp_rx_end(vm_id));
+	     (void *)get_sp_rx_start(vm_id), (void *)get_sp_rx_end(vm_id));
 
 	INFO("  TX                     : %p - %p\n",
-		(void *)get_sp_tx_start(vm_id),
-		(void *)get_sp_tx_end(vm_id));
+	     (void *)get_sp_tx_start(vm_id), (void *)get_sp_tx_end(vm_id));
 }
 
-static void cactus_print_boot_info(struct ffa_boot_info_header *boot_info_header)
+static void cactus_print_boot_info(
+	struct ffa_boot_info_header *boot_info_header)
 {
 	struct ffa_boot_info_desc *boot_info_desc;
 
@@ -175,14 +171,14 @@ static void cactus_print_boot_info(struct ffa_boot_info_header *boot_info_header
 	for (uint32_t i = 0; i < boot_info_header->desc_count; i++) {
 		VERBOSE("    Boot Data:\n");
 		VERBOSE("      Type: %u\n",
-				ffa_boot_info_type(&boot_info_desc[i]));
+			ffa_boot_info_type(&boot_info_desc[i]));
 		VERBOSE("      Type ID: %u\n",
-				ffa_boot_info_type_id(&boot_info_desc[i]));
+			ffa_boot_info_type_id(&boot_info_desc[i]));
 		VERBOSE("      Flags:\n");
 		VERBOSE("        Name Format: %x\n",
-				ffa_boot_info_name_format(&boot_info_desc[i]));
+			ffa_boot_info_name_format(&boot_info_desc[i]));
 		VERBOSE("        Content Format: %x\n",
-				ffa_boot_info_content_format(&boot_info_desc[i]));
+			ffa_boot_info_content_format(&boot_info_desc[i]));
 		VERBOSE("      Size: %u\n", boot_info_desc[i].size);
 		VERBOSE("      Value: %llx\n", boot_info_desc[i].content);
 	}
@@ -190,32 +186,20 @@ static void cactus_print_boot_info(struct ffa_boot_info_header *boot_info_header
 
 static void cactus_plat_configure_mmu(unsigned int vm_id)
 {
-	mmap_add_region(CACTUS_TEXT_START,
-			CACTUS_TEXT_START,
-			CACTUS_TEXT_END - CACTUS_TEXT_START,
-			MT_CODE);
-	mmap_add_region(CACTUS_RODATA_START,
-			CACTUS_RODATA_START,
-			CACTUS_RODATA_END - CACTUS_RODATA_START,
-			MT_RO_DATA);
-	mmap_add_region(CACTUS_DATA_START,
-			CACTUS_DATA_START,
-			CACTUS_DATA_END - CACTUS_DATA_START,
-			MT_RW_DATA);
-	mmap_add_region(CACTUS_BSS_START,
-			CACTUS_BSS_START,
-			CACTUS_BSS_END - CACTUS_BSS_START,
-			MT_RW_DATA);
+	mmap_add_region(CACTUS_TEXT_START, CACTUS_TEXT_START,
+			CACTUS_TEXT_END - CACTUS_TEXT_START, MT_CODE);
+	mmap_add_region(CACTUS_RODATA_START, CACTUS_RODATA_START,
+			CACTUS_RODATA_END - CACTUS_RODATA_START, MT_RO_DATA);
+	mmap_add_region(CACTUS_DATA_START, CACTUS_DATA_START,
+			CACTUS_DATA_END - CACTUS_DATA_START, MT_RW_DATA);
+	mmap_add_region(CACTUS_BSS_START, CACTUS_BSS_START,
+			CACTUS_BSS_END - CACTUS_BSS_START, MT_RW_DATA);
 
-	mmap_add_region(get_sp_rx_start(vm_id),
-			get_sp_rx_start(vm_id),
-			(SP_RX_TX_SIZE / 2),
-			MT_RO_DATA);
+	mmap_add_region(get_sp_rx_start(vm_id), get_sp_rx_start(vm_id),
+			(SP_RX_TX_SIZE / 2), MT_RO_DATA);
 
-	mmap_add_region(get_sp_tx_start(vm_id),
-			get_sp_tx_start(vm_id),
-			(SP_RX_TX_SIZE / 2),
-			MT_RW_DATA);
+	mmap_add_region(get_sp_tx_start(vm_id), get_sp_tx_start(vm_id),
+			(SP_RX_TX_SIZE / 2), MT_RW_DATA);
 
 	mmap_add(cactus_mmap);
 	init_xlat_tables();
@@ -249,11 +233,11 @@ void __dead2 cactus_main(bool primary_cold_boot,
 
 	if (primary_cold_boot == true) {
 		/* Clear BSS */
-		memset((void *)CACTUS_BSS_START,
-		       0, CACTUS_BSS_END - CACTUS_BSS_START);
+		memset((void *)CACTUS_BSS_START, 0,
+		       CACTUS_BSS_END - CACTUS_BSS_START);
 
-		mb.send = (void *) get_sp_tx_start(ffa_id);
-		mb.recv = (void *) get_sp_rx_start(ffa_id);
+		mb.send = (void *)get_sp_tx_start(ffa_id);
+		mb.recv = (void *)get_sp_rx_start(ffa_id);
 
 		/* Configure and enable Stage-1 MMU, enable D-Cache */
 		cactus_plat_configure_mmu(ffa_id);
@@ -271,8 +255,8 @@ void __dead2 cactus_main(bool primary_cold_boot,
 			 */
 			mmap_add_dynamic_region(
 				(unsigned long long)boot_info_header,
-				(uintptr_t)boot_info_header,
-				PAGE_SIZE, MT_RO_DATA);
+				(uintptr_t)boot_info_header, PAGE_SIZE,
+				MT_RO_DATA);
 		}
 	}
 
@@ -295,8 +279,8 @@ void __dead2 cactus_main(bool primary_cold_boot,
 	set_putc_impl(FFA_SVC_SMC_CALL_AS_STDOUT);
 
 	/* Below string is monitored by CI expect script. */
-	NOTICE("Booting Secure Partition (ID: %x)\n%s\n%s\n",
-		ffa_id, build_message, version_string);
+	NOTICE("Booting Secure Partition (ID: %x)\n%s\n%s\n", ffa_id,
+	       build_message, version_string);
 
 	if (ffa_id == SP_ID(1)) {
 		cactus_print_boot_info(boot_info_header);

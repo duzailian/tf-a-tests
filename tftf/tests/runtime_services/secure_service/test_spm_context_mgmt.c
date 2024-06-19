@@ -4,13 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <ffa_endpoints.h>
 #include <tftf.h>
-#include <tftf_lib.h>
-#include <test_helpers.h>
-#include <cactus_test_cmds.h>
 
+#include <cactus_test_cmds.h>
+#include <ffa_endpoints.h>
 #include <spm_test_helpers.h>
+#include <test_helpers.h>
+#include <tftf_lib.h>
 
 #define ECHO_VAL ULL(0xabcddcba)
 #define GCR_VAL ULL(0x1ff)
@@ -19,8 +19,7 @@
 #define TFSRE0_VAL ULL(0x3)
 
 static const struct ffa_uuid expected_sp_uuids[] = {
-		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}
-	};
+	{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}};
 
 /*
  * This test aims to validate MTE system registers are restored to correct
@@ -34,7 +33,8 @@ test_result_t test_spm_mte_regs_ctxt_mgmt(void)
 
 	SKIP_TEST_IF_MTE_SUPPORT_LESS_THAN(MTE_IMPLEMENTED_ELX);
 
-	/* Check SPMC has ffa_version and expected FFA endpoints are deployed. */
+	/* Check SPMC has ffa_version and expected FFA endpoints are deployed.
+	 */
 	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
 
 	write_gcr_el1(GCR_VAL);
@@ -47,7 +47,7 @@ test_result_t test_spm_mte_regs_ctxt_mgmt(void)
 
 	if (cactus_get_response(ret) != CACTUS_SUCCESS ||
 	    cactus_echo_get_val(ret) != ECHO_VAL ||
-		!is_ffa_direct_response(ret)) {
+	    !is_ffa_direct_response(ret)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -57,22 +57,26 @@ test_result_t test_spm_mte_regs_ctxt_mgmt(void)
 	tfsre0_el1 = read_tfsre0_el1();
 
 	if (gcr_el1 != GCR_VAL) {
-		ERROR("Expected vs actual value of gcr_el1: %llx, %llx\n", GCR_VAL, gcr_el1);
+		ERROR("Expected vs actual value of gcr_el1: %llx, %llx\n",
+		      GCR_VAL, gcr_el1);
 		return TEST_RESULT_FAIL;
 	}
 
 	if (rgsr_el1 != RGSR_VAL) {
-		ERROR("Expected vs actual value of rgsr_el1: %llx, %llx\n", RGSR_VAL, rgsr_el1);
+		ERROR("Expected vs actual value of rgsr_el1: %llx, %llx\n",
+		      RGSR_VAL, rgsr_el1);
 		return TEST_RESULT_FAIL;
 	}
 
 	if (tfsr_el1 != TFSR_VAL) {
-		ERROR("Expected vs actual value of tfsr_el1: %llx, %llx\n", TFSR_VAL, tfsr_el1);
+		ERROR("Expected vs actual value of tfsr_el1: %llx, %llx\n",
+		      TFSR_VAL, tfsr_el1);
 		return TEST_RESULT_FAIL;
 	}
 
 	if (tfsre0_el1 != TFSRE0_VAL) {
-		ERROR("Expected vs actual value of tfsre0_el1: %llx, %llx\n", TFSRE0_VAL, tfsre0_el1);
+		ERROR("Expected vs actual value of tfsre0_el1: %llx, %llx\n",
+		      TFSRE0_VAL, tfsre0_el1);
 		return TEST_RESULT_FAIL;
 	}
 

@@ -4,34 +4,29 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <debug.h>
-#include <drivers/arm/arm_gic.h>
-#include <drivers/console.h>
 #include <platform.h>
-#include <power_management.h>
 #include <psci.h>
 #include <sgi.h>
 #include <stdint.h>
 #include <tftf.h>
-#include <tftf_lib.h>
+
 #include "suspend_private.h"
+#include <arch_helpers.h>
+#include <drivers/arm/arm_gic.h>
+#include <drivers/console.h>
+#include <power_management.h>
+#include <tftf_lib.h>
 
-int32_t tftf_enter_suspend(const suspend_info_t *info,
-			   tftf_suspend_ctx_t *ctx)
+int32_t tftf_enter_suspend(const suspend_info_t *info, tftf_suspend_ctx_t *ctx)
 {
-	smc_args cpu_suspend_args = {
-			info->psci_api,
-			info->power_state,
-			(uintptr_t)__tftf_cpu_resume_ep,
-			(u_register_t)ctx
-		};
+	smc_args cpu_suspend_args = {info->psci_api, info->power_state,
+				     (uintptr_t)__tftf_cpu_resume_ep,
+				     (u_register_t)ctx};
 
-	smc_args system_suspend_args = {
-			info->psci_api,
-			(uintptr_t)__tftf_cpu_resume_ep,
-			(u_register_t)ctx
-		};
+	smc_args system_suspend_args = {info->psci_api,
+					(uintptr_t)__tftf_cpu_resume_ep,
+					(u_register_t)ctx};
 
 	smc_ret_values rc;
 

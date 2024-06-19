@@ -4,17 +4,18 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
-#include <cactus_test_cmds.h>
-#include "ffa_helpers.h"
-#include "tftf_lib.h"
 #include <debug.h>
-#include <ffa_endpoints.h>
-#include <ffa_svc.h>
-#include <host_realm_helper.h>
 #include <irq.h>
 #include <platform.h>
 #include <smccc.h>
+
+#include "ffa_helpers.h"
+#include "tftf_lib.h"
+#include <arch_helpers.h>
+#include <cactus_test_cmds.h>
+#include <ffa_endpoints.h>
+#include <ffa_svc.h>
+#include <host_realm_helper.h>
 #include <spm_common.h>
 #include <spm_test_helpers.h>
 #include <test_helpers.h>
@@ -25,8 +26,7 @@
 static __aligned(PAGE_SIZE) uint64_t share_page[PAGE_SIZE / sizeof(uint64_t)];
 
 static const struct ffa_uuid expected_sp_uuids[] = {
-		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}
-};
+	{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}};
 
 /**
  * @Test_Aim@ Check a realm region cannot be accessed from a secure partition.
@@ -42,11 +42,9 @@ static const struct ffa_uuid expected_sp_uuids[] = {
 test_result_t rl_memory_cannot_be_accessed_in_s(void)
 {
 	struct ffa_memory_region_constituent constituents[] = {
-		{
-			(void *)share_page, 1, 0
-		}
-	};
-	const uint32_t constituents_count = sizeof(constituents) /
+		{(void *)share_page, 1, 0}};
+	const uint32_t constituents_count =
+		sizeof(constituents) /
 		sizeof(struct ffa_memory_region_constituent);
 	ffa_memory_handle_t handle;
 	struct mailbox_buffers mb;
@@ -66,15 +64,15 @@ test_result_t rl_memory_cannot_be_accessed_in_s(void)
 	GET_TFTF_MAILBOX(mb);
 
 	handle = memory_init_and_send(mb.send, PAGE_SIZE, SENDER, &receiver, 1,
-				   constituents, constituents_count,
-				   FFA_MEM_SHARE_SMC64, &ret);
+				      constituents, constituents_count,
+				      FFA_MEM_SHARE_SMC64, &ret);
 
 	if (handle == FFA_MEMORY_HANDLE_INVALID) {
 		return TEST_RESULT_FAIL;
 	}
 
-	VERBOSE("TFTF - Handle: %llx Address: %p\n",
-		handle, constituents[0].address);
+	VERBOSE("TFTF - Handle: %llx Address: %p\n", handle,
+		constituents[0].address);
 
 	host_rmi_init_cmp_result();
 
@@ -89,8 +87,8 @@ test_result_t rl_memory_cannot_be_accessed_in_s(void)
 	 * Retrieve the shared page and attempt accessing it.
 	 * Tell SP to expect an exception.
 	 */
-	ret = cactus_mem_send_cmd(SENDER, RECEIVER, FFA_MEM_SHARE_SMC64,
-				  handle, 0, 1, true);
+	ret = cactus_mem_send_cmd(SENDER, RECEIVER, FFA_MEM_SHARE_SMC64, handle,
+				  0, 1, true);
 
 	/* Undelegate the shared page. */
 	retmm = host_rmi_granule_undelegate((u_register_t)&share_page);
@@ -136,7 +134,8 @@ test_result_t test_ffa_rxtx_to_realm_pas(void)
 	}
 
 	/***********************************************************************
-	 * Check if SPMC has ffa_version and expected FFA endpoints are deployed.
+	 * Check if SPMC has ffa_version and expected FFA endpoints are
+	 *deployed.
 	 **********************************************************************/
 	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
 
@@ -151,7 +150,7 @@ test_result_t test_ffa_rxtx_to_realm_pas(void)
 
 	if (!is_expected_ffa_error(ret, FFA_ERROR_ABORTED)) {
 		ERROR("FFA_PARTITON_INFO_GET should terminate with"
-		       "FFA_ERROR_ABORTED\n");
+		      "FFA_ERROR_ABORTED\n");
 		return TEST_RESULT_FAIL;
 	}
 

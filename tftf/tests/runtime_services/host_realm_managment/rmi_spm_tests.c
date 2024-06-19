@@ -4,21 +4,22 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include "rmi_spm_tests.h"
+
+#include <debug.h>
+#include <platform.h>
+#include <smccc.h>
 #include <stdlib.h>
 
 #include <arch_helpers.h>
 #include <cactus_test_cmds.h>
-#include <debug.h>
 #include <ffa_endpoints.h>
 #include <ffa_svc.h>
 #include <host_realm_helper.h>
 #include <lib/events.h>
 #include <lib/power_management.h>
 #include <plat_topology.h>
-#include <platform.h>
-#include "rmi_spm_tests.h"
 #include <spm_test_helpers.h>
-#include <smccc.h>
 #include <test_helpers.h>
 
 static test_result_t realm_multi_cpu_payload_del_undel(void);
@@ -29,18 +30,18 @@ static test_result_t realm_multi_cpu_payload_del_undel(void);
 #define MAX_REPEATED_TEST 3
 
 /* Buffer to delegate and undelegate */
-static char bufferdelegate[NUM_GRANULES * GRANULE_SIZE * PLATFORM_CORE_COUNT]
-	__aligned(GRANULE_SIZE);
+static char bufferdelegate[NUM_GRANULES * GRANULE_SIZE *
+			   PLATFORM_CORE_COUNT] __aligned(GRANULE_SIZE);
 static char bufferstate[NUM_GRANULES * PLATFORM_CORE_COUNT];
 static int cpu_test_spm_rmi[PLATFORM_CORE_COUNT];
 static event_t cpu_booted[PLATFORM_CORE_COUNT];
 static unsigned int lead_mpid;
 /*
- * The following test conducts SPM(direct messaging) tests on a subset of selected CPUs while
- * simultaneously performing another set of tests of the RMI(delegation)
- * on the remaining CPU's to the full platform count. Once that test completes
- * the same test is run again with a different assignment for what CPU does
- * SPM versus RMI.
+ * The following test conducts SPM(direct messaging) tests on a subset of
+ * selected CPUs while simultaneously performing another set of tests of the
+ * RMI(delegation) on the remaining CPU's to the full platform count. Once that
+ * test completes the same test is run again with a different assignment for
+ * what CPU does SPM versus RMI.
  */
 
 /*
@@ -81,21 +82,22 @@ static int spm_rmi_test(unsigned int mpidr)
 }
 
 /*
- * RMI function to randomize the initial state of granules allocated for the test.
- * A certain subset will be delegated leaving the rest undelegated
+ * RMI function to randomize the initial state of granules allocated for the
+ * test. A certain subset will be delegated leaving the rest undelegated
  */
 static test_result_t init_buffer_del_spm_rmi(void)
 {
 	u_register_t retrmm;
 
-	for (int i = 0; i < (NUM_GRANULES * PLATFORM_CORE_COUNT) ; i++) {
+	for (int i = 0; i < (NUM_GRANULES * PLATFORM_CORE_COUNT); i++) {
 		if ((rand() % 2) == 0) {
-			retrmm = host_rmi_granule_delegate(
-				(u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
+			retrmm = host_rmi_granule_delegate((
+				u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
 			bufferstate[i] = B_DELEGATED;
 			if (retrmm != 0UL) {
-				tftf_testcase_printf("Delegate operation returns 0x%lx\n",
-							retrmm);
+				tftf_testcase_printf(
+					"Delegate operation returns 0x%lx\n",
+					retrmm);
 				return TEST_RESULT_FAIL;
 			}
 		} else {
@@ -109,13 +111,14 @@ static test_result_t reset_buffer_del_spm_rmi(void)
 {
 	u_register_t retrmm;
 
-	for (uint32_t i = 0U; i < (NUM_GRANULES * PLATFORM_CORE_COUNT) ; i++) {
+	for (uint32_t i = 0U; i < (NUM_GRANULES * PLATFORM_CORE_COUNT); i++) {
 		if (bufferstate[i] == B_DELEGATED) {
-			retrmm = host_rmi_granule_undelegate(
-				(u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
+			retrmm = host_rmi_granule_undelegate((
+				u_register_t)&bufferdelegate[i * GRANULE_SIZE]);
 			if (retrmm != 0UL) {
-				ERROR("Undelegate operation returns fail, %lx\n",
-				retrmm);
+				ERROR("Undelegate operation returns fail, "
+				      "%lx\n",
+				      retrmm);
 				return TEST_RESULT_FAIL;
 			}
 			bufferstate[i] = B_UNDELEGATED;
@@ -136,7 +139,8 @@ static test_result_t wait_then_call(test_result_t (*callback)(void))
 	unsigned int this_core_pos = platform_get_core_pos(this_mpidr);
 
 	tftf_send_event_to_all(&cpu_booted[this_core_pos]);
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		mpidr = tftf_get_mpidr_from_node(cpu_node);
 		/* Ignore myself and the lead core */
 		if (mpidr == this_mpidr || mpidr == lead_mpid) {
@@ -150,9 +154,10 @@ static test_result_t wait_then_call(test_result_t (*callback)(void))
 }
 
 /*
- * Power on the given cpu and provide it with entrypoint to run and return result
+ * Power on the given cpu and provide it with entrypoint to run and return
+ * result
  */
-static test_result_t run_on_cpu(unsigned int  mpidr, uintptr_t cpu_on_handler)
+static test_result_t run_on_cpu(unsigned int mpidr, uintptr_t cpu_on_handler)
 {
 	int32_t ret;
 
@@ -168,11 +173,9 @@ static test_result_t run_on_cpu(unsigned int  mpidr, uintptr_t cpu_on_handler)
  * SPM functions for the direct messaging
  */
 static const struct ffa_uuid expected_sp_uuids[] = {
-		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}
-	};
+	{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}};
 
-static test_result_t send_cactus_echo_cmd(ffa_id_t sender,
-					  ffa_id_t dest,
+static test_result_t send_cactus_echo_cmd(ffa_id_t sender, ffa_id_t dest,
 					  uint64_t value)
 {
 	struct ffa_value ret;
@@ -226,8 +229,7 @@ static test_result_t run_spm_direct_message(void)
 	 */
 	ffa_ret = ffa_run(SP_ID(2), core_pos);
 	if (ffa_func_id(ffa_ret) != FFA_MSG_WAIT) {
-		ERROR("Failed to run SP%x on core %u\n", SP_ID(2),
-				core_pos);
+		ERROR("Failed to run SP%x on core %u\n", SP_ID(2), core_pos);
 		ret = TEST_RESULT_FAIL;
 		goto out;
 	}
@@ -243,8 +245,8 @@ static test_result_t run_spm_direct_message(void)
 	}
 
 	/*
-	 * Send a direct message request to SP3 (UP SP) from current physical CPU.
-	 * The SPMC uses the single vCPU migrated to the new physical core.
+	 * Send a direct message request to SP3 (UP SP) from current physical
+	 * CPU. The SPMC uses the single vCPU migrated to the new physical core.
 	 * The single SP vCPU may receive requests from multiple physical CPUs.
 	 * Thus it is possible one message is being processed on one core while
 	 * another (or multiple) cores attempt sending a new direct message
@@ -257,15 +259,15 @@ static test_result_t run_spm_direct_message(void)
 		ffa_ret = cactus_echo_send_cmd(HYP_ID, SP_ID(3), ECHO_VAL3);
 		if ((ffa_func_id(ffa_ret) == FFA_ERROR) &&
 		    (ffa_error_code(ffa_ret) == FFA_ERROR_BUSY)) {
-			VERBOSE("%s(%u) trial %u\n", __func__,
-			core_pos, trial_loop);
+			VERBOSE("%s(%u) trial %u\n", __func__, core_pos,
+				trial_loop);
 			waitms(1);
 			continue;
 		}
 
 		if (is_ffa_direct_response(ffa_ret) == true) {
 			if (cactus_get_response(ffa_ret) != CACTUS_SUCCESS ||
-				cactus_echo_get_val(ffa_ret) != ECHO_VAL3) {
+			    cactus_echo_get_val(ffa_ret) != ECHO_VAL3) {
 				ERROR("Echo Failed!\n");
 				ret = TEST_RESULT_FAIL;
 			}
@@ -315,20 +317,26 @@ static test_result_t realm_multi_cpu_payload_del_undel(void)
 	cpu_node = platform_get_core_pos(read_mpidr_el1() & MPID_MASK);
 
 	for (int i = 0; i < NUM_GRANULES; i++) {
-		if (bufferstate[((cpu_node * NUM_GRANULES) + i)] == B_UNDELEGATED) {
-			retrmm = host_rmi_granule_delegate((u_register_t)
-					&bufferdelegate[((cpu_node *
-						NUM_GRANULES) + i) * GRANULE_SIZE]);
-			bufferstate[((cpu_node * NUM_GRANULES) + i)] = B_DELEGATED;
+		if (bufferstate[((cpu_node * NUM_GRANULES) + i)] ==
+		    B_UNDELEGATED) {
+			retrmm = host_rmi_granule_delegate(
+				(u_register_t)&bufferdelegate
+					[((cpu_node * NUM_GRANULES) + i) *
+					 GRANULE_SIZE]);
+			bufferstate[((cpu_node * NUM_GRANULES) + i)] =
+				B_DELEGATED;
 		} else {
-			retrmm = host_rmi_granule_undelegate((u_register_t)
-					&bufferdelegate[((cpu_node *
-						NUM_GRANULES) + i) * GRANULE_SIZE]);
-			bufferstate[((cpu_node * NUM_GRANULES) + i)] = B_UNDELEGATED;
+			retrmm = host_rmi_granule_undelegate(
+				(u_register_t)&bufferdelegate
+					[((cpu_node * NUM_GRANULES) + i) *
+					 GRANULE_SIZE]);
+			bufferstate[((cpu_node * NUM_GRANULES) + i)] =
+				B_UNDELEGATED;
 		}
 		if (retrmm != 0UL) {
-			tftf_testcase_printf("Delegate operation returns fail, %lx\n",
-			retrmm);
+			tftf_testcase_printf(
+				"Delegate operation returns fail, %lx\n",
+				retrmm);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -345,7 +353,8 @@ static test_result_t non_secure_call_realm_multi_cpu_sync(void)
 }
 
 /*
- * NS world communicate with S and RL worlds in series via SMC from a single core.
+ * NS world communicate with S and RL worlds in series via SMC from a single
+ * core.
  */
 test_result_t test_spm_rmm_serial_smc(void)
 {
@@ -354,7 +363,7 @@ test_result_t test_spm_rmm_serial_smc(void)
 	}
 
 	lead_mpid = read_mpidr_el1() & MPID_MASK;
-	unsigned int  mpidr;
+	unsigned int mpidr;
 
 	/**********************************************************************
 	 * Check SPMC has ffa_version and expected FFA endpoints are deployed.
@@ -364,7 +373,8 @@ test_result_t test_spm_rmm_serial_smc(void)
 	host_rmi_init_cmp_result();
 
 	/*
-	 * Randomize the initial state of the RMI granules to realm or non-secure
+	 * Randomize the initial state of the RMI granules to realm or
+	 * non-secure
 	 */
 	if (init_buffer_del_spm_rmi() == TEST_RESULT_FAIL) {
 		return TEST_RESULT_FAIL;
@@ -383,8 +393,9 @@ test_result_t test_spm_rmm_serial_smc(void)
 	 */
 	for (size_t i = 0; i < MAX_REPEATED_TEST; i++) {
 		/* SPM FF-A direct message call */
-		if (TEST_RESULT_SUCCESS != run_on_cpu(mpidr,
-		(uintptr_t)non_secure_call_secure_and_realm)) {
+		if (TEST_RESULT_SUCCESS !=
+		    run_on_cpu(mpidr,
+			       (uintptr_t)non_secure_call_secure_and_realm)) {
 			return TEST_RESULT_FAIL;
 		}
 		/* Wait for the target CPU to finish the test execution */
@@ -424,7 +435,8 @@ test_result_t test_spm_rmm_parallel_smc(void)
 	host_rmi_init_cmp_result();
 
 	/*
-	 * Randomize the initial state of the RMI granules to realm or non-secure
+	 * Randomize the initial state of the RMI granules to realm or
+	 * non-secure
 	 */
 	if (init_buffer_del_spm_rmi() == TEST_RESULT_FAIL) {
 		return TEST_RESULT_FAIL;
@@ -435,7 +447,8 @@ test_result_t test_spm_rmm_parallel_smc(void)
 	 */
 	for (int i = 0; i < MAX_REPEATED_TEST; i++) {
 		VERBOSE("Main test(%d) to run both SPM and RMM or\
-		TRP together in parallel...\n", i);
+		TRP together in parallel...\n",
+			i);
 
 		/* Reinitialize all CPUs event */
 		for (unsigned int i = 0U; i < PLATFORM_CORE_COUNT; i++) {
@@ -448,21 +461,29 @@ test_result_t test_spm_rmm_parallel_smc(void)
 		rand_cpu_spm_rmi();
 
 		/*
-		 * for each CPU we assign it randomly either spm or rmi test function
+		 * for each CPU we assign it randomly either spm or rmi test
+		 * function
 		 */
-		for_each_cpu(cpu_node) {
+		for_each_cpu(cpu_node)
+		{
 			mpidr = tftf_get_mpidr_from_node(cpu_node);
 			if (mpidr == lead_mpid) {
 				continue;
 			}
 			if (spm_rmi_test(mpidr) == 1) {
-				if (TEST_RESULT_SUCCESS != run_on_cpu(mpidr,
-					(uintptr_t)non_secure_call_secure_multi_cpu_sync)) {
+				if (TEST_RESULT_SUCCESS !=
+				    run_on_cpu(
+					    mpidr,
+					    (uintptr_t)
+						    non_secure_call_secure_multi_cpu_sync)) {
 					return TEST_RESULT_FAIL;
 				}
 			} else {
-				if (TEST_RESULT_SUCCESS != run_on_cpu(mpidr,
-					(uintptr_t)non_secure_call_realm_multi_cpu_sync)) {
+				if (TEST_RESULT_SUCCESS !=
+				    run_on_cpu(
+					    mpidr,
+					    (uintptr_t)
+						    non_secure_call_realm_multi_cpu_sync)) {
 					return TEST_RESULT_FAIL;
 				}
 			}

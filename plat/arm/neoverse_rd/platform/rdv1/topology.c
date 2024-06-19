@@ -5,6 +5,7 @@
  */
 
 #include <assert.h>
+
 #include <plat_topology.h>
 #include <tftf_lib.h>
 
@@ -13,37 +14,37 @@ static const struct {
 	unsigned int cpu_id;
 } plat_cores[] = {
 	/* Cluster0: 1 core */
-	{ 0, 0 },
+	{0, 0},
 	/* Cluster1: 1 core */
-	{ 1, 0 },
+	{1, 0},
 	/* Cluster2: 1 core */
-	{ 2, 0 },
+	{2, 0},
 	/* Cluster3: 1 core */
-	{ 3, 0 },
+	{3, 0},
 	/* Cluster4: 1 core */
-	{ 4, 0 },
+	{4, 0},
 	/* Cluster5: 1 core */
-	{ 5, 0 },
+	{5, 0},
 	/* Cluster6: 1 core */
-	{ 6, 0 },
+	{6, 0},
 	/* Cluster7: 1 core */
-	{ 7, 0 },
+	{7, 0},
 	/* Cluster8: 1 core */
-	{ 8, 0 },
+	{8, 0},
 	/* Cluster9: 1 core */
-	{ 9, 0 },
+	{9, 0},
 	/* Cluster10: 1 core */
-	{ 10, 0 },
+	{10, 0},
 	/* Cluster11: 1 core */
-	{ 11, 0 },
+	{11, 0},
 	/* Cluster12: 1 core */
-	{ 12, 0 },
+	{12, 0},
 	/* Cluster13: 1 core */
-	{ 13, 0 },
+	{13, 0},
 	/* Cluster14: 1 core */
-	{ 14, 0 },
+	{14, 0},
 	/* Cluster15: 1 core */
-	{ 15, 0 },
+	{15, 0},
 };
 
 /*
@@ -86,8 +87,7 @@ const unsigned char plat_pd_tree_desc[] = {
 	/* Number of children for the 15th node */
 	NRD_MAX_CPUS_PER_CLUSTER,
 	/* Number of children for the 16th node */
-	NRD_MAX_CPUS_PER_CLUSTER
-};
+	NRD_MAX_CPUS_PER_CLUSTER};
 
 const unsigned char *tftf_plat_get_pwr_domain_tree_desc(void)
 {
@@ -101,7 +101,7 @@ uint64_t tftf_plat_get_mpidr(unsigned int core_pos)
 	assert(core_pos < PLATFORM_CORE_COUNT);
 
 	mpid = make_mpid(plat_cores[core_pos].cluster_id,
-				plat_cores[core_pos].cpu_id);
+			 plat_cores[core_pos].cpu_id);
 
 	return (uint64_t)mpid;
 }

@@ -11,6 +11,6 @@
 #include <nrd_soc_css_def_v2.h>
 
 /* Base address of non-trusted watchdog (SP805) */
-#define SP805_WDOG_BASE		UL(0x0C0F0000)
+#define SP805_WDOG_BASE UL(0x0C0F0000)
 
 #endif /*  NRD_SOC_PLATFORM_V2_H */

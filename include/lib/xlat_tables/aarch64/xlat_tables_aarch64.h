@@ -8,6 +8,7 @@
 #define XLAT_TABLES_AARCH64_H
 
 #include <arch.h>
+
 #include <utils_def.h>
 #include <xlat_tables_defs.h>
 
@@ -31,12 +32,12 @@ unsigned long long tcr_physical_addr_size_bits(unsigned long long max_addr);
  * descriptors.
  */
 #if PAGE_SIZE == PAGE_SIZE_4KB
-# define MIN_LVL_BLOCK_DESC	U(1)
+#define MIN_LVL_BLOCK_DESC U(1)
 #elif (PAGE_SIZE == PAGE_SIZE_16KB) || (PAGE_SIZE == PAGE_SIZE_64KB)
-# define MIN_LVL_BLOCK_DESC	U(2)
+#define MIN_LVL_BLOCK_DESC U(2)
 #endif
 
-#define XLAT_TABLE_LEVEL_MIN	U(0)
+#define XLAT_TABLE_LEVEL_MIN U(0)
 
 /*
  * Define the architectural limits of the virtual address space in AArch64
@@ -54,12 +55,11 @@ unsigned long long tcr_physical_addr_size_bits(unsigned long long max_addr);
  * (DDI 0487D.a)
  */
 /* Maximum value of TCR_ELx.T(0,1)SZ is 39 */
-#define MIN_VIRT_ADDR_SPACE_SIZE	(ULL(1) << (U(64) - TCR_TxSZ_MAX))
+#define MIN_VIRT_ADDR_SPACE_SIZE (ULL(1) << (U(64) - TCR_TxSZ_MAX))
 
 /* Maximum value of TCR_ELx.T(0,1)SZ is 48 */
-#define MIN_VIRT_ADDR_SPACE_SIZE_TTST	\
-				(ULL(1) << (U(64) - TCR_TxSZ_MAX_TTST))
-#define MAX_VIRT_ADDR_SPACE_SIZE	(ULL(1) << (U(64) - TCR_TxSZ_MIN))
+#define MIN_VIRT_ADDR_SPACE_SIZE_TTST (ULL(1) << (U(64) - TCR_TxSZ_MAX_TTST))
+#define MAX_VIRT_ADDR_SPACE_SIZE (ULL(1) << (U(64) - TCR_TxSZ_MIN))
 
 /*
  * Here we calculate the initial lookup level from the value of the given
@@ -85,12 +85,15 @@ unsigned long long tcr_physical_addr_size_bits(unsigned long long max_addr);
  * Note that this macro assumes that the given virtual address space size is
  * valid.
  */
-#define GET_XLAT_TABLE_LEVEL_BASE(_virt_addr_space_sz)		\
-	(((_virt_addr_space_sz) > (ULL(1) << L0_XLAT_ADDRESS_SHIFT))	\
-	? 0U								\
-	: (((_virt_addr_space_sz) > (ULL(1) << L1_XLAT_ADDRESS_SHIFT))	\
-	? 1U								\
-	: (((_virt_addr_space_sz) > (ULL(1) << L2_XLAT_ADDRESS_SHIFT))	\
-	? 2U : 3U)))
+#define GET_XLAT_TABLE_LEVEL_BASE(_virt_addr_space_sz)               \
+	(((_virt_addr_space_sz) > (ULL(1) << L0_XLAT_ADDRESS_SHIFT)) \
+		 ? 0U                                                \
+		 : (((_virt_addr_space_sz) >                         \
+		     (ULL(1) << L1_XLAT_ADDRESS_SHIFT))              \
+			    ? 1U                                     \
+			    : (((_virt_addr_space_sz) >              \
+				(ULL(1) << L2_XLAT_ADDRESS_SHIFT))   \
+				       ? 2U                          \
+				       : 3U)))
 
 #endif /* XLAT_TABLES_AARCH64_H */

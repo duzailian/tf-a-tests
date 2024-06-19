@@ -15,17 +15,16 @@
 #include <tftf_lib.h>
 #include <xlat_tables_defs.h>
 
-#define expect_eq(expr, value)							\
-	do {									\
-		if ((expr) != (value)) {					\
-			ERROR("expect failed %s:%u\n", __FILE__, __LINE__);	\
-			return TEST_RESULT_FAIL;				\
-		}								\
+#define expect_eq(expr, value)                                              \
+	do {                                                                \
+		if ((expr) != (value)) {                                    \
+			ERROR("expect failed %s:%u\n", __FILE__, __LINE__); \
+			return TEST_RESULT_FAIL;                            \
+		}                                                           \
 	} while (0);
 
 static const struct ffa_uuid sp_uuids[] = {
-		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}, {IVY_UUID}
-	};
+	{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}, {IVY_UUID}};
 
 struct ffa_value8 {
 	u_register_t fid;
@@ -63,7 +62,7 @@ test_result_t test_smccc_callee_preserved(void)
 	CONFIGURE_MAILBOX(mb, PAGE_SIZE);
 
 	memset(&args, 0, sizeof(struct ffa_value8));
-	args.fid  = FFA_VERSION;
+	args.fid = FFA_VERSION;
 	args.arg1 = 0x10001;
 	expect_eq(test_ffa_smc(&args), 0);
 	expect_eq(args.fid, FFA_VERSION_COMPILED);
@@ -76,7 +75,7 @@ test_result_t test_smccc_callee_preserved(void)
 	expect_eq(args.arg7, 0);
 
 	memset(&args, 0, sizeof(struct ffa_value8));
-	args.fid  = FFA_ID_GET;
+	args.fid = FFA_ID_GET;
 	expect_eq(test_ffa_smc(&args), 0);
 	expect_eq(args.fid, FFA_SUCCESS_SMC32);
 	expect_eq(args.arg1, 0);
@@ -88,7 +87,7 @@ test_result_t test_smccc_callee_preserved(void)
 	expect_eq(args.arg7, 0);
 
 	memset(&args, 0, sizeof(struct ffa_value8));
-	args.fid  = FFA_RXTX_MAP_SMC64;
+	args.fid = FFA_RXTX_MAP_SMC64;
 	args.arg1 = (uintptr_t)mb.send;
 	args.arg2 = (uintptr_t)mb.recv;
 	args.arg3 = 1;
@@ -154,7 +153,7 @@ test_result_t test_smccc_ext_callee_preserved(void)
 
 	/* Test the SMCCC extended registers range. */
 	memset(&args_ext, 0, sizeof(struct ffa_value));
-	args_ext.fid  = FFA_PARTITION_INFO_GET_REGS_SMC64;
+	args_ext.fid = FFA_PARTITION_INFO_GET_REGS_SMC64;
 	expect_eq(test_ffa_smc_ext(&args_ext), 0);
 	expect_eq(args_ext.fid, FFA_SUCCESS_SMC64);
 	expect_eq(args_ext.arg1, 0);

@@ -4,9 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <debug.h>
+
 #include "cactus_message_loop.h"
 #include "cactus_test_cmds.h"
-#include <debug.h>
 #include <ffa_helpers.h>
 
 CACTUS_CMD_HANDLER(echo_cmd, CACTUS_ECHO_CMD)
@@ -14,11 +15,10 @@ CACTUS_CMD_HANDLER(echo_cmd, CACTUS_ECHO_CMD)
 	uint64_t echo_val = cactus_echo_get_val(*args);
 
 	VERBOSE("Received echo at %x, value %llx.\n", ffa_dir_msg_dest(*args),
-						      echo_val);
+		echo_val);
 
 	return cactus_success_resp(ffa_dir_msg_dest(*args),
-				   ffa_dir_msg_source(*args),
-				   echo_val);
+				   ffa_dir_msg_source(*args), echo_val);
 }
 
 CACTUS_CMD_HANDLER(req_echo_cmd, CACTUS_REQ_ECHO_CMD)
@@ -48,8 +48,7 @@ CACTUS_CMD_HANDLER(req_echo_cmd, CACTUS_REQ_ECHO_CMD)
 	return cactus_success_resp(vm_id, ffa_dir_msg_source(*args), 0);
 }
 
-static struct ffa_value base_deadlock_handler(ffa_id_t vm_id,
-					      ffa_id_t source,
+static struct ffa_value base_deadlock_handler(ffa_id_t vm_id, ffa_id_t source,
 					      ffa_id_t deadlock_dest,
 					      ffa_id_t deadlock_next_dest)
 {
@@ -99,7 +98,7 @@ CACTUS_CMD_HANDLER(deadlock_cmd, CACTUS_DEADLOCK_CMD)
 	VERBOSE("%x is creating deadlock. next: %x\n", source, deadlock_dest);
 
 	return base_deadlock_handler(ffa_dir_msg_dest(*args), source,
-				      deadlock_dest, deadlock_next_dest);
+				     deadlock_dest, deadlock_next_dest);
 }
 
 CACTUS_CMD_HANDLER(req_deadlock_cmd, CACTUS_REQ_DEADLOCK_CMD)
@@ -112,7 +111,8 @@ CACTUS_CMD_HANDLER(req_deadlock_cmd, CACTUS_REQ_DEADLOCK_CMD)
 	VERBOSE("%x requested deadlock with %x and %x\n",
 		ffa_dir_msg_source(*args), deadlock_dest, deadlock_next_dest);
 
-	return base_deadlock_handler(vm_id, source, deadlock_dest, deadlock_next_dest);
+	return base_deadlock_handler(vm_id, source, deadlock_dest,
+				     deadlock_next_dest);
 }
 
 CACTUS_CMD_HANDLER(ras_delegate_cmd, CACTUS_RAS_DELEGATE_CMD)
@@ -120,9 +120,8 @@ CACTUS_CMD_HANDLER(ras_delegate_cmd, CACTUS_RAS_DELEGATE_CMD)
 	uint64_t event_id = cactus_ras_get_event_id(*args);
 
 	INFO("Received RAS cmd at %x, value %llu.\n", ffa_dir_msg_dest(*args),
-						      event_id);
+	     event_id);
 
 	return cactus_success_resp(ffa_dir_msg_dest(*args),
-				   ffa_dir_msg_source(*args),
-				   event_id);
+				   ffa_dir_msg_source(*args), event_id);
 }

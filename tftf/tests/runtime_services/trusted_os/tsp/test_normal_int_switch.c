@@ -4,21 +4,22 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <assert.h>
 #include <debug.h>
-#include <drivers/arm/arm_gic.h>
 #include <irq.h>
 #include <mmio.h>
 #include <platform.h>
-#include <platform_def.h>
 #include <sgi.h>
 #include <smccc.h>
-#include <std_svc.h>
 #include <stdlib.h>
 #include <string.h>
-#include <test_helpers.h>
 #include <tftf.h>
+
+#include <arch_helpers.h>
+#include <drivers/arm/arm_gic.h>
+#include <platform_def.h>
+#include <std_svc.h>
+#include <test_helpers.h>
 
 #define STRESS_COUNT 100
 
@@ -52,7 +53,7 @@ static int sgi_handler(void *data)
  * pending SGI will preempt a STD SMC.
  */
 static test_result_t preempt_tsp_via_SGI(const smc_args *tsp_svc_params,
-				int hold_irq_handler_for_fiq)
+					 int hold_irq_handler_for_fiq)
 {
 	int rc;
 	unsigned int core_mpid = read_mpidr_el1() & MPID_MASK;
@@ -67,8 +68,10 @@ static test_result_t preempt_tsp_via_SGI(const smc_args *tsp_svc_params,
 	/* Register Handler for the interrupt. SGIs #0 - #6 are available. */
 	rc = tftf_irq_register_handler(IRQ_NS_SGI_0, sgi_handler);
 	if (rc != 0) {
-		tftf_testcase_printf("Failed to register SGI handler. "
-				"Error code = %d\n", rc);
+		tftf_testcase_printf(
+			"Failed to register SGI handler. "
+			"Error code = %d\n",
+			rc);
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -90,9 +93,10 @@ static test_result_t preempt_tsp_via_SGI(const smc_args *tsp_svc_params,
 	 */
 	shared_data.tsp_result = tftf_smc(tsp_svc_params);
 	if (shared_data.tsp_result.ret0 != TSP_SMC_PREEMPTED) {
-		tftf_testcase_printf("SMC returned 0x%llX instead of "
-				     "TSP_SMC_PREEMPTED.\n",
-				     (unsigned long long)shared_data.tsp_result.ret0);
+		tftf_testcase_printf(
+			"SMC returned 0x%llX instead of "
+			"TSP_SMC_PREEMPTED.\n",
+			(unsigned long long)shared_data.tsp_result.ret0);
 		result = TEST_RESULT_FAIL;
 	}
 
@@ -105,8 +109,10 @@ static test_result_t preempt_tsp_via_SGI(const smc_args *tsp_svc_params,
 	/* Unregister handler */
 	rc = tftf_irq_unregister_handler(IRQ_NS_SGI_0);
 	if (rc != 0) {
-		tftf_testcase_printf("Failed to unregister IRQ handler. "
-				     "Error code = %d\n", rc);
+		tftf_testcase_printf(
+			"Failed to unregister IRQ handler. "
+			"Error code = %d\n",
+			rc);
 		result = TEST_RESULT_FAIL;
 	}
 
@@ -142,12 +148,13 @@ test_result_t tsp_int_and_resume(void)
 
 	/* Check the result of the addition */
 	if (tsp_result.ret0 != 0 || tsp_result.ret1 != 8 ||
-					tsp_result.ret2 != 12) {
-		tftf_testcase_printf("SMC resume returned wrong result:"
-				     "got %d %d %d expected: 0 8 12\n",
-						(unsigned int)tsp_result.ret0,
-						(unsigned int)tsp_result.ret1,
-						(unsigned int)tsp_result.ret2);
+	    tsp_result.ret2 != 12) {
+		tftf_testcase_printf(
+			"SMC resume returned wrong result:"
+			"got %d %d %d expected: 0 8 12\n",
+			(unsigned int)tsp_result.ret0,
+			(unsigned int)tsp_result.ret1,
+			(unsigned int)tsp_result.ret2);
 		tftf_testcase_printf("SMC resume returned wrong result\n");
 		return TEST_RESULT_FAIL;
 	}
@@ -166,12 +173,13 @@ test_result_t tsp_int_and_resume(void)
 
 	/* Check the result of the substraction */
 	if (tsp_result.ret0 != 0 || tsp_result.ret1 != 0 ||
-						tsp_result.ret2 != 0) {
-		tftf_testcase_printf("SMC resume returned wrong result:"
-				     "got %d %d %d expected: 0 0 0\n",
-						(unsigned int)tsp_result.ret0,
-						(unsigned int)tsp_result.ret1,
-						(unsigned int)tsp_result.ret2);
+	    tsp_result.ret2 != 0) {
+		tftf_testcase_printf(
+			"SMC resume returned wrong result:"
+			"got %d %d %d expected: 0 0 0\n",
+			(unsigned int)tsp_result.ret0,
+			(unsigned int)tsp_result.ret1,
+			(unsigned int)tsp_result.ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -189,12 +197,13 @@ test_result_t tsp_int_and_resume(void)
 
 	/* Check the result of the multiplication */
 	if (tsp_result.ret0 != 0 || tsp_result.ret1 != 16 ||
-						tsp_result.ret2 != 36) {
-		tftf_testcase_printf("SMC resume returned wrong result:"
-				     "got %d %d %d expected: 0 16 36\n",
-						(unsigned int)tsp_result.ret0,
-						(unsigned int)tsp_result.ret1,
-						(unsigned int)tsp_result.ret2);
+	    tsp_result.ret2 != 36) {
+		tftf_testcase_printf(
+			"SMC resume returned wrong result:"
+			"got %d %d %d expected: 0 16 36\n",
+			(unsigned int)tsp_result.ret0,
+			(unsigned int)tsp_result.ret1,
+			(unsigned int)tsp_result.ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -212,12 +221,13 @@ test_result_t tsp_int_and_resume(void)
 
 	/* Check the result of the division */
 	if (tsp_result.ret0 != 0 || tsp_result.ret1 != 1 ||
-					tsp_result.ret2 != 1) {
-		tftf_testcase_printf("SMC resume returned wrong result:"
-				     "got %d %d %d expected: 0 1 1\n",
-						(unsigned int)tsp_result.ret0,
-						(unsigned int)tsp_result.ret1,
-						(unsigned int)tsp_result.ret2);
+	    tsp_result.ret2 != 1) {
+		tftf_testcase_printf(
+			"SMC resume returned wrong result:"
+			"got %d %d %d expected: 0 1 1\n",
+			(unsigned int)tsp_result.ret0,
+			(unsigned int)tsp_result.ret1,
+			(unsigned int)tsp_result.ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -256,8 +266,9 @@ test_result_t test_fast_smc_when_tsp_preempted(void)
 	tsp_result = tftf_smc(&tsp_svc_params);
 
 	if (tsp_result.ret0 != SMC_UNKNOWN) {
-		tftf_testcase_printf("Fast SMC should not execute"
-				"while SMC is preempted\n");
+		tftf_testcase_printf(
+			"Fast SMC should not execute"
+			"while SMC is preempted\n");
 		res = TEST_RESULT_FAIL;
 	}
 
@@ -267,12 +278,13 @@ test_result_t test_fast_smc_when_tsp_preempted(void)
 
 	/* Check the result of the addition */
 	if (tsp_result.ret0 != 0 || tsp_result.ret1 != 8 ||
-				tsp_result.ret2 != 12) {
-		tftf_testcase_printf("SMC resume returned wrong result:"
-				     "got %d %d %d expected: 0 8 12\n",
-						(unsigned int)tsp_result.ret0,
-						(unsigned int)tsp_result.ret1,
-						(unsigned int)tsp_result.ret2);
+	    tsp_result.ret2 != 12) {
+		tftf_testcase_printf(
+			"SMC resume returned wrong result:"
+			"got %d %d %d expected: 0 8 12\n",
+			(unsigned int)tsp_result.ret0,
+			(unsigned int)tsp_result.ret1,
+			(unsigned int)tsp_result.ret2);
 
 		res = TEST_RESULT_FAIL;
 	}
@@ -317,7 +329,9 @@ static test_result_t test_std_smc_when_tsp_preempted(int abort_smc)
 	tsp_result = tftf_smc(&tsp_svc_params);
 
 	if (tsp_result.ret0 != SMC_UNKNOWN) {
-		tftf_testcase_printf("Standard SMC should not execute while SMC is preempted\n");
+		tftf_testcase_printf(
+			"Standard SMC should not execute while SMC is "
+			"preempted\n");
 		res = TEST_RESULT_FAIL;
 	}
 
@@ -334,11 +348,13 @@ static test_result_t test_std_smc_when_tsp_preempted(int abort_smc)
 		 * Check the result of the addition if we issued RESUME.
 		 */
 		if (tsp_result.ret0 != 0 || tsp_result.ret1 != 8 ||
-		     tsp_result.ret2 != 12) {
-			tftf_testcase_printf("SMC resume returned wrong result: got %d %d %d expected: 0 8 12\n",
-					     (unsigned int)tsp_result.ret0,
-					     (unsigned int)tsp_result.ret1,
-					     (unsigned int)tsp_result.ret2);
+		    tsp_result.ret2 != 12) {
+			tftf_testcase_printf(
+				"SMC resume returned wrong result: got %d %d "
+				"%d expected: 0 8 12\n",
+				(unsigned int)tsp_result.ret0,
+				(unsigned int)tsp_result.ret1,
+				(unsigned int)tsp_result.ret2);
 			res = TEST_RESULT_FAIL;
 		}
 	}
@@ -357,7 +373,8 @@ test_result_t test_std_smc_when_tsp_preempted_abort(void)
 }
 
 /*
- * @Test_Aim@ Test RESUME SMC call when TSP is not preempted. RESUME should fail.
+ * @Test_Aim@ Test RESUME SMC call when TSP is not preempted. RESUME should
+ * fail.
  *
  * Issues resume SMC. This is not expected by TSP and returns error.
  * This is a negative test, Return SUCCESS is RESUME returns SMC_UNKNOWN
@@ -374,8 +391,9 @@ test_result_t test_resume_smc_without_preemption(void)
 	tsp_result = tftf_smc(&tsp_svc_params);
 
 	if (tsp_result.ret0 != SMC_UNKNOWN) {
-		tftf_testcase_printf("SMC Resume should return UNKNOWN, got:%d\n", \
-							(unsigned int)tsp_result.ret0);
+		tftf_testcase_printf(
+			"SMC Resume should return UNKNOWN, got:%d\n",
+			(unsigned int)tsp_result.ret0);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -400,8 +418,7 @@ test_result_t tsp_int_and_resume_stress(void)
 	int count = 0;
 
 	NOTICE("This stress test will repeat %d times\n", STRESS_COUNT);
-	while ((count < STRESS_COUNT) &&
-			(res == TEST_RESULT_SUCCESS)) {
+	while ((count < STRESS_COUNT) && (res == TEST_RESULT_SUCCESS)) {
 		/* Standard SMC */
 		tsp_svc_params.fid = TSP_STD_FID(TSP_ADD);
 		tsp_svc_params.arg1 = 4;
@@ -417,12 +434,13 @@ test_result_t tsp_int_and_resume_stress(void)
 
 		/* Check the result of the addition */
 		if (tsp_result.ret0 != 0 || tsp_result.ret1 != 8 ||
-						tsp_result.ret2 != 12) {
-			tftf_testcase_printf("SMC resume returned wrong result:"
-				     "got %d %d %d expected: 0 8 12\n",
-						(unsigned int)tsp_result.ret0,
-						(unsigned int)tsp_result.ret1,
-						(unsigned int)tsp_result.ret2);
+		    tsp_result.ret2 != 12) {
+			tftf_testcase_printf(
+				"SMC resume returned wrong result:"
+				"got %d %d %d expected: 0 8 12\n",
+				(unsigned int)tsp_result.ret0,
+				(unsigned int)tsp_result.ret1,
+				(unsigned int)tsp_result.ret2);
 			res = TEST_RESULT_FAIL;
 		}
 
@@ -467,12 +485,13 @@ test_result_t tsp_fiq_while_int(void)
 
 	/* Check the result of the addition */
 	if (tsp_result.ret0 != 0 || tsp_result.ret1 != 8 ||
-					tsp_result.ret2 != 12) {
-		tftf_testcase_printf("SMC resume returned wrong result:"
-			     "got %d %d %d expected: 0 8 12\n",
-					(unsigned int)tsp_result.ret0,
-					(unsigned int)tsp_result.ret1,
-					(unsigned int)tsp_result.ret2);
+	    tsp_result.ret2 != 12) {
+		tftf_testcase_printf(
+			"SMC resume returned wrong result:"
+			"got %d %d %d expected: 0 8 12\n",
+			(unsigned int)tsp_result.ret0,
+			(unsigned int)tsp_result.ret1,
+			(unsigned int)tsp_result.ret2);
 		return TEST_RESULT_FAIL;
 	}
 	return TEST_RESULT_SUCCESS;

@@ -5,12 +5,13 @@
  */
 
 #include <assert.h>
+#include <platform.h>
+#include <tftf.h>
+
+#include "platform_def.h"
 #include <drivers/io/io_driver.h>
 #include <drivers/io/io_nor_flash.h>
 #include <io_storage.h>
-#include <platform.h>
-#include <tftf.h>
-#include "platform_def.h"
 
 #pragma weak plat_get_nvm_handle
 
@@ -26,8 +27,7 @@ static const io_nor_flash_spec_t flash_main_block_spec = {
 	.device_address = FLASH_BASE,
 	.region_address = FLASH_BASE,
 	.block_size = NOR_FLASH_BLOCK_SIZE,
-	.block_count = FLASH_SIZE / NOR_FLASH_BLOCK_SIZE
-};
+	.block_count = FLASH_SIZE / NOR_FLASH_BLOCK_SIZE};
 
 int arm_io_setup(void)
 {
@@ -37,8 +37,8 @@ int arm_io_setup(void)
 	if (io_result != IO_SUCCESS)
 		return io_result;
 
-	io_result = io_dev_open(flash_dev_con, flash_dev_spec,
-				&flash_dev_handle);
+	io_result =
+		io_dev_open(flash_dev_con, flash_dev_spec, &flash_dev_handle);
 	if (io_result != IO_SUCCESS)
 		return io_result;
 
@@ -46,9 +46,8 @@ int arm_io_setup(void)
 	if (io_result != IO_SUCCESS)
 		return io_result;
 
-	io_result = io_open(flash_dev_handle,
-				(uintptr_t)&flash_main_block_spec,
-				 &flash_handle);
+	io_result = io_open(flash_dev_handle, (uintptr_t)&flash_main_block_spec,
+			    &flash_handle);
 
 	if (io_result == IO_SUCCESS)
 		flash_init = 1;
@@ -62,4 +61,3 @@ void plat_get_nvm_handle(uintptr_t *handle)
 
 	*handle = flash_handle;
 }
-

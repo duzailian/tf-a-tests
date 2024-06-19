@@ -6,11 +6,11 @@
 
 #include <assert.h>
 #include <debug.h>
+
+#include "xlat_tables_private.h"
 #include <platform_def.h>
 #include <xlat_tables_defs.h>
 #include <xlat_tables_v2.h>
-
-#include "xlat_tables_private.h"
 
 /*
  * MMU configuration register values for the active translation context. Used
@@ -23,7 +23,7 @@ uint64_t mmu_cfg_params[MMU_CFG_PARAM_MAX];
  * image currently executing.
  */
 REGISTER_XLAT_CONTEXT(tf, MAX_MMAP_REGIONS, MAX_XLAT_TABLES,
-		PLAT_VIRT_ADDR_SPACE_SIZE, PLAT_PHY_ADDR_SPACE_SIZE);
+		      PLAT_VIRT_ADDR_SPACE_SIZE, PLAT_PHY_ADDR_SPACE_SIZE);
 
 void mmap_add_region(unsigned long long base_pa, uintptr_t base_va, size_t size,
 		     unsigned int attr)
@@ -80,11 +80,9 @@ int mmap_add_dynamic_region_alloc_va(unsigned long long base_pa,
 	return rc;
 }
 
-
 int mmap_remove_dynamic_region(uintptr_t base_va, size_t size)
 {
-	return mmap_remove_dynamic_region_ctx(&tf_xlat_ctx,
-					base_va, size);
+	return mmap_remove_dynamic_region_ctx(&tf_xlat_ctx, base_va, size);
 }
 
 #endif /* PLAT_XLAT_TABLES_DYNAMIC */
@@ -114,7 +112,8 @@ int xlat_get_mem_attributes(uintptr_t base_va, uint32_t *attr)
 
 int xlat_change_mem_attributes(uintptr_t base_va, size_t size, uint32_t attr)
 {
-	return xlat_change_mem_attributes_ctx(&tf_xlat_ctx, base_va, size, attr);
+	return xlat_change_mem_attributes_ctx(&tf_xlat_ctx, base_va, size,
+					      attr);
 }
 
 /*
@@ -129,9 +128,9 @@ int xlat_change_mem_attributes(uintptr_t base_va, size_t size, uint32_t attr)
  * space size might be mapped.
  */
 #ifdef PLAT_XLAT_TABLES_DYNAMIC
-#define MAX_PHYS_ADDR	tf_xlat_ctx.pa_max_address
+#define MAX_PHYS_ADDR tf_xlat_ctx.pa_max_address
 #else
-#define MAX_PHYS_ADDR	tf_xlat_ctx.max_pa
+#define MAX_PHYS_ADDR tf_xlat_ctx.max_pa
 #endif
 
 #ifndef __aarch64__

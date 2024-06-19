@@ -5,10 +5,11 @@
  */
 
 #include <amu.h>
-#include <amu_private.h>
 #include <arch.h>
-#include <arch_helpers.h>
 #include <assert.h>
+
+#include <amu_private.h>
+#include <arch_helpers.h>
 
 /*
  * Get AMU version value from pfr0.
@@ -20,7 +21,7 @@
 unsigned int amu_get_version(void)
 {
 	return (unsigned int)(read_id_pfr0() >> ID_PFR0_AMU_SHIFT) &
-		ID_PFR0_AMU_MASK;
+	       ID_PFR0_AMU_MASK;
 }
 
 /* Read the group 0 counter identified by the given `idx`. */

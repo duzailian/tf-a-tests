@@ -7,11 +7,12 @@
 #include <pauth.h>
 #include <psci.h>
 #include <smccc.h>
-#include <test_helpers.h>
-#include <tftf_lib.h>
+#include <string.h>
 #include <tftf.h>
 #include <tsp.h>
-#include <string.h>
+
+#include <test_helpers.h>
+#include <tftf_lib.h>
 
 #ifdef __aarch64__
 static uint128_t pauth_keys_before[NUM_KEYS];
@@ -30,7 +31,7 @@ test_result_t test_pauth_reg_access(void)
 	SKIP_TEST_IF_PAUTH_NOT_SUPPORTED();
 	pauth_test_lib_read_keys(pauth_keys_before);
 	return TEST_RESULT_SUCCESS;
-#endif	/* __aarch64__ */
+#endif /* __aarch64__ */
 }
 
 /*
@@ -46,8 +47,9 @@ test_result_t test_pauth_leakage(void)
 
 	tftf_get_psci_version();
 
-	return pauth_test_lib_compare_template(pauth_keys_before, pauth_keys_after);
-#endif	/* __aarch64__ */
+	return pauth_test_lib_compare_template(pauth_keys_before,
+					       pauth_keys_after);
+#endif /* __aarch64__ */
 }
 
 /* Test execution of ARMv8.3-PAuth instructions */
@@ -59,20 +61,20 @@ test_result_t test_pauth_instructions(void)
 
 #if ARM_ARCH_AT_LEAST(8, 3)
 	/* Pointer authentication instructions */
-	__asm__ volatile (
+	__asm__ volatile(
 		"paciasp\n"
 		"autiasp\n"
 		"paciasp\n"
-		"xpaclri"
-	);
+		"xpaclri");
 	return TEST_RESULT_SUCCESS;
 #else
-	tftf_testcase_printf("Pointer Authentication instructions "
-				"are not supported on ARMv%u.%u\n",
-				ARM_ARCH_MAJOR, ARM_ARCH_MINOR);
+	tftf_testcase_printf(
+		"Pointer Authentication instructions "
+		"are not supported on ARMv%u.%u\n",
+		ARM_ARCH_MAJOR, ARM_ARCH_MINOR);
 	return TEST_RESULT_SKIPPED;
-#endif	/* ARM_ARCH_AT_LEAST(8, 3) */
-#endif	/* __aarch64__ */
+#endif /* ARM_ARCH_AT_LEAST(8, 3) */
+#endif /* __aarch64__ */
 }
 
 /*
@@ -103,14 +105,16 @@ test_result_t test_pauth_leakage_tsp(void)
 	 */
 	if (tsp_result.ret0 != 0 || tsp_result.ret1 != 8 ||
 	    tsp_result.ret2 != 12) {
-		tftf_testcase_printf("TSP add returned wrong result: "
-				     "got %d %d %d expected: 0 8 12\n",
-				     (unsigned int)tsp_result.ret0,
-				     (unsigned int)tsp_result.ret1,
-				     (unsigned int)tsp_result.ret2);
+		tftf_testcase_printf(
+			"TSP add returned wrong result: "
+			"got %d %d %d expected: 0 8 12\n",
+			(unsigned int)tsp_result.ret0,
+			(unsigned int)tsp_result.ret1,
+			(unsigned int)tsp_result.ret2);
 		return TEST_RESULT_FAIL;
 	}
 
-	return pauth_test_lib_compare_template(pauth_keys_before, pauth_keys_after);
-#endif	/* __aarch64__ */
+	return pauth_test_lib_compare_template(pauth_keys_before,
+					       pauth_keys_after);
+#endif /* __aarch64__ */
 }

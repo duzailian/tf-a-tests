@@ -40,21 +40,22 @@
  */
 
 #if !(defined(__LINKER__) || defined(__ASSEMBLY__))
- /* Base address of each section */
- IMPORT_SYM(uintptr_t, __REALM_PAYLOAD_START__, REALM_IMAGE_BASE);
- IMPORT_SYM(uintptr_t, __REALM_POOL_START__, PAGE_POOL_BASE);
- IMPORT_SYM(uintptr_t, __REALM_POOL_END__, PAGE_POOL_END);
-#define NS_REALM_SHARED_MEM_BASE	(PAGE_POOL_BASE + (PAGE_POOL_MAX_SIZE * MAX_REALM_COUNT))
+/* Base address of each section */
+IMPORT_SYM(uintptr_t, __REALM_PAYLOAD_START__, REALM_IMAGE_BASE);
+IMPORT_SYM(uintptr_t, __REALM_POOL_START__, PAGE_POOL_BASE);
+IMPORT_SYM(uintptr_t, __REALM_POOL_END__, PAGE_POOL_END);
+#define NS_REALM_SHARED_MEM_BASE \
+	(PAGE_POOL_BASE + (PAGE_POOL_MAX_SIZE * MAX_REALM_COUNT))
 #endif
 
 #ifdef ENABLE_REALM_PAYLOAD_TESTS
- /* 1MB for shared buffer between Realm and Host */
- #define NS_REALM_SHARED_MEM_SIZE	U(0x100000)
- /* 3MB of memory used as a pool for realm's objects creation */
- #define PAGE_POOL_MAX_SIZE		U(0x300000)
+/* 1MB for shared buffer between Realm and Host */
+#define NS_REALM_SHARED_MEM_SIZE U(0x100000)
+/* 3MB of memory used as a pool for realm's objects creation */
+#define PAGE_POOL_MAX_SIZE U(0x300000)
 #else
- #define NS_REALM_SHARED_MEM_SIZE       U(0x0)
- #define PAGE_POOL_MAX_SIZE             U(0x0)
+#define NS_REALM_SHARED_MEM_SIZE U(0x0)
+#define PAGE_POOL_MAX_SIZE U(0x0)
 #endif
 
 #endif /* HOST_REALM_MEM_LAYOUT_H */

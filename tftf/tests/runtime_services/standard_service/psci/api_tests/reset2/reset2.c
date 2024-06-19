@@ -6,17 +6,17 @@
 
 #include <psci.h>
 #include <stdlib.h>
+
 #include <test_helpers.h>
 #include <tftf_lib.h>
 #include <xlat_tables_defs.h>
 #include <xlat_tables_v2.h>
 
-#define SENTINEL		0x55
-#define INVALID_ARCH_RESET	0x00000001
-#define INVALID_VENDOR_RESET	0x80000002
-#define MEM_PROTECT_ENABLE	1
-#define MEM_PROTECT_DISABLE	0
-
+#define SENTINEL 0x55
+#define INVALID_ARCH_RESET 0x00000001
+#define INVALID_VENDOR_RESET 0x80000002
+#define MEM_PROTECT_ENABLE 1
+#define MEM_PROTECT_DISABLE 0
 
 /*
  * Test warm reset using PSCI RESET2 call (parameter 0)
@@ -26,7 +26,7 @@
  */
 static test_result_t reset2_warm_helper(void *arg)
 {
-	smc_args args = { SMC_PSCI_RESET2, 0};
+	smc_args args = {SMC_PSCI_RESET2, 0};
 	unsigned char *sentinel = arg;
 	unsigned char value;
 
@@ -64,11 +64,13 @@ test_result_t reset2_warm(void)
 
 	sentinel = psci_mem_prot_get_sentinel();
 	if (sentinel == NULL) {
-		tftf_testcase_printf("Could not find a suitable address for the sentinel.\n");
+		tftf_testcase_printf(
+			"Could not find a suitable address for the "
+			"sentinel.\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
-	args.addr = (uintptr_t) sentinel & ~PAGE_SIZE_MASK;
+	args.addr = (uintptr_t)sentinel & ~PAGE_SIZE_MASK;
 	args.size = PAGE_SIZE;
 	args.attr = MT_RW_DATA;
 	args.arg = sentinel;
@@ -121,7 +123,7 @@ static test_result_t reset2_mem_protect_helper(void *arg)
 {
 	int ret;
 	unsigned char value;
-	smc_args args = { SMC_PSCI_RESET2, 0};
+	smc_args args = {SMC_PSCI_RESET2, 0};
 	unsigned char *sentinel = arg;
 
 	assert(sentinel != NULL);
@@ -173,11 +175,13 @@ test_result_t reset2_mem_protect(void)
 
 	sentinel = psci_mem_prot_get_sentinel();
 	if (sentinel == NULL) {
-		tftf_testcase_printf("Could not find a suitable address for the sentinel.\n");
+		tftf_testcase_printf(
+			"Could not find a suitable address for the "
+			"sentinel.\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
-	args.addr = (uintptr_t) sentinel & ~PAGE_SIZE_MASK;
+	args.addr = (uintptr_t)sentinel & ~PAGE_SIZE_MASK;
 	args.size = PAGE_SIZE;
 	args.attr = MT_RW_DATA;
 	args.arg = sentinel;

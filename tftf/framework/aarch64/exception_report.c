@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <debug.h>
+#include <platform.h>
 #include <stdint.h>
 #include <stdio.h>
 
 #include <arch_helpers.h>
-#include <debug.h>
-#include <platform.h>
 #include <utils_def.h>
 
 /* We save x0-x30. */
@@ -25,7 +25,7 @@ struct cpu_context {
  * Read the EL1 or EL2 version of a register, depending on the current exception
  * level.
  */
-#define read_sysreg(_name)			\
+#define read_sysreg(_name) \
 	(IS_IN_EL2() ? read_##_name##_el2() : read_##_name##_el1())
 
 void __dead2 print_exception(const struct cpu_context *ctx)
@@ -45,8 +45,8 @@ void __dead2 print_exception(const struct cpu_context *ctx)
 	printf("  MPIDR=0x%lx\n", mpid);
 	printf("  ESR=0x%lx  ELR=0x%lx  FAR=0x%lx\n", read_sysreg(esr),
 	       read_sysreg(elr), read_sysreg(far));
-	printf("  SCTLR=0x%lx  SPSR=0x%lx  DAIF=0x%lx\n",
-	       read_sysreg(sctlr), read_sysreg(spsr), read_daif());
+	printf("  SCTLR=0x%lx  SPSR=0x%lx  DAIF=0x%lx\n", read_sysreg(sctlr),
+	       read_sysreg(spsr), read_daif());
 
 	/* Dump general-purpose registers. */
 	printf("General-purpose registers:\n");

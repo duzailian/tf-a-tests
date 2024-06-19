@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <debug.h>
 #include <tftf.h>
 
+#include <arch_helpers.h>
 
 void tftf_arch_setup(void)
 {

@@ -5,13 +5,14 @@
  *
  */
 
-#include <stdio.h>
-#include <arch_features.h>
 #include <assert.h>
 #include <debug.h>
 #include <pauth.h>
-#include <realm_rsi.h>
+#include <stdio.h>
 #include <sync.h>
+
+#include <arch_features.h>
+#include <realm_rsi.h>
 
 static volatile bool set_cmd_done[MAX_REC_COUNT];
 static uint128_t pauth_keys_before[MAX_REC_COUNT][NUM_KEYS];
@@ -45,10 +46,10 @@ bool test_realm_pauth_fault(void)
 	register_custom_sync_exception_handler(exception_handler);
 	realm_printf("overwrite LR to generate fault.\n");
 	__asm__("mov	x17, x30;	"
-		"mov	x30, %0;	"	/* overwite LR. */
+		"mov	x30, %0;	" /* overwite LR. */
 		"isb;			"
 		"autiasp;		"
-		"ret;			"	/* fault on return.  */
+		"ret;			" /* fault on return.  */
 		:
 		: "r"(ptr));
 
@@ -84,7 +85,8 @@ bool test_realm_pauth_check_cmd(void)
 	if (!is_armv8_3_pauth_present() || !set_cmd_done[rec]) {
 		return false;
 	}
-	ret = pauth_test_lib_compare_template(pauth_keys_before[rec], pauth_keys_after[rec]);
+	ret = pauth_test_lib_compare_template(pauth_keys_before[rec],
+					      pauth_keys_after[rec]);
 	realm_printf("Pauth key comparison ret=%d\n", ret);
 	return ret;
 }

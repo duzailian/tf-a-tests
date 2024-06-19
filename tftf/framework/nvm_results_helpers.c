@@ -8,14 +8,15 @@
  * The include of stdarg.h is not in alphabetical order because it needs to be
  * included before stdio.h. Fixing this would require further changes.
  */
-#include <arch_helpers.h>
-#include <stdarg.h>
 #include <assert.h>
 #include <debug.h>
 #include <nvm.h>
 #include <platform.h>
 #include <spinlock.h>
+#include <stdarg.h>
 #include <stdio.h>
+
+#include <arch_helpers.h>
 
 /*
  * Temporary buffer to store 1 test output.
@@ -35,23 +36,22 @@ static unsigned int testcase_output_idx;
 static spinlock_t testcase_output_lock;
 
 static tftf_state_t tftf_init_state = {
-	.build_message		= "",
-	.test_to_run		= {
-		.testsuite_idx	= 0,
-		.testcase_idx	= 0,
-	},
-	.test_progress		= TEST_READY,
-	.testcase_buffer	= { 0 },
-	.testcase_results	= {
+	.build_message = "",
+	.test_to_run =
 		{
-			.result		= TEST_RESULT_NA,
-			.duration	= 0,
-			.output_offset	= 0,
-			.output_size	= 0,
-		}
-	},
-	.result_buffer_size	= 0,
-	.result_buffer		= NULL,
+			.testsuite_idx = 0,
+			.testcase_idx = 0,
+		},
+	.test_progress = TEST_READY,
+	.testcase_buffer = {0},
+	.testcase_results = {{
+		.result = TEST_RESULT_NA,
+		.duration = 0,
+		.output_offset = 0,
+		.output_size = 0,
+	}},
+	.result_buffer_size = 0,
+	.result_buffer = NULL,
 };
 
 unsigned int new_test_session(void)
@@ -69,7 +69,7 @@ unsigned int new_test_session(void)
 	 * executing.
 	 */
 	tftf_nvm_read(TFTF_STATE_OFFSET(build_message), saved_build_msg,
-		BUILD_MESSAGE_SIZE);
+		      BUILD_MESSAGE_SIZE);
 	return !!strncmp(build_message, saved_build_msg, BUILD_MESSAGE_SIZE);
 }
 
@@ -78,7 +78,8 @@ STATUS tftf_init_nvm(void)
 	INFO("Initialising NVM\n");
 
 	/* Copy the build message to identify the TFTF */
-	strncpy(tftf_init_state.build_message, build_message, BUILD_MESSAGE_SIZE);
+	strncpy(tftf_init_state.build_message, build_message,
+		BUILD_MESSAGE_SIZE);
 	return tftf_nvm_write(0, &tftf_init_state, sizeof(tftf_init_state));
 }
 
@@ -91,34 +92,34 @@ STATUS tftf_clean_nvm(void)
 	 * it runs.
 	 */
 	return tftf_nvm_write(TFTF_STATE_OFFSET(build_message),
-			&corrupt_build_message,
-			sizeof(corrupt_build_message));
+			      &corrupt_build_message,
+			      sizeof(corrupt_build_message));
 }
 
 STATUS tftf_set_test_to_run(const test_ref_t test_to_run)
 {
 	return tftf_nvm_write(TFTF_STATE_OFFSET(test_to_run), &test_to_run,
-			sizeof(test_to_run));
+			      sizeof(test_to_run));
 }
 
 STATUS tftf_get_test_to_run(test_ref_t *test_to_run)
 {
 	assert(test_to_run != NULL);
 	return tftf_nvm_read(TFTF_STATE_OFFSET(test_to_run), test_to_run,
-			sizeof(*test_to_run));
+			     sizeof(*test_to_run));
 }
 
 STATUS tftf_set_test_progress(test_progress_t test_progress)
 {
 	return tftf_nvm_write(TFTF_STATE_OFFSET(test_progress), &test_progress,
-			sizeof(test_progress));
+			      sizeof(test_progress));
 }
 
 STATUS tftf_get_test_progress(test_progress_t *test_progress)
 {
 	assert(test_progress != NULL);
 	return tftf_nvm_read(TFTF_STATE_OFFSET(test_progress), test_progress,
-			sizeof(*test_progress));
+			     sizeof(*test_progress));
 }
 
 STATUS tftf_testcase_set_result(const test_case_t *testcase,
@@ -141,7 +142,7 @@ STATUS tftf_testcase_set_result(const test_case_t *testcase,
 	if (test_result.output_size != 0) {
 		/* Get the size of the buffer containing all tests outputs */
 		status = tftf_nvm_read(TFTF_STATE_OFFSET(result_buffer_size),
-				&result_buffer_size, sizeof(unsigned));
+				       &result_buffer_size, sizeof(unsigned));
 		if (status != STATUS_SUCCESS)
 			goto reset_test_output;
 
@@ -165,9 +166,10 @@ STATUS tftf_testcase_set_result(const test_case_t *testcase,
 	}
 
 	/* Write the test result into NVM */
-	status = tftf_nvm_write(TFTF_STATE_OFFSET(testcase_results) +
-				(testcase->index * sizeof(TESTCASE_RESULT)),
-				&test_result, sizeof(TESTCASE_RESULT));
+	status = tftf_nvm_write(
+		TFTF_STATE_OFFSET(testcase_results) +
+			(testcase->index * sizeof(TESTCASE_RESULT)),
+		&test_result, sizeof(TESTCASE_RESULT));
 
 reset_test_output:
 	/* Reset test output buffer for the next test */
@@ -178,8 +180,7 @@ reset_test_output:
 }
 
 STATUS tftf_testcase_get_result(const test_case_t *testcase,
-				TESTCASE_RESULT *result,
-				char *test_output)
+				TESTCASE_RESULT *result, char *test_output)
 {
 	STATUS status;
 	unsigned output_size;
@@ -188,9 +189,10 @@ STATUS tftf_testcase_get_result(const test_case_t *testcase,
 	assert(result != NULL);
 	assert(test_output != NULL);
 
-	status = tftf_nvm_read(TFTF_STATE_OFFSET(testcase_results)
-			+ (testcase->index * sizeof(TESTCASE_RESULT)),
-			result, sizeof(TESTCASE_RESULT));
+	status = tftf_nvm_read(
+		TFTF_STATE_OFFSET(testcase_results) +
+			(testcase->index * sizeof(TESTCASE_RESULT)),
+		result, sizeof(TESTCASE_RESULT));
 	if (status != STATUS_SUCCESS) {
 		return status;
 	}
@@ -198,9 +200,9 @@ STATUS tftf_testcase_get_result(const test_case_t *testcase,
 	output_size = result->output_size;
 
 	if (output_size != 0) {
-		status = tftf_nvm_read(TFTF_STATE_OFFSET(result_buffer)
-				+ result->output_offset,
-				test_output, output_size);
+		status = tftf_nvm_read(TFTF_STATE_OFFSET(result_buffer) +
+					       result->output_offset,
+				       test_output, output_size);
 		if (status != STATUS_SUCCESS)
 			return status;
 	}
@@ -221,16 +223,18 @@ int tftf_testcase_printf(const char *format, ...)
 	assert(sizeof(testcase_output) >= testcase_output_idx);
 	available = sizeof(testcase_output) - testcase_output_idx;
 	if (available == 0) {
-		ERROR("%s: Output buffer is full ; the string won't be printed.\n",
-			__func__);
-		ERROR("%s: Consider increasing TESTCASE_OUTPUT_MAX_SIZE value.\n",
-			__func__);
+		ERROR("%s: Output buffer is full ; the string won't be "
+		      "printed.\n",
+		      __func__);
+		ERROR("%s: Consider increasing TESTCASE_OUTPUT_MAX_SIZE "
+		      "value.\n",
+		      __func__);
 		goto release_lock;
 	}
 
 	va_start(ap, format);
 	written = vsnprintf(&testcase_output[testcase_output_idx], available,
-			format, ap);
+			    format, ap);
 	va_end(ap);
 
 	if (written < 0) {
@@ -249,9 +253,10 @@ int tftf_testcase_printf(const char *format, ...)
 	 */
 	if (written >= available) {
 		ERROR("%s: String has been truncated (%u/%u bytes written).\n",
-			__func__, available - 1, written);
-		ERROR("%s: Consider increasing TESTCASE_OUTPUT_MAX_SIZE value.\n",
-			__func__);
+		      __func__, available - 1, written);
+		ERROR("%s: Consider increasing TESTCASE_OUTPUT_MAX_SIZE "
+		      "value.\n",
+		      __func__);
 		written = available - 1;
 	}
 

@@ -30,8 +30,8 @@ void *transfer_list_entry_data(struct transfer_list_entry *entry)
  * Compliant to 2.4.1 of Firmware handoff specification (v0.9)
  * Return transfer list operation status code
  ******************************************************************************/
-enum transfer_list_ops
-transfer_list_check_header(const struct transfer_list_header *tl)
+enum transfer_list_ops transfer_list_check_header(
+	const struct transfer_list_header *tl)
 {
 	uint8_t byte_sum = 0U;
 	uint8_t *b = (uint8_t *)tl;

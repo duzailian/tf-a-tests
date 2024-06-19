@@ -7,8 +7,9 @@
 #ifndef XLAT_TABLES_PRIVATE_H
 #define XLAT_TABLES_PRIVATE_H
 
-#include <platform_def.h>
 #include <stdbool.h>
+
+#include <platform_def.h>
 #include <xlat_tables_defs.h>
 
 #if PLAT_XLAT_TABLES_DYNAMIC
@@ -16,7 +17,7 @@
  * Private shifts and masks to access fields of an mmap attribute
  */
 /* Dynamic or static */
-#define MT_DYN_SHIFT		U(31)
+#define MT_DYN_SHIFT U(31)
 
 /*
  * Memory mapping private attributes
@@ -31,8 +32,8 @@
  *
  * Static regions can overlap each other, dynamic regions can't.
  */
-#define MT_STATIC	(U(0) << MT_DYN_SHIFT)
-#define MT_DYNAMIC	(U(1) << MT_DYN_SHIFT)
+#define MT_STATIC (U(0) << MT_DYN_SHIFT)
+#define MT_DYNAMIC (U(1) << MT_DYN_SHIFT)
 
 #endif /* PLAT_XLAT_TABLES_DYNAMIC */
 

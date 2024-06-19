@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <debug.h>
+#include <mmio.h>
+#include <smccc.h>
 
 #include <arch_helpers.h>
 #include <arm_arch_svc.h>
-#include <debug.h>
-#include <mmio.h>
 #include <tftf_lib.h>
-#include <smccc.h>
 #include <xlat_tables_v2.h>
 
-#define TEST_ADDRESS	UL(0x7FFFF000)
+#define TEST_ADDRESS UL(0x7FFFF000)
 
 /*
  * Purpose of these tests is to ensure EA from lower EL trap/handled in EL3.
@@ -32,23 +32,24 @@ test_result_t test_inject_syncEA(void)
 	int rc;
 
 	rc = mmap_add_dynamic_region(TEST_ADDRESS, TEST_ADDRESS, PAGE_SIZE,
-						MT_DEVICE | MT_RO | MT_NS);
+				     MT_DEVICE | MT_RO | MT_NS);
 	if (rc != 0) {
 		tftf_testcase_printf("%d: mapping address %lu(%d) failed\n",
-				      __LINE__, TEST_ADDRESS, rc);
+				     __LINE__, TEST_ADDRESS, rc);
 		return TEST_RESULT_FAIL;
 	}
 
 	/*
-	 * Try reading invalid address, which will cause an exception to be handled in EL3.
-	 * EL3 after handling the exception returns to the next instruction to avoid
-	 * continous exceptions.
+	 * Try reading invalid address, which will cause an exception to be
+	 * handled in EL3. EL3 after handling the exception returns to the next
+	 * instruction to avoid continous exceptions.
 	 */
 	rc = mmio_read_32(TEST_ADDRESS);
 
 	rc = mmap_remove_dynamic_region(TEST_ADDRESS, PAGE_SIZE);
 	if (rc != 0) {
-		tftf_testcase_printf("%d: mmap_remove_dynamic_region() = %d\n", __LINE__, rc);
+		tftf_testcase_printf("%d: mmap_remove_dynamic_region() = %d\n",
+				     __LINE__, rc);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -64,10 +65,10 @@ test_result_t test_inject_serror(void)
 	int rc;
 
 	rc = mmap_add_dynamic_region(TEST_ADDRESS, TEST_ADDRESS, PAGE_SIZE,
-						MT_DEVICE | MT_RW | MT_NS);
+				     MT_DEVICE | MT_RW | MT_NS);
 	if (rc != 0) {
 		tftf_testcase_printf("%d: mapping address %lu(%d) failed\n",
-				      __LINE__, TEST_ADDRESS, rc);
+				     __LINE__, TEST_ADDRESS, rc);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -76,7 +77,8 @@ test_result_t test_inject_serror(void)
 
 	rc = mmap_remove_dynamic_region(TEST_ADDRESS, PAGE_SIZE);
 	if (rc != 0) {
-		tftf_testcase_printf("%d: mmap_remove_dynamic_region() = %d\n", __LINE__, rc);
+		tftf_testcase_printf("%d: mmap_remove_dynamic_region() = %d\n",
+				     __LINE__, rc);
 		return TEST_RESULT_FAIL;
 	}
 

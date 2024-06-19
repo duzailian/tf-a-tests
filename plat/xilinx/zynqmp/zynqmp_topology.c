@@ -7,20 +7,16 @@
 #include <arch.h>
 #include <assert.h>
 #include <mmio.h>
+#include <stddef.h>
+
 #include <plat_topology.h>
 #include <platform_def.h>
-#include <stddef.h>
 #include <tftf_lib.h>
 
 static const struct {
 	unsigned int cluster_id;
 	unsigned int cpu_id;
-} zynqmp_cores[PLATFORM_CORE_COUNT] = {
-	{ 0, 0 },
-	{ 0, 1 },
-	{ 0, 2 },
-	{ 0, 3 }
-};
+} zynqmp_cores[PLATFORM_CORE_COUNT] = {{0, 0}, {0, 1}, {0, 2}, {0, 3}};
 
 static const unsigned char zynqmp_power_domain_tree_desc[] = {
 	/* Number of root nodes */
@@ -28,8 +24,7 @@ static const unsigned char zynqmp_power_domain_tree_desc[] = {
 	/* Number of children of root node */
 	PLATFORM_CLUSTER_COUNT,
 	/* Number of children for the cluster */
-	PLATFORM_CORES_PER_CLUSTER
-};
+	PLATFORM_CORES_PER_CLUSTER};
 
 const unsigned char *tftf_plat_get_pwr_domain_tree_desc(void)
 {

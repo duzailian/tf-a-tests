@@ -4,12 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <sdei.h>
+#include <timer.h>
+
 #include <fuzz_helper.h>
 #include <power_management.h>
-#include <sdei.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
-#include <timer.h>
 
 #ifndef tsp_add_op_funcid
 #define tsp_add_op_funcid 0

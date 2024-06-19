@@ -4,26 +4,26 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <timer.h>
+
 #include <cactus_test_cmds.h>
 #include <ffa_endpoints.h>
 #include <ffa_helpers.h>
 #include <spm_test_helpers.h>
 #include <test_helpers.h>
-#include <timer.h>
 
 static volatile int timer_irq_received;
 
-#define SENDER		HYP_ID
-#define RECEIVER	SP_ID(1)
-#define RECEIVER_2	SP_ID(2)
-#define RECEIVER_3	SP_ID(3)
-#define TIMER_DURATION	50U
-#define SLEEP_TIME	100U
-#define SLEEP_TIME_FWD	200U
+#define SENDER HYP_ID
+#define RECEIVER SP_ID(1)
+#define RECEIVER_2 SP_ID(2)
+#define RECEIVER_3 SP_ID(3)
+#define TIMER_DURATION 50U
+#define SLEEP_TIME 100U
+#define SLEEP_TIME_FWD 200U
 
 static const struct ffa_uuid expected_sp_uuids[] = {
-		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}
-	};
+	{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}};
 
 /*
  * ISR for the timer interrupt. Update a global variable to check it has been
@@ -254,8 +254,8 @@ test_result_t test_ffa_ns_interrupt_signaled(void)
  * 1. Register a handler for the non-secure timer interrupt. Program it to fire
  *    in a certain time.
  *
- * 2. Send a direct request to the first SP(i.e., SP(1)) to forward sleep command to
- *    the second SP(i.e., SP(3)).
+ * 2. Send a direct request to the first SP(i.e., SP(1)) to forward sleep
+ * command to the second SP(i.e., SP(3)).
  *
  * 3. While the second SP is running the busy loop, non-secure interrupt would
  *    trigger during this time.
@@ -273,17 +273,18 @@ test_result_t test_ffa_ns_interrupt_signaled(void)
  * 7. The first Cactus SP sends the managed exit direct response to TFTF through
  *    its interrupt handler for managed exit.
  *
- * 8. TFTF checks the return value in the direct message response from the first SP
- *    and ensures it is managed signal interrupt ID.
+ * 8. TFTF checks the return value in the direct message response from the first
+ * SP and ensures it is managed signal interrupt ID.
  *
  * 9. Check whether the pending non-secure timer interrupt successfully got
  *    handled in the normal world by TFTF.
  *
- * 10. Send a dummy direct message request command to resume the first SP's execution.
+ * 10. Send a dummy direct message request command to resume the first SP's
+ * execution.
  *
- * 11. The first SP direct message request returns with managed exit response. It
- *     then sends a dummy direct message request command to resume the second SP's
- *     execution.
+ * 11. The first SP direct message request returns with managed exit response.
+ * It then sends a dummy direct message request command to resume the second
+ * SP's execution.
  *
  * 12. The second SP resumes in the sleep routine and sends a direct message
  *     response to the first SP.
@@ -361,15 +362,15 @@ test_result_t test_ffa_ns_interrupt_managed_exit_chained(void)
 /*
  * @Test_Aim@ This test exercises the following scenario: Managed exit is
  * supported by the first SP but not by the second SP in a call chain. A
- * non-secure interrupt triggers while the second SP is processing a direct request
- * message sent by the first SP. We choose SP(1) as the first SP and SP(2) as
- * the second SP.
+ * non-secure interrupt triggers while the second SP is processing a direct
+ * request message sent by the first SP. We choose SP(1) as the first SP and
+ * SP(2) as the second SP.
  *
  * 1. Register a handler for the non-secure timer interrupt. Program it to fire
  *    in a certain time.
  *
- * 2. Send a direct request to the first SP(i.e., SP(1)) to forward sleep command to
- *    the second SP(i.e., SP(2)).
+ * 2. Send a direct request to the first SP(i.e., SP(1)) to forward sleep
+ * command to the second SP(i.e., SP(2)).
  *
  * 3. While the second SP is running the busy loop, non-secure interrupt would
  *    trigger during this time.
@@ -384,13 +385,14 @@ test_result_t test_ffa_ns_interrupt_managed_exit_chained(void)
  * 6. The first Cactus SP sends the managed exit direct response to TFTF through
  *    its interrupt handler for managed exit.
  *
- * 7. TFTF checks the return value in the direct message response from the first SP
- *    and ensures it is managed signal interrupt ID.
+ * 7. TFTF checks the return value in the direct message response from the first
+ * SP and ensures it is managed signal interrupt ID.
  *
  * 8. Check whether the pending non-secure timer interrupt successfully got
  *    handled in the normal world by TFTF.
  *
- * 9. Send a dummy direct message request command to resume the first SP's execution.
+ * 9. Send a dummy direct message request command to resume the first SP's
+ * execution.
  *
  * 10. The first SP direct message request returns with FFA_INTERRUPT status. It
  *     then resumes the second SP's execution using FFA_RUN ABI.
@@ -470,15 +472,16 @@ test_result_t test_ffa_SPx_ME_SPy_signaled(void)
 
 /*
  * @Test_Aim@ This test exercises the following scenario: Managed exit is
- * supported by the second SP but not by the first SP in a call chain. A non-secure
- * interrupt triggers while the second SP is processing a direct request message
- * sent by the first SP. We choose SP(2) as the first SP and SP(1) as the second SP.
+ * supported by the second SP but not by the first SP in a call chain. A
+ * non-secure interrupt triggers while the second SP is processing a direct
+ * request message sent by the first SP. We choose SP(2) as the first SP and
+ * SP(1) as the second SP.
  *
  * 1. Register a handler for the non-secure timer interrupt. Program it to fire
  *    in a certain time.
  *
- * 2. Send a direct request to the first SP(i.e., SP(2)) to forward sleep command to
- *    the second SP(i.e., SP(1)).
+ * 2. Send a direct request to the first SP(i.e., SP(2)) to forward sleep
+ * command to the second SP(i.e., SP(1)).
  *
  * 3. While the second SP is running the busy loop, non-secure interrupt would
  *    trigger during this time.
@@ -504,9 +507,9 @@ test_result_t test_ffa_SPx_ME_SPy_signaled(void)
  *
  * 9. Resume the first Cactus SP using FFA_RUN ABI.
  *
- * 10. The first SP direct message request returns with managed exit response. It
- *     then sends a dummy direct message request command to resume the second SP's
- *     execution.
+ * 10. The first SP direct message request returns with managed exit response.
+ * It then sends a dummy direct message request command to resume the second
+ * SP's execution.
  *
  * 11. The second SP resumes in the sleep routine and sends a direct message
  *     response to the first SP.
@@ -532,8 +535,8 @@ test_result_t test_ffa_SPx_signaled_SPy_ME(void)
 	}
 
 	/*
-	 * Send a request to the first Cactus SP to send request to another Cactus
-	 * SP to sleep.
+	 * Send a request to the first Cactus SP to send request to another
+	 * Cactus SP to sleep.
 	 */
 	VERBOSE("Forward sleep command\n");
 	ret_values = cactus_fwd_sleep_cmd(SENDER, RECEIVER_2, RECEIVER,

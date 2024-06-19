@@ -11,11 +11,11 @@
 #include "nfifo.h"
 
 #ifdef SMC_FUZZ_TMALLOC
-#define GENMALLOC(x)	malloc((x))
-#define GENFREE(x)	free((x))
+#define GENMALLOC(x) malloc((x))
+#define GENFREE(x) free((x))
 #else
-#define GENMALLOC(x)	smcmalloc((x), mmod)
-#define GENFREE(x)	smcfree((x), mmod)
+#define GENMALLOC(x) smcmalloc((x), mmod)
+#define GENFREE(x) smcfree((x), mmod)
 #endif
 
 /*
@@ -40,10 +40,12 @@ void pushnme(char *nme, struct nfifo *nf, struct memmod *mmod)
 			nf->thent += NFIFO_Q_THRESHOLD;
 			tnme = GENMALLOC(nf->thent * sizeof(char *));
 			for (unsigned int x = 0; x < nf->nent; x++) {
-				tnme[x] = GENMALLOC(1 * sizeof(char[MAX_NAME_CHARS]));
+				tnme[x] = GENMALLOC(
+					1 * sizeof(char[MAX_NAME_CHARS]));
 				strlcpy(tnme[x], nf->lnme[x], MAX_NAME_CHARS);
 			}
-			tnme[nf->nent] = GENMALLOC(1 * sizeof(char[MAX_NAME_CHARS]));
+			tnme[nf->nent] =
+				GENMALLOC(1 * sizeof(char[MAX_NAME_CHARS]));
 			strlcpy(tnme[nf->nent], nme, MAX_NAME_CHARS);
 			for (unsigned int x = 0; x < nf->nent; x++) {
 				GENFREE(nf->lnme[x]);
@@ -51,7 +53,8 @@ void pushnme(char *nme, struct nfifo *nf, struct memmod *mmod)
 			GENFREE(nf->lnme);
 			nf->lnme = tnme;
 		} else {
-			nf->lnme[nf->nent] = GENMALLOC(1 * sizeof(char[MAX_NAME_CHARS]));
+			nf->lnme[nf->nent] =
+				GENMALLOC(1 * sizeof(char[MAX_NAME_CHARS]));
 			strlcpy(nf->lnme[nf->nent], nme, MAX_NAME_CHARS);
 		}
 		nf->nent++;

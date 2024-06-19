@@ -6,18 +6,17 @@
 
 #include <debug.h>
 #include <events.h>
+#include <platform.h>
+#include <sdei.h>
+
+#include "include/tegra194_ras.h"
 #include <lib/irq.h>
 #include <power_management.h>
-#include <sdei.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
 
-#include <platform.h>
-
-#include "include/tegra194_ras.h"
-
 /* Macro to indicate CPU to start an action */
-#define START				U(0xAA55)
+#define START U(0xAA55)
 
 /* Global flag to indicate that a fault was received */
 static volatile uint64_t fault_received;
@@ -26,8 +25,8 @@ static volatile uint64_t fault_received;
 extern int tegra194_serror_sdei_event_handler(int ev, uint64_t arg);
 
 /* NVIDIA Pseudo fault generation registers */
-#define T194_ERXPFGCTL_EL1		S3_0_C15_C1_4
-#define T194_ERXPFGCDN_EL1		S3_0_C15_C1_6
+#define T194_ERXPFGCTL_EL1 S3_0_C15_C1_4
+#define T194_ERXPFGCDN_EL1 S3_0_C15_C1_6
 DEFINE_RENAME_SYSREG_RW_FUNCS(erxpfgctl_el1, T194_ERXPFGCTL_EL1)
 DEFINE_RENAME_SYSREG_RW_FUNCS(erxpfgcdn_el1, T194_ERXPFGCDN_EL1)
 
@@ -39,30 +38,25 @@ CCPLEX_RAS_NODE_LIST(DEFINE_ONE_RAS_NODE);
 
 /* Instantiate RAS node groups */
 static __unused struct ras_aux_data per_core_ras_group[] = {
-	PER_CORE_RAS_GROUP_NODES
-};
+	PER_CORE_RAS_GROUP_NODES};
 
 static __unused struct ras_aux_data per_cluster_ras_group[] = {
-	PER_CLUSTER_RAS_GROUP_NODES
-};
+	PER_CLUSTER_RAS_GROUP_NODES};
 
 static __unused struct ras_aux_data scf_l3_ras_group[] = {
-	SCF_L3_BANK_RAS_GROUP_NODES
-};
+	SCF_L3_BANK_RAS_GROUP_NODES};
 
 static __unused struct ras_aux_data ccplex_ras_group[] = {
-	CCPLEX_RAS_GROUP_NODES
-};
+	CCPLEX_RAS_GROUP_NODES};
 
 /*
  * we have same probe and handler for each error record group, use a macro to
  * simply the record definition.
  */
-#define ADD_ONE_ERR_GROUP(errselr_start, group)					\
-	{									\
-		.sysreg.idx_start = (errselr_start),				\
-		.sysreg.num_idx = ARRAY_SIZE((group)),				\
-		.aux_data = (group)						\
+#define ADD_ONE_ERR_GROUP(errselr_start, group)                            \
+	{                                                                  \
+		.sysreg.idx_start = (errselr_start),                       \
+		.sysreg.num_idx = ARRAY_SIZE((group)), .aux_data = (group) \
 	}
 
 /* RAS error record group information */
@@ -114,7 +108,8 @@ static struct err_record_info tegra194_ras_records[] = {
 
 static void test_ras_inject_serror(uint32_t errselr_el1, uint64_t pfg_ctlr)
 {
-	unsigned int core_pos = platform_get_core_pos(read_mpidr_el1() & MPID_MASK);
+	unsigned int core_pos =
+		platform_get_core_pos(read_mpidr_el1() & MPID_MASK);
 
 	/*
 	 * The per-cluster frequency monitoring nodes should be accessed from
@@ -122,7 +117,8 @@ static void test_ras_inject_serror(uint32_t errselr_el1, uint64_t pfg_ctlr)
 	 * 0x201 should be accessed from CPUs in cluster 0, nodes 0x210 and
 	 * 0x211 should be accessed from CPUs in cluster 1 and so on.
 	 */
-	if (((errselr_el1 & 0xF00) == 0x200) && ((errselr_el1 >> 4) & 0xF) != (core_pos >> 1)) {
+	if (((errselr_el1 & 0xF00) == 0x200) &&
+	    ((errselr_el1 >> 4) & 0xF) != (core_pos >> 1)) {
 		return;
 	}
 
@@ -132,7 +128,7 @@ static void test_ras_inject_serror(uint32_t errselr_el1, uint64_t pfg_ctlr)
 	dmbish();
 
 	INFO("mpidr=0x%lx, errselr_el1=0x%x, pfg_ctlr=0x%llx\n",
-		read_mpidr_el1(), errselr_el1, pfg_ctlr);
+	     read_mpidr_el1(), errselr_el1, pfg_ctlr);
 
 	/* Choose error record */
 	write_errselr_el1(errselr_el1);
@@ -156,7 +152,8 @@ static void test_ras_inject_serror(uint32_t errselr_el1, uint64_t pfg_ctlr)
 	 * frequency monitoring errors which are temporarily disabled when
 	 * detected.
 	 */
-	if (((errselr_el1 & 0xF00) == 0x200) && ((errselr_el1 >> 4) & 0xF) == (core_pos >> 1))
+	if (((errselr_el1 & 0xF00) == 0x200) &&
+	    ((errselr_el1 >> 4) & 0xF) == (core_pos >> 1))
 		write_actlr_el1(read_actlr_el1() | BIT_32(13));
 	else if ((errselr_el1 == 0x404))
 		write_actlr_el1(read_actlr_el1() | BIT_32(13));
@@ -175,12 +172,11 @@ static void generate_uncorrectable_faults(void)
 	VERBOSE("Total Nodes:%u\n", total);
 
 	for (i = 0; i < ARRAY_SIZE(tegra194_ras_records); i++) {
-
 		const struct err_record_info *info = &tegra194_ras_records[i];
 		uint32_t idx_start = info->sysreg.idx_start;
 		uint32_t num_idx = info->sysreg.num_idx;
 		const struct ras_aux_data *aux_data =
-		    (const struct ras_aux_data *)info->aux_data;
+			(const struct ras_aux_data *)info->aux_data;
 
 		for (j = 0; j < num_idx; j++) {
 			uint32_t errselr_el1 = idx_start + j;
@@ -208,7 +204,8 @@ static void generate_uncorrectable_faults(void)
 			for (k = 32; k < 64; k++) {
 				if (uncorr_errs & BIT_64(k)) {
 					VERBOSE("ERR<x>CTLR bit%d\n", k);
-					test_ras_inject_serror(errselr_el1, BIT_64(k));
+					test_ras_inject_serror(errselr_el1,
+							       BIT_64(k));
 				}
 			}
 		}
@@ -234,11 +231,11 @@ static void sdei_register_for_event(int event_id)
 	int64_t ret = 0;
 
 	/* Register SDEI handler */
-	ret = sdei_event_register(event_id, tegra194_serror_sdei_event_handler, 0,
-			SDEI_REGF_RM_PE, read_mpidr_el1());
+	ret = sdei_event_register(event_id, tegra194_serror_sdei_event_handler,
+				  0, SDEI_REGF_RM_PE, read_mpidr_el1());
 	if (ret < 0)
 		tftf_testcase_printf("SDEI event register failed: 0x%llx\n",
-			ret);
+				     ret);
 
 	ret = sdei_event_enable(event_id);
 	if (ret < 0)
@@ -300,16 +297,14 @@ test_result_t test_ras_uncorrectable(void)
 	tftf_platform_watchdog_reset();
 
 	/* Power on all CPUs */
-	for_each_cpu(cpu_node) {
-
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU, it is already powered on */
 		if (cpu_mpid == lead_mpid)
 			continue;
 
-		ret = tftf_cpu_on(cpu_mpid,
-				(uintptr_t) test_cpu_serrors,
-				0);
+		ret = tftf_cpu_on(cpu_mpid, (uintptr_t)test_cpu_serrors, 0);
 		if (ret != PSCI_E_SUCCESS)
 			ret = TEST_RESULT_FAIL;
 	}
@@ -322,7 +317,8 @@ test_result_t test_ras_uncorrectable(void)
 	 * this time because none of them have entered the test yet, hence the
 	 * framework will be misled in thinking the test is finished.
 	 */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (cpu_mpid == lead_mpid)
@@ -336,7 +332,8 @@ test_result_t test_ras_uncorrectable(void)
 	sdei_register_for_event(300);
 
 	/* Ask all CPUs to start the test */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/*
 		 * Except lead CPU, Wait for all cores to be powered off
@@ -364,7 +361,8 @@ test_result_t test_ras_uncorrectable(void)
 	VERBOSE("0x%lx: test complete\n", read_mpidr_el1());
 
 	/* Wait for all CPUs to power off */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/*
 		 * Except lead CPU, Wait for all cores to be powered off
@@ -380,7 +378,8 @@ test_result_t test_ras_uncorrectable(void)
 		dsbish();
 
 		/* Wait for the CPU to actually power off */
-		while (tftf_psci_affinity_info(cpu_mpid, MPIDR_AFFLVL0) != PSCI_STATE_OFF)
+		while (tftf_psci_affinity_info(cpu_mpid, MPIDR_AFFLVL0) !=
+		       PSCI_STATE_OFF)
 			dsbsy();
 	}
 

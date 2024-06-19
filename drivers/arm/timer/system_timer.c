@@ -5,14 +5,15 @@
  */
 
 #include <arch.h>
-#include <arch_helpers.h>
 #include <assert.h>
-#include <drivers/arm/arm_gic.h>
-#include <drivers/arm/gic_v2.h>
-#include <drivers/arm/system_timer.h>
 #include <debug.h>
 #include <irq.h>
 #include <mmio.h>
+
+#include <arch_helpers.h>
+#include <drivers/arm/arm_gic.h>
+#include <drivers/arm/gic_v2.h>
+#include <drivers/arm/system_timer.h>
 
 static uintptr_t g_systimer_base;
 
@@ -45,7 +46,8 @@ int program_systimer(unsigned long time_out_ms)
 		panic();
 
 	VERBOSE("%s : interrupt requested at sys_counter: %llu "
-		"time_out_ms: %ld\n", __func__, count_val, time_out_ms);
+		"time_out_ms: %ld\n",
+		__func__, count_val, time_out_ms);
 
 	return 0;
 }

@@ -6,9 +6,10 @@
 
 #include <debug.h>
 #include <platform.h>
-#include <platform_def.h>
 #include <psci.h>
 #include <tftf.h>
+
+#include <platform_def.h>
 
 static unsigned int pstate_initialized;
 
@@ -41,7 +42,7 @@ void tftf_init_pstate_framework(void)
 		plat_state_ptr[i] = plat_get_state_prop(i);
 		assert(plat_state_ptr[i]);
 
-		for (j = 0; (plat_state_ptr[i]+j)->state_ID != 0; j++)
+		for (j = 0; (plat_state_ptr[i] + j)->state_ID != 0; j++)
 			;
 
 		power_states_per_level[i] = j;
@@ -51,7 +52,7 @@ void tftf_init_pstate_framework(void)
 }
 
 void tftf_set_next_state_id_idx(unsigned int power_level,
-					unsigned int pstate_id_idx[])
+				unsigned int pstate_id_idx[])
 {
 	unsigned int i;
 #if ENABLE_ASSERTIONS
@@ -65,8 +66,9 @@ void tftf_set_next_state_id_idx(unsigned int power_level,
 	 */
 	for (i = 0; i < power_level; i++) {
 		if (pstate_id_idx[i] == PWR_STATE_INIT_INDEX) {
-			for ( ; i <= power_level; i++)
-				assert(pstate_id_idx[i] == PWR_STATE_INIT_INDEX);
+			for (; i <= power_level; i++)
+				assert(pstate_id_idx[i] ==
+				       PWR_STATE_INIT_INDEX);
 		}
 	}
 #endif
@@ -96,7 +98,7 @@ void tftf_set_next_state_id_idx(unsigned int power_level,
 }
 
 void tftf_set_deepest_pstate_idx(unsigned int power_level,
-				unsigned int pstate_id_idx[])
+				 unsigned int pstate_id_idx[])
 {
 	int i;
 
@@ -111,11 +113,10 @@ void tftf_set_deepest_pstate_idx(unsigned int power_level,
 		pstate_id_idx[i] = power_states_per_level[i] - 1;
 }
 
-
 int tftf_get_pstate_vars(unsigned int *test_power_level,
-				unsigned int *test_suspend_type,
-				unsigned int *suspend_state_id,
-				unsigned int pstate_id_idx[])
+			 unsigned int *test_suspend_type,
+			 unsigned int *suspend_state_id,
+			 unsigned int pstate_id_idx[])
 {
 	unsigned int i;
 	int state_id = 0;
@@ -124,15 +125,15 @@ int tftf_get_pstate_vars(unsigned int *test_power_level,
 	int psci_ret = PSCI_E_SUCCESS;
 	const plat_state_prop_t *local_state;
 
-	/* Atleast one entry should be valid to generate correct power state params */
+	/* Atleast one entry should be valid to generate correct power state
+	 * params */
 	assert(pstate_id_idx[0] != PWR_STATE_INIT_INDEX &&
-			pstate_id_idx[0] <= power_states_per_level[0]);
+	       pstate_id_idx[0] <= power_states_per_level[0]);
 
 	suspend_depth = (plat_state_ptr[0] + pstate_id_idx[0])->suspend_depth;
 	suspend_type = (plat_state_ptr[0] + pstate_id_idx[0])->is_pwrdown;
 
 	for (i = 0; i <= PLAT_MAX_PWR_LEVEL; i++) {
-
 		/* Reached all levels with the valid power index values */
 		if (pstate_id_idx[i] == PWR_STATE_INIT_INDEX)
 			break;
@@ -140,7 +141,8 @@ int tftf_get_pstate_vars(unsigned int *test_power_level,
 		assert(pstate_id_idx[i] <= power_states_per_level[i]);
 
 		local_state = plat_state_ptr[i] + pstate_id_idx[i];
-		state_id |= (local_state->state_ID << i * PLAT_LOCAL_PSTATE_WIDTH);
+		state_id |=
+			(local_state->state_ID << i * PLAT_LOCAL_PSTATE_WIDTH);
 
 		if (local_state->is_pwrdown > suspend_type)
 			suspend_type = local_state->is_pwrdown;
@@ -159,11 +161,12 @@ int tftf_get_pstate_vars(unsigned int *test_power_level,
 }
 
 void tftf_set_next_local_state_id_idx(unsigned int power_level,
-						unsigned int pstate_id_idx[])
+				      unsigned int pstate_id_idx[])
 {
 	assert(power_level <= PLAT_MAX_PWR_LEVEL);
 
-	if (pstate_id_idx[power_level] + 1 >= power_states_per_level[power_level]) {
+	if (pstate_id_idx[power_level] + 1 >=
+	    power_states_per_level[power_level]) {
 		pstate_id_idx[power_level] = PWR_STATE_INIT_INDEX;
 		return;
 	}

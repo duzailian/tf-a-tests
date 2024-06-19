@@ -12,4 +12,3 @@
 test_result_t test_corrupt_boot_fip(unsigned int offset);
 
 #endif /* TBB_TEST_INFRA_H_INCLUDED */
-

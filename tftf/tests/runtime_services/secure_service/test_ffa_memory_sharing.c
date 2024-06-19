@@ -4,16 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <debug.h>
+#include <sync.h>
+
 #include "arch_features.h"
 #include "arch_helpers.h"
 #include "ffa_helpers.h"
 #include "ffa_svc.h"
 #include "stdint.h"
 #include "utils_def.h"
-#include <debug.h>
-#include "ffa_helpers.h"
-#include <sync.h>
-
 #include <cactus_test_cmds.h>
 #include <ffa_endpoints.h>
 #include <host_realm_rmi.h>
@@ -32,13 +31,12 @@
  * A number of pages that is large enough that it must take two fragments to
  * share.
  */
-#define FRAGMENTED_SHARE_PAGE_COUNT                                            \
-	(sizeof(struct ffa_memory_region) /                                    \
+#define FRAGMENTED_SHARE_PAGE_COUNT         \
+	(sizeof(struct ffa_memory_region) / \
 	 sizeof(struct ffa_memory_region_constituent))
 
 static const struct ffa_uuid expected_sp_uuids[] = {
-		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}
-	};
+	{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}};
 
 /* Memory section to be used for memory share operations */
 static __aligned(PAGE_SIZE) uint8_t
@@ -63,19 +61,18 @@ static bool check_written_words(uint32_t *ptr, uint32_t word, uint32_t wcount)
 	return true;
 }
 
-static bool test_memory_send_expect_denied(uint32_t mem_func,
-					   void *mem_ptr,
+static bool test_memory_send_expect_denied(uint32_t mem_func, void *mem_ptr,
 					   ffa_id_t borrower)
 {
 	struct ffa_value ret;
 	struct mailbox_buffers mb;
 	struct ffa_memory_region_constituent constituents[] = {
-						{(void *)mem_ptr, 1, 0}
-					};
+		{(void *)mem_ptr, 1, 0}};
 	ffa_memory_handle_t handle;
 
-	const uint32_t constituents_count = sizeof(constituents) /
-			sizeof(struct ffa_memory_region_constituent);
+	const uint32_t constituents_count =
+		sizeof(constituents) /
+		sizeof(struct ffa_memory_region_constituent);
 
 	struct ffa_memory_access receiver =
 		ffa_memory_access_init_permissions_from_mem_func(borrower,
@@ -83,10 +80,9 @@ static bool test_memory_send_expect_denied(uint32_t mem_func,
 
 	GET_TFTF_MAILBOX(mb);
 
-	handle = memory_init_and_send((struct ffa_memory_region *)mb.send,
-					MAILBOX_SIZE, SENDER, &receiver, 1,
-					constituents, constituents_count,
-					mem_func, &ret);
+	handle = memory_init_and_send(
+		(struct ffa_memory_region *)mb.send, MAILBOX_SIZE, SENDER,
+		&receiver, 1, constituents, constituents_count, mem_func, &ret);
 
 	if (handle != FFA_MEMORY_HANDLE_INVALID) {
 		ERROR("Received a valid FF-A memory handle, and that isn't "
@@ -148,8 +144,8 @@ test_result_t test_share_forbidden_ranges(void)
 
 	for (unsigned i = 0; i < 3; i++) {
 		if (!test_memory_send_expect_denied(
-			FFA_MEM_SHARE_SMC64, (void *)forbidden_address[i],
-			RECEIVER)) {
+			    FFA_MEM_SHARE_SMC64, (void *)forbidden_address[i],
+			    RECEIVER)) {
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -175,9 +171,10 @@ test_result_t test_share_forbidden_ranges(void)
  * Hypervisor (sitting in EL2) would relinquish access from EL1/EL0
  * FF-A endpoint at relevant moment.
  */
-static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
-					 struct ffa_memory_region_constituent *constituents,
-					 size_t constituents_count)
+static test_result_t test_memory_send_sp(
+	uint32_t mem_func, ffa_id_t borrower,
+	struct ffa_memory_region_constituent *constituents,
+	size_t constituents_count)
 {
 	struct ffa_value ret;
 	ffa_memory_handle_t handle;
@@ -185,8 +182,7 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 	struct mailbox_buffers mb;
 	unsigned int rme_supported = get_armv9_2_feat_rme_support();
 	const bool check_gpc_fault =
-		mem_func != FFA_MEM_SHARE_SMC64 &&
-		rme_supported != 0U;
+		mem_func != FFA_MEM_SHARE_SMC64 && rme_supported != 0U;
 
 	/* Arbitrarily write 5 words after using memory. */
 	const uint32_t nr_words_to_write = 5;
@@ -196,7 +192,8 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 								 mem_func);
 
 	/***********************************************************************
-	 * Check if SPMC has ffa_version and expected FFA endpoints are deployed.
+	 * Check if SPMC has ffa_version and expected FFA endpoints are
+	 *deployed.
 	 **********************************************************************/
 	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
 
@@ -218,10 +215,9 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 		}
 	}
 
-	handle = memory_init_and_send((struct ffa_memory_region *)mb.send,
-					MAILBOX_SIZE, SENDER, &receiver, 1,
-					constituents, constituents_count,
-					mem_func, &ret);
+	handle = memory_init_and_send(
+		(struct ffa_memory_region *)mb.send, MAILBOX_SIZE, SENDER,
+		&receiver, 1, constituents, constituents_count, mem_func, &ret);
 
 	if (handle == FFA_MEMORY_HANDLE_INVALID) {
 		return TEST_RESULT_FAIL;
@@ -250,7 +246,6 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 	}
 
 	if (mem_func != FFA_MEM_DONATE_SMC64) {
-
 		/* Reclaim memory entirely before checking its state. */
 		if (is_ffa_call_error(ffa_mem_reclaim(handle, 0))) {
 			tftf_testcase_printf("Couldn't reclaim memory\n");
@@ -265,8 +260,7 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 			 * for FFA_MEM_SHARE test.
 			 */
 			if (mem_func == FFA_MEM_SHARE_SMC64 &&
-			    !check_written_words(ptr,
-						 mem_func + 0xFFAU,
+			    !check_written_words(ptr, mem_func + 0xFFAU,
 						 nr_words_to_write)) {
 				ERROR("Fail because of state of memory.\n");
 				return TEST_RESULT_FAIL;
@@ -277,7 +271,8 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 	if (check_gpc_fault) {
 		unregister_custom_sync_exception_handler();
 		if (!get_gpc_abort_triggered()) {
-			ERROR("No exception due to GPC for lend/donate with RME.\n");
+			ERROR("No exception due to GPC for lend/donate with "
+			      "RME.\n");
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -288,11 +283,11 @@ static test_result_t test_memory_send_sp(uint32_t mem_func, ffa_id_t borrower,
 test_result_t test_mem_share_sp(void)
 {
 	struct ffa_memory_region_constituent constituents[] = {
-		{(void *)share_page, 1, 0}
-	};
+		{(void *)share_page, 1, 0}};
 
-	const uint32_t constituents_count = sizeof(constituents) /
-				sizeof(struct ffa_memory_region_constituent);
+	const uint32_t constituents_count =
+		sizeof(constituents) /
+		sizeof(struct ffa_memory_region_constituent);
 
 	return test_memory_send_sp(FFA_MEM_SHARE_SMC64, RECEIVER, constituents,
 				   constituents_count);
@@ -301,12 +296,11 @@ test_result_t test_mem_share_sp(void)
 test_result_t test_mem_lend_sp(void)
 {
 	struct ffa_memory_region_constituent constituents[] = {
-		{(void *)four_share_pages, 4, 0},
-		{(void *)share_page, 1, 0}
-	};
+		{(void *)four_share_pages, 4, 0}, {(void *)share_page, 1, 0}};
 
-	const uint32_t constituents_count = sizeof(constituents) /
-				sizeof(struct ffa_memory_region_constituent);
+	const uint32_t constituents_count =
+		sizeof(constituents) /
+		sizeof(struct ffa_memory_region_constituent);
 
 	return test_memory_send_sp(FFA_MEM_LEND_SMC64, RECEIVER, constituents,
 				   constituents_count);
@@ -315,10 +309,10 @@ test_result_t test_mem_lend_sp(void)
 test_result_t test_mem_donate_sp(void)
 {
 	struct ffa_memory_region_constituent constituents[] = {
-		{(void *)donate_page, 1, 0}
-	};
-	const uint32_t constituents_count = sizeof(constituents) /
-				sizeof(struct ffa_memory_region_constituent);
+		{(void *)donate_page, 1, 0}};
+	const uint32_t constituents_count =
+		sizeof(constituents) /
+		sizeof(struct ffa_memory_region_constituent);
 	return test_memory_send_sp(FFA_MEM_DONATE_SMC64, RECEIVER, constituents,
 				   constituents_count);
 }
@@ -326,33 +320,31 @@ test_result_t test_mem_donate_sp(void)
 test_result_t test_consecutive_donate(void)
 {
 	struct ffa_memory_region_constituent constituents[] = {
-		{(void *)consecutive_donate_page, 1, 0}
-	};
-	const uint32_t constituents_count = sizeof(constituents) /
-				sizeof(struct ffa_memory_region_constituent);
+		{(void *)consecutive_donate_page, 1, 0}};
+	const uint32_t constituents_count =
+		sizeof(constituents) /
+		sizeof(struct ffa_memory_region_constituent);
 
 	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
 
-	test_result_t ret = test_memory_send_sp(FFA_MEM_DONATE_SMC64, SP_ID(1),
-						constituents,
-						constituents_count);
+	test_result_t ret =
+		test_memory_send_sp(FFA_MEM_DONATE_SMC64, SP_ID(1),
+				    constituents, constituents_count);
 
 	if (ret != TEST_RESULT_SUCCESS) {
 		ERROR("Failed at first attempting of sharing.\n");
 		return TEST_RESULT_FAIL;
 	}
 
-	if (!test_memory_send_expect_denied(FFA_MEM_DONATE_SMC64,
-					    consecutive_donate_page,
-					    SP_ID(1))) {
+	if (!test_memory_send_expect_denied(
+		    FFA_MEM_DONATE_SMC64, consecutive_donate_page, SP_ID(1))) {
 		ERROR("Memory was successfully donated again from the NWd, to "
 		      "the same borrower.\n");
 		return TEST_RESULT_FAIL;
 	}
 
-	if (!test_memory_send_expect_denied(FFA_MEM_DONATE_SMC64,
-					    consecutive_donate_page,
-					    SP_ID(2))) {
+	if (!test_memory_send_expect_denied(
+		    FFA_MEM_DONATE_SMC64, consecutive_donate_page, SP_ID(2))) {
 		ERROR("Memory was successfully donated again from the NWd, to "
 		      "another borrower.\n");
 		return TEST_RESULT_FAIL;
@@ -386,7 +378,7 @@ static test_result_t test_req_mem_send_sp_to_sp(uint32_t mem_func,
 
 	if (cactus_get_response(ret) == CACTUS_ERROR) {
 		ERROR("Failed sharing memory between SPs. Error code: %d\n",
-			cactus_error_code(ret));
+		      cactus_error_code(ret));
 		return TEST_RESULT_FAIL;
 	}
 
@@ -421,9 +413,10 @@ static test_result_t test_req_mem_send_sp_to_vm(uint32_t mem_func,
 		return TEST_RESULT_SUCCESS;
 	}
 
-	tftf_testcase_printf("Did not get the expected error, "
-			     "mem send returned with %d\n",
-			     cactus_get_response(ret));
+	tftf_testcase_printf(
+		"Did not get the expected error, "
+		"mem send returned with %d\n",
+		cactus_get_response(ret));
 	return TEST_RESULT_FAIL;
 }
 
@@ -472,19 +465,17 @@ test_result_t test_req_mem_share_sp_to_vm(void)
 
 test_result_t test_req_mem_lend_sp_to_vm(void)
 {
-	return test_req_mem_send_sp_to_vm(FFA_MEM_LEND_SMC64, SP_ID(2),
-					  HYP_ID);
+	return test_req_mem_send_sp_to_vm(FFA_MEM_LEND_SMC64, SP_ID(2), HYP_ID);
 }
 
 test_result_t test_mem_share_to_sp_clear_memory(void)
 {
 	struct ffa_memory_region_constituent constituents[] = {
-		{(void *)four_share_pages, 4, 0},
-		{(void *)share_page, 1, 0}
-	};
+		{(void *)four_share_pages, 4, 0}, {(void *)share_page, 1, 0}};
 
-	const uint32_t constituents_count = sizeof(constituents) /
-			sizeof(struct ffa_memory_region_constituent);
+	const uint32_t constituents_count =
+		sizeof(constituents) /
+		sizeof(struct ffa_memory_region_constituent);
 	struct mailbox_buffers mb;
 	uint32_t remaining_constituent_count;
 	uint32_t total_length;
@@ -505,9 +496,8 @@ test_result_t test_mem_share_to_sp_clear_memory(void)
 	remaining_constituent_count = ffa_memory_region_init(
 		(struct ffa_memory_region *)mb.send, MAILBOX_SIZE, SENDER,
 		&receiver, 1, constituents, constituents_count, 0,
-		FFA_MEMORY_REGION_FLAG_CLEAR,
-		FFA_MEMORY_NOT_SPECIFIED_MEM, 0, 0,
-		&total_length, &fragment_length);
+		FFA_MEMORY_REGION_FLAG_CLEAR, FFA_MEMORY_NOT_SPECIFIED_MEM, 0,
+		0, &total_length, &fragment_length);
 
 	if (remaining_constituent_count != 0) {
 		ERROR("Transaction descriptor initialization failed!\n");
@@ -582,13 +572,15 @@ static bool verify_retrieve_response(const struct ffa_memory_region *region1,
 		      region2->sender);
 		return false;
 	}
-	if (region1->attributes.shareability != region2->attributes.shareability) {
+	if (region1->attributes.shareability !=
+	    region2->attributes.shareability) {
 		ERROR("region1.attributes.shareability=%d, expected %d\n",
 		      region1->attributes.shareability,
 		      region2->attributes.shareability);
 		return false;
 	}
-	if (region1->attributes.cacheability != region2->attributes.cacheability) {
+	if (region1->attributes.cacheability !=
+	    region2->attributes.cacheability) {
 		ERROR("region1.attributes.cacheability=%d, expected %d\n",
 		      region1->attributes.cacheability,
 		      region2->attributes.cacheability);
@@ -601,7 +593,8 @@ static bool verify_retrieve_response(const struct ffa_memory_region *region1,
 	}
 	if (region1->attributes.security != region2->attributes.security) {
 		ERROR("region1.attributes.security=%d, expected %d\n",
-		      region1->attributes.security, region2->attributes.security);
+		      region1->attributes.security,
+		      region2->attributes.security);
 		return false;
 	}
 	if (region1->flags != region2->flags) {
@@ -615,10 +608,12 @@ static bool verify_retrieve_response(const struct ffa_memory_region *region1,
 		return false;
 	}
 	if (region1->tag != region2->tag) {
-		ERROR("region1.tag=%lld, expected %lld\n", region1->tag, region2->tag);
+		ERROR("region1.tag=%lld, expected %lld\n", region1->tag,
+		      region2->tag);
 		return false;
 	}
-	if (region1->memory_access_desc_size != region2->memory_access_desc_size) {
+	if (region1->memory_access_desc_size !=
+	    region2->memory_access_desc_size) {
 		ERROR("region1.memory_access_desc_size=%d, expected %d\n",
 		      region1->memory_access_desc_size,
 		      region2->memory_access_desc_size);
@@ -648,9 +643,9 @@ static bool verify_retrieve_response(const struct ffa_memory_region *region1,
  * Used by hypervisor retrieve request test: validate descriptors provided by
  * SPMC.
  */
-static bool
-verify_constituent(struct ffa_memory_region_constituent *constituent,
-		   void *address, uint32_t page_count)
+static bool verify_constituent(
+	struct ffa_memory_region_constituent *constituent, void *address,
+	uint32_t page_count)
 {
 	if (constituent->address != address) {
 		ERROR("constituent.address=%p, expected %p\n",
@@ -708,17 +703,16 @@ static bool verify_receivers_impdef(struct ffa_memory_access_impdef impdef1,
 	    impdef1.val[1] != impdef2.val[1]) {
 		ERROR("ipmdef1.val[0]=%llu expected=%llu"
 		      " ipmdef1.val[1]=%llu expected=%llu\n",
-		      impdef1.val[0], impdef2.val[0],
-		      impdef1.val[1], impdef2.val[1]);
+		      impdef1.val[0], impdef2.val[0], impdef1.val[1],
+		      impdef2.val[1]);
 		return false;
 	}
 
 	return true;
 }
 
-static bool verify_permissions(
-		ffa_memory_access_permissions_t permissions1,
-		ffa_memory_access_permissions_t permissions2)
+static bool verify_permissions(ffa_memory_access_permissions_t permissions1,
+			       ffa_memory_access_permissions_t permissions2)
 {
 	uint8_t access1;
 	uint8_t access2;
@@ -727,8 +721,8 @@ static bool verify_permissions(
 	access2 = permissions2.data_access;
 
 	if (access1 != access2) {
-		ERROR("permissions1.data_access=%u expected=%u\n",
-		      access1, access2);
+		ERROR("permissions1.data_access=%u expected=%u\n", access1,
+		      access2);
 		return false;
 	}
 
@@ -756,8 +750,8 @@ static bool verify_receivers(struct ffa_memory_access *receivers1,
 		if (receivers1[i].receiver_permissions.receiver !=
 		    receivers2[i].receiver_permissions.receiver) {
 			ERROR("receivers1[%u].receiver_permissions.receiver=%x"
-			      " expected=%x\n", i,
-			      receivers1[i].receiver_permissions.receiver,
+			      " expected=%x\n",
+			      i, receivers1[i].receiver_permissions.receiver,
 			      receivers2[i].receiver_permissions.receiver);
 			return false;
 		}
@@ -765,15 +759,15 @@ static bool verify_receivers(struct ffa_memory_access *receivers1,
 		if (receivers1[i].receiver_permissions.flags !=
 		    receivers2[i].receiver_permissions.flags) {
 			ERROR("receivers1[%u].receiver_permissions.flags=%u"
-			      " expected=%u\n", i,
-			      receivers1[i].receiver_permissions.flags,
+			      " expected=%u\n",
+			      i, receivers1[i].receiver_permissions.flags,
 			      receivers2[i].receiver_permissions.flags);
 			return false;
 		}
 
 		if (!verify_permissions(
-			receivers1[i].receiver_permissions.permissions,
-			receivers2[i].receiver_permissions.permissions)) {
+			    receivers1[i].receiver_permissions.permissions,
+			    receivers2[i].receiver_permissions.permissions)) {
 			return false;
 		}
 
@@ -845,8 +839,7 @@ static test_result_t hypervisor_retrieve_request_test_helper(
 	for (uint32_t i = 0; i < receiver_count; i++) {
 		receivers[i].composite_memory_region_offset =
 			sizeof(struct ffa_memory_region) +
-			receiver_count *
-				sizeof(struct ffa_memory_access);
+			receiver_count * sizeof(struct ffa_memory_access);
 	}
 
 	/* Add a page per constituent, so that we exhaust the size of a single
@@ -899,7 +892,7 @@ static test_result_t hypervisor_retrieve_request_test_helper(
 	 * Verify the received `FFA_MEM_RETRIEVE_RESP` aligns with
 	 * transaction description sent above.
 	 */
-	expected_response = (struct ffa_memory_region) {
+	expected_response = (struct ffa_memory_region){
 		.sender = SENDER,
 		.attributes = expected_attrs,
 		.flags = expected_flags,
@@ -919,16 +912,16 @@ static test_result_t hypervisor_retrieve_request_test_helper(
 	retrvd_receivers =
 		ffa_memory_region_get_receiver(hypervisor_retrieve_response, 0);
 
-	if (!verify_receivers(retrvd_receivers,
-			      receivers, receiver_count)) {
+	if (!verify_receivers(retrvd_receivers, receivers, receiver_count)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	composite = ffa_memory_region_get_composite(
-				hypervisor_retrieve_response, 0);
+		hypervisor_retrieve_response, 0);
 
 	if (!verify_composite(composite, composite->constituents,
-			      sent_constituents_count, sent_constituents_count)) {
+			      sent_constituents_count,
+			      sent_constituents_count)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -946,37 +939,44 @@ static test_result_t hypervisor_retrieve_request_test_helper(
 
 test_result_t test_hypervisor_share_retrieve(void)
 {
-	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC64, false, false);
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC64,
+						       false, false);
 }
 
 test_result_t test_hypervisor_lend_retrieve(void)
 {
-	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC64, false, false);
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC64,
+						       false, false);
 }
 
 test_result_t test_hypervisor_donate_retrieve(void)
 {
-	return hypervisor_retrieve_request_test_helper(FFA_MEM_DONATE_SMC64, false, false);
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_DONATE_SMC64,
+						       false, false);
 }
 
 test_result_t test_hypervisor_share_retrieve_multiple_receivers(void)
 {
-	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC64, true, false);
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC64,
+						       true, false);
 }
 
 test_result_t test_hypervisor_lend_retrieve_multiple_receivers(void)
 {
-	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC64, true, false);
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC64, true,
+						       false);
 }
 
 test_result_t test_hypervisor_share_retrieve_fragmented(void)
 {
-	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC64, false, true);
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_SHARE_SMC64,
+						       false, true);
 }
 
 test_result_t test_hypervisor_lend_retrieve_fragmented(void)
 {
-	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC64, false, true);
+	return hypervisor_retrieve_request_test_helper(FFA_MEM_LEND_SMC64,
+						       false, true);
 }
 
 /**
@@ -989,9 +989,9 @@ test_result_t test_hypervisor_lend_retrieve_fragmented(void)
  * management call with an appropriate FFA_ERROR.
  */
 static test_result_t test_ffa_mem_send_realm_expect_fail(
-		uint32_t mem_func, ffa_id_t borrower,
-		struct ffa_memory_region_constituent *constituents,
-		size_t constituents_count, uint64_t delegate_addr)
+	uint32_t mem_func, ffa_id_t borrower,
+	struct ffa_memory_region_constituent *constituents,
+	size_t constituents_count, uint64_t delegate_addr)
 {
 	struct ffa_value ret;
 	uint32_t remaining_constituent_count;
@@ -1009,7 +1009,8 @@ static test_result_t test_ffa_mem_send_realm_expect_fail(
 	}
 
 	/***********************************************************************
-	 * Check if SPMC has ffa_version and expected FFA endpoints are deployed.
+	 * Check if SPMC has ffa_version and expected FFA endpoints are
+	 *deployed.
 	 **********************************************************************/
 	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
 
@@ -1032,9 +1033,8 @@ static test_result_t test_ffa_mem_send_realm_expect_fail(
 	remaining_constituent_count = ffa_memory_region_init(
 		(struct ffa_memory_region *)mb.send, MAILBOX_SIZE, SENDER,
 		&receiver, 1, constituents, constituents_count, 0,
-		FFA_MEMORY_REGION_FLAG_CLEAR,
-		FFA_MEMORY_NOT_SPECIFIED_MEM, 0, 0,
-		&total_length, &fragment_length);
+		FFA_MEMORY_REGION_FLAG_CLEAR, FFA_MEMORY_NOT_SPECIFIED_MEM, 0,
+		0, &total_length, &fragment_length);
 
 	if (remaining_constituent_count != 0) {
 		goto out;
@@ -1099,15 +1099,15 @@ test_result_t test_ffa_mem_send_sp_realm_memory(void)
 	test_result_t ret;
 	uint32_t mem_func[] = {FFA_MEM_LEND_SMC64, FFA_MEM_DONATE_SMC64};
 	struct ffa_memory_region_constituent constituents[] = {
-		{(void *)four_share_pages, 4, 0},
-		{(void *)share_page, 1, 0}
-	};
+		{(void *)four_share_pages, 4, 0}, {(void *)share_page, 1, 0}};
 
-	const uint32_t constituents_count = sizeof(constituents) /
-				sizeof(struct ffa_memory_region_constituent);
+	const uint32_t constituents_count =
+		sizeof(constituents) /
+		sizeof(struct ffa_memory_region_constituent);
 
 	/***********************************************************************
-	 * Check if SPMC has ffa_version and expected FFA endpoints are deployed.
+	 * Check if SPMC has ffa_version and expected FFA endpoints are
+	 *deployed.
 	 **********************************************************************/
 	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
 
@@ -1118,9 +1118,8 @@ test_result_t test_ffa_mem_send_sp_realm_memory(void)
 				(uint64_t)&four_share_pages[i * PAGE_SIZE];
 
 			INFO("%s memory with realm addr: %llx\n",
-			     mem_func[j] == FFA_MEM_LEND_SMC64
-				? "Lend"
-				: "Donate",
+			     mem_func[j] == FFA_MEM_LEND_SMC64 ? "Lend"
+							       : "Donate",
 			     realm_addr);
 
 			ret = test_ffa_mem_send_realm_expect_fail(
@@ -1150,19 +1149,18 @@ test_result_t test_ffa_mem_lend_sp_realm_memory_separate_constituent(void)
 {
 	test_result_t ret;
 	struct ffa_memory_region_constituent constituents[] = {
-		{(void *)four_share_pages, 4, 0},
-		{(void *)share_page, 1, 0}
-	};
-	const uint32_t constituents_count = sizeof(constituents) /
-				sizeof(struct ffa_memory_region_constituent);
+		{(void *)four_share_pages, 4, 0}, {(void *)share_page, 1, 0}};
+	const uint32_t constituents_count =
+		sizeof(constituents) /
+		sizeof(struct ffa_memory_region_constituent);
 	/* Address to be delegated to Realm PAS. */
 	uint64_t realm_addr = (uint64_t)&share_page[0];
 
 	INFO("Sharing memory with realm addr: %llx\n", realm_addr);
 
 	ret = test_ffa_mem_send_realm_expect_fail(
-		FFA_MEM_LEND_SMC64, SP_ID(1), constituents,
-		constituents_count, realm_addr);
+		FFA_MEM_LEND_SMC64, SP_ID(1), constituents, constituents_count,
+		realm_addr);
 
 	return ret;
 }

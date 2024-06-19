@@ -41,10 +41,7 @@ unsigned int uuid_equal(const uuid_t *uuid1, const uuid_t *uuid2);
  *
  * Return the UUID.
  */
-uuid_t *make_uuid_from_4words(uuid_t *uuid,
-			      uint32_t uuid0,
-			      uint32_t uuid1,
-			      uint32_t uuid2,
-			      uint32_t uuid3);
+uuid_t *make_uuid_from_4words(uuid_t *uuid, uint32_t uuid0, uint32_t uuid1,
+			      uint32_t uuid2, uint32_t uuid3);
 
 #endif /* __UUID_UTILS_H__ */

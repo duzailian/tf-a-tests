@@ -7,8 +7,7 @@
 #include <stdint.h>
 #include <tftf.h>
 
-void asm_tftf_smc32(const smc_args *args,
-		smc_ret_values *smc_ret);
+void asm_tftf_smc32(const smc_args *args, smc_ret_values *smc_ret);
 
 smc_ret_values tftf_smc(const smc_args *args)
 {

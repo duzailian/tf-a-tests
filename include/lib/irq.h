@@ -5,17 +5,18 @@
  */
 
 #ifndef __IRQ_H__
-#define  __IRQ_H__
+#define __IRQ_H__
 
 #include <cdefs.h>
-#include <platform_def.h> /* For CACHE_WRITEBACK_GRANULE */
 #include <stdint.h>
+
+#include <platform_def.h> /* For CACHE_WRITEBACK_GRANULE */
 
 /*
  * SGI sent by the timer management framework to notify CPUs when the system
  * timer fires off
  */
-#define IRQ_WAKE_SGI		IRQ_NS_SGI_7
+#define IRQ_WAKE_SGI IRQ_NS_SGI_7
 
 #ifndef __ASSEMBLY__
 

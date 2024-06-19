@@ -4,17 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdlib.h>
 #include <arch.h>
-#include <arch_helpers.h>
 #include <debug.h>
+#include <stdlib.h>
+
+#include <arch_helpers.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
 
-typedef enum {
-	EXEC_WFIT = 0,
-	EXEC_WFET
-} exec_wfxt;
+typedef enum { EXEC_WFIT = 0, EXEC_WFET } exec_wfxt;
 
 #ifdef __aarch64__
 static test_result_t test_wfxt_inst(exec_wfxt val, uint64_t ms)
@@ -40,7 +38,8 @@ static test_result_t test_wfxt_inst(exec_wfxt val, uint64_t ms)
 		return TEST_RESULT_SUCCESS;
 	} else {
 		/* unlikely ends up here */
-		uint64_t lapsed_ms = ((timer_cnt2 - timer_cnt1) * 1000) / timer_freq;
+		uint64_t lapsed_ms =
+			((timer_cnt2 - timer_cnt1) * 1000) / timer_freq;
 
 		ERROR("Time elapsed: actual(%llu)ms vs requested(%llu)ms \n",
 		      lapsed_ms, ms);

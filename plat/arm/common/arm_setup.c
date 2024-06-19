@@ -5,12 +5,13 @@
  */
 
 #include <debug.h>
+#include <platform.h>
+
 #include <drivers/arm/arm_gic.h>
 #include <drivers/arm/pl011.h>
 #include <drivers/console.h>
 #include <io_storage.h>
 #include <plat_arm.h>
-#include <platform.h>
 #include <platform_def.h>
 
 #pragma weak tftf_platform_setup

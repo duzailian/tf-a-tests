@@ -10,6 +10,7 @@
 #ifndef __ASSEMBLY__
 #include <stddef.h>
 #include <tftf.h>
+
 #include "tests_list.h"
 
 #define TEST_BUFFER_SIZE 0x80
@@ -31,8 +32,8 @@ typedef struct {
 	 * test, i.e. whether it hasn't started yet, or it is being executed
 	 * right now, ...
 	 */
-	test_ref_t		test_to_run;
-	test_progress_t		test_progress;
+	test_ref_t test_to_run;
+	test_progress_t test_progress;
 
 	/*
 	 * @brief Scratch buffer for test internal use.
@@ -60,13 +61,13 @@ typedef struct {
 	 * Each test appends its output to the end of \a result_buffer.
 	 * Tests which produce no output write nothing in \a result_buffer.
 	 */
-	 char *result_buffer;
+	char *result_buffer;
 } tftf_state_t;
 
 /*
  * Helper macros to access fields of \a tftf_state_t structure.
  */
-#define TFTF_STATE_OFFSET(_field)		offsetof(tftf_state_t, _field)
+#define TFTF_STATE_OFFSET(_field) offsetof(tftf_state_t, _field)
 
 /*
  * Return 1 if we need to start a new test session;
@@ -105,7 +106,8 @@ STATUS tftf_clean_nvm(void);
  * size
  * Returns: STATUS_FAIL, STATUS_SUCCESS, STATUS_OUT_OF_RESOURCES
  */
-STATUS tftf_nvm_write(unsigned long long offset, const void *buffer, size_t size);
+STATUS tftf_nvm_write(unsigned long long offset, const void *buffer,
+		      size_t size);
 
 /* Reads the flash into buffer at offset with length equal to
  * size

@@ -4,13 +4,14 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <firmware_image_package.h>
-#include <fwu_nvm.h>
-#include <io_storage.h>
 #include <platform.h>
 #include <psci.h>
 #include <smccc.h>
 #include <status.h>
+
+#include <firmware_image_package.h>
+#include <fwu_nvm.h>
+#include <io_storage.h>
 #include <tftf_lib.h>
 
 /*
@@ -25,7 +26,7 @@ test_result_t test_fwu_toc(void)
 {
 	STATUS status;
 	unsigned int toc_header;
-	smc_args args = { SMC_PSCI_SYSTEM_RESET };
+	smc_args args = {SMC_PSCI_SYSTEM_RESET};
 	smc_ret_values ret = {0};
 
 	if (tftf_is_rebooted()) {
@@ -36,12 +37,14 @@ test_result_t test_fwu_toc(void)
 		 */
 		status = fwu_nvm_read(0, &toc_header, 4);
 		if (status != STATUS_SUCCESS) {
-			tftf_testcase_printf("Failed to read NVM (%d)\n", status);
+			tftf_testcase_printf("Failed to read NVM (%d)\n",
+					     status);
 			return TEST_RESULT_FAIL;
 		}
 
 		if (toc_header != TOC_HEADER_NAME) {
-			tftf_testcase_printf("ToC is Invalid (%u)\n", toc_header);
+			tftf_testcase_printf("ToC is Invalid (%u)\n",
+					     toc_header);
 			return TEST_RESULT_FAIL;
 		}
 
@@ -52,8 +55,8 @@ test_result_t test_fwu_toc(void)
 	toc_header = 0xdeadbeef;
 	status = fwu_nvm_write(0, &toc_header, 4);
 	if (status != STATUS_SUCCESS) {
-		tftf_testcase_printf("Failed to overwrite the ToC header (%d)\n",
-			status);
+		tftf_testcase_printf(
+			"Failed to overwrite the ToC header (%d)\n", status);
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -65,7 +68,7 @@ test_result_t test_fwu_toc(void)
 
 	/* The PSCI SYSTEM_RESET call is not supposed to return */
 	tftf_testcase_printf("System didn't reboot properly (%d)\n",
-		(unsigned int)ret.ret0);
+			     (unsigned int)ret.ret0);
 
 	return TEST_RESULT_FAIL;
 }

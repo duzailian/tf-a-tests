@@ -4,11 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
-#include <drivers/arm/arm_gic.h>
 #include <irq.h>
 #include <platform.h>
 #include <sgi.h>
+
+#include <arch_helpers.h>
+#include <drivers/arm/arm_gic.h>
 #include <tftf_lib.h>
 
 static volatile unsigned int counter;
@@ -49,7 +50,8 @@ test_result_t test_validation_irq(void)
 	/* Now register a handler */
 	ret = tftf_irq_register_handler(sgi_id, increment_counter);
 	if (ret != 0) {
-		tftf_testcase_printf("Failed to register initial IRQ handler\n");
+		tftf_testcase_printf(
+			"Failed to register initial IRQ handler\n");
 		return TEST_RESULT_FAIL;
 	}
 
@@ -65,13 +67,13 @@ test_result_t test_validation_irq(void)
 	while (counter != 1)
 		;
 
-	/*
-	 * Try to overwrite the IRQ handler. This should fail.
-	 * In debug builds, it would trigger an assertion so we can't test that
-	 * as it will stop the test session.
-	 * In release builds though, it should just do nothing, i.e. it won't
-	 * replace the existing handler and that's something that can be tested.
-	 */
+		/*
+		 * Try to overwrite the IRQ handler. This should fail.
+		 * In debug builds, it would trigger an assertion so we can't
+		 * test that as it will stop the test session. In release builds
+		 * though, it should just do nothing, i.e. it won't replace the
+		 * existing handler and that's something that can be tested.
+		 */
 #if !DEBUG
 	ret = tftf_irq_register_handler(sgi_id, set_counter_to_42);
 	if (ret == 0) {
@@ -120,7 +122,8 @@ test_result_t test_validation_irq(void)
 	ret = tftf_irq_unregister_handler(sgi_id);
 	if (ret == 0) {
 		tftf_testcase_printf(
-			"Unregistering the IRQ handler again should have failed\n");
+			"Unregistering the IRQ handler again should have "
+			"failed\n");
 		return TEST_RESULT_FAIL;
 	}
 #endif

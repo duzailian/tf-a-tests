@@ -10,9 +10,10 @@
 #ifndef __ASSEMBLY__
 
 #include <arch.h>
-#include <arch_helpers.h>
 #include <stdbool.h>
 #include <stdint.h>
+
+#include <arch_helpers.h>
 
 /*
  * Possible error codes for signaling the result of a test
@@ -24,10 +25,10 @@ typedef enum {
 	 * Initial value for a test result.
 	 * Used for CPUs that don't participate in the test.
 	 */
-	TEST_RESULT_NA		= -1,
+	TEST_RESULT_NA = -1,
 
-	TEST_RESULT_MIN		= 0,
-	TEST_RESULT_SKIPPED	= TEST_RESULT_MIN,
+	TEST_RESULT_MIN = 0,
+	TEST_RESULT_SKIPPED = TEST_RESULT_MIN,
 	TEST_RESULT_SUCCESS,
 	TEST_RESULT_FAIL,
 	TEST_RESULT_CRASHED,
@@ -38,30 +39,30 @@ typedef enum {
 #define TEST_RESULT_IS_VALID(result) \
 	((result >= TEST_RESULT_MIN) && (result < TEST_RESULT_MAX))
 
-#define TEST_ASSERT(must_be_true) \
-	do { \
-		if (!(must_be_true)) { \
-			tftf_testcase_printf("Failed at %s:%d\n", __FILE__, __LINE__); \
-			return TEST_RESULT_FAIL;\
-		} \
+#define TEST_ASSERT(must_be_true)                                           \
+	do {                                                                \
+		if (!(must_be_true)) {                                      \
+			tftf_testcase_printf("Failed at %s:%d\n", __FILE__, \
+					     __LINE__);                     \
+			return TEST_RESULT_FAIL;                            \
+		}                                                           \
 	} while (0)
 
-#define TEST_ASSERT_SKIP(must_be_true) \
-	do { \
-		if (!(must_be_true)) { \
-			tftf_testcase_printf("Failed at %s:%d\n", __FILE__, __LINE__); \
-			return TEST_RESULT_SKIPPED;\
-		} \
+#define TEST_ASSERT_SKIP(must_be_true)                                      \
+	do {                                                                \
+		if (!(must_be_true)) {                                      \
+			tftf_testcase_printf("Failed at %s:%d\n", __FILE__, \
+					     __LINE__);                     \
+			return TEST_RESULT_SKIPPED;                         \
+		}                                                           \
 	} while (0)
-
 
 /*
  * PSCI Function Wrappers
  *
  * SMC calls to PSCI functions
  */
-int32_t tftf_psci_cpu_on(u_register_t target_cpu,
-			 uintptr_t entry_point_address,
+int32_t tftf_psci_cpu_on(u_register_t target_cpu, uintptr_t entry_point_address,
 			 u_register_t context_id);
 int32_t tftf_psci_cpu_off(void);
 int32_t tftf_psci_set_suspend_mode(uint32_t mode);
@@ -70,9 +71,9 @@ int32_t tftf_psci_affinity_info(u_register_t target_affinity,
 int32_t tftf_psci_node_hw_state(u_register_t target_cpu, uint32_t power_level);
 int32_t tftf_get_psci_feature_info(uint32_t psci_func_id);
 u_register_t tftf_psci_stat_count(u_register_t target_cpu,
-		uint32_t power_state);
+				  uint32_t power_state);
 u_register_t tftf_psci_stat_residency(u_register_t target_cpu,
-		uint32_t power_state);
+				      uint32_t power_state);
 
 /*
  * PSCI Helper functions
@@ -101,7 +102,6 @@ unsigned int tftf_get_psci_version(void);
  */
 int tftf_is_valid_psci_version(unsigned int version);
 
-
 /*
  * The function constructs a composite state_id up-to the specified
  * affinity level querying the relevant state property from the platform.
@@ -113,16 +113,15 @@ int tftf_is_valid_psci_version(unsigned int version);
  * value from CPU SUSPEND call.
  */
 int tftf_psci_make_composite_state_id(uint32_t affinity_level,
-		uint32_t state_type, uint32_t *state_id);
+				      uint32_t state_type, uint32_t *state_id);
 
 /*
  * This function composes the power state parameter in the right format
  * needed by PSCI. The detection of the power state format is done during
  * cold boot by tftf_detect_psci_pstate_format() function.
  */
-uint32_t tftf_make_psci_pstate(uint32_t affinity_level,
-					uint32_t state_type,
-					uint32_t state_id);
+uint32_t tftf_make_psci_pstate(uint32_t affinity_level, uint32_t state_type,
+			       uint32_t state_id);
 
 /*
  * Returns 1, if the EL3 software supports PSCI's original format state ID as
@@ -148,27 +147,27 @@ void waitus(uint64_t us);
  */
 typedef struct {
 	/* Function identifier. Identifies which function is being invoked. */
-	uint32_t	fid;
+	uint32_t fid;
 
-	u_register_t	arg1;
-	u_register_t	arg2;
-	u_register_t	arg3;
-	u_register_t	arg4;
-	u_register_t	arg5;
-	u_register_t	arg6;
-	u_register_t	arg7;
+	u_register_t arg1;
+	u_register_t arg2;
+	u_register_t arg3;
+	u_register_t arg4;
+	u_register_t arg5;
+	u_register_t arg6;
+	u_register_t arg7;
 } smc_args;
 
 /* SMC calls can return up to 8 register values */
 typedef struct {
-	u_register_t	ret0;
-	u_register_t	ret1;
-	u_register_t	ret2;
-	u_register_t	ret3;
-	u_register_t	ret4;
-	u_register_t	ret5;
-	u_register_t	ret6;
-	u_register_t	ret7;
+	u_register_t ret0;
+	u_register_t ret1;
+	u_register_t ret2;
+	u_register_t ret3;
+	u_register_t ret4;
+	u_register_t ret5;
+	u_register_t ret6;
+	u_register_t ret7;
 } smc_ret_values;
 
 /*
@@ -177,10 +176,10 @@ typedef struct {
 smc_ret_values tftf_smc(const smc_args *args);
 
 /* Assembler routine to trigger a SMC call. */
-smc_ret_values asm_tftf_smc64(uint32_t fid, u_register_t arg1, u_register_t arg2,
-			      u_register_t arg3, u_register_t arg4,
-			      u_register_t arg5, u_register_t arg6,
-			      u_register_t arg7);
+smc_ret_values asm_tftf_smc64(uint32_t fid, u_register_t arg1,
+			      u_register_t arg2, u_register_t arg3,
+			      u_register_t arg4, u_register_t arg5,
+			      u_register_t arg6, u_register_t arg7);
 
 /*
  * Update the SVE hint for the current CPU. Any SMC call made through tftf_smc
@@ -219,8 +218,8 @@ hvc_ret_values tftf_hvc(const hvc_args *args);
  * write (i.e. when the string is truncated) is not considered as an output
  * error.
  */
-__attribute__((format(printf, 1, 2)))
-int tftf_testcase_printf(const char *format, ...);
+__attribute__((format(printf, 1, 2))) int tftf_testcase_printf(
+	const char *format, ...);
 
 /*
  * This function is meant to be used by tests.
@@ -242,8 +241,7 @@ unsigned int tftf_is_rebooted(void);
 
 static inline unsigned int make_mpid(unsigned int clusterid,
 #if PLAT_MAX_PE_PER_CPU > 1
-				     unsigned int coreid,
-				     unsigned int threadid)
+				     unsigned int coreid, unsigned int threadid)
 #else
 				     unsigned int coreid)
 #endif
@@ -255,14 +253,13 @@ static inline unsigned int make_mpid(unsigned int clusterid,
 	if ((read_mpidr_el1() & MPIDR_MT_MASK) != 0)
 		return MPIDR_MT_MASK |
 #if PLAT_MAX_PE_PER_CPU > 1
-			((threadid & MPIDR_AFFLVL_MASK) << MPIDR_AFF0_SHIFT) |
+		       ((threadid & MPIDR_AFFLVL_MASK) << MPIDR_AFF0_SHIFT) |
 #endif
-			((coreid & MPIDR_AFFLVL_MASK) << MPIDR_AFF1_SHIFT)   |
-			((clusterid & MPIDR_AFFLVL_MASK) << MPIDR_AFF2_SHIFT);
+		       ((coreid & MPIDR_AFFLVL_MASK) << MPIDR_AFF1_SHIFT) |
+		       ((clusterid & MPIDR_AFFLVL_MASK) << MPIDR_AFF2_SHIFT);
 	else
 		return ((coreid & MPIDR_AFFLVL_MASK) << MPIDR_AFF0_SHIFT) |
 		       ((clusterid & MPIDR_AFFLVL_MASK) << MPIDR_AFF1_SHIFT);
-
 }
 
 #endif /* __ASSEMBLY__ */

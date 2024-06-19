@@ -15,8 +15,8 @@
 
 #ifdef __aarch64__
 
-#define SME2_ARRAYSIZE		(512/64)
-#define SME2_INPUT_DATA		(0x1fffffffffffffff)
+#define SME2_ARRAYSIZE (512 / 64)
+#define SME2_INPUT_DATA (0x1fffffffffffffff)
 
 /* Global buffers */
 static __aligned(16) uint64_t sme2_input_buffer[SME2_ARRAYSIZE] = {0};
@@ -34,7 +34,7 @@ static void clear_ZT0(void)
 	 * TODO: Further, once the toolchain adds support for SME features
 	 * this could be replaced with the instruction ZERO {ZT0}.
 	 */
-	asm volatile(".inst 0xc0480001" : : : );
+	asm volatile(".inst 0xc0480001" : : :);
 }
 
 #endif /* __aarch64__ */

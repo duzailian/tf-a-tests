@@ -7,82 +7,68 @@
 
 #include <assert.h>
 #include <debug.h>
+#include <errno.h>
+
+#include "ivy.h"
+#include "ivy_def.h"
 #include <drivers/arm/pl011.h>
 #include <drivers/console.h>
-#include <errno.h>
 #include <ffa_helpers.h>
 #include <lib/aarch64/arch_helpers.h>
 #include <lib/xlat_tables/xlat_mmu_helpers.h>
 #include <lib/xlat_tables/xlat_tables_v2.h>
-#include <plat_arm.h>
 #include <plat/common/platform.h>
+#include <plat_arm.h>
 #include <platform_def.h>
 #include <sp_debug.h>
 #include <sp_helpers.h>
 #include <std_svc.h>
-
-#include "ivy.h"
-#include "ivy_def.h"
 
 static void shim_print_memory_layout(void)
 {
 	INFO("Secure Partition memory layout:\n");
 
 	INFO("  Image regions\n");
-	INFO("    Text region            : %p - %p\n",
-		(void *)IVY_TEXT_START, (void *)IVY_TEXT_END);
-	INFO("    Read-only data region  : %p - %p\n",
-		(void *)IVY_RODATA_START, (void *)IVY_RODATA_END);
-	INFO("    Data region            : %p - %p\n",
-		(void *)IVY_DATA_START, (void *)IVY_DATA_END);
-	INFO("    BSS region             : %p - %p\n",
-		(void *)IVY_BSS_START, (void *)IVY_BSS_END);
-	INFO("    Total image memory     : %p - %p\n",
-		(void *)IVY_IMAGE_BASE,
-		(void *)(IVY_IMAGE_BASE + IVY_IMAGE_SIZE));
+	INFO("    Text region            : %p - %p\n", (void *)IVY_TEXT_START,
+	     (void *)IVY_TEXT_END);
+	INFO("    Read-only data region  : %p - %p\n", (void *)IVY_RODATA_START,
+	     (void *)IVY_RODATA_END);
+	INFO("    Data region            : %p - %p\n", (void *)IVY_DATA_START,
+	     (void *)IVY_DATA_END);
+	INFO("    BSS region             : %p - %p\n", (void *)IVY_BSS_START,
+	     (void *)IVY_BSS_END);
+	INFO("    Total image memory     : %p - %p\n", (void *)IVY_IMAGE_BASE,
+	     (void *)(IVY_IMAGE_BASE + IVY_IMAGE_SIZE));
 	INFO("  SPM regions\n");
-	INFO("    SPM <-> SP buffer      : %p - %p\n",
-		(void *)IVY_SPM_BUF_BASE,
-		(void *)(IVY_SPM_BUF_BASE + IVY_SPM_BUF_SIZE));
-	INFO("    NS <-> SP buffer       : %p - %p\n",
-		(void *)IVY_NS_BUF_BASE,
-		(void *)(IVY_NS_BUF_BASE + IVY_NS_BUF_SIZE));
+	INFO("    SPM <-> SP buffer      : %p - %p\n", (void *)IVY_SPM_BUF_BASE,
+	     (void *)(IVY_SPM_BUF_BASE + IVY_SPM_BUF_SIZE));
+	INFO("    NS <-> SP buffer       : %p - %p\n", (void *)IVY_NS_BUF_BASE,
+	     (void *)(IVY_NS_BUF_BASE + IVY_NS_BUF_SIZE));
 }
 
 static void shim_plat_configure_mmu(void)
 {
-	mmap_add_region(SHIM_TEXT_START,
-			SHIM_TEXT_START,
+	mmap_add_region(SHIM_TEXT_START, SHIM_TEXT_START,
 			SHIM_TEXT_END - SHIM_TEXT_START,
 			MT_CODE | MT_PRIVILEGED);
-	mmap_add_region(SHIM_RODATA_START,
-			SHIM_RODATA_START,
+	mmap_add_region(SHIM_RODATA_START, SHIM_RODATA_START,
 			SHIM_RODATA_END - SHIM_RODATA_START,
 			MT_RO_DATA | MT_PRIVILEGED);
-	mmap_add_region(SHIM_DATA_START,
-			SHIM_DATA_START,
+	mmap_add_region(SHIM_DATA_START, SHIM_DATA_START,
 			SHIM_DATA_END - SHIM_DATA_START,
 			MT_RW_DATA | MT_PRIVILEGED);
-	mmap_add_region(SHIM_BSS_START,
-			SHIM_BSS_START,
+	mmap_add_region(SHIM_BSS_START, SHIM_BSS_START,
 			SHIM_BSS_END - SHIM_BSS_START,
 			MT_RW_DATA | MT_PRIVILEGED);
-	mmap_add_region(IVY_TEXT_START,
-			IVY_TEXT_START,
-			IVY_TEXT_END - IVY_TEXT_START,
-			MT_CODE | MT_USER);
-	mmap_add_region(IVY_RODATA_START,
-			IVY_RODATA_START,
+	mmap_add_region(IVY_TEXT_START, IVY_TEXT_START,
+			IVY_TEXT_END - IVY_TEXT_START, MT_CODE | MT_USER);
+	mmap_add_region(IVY_RODATA_START, IVY_RODATA_START,
 			IVY_RODATA_END - IVY_RODATA_START,
 			MT_RO_DATA | MT_USER);
-	mmap_add_region(IVY_DATA_START,
-			IVY_DATA_START,
-			IVY_DATA_END - IVY_DATA_START,
-			MT_RW_DATA | MT_USER);
-	mmap_add_region(IVY_BSS_START,
-			IVY_BSS_START,
-			IVY_BSS_END - IVY_BSS_START,
-			MT_RW_DATA | MT_USER);
+	mmap_add_region(IVY_DATA_START, IVY_DATA_START,
+			IVY_DATA_END - IVY_DATA_START, MT_RW_DATA | MT_USER);
+	mmap_add_region(IVY_BSS_START, IVY_BSS_START,
+			IVY_BSS_END - IVY_BSS_START, MT_RW_DATA | MT_USER);
 
 	init_xlat_tables();
 }
