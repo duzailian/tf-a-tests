@@ -52,6 +52,24 @@
       "parentUuid": "4e02f2b1_6ebfa474",
       "revId": "8ad60b73e92eb69404f26297c1539808f9530249",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6b2b0e7_be18c713",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-06-20T14:29:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c77b9b90_12b58026",
+      "revId": "8ad60b73e92eb69404f26297c1539808f9530249",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ],
   "submitRequirementResults": []
