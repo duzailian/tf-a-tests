@@ -13,16 +13,16 @@
 /**
  * Success and error return to be sent over a msg response.
  */
-#define CACTUS_SUCCESS		U(0)
-#define CACTUS_ERROR		U(-1)
+#define CACTUS_SUCCESS U(0)
+#define CACTUS_ERROR U(-1)
 
 /**
  * Error codes.
  */
-#define CACTUS_ERROR_INVALID		U(1)
-#define CACTUS_ERROR_TEST		U(2)
-#define CACTUS_ERROR_FFA_CALL		U(3)
-#define CACTUS_ERROR_UNHANDLED		U(4)
+#define CACTUS_ERROR_INVALID U(1)
+#define CACTUS_ERROR_TEST U(2)
+#define CACTUS_ERROR_FFA_CALL U(3)
+#define CACTUS_ERROR_UNHANDLED U(4)
 
 #define ECHO_VAL1 U(0xa0a0a0a0)
 #define ECHO_VAL2 U(0xb0b0b0b0)
@@ -40,12 +40,13 @@ static inline uint64_t cactus_get_cmd(struct ffa_value ret)
  * Template for commands to be sent to CACTUS partitions over direct
  * messages interfaces.
  */
-static inline struct ffa_value cactus_send_cmd(
-	ffa_id_t source, ffa_id_t dest, uint64_t cmd, uint64_t val0,
-	uint64_t val1, uint64_t val2, uint64_t val3)
+static inline struct ffa_value cactus_send_cmd(ffa_id_t source, ffa_id_t dest,
+					       uint64_t cmd, uint64_t val0,
+					       uint64_t val1, uint64_t val2,
+					       uint64_t val3)
 {
-	return 	ffa_msg_send_direct_req64(source, dest, cmd, val0, val1, val2,
-					  val3);
+	return ffa_msg_send_direct_req64(source, dest, cmd, val0, val1, val2,
+					 val3);
 }
 
 /**
@@ -57,15 +58,15 @@ static inline struct ffa_value cactus_send_response(
 	ffa_id_t source, ffa_id_t dest, uint32_t resp, uint64_t val0,
 	uint64_t val1, uint64_t val2, uint64_t val3)
 {
-	return ffa_msg_send_direct_resp64(source, dest, resp, val0, val1,
-					  val2, val3);
+	return ffa_msg_send_direct_resp64(source, dest, resp, val0, val1, val2,
+					  val3);
 }
 
 /**
  * For responses of one value only.
  */
-static inline struct ffa_value cactus_response(
-	ffa_id_t source, ffa_id_t dest, uint32_t response)
+static inline struct ffa_value cactus_response(ffa_id_t source, ffa_id_t dest,
+					       uint32_t response)
 {
 	return cactus_send_response(source, dest, response, 0, 0, 0, 0);
 }
@@ -81,11 +82,12 @@ static inline uint32_t cactus_get_response(struct ffa_value ret)
  * If more arguments are needed, a custom response should be defined for the
  * specific test.
  */
-static inline struct ffa_value cactus_success_resp(
-		ffa_id_t source, ffa_id_t dest, uint64_t value)
+static inline struct ffa_value cactus_success_resp(ffa_id_t source,
+						   ffa_id_t dest,
+						   uint64_t value)
 {
-	return cactus_send_response(source, dest, CACTUS_SUCCESS, value,
-				    0, 0, 0);
+	return cactus_send_response(source, dest, CACTUS_SUCCESS, value, 0, 0,
+				    0);
 }
 
 /**
@@ -93,16 +95,16 @@ static inline struct ffa_value cactus_success_resp(
  * the reason, which can be specific to the test, or general ones as defined
  * in the error code list.
  */
-static inline struct ffa_value cactus_error_resp(
-		ffa_id_t source, ffa_id_t dest, uint32_t error_code)
+static inline struct ffa_value cactus_error_resp(ffa_id_t source, ffa_id_t dest,
+						 uint32_t error_code)
 {
-	return cactus_send_response(source, dest, CACTUS_ERROR, error_code,
-				    0, 0, 0);
+	return cactus_send_response(source, dest, CACTUS_ERROR, error_code, 0,
+				    0, 0);
 }
 
 static inline uint32_t cactus_error_code(struct ffa_value ret)
 {
-	return (uint32_t) ret.arg4;
+	return (uint32_t)ret.arg4;
 }
 
 /**
@@ -113,8 +115,9 @@ static inline uint32_t cactus_error_code(struct ffa_value ret)
  */
 #define CACTUS_ECHO_CMD U(0x6563686f)
 
-static inline struct ffa_value cactus_echo_send_cmd(
-	ffa_id_t source, ffa_id_t dest, uint64_t echo_val)
+static inline struct ffa_value cactus_echo_send_cmd(ffa_id_t source,
+						    ffa_id_t dest,
+						    uint64_t echo_val)
 {
 	return cactus_send_cmd(source, dest, CACTUS_ECHO_CMD, echo_val, 0, 0,
 			       0);
@@ -134,9 +137,10 @@ static inline uint64_t cactus_echo_get_val(struct ffa_value ret)
  */
 #define CACTUS_REQ_ECHO_CMD (CACTUS_ECHO_CMD + 1)
 
-static inline struct ffa_value cactus_req_echo_send_cmd(
-	ffa_id_t source, ffa_id_t dest, ffa_id_t echo_dest,
-	uint64_t echo_val)
+static inline struct ffa_value cactus_req_echo_send_cmd(ffa_id_t source,
+							ffa_id_t dest,
+							ffa_id_t echo_dest,
+							uint64_t echo_val)
 {
 	return cactus_send_cmd(source, dest, CACTUS_REQ_ECHO_CMD, echo_val,
 			       echo_dest, 0, 0);
@@ -158,8 +162,9 @@ static inline ffa_id_t cactus_req_echo_get_echo_dest(struct ffa_value ret)
  */
 #define CACTUS_DEADLOCK_CMD U(0x64656164)
 
-static inline struct ffa_value cactus_deadlock_send_cmd(
-	ffa_id_t source, ffa_id_t dest, ffa_id_t next_dest)
+static inline struct ffa_value cactus_deadlock_send_cmd(ffa_id_t source,
+							ffa_id_t dest,
+							ffa_id_t next_dest)
 {
 	return cactus_send_cmd(source, dest, CACTUS_DEADLOCK_CMD, next_dest, 0,
 			       0, 0);
@@ -176,9 +181,10 @@ static inline ffa_id_t cactus_deadlock_get_next_dest(struct ffa_value ret)
  */
 #define CACTUS_REQ_DEADLOCK_CMD (CACTUS_DEADLOCK_CMD + 1)
 
-static inline struct ffa_value cactus_req_deadlock_send_cmd(
-	ffa_id_t source, ffa_id_t dest, ffa_id_t next_dest1,
-	ffa_id_t next_dest2)
+static inline struct ffa_value cactus_req_deadlock_send_cmd(ffa_id_t source,
+							    ffa_id_t dest,
+							    ffa_id_t next_dest1,
+							    ffa_id_t next_dest2)
 {
 	return cactus_send_cmd(source, dest, CACTUS_REQ_DEADLOCK_CMD,
 			       next_dest1, next_dest2, 0, 0);
@@ -241,9 +247,11 @@ static inline bool cactus_mem_send_expect_exception(struct ffa_value ret)
  */
 #define CACTUS_REQ_MEM_SEND_CMD U(0x6d656d6f7279)
 
-static inline struct ffa_value cactus_req_mem_send_send_cmd(
-	ffa_id_t source, ffa_id_t dest, uint32_t mem_func,
-	ffa_id_t receiver, bool non_secure)
+static inline struct ffa_value cactus_req_mem_send_send_cmd(ffa_id_t source,
+							    ffa_id_t dest,
+							    uint32_t mem_func,
+							    ffa_id_t receiver,
+							    bool non_secure)
 {
 	return cactus_send_cmd(source, dest, CACTUS_REQ_MEM_SEND_CMD, mem_func,
 			       receiver, non_secure, 0);
@@ -273,8 +281,8 @@ static inline bool cactus_req_mem_send_get_non_secure(struct ffa_value ret)
  */
 #define CACTUS_REQ_SIMD_FILL_CMD U(0x53494d44)
 
-static inline struct ffa_value cactus_req_simd_fill_send_cmd(
-	ffa_id_t source, ffa_id_t dest)
+static inline struct ffa_value cactus_req_simd_fill_send_cmd(ffa_id_t source,
+							     ffa_id_t dest)
 {
 	return cactus_send_cmd(source, dest, CACTUS_REQ_SIMD_FILL_CMD, 0, 0, 0,
 			       0);
@@ -287,8 +295,8 @@ static inline struct ffa_value cactus_req_simd_fill_send_cmd(
  */
 #define CACTUS_CMP_SIMD_VALUE_CMD (CACTUS_REQ_SIMD_FILL_CMD + 1)
 
-static inline struct ffa_value cactus_req_simd_compare_send_cmd(
-	ffa_id_t source, ffa_id_t dest)
+static inline struct ffa_value cactus_req_simd_compare_send_cmd(ffa_id_t source,
+								ffa_id_t dest)
 {
 	return cactus_send_cmd(source, dest, CACTUS_CMP_SIMD_VALUE_CMD, 0, 0, 0,
 			       0);
@@ -301,8 +309,8 @@ static inline struct ffa_value cactus_req_simd_compare_send_cmd(
  */
 #define CACTUS_SLEEP_CMD U(0x736c656570)
 
-static inline struct ffa_value cactus_sleep_cmd(
-	ffa_id_t source, ffa_id_t dest, uint32_t sleep_time)
+static inline struct ffa_value cactus_sleep_cmd(ffa_id_t source, ffa_id_t dest,
+						uint32_t sleep_time)
 {
 	return cactus_send_cmd(source, dest, CACTUS_SLEEP_CMD, sleep_time, 0, 0,
 			       0);
@@ -318,9 +326,11 @@ static inline struct ffa_value cactus_sleep_cmd(
  */
 #define CACTUS_FWD_SLEEP_CMD (CACTUS_SLEEP_CMD + 1)
 
-static inline struct ffa_value cactus_fwd_sleep_cmd(
-	ffa_id_t source, ffa_id_t dest, ffa_id_t fwd_dest,
-	uint32_t sleep_time, bool hint_interrupted)
+static inline struct ffa_value cactus_fwd_sleep_cmd(ffa_id_t source,
+						    ffa_id_t dest,
+						    ffa_id_t fwd_dest,
+						    uint32_t sleep_time,
+						    bool hint_interrupted)
 {
 	return cactus_send_cmd(source, dest, CACTUS_FWD_SLEEP_CMD, sleep_time,
 			       fwd_dest, hint_interrupted, 0);
@@ -351,13 +361,11 @@ static inline bool cactus_get_fwd_sleep_interrupted_hint(struct ffa_value ret)
 #define CACTUS_SLEEP_TRIGGER_TWDOG_CMD (CACTUS_SLEEP_CMD + 2)
 
 static inline struct ffa_value cactus_sleep_trigger_wdog_cmd(
-	ffa_id_t source, ffa_id_t dest, uint32_t sleep_time,
-	uint64_t wdog_time)
+	ffa_id_t source, ffa_id_t dest, uint32_t sleep_time, uint64_t wdog_time)
 {
-	return cactus_send_cmd(source, dest, CACTUS_SLEEP_TRIGGER_TWDOG_CMD, sleep_time,
-			       wdog_time, 0, 0);
+	return cactus_send_cmd(source, dest, CACTUS_SLEEP_TRIGGER_TWDOG_CMD,
+			       sleep_time, wdog_time, 0, 0);
 }
-
 
 static inline uint32_t cactus_get_wdog_trigger_duration(struct ffa_value ret)
 {
@@ -371,9 +379,10 @@ static inline uint32_t cactus_get_wdog_trigger_duration(struct ffa_value ret)
  */
 #define CACTUS_INTERRUPT_CMD U(0x696e7472)
 
-static inline struct ffa_value cactus_interrupt_cmd(
-	ffa_id_t source, ffa_id_t dest, uint32_t interrupt_id,
-	bool enable, uint32_t pin)
+static inline struct ffa_value cactus_interrupt_cmd(ffa_id_t source,
+						    ffa_id_t dest,
+						    uint32_t interrupt_id,
+						    bool enable, uint32_t pin)
 {
 	return cactus_send_cmd(source, dest, CACTUS_INTERRUPT_CMD, interrupt_id,
 			       enable, pin, 0);
@@ -399,11 +408,13 @@ static inline enum interrupt_pin cactus_get_interrupt_pin(struct ffa_value ret)
  *
  * The command id is the hex representation of the string "SMMU"
  */
-#define CACTUS_DMA_SMMUv3_CMD           (0x534d4d55)
+#define CACTUS_DMA_SMMUv3_CMD (0x534d4d55)
 
-static inline struct ffa_value cactus_send_dma_cmd(
-	ffa_id_t source, ffa_id_t dest, uint32_t operation,
-	uintptr_t base, size_t range, uint32_t attributes)
+static inline struct ffa_value cactus_send_dma_cmd(ffa_id_t source,
+						   ffa_id_t dest,
+						   uint32_t operation,
+						   uintptr_t base, size_t range,
+						   uint32_t attributes)
 {
 	return cactus_send_cmd(source, dest, CACTUS_DMA_SMMUv3_CMD,
 			       (uint64_t)operation, (uint64_t)base,
@@ -422,8 +433,8 @@ static inline struct ffa_value cactus_send_dma_cmd(
 #define CACTUS_NOTIFICATION_BIND_CMD U(0x62696e64)
 
 static inline struct ffa_value cactus_notification_bind_send_cmd(
-	ffa_id_t source, ffa_id_t dest, ffa_id_t receiver,
-	ffa_id_t sender, ffa_notification_bitmap_t notifications, uint32_t flags)
+	ffa_id_t source, ffa_id_t dest, ffa_id_t receiver, ffa_id_t sender,
+	ffa_notification_bitmap_t notifications, uint32_t flags)
 {
 	return cactus_send_cmd(source, dest, CACTUS_NOTIFICATION_BIND_CMD,
 			       receiver, sender, notifications, flags);
@@ -441,8 +452,8 @@ static inline struct ffa_value cactus_notification_bind_send_cmd(
 #define CACTUS_NOTIFICATION_UNBIND_CMD U(0x756e62696e64)
 
 static inline struct ffa_value cactus_notification_unbind_send_cmd(
-	ffa_id_t source, ffa_id_t dest, ffa_id_t receiver,
-	ffa_id_t sender, ffa_notification_bitmap_t notifications)
+	ffa_id_t source, ffa_id_t dest, ffa_id_t receiver, ffa_id_t sender,
+	ffa_notification_bitmap_t notifications)
 {
 	return cactus_send_cmd(source, dest, CACTUS_NOTIFICATION_UNBIND_CMD,
 			       receiver, sender, notifications, 0);
@@ -475,8 +486,8 @@ static inline ffa_notification_bitmap_t cactus_notification_get_notifications(
 #define CACTUS_NOTIFICATION_GET_CMD U(0x6765746e6f74)
 
 static inline struct ffa_value cactus_notification_get_send_cmd(
-	ffa_id_t source, ffa_id_t dest, ffa_id_t receiver,
-	uint32_t vcpu_id, uint32_t flags, bool check_npi_handled)
+	ffa_id_t source, ffa_id_t dest, ffa_id_t receiver, uint32_t vcpu_id,
+	uint32_t flags, bool check_npi_handled)
 {
 	return cactus_send_cmd(source, dest, CACTUS_NOTIFICATION_GET_CMD,
 			       receiver, vcpu_id, check_npi_handled, flags);
@@ -493,8 +504,7 @@ static inline uint32_t cactus_notification_get_flags(struct ffa_value ret)
 }
 
 static inline struct ffa_value cactus_notifications_get_success_resp(
-	ffa_id_t source, ffa_id_t dest, uint64_t from_sp,
-	uint64_t from_vm)
+	ffa_id_t source, ffa_id_t dest, uint64_t from_sp, uint64_t from_vm)
 {
 	return cactus_send_response(source, dest, CACTUS_SUCCESS, from_sp,
 				    from_vm, 0, 0);
@@ -526,14 +536,13 @@ static inline bool cactus_notifications_check_npi_handled(struct ffa_value ret)
 #define CACTUS_NOTIFICATIONS_SET_CMD U(0x6e6f74736574)
 
 static inline struct ffa_value cactus_notifications_set_send_cmd(
-	ffa_id_t source, ffa_id_t dest, ffa_id_t receiver,
-	ffa_id_t sender, uint32_t flags, ffa_notification_bitmap_t notifications,
+	ffa_id_t source, ffa_id_t dest, ffa_id_t receiver, ffa_id_t sender,
+	uint32_t flags, ffa_notification_bitmap_t notifications,
 	ffa_id_t echo_dest)
 {
 	return cactus_send_cmd(source, dest, CACTUS_NOTIFICATIONS_SET_CMD,
 			       (uint32_t)receiver | ((uint32_t)sender << 16),
-			       echo_dest,
-			       notifications, flags);
+			       echo_dest, notifications, flags);
 }
 
 static inline ffa_id_t cactus_notifications_set_get_receiver(
@@ -552,10 +561,11 @@ static inline ffa_id_t cactus_notifications_set_get_sender(struct ffa_value ret)
  *
  * The command id is the hex representaton of the string "WDOG"
  */
-#define CACTUS_TWDOG_START_CMD		U(0x57444f47)
+#define CACTUS_TWDOG_START_CMD U(0x57444f47)
 
-static inline struct ffa_value cactus_send_twdog_cmd(
-	ffa_id_t source, ffa_id_t dest, uint64_t time)
+static inline struct ffa_value cactus_send_twdog_cmd(ffa_id_t source,
+						     ffa_id_t dest,
+						     uint64_t time)
 {
 	return cactus_send_cmd(source, dest, CACTUS_TWDOG_START_CMD, time, 0, 0,
 			       0);
@@ -573,8 +583,8 @@ static inline uint32_t cactus_get_wdog_duration(struct ffa_value ret)
  */
 #define CACTUS_GET_REQ_COUNT_CMD U(0x726571636f756e74)
 
-static inline struct ffa_value cactus_get_req_count_send_cmd(
-	ffa_id_t source, ffa_id_t dest)
+static inline struct ffa_value cactus_get_req_count_send_cmd(ffa_id_t source,
+							     ffa_id_t dest)
 {
 	return cactus_send_cmd(source, dest, CACTUS_GET_REQ_COUNT_CMD, 0, 0, 0,
 			       0);
@@ -592,11 +602,11 @@ static inline uint32_t cactus_get_req_count(struct ffa_value ret)
  */
 #define CACTUS_LAST_INTERRUPT_SERVICED_CMD U(0x76494e54)
 
-static inline struct ffa_value cactus_get_last_interrupt_cmd(
-	ffa_id_t source, ffa_id_t dest)
+static inline struct ffa_value cactus_get_last_interrupt_cmd(ffa_id_t source,
+							     ffa_id_t dest)
 {
 	return cactus_send_cmd(source, dest, CACTUS_LAST_INTERRUPT_SERVICED_CMD,
-				 0, 0, 0, 0);
+			       0, 0, 0, 0);
 }
 
 /**
@@ -608,11 +618,11 @@ static inline struct ffa_value cactus_get_last_interrupt_cmd(
  */
 #define CACTUS_RESUME_AFTER_MANAGED_EXIT U(0x52414d45)
 
-static inline struct ffa_value cactus_resume_after_managed_exit(
-	ffa_id_t source, ffa_id_t dest)
+static inline struct ffa_value cactus_resume_after_managed_exit(ffa_id_t source,
+								ffa_id_t dest)
 {
 	return cactus_send_cmd(source, dest, CACTUS_RESUME_AFTER_MANAGED_EXIT,
-				 0, 0, 0, 0);
+			       0, 0, 0, 0);
 }
 
 /**
@@ -621,11 +631,12 @@ static inline struct ffa_value cactus_resume_after_managed_exit(
  * The command is the hex representation of the string "espi".
  */
 #define CACTUS_TRIGGER_ESPI_CMD U(0x65737069)
-static inline struct ffa_value cactus_trigger_espi_cmd(
-	ffa_id_t source, ffa_id_t dest, uint32_t espi_id)
+static inline struct ffa_value cactus_trigger_espi_cmd(ffa_id_t source,
+						       ffa_id_t dest,
+						       uint32_t espi_id)
 {
-	return cactus_send_cmd(source, dest, CACTUS_TRIGGER_ESPI_CMD,
-				 espi_id, 0, 0, 0);
+	return cactus_send_cmd(source, dest, CACTUS_TRIGGER_ESPI_CMD, espi_id,
+			       0, 0, 0);
 }
 
 static inline uint32_t cactus_get_espi_id(struct ffa_value ret)
@@ -642,11 +653,12 @@ static inline uint32_t cactus_get_espi_id(struct ffa_value ret)
  */
 #define CACTUS_RAS_DELEGATE_CMD U(0x72617365)
 
-static inline struct ffa_value cactus_ras_delegate_send_cmd(
-	ffa_id_t source, ffa_id_t dest, uint64_t event_id)
+static inline struct ffa_value cactus_ras_delegate_send_cmd(ffa_id_t source,
+							    ffa_id_t dest,
+							    uint64_t event_id)
 {
-	return cactus_send_cmd(source, dest, CACTUS_RAS_DELEGATE_CMD, event_id, 0, 0,
-			       0);
+	return cactus_send_cmd(source, dest, CACTUS_RAS_DELEGATE_CMD, event_id,
+			       0, 0, 0);
 }
 
 static inline uint64_t cactus_ras_get_event_id(struct ffa_value ret)
@@ -661,12 +673,14 @@ static inline uint64_t cactus_ras_get_event_id(struct ffa_value ret)
  */
 #define CACTUS_REQ_MSG_SEND_CMD U(0x4d5347524551a)
 
-static inline struct ffa_value cactus_req_ind_msg_send_cmd(
-	ffa_id_t source, ffa_id_t dest, ffa_id_t receiver,
-	ffa_id_t sender, uint32_t flags)
+static inline struct ffa_value cactus_req_ind_msg_send_cmd(ffa_id_t source,
+							   ffa_id_t dest,
+							   ffa_id_t receiver,
+							   ffa_id_t sender,
+							   uint32_t flags)
 {
-	return cactus_send_cmd(source, dest, CACTUS_REQ_MSG_SEND_CMD,
-			       flags, receiver, sender, 0);
+	return cactus_send_cmd(source, dest, CACTUS_REQ_MSG_SEND_CMD, flags,
+			       receiver, sender, 0);
 }
 
 static inline ffa_id_t cactus_msg_send_receiver(struct ffa_value ret)

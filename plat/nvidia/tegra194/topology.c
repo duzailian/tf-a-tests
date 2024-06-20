@@ -6,25 +6,16 @@
 
 #include <arch.h>
 #include <assert.h>
-#include <stddef.h>
-
 #include <plat_topology.h>
 #include <platform_def.h>
+#include <stddef.h>
 #include <tftf_lib.h>
 
 static const struct {
 	unsigned cluster_id;
 	unsigned cpu_id;
-} tegra194_cores[] = {
-	{ 0, 0 },
-	{ 0, 1 },
-	{ 1, 0 },
-	{ 1, 1 },
-	{ 2, 0 },
-	{ 2, 1 },
-	{ 3, 0 },
-	{ 3, 1 }
-};
+} tegra194_cores[] = {{0, 0}, {0, 1}, {1, 0}, {1, 1},
+		      {2, 0}, {2, 1}, {3, 0}, {3, 1}};
 
 /*
  * The Tegra194 power domain tree descriptor. Tegra194 implements a system
@@ -43,8 +34,7 @@ static const unsigned char tegra194_power_domain_tree_desc[] = {
 	/* Number of children for the third cluster */
 	PLATFORM_CORES_PER_CLUSTER,
 	/* Number of children for the fourth cluster */
-	PLATFORM_CORES_PER_CLUSTER
-};
+	PLATFORM_CORES_PER_CLUSTER};
 
 const unsigned char *tftf_plat_get_pwr_domain_tree_desc(void)
 {

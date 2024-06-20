@@ -8,16 +8,16 @@
 #include <ffa_endpoints.h>
 #include <ffa_helpers.h>
 #include <fpu.h>
+#include <lib/extensions/sve.h>
 #include <spm_test_helpers.h>
 #include <test_helpers.h>
-#include <lib/extensions/sve.h>
 
 #define SENDER HYP_ID
 #define RECEIVER SP_ID(1)
-#define SVE_TEST_ITERATIONS	100
-#define NS_SVE_OP_ARRAYSIZE		1024
+#define SVE_TEST_ITERATIONS 100
+#define NS_SVE_OP_ARRAYSIZE 1024
 
-static const struct ffa_uuid expected_sp_uuids[] = { {PRIMARY_UUID} };
+static const struct ffa_uuid expected_sp_uuids[] = {{PRIMARY_UUID}};
 
 static sve_z_regs_t sve_vectors_input;
 static sve_z_regs_t sve_vectors_output;
@@ -27,10 +27,10 @@ static fpu_state_t g_fpu_state_write;
 static fpu_state_t g_fpu_state_read;
 
 /*
- * Tests that SIMD vectors and FPU state are preserved during the context switches between
- * normal world and the secure world.
- * Fills the SIMD vectors, FPCR and FPSR with random values, requests SP to fill the vectors
- * with a different values, request SP to check if secure SIMD context is restored.
+ * Tests that SIMD vectors and FPU state are preserved during the context
+ * switches between normal world and the secure world. Fills the SIMD vectors,
+ * FPCR and FPSR with random values, requests SP to fill the vectors with a
+ * different values, request SP to check if secure SIMD context is restored.
  * Checks that the NS context is restored on return.
  */
 test_result_t test_simd_vectors_preserved(void)
@@ -89,8 +89,9 @@ test_result_t test_sve_vectors_preserved(void)
 	CHECK_SPMC_TESTING_SETUP(1, 1, expected_sp_uuids);
 
 	/*
-	 * Clear SVE vectors buffers used to compare the SVE state before calling
-	 * into the Swd compared to SVE state restored after returning to NWd.
+	 * Clear SVE vectors buffers used to compare the SVE state before
+	 * calling into the Swd compared to SVE state restored after returning
+	 * to NWd.
 	 */
 	memset(sve_vectors_input, 0, sizeof(sve_vectors_input));
 	memset(sve_vectors_output, 0, sizeof(sve_vectors_output));
@@ -103,8 +104,9 @@ test_result_t test_sve_vectors_preserved(void)
 	vl = sve_rdvl_1();
 
 	/* Fill each vector for the VL size with a fixed pattern. */
-	sve_vector = (uint8_t *) sve_vectors_input;
-	for (uint32_t vector_num = 0U; vector_num < SVE_NUM_VECTORS; vector_num++) {
+	sve_vector = (uint8_t *)sve_vectors_input;
+	for (uint32_t vector_num = 0U; vector_num < SVE_NUM_VECTORS;
+	     vector_num++) {
 		memset(sve_vector, 0x11 * (vector_num + 1), vl);
 		sve_vector += vl;
 	}
@@ -130,7 +132,8 @@ test_result_t test_sve_vectors_preserved(void)
 	sve_z_regs_read(&sve_vectors_output);
 
 	/* Compare to state before calling into secure world. */
-	if (sve_z_regs_compare(&sve_vectors_input, &sve_vectors_output) != 0UL) {
+	if (sve_z_regs_compare(&sve_vectors_input, &sve_vectors_output) !=
+	    0UL) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -189,15 +192,13 @@ test_result_t test_sve_vectors_operations(void)
 
 	for (unsigned int i = 0; i < SVE_TEST_ITERATIONS; i++) {
 		/* Perform SVE operations with intermittent calls to Swd. */
-		cb_err = sve_subtract_arrays_interleaved(sve_op_1, sve_op_1,
-							 sve_op_2,
-							 NS_SVE_OP_ARRAYSIZE,
-							 &callback_enter_cactus_sp);
+		cb_err = sve_subtract_arrays_interleaved(
+			sve_op_1, sve_op_1, sve_op_2, NS_SVE_OP_ARRAYSIZE,
+			&callback_enter_cactus_sp);
 		if (cb_err == true) {
 			ERROR("Callback to Cactus SP failed\n");
 			return TEST_RESULT_FAIL;
 		}
-
 	}
 
 	/* Check result of SVE operations. */

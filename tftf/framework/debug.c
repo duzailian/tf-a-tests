@@ -17,7 +17,8 @@ void __attribute__((__noreturn__)) do_panic(const char *file, int line)
 		continue;
 }
 
-void __attribute__((__noreturn__)) do_bug_unreachable(const char *file, int line)
+void __attribute__((__noreturn__))
+do_bug_unreachable(const char *file, int line)
 {
 	mp_printf("BUG: Unreachable code!\n");
 	do_panic(file, line);

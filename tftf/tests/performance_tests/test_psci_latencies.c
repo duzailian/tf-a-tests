@@ -32,7 +32,7 @@ static event_t target_booted, target_keep_on_booted, target_keep_on;
  * to be used. For example, for 10% define this macro to 10 and for
  * 20% define to 5.
  */
-#define BASELINE_VARIANCE	10
+#define BASELINE_VARIANCE 10
 
 static test_result_t test_target_function(void)
 {
@@ -48,18 +48,20 @@ static test_result_t test_target_keep_on_function(void)
 }
 
 /*
- * The helper routine for psci_trigger_peer_cluster_cache_coh() test. Turn ON and turn OFF
- * the target CPU while flooding it with CPU ON requests.
+ * The helper routine for psci_trigger_peer_cluster_cache_coh() test. Turn ON
+ * and turn OFF the target CPU while flooding it with CPU ON requests.
  */
-static test_result_t get_target_cpu_on_stats(unsigned int target_mpid,
-		uint64_t *count_diff, unsigned int *cpu_on_hits_on_target)
+static test_result_t get_target_cpu_on_stats(
+	unsigned int target_mpid, uint64_t *count_diff,
+	unsigned int *cpu_on_hits_on_target)
 {
 	int ret;
 	uint64_t start_time;
 
-	ret = tftf_try_cpu_on(target_mpid, (uintptr_t) test_target_function, 0);
+	ret = tftf_try_cpu_on(target_mpid, (uintptr_t)test_target_function, 0);
 	if (ret != PSCI_E_SUCCESS) {
-		tftf_testcase_printf("Failed to turn ON target CPU %x\n", target_mpid);
+		tftf_testcase_printf("Failed to turn ON target CPU %x\n",
+				     target_mpid);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -71,13 +73,16 @@ static test_result_t get_target_cpu_on_stats(unsigned int target_mpid,
 
 	/* Flood the target CPU with CPU ON requests */
 	do {
-		ret = tftf_try_cpu_on(target_mpid, (uintptr_t) test_target_function, 0);
+		ret = tftf_try_cpu_on(target_mpid,
+				      (uintptr_t)test_target_function, 0);
 		if (ret == PSCI_E_ALREADY_ON)
 			(*cpu_on_hits_on_target)++;
-	} while ((ret == PSCI_E_ALREADY_ON) && (syscounter_read() < (start_time + read_cntfrq_el0())));
+	} while ((ret == PSCI_E_ALREADY_ON) &&
+		 (syscounter_read() < (start_time + read_cntfrq_el0())));
 
 	if (ret != PSCI_E_SUCCESS) {
-		tftf_testcase_printf("The target failed to turn ON within 1000ms\n");
+		tftf_testcase_printf(
+			"The target failed to turn ON within 1000ms\n");
 		return TEST_RESULT_FAIL;
 	}
 
@@ -87,7 +92,6 @@ static test_result_t get_target_cpu_on_stats(unsigned int target_mpid,
 
 	return TEST_RESULT_SUCCESS;
 }
-
 
 /*
  * @Test_Aim@ Measure the difference in latencies in waking up a CPU when it is
@@ -126,8 +130,8 @@ static test_result_t get_target_cpu_on_stats(unsigned int target_mpid,
 test_result_t psci_trigger_peer_cluster_cache_coh(void)
 {
 	unsigned int target_idx, target_keep_on_idx, cluster_1, cluster_2,
-			target_mpid, target_keep_on_mpid, hits_baseline = 0,
-			hits_test = 0;
+		target_mpid, target_keep_on_mpid, hits_baseline = 0,
+						  hits_test = 0;
 	int ret;
 	uint64_t diff_baseline = 0, diff_test = 0;
 
@@ -139,11 +143,12 @@ test_result_t psci_trigger_peer_cluster_cache_coh(void)
 
 	/* Identify the cluster node corresponding to the lead CPU */
 	cluster_1 = tftf_get_parent_node_from_mpidr(read_mpidr_el1(),
-					PLAT_MAX_PWR_LEVEL - 1);
+						    PLAT_MAX_PWR_LEVEL - 1);
 	assert(cluster_1 != PWR_DOMAIN_INIT);
 
 	/* Identify 2nd cluster node for the test */
-	for_each_power_domain_idx(cluster_2, PLAT_MAX_PWR_LEVEL - 1) {
+	for_each_power_domain_idx(cluster_2, PLAT_MAX_PWR_LEVEL - 1)
+	{
 		if (cluster_2 != cluster_1)
 			break;
 	}
@@ -152,13 +157,16 @@ test_result_t psci_trigger_peer_cluster_cache_coh(void)
 
 	/* First lets try to get baseline time data */
 	/* Identify a target CPU and `keep_on` CPU nodes on cluster_2 */
-	target_idx = tftf_get_next_cpu_in_pwr_domain(cluster_2, PWR_DOMAIN_INIT);
-	target_keep_on_idx = tftf_get_next_cpu_in_pwr_domain(cluster_2, target_idx);
+	target_idx =
+		tftf_get_next_cpu_in_pwr_domain(cluster_2, PWR_DOMAIN_INIT);
+	target_keep_on_idx =
+		tftf_get_next_cpu_in_pwr_domain(cluster_2, target_idx);
 
 	assert(target_idx != PWR_DOMAIN_INIT);
 
 	if (target_keep_on_idx == PWR_DOMAIN_INIT) {
-		tftf_testcase_printf("Need at least 2 CPUs on target test cluster\n");
+		tftf_testcase_printf(
+			"Need at least 2 CPUs on target test cluster\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -169,15 +177,18 @@ test_result_t psci_trigger_peer_cluster_cache_coh(void)
 	assert(target_keep_on_mpid != INVALID_MPID);
 
 	/* Turn On the `keep_on CPU` and keep it ON for the baseline data */
-	ret = tftf_try_cpu_on(target_keep_on_mpid, (uintptr_t) test_target_keep_on_function, 0);
+	ret = tftf_try_cpu_on(target_keep_on_mpid,
+			      (uintptr_t)test_target_keep_on_function, 0);
 	if (ret != PSCI_E_SUCCESS) {
-		tftf_testcase_printf("Failed to turn ON target CPU %x\n", target_mpid);
+		tftf_testcase_printf("Failed to turn ON target CPU %x\n",
+				     target_mpid);
 		return TEST_RESULT_FAIL;
 	}
 
 	tftf_wait_for_event(&target_keep_on_booted);
 
-	ret = get_target_cpu_on_stats(target_mpid, &diff_baseline, &hits_baseline);
+	ret = get_target_cpu_on_stats(target_mpid, &diff_baseline,
+				      &hits_baseline);
 
 	/* Allow `Keep-on` CPU to power OFF */
 	tftf_send_event(&target_keep_on);
@@ -185,9 +196,10 @@ test_result_t psci_trigger_peer_cluster_cache_coh(void)
 	if (ret != TEST_RESULT_SUCCESS)
 		return TEST_RESULT_FAIL;
 
-	tftf_testcase_printf("\t\tFinished in ticks \tCPU_ON requests prior to success\n");
+	tftf_testcase_printf(
+		"\t\tFinished in ticks \tCPU_ON requests prior to success\n");
 	tftf_testcase_printf("Baseline data: \t%lld \t\t\t%d\n", diff_baseline,
-							hits_baseline);
+			     hits_baseline);
 
 	wait_for_non_lead_cpus();
 
@@ -200,11 +212,11 @@ test_result_t psci_trigger_peer_cluster_cache_coh(void)
 		return TEST_RESULT_FAIL;
 
 	tftf_testcase_printf("Test data: \t%lld \t\t\t%d\n", diff_test,
-							hits_test);
+			     hits_test);
 
 	int variance = ((diff_test - diff_baseline) * 100) / (diff_baseline);
 	tftf_testcase_printf("Variance of %d per-cent from baseline detected\n",
-			variance);
+			     variance);
 
 	wait_for_non_lead_cpus();
 

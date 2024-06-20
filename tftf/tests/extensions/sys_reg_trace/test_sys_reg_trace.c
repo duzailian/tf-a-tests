@@ -4,13 +4,12 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <string.h>
-
-#include <test_helpers.h>
-#include <tftf_lib.h>
-#include <tftf.h>
-
 #include "./test_sys_reg_trace.h"
+
+#include <string.h>
+#include <test_helpers.h>
+#include <tftf.h>
+#include <tftf_lib.h>
 
 static uint32_t get_trace_arch_ver(void)
 {

@@ -66,24 +66,23 @@ static test_result_t validate_el3_pstate_parsing(void)
 			if (pstate_id_idx[0] == PWR_STATE_INIT_INDEX)
 				break;
 
-			expected_return_val = tftf_get_pstate_vars(&power_level,
-								&test_suspend_type,
-								&suspend_state_id,
-								pstate_id_idx);
+			expected_return_val = tftf_get_pstate_vars(
+				&power_level, &test_suspend_type,
+				&suspend_state_id, pstate_id_idx);
 			power_state = tftf_make_psci_pstate(power_level,
-							test_suspend_type,
-							suspend_state_id);
+							    test_suspend_type,
+							    suspend_state_id);
 
 			psci_ret = tftf_cpu_suspend(power_state);
 
 			if (expected_return_val != psci_ret) {
-				tftf_testcase_printf("Failed with values: "
-							" psci_ret:%d"
-							" expected_return_val:%d"
-							" power_state:0x%x\n",
-							psci_ret,
-							expected_return_val,
-							power_state);
+				tftf_testcase_printf(
+					"Failed with values: "
+					" psci_ret:%d"
+					" expected_return_val:%d"
+					" power_state:0x%x\n",
+					psci_ret, expected_return_val,
+					power_state);
 				return TEST_RESULT_FAIL;
 			}
 		} while (1);
@@ -115,7 +114,8 @@ static test_result_t valid_only_local_stateid(void)
 
 	/* If only single power level is possible, SKIP the test */
 	if (!PLAT_MAX_PWR_LEVEL) {
-		tftf_testcase_printf("Platform has only a single valid local level\n");
+		tftf_testcase_printf(
+			"Platform has only a single valid local level\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -127,25 +127,26 @@ static test_result_t valid_only_local_stateid(void)
 	 */
 	for (i = 1; i <= PLAT_MAX_PWR_LEVEL; i++) {
 		do {
-
 			INFO("Getting next local state:\n");
 			tftf_set_next_local_state_id_idx(i, pstate_id_idx);
 
 			if (pstate_id_idx[i] == PWR_STATE_INIT_INDEX)
 				break;
-			local_level_state = plat_get_state_prop(i) + pstate_id_idx[i];
-			power_state = tftf_make_psci_pstate(i,
-					local_level_state->is_pwrdown,
-					local_level_state->state_ID << PLAT_LOCAL_PSTATE_WIDTH);
+			local_level_state =
+				plat_get_state_prop(i) + pstate_id_idx[i];
+			power_state = tftf_make_psci_pstate(
+				i, local_level_state->is_pwrdown,
+				local_level_state->state_ID
+					<< PLAT_LOCAL_PSTATE_WIDTH);
 
 			psci_ret = tftf_cpu_suspend(power_state);
 
 			if (psci_ret != PSCI_E_INVALID_PARAMS) {
-				tftf_testcase_printf("Expected invalid params but got :"
+				tftf_testcase_printf(
+					"Expected invalid params but got :"
 					" psci_ret: %d"
 					" power_state:0x%x\n",
-					psci_ret,
-					power_state);
+					psci_ret, power_state);
 
 				return TEST_RESULT_FAIL;
 			}
@@ -174,18 +175,19 @@ static test_result_t completely_invalid_stateid(void)
 
 	/* Make stateID with all invalid ID's for all power levels */
 	for (i = 0; i < PLAT_MAX_PWR_LEVEL; i++)
-		state_id = state_id |
-				((PLAT_PSCI_DUMMY_STATE_ID & ((1 << PLAT_LOCAL_PSTATE_WIDTH) - 1))
-				 << (PLAT_LOCAL_PSTATE_WIDTH * i));
+		state_id = state_id | ((PLAT_PSCI_DUMMY_STATE_ID &
+					((1 << PLAT_LOCAL_PSTATE_WIDTH) - 1))
+				       << (PLAT_LOCAL_PSTATE_WIDTH * i));
 
-	power_state = tftf_make_psci_pstate(PLAT_MAX_PWR_LEVEL, PSTATE_TYPE_POWERDOWN, state_id);
+	power_state = tftf_make_psci_pstate(PLAT_MAX_PWR_LEVEL,
+					    PSTATE_TYPE_POWERDOWN, state_id);
 	psci_ret = tftf_cpu_suspend(power_state);
 
 	if (psci_ret != PSCI_E_INVALID_PARAMS) {
-		tftf_testcase_printf("Expected invalid params but got : %d"
-					" power_state:0x%x\n",
-					psci_ret,
-					power_state);
+		tftf_testcase_printf(
+			"Expected invalid params but got : %d"
+			" power_state:0x%x\n",
+			psci_ret, power_state);
 
 		return TEST_RESULT_FAIL;
 	}
@@ -219,25 +221,25 @@ static test_result_t invalid_state_type(void)
 		if (pstate_id_idx[0] == PWR_STATE_INIT_INDEX)
 			break;
 
-		expected_return_val = tftf_get_pstate_vars(&power_level,
-								&test_suspend_type,
-								&suspend_state_id,
-								pstate_id_idx);
+		expected_return_val =
+			tftf_get_pstate_vars(&power_level, &test_suspend_type,
+					     &suspend_state_id, pstate_id_idx);
 
 		if (expected_return_val != PSCI_E_SUCCESS)
 			continue;
 
 		/* Reverse the suspend type */
-		power_state = tftf_make_psci_pstate(power_level, !test_suspend_type, suspend_state_id);
+		power_state = tftf_make_psci_pstate(
+			power_level, !test_suspend_type, suspend_state_id);
 
 		psci_ret = tftf_cpu_suspend(power_state);
 
 		if (PSCI_E_INVALID_PARAMS != psci_ret) {
-			tftf_testcase_printf("Failed with values:"
+			tftf_testcase_printf(
+				"Failed with values:"
 				" psci_ret:%d"
 				" power_state:0x%x\n",
-				psci_ret,
-				power_state);
+				psci_ret, power_state);
 			return TEST_RESULT_FAIL;
 		}
 	} while (1);
@@ -277,27 +279,25 @@ static test_result_t invalid_power_level(void)
 		if (pstate_id_idx[0] == PWR_STATE_INIT_INDEX)
 			break;
 
-		expected_return_val = tftf_get_pstate_vars(&power_level,
-					&test_suspend_type,
-					&suspend_state_id,
-					pstate_id_idx);
+		expected_return_val =
+			tftf_get_pstate_vars(&power_level, &test_suspend_type,
+					     &suspend_state_id, pstate_id_idx);
 
 		if (expected_return_val != PSCI_E_SUCCESS)
 			continue;
 
 		/* Make a power state with invalid power level */
-		power_state = tftf_make_psci_pstate(power_level + 1,
-					test_suspend_type,
-					suspend_state_id);
+		power_state = tftf_make_psci_pstate(
+			power_level + 1, test_suspend_type, suspend_state_id);
 
 		psci_ret = tftf_cpu_suspend(power_state);
 
 		if (PSCI_E_INVALID_PARAMS != psci_ret) {
-			tftf_testcase_printf("Failed with values:"
-					" psci_ret:%d"
-					" power_state:0x%x\n",
-					psci_ret,
-					power_state);
+			tftf_testcase_printf(
+				"Failed with values:"
+				" psci_ret:%d"
+				" power_state:0x%x\n",
+				psci_ret, power_state);
 			return TEST_RESULT_FAIL;
 		}
 	} while (1);
@@ -341,25 +341,25 @@ static test_result_t mixed_state_id(void)
 		if (pstate_id_idx[0] == PWR_STATE_INIT_INDEX)
 			break;
 
-		if (tftf_get_pstate_vars(&power_level,
-					&test_suspend_type,
-					&suspend_state_id,
-					pstate_id_idx) != PSCI_E_SUCCESS)
+		if (tftf_get_pstate_vars(&power_level, &test_suspend_type,
+					 &suspend_state_id,
+					 pstate_id_idx) != PSCI_E_SUCCESS)
 			continue;
 
 		invalid_id_set = 0;
 
 		/*
-		 * Generate a state ID with valid and invalid local state ID's at
-		 * different levels
+		 * Generate a state ID with valid and invalid local state ID's
+		 * at different levels
 		 */
 		for (j = 0; j <= power_level; j++) {
 			/* Set index to invalid level for even power levels */
 			if (rand() % 2) {
-				suspend_state_id = suspend_state_id |
-							((PLAT_PSCI_DUMMY_STATE_ID &
-							((1 << PLAT_LOCAL_PSTATE_WIDTH) - 1))
-							<< (PLAT_LOCAL_PSTATE_WIDTH * j));
+				suspend_state_id =
+					suspend_state_id |
+					((PLAT_PSCI_DUMMY_STATE_ID &
+					  ((1 << PLAT_LOCAL_PSTATE_WIDTH) - 1))
+					 << (PLAT_LOCAL_PSTATE_WIDTH * j));
 				invalid_id_set = 1;
 			}
 		}
@@ -370,33 +370,32 @@ static test_result_t mixed_state_id(void)
 		 */
 		if (!invalid_id_set) {
 			j = rand() % (power_level + 1);
-			suspend_state_id = suspend_state_id |
-						((PLAT_PSCI_DUMMY_STATE_ID &
-						((1 << PLAT_LOCAL_PSTATE_WIDTH) - 1))
-						<< (PLAT_LOCAL_PSTATE_WIDTH * j));
+			suspend_state_id =
+				suspend_state_id |
+				((PLAT_PSCI_DUMMY_STATE_ID &
+				  ((1 << PLAT_LOCAL_PSTATE_WIDTH) - 1))
+				 << (PLAT_LOCAL_PSTATE_WIDTH * j));
 		}
 
-		power_state = tftf_make_psci_pstate(power_level, test_suspend_type, suspend_state_id);
+		power_state = tftf_make_psci_pstate(
+			power_level, test_suspend_type, suspend_state_id);
 		psci_ret = tftf_cpu_suspend(power_state);
 
 		if (psci_ret != PSCI_E_INVALID_PARAMS) {
-			tftf_testcase_printf("Failed with values: power_level: %d"
-					" test_suspend_type: %d"
-					" suspend_state_id:%d"
-					" psci_ret:%d"
-					" power_state:0x%x\n",
-					power_level,
-					test_suspend_type,
-					suspend_state_id,
-					psci_ret,
-					power_state);
+			tftf_testcase_printf(
+				"Failed with values: power_level: %d"
+				" test_suspend_type: %d"
+				" suspend_state_id:%d"
+				" psci_ret:%d"
+				" power_state:0x%x\n",
+				power_level, test_suspend_type,
+				suspend_state_id, psci_ret, power_state);
 			return TEST_RESULT_FAIL;
 		}
 	} while (1);
 
 	return TEST_RESULT_SUCCESS;
 }
-
 
 /*
  * This function contains common code for all test cases and runs the testcase
@@ -471,7 +470,8 @@ static test_result_t test_lead_cpu_validate_ep(void)
 	int i;
 
 	if (tftf_is_psci_state_id_null()) {
-		tftf_testcase_printf("EL3 firmware supports only NULL stateID\n");
+		tftf_testcase_printf(
+			"EL3 firmware supports only NULL stateID\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -484,26 +484,27 @@ static test_result_t test_lead_cpu_validate_ep(void)
 	/*
 	 * Preparation step: Power on all cores.
 	 */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU as it is already on */
 		if (target_mpid == lead_mpid)
 			continue;
 
 		ret = tftf_cpu_on(target_mpid,
-			(uintptr_t) test_non_lead_cpu_validate_ep,
-				0);
+				  (uintptr_t)test_non_lead_cpu_validate_ep, 0);
 		if (ret != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
-			"Failed to power on CPU 0x%x (%d)\n",
-			(unsigned int)target_mpid, ret);
+				"Failed to power on CPU 0x%x (%d)\n",
+				(unsigned int)target_mpid, ret);
 
 			return TEST_RESULT_SKIPPED;
 		}
 	}
 
 	/* Wait for all non-lead CPUs to be ready */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (target_mpid == lead_mpid)

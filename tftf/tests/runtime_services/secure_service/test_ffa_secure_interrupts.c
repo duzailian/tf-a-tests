@@ -5,6 +5,7 @@
  */
 
 #include <cactus_test_cmds.h>
+#include <drivers/arm/arm_gic.h>
 #include <ffa_endpoints.h>
 #include <ffa_helpers.h>
 #include <mmio.h>
@@ -13,18 +14,15 @@
 #include <test_helpers.h>
 #include <timer.h>
 
-#include <drivers/arm/arm_gic.h>
+#define SENDER HYP_ID
+#define RECEIVER SP_ID(1)
+#define RECEIVER_2 SP_ID(2)
+#define SP_SLEEP_TIME 1000U
+#define NS_TIME_SLEEP 1500U
+#define ECHO_VAL1 U(0xa0a0a0a0)
 
-#define SENDER		HYP_ID
-#define RECEIVER	SP_ID(1)
-#define RECEIVER_2	SP_ID(2)
-#define SP_SLEEP_TIME	1000U
-#define NS_TIME_SLEEP	1500U
-#define ECHO_VAL1	U(0xa0a0a0a0)
-
-static const struct ffa_uuid expected_sp_uuids[] = {
-		{PRIMARY_UUID}, {SECONDARY_UUID}
-	};
+static const struct ffa_uuid expected_sp_uuids[] = {{PRIMARY_UUID},
+						    {SECONDARY_UUID}};
 
 /*
  * @Test_Aim@ Test secure interrupt handling while first Secure Partition is
@@ -57,8 +55,8 @@ static const struct ffa_uuid expected_sp_uuids[] = {
  * 9. We make sure the time elapsed in the sleep routine by SP is not less than
  *    the requested value.
  *
- * 10. TFTF sends a direct request message to SP to query the ID of last serviced
- *     secure virtual interrupt.
+ * 10. TFTF sends a direct request message to SP to query the ID of last
+ * serviced secure virtual interrupt.
  *
  * 11. Further, TFTF expects SP to return the ID of Trusted Watchdog timer
  *     interrupt through a direct response message.
@@ -87,7 +85,8 @@ test_result_t test_ffa_sec_interrupt_sp_running(void)
 	}
 
 	/* Send request to first Cactus SP to sleep */
-	ret_values = cactus_sleep_trigger_wdog_cmd(SENDER, RECEIVER, SP_SLEEP_TIME, 50);
+	ret_values = cactus_sleep_trigger_wdog_cmd(SENDER, RECEIVER,
+						   SP_SLEEP_TIME, 50);
 
 	/*
 	 * Secure interrupt should trigger during this time, Cactus
@@ -99,7 +98,7 @@ test_result_t test_ffa_sec_interrupt_sp_running(void)
 	}
 
 	VERBOSE("Secure interrupt has preempted execution: %u\n",
-					cactus_get_response(ret_values));
+		cactus_get_response(ret_values));
 
 	/* Make sure elapsed time not less than sleep time */
 	if (cactus_get_response(ret_values) < SP_SLEEP_TIME) {
@@ -112,7 +111,7 @@ test_result_t test_ffa_sec_interrupt_sp_running(void)
 
 	if (!is_ffa_direct_response(ret_values)) {
 		ERROR("Expected a direct response for last serviced interrupt"
-			" command\n");
+		      " command\n");
 		return TEST_RESULT_FAIL;
 	}
 
@@ -159,7 +158,8 @@ test_result_t test_ffa_sec_interrupt_sp_running(void)
  * 9. We make sure the time elapsed in the sleep routine is not less than
  *    the requested value.
  *
- * 10. TFTF sends a direct request message to SP to query the ID of last serviced
+ * 10. TFTF sends a direct request message to SP to query the ID of last
+ serviced
  *     secure virtual interrupt.
  *
  * 11. Further, TFTF expects SP to return the ID of Trusted Watchdog timer
@@ -196,8 +196,8 @@ test_result_t test_ffa_sec_interrupt_sp_waiting(void)
 	time1 = syscounter_read();
 
 	/*
-	 * Sleep for NS_TIME_SLEEP ms. This ensures secure wdog timer triggers during this
-	 * time. We explicitly do not use tftf_timer_sleep();
+	 * Sleep for NS_TIME_SLEEP ms. This ensures secure wdog timer triggers
+	 * during this time. We explicitly do not use tftf_timer_sleep();
 	 */
 	waitms(NS_TIME_SLEEP);
 	time2 = syscounter_read();
@@ -207,7 +207,7 @@ test_result_t test_ffa_sec_interrupt_sp_waiting(void)
 
 	if (time_lapsed < NS_TIME_SLEEP) {
 		ERROR("Time elapsed less than expected value: %llu vs %u\n",
-				time_lapsed, NS_TIME_SLEEP);
+		      time_lapsed, NS_TIME_SLEEP);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -216,7 +216,7 @@ test_result_t test_ffa_sec_interrupt_sp_waiting(void)
 
 	if (!is_ffa_direct_response(ret_values)) {
 		ERROR("Expected a direct response for last serviced interrupt"
-			" command\n");
+		      " command\n");
 		return TEST_RESULT_FAIL;
 	}
 
@@ -294,7 +294,7 @@ test_result_t test_ffa_sec_interrupt_sp_blocked(void)
 	 * SP to sleep
 	 */
 	ret_values = cactus_fwd_sleep_cmd(SENDER, RECEIVER, RECEIVER_2,
-					 SP_SLEEP_TIME, false);
+					  SP_SLEEP_TIME, false);
 
 	/*
 	 * Secure interrupt should trigger during this time, Cactus
@@ -314,7 +314,7 @@ test_result_t test_ffa_sec_interrupt_sp_blocked(void)
 
 	if (!is_ffa_direct_response(ret_values)) {
 		ERROR("Expected a direct response for last serviced interrupt"
-			" command\n");
+		      " command\n");
 		return TEST_RESULT_FAIL;
 	}
 
@@ -362,8 +362,8 @@ test_result_t test_ffa_sec_interrupt_sp_blocked(void)
  * 9. We make sure the time elapsed in the sleep routine by SP is not less than
  *    the requested value.
  *
- * 10. TFTF sends a direct request message to SP to query the ID of last serviced
- *     secure virtual interrupt.
+ * 10. TFTF sends a direct request message to SP to query the ID of last
+ * serviced secure virtual interrupt.
  *
  * 11. Further, TFTF expects SP to return the ID of Trusted Watchdog timer
  *     interrupt through a direct response message.
@@ -411,7 +411,7 @@ test_result_t test_ffa_sec_interrupt_sp1_waiting_sp2_running(void)
 
 	if (!is_ffa_direct_response(ret_values)) {
 		ERROR("Expected a direct response for last serviced interrupt"
-			" command\n");
+		      " command\n");
 		return TEST_RESULT_FAIL;
 	}
 
@@ -463,7 +463,8 @@ test_result_t test_ffa_espi_sec_interrupt(void)
 
 	if (!is_ffa_direct_response(ret_values)) {
 		ERROR("Expected a direct response message while configuring"
-			" interrupt ESPI %u\n", IRQ_ESPI_TEST_INTID);
+		      " interrupt ESPI %u\n",
+		      IRQ_ESPI_TEST_INTID);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -473,10 +474,12 @@ test_result_t test_ffa_espi_sec_interrupt(void)
 	}
 
 	/* Trigger ESPI while running. */
-	ret_values = cactus_trigger_espi_cmd(SENDER, RECEIVER, IRQ_ESPI_TEST_INTID);
+	ret_values =
+		cactus_trigger_espi_cmd(SENDER, RECEIVER, IRQ_ESPI_TEST_INTID);
 	if (!is_ffa_direct_response(ret_values)) {
 		ERROR("Expected a direct response message while triggering"
-			" interrupt ESPI %u\n", IRQ_ESPI_TEST_INTID);
+		      " interrupt ESPI %u\n",
+		      IRQ_ESPI_TEST_INTID);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -491,12 +494,14 @@ test_result_t test_ffa_espi_sec_interrupt(void)
 
 	if (!is_ffa_direct_response(ret_values)) {
 		ERROR("Expected a direct response message while configuring"
-			" interrupt ESPI %u\n", IRQ_ESPI_TEST_INTID);
+		      " interrupt ESPI %u\n",
+		      IRQ_ESPI_TEST_INTID);
 		return TEST_RESULT_FAIL;
 	}
 
 	if (cactus_get_response(ret_values) != CACTUS_SUCCESS) {
-		ERROR("Failed to configure ESPI interrupt %u\n", IRQ_ESPI_TEST_INTID);
+		ERROR("Failed to configure ESPI interrupt %u\n",
+		      IRQ_ESPI_TEST_INTID);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -505,13 +510,14 @@ test_result_t test_ffa_espi_sec_interrupt(void)
 
 	if (!is_ffa_direct_response(ret_values)) {
 		ERROR("Expected a direct response for last serviced interrupt"
-			" command\n");
+		      " command\n");
 		return TEST_RESULT_FAIL;
 	}
 
 	/* Make sure Trusted Watchdog timer interrupt was serviced*/
 	if (cactus_get_response(ret_values) != IRQ_ESPI_TEST_INTID) {
-		ERROR("ESPI interrupt %u not serviced by SP\n", IRQ_ESPI_TEST_INTID);
+		ERROR("ESPI interrupt %u not serviced by SP\n",
+		      IRQ_ESPI_TEST_INTID);
 		return TEST_RESULT_FAIL;
 	}
 	return TEST_RESULT_SUCCESS;

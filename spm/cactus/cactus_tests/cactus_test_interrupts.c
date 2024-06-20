@@ -6,14 +6,13 @@
 
 #include <common/debug.h>
 #include <drivers/arm/sp805.h>
+#include <mmio.h>
+#include <platform.h>
 #include <sp_helpers.h>
 #include <spm_helpers.h>
 
 #include "cactus_message_loop.h"
 #include "cactus_test_cmds.h"
-
-#include <mmio.h>
-#include <platform.h>
 
 /* Secure virtual interrupt that was last handled by Cactus SP. */
 extern uint32_t last_serviced_interrupt[PLATFORM_CORE_COUNT];
@@ -54,8 +53,7 @@ CACTUS_CMD_HANDLER(sleep_cmd, CACTUS_SLEEP_CMD)
 	VERBOSE("Sleep complete: %llu\n", time_lapsed);
 
 	return cactus_response(ffa_dir_msg_dest(*args),
-			       ffa_dir_msg_source(*args),
-			       time_lapsed);
+			       ffa_dir_msg_source(*args), time_lapsed);
 }
 
 CACTUS_CMD_HANDLER(sleep_fwd_cmd, CACTUS_FWD_SLEEP_CMD)
@@ -78,8 +76,8 @@ CACTUS_CMD_HANDLER(sleep_fwd_cmd, CACTUS_FWD_SLEEP_CMD)
 	 * Hence, the target is allocated cpu cycles in this while loop.
 	 */
 	while ((ffa_func_id(ffa_ret) == FFA_INTERRUPT) ||
-		is_expected_cactus_response(ffa_ret, MANAGED_EXIT_INTERRUPT_ID,
-					    0)) {
+	       is_expected_cactus_response(ffa_ret, MANAGED_EXIT_INTERRUPT_ID,
+					   0)) {
 		fwd_dest_interrupted = true;
 
 		if (ffa_func_id(ffa_ret) == FFA_INTERRUPT) {
@@ -122,7 +120,6 @@ CACTUS_CMD_HANDLER(sleep_fwd_cmd, CACTUS_FWD_SLEEP_CMD)
 		      cactus_get_response(ffa_ret));
 		return cactus_error_resp(vm_id, ffa_dir_msg_source(*args),
 					 CACTUS_ERROR_TEST);
-
 	}
 
 	return cactus_success_resp(vm_id, ffa_dir_msg_source(*args), 0);
@@ -143,8 +140,7 @@ CACTUS_CMD_HANDLER(interrupt_cmd, CACTUS_INTERRUPT_CMD)
 	}
 
 	return cactus_response(ffa_dir_msg_dest(*args),
-			       ffa_dir_msg_source(*args),
-			       CACTUS_SUCCESS);
+			       ffa_dir_msg_source(*args), CACTUS_SUCCESS);
 }
 
 CACTUS_CMD_HANDLER(twdog_cmd, CACTUS_TWDOG_START_CMD)
@@ -212,14 +208,12 @@ CACTUS_CMD_HANDLER(sleep_twdog_cmd, CACTUS_SLEEP_TRIGGER_TWDOG_CMD)
 	VERBOSE("2nd Sleep complete: %llu\n", time_lapsed);
 
 	return cactus_response(ffa_dir_msg_dest(*args),
-			       ffa_dir_msg_source(*args),
-			       time_lapsed);
+			       ffa_dir_msg_source(*args), time_lapsed);
 fail:
 	/* Test failed. */
 	ERROR("Watchdog interrupt not handled\n");
 	return cactus_error_resp(ffa_dir_msg_dest(*args),
-				 ffa_dir_msg_source(*args),
-				 CACTUS_ERROR_TEST);
+				 ffa_dir_msg_source(*args), CACTUS_ERROR_TEST);
 }
 
 CACTUS_CMD_HANDLER(interrupt_serviced_cmd, CACTUS_LAST_INTERRUPT_SERVICED_CMD)
@@ -250,30 +244,29 @@ CACTUS_CMD_HANDLER(trigger_espi_cmd, CACTUS_TRIGGER_ESPI_CMD)
 	 * whitelist of the Cactus SP that invokes it.
 	 */
 	smc_args plat_sip_call = {
-			.fid = 0x82000100,
-			.arg1 = espi_id,
+		.fid = 0x82000100,
+		.arg1 = espi_id,
 	};
 	smc_ret_values ret;
 
-	sp_register_interrupt_handler(sec_interrupt_test_espi_handled,
-				      espi_id);
+	sp_register_interrupt_handler(sec_interrupt_test_espi_handled, espi_id);
 
 	/*
 	 * Call the low level assembler routine to make the SMC call bypassing
 	 * tftf_smc, as tftf_smc will set SVE hint bit in SMC FID when CPU
 	 * supports SVE and SVE traps are enabled.
 	 *
-	 * This can be changed to tftf_smc call once SPMC disregards SVE hint bit
-	 * from function identification.
+	 * This can be changed to tftf_smc call once SPMC disregards SVE hint
+	 * bit from function identification.
 	 */
-	ret = asm_tftf_smc64(plat_sip_call.fid, plat_sip_call.arg1, 0, 0, 0,
-			     0, 0, 0);
+	ret = asm_tftf_smc64(plat_sip_call.fid, plat_sip_call.arg1, 0, 0, 0, 0,
+			     0, 0);
 
 	if (ret.ret0 == SMC_UNKNOWN) {
 		ERROR("SiP SMC call not supported\n");
 		return cactus_error_resp(ffa_dir_msg_dest(*args),
-				ffa_dir_msg_source(*args),
-				CACTUS_ERROR_TEST);
+					 ffa_dir_msg_source(*args),
+					 CACTUS_ERROR_TEST);
 	}
 
 	return cactus_response(ffa_dir_msg_dest(*args),

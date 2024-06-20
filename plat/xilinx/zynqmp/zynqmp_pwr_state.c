@@ -4,17 +4,16 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stddef.h>
-
 #include <arch.h>
 #include <platform.h>
 #include <psci.h>
+#include <stddef.h>
 
 /*
  * State IDs for local power states.
  */
-#define ZYNQMP_RETENTION_STATE_ID	1	/* Valid for only CPUs */
-#define ZYNQMP_OFF_STATE_ID		0	/* Valid for CPUs and Clusters */
+#define ZYNQMP_RETENTION_STATE_ID 1 /* Valid for only CPUs */
+#define ZYNQMP_OFF_STATE_ID 0	    /* Valid for CPUs and Clusters */
 
 /*
  * Suspend depth definitions for each power state
@@ -27,18 +26,21 @@ typedef enum {
 
 /* The state property array with details of idle state possible for the core */
 static const plat_state_prop_t core_state_prop[] = {
-	{ZYNQMP_RETENTION_DEPTH, ZYNQMP_RETENTION_STATE_ID, PSTATE_TYPE_STANDBY},
+	{ZYNQMP_RETENTION_DEPTH, ZYNQMP_RETENTION_STATE_ID,
+	 PSTATE_TYPE_STANDBY},
 	{ZYNQMP_OFF_DEPTH, ZYNQMP_OFF_STATE_ID, PSTATE_TYPE_POWERDOWN},
 	{0},
 };
 
-/* The state property array with details of idle state possible for the cluster */
+/* The state property array with details of idle state possible for the cluster
+ */
 static const plat_state_prop_t cluster_state_prop[] = {
 	{ZYNQMP_OFF_DEPTH, ZYNQMP_OFF_STATE_ID, PSTATE_TYPE_POWERDOWN},
 	{0},
 };
 
-/* The state property array with details of idle state possible for the system level */
+/* The state property array with details of idle state possible for the system
+ * level */
 static const plat_state_prop_t system_state_prop[] = {
 	{ZYNQMP_OFF_DEPTH, ZYNQMP_OFF_STATE_ID, PSTATE_TYPE_POWERDOWN},
 	{0},

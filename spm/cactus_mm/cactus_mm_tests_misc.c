@@ -28,10 +28,10 @@ void misc_tests(void)
 	const char *test_version = "SPM version check";
 
 	announce_test_start(test_version);
-	svc_args svc_values = { SPM_VERSION_AARCH32 };
+	svc_args svc_values = {SPM_VERSION_AARCH32};
 	ret = sp_svc(&svc_values);
-	INFO("Version = 0x%x (%u.%u)\n", ret,
-	     (ret >> 16) & 0x7FFF, ret & 0xFFFF);
+	INFO("Version = 0x%x (%u.%u)\n", ret, (ret >> 16) & 0x7FFF,
+	     ret & 0xFFFF);
 	expect(ret, SPM_VERSION_COMPILED);
 	announce_test_end(test_version);
 

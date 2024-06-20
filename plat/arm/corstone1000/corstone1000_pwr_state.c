@@ -4,17 +4,17 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stddef.h>
 #include <arch.h>
 #include <platform.h>
 #include <psci.h>
+#include <stddef.h>
 
 /*
  * State IDs for local power states on Corstone1000.
  */
-#define CORSTONE1000_RUN_STATE_ID		0 /* Valid for CPUs and Clusters */
-#define CORSTONE1000_RETENTION_STATE_ID		1 /* Valid for only CPUs */
-#define CORSTONE1000_OFF_STATE_ID		2 /* Valid for CPUs and Clusters */
+#define CORSTONE1000_RUN_STATE_ID 0	  /* Valid for CPUs and Clusters */
+#define CORSTONE1000_RETENTION_STATE_ID 1 /* Valid for only CPUs */
+#define CORSTONE1000_OFF_STATE_ID 2	  /* Valid for CPUs and Clusters */
 
 /*
  * Suspend depth definitions for each power state
@@ -27,8 +27,10 @@ typedef enum {
 
 /* The state property array with details of idle state possible for the core */
 static const plat_state_prop_t core_state_prop[] = {
-	{CORSTONE1000_RETENTION_DEPTH, CORSTONE1000_RETENTION_STATE_ID, PSTATE_TYPE_STANDBY},
-	{CORSTONE1000_OFF_DEPTH, CORSTONE1000_OFF_STATE_ID, PSTATE_TYPE_POWERDOWN},
+	{CORSTONE1000_RETENTION_DEPTH, CORSTONE1000_RETENTION_STATE_ID,
+	 PSTATE_TYPE_STANDBY},
+	{CORSTONE1000_OFF_DEPTH, CORSTONE1000_OFF_STATE_ID,
+	 PSTATE_TYPE_POWERDOWN},
 	{0},
 };
 
@@ -37,7 +39,8 @@ static const plat_state_prop_t core_state_prop[] = {
  * for the cluster
  */
 static const plat_state_prop_t cluster_state_prop[] = {
-	{CORSTONE1000_OFF_DEPTH, CORSTONE1000_OFF_STATE_ID, PSTATE_TYPE_POWERDOWN},
+	{CORSTONE1000_OFF_DEPTH, CORSTONE1000_OFF_STATE_ID,
+	 PSTATE_TYPE_POWERDOWN},
 	{0},
 };
 
@@ -47,7 +50,8 @@ static const plat_state_prop_t cluster_state_prop[] = {
  * at system power level.
  */
 static const plat_state_prop_t system_state_prop[] = {
-	{CORSTONE1000_OFF_DEPTH, CORSTONE1000_OFF_STATE_ID, PSTATE_TYPE_POWERDOWN},
+	{CORSTONE1000_OFF_DEPTH, CORSTONE1000_OFF_STATE_ID,
+	 PSTATE_TYPE_POWERDOWN},
 	{0},
 };
 

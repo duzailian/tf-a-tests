@@ -4,8 +4,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <arch_helpers.h>
 #include <arch_features.h>
+#include <arch_helpers.h>
 #include <assert.h>
 #include <debug.h>
 #include <drivers/arm/arm_gic.h>
@@ -28,7 +28,7 @@
 #include <transfer_list.h>
 #endif
 
-#define MIN_RETRY_TO_POWER_ON_LEAD_CPU       10
+#define MIN_RETRY_TO_POWER_ON_LEAD_CPU 10
 
 /* version information for TFTF */
 extern const char version_string[];
@@ -66,8 +66,8 @@ static inline const test_case_t *current_testcase(void)
 {
 	test_ref_t test_to_run;
 	tftf_get_test_to_run(&test_to_run);
-	return &testsuites[test_to_run.testsuite_idx].
-		testcases[test_to_run.testcase_idx];
+	return &testsuites[test_to_run.testsuite_idx]
+			.testcases[test_to_run.testcase_idx];
 }
 
 /*
@@ -144,13 +144,14 @@ static void prepare_next_test(void)
 	 * should be powered off or powering off. If some CPUs are not powered
 	 * off yet, wait for them to power off.
 	 */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		mpid = tftf_get_mpidr_from_node(cpu_node);
 		if (mpid == lead_cpu_mpid)
 			assert(tftf_is_cpu_online(mpid));
 		else
-			while (tftf_psci_affinity_info(mpid, MPIDR_AFFLVL0)
-					  == PSCI_STATE_ON)
+			while (tftf_psci_affinity_info(mpid, MPIDR_AFFLVL0) ==
+			       PSCI_STATE_ON)
 				;
 	}
 
@@ -159,7 +160,7 @@ static void prepare_next_test(void)
 
 	/* Populate the test entrypoint for the lead CPU */
 	core_pos = platform_get_core_pos(lead_cpu_mpid);
-	test_entrypoint[core_pos] = (test_function_t) current_testcase()->test;
+	test_entrypoint[core_pos] = (test_function_t)current_testcase()->test;
 
 	for (unsigned int i = 0; i < PLATFORM_CORE_COUNT; ++i)
 		test_results[i] = TEST_RESULT_NA;
@@ -192,7 +193,8 @@ static test_result_t get_overall_test_result(void)
 	unsigned int cpu_node;
 	unsigned int core_pos;
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		core_pos = platform_get_core_pos(cpu_mpid);
 
@@ -228,7 +230,7 @@ static test_result_t get_overall_test_result(void)
 
 		default:
 			ERROR("Unknown test result value: %u\n",
-				test_results[core_pos]);
+			      test_results[core_pos]);
 			panic();
 		}
 	}
@@ -281,9 +283,8 @@ static unsigned int close_test(void)
 	assert(tftf_get_ref_cnt() == 0);
 
 	/* Save test result in NVM */
-	tftf_testcase_set_result(current_testcase(),
-				get_overall_test_result(),
-				0);
+	tftf_testcase_set_result(current_testcase(), get_overall_test_result(),
+				 0);
 
 	print_test_end(current_testcase());
 
@@ -302,7 +303,7 @@ static unsigned int close_test(void)
 		 * environment.
 		 */
 		INFO("Reset platform before executing next test:%p\n",
-				(void *) &(next_test->test));
+		     (void *)&(next_test->test));
 		tftf_plat_reset();
 		bug_unreachable();
 #endif
@@ -351,8 +352,8 @@ static void __dead2 hand_over_to_lead_cpu(void)
 	}
 
 	if (ret != PSCI_E_SUCCESS) {
-		ERROR("CPU%u: Failed to power on lead CPU%u (%d)\n",
-			core_pos, platform_get_core_pos(lead_cpu_mpid), ret);
+		ERROR("CPU%u: Failed to power on lead CPU%u (%d)\n", core_pos,
+		      platform_get_core_pos(lead_cpu_mpid), ret);
 		panic();
 	}
 
@@ -489,8 +490,7 @@ static int resume_test_session(void)
 		 */
 		INFO("Test has crashed, moving to the next one\n");
 		tftf_testcase_set_result(current_testcase(),
-					TEST_RESULT_CRASHED,
-					0);
+					 TEST_RESULT_CRASHED, 0);
 		next_test = advance_to_next_test();
 		if (!next_test) {
 			INFO("No more tests\n");
@@ -511,7 +511,7 @@ static int resume_test_session(void)
 		 * restart the test session from the beginning...
 		 */
 		NOTICE("The test framework has been interrupted in the middle "
-			"of critical maintenance operations.\n");
+		       "of critical maintenance operations.\n");
 		NOTICE("Can't recover execution.\n");
 		return -1;
 
@@ -592,7 +592,8 @@ void __dead2 tftf_cold_boot_main(void)
 			 * structures have not been initialised. There's no
 			 * point in continuing execution.
 			 */
-			ERROR("FATAL: Failed to initialise internal data structures in NVM.\n");
+			ERROR("FATAL: Failed to initialise internal data "
+			      "structures in NVM.\n");
 			tftf_clean_nvm();
 			tftf_exit();
 		}

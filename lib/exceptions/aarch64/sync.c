@@ -3,10 +3,9 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-#include <stdbool.h>
-
 #include <arch_helpers.h>
 #include <debug.h>
+#include <stdbool.h>
 #include <sync.h>
 
 static exception_handler_t custom_sync_exception_handler;

@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-
 #ifndef NFIFO_H
 #define NFIFO_H
 
@@ -15,6 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #include "smcmalloc.h"
 
 struct nfifo {

@@ -12,7 +12,6 @@
 #include <spm_svc.h>
 #include <string.h>
 
-
 /*
  * Handle a fast secure service request, i.e. one made through an MM_COMMUNICATE
  * call.
@@ -39,7 +38,8 @@ static int32_t cactus_handle_fast_request(int cc,
 	switch (sps->id) {
 	case SPS_TIMER_SLEEP: {
 		if (sps->data_size != 1) {
-			ERROR("Invalid payload size for SPM_SPS_TIMER_SLEEP request (%llu)\n",
+			ERROR("Invalid payload size for SPM_SPS_TIMER_SLEEP "
+			      "request (%llu)\n",
 			      sps->data_size);
 			return SPM_INVALID_PARAMETER;
 		}
@@ -59,7 +59,8 @@ static int32_t cactus_handle_fast_request(int cc,
 		return SPM_SUCCESS;
 
 	default:
-		INFO("Unsupported MM_COMMUNICATE_AARCH64 call with service ID 0x%x, ignoring it\n",
+		INFO("Unsupported MM_COMMUNICATE_AARCH64 call with service ID "
+		     "0x%x, ignoring it\n",
 		     sps->id);
 		return SPM_INVALID_PARAMETER;
 	}
@@ -68,7 +69,7 @@ static int32_t cactus_handle_fast_request(int cc,
 __dead2 void secure_services_loop(void)
 {
 	int32_t event_status_code;
-	svc_args svc_values = { 0 };
+	svc_args svc_values = {0};
 
 	/*
 	 * The first time this loop is executed corresponds to when Cactus has
@@ -84,13 +85,13 @@ __dead2 void secure_services_loop(void)
 		int32_t event_id = sp_svc(&svc_values);
 
 		switch (event_id) {
-		case MM_COMMUNICATE_AARCH64:
-		  {
+		case MM_COMMUNICATE_AARCH64: {
 			uint64_t ctx_addr = svc_values.arg1;
 			uint32_t ctx_size = svc_values.arg2;
 			uint64_t cookie = svc_values.arg3;
 
-			NOTICE("Cactus: Received MM_COMMUNICATE_AARCH64 call\n");
+			NOTICE("Cactus: Received MM_COMMUNICATE_AARCH64 "
+			       "call\n");
 			NOTICE("Cactus:   Context address: 0x%llx\n", ctx_addr);
 			NOTICE("Cactus:   Context size   : %u\n", ctx_size);
 			NOTICE("Cactus:   Cookie         : 0x%llx\n", cookie);
@@ -101,20 +102,22 @@ __dead2 void secure_services_loop(void)
 				continue;
 			}
 
-			secure_partition_request_info_t *sps = (void *)(uintptr_t) ctx_addr;
-			NOTICE("Received fast secure service request with ID #%u\n",
+			secure_partition_request_info_t *sps =
+				(void *)(uintptr_t)ctx_addr;
+			NOTICE("Received fast secure service request with ID "
+			       "#%u\n",
 			       sps->id);
 			event_status_code = cactus_handle_fast_request(64, sps);
 			break;
-		  }
+		}
 
-		case MM_COMMUNICATE_AARCH32:
-		  {
+		case MM_COMMUNICATE_AARCH32: {
 			uint32_t ctx_addr = svc_values.arg1;
 			uint32_t ctx_size = svc_values.arg2;
 			uint32_t cookie = svc_values.arg3;
 
-			NOTICE("Cactus: Received MM_COMMUNICATE_AARCH32 call\n");
+			NOTICE("Cactus: Received MM_COMMUNICATE_AARCH32 "
+			       "call\n");
 			NOTICE("Cactus:   Context address: 0x%x\n", ctx_addr);
 			NOTICE("Cactus:   Context size   : %u\n", ctx_size);
 			NOTICE("Cactus:   Cookie         : 0x%x\n", cookie);
@@ -125,12 +128,14 @@ __dead2 void secure_services_loop(void)
 				continue;
 			}
 
-			secure_partition_request_info_t *sps = (void *)(uintptr_t) ctx_addr;
-			NOTICE("Received fast secure service request with ID #%u\n",
+			secure_partition_request_info_t *sps =
+				(void *)(uintptr_t)ctx_addr;
+			NOTICE("Received fast secure service request with ID "
+			       "#%u\n",
 			       sps->id);
 			event_status_code = cactus_handle_fast_request(32, sps);
 			break;
-		  }
+		}
 
 		default:
 			NOTICE("Unhandled Service ID 0x%x\n", event_id);

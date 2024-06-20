@@ -7,8 +7,7 @@
 #include <power_management.h>
 #include <test_helpers.h>
 
-__attribute__((noinline))
-static void debug_hook_func(void)
+__attribute__((noinline)) static void debug_hook_func(void)
 {
 	__asm__ volatile(
 		"nop\n"
@@ -20,8 +19,7 @@ static void debug_hook_func(void)
 		"nop\n"
 		"nop\n"
 		"nop\n"
-		"nop\n"
-	);
+		"nop\n");
 
 	return;
 }
@@ -50,7 +48,8 @@ test_result_t test_nop(void)
 	lead_mpid = read_mpidr_el1() & MPID_MASK;
 
 	/* Start all other CPUs */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node) & MPID_MASK;
 
 		if (lead_mpid == target_mpid) {
@@ -59,7 +58,8 @@ test_result_t test_nop(void)
 
 		ret = tftf_cpu_on(target_mpid, (uintptr_t)secondary_cpu, 0);
 		if (ret != PSCI_E_SUCCESS) {
-			ERROR("CPU ON failed for 0x0x%llx\n", (unsigned long long)target_mpid);
+			ERROR("CPU ON failed for 0x0x%llx\n",
+			      (unsigned long long)target_mpid);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -68,14 +68,16 @@ test_result_t test_nop(void)
 	debug_hook_func();
 
 	/* Wait for other CPUs to complete */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node) & MPID_MASK;
 
 		if (lead_mpid == target_mpid) {
 			continue;
 		}
 
-		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) != PSCI_STATE_OFF) {
+		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
+		       PSCI_STATE_OFF) {
 			continue;
 		}
 	}

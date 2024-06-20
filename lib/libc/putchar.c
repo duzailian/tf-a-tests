@@ -4,9 +4,8 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdio.h>
-
 #include <drivers/console.h>
+#include <stdio.h>
 
 int putchar(int c)
 {

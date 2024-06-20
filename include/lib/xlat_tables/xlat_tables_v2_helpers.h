@@ -33,13 +33,10 @@ struct mmap_region;
  * the fields of the structure but its parameter list is not guaranteed to
  * remain stable as we add members to mmap_region_t.
  */
-#define MAP_REGION_FULL_SPEC(_pa, _va, _sz, _attr, _gr)		\
-	{							\
-		.base_pa = (_pa),				\
-		.base_va = (_va),				\
-		.size = (_sz),					\
-		.attr = (_attr),				\
-		.granularity = (_gr),				\
+#define MAP_REGION_FULL_SPEC(_pa, _va, _sz, _attr, _gr)            \
+	{                                                          \
+		.base_pa = (_pa), .base_va = (_va), .size = (_sz), \
+		.attr = (_attr), .granularity = (_gr),             \
 	}
 
 /* Struct that holds all information about the translation tables. */
@@ -86,10 +83,10 @@ struct xlat_ctx {
 	unsigned int base_table_entries;
 
 	/*
-	* Max Physical and Virtual addresses currently in use by the
-	* translation tables. These might get updated as we map/unmap memory
-	* regions but they will never go beyond pa/va_max_address.
-	*/
+	 * Max Physical and Virtual addresses currently in use by the
+	 * translation tables. These might get updated as we map/unmap memory
+	 * regions but they will never go beyond pa/va_max_address.
+	 */
 	unsigned long long max_pa;
 	uintptr_t max_va;
 
@@ -107,55 +104,57 @@ struct xlat_ctx {
 };
 
 #if PLAT_XLAT_TABLES_DYNAMIC
-#define XLAT_ALLOC_DYNMAP_STRUCT(_ctx_name, _xlat_tables_count)		\
+#define XLAT_ALLOC_DYNMAP_STRUCT(_ctx_name, _xlat_tables_count) \
 	static int _ctx_name##_mapped_regions[_xlat_tables_count];
 
-#define XLAT_REGISTER_DYNMAP_STRUCT(_ctx_name)				\
+#define XLAT_REGISTER_DYNMAP_STRUCT(_ctx_name) \
 	.tables_mapped_regions = _ctx_name##_mapped_regions,
 #else
-#define XLAT_ALLOC_DYNMAP_STRUCT(_ctx_name, _xlat_tables_count)		\
-	/* do nothing */
+#define XLAT_ALLOC_DYNMAP_STRUCT(_ctx_name, _xlat_tables_count) /* do nothing \
+								 */
 
-#define XLAT_REGISTER_DYNMAP_STRUCT(_ctx_name)				\
-	/* do nothing */
-#endif /* PLAT_XLAT_TABLES_DYNAMIC */
+#define XLAT_REGISTER_DYNMAP_STRUCT(_ctx_name) /* do nothing */
+#endif					       /* PLAT_XLAT_TABLES_DYNAMIC */
 
-#define REGISTER_XLAT_CONTEXT_FULL_SPEC(_ctx_name, _mmap_count,		\
-			_xlat_tables_count, _virt_addr_space_size,	\
-			_phy_addr_space_size, _xlat_regime, _section_name)\
-	CASSERT(CHECK_PHY_ADDR_SPACE_SIZE(_phy_addr_space_size),	\
-		assert_invalid_physical_addr_space_sizefor_##_ctx_name);\
-									\
-	static mmap_region_t _ctx_name##_mmap[_mmap_count + 1];		\
-									\
-	static uint64_t _ctx_name##_xlat_tables[_xlat_tables_count]	\
-		[XLAT_TABLE_ENTRIES]					\
-		__aligned(XLAT_TABLE_SIZE) __section(_section_name);	\
-									\
-	static uint64_t _ctx_name##_base_xlat_table			\
-		[GET_NUM_BASE_LEVEL_ENTRIES(_virt_addr_space_size)]	\
-		__aligned(GET_NUM_BASE_LEVEL_ENTRIES(_virt_addr_space_size)\
-			* sizeof(uint64_t));				\
-									\
-	XLAT_ALLOC_DYNMAP_STRUCT(_ctx_name, _xlat_tables_count)		\
-									\
-	static xlat_ctx_t _ctx_name##_xlat_ctx = {			\
-		.va_max_address = (_virt_addr_space_size) - 1UL,	\
-		.pa_max_address = (_phy_addr_space_size) - 1ULL,	\
-		.mmap = _ctx_name##_mmap,				\
-		.mmap_num = (_mmap_count),				\
-		.base_level = GET_XLAT_TABLE_LEVEL_BASE(_virt_addr_space_size),\
-		.base_table = _ctx_name##_base_xlat_table,		\
-		.base_table_entries =					\
-			GET_NUM_BASE_LEVEL_ENTRIES(_virt_addr_space_size),\
-		.tables = _ctx_name##_xlat_tables,			\
-		.tables_num = _xlat_tables_count,			\
-		 XLAT_REGISTER_DYNMAP_STRUCT(_ctx_name)			\
-		.xlat_regime = (_xlat_regime),				\
-		.max_pa = 0U,						\
-		.max_va = 0U,						\
-		.next_table = 0,					\
-		.initialized = false,					\
+#define REGISTER_XLAT_CONTEXT_FULL_SPEC(                                       \
+	_ctx_name, _mmap_count, _xlat_tables_count, _virt_addr_space_size,     \
+	_phy_addr_space_size, _xlat_regime, _section_name)                     \
+	CASSERT(CHECK_PHY_ADDR_SPACE_SIZE(_phy_addr_space_size),               \
+		assert_invalid_physical_addr_space_sizefor_##_ctx_name);       \
+                                                                               \
+	static mmap_region_t _ctx_name##_mmap[_mmap_count + 1];                \
+                                                                               \
+	static uint64_t _ctx_name##_xlat_tables[_xlat_tables_count]            \
+					       [XLAT_TABLE_ENTRIES] __aligned( \
+						       XLAT_TABLE_SIZE)        \
+						       __section(              \
+							       _section_name); \
+                                                                               \
+	static uint64_t _ctx_name##_base_xlat_table                            \
+		[GET_NUM_BASE_LEVEL_ENTRIES(_virt_addr_space_size)] __aligned( \
+			GET_NUM_BASE_LEVEL_ENTRIES(_virt_addr_space_size) *    \
+			sizeof(uint64_t));                                     \
+                                                                               \
+	XLAT_ALLOC_DYNMAP_STRUCT(_ctx_name, _xlat_tables_count)                \
+                                                                               \
+	static xlat_ctx_t _ctx_name##_xlat_ctx = {                             \
+		.va_max_address = (_virt_addr_space_size)-1UL,                 \
+		.pa_max_address = (_phy_addr_space_size)-1ULL,                 \
+		.mmap = _ctx_name##_mmap,                                      \
+		.mmap_num = (_mmap_count),                                     \
+		.base_level =                                                  \
+			GET_XLAT_TABLE_LEVEL_BASE(_virt_addr_space_size),      \
+		.base_table = _ctx_name##_base_xlat_table,                     \
+		.base_table_entries =                                          \
+			GET_NUM_BASE_LEVEL_ENTRIES(_virt_addr_space_size),     \
+		.tables = _ctx_name##_xlat_tables,                             \
+		.tables_num = _xlat_tables_count,                              \
+		XLAT_REGISTER_DYNMAP_STRUCT(_ctx_name).xlat_regime =           \
+			(_xlat_regime),                                        \
+		.max_pa = 0U,                                                  \
+		.max_va = 0U,                                                  \
+		.next_table = 0,                                               \
+		.initialized = false,                                          \
 	}
 
 #endif /*__ASSEMBLY__*/

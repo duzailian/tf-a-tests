@@ -4,14 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <arch_helpers.h>
+#include <host_shared_data.h>
+#include <realm_rsi.h>
 #include <stdarg.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
-
-#include <arch_helpers.h>
-#include <host_shared_data.h>
-#include <realm_rsi.h>
 
 /*
  * A printf formatted function used in the Realm world to log messages
@@ -29,7 +28,7 @@ void realm_printf(const char *fmt, ...)
 		(void)memset((char *)log_buffer, 0, MAX_BUF_SIZE);
 	}
 	(void)vsnprintf((char *)log_buffer +
-			strnlen((const char *)log_buffer, MAX_BUF_SIZE),
+				strnlen((const char *)log_buffer, MAX_BUF_SIZE),
 			MAX_BUF_SIZE, fmt, args);
 	va_end(args);
 	rsi_exit_to_host(HOST_CALL_EXIT_PRINT_CMD);
@@ -55,7 +54,8 @@ int console_putc(int c)
 	if (strnlen((const char *)log_buffer, MAX_BUF_SIZE) == MAX_BUF_SIZE) {
 		(void)memset((char *)log_buffer, 0, MAX_BUF_SIZE);
 	}
-	*((char *)log_buffer + strnlen((const char *)log_buffer, MAX_BUF_SIZE)) = c;
+	*((char *)log_buffer +
+	  strnlen((const char *)log_buffer, MAX_BUF_SIZE)) = c;
 
 	return c;
 }

@@ -16,7 +16,7 @@
 #include <tftf_lib.h>
 #include <timer.h>
 
-#define SUSPEND_TIME_1_SEC	1000
+#define SUSPEND_TIME_1_SEC 1000
 
 static volatile int wakeup_irq_received[PLATFORM_CORE_COUNT];
 
@@ -58,16 +58,16 @@ static test_result_t suspend_and_resume_this_cpu(void)
 	 * Suspend the calling CPU to power level 0 and power
 	 * state.
 	 */
-	psci_ret = tftf_psci_make_composite_state_id(PSTATE_AFF_LVL_0,
-						     PSTATE_TYPE_POWERDOWN,
-						     &stateid);
+	psci_ret = tftf_psci_make_composite_state_id(
+		PSTATE_AFF_LVL_0, PSTATE_TYPE_POWERDOWN, &stateid);
 	if (psci_ret != PSCI_E_SUCCESS) {
-		mp_printf("Failed to make composite state ID @ CPU %d. rc = %x\n",
-			  core_pos, psci_ret);
+		mp_printf(
+			"Failed to make composite state ID @ CPU %d. rc = %x\n",
+			core_pos, psci_ret);
 		result = TEST_RESULT_FAIL;
 	} else {
-		unsigned int power_state = tftf_make_psci_pstate(PSTATE_AFF_LVL_0,
-						PSTATE_TYPE_POWERDOWN, stateid);
+		unsigned int power_state = tftf_make_psci_pstate(
+			PSTATE_AFF_LVL_0, PSTATE_TYPE_POWERDOWN, stateid);
 		psci_ret = tftf_cpu_suspend(power_state);
 
 		if (!wakeup_irq_received[core_pos]) {
@@ -134,7 +134,9 @@ test_result_t test_amu_valid_ctr(void)
 
 		value = amu_group0_cnt_read(i);
 		if (amu_group0_cnt_valid(i, value)) {
-			tftf_testcase_printf("Group0 counter %d has invalid value %lld\n", i, value);
+			tftf_testcase_printf(
+				"Group0 counter %d has invalid value %lld\n", i,
+				value);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -204,7 +206,9 @@ test_result_t test_amu_suspend_resume(void)
 
 		value = amu_group0_cnt_read(i);
 		if (value < group0_ctrs[i]) {
-			tftf_testcase_printf("Invalid counter value: before: %llx, after: %llx\n",
+			tftf_testcase_printf(
+				"Invalid counter value: before: %llx, after: "
+				"%llx\n",
 				(unsigned long long)group0_ctrs[i],
 				(unsigned long long)value);
 			return TEST_RESULT_FAIL;
@@ -215,7 +219,7 @@ test_result_t test_amu_suspend_resume(void)
 	if (amu_get_version() >= ID_AA64PFR0_AMU_V1P1) {
 		for (i = 0U; i < AMU_GROUP0_NR_COUNTERS; i++) {
 			if ((i != 1U) &&
-				(amu_group0_voffset_read(i) != 0xDEADBEEF)) {
+			    (amu_group0_voffset_read(i) != 0xDEADBEEF)) {
 				tftf_testcase_printf(
 					"Invalid G0 voffset %u: 0x%llx\n", i,
 					amu_group0_voffset_read(i));
@@ -229,9 +233,10 @@ test_result_t test_amu_suspend_resume(void)
 		for (i = 0U; i < AMU_GROUP1_NR_COUNTERS; i++) {
 			if (((amcg1idr >> i) & 1U) != 0U) {
 				if (amu_group1_voffset_read(i) != 0xDEADBEEF) {
-					tftf_testcase_printf("Invalid G1 " \
-						"voffset %u: 0x%llx\n", i,
-						amu_group1_voffset_read(i));
+					tftf_testcase_printf(
+						"Invalid G1 "
+						"voffset %u: 0x%llx\n",
+						i, amu_group1_voffset_read(i));
 					return TEST_RESULT_FAIL;
 				}
 			}

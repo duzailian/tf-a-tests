@@ -28,13 +28,13 @@
 #define TEST_ITERATION_COUNT 0x5
 
 /* TODO: Remove assumption that affinity levels always map to power levels. */
-#define MPIDR_CLUSTER_ID(mpid)	MPIDR_AFF_ID(mpid, 1)
-#define MPIDR_CPU_ID(mpid)	MPIDR_AFF_ID(mpid, 0)
+#define MPIDR_CLUSTER_ID(mpid) MPIDR_AFF_ID(mpid, 1)
+#define MPIDR_CPU_ID(mpid) MPIDR_AFF_ID(mpid, 0)
 
 /* Helper macro to verify if system suspend API is supported */
-#define is_psci_sys_susp64_supported()	\
+#define is_psci_sys_susp64_supported()                            \
 	(tftf_get_psci_feature_info(SMC_PSCI_SYSTEM_SUSPEND64) != \
-	PSCI_E_NOT_SUPPORTED)
+	 PSCI_E_NOT_SUPPORTED)
 
 static unsigned int deepest_power_state;
 static unsigned int test_target_node = PWR_DOMAIN_INIT;
@@ -67,7 +67,7 @@ static int sgi_handler(void *data)
 	unsigned int mpid = read_mpidr_el1() & MPID_MASK;
 	unsigned int core_pos = platform_get_core_pos(mpid);
 
-	sgi_data = *(sgi_data_t *) data;
+	sgi_data = *(sgi_data_t *)data;
 	sgi_handled[core_pos] = 1;
 	return 0;
 }
@@ -97,16 +97,18 @@ static test_result_t sys_suspend_from_all_cores(void)
 	tftf_timer_register_handler(suspend_wakeup_handler);
 
 	/* Program timer to fire after delay */
-	ret = tftf_program_timer_and_sys_suspend(PLAT_SUSPEND_ENTRY_TIME,
-								NULL, NULL);
+	ret = tftf_program_timer_and_sys_suspend(PLAT_SUSPEND_ENTRY_TIME, NULL,
+						 NULL);
 
 	/* Wait until the IRQ wake interrupt is received */
 	while (!wakeup_irq_rcvd[core_pos])
 		;
 
 	if (ret) {
-		tftf_testcase_printf("Failed to program timer or suspend "
-					"system from core %x\n", core_pos);
+		tftf_testcase_printf(
+			"Failed to program timer or suspend "
+			"system from core %x\n",
+			core_pos);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -121,19 +123,19 @@ static test_result_t sys_suspend_from_all_cores(void)
 	test_target_node = tftf_topology_next_cpu(test_target_node);
 	if (test_target_node != PWR_DOMAIN_INIT) {
 		target_mpid = tftf_get_mpidr_from_node(test_target_node);
-		psci_ret = tftf_cpu_on(target_mpid,
-				(uintptr_t) sys_suspend_from_all_cores,
-				0);
+		psci_ret = tftf_cpu_on(
+			target_mpid, (uintptr_t)sys_suspend_from_all_cores, 0);
 		if (psci_ret != PSCI_E_SUCCESS) {
-			tftf_testcase_printf("Failed to power on CPU 0x%x (%d) \n",
+			tftf_testcase_printf(
+				"Failed to power on CPU 0x%x (%d) \n",
 				(unsigned int)target_mpid, psci_ret);
 			return TEST_RESULT_FAIL;
 		}
 
 		/*
 		 * Wait for the target CPU to enter the test. The TFTF framework
-		 * requires more than one CPU to be in the test to detect that the
-		 * test has not finished.
+		 * requires more than one CPU to be in the test to detect that
+		 * the test has not finished.
 		 */
 		while (!cpu_ref_count)
 			;
@@ -156,8 +158,9 @@ test_result_t test_system_suspend_from_all_cores(void)
 	my_mpid = read_mpidr_el1() & MPID_MASK;
 
 	if (!is_psci_sys_susp64_supported()) {
-		tftf_testcase_printf("System suspend is not supported "
-				"by the EL3 firmware\n");
+		tftf_testcase_printf(
+			"System suspend is not supported "
+			"by the EL3 firmware\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -174,11 +177,10 @@ test_result_t test_system_suspend_from_all_cores(void)
 		return sys_suspend_from_all_cores();
 
 	psci_ret = tftf_cpu_on(target_mpid,
-				(uintptr_t) sys_suspend_from_all_cores,
-				0);
+			       (uintptr_t)sys_suspend_from_all_cores, 0);
 	if (psci_ret != PSCI_E_SUCCESS) {
 		tftf_testcase_printf("Failed to power on CPU 0x%x (%d) \n",
-				(unsigned int)target_mpid, psci_ret);
+				     (unsigned int)target_mpid, psci_ret);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -196,14 +198,11 @@ test_result_t test_system_suspend_from_all_cores(void)
 /*
  * Helper function to issue SYSTEM SUSPEND SMC with custom parameters.
  */
-int sys_suspend_helper(uintptr_t entry_point_address,
-		       u_register_t context_id)
+int sys_suspend_helper(uintptr_t entry_point_address, u_register_t context_id)
 {
-	smc_args args = {
-		SMC_PSCI_SYSTEM_SUSPEND,
-		(uintptr_t)entry_point_address,
-		(u_register_t)context_id
-	};
+	smc_args args = {SMC_PSCI_SYSTEM_SUSPEND,
+			 (uintptr_t)entry_point_address,
+			 (u_register_t)context_id};
 	smc_ret_values ret_vals;
 
 	ret_vals = tftf_smc(&args);
@@ -227,10 +226,10 @@ static test_result_t invalid_entrypoint_for_sys_suspend(void)
 	while (!is_sys_suspend_state_ready())
 		;
 
-	psci_ret = sys_suspend_helper((uintptr_t) 0x1, 0);
+	psci_ret = sys_suspend_helper((uintptr_t)0x1, 0);
 	if (psci_ret != PSCI_E_INVALID_ADDRESS) {
 		tftf_testcase_printf("Test failed with invalid entry addr %x\n",
-				psci_ret);
+				     psci_ret);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -241,19 +240,20 @@ static test_result_t invalid_entrypoint_for_sys_suspend(void)
 	test_target_node = tftf_topology_next_cpu(test_target_node);
 	if (test_target_node != PWR_DOMAIN_INIT) {
 		target_mpid = tftf_get_mpidr_from_node(test_target_node);
-		psci_ret = tftf_cpu_on(target_mpid,
-				(uintptr_t) invalid_entrypoint_for_sys_suspend,
-				0);
+		psci_ret = tftf_cpu_on(
+			target_mpid,
+			(uintptr_t)invalid_entrypoint_for_sys_suspend, 0);
 		if (psci_ret != PSCI_E_SUCCESS) {
-			tftf_testcase_printf("Failed to power on CPU 0x%x (%d) \n",
+			tftf_testcase_printf(
+				"Failed to power on CPU 0x%x (%d) \n",
 				(unsigned int)target_mpid, psci_ret);
 			return TEST_RESULT_FAIL;
 		}
 
 		/*
 		 * Wait for the target CPU to enter the test. The TFTF framework
-		 * requires more than one CPU to be in the test to detect that the
-		 * test has not finished.
+		 * requires more than one CPU to be in the test to detect that
+		 * the test has not finished.
 		 */
 		while (!cpu_ref_count)
 			;
@@ -275,8 +275,9 @@ test_result_t test_system_suspend_invalid_entrypoint(void)
 	my_mpid = read_mpidr_el1() & MPID_MASK;
 
 	if (!is_psci_sys_susp64_supported()) {
-		tftf_testcase_printf("System suspend is not supported "
-				"by the EL3 firmware\n");
+		tftf_testcase_printf(
+			"System suspend is not supported "
+			"by the EL3 firmware\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -292,12 +293,11 @@ test_result_t test_system_suspend_invalid_entrypoint(void)
 	if (target_mpid == my_mpid)
 		return invalid_entrypoint_for_sys_suspend();
 
-	psci_ret = tftf_cpu_on(target_mpid,
-				(uintptr_t) invalid_entrypoint_for_sys_suspend,
-				0);
+	psci_ret = tftf_cpu_on(
+		target_mpid, (uintptr_t)invalid_entrypoint_for_sys_suspend, 0);
 	if (psci_ret != PSCI_E_SUCCESS) {
 		tftf_testcase_printf("Failed to power on CPU 0x%x (%d) \n",
-				(unsigned int)target_mpid, psci_ret);
+				     (unsigned int)target_mpid, psci_ret);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -326,8 +326,8 @@ static test_result_t non_lead_cpu_sgi_test(void)
 	/* Register the local IRQ handler for the SGI */
 	sgi_ret = tftf_irq_register_handler(sgi_id, sgi_handler);
 	if (sgi_ret != 0) {
-		tftf_testcase_printf("Failed to register IRQ %u (%d)",
-				sgi_id, sgi_ret);
+		tftf_testcase_printf("Failed to register IRQ %u (%d)", sgi_id,
+				     sgi_ret);
 		return TEST_RESULT_FAIL;
 	}
 	/* Enable SGI */
@@ -368,8 +368,9 @@ test_result_t test_psci_sys_susp_multiple_iteration(void)
 	int timer_ret;
 
 	if (!is_psci_sys_susp64_supported()) {
-		tftf_testcase_printf("System suspend is not supported "
-				"by the EL3 firmware\n");
+		tftf_testcase_printf(
+			"System suspend is not supported "
+			"by the EL3 firmware\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -385,23 +386,26 @@ test_result_t test_psci_sys_susp_multiple_iteration(void)
 		wakeup_irq_rcvd[core_pos] = 0;
 
 		/*
-		 * Program the wakeup timer, this will serve as the wake-up event
-		 * to come out of suspend state, and issue system suspend
+		 * Program the wakeup timer, this will serve as the wake-up
+		 * event to come out of suspend state, and issue system suspend
 		 */
-		tftf_program_timer_and_sys_suspend(
-				PLAT_SUSPEND_ENTRY_TIME, &timer_ret, &psci_ret);
+		tftf_program_timer_and_sys_suspend(PLAT_SUSPEND_ENTRY_TIME,
+						   &timer_ret, &psci_ret);
 
 		while (!wakeup_irq_rcvd[core_pos])
 			;
 
 		if (psci_ret != PSCI_E_SUCCESS) {
-			tftf_testcase_printf("System suspend failed with return value %i\n",
-								psci_ret);
+			tftf_testcase_printf(
+				"System suspend failed with return value %i\n",
+				psci_ret);
 			return TEST_RESULT_FAIL;
 		}
 		if (timer_ret) {
-			tftf_testcase_printf("Timer programming failed with return value %i\n",
-								timer_ret);
+			tftf_testcase_printf(
+				"Timer programming failed with return value "
+				"%i\n",
+				timer_ret);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -411,7 +415,8 @@ test_result_t test_psci_sys_susp_multiple_iteration(void)
 	tftf_timer_unregister_handler();
 
 	/* Turn on all cores after test to ensure all cores boot up*/
-	for_each_cpu(target_node) {
+	for_each_cpu(target_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(target_node);
 		core_pos = platform_get_core_pos(target_mpid);
 
@@ -419,19 +424,19 @@ test_result_t test_psci_sys_susp_multiple_iteration(void)
 			continue;
 
 		psci_ret = tftf_cpu_on(target_mpid,
-				(uintptr_t) non_lead_cpu_sgi_test,
-				0);
+				       (uintptr_t)non_lead_cpu_sgi_test, 0);
 		if (psci_ret != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
-					"Failed to power on CPU 0x%x (%d)\n",
-					target_mpid, psci_ret);
+				"Failed to power on CPU 0x%x (%d)\n",
+				target_mpid, psci_ret);
 			return TEST_RESULT_FAIL;
 		}
 		tftf_wait_for_event(&cpu_ready[core_pos]);
 	}
 
 	/* Send SGI to all non lead CPUs and ensure that they receive it */
-	for_each_cpu(target_node) {
+	for_each_cpu(target_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(target_node);
 		/* Skip lead CPU */
 		if (target_mpid == lead_mpid)
@@ -464,8 +469,9 @@ test_result_t test_psci_sys_susp_pending_irq(void)
 	test_result_t ret = TEST_RESULT_SUCCESS;
 
 	if (!is_psci_sys_susp64_supported()) {
-		tftf_testcase_printf("System suspend is not supported "
-				"by the EL3 firmware\n");
+		tftf_testcase_printf(
+			"System suspend is not supported "
+			"by the EL3 firmware\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -476,8 +482,8 @@ test_result_t test_psci_sys_susp_pending_irq(void)
 	/* Register the local IRQ handler for the SGI */
 	sgi_ret = tftf_irq_register_handler(sgi_id, sgi_handler);
 	if (sgi_ret != 0) {
-		tftf_testcase_printf("Failed to register IRQ %u (%d)",
-				sgi_id, sgi_ret);
+		tftf_testcase_printf("Failed to register IRQ %u (%d)", sgi_id,
+				     sgi_ret);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -520,7 +526,7 @@ test_result_t test_psci_sys_susp_pending_irq(void)
 	/* Verify the sgi data received by the SGI handler */
 	if (sgi_data.irq_id != sgi_id) {
 		tftf_testcase_printf("Wrong IRQ ID, expected %u, got %u\n",
-				sgi_id, sgi_data.irq_id);
+				     sgi_id, sgi_data.irq_id);
 		ret = TEST_RESULT_FAIL;
 	}
 
@@ -544,7 +550,7 @@ unsigned long check_data_integrity(unsigned int *addr, unsigned int size)
 	unsigned int chksum = 0;
 	unsigned int i;
 
-	for (i = 0; i < (size/sizeof(unsigned int)); i++)
+	for (i = 0; i < (size / sizeof(unsigned int)); i++)
 		chksum += *(addr + i);
 	return chksum;
 }
@@ -570,8 +576,9 @@ test_result_t test_psci_sys_susp_validate_ram(void)
 	test_result_t ret = TEST_RESULT_SUCCESS;
 
 	if (!is_psci_sys_susp64_supported()) {
-		tftf_testcase_printf("System suspend is not supported "
-				"by the EL3 firmware\n");
+		tftf_testcase_printf(
+			"System suspend is not supported "
+			"by the EL3 firmware\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -579,7 +586,7 @@ test_result_t test_psci_sys_susp_validate_ram(void)
 
 	/* Check hash on known region of RAM before putting into suspend */
 	prev_hash_val = check_data_integrity((unsigned int *)TFTF_RO_START,
-						TFTF_RO_END - TFTF_RO_START);
+					     TFTF_RO_END - TFTF_RO_START);
 
 	tftf_timer_register_handler(suspend_wakeup_handler);
 
@@ -587,8 +594,8 @@ test_result_t test_psci_sys_susp_validate_ram(void)
 	 * Program timer to fire interrupt after timer expires and issue
 	 * system suspend
 	 */
-	tftf_program_timer_and_sys_suspend(SUSPEND_TIME_10_SECS,
-						     &timer_ret, &psci_ret);
+	tftf_program_timer_and_sys_suspend(SUSPEND_TIME_10_SECS, &timer_ret,
+					   &psci_ret);
 
 	while (!wakeup_irq_rcvd[core_pos])
 		;
@@ -597,9 +604,9 @@ test_result_t test_psci_sys_susp_validate_ram(void)
 		 * Check hash on known region of RAM after returning
 		 * from suspend
 		 */
-		present_hash_val = check_data_integrity(
-				(unsigned int *)TFTF_RO_START,
-				TFTF_RO_END - TFTF_RO_START);
+		present_hash_val =
+			check_data_integrity((unsigned int *)TFTF_RO_START,
+					     TFTF_RO_END - TFTF_RO_START);
 		if (present_hash_val != prev_hash_val) {
 			tftf_testcase_printf("ERROR: RAM data not retained \n");
 			ret = TEST_RESULT_FAIL;
@@ -638,16 +645,13 @@ static unsigned int get_deepest_power_state(void)
 		if (pstate_id_idx[0] == PWR_STATE_INIT_INDEX)
 			break;
 
-		ret = tftf_get_pstate_vars(&power_level,
-				&test_suspend_type,
-				&suspend_state_id,
-				pstate_id_idx);
+		ret = tftf_get_pstate_vars(&power_level, &test_suspend_type,
+					   &suspend_state_id, pstate_id_idx);
 		if (ret)
 			continue;
 
-		power_state = tftf_make_psci_pstate(power_level,
-				test_suspend_type,
-				suspend_state_id);
+		power_state = tftf_make_psci_pstate(
+			power_level, test_suspend_type, suspend_state_id);
 
 	} while (1);
 
@@ -701,8 +705,9 @@ test_result_t test_psci_sys_susp_with_cores_in_suspend(void)
 	test_result_t ret = TEST_RESULT_SUCCESS;
 
 	if (!is_psci_sys_susp64_supported()) {
-		tftf_testcase_printf("System suspend is not supported "
-				"by the EL3 firmware\n");
+		tftf_testcase_printf(
+			"System suspend is not supported "
+			"by the EL3 firmware\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -715,7 +720,8 @@ test_result_t test_psci_sys_susp_with_cores_in_suspend(void)
 	deepest_power_state = get_deepest_power_state();
 
 	/* Suspend all cores other than lead core */
-	for_each_cpu(target_node) {
+	for_each_cpu(target_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(target_node);
 
 		if (target_mpid == lead_mpid)
@@ -723,18 +729,18 @@ test_result_t test_psci_sys_susp_with_cores_in_suspend(void)
 
 		/* Turn on the non lead CPU and suspend it. */
 		psci_ret = tftf_cpu_on(target_mpid,
-				(uintptr_t) suspend_non_lead_cpu,
-				0);
+				       (uintptr_t)suspend_non_lead_cpu, 0);
 		if (psci_ret != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
-					"Failed to power on CPU 0x%x (%d)\n",
-					(unsigned int)target_mpid, psci_ret);
+				"Failed to power on CPU 0x%x (%d)\n",
+				(unsigned int)target_mpid, psci_ret);
 			return TEST_RESULT_FAIL;
 		}
 	}
 
 	/* Wait for all non-lead CPUs to be ready */
-	for_each_cpu(target_node) {
+	for_each_cpu(target_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(target_node);
 		/* Skip lead CPU */
 		if (target_mpid == lead_mpid)
@@ -752,11 +758,12 @@ test_result_t test_psci_sys_susp_with_cores_in_suspend(void)
 	 * when other cores are in suspend state
 	 */
 	tftf_timer_register_handler(suspend_wakeup_handler);
-	tftf_program_timer_and_sys_suspend(
-		PLAT_SUSPEND_ENTRY_TIME, &timer_ret, &psci_ret);
+	tftf_program_timer_and_sys_suspend(PLAT_SUSPEND_ENTRY_TIME, &timer_ret,
+					   &psci_ret);
 
 	/* Wake all non-lead CPUs */
-	for_each_cpu(target_node) {
+	for_each_cpu(target_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(target_node);
 		/* Skip lead CPU */
 		if (target_mpid == lead_mpid)
@@ -815,8 +822,9 @@ test_result_t test_psci_sys_susp_with_cores_on(void)
 	test_result_t ret = TEST_RESULT_SUCCESS;
 
 	if (!is_psci_sys_susp64_supported()) {
-		tftf_testcase_printf("System suspend is not supported "
-				"by the EL3 firmware\n");
+		tftf_testcase_printf(
+			"System suspend is not supported "
+			"by the EL3 firmware\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -829,17 +837,17 @@ test_result_t test_psci_sys_susp_with_cores_on(void)
 	}
 
 	/* Turn on cores in non-lead cluster */
-	for_each_cpu(target_node) {
+	for_each_cpu(target_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(target_node);
 
 		if (MPIDR_CLUSTER_ID(target_mpid) == lead_cluster)
 			continue;
 
-		psci_ret = tftf_cpu_on(target_mpid,
-				(uintptr_t) cpu_waitq,
-				0);
+		psci_ret = tftf_cpu_on(target_mpid, (uintptr_t)cpu_waitq, 0);
 		if (psci_ret != PSCI_E_SUCCESS) {
-			tftf_testcase_printf("Failed to power "
+			tftf_testcase_printf(
+				"Failed to power "
 				"on CPU 0x%x (%d)\n",
 				(unsigned int)target_mpid, psci_ret);
 			return TEST_RESULT_FAIL;
@@ -857,11 +865,12 @@ test_result_t test_psci_sys_susp_with_cores_on(void)
 	 * Program timer to fire after delay and issue system suspend with
 	 * other cores in ON state
 	 */
-	tftf_program_timer_and_sys_suspend(PLAT_SUSPEND_ENTRY_TIME,
-							&timer_ret, &psci_ret);
+	tftf_program_timer_and_sys_suspend(PLAT_SUSPEND_ENTRY_TIME, &timer_ret,
+					   &psci_ret);
 
 	/* Send event to CPUs waiting for `waitq` event. */
-	for_each_cpu(target_node) {
+	for_each_cpu(target_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(target_node);
 
 		/* Skip lead cluster */
@@ -874,13 +883,17 @@ test_result_t test_psci_sys_susp_with_cores_on(void)
 
 	/* Check return value from system suspend API */
 	if (psci_ret != PSCI_E_DENIED) {
-		tftf_testcase_printf("Test failed when suspending with return "
-				     "value: %x \n", psci_ret);
+		tftf_testcase_printf(
+			"Test failed when suspending with return "
+			"value: %x \n",
+			psci_ret);
 		ret = TEST_RESULT_FAIL;
 	}
 	if (timer_ret) {
-		tftf_testcase_printf("Test failed with return value when "
-				     "programming the timer: %x \n", timer_ret);
+		tftf_testcase_printf(
+			"Test failed with return value when "
+			"programming the timer: %x \n",
+			timer_ret);
 		ret = TEST_RESULT_FAIL;
 	}
 	tftf_timer_unregister_handler();

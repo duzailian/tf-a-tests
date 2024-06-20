@@ -18,7 +18,8 @@
 static spinlock_t flash_access_lock;
 #endif
 
-STATUS tftf_nvm_write(unsigned long long offset, const void *buffer, size_t size)
+STATUS tftf_nvm_write(unsigned long long offset, const void *buffer,
+		      size_t size)
 {
 #if USE_NVM
 	int ret;
@@ -35,13 +36,12 @@ STATUS tftf_nvm_write(unsigned long long offset, const void *buffer, size_t size
 
 	spin_lock(&flash_access_lock);
 
-	ret = io_seek(nvm_handle, IO_SEEK_SET,
-					offset + TFTF_NVM_OFFSET);
+	ret = io_seek(nvm_handle, IO_SEEK_SET, offset + TFTF_NVM_OFFSET);
 	if (ret != IO_SUCCESS)
 		goto fail;
 
 	ret = io_write(nvm_handle, (const uintptr_t)buffer, size,
-							 &length_written);
+		       &length_written);
 	if (ret != IO_SUCCESS)
 		goto fail;
 
@@ -98,4 +98,3 @@ fail:
 
 	return STATUS_SUCCESS;
 }
-

@@ -13,6 +13,6 @@
  * The following  compilation error is triggered if the assertion fails:
  * "error: size of array 'msg' is negative"
  ******************************************************************************/
-#define CASSERT(cond, msg)	typedef char msg[(cond) ? 1 : -1]
+#define CASSERT(cond, msg) typedef char msg[(cond) ? 1 : -1]
 
 #endif /* __CASSERT_H__ */

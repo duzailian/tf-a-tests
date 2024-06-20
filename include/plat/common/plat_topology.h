@@ -17,28 +17,28 @@
  * to indicate the end of iterative topology navigation when returned
  * by the tftf topology helpers.
  */
-#define PWR_DOMAIN_INIT		((unsigned int) -1)
+#define PWR_DOMAIN_INIT ((unsigned int)-1)
 
 /*
  * Return the total number of clusters in the system.
  * Currently there is correspondence between power level and affinity
  * level and hence cluster power level corresponds to affinity level 1.
  */
-#define tftf_get_total_clusters_count()		tftf_get_total_aff_count(1)
+#define tftf_get_total_clusters_count() tftf_get_total_aff_count(1)
 
 /*
  * Return the total number of CPUs in the system (across all clusters).
  * Currently there is correspondence between power level and affinity
  * level and hence CPU power level correspond to affinity level 0.
  */
-#define tftf_get_total_cpus_count()		tftf_get_total_aff_count(0)
+#define tftf_get_total_cpus_count() tftf_get_total_aff_count(0)
 
 /*
  * Converts a 'core_pos' into an MPIDR. The 'core_pos' is a unique number
  * corresponding to a CPU as returned by platform_get_core_pos() API
  */
-#define tftf_core_pos_to_mpidr(core_pos)	\
-			tftf_get_mpidr_from_node(core_pos + tftf_pwr_domain_start_idx[0])
+#define tftf_core_pos_to_mpidr(core_pos) \
+	tftf_get_mpidr_from_node(core_pos + tftf_pwr_domain_start_idx[0])
 
 /*
  * The following array stores the start index of each level in the power
@@ -107,7 +107,7 @@ unsigned int tftf_get_total_aff_count(unsigned int aff_lvl);
  * It returns PWR_DOMAIN_INIT if none is found.
  */
 unsigned int tftf_get_next_peer_domain(unsigned int pwr_domain_idx,
-				      unsigned int pwr_lvl);
+				       unsigned int pwr_lvl);
 
 /*
  * Returns the index of the next CPU after the current CPU `cpu_node`
@@ -116,7 +116,7 @@ unsigned int tftf_get_next_peer_domain(unsigned int pwr_domain_idx,
  * It returns PWR_DOMAIN_INIT if none is found.
  */
 unsigned int tftf_get_next_cpu_in_pwr_domain(unsigned int pwr_domain_idx,
-				      unsigned int cpu_node);
+					     unsigned int cpu_node);
 
 /*
  * Return the node index of the next CPU after 'cpu_node' in the topology tree.
@@ -130,32 +130,31 @@ unsigned int tftf_topology_next_cpu(unsigned int cpu_node);
  * cpu: unsigned integer corresponding to the index of the cpu in
  * the topology array.
  */
-#define for_each_cpu(cpu)					\
-	for (cpu = tftf_topology_next_cpu(PWR_DOMAIN_INIT);	\
-		cpu != PWR_DOMAIN_INIT;				\
-		cpu = tftf_topology_next_cpu(cpu))
+#define for_each_cpu(cpu)                                   \
+	for (cpu = tftf_topology_next_cpu(PWR_DOMAIN_INIT); \
+	     cpu != PWR_DOMAIN_INIT; cpu = tftf_topology_next_cpu(cpu))
 
 /*
  * Iterate over every power domain idx for a given level.
  * - idx: unsigned integer corresponding to the power domain index.
  * - lvl: level
  */
-#define for_each_power_domain_idx(idx, lvl)				\
-	for (idx = tftf_get_next_peer_domain(PWR_DOMAIN_INIT, (lvl));	\
-		idx != PWR_DOMAIN_INIT;					\
-		idx = tftf_get_next_peer_domain(idx, (lvl)))
+#define for_each_power_domain_idx(idx, lvl)                           \
+	for (idx = tftf_get_next_peer_domain(PWR_DOMAIN_INIT, (lvl)); \
+	     idx != PWR_DOMAIN_INIT;                                  \
+	     idx = tftf_get_next_peer_domain(idx, (lvl)))
 
 /*
  * Iterate over every CPU in a power domain idx.
  * - cpu_idx: CPU index.
  * - pwr_domain_idx: unsigned integer corresponding to the power domain index.
  */
-#define for_each_cpu_in_power_domain(cpu_idx, pwr_domain_idx)		\
-	for (cpu_idx = tftf_get_next_cpu_in_pwr_domain(			\
-			(pwr_domain_idx), PWR_DOMAIN_INIT);		\
-		cpu_idx != PWR_DOMAIN_INIT;				\
-		cpu_idx = tftf_get_next_cpu_in_pwr_domain(		\
-			(pwr_domain_idx), cpu_idx))
+#define for_each_cpu_in_power_domain(cpu_idx, pwr_domain_idx)            \
+	for (cpu_idx = tftf_get_next_cpu_in_pwr_domain((pwr_domain_idx), \
+						       PWR_DOMAIN_INIT); \
+	     cpu_idx != PWR_DOMAIN_INIT;                                 \
+	     cpu_idx = tftf_get_next_cpu_in_pwr_domain((pwr_domain_idx), \
+						       cpu_idx))
 
 /*
  * Returns the MPIDR of the CPU power domain node indexed by `cpu_node`
@@ -163,15 +162,13 @@ unsigned int tftf_topology_next_cpu(unsigned int cpu_node);
  */
 unsigned int tftf_get_mpidr_from_node(unsigned int cpu_node);
 
-
 /*
  * Returns the index corresponding to the parent power domain at `pwrlvl` of the
  * CPU specified by `mpidr`. Returns POWER_DOMAIN_INIT if any of input arguments
  * are incorrect.
  */
 unsigned int tftf_get_parent_node_from_mpidr(unsigned int mpidr,
-		unsigned int pwrlvl);
-
+					     unsigned int pwrlvl);
 
 /*
  * Query the platform topology to find another CPU than the one specified

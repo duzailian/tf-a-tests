@@ -8,16 +8,15 @@
 #include <arch_helpers.h>
 #include <assert.h>
 #include <debug.h>
-#include <stdlib.h>
-#include <sync.h>
-#include <lib/extensions/fpu.h>
-#include <lib/extensions/sve.h>
-
 #include <host_realm_simd.h>
 #include <host_shared_data.h>
+#include <lib/extensions/fpu.h>
+#include <lib/extensions/sve.h>
+#include <stdlib.h>
+#include <sync.h>
 
-#define RL_SVE_OP_ARRAYSIZE		512U
-#define SVE_TEST_ITERATIONS		4U
+#define RL_SVE_OP_ARRAYSIZE 512U
+#define SVE_TEST_ITERATIONS 4U
 
 static int rl_sve_op_1[RL_SVE_OP_ARRAYSIZE];
 static int rl_sve_op_2[RL_SVE_OP_ARRAYSIZE];
@@ -65,8 +64,9 @@ bool test_realm_sve_read_id_registers(void)
 	output = (struct sve_cmd_id_regs *)sd->realm_cmd_output_buffer;
 	memset((void *)output, 0, sizeof(struct sve_cmd_id_regs));
 
-	realm_printf("reading ID registers: ID_AA64PFR0_EL1, "
-		    " ID_AA64ZFR0_EL1\n");
+	realm_printf(
+		"reading ID registers: ID_AA64PFR0_EL1, "
+		" ID_AA64ZFR0_EL1\n");
 	output->id_aa64pfr0_el1 = read_id_aa64pfr0_el1();
 	output->id_aa64zfr0_el1 = read_id_aa64zfr0_el1();
 
@@ -193,9 +193,10 @@ static bool realm_sync_exception_handler(void)
 	uint64_t esr_el1 = read_esr_el1();
 
 	if (EC_BITS(esr_el1) == EC_UNKNOWN) {
-		realm_printf("received undefined abort. "
-			     "esr_el1: 0x%llx elr_el1: 0x%llx\n",
-			     esr_el1, read_elr_el1());
+		realm_printf(
+			"received undefined abort. "
+			"esr_el1: 0x%llx elr_el1: 0x%llx\n",
+			esr_el1, read_elr_el1());
 		realm_got_undef_abort++;
 	}
 
@@ -228,8 +229,9 @@ bool test_realm_sme_read_id_registers(void)
 	output = (struct sme_cmd_id_regs *)sd->realm_cmd_output_buffer;
 	memset((void *)output, 0, sizeof(struct sme_cmd_id_regs));
 
-	realm_printf("reading ID registers: ID_AA64PFR1_EL1, "
-		    " ID_AA64SMFR0_EL1\n");
+	realm_printf(
+		"reading ID registers: ID_AA64PFR1_EL1, "
+		" ID_AA64SMFR0_EL1\n");
 
 	output->id_aa64pfr1_el1 = read_id_aa64pfr1_el1();
 	output->id_aa64smfr0_el1 = read_id_aa64smfr0_el1();

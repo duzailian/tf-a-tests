@@ -5,8 +5,6 @@
  *
  */
 
-#include <stdint.h>
-
 #include <arch_helpers.h>
 #include <debug.h>
 #include <events.h>
@@ -15,27 +13,21 @@
 #include <host_realm_mem_layout.h>
 #include <host_realm_rmi.h>
 #include <host_shared_data.h>
-#include <platform.h>
 #include <plat_topology.h>
+#include <platform.h>
 #include <power_management.h>
 #include <realm_def.h>
 #include <sgi.h>
+#include <stdint.h>
 #include <test_helpers.h>
 #include <xlat_tables_v2.h>
 
-#define RMI_EXIT(id)	\
-	[RMI_EXIT_##id] = #id
+#define RMI_EXIT(id) [RMI_EXIT_##id] = #id
 
-const char *rmi_exit[] = {
-	RMI_EXIT(SYNC),
-	RMI_EXIT(IRQ),
-	RMI_EXIT(FIQ),
-	RMI_EXIT(FIQ),
-	RMI_EXIT(PSCI),
-	RMI_EXIT(RIPAS_CHANGE),
-	RMI_EXIT(HOST_CALL),
-	RMI_EXIT(SERROR)
-};
+const char *rmi_exit[] = {RMI_EXIT(SYNC),      RMI_EXIT(IRQ),
+			  RMI_EXIT(FIQ),       RMI_EXIT(FIQ),
+			  RMI_EXIT(PSCI),      RMI_EXIT(RIPAS_CHANGE),
+			  RMI_EXIT(HOST_CALL), RMI_EXIT(SERROR)};
 
 /*
  * The function handler to print the Realm logged buffer,
@@ -59,7 +51,8 @@ void realm_print_handler(struct realm *realm_ptr, unsigned int rec_num)
 	if (str_len != 0UL) {
 		/* Avoid memory overflow */
 		log_buffer[MAX_BUF_SIZE - 1] = 0U;
-		mp_printf("[VMID %u][Rec %u]: %s", realm_ptr->vmid, rec_num, log_buffer);
+		mp_printf("[VMID %u][Rec %u]: %s", realm_ptr->vmid, rec_num,
+			  log_buffer);
 		(void)memset((char *)log_buffer, 0, MAX_BUF_SIZE);
 	}
 }
@@ -75,12 +68,12 @@ static void host_init_realm_print_buffer(struct realm *realm_ptr)
 
 	for (unsigned int i = 0U; i < realm_ptr->rec_count; i++) {
 		host_shared_data = host_get_shared_structure(realm_ptr, i);
-		(void)memset((char *)host_shared_data, 0, sizeof(host_shared_data_t));
+		(void)memset((char *)host_shared_data, 0,
+			     sizeof(host_shared_data_t));
 	}
 }
 
-static bool host_enter_realm(struct realm *realm_ptr,
-			     u_register_t *exit_reason,
+static bool host_enter_realm(struct realm *realm_ptr, u_register_t *exit_reason,
 			     unsigned int *host_call_result,
 			     unsigned int rec_num)
 {
@@ -96,7 +89,8 @@ static bool host_enter_realm(struct realm *realm_ptr,
 	}
 
 	/* Enter Realm */
-	ret = host_realm_rec_enter(realm_ptr, exit_reason, host_call_result, rec_num);
+	ret = host_realm_rec_enter(realm_ptr, exit_reason, host_call_result,
+				   rec_num);
 	if (ret != REALM_SUCCESS) {
 		ERROR("%s() failed, ret=%lx\n", "host_realm_rec_enter", ret);
 		return false;
@@ -106,13 +100,12 @@ static bool host_enter_realm(struct realm *realm_ptr,
 }
 
 bool host_prepare_realm_payload(struct realm *realm_ptr,
-			       u_register_t realm_payload_adr,
-			       u_register_t plat_mem_pool_adr,
-			       u_register_t realm_pages_size,
-			       u_register_t feature_flag,
-			       long sl,
-			       const u_register_t *rec_flag,
-			       unsigned int rec_count)
+				u_register_t realm_payload_adr,
+				u_register_t plat_mem_pool_adr,
+				u_register_t realm_pages_size,
+				u_register_t feature_flag, long sl,
+				const u_register_t *rec_flag,
+				unsigned int rec_count)
 {
 	int8_t value;
 
@@ -121,10 +114,9 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 		return false;
 	}
 
-	if (plat_mem_pool_adr  == 0UL ||
-			realm_pages_size == 0UL) {
+	if (plat_mem_pool_adr == 0UL || realm_pages_size == 0UL) {
 		ERROR("plat_mem_pool_size or "
-			"realm_pages_size is NULL\n");
+		      "realm_pages_size is NULL\n");
 		return false;
 	}
 
@@ -137,22 +129,23 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 	INFO("Realm start adr=0x%lx\n", plat_mem_pool_adr);
 
 	/* Initialize  Host NS heap memory to be used in Realm creation*/
-	if (page_pool_init(plat_mem_pool_adr, realm_pages_size)
-		!= HEAP_INIT_SUCCESS) {
+	if (page_pool_init(plat_mem_pool_adr, realm_pages_size) !=
+	    HEAP_INIT_SUCCESS) {
 		ERROR("%s() failed\n", "page_pool_init");
 		return false;
 	}
 	memset((char *)realm_ptr, 0U, sizeof(struct realm));
 
 	/* Read Realm Feature Reg 0 */
-	if (host_rmi_features(0UL, &realm_ptr->rmm_feat_reg0) != REALM_SUCCESS) {
+	if (host_rmi_features(0UL, &realm_ptr->rmm_feat_reg0) !=
+	    REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_rmi_features");
 		return false;
 	}
 
 	/* Fail if IPA bits > implemented size */
 	if (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, feature_flag) >
-			EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, realm_ptr->rmm_feat_reg0)) {
+	    EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, realm_ptr->rmm_feat_reg0)) {
 		ERROR("%s() failed\n", "Invalid s2sz");
 		return false;
 	}
@@ -163,8 +156,9 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 	 */
 	if (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, feature_flag) != 0U) {
 		realm_ptr->rmm_feat_reg0 &= ~MASK(RMI_FEATURE_REGISTER_0_S2SZ);
-		realm_ptr->rmm_feat_reg0 |= INPLACE(RMI_FEATURE_REGISTER_0_S2SZ,
-				EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, feature_flag));
+		realm_ptr->rmm_feat_reg0 |= INPLACE(
+			RMI_FEATURE_REGISTER_0_S2SZ,
+			EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, feature_flag));
 	}
 
 	/* Disable PMU if not required */
@@ -196,7 +190,7 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 		realm_ptr->num_bps = (unsigned int)value;
 	} else {
 		realm_ptr->num_bps = EXTRACT(RMI_FEATURE_REGISTER_0_NUM_BPS,
-					realm_ptr->rmm_feat_reg0);
+					     realm_ptr->rmm_feat_reg0);
 	}
 
 	/* Requested number of watchpoints */
@@ -205,17 +199,18 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 		realm_ptr->num_wps = (unsigned int)value;
 	} else {
 		realm_ptr->num_wps = EXTRACT(RMI_FEATURE_REGISTER_0_NUM_WPS,
-					realm_ptr->rmm_feat_reg0);
+					     realm_ptr->rmm_feat_reg0);
 	}
 
 	/* Set SVE bits from feature_flag */
 	realm_ptr->rmm_feat_reg0 &= ~(RMI_FEATURE_REGISTER_0_SVE_EN |
-				 MASK(RMI_FEATURE_REGISTER_0_SVE_VL));
+				      MASK(RMI_FEATURE_REGISTER_0_SVE_VL));
 	if ((feature_flag & RMI_FEATURE_REGISTER_0_SVE_EN) != 0UL) {
-		realm_ptr->rmm_feat_reg0 |= RMI_FEATURE_REGISTER_0_SVE_EN |
-				       INPLACE(RMI_FEATURE_REGISTER_0_SVE_VL,
-				       EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL,
-						feature_flag));
+		realm_ptr->rmm_feat_reg0 |=
+			RMI_FEATURE_REGISTER_0_SVE_EN |
+			INPLACE(RMI_FEATURE_REGISTER_0_SVE_VL,
+				EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL,
+					feature_flag));
 	}
 
 	if (realm_ptr->rec_count > MAX_REC_COUNT) {
@@ -225,7 +220,7 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 	realm_ptr->rec_count = rec_count;
 	for (unsigned int i = 0U; i < rec_count; i++) {
 		if (rec_flag[i] == RMI_RUNNABLE ||
-				rec_flag[i] == RMI_NOT_RUNNABLE) {
+		    rec_flag[i] == RMI_NOT_RUNNABLE) {
 			realm_ptr->rec_flag[i] = rec_flag[i];
 		} else {
 			ERROR("Invalid Rec Flag\n");
@@ -252,7 +247,7 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 
 	/* RTT map Realm image */
 	if (host_realm_map_payload_image(realm_ptr, realm_payload_adr) !=
-			REALM_SUCCESS) {
+	    REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_map_payload_image");
 		goto destroy_realm;
 	}
@@ -275,21 +270,15 @@ bool host_create_realm_payload(struct realm *realm_ptr,
 			       u_register_t realm_payload_adr,
 			       u_register_t plat_mem_pool_adr,
 			       u_register_t realm_pages_size,
-			       u_register_t feature_flag,
-			       long sl,
+			       u_register_t feature_flag, long sl,
 			       const u_register_t *rec_flag,
 			       unsigned int rec_count)
 {
 	bool ret;
 
-	ret = host_prepare_realm_payload(realm_ptr,
-			realm_payload_adr,
-			plat_mem_pool_adr,
-			realm_pages_size,
-			feature_flag,
-			sl,
-			rec_flag,
-			rec_count);
+	ret = host_prepare_realm_payload(realm_ptr, realm_payload_adr,
+					 plat_mem_pool_adr, realm_pages_size,
+					 feature_flag, sl, rec_flag, rec_count);
 	if (!ret) {
 		goto destroy_realm;
 	} else {
@@ -316,25 +305,19 @@ destroy_realm:
 }
 
 bool host_create_activate_realm_payload(struct realm *realm_ptr,
-			u_register_t realm_payload_adr,
-			u_register_t plat_mem_pool_adr,
-			u_register_t realm_pages_size,
-			u_register_t feature_flag,
-			long sl,
-			const u_register_t *rec_flag,
-			unsigned int rec_count)
+					u_register_t realm_payload_adr,
+					u_register_t plat_mem_pool_adr,
+					u_register_t realm_pages_size,
+					u_register_t feature_flag, long sl,
+					const u_register_t *rec_flag,
+					unsigned int rec_count)
 
 {
 	bool ret;
 
-	ret = host_create_realm_payload(realm_ptr,
-			realm_payload_adr,
-			plat_mem_pool_adr,
-			realm_pages_size,
-			feature_flag,
-			sl,
-			rec_flag,
-			rec_count);
+	ret = host_create_realm_payload(realm_ptr, realm_payload_adr,
+					plat_mem_pool_adr, realm_pages_size,
+					feature_flag, sl, rec_flag, rec_count);
 	if (!ret) {
 		goto destroy_realm;
 	} else {
@@ -358,15 +341,15 @@ bool host_create_shared_mem(struct realm *realm_ptr,
 			    u_register_t ns_shared_mem_adr,
 			    u_register_t ns_shared_mem_size)
 {
-	if (ns_shared_mem_adr < NS_REALM_SHARED_MEM_BASE  ||
-			ns_shared_mem_adr + ns_shared_mem_size > PAGE_POOL_END) {
+	if (ns_shared_mem_adr < NS_REALM_SHARED_MEM_BASE ||
+	    ns_shared_mem_adr + ns_shared_mem_size > PAGE_POOL_END) {
 		ERROR("%s() Invalid adr range\n", "host_realm_map_ns_shared");
 		return false;
 	}
 
 	/* RTT map NS shared region */
 	if (host_realm_map_ns_shared(realm_ptr, ns_shared_mem_adr,
-				ns_shared_mem_size) != REALM_SUCCESS) {
+				     ns_shared_mem_size) != REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_map_ns_shared");
 		realm_ptr->shared_mem_created = false;
 		return false;
@@ -410,10 +393,8 @@ bool host_destroy_realm(struct realm *realm_ptr)
  *	       TEST_RESULT_SUCCESS.
  *	false: On error.
  */
-bool host_enter_realm_execute(struct realm *realm_ptr,
-			      uint8_t cmd,
-			      int test_exit_reason,
-			      unsigned int rec_num)
+bool host_enter_realm_execute(struct realm *realm_ptr, uint8_t cmd,
+			      int test_exit_reason, unsigned int rec_num)
 {
 	u_register_t realm_exit_reason = RMI_EXIT_INVALID;
 	unsigned int host_call_result = TEST_RESULT_FAIL;
@@ -432,10 +413,10 @@ bool host_enter_realm_execute(struct realm *realm_ptr,
 		return false;
 	}
 	host_shared_data_set_realm_cmd(realm_ptr, cmd, rec_num);
-	if (!host_enter_realm(realm_ptr, &realm_exit_reason, &host_call_result, rec_num)) {
+	if (!host_enter_realm(realm_ptr, &realm_exit_reason, &host_call_result,
+			      rec_num)) {
 		return false;
 	}
-
 
 	if (test_exit_reason == realm_exit_reason) {
 		if (realm_exit_reason != RMI_EXIT_HOST_CALL) {
@@ -457,7 +438,7 @@ bool host_enter_realm_execute(struct realm *realm_ptr,
 		}
 	} else {
 		ERROR("%s(%u) Unknown or unsupported RmiRecExitReason: 0x%lx\n",
-		__func__, cmd, realm_exit_reason);
+		      __func__, cmd, realm_exit_reason);
 	}
 	return false;
 }
@@ -477,7 +458,7 @@ test_result_t host_cmp_result(void)
  * Host mpidr is saved on every rec enter
  */
 static unsigned int host_realm_find_core_pos_by_rec(struct realm *realm_ptr,
-		unsigned int rec_num)
+						    unsigned int rec_num)
 {
 	if (rec_num < MAX_REC_COUNT && realm_ptr->run[rec_num] != 0U) {
 		return platform_get_core_pos(realm_ptr->host_mpidr[rec_num]);
@@ -489,11 +470,11 @@ static unsigned int host_realm_find_core_pos_by_rec(struct realm *realm_ptr,
  * Send SGI on core running specified Rec
  * API can be used to forcefully exit from Realm
  */
-void host_rec_send_sgi(struct realm *realm_ptr,
-		       unsigned int sgi,
+void host_rec_send_sgi(struct realm *realm_ptr, unsigned int sgi,
 		       unsigned int rec_num)
 {
-	unsigned int core_pos = host_realm_find_core_pos_by_rec(realm_ptr, rec_num);
+	unsigned int core_pos =
+		host_realm_find_core_pos_by_rec(realm_ptr, rec_num);
 	if (core_pos < PLATFORM_CORE_COUNT) {
 		tftf_send_sgi(sgi, core_pos);
 	}

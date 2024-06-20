@@ -22,18 +22,18 @@ typedef struct {
 	/* Use the 'in_use' flag as any value for base and file_pos could be
 	 * valid.
 	 */
-	int		in_use;
-	uintptr_t	base;
-	size_t		file_pos;
+	int in_use;
+	uintptr_t base;
+	size_t file_pos;
 
 	/* Definition of the flash block device */
 	const io_nor_flash_spec_t *block_spec;
 } file_state_t;
 
 int flash_block_write(file_state_t *fp, uint32_t address,
-		const uintptr_t buffer, size_t *written);
+		      const uintptr_t buffer, size_t *written);
 
 int flash_partial_write(file_state_t *fp, uint32_t address,
-		const uintptr_t buffer, size_t length, size_t *written);
+			const uintptr_t buffer, size_t length, size_t *written);
 
 #endif /* __IO_VEXPRESS_NOR_INTERNAL_H__ */

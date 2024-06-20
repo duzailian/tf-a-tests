@@ -56,12 +56,12 @@ void system_setup_tests(void)
 	 */
 	uint64_t fp_reg;
 
-	__asm__ volatile("fmov %0, d0" : "=r" (fp_reg) :: "d0");
+	__asm__ volatile("fmov %0, d0" : "=r"(fp_reg)::"d0");
 	INFO("D0 = 0x%llx\n", fp_reg);
 	__asm__ volatile(
 		"fmov d0, #1.0 \n\t"
 		"fmov %0, d0 \n\t"
-		: "=r" (fp_reg)
+		: "=r"(fp_reg)
 		:
 		: "d0");
 	INFO("D0 = 0x%llx\n", fp_reg);

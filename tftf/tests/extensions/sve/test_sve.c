@@ -4,15 +4,15 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include "./test_sve.h"
+
 #include <arch_features.h>
 #include <arch_helpers.h>
 #include <debug.h>
+#include <lib/extensions/sve.h>
 #include <stdlib.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
-#include <lib/extensions/sve.h>
-
-#include "./test_sve.h"
 
 #if __GNUC__ > 8 || (__GNUC__ == 8 && __GNUC_MINOR__ > 0)
 

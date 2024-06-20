@@ -82,15 +82,15 @@ static void test_measure_smc_latency(const smc_args *smc_args,
 
 	avg_cycles = cycles_sum / ITERATIONS_CNT;
 	tftf_testcase_printf("Average number of cycles: %llu\n",
-		(unsigned long long) avg_cycles);
+			     (unsigned long long)avg_cycles);
 	latency->min = cycles_to_ns(min_cycles);
 	latency->max = cycles_to_ns(max_cycles);
 	latency->avg = cycles_to_ns(avg_cycles);
 
 	NOTICE("Raw results:\n");
 	for (unsigned int i = 0; i < ITERATIONS_CNT; ++i) {
-		NOTICE("%llu cycles\t%llu ns\n",
-			raw_results[i], cycles_to_ns(raw_results[i]));
+		NOTICE("%llu cycles\t%llu ns\n", raw_results[i],
+		       cycles_to_ns(raw_results[i]));
 	}
 }
 
@@ -101,14 +101,14 @@ static void test_measure_smc_latency(const smc_args *smc_args,
 test_result_t smc_psci_version_latency(void)
 {
 	struct latency_info latency;
-	smc_args args = { SMC_PSCI_VERSION };
+	smc_args args = {SMC_PSCI_VERSION};
 
 	test_measure_smc_latency(&args, &latency);
 	tftf_testcase_printf(
 		"Average time: %llu ns (ranging from %llu to %llu)\n",
-		(unsigned long long) latency.avg,
-		(unsigned long long) latency.min,
-		(unsigned long long) latency.max);
+		(unsigned long long)latency.avg,
+		(unsigned long long)latency.min,
+		(unsigned long long)latency.max);
 
 	return TEST_RESULT_SUCCESS;
 }
@@ -121,14 +121,14 @@ test_result_t smc_psci_version_latency(void)
 test_result_t smc_std_svc_call_uid_latency(void)
 {
 	struct latency_info latency;
-	smc_args args = { SMC_STD_SVC_UID };
+	smc_args args = {SMC_STD_SVC_UID};
 
 	test_measure_smc_latency(&args, &latency);
 	tftf_testcase_printf(
 		"Average time: %llu ns (ranging from %llu to %llu)\n",
-		(unsigned long long) latency.avg,
-		(unsigned long long) latency.min,
-		(unsigned long long) latency.max);
+		(unsigned long long)latency.avg,
+		(unsigned long long)latency.min,
+		(unsigned long long)latency.max);
 
 	return TEST_RESULT_SUCCESS;
 }
@@ -146,8 +146,7 @@ test_result_t smc_arch_workaround_1(void)
 	args.fid = SMCCC_VERSION;
 	ret = tftf_smc(&args);
 	if ((int32_t)ret.ret0 < expected_ver) {
-		printf("Unexpected SMCCC version: 0x%x\n",
-		       (int)ret.ret0);
+		printf("Unexpected SMCCC version: 0x%x\n", (int)ret.ret0);
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -167,9 +166,9 @@ test_result_t smc_arch_workaround_1(void)
 	test_measure_smc_latency(&args, &latency);
 	tftf_testcase_printf(
 		"Average time: %llu ns (ranging from %llu to %llu)\n",
-		(unsigned long long) latency.avg,
-		(unsigned long long) latency.min,
-		(unsigned long long) latency.max);
+		(unsigned long long)latency.avg,
+		(unsigned long long)latency.min,
+		(unsigned long long)latency.max);
 
 	return TEST_RESULT_SUCCESS;
 }

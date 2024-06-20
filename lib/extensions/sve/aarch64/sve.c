@@ -14,27 +14,28 @@
 
 static uint8_t zero_mem[512];
 
-#define sve_traps_save_disable(flags)						\
-	do {									\
-		if (IS_IN_EL2()) {						\
-			flags = read_cptr_el2();				\
-			write_cptr_el2(flags & ~(CPTR_EL2_TZ_BIT));		\
-		} else {							\
-			flags = read_cpacr_el1();				\
-			write_cpacr_el1(flags |					\
-					CPACR_EL1_ZEN(CPACR_EL1_ZEN_TRAP_NONE));\
-		}								\
-		isb();								\
+#define sve_traps_save_disable(flags)                                    \
+	do {                                                             \
+		if (IS_IN_EL2()) {                                       \
+			flags = read_cptr_el2();                         \
+			write_cptr_el2(flags & ~(CPTR_EL2_TZ_BIT));      \
+		} else {                                                 \
+			flags = read_cpacr_el1();                        \
+			write_cpacr_el1(                                 \
+				flags |                                  \
+				CPACR_EL1_ZEN(CPACR_EL1_ZEN_TRAP_NONE)); \
+		}                                                        \
+		isb();                                                   \
 	} while (false)
 
-#define sve_traps_restore(flags)						\
-	do {									\
-		if (IS_IN_EL2()) {						\
-			write_cptr_el2(flags);					\
-		} else {							\
-			write_cpacr_el1(flags);					\
-		}								\
-		isb();								\
+#define sve_traps_restore(flags)                \
+	do {                                    \
+		if (IS_IN_EL2()) {              \
+			write_cptr_el2(flags);  \
+		} else {                        \
+			write_cpacr_el1(flags); \
+		}                               \
+		isb();                          \
 	} while (false)
 
 static void config_vq(uint8_t sve_vq)
@@ -67,8 +68,7 @@ uint64_t sve_rdvl_1(void)
 		".arch_extension sve\n"
 		"rdvl %0, #1;"
 		".arch_extension nosve\n"
-		: "=r" (vl)
-	);
+		: "=r"(vl));
 
 	sve_traps_restore(flags);
 	return vl;
@@ -169,41 +169,16 @@ uint32_t sve_probe_vl(uint8_t sve_max_vq)
 static void z_regs_write(const sve_z_regs_t *z_regs)
 {
 	__asm__ volatile(
-		".arch_extension sve\n"
-		fill_sve_helper(0)
-		fill_sve_helper(1)
-		fill_sve_helper(2)
-		fill_sve_helper(3)
-		fill_sve_helper(4)
-		fill_sve_helper(5)
-		fill_sve_helper(6)
-		fill_sve_helper(7)
-		fill_sve_helper(8)
-		fill_sve_helper(9)
-		fill_sve_helper(10)
-		fill_sve_helper(11)
-		fill_sve_helper(12)
-		fill_sve_helper(13)
-		fill_sve_helper(14)
-		fill_sve_helper(15)
-		fill_sve_helper(16)
-		fill_sve_helper(17)
-		fill_sve_helper(18)
-		fill_sve_helper(19)
-		fill_sve_helper(20)
-		fill_sve_helper(21)
-		fill_sve_helper(22)
-		fill_sve_helper(23)
-		fill_sve_helper(24)
-		fill_sve_helper(25)
-		fill_sve_helper(26)
-		fill_sve_helper(27)
-		fill_sve_helper(28)
-		fill_sve_helper(29)
-		fill_sve_helper(30)
-		fill_sve_helper(31)
-		".arch_extension nosve\n"
-		: : "r" (z_regs));
+		".arch_extension sve\n" fill_sve_helper(0) fill_sve_helper(1) fill_sve_helper(2) fill_sve_helper(3) fill_sve_helper(
+			4) fill_sve_helper(5) fill_sve_helper(6) fill_sve_helper(7) fill_sve_helper(8) fill_sve_helper(9)
+			fill_sve_helper(10) fill_sve_helper(11) fill_sve_helper(12) fill_sve_helper(13) fill_sve_helper(
+				14) fill_sve_helper(15) fill_sve_helper(16) fill_sve_helper(17) fill_sve_helper(18)
+				fill_sve_helper(19) fill_sve_helper(20) fill_sve_helper(21) fill_sve_helper(22) fill_sve_helper(
+					23) fill_sve_helper(24) fill_sve_helper(25) fill_sve_helper(26) fill_sve_helper(27)
+					fill_sve_helper(28) fill_sve_helper(29) fill_sve_helper(30) fill_sve_helper(
+						31) ".arch_extension nosve\n"
+		:
+		: "r"(z_regs));
 }
 
 /*
@@ -229,41 +204,16 @@ void sve_z_regs_read(sve_z_regs_t *z_regs)
 	sve_traps_save_disable(flags);
 
 	__asm__ volatile(
-		".arch_extension sve\n"
-		read_sve_helper(0)
-		read_sve_helper(1)
-		read_sve_helper(2)
-		read_sve_helper(3)
-		read_sve_helper(4)
-		read_sve_helper(5)
-		read_sve_helper(6)
-		read_sve_helper(7)
-		read_sve_helper(8)
-		read_sve_helper(9)
-		read_sve_helper(10)
-		read_sve_helper(11)
-		read_sve_helper(12)
-		read_sve_helper(13)
-		read_sve_helper(14)
-		read_sve_helper(15)
-		read_sve_helper(16)
-		read_sve_helper(17)
-		read_sve_helper(18)
-		read_sve_helper(19)
-		read_sve_helper(20)
-		read_sve_helper(21)
-		read_sve_helper(22)
-		read_sve_helper(23)
-		read_sve_helper(24)
-		read_sve_helper(25)
-		read_sve_helper(26)
-		read_sve_helper(27)
-		read_sve_helper(28)
-		read_sve_helper(29)
-		read_sve_helper(30)
-		read_sve_helper(31)
-		".arch_extension nosve\n"
-		: : "r" (z_regs));
+		".arch_extension sve\n" read_sve_helper(0) read_sve_helper(1) read_sve_helper(2) read_sve_helper(3) read_sve_helper(
+			4) read_sve_helper(5) read_sve_helper(6) read_sve_helper(7) read_sve_helper(8) read_sve_helper(9)
+			read_sve_helper(10) read_sve_helper(11) read_sve_helper(12) read_sve_helper(13) read_sve_helper(
+				14) read_sve_helper(15) read_sve_helper(16) read_sve_helper(17) read_sve_helper(18)
+				read_sve_helper(19) read_sve_helper(20) read_sve_helper(21) read_sve_helper(22) read_sve_helper(
+					23) read_sve_helper(24) read_sve_helper(25) read_sve_helper(26) read_sve_helper(27)
+					read_sve_helper(28) read_sve_helper(29) read_sve_helper(30) read_sve_helper(
+						31) ".arch_extension nosve\n"
+		:
+		: "r"(z_regs));
 
 	sve_traps_restore(flags);
 }
@@ -271,25 +221,16 @@ void sve_z_regs_read(sve_z_regs_t *z_regs)
 static void p_regs_write(const sve_p_regs_t *p_regs)
 {
 	__asm__ volatile(
-		".arch_extension sve\n"
-		fill_sve_p_helper(0)
-		fill_sve_p_helper(1)
-		fill_sve_p_helper(2)
-		fill_sve_p_helper(3)
-		fill_sve_p_helper(4)
-		fill_sve_p_helper(5)
-		fill_sve_p_helper(6)
-		fill_sve_p_helper(7)
-		fill_sve_p_helper(8)
-		fill_sve_p_helper(9)
-		fill_sve_p_helper(10)
-		fill_sve_p_helper(11)
-		fill_sve_p_helper(12)
-		fill_sve_p_helper(13)
-		fill_sve_p_helper(14)
-		fill_sve_p_helper(15)
-		".arch_extension nosve\n"
-		: : "r" (p_regs));
+		".arch_extension sve\n" fill_sve_p_helper(0) fill_sve_p_helper(
+			1) fill_sve_p_helper(2) fill_sve_p_helper(3)
+			fill_sve_p_helper(4) fill_sve_p_helper(5) fill_sve_p_helper(
+				6) fill_sve_p_helper(7) fill_sve_p_helper(8)
+				fill_sve_p_helper(9) fill_sve_p_helper(10) fill_sve_p_helper(
+					11) fill_sve_p_helper(12) fill_sve_p_helper(13)
+					fill_sve_p_helper(14) fill_sve_p_helper(
+						15) ".arch_extension nosve\n"
+		:
+		: "r"(p_regs));
 }
 
 /*
@@ -316,25 +257,16 @@ void sve_p_regs_read(sve_p_regs_t *p_regs)
 	sve_traps_save_disable(flags);
 
 	__asm__ volatile(
-		".arch_extension sve\n"
-		read_sve_p_helper(0)
-		read_sve_p_helper(1)
-		read_sve_p_helper(2)
-		read_sve_p_helper(3)
-		read_sve_p_helper(4)
-		read_sve_p_helper(5)
-		read_sve_p_helper(6)
-		read_sve_p_helper(7)
-		read_sve_p_helper(8)
-		read_sve_p_helper(9)
-		read_sve_p_helper(10)
-		read_sve_p_helper(11)
-		read_sve_p_helper(12)
-		read_sve_p_helper(13)
-		read_sve_p_helper(14)
-		read_sve_p_helper(15)
-		".arch_extension nosve\n"
-		: : "r" (p_regs));
+		".arch_extension sve\n" read_sve_p_helper(0) read_sve_p_helper(
+			1) read_sve_p_helper(2) read_sve_p_helper(3)
+			read_sve_p_helper(4) read_sve_p_helper(5) read_sve_p_helper(
+				6) read_sve_p_helper(7) read_sve_p_helper(8)
+				read_sve_p_helper(9) read_sve_p_helper(10) read_sve_p_helper(
+					11) read_sve_p_helper(12) read_sve_p_helper(13)
+					read_sve_p_helper(14) read_sve_p_helper(
+						15) ".arch_extension nosve\n"
+		:
+		: "r"(p_regs));
 
 	sve_traps_restore(flags);
 }
@@ -352,7 +284,7 @@ static void ffr_regs_write(const sve_ffr_regs_t *ffr_regs)
 		"	ldr	p0, [%1]\n"
 		".arch_extension nosve\n"
 		:
-		: "r" (ffr_regs), "r" (sve_p_reg)
+		: "r"(ffr_regs), "r"(sve_p_reg)
 		: "memory");
 }
 
@@ -380,7 +312,8 @@ void sve_ffr_regs_read(sve_ffr_regs_t *ffr_regs)
 
 	sve_traps_save_disable(flags);
 
-	/* Save p0. Read FFR to p0 and save p0 (ffr) to 'ffr_regs'. Restore p0 */
+	/* Save p0. Read FFR to p0 and save p0 (ffr) to 'ffr_regs'. Restore p0
+	 */
 	__asm__ volatile(
 		".arch_extension sve\n"
 		"	str	p0, [%1]\n"
@@ -389,7 +322,7 @@ void sve_ffr_regs_read(sve_ffr_regs_t *ffr_regs)
 		"	ldr	p0, [%1]\n"
 		".arch_extension nosve\n"
 		:
-		: "r" (ffr_regs), "r" (sve_p_reg)
+		: "r"(ffr_regs), "r"(sve_p_reg)
 		: "memory");
 
 	sve_traps_restore(flags);
@@ -583,7 +516,8 @@ uint64_t sve_p_regs_compare(const sve_p_regs_t *s1, const sve_p_regs_t *s2)
  * 0		: FFR register in 's1' and 's2' are equal
  * nonzero	: FFR register is not equal
  */
-uint64_t sve_ffr_regs_compare(const sve_ffr_regs_t *s1, const sve_ffr_regs_t *s2)
+uint64_t sve_ffr_regs_compare(const sve_ffr_regs_t *s1,
+			      const sve_ffr_regs_t *s2)
 {
 	uint32_t ffr_size;
 	uint64_t cmp_bitmap = 0UL;

@@ -5,16 +5,15 @@
  */
 
 #include <debug.h>
+#include <drivers/arm/sp805.h>
+#include <ffa_helpers.h>
+#include <platform_def.h>
+#include <sp_helpers.h>
+#include <spm_helpers.h>
 
 #include "cactus_message_loop.h"
 #include "cactus_test_cmds.h"
-#include <drivers/arm/sp805.h>
-#include <ffa_helpers.h>
-#include <sp_helpers.h>
 #include "spm_common.h"
-#include <spm_helpers.h>
-
-#include <platform_def.h>
 
 #define NOTIFICATION_PENDING_INTERRUPT_INTID 5
 
@@ -42,7 +41,7 @@ void discover_managed_exit_interrupt_id(void)
 	managed_exit_interrupt_id = ffa_feature_intid(ffa_ret);
 
 	VERBOSE("Discovered managed exit interrupt ID: %d\n",
-	     managed_exit_interrupt_id);
+		managed_exit_interrupt_id);
 }
 
 /*
@@ -66,21 +65,25 @@ void send_managed_exit_response(void)
 	 * interrupt, no need for deactivation.
 	 */
 	ffa_ret = cactus_response(g_ffa_id, g_dir_req_source_id,
-			MANAGED_EXIT_INTERRUPT_ID);
+				  MANAGED_EXIT_INTERRUPT_ID);
 	waiting_resume_after_managed_exit = true;
 
 	while (waiting_resume_after_managed_exit) {
-
 		waiting_resume_after_managed_exit =
-			(ffa_func_id(ffa_ret) != FFA_MSG_SEND_DIRECT_REQ_SMC32 &&
-			 ffa_func_id(ffa_ret) != FFA_MSG_SEND_DIRECT_REQ_SMC64) ||
-			 ffa_dir_msg_source(ffa_ret) != g_dir_req_source_id ||
-			 cactus_get_cmd(ffa_ret) != CACTUS_RESUME_AFTER_MANAGED_EXIT;
+			(ffa_func_id(ffa_ret) !=
+				 FFA_MSG_SEND_DIRECT_REQ_SMC32 &&
+			 ffa_func_id(ffa_ret) !=
+				 FFA_MSG_SEND_DIRECT_REQ_SMC64) ||
+			ffa_dir_msg_source(ffa_ret) != g_dir_req_source_id ||
+			cactus_get_cmd(ffa_ret) !=
+				CACTUS_RESUME_AFTER_MANAGED_EXIT;
 
 		if (waiting_resume_after_managed_exit) {
-			VERBOSE("Expected a direct message request from endpoint"
-			      " %x with command CACTUS_RESUME_AFTER_MANAGED_EXIT\n",
-			       g_dir_req_source_id);
+			VERBOSE("Expected a direct message request from "
+				"endpoint"
+				" %x with command "
+				"CACTUS_RESUME_AFTER_MANAGED_EXIT\n",
+				g_dir_req_source_id);
 			ffa_ret = cactus_error_resp(g_ffa_id,
 						    ffa_dir_msg_source(ffa_ret),
 						    CACTUS_ERROR_TEST);
@@ -92,9 +95,9 @@ void send_managed_exit_response(void)
 void register_maintenance_interrupt_handlers(void)
 {
 	sp_register_interrupt_handler(send_managed_exit_response,
-		managed_exit_interrupt_id);
+				      managed_exit_interrupt_id);
 	sp_register_interrupt_handler(notification_pending_interrupt_handler,
-		NOTIFICATION_PENDING_INTERRUPT_INTID);
+				      NOTIFICATION_PENDING_INTERRUPT_INTID);
 }
 
 void cactus_interrupt_handler_irq(void)

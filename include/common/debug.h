@@ -20,8 +20,7 @@
  * manner, i.e. it can be called from several CPUs simultaneously without
  * getting interleaved messages.
  */
-__attribute__((format(printf, 1, 2)))
-void mp_printf(const char *fmt, ...);
+__attribute__((format(printf, 1, 2))) void mp_printf(const char *fmt, ...);
 #endif /* IMAGE_CACTUS_MM */
 
 #ifdef IMAGE_REALM
@@ -38,41 +37,41 @@ void realm_printf(const char *fmt, ...);
  * INFO("Info %s.\n", "message")    -> INFO: Info message.
  * WARN("Warning %s.\n", "message") -> WARNING: Warning message.
  */
-#define LOG_LEVEL_NONE                  0
-#define LOG_LEVEL_ERROR                 10
-#define LOG_LEVEL_NOTICE                20
-#define LOG_LEVEL_WARNING               30
-#define LOG_LEVEL_INFO                  40
-#define LOG_LEVEL_VERBOSE               50
+#define LOG_LEVEL_NONE 0
+#define LOG_LEVEL_ERROR 10
+#define LOG_LEVEL_NOTICE 20
+#define LOG_LEVEL_WARNING 30
+#define LOG_LEVEL_INFO 40
+#define LOG_LEVEL_VERBOSE 50
 
 #if LOG_LEVEL >= LOG_LEVEL_NOTICE
-# define NOTICE(...)    mp_printf("NOTICE:  " __VA_ARGS__)
+#define NOTICE(...) mp_printf("NOTICE:  " __VA_ARGS__)
 #else
-# define NOTICE(...)
+#define NOTICE(...)
 #endif
 
 #if LOG_LEVEL >= LOG_LEVEL_ERROR
-# define ERROR(...)     mp_printf("ERROR:   " __VA_ARGS__)
+#define ERROR(...) mp_printf("ERROR:   " __VA_ARGS__)
 #else
-# define ERROR(...)
+#define ERROR(...)
 #endif
 
 #if LOG_LEVEL >= LOG_LEVEL_WARNING
-# define WARN(...)      mp_printf("WARNING: " __VA_ARGS__)
+#define WARN(...) mp_printf("WARNING: " __VA_ARGS__)
 #else
-# define WARN(...)
+#define WARN(...)
 #endif
 
 #if LOG_LEVEL >= LOG_LEVEL_INFO
-# define INFO(...)      mp_printf("INFO:    " __VA_ARGS__)
+#define INFO(...) mp_printf("INFO:    " __VA_ARGS__)
 #else
-# define INFO(...)
+#define INFO(...)
 #endif
 
 #if LOG_LEVEL >= LOG_LEVEL_VERBOSE
-# define VERBOSE(...)	mp_printf("VERBOSE: " __VA_ARGS__)
+#define VERBOSE(...) mp_printf("VERBOSE: " __VA_ARGS__)
 #else
-# define VERBOSE(...)
+#define VERBOSE(...)
 #endif
 
 #if ENABLE_BACKTRACE
@@ -86,9 +85,10 @@ void backtrace(const char *cookie);
  * spin. This can be expanded in the future to provide more information.
  */
 void __attribute__((__noreturn__)) do_panic(const char *file, int line);
-#define panic()	do_panic(__FILE__, __LINE__)
+#define panic() do_panic(__FILE__, __LINE__)
 
-void __attribute__((__noreturn__)) do_bug_unreachable(const char *file, int line);
+void __attribute__((__noreturn__))
+do_bug_unreachable(const char *file, int line);
 #define bug_unreachable() do_bug_unreachable(__FILE__, __LINE__)
 
 #endif /* __DEBUG_H__ */

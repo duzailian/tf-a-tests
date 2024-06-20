@@ -47,7 +47,7 @@ static volatile unsigned int all_cores_inside_test;
 static int requested_irq_handler(void *data)
 {
 	unsigned int core_pos = platform_get_core_pos(read_mpidr_el1());
-	unsigned int irq_id = *(unsigned int *) data;
+	unsigned int irq_id = *(unsigned int *)data;
 
 	assert(irq_id == IRQ_WAKE_SGI || irq_id == tftf_get_timer_irq());
 	assert(requested_irq_received[core_pos] == 0);
@@ -70,7 +70,7 @@ static int requested_irq_handler(void *data)
 static int multiple_timer_handler(void *data)
 {
 	unsigned int core_pos = platform_get_core_pos(read_mpidr_el1());
-	unsigned int irq_id = *(unsigned int *) data;
+	unsigned int irq_id = *(unsigned int *)data;
 
 	assert(irq_id == IRQ_WAKE_SGI || irq_id == tftf_get_timer_irq());
 	assert(requested_irq_received[core_pos] == 0);
@@ -103,7 +103,8 @@ test_result_t test_timer_framework_interrupt(void)
 	/* Register timer handler to confirm it received the timer interrupt */
 	ret = tftf_timer_register_handler(requested_irq_handler);
 	if (ret != 0) {
-		tftf_testcase_printf("Failed to register timer handler:0x%x\n", ret);
+		tftf_testcase_printf("Failed to register timer handler:0x%x\n",
+				     ret);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -118,7 +119,8 @@ test_result_t test_timer_framework_interrupt(void)
 		;
 	ret = tftf_timer_unregister_handler();
 	if (ret != 0) {
-		tftf_testcase_printf("Failed to unregister timer handler:0x%x\n", ret);
+		tftf_testcase_printf(
+			"Failed to unregister timer handler:0x%x\n", ret);
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -138,8 +140,8 @@ static test_result_t timer_target_power_down_cpu(void)
 	requested_irq_received[core_pos] = 0;
 
 	/* Construct the state-id for power down */
-	ret = tftf_psci_make_composite_state_id(MPIDR_AFFLVL0,
-					PSTATE_TYPE_POWERDOWN, &stateid);
+	ret = tftf_psci_make_composite_state_id(
+		MPIDR_AFFLVL0, PSTATE_TYPE_POWERDOWN, &stateid);
 	if (ret != PSCI_E_SUCCESS) {
 		tftf_testcase_printf("Failed to construct composite state\n");
 		return TEST_RESULT_FAIL;
@@ -148,7 +150,8 @@ static test_result_t timer_target_power_down_cpu(void)
 	/* Register timer handler to confirm it received the timer interrupt */
 	ret = tftf_timer_register_handler(requested_irq_handler);
 	if (ret != 0) {
-		tftf_testcase_printf("Failed to register timer handler:0x%x\n", ret);
+		tftf_testcase_printf("Failed to register timer handler:0x%x\n",
+				     ret);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -164,8 +167,8 @@ static test_result_t timer_target_power_down_cpu(void)
 	next_int_time -= 2 * (timer_step_value + PLAT_SUSPEND_ENTRY_EXIT_TIME);
 	spin_unlock(&int_timer_access_lock);
 
-	ret = tftf_program_timer_and_suspend(timer_delay, power_state,
-								NULL, NULL);
+	ret = tftf_program_timer_and_suspend(timer_delay, power_state, NULL,
+					     NULL);
 	if (ret != 0) {
 		tftf_testcase_printf(
 			"Failed to program timer or suspend CPU: 0x%x\n", ret);
@@ -176,7 +179,8 @@ static test_result_t timer_target_power_down_cpu(void)
 		;
 	ret = tftf_timer_unregister_handler();
 	if (ret != 0) {
-		tftf_testcase_printf("Failed to unregister timer handler:0x%x\n", ret);
+		tftf_testcase_printf(
+			"Failed to unregister timer handler:0x%x\n", ret);
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -209,7 +213,7 @@ test_result_t test_timer_target_power_down_cpu(void)
 	}
 
 	if (!timer_step_value)
-		timer_step_value =  tftf_get_timer_step_value();
+		timer_step_value = tftf_get_timer_step_value();
 
 	timer_switch_count = 0;
 	all_cores_inside_test = 0;
@@ -220,30 +224,32 @@ test_result_t test_timer_target_power_down_cpu(void)
 	 * difference of twice the sum of step value and suspend entry
 	 * exit time.
 	 */
-	next_int_time = 2 * (timer_step_value + PLAT_SUSPEND_ENTRY_EXIT_TIME) * (PLATFORM_CORE_COUNT + 2);
+	next_int_time = 2 * (timer_step_value + PLAT_SUSPEND_ENTRY_EXIT_TIME) *
+			(PLATFORM_CORE_COUNT + 2);
 
 	/*
 	 * Preparation step: Power on all cores.
 	 */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU as it is already on */
 		if (cpu_mpid == lead_mpid)
 			continue;
 
 		rc = tftf_cpu_on(cpu_mpid,
-				(uintptr_t) timer_target_power_down_cpu,
-				0);
+				 (uintptr_t)timer_target_power_down_cpu, 0);
 		if (rc != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
-			"Failed to power on CPU 0x%x (%d)\n",
-			cpu_mpid, rc);
+				"Failed to power on CPU 0x%x (%d)\n", cpu_mpid,
+				rc);
 			return TEST_RESULT_SKIPPED;
 		}
 	}
 
 	/* Wait for all non-lead CPUs to be ready */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (cpu_mpid == lead_mpid)
@@ -259,7 +265,8 @@ test_result_t test_timer_target_power_down_cpu(void)
 
 	valid_cpu_count = 0;
 	/* Wait for all cores to complete the test */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		core_pos = platform_get_core_pos(cpu_mpid);
 		while (!requested_irq_received[core_pos])
@@ -269,7 +276,7 @@ test_result_t test_timer_target_power_down_cpu(void)
 
 	if (timer_switch_count != valid_cpu_count) {
 		tftf_testcase_printf("Expected timer switch: %d Actual: %d\n",
-					valid_cpu_count, timer_switch_count);
+				     valid_cpu_count, timer_switch_count);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -289,8 +296,8 @@ static test_result_t timer_same_interval(void)
 	requested_irq_received[core_pos] = 0;
 
 	/* Construct the state-id for power down */
-	ret = tftf_psci_make_composite_state_id(MPIDR_AFFLVL0,
-					PSTATE_TYPE_POWERDOWN, &stateid);
+	ret = tftf_psci_make_composite_state_id(
+		MPIDR_AFFLVL0, PSTATE_TYPE_POWERDOWN, &stateid);
 	if (ret != PSCI_E_SUCCESS) {
 		tftf_testcase_printf("Failed to construct composite state\n");
 		return TEST_RESULT_FAIL;
@@ -299,7 +306,8 @@ static test_result_t timer_same_interval(void)
 	/* Register timer handler to confirm it received the timer interrupt */
 	ret = tftf_timer_register_handler(multiple_timer_handler);
 	if (ret != 0) {
-		tftf_testcase_printf("Failed to register timer handler:0x%x\n", ret);
+		tftf_testcase_printf("Failed to register timer handler:0x%x\n",
+				     ret);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -308,8 +316,8 @@ static test_result_t timer_same_interval(void)
 		;
 
 	/*
-	 * Lets hope with in Suspend entry time + 10ms, at least some of the CPU's
-	 * have same interval
+	 * Lets hope with in Suspend entry time + 10ms, at least some of the
+	 * CPU's have same interval
 	 */
 	power_state = tftf_make_psci_pstate(MPIDR_AFFLVL0,
 					    PSTATE_TYPE_POWERDOWN, stateid);
@@ -324,7 +332,8 @@ static test_result_t timer_same_interval(void)
 		;
 	ret = tftf_timer_unregister_handler();
 	if (ret != 0) {
-		tftf_testcase_printf("Failed to unregister timer handler:0x%x\n", ret);
+		tftf_testcase_printf(
+			"Failed to unregister timer handler:0x%x\n", ret);
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -359,25 +368,25 @@ test_result_t test_timer_target_multiple_same_interval(void)
 	/*
 	 * Preparation step: Power on all cores.
 	 */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU as it is already on */
 		if (cpu_mpid == lead_mpid)
 			continue;
 
-		rc = tftf_cpu_on(cpu_mpid,
-				(uintptr_t) timer_same_interval,
-				0);
+		rc = tftf_cpu_on(cpu_mpid, (uintptr_t)timer_same_interval, 0);
 		if (rc != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
-			"Failed to power on CPU 0x%x (%d)\n",
-			cpu_mpid, rc);
+				"Failed to power on CPU 0x%x (%d)\n", cpu_mpid,
+				rc);
 			return TEST_RESULT_SKIPPED;
 		}
 	}
 
 	/* Wait for all non-lead CPUs to be ready */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (cpu_mpid == lead_mpid)
@@ -396,7 +405,8 @@ test_result_t test_timer_target_multiple_same_interval(void)
 	rc = timer_same_interval();
 
 	/* Wait for all cores to complete the test */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		core_pos = platform_get_core_pos(cpu_mpid);
 		while (!requested_irq_received[core_pos])
@@ -426,8 +436,8 @@ static test_result_t do_stress_test(void)
 	end_time = read_cntpct_el0() + read_cntfrq_el0() * 10;
 
 	/* Construct the state-id for power down */
-	ret = tftf_psci_make_composite_state_id(MPIDR_AFFLVL0,
-					PSTATE_TYPE_POWERDOWN, &stateid);
+	ret = tftf_psci_make_composite_state_id(
+		MPIDR_AFFLVL0, PSTATE_TYPE_POWERDOWN, &stateid);
 	if (ret != PSCI_E_SUCCESS) {
 		tftf_testcase_printf("Failed to construct composite state\n");
 		return TEST_RESULT_FAIL;
@@ -436,7 +446,8 @@ static test_result_t do_stress_test(void)
 	/* Register a handler to confirm its woken by programmed interrupt */
 	ret = tftf_timer_register_handler(requested_irq_handler);
 	if (ret != 0) {
-		tftf_testcase_printf("Failed to register timer handler:0x%x\n", ret);
+		tftf_testcase_printf("Failed to register timer handler:0x%x\n",
+				     ret);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -459,28 +470,33 @@ static test_result_t do_stress_test(void)
 			ret = tftf_program_timer(PLAT_SUSPEND_ENTRY_TIME +
 						 timer_int_interval);
 			if (ret != 0) {
-				tftf_testcase_printf("Failed to program timer: "
-						     "0x%x\n", ret);
+				tftf_testcase_printf(
+					"Failed to program timer: "
+					"0x%x\n",
+					ret);
 				return TEST_RESULT_FAIL;
 			}
 
 			ret = tftf_cancel_timer();
 			if (ret != 0) {
-				tftf_testcase_printf("Failed to cancel timer: "
-						     "0x%x\n", ret);
+				tftf_testcase_printf(
+					"Failed to cancel timer: "
+					"0x%x\n",
+					ret);
 				return TEST_RESULT_FAIL;
 			}
 		} else {
 			power_state = tftf_make_psci_pstate(
-					MPIDR_AFFLVL0, PSTATE_TYPE_POWERDOWN,
-					stateid);
+				MPIDR_AFFLVL0, PSTATE_TYPE_POWERDOWN, stateid);
 
 			ret = tftf_program_timer_and_suspend(
 				PLAT_SUSPEND_ENTRY_TIME + timer_int_interval,
 				power_state, NULL, NULL);
 			if (ret != 0) {
-				tftf_testcase_printf("Failed to program timer "
-						     "or suspend: 0x%x\n", ret);
+				tftf_testcase_printf(
+					"Failed to program timer "
+					"or suspend: 0x%x\n",
+					ret);
 				return TEST_RESULT_FAIL;
 			}
 
@@ -491,7 +507,9 @@ static test_result_t do_stress_test(void)
 				 */
 				ret = tftf_cancel_timer();
 				if (ret != 0) {
-					tftf_testcase_printf("Failed to cancel timer:0x%x\n", ret);
+					tftf_testcase_printf(
+						"Failed to cancel timer:0x%x\n",
+						ret);
 					return TEST_RESULT_FAIL;
 				}
 			}
@@ -500,7 +518,8 @@ static test_result_t do_stress_test(void)
 
 	ret = tftf_timer_unregister_handler();
 	if (ret != 0) {
-		tftf_testcase_printf("Failed to unregister timer handler:0x%x\n", ret);
+		tftf_testcase_printf(
+			"Failed to unregister timer handler:0x%x\n", ret);
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -528,25 +547,25 @@ test_result_t stress_test_timer_framework(void)
 	/*
 	 * Preparation step: Power on all cores.
 	 */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU as it is already on */
 		if (cpu_mpid == lead_mpid)
 			continue;
 
-		rc = tftf_cpu_on(cpu_mpid,
-				(uintptr_t) do_stress_test,
-				0);
+		rc = tftf_cpu_on(cpu_mpid, (uintptr_t)do_stress_test, 0);
 		if (rc != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
-			"Failed to power on CPU 0x%x (%d)\n",
-			cpu_mpid, rc);
+				"Failed to power on CPU 0x%x (%d)\n", cpu_mpid,
+				rc);
 			return TEST_RESULT_SKIPPED;
 		}
 	}
 
 	/* Wait for all non-lead CPUs to be ready */
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU */
 		if (cpu_mpid == lead_mpid)

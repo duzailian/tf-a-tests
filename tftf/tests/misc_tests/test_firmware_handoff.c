@@ -5,7 +5,6 @@
  */
 
 #include <assert.h>
-
 #include <test_helpers.h>
 #include <tftf_lib.h>
 #include <transfer_list.h>

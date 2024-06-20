@@ -3,11 +3,10 @@
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-#include <stdbool.h>
-
 #include <arch_helpers.h>
 #include <debug.h>
 #include <serror.h>
+#include <stdbool.h>
 
 static exception_handler_t custom_serror_handler;
 

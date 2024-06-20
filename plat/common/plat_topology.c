@@ -11,12 +11,12 @@
 #include <platform.h>
 #include <stdlib.h>
 
-#define CPU_INDEX_IS_VALID(_cpu_idx)	\
-	(((_cpu_idx) - tftf_pwr_domain_start_idx[0]) < PLATFORM_CORE_COUNT)
+#define CPU_INDEX_IS_VALID(_cpu_idx) \
+	(((_cpu_idx)-tftf_pwr_domain_start_idx[0]) < PLATFORM_CORE_COUNT)
 
-#define IS_A_CPU_NODE(_cpu_idx)		(tftf_pd_nodes[(_cpu_idx)].level == 0)
+#define IS_A_CPU_NODE(_cpu_idx) (tftf_pd_nodes[(_cpu_idx)].level == 0)
 
-#define CPU_NODE_IS_VALID(_cpu_node)	\
+#define CPU_NODE_IS_VALID(_cpu_node) \
 	(CPU_INDEX_IS_VALID(_cpu_node) && IS_A_CPU_NODE(_cpu_node))
 
 /*
@@ -26,8 +26,8 @@
 static unsigned int topology_setup_done;
 
 /*
- * Store the start indices of power domains at various levels. This array makes it
- * easier to traverse the topology tree if the power domain level is known.
+ * Store the start indices of power domains at various levels. This array makes
+ * it easier to traverse the topology tree if the power domain level is known.
  */
 unsigned int tftf_pwr_domain_start_idx[PLATFORM_MAX_AFFLVL + 1];
 
@@ -50,24 +50,24 @@ static void dump_topology(void)
 
 	for (cluster_idx = PWR_DOMAIN_INIT;
 	     cluster_idx = tftf_get_next_peer_domain(cluster_idx, 1),
-	     cluster_idx != PWR_DOMAIN_INIT;) {
+	    cluster_idx != PWR_DOMAIN_INIT;) {
 		count = 0;
 		for (cpu_idx = tftf_pd_nodes[cluster_idx].cpu_start_node;
 		     cpu_idx < (tftf_pd_nodes[cluster_idx].cpu_start_node +
-				     tftf_pd_nodes[cluster_idx].ncpus);
+				tftf_pd_nodes[cluster_idx].ncpus);
 		     cpu_idx++) {
 			if (tftf_pd_nodes[cpu_idx].is_present)
 				count++;
 		}
 		NOTICE("  Cluster #%u   [%u CPUs]\n",
-				cluster_idx - tftf_pwr_domain_start_idx[1],
-				count);
+		       cluster_idx - tftf_pwr_domain_start_idx[1], count);
 		for (cpu_idx = PWR_DOMAIN_INIT;
-		     cpu_idx = tftf_get_next_cpu_in_pwr_domain(cluster_idx, cpu_idx),
-		     cpu_idx != PWR_DOMAIN_INIT;) {
+		     cpu_idx = tftf_get_next_cpu_in_pwr_domain(cluster_idx,
+							       cpu_idx),
+		    cpu_idx != PWR_DOMAIN_INIT;) {
 			NOTICE("    CPU #%u   [MPID: 0x%x]\n",
-					cpu_idx - tftf_pwr_domain_start_idx[0],
-					tftf_get_mpidr_from_node(cpu_idx));
+			       cpu_idx - tftf_pwr_domain_start_idx[0],
+			       tftf_get_mpidr_from_node(cpu_idx));
 		}
 	}
 	NOTICE("\n");
@@ -97,7 +97,7 @@ unsigned int tftf_get_total_aff_count(unsigned int aff_lvl)
 }
 
 unsigned int tftf_get_next_peer_domain(unsigned int pwr_domain_idx,
-				      unsigned int pwr_lvl)
+				       unsigned int pwr_lvl)
 {
 	assert(topology_setup_done == 1);
 
@@ -110,11 +110,11 @@ unsigned int tftf_get_next_peer_domain(unsigned int pwr_domain_idx,
 	}
 
 	assert(pwr_domain_idx < PLATFORM_NUM_AFFS &&
-			tftf_pd_nodes[pwr_domain_idx].level == pwr_lvl);
+	       tftf_pd_nodes[pwr_domain_idx].level == pwr_lvl);
 
-	for (++pwr_domain_idx; (pwr_domain_idx < PLATFORM_NUM_AFFS)
-				&& (tftf_pd_nodes[pwr_domain_idx].level == pwr_lvl);
-				pwr_domain_idx++) {
+	for (++pwr_domain_idx; (pwr_domain_idx < PLATFORM_NUM_AFFS) &&
+			       (tftf_pd_nodes[pwr_domain_idx].level == pwr_lvl);
+	     pwr_domain_idx++) {
 		if (tftf_pd_nodes[pwr_domain_idx].is_present)
 			return pwr_domain_idx;
 	}
@@ -123,13 +123,13 @@ unsigned int tftf_get_next_peer_domain(unsigned int pwr_domain_idx,
 }
 
 unsigned int tftf_get_next_cpu_in_pwr_domain(unsigned int pwr_domain_idx,
-				      unsigned int cpu_node)
+					     unsigned int cpu_node)
 {
 	unsigned int cpu_end_node;
 
 	assert(topology_setup_done == 1);
-	assert(pwr_domain_idx != PWR_DOMAIN_INIT
-			&& pwr_domain_idx < PLATFORM_NUM_AFFS);
+	assert(pwr_domain_idx != PWR_DOMAIN_INIT &&
+	       pwr_domain_idx < PLATFORM_NUM_AFFS);
 
 	if (cpu_node == PWR_DOMAIN_INIT) {
 		cpu_node = tftf_pd_nodes[pwr_domain_idx].cpu_start_node;
@@ -139,8 +139,8 @@ unsigned int tftf_get_next_cpu_in_pwr_domain(unsigned int pwr_domain_idx,
 
 	assert(CPU_NODE_IS_VALID(cpu_node));
 
-	cpu_end_node = tftf_pd_nodes[pwr_domain_idx].cpu_start_node
-			+ tftf_pd_nodes[pwr_domain_idx].ncpus - 1;
+	cpu_end_node = tftf_pd_nodes[pwr_domain_idx].cpu_start_node +
+		       tftf_pd_nodes[pwr_domain_idx].ncpus - 1;
 
 	assert(cpu_end_node < PLATFORM_NUM_AFFS);
 
@@ -157,8 +157,8 @@ unsigned int tftf_get_next_cpu_in_pwr_domain(unsigned int pwr_domain_idx,
  * domain.
  */
 static void get_parent_pwr_domain_nodes(unsigned int cpu_node,
-				      unsigned int end_lvl,
-				      unsigned int node_index[])
+					unsigned int end_lvl,
+					unsigned int node_index[])
 {
 	unsigned int parent_node = tftf_pd_nodes[cpu_node].parent_node;
 	unsigned int i;
@@ -194,17 +194,17 @@ static void update_pwrlvl_limits(void)
 
 	for (cpu_id = 0; cpu_id < PLATFORM_CORE_COUNT; cpu_id++) {
 		get_parent_pwr_domain_nodes(cpu_id + cpu_node_offset,
-						PLATFORM_MAX_AFFLVL,
-						temp_index);
+					    PLATFORM_MAX_AFFLVL, temp_index);
 		is_present = tftf_pd_nodes[cpu_id + cpu_node_offset].is_present;
 
 		for (j = PLATFORM_MAX_AFFLVL - 1; j >= 0; j--) {
 			if (temp_index[j] != nodes_idx[j]) {
 				nodes_idx[j] = temp_index[j];
-				tftf_pd_nodes[nodes_idx[j]].cpu_start_node
-							= cpu_id + cpu_node_offset;
+				tftf_pd_nodes[nodes_idx[j]].cpu_start_node =
+					cpu_id + cpu_node_offset;
 				if (!tftf_pd_nodes[nodes_idx[j]].is_present)
-					tftf_pd_nodes[nodes_idx[j]].is_present = is_present;
+					tftf_pd_nodes[nodes_idx[j]].is_present =
+						is_present;
 			}
 			tftf_pd_nodes[nodes_idx[j]].ncpus++;
 		}
@@ -251,26 +251,31 @@ static void populate_power_domain_tree(void)
 		 */
 		for (i = 0; i < num_nodes_at_lvl; i++) {
 			assert(parent_idx <=
-				PLATFORM_NUM_AFFS - PLATFORM_CORE_COUNT);
+			       PLATFORM_NUM_AFFS - PLATFORM_CORE_COUNT);
 			num_children = plat_array[parent_idx];
 
-			for (j = node_index;
-				j < node_index + num_children; j++) {
+			for (j = node_index; j < node_index + num_children;
+			     j++) {
 				/* Initialize the power domain node */
 				tftf_pd_nodes[j].parent_node = parent_idx - 1;
 				tftf_pd_nodes[j].level = num_level;
 
-				/* Additional initializations for CPU power domains */
+				/* Additional initializations for CPU power
+				 * domains */
 				if (num_level == 0) {
-					/* Calculate the cpu id from node index */
-					int cpu_id =  j - tftf_pwr_domain_start_idx[0];
+					/* Calculate the cpu id from node index
+					 */
+					int cpu_id =
+						j -
+						tftf_pwr_domain_start_idx[0];
 
 					assert(cpu_id < PLATFORM_CORE_COUNT);
 
 					/* Set the mpidr of cpu node */
 					tftf_pd_nodes[j].mpidr =
 						tftf_plat_get_mpidr(cpu_id);
-					if (tftf_pd_nodes[j].mpidr != INVALID_MPID)
+					if (tftf_pd_nodes[j].mpidr !=
+					    INVALID_MPID)
 						tftf_pd_nodes[j].is_present = 1;
 
 					tftf_pd_nodes[j].cpu_start_node = j;
@@ -289,7 +294,6 @@ static void populate_power_domain_tree(void)
 	/* Validate the sanity of array exported by the platform */
 	assert(j == PLATFORM_NUM_AFFS);
 }
-
 
 void tftf_init_topology(void)
 {
@@ -321,7 +325,8 @@ unsigned int tftf_topology_next_cpu(unsigned int cpu_node)
 	return PWR_DOMAIN_INIT;
 }
 
-unsigned int tftf_get_parent_node_from_mpidr(unsigned int mpidr, unsigned int pwrlvl)
+unsigned int tftf_get_parent_node_from_mpidr(unsigned int mpidr,
+					     unsigned int pwrlvl)
 {
 	unsigned int core_pos = platform_get_core_pos(mpidr);
 	unsigned int node, i;
@@ -356,7 +361,8 @@ unsigned int tftf_find_any_cpu_other_than(unsigned exclude_mpid)
 {
 	unsigned int cpu_node, mpidr;
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		mpidr = tftf_get_mpidr_from_node(cpu_node);
 		if (mpidr != exclude_mpid)
 			return mpidr;
@@ -374,7 +380,8 @@ unsigned int tftf_find_random_cpu_other_than(unsigned int exclude_mpid)
 	unsigned int possible_cpus_cnt = 0;
 	unsigned int possible_cpus[PLATFORM_CORE_COUNT];
 
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		mpidr = tftf_get_mpidr_from_node(cpu_node);
 		if (mpidr != exclude_mpid)
 			possible_cpus[possible_cpus_cnt++] = mpidr;

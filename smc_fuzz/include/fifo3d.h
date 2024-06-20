@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-
 #ifndef FIFO3D_H
 #define FIFO3D_H
 
@@ -12,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #include "smcmalloc.h"
 
 struct fifo3d {

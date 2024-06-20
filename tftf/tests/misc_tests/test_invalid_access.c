@@ -4,32 +4,33 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include "ffa_helpers.h"
+#include <arch.h>
+#include <arch_features.h>
+#include <arch_helpers.h>
+#include <debug.h>
 #include <plat/common/platform.h>
 
-#include <arch.h>
-#include <arch_helpers.h>
-#include <arch_features.h>
-#include <debug.h>
+#include "ffa_helpers.h"
 #ifdef __aarch64__
 #include <spm_test_helpers.h>
 #include <sync.h>
 #endif
+#include <cactus_test_cmds.h>
+#include <ffa_endpoints.h>
 #include <host_realm_helper.h>
 #include <lib/aarch64/arch_features.h>
+#include <platform_def.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
 #include <xlat_tables_v2.h>
-#include <platform_def.h>
-#include <cactus_test_cmds.h>
-#include <ffa_endpoints.h>
 
 /*
- * Using "__aarch64__" here looks weird but its unavoidable because of following reason
- * This test is part of standard test which runs on all platforms but pre-requisite
- * to run this test (custom sync exception handler) is only implemented for aarch64.
- * TODO:  Write a framework so that tests kept in standard list can be selectively
- * run on a given architecture
+ * Using "__aarch64__" here looks weird but its unavoidable because of following
+ * reason This test is part of standard test which runs on all platforms but
+ * pre-requisite to run this test (custom sync exception handler) is only
+ * implemented for aarch64.
+ * TODO:  Write a framework so that tests kept in standard list can be
+ * selectively run on a given architecture
  */
 #ifdef __aarch64__
 
@@ -39,8 +40,7 @@
 static volatile bool sync_exception_triggered;
 static volatile bool data_abort_triggered;
 static const struct ffa_uuid expected_sp_uuids[] = {
-		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}
-};
+	{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}};
 
 static __aligned(PAGE_SIZE) uint64_t share_page[PAGE_SIZE / sizeof(uint64_t)];
 
@@ -55,15 +55,19 @@ static bool data_abort_handler(void)
 
 	if (EC_BITS(esr_elx) == EC_DABORT_CUR_EL) {
 		if (rme_supported == 0) {
-			/* Synchronous external data abort triggered by trustzone controller */
-			if ((ISS_BITS(esr_elx) & ISS_DFSC_MASK) == DFSC_EXT_DABORT) {
+			/* Synchronous external data abort triggered by
+			 * trustzone controller */
+			if ((ISS_BITS(esr_elx) & ISS_DFSC_MASK) ==
+			    DFSC_EXT_DABORT) {
 				VERBOSE("%s TZC Data Abort caught\n", __func__);
 				data_abort_triggered = true;
 				return true;
 			}
 		} else {
-			/* Synchronous data abort triggered by Granule protection */
-			if ((ISS_BITS(esr_elx) & ISS_DFSC_MASK) == DFSC_GPF_DABORT) {
+			/* Synchronous data abort triggered by Granule
+			 * protection */
+			if ((ISS_BITS(esr_elx) & ISS_DFSC_MASK) ==
+			    DFSC_GPF_DABORT) {
 				VERBOSE("%s GPF Data Abort caught\n", __func__);
 				data_abort_triggered = true;
 				return true;
@@ -84,9 +88,10 @@ test_result_t el3_memory_cannot_be_accessed_in_ns(void)
 	data_abort_triggered = false;
 
 	int rc = mmap_add_dynamic_region(test_address, test_address, PAGE_SIZE,
-					MT_MEMORY | MT_RW | MT_NS);
+					 MT_MEMORY | MT_RW | MT_NS);
 	if (rc != 0) {
-		tftf_testcase_printf("%d: mmap_add_dynamic_region() = %d\n", __LINE__, rc);
+		tftf_testcase_printf("%d: mmap_add_dynamic_region() = %d\n",
+				     __LINE__, rc);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -96,12 +101,15 @@ test_result_t el3_memory_cannot_be_accessed_in_ns(void)
 
 	rc = mmap_remove_dynamic_region(test_address, PAGE_SIZE);
 	if (rc != 0) {
-		tftf_testcase_printf("%d: mmap_remove_dynamic_region() = %d\n", __LINE__, rc);
+		tftf_testcase_printf("%d: mmap_remove_dynamic_region() = %d\n",
+				     __LINE__, rc);
 		return TEST_RESULT_FAIL;
 	}
 
 	if (sync_exception_triggered == false) {
-		tftf_testcase_printf("No sync exception while accessing (0x%lx)\n", test_address);
+		tftf_testcase_printf(
+			"No sync exception while accessing (0x%lx)\n",
+			test_address);
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -199,10 +207,11 @@ test_result_t s_memory_cannot_be_accessed_in_ns(void)
 	dsbsy();
 
 	int rc = mmap_add_dynamic_region(test_address, test_address, PAGE_SIZE,
-					MT_MEMORY | MT_RW | MT_NS);
+					 MT_MEMORY | MT_RW | MT_NS);
 
 	if (rc != 0) {
-		tftf_testcase_printf("%d: mmap_add_dynamic_region() = %d\n", __LINE__, rc);
+		tftf_testcase_printf("%d: mmap_add_dynamic_region() = %d\n",
+				     __LINE__, rc);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -214,7 +223,9 @@ test_result_t s_memory_cannot_be_accessed_in_ns(void)
 	unregister_custom_sync_exception_handler();
 
 	if (sync_exception_triggered == false) {
-		tftf_testcase_printf("No sync exception while accessing (0x%lx)\n", test_address);
+		tftf_testcase_printf(
+			"No sync exception while accessing (0x%lx)\n",
+			test_address);
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -237,21 +248,24 @@ static test_result_t memory_cannot_be_accessed_in_rl(u_register_t params)
 	retrmm = host_rmi_granule_delegate((u_register_t)&rd[0]);
 	if (retrmm != 0UL) {
 		ERROR("%s() failed, ret=0x%lx\n", "host_rmi_granule_delegate",
-			retrmm);
+		      retrmm);
 		return TEST_RESULT_FAIL;
 	}
 
-	/* Create a realm using a parameter in a secure physical address space should fail. */
+	/* Create a realm using a parameter in a secure physical address space
+	 * should fail. */
 	retrmm = host_rmi_realm_create((u_register_t)&rd[0], params);
 	if (retrmm == 0UL) {
 		ERROR("Realm create operation should fail, %lx\n", retrmm);
 		retrmm = host_rmi_realm_destroy((u_register_t)&rd[0]);
 		if (retrmm != 0UL) {
-			ERROR("Realm destroy operation returns fail, %lx\n", retrmm);
+			ERROR("Realm destroy operation returns fail, %lx\n",
+			      retrmm);
 		}
 	} else if (retrmm != RMI_ERROR_INPUT) {
-		ERROR("Realm create operation should fail with code:%d retrmm:%ld\n",
-			RMI_ERROR_INPUT, retrmm);
+		ERROR("Realm create operation should fail with code:%d "
+		      "retrmm:%ld\n",
+		      RMI_ERROR_INPUT, retrmm);
 	} else {
 		result = TEST_RESULT_SUCCESS;
 	}
@@ -284,11 +298,9 @@ test_result_t rt_memory_cannot_be_accessed_in_s(void)
 {
 	const uintptr_t test_address = EL3_MEMORY_ACCESS_ADDR;
 	struct ffa_memory_region_constituent constituents[] = {
-		{
-			(void *)test_address, 1, 0
-		}
-	};
-	const uint32_t constituents_count = sizeof(constituents) /
+		{(void *)test_address, 1, 0}};
+	const uint32_t constituents_count =
+		sizeof(constituents) /
 		sizeof(struct ffa_memory_region_constituent);
 	ffa_memory_handle_t handle;
 	struct mailbox_buffers mb;

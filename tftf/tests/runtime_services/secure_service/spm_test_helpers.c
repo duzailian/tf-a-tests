@@ -4,10 +4,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdlib.h>
-
 #include <power_management.h>
 #include <spm_test_helpers.h>
+#include <stdlib.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
 
@@ -41,11 +40,12 @@ bool get_tftf_mailbox(struct mailbox_buffers *mb)
 	return true;
 }
 
-test_result_t check_spmc_testing_set_up(
-	uint32_t ffa_version_major, uint32_t ffa_version_minor,
-	const struct ffa_uuid *ffa_uuids, size_t ffa_uuids_size)
+test_result_t check_spmc_testing_set_up(uint32_t ffa_version_major,
+					uint32_t ffa_version_minor,
+					const struct ffa_uuid *ffa_uuids,
+					size_t ffa_uuids_size)
 {
-	struct  mailbox_buffers mb;
+	struct mailbox_buffers mb;
 
 	if (ffa_uuids == NULL) {
 		ERROR("Invalid parameter ffa_uuids!\n");
@@ -84,8 +84,9 @@ test_result_t spm_run_multi_core_test(uintptr_t cpu_on_handler,
 		tftf_init_event(&cpu_done[i]);
 	}
 
-	 /* Power on each secondary CPU one after the other. */
-	for_each_cpu(cpu_node) {
+	/* Power on each secondary CPU one after the other. */
+	for_each_cpu(cpu_node)
+	{
 		mpidr = tftf_get_mpidr_from_node(cpu_node);
 		if (mpidr == lead_mpid) {
 			continue;
@@ -93,8 +94,8 @@ test_result_t spm_run_multi_core_test(uintptr_t cpu_on_handler,
 
 		ret = tftf_cpu_on(mpidr, cpu_on_handler, 0U);
 		if (ret != 0) {
-			ERROR("tftf_cpu_on mpidr 0x%x returns %d\n",
-			      mpidr, ret);
+			ERROR("tftf_cpu_on mpidr 0x%x returns %d\n", mpidr,
+			      ret);
 		}
 
 		/* Wait for the secondary CPU to be ready. */
@@ -118,8 +119,8 @@ bool spm_core_sp_init(ffa_id_t sp_id)
 		struct ffa_value ret = ffa_run(sp_id, core_pos);
 
 		if (ffa_func_id(ret) != FFA_MSG_WAIT) {
-			ERROR("Failed to run SP%x on core %u\n",
-			      sp_id, core_pos);
+			ERROR("Failed to run SP%x on core %u\n", sp_id,
+			      core_pos);
 			return false;
 		}
 	}

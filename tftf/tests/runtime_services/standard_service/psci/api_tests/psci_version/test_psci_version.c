@@ -20,8 +20,7 @@ test_result_t test_psci_version(void)
 
 	version = tftf_get_psci_version();
 	if (!tftf_is_valid_psci_version(version)) {
-		tftf_testcase_printf(
-			"Wrong PSCI version:0x%08x\n", version);
+		tftf_testcase_printf("Wrong PSCI version:0x%08x\n", version);
 		return TEST_RESULT_FAIL;
 	}
 

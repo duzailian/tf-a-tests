@@ -29,14 +29,14 @@ test_result_t test_corrupt_boot_fip(unsigned int offset)
 	plat_get_nvm_handle(&dev_handle);
 	result = io_seek(dev_handle, IO_SEEK_SET, offset);
 	TEST_ASSERT(result == IO_SUCCESS);
-	result = io_write(dev_handle, (uintptr_t) &flag, sizeof(flag), &written);
+	result = io_write(dev_handle, (uintptr_t)&flag, sizeof(flag), &written);
 	TEST_ASSERT(result == IO_SUCCESS);
 	TEST_ASSERT(written == sizeof(flag));
 
 	/*
 	 * Now reboot the system.
-	 * On the next boot, EL3 firmware should notice and repair the corruption
-	 * before re-entering TFTF
+	 * On the next boot, EL3 firmware should notice and repair the
+	 * corruption before re-entering TFTF
 	 */
 
 	tftf_notify_reboot();

@@ -27,32 +27,30 @@
  * successfully mapped.
  */
 
-#define STRESS_TEST_ITERATIONS		1000
+#define STRESS_TEST_ITERATIONS 1000
 
-#define SIZE_L1		XLAT_BLOCK_SIZE(1)
-#define SIZE_L2		XLAT_BLOCK_SIZE(2)
-#define SIZE_L3		XLAT_BLOCK_SIZE(3) /* PAGE_SIZE */
+#define SIZE_L1 XLAT_BLOCK_SIZE(1)
+#define SIZE_L2 XLAT_BLOCK_SIZE(2)
+#define SIZE_L3 XLAT_BLOCK_SIZE(3) /* PAGE_SIZE */
 
-#define MASK_L1		XLAT_BLOCK_MASK(1)
-#define MASK_L2		XLAT_BLOCK_MASK(2)
-#define MASK_L3		XLAT_BLOCK_MASK(3)
+#define MASK_L1 XLAT_BLOCK_MASK(1)
+#define MASK_L2 XLAT_BLOCK_MASK(2)
+#define MASK_L3 XLAT_BLOCK_MASK(3)
 
 static const struct {
 	size_t size;
 	size_t expected_va_mask;
-} mem_tests[] = {
-	{ SIZE_L1 + 2 * SIZE_L2 + 2 * SIZE_L3,	MASK_L3 },
-	{ SIZE_L1 + SIZE_L2 + SIZE_L3,		MASK_L3 },
-	{ SIZE_L1 + 2 * SIZE_L2,		MASK_L2 },
-	{ SIZE_L1 + SIZE_L2,			MASK_L2 },
-	{ SIZE_L1 + 2 * SIZE_L3,		MASK_L3 },
-	{ SIZE_L1 + SIZE_L3,			MASK_L3 },
-	{ SIZE_L1,				MASK_L1 },
-	{ SIZE_L2 + 2 * SIZE_L3,		MASK_L3 },
-	{ SIZE_L2 + SIZE_L3,			MASK_L3 },
-	{ SIZE_L2,				MASK_L2 },
-	{ SIZE_L3,				MASK_L3 }
-};
+} mem_tests[] = {{SIZE_L1 + 2 * SIZE_L2 + 2 * SIZE_L3, MASK_L3},
+		 {SIZE_L1 + SIZE_L2 + SIZE_L3, MASK_L3},
+		 {SIZE_L1 + 2 * SIZE_L2, MASK_L2},
+		 {SIZE_L1 + SIZE_L2, MASK_L2},
+		 {SIZE_L1 + 2 * SIZE_L3, MASK_L3},
+		 {SIZE_L1 + SIZE_L3, MASK_L3},
+		 {SIZE_L1, MASK_L1},
+		 {SIZE_L2 + 2 * SIZE_L3, MASK_L3},
+		 {SIZE_L2 + SIZE_L3, MASK_L3},
+		 {SIZE_L2, MASK_L2},
+		 {SIZE_L3, MASK_L3}};
 
 /*
  * Translate the given virtual address into a physical address in the current
@@ -108,8 +106,8 @@ static int verify_region_mapped(unsigned long long base_pa, uintptr_t base_va,
 	uintptr_t end_va = base_va + size;
 	unsigned long long addr;
 
-	VERBOSE("Checking: PA = 0x%llx, VA = 0x%lx, size = 0x%zx\n",
-		base_pa, base_va, size);
+	VERBOSE("Checking: PA = 0x%llx, VA = 0x%lx, size = 0x%zx\n", base_pa,
+		base_va, size);
 
 	while (base_va < end_va) {
 		addr = va2pa(base_va);
@@ -230,7 +228,7 @@ static int remove_region(uintptr_t base_va, size_t size)
  * region that we use for testing. The size of each block is total_size /
  * num_blocks. The test tries to allocate as much memory as possible.
  */
-#define STRESS_TEST_NUM_BLOCKS		1024
+#define STRESS_TEST_NUM_BLOCKS 1024
 
 /* Memory region to be used by the stress test */
 static uintptr_t memory_base_va;
@@ -433,8 +431,8 @@ test_result_t xlat_lib_v2_basic_test(void)
 	 */
 	rc = add_region_alloc_va(0, &memory_base_va, 0, 0);
 	if (rc != 0) {
-		tftf_testcase_printf("%d: add_region_alloc_va: %d\n",
-				     __LINE__, rc);
+		tftf_testcase_printf("%d: add_region_alloc_va: %d\n", __LINE__,
+				     rc);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -445,8 +443,9 @@ test_result_t xlat_lib_v2_basic_test(void)
 	rc = remove_region(memory_base_va, 0);
 	if (rc != -EINVAL) {
 		if (rc == 0) {
-			tftf_testcase_printf("%d: Deallocation should have failed.\n",
-					     __LINE__);
+			tftf_testcase_printf(
+				"%d: Deallocation should have failed.\n",
+				__LINE__);
 		} else {
 			tftf_testcase_printf("%d: remove_region: %d\n",
 					     __LINE__, rc);
@@ -458,8 +457,8 @@ test_result_t xlat_lib_v2_basic_test(void)
 
 	rc = add_region_alloc_va(0, &memory_base_va, SIZE_L3, MT_DEVICE);
 	if (rc != 0) {
-		tftf_testcase_printf("%d: add_region_alloc_va: %d\n",
-				     __LINE__, rc);
+		tftf_testcase_printf("%d: add_region_alloc_va: %d\n", __LINE__,
+				     rc);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -474,8 +473,8 @@ test_result_t xlat_lib_v2_basic_test(void)
 	 * can lead to wraparound problems (specially in AArch32).
 	 */
 	rc = add_region(PLAT_VIRT_ADDR_SPACE_SIZE - PAGE_SIZE,
-			PLAT_VIRT_ADDR_SPACE_SIZE - PAGE_SIZE,
-			PAGE_SIZE, MT_DEVICE);
+			PLAT_VIRT_ADDR_SPACE_SIZE - PAGE_SIZE, PAGE_SIZE,
+			MT_DEVICE);
 	if (rc != 0) {
 		tftf_testcase_printf("%d: add_region: %d\n", __LINE__, rc);
 		return TEST_RESULT_FAIL;
@@ -522,18 +521,17 @@ test_result_t xlat_lib_v2_basic_test(void)
 			PLAT_VIRT_ADDR_SPACE_SIZE + PAGE_SIZE - memory_base_pa,
 			MT_DEVICE);
 	if (rc != -ERANGE) {
-		tftf_testcase_printf("%d: Allocation succeeded: %d\n",
-				     __LINE__, rc);
+		tftf_testcase_printf("%d: Allocation succeeded: %d\n", __LINE__,
+				     rc);
 		return TEST_RESULT_FAIL;
 	}
 
 	/* Try to wrap around 64 bit */
-	rc = add_region(1ULL << 32, 1ULL << 32,
-			UINT64_MAX - PAGE_SIZE + 1ULL,
+	rc = add_region(1ULL << 32, 1ULL << 32, UINT64_MAX - PAGE_SIZE + 1ULL,
 			MT_DEVICE);
 	if (rc != -ERANGE) {
-		tftf_testcase_printf("%d: Allocation succeeded: %d\n",
-				     __LINE__, rc);
+		tftf_testcase_printf("%d: Allocation succeeded: %d\n", __LINE__,
+				     rc);
 		return TEST_RESULT_FAIL;
 	}
 #else
@@ -541,8 +539,8 @@ test_result_t xlat_lib_v2_basic_test(void)
 	rc = add_region((1ULL << 32) - PAGE_SIZE, (1ULL << 32) - PAGE_SIZE,
 			2 * PAGE_SIZE, MT_DEVICE);
 	if (rc != -ERANGE) {
-		tftf_testcase_printf("%d: Allocation succeeded: %d\n",
-				     __LINE__, rc);
+		tftf_testcase_printf("%d: Allocation succeeded: %d\n", __LINE__,
+				     rc);
 		return TEST_RESULT_FAIL;
 	}
 #endif
@@ -561,8 +559,8 @@ test_result_t xlat_lib_v2_basic_test(void)
 			/* The limit has been reached as expected */
 			break;
 		} else if (rc != 0) {
-			tftf_testcase_printf("%d: add_region: %d\n",
-					     __LINE__, rc);
+			tftf_testcase_printf("%d: add_region: %d\n", __LINE__,
+					     rc);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -579,7 +577,7 @@ test_result_t xlat_lib_v2_basic_test(void)
 	for (; i >= 0; i--) {
 		uintptr_t addr = memory_base_va + PAGE_SIZE * i;
 
-		rc = remove_region(addr,  PAGE_SIZE);
+		rc = remove_region(addr, PAGE_SIZE);
 		if (rc != 0) {
 			tftf_testcase_printf("%d: remove_region: %d\n",
 					     __LINE__, rc);
@@ -629,19 +627,22 @@ test_result_t xlat_lib_v2_alignment_test(void)
 	 * a size that isn't multiple of PAGE_SIZE.
 	 */
 
-	rc = add_region(memory_base_va + 1, memory_base_va, PAGE_SIZE, MT_DEVICE);
+	rc = add_region(memory_base_va + 1, memory_base_va, PAGE_SIZE,
+			MT_DEVICE);
 	if (rc != -EINVAL) {
 		tftf_testcase_printf("%d: add_region: %d\n", __LINE__, rc);
 		return TEST_RESULT_FAIL;
 	}
 
-	rc = add_region(memory_base_va, memory_base_va + 1, PAGE_SIZE, MT_DEVICE);
+	rc = add_region(memory_base_va, memory_base_va + 1, PAGE_SIZE,
+			MT_DEVICE);
 	if (rc != -EINVAL) {
 		tftf_testcase_printf("%d: add_region: %d\n", __LINE__, rc);
 		return TEST_RESULT_FAIL;
 	}
 
-	rc = add_region(memory_base_va, memory_base_va, PAGE_SIZE + 1, MT_DEVICE);
+	rc = add_region(memory_base_va, memory_base_va, PAGE_SIZE + 1,
+			MT_DEVICE);
 	if (rc != -EINVAL) {
 		tftf_testcase_printf("%d: add_region: %d\n", __LINE__, rc);
 		return TEST_RESULT_FAIL;
@@ -659,8 +660,8 @@ test_result_t xlat_lib_v2_alignment_test(void)
 		tftf_testcase_printf("%d: Not enough memory\n", __LINE__);
 		return TEST_RESULT_FAIL;
 	} else if (rc != 0) {
-		tftf_testcase_printf("%d: add_region_alloc_va: %d\n",
-				     __LINE__, rc);
+		tftf_testcase_printf("%d: add_region_alloc_va: %d\n", __LINE__,
+				     rc);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -675,12 +676,13 @@ test_result_t xlat_lib_v2_alignment_test(void)
 	 * which should fail. In AArch64 there's enough memory to map 4GB of
 	 * virtual memory so skip it.
 	 */
-	rc = add_region_alloc_va(memory_base_pa + PAGE_SIZE, &memory_base_va,
-		 PLAT_VIRT_ADDR_SPACE_SIZE - (memory_base_pa + PAGE_SIZE),
-		 MT_DEVICE);
+	rc = add_region_alloc_va(
+		memory_base_pa + PAGE_SIZE, &memory_base_va,
+		PLAT_VIRT_ADDR_SPACE_SIZE - (memory_base_pa + PAGE_SIZE),
+		MT_DEVICE);
 	if (rc != -ENOMEM) {
-		tftf_testcase_printf("%d: add_region_alloc_va: %d\n",
-				     __LINE__, rc);
+		tftf_testcase_printf("%d: add_region_alloc_va: %d\n", __LINE__,
+				     rc);
 		return TEST_RESULT_FAIL;
 	}
 #endif
@@ -703,8 +705,8 @@ test_result_t xlat_lib_v2_alignment_test(void)
 			 * This is a problem specially in AArch32, when the max
 			 * virtual address space width is 32 bit.
 			 */
-			WARN("%d: Not enough memory for case %d\n",
-			     __LINE__, i);
+			WARN("%d: Not enough memory for case %d\n", __LINE__,
+			     i);
 			continue;
 		} else if (rc != 0) {
 			tftf_testcase_printf("%d: add_region_alloc_va: %d\n",
@@ -720,8 +722,9 @@ test_result_t xlat_lib_v2_alignment_test(void)
 		}
 
 		if (memory_base_va & mem_tests[i].expected_va_mask) {
-			tftf_testcase_printf("%d: Invalid alignment for case %d\n",
-					     __LINE__, i);
+			tftf_testcase_printf(
+				"%d: Invalid alignment for case %d\n", __LINE__,
+				i);
 			return TEST_RESULT_FAIL;
 		}
 
@@ -733,7 +736,6 @@ test_result_t xlat_lib_v2_alignment_test(void)
 		 */
 
 		if (mem_tests[i].expected_va_mask != MASK_L3) {
-
 			base_pa = memory_base_pa;
 
 			if (mem_tests[i].expected_va_mask == MASK_L1) {
@@ -745,12 +747,12 @@ test_result_t xlat_lib_v2_alignment_test(void)
 			rc = add_region_alloc_va(base_pa, &memory_base_va,
 						 mem_tests[i].size, MT_DEVICE);
 			if (rc == 0) {
-
 				rc = remove_region(memory_base_va,
 						   mem_tests[i].size);
 				if (rc != 0) {
-					tftf_testcase_printf("%d: remove_region: %d\n",
-							     __LINE__, rc);
+					tftf_testcase_printf(
+						"%d: remove_region: %d\n",
+						__LINE__, rc);
 					return TEST_RESULT_FAIL;
 				}
 
@@ -761,8 +763,9 @@ test_result_t xlat_lib_v2_alignment_test(void)
 				 * that. However, any other error is a
 				 * legitimate error.
 				 */
-				tftf_testcase_printf("%d: add_region_alloc_va: %d\n",
-						     __LINE__, rc);
+				tftf_testcase_printf(
+					"%d: add_region_alloc_va: %d\n",
+					__LINE__, rc);
 				return TEST_RESULT_FAIL;
 			}
 		}
@@ -819,8 +822,9 @@ test_result_t xlat_lib_v2_stress_test(void)
 
 		block_size >>= 1;
 		if (block_size < PAGE_SIZE) {
-			tftf_testcase_printf("%d: Couldn't allocate enough memory\n",
-					     __LINE__);
+			tftf_testcase_printf(
+				"%d: Couldn't allocate enough memory\n",
+				__LINE__);
 			return TEST_RESULT_FAIL;
 		}
 	}

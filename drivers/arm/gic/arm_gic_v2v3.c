@@ -94,8 +94,7 @@ unsigned int arm_gic_get_intr_priority(unsigned int num)
 		return gicv2_gicd_get_ipriorityr(num);
 }
 
-void arm_gic_set_intr_priority(unsigned int num,
-				unsigned int priority)
+void arm_gic_set_intr_priority(unsigned int num, unsigned int priority)
 {
 	if (gicv3_detected)
 		gicv3_set_ipriorityr(num, priority);
@@ -180,11 +179,8 @@ void arm_gic_end_of_intr(unsigned int raw_iar)
 		gicv2_gicc_write_eoir(raw_iar);
 }
 
-void arm_gic_init(uintptr_t gicc_base,
-		uintptr_t gicd_base,
-		uintptr_t gicr_base)
+void arm_gic_init(uintptr_t gicc_base, uintptr_t gicd_base, uintptr_t gicr_base)
 {
-
 	if (is_gicv3_mode()) {
 		gicv3_detected = 1;
 		gicv3_init(gicr_base, gicd_base);
@@ -192,8 +188,7 @@ void arm_gic_init(uintptr_t gicc_base,
 		gicv2_init(gicc_base, gicd_base);
 	}
 
-	INFO("%s mode detected\n", (gicv3_detected) ?
-			"GICv3" : "GICv2");
+	INFO("%s mode detected\n", (gicv3_detected) ? "GICv3" : "GICv2");
 }
 
 bool arm_gic_is_espi_supported(void)

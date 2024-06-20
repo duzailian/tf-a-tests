@@ -5,21 +5,21 @@
  */
 
 #include <assert.h>
+#include <common/debug.h>
 #include <stdarg.h>
 #include <stdbool.h>
 #include <stdint.h>
 
-#include <common/debug.h>
+#define get_num_va_args(_args, _lcount)                                \
+	(((_lcount) > 1) ? va_arg(_args, long long int)                \
+			 : (((_lcount) == 1) ? va_arg(_args, long int) \
+					     : va_arg(_args, int)))
 
-#define get_num_va_args(_args, _lcount)				\
-	(((_lcount) > 1)  ? va_arg(_args, long long int) :	\
-	(((_lcount) == 1) ? va_arg(_args, long int) :		\
-			    va_arg(_args, int)))
-
-#define get_unum_va_args(_args, _lcount)				\
-	(((_lcount) > 1)  ? va_arg(_args, unsigned long long int) :	\
-	(((_lcount) == 1) ? va_arg(_args, unsigned long int) :		\
-			    va_arg(_args, unsigned int)))
+#define get_unum_va_args(_args, _lcount)                                \
+	(((_lcount) > 1)                                                \
+		 ? va_arg(_args, unsigned long long int)                \
+		 : (((_lcount) == 1) ? va_arg(_args, unsigned long int) \
+				     : va_arg(_args, unsigned int)))
 
 static int string_print(const char *str, char padc, int padn)
 {
@@ -38,7 +38,7 @@ static int string_print(const char *str, char padc, int padn)
 		}
 	}
 
-	for ( ; *str != '\0'; str++) {
+	for (; *str != '\0'; str++) {
 		(void)putchar(*str);
 		count++;
 	}
@@ -128,8 +128,8 @@ int vprintf(const char *fmt, va_list args)
 	long long int num;
 	unsigned long long int unum;
 	char *str;
-	char padc; /* Padding character */
-	int padn; /* Number of characters to pad */
+	char padc;     /* Padding character */
+	int padn;      /* Number of characters to pad */
 	int count = 0; /* Number of printed characters */
 
 	while (*fmt != '\0') {
@@ -141,7 +141,7 @@ int vprintf(const char *fmt, va_list args)
 		if (*fmt == '%') {
 			fmt++;
 			/* Check the format specifier */
-loop:
+		loop:
 			switch (*fmt) {
 			case '1':
 			case '2':
@@ -153,7 +153,8 @@ loop:
 			case '8':
 			case '9':
 				padc = ' ';
-				for (padn = 0; *fmt >= '0' && *fmt <= '9'; fmt++)
+				for (padn = 0; *fmt >= '0' && *fmt <= '9';
+				     fmt++)
 					padn = (padn * 10) + (*fmt - '0');
 				if (left)
 					padn = -padn;
@@ -172,8 +173,8 @@ loop:
 				} else
 					unum = (unsigned long long int)num;
 
-				count += unsigned_num_print(unum, 10,
-							    padc, padn);
+				count += unsigned_num_print(unum, 10, padc,
+							    padn);
 				break;
 			case 's':
 				str = va_arg(args, char *);
@@ -186,13 +187,13 @@ loop:
 					padn -= 2;
 				}
 
-				count += unsigned_num_print(unum, 16,
-							    padc, padn);
+				count += unsigned_num_print(unum, 16, padc,
+							    padn);
 				break;
 			case 'x':
 				unum = get_unum_va_args(args, l_count);
-				count += unsigned_num_print(unum, 16,
-							    padc, padn);
+				count += unsigned_num_print(unum, 16, padc,
+							    padn);
 				break;
 			case 'z':
 				if (sizeof(size_t) == 8U)
@@ -206,8 +207,8 @@ loop:
 				goto loop;
 			case 'u':
 				unum = get_unum_va_args(args, l_count);
-				count += unsigned_num_print(unum, 10,
-							    padc, padn);
+				count += unsigned_num_print(unum, 10, padc,
+							    padn);
 				break;
 			case '0':
 				padc = '0';

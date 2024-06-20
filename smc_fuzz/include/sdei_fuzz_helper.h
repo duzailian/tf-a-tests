@@ -33,7 +33,6 @@
 #define sdei_shared_reset_funcid 0
 #endif
 
-
 void tftf_test_sdei_noarg(int64_t (*sdei_func)(void), char *funcstr);
 void tftf_test_sdei_singlearg(int64_t (*sdei_func)(uint64_t), char *funcstr);
 void run_sdei_fuzz(int funcid);

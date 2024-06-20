@@ -4,21 +4,20 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-
 #include <arch_features.h>
 #include <arch_helpers.h>
 #include <lib/extensions/sme.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
 
 #ifdef __aarch64__
 
 /* Global buffers*/
-static __aligned(16) uint64_t ZA_In_vector[8] = {0xaaff, 0xbbff, 0xccff, 0xddff, 0xeeff,
-					0xffff, 0xff00, 0xff00};
+static __aligned(16) uint64_t ZA_In_vector[8] = {
+	0xaaff, 0xbbff, 0xccff, 0xddff, 0xeeff, 0xffff, 0xff00, 0xff00};
 static __aligned(16) uint64_t ZA_Out_vector[8] = {0};
 
 /**
@@ -36,7 +35,7 @@ static void sme_zero_ZA(void)
 	 * TODO: Further, once the toolchain adds support for SME features
 	 * this could be replaced with the actual instruction ZERO { <mask>}.
 	 */
-	asm volatile(".inst 0xc008000f" : : : );
+	asm volatile(".inst 0xc008000f" : : :);
 }
 
 /**
@@ -45,11 +44,12 @@ static void sme_zero_ZA(void)
  * @return true : If both are equal
  * @return false : If both are not equal
  */
-static bool sme_cmp_vector(const uint64_t *ZA_In_vector, const uint64_t *ZA_Out_vector)
+static bool sme_cmp_vector(const uint64_t *ZA_In_vector,
+			   const uint64_t *ZA_Out_vector)
 {
 	bool ret = true;
 
-	for (int i = 0; i < (MAX_VL_B/8); i++) {
+	for (int i = 0; i < (MAX_VL_B / 8); i++) {
 		if (ZA_In_vector[i] != ZA_Out_vector[i]) {
 			ret = false;
 		}

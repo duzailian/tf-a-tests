@@ -11,17 +11,17 @@
 #include <tftf_lib.h>
 #include <xlat_tables_v2.h>
 
-#define SENTINEL		0x55
-#define MEM_PROT_ENABLED	1
-#define MEM_PROT_DISABLED	0
+#define SENTINEL 0x55
+#define MEM_PROT_ENABLED 1
+#define MEM_PROT_DISABLED 0
 /*
  * Test to verify that mem_protect is executed in next boot after calling
  * the PSCI mem_protect function
  *
  * Returns:
  *         TEST_RESULT_SUCCESS : when after rebooting mem_protect is activated
- *                               and the sentinel is detected to have been reset.
- *         TEST_RESULT_FAIL : when some of the calls to mem_protect fails or
+ *                               and the sentinel is detected to have been
+ * reset. TEST_RESULT_FAIL : when some of the calls to mem_protect fails or
  *                            sentinel is not cleared after resetting.
  */
 static test_result_t test_mem_protect_helper(void *arg)
@@ -35,12 +35,16 @@ static test_result_t test_mem_protect_helper(void *arg)
 	if (tftf_is_rebooted()) {
 		value = *sentinel;
 		if (value != 0 && value != SENTINEL) {
-			tftf_testcase_printf("Sentinel address modified out of mem_protect:%d\n",
+			tftf_testcase_printf(
+				"Sentinel address modified out of "
+				"mem_protect:%d\n",
 				value);
 			return TEST_RESULT_FAIL;
 		}
 		if (value == SENTINEL) {
-			tftf_testcase_printf("Sentinel address not cleared by mem_protect\n");
+			tftf_testcase_printf(
+				"Sentinel address not cleared by "
+				"mem_protect\n");
 			return TEST_RESULT_FAIL;
 		}
 		return TEST_RESULT_SUCCESS;
@@ -92,11 +96,13 @@ test_result_t test_mem_protect(void)
 
 	sentinel = psci_mem_prot_get_sentinel();
 	if (sentinel == NULL) {
-		tftf_testcase_printf("Could not find a suitable address for the sentinel.\n");
+		tftf_testcase_printf(
+			"Could not find a suitable address for the "
+			"sentinel.\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
-	args.addr = (uintptr_t) sentinel & ~PAGE_SIZE_MASK;
+	args.addr = (uintptr_t)sentinel & ~PAGE_SIZE_MASK;
 	args.size = PAGE_SIZE;
 	args.attr = MT_RW_DATA;
 	args.arg = sentinel;

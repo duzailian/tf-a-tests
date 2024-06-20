@@ -5,15 +5,13 @@
  *
  */
 
-#include <stdbool.h>
-#include <stdint.h>
-
 #include <debug.h>
 #include <heap/page_alloc.h>
-#include <spinlock.h>
-#include <utils_def.h>
-
 #include <platform_def.h>
+#include <spinlock.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <utils_def.h>
 
 static uint64_t memory_used;
 static uint64_t heap_base_addr;
@@ -29,7 +27,8 @@ static spinlock_t mem_lock;
  */
 int page_pool_init(uint64_t heap_base, uint64_t heap_len)
 {
-	const uint64_t plat_max_addr = (uint64_t)DRAM_BASE + (uint64_t)DRAM_SIZE;
+	const uint64_t plat_max_addr =
+		(uint64_t)DRAM_BASE + (uint64_t)DRAM_SIZE;
 	uint64_t max_addr = heap_base + heap_len;
 
 	if (heap_len == 0ULL) {
@@ -37,7 +36,8 @@ int page_pool_init(uint64_t heap_base, uint64_t heap_len)
 		heap_initialised = HEAP_INVALID_LEN;
 	} else if (max_addr >= plat_max_addr) {
 		ERROR("heap_base + heap[0x%llx] must not exceed platform"
-			"max address[0x%llx]\n", max_addr, plat_max_addr);
+		      "max address[0x%llx]\n",
+		      max_addr, plat_max_addr);
 
 		heap_initialised = HEAP_OUT_OF_RANGE;
 	} else {
@@ -67,7 +67,7 @@ void *page_alloc(u_register_t bytes_size)
 	spin_lock(&mem_lock);
 
 	if ((memory_used + bytes_size) >= (heap_base_addr + heap_size)) {
-		ERROR("Reached to max KB allowed[%llu]\n", (heap_size/1024U));
+		ERROR("Reached to max KB allowed[%llu]\n", (heap_size / 1024U));
 		goto unlock_failed;
 	}
 	/* set pointer to current used heap memory cursor */
@@ -78,7 +78,7 @@ void *page_alloc(u_register_t bytes_size)
 
 	return (void *)heap_addr;
 
-unlock_failed:/* failed allocation */
+unlock_failed: /* failed allocation */
 	spin_unlock(&mem_lock);
 	return HEAP_NULL_PTR;
 }

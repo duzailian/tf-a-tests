@@ -10,8 +10,8 @@
 #include <platform.h>
 #include <power_management.h>
 #include <sdei.h>
-#include <timer.h>
 #include <tftf_lib.h>
+#include <timer.h>
 
 /* This test makes sure RM_ANY can route SDEI events to all cores. */
 
@@ -53,7 +53,7 @@ static test_result_t cleanup(test_result_t result)
 	 */
 	if ((result == TEST_RESULT_SUCCESS) && (event_count != core_count)) {
 		printf("Event count (%u) and core count (%u) mismatch!",
-			event_count, core_count);
+		       event_count, core_count);
 		result = TEST_RESULT_FAIL;
 	}
 
@@ -61,7 +61,7 @@ static test_result_t cleanup(test_result_t result)
 	ret = sdei_event_unregister(event);
 	if (ret < 0) {
 		printf("%u: %s failed (%lld)\n", __LINE__,
-			"sdei_event_unregister", ret);
+		       "sdei_event_unregister", ret);
 		result = TEST_RESULT_FAIL;
 	}
 
@@ -69,7 +69,7 @@ static test_result_t cleanup(test_result_t result)
 	ret = sdei_interrupt_release(event, &intr_ctx);
 	if (ret < 0) {
 		printf("%u: %s failed (%lld)\n", __LINE__,
-			"sdei_interrupt_release", ret);
+		       "sdei_interrupt_release", ret);
 		result = TEST_RESULT_FAIL;
 	}
 	return result;
@@ -194,35 +194,36 @@ test_result_t test_sdei_routing_any(void)
 	/* Initialize SDEI event to use TFTF timer as trigger. */
 	event = sdei_interrupt_bind(tftf_get_timer_irq(), &intr_ctx);
 	if (event < 0) {
-		printf("%u: %s failed (%d)\n", __LINE__,
-			"sdei_interrupt_bind", event);
+		printf("%u: %s failed (%d)\n", __LINE__, "sdei_interrupt_bind",
+		       event);
 		return TEST_RESULT_FAIL;
 	}
 	ret = sdei_event_register(event, sdei_rm_any_entrypoint, 0U,
-			SDEI_REGF_RM_ANY, 0U);
+				  SDEI_REGF_RM_ANY, 0U);
 	if (ret < 0) {
 		printf("%u: %s failed (%lld)\n", __LINE__,
-			"sdei_event_register", ret);
+		       "sdei_event_register", ret);
 		return cleanup(TEST_RESULT_FAIL);
 	}
 	ret = sdei_event_enable(event);
 	if (ret < 0) {
 		printf("%u: %s failed (%lld)\n", __LINE__, "sdei_event_enable",
-			ret);
+		       ret);
 		return cleanup(TEST_RESULT_FAIL);
 	}
 
 	/* Power on all CPUs and wait for them to be ready. */
 	printf("Powering up CPUs.\n");
 	core_count = 0U;
-	for_each_cpu(cpu_node) {
+	for_each_cpu(cpu_node)
+	{
 		target_mpid = tftf_get_mpidr_from_node(cpu_node) & MPID_MASK;
 		if (mpid_lead != target_mpid) {
-			ret = tftf_cpu_on(target_mpid,
-				(uintptr_t)test_loop, 0U);
+			ret = tftf_cpu_on(target_mpid, (uintptr_t)test_loop,
+					  0U);
 			if (ret != PSCI_E_SUCCESS) {
 				printf("CPU ON failed for 0x%llx\n",
-					(unsigned long long)target_mpid);
+				       (unsigned long long)target_mpid);
 				return cleanup(TEST_RESULT_FAIL);
 			}
 		}

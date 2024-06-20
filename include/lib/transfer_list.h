@@ -7,10 +7,9 @@
 #ifndef __TRANSFER_LIST_H
 #define __TRANSFER_LIST_H
 
+#include <lib/utils_def.h>
 #include <stdbool.h>
 #include <stdint.h>
-
-#include <lib/utils_def.h>
 
 #define TRANSFER_LIST_SIGNATURE U(0x4a0fb10b)
 #define TRANSFER_LIST_VERSION U(0x0001)
@@ -37,8 +36,8 @@ enum transfer_list_tag_id {
 };
 
 enum transfer_list_ops {
-	TL_OPS_NON, // invalid for any operation
-	TL_OPS_ALL, // valid for all operations
+	TL_OPS_NON,  // invalid for any operation
+	TL_OPS_ALL,  // valid for all operations
 };
 
 struct transfer_list_header {
@@ -46,8 +45,8 @@ struct transfer_list_header {
 	uint8_t checksum;
 	uint8_t version;
 	uint8_t hdr_size;
-	uint8_t alignment; // max alignment of TE data
-	uint32_t size; // TL header + all TEs
+	uint8_t alignment;  // max alignment of TE data
+	uint32_t size;	    // TL header + all TEs
 	uint32_t max_size;
 	/*
 	 * Commented out element used to visualize dynamic part of the
@@ -63,7 +62,7 @@ struct transfer_list_header {
 
 struct transfer_list_entry {
 	uint16_t tag_id;
-	uint8_t reserved0; // place holder
+	uint8_t reserved0;  // place holder
 	uint8_t hdr_size;
 	uint32_t data_size;
 	/*
@@ -84,8 +83,8 @@ void *transfer_list_entry_data(struct transfer_list_entry *entry);
 struct transfer_list_entry *transfer_list_find(struct transfer_list_header *tl,
 					       uint16_t tag_id);
 
-enum transfer_list_ops
-transfer_list_check_header(const struct transfer_list_header *tl);
+enum transfer_list_ops transfer_list_check_header(
+	const struct transfer_list_header *tl);
 
 #endif /*__ASSEMBLER__*/
 #endif /*__TRANSFER_LIST_H*/

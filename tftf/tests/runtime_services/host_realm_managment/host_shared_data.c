@@ -4,26 +4,26 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <string.h>
 #include <assert.h>
 #include <cassert.h>
 #include <host_realm_mem_layout.h>
 #include <host_realm_rmi.h>
 #include <host_shared_data.h>
+#include <string.h>
 
 /*
  * Currently we support only creation of a single Realm in TFTF.
  * Hence we can assume that Shared area should be sufficient for all
  * the RECs of this Realm.
  */
-CASSERT(NS_REALM_SHARED_MEM_SIZE > (MAX_REC_COUNT *
-				sizeof(host_shared_data_t)),
-		too_small_realm_shared_mem_size);
+CASSERT(NS_REALM_SHARED_MEM_SIZE > (MAX_REC_COUNT * sizeof(host_shared_data_t)),
+	too_small_realm_shared_mem_size);
 
 /*
  * Return shared buffer pointer mapped as host_shared_data_t structure
  */
-host_shared_data_t *host_get_shared_structure(struct realm *realm_ptr, unsigned int rec_num)
+host_shared_data_t *host_get_shared_structure(struct realm *realm_ptr,
+					      unsigned int rec_num)
 {
 	host_shared_data_t *host_shared_data;
 
@@ -37,7 +37,8 @@ host_shared_data_t *host_get_shared_structure(struct realm *realm_ptr, unsigned 
  * Set data to be shared from Host to realm
  */
 void host_shared_data_set_host_val(struct realm *realm_ptr,
-		unsigned int rec_num, uint8_t index, u_register_t val)
+				   unsigned int rec_num, uint8_t index,
+				   u_register_t val)
 {
 	host_shared_data_t *host_shared_data;
 
@@ -52,7 +53,7 @@ void host_shared_data_set_host_val(struct realm *realm_ptr,
  * Return data shared by realm in realm_out_val.
  */
 u_register_t host_shared_data_get_realm_val(struct realm *realm_ptr,
-		unsigned int rec_num, uint8_t index)
+					    unsigned int rec_num, uint8_t index)
 {
 	host_shared_data_t *host_shared_data;
 
@@ -66,8 +67,8 @@ u_register_t host_shared_data_get_realm_val(struct realm *realm_ptr,
 /*
  * Set command to be send from Host to realm
  */
-void host_shared_data_set_realm_cmd(struct realm *realm_ptr,
-		uint8_t cmd, unsigned int rec_num)
+void host_shared_data_set_realm_cmd(struct realm *realm_ptr, uint8_t cmd,
+				    unsigned int rec_num)
 {
 	host_shared_data_t *host_shared_data;
 
@@ -76,4 +77,3 @@ void host_shared_data_set_realm_cmd(struct realm *realm_ptr,
 	host_shared_data = (host_shared_data_t *)realm_ptr->host_shared_data;
 	host_shared_data[rec_num].realm_cmd = cmd;
 }
-

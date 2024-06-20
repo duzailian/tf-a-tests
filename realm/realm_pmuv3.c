@@ -8,22 +8,21 @@
 #include <arm_arch_svc.h>
 #include <debug.h>
 #include <drivers/arm/gic_v3.h>
-
 #include <host_realm_pmu.h>
 #include <realm_rsi.h>
 
 /* PMUv3 events */
-#define PMU_EVT_SW_INCR		0x0
-#define PMU_EVT_INST_RETIRED	0x8
-#define PMU_EVT_CPU_CYCLES	0x11
-#define PMU_EVT_MEM_ACCESS	0x13
+#define PMU_EVT_SW_INCR 0x0
+#define PMU_EVT_INST_RETIRED 0x8
+#define PMU_EVT_CPU_CYCLES 0x11
+#define PMU_EVT_MEM_ACCESS 0x13
 
-#define NOP_REPETITIONS		50
-#define MAX_COUNTERS		32
+#define NOP_REPETITIONS 50
+#define MAX_COUNTERS 32
 
-#define PRE_OVERFLOW		~(0xF)
+#define PRE_OVERFLOW ~(0xF)
 
-#define	DELAY_MS		3000ULL
+#define DELAY_MS 3000ULL
 
 static inline void read_all_counters(u_register_t *array, int impl_ev_ctrs)
 {
@@ -33,7 +32,8 @@ static inline void read_all_counters(u_register_t *array, int impl_ev_ctrs)
 	}
 }
 
-static inline void read_all_counter_configs(u_register_t *array, int impl_ev_ctrs)
+static inline void read_all_counter_configs(u_register_t *array,
+					    int impl_ev_ctrs)
 {
 	array[0] = read_pmccfiltr_el0();
 	for (unsigned int i = 0U; i < impl_ev_ctrs; i++) {
@@ -71,8 +71,8 @@ static inline void clear_counters(void)
 static void pmu_reset(void)
 {
 	/* Reset all counters */
-	write_pmcr_el0(read_pmcr_el0() |
-			PMCR_EL0_DP_BIT | PMCR_EL0_C_BIT | PMCR_EL0_P_BIT);
+	write_pmcr_el0(read_pmcr_el0() | PMCR_EL0_DP_BIT | PMCR_EL0_C_BIT |
+		       PMCR_EL0_P_BIT);
 
 	/* Disable all counters */
 	write_pmcntenclr_el0(PMU_CLEAR_ALL);
@@ -100,9 +100,9 @@ static inline void enable_cycle_counter(void)
 	 * Set PMCCFILTR_EL0.NSH = PMCCFILTR_EL0_EL0.RLH
 	 * to disable event counting in Realm EL2.
 	 */
-	write_pmccfiltr_el0(PMCCFILTR_EL0_U_BIT |
-			    PMCCFILTR_EL0_P_BIT | PMCCFILTR_EL0_RLK_BIT |
-			    PMCCFILTR_EL0_NSH_BIT | PMCCFILTR_EL0_RLH_BIT);
+	write_pmccfiltr_el0(PMCCFILTR_EL0_U_BIT | PMCCFILTR_EL0_P_BIT |
+			    PMCCFILTR_EL0_RLK_BIT | PMCCFILTR_EL0_NSH_BIT |
+			    PMCCFILTR_EL0_RLH_BIT);
 	write_pmcntenset_el0(read_pmcntenset_el0() | PMCNTENSET_EL0_C_BIT);
 	isb();
 }
@@ -117,13 +117,14 @@ static inline void enable_event_counter(int ctr_num)
 	 * Set PMEVTYPER_EL0.NSH = PMEVTYPER_EL0.RLH
 	 * to disable event counting in Realm EL2.
 	 */
-	write_pmevtypern_el0(ctr_num,
-			PMEVTYPER_EL0_U_BIT |
-			PMEVTYPER_EL0_P_BIT | PMEVTYPER_EL0_RLK_BIT |
-			PMEVTYPER_EL0_NSH_BIT | PMEVTYPER_EL0_RLH_BIT |
+	write_pmevtypern_el0(
+		ctr_num,
+		PMEVTYPER_EL0_U_BIT | PMEVTYPER_EL0_P_BIT |
+			PMEVTYPER_EL0_RLK_BIT | PMEVTYPER_EL0_NSH_BIT |
+			PMEVTYPER_EL0_RLH_BIT |
 			(PMU_EVT_INST_RETIRED & PMEVTYPER_EL0_EVTCOUNT_BITS));
 	write_pmcntenset_el0(read_pmcntenset_el0() |
-		PMCNTENSET_EL0_P_BIT(ctr_num));
+			     PMCNTENSET_EL0_P_BIT(ctr_num));
 	isb();
 }
 
@@ -131,7 +132,7 @@ static inline void enable_event_counter(int ctr_num)
 static inline void execute_nops(void)
 {
 	for (unsigned int i = 0U; i < NOP_REPETITIONS; i++) {
-		__asm__ ("orr x0, x0, x0\n");
+		__asm__("orr x0, x0, x0\n");
 	}
 }
 
@@ -154,8 +155,7 @@ bool test_pmuv3_cycle_works_realm(void)
 	disable_counting();
 	clear_counters();
 
-	realm_printf("counted from %lu to %lu\n",
-		ccounter_start, ccounter_end);
+	realm_printf("counted from %lu to %lu\n", ccounter_start, ccounter_end);
 	if (ccounter_start != ccounter_end) {
 		return true;
 	}
@@ -169,8 +169,8 @@ bool test_pmuv3_counter(void)
 
 	num_cnts_host = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
 	num_cnts = GET_PMU_CNT;
-	realm_printf("CPU=%u num_cnts=%lu num_cnts_host=%lu\n", read_mpidr_el1() & MPID_MASK,
-			num_cnts, num_cnts_host);
+	realm_printf("CPU=%u num_cnts=%lu num_cnts_host=%lu\n",
+		     read_mpidr_el1() & MPID_MASK, num_cnts, num_cnts_host);
 	if (num_cnts == num_cnts_host) {
 		return true;
 	}
@@ -204,8 +204,8 @@ bool test_pmuv3_event_works_realm(void)
 	evcounter_end = read_pmevcntrn_el0(0);
 	clear_counters();
 
-	realm_printf("counted from %lu to %lu\n",
-		evcounter_start, evcounter_end);
+	realm_printf("counted from %lu to %lu\n", evcounter_start,
+		     evcounter_end);
 	if (evcounter_start != evcounter_end) {
 		return true;
 	}
@@ -250,20 +250,18 @@ bool test_pmuv3_rmm_preserves(void)
 	read_all_pmu_configs(pmu_cfg_end);
 
 	if (memcmp(ctr_start, ctr_end, sizeof(ctr_start)) != 0) {
-		realm_printf("SMC call did not preserve %s\n",
-				"counters");
+		realm_printf("SMC call did not preserve %s\n", "counters");
 		return false;
 	}
 
 	if (memcmp(ctr_cfg_start, ctr_cfg_end, sizeof(ctr_cfg_start)) != 0) {
 		realm_printf("SMC call did not preserve %s\n",
-				"counter config");
+			     "counter config");
 		return false;
 	}
 
 	if (memcmp(pmu_cfg_start, pmu_cfg_end, sizeof(pmu_cfg_start)) != 0) {
-		realm_printf("SMC call did not preserve %s\n",
-				"PMU registers");
+		realm_printf("SMC call did not preserve %s\n", "PMU registers");
 		return false;
 	}
 
@@ -279,7 +277,8 @@ bool test_pmuv3_overflow_interrupt(void)
 
 	/* Get the number of priority bits implemented */
 	priority_bits = ((read_icv_ctrl_el1() >> ICV_CTLR_EL1_PRIbits_SHIFT) &
-				ICV_CTLR_EL1_PRIbits_MASK) + 1UL;
+			 ICV_CTLR_EL1_PRIbits_MASK) +
+			1UL;
 
 	/* Unimplemented bits are RES0 and start from LSB */
 	priority = (0xFFUL << (8UL - priority_bits)) & 0xFFUL;
@@ -319,13 +318,13 @@ bool test_pmuv3_overflow_interrupt(void)
 	pmu_reset();
 
 	if (delay_time == 0ULL) {
-		realm_printf("PMU vIRQ %sreceived in %llums\n",	"not ",
-				DELAY_MS);
+		realm_printf("PMU vIRQ %sreceived in %llums\n", "not ",
+			     DELAY_MS);
 		return false;
 	}
 
 	realm_printf("PMU vIRQ %sreceived in %llums\n", "",
-			DELAY_MS - delay_time);
+		     DELAY_MS - delay_time);
 
 	return true;
 }

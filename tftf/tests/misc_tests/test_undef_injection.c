@@ -9,10 +9,10 @@
 #include <arm_arch_svc.h>
 #include <assert.h>
 #include <debug.h>
+#include <platform_def.h>
 #include <smccc.h>
 #include <sync.h>
 #include <tftf_lib.h>
-#include <platform_def.h>
 
 static volatile bool undef_injection_triggered;
 
@@ -59,8 +59,10 @@ test_result_t test_undef_injection(void)
 	smc_ret = tftf_smc(&args);
 
 	tftf_testcase_printf("SMCCC Version = %d.%d\n",
-		(int)((smc_ret.ret0 >> SMCCC_VERSION_MAJOR_SHIFT) & SMCCC_VERSION_MAJOR_MASK),
-		(int)((smc_ret.ret0 >> SMCCC_VERSION_MINOR_SHIFT) & SMCCC_VERSION_MINOR_MASK));
+			     (int)((smc_ret.ret0 >> SMCCC_VERSION_MAJOR_SHIFT) &
+				   SMCCC_VERSION_MAJOR_MASK),
+			     (int)((smc_ret.ret0 >> SMCCC_VERSION_MINOR_SHIFT) &
+				   SMCCC_VERSION_MINOR_MASK));
 
 	if (undef_injection_triggered == false) {
 		return TEST_RESULT_FAIL;

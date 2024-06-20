@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-
 #include <arch_helpers.h>
 #include <sdei.h>
 #include <tftf_lib.h>
@@ -30,10 +29,10 @@ test_result_t test_single_fault(void)
 
 	/* Register SDEI handler */
 	ret = sdei_event_register(event_id, serror_sdei_event_handler, 0,
-			SDEI_REGF_RM_PE, read_mpidr_el1());
+				  SDEI_REGF_RM_PE, read_mpidr_el1());
 	if (ret < 0) {
 		tftf_testcase_printf("SDEI event register failed: 0x%llx\n",
-			ret);
+				     ret);
 		return TEST_RESULT_FAIL;
 	}
 

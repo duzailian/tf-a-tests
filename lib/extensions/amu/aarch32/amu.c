@@ -20,7 +20,7 @@
 unsigned int amu_get_version(void)
 {
 	return (unsigned int)(read_id_pfr0() >> ID_PFR0_AMU_SHIFT) &
-		ID_PFR0_AMU_MASK;
+	       ID_PFR0_AMU_MASK;
 }
 
 /* Read the group 0 counter identified by the given `idx`. */
