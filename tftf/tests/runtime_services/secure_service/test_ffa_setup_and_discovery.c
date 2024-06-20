@@ -364,7 +364,7 @@ test_result_t test_ffa_rxtx_map_memory_share_fail(void)
 				SP_ID(1), mem_func);
 		memory_init_and_send(mb.send, PAGE_SIZE, HYP_ID, &receiver, 1,
 				     &constituent, 1, mem_func, &ret);
-		if (!is_expected_ffa_error(ret, FFA_ERROR_DENIED))
+		if (!is_expected_ffa_error(ret, FFA_ERROR_NOT_SUPPORTED))
 			return TEST_RESULT_FAIL;
 	}
 
