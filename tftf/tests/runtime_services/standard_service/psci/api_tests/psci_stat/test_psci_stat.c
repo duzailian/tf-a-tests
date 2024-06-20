@@ -31,22 +31,23 @@ typedef struct psci_stat_data {
 } psci_stat_data_t;
 
 /* Assuming 4 power levels as maximum */
-#define MAX_STAT_STATES (PLAT_MAX_PWR_STATES_PER_LVL *	\
-			PLAT_MAX_PWR_STATES_PER_LVL *	\
-			PLAT_MAX_PWR_STATES_PER_LVL *	\
-			PLAT_MAX_PWR_STATES_PER_LVL)
+#define MAX_STAT_STATES                                              \
+	(PLAT_MAX_PWR_STATES_PER_LVL * PLAT_MAX_PWR_STATES_PER_LVL * \
+	 PLAT_MAX_PWR_STATES_PER_LVL * PLAT_MAX_PWR_STATES_PER_LVL)
 
 /* Based on PSCI_MAX_PWR_LVL in tf-a
- * See: https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/include/lib/psci/psci.h#n38
+ * See:
+ * https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/tree/include/lib/psci/psci.h#n38
  */
-CASSERT(PLAT_MAX_PWR_LEVEL <= 3, assert_maximum_defined_stat_array_size_exceeded);
+CASSERT(PLAT_MAX_PWR_LEVEL <= 3,
+	assert_maximum_defined_stat_array_size_exceeded);
 
 /*
  * The data structure holding stat information as queried by each CPU.
  * We don't worry about cache line thrashing.
  */
 static psci_stat_data_t stat_data[PLATFORM_CORE_COUNT][PLAT_MAX_PWR_LEVEL + 1]
-						       [MAX_STAT_STATES];
+				 [MAX_STAT_STATES];
 
 /*
  * Synchronization event for stat tests. A 2-D event array is used to
@@ -85,9 +86,10 @@ static int is_psci_stat_supported(void)
 	ret_stat_res = tftf_get_psci_feature_info(SMC_PSCI_STAT_RESIDENCY64);
 
 	if (ret_stat_count == PSCI_E_NOT_SUPPORTED ||
-			ret_stat_res == PSCI_E_NOT_SUPPORTED) {
-		tftf_testcase_printf("PSCI STAT APIs are not supported"
-				" in EL3 firmware\n");
+	    ret_stat_res == PSCI_E_NOT_SUPPORTED) {
+		tftf_testcase_printf(
+			"PSCI STAT APIs are not supported"
+			" in EL3 firmware\n");
 		return 0;
 	}
 
@@ -100,12 +102,13 @@ static int is_psci_stat_supported(void)
  */
 static int get_stat_idx(unsigned int pstateid_idx[], unsigned int lvl)
 {
-	int  i, stat_idx;
+	int i, stat_idx;
 	/* Calculate the stat_idx */
 	for (stat_idx = 0, i = lvl; i >= 0; i--) {
 		assert((pstateid_idx[i] != PWR_STATE_INIT_INDEX) &&
-			(pstateid_idx[i] < PLAT_MAX_PWR_STATES_PER_LVL));
-		stat_idx += (pstateid_idx[i] * pow(PLAT_MAX_PWR_STATES_PER_LVL, i));
+		       (pstateid_idx[i] < PLAT_MAX_PWR_STATES_PER_LVL));
+		stat_idx +=
+			(pstateid_idx[i] * pow(PLAT_MAX_PWR_STATES_PER_LVL, i));
 	}
 
 	assert(stat_idx >= 0 && stat_idx < MAX_STAT_STATES);
@@ -117,9 +120,8 @@ static int get_stat_idx(unsigned int pstateid_idx[], unsigned int lvl)
  * cpu index, power level and `stat` index (which is computed from
  * the pstateid_idx[]).
  */
-static psci_stat_data_t *get_psci_stat_data(int cpu_idx,
-		unsigned int pwrlvl,
-		unsigned int pstateid_idx[])
+static psci_stat_data_t *get_psci_stat_data(int cpu_idx, unsigned int pwrlvl,
+					    unsigned int pstateid_idx[])
 {
 	int stat_idx;
 
@@ -169,58 +171,62 @@ static int validate_stat_result(unsigned int pstateid_idx[],
 	/* First do the precise validation */
 	do {
 		/* Check if the power state is valid */
-		ret = tftf_get_pstate_vars(&pwrlvl,
-					&susp_type,
-					&state_id,
-					local_pstateid_idx);
+		ret = tftf_get_pstate_vars(&pwrlvl, &susp_type, &state_id,
+					   local_pstateid_idx);
 		assert(ret == PSCI_E_SUCCESS);
 		assert(pwrlvl <= PLAT_MAX_PWR_LEVEL);
 
-		power_state = tftf_make_psci_pstate(pwrlvl,
-				susp_type, state_id);
+		power_state =
+			tftf_make_psci_pstate(pwrlvl, susp_type, state_id);
 
 		/* Get current stat values for the power state */
-		current_stat_data.residency = tftf_psci_stat_residency(my_mpid, power_state);
-		current_stat_data.count = tftf_psci_stat_count(my_mpid, power_state);
+		current_stat_data.residency =
+			tftf_psci_stat_residency(my_mpid, power_state);
+		current_stat_data.count =
+			tftf_psci_stat_count(my_mpid, power_state);
 
-		pstat_data = get_psci_stat_data(cpu_idx, pwrlvl, local_pstateid_idx);
+		pstat_data =
+			get_psci_stat_data(cpu_idx, pwrlvl, local_pstateid_idx);
 		if ((pstat_data->residency == current_stat_data.residency) &&
-				(pstat_data->count == current_stat_data.count)) {
+		    (pstat_data->count == current_stat_data.count)) {
 			/*
 			 * Targeted power state has been downgraded and the
 			 * queried stats should be equal to  previous stats
 			 */
 			WARN("The power state 0x%x at pwrlvl %d has been"
-					" downgraded by platform\n",
-					power_state, pwrlvl);
-		} else if ((pstat_data->residency > current_stat_data.residency) ||
-				(pstat_data->count + 1 != current_stat_data.count)) {
+			     " downgraded by platform\n",
+			     power_state, pwrlvl);
+		} else if ((pstat_data->residency >
+			    current_stat_data.residency) ||
+			   (pstat_data->count + 1 != current_stat_data.count)) {
 			/*
 			 * The previous residency is greater than current or the
 			 * stat count has not incremented by 1 for the targeted
 			 * power state. Return error in this case.
 			 */
 			ERROR("Precise validation failed. Stats for CPU %d at"
-					" pwrlvl %d for power state 0x%x : Prev"
-					" stats 0x%llx 0x%llx, current stats"
-					" 0x%llx 0x%llx\n",
-					cpu_idx, pwrlvl, power_state,
-					(unsigned long long)pstat_data->residency,
-					(unsigned long long)pstat_data->count,
-					(unsigned long long)current_stat_data.residency,
-					(unsigned long long)current_stat_data.count);
+			      " pwrlvl %d for power state 0x%x : Prev"
+			      " stats 0x%llx 0x%llx, current stats"
+			      " 0x%llx 0x%llx\n",
+			      cpu_idx, pwrlvl, power_state,
+			      (unsigned long long)pstat_data->residency,
+			      (unsigned long long)pstat_data->count,
+			      (unsigned long long)current_stat_data.residency,
+			      (unsigned long long)current_stat_data.count);
 			return -1;
 		} else {
 			/*
-			 * The stats are as expected for the targeted power state
-			 * i.e previous residency <= current residency and
+			 * The stats are as expected for the targeted power
+			 * state i.e previous residency <= current residency and
 			 * previous stat count + 1 == current stat count.
 			 */
 			INFO("The difference in programmed time and residency"
-				" time in us = %lld at power level %d\n",
-				(unsigned long long)
-				((current_stat_data.residency - pstat_data->residency)
-				- (PLAT_SUSPEND_ENTRY_TIME * 1000)), pwrlvl);
+			     " time in us = %lld at power level %d\n",
+			     (unsigned long long)((current_stat_data.residency -
+						   pstat_data->residency) -
+						  (PLAT_SUSPEND_ENTRY_TIME *
+						   1000)),
+			     pwrlvl);
 		}
 
 		local_pstateid_idx[pwrlvl] = PWR_STATE_INIT_INDEX;
@@ -230,47 +236,51 @@ static int validate_stat_result(unsigned int pstateid_idx[],
 
 	/* Imprecise validation */
 	do {
-		tftf_set_next_state_id_idx(PLAT_MAX_PWR_LEVEL, local_pstateid_idx);
+		tftf_set_next_state_id_idx(PLAT_MAX_PWR_LEVEL,
+					   local_pstateid_idx);
 		if (local_pstateid_idx[0] == PWR_STATE_INIT_INDEX)
 			break;
 
 		/* Check if the power state is valid */
-		ret = tftf_get_pstate_vars(&pwrlvl,
-					&susp_type,
-					&state_id,
-					local_pstateid_idx);
+		ret = tftf_get_pstate_vars(&pwrlvl, &susp_type, &state_id,
+					   local_pstateid_idx);
 		if (ret != PSCI_E_SUCCESS)
 			continue;
 
 		assert(pwrlvl <= PLAT_MAX_PWR_LEVEL);
 
-		power_state = tftf_make_psci_pstate(pwrlvl,
-				susp_type, state_id);
+		power_state =
+			tftf_make_psci_pstate(pwrlvl, susp_type, state_id);
 
-		pstat_data = get_psci_stat_data(cpu_idx, pwrlvl, local_pstateid_idx);
+		pstat_data =
+			get_psci_stat_data(cpu_idx, pwrlvl, local_pstateid_idx);
 
-		current_stat_data.residency = tftf_psci_stat_residency(my_mpid,
-								power_state);
-		current_stat_data.count = tftf_psci_stat_count(my_mpid,
-								power_state);
+		current_stat_data.residency =
+			tftf_psci_stat_residency(my_mpid, power_state);
+		current_stat_data.count =
+			tftf_psci_stat_count(my_mpid, power_state);
 		if (pwrlvl <= target_pwrlvl) {
 			/*
 			 * For all power states that target power domain level
 			 * <= `target_pwrlvl, the previous residency and count
 			 * should never be greater than current.
 			 */
-			if ((pstat_data->residency > current_stat_data.residency) ||
-					(pstat_data->count > current_stat_data.count)) {
+			if ((pstat_data->residency >
+			     current_stat_data.residency) ||
+			    (pstat_data->count > current_stat_data.count)) {
 				ERROR("Imprecise validation failed for"
-					" pwrlvl <= target_pwrlvl. Stats for"
-					" CPU %d for power state 0x%x. Prev"
-					" stats 0x%llx 0x%llx, current stats 0x%llx"
-					" 0x%llx\n",
-					cpu_idx, power_state,
-					(unsigned long long)pstat_data->residency,
-					(unsigned long long)pstat_data->count,
-					(unsigned long long)current_stat_data.residency,
-					(unsigned long long)current_stat_data.count);
+				      " pwrlvl <= target_pwrlvl. Stats for"
+				      " CPU %d for power state 0x%x. Prev"
+				      " stats 0x%llx 0x%llx, current stats "
+				      "0x%llx"
+				      " 0x%llx\n",
+				      cpu_idx, power_state,
+				      (unsigned long long)pstat_data->residency,
+				      (unsigned long long)pstat_data->count,
+				      (unsigned long long)
+					      current_stat_data.residency,
+				      (unsigned long long)
+					      current_stat_data.count);
 				return -1;
 			}
 
@@ -280,18 +290,21 @@ static int validate_stat_result(unsigned int pstateid_idx[],
 			 * > `target_pwrlvl, the previous residency and count
 			 * should never be equal to current.
 			 */
-			if ((pstat_data->residency != current_stat_data.residency) ||
-					(pstat_data->count != current_stat_data.count)) {
+			if ((pstat_data->residency !=
+			     current_stat_data.residency) ||
+			    (pstat_data->count != current_stat_data.count)) {
 				ERROR("Imprecise validation failed for pwrlvl >"
-						" target_pwrlvl. Stats for CPU"
-						" %d for power state 0x%x. Prev"
-						" stats 0x%llx 0x%llx, current stats"
-						" 0x%llx 0x%llx\n",
-						cpu_idx, power_state,
-						(unsigned long long)pstat_data->residency,
-						(unsigned long long)pstat_data->count,
-						(unsigned long long)current_stat_data.residency,
-						(unsigned long long)current_stat_data.count);
+				      " target_pwrlvl. Stats for CPU"
+				      " %d for power state 0x%x. Prev"
+				      " stats 0x%llx 0x%llx, current stats"
+				      " 0x%llx 0x%llx\n",
+				      cpu_idx, power_state,
+				      (unsigned long long)pstat_data->residency,
+				      (unsigned long long)pstat_data->count,
+				      (unsigned long long)
+					      current_stat_data.residency,
+				      (unsigned long long)
+					      current_stat_data.count);
 				return -1;
 			}
 		}
@@ -320,33 +333,32 @@ static void populate_all_stats_all_lvls(void)
 			break;
 
 		/* Check if the power state is valid */
-		ret = tftf_get_pstate_vars(&pwrlvl,
-					&susp_type,
-					&state_id,
-					pstateid_idx);
+		ret = tftf_get_pstate_vars(&pwrlvl, &susp_type, &state_id,
+					   pstateid_idx);
 		if (ret != PSCI_E_SUCCESS)
 			continue;
 
 		assert(pwrlvl <= PLAT_MAX_PWR_LEVEL);
 
-		power_state = tftf_make_psci_pstate(pwrlvl,
-				susp_type, state_id);
+		power_state =
+			tftf_make_psci_pstate(pwrlvl, susp_type, state_id);
 
 		pstat_data = get_psci_stat_data(cpu_idx, pwrlvl, pstateid_idx);
-		pstat_data->residency = tftf_psci_stat_residency(mpidr,
-							power_state);
+		pstat_data->residency =
+			tftf_psci_stat_residency(mpidr, power_state);
 		pstat_data->count = tftf_psci_stat_count(mpidr, power_state);
 	} while (1);
 }
 
 /*
- * The core function by executed by all CPUs when `test_psci_stat_all_power_states`
- * test is executed. Each CPU queries the next valid power state using the
- * `power state` helpers and assumes that the power state progresses from lower
- * power levels to higher levels. It also assumes that the number of applicable
- * low power states are same across Big - Little clusters. In future this
- * assumption may not be true and this test may need to be reworked to have
- * `power domain` awareness. The sequence executed by the test is as follows:
+ * The core function by executed by all CPUs when
+ * `test_psci_stat_all_power_states` test is executed. Each CPU queries the next
+ * valid power state using the `power state` helpers and assumes that the power
+ * state progresses from lower power levels to higher levels. It also assumes
+ * that the number of applicable low power states are same across Big - Little
+ * clusters. In future this assumption may not be true and this test may need to
+ * be reworked to have `power domain` awareness. The sequence executed by the
+ * test is as follows:
  *
  * 1. Populate the stats for all power states at all power domain levels for
  *    the current CPU.
@@ -377,7 +389,8 @@ static test_result_t test_psci_stat(void)
 	for_each_cpu(cpu_node) {
 		u_register_t target_mpid;
 		target_mpid = tftf_get_mpidr_from_node(cpu_node);
-		tftf_init_event(&stat_sync[platform_get_core_pos(target_mpid)][cpu_idx]);
+		tftf_init_event(&stat_sync[platform_get_core_pos(target_mpid)]
+					  [cpu_idx]);
 	}
 
 	INIT_PWR_LEVEL_INDEX(pstateid_idx);
@@ -388,16 +401,18 @@ static test_result_t test_psci_stat(void)
 		if (pstateid_idx[0] == PWR_STATE_INIT_INDEX)
 			break;
 
-		/* Populate the PSCI STATs for all power levels and all states */
+		/* Populate the PSCI STATs for all power levels and all states
+		 */
 		populate_all_stats_all_lvls();
 
 		/* Check if the power state is valid */
 		ret = tftf_get_pstate_vars(&pwrlvl, &susp_type, &state_id,
-					pstateid_idx);
+					   pstateid_idx);
 		if (ret != PSCI_E_SUCCESS)
 			continue;
 
-		power_state = tftf_make_psci_pstate(pwrlvl, susp_type, state_id);
+		power_state =
+			tftf_make_psci_pstate(pwrlvl, susp_type, state_id);
 
 		/*
 		 * Create a synchronization point. A 2-D event array is used to
@@ -408,7 +423,7 @@ static test_result_t test_psci_stat(void)
 		for_each_cpu(cpu_node) {
 			unsigned int target_idx;
 			target_idx = platform_get_core_pos(
-					tftf_get_mpidr_from_node(cpu_node));
+				tftf_get_mpidr_from_node(cpu_node));
 			tftf_send_event(&stat_sync[target_idx][cpu_idx]);
 			tftf_wait_for_event(&stat_sync[cpu_idx][target_idx]);
 		}
@@ -427,16 +442,13 @@ static test_result_t test_psci_stat(void)
 		tftf_cancel_timer();
 		if (ret) {
 			ERROR("PSCI-STAT: Suspend failed. "
-					"mpidr:0x%llx  pwr_lvl:0x%x  powerstate:0x%x\n",
-					(unsigned long long)mpidr,
-					pwrlvl, power_state);
+			      "mpidr:0x%llx  pwr_lvl:0x%x  powerstate:0x%x\n",
+			      (unsigned long long)mpidr, pwrlvl, power_state);
 			return TEST_RESULT_FAIL;
 		}
 
-
 		INFO("PSCI-STAT: mpidr:0x%llx  pwr_lvl:0x%x  powerstate:0x%x\n",
-				(unsigned long long)mpidr,
-				pwrlvl, power_state);
+		     (unsigned long long)mpidr, pwrlvl, power_state);
 
 		wait_for_participating_cpus();
 
@@ -471,45 +483,46 @@ static int validate_stat_result_from_lead(u_register_t target_cpu)
 	INIT_PWR_LEVEL_INDEX(local_pstateid_idx);
 
 	do {
-		tftf_set_next_state_id_idx(PLAT_MAX_PWR_LEVEL, local_pstateid_idx);
+		tftf_set_next_state_id_idx(PLAT_MAX_PWR_LEVEL,
+					   local_pstateid_idx);
 		if (local_pstateid_idx[0] == PWR_STATE_INIT_INDEX)
 			break;
 
 		/* Check if the power state is valid */
-		ret = tftf_get_pstate_vars(&pwrlvl,
-					&susp_type,
-					&state_id,
-					local_pstateid_idx);
+		ret = tftf_get_pstate_vars(&pwrlvl, &susp_type, &state_id,
+					   local_pstateid_idx);
 		if (ret != PSCI_E_SUCCESS)
 			continue;
 
 		assert(pwrlvl <= PLAT_MAX_PWR_LEVEL);
 
-		power_state = tftf_make_psci_pstate(pwrlvl,
-				susp_type, state_id);
+		power_state =
+			tftf_make_psci_pstate(pwrlvl, susp_type, state_id);
 
 		/* Get target CPU stat values for the power state */
-		target_stat_data.residency = tftf_psci_stat_residency(target_cpu, power_state);
-		target_stat_data.count = tftf_psci_stat_count(target_cpu, power_state);
+		target_stat_data.residency =
+			tftf_psci_stat_residency(target_cpu, power_state);
+		target_stat_data.count =
+			tftf_psci_stat_count(target_cpu, power_state);
 
-		pstat_data = get_psci_stat_data(cpu_idx, pwrlvl, local_pstateid_idx);
+		pstat_data =
+			get_psci_stat_data(cpu_idx, pwrlvl, local_pstateid_idx);
 		if ((pstat_data->residency != target_stat_data.residency) ||
-				(pstat_data->count != target_stat_data.count)) {
+		    (pstat_data->count != target_stat_data.count)) {
 			INFO("Stats for CPU %d for power state 0x%x :"
-					" Recorded stats 0x%llx 0x%llx,"
-					" Target stats 0x%llx 0x%llx\n",
-					cpu_idx, power_state,
-					(unsigned long long)pstat_data->residency,
-					(unsigned long long)pstat_data->count,
-					(unsigned long long)target_stat_data.residency,
-					(unsigned long long)target_stat_data.count);
+			     " Recorded stats 0x%llx 0x%llx,"
+			     " Target stats 0x%llx 0x%llx\n",
+			     cpu_idx, power_state,
+			     (unsigned long long)pstat_data->residency,
+			     (unsigned long long)pstat_data->count,
+			     (unsigned long long)target_stat_data.residency,
+			     (unsigned long long)target_stat_data.count);
 			return -1;
 		}
 	} while (1);
 
 	return 0;
 }
-
 
 /*
  * @Test_Aim@ Verify if PSCI Stat Count and Residency are updated
@@ -539,10 +552,10 @@ test_result_t test_psci_stat_all_power_states(void)
 		if (lead_mpid == target_mpid)
 			continue;
 
-		ret = tftf_cpu_on(target_mpid, (uintptr_t) test_psci_stat, 0);
+		ret = tftf_cpu_on(target_mpid, (uintptr_t)test_psci_stat, 0);
 		if (ret != PSCI_E_SUCCESS) {
 			ERROR("CPU ON failed for 0x%llx\n",
-					(unsigned long long)target_mpid);
+			      (unsigned long long)target_mpid);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -560,7 +573,7 @@ test_result_t test_psci_stat_all_power_states(void)
 			continue;
 
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-				PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			;
 
 		ret = validate_stat_result_from_lead(target_mpid);
@@ -616,23 +629,21 @@ static test_result_t verify_powerdown_stats(void)
 			break;
 
 		/* Check if the power state is valid */
-		ret = tftf_get_pstate_vars(&pwrlvl,
-					&susp_type,
-					&state_id,
-					stateid_idx);
+		ret = tftf_get_pstate_vars(&pwrlvl, &susp_type, &state_id,
+					   stateid_idx);
 		if ((ret != PSCI_E_SUCCESS) ||
-				(susp_type != PSTATE_TYPE_POWERDOWN))
+		    (susp_type != PSTATE_TYPE_POWERDOWN))
 			continue;
 
-		power_state = tftf_make_psci_pstate(pwrlvl,
-					susp_type, state_id);
+		power_state =
+			tftf_make_psci_pstate(pwrlvl, susp_type, state_id);
 		pstat_data = get_psci_stat_data(cpu_idx, pwrlvl, stateid_idx);
-		curr_stat_data.residency = tftf_psci_stat_residency(mpidr,
-							power_state);
+		curr_stat_data.residency =
+			tftf_psci_stat_residency(mpidr, power_state);
 		curr_stat_data.count = tftf_psci_stat_count(mpidr, power_state);
 
 		if ((curr_stat_data.count == (pstat_data->count + 1)) &&
-				(curr_stat_data.residency >= pstat_data->residency)) {
+		    (curr_stat_data.residency >= pstat_data->residency)) {
 			/*
 			 * If the stats for at least a single power state
 			 * targeted to a pwrlvl <= `verify_stats_target_lvl`
@@ -641,20 +652,20 @@ static test_result_t verify_powerdown_stats(void)
 			if (verify_stats_target_lvl >= pwrlvl)
 				result = TEST_RESULT_SUCCESS;
 		} else if ((curr_stat_data.count != pstat_data->count) ||
-			(curr_stat_data.residency != pstat_data->residency)) {
-
+			   (curr_stat_data.residency !=
+			    pstat_data->residency)) {
 			/*
 			 * If the stats havent incremented, then they should be
 			 * equal to previous.
 			 */
 			ERROR("Stats for CPU %d for power state 0x%x :"
-				" Recorded stats 0x%llx 0x%llx,"
-				" current stats 0x%llx 0x%llx\n",
-				cpu_idx, power_state,
-				(unsigned long long)pstat_data->residency,
-				(unsigned long long)pstat_data->count,
-				(unsigned long long)curr_stat_data.residency,
-				(unsigned long long)curr_stat_data.count);
+			      " Recorded stats 0x%llx 0x%llx,"
+			      " current stats 0x%llx 0x%llx\n",
+			      cpu_idx, power_state,
+			      (unsigned long long)pstat_data->residency,
+			      (unsigned long long)pstat_data->count,
+			      (unsigned long long)curr_stat_data.residency,
+			      (unsigned long long)curr_stat_data.count);
 
 			return TEST_RESULT_FAIL;
 		}
@@ -709,23 +720,21 @@ test_result_t test_psci_stats_cpu_off(void)
 		 * execute `update_stats_and_power_off` function.
 		 */
 		ret = tftf_cpu_on(target_mpid,
-				(uintptr_t) update_stats_and_power_off, 0);
+				  (uintptr_t)update_stats_and_power_off, 0);
 		if (ret != PSCI_E_SUCCESS) {
 			ERROR("CPU ON failed for 0x%llx",
-					(unsigned long long)target_mpid);
+			      (unsigned long long)target_mpid);
 			return TEST_RESULT_FAIL;
 		}
-
 	}
 
 	/* Wait for the secondary to turn OFF */
 	for_each_cpu(cpu_node) {
-
 		target_mpid = tftf_get_mpidr_from_node(cpu_node);
 		if (lead_mpid == target_mpid)
 			continue;
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-					PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			;
 		off_cpu_count++;
 	}
@@ -734,16 +743,16 @@ test_result_t test_psci_stats_cpu_off(void)
 	cpu_count = 0;
 
 	ret = tftf_psci_make_composite_state_id(MPIDR_AFFLVL0,
-					PSTATE_TYPE_STANDBY, &stateid);
+						PSTATE_TYPE_STANDBY, &stateid);
 	if (ret != PSCI_E_SUCCESS) {
 		ERROR("Failed to construct composite state\n");
 		return TEST_RESULT_FAIL;
 	}
 
-	power_state = tftf_make_psci_pstate(MPIDR_AFFLVL0,
-						PSTATE_TYPE_STANDBY, stateid);
+	power_state = tftf_make_psci_pstate(MPIDR_AFFLVL0, PSTATE_TYPE_STANDBY,
+					    stateid);
 	ret = tftf_program_timer_and_suspend(PLAT_SUSPEND_ENTRY_TIME,
-						power_state, NULL, NULL);
+					     power_state, NULL, NULL);
 	if (ret != 0) {
 		ERROR("Failed to program timer or suspend CPU: 0x%x\n", ret);
 		return TEST_RESULT_FAIL;
@@ -762,10 +771,10 @@ test_result_t test_psci_stats_cpu_off(void)
 			continue;
 
 		ret = tftf_cpu_on(target_mpid,
-				(uintptr_t) verify_powerdown_stats, 0);
+				  (uintptr_t)verify_powerdown_stats, 0);
 		if (ret != PSCI_E_SUCCESS) {
 			ERROR("CPU ON failed for 0x%llx",
-					(unsigned long long)target_mpid);
+			      (unsigned long long)target_mpid);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -776,7 +785,7 @@ test_result_t test_psci_stats_cpu_off(void)
 		if (lead_mpid == target_mpid)
 			continue;
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-					PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			;
 	}
 
@@ -803,8 +812,9 @@ test_result_t test_psci_stats_system_suspend(void)
 
 	ret = tftf_get_psci_feature_info(SMC_PSCI_SYSTEM_SUSPEND64);
 	if (ret == PSCI_E_NOT_SUPPORTED) {
-		tftf_testcase_printf("SYSTEM_SUSPEND not supported"
-				" in EL3 firmware\n");
+		tftf_testcase_printf(
+			"SYSTEM_SUSPEND not supported"
+			" in EL3 firmware\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -813,7 +823,8 @@ test_result_t test_psci_stats_system_suspend(void)
 
 	lead_mpid = read_mpidr_el1() & MPID_MASK;
 
-	/* Initialize participating CPU count. The lead CPU is excluded in the count */
+	/* Initialize participating CPU count. The lead CPU is excluded in the
+	 * count */
 	participating_cpu_count = tftf_get_total_cpus_count() - 1;
 	init_spinlock(&cpu_count_lock);
 	cpu_count = 0;
@@ -830,7 +841,7 @@ test_result_t test_psci_stats_system_suspend(void)
 		 * execute `update_stats_and_power_off` function.
 		 */
 		ret = tftf_cpu_on(target_mpid,
-				(uintptr_t) update_stats_and_power_off, 0);
+				  (uintptr_t)update_stats_and_power_off, 0);
 		if (ret != PSCI_E_SUCCESS)
 			return TEST_RESULT_FAIL;
 	}
@@ -841,7 +852,7 @@ test_result_t test_psci_stats_system_suspend(void)
 		if (lead_mpid == target_mpid)
 			continue;
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-					PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			;
 
 		off_cpu_count++;
@@ -854,8 +865,8 @@ test_result_t test_psci_stats_system_suspend(void)
 	populate_all_stats_all_lvls();
 
 	/* Program timer to fire after delay and issue system suspend */
-	ret = tftf_program_timer_and_sys_suspend(PLAT_SUSPEND_ENTRY_TIME,
-								NULL, NULL);
+	ret = tftf_program_timer_and_sys_suspend(PLAT_SUSPEND_ENTRY_TIME, NULL,
+						 NULL);
 	tftf_cancel_timer();
 	if (ret)
 		return TEST_RESULT_FAIL;
@@ -871,7 +882,7 @@ test_result_t test_psci_stats_system_suspend(void)
 			continue;
 
 		ret = tftf_cpu_on(target_mpid,
-				(uintptr_t) verify_powerdown_stats, 0);
+				  (uintptr_t)verify_powerdown_stats, 0);
 		if (ret != PSCI_E_SUCCESS)
 			return TEST_RESULT_FAIL;
 	}
@@ -882,11 +893,12 @@ test_result_t test_psci_stats_system_suspend(void)
 		if (lead_mpid == target_mpid)
 			continue;
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-					PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			;
 	}
 
-	/* Increment the participating CPU count to include the lead CPU as well */
+	/* Increment the participating CPU count to include the lead CPU as well
+	 */
 	participating_cpu_count++;
 
 	/* Verify the stats on the lead CPU as well */
@@ -918,33 +930,34 @@ static test_result_t verify_psci_stats_cold_boot(void)
 
 		INIT_PWR_LEVEL_INDEX(stateid_idx);
 		do {
-			tftf_set_next_state_id_idx(PLAT_MAX_PWR_LEVEL, stateid_idx);
+			tftf_set_next_state_id_idx(PLAT_MAX_PWR_LEVEL,
+						   stateid_idx);
 			if (stateid_idx[0] == PWR_STATE_INIT_INDEX)
 				break;
 
 			/* Check if the power state is valid */
-			ret = tftf_get_pstate_vars(&pwrlvl,
-						&susp_type,
-						&state_id,
-						stateid_idx);
+			ret = tftf_get_pstate_vars(&pwrlvl, &susp_type,
+						   &state_id, stateid_idx);
 			if (ret != PSCI_E_SUCCESS)
 				continue;
 
 			if ((target_mpid == lead_cpu) && (pwrlvl == 0) &&
-					(susp_type == PSTATE_TYPE_STANDBY))
+			    (susp_type == PSTATE_TYPE_STANDBY))
 				continue;
 
-			power_state = tftf_make_psci_pstate(pwrlvl,
-					susp_type, state_id);
-			stat_residency = tftf_psci_stat_residency(target_mpid, power_state);
-			stat_count =  tftf_psci_stat_count(target_mpid, power_state);
+			power_state = tftf_make_psci_pstate(pwrlvl, susp_type,
+							    state_id);
+			stat_residency = tftf_psci_stat_residency(target_mpid,
+								  power_state);
+			stat_count =
+				tftf_psci_stat_count(target_mpid, power_state);
 			if (stat_count || stat_residency) {
 				ERROR("mpid = %lld, power_state = %x, "
 				      "stat count = %lld, residency = %lld\n",
-				      (unsigned long long) target_mpid,
+				      (unsigned long long)target_mpid,
 				      power_state,
-				      (unsigned long long) stat_count,
-				      (unsigned long long) stat_residency);
+				      (unsigned long long)stat_count,
+				      (unsigned long long)stat_residency);
 				return TEST_RESULT_FAIL;
 			}
 		} while (1);
@@ -959,7 +972,7 @@ static test_result_t verify_psci_stats_cold_boot(void)
  */
 test_result_t test_psci_stats_after_shutdown(void)
 {
-	smc_args args = { SMC_PSCI_SYSTEM_OFF };
+	smc_args args = {SMC_PSCI_SYSTEM_OFF};
 
 	if (!is_psci_stat_supported())
 		return TEST_RESULT_SKIPPED;
@@ -986,7 +999,7 @@ test_result_t test_psci_stats_after_shutdown(void)
  */
 test_result_t test_psci_stats_after_reset(void)
 {
-	smc_args args = { SMC_PSCI_SYSTEM_RESET };
+	smc_args args = {SMC_PSCI_SYSTEM_RESET};
 
 	if (!is_psci_stat_supported())
 		return TEST_RESULT_SKIPPED;

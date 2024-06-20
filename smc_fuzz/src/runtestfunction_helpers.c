@@ -7,7 +7,6 @@
 #include <sdei_fuzz_helper.h>
 #include <tsp_fuzz_helper.h>
 
-
 /*
  * Invoke the SMC call based on the function name specified.
  */

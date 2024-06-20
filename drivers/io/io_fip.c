@@ -19,7 +19,6 @@
 #include <uuid.h>
 #include <uuid_utils.h>
 
-
 typedef struct {
 	unsigned int file_pos;
 	fip_toc_entry_t entry;
@@ -29,18 +28,16 @@ static file_state_t current_file = {0};
 static uintptr_t backend_dev_handle;
 static uintptr_t backend_image_spec;
 
-
 /* Firmware Image Package driver functions */
 static int fip_dev_open(const uintptr_t dev_spec, io_dev_info_t **dev_info);
 static int fip_file_open(io_dev_info_t *dev_info, const uintptr_t spec,
-			  io_entity_t *entity);
+			 io_entity_t *entity);
 static int fip_file_len(io_entity_t *entity, size_t *length);
 static int fip_file_read(io_entity_t *entity, uintptr_t buffer, size_t length,
-			  size_t *length_read);
+			 size_t *length_read);
 static int fip_file_close(io_entity_t *entity);
 static int fip_dev_init(io_dev_info_t *dev_info, const uintptr_t init_params);
 static int fip_dev_close(io_dev_info_t *dev_info);
-
 
 /* TODO: We could check version numbers or do a package checksum? */
 static inline int is_valid_header(fip_toc_header_t *header)
@@ -52,18 +49,13 @@ static inline int is_valid_header(fip_toc_header_t *header)
 	}
 }
 
-
 /* Identify the device type as a virtual driver */
 io_type_t device_type_fip(void)
 {
 	return IO_TYPE_FIRMWARE_IMAGE_PACKAGE;
 }
 
-
-static const io_dev_connector_t fip_dev_connector = {
-	.dev_open = fip_dev_open
-};
-
+static const io_dev_connector_t fip_dev_connector = {.dev_open = fip_dev_open};
 
 static const io_dev_funcs_t fip_dev_funcs = {
 	.type = device_type_fip,
@@ -77,24 +69,19 @@ static const io_dev_funcs_t fip_dev_funcs = {
 	.dev_close = fip_dev_close,
 };
 
-
 /* No state associated with this device so structure can be const */
-static const io_dev_info_t fip_dev_info = {
-	.funcs = &fip_dev_funcs,
-	.info = (uintptr_t)NULL
-};
-
+static const io_dev_info_t fip_dev_info = {.funcs = &fip_dev_funcs,
+					   .info = (uintptr_t)NULL};
 
 /* Open a connection to the FIP device */
 static int fip_dev_open(const uintptr_t dev_spec __attribute__((unused)),
-			 io_dev_info_t **dev_info)
+			io_dev_info_t **dev_info)
 {
 	assert(dev_info != NULL);
 	*dev_info = (io_dev_info_t *)&fip_dev_info; /* cast away const */
 
 	return IO_SUCCESS;
 }
-
 
 /* Do some basic package checks. */
 static int fip_dev_init(io_dev_info_t *dev_info, const uintptr_t init_params)
@@ -110,7 +97,7 @@ static int fip_dev_init(io_dev_info_t *dev_info, const uintptr_t init_params)
 				       &backend_image_spec);
 	if (result != IO_SUCCESS) {
 		WARN("Failed to obtain reference to image id=%u (%i)\n",
-			image_id, result);
+		     image_id, result);
 		result = IO_FAIL;
 		goto fip_dev_init_exit;
 	}
@@ -125,7 +112,7 @@ static int fip_dev_init(io_dev_info_t *dev_info, const uintptr_t init_params)
 	}
 
 	result = io_read(backend_handle, (uintptr_t)&header, sizeof(header),
-			&bytes_read);
+			 &bytes_read);
 	if (result == IO_SUCCESS) {
 		if (!is_valid_header(&header)) {
 			WARN("Firmware Image Package header check failed.\n");
@@ -137,7 +124,7 @@ static int fip_dev_init(io_dev_info_t *dev_info, const uintptr_t init_params)
 
 	io_close(backend_handle);
 
- fip_dev_init_exit:
+fip_dev_init_exit:
 	return result;
 }
 
@@ -152,7 +139,6 @@ static int fip_dev_close(io_dev_info_t *dev_info)
 
 	return IO_SUCCESS;
 }
-
 
 /* Open a file for access from package. */
 static int fip_file_open(io_dev_info_t *dev_info, const uintptr_t spec,
@@ -197,13 +183,11 @@ static int fip_file_open(io_dev_info_t *dev_info, const uintptr_t spec,
 
 	found_file = 0;
 	do {
-		result = io_read(backend_handle,
-				 (uintptr_t)&current_file.entry,
-				 sizeof(current_file.entry),
-				 &bytes_read);
+		result = io_read(backend_handle, (uintptr_t)&current_file.entry,
+				 sizeof(current_file.entry), &bytes_read);
 		if (result == IO_SUCCESS) {
 			if (uuid_equal(&current_file.entry.uuid,
-					  &uuid_spec->uuid)) {
+				       &uuid_spec->uuid)) {
 				found_file = 1;
 				break;
 			}
@@ -226,13 +210,12 @@ static int fip_file_open(io_dev_info_t *dev_info, const uintptr_t spec,
 		result = IO_FAIL;
 	}
 
- fip_file_open_close:
+fip_file_open_close:
 	io_close(backend_handle);
 
- fip_file_open_exit:
+fip_file_open_exit:
 	return result;
 }
-
 
 /* Return the size of a file in package */
 static int fip_file_len(io_entity_t *entity, size_t *length)
@@ -240,15 +223,14 @@ static int fip_file_len(io_entity_t *entity, size_t *length)
 	assert(entity != NULL);
 	assert(length != NULL);
 
-	*length =  ((file_state_t *)entity->info)->entry.size;
+	*length = ((file_state_t *)entity->info)->entry.size;
 
 	return IO_SUCCESS;
 }
 
-
 /* Read data from a file in package */
 static int fip_file_read(io_entity_t *entity, uintptr_t buffer, size_t length,
-			  size_t *length_read)
+			 size_t *length_read)
 {
 	int result = IO_FAIL;
 	file_state_t *fp;
@@ -293,14 +275,13 @@ static int fip_file_read(io_entity_t *entity, uintptr_t buffer, size_t length,
 		fp->file_pos += bytes_read;
 	}
 
-/* Close the backend. */
- fip_file_read_close:
+	/* Close the backend. */
+fip_file_read_close:
 	io_close(backend_handle);
 
- fip_file_read_exit:
+fip_file_read_exit:
 	return result;
 }
-
 
 /* Close a file in package */
 static int fip_file_close(io_entity_t *entity)

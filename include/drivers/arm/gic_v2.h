@@ -12,86 +12,86 @@
  **************************************************************************/
 
 /* GICD_CTLR bit definitions */
-#define GICD_CTLR_ENABLE	(1 << 0)
+#define GICD_CTLR_ENABLE (1 << 0)
 
 /* Distributor interface register offsets */
-#define GICD_ITARGETSR		0x800
-#define GICD_SGIR		0xF00
-#define GICD_CPENDSGIR		0xF10
-#define GICD_SPENDSGIR		0xF20
+#define GICD_ITARGETSR 0x800
+#define GICD_SGIR 0xF00
+#define GICD_CPENDSGIR 0xF10
+#define GICD_SPENDSGIR 0xF20
 
 /* GIC Distributor register shifts */
-#define ITARGETSR_SHIFT		2
-#define CPENDSGIR_SHIFT		2
-#define SPENDSGIR_SHIFT		CPENDSGIR_SHIFT
+#define ITARGETSR_SHIFT 2
+#define CPENDSGIR_SHIFT 2
+#define SPENDSGIR_SHIFT CPENDSGIR_SHIFT
 
 /* GICD_SGIR bit shifts */
-#define GICD_SGIR_INTID_SHIFT		0
-#define GICD_SGIR_CPUTL_SHIFT		16
+#define GICD_SGIR_INTID_SHIFT 0
+#define GICD_SGIR_CPUTL_SHIFT 16
 
 /* Physical CPU Interface register offsets */
-#define GICC_CTLR		0x0
-#define GICC_PMR		0x4
-#define GICC_BPR		0x8
-#define GICC_IAR		0xC
-#define GICC_EOIR		0x10
-#define GICC_RPR		0x14
-#define GICC_HPPIR		0x18
-#define GICC_AHPPIR		0x28
-#define GICC_IIDR		0xFC
-#define GICC_DIR		0x1000
-#define GICC_PRIODROP		GICC_EOIR
+#define GICC_CTLR 0x0
+#define GICC_PMR 0x4
+#define GICC_BPR 0x8
+#define GICC_IAR 0xC
+#define GICC_EOIR 0x10
+#define GICC_RPR 0x14
+#define GICC_HPPIR 0x18
+#define GICC_AHPPIR 0x28
+#define GICC_IIDR 0xFC
+#define GICC_DIR 0x1000
+#define GICC_PRIODROP GICC_EOIR
 
 /* GICC_IIDR bit masks and shifts */
-#define GICC_IIDR_PID_SHIFT	20
-#define GICC_IIDR_ARCH_SHIFT	16
-#define GICC_IIDR_REV_SHIFT	12
-#define GICC_IIDR_IMP_SHIFT	0
+#define GICC_IIDR_PID_SHIFT 20
+#define GICC_IIDR_ARCH_SHIFT 16
+#define GICC_IIDR_REV_SHIFT 12
+#define GICC_IIDR_IMP_SHIFT 0
 
-#define GICC_IIDR_PID_MASK	0xfff
-#define GICC_IIDR_ARCH_MASK	0xf
-#define GICC_IIDR_REV_MASK	0xf
-#define GICC_IIDR_IMP_MASK	0xfff
+#define GICC_IIDR_PID_MASK 0xfff
+#define GICC_IIDR_ARCH_MASK 0xf
+#define GICC_IIDR_REV_MASK 0xf
+#define GICC_IIDR_IMP_MASK 0xfff
 
 /* HYP view virtual CPU Interface register offsets */
-#define GICH_CTL		0x0
-#define GICH_VTR		0x4
-#define GICH_ELRSR0		0x30
-#define GICH_ELRSR1		0x34
-#define GICH_APR0		0xF0
-#define GICH_LR_BASE		0x100
+#define GICH_CTL 0x0
+#define GICH_VTR 0x4
+#define GICH_ELRSR0 0x30
+#define GICH_ELRSR1 0x34
+#define GICH_APR0 0xF0
+#define GICH_LR_BASE 0x100
 
 /* Virtual CPU Interface register offsets */
-#define GICV_CTL		0x0
-#define GICV_PRIMASK		0x4
-#define GICV_BP			0x8
-#define GICV_INTACK		0xC
-#define GICV_EOI		0x10
-#define GICV_RUNNINGPRI		0x14
-#define GICV_HIGHESTPEND	0x18
-#define GICV_DEACTIVATE		0x1000
+#define GICV_CTL 0x0
+#define GICV_PRIMASK 0x4
+#define GICV_BP 0x8
+#define GICV_INTACK 0xC
+#define GICV_EOI 0x10
+#define GICV_RUNNINGPRI 0x14
+#define GICV_HIGHESTPEND 0x18
+#define GICV_DEACTIVATE 0x1000
 
 /* GICC_IAR bit masks and shifts */
-#define GICC_IAR_INTID_SHIFT	0
-#define GICC_IAR_CPUID_SHIFT	10
+#define GICC_IAR_INTID_SHIFT 0
+#define GICC_IAR_CPUID_SHIFT 10
 
-#define GICC_IAR_INTID_MASK	0x3ff
-#define GICC_IAR_CPUID_MASK	0x7
+#define GICC_IAR_INTID_MASK 0x3ff
+#define GICC_IAR_CPUID_MASK 0x7
 
-#define get_gicc_iar_intid(val)	(((val) >> GICC_IAR_INTID_SHIFT) \
-					& GICC_IAR_INTID_MASK)
-#define get_gicc_iar_cpuid(val)	(((val) >> GICC_IAR_CPUID_SHIFT) \
-					& GICC_IAR_CPUID_MASK)
+#define get_gicc_iar_intid(val) \
+	(((val) >> GICC_IAR_INTID_SHIFT) & GICC_IAR_INTID_MASK)
+#define get_gicc_iar_cpuid(val) \
+	(((val) >> GICC_IAR_CPUID_SHIFT) & GICC_IAR_CPUID_MASK)
 
 /*
  * GICC_CTLR is banked to provide Secure and Non-secure copies and the register
  * bit assignments are different in the Secure and Non-secure copies.
  * These are the bit assignments for the Non-secure copy.
  */
-#define GICC_CTLR_ENABLE	(1 << 0)
-#define FIQ_BYP_DIS_GRP1	(1 << 5)
-#define IRQ_BYP_DIS_GRP1	(1 << 6)
-#define EOI_MODE_NS		(1 << 9)
+#define GICC_CTLR_ENABLE (1 << 0)
+#define FIQ_BYP_DIS_GRP1 (1 << 5)
+#define IRQ_BYP_DIS_GRP1 (1 << 6)
+#define EOI_MODE_NS (1 << 9)
 
 #ifndef __ASSEMBLY__
 
@@ -163,7 +163,6 @@ static inline unsigned int gicc_read_iidr(unsigned int base)
 	return mmio_read_32(base + GICC_IIDR);
 }
 
-
 /*******************************************************************************
  * GICv2 CPU interface accessors for writing entire registers
  ******************************************************************************/
@@ -182,7 +181,6 @@ static inline void gicc_write_bpr(unsigned int base, unsigned int val)
 {
 	mmio_write_32(base + GICC_BPR, val);
 }
-
 
 static inline void gicc_write_iar(unsigned int base, unsigned int val)
 {
@@ -284,7 +282,8 @@ unsigned int gicv2_gicd_get_ipriorityr(unsigned int interrupt_id);
 /*
  * Set the priority of the interrupt `interrupt_id` to `priority`.
  */
-void gicv2_gicd_set_ipriorityr(unsigned int interrupt_id, unsigned int priority);
+void gicv2_gicd_set_ipriorityr(unsigned int interrupt_id,
+			       unsigned int priority);
 
 /*
  * Setup the GIC Distributor interface.
@@ -335,7 +334,6 @@ void gicv2_restore_cpuif_context(void);
  * to GIC CPU ID when required.
  */
 void gicv2_probe_gic_cpu_id(void);
-
 
 #endif /*__ASSEMBLY__*/
 #endif /* __GIC_V2_H__ */

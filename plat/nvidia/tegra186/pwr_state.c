@@ -6,18 +6,17 @@
 
 #include <arch.h>
 #include <platform.h>
-#include <stddef.h>
-
 #include <psci.h>
+#include <stddef.h>
 #include <utils_def.h>
 
 /*
  * State IDs for local power states
  */
-#define TEGRA186_RUN_STATE_ID		U(0) /* Valid for CPUs and Clusters */
-#define TEGRA186_CORE_RETN_STATE_ID	U(6) /* Valid for only CPUs */
-#define TEGRA186_CORE_OFF_STATE_ID	U(7) /* Valid for CPUs and Clusters */
-#define TEGRA186_SOC_OFF_STATE_ID	U(2) /* Valid for the System */
+#define TEGRA186_RUN_STATE_ID U(0)	 /* Valid for CPUs and Clusters */
+#define TEGRA186_CORE_RETN_STATE_ID U(6) /* Valid for only CPUs */
+#define TEGRA186_CORE_OFF_STATE_ID U(7)	 /* Valid for CPUs and Clusters */
+#define TEGRA186_SOC_OFF_STATE_ID U(2)	 /* Valid for the System */
 
 /*
  * Suspend depth definitions for each power state
@@ -31,18 +30,18 @@ typedef enum {
 
 /* The state property array with details of idle state possible for the core */
 static const plat_state_prop_t core_state_prop[] = {
-	{TEGRA186_CORE_OFF_DEPTH, TEGRA186_CORE_OFF_STATE_ID, PSTATE_TYPE_POWERDOWN},
-	{0}
-};
+	{TEGRA186_CORE_OFF_DEPTH, TEGRA186_CORE_OFF_STATE_ID,
+	 PSTATE_TYPE_POWERDOWN},
+	{0}};
 
 /*
  * The state property array with details of idle state possible
  * for the cluster
  */
 static const plat_state_prop_t cluster_state_prop[] = {
-	{TEGRA186_CORE_OFF_DEPTH, TEGRA186_CORE_OFF_STATE_ID, PSTATE_TYPE_POWERDOWN},
-	{0}
-};
+	{TEGRA186_CORE_OFF_DEPTH, TEGRA186_CORE_OFF_STATE_ID,
+	 PSTATE_TYPE_POWERDOWN},
+	{0}};
 
 /*
  * The state property array with details of idle state possible
@@ -50,9 +49,9 @@ static const plat_state_prop_t cluster_state_prop[] = {
  * at system power level.
  */
 static const plat_state_prop_t system_state_prop[] = {
-	{TEGRA186_SYSTEM_OFF_DEPTH, TEGRA186_SOC_OFF_STATE_ID, PSTATE_TYPE_POWERDOWN},
-	{0}
-};
+	{TEGRA186_SYSTEM_OFF_DEPTH, TEGRA186_SOC_OFF_STATE_ID,
+	 PSTATE_TYPE_POWERDOWN},
+	{0}};
 
 /*
  * This functions returns the plat_state_prop_t array for all the valid low

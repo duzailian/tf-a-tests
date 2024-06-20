@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-
 #include <arch_helpers.h>
 #include <arm_arch_svc.h>
 #include <psci.h>
@@ -69,26 +68,26 @@ test_result_t test_ras_ffh_nested(void)
 	smc_ret_values smc_ret;
 	u_register_t expected_ver;
 
-        /* Register SDEI handler */
-        ret = sdei_event_register(event_id, serror_sdei_event_handler, 0,
-                        SDEI_REGF_RM_PE, read_mpidr_el1());
-        if (ret < 0) {
-                tftf_testcase_printf("SDEI event register failed: 0x%llx\n",
-                        ret);
-                return TEST_RESULT_FAIL;
-        }
+	/* Register SDEI handler */
+	ret = sdei_event_register(event_id, serror_sdei_event_handler, 0,
+				  SDEI_REGF_RM_PE, read_mpidr_el1());
+	if (ret < 0) {
+		tftf_testcase_printf("SDEI event register failed: 0x%llx\n",
+				     ret);
+		return TEST_RESULT_FAIL;
+	}
 
-        ret = sdei_event_enable(event_id);
-        if (ret < 0) {
-                tftf_testcase_printf("SDEI event enable failed: 0x%llx\n", ret);
-                return TEST_RESULT_FAIL;
-        }
+	ret = sdei_event_enable(event_id);
+	if (ret < 0) {
+		tftf_testcase_printf("SDEI event enable failed: 0x%llx\n", ret);
+		return TEST_RESULT_FAIL;
+	}
 
-        ret = sdei_pe_unmask();
-        if (ret < 0) {
-                tftf_testcase_printf("SDEI pe unmask failed: 0x%llx\n", ret);
-                return TEST_RESULT_FAIL;
-        }
+	ret = sdei_pe_unmask();
+	if (ret < 0) {
+		tftf_testcase_printf("SDEI pe unmask failed: 0x%llx\n", ret);
+		return TEST_RESULT_FAIL;
+	}
 
 	/* Get the version to compare against */
 	memset(&args, 0, sizeof(args));
@@ -99,7 +98,7 @@ test_result_t test_ras_ffh_nested(void)
 
 	disable_serror();
 
-        inject_unrecoverable_ras_error();
+	inject_unrecoverable_ras_error();
 
 	waitms(50);
 
@@ -115,13 +114,15 @@ test_result_t test_ras_ffh_nested(void)
 	smc_ret = tftf_smc(&args);
 
 	tftf_testcase_printf("SMCCC Version = %d.%d\n",
-		(int)((smc_ret.ret0 >> SMCCC_VERSION_MAJOR_SHIFT) & SMCCC_VERSION_MAJOR_MASK),
-		(int)((smc_ret.ret0 >> SMCCC_VERSION_MINOR_SHIFT) & SMCCC_VERSION_MINOR_MASK));
+			     (int)((smc_ret.ret0 >> SMCCC_VERSION_MAJOR_SHIFT) &
+				   SMCCC_VERSION_MAJOR_MASK),
+			     (int)((smc_ret.ret0 >> SMCCC_VERSION_MINOR_SHIFT) &
+				   SMCCC_VERSION_MINOR_MASK));
 
 	if ((int32_t)smc_ret.ret0 != expected_ver) {
 		printf("Unexpected SMCCC version: 0x%x\n", (int)smc_ret.ret0);
 		return TEST_RESULT_FAIL;
-        }
+	}
 
 	if (sdei_event_received == false) {
 		tftf_testcase_printf("SError is not triggered\n");

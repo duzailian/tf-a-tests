@@ -27,40 +27,40 @@
 
 #if IMAGE_TFTF
 
-#define IMAGE_TEXT_BASE		TFTF_BASE
-IMPORT_SYM(uintptr_t,		__TEXT_END__,		IMAGE_TEXT_END);
+#define IMAGE_TEXT_BASE TFTF_BASE
+IMPORT_SYM(uintptr_t, __TEXT_END__, IMAGE_TEXT_END);
 
-#define IMAGE_RODATA_BASE	IMAGE_TEXT_END
-IMPORT_SYM(uintptr_t,		__RODATA_END__,		IMAGE_RODATA_END);
+#define IMAGE_RODATA_BASE IMAGE_TEXT_END
+IMPORT_SYM(uintptr_t, __RODATA_END__, IMAGE_RODATA_END);
 
-#define IMAGE_RW_BASE		IMAGE_RODATA_END
-IMPORT_SYM(uintptr_t,		__TFTF_END__,		IMAGE_RW_END);
+#define IMAGE_RW_BASE IMAGE_RODATA_END
+IMPORT_SYM(uintptr_t, __TFTF_END__, IMAGE_RW_END);
 
-IMPORT_SYM(uintptr_t,		__COHERENT_RAM_START__,	COHERENT_RAM_START);
-IMPORT_SYM(uintptr_t,		__COHERENT_RAM_END__,	COHERENT_RAM_END);
+IMPORT_SYM(uintptr_t, __COHERENT_RAM_START__, COHERENT_RAM_START);
+IMPORT_SYM(uintptr_t, __COHERENT_RAM_END__, COHERENT_RAM_END);
 
 #elif IMAGE_NS_BL1U
 
-#define IMAGE_TEXT_BASE		NS_BL1U_BASE
-IMPORT_SYM(uintptr_t,		__TEXT_END__,		IMAGE_TEXT_END);
+#define IMAGE_TEXT_BASE NS_BL1U_BASE
+IMPORT_SYM(uintptr_t, __TEXT_END__, IMAGE_TEXT_END);
 
-#define IMAGE_RODATA_BASE	IMAGE_TEXT_END
-IMPORT_SYM(uintptr_t,		__RODATA_END__,		IMAGE_RODATA_END);
+#define IMAGE_RODATA_BASE IMAGE_TEXT_END
+IMPORT_SYM(uintptr_t, __RODATA_END__, IMAGE_RODATA_END);
 
-#define IMAGE_RW_BASE		NS_BL1U_RW_BASE
-IMPORT_SYM(uintptr_t,		__NS_BL1U_RAM_END__,	IMAGE_RW_END);
+#define IMAGE_RW_BASE NS_BL1U_RW_BASE
+IMPORT_SYM(uintptr_t, __NS_BL1U_RAM_END__, IMAGE_RW_END);
 
 #elif IMAGE_NS_BL2U
 
-#define IMAGE_TEXT_BASE		NS_BL2U_BASE
-IMPORT_SYM(uintptr_t,		__TEXT_END__,		IMAGE_TEXT_END);
+#define IMAGE_TEXT_BASE NS_BL2U_BASE
+IMPORT_SYM(uintptr_t, __TEXT_END__, IMAGE_TEXT_END);
 
-#define IMAGE_RODATA_BASE	IMAGE_TEXT_END
-IMPORT_SYM(uintptr_t,		__RODATA_END__,		IMAGE_RODATA_END);
+#define IMAGE_RODATA_BASE IMAGE_TEXT_END
+IMPORT_SYM(uintptr_t, __RODATA_END__, IMAGE_RODATA_END);
 
-#define IMAGE_RW_BASE		IMAGE_RODATA_END
-IMPORT_SYM(uintptr_t,		__NS_BL2U_END__,	IMAGE_RW_END_UNALIGNED);
-#define IMAGE_RW_END		round_up(IMAGE_RW_END_UNALIGNED, PAGE_SIZE)
+#define IMAGE_RW_BASE IMAGE_RODATA_END
+IMPORT_SYM(uintptr_t, __NS_BL2U_END__, IMAGE_RW_END_UNALIGNED);
+#define IMAGE_RW_END round_up(IMAGE_RW_END_UNALIGNED, PAGE_SIZE)
 
 #endif
 
@@ -92,7 +92,8 @@ void tftf_plat_configure_mmu(void)
 
 	/* RO data */
 	mmap_add_region(IMAGE_RODATA_BASE, IMAGE_RODATA_BASE,
-			IMAGE_RODATA_END - IMAGE_RODATA_BASE, MT_RO_DATA | MT_NS);
+			IMAGE_RODATA_END - IMAGE_RODATA_BASE,
+			MT_RO_DATA | MT_NS);
 
 	/* Data + BSS */
 	mmap_add_region(IMAGE_RW_BASE, IMAGE_RW_BASE,
@@ -136,8 +137,8 @@ void tftf_plat_reset(void)
 	sp805_wdog_start(1);
 
 	/*
-	 * Reset might take some execution cycles, Depending on the ratio between
-	 * CPU clock frequency and Watchdog clock frequency
+	 * Reset might take some execution cycles, Depending on the ratio
+	 * between CPU clock frequency and Watchdog clock frequency
 	 */
 	while (1)
 		;

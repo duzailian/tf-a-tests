@@ -29,30 +29,27 @@ static uintptr_t cactus_tests_size;
  * by the SP_MEMORY_ATTRIBUTES_SET_AARCH64 SMC.
  */
 static inline uint32_t mem_access_perm(int instr_access_perm,
-				int data_access_perm)
+				       int data_access_perm)
 {
 	return instr_access_perm |
-		((data_access_perm & SP_MEMORY_ATTRIBUTES_ACCESS_MASK)
-			<< SP_MEMORY_ATTRIBUTES_ACCESS_SHIFT);
+	       ((data_access_perm & SP_MEMORY_ATTRIBUTES_ACCESS_MASK)
+		<< SP_MEMORY_ATTRIBUTES_ACCESS_SHIFT);
 }
 
 /*
  * Send an SP_MEMORY_ATTRIBUTES_SET_AARCH64 SVC with the given arguments.
  * Return the return value of the SVC.
  */
-static int32_t request_mem_attr_changes(uintptr_t base_address,
-					int pages_count,
+static int32_t request_mem_attr_changes(uintptr_t base_address, int pages_count,
 					uint32_t memory_access_controls)
 {
 	INFO("Requesting memory attributes change\n");
-	INFO("  Start address  : %p\n", (void *) base_address);
+	INFO("  Start address  : %p\n", (void *)base_address);
 	INFO("  Number of pages: %i\n", pages_count);
 	INFO("  Attributes     : 0x%x\n", memory_access_controls);
 
-	svc_args svc_values = { SP_MEMORY_ATTRIBUTES_SET_AARCH64,
-				base_address,
-				pages_count,
-				memory_access_controls };
+	svc_args svc_values = {SP_MEMORY_ATTRIBUTES_SET_AARCH64, base_address,
+			       pages_count, memory_access_controls};
 	return sp_svc(&svc_values);
 }
 
@@ -63,10 +60,9 @@ static int32_t request_mem_attr_changes(uintptr_t base_address,
 static int32_t request_get_mem_attr(uintptr_t base_address)
 {
 	INFO("Requesting memory attributes\n");
-	INFO("  Base address  : %p\n", (void *) base_address);
+	INFO("  Base address  : %p\n", (void *)base_address);
 
-	svc_args svc_values = { SP_MEMORY_ATTRIBUTES_GET_AARCH64,
-				base_address };
+	svc_args svc_values = {SP_MEMORY_ATTRIBUTES_GET_AARCH64, base_address};
 	return sp_svc(&svc_values);
 }
 
@@ -100,9 +96,11 @@ static void mem_attr_changes_unittest(uintptr_t addr, int pages_count)
 	assert(addr >= cactus_tests_start);
 	assert(end_addr < (cactus_tests_start + cactus_tests_size));
 
-	old_attr = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC, SP_MEMORY_ATTRIBUTES_ACCESS_RO);
+	old_attr = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC,
+				   SP_MEMORY_ATTRIBUTES_ACCESS_RO);
 	/* Memory was read-only, let's try changing that to RW */
-	new_attr = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC, SP_MEMORY_ATTRIBUTES_ACCESS_RW);
+	new_attr = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC,
+				   SP_MEMORY_ATTRIBUTES_ACCESS_RW);
 
 	ret = request_mem_attr_changes(addr, pages_count, new_attr);
 	expect(ret, SPM_SUCCESS);
@@ -113,9 +111,8 @@ static void mem_attr_changes_unittest(uintptr_t addr, int pages_count)
 	expect(ret, new_attr);
 
 	/* If it worked, we should be able to write to this memory now! */
-	for (unsigned char *data = (unsigned char *) addr;
-	     (uintptr_t) data != end_addr;
-	     ++data) {
+	for (unsigned char *data = (unsigned char *)addr;
+	     (uintptr_t)data != end_addr; ++data) {
 		*data = 42;
 	}
 	printf("Successfully wrote to the memory\n");
@@ -143,8 +140,8 @@ void mem_attr_changes_tests(const secure_partition_boot_info_t *boot_info)
 	uintptr_t addr;
 
 	cactus_tests_start = CACTUS_BSS_END;
-	cactus_tests_end   = boot_info->sp_image_base + boot_info->sp_image_size;
-	cactus_tests_size  = cactus_tests_end - cactus_tests_start;
+	cactus_tests_end = boot_info->sp_image_base + boot_info->sp_image_size;
+	cactus_tests_size = cactus_tests_end - cactus_tests_start;
 
 	const char *test_sect_desc = "memory attributes changes";
 
@@ -155,7 +152,8 @@ void mem_attr_changes_tests(const secure_partition_boot_info_t *boot_info)
 	const char *test_desc1 = "Read-write, executable";
 
 	announce_test_start(test_desc1);
-	attributes = mem_access_perm(SP_MEMORY_ATTRIBUTES_EXEC, SP_MEMORY_ATTRIBUTES_ACCESS_RW);
+	attributes = mem_access_perm(SP_MEMORY_ATTRIBUTES_EXEC,
+				     SP_MEMORY_ATTRIBUTES_ACCESS_RW);
 	ret = request_mem_attr_changes(CACTUS_RWDATA_START, 1, attributes);
 	expect(ret, SPM_INVALID_PARAMETER);
 	announce_test_end(test_desc1);
@@ -163,7 +161,8 @@ void mem_attr_changes_tests(const secure_partition_boot_info_t *boot_info)
 	const char *test_desc2 = "Size == 0";
 
 	announce_test_start(test_desc2);
-	attributes = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC, SP_MEMORY_ATTRIBUTES_ACCESS_RW);
+	attributes = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC,
+				     SP_MEMORY_ATTRIBUTES_ACCESS_RW);
 	ret = request_mem_attr_changes(CACTUS_RWDATA_START, 0, attributes);
 	expect(ret, SPM_INVALID_PARAMETER);
 	announce_test_end(test_desc2);
@@ -171,7 +170,8 @@ void mem_attr_changes_tests(const secure_partition_boot_info_t *boot_info)
 	const char *test_desc3 = "Unaligned address";
 
 	announce_test_start(test_desc3);
-	attributes = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC, SP_MEMORY_ATTRIBUTES_ACCESS_RW);
+	attributes = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC,
+				     SP_MEMORY_ATTRIBUTES_ACCESS_RW);
 	/* Choose an address not aligned to a page boundary. */
 	addr = cactus_tests_start + 5;
 	ret = request_mem_attr_changes(addr, 1, attributes);
@@ -182,7 +182,8 @@ void mem_attr_changes_tests(const secure_partition_boot_info_t *boot_info)
 
 	announce_test_start(test_desc4);
 	addr = boot_info->sp_mem_limit + 2 * PAGE_SIZE;
-	attributes = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC, SP_MEMORY_ATTRIBUTES_ACCESS_RW);
+	attributes = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC,
+				     SP_MEMORY_ATTRIBUTES_ACCESS_RW);
 	ret = request_mem_attr_changes(addr, 3, attributes);
 	expect(ret, SPM_INVALID_PARAMETER);
 	announce_test_end(test_desc4);
@@ -191,12 +192,14 @@ void mem_attr_changes_tests(const secure_partition_boot_info_t *boot_info)
 
 	announce_test_start(test_desc5);
 	addr = boot_info->sp_mem_base - 2 * PAGE_SIZE;
-	attributes = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC, SP_MEMORY_ATTRIBUTES_ACCESS_RW);
+	attributes = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC,
+				     SP_MEMORY_ATTRIBUTES_ACCESS_RW);
 	ret = request_mem_attr_changes(addr, 6, attributes);
 	expect(ret, SPM_INVALID_PARAMETER);
 	announce_test_end(test_desc5);
 
-	const char *test_desc6 = "Memory region mapped with the wrong granularity";
+	const char *test_desc6 =
+		"Memory region mapped with the wrong granularity";
 
 	announce_test_start(test_desc6);
 	/*
@@ -205,8 +208,10 @@ void mem_attr_changes_tests(const secure_partition_boot_info_t *boot_info)
 	 * the attributes of the block actually changed, the console would work
 	 * and we would get the error message.
 	 */
-	addr = ((uintptr_t)PLAT_ARM_UART_BASE + 0x200000ULL) & ~(0x200000ULL - 1ULL);
-	attributes = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC, SP_MEMORY_ATTRIBUTES_ACCESS_RW);
+	addr = ((uintptr_t)PLAT_ARM_UART_BASE + 0x200000ULL) &
+	       ~(0x200000ULL - 1ULL);
+	attributes = mem_access_perm(SP_MEMORY_ATTRIBUTES_NON_EXEC,
+				     SP_MEMORY_ATTRIBUTES_ACCESS_RW);
 	ret = request_mem_attr_changes(addr, 1, attributes);
 	expect(ret, SPM_INVALID_PARAMETER);
 	announce_test_end(test_desc6);
@@ -222,9 +227,8 @@ void mem_attr_changes_tests(const secure_partition_boot_info_t *boot_info)
 		const int pages_max = cactus_tests_size / PAGE_SIZE;
 		int pages_count = bound_rand(1, pages_max);
 
-		addr = bound_rand(
-			cactus_tests_start,
-			cactus_tests_end - (pages_count * PAGE_SIZE));
+		addr = bound_rand(cactus_tests_start,
+				  cactus_tests_end - (pages_count * PAGE_SIZE));
 		/* Align to PAGE_SIZE. */
 		addr &= ~(PAGE_SIZE - 1);
 

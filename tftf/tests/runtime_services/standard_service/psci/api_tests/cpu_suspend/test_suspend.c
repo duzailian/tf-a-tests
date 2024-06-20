@@ -44,7 +44,7 @@ static int requested_irq_handler(void *data)
 {
 	unsigned int core_pos = platform_get_core_pos(read_mpidr_el1());
 #if ENABLE_ASSERTIONS
-	unsigned int irq_id = *(unsigned int *) data;
+	unsigned int irq_id = *(unsigned int *)data;
 #endif
 
 	assert(irq_id == IRQ_WAKE_SGI || irq_id == tftf_get_timer_irq());
@@ -126,9 +126,8 @@ static test_result_t suspend_non_lead_cpu(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	expected_return_val = tftf_psci_make_composite_state_id(aff_level,
-								suspend_type,
-								&stateid);
+	expected_return_val = tftf_psci_make_composite_state_id(
+		aff_level, suspend_type, &stateid);
 
 	/*
 	 * Suspend the calling CPU to the desired affinity level and power state
@@ -151,7 +150,7 @@ static test_result_t suspend_non_lead_cpu(void)
 		return TEST_RESULT_SUCCESS;
 
 	tftf_testcase_printf("Wrong value: expected %i, got %i\n",
-					expected_return_val, rc);
+			     expected_return_val, rc);
 	return TEST_RESULT_FAIL;
 }
 
@@ -184,8 +183,7 @@ static test_result_t test_psci_suspend(void)
 		if (target_mpid == lead_mpid)
 			continue;
 
-		rc = tftf_cpu_on(target_mpid,
-				 (uintptr_t) suspend_non_lead_cpu,
+		rc = tftf_cpu_on(target_mpid, (uintptr_t)suspend_non_lead_cpu,
 				 0);
 		if (rc != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
@@ -239,9 +237,8 @@ static test_result_t test_psci_suspend(void)
 	core_pos = platform_get_core_pos(lead_mpid);
 	aff_level = test_aff_level[core_pos];
 	suspend_type = test_suspend_type[core_pos];
-	expected_return_val = tftf_psci_make_composite_state_id(aff_level,
-								suspend_type,
-								&stateid);
+	expected_return_val = tftf_psci_make_composite_state_id(
+		aff_level, suspend_type, &stateid);
 
 	/*
 	 * Suspend the calling CPU to the desired affinity level and power state
@@ -294,7 +291,7 @@ static test_result_t test_psci_suspend(void)
 		return TEST_RESULT_SUCCESS;
 
 	tftf_testcase_printf("Wrong value: expected %i, got %i\n",
-					expected_return_val, rc);
+			     expected_return_val, rc);
 	return TEST_RESULT_FAIL;
 }
 
@@ -522,9 +519,8 @@ static test_result_t test_psci_suspend_level2_osi(unsigned int suspend_type)
 			if (lvl_1_pd_node.parent_node != lvl_2_node)
 				continue;
 
-			lvl_1_end_node =
-				lvl_1_pd_node.cpu_start_node +
-				lvl_1_pd_node.ncpus - 1;
+			lvl_1_end_node = lvl_1_pd_node.cpu_start_node +
+					 lvl_1_pd_node.ncpus - 1;
 
 			for_each_cpu_in_power_domain(target_node, lvl_1_node) {
 				target_mpid =
@@ -538,18 +534,17 @@ static test_result_t test_psci_suspend_level2_osi(unsigned int suspend_type)
 				    target_node == lvl_2_end_node &&
 				    lvl_2_node != lead_lvl_2_node) {
 					test_aff_level[core_pos] =
-							PSTATE_AFF_LVL_2;
+						PSTATE_AFF_LVL_2;
 				} else if (target_node == lvl_1_end_node &&
 					   lvl_1_node != lead_lvl_1_node) {
 					test_aff_level[core_pos] =
-							PSTATE_AFF_LVL_1;
+						PSTATE_AFF_LVL_1;
 				} else {
 					test_aff_level[core_pos] =
-							PSTATE_AFF_LVL_0;
+						PSTATE_AFF_LVL_0;
 				}
 			}
 		}
-
 	}
 
 	rc = test_psci_suspend();
@@ -617,49 +612,50 @@ static test_result_t test_psci_suspend_level3_osi(unsigned int suspend_type)
 			if (lvl_2_pd_node.parent_node != lvl_3_node)
 				continue;
 
-			lvl_2_end_node =
-				lvl_2_pd_node.cpu_start_node + lvl_2_pd_node.ncpus - 1;
+			lvl_2_end_node = lvl_2_pd_node.cpu_start_node +
+					 lvl_2_pd_node.ncpus - 1;
 
 			for_each_power_domain_idx(lvl_1_node, PSTATE_AFF_LVL_1) {
 				lvl_1_pd_node = tftf_pd_nodes[lvl_1_node];
 				if (lvl_1_pd_node.parent_node != lvl_2_node)
 					continue;
 
-				lvl_1_end_node =
-					lvl_1_pd_node.cpu_start_node +
-					lvl_1_pd_node.ncpus - 1;
+				lvl_1_end_node = lvl_1_pd_node.cpu_start_node +
+						 lvl_1_pd_node.ncpus - 1;
 
 				for_each_cpu_in_power_domain(target_node, lvl_1_node) {
-					target_mpid =
-						tftf_get_mpidr_from_node(target_node);
+					target_mpid = tftf_get_mpidr_from_node(
+						target_node);
 					/* Skip lead CPU as it is already on */
 					if (target_mpid == lead_mpid)
 						continue;
 
-					core_pos = platform_get_core_pos(target_mpid);
+					core_pos = platform_get_core_pos(
+						target_mpid);
 					if (target_node == lvl_1_end_node &&
 					    target_node == lvl_2_end_node &&
 					    target_node == lvl_3_end_node &&
 					    lvl_3_node != lead_lvl_3_node) {
 						test_aff_level[core_pos] =
-								PSTATE_AFF_LVL_3;
+							PSTATE_AFF_LVL_3;
 					}
 					if (target_node == lvl_1_end_node &&
 					    target_node == lvl_2_end_node &&
 					    lvl_2_node != lead_lvl_2_node) {
 						test_aff_level[core_pos] =
-								PSTATE_AFF_LVL_2;
-					} else if (target_node == lvl_1_end_node &&
-						   lvl_1_node != lead_lvl_1_node) {
+							PSTATE_AFF_LVL_2;
+					} else if (target_node ==
+							   lvl_1_end_node &&
+						   lvl_1_node !=
+							   lead_lvl_1_node) {
 						test_aff_level[core_pos] =
-								PSTATE_AFF_LVL_1;
+							PSTATE_AFF_LVL_1;
 					} else {
 						test_aff_level[core_pos] =
-								PSTATE_AFF_LVL_0;
+							PSTATE_AFF_LVL_0;
 					}
 				}
 			}
-
 		}
 	}
 

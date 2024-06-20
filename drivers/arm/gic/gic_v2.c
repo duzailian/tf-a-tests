@@ -70,28 +70,28 @@ unsigned int gicd_read_spendsgir(unsigned int base, unsigned int interrupt_id)
 /*******************************************************************************
  * GIC Distributor interface accessors for writing entire registers
  ******************************************************************************/
-void gicd_write_itargetsr(unsigned int base,
-				unsigned int interrupt_id, unsigned int val)
+void gicd_write_itargetsr(unsigned int base, unsigned int interrupt_id,
+			  unsigned int val)
 {
 	unsigned n = interrupt_id >> ITARGETSR_SHIFT;
 	mmio_write_32(base + GICD_ITARGETSR + (n << 2), val);
 }
 
-void gicd_write_itargetsr_byte(unsigned int base,
-				unsigned int interrupt_id, unsigned int val)
+void gicd_write_itargetsr_byte(unsigned int base, unsigned int interrupt_id,
+			       unsigned int val)
 {
 	mmio_write_8(base + GICD_ITARGETSR + interrupt_id, val);
 }
 
-void gicd_write_cpendsgir(unsigned int base,
-				unsigned int interrupt_id, unsigned int val)
+void gicd_write_cpendsgir(unsigned int base, unsigned int interrupt_id,
+			  unsigned int val)
 {
 	unsigned n = interrupt_id >> CPENDSGIR_SHIFT;
 	mmio_write_32(base + GICD_CPENDSGIR + (n << 2), val);
 }
 
-void gicd_write_spendsgir(unsigned int base,
-				unsigned int interrupt_id, unsigned int val)
+void gicd_write_spendsgir(unsigned int base, unsigned int interrupt_id,
+			  unsigned int val)
 {
 	unsigned n = interrupt_id >> SPENDSGIR_SHIFT;
 	mmio_write_32(base + GICD_SPENDSGIR + (n << 2), val);
@@ -100,8 +100,8 @@ void gicd_write_spendsgir(unsigned int base,
 /*******************************************************************************
  * GIC Distributor interface accessors for individual interrupt manipulation
  ******************************************************************************/
-void gicd_set_itargetsr(unsigned int base,
-			unsigned int interrupt_id, unsigned int iface)
+void gicd_set_itargetsr(unsigned int base, unsigned int interrupt_id,
+			unsigned int iface)
 {
 	mmio_write_8(base + GICD_ITARGETSR + interrupt_id, (1 << iface));
 }
@@ -117,8 +117,7 @@ void gicv2_enable_cpuif(void)
 	assert(gicc_base_addr);
 
 	/* Enable the GICC and disable bypass */
-	gicc_ctlr = GICC_CTLR_ENABLE | FIQ_BYP_DIS_GRP1
-					 | IRQ_BYP_DIS_GRP1;
+	gicc_ctlr = GICC_CTLR_ENABLE | FIQ_BYP_DIS_GRP1 | IRQ_BYP_DIS_GRP1;
 	gicc_write_ctlr(gicc_base_addr, gicc_ctlr);
 }
 
@@ -140,7 +139,8 @@ void gicv2_setup_cpuif(void)
 {
 	assert(gicc_base_addr);
 
-	/* Set the priority mask register to allow all interrupts to trickle in */
+	/* Set the priority mask register to allow all interrupts to trickle in
+	 */
 	gicc_write_pmr(gicc_base_addr, GIC_PRI_MASK);
 	gicv2_enable_cpuif();
 }
@@ -163,8 +163,7 @@ void gicv2_save_cpuif_context(void)
 	unsigned int core_pos = platform_get_core_pos(read_mpidr_el1());
 
 	assert(gicc_base_addr);
-	pcpu_gic_ctx[core_pos].gicc_ctlr =
-				gicc_read_ctlr(gicc_base_addr);
+	pcpu_gic_ctx[core_pos].gicc_ctlr = gicc_read_ctlr(gicc_base_addr);
 }
 
 void gicv2_restore_cpuif_context(void)
@@ -176,8 +175,7 @@ void gicv2_restore_cpuif_context(void)
 	/* The GICC_PMR is never modified, hence we initialize this register */
 	gicc_write_pmr(gicc_base_addr, GIC_PRI_MASK);
 
-	gicc_write_ctlr(gicc_base_addr,
-			pcpu_gic_ctx[core_pos].gicc_ctlr);
+	gicc_write_ctlr(gicc_base_addr, pcpu_gic_ctx[core_pos].gicc_ctlr);
 }
 
 void gicv2_setup_distif(void)
@@ -200,15 +198,16 @@ void gicv2_save_sgi_ppi_context(void)
 
 	assert(gicd_base_addr);
 	pcpu_gic_ctx[core_pos].gicd_isenabler0 =
-				gicd_read_isenabler(gicd_base_addr, 0);
+		gicd_read_isenabler(gicd_base_addr, 0);
 
 	/* Read the ipriority registers, 4 at a time */
 	for (i = 0; i < (NUM_PCPU_INTR >> IPRIORITYR_SHIFT); i++)
 		pcpu_gic_ctx[core_pos].gicd_ipriorityr[i] =
-			gicd_read_ipriorityr(gicd_base_addr, i << IPRIORITYR_SHIFT);
+			gicd_read_ipriorityr(gicd_base_addr,
+					     i << IPRIORITYR_SHIFT);
 
 	pcpu_gic_ctx[core_pos].gicd_icfgr =
-			gicd_read_icfgr(gicd_base_addr, MIN_PPI_ID);
+		gicd_read_icfgr(gicd_base_addr, MIN_PPI_ID);
 }
 
 /* Restore the per-cpu GICD ISENABLER, IPRIORITYR and ICFGR registers */
@@ -221,14 +220,15 @@ void gicv2_restore_sgi_ppi_context(void)
 
 	/* Write the ipriority registers, 4 at a time */
 	for (i = 0; i < (NUM_PCPU_INTR >> IPRIORITYR_SHIFT); i++)
-		gicd_write_ipriorityr(gicd_base_addr, i << IPRIORITYR_SHIFT,
+		gicd_write_ipriorityr(
+			gicd_base_addr, i << IPRIORITYR_SHIFT,
 			pcpu_gic_ctx[core_pos].gicd_ipriorityr[i]);
 
 	gicd_write_icfgr(gicd_base_addr, MIN_PPI_ID,
-			pcpu_gic_ctx[core_pos].gicd_icfgr);
+			 pcpu_gic_ctx[core_pos].gicd_icfgr);
 
 	gicd_write_isenabler(gicd_base_addr, 0,
-			pcpu_gic_ctx[core_pos].gicd_isenabler0);
+			     pcpu_gic_ctx[core_pos].gicd_isenabler0);
 }
 
 unsigned int gicv2_gicd_get_ipriorityr(unsigned int interrupt_id)
@@ -239,8 +239,7 @@ unsigned int gicv2_gicd_get_ipriorityr(unsigned int interrupt_id)
 	return gicd_get_ipriorityr(gicd_base_addr, interrupt_id);
 }
 
-void gicv2_gicd_set_ipriorityr(unsigned int interrupt_id,
-				unsigned int priority)
+void gicv2_gicd_set_ipriorityr(unsigned int interrupt_id, unsigned int priority)
 {
 	assert(gicd_base_addr);
 	assert(IS_VALID_INTR_ID(interrupt_id));
@@ -256,7 +255,8 @@ void gicv2_send_sgi(unsigned int sgi_id, unsigned int core_pos)
 	assert(IS_SGI(sgi_id));
 
 	sgir_val = sgi_id << GICD_SGIR_INTID_SHIFT;
-	sgir_val |= (1 << core_pos_to_gic_id(core_pos)) << GICD_SGIR_CPUTL_SHIFT;
+	sgir_val |= (1 << core_pos_to_gic_id(core_pos))
+		    << GICD_SGIR_CPUTL_SHIFT;
 
 	gicd_write_sgir(gicd_base_addr, sgir_val);
 }
@@ -352,8 +352,7 @@ void gicv2_gicc_write_eoir(unsigned int val)
 	gicc_write_eoir(gicc_base_addr, val);
 }
 
-void gicv2_init(uintptr_t gicc_base,
-		uintptr_t gicd_base)
+void gicv2_init(uintptr_t gicc_base, uintptr_t gicd_base)
 {
 	assert(gicc_base);
 	assert(gicd_base);

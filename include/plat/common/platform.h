@@ -7,21 +7,21 @@
 #ifndef __PLATFORM_H__
 #define __PLATFORM_H__
 
-#include <stdint.h>
 #include <arch_helpers.h>
+#include <stdint.h>
 #include <timer.h>
 #include <xlat_tables_v2.h>
 
-#define PLAT_PSCI_DUMMY_STATE_ID		0xF
+#define PLAT_PSCI_DUMMY_STATE_ID 0xF
 
-#define PWR_STATE_INIT_INDEX			(-1)
+#define PWR_STATE_INIT_INDEX (-1)
 
-#define INIT_PWR_LEVEL_INDEX(array_name)					\
-	do {									\
-		unsigned int var;						\
-		assert(ARRAY_SIZE(array_name) == (PLAT_MAX_PWR_LEVEL + 1));	\
-		for (var = 0; var <= PLAT_MAX_PWR_LEVEL; var++)			\
-			array_name[var] = PWR_STATE_INIT_INDEX;			\
+#define INIT_PWR_LEVEL_INDEX(array_name)                                    \
+	do {                                                                \
+		unsigned int var;                                           \
+		assert(ARRAY_SIZE(array_name) == (PLAT_MAX_PWR_LEVEL + 1)); \
+		for (var = 0; var <= PLAT_MAX_PWR_LEVEL; var++)             \
+			array_name[var] = PWR_STATE_INIT_INDEX;             \
 	} while (0)
 
 /*
@@ -114,20 +114,20 @@ void tftf_init_pstate_framework(void);
  * pwr_lvel_state_indexes for power_level 0 is PWR_STATE_INIT_INDEX
  */
 void tftf_set_next_state_id_idx(unsigned int power_level,
-					unsigned int pstate_id_idx[]);
+				unsigned int pstate_id_idx[]);
 
 /*
  * This function sets the index for the next state ID of the given power level
  */
 void tftf_set_next_local_state_id_idx(unsigned int power_level,
-					unsigned int pstate_id_idx[]);
+				      unsigned int pstate_id_idx[]);
 
 /*
  * This function sets the index corresponding to the deepest power state at
  * a given power level.
  */
 void tftf_set_deepest_pstate_idx(unsigned int power_level,
-				unsigned int pstate_id_idx[]);
+				 unsigned int pstate_id_idx[]);
 
 /*
  * Helper function to get the state ID, state type, power level in power_state
@@ -140,9 +140,9 @@ void tftf_set_deepest_pstate_idx(unsigned int power_level,
  * It returns the expected PSCI return value of a suspend request
  */
 int tftf_get_pstate_vars(unsigned int *test_power_level,
-				unsigned int *test_suspend_type,
-				unsigned int *suspend_state_id,
-				unsigned int pstate_id_idx[]);
+			 unsigned int *test_suspend_type,
+			 unsigned int *suspend_state_id,
+			 unsigned int pstate_id_idx[]);
 
 /*
  * This function gets the platform specific timer driver information and
@@ -179,9 +179,8 @@ const mmap_region_t *tftf_platform_get_mmap(void);
  * Return an IO device handle and specification which can be used
  * to access an image. Use this to enforce platform load policy.
  */
-int plat_get_image_source(unsigned int image_id,
-		uintptr_t *dev_handle,
-		uintptr_t *image_spec);
+int plat_get_image_source(unsigned int image_id, uintptr_t *dev_handle,
+			  uintptr_t *image_spec);
 
 void plat_fwu_io_setup(void);
 

@@ -4,24 +4,22 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdlib.h>
-
-#include <assert.h>
 #include <arch_features.h>
+#include <assert.h>
 #include <debug.h>
-#include <irq.h>
 #include <drivers/arm/arm_gic.h>
 #include <drivers/arm/gic_v3.h>
 #include <heap/page_alloc.h>
-#include <pauth.h>
-#include <test_helpers.h>
-
 #include <host_realm_helper.h>
 #include <host_realm_mem_layout.h>
 #include <host_realm_pmu.h>
 #include <host_shared_data.h>
+#include <irq.h>
+#include <pauth.h>
+#include <stdlib.h>
+#include <test_helpers.h>
 
-#define SLEEP_TIME_MS	20U
+#define SLEEP_TIME_MS 20U
 
 extern const char *rmi_exit[];
 
@@ -31,7 +29,7 @@ static uint128_t pauth_keys_after[NUM_KEYS];
 #endif
 
 /*
- * @Test_Aim@ Test realm payload creation, execution and destruction  iteratively
+ * @Test_Aim@ Test realm payload creation, execution and destruction iteratively
  */
 test_result_t host_test_realm_create_enter(void)
 {
@@ -49,24 +47,27 @@ test_result_t host_test_realm_create_enter(void)
 	}
 
 	for (unsigned int i = 0U; i < 5U; i++) {
-		if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-				(u_register_t)PAGE_POOL_BASE,
-				(u_register_t)PAGE_POOL_MAX_SIZE,
-				feature_flag, sl, rec_flag, 1U)) {
+		if (!host_create_activate_realm_payload(
+			    &realm, (u_register_t)REALM_IMAGE_BASE,
+			    (u_register_t)PAGE_POOL_BASE,
+			    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+			    rec_flag, 1U)) {
 			return TEST_RESULT_FAIL;
 		}
 		if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-				NS_REALM_SHARED_MEM_SIZE)) {
+					    NS_REALM_SHARED_MEM_SIZE)) {
 			return TEST_RESULT_FAIL;
 		}
 
-		host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, SLEEP_TIME_MS);
-		ret1 = host_enter_realm_execute(&realm, REALM_SLEEP_CMD, RMI_EXIT_HOST_CALL, 0U);
+		host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX,
+					      SLEEP_TIME_MS);
+		ret1 = host_enter_realm_execute(&realm, REALM_SLEEP_CMD,
+						RMI_EXIT_HOST_CALL, 0U);
 		ret2 = host_destroy_realm(&realm);
 
 		if (!ret1 || !ret2) {
-			ERROR("%s(): enter=%d destroy=%d\n",
-			__func__, ret1, ret2);
+			ERROR("%s(): enter=%d destroy=%d\n", __func__, ret1,
+			      ret2);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -92,23 +93,24 @@ test_result_t host_test_realm_rsi_version(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 1U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
-	ret1 = host_enter_realm_execute(&realm, REALM_GET_RSI_VERSION, RMI_EXIT_HOST_CALL, 0U);
+	ret1 = host_enter_realm_execute(&realm, REALM_GET_RSI_VERSION,
+					RMI_EXIT_HOST_CALL, 0U);
 	ret2 = host_destroy_realm(&realm);
 
 	if (!ret1 || !ret2) {
-		ERROR("%s(): enter=%d destroy=%d\n",
-		__func__, ret1, ret2);
+		ERROR("%s(): enter=%d destroy=%d\n", __func__, ret1, ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -125,8 +127,10 @@ test_result_t host_realm_enable_pauth(void)
 	return TEST_RESULT_SKIPPED;
 #else
 	bool ret1, ret2;
-	u_register_t rec_flag[MAX_REC_COUNT] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
-		RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,};
+	u_register_t rec_flag[MAX_REC_COUNT] = {
+		RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
+		RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
+	};
 	struct realm realm;
 	u_register_t feature_flag = 0U;
 	long sl = RTT_MIN_LEVEL;
@@ -139,21 +143,22 @@ test_result_t host_realm_enable_pauth(void)
 	}
 
 	pauth_test_lib_fill_regs_and_template(pauth_keys_before);
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-				(u_register_t)PAGE_POOL_BASE,
-				(u_register_t)PAGE_POOL_MAX_SIZE,
-				feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, MAX_REC_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-				NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	for (unsigned int i = 0U; i < MAX_REC_COUNT; i++) {
 		ret1 = host_enter_realm_execute(&realm, REALM_PAUTH_SET_CMD,
-				RMI_EXIT_HOST_CALL, i);
+						RMI_EXIT_HOST_CALL, i);
 
 		if (!ret1) {
 			ERROR("Pauth set cmd failed\n");
@@ -161,7 +166,7 @@ test_result_t host_realm_enable_pauth(void)
 		}
 		/* Re-enter Realm to compare PAuth registers. */
 		ret1 = host_enter_realm_execute(&realm, REALM_PAUTH_CHECK_CMD,
-			RMI_EXIT_HOST_CALL, i);
+						RMI_EXIT_HOST_CALL, i);
 		if (!ret1) {
 			ERROR("Pauth check cmd failed\n");
 			break;
@@ -171,15 +176,14 @@ test_result_t host_realm_enable_pauth(void)
 	ret2 = host_destroy_realm(&realm);
 
 	if (!ret1 || !ret2) {
-		ERROR("%s(): enter=%d destroy=%d\n",
-				__func__, ret1, ret2);
+		ERROR("%s(): enter=%d destroy=%d\n", __func__, ret1, ret2);
 		return TEST_RESULT_FAIL;
 	}
 
 	/* Check if PAuth keys are preserved. */
-	if (!pauth_test_lib_compare_template(pauth_keys_before, pauth_keys_after)) {
-		ERROR("%s(): NS PAuth keys not preserved\n",
-				__func__);
+	if (!pauth_test_lib_compare_template(pauth_keys_before,
+					     pauth_keys_after)) {
+		ERROR("%s(): NS PAuth keys not preserved\n", __func__);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -207,23 +211,24 @@ test_result_t host_realm_pauth_fault(void)
 	}
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-				(u_register_t)PAGE_POOL_BASE,
-				(u_register_t)PAGE_POOL_MAX_SIZE,
-				feature_flag, sl, rec_flag, 1U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-				NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
-	ret1 = host_enter_realm_execute(&realm, REALM_PAUTH_FAULT, RMI_EXIT_HOST_CALL, 0U);
+	ret1 = host_enter_realm_execute(&realm, REALM_PAUTH_FAULT,
+					RMI_EXIT_HOST_CALL, 0U);
 	ret2 = host_destroy_realm(&realm);
 
 	if (!ret1) {
-		ERROR("%s(): enter=%d destroy=%d\n",
-				__func__, ret1, ret2);
+		ERROR("%s(): enter=%d destroy=%d\n", __func__, ret1, ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -242,7 +247,7 @@ test_result_t host_realm_pauth_fault(void)
  * @return true in case of PMU interrupt, false otherwise.
  */
 static bool host_realm_handle_irq_exit(struct realm *realm_ptr,
-		unsigned int rec_num)
+				       unsigned int rec_num)
 {
 	struct rmi_rec_run *run = (struct rmi_rec_run *)realm_ptr->run[rec_num];
 
@@ -268,7 +273,7 @@ static bool host_realm_handle_irq_exit(struct realm *realm_ptr,
 		INFO("Re-entering Realm with vIRQ %lu pending\n", PMU_VIRQ);
 
 		retrmm = host_realm_rec_enter(realm_ptr, &exit_reason,
-						&host_call_result, rec_num);
+					      &host_call_result, rec_num);
 		if ((retrmm == REALM_SUCCESS) &&
 		    (exit_reason == RMI_EXIT_HOST_CALL) &&
 		    (host_call_result == TEST_RESULT_SUCCESS)) {
@@ -276,7 +281,7 @@ static bool host_realm_handle_irq_exit(struct realm *realm_ptr,
 		}
 
 		ERROR("%s() failed, ret=%lx host_call_result %u\n",
-			"host_realm_rec_enter", retrmm, host_call_result);
+		      "host_realm_rec_enter", retrmm, host_call_result);
 	}
 	return false;
 }
@@ -302,28 +307,30 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 	host_set_pmu_state();
 
 	feature_flag = RMI_FEATURE_REGISTER_0_PMU_EN |
-			INPLACE(FEATURE_PMU_NUM_CTRS, (unsigned long long)(-1));
+		       INPLACE(FEATURE_PMU_NUM_CTRS, (unsigned long long)(-1));
 
 	if (is_feat_52b_on_4k_2_supported() == true) {
 		feature_flag |= RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
-
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 1U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	ret1 = host_enter_realm_execute(&realm, cmd,
-					(cmd == REALM_PMU_INTERRUPT) ?
-					RMI_EXIT_IRQ : RMI_EXIT_HOST_CALL, 0U);
+					(cmd == REALM_PMU_INTERRUPT)
+						? RMI_EXIT_IRQ
+						: RMI_EXIT_HOST_CALL,
+					0U);
 	if (!ret1 || (cmd != REALM_PMU_INTERRUPT)) {
 		goto test_exit;
 	}
@@ -389,8 +396,7 @@ test_result_t host_realm_pmuv3_overflow_interrupt(void)
 	int ret = tftf_irq_register_handler(PMU_PPI, host_overflow_interrupt);
 
 	if (ret != 0) {
-		tftf_testcase_printf("Failed to %sregister IRQ handler\n",
-					"");
+		tftf_testcase_printf("Failed to %sregister IRQ handler\n", "");
 		return TEST_RESULT_FAIL;
 	}
 
@@ -420,41 +426,48 @@ test_result_t host_test_multiple_realm_create_enter(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
-	if (!host_create_activate_realm_payload(&realm1, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 1U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm1, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 
-
-	if (!host_create_activate_realm_payload(&realm2, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 1U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm2, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 1U)) {
 		ret2 = host_destroy_realm(&realm1);
 		return TEST_RESULT_FAIL;
 	}
 
 	if (!host_create_shared_mem(&realm1, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		ret1 = false;
 		goto destroy_realms;
 	}
 
-	if (!host_create_shared_mem(&realm2, NS_REALM_SHARED_MEM_BASE +
-				NS_REALM_SHARED_MEM_SIZE, NS_REALM_SHARED_MEM_SIZE)) {
+	if (!host_create_shared_mem(
+		    &realm2,
+		    NS_REALM_SHARED_MEM_BASE + NS_REALM_SHARED_MEM_SIZE,
+		    NS_REALM_SHARED_MEM_SIZE)) {
 		ret1 = false;
 		goto destroy_realms;
 	}
 
-	host_shared_data_set_host_val(&realm1, 0U, HOST_ARG1_INDEX, SLEEP_TIME_MS);
-	ret1 = host_enter_realm_execute(&realm1, REALM_SLEEP_CMD, RMI_EXIT_HOST_CALL, 0U);
+	host_shared_data_set_host_val(&realm1, 0U, HOST_ARG1_INDEX,
+				      SLEEP_TIME_MS);
+	ret1 = host_enter_realm_execute(&realm1, REALM_SLEEP_CMD,
+					RMI_EXIT_HOST_CALL, 0U);
 	if (!ret1) {
 		goto destroy_realms;
 	}
-	host_shared_data_set_host_val(&realm2, 0U, HOST_ARG1_INDEX, SLEEP_TIME_MS);
-	ret1 = host_enter_realm_execute(&realm2, REALM_SLEEP_CMD, RMI_EXIT_HOST_CALL, 0U);
+	host_shared_data_set_host_val(&realm2, 0U, HOST_ARG1_INDEX,
+				      SLEEP_TIME_MS);
+	ret1 = host_enter_realm_execute(&realm2, REALM_SLEEP_CMD,
+					RMI_EXIT_HOST_CALL, 0U);
 
 destroy_realms:
 	ret2 = host_destroy_realm(&realm1);
@@ -477,9 +490,9 @@ destroy_realms:
  * Test allocates 3 PAGES and passes to Realm
  * Realm: verifies that initial RIPAS of these pages is EMPTY
  * Realm: requests RIPAS Change to RAM
- * Host: attempt to change RIPAS outside requested range, verifies error generated by RMM
- * Host: changes RIPAS of first PAGE and re-enters Realm
- * Realm: tracks progress and requests RIPAS Change to RAM till all pages are complete
+ * Host: attempt to change RIPAS outside requested range, verifies error
+ * generated by RMM Host: changes RIPAS of first PAGE and re-enters Realm Realm:
+ * tracks progress and requests RIPAS Change to RAM till all pages are complete
  * Host: changes RIPAS of requested PAGE and re-enters Realm
  * Realm: verifies all PAGES are set to RIPAS=RAM
  */
@@ -502,35 +515,38 @@ test_result_t host_realm_set_ripas(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 1U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, 10U);
-	ret1 = host_enter_realm_execute(&realm, REALM_SLEEP_CMD, RMI_EXIT_HOST_CALL, 0U);
+	ret1 = host_enter_realm_execute(&realm, REALM_SLEEP_CMD,
+					RMI_EXIT_HOST_CALL, 0U);
 	base = (u_register_t)page_alloc(PAGE_SIZE * test_page_num);
 	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
 	host_shared_data_set_host_val(&realm, 0U, HOST_ARG2_INDEX,
-			base + (PAGE_SIZE * test_page_num));
+				      base + (PAGE_SIZE * test_page_num));
 
 	for (unsigned int i = 0U; i < test_page_num; i++) {
-		ret = host_realm_delegate_map_protected_data(true, &realm,
-				base + (PAGE_SIZE * i), PAGE_SIZE,
-				base + (PAGE_SIZE * i));
+		ret = host_realm_delegate_map_protected_data(
+			true, &realm, base + (PAGE_SIZE * i), PAGE_SIZE,
+			base + (PAGE_SIZE * i));
 		if (ret != REALM_SUCCESS) {
-			ERROR("host_realm_delegate_map_protected_data failed\n");
+			ERROR("host_realm_delegate_map_protected_data "
+			      "failed\n");
 			goto destroy_realm;
 		}
 	}
 	ret1 = host_enter_realm_execute(&realm, REALM_SET_RIPAS_CMD,
-			RMI_EXIT_RIPAS_CHANGE, 0U);
+					RMI_EXIT_RIPAS_CHANGE, 0U);
 	if (!ret1) {
 		ERROR("Rec enter failed\n");
 		goto destroy_realm;
@@ -538,31 +554,30 @@ test_result_t host_realm_set_ripas(void)
 	run = (struct rmi_rec_run *)realm.run[0U];
 
 	/* Attemp to set ripas for IPA out of requested range, expect error */
-	ret = host_rmi_rtt_set_ripas(realm.rd,
-				     realm.rec[0U],
+	ret = host_rmi_rtt_set_ripas(realm.rd, realm.rec[0U],
 				     run->exit.ripas_base - PAGE_SIZE,
-				     run->exit.ripas_base,
-				     &new_base);
+				     run->exit.ripas_base, &new_base);
 	if (ret != RMI_ERROR_INPUT || new_base != 0U) {
-		ERROR("host_rmi_rtt_set_ripas should have failed ret = 0x%lx\n", ret);
+		ERROR("host_rmi_rtt_set_ripas should have failed ret = 0x%lx\n",
+		      ret);
 		goto destroy_realm;
 	}
 
 	while (run->exit.ripas_base <= base + (PAGE_SIZE * test_page_num)) {
 		INFO("host_rmi_rtt_set_ripas ripas_base=0x%lx\n",
-				run->exit.ripas_base);
-		ret = host_rmi_rtt_set_ripas(realm.rd,
-					     realm.rec[0U],
-					     run->exit.ripas_base,
-					     run->exit.ripas_base + PAGE_SIZE,
-					     &new_base);
+		     run->exit.ripas_base);
+		ret = host_rmi_rtt_set_ripas(
+			realm.rd, realm.rec[0U], run->exit.ripas_base,
+			run->exit.ripas_base + PAGE_SIZE, &new_base);
 		if (ret != RMI_SUCCESS) {
-			ERROR("host_rmi_rtt_set_ripas failed ret = 0x%lx\n", ret);
+			ERROR("host_rmi_rtt_set_ripas failed ret = 0x%lx\n",
+			      ret);
 			goto destroy_realm;
 		}
-		ret = host_realm_rec_enter(&realm,
-			&exit_reason, &host_call_result, 0U);
-		if (ret != RMI_SUCCESS || exit_reason != RMI_EXIT_RIPAS_CHANGE) {
+		ret = host_realm_rec_enter(&realm, &exit_reason,
+					   &host_call_result, 0U);
+		if (ret != RMI_SUCCESS ||
+		    exit_reason != RMI_EXIT_RIPAS_CHANGE) {
 			goto destroy_realm;
 		}
 	}
@@ -570,8 +585,7 @@ destroy_realm:
 	ret2 = host_destroy_realm(&realm);
 
 	if (!ret2) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret2);
+		ERROR("%s(): destroy=%d\n", __func__, ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -607,27 +621,29 @@ test_result_t host_realm_reject_set_ripas(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 1U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	base = (u_register_t)page_alloc(PAGE_SIZE);
 
-	ret = host_realm_delegate_map_protected_data(true, &realm, base, PAGE_SIZE, base);
+	ret = host_realm_delegate_map_protected_data(true, &realm, base,
+						     PAGE_SIZE, base);
 	if (ret != RMI_SUCCESS) {
 		ERROR("host_realm_delegate_map_protected_data failede\n");
 		goto destroy_realm;
 	}
 	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
 	ret1 = host_enter_realm_execute(&realm, REALM_REJECT_SET_RIPAS_CMD,
-			RMI_EXIT_RIPAS_CHANGE, 0U);
+					RMI_EXIT_RIPAS_CHANGE, 0U);
 
 	if (!ret1) {
 		ERROR("Rec did not request RIPAS change\n");
@@ -648,8 +664,7 @@ destroy_realm:
 	ret2 = host_destroy_realm(&realm);
 
 	if (!ret2) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret2);
+		ERROR("%s(): destroy=%d\n", __func__, ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -686,13 +701,13 @@ test_result_t host_realm_abort_unassigned_destroyed(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 2U)) {
+				       (u_register_t)PAGE_POOL_BASE,
+				       (u_register_t)PAGE_POOL_MAX_SIZE,
+				       feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -701,22 +716,23 @@ test_result_t host_realm_abort_unassigned_destroyed(void)
 	run = (struct rmi_rec_run *)realm.run[0];
 
 	/* DATA_CREATE
-	 * Copies content of TFTF_BASE in newly created page, any PA can be used for dummy copy
-	 * maps 1:1 IPA:PA
+	 * Copies content of TFTF_BASE in newly created page, any PA can be used
+	 * for dummy copy maps 1:1 IPA:PA
 	 */
-	ret = host_realm_delegate_map_protected_data(false, &realm, base, PAGE_SIZE, TFTF_BASE);
+	ret = host_realm_delegate_map_protected_data(false, &realm, base,
+						     PAGE_SIZE, TFTF_BASE);
 	if (ret != RMI_SUCCESS) {
 		ERROR("host_realm_delegate_map_protected_data failed\n");
 		goto destroy_realm;
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_ASSIGNED ||
-			(rtt.ripas != RMI_RAM)) {
+	    (rtt.ripas != RMI_RAM)) {
 		ERROR("wrong state after DATA_CRATE_UNKNOWN\n");
 		goto undelegate_destroy;
 	}
 	INFO("Initial state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
-			base, rtt.state, rtt.ripas);
+	     base, rtt.state, rtt.ripas);
 	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
 	host_shared_data_set_host_val(&realm, 1U, HOST_ARG1_INDEX, base);
 
@@ -727,52 +743,56 @@ test_result_t host_realm_abort_unassigned_destroyed(void)
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
-			rtt.ripas != RMI_DESTROYED) {
+	    rtt.ripas != RMI_DESTROYED) {
 		ERROR("Wrong state after host_rmi_data_destroy\n");
 		goto undelegate_destroy;
 	}
 
-	INFO("New state4 base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
-			base, rtt.state, rtt.ripas);
+	INFO("New state4 base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n", base,
+	     rtt.state, rtt.ripas);
 
 	if (host_realm_activate(&realm) != REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_activate");
 		goto undelegate_destroy;
 	}
 
-	/* Realm0 expect rec exit due to Instr Abort unassigned destroyed page */
+	/* Realm0 expect rec exit due to Instr Abort unassigned destroyed page
+	 */
 	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
-		RMI_EXIT_SYNC, 0U);
+					RMI_EXIT_SYNC, 0U);
 
 	/* ESR.EC == 0b100000 Instruction Abort from a lower Exception level */
-	if (!ret1 || ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT)
-			|| (EC_BITS(run->exit.esr) != EC_IABORT_LOWER_EL)
-			|| ((run->exit.esr & ISS_IFSC_MASK) < IFSC_L0_TRANS_FAULT)
-			|| ((run->exit.esr & ISS_IFSC_MASK) > IFSC_L3_TRANS_FAULT)
-			|| ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U))) {
+	if (!ret1 ||
+	    ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT) ||
+	     (EC_BITS(run->exit.esr) != EC_IABORT_LOWER_EL) ||
+	     ((run->exit.esr & ISS_IFSC_MASK) < IFSC_L0_TRANS_FAULT) ||
+	     ((run->exit.esr & ISS_IFSC_MASK) > IFSC_L3_TRANS_FAULT) ||
+	     ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U))) {
 		ERROR("Rec did not fault ESR=0x%lx\n", run->exit.esr);
 		goto undelegate_destroy;
 	}
-	INFO("IA FAR=0x%lx, HPFAR=0x%lx ESR=0x%lx\n", run->exit.far, run->exit.hpfar,
-			run->exit.esr);
+	INFO("IA FAR=0x%lx, HPFAR=0x%lx ESR=0x%lx\n", run->exit.far,
+	     run->exit.hpfar, run->exit.esr);
 
 	run = (struct rmi_rec_run *)realm.run[1];
 
 	/* Realm1 expect rec exit due to Data Abort unassigned destroyed page */
 	ret1 = host_enter_realm_execute(&realm, REALM_DATA_ACCESS_CMD,
-			RMI_EXIT_SYNC, 1U);
+					RMI_EXIT_SYNC, 1U);
 
-	/* ESR.EC == 0b100100 Data Abort exception from a lower Exception level */
-	if (!ret1 || ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT)
-		|| (EC_BITS(run->exit.esr) != EC_DABORT_LOWER_EL)
-		|| ((run->exit.esr & ISS_DFSC_MASK) < DFSC_L0_TRANS_FAULT)
-		|| ((run->exit.esr & ISS_DFSC_MASK) > DFSC_L3_TRANS_FAULT)
-		|| ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U))) {
+	/* ESR.EC == 0b100100 Data Abort exception from a lower Exception level
+	 */
+	if (!ret1 ||
+	    ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT) ||
+	     (EC_BITS(run->exit.esr) != EC_DABORT_LOWER_EL) ||
+	     ((run->exit.esr & ISS_DFSC_MASK) < DFSC_L0_TRANS_FAULT) ||
+	     ((run->exit.esr & ISS_DFSC_MASK) > DFSC_L3_TRANS_FAULT) ||
+	     ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U))) {
 		ERROR("Rec did not fault\n");
 		goto undelegate_destroy;
 	}
-	INFO("DA FAR=0x%lx, HPFAR=0x%lx ESR= 0x%lx\n", run->exit.far, run->exit.hpfar,
-			run->exit.esr);
+	INFO("DA FAR=0x%lx, HPFAR=0x%lx ESR= 0x%lx\n", run->exit.far,
+	     run->exit.hpfar, run->exit.esr);
 	res = TEST_RESULT_SUCCESS;
 
 undelegate_destroy:
@@ -781,8 +801,7 @@ destroy_realm:
 	ret2 = host_destroy_realm(&realm);
 
 	if (!ret2) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret2);
+		ERROR("%s(): destroy=%d\n", __func__, ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -818,13 +837,13 @@ test_result_t host_realm_abort_unassigned_ram(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 2U)) {
+				       (u_register_t)PAGE_POOL_BASE,
+				       (u_register_t)PAGE_POOL_MAX_SIZE,
+				       feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -837,7 +856,7 @@ test_result_t host_realm_abort_unassigned_ram(void)
 	ret = host_rmi_rtt_init_ripas(realm.rd, base, base + PAGE_SIZE, &top);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, ret=0x%lx line=%u\n",
-			"host_rmi_rtt_init_ripas", ret, __LINE__);
+		      "host_rmi_rtt_init_ripas", ret, __LINE__);
 		goto destroy_realm;
 	}
 	if (host_realm_activate(&realm) != REALM_SUCCESS) {
@@ -847,55 +866,57 @@ test_result_t host_realm_abort_unassigned_ram(void)
 
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
-			(rtt.ripas != RMI_RAM)) {
+	    (rtt.ripas != RMI_RAM)) {
 		ERROR("wrong initial state\n");
 		goto destroy_realm;
 	}
 	INFO("Initial state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
-			base, rtt.state, rtt.ripas);
+	     base, rtt.state, rtt.ripas);
 	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
 	host_shared_data_set_host_val(&realm, 1U, HOST_ARG1_INDEX, base);
 
 	/* Rec0 expect rec exit due to Instr Abort unassigned ram page */
 	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
-			RMI_EXIT_SYNC, 0U);
+					RMI_EXIT_SYNC, 0U);
 
 	/* ESR.EC == 0b100000 Instruction Abort from a lower Exception level */
-	if (!ret1 || ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT)
-			|| (EC_BITS(run->exit.esr) != EC_IABORT_LOWER_EL)
-			|| ((run->exit.esr & ISS_IFSC_MASK) < IFSC_L0_TRANS_FAULT)
-			|| ((run->exit.esr & ISS_IFSC_MASK) > IFSC_L3_TRANS_FAULT)
-			|| ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U))) {
+	if (!ret1 ||
+	    ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT) ||
+	     (EC_BITS(run->exit.esr) != EC_IABORT_LOWER_EL) ||
+	     ((run->exit.esr & ISS_IFSC_MASK) < IFSC_L0_TRANS_FAULT) ||
+	     ((run->exit.esr & ISS_IFSC_MASK) > IFSC_L3_TRANS_FAULT) ||
+	     ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U))) {
 		ERROR("Rec did not fault ESR=0x%lx\n", run->exit.esr);
 		goto destroy_realm;
 	}
-	INFO("IA FAR=0x%lx, HPFAR=0x%lx ESR=0x%lx\n", run->exit.far, run->exit.hpfar,
-			run->exit.esr);
+	INFO("IA FAR=0x%lx, HPFAR=0x%lx ESR=0x%lx\n", run->exit.far,
+	     run->exit.hpfar, run->exit.esr);
 	run = (struct rmi_rec_run *)realm.run[1];
 
 	/* Rec1 expect rec exit due to Data Abort unassigned ram page */
 	ret1 = host_enter_realm_execute(&realm, REALM_DATA_ACCESS_CMD,
-			RMI_EXIT_SYNC, 1U);
+					RMI_EXIT_SYNC, 1U);
 
-	/* ESR.EC == 0b100100 Data Abort exception from a lower Exception level */
-	if (!ret1 || ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT)
-		|| (EC_BITS(run->exit.esr) != EC_DABORT_LOWER_EL)
-		|| ((run->exit.esr & ISS_DFSC_MASK) < DFSC_L0_TRANS_FAULT)
-		|| ((run->exit.esr & ISS_DFSC_MASK) > DFSC_L3_TRANS_FAULT)
-		|| ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U))) {
+	/* ESR.EC == 0b100100 Data Abort exception from a lower Exception level
+	 */
+	if (!ret1 ||
+	    ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT) ||
+	     (EC_BITS(run->exit.esr) != EC_DABORT_LOWER_EL) ||
+	     ((run->exit.esr & ISS_DFSC_MASK) < DFSC_L0_TRANS_FAULT) ||
+	     ((run->exit.esr & ISS_DFSC_MASK) > DFSC_L3_TRANS_FAULT) ||
+	     ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U))) {
 		ERROR("Rec did not fault ESR=0x%lx\n", run->exit.esr);
 		goto destroy_realm;
 	}
-	INFO("DA FAR=0x%lx, HPFAR=0x%lx ESR=0x%lx\n", run->exit.far, run->exit.hpfar,
-			run->exit.esr);
+	INFO("DA FAR=0x%lx, HPFAR=0x%lx ESR=0x%lx\n", run->exit.far,
+	     run->exit.hpfar, run->exit.esr);
 	res = TEST_RESULT_SUCCESS;
 
 destroy_realm:
 	ret2 = host_destroy_realm(&realm);
 
 	if (!ret2) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret2);
+		ERROR("%s(): destroy=%d\n", __func__, ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -933,13 +954,13 @@ test_result_t host_realm_abort_assigned_destroyed(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 2U)) {
+				       (u_register_t)PAGE_POOL_BASE,
+				       (u_register_t)PAGE_POOL_MAX_SIZE,
+				       feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -947,20 +968,22 @@ test_result_t host_realm_abort_assigned_destroyed(void)
 	run = (struct rmi_rec_run *)realm.run[0];
 
 	/* DATA_CREATE */
-	/* Copied content of TFTF_BASE to new page, can use any adr, maps 1:1 IPA:PA */
-	ret = host_realm_delegate_map_protected_data(false, &realm, base, PAGE_SIZE, TFTF_BASE);
+	/* Copied content of TFTF_BASE to new page, can use any adr, maps 1:1
+	 * IPA:PA */
+	ret = host_realm_delegate_map_protected_data(false, &realm, base,
+						     PAGE_SIZE, TFTF_BASE);
 	if (ret != RMI_SUCCESS) {
 		ERROR("host_realm_delegate_map_protected_data failed\n");
 		goto destroy_realm;
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_ASSIGNED ||
-			(rtt.ripas != RMI_RAM)) {
+	    (rtt.ripas != RMI_RAM)) {
 		ERROR("wrong state after data create\n");
 		goto destroy_realm;
 	}
 	INFO("Initial state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
-			base, rtt.state, rtt.ripas);
+	     base, rtt.state, rtt.ripas);
 	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
 	host_shared_data_set_host_val(&realm, 1U, HOST_ARG1_INDEX, base);
 
@@ -976,57 +999,61 @@ test_result_t host_realm_abort_assigned_destroyed(void)
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
-			rtt.ripas != RMI_DESTROYED) {
+	    rtt.ripas != RMI_DESTROYED) {
 		ERROR("Wrong state after host_rmi_data_destroy\n");
 		goto destroy_realm;
 	}
 	ret = host_rmi_granule_undelegate(base);
 
 	/* DATA_CREATE_UNKNOWN */
-	ret = host_realm_delegate_map_protected_data(true, &realm, base, PAGE_SIZE, 0U);
+	ret = host_realm_delegate_map_protected_data(true, &realm, base,
+						     PAGE_SIZE, 0U);
 	if (ret != RMI_SUCCESS) {
 		ERROR("host_realm_delegate_map_protected_data failede\n");
 		goto destroy_realm;
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_ASSIGNED ||
-			(rtt.ripas != RMI_DESTROYED)) {
+	    (rtt.ripas != RMI_DESTROYED)) {
 		ERROR("wrong state after data create unknown\n");
 		goto destroy_data;
 	}
 
 	/* Rec0, expect rec exit due to Instr Abort assigned destroyed page */
 	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
-		RMI_EXIT_SYNC, 0U);
+					RMI_EXIT_SYNC, 0U);
 
 	/* ESR.EC == 0b100000 Instruction Abort from a lower Exception level */
-	if (!ret1 || ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT)
-		|| (EC_BITS(run->exit.esr) != EC_IABORT_LOWER_EL)
-		|| ((run->exit.esr & ISS_IFSC_MASK) < IFSC_L0_TRANS_FAULT)
-		|| ((run->exit.esr & ISS_IFSC_MASK) > IFSC_L3_TRANS_FAULT)
-		|| ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U))) {
+	if (!ret1 ||
+	    ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT) ||
+	     (EC_BITS(run->exit.esr) != EC_IABORT_LOWER_EL) ||
+	     ((run->exit.esr & ISS_IFSC_MASK) < IFSC_L0_TRANS_FAULT) ||
+	     ((run->exit.esr & ISS_IFSC_MASK) > IFSC_L3_TRANS_FAULT) ||
+	     ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U))) {
 		ERROR("Rec did not fault ESR=0x%lx\n", run->exit.esr);
 		goto destroy_data;
 	}
-	INFO("IA FAR=0x%lx, HPFAR=0x%lx ESR=0x%lx\n", run->exit.far, run->exit.hpfar,
-				run->exit.esr);
+	INFO("IA FAR=0x%lx, HPFAR=0x%lx ESR=0x%lx\n", run->exit.far,
+	     run->exit.hpfar, run->exit.esr);
 	run = (struct rmi_rec_run *)realm.run[1];
 
 	/* Rec1  expect rec exit due to Data Abort  assigned destroyed page */
 	ret1 = host_enter_realm_execute(&realm, REALM_DATA_ACCESS_CMD,
-			RMI_EXIT_SYNC, 1U);
+					RMI_EXIT_SYNC, 1U);
 
-	/* ESR.EC == 0b100100 Data Abort exception from a lower Exception level */
-	if (!ret1 || ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT)
-		|| (EC_BITS(run->exit.esr) != EC_DABORT_LOWER_EL)
-		|| ((run->exit.esr & ISS_DFSC_MASK) < DFSC_L0_TRANS_FAULT)
-		|| ((run->exit.esr & ISS_DFSC_MASK) > DFSC_L3_TRANS_FAULT)
-		|| ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U))) {
+	/* ESR.EC == 0b100100 Data Abort exception from a lower Exception level
+	 */
+	if (!ret1 ||
+	    ((run->exit.hpfar >> 4U) != (base >> PAGE_SIZE_SHIFT) ||
+	     (EC_BITS(run->exit.esr) != EC_DABORT_LOWER_EL) ||
+	     ((run->exit.esr & ISS_DFSC_MASK) < DFSC_L0_TRANS_FAULT) ||
+	     ((run->exit.esr & ISS_DFSC_MASK) > DFSC_L3_TRANS_FAULT) ||
+	     ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U))) {
 		ERROR("Rec did not fault ESR=0x%lx\n", run->exit.esr);
 		goto destroy_data;
 	}
-	INFO("DA FAR=0x%lx, HPFAR=0x%lx ESR=0x%lx\n", run->exit.far, run->exit.hpfar,
-				run->exit.esr);
+	INFO("DA FAR=0x%lx, HPFAR=0x%lx ESR=0x%lx\n", run->exit.far,
+	     run->exit.hpfar, run->exit.esr);
 	res = TEST_RESULT_SUCCESS;
 
 destroy_data:
@@ -1036,8 +1063,7 @@ destroy_realm:
 	ret2 = host_destroy_realm(&realm);
 
 	if (!ret2) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret2);
+		ERROR("%s(): destroy=%d\n", __func__, ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -1064,7 +1090,8 @@ test_result_t host_realm_sea_empty(void)
 	struct rtt_entry rtt;
 	u_register_t feature_flag = 0UL;
 	long sl = RTT_MIN_LEVEL;
-	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE};
+	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
+				   RMI_RUNNABLE};
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
@@ -1073,22 +1100,22 @@ test_result_t host_realm_sea_empty(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 4U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 4U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
 	base = (u_register_t)page_alloc(PAGE_SIZE);
 
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (rtt.state != RMI_UNASSIGNED ||
-			(rtt.ripas != RMI_EMPTY)) {
+	if (rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_EMPTY)) {
 		ERROR("wrong initial state\n");
 		goto destroy_realm;
 	}
@@ -1099,7 +1126,7 @@ test_result_t host_realm_sea_empty(void)
 
 	/* Rec0 expect IA due to SEA unassigned empty page */
 	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
-			RMI_EXIT_HOST_CALL, 0U);
+					RMI_EXIT_HOST_CALL, 0U);
 	if (!ret1) {
 		ERROR("Rec0 did not fault\n");
 		goto destroy_realm;
@@ -1107,7 +1134,8 @@ test_result_t host_realm_sea_empty(void)
 
 	/* get ESR set by Realm exception handler */
 	esr = host_shared_data_get_realm_val(&realm, 0U, HOST_ARG2_INDEX);
-	if (((esr & ISS_IFSC_MASK) != IFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_IABORT_CUR_EL)) {
+	if (((esr & ISS_IFSC_MASK) != IFSC_NO_WALK_SEA) ||
+	    (EC_BITS(esr) != EC_IABORT_CUR_EL)) {
 		ERROR("Rec0 incorrect ESR=0x%lx\n", esr);
 		goto destroy_realm;
 	}
@@ -1115,7 +1143,7 @@ test_result_t host_realm_sea_empty(void)
 
 	/* Rec1 expect DA due to SEA unassigned empty page */
 	ret1 = host_enter_realm_execute(&realm, REALM_DATA_ACCESS_CMD,
-			RMI_EXIT_HOST_CALL, 1U);
+					RMI_EXIT_HOST_CALL, 1U);
 	if (!ret1) {
 		ERROR("Rec1 did not fault\n");
 		goto destroy_realm;
@@ -1123,30 +1151,31 @@ test_result_t host_realm_sea_empty(void)
 
 	/* get ESR set by Realm exception handler */
 	esr = host_shared_data_get_realm_val(&realm, 1U, HOST_ARG2_INDEX);
-	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_DABORT_CUR_EL)) {
+	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA) ||
+	    (EC_BITS(esr) != EC_DABORT_CUR_EL)) {
 		ERROR("Rec1 incorrect ESR=0x%lx\n", esr);
 		goto destroy_realm;
 	}
 	INFO("Rec1 ESR=0x%lx\n", esr);
 
 	/* DATA_CREATE_UNKNOWN */
-	ret = host_realm_delegate_map_protected_data(true, &realm, base, PAGE_SIZE, 0U);
+	ret = host_realm_delegate_map_protected_data(true, &realm, base,
+						     PAGE_SIZE, 0U);
 	if (ret != RMI_SUCCESS) {
 		ERROR("host_realm_delegate_map_protected_data failed\n");
 		goto destroy_realm;
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (rtt.state != RMI_ASSIGNED ||
-			(rtt.ripas != RMI_EMPTY)) {
+	if (rtt.state != RMI_ASSIGNED || (rtt.ripas != RMI_EMPTY)) {
 		ERROR("wrong state after DATA_CRATE_UNKNOWN\n");
 		goto undelegate_destroy;
 	}
-	INFO("state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
-			base, rtt.state, rtt.ripas);
+	INFO("state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n", base,
+	     rtt.state, rtt.ripas);
 
 	/* Rec2 expect IA due to SEA assigned empty page */
 	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
-		RMI_EXIT_HOST_CALL, 2U);
+					RMI_EXIT_HOST_CALL, 2U);
 
 	if (!ret1) {
 		ERROR("Rec2 did not fault\n");
@@ -1155,7 +1184,8 @@ test_result_t host_realm_sea_empty(void)
 
 	/* get ESR set by Realm exception handler */
 	esr = host_shared_data_get_realm_val(&realm, 2U, HOST_ARG2_INDEX);
-	if (((esr & ISS_IFSC_MASK) != IFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_IABORT_CUR_EL)) {
+	if (((esr & ISS_IFSC_MASK) != IFSC_NO_WALK_SEA) ||
+	    (EC_BITS(esr) != EC_IABORT_CUR_EL)) {
 		ERROR("Rec2 incorrect ESR=0x%lx\n", esr);
 		goto destroy_realm;
 	}
@@ -1163,7 +1193,7 @@ test_result_t host_realm_sea_empty(void)
 
 	/* Rec3 expect DA due to SEA unassigned empty page */
 	ret1 = host_enter_realm_execute(&realm, REALM_DATA_ACCESS_CMD,
-			RMI_EXIT_HOST_CALL, 3U);
+					RMI_EXIT_HOST_CALL, 3U);
 	if (!ret1) {
 		ERROR("Rec3 did not fault\n");
 		goto undelegate_destroy;
@@ -1171,7 +1201,8 @@ test_result_t host_realm_sea_empty(void)
 
 	/* get ESR set by Realm exception handler */
 	esr = host_shared_data_get_realm_val(&realm, 3U, HOST_ARG2_INDEX);
-	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_DABORT_CUR_EL)) {
+	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA) ||
+	    (EC_BITS(esr) != EC_DABORT_CUR_EL)) {
 		ERROR("Rec3 incorrect ESR=0x%lx\n", esr);
 	}
 	INFO("Rec3 ESR=0x%lx\n", esr);
@@ -1183,8 +1214,7 @@ destroy_realm:
 	ret2 = host_destroy_realm(&realm);
 
 	if (!ret2) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret2);
+		ERROR("%s(): destroy=%d\n", __func__, ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -1201,7 +1231,6 @@ destroy_realm:
  */
 test_result_t host_realm_sea_unprotected(void)
 {
-
 	bool ret1, ret2;
 	test_result_t res = TEST_RESULT_FAIL;
 	u_register_t ret, base, base_ipa, esr;
@@ -1221,22 +1250,24 @@ test_result_t host_realm_sea_unprotected(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 2U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
-	/* Can choose any unprotected IPA adr, TFTF_BASE chosen for convenience */
+	/* Can choose any unprotected IPA adr, TFTF_BASE chosen for convenience
+	 */
 	base = TFTF_BASE;
 	base_ipa = base | (1UL << (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
-					realm.rmm_feat_reg0) - 1U));
-
+					   realm.rmm_feat_reg0) -
+				   1U));
 
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (rtt.state != RMI_UNASSIGNED) {
@@ -1250,7 +1281,7 @@ test_result_t host_realm_sea_unprotected(void)
 
 	/* Rec0 expect SEA in realm due to IA unprotected IPA page */
 	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
-			RMI_EXIT_HOST_CALL, 0U);
+					RMI_EXIT_HOST_CALL, 0U);
 	if (!ret1) {
 		ERROR("Rec0 did not fault\n");
 		goto destroy_realm;
@@ -1258,7 +1289,8 @@ test_result_t host_realm_sea_unprotected(void)
 
 	/* get ESR set by Realm exception handler */
 	esr = host_shared_data_get_realm_val(&realm, 0U, HOST_ARG2_INDEX);
-	if (((esr & ISS_IFSC_MASK) != IFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_IABORT_CUR_EL)) {
+	if (((esr & ISS_IFSC_MASK) != IFSC_NO_WALK_SEA) ||
+	    (EC_BITS(esr) != EC_IABORT_CUR_EL)) {
 		ERROR("Rec0 incorrect ESR=0x%lx\n", esr);
 		goto destroy_realm;
 	}
@@ -1266,20 +1298,24 @@ test_result_t host_realm_sea_unprotected(void)
 
 	run = (struct rmi_rec_run *)realm.run[1U];
 
-	/* Rec1 expect rec exit due to DA unprotected IPA page when HIPAS is UNASSIGNED_NS */
+	/* Rec1 expect rec exit due to DA unprotected IPA page when HIPAS is
+	 * UNASSIGNED_NS */
 	ret1 = host_enter_realm_execute(&realm, REALM_DATA_ACCESS_CMD,
-			RMI_EXIT_SYNC, 1U);
+					RMI_EXIT_SYNC, 1U);
 
-	if (!ret1 || (run->exit.hpfar >> 4U) != (base_ipa >> PAGE_SIZE_SHIFT)
-		|| (EC_BITS(run->exit.esr) != EC_DABORT_LOWER_EL)
-		|| ((run->exit.esr & ISS_DFSC_MASK) < DFSC_L0_TRANS_FAULT)
-		|| ((run->exit.esr & ISS_DFSC_MASK) > DFSC_L3_TRANS_FAULT)
-		|| ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U)) {
-		ERROR("Rec1 did not fault exit=0x%lx ret1=%d HPFAR=0x%lx esr=0x%lx\n",
-				run->exit.exit_reason, ret1, run->exit.hpfar, run->exit.esr);
+	if (!ret1 || (run->exit.hpfar >> 4U) != (base_ipa >> PAGE_SIZE_SHIFT) ||
+	    (EC_BITS(run->exit.esr) != EC_DABORT_LOWER_EL) ||
+	    ((run->exit.esr & ISS_DFSC_MASK) < DFSC_L0_TRANS_FAULT) ||
+	    ((run->exit.esr & ISS_DFSC_MASK) > DFSC_L3_TRANS_FAULT) ||
+	    ((run->exit.esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U)) {
+		ERROR("Rec1 did not fault exit=0x%lx ret1=%d HPFAR=0x%lx "
+		      "esr=0x%lx\n",
+		      run->exit.exit_reason, ret1, run->exit.hpfar,
+		      run->exit.esr);
 		goto destroy_realm;
 	}
-	INFO("Host DA FAR=0x%lx, HPFAR=0x%lx\n", run->exit.far, run->exit.hpfar);
+	INFO("Host DA FAR=0x%lx, HPFAR=0x%lx\n", run->exit.far,
+	     run->exit.hpfar);
 	INFO("Injecting SEA to Realm\n");
 
 	/* Inject SEA back to Realm */
@@ -1288,13 +1324,15 @@ test_result_t host_realm_sea_unprotected(void)
 	/* Rec1 re-entry expect exception handler to run, return ESR */
 	ret = host_realm_rec_enter(&realm, &exit_reason, &host_call_result, 1U);
 	if (ret != RMI_SUCCESS || exit_reason != RMI_EXIT_HOST_CALL) {
-		ERROR("rec1 failed ret=0x%lx exit_reason=0x%lx", ret, run->exit.exit_reason);
+		ERROR("rec1 failed ret=0x%lx exit_reason=0x%lx", ret,
+		      run->exit.exit_reason);
 		goto destroy_realm;
 	}
 
 	/* get ESR set by Realm exception handler */
 	esr = host_shared_data_get_realm_val(&realm, 1U, HOST_ARG2_INDEX);
-	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_DABORT_CUR_EL)) {
+	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA) ||
+	    (EC_BITS(esr) != EC_DABORT_CUR_EL)) {
 		ERROR("Rec1 incorrect ESR=0x%lx\n", esr);
 		goto destroy_realm;
 	}
@@ -1305,8 +1343,7 @@ destroy_realm:
 	ret2 = host_destroy_realm(&realm);
 
 	if (!ret2) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret2);
+		ERROR("%s(): destroy=%d\n", __func__, ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -1323,7 +1360,9 @@ test_result_t host_realm_enable_dit(void)
 	u_register_t feature_flag = 0UL;
 	long sl = RTT_MIN_LEVEL;
 	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
-	RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE}, dit;
+				   RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
+				   RMI_RUNNABLE, RMI_RUNNABLE},
+		     dit;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
@@ -1332,14 +1371,15 @@ test_result_t host_realm_enable_dit(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, MAX_REC_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -1348,7 +1388,7 @@ test_result_t host_realm_enable_dit(void)
 	for (unsigned int i = 0; i < MAX_REC_COUNT; i++) {
 		host_shared_data_set_host_val(&realm, i, HOST_ARG1_INDEX, 10U);
 		ret1 = host_enter_realm_execute(&realm, REALM_DIT_CHECK_CMD,
-				RMI_EXIT_HOST_CALL, i);
+						RMI_EXIT_HOST_CALL, i);
 		if (!ret1) {
 			break;
 		}
@@ -1364,8 +1404,7 @@ test_result_t host_realm_enable_dit(void)
 
 	write_dit(0U);
 	if (!ret1 || !ret2) {
-		ERROR("%s(): enter=%d destroy=%d\n",
-		__func__, ret1, ret2);
+		ERROR("%s(): enter=%d destroy=%d\n", __func__, ret1, ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -1386,8 +1425,8 @@ static test_result_t test_rtt_destroy_ram(struct realm *realm, bool activate)
 	base = ALIGN_DOWN(PAGE_POOL_BASE, RTT_MAP_SIZE(2U));
 	while (true) {
 		ret = host_rmi_rtt_readentry(realm->rd, base, 3L, &rtt);
-		if (ret != RMI_SUCCESS || rtt.walk_level != 2U || rtt.state != RMI_UNASSIGNED
-				|| (rtt.ripas != RMI_EMPTY)) {
+		if (ret != RMI_SUCCESS || rtt.walk_level != 2U ||
+		    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_EMPTY)) {
 			base += RTT_MAP_SIZE(2U);
 			continue;
 		}
@@ -1413,14 +1452,14 @@ static test_result_t test_rtt_destroy_ram(struct realm *realm, bool activate)
 	ret = host_rmi_rtt_init_ripas(realm->rd, base, base + PAGE_SIZE, &top);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, ret=0x%lx line=%u\n",
-			"host_rmi_rtt_init_ripas", ret, __LINE__);
+		      "host_rmi_rtt_init_ripas", ret, __LINE__);
 		return TEST_RESULT_FAIL;
 	}
 
 	/* INIT_RIPAS should move state to unassigned ram */
 	ret = host_rmi_rtt_readentry(realm->rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
-			(rtt.ripas != RMI_RAM)) {
+	    (rtt.ripas != RMI_RAM)) {
 		ERROR("wrong state after INIT_RIPAS\n");
 		return TEST_RESULT_FAIL;
 	}
@@ -1433,7 +1472,8 @@ static test_result_t test_rtt_destroy_ram(struct realm *realm, bool activate)
 		}
 	}
 
-	/* Destroy newly created rtt, for protected IPA there should be no live L3 entry */
+	/* Destroy newly created rtt, for protected IPA there should be no live
+	 * L3 entry */
 	ret = host_rmi_rtt_destroy(realm->rd, base, 3L, &out_rtt, &top);
 	if (ret != RMI_SUCCESS) {
 		ERROR("host_rmi_rtt_destroy failed ret=0x%lx\n", ret);
@@ -1444,7 +1484,7 @@ static test_result_t test_rtt_destroy_ram(struct realm *realm, bool activate)
 	/* Walk should terminate at L2 after RTT_DESTROY */
 	ret = host_rmi_rtt_readentry(realm->rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
-			rtt.ripas != RMI_DESTROYED || rtt.walk_level != 2L) {
+	    rtt.ripas != RMI_DESTROYED || rtt.walk_level != 2L) {
 		ERROR("Wrong state after host_rmi_rtt_destroy\n");
 		return TEST_RESULT_FAIL;
 	}
@@ -1465,8 +1505,8 @@ static test_result_t test_rtt_destroy_empty(struct realm *realm)
 	base = ALIGN_DOWN(PAGE_POOL_BASE, RTT_MAP_SIZE(2U));
 	while (true) {
 		ret = host_rmi_rtt_readentry(realm->rd, base, 3L, &rtt);
-		if (ret != RMI_SUCCESS || rtt.walk_level != 2L || rtt.state != RMI_UNASSIGNED
-				|| (rtt.ripas != RMI_EMPTY)) {
+		if (ret != RMI_SUCCESS || rtt.walk_level != 2L ||
+		    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_EMPTY)) {
 			base += RTT_MAP_SIZE(2U);
 			continue;
 		}
@@ -1489,7 +1529,8 @@ static test_result_t test_rtt_destroy_empty(struct realm *realm)
 		return TEST_RESULT_FAIL;
 	}
 
-	/* Destroy newly created rtt, for protected IPA there should be no live L3 entry */
+	/* Destroy newly created rtt, for protected IPA there should be no live
+	 * L3 entry */
 	ret = host_rmi_rtt_destroy(realm->rd, base, 3L, &out_rtt, &top);
 	if (ret != RMI_SUCCESS) {
 		ERROR("host_rmi_rtt_destroy failed ret=0x%lx\n", ret);
@@ -1497,14 +1538,15 @@ static test_result_t test_rtt_destroy_empty(struct realm *realm)
 	}
 	ret = host_rmi_granule_undelegate(out_rtt);
 	if (ret != RMI_SUCCESS) {
-		ERROR("host_rmi_granule_undelegate RTT failed ret=0x%lx\n", ret);
+		ERROR("host_rmi_granule_undelegate RTT failed ret=0x%lx\n",
+		      ret);
 		return TEST_RESULT_FAIL;
 	}
 
 	/* Walk should terminate at L2 after RTT_DESTROY */
 	ret = host_rmi_rtt_readentry(realm->rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
-			rtt.ripas != RMI_DESTROYED || rtt.walk_level != 2L) {
+	    rtt.ripas != RMI_DESTROYED || rtt.walk_level != 2L) {
 		ERROR("Wrong state after host_rmi_rtt_destroy\n");
 		return TEST_RESULT_FAIL;
 	}
@@ -1524,28 +1566,28 @@ static test_result_t test_rtt_destroy_empty(struct realm *realm)
  * 4. Test INIT_RIPAS moves initial state (new page) to Unassigned RAM
  *    a. Test DATA_CREATE_UNKNOWN moves state to Assigned Ram
  * 5. Test RTT_DESTROY moves initial state (new page) to Unassigned Destroyed
- * 6. Test RTT_DESTROY moves state (new page) unassigned ram to Unassigned Destroyed
- * Transition
+ * 6. Test RTT_DESTROY moves state (new page) unassigned ram to Unassigned
+ * Destroyed Transition
  *
- *     +------------------+            +-------------------+            +-------------------+
- *     |  Assigned Empty  |            |   Assigned Dest   |            | Assigned RAM      |
- *     +------------------+            +--+---^------------+            +-------^---+-----^-+
- *          ^          |                  |   ^                                 ^   |     ^
- *          |          |                  |   |                                 |   |     |
- *          |          |                  |   |                 2a              |   |     |
- *          |          |                  |   |      +--------------------------+---+     |
- *          |          |                  |   | 2b   |                          |         |4a
- *          |          |3a                |   +---------+                       |         |
- *        3 |          |                2c|          |  |                       |         |
- *          |          |                  |          |  |                       |         |
- *          |    +-----+--------2---------+----------+--+-----------------------+         |
- *          |    |     |                  |          |  |                                 |
- *          |    |     V                  V          V  |                                 |
- *     +----+----+-----v---+           |--V----------V--+---|         |------------------+--|
- * --->|  Unassigned Empty |---------->|Unassigned Dest     |<--------|  Unassigned RAM     |
- * 1   +--------------+----+     5     +--------------------+    6    +---------^-----------+
- *                    |			                                        ^
- *                    |                                                         |
+ *     +------------------+            +-------------------+
+ * +-------------------+ |  Assigned Empty  |            |   Assigned Dest   |
+ * | Assigned RAM      |
+ *     +------------------+            +--+---^------------+
+ * +-------^---+-----^-+ ^          |                  |   ^ ^   |     ^ | | |
+ * |                                 |   |     | |          |                  |
+ * |                 2a              |   |     | |          |                  |
+ * |      +--------------------------+---+     | |          |                  |
+ * | 2b   |                          |         |4a |          |3a | +---------+
+ * |         | 3 |          |                2c|          |  | |         | | |
+ * |          |  |                       |         | |
+ * +-----+--------2---------+----------+--+-----------------------+         | |
+ * |     |                  |          |  |                                 | |
+ * |     V                  V          V  |                                 |
+ *     +----+----+-----v---+           |--V----------V--+---|
+ * |------------------+--|
+ * --->|  Unassigned Empty |---------->|Unassigned Dest     |<--------|
+ * Unassigned RAM     | 1   +--------------+----+     5 +--------------------+
+ * 6    +---------^-----------+ | ^ | |
  *                    +---------------------------------------------------------+
  *                                                      4
  */
@@ -1568,13 +1610,13 @@ test_result_t host_realm_pas_validation_new(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 2U)) {
+				       (u_register_t)PAGE_POOL_BASE,
+				       (u_register_t)PAGE_POOL_MAX_SIZE,
+				       feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -1590,21 +1632,23 @@ test_result_t host_realm_pas_validation_new(void)
 
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
-			(rtt.ripas != RMI_EMPTY) || rtt.walk_level != 3L) {
+	    (rtt.ripas != RMI_EMPTY) || rtt.walk_level != 3L) {
 		ERROR("wrong initial state\n");
 		goto destroy_realm;
 	}
 
-	/* 2. DATA_CREATE copy TFTF_BASE, chosen for convenience, can be any adr */
+	/* 2. DATA_CREATE copy TFTF_BASE, chosen for convenience, can be any adr
+	 */
 	INFO("Test 2\n");
-	ret = host_realm_delegate_map_protected_data(false, &realm, base, PAGE_SIZE, TFTF_BASE);
+	ret = host_realm_delegate_map_protected_data(false, &realm, base,
+						     PAGE_SIZE, TFTF_BASE);
 	if (ret != RMI_SUCCESS) {
 		ERROR("host_realm_delegate_map_protected_data failed\n");
 		goto destroy_realm;
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_ASSIGNED ||
-			(rtt.ripas != RMI_RAM)) {
+	    (rtt.ripas != RMI_RAM)) {
 		ERROR("wrong state after DATA_CRATE_UNKNOWN\n");
 		goto undelegate_destroy;
 	}
@@ -1617,23 +1661,25 @@ test_result_t host_realm_pas_validation_new(void)
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
-			rtt.ripas != RMI_DESTROYED) {
+	    rtt.ripas != RMI_DESTROYED) {
 		ERROR("Wrong state after host_rmi_data_destroy\n");
 		goto undelegate_destroy;
 	}
 
-	/* Undelegated to use helper function host_realm_delegate_map_protected_data */
+	/* Undelegated to use helper function
+	 * host_realm_delegate_map_protected_data */
 	host_rmi_granule_undelegate(base);
 
 	/*2b DATA_CREATE_UNKNOWN */
-	ret = host_realm_delegate_map_protected_data(true, &realm, base, PAGE_SIZE, 0U);
+	ret = host_realm_delegate_map_protected_data(true, &realm, base,
+						     PAGE_SIZE, 0U);
 	if (ret != RMI_SUCCESS) {
 		ERROR("host_realm_delegate_map_protected_data failed\n");
 		goto undelegate_destroy;
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_ASSIGNED ||
-			(rtt.ripas != RMI_DESTROYED)) {
+	    (rtt.ripas != RMI_DESTROYED)) {
 		ERROR("wrong state after DATA_CRATE_UNKNOWN\n");
 		goto undelegate_destroy;
 	}
@@ -1646,7 +1692,7 @@ test_result_t host_realm_pas_validation_new(void)
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
-			rtt.ripas != RMI_DESTROYED) {
+	    rtt.ripas != RMI_DESTROYED) {
 		ERROR("Wrong state after host_rmi_data_destroy\n");
 		goto undelegate_destroy;
 	}
@@ -1656,14 +1702,15 @@ test_result_t host_realm_pas_validation_new(void)
 	/* 3. start with new page */
 	INFO("Test 3\n");
 	base = (u_register_t)page_alloc(PAGE_SIZE);
-	ret = host_realm_delegate_map_protected_data(true, &realm, base, PAGE_SIZE, 0U);
+	ret = host_realm_delegate_map_protected_data(true, &realm, base,
+						     PAGE_SIZE, 0U);
 	if (ret != RMI_SUCCESS) {
 		ERROR("host_realm_delegate_map_protected_data failed\n");
 		goto destroy_realm;
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_ASSIGNED ||
-			(rtt.ripas != RMI_EMPTY)) {
+	    (rtt.ripas != RMI_EMPTY)) {
 		ERROR("wrong state after DATA_CRATE_UNKNOWN\n");
 		goto undelegate_destroy;
 	}
@@ -1674,7 +1721,7 @@ test_result_t host_realm_pas_validation_new(void)
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
-			rtt.ripas != RMI_EMPTY) {
+	    rtt.ripas != RMI_EMPTY) {
 		ERROR("Wrong state after host_rmi_data_destroy\n");
 		goto undelegate_destroy;
 	}
@@ -1686,24 +1733,25 @@ test_result_t host_realm_pas_validation_new(void)
 	ret = host_rmi_rtt_init_ripas(realm.rd, base, base + PAGE_SIZE, &top);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, ret=0x%lx line=%u\n",
-			"host_rmi_rtt_init_ripas", ret, __LINE__);
+		      "host_rmi_rtt_init_ripas", ret, __LINE__);
 		goto destroy_realm;
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
-			(rtt.ripas != RMI_RAM)) {
+	    (rtt.ripas != RMI_RAM)) {
 		ERROR("wrong state after INIT_RIPAS\n");
 		goto undelegate_destroy;
 	}
 	/* 4a. DATA_CREATE_UNKNOWN */
-	ret = host_realm_delegate_map_protected_data(true, &realm, base, PAGE_SIZE, 0U);
+	ret = host_realm_delegate_map_protected_data(true, &realm, base,
+						     PAGE_SIZE, 0U);
 	if (ret != RMI_SUCCESS) {
 		ERROR("host_realm_delegate_map_protected_data failed\n");
 		goto destroy_realm;
 	}
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_ASSIGNED ||
-			(rtt.ripas != RMI_RAM)) {
+	    (rtt.ripas != RMI_RAM)) {
 		ERROR("wrong state after DATA_CRATE_UNKNOWN\n");
 		goto undelegate_destroy;
 	}
@@ -1725,13 +1773,14 @@ test_result_t host_realm_pas_validation_new(void)
 undelegate_destroy:
 	ret = host_rmi_granule_undelegate(base);
 	if (ret != RMI_SUCCESS) {
-		ERROR("host_rmi_granule_undelegate failed base=0x%lx ret=0x%lx\n", base, ret);
+		ERROR("host_rmi_granule_undelegate failed base=0x%lx "
+		      "ret=0x%lx\n",
+		      base, ret);
 	}
 destroy_realm:
 	ret1 = host_destroy_realm(&realm);
 	if (!ret1) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret1);
+		ERROR("%s(): destroy=%d\n", __func__, ret1);
 		return TEST_RESULT_FAIL;
 	}
 	return test_result;
@@ -1759,13 +1808,13 @@ test_result_t host_realm_pas_validation_active(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 1U)) {
+				       (u_register_t)PAGE_POOL_BASE,
+				       (u_register_t)PAGE_POOL_MAX_SIZE,
+				       feature_flag, sl, rec_flag, 1U)) {
 		goto destroy_realm;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -1803,20 +1852,22 @@ test_result_t host_realm_sea_adr_fault(void)
 	test_result_t res = TEST_RESULT_FAIL;
 	u_register_t base_ipa, esr, feature_flag, base;
 	struct realm realm;
-	u_register_t rec_flag[4U] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE};
+	u_register_t rec_flag[4U] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
+				     RMI_RUNNABLE};
 	struct rmi_rec_run *run;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
 	feature_flag = INPLACE(RMI_FEATURE_REGISTER_0_S2SZ, 0x2CU);
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, RTT_MIN_LEVEL, rec_flag, 4U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag,
+		    RTT_MIN_LEVEL, rec_flag, 4U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -1824,7 +1875,8 @@ test_result_t host_realm_sea_adr_fault(void)
 	base = TFTF_BASE;
 	/* IPA outside Realm space */
 	base_ipa = base | (1UL << (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
-					realm.rmm_feat_reg0) + 1U));
+					   realm.rmm_feat_reg0) +
+				   1U));
 	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base_ipa);
 	host_shared_data_set_host_val(&realm, 1U, HOST_ARG1_INDEX, base_ipa);
 
@@ -1832,20 +1884,23 @@ test_result_t host_realm_sea_adr_fault(void)
 
 	run = (struct rmi_rec_run *)realm.run[0];
 
-	/* Rec0 expect SEA in realm due to Data access to address outside Realm IPA size */
+	/* Rec0 expect SEA in realm due to Data access to address outside Realm
+	 * IPA size */
 	ret1 = host_enter_realm_execute(&realm, REALM_DATA_ACCESS_CMD,
-			RMI_EXIT_HOST_CALL, 0U);
+					RMI_EXIT_HOST_CALL, 0U);
 	if (!ret1) {
-		ERROR("Rec0 did not fault exit=0x%lx ret1=%d HPFAR=0x%lx esr=0x%lx\n",
-				run->exit.exit_reason, ret1, run->exit.hpfar, run->exit.esr);
+		ERROR("Rec0 did not fault exit=0x%lx ret1=%d HPFAR=0x%lx "
+		      "esr=0x%lx\n",
+		      run->exit.exit_reason, ret1, run->exit.hpfar,
+		      run->exit.esr);
 		goto destroy_realm;
 	}
 
 	/* get ESR set by Realm exception handler */
 	esr = host_shared_data_get_realm_val(&realm, 0U, HOST_ARG2_INDEX);
-	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA)
-			|| (EC_BITS(esr) != EC_DABORT_CUR_EL)
-			|| ((esr & (1UL << ESR_ISS_EABORT_EA_BIT)) == 0U)) {
+	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA) ||
+	    (EC_BITS(esr) != EC_DABORT_CUR_EL) ||
+	    ((esr & (1UL << ESR_ISS_EABORT_EA_BIT)) == 0U)) {
 		ERROR("Rec0 incorrect ESR=0x%lx\n", esr);
 		goto destroy_realm;
 	}
@@ -1853,9 +1908,10 @@ test_result_t host_realm_sea_adr_fault(void)
 
 	run = (struct rmi_rec_run *)realm.run[1];
 
-	/* Rec1 expect SEA in realm due to Instruction access to address outside Realm IPA size */
+	/* Rec1 expect SEA in realm due to Instruction access to address outside
+	 * Realm IPA size */
 	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
-		RMI_EXIT_HOST_CALL, 1U);
+					RMI_EXIT_HOST_CALL, 1U);
 	if (!ret1) {
 		ERROR("Rec1 did not fault\n");
 		goto destroy_realm;
@@ -1863,11 +1919,13 @@ test_result_t host_realm_sea_adr_fault(void)
 
 	/* get ESR set by Realm exception handler */
 	esr = host_shared_data_get_realm_val(&realm, 1U, HOST_ARG2_INDEX);
-	if (((esr & ISS_DFSC_MASK) != IFSC_NO_WALK_SEA)
-			|| (EC_BITS(esr) != EC_IABORT_CUR_EL)
-			|| ((esr & (1UL << ESR_ISS_EABORT_EA_BIT)) == 0U)) {
-		ERROR("Rec1 did not fault exit=0x%lx ret1=%d HPFAR=0x%lx esr=0x%lx\n",
-				run->exit.exit_reason, ret1, run->exit.hpfar, run->exit.esr);
+	if (((esr & ISS_DFSC_MASK) != IFSC_NO_WALK_SEA) ||
+	    (EC_BITS(esr) != EC_IABORT_CUR_EL) ||
+	    ((esr & (1UL << ESR_ISS_EABORT_EA_BIT)) == 0U)) {
+		ERROR("Rec1 did not fault exit=0x%lx ret1=%d HPFAR=0x%lx "
+		      "esr=0x%lx\n",
+		      run->exit.exit_reason, ret1, run->exit.hpfar,
+		      run->exit.esr);
 		goto destroy_realm;
 	}
 	INFO("Rec1 ESR=0x%lx\n", esr);
@@ -1882,20 +1940,23 @@ test_result_t host_realm_sea_adr_fault(void)
 
 	run = (struct rmi_rec_run *)realm.run[2];
 
-	/* Rec2 expect SEA in realm due to Data access to address outside Realm IPA size */
+	/* Rec2 expect SEA in realm due to Data access to address outside Realm
+	 * IPA size */
 	ret1 = host_enter_realm_execute(&realm, REALM_DATA_ACCESS_CMD,
-			RMI_EXIT_HOST_CALL, 2U);
+					RMI_EXIT_HOST_CALL, 2U);
 	if (!ret1) {
-		ERROR("Rec2 did not fault exit=0x%lx ret1=%d HPFAR=0x%lx esr=0x%lx\n",
-				run->exit.exit_reason, ret1, run->exit.hpfar, run->exit.esr);
+		ERROR("Rec2 did not fault exit=0x%lx ret1=%d HPFAR=0x%lx "
+		      "esr=0x%lx\n",
+		      run->exit.exit_reason, ret1, run->exit.hpfar,
+		      run->exit.esr);
 		goto destroy_realm;
 	}
 
 	/* get ESR set by Realm exception handler */
 	esr = host_shared_data_get_realm_val(&realm, 2U, HOST_ARG2_INDEX);
-	if (((esr & ISS_DFSC_MASK) != DFSC_L0_ADR_SIZE_FAULT)
-			|| (EC_BITS(esr) != EC_DABORT_CUR_EL)
-			|| ((esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U)) {
+	if (((esr & ISS_DFSC_MASK) != DFSC_L0_ADR_SIZE_FAULT) ||
+	    (EC_BITS(esr) != EC_DABORT_CUR_EL) ||
+	    ((esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U)) {
 		ERROR("Rec2 incorrect ESR=0x%lx\n", esr);
 		goto destroy_realm;
 	}
@@ -1903,9 +1964,10 @@ test_result_t host_realm_sea_adr_fault(void)
 
 	run = (struct rmi_rec_run *)realm.run[3];
 
-	/* Rec3 expect SEA in realm due to Instruction access to address outside Realm IPA size */
+	/* Rec3 expect SEA in realm due to Instruction access to address outside
+	 * Realm IPA size */
 	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
-		RMI_EXIT_HOST_CALL, 3U);
+					RMI_EXIT_HOST_CALL, 3U);
 	if (!ret1) {
 		ERROR("Rec3 did not fault\n");
 		goto destroy_realm;
@@ -1913,11 +1975,13 @@ test_result_t host_realm_sea_adr_fault(void)
 
 	/* get ESR set by Realm exception handler */
 	esr = host_shared_data_get_realm_val(&realm, 3U, HOST_ARG2_INDEX);
-	if (((esr & ISS_IFSC_MASK) != IFSC_L0_ADR_SIZE_FAULT)
-			|| (EC_BITS(esr) != EC_IABORT_CUR_EL)
-			|| ((esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U)) {
-		ERROR("Rec3 did not fault exit=0x%lx ret1=%d HPFAR=0x%lx esr=0x%lx\n",
-				run->exit.exit_reason, ret1, run->exit.hpfar, run->exit.esr);
+	if (((esr & ISS_IFSC_MASK) != IFSC_L0_ADR_SIZE_FAULT) ||
+	    (EC_BITS(esr) != EC_IABORT_CUR_EL) ||
+	    ((esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U)) {
+		ERROR("Rec3 did not fault exit=0x%lx ret1=%d HPFAR=0x%lx "
+		      "esr=0x%lx\n",
+		      run->exit.exit_reason, ret1, run->exit.hpfar,
+		      run->exit.esr);
 		goto destroy_realm;
 	}
 	INFO("Rec3 ESR=0x%lx\n", esr);
@@ -1927,8 +1991,7 @@ destroy_realm:
 	ret2 = host_destroy_realm(&realm);
 
 	if (!ret2) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret2);
+		ERROR("%s(): destroy=%d\n", __func__, ret2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -1945,7 +2008,6 @@ destroy_realm:
  */
 test_result_t host_test_rtt_fold_unfold_unassigned_empty(void)
 {
-
 	bool ret1;
 	test_result_t res = TEST_RESULT_FAIL;
 	u_register_t ret, base;
@@ -1962,24 +2024,26 @@ test_result_t host_test_rtt_fold_unfold_unassigned_empty(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 1U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
 		goto destroy_realm;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
-	/* Find an address not mapped at L1 and mapped at L0 as unassigned empty */
+	/* Find an address not mapped at L1 and mapped at L0 as unassigned empty
+	 */
 	base = ALIGN_DOWN(TFTF_BASE, RTT_MAP_SIZE(1U));
 	while (true) {
 		ret = host_rmi_rtt_readentry(realm.rd, base, 1L, &rtt);
-		if (ret != RMI_SUCCESS || rtt.walk_level > 0U || rtt.state != RMI_UNASSIGNED
-			|| (rtt.ripas != RMI_EMPTY)) {
+		if (ret != RMI_SUCCESS || rtt.walk_level > 0U ||
+		    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_EMPTY)) {
 			base += RTT_MAP_SIZE(1U);
 			if (host_ipa_is_ns(base, realm.rmm_feat_reg0)) {
 				ERROR("could not find unmapped adr range\n");
@@ -2001,13 +2065,14 @@ test_result_t host_test_rtt_fold_unfold_unassigned_empty(void)
 
 	/* L3 entry is expected now */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 3L || rtt.state != RMI_UNASSIGNED
-			|| (rtt.ripas != RMI_EMPTY)) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 3L ||
+	    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_EMPTY)) {
 		ERROR("host_rmi_create_rtt_levels failed ret=0x%lx\n", ret);
 		goto destroy_realm;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx rtt.ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "rtt.ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	/* RTT Fold */
 	ret = host_realm_fold_rtt(realm.rd, base, 3L);
@@ -2018,15 +2083,16 @@ test_result_t host_test_rtt_fold_unfold_unassigned_empty(void)
 
 	/* Walk should terminate at L2 */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 2L || rtt.state != RMI_UNASSIGNED
-			|| (rtt.ripas != RMI_EMPTY)) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 2L ||
+	    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_EMPTY)) {
 		ERROR("host_rmi_fold_rtt failed ret=0x%lx rtt.state=0x%lx"
-				" rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
-				ret, rtt.state, rtt.walk_level, rtt.out_addr);
+		      " rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
+		      ret, rtt.state, rtt.walk_level, rtt.out_addr);
 		goto destroy_realm;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx rtt.ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "rtt.ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	/* RTT Fold */
 	ret = host_realm_fold_rtt(realm.rd, base, 2L);
@@ -2037,15 +2103,16 @@ test_result_t host_test_rtt_fold_unfold_unassigned_empty(void)
 
 	/* Walk should terminate at L1 */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 1L || rtt.state != RMI_UNASSIGNED
-			|| (rtt.ripas != RMI_EMPTY)) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 1L ||
+	    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_EMPTY)) {
 		ERROR("host_rmi_fold_rtt failed ret=0x%lx rtt.state=0x%lx"
-				" rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
-				ret, rtt.state, rtt.walk_level, rtt.out_addr);
+		      " rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
+		      ret, rtt.state, rtt.walk_level, rtt.out_addr);
 		goto destroy_realm;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx rtt.ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "rtt.ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	/* RTT Fold */
 	ret = host_realm_fold_rtt(realm.rd, base, 1L);
@@ -2056,15 +2123,16 @@ test_result_t host_test_rtt_fold_unfold_unassigned_empty(void)
 
 	/* Walk should terminate at L0 */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 0L || rtt.state != RMI_UNASSIGNED
-			|| (rtt.ripas != RMI_EMPTY)) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 0L ||
+	    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_EMPTY)) {
 		ERROR("host_rmi_fold_rtt failed ret=0x%lx rtt.state=0x%lx"
-				" rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
-				ret, rtt.state, rtt.walk_level, rtt.out_addr);
+		      " rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
+		      ret, rtt.state, rtt.walk_level, rtt.out_addr);
 		goto destroy_realm;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx rtt.ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "rtt.ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	/* Create RTT entries will cause unfold operation */
 	ret = host_rmi_create_rtt_levels(&realm, base, rtt.walk_level, 3L);
@@ -2075,13 +2143,14 @@ test_result_t host_test_rtt_fold_unfold_unassigned_empty(void)
 
 	/* L3 entry should be created */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 3L || rtt.state != RMI_UNASSIGNED
-			|| (rtt.ripas != RMI_EMPTY)) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 3L ||
+	    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_EMPTY)) {
 		ERROR("host_rmi_create_rtt_levels failed ret=0x%lx\n", ret);
 		goto destroy_realm;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx rtt.ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "rtt.ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	res = TEST_RESULT_SUCCESS;
 
@@ -2089,8 +2158,7 @@ destroy_realm:
 	ret1 = host_destroy_realm(&realm);
 
 	if (!ret1) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret1);
+		ERROR("%s(): destroy=%d\n", __func__, ret1);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -2108,7 +2176,6 @@ destroy_realm:
  */
 test_result_t host_test_rtt_fold_unfold_unassigned_ram(void)
 {
-
 	bool ret1;
 	test_result_t res = TEST_RESULT_FAIL;
 	u_register_t ret, base, top;
@@ -2126,23 +2193,24 @@ test_result_t host_test_rtt_fold_unfold_unassigned_ram(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 1U)) {
+				       (u_register_t)PAGE_POOL_BASE,
+				       (u_register_t)PAGE_POOL_MAX_SIZE,
+				       feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
 		goto destroy_realm;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
-	/* Find an address not mapped at L1 and mapped at L0 as unassigned empty */
+	/* Find an address not mapped at L1 and mapped at L0 as unassigned empty
+	 */
 	base = ALIGN_DOWN(TFTF_BASE, RTT_MAP_SIZE(1U));
 	while (true) {
 		ret = host_rmi_rtt_readentry(realm.rd, base, 1L, &rtt);
-		if (ret != RMI_SUCCESS || rtt.walk_level > 0L || rtt.state != RMI_UNASSIGNED
-			|| (rtt.ripas != RMI_EMPTY)) {
+		if (ret != RMI_SUCCESS || rtt.walk_level > 0L ||
+		    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_EMPTY)) {
 			base += RTT_MAP_SIZE(1U);
 			if (host_ipa_is_ns(base, realm.rmm_feat_reg0)) {
 				ERROR("could not find unmapped adr range\n");
@@ -2154,10 +2222,11 @@ test_result_t host_test_rtt_fold_unfold_unassigned_ram(void)
 	}
 
 	/* Set RIPAS of PAGE to RAM */
-	ret = host_rmi_rtt_init_ripas(realm.rd, base, base + RTT_MAP_SIZE(0U), &top);
+	ret = host_rmi_rtt_init_ripas(realm.rd, base, base + RTT_MAP_SIZE(0U),
+				      &top);
 	if (ret != RMI_SUCCESS || top != (base + RTT_MAP_SIZE(0))) {
 		ERROR("%s() failed, ret=0x%lx line=%u\n",
-			"host_rmi_rtt_init_ripas", ret, __LINE__);
+		      "host_rmi_rtt_init_ripas", ret, __LINE__);
 		goto destroy_realm;
 	}
 	if (host_realm_activate(&realm) != REALM_SUCCESS) {
@@ -2167,7 +2236,7 @@ test_result_t host_test_rtt_fold_unfold_unassigned_ram(void)
 
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_UNASSIGNED ||
-			(rtt.ripas != RMI_RAM) || rtt.walk_level != 0L) {
+	    (rtt.ripas != RMI_RAM) || rtt.walk_level != 0L) {
 		ERROR("wrong initial state\n");
 		goto destroy_realm;
 	}
@@ -2183,13 +2252,14 @@ test_result_t host_test_rtt_fold_unfold_unassigned_ram(void)
 
 	/* L3 entry should be created */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 3L || rtt.state != RMI_UNASSIGNED
-			|| (rtt.ripas != RMI_RAM)) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 3L ||
+	    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_RAM)) {
 		ERROR("host_rmi_create_rtt_levels failed ret=0x%lx\n", ret);
 		goto destroy_realm;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx rtt.ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "rtt.ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	/* RTT Fold */
 	ret = host_realm_fold_rtt(realm.rd, base, 3L);
@@ -2200,15 +2270,16 @@ test_result_t host_test_rtt_fold_unfold_unassigned_ram(void)
 
 	/* Walk should terminate at L2 */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 2L || rtt.state != RMI_UNASSIGNED
-			|| (rtt.ripas != RMI_RAM)) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 2L ||
+	    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_RAM)) {
 		ERROR("host_rmi_fold_rtt failed ret=0x%lx rtt.state=0x%lx"
-				" rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
-				ret, rtt.state, rtt.walk_level, rtt.out_addr);
+		      " rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
+		      ret, rtt.state, rtt.walk_level, rtt.out_addr);
 		goto destroy_realm;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx rtt.ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "rtt.ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	/* RTT Fold */
 	ret = host_realm_fold_rtt(realm.rd, base, 2L);
@@ -2219,15 +2290,16 @@ test_result_t host_test_rtt_fold_unfold_unassigned_ram(void)
 
 	/* Walk should terminate at L1 */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 1L || rtt.state != RMI_UNASSIGNED
-			|| (rtt.ripas != RMI_RAM)) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 1L ||
+	    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_RAM)) {
 		ERROR("host_rmi_fold_rtt failed ret=0x%lx rtt.state=0x%lx"
-				" rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
-				ret, rtt.state, rtt.walk_level, rtt.out_addr);
+		      " rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
+		      ret, rtt.state, rtt.walk_level, rtt.out_addr);
 		goto destroy_realm;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx rtt.ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "rtt.ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	/* RTT Fold */
 	ret = host_realm_fold_rtt(realm.rd, base, 1L);
@@ -2238,15 +2310,16 @@ test_result_t host_test_rtt_fold_unfold_unassigned_ram(void)
 
 	/* Walk should terminate at L0 */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 0L || rtt.state != RMI_UNASSIGNED
-			|| (rtt.ripas != RMI_RAM)) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 0L ||
+	    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_RAM)) {
 		ERROR("host_rmi_fold_rtt failed ret=0x%lx rtt.state=0x%lx"
-				" rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
-				ret, rtt.state, rtt.walk_level, rtt.out_addr);
+		      " rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
+		      ret, rtt.state, rtt.walk_level, rtt.out_addr);
 		goto destroy_realm;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx rtt.ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "rtt.ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	/* Create RTT entries will cause unfold operation */
 	ret = host_rmi_create_rtt_levels(&realm, base, rtt.walk_level, 3L);
@@ -2257,13 +2330,14 @@ test_result_t host_test_rtt_fold_unfold_unassigned_ram(void)
 
 	/* L3 entry should be created */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 3L || rtt.state != RMI_UNASSIGNED
-			|| (rtt.ripas != RMI_RAM)) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 3L ||
+	    rtt.state != RMI_UNASSIGNED || (rtt.ripas != RMI_RAM)) {
 		ERROR("host_rmi_create_rtt_levels failed ret=0x%lx\n", ret);
 		goto destroy_realm;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx rtt.ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "rtt.ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	res = TEST_RESULT_SUCCESS;
 
@@ -2271,8 +2345,7 @@ destroy_realm:
 	ret1 = host_destroy_realm(&realm);
 
 	if (!ret1) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret1);
+		ERROR("%s(): destroy=%d\n", __func__, ret1);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -2289,7 +2362,6 @@ destroy_realm:
  */
 test_result_t host_test_rtt_fold_unfold_assigned_ns(void)
 {
-
 	bool ret1;
 	test_result_t res = TEST_RESULT_FAIL;
 	u_register_t ret, ns_ipa, base_pa, top;
@@ -2306,45 +2378,49 @@ test_result_t host_test_rtt_fold_unfold_assigned_ns(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 1U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
 		goto destroy_realm;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
 	/*
 	 * Pick an address which is to be mapped to unprotected IPA space.
 	 * We use TFTF Base as the PA to map in unprotected IPA space of RMM.
-	 * Note that as long as Realm does not explicitly touch this unprotected IPA space,
-	 * it will not hit a fault.
-	 * Hence it does not matter even if the same pages are delegated
-	 * or even if it is invalid memory.
+	 * Note that as long as Realm does not explicitly touch this unprotected
+	 * IPA space, it will not hit a fault. Hence it does not matter even if
+	 * the same pages are delegated or even if it is invalid memory.
 	 */
 	base_pa = ALIGN(TFTF_BASE, RTT_L1_BLOCK_SIZE);
 	ns_ipa = base_pa | (1UL << (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
-					realm.rmm_feat_reg0) - 1U));
+					    realm.rmm_feat_reg0) -
+				    1U));
 
 	INFO("base=0x%lx\n", ns_ipa);
 	ret = host_realm_map_unprotected(&realm, base_pa, RTT_L1_BLOCK_SIZE);
 	if (ret != RMI_SUCCESS) {
-		ERROR("host_realm_map_unprotected fail base=0x%lx ret=0x%lx\n", ns_ipa, ret);
+		ERROR("host_realm_map_unprotected fail base=0x%lx ret=0x%lx\n",
+		      ns_ipa, ret);
 		goto destroy_realm;
 	}
 
 	ret = host_rmi_rtt_readentry(realm.rd, ns_ipa, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 1L || rtt.state != RMI_ASSIGNED) {
-		INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
-				rtt.state, rtt.walk_level, rtt.out_addr);
+	if (ret != RMI_SUCCESS || rtt.walk_level != 1L ||
+	    rtt.state != RMI_ASSIGNED) {
+		INFO("rtt.state=0x%lx rtt.walk_level=0x%lx "
+		     "rtt.out_addr=0x%llx\n",
+		     rtt.state, rtt.walk_level, rtt.out_addr);
 		goto destroy_realm;
 	}
 	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
-		rtt.state, rtt.walk_level, rtt.out_addr);
+	     rtt.state, rtt.walk_level, rtt.out_addr);
 
 	/* Unfold Create L2 RTT entries */
 	ret = host_rmi_create_rtt_levels(&realm, ns_ipa, 1L, 2L);
@@ -2353,14 +2429,16 @@ test_result_t host_test_rtt_fold_unfold_assigned_ns(void)
 	}
 
 	ret = host_rmi_rtt_readentry(realm.rd, ns_ipa, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 2L || rtt.state != RMI_ASSIGNED) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 2L ||
+	    rtt.state != RMI_ASSIGNED) {
 		ERROR("Initial realm table creation changed\n");
-		INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
-				rtt.state, rtt.walk_level, rtt.out_addr);
+		INFO("rtt.state=0x%lx rtt.walk_level=0x%lx "
+		     "rtt.out_addr=0x%llx\n",
+		     rtt.state, rtt.walk_level, rtt.out_addr);
 		goto destroy_realm;
 	}
 	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
-		rtt.state, rtt.walk_level, rtt.out_addr);
+	     rtt.state, rtt.walk_level, rtt.out_addr);
 
 	INFO("Fold L2\n");
 	/* RTT Fold */
@@ -2372,14 +2450,15 @@ test_result_t host_test_rtt_fold_unfold_assigned_ns(void)
 
 	/* Walk should terminate at L1 */
 	ret = host_rmi_rtt_readentry(realm.rd, ns_ipa, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 1L || rtt.state != RMI_ASSIGNED) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 1L ||
+	    rtt.state != RMI_ASSIGNED) {
 		ERROR("host_rmi_fold_rtt failed ret=0x%lx rtt.state=0x%lx"
-				" rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
-				ret, rtt.state, rtt.walk_level, rtt.out_addr);
+		      " rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
+		      ret, rtt.state, rtt.walk_level, rtt.out_addr);
 		goto destroy_realm;
 	}
 	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr);
+	     rtt.state, rtt.walk_level, rtt.out_addr);
 
 	res = TEST_RESULT_SUCCESS;
 	INFO("unmap\n\n");
@@ -2394,8 +2473,7 @@ destroy_realm:
 	ret1 = host_destroy_realm(&realm);
 
 	if (!ret1) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret1);
+		ERROR("%s(): destroy=%d\n", __func__, ret1);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -2427,15 +2505,16 @@ test_result_t host_test_rtt_fold_unfold_assigned_empty(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 1U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
 		goto destroy_realm;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -2443,13 +2522,15 @@ test_result_t host_test_rtt_fold_unfold_assigned_empty(void)
 	 * Any 2 MB range not mapped in RTT and which can be delegated,
 	 * using heap for second realm here.
 	 */
-	base = ALIGN_DOWN(PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE, RTT_L2_BLOCK_SIZE);
+	base = ALIGN_DOWN(PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE,
+			  RTT_L2_BLOCK_SIZE);
 
 	for (unsigned int i = 0U; i < 512; i++) {
-		ret = host_realm_delegate_map_protected_data(true, &realm, base + (PAGE_SIZE * i),
-				PAGE_SIZE, 0U);
+		ret = host_realm_delegate_map_protected_data(
+			true, &realm, base + (PAGE_SIZE * i), PAGE_SIZE, 0U);
 		if (ret != RMI_SUCCESS) {
-			ERROR("host_realm_delegate_map_protected_data failed\n");
+			ERROR("host_realm_delegate_map_protected_data "
+			      "failed\n");
 			goto undelegate_destroy;
 		}
 	}
@@ -2457,7 +2538,7 @@ test_result_t host_test_rtt_fold_unfold_assigned_empty(void)
 	INFO("base=0x%lx\n", base);
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_ASSIGNED ||
-			(rtt.ripas != RMI_EMPTY) || rtt.walk_level != 3L) {
+	    (rtt.ripas != RMI_EMPTY) || rtt.walk_level != 3L) {
 		ERROR("wrong state after DATA_CRATE_UNKNOWN\n");
 		goto undelegate_destroy;
 	}
@@ -2471,15 +2552,16 @@ test_result_t host_test_rtt_fold_unfold_assigned_empty(void)
 
 	/* Walk should terminate at L2 */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 2L || rtt.state != RMI_ASSIGNED ||
-			rtt.ripas != RMI_EMPTY) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 2L ||
+	    rtt.state != RMI_ASSIGNED || rtt.ripas != RMI_EMPTY) {
 		ERROR("host_rmi_fold_rtt failed ret=0x%lx rtt.state=0x%lx"
-				" rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
-				ret, rtt.state, rtt.walk_level, rtt.out_addr);
+		      " rtt.walk_level=0x%lx rtt.out_addr=0x%llx\n",
+		      ret, rtt.state, rtt.walk_level, rtt.out_addr);
 		goto undelegate_destroy;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	/* Create L3 RTT entries */
 	ret = host_rmi_create_rtt_levels(&realm, base, 2L, 3L);
@@ -2490,31 +2572,33 @@ test_result_t host_test_rtt_fold_unfold_assigned_empty(void)
 
 	/* L3 entry should be created */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 3L || rtt.state != RMI_ASSIGNED ||
-			rtt.ripas != RMI_EMPTY) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 3L ||
+	    rtt.state != RMI_ASSIGNED || rtt.ripas != RMI_EMPTY) {
 		ERROR("host_rmi_create_rtt_levels failed ret=0x%lx\n", ret);
 		goto destroy_realm;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	res = TEST_RESULT_SUCCESS;
 
 undelegate_destroy:
 	if (res != TEST_RESULT_SUCCESS) {
 		for (unsigned int i = 0U; i < 512; i++) {
-			ret = host_rmi_granule_undelegate(base + (PAGE_SIZE * i));
+			ret = host_rmi_granule_undelegate(base +
+							  (PAGE_SIZE * i));
 			if (ret != RMI_SUCCESS) {
-				ERROR("host_rmi_granule_undelegate failed base=0x%lx ret=0x%lx\n",
-					base, ret);
+				ERROR("host_rmi_granule_undelegate failed "
+				      "base=0x%lx ret=0x%lx\n",
+				      base, ret);
 			}
 		}
 	}
 destroy_realm:
 	ret1 = host_destroy_realm(&realm);
 	if (!ret1) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret1);
+		ERROR("%s(): destroy=%d\n", __func__, ret1);
 		return TEST_RESULT_FAIL;
 	}
 	return res;
@@ -2546,14 +2630,14 @@ test_result_t host_test_rtt_fold_unfold_assigned_ram(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 1U)) {
+				       (u_register_t)PAGE_POOL_BASE,
+				       (u_register_t)PAGE_POOL_MAX_SIZE,
+				       feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
 		goto destroy_realm;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
+				    NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -2561,15 +2645,18 @@ test_result_t host_test_rtt_fold_unfold_assigned_ram(void)
 	 * Any 2 MB range not mapped in RTT and which can be delegated,
 	 * using heap for second realm here.
 	 */
-	base = ALIGN_DOWN(PAGE_POOL_BASE + (PAGE_POOL_MAX_SIZE), RTT_L2_BLOCK_SIZE);
+	base = ALIGN_DOWN(PAGE_POOL_BASE + (PAGE_POOL_MAX_SIZE),
+			  RTT_L2_BLOCK_SIZE);
 
 	INFO("base=0x%lx\n", base);
 	for (unsigned int i = 0U; i < 512; i++) {
-		ret = host_realm_delegate_map_protected_data(false, &realm, base + (PAGE_SIZE * i),
-				PAGE_SIZE, REALM_IMAGE_BASE);
+		ret = host_realm_delegate_map_protected_data(
+			false, &realm, base + (PAGE_SIZE * i), PAGE_SIZE,
+			REALM_IMAGE_BASE);
 		if (ret != RMI_SUCCESS) {
-			ERROR("host_realm_delegate_map_protected_data failed base=0x%lx\n",
-					base + (PAGE_SIZE * i));
+			ERROR("host_realm_delegate_map_protected_data failed "
+			      "base=0x%lx\n",
+			      base + (PAGE_SIZE * i));
 			goto undelegate_destroy;
 		}
 	}
@@ -2577,7 +2664,7 @@ test_result_t host_test_rtt_fold_unfold_assigned_ram(void)
 	/* INIT_RIPAS should move state to unassigned ram */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.state != RMI_ASSIGNED ||
-			(rtt.ripas != RMI_RAM)) {
+	    (rtt.ripas != RMI_RAM)) {
 		ERROR("wrong state after INIT_RIPAS\n");
 		return TEST_RESULT_FAIL;
 	}
@@ -2592,15 +2679,16 @@ test_result_t host_test_rtt_fold_unfold_assigned_ram(void)
 
 	/* Walk should terminate at L2 */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 2L || rtt.state != RMI_ASSIGNED ||
-			rtt.ripas != RMI_RAM) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 2L ||
+	    rtt.state != RMI_ASSIGNED || rtt.ripas != RMI_RAM) {
 		ERROR("host_rmi_fold_rtt failed ret=0x%lx rtt.state=0x%lx"
-			" rtt.walk_level=0x%lx rtt.out_addr=0x%llx ripas=0x%lx\n",
-				ret, rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+		      " rtt.walk_level=0x%lx rtt.out_addr=0x%llx ripas=0x%lx\n",
+		      ret, rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 		goto undelegate_destroy;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx rtt.ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "rtt.ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	/* Create L3 RTT entries */
 	ret = host_rmi_create_rtt_levels(&realm, base, 2L, 3L);
@@ -2611,31 +2699,33 @@ test_result_t host_test_rtt_fold_unfold_assigned_ram(void)
 
 	/* L3 entry should be created */
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (ret != RMI_SUCCESS || rtt.walk_level != 3L || rtt.state != RMI_ASSIGNED ||
-			rtt.ripas != RMI_RAM) {
+	if (ret != RMI_SUCCESS || rtt.walk_level != 3L ||
+	    rtt.state != RMI_ASSIGNED || rtt.ripas != RMI_RAM) {
 		ERROR("host_rmi_create_rtt_levels failed ret=0x%lx\n", ret);
 		goto destroy_realm;
 	}
-	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx ripas=0x%lx\n",
-			rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
+	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx "
+	     "ripas=0x%lx\n",
+	     rtt.state, rtt.walk_level, rtt.out_addr, rtt.ripas);
 
 	res = TEST_RESULT_SUCCESS;
 
 undelegate_destroy:
 	if (res != TEST_RESULT_SUCCESS) {
 		for (unsigned int i = 0U; i < 512; i++) {
-			ret = host_rmi_granule_undelegate(base + (PAGE_SIZE * i));
+			ret = host_rmi_granule_undelegate(base +
+							  (PAGE_SIZE * i));
 			if (ret != RMI_SUCCESS) {
-				ERROR("host_rmi_granule_undelegate failed base=0x%lx ret=0x%lx\n",
-					base + (PAGE_SIZE * i), ret);
+				ERROR("host_rmi_granule_undelegate failed "
+				      "base=0x%lx ret=0x%lx\n",
+				      base + (PAGE_SIZE * i), ret);
 			}
 		}
 	}
 destroy_realm:
 	ret1 = host_destroy_realm(&realm);
 	if (!ret1) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret1);
+		ERROR("%s(): destroy=%d\n", __func__, ret1);
 		return TEST_RESULT_FAIL;
 	}
 	return res;

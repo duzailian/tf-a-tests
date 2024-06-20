@@ -5,13 +5,12 @@
  */
 
 #include <platform.h>
-
 #include <psci.h>
 #include <tftf.h>
 
 void tftf_plat_reset(void)
 {
-	smc_args reset_args = { SMC_PSCI_SYSTEM_RESET };
+	smc_args reset_args = {SMC_PSCI_SYSTEM_RESET};
 
 	(void)tftf_smc(&reset_args);
 	bug_unreachable();

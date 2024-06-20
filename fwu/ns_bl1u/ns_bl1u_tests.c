@@ -36,70 +36,76 @@ typedef struct {
 static const ns_bl1u_test_t tests[] = {
 	/* Basic FWU SMC handler test cases. */
 	{
-		.description	= "BL1_SMC_CALL_COUNT",
-		.args		= { BL1_SMC_CALL_COUNT, 0, 0, 0, 0 },
-		.expect		= BL1_NUM_SMC_CALLS,
+		.description = "BL1_SMC_CALL_COUNT",
+		.args = {BL1_SMC_CALL_COUNT, 0, 0, 0, 0},
+		.expect = BL1_NUM_SMC_CALLS,
 	},
 
 	{
-		.description	= "BL1_SMC_VERSION",
-		.args		= { BL1_SMC_VERSION, 0, 0, 0, 0 },
-		.expect		= BL1_VERSION,
+		.description = "BL1_SMC_VERSION",
+		.args = {BL1_SMC_VERSION, 0, 0, 0, 0},
+		.expect = BL1_VERSION,
 	},
 
 	{
-		.description	= "Invalid SMC",
-		.args		= { 0xdeadbeef, 0, 0, 0, 0 },
-		.expect		= SMC_UNKNOWN,
+		.description = "Invalid SMC",
+		.args = {0xdeadbeef, 0, 0, 0, 0},
+		.expect = SMC_UNKNOWN,
 	},
 
 	/* FWU_SMC_IMAGE_COPY test cases. */
 	{
-		.description	= "IMAGE_COPY with invalid image_id",
-		.args		= { FWU_SMC_IMAGE_COPY, 0xdeadbeef, 0, 0, 0 },
-		.expect		= -EPERM,
+		.description = "IMAGE_COPY with invalid image_id",
+		.args = {FWU_SMC_IMAGE_COPY, 0xdeadbeef, 0, 0, 0},
+		.expect = -EPERM,
 	},
 
 	{
-		.description	= "IMAGE_COPY with non-secure image_id",
-		.args		= { FWU_SMC_IMAGE_COPY, NS_BL2U_IMAGE_ID, 0, 0, 0 },
-		.expect		= -EPERM,
+		.description = "IMAGE_COPY with non-secure image_id",
+		.args = {FWU_SMC_IMAGE_COPY, NS_BL2U_IMAGE_ID, 0, 0, 0},
+		.expect = -EPERM,
 	},
 
 	{
-		.description	= "IMAGE_COPY with valid args",
-		.args		= { FWU_SMC_IMAGE_COPY, FWU_CERT_ID, PLAT_ARM_FWU_FIP_BASE, 0x20, 0x20 },
-		.expect		= STATUS_SUCCESS,
+		.description = "IMAGE_COPY with valid args",
+		.args = {FWU_SMC_IMAGE_COPY, FWU_CERT_ID, PLAT_ARM_FWU_FIP_BASE,
+			 0x20, 0x20},
+		.expect = STATUS_SUCCESS,
 	},
 
 	{
-		.description	= "IMAGE_COPY to copy an image_id again",
-		.args		= { FWU_SMC_IMAGE_COPY, FWU_CERT_ID, PLAT_ARM_FWU_FIP_BASE, 0x20, 0x20 },
-		.expect		= -EPERM,
+		.description = "IMAGE_COPY to copy an image_id again",
+		.args = {FWU_SMC_IMAGE_COPY, FWU_CERT_ID, PLAT_ARM_FWU_FIP_BASE,
+			 0x20, 0x20},
+		.expect = -EPERM,
 	},
 
 	{
-		.description	= "IMAGE_COPY with source address not mapped",
-		.args		= { FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID, 0, 0, 0 },
-		.expect		= -ENOMEM,
+		.description = "IMAGE_COPY with source address not mapped",
+		.args = {FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID, 0, 0, 0},
+		.expect = -ENOMEM,
 	},
 
 	{
-		.description	= "IMAGE_COPY with source size not mapped",
-		.args		= { FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID, PLAT_ARM_FWU_FIP_BASE, 0xdeadbeef, 0xdeadbeef },
-		.expect		= -ENOMEM,
+		.description = "IMAGE_COPY with source size not mapped",
+		.args = {FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID,
+			 PLAT_ARM_FWU_FIP_BASE, 0xdeadbeef, 0xdeadbeef},
+		.expect = -ENOMEM,
 	},
 
 	{
-		.description	= "IMAGE_COPY with image size more than secure mem",
-		.args		= { FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID, PLAT_ARM_FWU_FIP_BASE, 0x40000, 0x40000 },
-		.expect		= -ENOMEM,
+		.description =
+			"IMAGE_COPY with image size more than secure mem",
+		.args = {FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID,
+			 PLAT_ARM_FWU_FIP_BASE, 0x40000, 0x40000},
+		.expect = -ENOMEM,
 	},
 
 	{
-		.description	= "IMAGE_COPY with image size 0",
-		.args		= { FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID, PLAT_ARM_FWU_FIP_BASE, 0, 0 },
-		.expect		= -ENOMEM,
+		.description = "IMAGE_COPY with image size 0",
+		.args = {FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID,
+			 PLAT_ARM_FWU_FIP_BASE, 0, 0},
+		.expect = -ENOMEM,
 	},
 
 	/*
@@ -108,9 +114,11 @@ static const ns_bl1u_test_t tests[] = {
 	 * address.
 	 */
 	{
-		.description	= "IMAGE_COPY with an image that overlaps a different one",
-		.args		= { FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID, PLAT_ARM_FWU_FIP_BASE, 0x20, 0x40 },
-		.expect		= -EPERM,
+		.description = "IMAGE_COPY with an image that overlaps a "
+			       "different one",
+		.args = {FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID,
+			 PLAT_ARM_FWU_FIP_BASE, 0x20, 0x40},
+		.expect = -EPERM,
 	},
 
 	/*
@@ -118,125 +126,132 @@ static const ns_bl1u_test_t tests[] = {
 	 * the state of this image to "RESET" for the following tests.
 	 */
 	{
-		.description	= "IMAGE_AUTH with an invalid image",
-		.args		= { FWU_SMC_IMAGE_AUTH, FWU_CERT_ID, PLAT_ARM_FWU_FIP_BASE, 0x20, 0x20 },
-		.expect		= -EAUTH,
+		.description = "IMAGE_AUTH with an invalid image",
+		.args = {FWU_SMC_IMAGE_AUTH, FWU_CERT_ID, PLAT_ARM_FWU_FIP_BASE,
+			 0x20, 0x20},
+		.expect = -EAUTH,
 	},
 
 	{
-		.description	= "IMAGE_COPY with 1st block size in partial copy",
-		.args		= { FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID, PLAT_ARM_FWU_FIP_BASE, 0x20, 0x40 },
-		.expect		= STATUS_SUCCESS,
+		.description = "IMAGE_COPY with 1st block size in partial copy",
+		.args = {FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID,
+			 PLAT_ARM_FWU_FIP_BASE, 0x20, 0x40},
+		.expect = STATUS_SUCCESS,
 	},
 
 	{
-		.description	= "IMAGE_AUTH while copying the image",
-		.args		= { FWU_SMC_IMAGE_AUTH, BL2U_IMAGE_ID, PLAT_ARM_FWU_FIP_BASE, 0x40, 0 },
-		.expect		= -EPERM,
+		.description = "IMAGE_AUTH while copying the image",
+		.args = {FWU_SMC_IMAGE_AUTH, BL2U_IMAGE_ID,
+			 PLAT_ARM_FWU_FIP_BASE, 0x40, 0},
+		.expect = -EPERM,
 	},
 
 	{
-		.description	= "IMAGE_COPY with last block with invalid source in partial copy",
-		.args		= { FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID, 0, 0x21, 0x40 },
-		.expect		= -ENOMEM,
+		.description = "IMAGE_COPY with last block with invalid source "
+			       "in partial copy",
+		.args = {FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID, 0, 0x21, 0x40},
+		.expect = -ENOMEM,
 	},
 
 	{
-		.description	= "IMAGE_COPY with last block size > total size in partial copy",
-		.args		= { FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID, PLAT_ARM_FWU_FIP_BASE, 0x21, 0x40 },
-		.expect		= STATUS_SUCCESS,
+		.description = "IMAGE_COPY with last block size > total size "
+			       "in partial copy",
+		.args = {FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID,
+			 PLAT_ARM_FWU_FIP_BASE, 0x21, 0x40},
+		.expect = STATUS_SUCCESS,
 	},
 
 	{
-		.description	= "IMAGE_AUTH to RESET the image state",
-		.args		= { FWU_SMC_IMAGE_AUTH, BL2U_IMAGE_ID, PLAT_ARM_FWU_FIP_BASE, 0x40, 0 },
-		.expect		= -EAUTH,
+		.description = "IMAGE_AUTH to RESET the image state",
+		.args = {FWU_SMC_IMAGE_AUTH, BL2U_IMAGE_ID,
+			 PLAT_ARM_FWU_FIP_BASE, 0x40, 0},
+		.expect = -EAUTH,
 	},
 
 	{
-		.description	= "IMAGE_COPY with block size > total size",
-		.args		= { FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID, PLAT_ARM_FWU_FIP_BASE, 0x21, 0x20 },
-		.expect		= STATUS_SUCCESS,
+		.description = "IMAGE_COPY with block size > total size",
+		.args = {FWU_SMC_IMAGE_COPY, BL2U_IMAGE_ID,
+			 PLAT_ARM_FWU_FIP_BASE, 0x21, 0x20},
+		.expect = STATUS_SUCCESS,
 	},
 
 	{
-		.description	= "IMAGE_RESET to RESET the image state",
-		.args		= { FWU_SMC_IMAGE_RESET, BL2U_IMAGE_ID, 0, 0, 0 },
-		.expect		= STATUS_SUCCESS,
+		.description = "IMAGE_RESET to RESET the image state",
+		.args = {FWU_SMC_IMAGE_RESET, BL2U_IMAGE_ID, 0, 0, 0},
+		.expect = STATUS_SUCCESS,
 	},
-
 
 	/* FWU_SMC_IMAGE_AUTH test cases. */
 	{
-		.description	= "IMAGE_AUTH with invalid image_id",
-		.args		= { FWU_SMC_IMAGE_AUTH, 0, 0, 0, 0 },
-		.expect		= -EPERM,
+		.description = "IMAGE_AUTH with invalid image_id",
+		.args = {FWU_SMC_IMAGE_AUTH, 0, 0, 0, 0},
+		.expect = -EPERM,
 	},
 
 	{
-		.description	= "IMAGE_AUTH with secure image not copied",
-		.args		= { FWU_SMC_IMAGE_AUTH, BL2U_IMAGE_ID, 0, 0, 0 },
-		.expect		= -EPERM,
+		.description = "IMAGE_AUTH with secure image not copied",
+		.args = {FWU_SMC_IMAGE_AUTH, BL2U_IMAGE_ID, 0, 0, 0},
+		.expect = -EPERM,
 	},
 
 	{
-		.description	= "IMAGE_AUTH with source address not mapped",
-		.args		= { FWU_SMC_IMAGE_AUTH, NS_BL2U_IMAGE_ID, 0, 0, 0 },
-		.expect		= -ENOMEM,
+		.description = "IMAGE_AUTH with source address not mapped",
+		.args = {FWU_SMC_IMAGE_AUTH, NS_BL2U_IMAGE_ID, 0, 0, 0},
+		.expect = -ENOMEM,
 	},
 
 	{
-		.description	= "IMAGE_AUTH with source size not mapped",
-		.args		= { FWU_SMC_IMAGE_AUTH, NS_BL2U_IMAGE_ID, PLAT_ARM_FWU_FIP_BASE, 0xdeadbeef, 0 },
-		.expect		= -ENOMEM,
+		.description = "IMAGE_AUTH with source size not mapped",
+		.args = {FWU_SMC_IMAGE_AUTH, NS_BL2U_IMAGE_ID,
+			 PLAT_ARM_FWU_FIP_BASE, 0xdeadbeef, 0},
+		.expect = -ENOMEM,
 	},
 
 	{
-		.description	= "IMAGE_COPY to copy after auth failure",
-		.args		= { FWU_SMC_IMAGE_COPY, FWU_CERT_ID, PLAT_ARM_FWU_FIP_BASE, 0x40, 0x40 },
-		.expect		= STATUS_SUCCESS,
+		.description = "IMAGE_COPY to copy after auth failure",
+		.args = {FWU_SMC_IMAGE_COPY, FWU_CERT_ID, PLAT_ARM_FWU_FIP_BASE,
+			 0x40, 0x40},
+		.expect = STATUS_SUCCESS,
 	},
 
 	{
-		.description	= "IMAGE_AUTH with valid args for copied image",
-		.args		= { FWU_SMC_IMAGE_AUTH, FWU_CERT_ID, 0, 0, 0 },
-		.expect		= -EAUTH,
+		.description = "IMAGE_AUTH with valid args for copied image",
+		.args = {FWU_SMC_IMAGE_AUTH, FWU_CERT_ID, 0, 0, 0},
+		.expect = -EAUTH,
 	},
 
 	/* FWU_SMC_IMAGE_EXECUTE test cases. */
 	{
-		.description	= "IMAGE_EXECUTE with invalid image_id",
-		.args		= { FWU_SMC_IMAGE_EXECUTE, 0, 0, 0, 0 },
-		.expect		= -EPERM,
+		.description = "IMAGE_EXECUTE with invalid image_id",
+		.args = {FWU_SMC_IMAGE_EXECUTE, 0, 0, 0, 0},
+		.expect = -EPERM,
 	},
 
 	{
-		.description	= "IMAGE_EXECUTE with non-executable image_id",
-		.args		= { FWU_SMC_IMAGE_EXECUTE, FWU_CERT_ID, 0, 0, 0 },
-		.expect		= -EPERM,
+		.description = "IMAGE_EXECUTE with non-executable image_id",
+		.args = {FWU_SMC_IMAGE_EXECUTE, FWU_CERT_ID, 0, 0, 0},
+		.expect = -EPERM,
 	},
 
 	{
-		.description	= "IMAGE_EXECUTE with un-authenticated image_id",
-		.args		= { FWU_SMC_IMAGE_EXECUTE, BL2U_IMAGE_ID, 0, 0, 0 },
-		.expect		= -EPERM,
+		.description = "IMAGE_EXECUTE with un-authenticated image_id",
+		.args = {FWU_SMC_IMAGE_EXECUTE, BL2U_IMAGE_ID, 0, 0, 0},
+		.expect = -EPERM,
 	},
-
 
 	/* FWU_SMC_IMAGE_RESUME test case. */
 	{
-		.description	= "IMAGE_RESUME with invalid args",
-		.args		= { FWU_SMC_IMAGE_RESUME, 0, 0, 0, 0 },
-		.expect		= -EPERM,
+		.description = "IMAGE_RESUME with invalid args",
+		.args = {FWU_SMC_IMAGE_RESUME, 0, 0, 0, 0},
+		.expect = -EPERM,
 	},
 };
-
 
 void ns_bl1u_fwu_test_main(void)
 {
 	NOTICE("NS_BL1U: ***** Starting NS_BL1U FWU test *****\n");
 
-	for (int i = 0 ; i < ARRAY_SIZE(tests); ++i) {
+	for (int i = 0; i < ARRAY_SIZE(tests); ++i) {
 		u_register_t result;
 
 		INFO("NS_BL1U: %s\n", tests[i].description);
@@ -247,7 +262,8 @@ void ns_bl1u_fwu_test_main(void)
 
 		if (result != tests[i].expect) {
 			ERROR("NS_BL1U: Unexpected SMC return value 0x%lX, "
-				"expected 0x%lX\n", result, tests[i].expect);
+			      "expected 0x%lX\n",
+			      result, tests[i].expect);
 			panic();
 		}
 	}

@@ -8,9 +8,9 @@
 #define __CONSOLE_H__
 
 /* Returned by getc callbacks when receive FIFO is empty. */
-#define ERROR_NO_PENDING_CHAR		-1
+#define ERROR_NO_PENDING_CHAR -1
 /* Returned by console_xxx() if the registered console doesn't implement xxx. */
-#define ERROR_NO_VALID_CONSOLE		(-128)
+#define ERROR_NO_VALID_CONSOLE (-128)
 
 #ifndef __ASSEMBLY__
 
@@ -21,8 +21,8 @@
  * information. It saves the console base to the data section. Returns 1 on
  * success, 0 on error.
  */
-int console_init(uintptr_t base_addr,
-		unsigned int uart_clk, unsigned int baud_rate);
+int console_init(uintptr_t base_addr, unsigned int uart_clk,
+		 unsigned int baud_rate);
 
 /*
  * Function to output a character over the console. It returns the character

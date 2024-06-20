@@ -60,11 +60,11 @@ test_result_t test_template_multi_core(void)
 		if (cpu_mpid == lead_mpid)
 			continue;
 
-		psci_ret = tftf_cpu_on(cpu_mpid, (uintptr_t) non_lead_cpu_fn, 0);
+		psci_ret = tftf_cpu_on(cpu_mpid, (uintptr_t)non_lead_cpu_fn, 0);
 		if (psci_ret != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
-				"Failed to power on CPU 0x%x (%d)\n",
-				cpu_mpid, psci_ret);
+				"Failed to power on CPU 0x%x (%d)\n", cpu_mpid,
+				psci_ret);
 			return TEST_RESULT_SKIPPED;
 		}
 	}

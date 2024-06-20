@@ -55,6 +55,6 @@ void ns_bl2u_main(void)
 	fwu_params.fid = FWU_SMC_UPDATE_DONE;
 	fwu_result = tftf_smc(&fwu_params);
 	ERROR("NS_BL2U: Unexpected return from FWU process (%d)\n",
-			(int)fwu_result.ret0);
+	      (int)fwu_result.ret0);
 	panic();
 }

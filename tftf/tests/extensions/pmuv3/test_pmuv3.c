@@ -11,9 +11,9 @@
 /* tests target aarch64. Aarch32 is too different to even build */
 #if defined(__aarch64__)
 
-#define PMU_EVT_INST_RETIRED	0x0008
-#define NOP_REPETITIONS		50
-#define MAX_COUNTERS		32
+#define PMU_EVT_INST_RETIRED 0x0008
+#define NOP_REPETITIONS 50
+#define MAX_COUNTERS 32
 
 static inline void read_all_counters(u_register_t *array, int impl_ev_ctrs)
 {
@@ -23,7 +23,8 @@ static inline void read_all_counters(u_register_t *array, int impl_ev_ctrs)
 	}
 }
 
-static inline void read_all_counter_configs(u_register_t *array, int impl_ev_ctrs)
+static inline void read_all_counter_configs(u_register_t *array,
+					    int impl_ev_ctrs)
 {
 	array[0] = read_pmccfiltr_el0();
 	for (int i = 0; i < impl_ev_ctrs; i++) {
@@ -70,24 +71,25 @@ static inline void enable_cycle_counter(void)
 
 static inline void enable_event_counter(int ctr_num)
 {
-	write_pmevtypern_el0(ctr_num, PMEVTYPER_EL0_NSH_BIT |
-		(PMU_EVT_INST_RETIRED & PMEVTYPER_EL0_EVTCOUNT_BITS));
+	write_pmevtypern_el0(
+		ctr_num, PMEVTYPER_EL0_NSH_BIT | (PMU_EVT_INST_RETIRED &
+						  PMEVTYPER_EL0_EVTCOUNT_BITS));
 	write_pmcntenset_el0(read_pmcntenset_el0() |
-		PMCNTENSET_EL0_P_BIT(ctr_num));
+			     PMCNTENSET_EL0_P_BIT(ctr_num));
 }
 
 /* doesn't really matter what happens, as long as it happens a lot */
 static inline void execute_nops(void)
 {
 	for (int i = 0; i < NOP_REPETITIONS; i++) {
-		__asm__ ("orr x0, x0, x0\n");
+		__asm__("orr x0, x0, x0\n");
 	}
 }
 
 static inline void execute_el3_nop(void)
 {
 	/* ask EL3 for some info, no side effects */
-	smc_args args = { SMCCC_VERSION };
+	smc_args args = {SMCCC_VERSION};
 
 	/* return values don't matter */
 	tftf_smc(&args);
@@ -116,8 +118,8 @@ test_result_t test_pmuv3_cycle_works_ns(void)
 	disable_counting();
 	clear_counters();
 
-	tftf_testcase_printf("Counted from %ld to %ld\n",
-		ccounter_start, ccounter_end);
+	tftf_testcase_printf("Counted from %ld to %ld\n", ccounter_start,
+			     ccounter_end);
 	if (ccounter_start != ccounter_end) {
 		return TEST_RESULT_SUCCESS;
 	}
@@ -178,15 +180,14 @@ test_result_t test_pmuv3_event_works_ns(void)
 	disable_counting();
 	clear_counters();
 
-	tftf_testcase_printf("Counted from %ld to %ld\n",
-		evcounter_start, evcounter_end);
+	tftf_testcase_printf("Counted from %ld to %ld\n", evcounter_start,
+			     evcounter_end);
 	if (evcounter_start != evcounter_end) {
 		return TEST_RESULT_SUCCESS;
 	}
 	return TEST_RESULT_FAIL;
 #endif /* defined(__aarch64__) */
 }
-
 
 /*
  * check if entering/exiting EL3 (with a NOP) preserves all PMU registers.
@@ -235,12 +236,14 @@ test_result_t test_pmuv3_el3_preserves(void)
 	}
 
 	if (memcmp(ctr_cfg_start, ctr_cfg_end, sizeof(ctr_cfg_start)) != 0) {
-		tftf_testcase_printf("SMC call did not preserve counter config\n");
+		tftf_testcase_printf(
+			"SMC call did not preserve counter config\n");
 		return TEST_RESULT_FAIL;
 	}
 
 	if (memcmp(pmu_cfg_start, pmu_cfg_end, sizeof(pmu_cfg_start)) != 0) {
-		tftf_testcase_printf("SMC call did not preserve PMU registers\n");
+		tftf_testcase_printf(
+			"SMC call did not preserve PMU registers\n");
 		return TEST_RESULT_FAIL;
 	}
 

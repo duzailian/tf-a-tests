@@ -5,67 +5,70 @@
  */
 
 #include <arch_helpers.h>
+#include <debug.h>
+#include <lib/extensions/fpu.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 
-#include <debug.h>
-#include <lib/extensions/fpu.h>
-
 #define __STR(x) #x
 #define STR(x) __STR(x)
 
-#define fill_simd_helper(num1, num2) "ldp q"#num1", q"#num2",\
-	[%0], #"STR(2 * FPU_Q_SIZE)";"
-#define read_simd_helper(num1, num2) "stp q"#num1", q"#num2",\
-	[%0], #"STR(2 * FPU_Q_SIZE)";"
+#define fill_simd_helper(num1, num2) \
+	"ldp q" #num1 ", q" #num2    \
+	",\
+	[%0], #" STR(2 * FPU_Q_SIZE) ";"
+#define read_simd_helper(num1, num2) \
+	"stp q" #num1 ", q" #num2    \
+	",\
+	[%0], #" STR(2 * FPU_Q_SIZE) ";"
 
 /* Read FPU Q[0-31] and strore it in 'q_regs' */
 void fpu_q_regs_read(fpu_q_reg_t q_regs[FPU_Q_COUNT])
 {
 	__asm__ volatile(
-			read_simd_helper(0, 1)
-			read_simd_helper(2, 3)
-			read_simd_helper(4, 5)
-			read_simd_helper(6, 7)
-			read_simd_helper(8, 9)
-			read_simd_helper(10, 11)
-			read_simd_helper(12, 13)
-			read_simd_helper(14, 15)
-			read_simd_helper(16, 17)
-			read_simd_helper(18, 19)
-			read_simd_helper(20, 21)
-			read_simd_helper(22, 23)
-			read_simd_helper(24, 25)
-			read_simd_helper(26, 27)
-			read_simd_helper(28, 29)
-			read_simd_helper(30, 31)
-			"sub %0, %0, #" STR(FPU_Q_COUNT * FPU_Q_SIZE) ";"
-			: : "r" (q_regs));
+		read_simd_helper(0, 1) read_simd_helper(2, 3) read_simd_helper(4, 5) read_simd_helper(
+			6,
+			7) read_simd_helper(8,
+					    9) read_simd_helper(10,
+								11) read_simd_helper(12,
+										     13)
+			read_simd_helper(14, 15) read_simd_helper(16, 17) read_simd_helper(
+				18,
+				19) read_simd_helper(20,
+						     21) read_simd_helper(22,
+									  23) read_simd_helper(24,
+											       25)
+				read_simd_helper(26, 27) read_simd_helper(28, 29) read_simd_helper(
+					30,
+					31) "sub %0, %0, #" STR(FPU_Q_COUNT *
+								FPU_Q_SIZE) ";"
+		:
+		: "r"(q_regs));
 }
 
 /* Write FPU Q[0-31] registers passed in 'q_regs' */
 static void fpu_q_regs_write(const fpu_q_reg_t q_regs[FPU_Q_COUNT])
 {
 	__asm__ volatile(
-			fill_simd_helper(0, 1)
-			fill_simd_helper(2, 3)
-			fill_simd_helper(4, 5)
-			fill_simd_helper(6, 7)
-			fill_simd_helper(8, 9)
-			fill_simd_helper(10, 11)
-			fill_simd_helper(12, 13)
-			fill_simd_helper(14, 15)
-			fill_simd_helper(16, 17)
-			fill_simd_helper(18, 19)
-			fill_simd_helper(20, 21)
-			fill_simd_helper(22, 23)
-			fill_simd_helper(24, 25)
-			fill_simd_helper(26, 27)
-			fill_simd_helper(28, 29)
-			fill_simd_helper(30, 31)
-			"sub %0, %0, #" STR(FPU_Q_COUNT * FPU_Q_SIZE) ";"
-			: : "r" (q_regs));
+		fill_simd_helper(0, 1) fill_simd_helper(2, 3) fill_simd_helper(4, 5) fill_simd_helper(
+			6,
+			7) fill_simd_helper(8,
+					    9) fill_simd_helper(10,
+								11) fill_simd_helper(12,
+										     13)
+			fill_simd_helper(14, 15) fill_simd_helper(16, 17) fill_simd_helper(
+				18,
+				19) fill_simd_helper(20,
+						     21) fill_simd_helper(22,
+									  23) fill_simd_helper(24,
+											       25)
+				fill_simd_helper(26, 27) fill_simd_helper(28, 29) fill_simd_helper(
+					30,
+					31) "sub %0, %0, #" STR(FPU_Q_COUNT *
+								FPU_Q_SIZE) ";"
+		:
+		: "r"(q_regs));
 }
 
 /* Read FPCR and FPSR and store it in 'cs_regs' */

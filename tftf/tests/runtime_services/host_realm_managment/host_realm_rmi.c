@@ -5,35 +5,35 @@
  *
  */
 
-#include <assert.h>
-#include <string.h>
-
 #include <arch_features.h>
-
+#include <assert.h>
 #include <debug.h>
 #include <heap/page_alloc.h>
-#include <test_helpers.h>
 #include <host_realm_helper.h>
 #include <host_realm_mem_layout.h>
 #include <host_realm_rmi.h>
 #include <host_shared_data.h>
 #include <plat/common/platform.h>
 #include <realm_def.h>
+#include <string.h>
+#include <test_helpers.h>
 #include <tftf_lib.h>
 #include <utils_def.h>
 
-#define SET_ARG(_n) {			\
-	case _n:			\
-	regs[_n] = rand64();		\
-	CONC(args->arg, _n) = regs[_n];	\
-	__attribute__((fallthrough));	\
-}
+#define SET_ARG(_n)                             \
+	{                                       \
+	case _n:                                \
+		regs[_n] = rand64();            \
+		CONC(args->arg, _n) = regs[_n]; \
+		__attribute__((fallthrough));   \
+	}
 
-#define	CHECK_RET(_n) {					\
-	if (CONC(ret_val.ret, _n) != regs[_n]) {	\
-		cmp_flag |= (1U << _n);			\
-	}						\
-}
+#define CHECK_RET(_n)                                    \
+	{                                                \
+		if (CONC(ret_val.ret, _n) != regs[_n]) { \
+			cmp_flag |= (1U << _n);          \
+		}                                        \
+	}
 
 static bool rmi_cmp_result;
 static unsigned short vmid;
@@ -86,11 +86,10 @@ static smc_ret_values host_rmi_handler(smc_args *args, unsigned int in_reg)
 		rmi_cmp_result = false;
 
 		ERROR("RMI SMC 0x%lx corrupted registers: %s %s %s %s\n",
-			regs[0],
-			(((cmp_flag & (1U << 4)) != 0U) ? "X4" : ""),
-			(((cmp_flag & (1U << 5)) != 0U) ? "X5" : ""),
-			(((cmp_flag & (1U << 6)) != 0U) ? "X6" : ""),
-			(((cmp_flag & (1U << 7)) != 0U) ? "X7" : ""));
+		      regs[0], (((cmp_flag & (1U << 4)) != 0U) ? "X4" : ""),
+		      (((cmp_flag & (1U << 5)) != 0U) ? "X5" : ""),
+		      (((cmp_flag & (1U << 6)) != 0U) ? "X6" : ""),
+		      (((cmp_flag & (1U << 7)) != 0U) ? "X7" : ""));
 	}
 
 	return ret_val;
@@ -106,54 +105,60 @@ bool host_rmi_get_cmp_result(void)
 	return rmi_cmp_result;
 }
 
-u_register_t host_rmi_psci_complete(u_register_t calling_rec, u_register_t target_rec,
-		unsigned long status)
+u_register_t host_rmi_psci_complete(u_register_t calling_rec,
+				    u_register_t target_rec,
+				    unsigned long status)
 {
-	return (host_rmi_handler(&(smc_args) {RMI_PSCI_COMPLETE, calling_rec,
-				target_rec, status}, 4U)).ret0;
+	return (host_rmi_handler(&(smc_args){RMI_PSCI_COMPLETE, calling_rec,
+					     target_rec, status},
+				 4U))
+		.ret0;
 }
 
-u_register_t host_rmi_data_create(bool unknown,
-				  u_register_t rd,
-				  u_register_t data,
-				  u_register_t map_addr,
+u_register_t host_rmi_data_create(bool unknown, u_register_t rd,
+				  u_register_t data, u_register_t map_addr,
 				  u_register_t src)
 {
 	if (unknown) {
-		return host_rmi_handler(&(smc_args) {RMI_DATA_CREATE_UNKNOWN,
-					rd, data, map_addr}, 4U).ret0;
+		return host_rmi_handler(&(smc_args){RMI_DATA_CREATE_UNKNOWN, rd,
+						    data, map_addr},
+					4U)
+			.ret0;
 	} else {
-		return host_rmi_handler(&(smc_args) {RMI_DATA_CREATE,
-					/* X5 = flags */
-					rd, data, map_addr, src, 0UL}, 6U).ret0;
+		return host_rmi_handler(
+			       &(smc_args){RMI_DATA_CREATE,
+					   /* X5 = flags */
+					   rd, data, map_addr, src, 0UL},
+			       6U)
+			.ret0;
 	}
 }
 
 static inline u_register_t host_rmi_realm_activate(u_register_t rd)
 {
-	return host_rmi_handler(&(smc_args) {RMI_REALM_ACTIVATE, rd}, 2U).ret0;
+	return host_rmi_handler(&(smc_args){RMI_REALM_ACTIVATE, rd}, 2U).ret0;
 }
 
 u_register_t host_rmi_realm_create(u_register_t rd, u_register_t params_ptr)
 {
-	return host_rmi_handler(&(smc_args) {RMI_REALM_CREATE, rd, params_ptr},
-						3U).ret0;
+	return host_rmi_handler(&(smc_args){RMI_REALM_CREATE, rd, params_ptr},
+				3U)
+		.ret0;
 }
 
 u_register_t host_rmi_realm_destroy(u_register_t rd)
 {
-	return host_rmi_handler(&(smc_args) {RMI_REALM_DESTROY, rd}, 2U).ret0;
+	return host_rmi_handler(&(smc_args){RMI_REALM_DESTROY, rd}, 2U).ret0;
 }
 
-u_register_t host_rmi_data_destroy(u_register_t rd,
-				   u_register_t map_addr,
-				   u_register_t *data,
-				   u_register_t *top)
+u_register_t host_rmi_data_destroy(u_register_t rd, u_register_t map_addr,
+				   u_register_t *data, u_register_t *top)
 {
 	smc_ret_values rets;
 
-	rets = host_rmi_handler(&(smc_args) {RMI_DATA_DESTROY, rd, map_addr,
-						(u_register_t)&rets}, 4U);
+	rets = host_rmi_handler(&(smc_args){RMI_DATA_DESTROY, rd, map_addr,
+					    (u_register_t)&rets},
+				4U);
 
 	*data = rets.ret1;
 	*top = rets.ret2;
@@ -161,38 +166,40 @@ u_register_t host_rmi_data_destroy(u_register_t rd,
 }
 
 static inline u_register_t host_rmi_rec_create(u_register_t rd,
-						u_register_t rec,
-						u_register_t params_ptr)
+					       u_register_t rec,
+					       u_register_t params_ptr)
 {
-	return host_rmi_handler(&(smc_args) {RMI_REC_CREATE,
-				rd, rec, params_ptr}, 4U).ret0;
+	return host_rmi_handler(
+		       &(smc_args){RMI_REC_CREATE, rd, rec, params_ptr}, 4U)
+		.ret0;
 }
 
 static inline u_register_t host_rmi_rec_destroy(u_register_t rec)
 {
-	return host_rmi_handler(&(smc_args) {RMI_REC_DESTROY, rec}, 2U).ret0;
+	return host_rmi_handler(&(smc_args){RMI_REC_DESTROY, rec}, 2U).ret0;
 }
 
 static inline u_register_t host_rmi_rtt_create(u_register_t rd,
-						u_register_t rtt,
-						u_register_t map_addr,
-						long  level)
+					       u_register_t rtt,
+					       u_register_t map_addr,
+					       long level)
 {
-	return host_rmi_handler(&(smc_args) {RMI_RTT_CREATE,
-				rd, rtt, map_addr, (u_register_t)level}, 5U).ret0;
+	return host_rmi_handler(&(smc_args){RMI_RTT_CREATE, rd, rtt, map_addr,
+					    (u_register_t)level},
+				5U)
+		.ret0;
 }
 
-u_register_t host_rmi_rtt_destroy(u_register_t rd,
-				  u_register_t map_addr,
-				  long level,
-				  u_register_t *rtt,
+u_register_t host_rmi_rtt_destroy(u_register_t rd, u_register_t map_addr,
+				  long level, u_register_t *rtt,
 				  u_register_t *top)
 {
 	smc_ret_values rets;
 
-	rets = host_rmi_handler(&(smc_args) {RMI_RTT_DESTROY,
-				rd, map_addr, (u_register_t)level,
-				(u_register_t)&rets}, 5U);
+	rets = host_rmi_handler(
+		&(smc_args){RMI_RTT_DESTROY, rd, map_addr, (u_register_t)level,
+			    (u_register_t)&rets},
+		5U);
 	*rtt = rets.ret1;
 	*top = rets.ret2;
 	return rets.ret0;
@@ -202,21 +209,19 @@ u_register_t host_rmi_features(u_register_t index, u_register_t *features)
 {
 	smc_ret_values rets;
 
-	rets = host_rmi_handler(&(smc_args) {RMI_FEATURES, index}, 2U);
+	rets = host_rmi_handler(&(smc_args){RMI_FEATURES, index}, 2U);
 	*features = rets.ret1;
 	return rets.ret0;
 }
 
-u_register_t host_rmi_rtt_init_ripas(u_register_t rd,
-				   u_register_t start,
-				   u_register_t end,
-				   u_register_t *top)
+u_register_t host_rmi_rtt_init_ripas(u_register_t rd, u_register_t start,
+				     u_register_t end, u_register_t *top)
 
 {
 	smc_ret_values rets;
 
-	rets = host_rmi_handler(&(smc_args) {RMI_RTT_INIT_RIPAS,
-				rd, start, end}, 4U);
+	rets = host_rmi_handler(&(smc_args){RMI_RTT_INIT_RIPAS, rd, start, end},
+				4U);
 	*top = rets.ret1;
 	return rets.ret0;
 }
@@ -228,15 +233,15 @@ u_register_t host_rmi_rtt_init_ripas(u_register_t rd,
  * Output result, base PA of child RTT which was destroyed
  */
 static inline u_register_t host_rmi_rtt_fold(u_register_t rd,
-					     u_register_t map_addr,
-					     long level,
+					     u_register_t map_addr, long level,
 					     u_register_t *pa)
 {
 	smc_ret_values rets;
 
-	rets = host_rmi_handler(&(smc_args) {RMI_RTT_FOLD,
-				rd, map_addr, (u_register_t)level,
-				(u_register_t)&rets}, 5U);
+	rets = host_rmi_handler(
+		&(smc_args){RMI_RTT_FOLD, rd, map_addr, (u_register_t)level,
+			    (u_register_t)&rets},
+		5U);
 	*pa = rets.ret1;
 	return rets.ret0;
 }
@@ -246,43 +251,41 @@ static inline u_register_t host_rmi_rec_aux_count(u_register_t rd,
 {
 	smc_ret_values rets;
 
-	rets = host_rmi_handler(&(smc_args) {RMI_REC_AUX_COUNT, rd}, 2U);
+	rets = host_rmi_handler(&(smc_args){RMI_REC_AUX_COUNT, rd}, 2U);
 	*aux_count = rets.ret1;
 	return rets.ret0;
 }
 
-u_register_t host_rmi_rtt_set_ripas(u_register_t rd,
-				    u_register_t rec,
-				    u_register_t start,
-				    u_register_t end,
+u_register_t host_rmi_rtt_set_ripas(u_register_t rd, u_register_t rec,
+				    u_register_t start, u_register_t end,
 				    u_register_t *top)
 {
 	smc_ret_values rets;
 
-	rets = host_rmi_handler(&(smc_args) {RMI_RTT_SET_RIPAS,
-				rd, rec, start, end}, 5U);
+	rets = host_rmi_handler(
+		&(smc_args){RMI_RTT_SET_RIPAS, rd, rec, start, end}, 5U);
 	*top = rets.ret1;
 	return rets.ret0;
 }
 
-u_register_t host_rmi_rtt_mapunprotected(u_register_t rd,
-					 u_register_t map_addr,
-					 long level,
-					 u_register_t ns_pa)
+u_register_t host_rmi_rtt_mapunprotected(u_register_t rd, u_register_t map_addr,
+					 long level, u_register_t ns_pa)
 {
-	return host_rmi_handler(&(smc_args) {RMI_RTT_MAP_UNPROTECTED,
-				rd, map_addr, (u_register_t)level, ns_pa}, 5U).ret0;
+	return host_rmi_handler(
+		       &(smc_args){RMI_RTT_MAP_UNPROTECTED, rd, map_addr,
+				   (u_register_t)level, ns_pa},
+		       5U)
+		.ret0;
 }
 
-u_register_t host_rmi_rtt_readentry(u_register_t rd,
-				   u_register_t map_addr,
-				   long level,
-				   struct rtt_entry *rtt)
+u_register_t host_rmi_rtt_readentry(u_register_t rd, u_register_t map_addr,
+				    long level, struct rtt_entry *rtt)
 {
 	smc_ret_values rets;
 
-	rets = host_rmi_handler(&(smc_args) {RMI_RTT_READ_ENTRY,
-					rd, map_addr, (u_register_t)level}, 4U);
+	rets = host_rmi_handler(&(smc_args){RMI_RTT_READ_ENTRY, rd, map_addr,
+					    (u_register_t)level},
+				4U);
 	rtt->walk_level = (long)rets.ret1;
 	rtt->state = rets.ret2;
 	rtt->out_addr = rets.ret3;
@@ -291,26 +294,27 @@ u_register_t host_rmi_rtt_readentry(u_register_t rd,
 }
 
 u_register_t host_rmi_rtt_unmap_unprotected(u_register_t rd,
-					  u_register_t map_addr,
-					  long level,
-					  u_register_t *top)
+					    u_register_t map_addr, long level,
+					    u_register_t *top)
 {
 	smc_ret_values rets;
 
-	rets = host_rmi_handler(&(smc_args) {RMI_RTT_UNMAP_UNPROTECTED,
-					rd, map_addr, (u_register_t)level}, 4U);
+	rets = host_rmi_handler(&(smc_args){RMI_RTT_UNMAP_UNPROTECTED, rd,
+					    map_addr, (u_register_t)level},
+				4U);
 	*top = rets.ret1;
 	return rets.ret0;
 }
 
 bool host_ipa_is_ns(u_register_t addr, u_register_t rmm_feat_reg0)
 {
-	return (addr >> (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, rmm_feat_reg0) - 1UL) == 1UL);
+	return (addr >> (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, rmm_feat_reg0) -
+			 1UL) ==
+		1UL);
 }
 
 static inline u_register_t host_realm_rtt_create(struct realm *realm,
-						 u_register_t addr,
-						 long level,
+						 u_register_t addr, long level,
 						 u_register_t phys)
 {
 	addr = ALIGN_DOWN(addr, RTT_MAP_SIZE(level - 1));
@@ -318,8 +322,8 @@ static inline u_register_t host_realm_rtt_create(struct realm *realm,
 }
 
 u_register_t host_rmi_create_rtt_levels(struct realm *realm,
-					u_register_t map_addr,
-					long level, long max_level)
+					u_register_t map_addr, long level,
+					long max_level)
 {
 	u_register_t rtt, ret;
 
@@ -332,14 +336,15 @@ u_register_t host_rmi_create_rtt_levels(struct realm *realm,
 			ret = host_rmi_granule_delegate(rtt);
 			if (ret != RMI_SUCCESS) {
 				ERROR("%s() failed, rtt=0x%lx ret=0x%lx\n",
-					"host_rmi_granule_delegate", rtt, ret);
+				      "host_rmi_granule_delegate", rtt, ret);
 				return REALM_ERROR;
 			}
 		}
-		ret = host_realm_rtt_create(realm, map_addr, (u_register_t)level, rtt);
+		ret = host_realm_rtt_create(realm, map_addr,
+					    (u_register_t)level, rtt);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, rtt=0x%lx ret=0x%lx\n",
-				"host_realm_rtt_create", rtt, ret);
+			      "host_realm_rtt_create", rtt, ret);
 			host_rmi_granule_undelegate(rtt);
 			page_free(rtt);
 			return REALM_ERROR;
@@ -349,15 +354,14 @@ u_register_t host_rmi_create_rtt_levels(struct realm *realm,
 	return REALM_SUCCESS;
 }
 
-u_register_t host_realm_fold_rtt(u_register_t rd, u_register_t addr,
-				 long level)
+u_register_t host_realm_fold_rtt(u_register_t rd, u_register_t addr, long level)
 {
 	u_register_t pa, ret;
 
 	ret = host_rmi_rtt_fold(rd, addr, level, &pa);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, addr=0x%lx ret=0x%lx\n",
-			"host_rmi_rtt_fold", addr, ret);
+		      "host_rmi_rtt_fold", addr, ret);
 		return REALM_ERROR;
 	}
 
@@ -368,13 +372,12 @@ u_register_t host_realm_fold_rtt(u_register_t rd, u_register_t addr,
 	ret = host_rmi_granule_undelegate(pa);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, rtt=0x%lx ret=0x%lx\n",
-			"host_rmi_granule_undelegate", pa, ret);
+		      "host_rmi_granule_undelegate", pa, ret);
 		return REALM_ERROR;
 	}
 	page_free(pa);
 
 	return REALM_SUCCESS;
-
 }
 
 u_register_t host_realm_delegate_map_protected_data(bool unknown,
@@ -398,7 +401,7 @@ u_register_t host_realm_delegate_map_protected_data(bool unknown,
 		ret = host_rmi_granule_delegate(phys);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, PA=0x%lx ret=0x%lx\n",
-				"host_rmi_granule_delegate", phys, ret);
+			      "host_rmi_granule_delegate", phys, ret);
 			return REALM_ERROR;
 		}
 
@@ -407,13 +410,12 @@ u_register_t host_realm_delegate_map_protected_data(bool unknown,
 		if (RMI_RETURN_STATUS(ret) == RMI_ERROR_RTT) {
 			/* Create missing RTTs till L3 and retry */
 			level = RMI_RETURN_INDEX(ret);
-			ret = host_rmi_create_rtt_levels(realm, map_addr,
-							 (u_register_t)level,
-							 3U);
+			ret = host_rmi_create_rtt_levels(
+				realm, map_addr, (u_register_t)level, 3U);
 			if (ret != RMI_SUCCESS) {
 				ERROR("%s() failed, ret=0x%lx line=%u\n",
-					"host_rmi_create_rtt_levels",
-					ret, __LINE__);
+				      "host_rmi_create_rtt_levels", ret,
+				      __LINE__);
 				goto err;
 			}
 
@@ -423,7 +425,7 @@ u_register_t host_realm_delegate_map_protected_data(bool unknown,
 
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, ret=0x%lx\n",
-				"host_rmi_data_create", ret);
+			      "host_rmi_data_create", ret);
 			goto err;
 		}
 
@@ -441,14 +443,14 @@ err:
 		ret = host_rmi_data_destroy(rd, map_addr, &data, &top);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, addr=0x%lx ret=0x%lx\n",
-				"host_rmi_data_destroy", map_addr, ret);
+			      "host_rmi_data_destroy", map_addr, ret);
 		}
 
 		ret = host_rmi_granule_undelegate(phys);
 		if (ret != RMI_SUCCESS) {
 			/* Page can't be returned to NS world so is lost */
 			ERROR("%s() failed, ret=0x%lx\n",
-				"host_rmi_granule_undelegate", ret);
+			      "host_rmi_granule_undelegate", ret);
 		}
 		phys -= PAGE_SIZE;
 		size -= PAGE_SIZE;
@@ -458,8 +460,7 @@ err:
 	return REALM_ERROR;
 }
 
-u_register_t host_realm_map_unprotected(struct realm *realm,
-					u_register_t ns_pa,
+u_register_t host_realm_map_unprotected(struct realm *realm, u_register_t ns_pa,
 					u_register_t map_size)
 {
 	u_register_t rd = realm->rd;
@@ -468,9 +469,10 @@ u_register_t host_realm_map_unprotected(struct realm *realm,
 	int8_t level;
 	u_register_t ret = 0UL;
 	u_register_t phys = ns_pa;
-	u_register_t map_addr = ns_pa |
-			(1UL << (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
-			realm->rmm_feat_reg0) - 1UL));
+	u_register_t map_addr =
+		ns_pa | (1UL << (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
+					 realm->rmm_feat_reg0) -
+				 1UL));
 
 	if (!IS_ALIGNED(map_addr, map_size)) {
 		return REALM_ERROR;
@@ -493,7 +495,7 @@ u_register_t host_realm_map_unprotected(struct realm *realm,
 
 	if ((realm->rmm_feat_reg0 & RMI_FEATURE_REGISTER_0_LPA2) != 0L) {
 		desc = (phys & ~OA_50_51_MASK) |
-				INPLACE(TTE_OA_50_51, EXTRACT(OA_50_51, phys));
+		       INPLACE(TTE_OA_50_51, EXTRACT(OA_50_51, phys));
 		desc |= S2TTE_ATTR_FWB_WB_RW_LPA2;
 	} else {
 		desc = phys | S2TTE_ATTR_FWB_WB_RW;
@@ -504,11 +506,11 @@ u_register_t host_realm_map_unprotected(struct realm *realm,
 	if (RMI_RETURN_STATUS(ret) == RMI_ERROR_RTT) {
 		/* Create missing RTTs and retry */
 		level = RMI_RETURN_INDEX(ret);
-		ret = host_rmi_create_rtt_levels(realm, map_addr,
-						 level, map_level);
+		ret = host_rmi_create_rtt_levels(realm, map_addr, level,
+						 map_level);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, ret=0x%lx line=%u\n",
-				"host_rmi_create_rtt_levels", ret, __LINE__);
+			      "host_rmi_create_rtt_levels", ret, __LINE__);
 			return REALM_ERROR;
 		}
 
@@ -517,7 +519,7 @@ u_register_t host_realm_map_unprotected(struct realm *realm,
 	}
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, ret=0x%lx\n", "host_rmi_rtt_mapunprotected",
-			ret);
+		      ret);
 		return REALM_ERROR;
 	}
 
@@ -525,33 +527,30 @@ u_register_t host_realm_map_unprotected(struct realm *realm,
 }
 
 static u_register_t host_realm_rtt_destroy(struct realm *realm,
-					   u_register_t addr,
-					   long level,
-					   u_register_t *rtt,
-					   u_register_t *top)
+					   u_register_t addr, long level,
+					   u_register_t *rtt, u_register_t *top)
 {
 	addr = ALIGN_DOWN(addr, RTT_MAP_SIZE(level - 1L));
 	return host_rmi_rtt_destroy(realm->rd, addr, level, rtt, top);
 }
 
 static u_register_t host_realm_destroy_free_rtt(struct realm *realm,
-						u_register_t addr,
-						long level,
+						u_register_t addr, long level,
 						u_register_t rtt_granule)
 {
 	u_register_t rtt, top, ret;
 
 	ret = host_realm_rtt_destroy(realm, addr, level, &rtt, &top);
 	if (ret != RMI_SUCCESS) {
-		ERROR("%s() failed, ret=0x%lx\n",
-			"host_realm_rtt_destroy", ret);
+		ERROR("%s() failed, ret=0x%lx\n", "host_realm_rtt_destroy",
+		      ret);
 		return REALM_ERROR;
 	}
 
 	ret = host_rmi_granule_undelegate(rtt_granule);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, rtt=0x%lx ret=0x%lx\n",
-			"host_rmi_granule_undelegate", rtt_granule, ret);
+		      "host_rmi_granule_undelegate", rtt_granule, ret);
 		return REALM_ERROR;
 	}
 
@@ -572,14 +571,14 @@ static u_register_t host_realm_destroy_undelegate_range(struct realm *realm,
 		ret = host_rmi_data_destroy(rd, ipa, &data, &top);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, addr=0x%lx ret=0x%lx\n",
-				"host_rmi_data_destroy", ipa, ret);
+			      "host_rmi_data_destroy", ipa, ret);
 			return REALM_ERROR;
 		}
 
 		ret = host_rmi_granule_undelegate(addr);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, addr=0x%lx ret=0x%lx\n",
-				"host_rmi_granule_undelegate", ipa, ret);
+			      "host_rmi_granule_undelegate", ipa, ret);
 			return REALM_ERROR;
 		}
 
@@ -608,7 +607,7 @@ static u_register_t host_realm_tear_down_rtt_range(struct realm *realm,
 		end_addr = MIN(next_addr, end);
 
 		ret = host_rmi_rtt_readentry(rd, ALIGN_DOWN(map_addr, map_size),
-						level, &rtt);
+					     level, &rtt);
 		if (ret != RMI_SUCCESS) {
 			continue;
 		}
@@ -618,28 +617,25 @@ static u_register_t host_realm_tear_down_rtt_range(struct realm *realm,
 		switch (rtt.state) {
 		case RMI_ASSIGNED:
 			if (host_ipa_is_ns(map_addr, realm->rmm_feat_reg0)) {
-
 				ret = host_rmi_rtt_unmap_unprotected(
-								rd,
-								map_addr,
-								level,
-								&top);
+					rd, map_addr, level, &top);
 				if (ret != RMI_SUCCESS) {
-					ERROR("%s() failed, addr=0x%lx ret=0x%lx\n",
-						"host_rmi_rtt_unmap_unprotected",
-						map_addr, ret);
+					ERROR("%s() failed, addr=0x%lx "
+					      "ret=0x%lx\n",
+					      "host_rmi_rtt_unmap_unprotected",
+					      map_addr, ret);
 					return REALM_ERROR;
 				}
 			} else {
 				ret = host_realm_destroy_undelegate_range(
-									realm,
-									map_addr,
-									rtt_out_addr,
-									map_size);
+					realm, map_addr, rtt_out_addr,
+					map_size);
 				if (ret != RMI_SUCCESS) {
-					ERROR("%s() failed, addr=0x%lx ret=0x%lx\n",
-						"host_realm_destroy_undelegate_range",
-						map_addr, ret);
+					ERROR("%s() failed, addr=0x%lx "
+					      "ret=0x%lx\n",
+					      "host_realm_destroy_undelegate_"
+					      "range",
+					      map_addr, ret);
 					return REALM_ERROR;
 				}
 			}
@@ -647,23 +643,21 @@ static u_register_t host_realm_tear_down_rtt_range(struct realm *realm,
 		case RMI_UNASSIGNED:
 			break;
 		case RMI_TABLE:
-			ret = host_realm_tear_down_rtt_range(realm, level + 1L,
-							     map_addr,
-							     end_addr);
+			ret = host_realm_tear_down_rtt_range(
+				realm, level + 1L, map_addr, end_addr);
 			if (ret != RMI_SUCCESS) {
 				ERROR("%s() failed, map_addr=0x%lx ret=0x%lx\n",
-					"host_realm_tear_down_rtt_range",
-					map_addr, ret);
+				      "host_realm_tear_down_rtt_range",
+				      map_addr, ret);
 				return REALM_ERROR;
 			}
 
-			ret = host_realm_destroy_free_rtt(realm, map_addr,
-							  level + 1L,
-							  rtt_out_addr);
+			ret = host_realm_destroy_free_rtt(
+				realm, map_addr, level + 1L, rtt_out_addr);
 			if (ret != RMI_SUCCESS) {
 				ERROR("%s() failed, map_addr=0x%lx ret=0x%lx\n",
-					"host_realm_destroy_free_rtt",
-					map_addr, ret);
+				      "host_realm_destroy_free_rtt", map_addr,
+				      ret);
 				return REALM_ERROR;
 			}
 			break;
@@ -677,19 +671,21 @@ static u_register_t host_realm_tear_down_rtt_range(struct realm *realm,
 
 u_register_t host_rmi_granule_delegate(u_register_t addr)
 {
-	return host_rmi_handler(&(smc_args) {RMI_GRANULE_DELEGATE, addr}, 2U).ret0;
+	return host_rmi_handler(&(smc_args){RMI_GRANULE_DELEGATE, addr}, 2U)
+		.ret0;
 }
 
 u_register_t host_rmi_granule_undelegate(u_register_t addr)
 {
-	return host_rmi_handler(&(smc_args) {RMI_GRANULE_UNDELEGATE, addr}, 2U).ret0;
+	return host_rmi_handler(&(smc_args){RMI_GRANULE_UNDELEGATE, addr}, 2U)
+		.ret0;
 }
 
 u_register_t host_rmi_version(u_register_t requested_ver)
 {
 	smc_ret_values ret;
 
-	ret = host_rmi_handler(&(smc_args) {RMI_VERSION, requested_ver}, 2U);
+	ret = host_rmi_handler(&(smc_args){RMI_VERSION, requested_ver}, 2U);
 	if (ret.ret0 == (u_register_t)SMC_UNKNOWN) {
 		return SMC_UNKNOWN;
 	}
@@ -712,7 +708,7 @@ u_register_t host_realm_create(struct realm *realm)
 	realm->par_base = (u_register_t)page_alloc(realm->par_size);
 	if (realm->par_base == HEAP_NULL_PTR) {
 		ERROR("page_alloc failed, base=0x%lx, size=0x%lx\n",
-			  realm->par_base, realm->par_size);
+		      realm->par_base, realm->par_size);
 		return REALM_ERROR;
 	}
 
@@ -725,7 +721,7 @@ u_register_t host_realm_create(struct realm *realm)
 		ret = host_rmi_granule_delegate(realm->rd);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, rd=0x%lx ret=0x%lx\n",
-				"host_rmi_granule_delegate", realm->rd, ret);
+			      "host_rmi_granule_delegate", realm->rd, ret);
 			goto err_free_rd;
 		}
 	}
@@ -739,7 +735,8 @@ u_register_t host_realm_create(struct realm *realm)
 		ret = host_rmi_granule_delegate(realm->rtt_addr);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, rtt_addr=0x%lx ret=0x%lx\n",
-				"host_rmi_granule_delegate", realm->rtt_addr, ret);
+			      "host_rmi_granule_delegate", realm->rtt_addr,
+			      ret);
 			goto err_free_rtt;
 		}
 	}
@@ -752,8 +749,8 @@ u_register_t host_realm_create(struct realm *realm)
 	}
 
 	/* Populate params */
-	params->s2sz = EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
-				realm->rmm_feat_reg0);
+	params->s2sz =
+		EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, realm->rmm_feat_reg0);
 	params->num_bps = realm->num_bps;
 	params->num_wps = realm->num_wps;
 
@@ -789,7 +786,7 @@ u_register_t host_realm_create(struct realm *realm)
 	ret = host_rmi_realm_create(realm->rd, (u_register_t)params);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, rd=0x%lx ret=0x%lx\n",
-			"host_rmi_realm_create", realm->rd, ret);
+		      "host_rmi_realm_create", realm->rd, ret);
 		goto err_free_params;
 	}
 
@@ -797,7 +794,7 @@ u_register_t host_realm_create(struct realm *realm)
 	ret = host_rmi_rec_aux_count(realm->rd, &realm->num_aux);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, rd=0x%lx ret=0x%lx\n",
-			"host_rmi_rec_aux_count", realm->rd, ret);
+		      "host_rmi_rec_aux_count", realm->rd, ret);
 		host_rmi_realm_destroy(realm->rd);
 		goto err_free_params;
 	}
@@ -815,7 +812,7 @@ err_undelegate_rtt:
 	ret = host_rmi_granule_undelegate(realm->rtt_addr);
 	if (ret != RMI_SUCCESS) {
 		WARN("%s() failed, rtt_addr=0x%lx ret=0x%lx\n",
-			"host_rmi_granule_undelegate", realm->rtt_addr, ret);
+		     "host_rmi_granule_undelegate", realm->rtt_addr, ret);
 	}
 
 err_free_rtt:
@@ -825,7 +822,7 @@ err_undelegate_rd:
 	ret = host_rmi_granule_undelegate(realm->rd);
 	if (ret != RMI_SUCCESS) {
 		WARN("%s() failed, rd=0x%lx ret=0x%lx\n",
-			"host_rmi_granule_undelegate", realm->rd, ret);
+		     "host_rmi_granule_undelegate", realm->rd, ret);
 	}
 err_free_rd:
 	page_free(realm->rd);
@@ -845,14 +842,13 @@ u_register_t host_realm_map_payload_image(struct realm *realm,
 
 	/* MAP image regions */
 	while (i < (realm->par_size / PAGE_SIZE)) {
-		ret = host_realm_delegate_map_protected_data(false, realm,
-						realm->par_base + i * PAGE_SIZE,
-						PAGE_SIZE,
-						src_pa + i * PAGE_SIZE);
+		ret = host_realm_delegate_map_protected_data(
+			false, realm, realm->par_base + i * PAGE_SIZE,
+			PAGE_SIZE, src_pa + i * PAGE_SIZE);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, par_base=0x%lx ret=0x%lx\n",
-				"host_realm_delegate_map_protected_data",
-				realm->par_base, ret);
+			      "host_realm_delegate_map_protected_data",
+			      realm->par_base, ret);
 			return REALM_ERROR;
 		}
 		i++;
@@ -862,7 +858,7 @@ u_register_t host_realm_map_payload_image(struct realm *realm,
 }
 
 u_register_t host_realm_init_ipa_state(struct realm *realm, long level,
-					u_register_t start, uint64_t end)
+				       u_register_t start, uint64_t end)
 {
 	u_register_t rd = realm->rd, ret;
 	u_register_t top;
@@ -877,14 +873,13 @@ u_register_t host_realm_init_ipa_state(struct realm *realm, long level,
 			int8_t cur_level = RMI_RETURN_INDEX(ret);
 
 			if ((int)cur_level < level) {
-				ret = host_rmi_create_rtt_levels(realm,
-								 start,
-								 cur_level,
-								 level);
+				ret = host_rmi_create_rtt_levels(
+					realm, start, cur_level, level);
 				if (ret != RMI_SUCCESS) {
-					ERROR("%s() failed, ret=0x%lx line=%u\n",
-						"host_rmi_create_rtt_levels",
-						ret, __LINE__);
+					ERROR("%s() failed, ret=0x%lx "
+					      "line=%u\n",
+					      "host_rmi_create_rtt_levels", ret,
+					      __LINE__);
 					return REALM_ERROR;
 				}
 
@@ -902,24 +897,25 @@ u_register_t host_realm_init_ipa_state(struct realm *realm, long level,
 }
 
 u_register_t host_realm_map_ns_shared(struct realm *realm,
-					u_register_t ns_shared_mem_adr,
-					u_register_t ns_shared_mem_size)
+				      u_register_t ns_shared_mem_adr,
+				      u_register_t ns_shared_mem_size)
 {
 	u_register_t i = 0UL;
 	u_register_t ret;
 
 	realm->ipa_ns_buffer = ns_shared_mem_adr |
-			(1UL << (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
-			realm->rmm_feat_reg0) - 1));
+			       (1UL << (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
+						realm->rmm_feat_reg0) -
+					1));
 	realm->ns_buffer_size = ns_shared_mem_size;
 	/* MAP SHARED_NS region */
 	while (i < ns_shared_mem_size / PAGE_SIZE) {
-		ret = host_realm_map_unprotected(realm, ns_shared_mem_adr +
-						 (i * PAGE_SIZE), PAGE_SIZE);
+		ret = host_realm_map_unprotected(
+			realm, ns_shared_mem_adr + (i * PAGE_SIZE), PAGE_SIZE);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, par_base=0x%lx ret=0x%lx\n",
-				"host_realm_map_unprotected",
-				(ns_shared_mem_adr + i * PAGE_SIZE), ret);
+			      "host_realm_map_unprotected",
+			      (ns_shared_mem_adr + i * PAGE_SIZE), ret);
 			return REALM_ERROR;
 		}
 		i++;
@@ -928,21 +924,21 @@ u_register_t host_realm_map_ns_shared(struct realm *realm,
 }
 
 /* Free AUX pages for rec0 to rec_num */
-static void host_realm_free_rec_aux(u_register_t
-		(*aux_pages)[REC_PARAMS_AUX_GRANULES],
-		unsigned int num_aux, unsigned int rec_num)
+static void host_realm_free_rec_aux(
+	u_register_t (*aux_pages)[REC_PARAMS_AUX_GRANULES],
+	unsigned int num_aux, unsigned int rec_num)
 {
 	u_register_t ret;
 
 	assert(rec_num < MAX_REC_COUNT);
 	assert(num_aux <= REC_PARAMS_AUX_GRANULES);
 	for (unsigned int i = 0U; i <= rec_num; i++) {
-		for (unsigned int j = 0U; j < num_aux &&
-					aux_pages[i][j] != 0U; j++) {
+		for (unsigned int j = 0U; j < num_aux && aux_pages[i][j] != 0U;
+		     j++) {
 			ret = host_rmi_granule_undelegate(aux_pages[i][j]);
 			if (ret != RMI_SUCCESS) {
 				WARN("%s() failed, index=%u,%u ret=0x%lx\n",
-				"host_rmi_granule_undelegate", i, j, ret);
+				     "host_rmi_granule_undelegate", i, j, ret);
 			}
 			page_free(aux_pages[i][j]);
 		}
@@ -950,7 +946,8 @@ static void host_realm_free_rec_aux(u_register_t
 }
 
 static u_register_t host_realm_alloc_rec_aux(struct realm *realm,
-		struct rmi_rec_params *params, u_register_t rec_num)
+					     struct rmi_rec_params *params,
+					     u_register_t rec_num)
 {
 	u_register_t ret;
 	unsigned int j;
@@ -965,7 +962,7 @@ static u_register_t host_realm_alloc_rec_aux(struct realm *realm,
 		ret = host_rmi_granule_delegate(params->aux[j]);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, index=%u ret=0x%lx\n",
-				"host_rmi_granule_delegate", j, ret);
+			      "host_rmi_granule_delegate", j, ret);
 			/*
 			 * Free current page,
 			 * prev pages freed at host_realm_free_rec_aux
@@ -992,8 +989,8 @@ u_register_t host_realm_rec_create(struct realm *realm)
 		realm->rec[i] = 0U;
 		realm->mpidr[i] = 0U;
 	}
-	(void)memset(realm->aux_pages_all_rec, 0x0, sizeof(u_register_t) *
-			realm->num_aux*realm->rec_count);
+	(void)memset(realm->aux_pages_all_rec, 0x0,
+		     sizeof(u_register_t) * realm->num_aux * realm->rec_count);
 
 	/* Allocate memory for rec_params */
 	rec_params = (struct rmi_rec_params *)page_alloc(PAGE_SIZE);
@@ -1022,7 +1019,8 @@ u_register_t host_realm_rec_create(struct realm *realm)
 			ret = host_rmi_granule_delegate(realm->rec[i]);
 			if (ret != RMI_SUCCESS) {
 				ERROR("%s() failed, rec=0x%lx ret=0x%lx\n",
-				"host_rmi_granule_delegate", realm->rd, ret);
+				      "host_rmi_granule_delegate", realm->rd,
+				      ret);
 				goto err_free_mem;
 			}
 		}
@@ -1030,8 +1028,8 @@ u_register_t host_realm_rec_create(struct realm *realm)
 		/* Delegate the required number of auxiliary Granules  */
 		ret = host_realm_alloc_rec_aux(realm, rec_params, i);
 		if (ret != RMI_SUCCESS) {
-			ERROR("%s() failed, ret=0x%lx\n", "host_realm_alloc_rec_aux",
-			ret);
+			ERROR("%s() failed, ret=0x%lx\n",
+			      "host_realm_alloc_rec_aux", ret);
 			goto err_free_aux;
 		}
 
@@ -1045,10 +1043,10 @@ u_register_t host_realm_rec_create(struct realm *realm)
 
 		/* Create REC  */
 		ret = host_rmi_rec_create(realm->rd, realm->rec[i],
-				(u_register_t)rec_params);
+					  (u_register_t)rec_params);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed,index=%u, ret=0x%lx\n",
-					"host_rmi_rec_create", i, ret);
+			      "host_rmi_rec_create", i, ret);
 			goto err_free_aux;
 		}
 	}
@@ -1060,11 +1058,11 @@ err_free_aux:
 	host_realm_free_rec_aux(realm->aux_pages_all_rec, realm->num_aux, i);
 
 err_free_mem:
-	for (unsigned int j = 0U; j <= i ; j++) {
+	for (unsigned int j = 0U; j <= i; j++) {
 		ret = host_rmi_granule_undelegate(realm->rec[j]);
 		if (ret != RMI_SUCCESS) {
 			WARN("%s() failed, rec=0x%lx ret=0x%lx\n",
-			"host_rmi_granule_undelegate", realm->rec[j], ret);
+			     "host_rmi_granule_undelegate", realm->rec[j], ret);
 		}
 		page_free(realm->run[j]);
 		page_free(realm->rec[j]);
@@ -1081,7 +1079,7 @@ u_register_t host_realm_activate(struct realm *realm)
 	ret = host_rmi_realm_activate(realm->rd);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, ret=0x%lx\n", "host_rmi_realm_activate",
-			ret);
+		      ret);
 		return REALM_ERROR;
 	}
 
@@ -1108,14 +1106,15 @@ u_register_t host_realm_destroy(struct realm *realm)
 		ret = host_rmi_rec_destroy(realm->rec[i]);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, rec=0x%lx ret=0x%lx\n",
-				"host_rmi_rec_destroy", realm->rec[i], ret);
+			      "host_rmi_rec_destroy", realm->rec[i], ret);
 			return REALM_ERROR;
 		}
 
 		ret = host_rmi_granule_undelegate(realm->rec[i]);
 		if (ret != RMI_SUCCESS) {
 			ERROR("%s() failed, rec=0x%lx ret=0x%lx\n",
-				"host_rmi_granule_undelegate", realm->rec[i], ret);
+			      "host_rmi_granule_undelegate", realm->rec[i],
+			      ret);
 			return REALM_ERROR;
 		}
 
@@ -1125,8 +1124,8 @@ u_register_t host_realm_destroy(struct realm *realm)
 		page_free(realm->run[i]);
 	}
 
-	host_realm_free_rec_aux(realm->aux_pages_all_rec,
-			realm->num_aux, realm->rec_count - 1U);
+	host_realm_free_rec_aux(realm->aux_pages_all_rec, realm->num_aux,
+				realm->rec_count - 1U);
 
 	/*
 	 * For each data granule - Destroy, undelegate and free
@@ -1134,19 +1133,22 @@ u_register_t host_realm_destroy(struct realm *realm)
 	 * using RMI_DATA_DESTROY, RMI_RTT_DESTROY and RMI_GRANULE_UNDELEGATE
 	 * commands.
 	 */
-	if (host_realm_tear_down_rtt_range(realm, rtt_start_level, 0UL,
-				(1UL << (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
-				realm->rmm_feat_reg0) - 1UL))) != RMI_SUCCESS) {
+	if (host_realm_tear_down_rtt_range(
+		    realm, rtt_start_level, 0UL,
+		    (1UL << (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
+				     realm->rmm_feat_reg0) -
+			     1UL))) != RMI_SUCCESS) {
 		ERROR("host_realm_tear_down_rtt_range() line=%u\n", __LINE__);
 		return REALM_ERROR;
 	}
 
 	if (realm->shared_mem_created == true) {
-		if (host_realm_tear_down_rtt_range(realm, rtt_start_level,
-				realm->ipa_ns_buffer,
-				(realm->ipa_ns_buffer + realm->ns_buffer_size)) !=
-				RMI_SUCCESS) {
-			ERROR("host_realm_tear_down_rtt_range() line=%u\n", __LINE__);
+		if (host_realm_tear_down_rtt_range(
+			    realm, rtt_start_level, realm->ipa_ns_buffer,
+			    (realm->ipa_ns_buffer + realm->ns_buffer_size)) !=
+		    RMI_SUCCESS) {
+			ERROR("host_realm_tear_down_rtt_range() line=%u\n",
+			      __LINE__);
 			return REALM_ERROR;
 		}
 	}
@@ -1159,21 +1161,21 @@ u_register_t host_realm_destroy(struct realm *realm)
 	ret = host_rmi_realm_destroy(realm->rd);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, rd=0x%lx ret=0x%lx\n",
-			"host_rmi_realm_destroy", realm->rd, ret);
+		      "host_rmi_realm_destroy", realm->rd, ret);
 		return REALM_ERROR;
 	}
 
 	ret = host_rmi_granule_undelegate(realm->rd);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, rd=0x%lx ret=0x%lx\n",
-			"host_rmi_granule_undelegate", realm->rd, ret);
+		      "host_rmi_granule_undelegate", realm->rd, ret);
 		return REALM_ERROR;
 	}
 
 	ret = host_rmi_granule_undelegate(realm->rtt_addr);
 	if (ret != RMI_SUCCESS) {
 		ERROR("%s() failed, rtt_addr=0x%lx ret=0x%lx\n",
-			"host_rmi_granule_undelegate", realm->rtt_addr, ret);
+		      "host_rmi_granule_undelegate", realm->rtt_addr, ret);
 		return REALM_ERROR;
 	}
 
@@ -1184,7 +1186,8 @@ u_register_t host_realm_destroy(struct realm *realm)
 	return REALM_SUCCESS;
 }
 
-unsigned int host_realm_find_rec_by_mpidr(unsigned int mpidr, struct realm *realm)
+unsigned int host_realm_find_rec_by_mpidr(unsigned int mpidr,
+					  struct realm *realm)
 {
 	for (unsigned int i = 0U; i < MAX_REC_COUNT; i++) {
 		if (realm->run[i] != 0U && realm->mpidr[i] == mpidr) {
@@ -1211,8 +1214,11 @@ u_register_t host_realm_rec_enter(struct realm *realm,
 	realm->host_mpidr[rec_num] = read_mpidr_el1();
 	do {
 		re_enter_rec = false;
-		ret = host_rmi_handler(&(smc_args) {RMI_REC_ENTER,
-					realm->rec[rec_num], realm->run[rec_num]}, 3U).ret0;
+		ret = host_rmi_handler(
+			      &(smc_args){RMI_REC_ENTER, realm->rec[rec_num],
+					  realm->run[rec_num]},
+			      3U)
+			      .ret0;
 		VERBOSE("%s() ret=%lu run->exit.exit_reason=%lu "
 			"run->exit.esr=0x%lx EC_BITS=%u ISS_DFSC_MASK=0x%lx\n",
 			__func__, ret, run->exit.exit_reason, run->exit.esr,
@@ -1223,7 +1229,7 @@ u_register_t host_realm_rec_enter(struct realm *realm,
 		if (EC_BITS(run->exit.esr) == EC_DABORT_CUR_EL) {
 			ERROR("EC_BITS(run->exit.esr) == EC_DABORT_CUR_EL\n");
 			if ((ISS_BITS(run->exit.esr) & ISS_DFSC_MASK) ==
-				DFSC_GPF_DABORT) {
+			    DFSC_GPF_DABORT) {
 				ERROR("DFSC_GPF_DABORT\n");
 			}
 		}

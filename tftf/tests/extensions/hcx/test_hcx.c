@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <tftf_lib.h>
-#include <tftf.h>
-#include <arch_helpers.h>
 #include <arch_features.h>
+#include <arch_helpers.h>
+#include <tftf.h>
+#include <tftf_lib.h>
 
 /* This very simple test just ensures that HCRX_EL2 access does not trap. */
 test_result_t test_feat_hcx_enabled(void)

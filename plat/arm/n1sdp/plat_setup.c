@@ -14,8 +14,7 @@ static const mmap_region_t mmap[] = {
 			MT_DEVICE | MT_RW | MT_NS),*/
 	MAP_REGION_FLAT(DRAM_BASE, TFTF_BASE - DRAM_BASE,
 			MT_MEMORY | MT_RW | MT_NS),
-	{0}
-};
+	{0}};
 
 const mmap_region_t *tftf_platform_get_mmap(void)
 {

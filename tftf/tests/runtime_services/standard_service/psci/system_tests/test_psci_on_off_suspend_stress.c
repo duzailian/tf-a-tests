@@ -29,7 +29,7 @@ typedef struct cpu_pm_ops_desc {
 } cpu_pm_ops_desc_t;
 
 static cpu_pm_ops_desc_t device_pm_ops_desc
-			__attribute__ ((section("tftf_coherent_mem")));
+	__attribute__((section("tftf_coherent_mem")));
 static cpu_pm_ops_desc_t normal_pm_ops_desc;
 
 static event_t cpu_booted[PLATFORM_CORE_COUNT];
@@ -73,9 +73,10 @@ static int update_counters(void)
 	spin_unlock(&device_pm_ops_desc.lock);
 
 	if (device_count != normal_count) {
-		tftf_testcase_printf("Count mismatch. Device memory count ="
-				" %u: normal memory count = %u\n",
-				device_count, normal_count);
+		tftf_testcase_printf(
+			"Count mismatch. Device memory count ="
+			" %u: normal memory count = %u\n",
+			device_count, normal_count);
 		return -1;
 	}
 
@@ -99,8 +100,8 @@ static int update_counters(void)
  */
 static test_result_t random_suspend_off_loop(void)
 {
-#define OFFLINE_CORE	1
-#define SUSPEND_CORE	0
+#define OFFLINE_CORE 1
+#define SUSPEND_CORE 0
 
 	int rc, op;
 
@@ -121,13 +122,15 @@ static test_result_t random_suspend_off_loop(void)
 
 		/* Program timer for wake-up event. */
 		rc = tftf_program_timer_and_suspend(PLAT_SUSPEND_ENTRY_TIME,
-				power_state, NULL, NULL);
+						    power_state, NULL, NULL);
 
 		tftf_cancel_timer();
 
 		if (rc != PSCI_E_SUCCESS) {
-			tftf_testcase_printf("CPU timer/suspend returned error"
-							" 0x%x\n", rc);
+			tftf_testcase_printf(
+				"CPU timer/suspend returned error"
+				" 0x%x\n",
+				rc);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -148,13 +151,15 @@ static test_result_t lead_cpu_main(unsigned long long mpid)
 
 		/* Program timer for wake-up event. */
 		rc = tftf_program_timer_and_suspend(PLAT_SUSPEND_ENTRY_TIME,
-				power_state, NULL, NULL);
+						    power_state, NULL, NULL);
 
 		tftf_cancel_timer();
 
 		if (rc != PSCI_E_SUCCESS) {
-			tftf_testcase_printf("CPU timer/suspend returned error"
-							" 0x%x\n", rc);
+			tftf_testcase_printf(
+				"CPU timer/suspend returned error"
+				" 0x%x\n",
+				rc);
 			return TEST_RESULT_FAIL;
 		}
 
@@ -165,18 +170,17 @@ static test_result_t lead_cpu_main(unsigned long long mpid)
 		 */
 		do {
 			rand_mpid = tftf_find_random_cpu_other_than(mpid);
-		} while (tftf_psci_affinity_info(rand_mpid, MPIDR_AFFLVL0)
-				  != PSCI_STATE_OFF);
+		} while (tftf_psci_affinity_info(rand_mpid, MPIDR_AFFLVL0) !=
+			 PSCI_STATE_OFF);
 
 		rc = tftf_try_cpu_on(rand_mpid,
-				      (uintptr_t) random_suspend_off_loop,
-				      0);
-		if ((rc != PSCI_E_ALREADY_ON) &&
-		    (rc != PSCI_E_ON_PENDING) &&
-		    (rc != PSCI_E_SUCCESS) &&
-		    (rc != PSCI_E_INVALID_PARAMS)) {
-			tftf_testcase_printf("CPU ON failed with error ="
-								" 0x%x\n", rc);
+				     (uintptr_t)random_suspend_off_loop, 0);
+		if ((rc != PSCI_E_ALREADY_ON) && (rc != PSCI_E_ON_PENDING) &&
+		    (rc != PSCI_E_SUCCESS) && (rc != PSCI_E_INVALID_PARAMS)) {
+			tftf_testcase_printf(
+				"CPU ON failed with error ="
+				" 0x%x\n",
+				rc);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -238,17 +242,17 @@ test_result_t psci_on_off_suspend_coherency_test(void)
 	exit_test = 0;
 
 	/* Seed the random number generator */
-	counter_lo = (unsigned int) read_cntpct_el0();
+	counter_lo = (unsigned int)read_cntpct_el0();
 	srand(counter_lo);
 
-	psci_ret = tftf_psci_make_composite_state_id(PLAT_MAX_PWR_LEVEL,
-					PSTATE_TYPE_POWERDOWN, &stateid);
+	psci_ret = tftf_psci_make_composite_state_id(
+		PLAT_MAX_PWR_LEVEL, PSTATE_TYPE_POWERDOWN, &stateid);
 	if (psci_ret != PSCI_E_SUCCESS) {
 		tftf_testcase_printf("Failed to construct composite state\n");
 		return TEST_RESULT_SKIPPED;
 	}
 	power_state = tftf_make_psci_pstate(MPIDR_AFFLVL0,
-					PSTATE_TYPE_POWERDOWN, stateid);
+					    PSTATE_TYPE_POWERDOWN, stateid);
 
 	/* Turn on all the non-lead CPUs */
 	for_each_cpu(cpu_node) {
@@ -257,8 +261,9 @@ test_result_t psci_on_off_suspend_coherency_test(void)
 		if (cpu_mpid == lead_mpid)
 			continue;
 
-		psci_ret = tftf_cpu_on(cpu_mpid,
-				(uintptr_t) non_lead_random_suspend_off_loop, 0);
+		psci_ret = tftf_cpu_on(
+			cpu_mpid, (uintptr_t)non_lead_random_suspend_off_loop,
+			0);
 		if (psci_ret != PSCI_E_SUCCESS)
 			return TEST_RESULT_FAIL;
 	}
@@ -291,11 +296,13 @@ static int test_cpu_on_race(void)
 
 	do {
 		ret = tftf_try_cpu_on(target_mpid,
-				(uintptr_t) secondary_cpu_on_race_test, 0);
+				      (uintptr_t)secondary_cpu_on_race_test, 0);
 		if (ret != PSCI_E_SUCCESS && ret != PSCI_E_ON_PENDING &&
-				ret != PSCI_E_ALREADY_ON) {
-			tftf_testcase_printf("Unexpected return value 0x%x"
-					" from PSCI CPU ON\n", ret);
+		    ret != PSCI_E_ALREADY_ON) {
+			tftf_testcase_printf(
+				"Unexpected return value 0x%x"
+				" from PSCI CPU ON\n",
+				ret);
 			return 1;
 		}
 	} while (ret != PSCI_E_ALREADY_ON);
@@ -376,7 +383,7 @@ test_result_t psci_verify_cpu_on_race(void)
 			continue;
 
 		ret = tftf_cpu_on(cpu_mpid,
-				(uintptr_t) secondary_cpu_on_race_test, 0);
+				  (uintptr_t)secondary_cpu_on_race_test, 0);
 		if (ret != PSCI_E_SUCCESS)
 			return TEST_RESULT_FAIL;
 
@@ -405,7 +412,8 @@ test_result_t psci_verify_cpu_on_race(void)
 
 			/* Wait for the target CPU to turn OFF */
 			while (tftf_psci_affinity_info(target_mpid,
-					MPIDR_AFFLVL0) != PSCI_STATE_OFF)
+						       MPIDR_AFFLVL0) !=
+			       PSCI_STATE_OFF)
 				;
 			rc = test_cpu_on_race();
 			if (rc)
@@ -449,12 +457,14 @@ static test_result_t launch_cpu_on_off_stress(void)
 			if (tftf_is_cpu_online(mpid))
 				continue;
 
-			ret = tftf_try_cpu_on(mpid,
-					(uintptr_t) launch_cpu_on_off_stress, 0);
-			if (ret != PSCI_E_SUCCESS && ret !=
-				PSCI_E_ON_PENDING && ret != PSCI_E_ALREADY_ON) {
-				tftf_testcase_printf("Unexpected return value"
-					" 0x%x from PSCI CPU ON\n", ret);
+			ret = tftf_try_cpu_on(
+				mpid, (uintptr_t)launch_cpu_on_off_stress, 0);
+			if (ret != PSCI_E_SUCCESS && ret != PSCI_E_ON_PENDING &&
+			    ret != PSCI_E_ALREADY_ON) {
+				tftf_testcase_printf(
+					"Unexpected return value"
+					" 0x%x from PSCI CPU ON\n",
+					ret);
 				return TEST_RESULT_FAIL;
 			}
 		}
@@ -466,13 +476,16 @@ static test_result_t launch_cpu_on_off_stress(void)
 		/* Check whether to suspend before iterating */
 		if (include_cpu_suspend) {
 			ret = tftf_program_timer_and_suspend(
-			PLAT_SUSPEND_ENTRY_TIME, power_state, NULL, NULL);
+				PLAT_SUSPEND_ENTRY_TIME, power_state, NULL,
+				NULL);
 
 			tftf_cancel_timer();
 
 			if (ret != PSCI_E_SUCCESS) {
-				tftf_testcase_printf("CPU timer/suspend"
-					" returned error 0x%x\n", ret);
+				tftf_testcase_printf(
+					"CPU timer/suspend"
+					" returned error 0x%x\n",
+					ret);
 				return TEST_RESULT_FAIL;
 			}
 		}
@@ -542,13 +555,13 @@ test_result_t psci_cpu_on_off_suspend_stress(void)
 	exit_test = 0;
 
 	rc = tftf_psci_make_composite_state_id(PLAT_MAX_PWR_LEVEL,
-					PSTATE_TYPE_POWERDOWN, &stateid);
+					       PSTATE_TYPE_POWERDOWN, &stateid);
 	if (rc != PSCI_E_SUCCESS) {
 		tftf_testcase_printf("Failed to construct composite state\n");
 		return TEST_RESULT_SKIPPED;
 	}
 	power_state = tftf_make_psci_pstate(PLAT_MAX_PWR_LEVEL,
-			PSTATE_TYPE_POWERDOWN, stateid);
+					    PSTATE_TYPE_POWERDOWN, stateid);
 
 	include_cpu_suspend = 1;
 	return launch_cpu_on_off_stress();

@@ -16,8 +16,8 @@
 #include <tftf_lib.h>
 
 #ifdef __aarch64__
-#define CORTEX_A57_MIDR	0x410FD070
-#define CORTEX_A72_MIDR	0x410FD080
+#define CORTEX_A57_MIDR 0x410FD070
+#define CORTEX_A72_MIDR 0x410FD080
 #define CORTEX_A73_MIDR 0x410FD090
 #define CORTEX_A75_MIDR 0x410FD0A0
 #define DENVER_MIDR_PN0 0x4E0F0000
@@ -34,15 +34,15 @@ static struct ent {
 	unsigned int midr;
 	int (*wa_required)(void);
 } entries[] = {
-	{ .midr = CORTEX_A57_MIDR, .wa_required = cortex_a57_test },
-	{ .midr = CORTEX_A72_MIDR, .wa_required = csv2_test },
-	{ .midr = CORTEX_A73_MIDR, .wa_required = csv2_test },
-	{ .midr = CORTEX_A75_MIDR, .wa_required = csv2_test },
-	{ .midr = DENVER_MIDR_PN0, .wa_required = denver_test },
-	{ .midr = DENVER_MIDR_PN1, .wa_required = denver_test },
-	{ .midr = DENVER_MIDR_PN2, .wa_required = denver_test },
-	{ .midr = DENVER_MIDR_PN3, .wa_required = denver_test },
-	{ .midr = DENVER_MIDR_PN4, .wa_required = denver_test },
+	{.midr = CORTEX_A57_MIDR, .wa_required = cortex_a57_test},
+	{.midr = CORTEX_A72_MIDR, .wa_required = csv2_test},
+	{.midr = CORTEX_A73_MIDR, .wa_required = csv2_test},
+	{.midr = CORTEX_A75_MIDR, .wa_required = csv2_test},
+	{.midr = DENVER_MIDR_PN0, .wa_required = denver_test},
+	{.midr = DENVER_MIDR_PN1, .wa_required = denver_test},
+	{.midr = DENVER_MIDR_PN2, .wa_required = denver_test},
+	{.midr = DENVER_MIDR_PN3, .wa_required = denver_test},
+	{.midr = DENVER_MIDR_PN4, .wa_required = denver_test},
 };
 
 static int cortex_a57_test(void)
@@ -81,7 +81,7 @@ static test_result_t test_smccc_entrypoint(void)
 	ret = tftf_smc(&args);
 	if ((int32_t)ret.ret0 < expected_ver) {
 		tftf_testcase_printf("Unexpected SMCCC version: 0x%x\n",
-		       (int)ret.ret0);
+				     (int)ret.ret0);
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -91,7 +91,8 @@ static test_result_t test_smccc_entrypoint(void)
 	args.arg1 = SMCCC_ARCH_WORKAROUND_1;
 	ret = tftf_smc(&args);
 	if ((int)ret.ret0 == -1) {
-		tftf_testcase_printf("SMCCC_ARCH_WORKAROUND_1 is not implemented\n");
+		tftf_testcase_printf(
+			"SMCCC_ARCH_WORKAROUND_1 is not implemented\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -104,7 +105,7 @@ static test_result_t test_smccc_entrypoint(void)
 	/* Check if the SMC return value matches our expectations */
 	my_midr = (unsigned int)read_midr_el1();
 	midr_mask = (MIDR_IMPL_MASK << MIDR_IMPL_SHIFT) |
-		(MIDR_PN_MASK << MIDR_PN_SHIFT);
+		    (MIDR_PN_MASK << MIDR_PN_SHIFT);
 	for (i = 0; i < ARRAY_SIZE(entries); i++) {
 		struct ent *entp = &entries[i];
 
@@ -115,7 +116,8 @@ static test_result_t test_smccc_entrypoint(void)
 		}
 	}
 	if (i == ARRAY_SIZE(entries) && wa_required) {
-		tftf_testcase_printf("TFTF workaround table out of sync with TF\n");
+		tftf_testcase_printf(
+			"TFTF workaround table out of sync with TF\n");
 		return TEST_RESULT_FAIL;
 	}
 
@@ -138,11 +140,11 @@ test_result_t test_smccc_arch_workaround_1(void)
 		target_mpid = tftf_get_mpidr_from_node(cpu_node);
 		if (lead_mpid == target_mpid)
 			continue;
-		ret = tftf_cpu_on(target_mpid,
-		    (uintptr_t)test_smccc_entrypoint, 0);
+		ret = tftf_cpu_on(target_mpid, (uintptr_t)test_smccc_entrypoint,
+				  0);
 		if (ret != PSCI_E_SUCCESS) {
 			ERROR("CPU ON failed for 0x%llx\n",
-			    (unsigned long long)target_mpid);
+			      (unsigned long long)target_mpid);
 			return TEST_RESULT_FAIL;
 		}
 		/*
@@ -150,7 +152,7 @@ test_result_t test_smccc_arch_workaround_1(void)
 		 * and the CPU to power down
 		 */
 		while (tftf_psci_affinity_info(target_mpid, MPIDR_AFFLVL0) !=
-			PSCI_STATE_OFF)
+		       PSCI_STATE_OFF)
 			continue;
 	}
 

@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-
 #include <arch_helpers.h>
 #include <arm_arch_svc.h>
 #include <drivers/arm/arm_gic.h>
@@ -63,24 +62,24 @@ static int irq_handler(void *data)
  *     change SCR_EL3.I back to 0 along with unmasking SError for TFTF.
  *     SPSR.PSTATE.A = 0.
  *  9. At tftf entry it will see both IRQ and SError pending, so it can take
- *     either of exception first (based on priority of SError/IRQ). The fvp model
- *     on which it was tested, IRQ is taken first.
- *  10.First IRQ handler will be called and then SError handler will called.
+ *     either of exception first (based on priority of SError/IRQ). The fvp
+ * model on which it was tested, IRQ is taken first. 10.First IRQ handler will
+ * be called and then SError handler will called.
  *
  */
 test_result_t test_ras_kfh_reflect_irq(void)
 {
 	smc_args args;
 	unsigned int mpid = read_mpidr_el1();
-        unsigned int core_pos = platform_get_core_pos(mpid);
-        const unsigned int sgi_id = IRQ_NS_SGI_0;
+	unsigned int core_pos = platform_get_core_pos(mpid);
+	const unsigned int sgi_id = IRQ_NS_SGI_0;
 	smc_ret_values smc_ret;
-        int ret;
+	int ret;
 
 	/* Get the SMCCC version to compare against */
 	memset(&args, 0, sizeof(args));
 	args.fid = SMCCC_VERSION;
-	smc_ret	= tftf_smc(&args);
+	smc_ret = tftf_smc(&args);
 	expected_ver = smc_ret.ret0;
 
 	register_custom_serror_handler(serror_handler);
@@ -90,10 +89,11 @@ test_result_t test_ras_kfh_reflect_irq(void)
 	waitms(50);
 
 	ret = tftf_irq_register_handler(sgi_id, irq_handler);
-	 if (ret != 0) {
-                tftf_testcase_printf("Failed to register initial IRQ handler\n");
-                return TEST_RESULT_FAIL;
-        }
+	if (ret != 0) {
+		tftf_testcase_printf(
+			"Failed to register initial IRQ handler\n");
+		return TEST_RESULT_FAIL;
+	}
 	tftf_irq_enable(sgi_id, GIC_HIGHEST_NS_PRIORITY);
 	tftf_send_sgi(sgi_id, core_pos);
 
@@ -149,13 +149,16 @@ test_result_t test_ras_kfh_reflect_sync(void)
 	args.fid = SMCCC_VERSION;
 	ret = tftf_smc(&args);
 	tftf_testcase_printf("SMCCC Version = %d.%d\n",
-		(int)((ret.ret0 >> SMCCC_VERSION_MAJOR_SHIFT) & SMCCC_VERSION_MAJOR_MASK),
-		(int)((ret.ret0 >> SMCCC_VERSION_MINOR_SHIFT) & SMCCC_VERSION_MINOR_MASK));
+			     (int)((ret.ret0 >> SMCCC_VERSION_MAJOR_SHIFT) &
+				   SMCCC_VERSION_MAJOR_MASK),
+			     (int)((ret.ret0 >> SMCCC_VERSION_MINOR_SHIFT) &
+				   SMCCC_VERSION_MINOR_MASK));
 
 	if ((int32_t)ret.ret0 != expected_ver) {
-		tftf_testcase_printf("Unexpected SMCCC version: 0x%x\n", (int)ret.ret0);
+		tftf_testcase_printf("Unexpected SMCCC version: 0x%x\n",
+				     (int)ret.ret0);
 		return TEST_RESULT_FAIL;
-        }
+	}
 
 	unregister_custom_serror_handler();
 

@@ -19,13 +19,13 @@
 #include <tftf.h>
 #include <tftf_lib.h>
 
-#define IS_PLAT_SPI(irq_num)						\
-	(((irq_num) >= MIN_SPI_ID) &&					\
+#define IS_PLAT_SPI(irq_num)          \
+	(((irq_num) >= MIN_SPI_ID) && \
 	 ((irq_num) <= MIN_SPI_ID + PLAT_MAX_SPI_OFFSET_ID))
 
 static spi_desc spi_desc_table[PLAT_MAX_SPI_OFFSET_ID + 1];
-static ppi_desc ppi_desc_table[PLATFORM_CORE_COUNT][
-				(MAX_PPI_ID + 1) - MIN_PPI_ID];
+static ppi_desc ppi_desc_table[PLATFORM_CORE_COUNT]
+			      [(MAX_PPI_ID + 1) - MIN_PPI_ID];
 static sgi_desc sgi_desc_table[PLATFORM_CORE_COUNT][MAX_SGI_ID + 1];
 static spurious_desc spurious_desc_handler;
 
@@ -92,7 +92,8 @@ void tftf_irq_enable(unsigned int irq_num, uint8_t irq_priority)
 		 * Instruct the GIC Distributor to forward the interrupt to
 		 * the calling core
 		 */
-		arm_gic_set_intr_target(irq_num, platform_get_core_pos(read_mpidr_el1()));
+		arm_gic_set_intr_target(
+			irq_num, platform_get_core_pos(read_mpidr_el1()));
 	}
 
 	arm_gic_set_intr_priority(irq_num, irq_priority);
@@ -109,7 +110,7 @@ void tftf_irq_disable(unsigned int irq_num)
 	VERBOSE("Disabled IRQ #%u\n", irq_num);
 }
 
-#define HANDLER_VALID(handler, expect_handler)		\
+#define HANDLER_VALID(handler, expect_handler) \
 	((expect_handler) ? ((handler) != NULL) : ((handler) == NULL))
 
 static int tftf_irq_update_handler(unsigned int irq_num,
@@ -146,7 +147,7 @@ int tftf_irq_register_handler(unsigned int irq_num, irq_handler_t irq_handler)
 	ret = tftf_irq_update_handler(irq_num, irq_handler, false);
 	if (ret == 0)
 		INFO("Registered IRQ handler %p for IRQ #%u\n",
-			(void *)(uintptr_t) irq_handler, irq_num);
+		     (void *)(uintptr_t)irq_handler, irq_num);
 
 	return ret;
 }

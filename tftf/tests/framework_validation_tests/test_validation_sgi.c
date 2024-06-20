@@ -24,7 +24,7 @@ static volatile unsigned int sgi_handled;
 static int sgi_handler(void *data)
 {
 	/* Save SGI data */
-	sgi_data = *(sgi_data_t *) data;
+	sgi_data = *(sgi_data_t *)data;
 	sgi_handled = 1;
 
 	/* Return value doesn't matter */
@@ -52,8 +52,8 @@ test_result_t test_validation_sgi(void)
 	/* Register the local IRQ handler for the SGI */
 	ret = tftf_irq_register_handler(sgi_id, sgi_handler);
 	if (ret != 0) {
-		tftf_testcase_printf("Failed to register IRQ %u (%d)",
-				sgi_id, ret);
+		tftf_testcase_printf("Failed to register IRQ %u (%d)", sgi_id,
+				     ret);
 		return TEST_RESULT_FAIL;
 	}
 	tftf_irq_enable(sgi_id, GIC_HIGHEST_NS_PRIORITY);
@@ -71,7 +71,7 @@ test_result_t test_validation_sgi(void)
 	/* Verify the data received in the SGI handler */
 	if (sgi_data.irq_id != sgi_id) {
 		tftf_testcase_printf("Wrong IRQ ID, expected %u, got %u\n",
-			sgi_id, sgi_data.irq_id);
+				     sgi_id, sgi_data.irq_id);
 		test_res = TEST_RESULT_FAIL;
 	}
 

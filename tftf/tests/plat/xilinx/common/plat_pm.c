@@ -6,21 +6,18 @@
 
 #include <arch_helpers.h>
 #include <debug.h>
+#include <platform_def.h>
 #include <smccc.h>
 #include <tftf_lib.h>
 
-#include <platform_def.h>
-
 /* Number of 32bits values in payload */
-#define PAYLOAD_ARG_CNT			4U
+#define PAYLOAD_ARG_CNT 4U
 
-#define upper_32_bits(n)		((uint32_t)(((n) >> 32)))
-#define lower_32_bits(n)		((uint32_t)((n) & 0xffffffff))
+#define upper_32_bits(n) ((uint32_t)(((n) >> 32)))
+#define lower_32_bits(n) ((uint32_t)((n)&0xffffffff))
 
-
-#define PM_GET_API_VERSION		0xC2000001
-#define PM_GET_CHIPID			0xC2000018
-
+#define PM_GET_API_VERSION 0xC2000001
+#define PM_GET_CHIPID 0xC2000018
 
 /*
  * @Test_Aim@ Test to read the PM-API version from AMD-Xilinx platform
@@ -34,7 +31,7 @@
  */
 test_result_t test_pmapi_version(void)
 {
-	smc_args args = { PM_GET_API_VERSION };
+	smc_args args = {PM_GET_API_VERSION};
 	smc_ret_values ret;
 	uint32_t major, minor, status;
 
@@ -49,8 +46,8 @@ test_result_t test_pmapi_version(void)
 	major = upper_32_bits(ret.ret0) >> 16;
 	minor = upper_32_bits(ret.ret0) & 0xFFFF;
 
-	tftf_testcase_printf("%s PM-API Version : %d.%d\n", __func__,
-			     major, minor);
+	tftf_testcase_printf("%s PM-API Version : %d.%d\n", __func__, major,
+			     minor);
 	return TEST_RESULT_SUCCESS;
 }
 
@@ -66,7 +63,7 @@ test_result_t test_pmapi_version(void)
  */
 test_result_t test_get_chipid(void)
 {
-	smc_args args = { PM_GET_CHIPID };
+	smc_args args = {PM_GET_CHIPID};
 	smc_ret_values ret;
 	uint32_t idcode, version, status;
 

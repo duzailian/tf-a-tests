@@ -6,7 +6,7 @@
 
 #include <arch_helpers.h>
 #include <assert.h>
-#include <cdefs.h>		/* For __dead2 */
+#include <cdefs.h> /* For __dead2 */
 #include <debug.h>
 #include <drivers/arm/arm_gic.h>
 #include <drivers/console.h>
@@ -113,7 +113,8 @@ void tftf_set_cpu_online(void)
 		;
 
 	spin_lock(&cpus_status_map[core_pos].lock);
-	assert(cpus_status_map[core_pos].state == TFTF_AFFINITY_STATE_ON_PENDING);
+	assert(cpus_status_map[core_pos].state ==
+	       TFTF_AFFINITY_STATE_ON_PENDING);
 	cpus_status_map[core_pos].state = TFTF_AFFINITY_STATE_ON;
 	spin_unlock(&cpus_status_map[core_pos].lock);
 }
@@ -141,8 +142,7 @@ unsigned int tftf_is_core_pos_online(unsigned int core_pos)
 	return cpus_status_map[core_pos].state == TFTF_AFFINITY_STATE_ON;
 }
 
-int32_t tftf_cpu_on(u_register_t target_cpu,
-		    uintptr_t entrypoint,
+int32_t tftf_cpu_on(u_register_t target_cpu, uintptr_t entrypoint,
 		    u_register_t context_id)
 {
 	int32_t ret;
@@ -165,9 +165,8 @@ int32_t tftf_cpu_on(u_register_t target_cpu,
 	assert(cpu_state == TFTF_AFFINITY_STATE_OFF);
 
 	do {
-		ret = tftf_psci_cpu_on(target_cpu,
-			       (uintptr_t) tftf_hotplug_entry,
-			       context_id);
+		ret = tftf_psci_cpu_on(
+			target_cpu, (uintptr_t)tftf_hotplug_entry, context_id);
 
 		/* Check if multiple CPU_ON calls are done for same CPU */
 		assert(ret != PSCI_E_ON_PENDING);
@@ -176,39 +175,38 @@ int32_t tftf_cpu_on(u_register_t target_cpu,
 	if (ret == PSCI_E_SUCCESS) {
 		/*
 		 * Populate the test entry point for this core.
-		 * This is the address where the core will jump to once the framework
-		 * has finished initialising it.
+		 * This is the address where the core will jump to once the
+		 * framework has finished initialising it.
 		 */
-		test_entrypoint[core_pos] = (test_function_t) entrypoint;
+		test_entrypoint[core_pos] = (test_function_t)entrypoint;
 
-		cpus_status_map[core_pos].state = TFTF_AFFINITY_STATE_ON_PENDING;
+		cpus_status_map[core_pos].state =
+			TFTF_AFFINITY_STATE_ON_PENDING;
 		spin_unlock(&cpus_status_map[core_pos].lock);
 	} else {
 		spin_unlock(&cpus_status_map[core_pos].lock);
 		ERROR("Failed to boot CPU 0x%llx (%d)\n",
-				(unsigned long long)target_cpu, ret);
+		      (unsigned long long)target_cpu, ret);
 	}
 
 	return ret;
 }
 
-int32_t tftf_try_cpu_on(u_register_t target_cpu,
-			uintptr_t entrypoint,
+int32_t tftf_try_cpu_on(u_register_t target_cpu, uintptr_t entrypoint,
 			u_register_t context_id)
 {
 	int32_t ret;
 	unsigned int core_pos = platform_get_core_pos(target_cpu);
 
-	ret = tftf_psci_cpu_on(target_cpu,
-		       (uintptr_t) tftf_hotplug_entry,
-		       context_id);
+	ret = tftf_psci_cpu_on(target_cpu, (uintptr_t)tftf_hotplug_entry,
+			       context_id);
 
 	if (ret == PSCI_E_SUCCESS) {
 		spin_lock(&cpus_status_map[core_pos].lock);
 		assert(cpus_status_map[core_pos].state ==
-						TFTF_AFFINITY_STATE_OFF);
+		       TFTF_AFFINITY_STATE_OFF);
 		cpus_status_map[core_pos].state =
-				TFTF_AFFINITY_STATE_ON_PENDING;
+			TFTF_AFFINITY_STATE_ON_PENDING;
 
 		spin_unlock(&cpus_status_map[core_pos].lock);
 
@@ -217,7 +215,7 @@ int32_t tftf_try_cpu_on(u_register_t target_cpu,
 		 * This is the address where the core will jump to once the
 		 * framework has finished initialising it.
 		 */
-		test_entrypoint[core_pos] = (test_function_t) entrypoint;
+		test_entrypoint[core_pos] = (test_function_t)entrypoint;
 	}
 
 	return ret;

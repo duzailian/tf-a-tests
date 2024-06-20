@@ -12,9 +12,9 @@
 /*
  * State IDs for local power states on the HIKEY960.
  */
-#define HIKEY960_RUN_STATE_ID		0	/* Valid for CPUs and Clusters */
-#define HIKEY960_RETENTION_STATE_ID	1	/* Valid for only CPUs */
-#define HIKEY960_OFF_STATE_ID		2	/* Valid for CPUs and Clusters */
+#define HIKEY960_RUN_STATE_ID 0	      /* Valid for CPUs and Clusters */
+#define HIKEY960_RETENTION_STATE_ID 1 /* Valid for only CPUs */
+#define HIKEY960_OFF_STATE_ID 2	      /* Valid for CPUs and Clusters */
 
 /*
  * Suspend depth definitions for each power state
@@ -27,7 +27,8 @@ typedef enum {
 
 /* The state property array with details of idle state possible for the core */
 static const plat_state_prop_t core_state_prop[] = {
-	{HIKEY960_RETENTION_DEPTH, HIKEY960_RETENTION_STATE_ID, PSTATE_TYPE_STANDBY},
+	{HIKEY960_RETENTION_DEPTH, HIKEY960_RETENTION_STATE_ID,
+	 PSTATE_TYPE_STANDBY},
 	{HIKEY960_OFF_DEPTH, HIKEY960_OFF_STATE_ID, PSTATE_TYPE_POWERDOWN},
 	{0},
 };

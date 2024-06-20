@@ -10,22 +10,23 @@
 #include <tftf.h>
 #include <tftf_lib.h>
 
-#define MAX_ITERATIONS_EXCLUSIVE 	100
+#define MAX_ITERATIONS_EXCLUSIVE 100
 
 /*
  * This test ensures that a RNDR/RNDRRS instructions causes a trap to EL3 and
  * generates a random number each time.
- * Argument "use_rndrrs" decides whether to execute "rndrrs" or "rndr" instruction.
+ * Argument "use_rndrrs" decides whether to execute "rndrrs" or "rndr"
+ * instruction.
  *
  * This test usage load/store exclusive pairs to detect whether the execution
  * trapped to EL3 or not?
- * It relies on the fact that when exception level changes the monitor is cleared.
- * In a load/store exclusive pair with stxr instruction, the status gets updated
- * to '1' when monitor is cleared.
- * In this test start with ldxr and execute trap instruction and if the trap to EL3
- * happened then stxr status will be '1', to avoid chances of monitor being cleared
- * (highly unlikely in this scenario) by any other reason do this test iteratively.
- * If stxr succeds even single time we are sure that trap did not happen.
+ * It relies on the fact that when exception level changes the monitor is
+ * cleared. In a load/store exclusive pair with stxr instruction, the status
+ * gets updated to '1' when monitor is cleared. In this test start with ldxr and
+ * execute trap instruction and if the trap to EL3 happened then stxr status
+ * will be '1', to avoid chances of monitor being cleared (highly unlikely in
+ * this scenario) by any other reason do this test iteratively. If stxr succeds
+ * even single time we are sure that trap did not happen.
  */
 static test_result_t test_rng_trap(bool use_rndrrs)
 {
@@ -44,21 +45,21 @@ static test_result_t test_rng_trap(bool use_rndrrs)
 	 */
 	for (i = 0; i < MAX_ITERATIONS_EXCLUSIVE; i++) {
 		/* Attempt to acquire address for exclusive access */
-		__asm__ volatile ("ldxr %0, %1\n" : "=r"(rng)
-					: "Q"(exclusive));
+		__asm__ volatile("ldxr %0, %1\n" : "=r"(rng) : "Q"(exclusive));
 		if (use_rndrrs) {
 			/* Attempt to read RNDRRS. */
-			__asm__ volatile ("mrs %0, rndrrs\n" : "=r" (rng));
+			__asm__ volatile("mrs %0, rndrrs\n" : "=r"(rng));
 		} else {
 			/* Attempt to read RNDR. */
-			__asm__ volatile ("mrs %0, rndr\n" : "=r" (rng));
+			__asm__ volatile("mrs %0, rndr\n" : "=r"(rng));
 		}
 		/*
 		 * After returning from the trap, the monitor variable should
 		 * be cleared, so the status value should be 1.
 		 */
-		__asm__ volatile ("stxr %w0, %1, %2\n" : "=&r"(status)
-					: "r"(rng), "Q"(exclusive));
+		__asm__ volatile("stxr %w0, %1, %2\n"
+				 : "=&r"(status)
+				 : "r"(rng), "Q"(exclusive));
 		/* If monitor is not cleared or not a new random number */
 		if ((status == 0) || (rng == rng1)) {
 			return TEST_RESULT_FAIL;
@@ -73,13 +74,15 @@ static test_result_t test_rng_trap(bool use_rndrrs)
 #endif
 }
 
-/* Test RNDR read access causes a trap to EL3 and generates a random number each time */
+/* Test RNDR read access causes a trap to EL3 and generates a random number each
+ * time */
 test_result_t test_rndr_rng_trap(void)
 {
 	return test_rng_trap(false);
 }
 
-/* Test RNDRRS read access causes a trap to EL3 and generates a random number each time */
+/* Test RNDRRS read access causes a trap to EL3 and generates a random number
+ * each time */
 test_result_t test_rndrrs_rng_trap(void)
 {
 	return test_rng_trap(true);

@@ -21,14 +21,13 @@
 #include <tftf.h>
 #include <timer.h>
 
-
 /* Helper macros */
 #define TIMER_STEP_VALUE (plat_timer_info->timer_step_value)
 #define TIMER_IRQ (plat_timer_info->timer_irq)
 #define PROGRAM_TIMER(a) plat_timer_info->program(a)
-#define INVALID_CORE	UINT32_MAX
-#define INVALID_TIME	UINT64_MAX
-#define MAX_TIME_OUT_MS	10000
+#define INVALID_CORE UINT32_MAX
+#define INVALID_TIME UINT64_MAX
+#define MAX_TIME_OUT_MS 10000
 
 /*
  * Pointer containing available timer information for the platform.
@@ -65,8 +64,9 @@ static inline unsigned long long get_current_time_ms(void)
 
 static inline unsigned long long get_current_prog_time(void)
 {
-	return current_prog_core == INVALID_CORE ?
-		0 : interrupt_req_time[current_prog_core];
+	return current_prog_core == INVALID_CORE
+		       ? 0
+		       : interrupt_req_time[current_prog_core];
 }
 
 int tftf_initialise_timer(void)
@@ -114,7 +114,7 @@ static inline unsigned int get_lowest_req_core(void)
 	for (i = 0; i < PLATFORM_CORE_COUNT; i++) {
 		if (interrupt_req_time[i] < lowest_timer) {
 			lowest_timer = interrupt_req_time[i];
-			lowest_core_req =  i;
+			lowest_core_req = i;
 		}
 	}
 
@@ -154,7 +154,7 @@ int tftf_program_timer(unsigned long time_out_ms)
 	spin_lock(&timer_lock);
 
 	assert((current_prog_core < PLATFORM_CORE_COUNT) ||
-		(current_prog_core == INVALID_CORE));
+	       (current_prog_core == INVALID_CORE));
 
 	/*
 	 * Read time after acquiring timer_lock to account for any time taken
@@ -166,9 +166,9 @@ int tftf_program_timer(unsigned long time_out_ms)
 	interrupt_req_time[core_pos] = current_time + time_out_ms;
 
 	VERBOSE("Need timer interrupt at: %lld current_prog_time:%lld\n"
-			" current time: %lld\n", interrupt_req_time[core_pos],
-					get_current_prog_time(),
-					get_current_time_ms());
+		" current time: %lld\n",
+		interrupt_req_time[core_pos], get_current_prog_time(),
+		get_current_time_ms());
 
 	/*
 	 * If the interrupt request time is less than the current programmed
@@ -176,9 +176,9 @@ int tftf_program_timer(unsigned long time_out_ms)
 	 * requested time and retarget the timer interrupt to the current
 	 * core.
 	 */
-	if ((!get_current_prog_time()) || (interrupt_req_time[core_pos] <
-				(get_current_prog_time() - TIMER_STEP_VALUE))) {
-
+	if ((!get_current_prog_time()) ||
+	    (interrupt_req_time[core_pos] <
+	     (get_current_prog_time() - TIMER_STEP_VALUE))) {
 		arm_gic_set_intr_target(TIMER_IRQ, core_pos);
 
 		rc = PROGRAM_TIMER(time_out_ms);
@@ -198,8 +198,8 @@ int tftf_program_timer(unsigned long time_out_ms)
 }
 
 int tftf_program_timer_and_suspend(unsigned long milli_secs,
-				   unsigned int pwr_state,
-				   int *timer_rc, int *suspend_rc)
+				   unsigned int pwr_state, int *timer_rc,
+				   int *suspend_rc)
 {
 	int rc = 0;
 	u_register_t flags;
@@ -226,11 +226,12 @@ int tftf_program_timer_and_suspend(unsigned long milli_secs,
 		if (suspend_rc_val != PSCI_E_SUCCESS) {
 			rc = -1;
 			INFO("%s %d: suspend_rc = %d\n", __func__, __LINE__,
-				suspend_rc_val);
+			     suspend_rc_val);
 		}
 	} else {
 		rc = -1;
-		INFO("%s %d: timer_rc = %d\n", __func__, __LINE__, timer_rc_val);
+		INFO("%s %d: timer_rc = %d\n", __func__, __LINE__,
+		     timer_rc_val);
 	}
 
 	/* Restore previous DAIF flags */
@@ -250,8 +251,8 @@ int tftf_program_timer_and_suspend(unsigned long milli_secs,
 	return rc;
 }
 
-int tftf_program_timer_and_sys_suspend(unsigned long milli_secs,
-				   int *timer_rc, int *suspend_rc)
+int tftf_program_timer_and_sys_suspend(unsigned long milli_secs, int *timer_rc,
+				       int *suspend_rc)
 {
 	int rc = 0;
 	u_register_t flags;
@@ -278,11 +279,12 @@ int tftf_program_timer_and_sys_suspend(unsigned long milli_secs,
 		if (suspend_rc_val != PSCI_E_SUCCESS) {
 			rc = -1;
 			INFO("%s %d: suspend_rc = %d\n", __func__, __LINE__,
-				suspend_rc_val);
+			     suspend_rc_val);
 		}
 	} else {
 		rc = -1;
-		INFO("%s %d: timer_rc = %d\n", __func__, __LINE__, timer_rc_val);
+		INFO("%s %d: timer_rc = %d\n", __func__, __LINE__,
+		     timer_rc_val);
 	}
 
 	/* Restore previous DAIF flags */
@@ -308,14 +310,14 @@ int tftf_timer_sleep(unsigned long milli_secs)
 	uint32_t stateid;
 
 	ret = tftf_psci_make_composite_state_id(MPIDR_AFFLVL0,
-			PSTATE_TYPE_STANDBY, &stateid);
+						PSTATE_TYPE_STANDBY, &stateid);
 	if (ret != PSCI_E_SUCCESS)
 		return -1;
 
 	power_state = tftf_make_psci_pstate(MPIDR_AFFLVL0, PSTATE_TYPE_STANDBY,
-			stateid);
-	ret = tftf_program_timer_and_suspend(milli_secs, power_state,
-								NULL, NULL);
+					    stateid);
+	ret = tftf_program_timer_and_suspend(milli_secs, power_state, NULL,
+					     NULL);
 	if (ret != 0)
 		return -1;
 
@@ -365,9 +367,9 @@ int tftf_cancel_timer(void)
 		/* Get next timer consumer */
 		next_timer_req_core_pos = get_lowest_req_core();
 		if (next_timer_req_core_pos != INVALID_CORE) {
-
 			/* Retarget to the next_timer_req_core_pos */
-			arm_gic_set_intr_target(TIMER_IRQ, next_timer_req_core_pos);
+			arm_gic_set_intr_target(TIMER_IRQ,
+						next_timer_req_core_pos);
 			current_prog_core = next_timer_req_core_pos;
 
 			current_time = get_current_time_ms();
@@ -378,17 +380,21 @@ int tftf_cancel_timer(void)
 			 * program it to fire after TIMER_STEP_VALUE.
 			 */
 			if (interrupt_req_time[next_timer_req_core_pos] >
-					 current_time + TIMER_STEP_VALUE)
-				rc = PROGRAM_TIMER(interrupt_req_time[next_timer_req_core_pos] - current_time);
+			    current_time + TIMER_STEP_VALUE)
+				rc = PROGRAM_TIMER(
+					interrupt_req_time
+						[next_timer_req_core_pos] -
+					current_time);
 			else
 				rc = PROGRAM_TIMER(TIMER_STEP_VALUE);
 			VERBOSE("Cancel and program new timer for core_pos: "
-						"%d %lld\n",
-						next_timer_req_core_pos,
-						get_current_prog_time());
+				"%d %lld\n",
+				next_timer_req_core_pos,
+				get_current_prog_time());
 			/* We don't expect timer programming to fail */
 			if (rc)
-				ERROR("%s %d: rc = %d\n", __func__, __LINE__, rc);
+				ERROR("%s %d: rc = %d\n", __func__, __LINE__,
+				      rc);
 		} else {
 			current_prog_core = INVALID_CORE;
 			VERBOSE("Cancelling timer : %d\n", core_pos);
@@ -444,7 +450,7 @@ int tftf_timer_framework_handler(void *data)
 	/* Send interrupts to all the CPUS in the min time block */
 	for (int i = 0; i < PLATFORM_CORE_COUNT; i++) {
 		if ((interrupt_req_time[i] <=
-				(current_time + TIMER_STEP_VALUE))) {
+		     (current_time + TIMER_STEP_VALUE))) {
 			interrupt_req_time[i] = INVALID_TIME;
 			tftf_send_sgi(IRQ_WAKE_SGI, i);
 		}
@@ -455,10 +461,10 @@ int tftf_timer_framework_handler(void *data)
 	if (next_timer_req_core_pos != INVALID_CORE) {
 		/* Check we have not exceeded the time for next core */
 		assert(interrupt_req_time[next_timer_req_core_pos] >
-							current_time);
+		       current_time);
 		arm_gic_set_intr_target(TIMER_IRQ, next_timer_req_core_pos);
-		rc = PROGRAM_TIMER(interrupt_req_time[next_timer_req_core_pos]
-				 - current_time);
+		rc = PROGRAM_TIMER(interrupt_req_time[next_timer_req_core_pos] -
+				   current_time);
 	}
 	/* Update current program core to the newer one */
 	current_prog_core = next_timer_req_core_pos;
@@ -560,4 +566,3 @@ void tftf_timer_gic_state_restore(void)
 
 	spin_unlock(&timer_lock);
 }
-

@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <power_management.h>
 #include <psci.h>
 #include <smccc.h>
-#include <tftf_lib.h>
 #include <test_helpers.h>
-#include <power_management.h>
+#include <tftf_lib.h>
 
 /* Generic function to call System OFF SMC */
 static test_result_t test_cpu_system_off(void)
@@ -16,7 +16,7 @@ static test_result_t test_cpu_system_off(void)
 	u_register_t curr_mpid = read_mpidr_el1() & MPID_MASK;
 	u_register_t mpid;
 	unsigned int cpu_node;
-	smc_args args = { SMC_PSCI_SYSTEM_OFF };
+	smc_args args = {SMC_PSCI_SYSTEM_OFF};
 
 	/* Wait for all other CPU's to turn off */
 	for_each_cpu(cpu_node) {
@@ -25,8 +25,8 @@ static test_result_t test_cpu_system_off(void)
 		if (mpid == curr_mpid)
 			continue;
 
-		while (tftf_psci_affinity_info(mpid,
-			MPIDR_AFFLVL0) != PSCI_STATE_OFF) {
+		while (tftf_psci_affinity_info(mpid, MPIDR_AFFLVL0) !=
+		       PSCI_STATE_OFF) {
 		}
 	}
 
@@ -75,13 +75,11 @@ test_result_t test_system_off_cpu_other_than_lead(void)
 	/* Power ON another CPU, other than the lead CPU */
 	cpu_mpid = tftf_find_random_cpu_other_than(lead_mpid);
 	VERBOSE("CPU to be turned on MPID: 0x%lx\n", cpu_mpid);
-	psci_ret = tftf_cpu_on(cpu_mpid,
-			   (uintptr_t)test_cpu_system_off,
-			   0);
+	psci_ret = tftf_cpu_on(cpu_mpid, (uintptr_t)test_cpu_system_off, 0);
 
 	if (psci_ret != PSCI_E_SUCCESS) {
 		tftf_testcase_printf("Failed to power on CPU 0x%lx (%d)\n",
-				cpu_mpid, psci_ret);
+				     cpu_mpid, psci_ret);
 		return TEST_RESULT_FAIL;
 	}
 

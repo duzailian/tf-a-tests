@@ -7,13 +7,13 @@
 #ifndef PLATFORM_H
 #define PLATFORM_H
 
-#define PRIMARY_CPU_MPID		0x0
+#define PRIMARY_CPU_MPID 0x0
 
-#define CPUS_COUNT			8
+#define CPUS_COUNT 8
 
-#define UART_BASE			0x7ff80000
+#define UART_BASE 0x7ff80000
 
-#define MAX_CPUS_PER_CLUSTER		4
-#define MAX_PE_PER_CPU			1
+#define MAX_CPUS_PER_CLUSTER 4
+#define MAX_PE_PER_CPU 1
 
 #endif /* PLATFORM_H */

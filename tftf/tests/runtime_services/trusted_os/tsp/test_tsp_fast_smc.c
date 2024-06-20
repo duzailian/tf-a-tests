@@ -30,10 +30,8 @@ static event_t cpu_has_entered_test[PLATFORM_CORE_COUNT];
  * expected else failure.
  */
 static test_result_t validate_tsp_operations(uint64_t fn_identifier,
-					   uint64_t arg1,
-					   uint64_t arg2,
-					   uint64_t ret1,
-					   uint64_t ret2)
+					     uint64_t arg1, uint64_t arg2,
+					     uint64_t ret1, uint64_t ret2)
 {
 	smc_args tsp_svc_params = {fn_identifier, arg1, arg2};
 	smc_ret_values tsp_result;
@@ -42,27 +40,27 @@ static test_result_t validate_tsp_operations(uint64_t fn_identifier,
 
 	if (tsp_result.ret0) {
 		tftf_testcase_printf("TSP operation 0x%x failed, error:0x%x\n",
-					(unsigned int) fn_identifier,
-					(unsigned int) tsp_result.ret0);
+				     (unsigned int)fn_identifier,
+				     (unsigned int)tsp_result.ret0);
 		return TEST_RESULT_FAIL;
 	}
 
 	if (tsp_result.ret1 != ret1 || tsp_result.ret2 != ret2) {
-		tftf_testcase_printf("TSP function:0x%x returned wrong result:"
-				     "got 0x%x 0x%x expected: 0x%x 0x%x\n",
-						(unsigned int)fn_identifier,
-						(unsigned int)tsp_result.ret1,
-						(unsigned int)tsp_result.ret2,
-						(unsigned int)ret1,
-						(unsigned int)ret2);
+		tftf_testcase_printf(
+			"TSP function:0x%x returned wrong result:"
+			"got 0x%x 0x%x expected: 0x%x 0x%x\n",
+			(unsigned int)fn_identifier,
+			(unsigned int)tsp_result.ret1,
+			(unsigned int)tsp_result.ret2, (unsigned int)ret1,
+			(unsigned int)ret2);
 		return TEST_RESULT_FAIL;
 	}
 	return TEST_RESULT_SUCCESS;
 }
 
 /*
- * This function issues SMC calls to trusted OS(TSP) to perform basic mathematical
- * operations supported by it and validates the result.
+ * This function issues SMC calls to trusted OS(TSP) to perform basic
+ * mathematical operations supported by it and validates the result.
  */
 static test_result_t issue_trustedos_service_calls(void)
 {
@@ -79,7 +77,8 @@ static test_result_t issue_trustedos_service_calls(void)
 		 * TSP add function performs addition of argx to itself and
 		 * returns the result in argx where x is 1, 2
 		 */
-		ret = validate_tsp_operations(TSP_FAST_FID(TSP_ADD), 4, 6, 8, 12);
+		ret = validate_tsp_operations(TSP_FAST_FID(TSP_ADD), 4, 6, 8,
+					      12);
 		if (ret != TEST_RESULT_SUCCESS)
 			return ret;
 
@@ -87,15 +86,17 @@ static test_result_t issue_trustedos_service_calls(void)
 		 * TSP sub function performs substraction of argx to itself and
 		 * returns the result in argx where x is 1, 2
 		 */
-		ret = validate_tsp_operations(TSP_FAST_FID(TSP_SUB), 4, 6, 0, 0);
+		ret = validate_tsp_operations(TSP_FAST_FID(TSP_SUB), 4, 6, 0,
+					      0);
 		if (ret != TEST_RESULT_SUCCESS)
 			return ret;
 
 		/*
-		 * TSP mul function performs multiplication of argx to itself and
-		 * returns the result in argx where x is 1, 2
+		 * TSP mul function performs multiplication of argx to itself
+		 * and returns the result in argx where x is 1, 2
 		 */
-		ret = validate_tsp_operations(TSP_FAST_FID(TSP_MUL), 4, 6, 16, 36);
+		ret = validate_tsp_operations(TSP_FAST_FID(TSP_MUL), 4, 6, 16,
+					      36);
 		if (ret != TEST_RESULT_SUCCESS)
 			return ret;
 
@@ -103,7 +104,8 @@ static test_result_t issue_trustedos_service_calls(void)
 		 * TSP div function performs division of argx to itself and
 		 * returns the result in argx where x is 1, 2
 		 */
-		ret = validate_tsp_operations(TSP_FAST_FID(TSP_DIV), 4, 6, 1, 1);
+		ret = validate_tsp_operations(TSP_FAST_FID(TSP_DIV), 4, 6, 1,
+					      1);
 		if (ret != TEST_RESULT_SUCCESS)
 			return ret;
 	}
@@ -134,11 +136,11 @@ test_result_t test_tsp_fast_smc_operations(void)
 			continue;
 
 		ret = tftf_cpu_on(cpu_mpid,
-				(uintptr_t) issue_trustedos_service_calls,
-				0);
+				  (uintptr_t)issue_trustedos_service_calls, 0);
 		if (ret != PSCI_E_SUCCESS) {
-			tftf_testcase_printf("Failed to power on CPU 0x%llx (%i)\n",
-					(unsigned long long) cpu_mpid, ret);
+			tftf_testcase_printf(
+				"Failed to power on CPU 0x%llx (%i)\n",
+				(unsigned long long)cpu_mpid, ret);
 			return TEST_RESULT_FAIL;
 		}
 	}

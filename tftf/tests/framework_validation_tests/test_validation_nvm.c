@@ -45,8 +45,8 @@ test_result_t test_validation_nvm(void)
 	}
 
 	/* Read it back from NVM */
-	status = tftf_nvm_read(TFTF_STATE_OFFSET(testcase_buffer),
-			&test_value2, sizeof(test_value2));
+	status = tftf_nvm_read(TFTF_STATE_OFFSET(testcase_buffer), &test_value2,
+			       sizeof(test_value2));
 	if (status != STATUS_SUCCESS) {
 		tftf_testcase_printf("tftf_nvm_read: error (%d)\n", status);
 		return TEST_RESULT_FAIL;
@@ -54,8 +54,8 @@ test_result_t test_validation_nvm(void)
 
 	/* Check that the 2 values match */
 	if (test_value1 != test_value2) {
-		tftf_testcase_printf("Values mismatch: %u != %u\n",
-				test_value1, test_value2);
+		tftf_testcase_printf("Values mismatch: %u != %u\n", test_value1,
+				     test_value2);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -69,9 +69,9 @@ static unsigned int access_flash_concurrent(unsigned int core_pos)
 	unsigned int test_value;
 
 	if (core_pos % 2) {
-		ret = tftf_nvm_write(TFTF_STATE_OFFSET(testcase_buffer)
-				+ core_pos * PER_CPU_BUFFER_OFFSET,
-				&core_pos, sizeof(core_pos));
+		ret = tftf_nvm_write(TFTF_STATE_OFFSET(testcase_buffer) +
+					     core_pos * PER_CPU_BUFFER_OFFSET,
+				     &core_pos, sizeof(core_pos));
 		if (ret != STATUS_SUCCESS) {
 			tftf_testcase_printf("Write failed\n");
 			return TEST_RESULT_FAIL;
@@ -79,7 +79,7 @@ static unsigned int access_flash_concurrent(unsigned int core_pos)
 	} else {
 		/* Dummy read */
 		ret = tftf_nvm_read(TFTF_STATE_OFFSET(testcase_buffer),
-				&test_value, sizeof(test_value));
+				    &test_value, sizeof(test_value));
 		if (ret != STATUS_SUCCESS) {
 			tftf_testcase_printf("Read failed\n");
 			return TEST_RESULT_FAIL;
@@ -92,8 +92,8 @@ static unsigned int access_flash_concurrent(unsigned int core_pos)
 /*
  * @Test_Aim@ Test concurrent memory access to Non-Volatile Memory
  *
- * Try reading/writing data from multiple cores to NVM and verify the operations are
- * serialised and also the device does not crash.
+ * Try reading/writing data from multiple cores to NVM and verify the operations
+ * are serialised and also the device does not crash.
  *
  */
 static test_result_t test_validate_nvm_secondary(void)
@@ -134,9 +134,8 @@ test_result_t test_validate_nvm_serialisation(void)
 	char init_buffer[TEST_BUFFER_SIZE] = {0};
 
 	/* Initialise the scratch flash */
-	ret = tftf_nvm_write(TFTF_STATE_OFFSET(testcase_buffer),
-				&init_buffer,
-				sizeof(init_buffer));
+	ret = tftf_nvm_write(TFTF_STATE_OFFSET(testcase_buffer), &init_buffer,
+			     sizeof(init_buffer));
 	if (ret != STATUS_SUCCESS) {
 		tftf_testcase_printf("Write failed\n");
 		return TEST_RESULT_FAIL;
@@ -149,10 +148,10 @@ test_result_t test_validate_nvm_serialisation(void)
 		if (target_mpid == lead_mpid)
 			continue;
 		rc = tftf_cpu_on(target_mpid,
-				(uintptr_t) test_validate_nvm_secondary,
-				0);
+				 (uintptr_t)test_validate_nvm_secondary, 0);
 		if (rc != PSCI_E_SUCCESS) {
-			tftf_testcase_printf("Failed to power on CPU 0x%x (%d)\n",
+			tftf_testcase_printf(
+				"Failed to power on CPU 0x%x (%d)\n",
 				target_mpid, rc);
 			return TEST_RESULT_SKIPPED;
 		}
@@ -200,20 +199,21 @@ test_result_t test_validate_nvm_serialisation(void)
 		core_pos = platform_get_core_pos(target_mpid);
 
 		tftf_nvm_read(TFTF_STATE_OFFSET(testcase_buffer) +
-				core_pos * PER_CPU_BUFFER_OFFSET,
-				&test_value,
-				sizeof(test_value));
+				      core_pos * PER_CPU_BUFFER_OFFSET,
+			      &test_value, sizeof(test_value));
 
 		if ((core_pos % 2) && (test_value != core_pos)) {
-			tftf_testcase_printf("Concurrent flash access test "
+			tftf_testcase_printf(
+				"Concurrent flash access test "
 				"failed on cpu index: %d test_value:%d \n",
 				core_pos, test_value);
 			return TEST_RESULT_FAIL;
 		} else if (((core_pos % 2) == 0) && (test_value != 0)) {
-			tftf_testcase_printf("Concurrent flash access test "
+			tftf_testcase_printf(
+				"Concurrent flash access test "
 				"failed on cpu index: %d test_value:%d \n",
 				core_pos, test_value);
-			 return TEST_RESULT_FAIL;
+			return TEST_RESULT_FAIL;
 		}
 	}
 

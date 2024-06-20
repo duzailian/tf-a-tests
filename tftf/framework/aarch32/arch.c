@@ -8,7 +8,6 @@
 #include <debug.h>
 #include <tftf.h>
 
-
 void tftf_arch_setup(void)
 {
 	if (!IS_IN_HYP())

@@ -10,7 +10,7 @@
 #include <platform_def.h>
 
 #ifndef NOR_FLASH_BLOCK_SIZE
-	#error NOR_FLASH_BLOCK_SIZE must be defined as the block \
+#error NOR_FLASH_BLOCK_SIZE must be defined as the block \
 		 size of the NOR Flash seen by the software
 #endif
 

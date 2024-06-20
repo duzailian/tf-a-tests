@@ -6,9 +6,8 @@
 
 #include <assert.h>
 #include <cdefs.h>
-#include <stdio.h>
-
 #include <common/debug.h>
+#include <stdio.h>
 
 void __assert(const char *file, unsigned int line, const char *assertion)
 {

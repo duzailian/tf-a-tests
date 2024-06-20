@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <debug.h>
 #include <string.h>
+
 #include "io_vexpress_nor_internal.h"
 
 static file_state_t current_file = {0};
@@ -19,20 +20,17 @@ io_type_t device_type_flash(void)
 /* NOR Flash device functions */
 static int flash_dev_open(const uintptr_t dev_spec, io_dev_info_t **dev_info);
 static int flash_open(io_dev_info_t *dev_info, const uintptr_t spec,
-			     io_entity_t *entity);
-static int flash_seek(io_entity_t *entity, int mode,
-			     ssize_t offset);
-static int flash_read(io_entity_t *entity, uintptr_t buffer,
-			     size_t length, size_t *length_read);
+		      io_entity_t *entity);
+static int flash_seek(io_entity_t *entity, int mode, ssize_t offset);
+static int flash_read(io_entity_t *entity, uintptr_t buffer, size_t length,
+		      size_t *length_read);
 static int flash_write(io_entity_t *entity, const uintptr_t buffer,
-			      size_t length, size_t *length_written);
+		       size_t length, size_t *length_written);
 static int flash_close(io_entity_t *entity);
 static int flash_dev_close(io_dev_info_t *dev_info);
 
-
-static const io_dev_connector_t flash_dev_connector = {
-	.dev_open = flash_dev_open
-};
+static const io_dev_connector_t flash_dev_connector = {.dev_open =
+							       flash_dev_open};
 
 static const io_dev_funcs_t flash_dev_funcs = {
 	.type = device_type_flash,
@@ -47,14 +45,12 @@ static const io_dev_funcs_t flash_dev_funcs = {
 };
 
 /* No state associated with this device so structure can be const */
-static const io_dev_info_t flash_dev_info = {
-	.funcs = &flash_dev_funcs,
-	.info = (uintptr_t)NULL
-};
+static const io_dev_info_t flash_dev_info = {.funcs = &flash_dev_funcs,
+					     .info = (uintptr_t)NULL};
 
 /* Open a connection to the flash device */
 static int flash_dev_open(const uintptr_t dev_spec __attribute__((unused)),
-			   io_dev_info_t **dev_info)
+			  io_dev_info_t **dev_info)
 {
 	assert(dev_info != NULL);
 	*dev_info = (io_dev_info_t *)&flash_dev_info; /* cast away const */
@@ -70,11 +66,10 @@ static int flash_dev_close(io_dev_info_t *dev_info)
 	return IO_SUCCESS;
 }
 
-
 /* Open a file on the flash device */
 /* TODO: Can we do any sensible limit checks on requested memory */
 static int flash_open(io_dev_info_t *dev_info, const uintptr_t spec,
-			     io_entity_t *entity)
+		      io_entity_t *entity)
 {
 	int result;
 	const io_nor_flash_spec_t *block_spec = (io_nor_flash_spec_t *)spec;
@@ -128,9 +123,9 @@ static int flash_seek(io_entity_t *entity, int mode, ssize_t offset)
 	} else if (mode == IO_SEEK_END) {
 		flash_base = block_spec->region_address;
 		/* Ensure the offset is into the flash */
-		if ((offset <= 0) && (flash_size + offset >= 0))  {
+		if ((offset <= 0) && (flash_size + offset >= 0)) {
 			((file_state_t *)entity->info)->file_pos =
-					flash_base + flash_size + offset;
+				flash_base + flash_size + offset;
 			result = IO_SUCCESS;
 		} else {
 			result = IO_FAIL;
@@ -138,10 +133,10 @@ static int flash_seek(io_entity_t *entity, int mode, ssize_t offset)
 	} else if (mode == IO_SEEK_CUR) {
 		flash_base = block_spec->region_address;
 		/* Ensure the offset is into the flash */
-		if ((((file_state_t *)entity->info)->file_pos +
-					offset >= flash_base) &&
-		    (((file_state_t *)entity->info)->file_pos +
-					offset < flash_base + flash_size)) {
+		if ((((file_state_t *)entity->info)->file_pos + offset >=
+		     flash_base) &&
+		    (((file_state_t *)entity->info)->file_pos + offset <
+		     flash_base + flash_size)) {
 			((file_state_t *)entity->info)->file_pos += offset;
 			result = IO_SUCCESS;
 		} else {
@@ -155,8 +150,8 @@ static int flash_seek(io_entity_t *entity, int mode, ssize_t offset)
 }
 
 /* Read data from a file on the flash device */
-static int flash_read(io_entity_t *entity, uintptr_t buffer,
-			     size_t length, size_t *length_read)
+static int flash_read(io_entity_t *entity, uintptr_t buffer, size_t length,
+		      size_t *length_read)
 {
 	file_state_t *fp;
 
@@ -177,7 +172,7 @@ static int flash_read(io_entity_t *entity, uintptr_t buffer,
 
 /* Write data to a file on the flash device */
 static int flash_write(io_entity_t *entity, const uintptr_t buffer,
-			      size_t length, size_t *length_written)
+		       size_t length, size_t *length_written)
 {
 	file_state_t *fp;
 	const io_nor_flash_spec_t *block_spec;
@@ -202,13 +197,14 @@ static int flash_write(io_entity_t *entity, const uintptr_t buffer,
 		if (IS_FLASH_ADDRESS_BLOCK_ALIGNED(fp, file_pos)) {
 			if (length / block_spec->block_size > 0) {
 				ret = flash_block_write(fp, file_pos,
-							 buffer_ptr, &written);
+							buffer_ptr, &written);
 			} else {
 				/* Case when the length is smaller than a
 				 * block size
 				 */
 				ret = flash_partial_write(fp, file_pos,
-					buffer_ptr, length, &written);
+							  buffer_ptr, length,
+							  &written);
 			}
 		} else {
 			/* Case when the buffer does not start at the beginning
@@ -218,16 +214,18 @@ static int flash_write(io_entity_t *entity, const uintptr_t buffer,
 			/* Length between the current file_pos and the end of
 			 * the block
 			 */
-			remaining_block_size = block_spec->block_size -
-					(file_pos % block_spec->block_size);
+			remaining_block_size =
+				block_spec->block_size -
+				(file_pos % block_spec->block_size);
 
 			if (length < remaining_block_size) {
 				ret = flash_partial_write(fp, file_pos,
-						 buffer_ptr, length, &written);
+							  buffer_ptr, length,
+							  &written);
 			} else {
-				ret = flash_partial_write(fp, file_pos,
-					buffer_ptr, remaining_block_size,
-					 &written);
+				ret = flash_partial_write(
+					fp, file_pos, buffer_ptr,
+					remaining_block_size, &written);
 			}
 		}
 

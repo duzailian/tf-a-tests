@@ -93,7 +93,8 @@ test_result_t test_psci_cpu_hotplug_plugged(void)
 		if (cpu_mpid == lead_mpid)
 			continue;
 
-		psci_ret = tftf_cpu_on(cpu_mpid, (uintptr_t) reissue_cpu_hotplug, 0);
+		psci_ret = tftf_cpu_on(cpu_mpid, (uintptr_t)reissue_cpu_hotplug,
+				       0);
 		if (psci_ret != PSCI_E_SUCCESS)
 			return TEST_RESULT_SKIPPED;
 
@@ -120,8 +121,8 @@ test_result_t test_psci_cpu_hotplug_invalid_cpu(void)
 	 * Pass a valid entry point address to make sure that the call does not
 	 * fail for the wrong reason.
 	 */
-	psci_ret = tftf_psci_cpu_on(0xFFFFFFFF,
-		(uintptr_t) test_psci_cpu_hotplug_invalid_cpu, 0);
+	psci_ret = tftf_psci_cpu_on(
+		0xFFFFFFFF, (uintptr_t)test_psci_cpu_hotplug_invalid_cpu, 0);
 
 	return report_result(PSCI_E_INVALID_PARAMS, psci_ret);
 }
@@ -143,8 +144,7 @@ test_result_t test_psci_cpu_hotplug_invalid_ep(void)
 	psci_version = tftf_get_psci_version();
 
 	if (!(psci_version & PSCI_MAJOR_VER_MASK)) {
-		tftf_testcase_printf(
-			"PSCI Version is less then 1.0\n");
+		tftf_testcase_printf("PSCI Version is less then 1.0\n");
 		return TEST_RESULT_SKIPPED;
 	}
 
@@ -166,10 +166,9 @@ test_result_t test_psci_cpu_hotplug_invalid_ep(void)
 
 		psci_ret = tftf_psci_cpu_on(cpu_mpid, 0, 0);
 		if (psci_ret != PSCI_E_INVALID_ADDRESS) {
-			tftf_testcase_printf("CPU:0x%x Expected: %i Actual: %i\n",
-						cpu_mpid,
-						PSCI_E_INVALID_ADDRESS,
-						psci_ret);
+			tftf_testcase_printf(
+				"CPU:0x%x Expected: %i Actual: %i\n", cpu_mpid,
+				PSCI_E_INVALID_ADDRESS, psci_ret);
 			return TEST_RESULT_FAIL;
 		}
 	}

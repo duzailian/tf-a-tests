@@ -4,26 +4,25 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include "fifo3d.h"
+
 #include <debug.h>
 #include <drivers/arm/private_timer.h>
 #include <events.h>
-#include "fifo3d.h"
 #include <libfdt.h>
-
+#include <plat_topology.h>
+#include <platform.h>
 #include <power_management.h>
 #include <sdei.h>
 #include <tftf_lib.h>
 #include <timer.h>
 
-#include <plat_topology.h>
-#include <platform.h>
-
 #ifdef SMC_FUZZ_TMALLOC
-#define GENMALLOC(x)	malloc((x))
-#define GENFREE(x)	free((x))
+#define GENMALLOC(x) malloc((x))
+#define GENFREE(x) free((x))
 #else
-#define GENMALLOC(x)	smcmalloc((x), mmod)
-#define GENFREE(x)	smcfree((x), mmod)
+#define GENMALLOC(x) smcmalloc((x), mmod)
+#define GENFREE(x) smcfree((x), mmod)
 #endif
 
 /*
@@ -31,8 +30,8 @@
  */
 void push_3dfifo_fname(struct fifo3d *f3d, char *fname)
 {
-	strlcpy(f3d->fnamefifo[f3d->col - 1][f3d->row[f3d->col - 1] - 1],
-		fname, MAX_NAME_CHARS);
+	strlcpy(f3d->fnamefifo[f3d->col - 1][f3d->row[f3d->col - 1] - 1], fname,
+		MAX_NAME_CHARS);
 }
 
 /*
@@ -51,7 +50,6 @@ void push_3dfifo_fid(struct fifo3d *f3d, int id)
 	f3d->fidfifo[f3d->col - 1][f3d->row[f3d->col - 1] - 1] = id;
 }
 
-
 /*
  * Create new column and/or row for raw data structure for newly
  * found node from device tree.  The fifo has four elements that reflect
@@ -62,14 +60,13 @@ void push_3dfifo_fid(struct fifo3d *f3d, int id)
  */
 void push_3dfifo_col(struct fifo3d *f3d, char *entry, struct memmod *mmod)
 {
-
-/*
- * four elements required:
- * 1. node name as a string
- * 2. function name as a string
- * 3. bias value as an integer
- * 4. id value as an integer
- */
+	/*
+	 * four elements required:
+	 * 1. node name as a string
+	 * 2. function name as a string
+	 * 3. bias value as an integer
+	 * 4. id value as an integer
+	 */
 	char ***tnnfifo;
 	char ***tfnamefifo;
 	int **tbiasfifo;
@@ -110,14 +107,18 @@ void push_3dfifo_col(struct fifo3d *f3d, char *entry, struct memmod *mmod)
 			tbiasfifo[i] = GENMALLOC((f3d->row[i]) * sizeof(int));
 			tfidfifo[i] = GENMALLOC((f3d->row[i]) * sizeof(int));
 			for (unsigned int j = 0U; (int)j < f3d->row[i]; j++) {
-				tnnfifo[i][j] = GENMALLOC(1 * sizeof(char[MAX_NAME_CHARS]));
-				tfnamefifo[i][j] =
-					GENMALLOC(1 * sizeof(char[MAX_NAME_CHARS]));
+				tnnfifo[i][j] = GENMALLOC(
+					1 * sizeof(char[MAX_NAME_CHARS]));
+				tfnamefifo[i][j] = GENMALLOC(
+					1 * sizeof(char[MAX_NAME_CHARS]));
 				if (!((j == f3d->row[f3d->col - 1] - 1) &&
 				      (i == (f3d->col - 1)))) {
-					strlcpy(tnnfifo[i][j], f3d->nnfifo[i][j], MAX_NAME_CHARS);
+					strlcpy(tnnfifo[i][j],
+						f3d->nnfifo[i][j],
+						MAX_NAME_CHARS);
 					strlcpy(tfnamefifo[i][j],
-						f3d->fnamefifo[i][j], MAX_NAME_CHARS);
+						f3d->fnamefifo[i][j],
+						MAX_NAME_CHARS);
 					tbiasfifo[i][j] = f3d->biasfifo[i][j];
 					tfidfifo[i][j] = f3d->fidfifo[i][j];
 				}
@@ -127,8 +128,8 @@ void push_3dfifo_col(struct fifo3d *f3d, char *entry, struct memmod *mmod)
 		/*
 		 * Copy data from old raw data to new memory location
 		 */
-		strlcpy(tnnfifo[f3d->col - 1][f3d->row[f3d->col - 1] - 1], entry,
-			MAX_NAME_CHARS);
+		strlcpy(tnnfifo[f3d->col - 1][f3d->row[f3d->col - 1] - 1],
+			entry, MAX_NAME_CHARS);
 		strlcpy(tfnamefifo[f3d->col - 1][f3d->row[f3d->col - 1] - 1],
 			"none", MAX_NAME_CHARS);
 		tbiasfifo[f3d->col - 1][f3d->row[f3d->col - 1] - 1] = 0;
@@ -182,14 +183,18 @@ void push_3dfifo_col(struct fifo3d *f3d, char *entry, struct memmod *mmod)
 			tbiasfifo[i] = GENMALLOC((f3d->row[i]) * sizeof(int));
 			tfidfifo[i] = GENMALLOC((f3d->row[i]) * sizeof(int));
 			for (unsigned int j = 0U; (int)j < f3d->row[i]; j++) {
-				tnnfifo[i][j] = GENMALLOC(1 * sizeof(char[MAX_NAME_CHARS]));
-				tfnamefifo[i][j] =
-					GENMALLOC(1 * sizeof(char[MAX_NAME_CHARS]));
+				tnnfifo[i][j] = GENMALLOC(
+					1 * sizeof(char[MAX_NAME_CHARS]));
+				tfnamefifo[i][j] = GENMALLOC(
+					1 * sizeof(char[MAX_NAME_CHARS]));
 				if (!((j == f3d->row[f3d->col - 1] - 1) &&
 				      (i == (f3d->col - 1)))) {
-					strlcpy(tnnfifo[i][j], f3d->nnfifo[i][j], MAX_NAME_CHARS);
+					strlcpy(tnnfifo[i][j],
+						f3d->nnfifo[i][j],
+						MAX_NAME_CHARS);
 					strlcpy(tfnamefifo[i][j],
-						f3d->fnamefifo[i][j], MAX_NAME_CHARS);
+						f3d->fnamefifo[i][j],
+						MAX_NAME_CHARS);
 					tbiasfifo[i][j] = f3d->biasfifo[i][j];
 					tfidfifo[i][j] = f3d->fidfifo[i][j];
 				}
@@ -199,8 +204,8 @@ void push_3dfifo_col(struct fifo3d *f3d, char *entry, struct memmod *mmod)
 		/*
 		 * Copy data from old raw data to new memory location
 		 */
-		strlcpy(tnnfifo[f3d->col - 1][f3d->row[f3d->col - 1] - 1], entry,
-			MAX_NAME_CHARS);
+		strlcpy(tnnfifo[f3d->col - 1][f3d->row[f3d->col - 1] - 1],
+			entry, MAX_NAME_CHARS);
 		strlcpy(tfnamefifo[f3d->col - 1][f3d->row[f3d->col - 1] - 1],
 			"none", MAX_NAME_CHARS);
 		tbiasfifo[f3d->col - 1][f3d->row[f3d->col - 1] - 1] = 0;

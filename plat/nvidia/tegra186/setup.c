@@ -5,12 +5,11 @@
  */
 
 #include <debug.h>
-#include <drivers/console.h>
 #include <drivers/arm/gic_common.h>
 #include <drivers/arm/gic_v2.h>
+#include <drivers/console.h>
 #include <platform.h>
 #include <platform_def.h>
-
 #include <xlat_tables_v2.h>
 
 /*
@@ -41,8 +40,7 @@ static const mmap_region_t tegra186_mmap[] = {
 			MT_DEVICE | MT_RW | MT_NS),
 	MAP_REGION_FLAT(DRAM_BASE + TFTF_NVM_OFFSET, TFTF_NVM_SIZE,
 			MT_MEMORY | MT_RW | MT_NS),
-	{0}
-};
+	{0}};
 
 const mmap_region_t *tftf_platform_get_mmap(void)
 {
@@ -58,7 +56,7 @@ void tftf_early_platform_setup(void)
 {
 	/* Tegra186 platforms use UARTA as the console */
 	console_init(TEGRA_UARTA_BASE, TEGRA_CONSOLE_CLKRATE,
-			TEGRA_CONSOLE_BAUDRATE);
+		     TEGRA_CONSOLE_BAUDRATE);
 }
 
 void tftf_platform_setup(void)

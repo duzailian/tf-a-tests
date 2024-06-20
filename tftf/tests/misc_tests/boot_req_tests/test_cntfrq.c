@@ -20,7 +20,9 @@ static test_result_t cntfrq_check(void)
 	ns_cntfrq = mmio_read_32(SYS_CNT_BASE1 + CNTBASEN_CNTFRQ);
 
 	if (cntfrq_el0 != ns_cntfrq) {
-		tftf_testcase_printf("CNTFRQ read from sys_reg = %llx and NS timer = %llx differs/n",
+		tftf_testcase_printf(
+			"CNTFRQ read from sys_reg = %llx and NS timer = %llx "
+			"differs/n",
 			(unsigned long long)cntfrq_el0,
 			(unsigned long long)ns_cntfrq);
 		return TEST_RESULT_FAIL;
@@ -51,13 +53,11 @@ test_result_t test_cntfrq_check(void)
 		if (cpu_mpid == lead_mpid)
 			continue;
 
-		rc = tftf_cpu_on(cpu_mpid,
-				(uintptr_t) cntfrq_check,
-				0);
+		rc = tftf_cpu_on(cpu_mpid, (uintptr_t)cntfrq_check, 0);
 		if (rc != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
-				"Failed to power on CPU 0x%x (%d)\n",
-				cpu_mpid, rc);
+				"Failed to power on CPU 0x%x (%d)\n", cpu_mpid,
+				rc);
 			return TEST_RESULT_FAIL;
 		}
 	}
@@ -73,8 +73,8 @@ test_result_t test_cntfrq_check(void)
 			continue;
 
 		/* Wait for the target CPU to turn OFF */
-		while (tftf_psci_affinity_info(cpu_mpid,
-				MPIDR_AFFLVL0) != PSCI_STATE_OFF)
+		while (tftf_psci_affinity_info(cpu_mpid, MPIDR_AFFLVL0) !=
+		       PSCI_STATE_OFF)
 			;
 	}
 

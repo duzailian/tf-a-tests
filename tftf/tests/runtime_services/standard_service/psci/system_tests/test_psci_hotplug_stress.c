@@ -20,8 +20,8 @@
 #define STRESS_TEST_COUNT 1000
 
 /* TODO: Remove assumption that affinity levels always map to power levels. */
-#define MPIDR_CLUSTER_ID(mpid)	MPIDR_AFF_ID(mpid, 1)
-#define MPIDR_CPU_ID(mpid)	MPIDR_AFF_ID(mpid, 0)
+#define MPIDR_CLUSTER_ID(mpid) MPIDR_AFF_ID(mpid, 1)
+#define MPIDR_CPU_ID(mpid) MPIDR_AFF_ID(mpid, 0)
 
 static event_t cpu_booted[PLATFORM_CORE_COUNT];
 static event_t cluster_booted;
@@ -73,7 +73,7 @@ test_result_t psci_hotplug_single_core_stress_test(void)
 	SKIP_TEST_IF_LESS_THAN_N_CPUS(2);
 
 	NOTICE("Power on and off any random core %d times\n",
-							STRESS_TEST_COUNT);
+	       STRESS_TEST_COUNT);
 
 	for (unsigned int i = 0; i < STRESS_TEST_COUNT; ++i) {
 		/* Reset/Initialise the event variable */
@@ -86,9 +86,7 @@ test_result_t psci_hotplug_single_core_stress_test(void)
 		cpu = tftf_find_random_cpu_other_than(lead_mpid);
 		assert(cpu != lead_mpid);
 
-		psci_ret = tftf_cpu_on(cpu,
-					(uintptr_t) test_cpu_booted,
-					0);
+		psci_ret = tftf_cpu_on(cpu, (uintptr_t)test_cpu_booted, 0);
 		if (psci_ret != PSCI_E_SUCCESS)
 			return TEST_RESULT_FAIL;
 
@@ -96,8 +94,8 @@ test_result_t psci_hotplug_single_core_stress_test(void)
 		tftf_wait_for_event(&cpu_booted[core_pos]);
 
 		/*
-		 * Wait for the CPU to be powered off by framework before issuing a
-		 * CPU_ON to it
+		 * Wait for the CPU to be powered off by framework before
+		 * issuing a CPU_ON to it
 		 */
 		while (tftf_is_cpu_online(cpu))
 			;
@@ -126,7 +124,7 @@ test_result_t psci_hotplug_stress_test(void)
 	SKIP_TEST_IF_LESS_THAN_N_CPUS(2);
 
 	NOTICE("This multi-core test will repeat %d times\n",
-							STRESS_TEST_COUNT);
+	       STRESS_TEST_COUNT);
 
 	for (unsigned int i = 0; i < STRESS_TEST_COUNT; i++) {
 		/* Reinitialize the event variable */
@@ -140,8 +138,7 @@ test_result_t psci_hotplug_stress_test(void)
 				continue;
 
 			psci_ret = tftf_cpu_on(cpu_mpid,
-					(uintptr_t) test_cpu_booted,
-					0);
+					       (uintptr_t)test_cpu_booted, 0);
 			if (psci_ret != PSCI_E_SUCCESS)
 				return TEST_RESULT_FAIL;
 		}
@@ -196,7 +193,7 @@ test_result_t psci_cluster_hotplug_stress_test(void)
 	SKIP_TEST_IF_LESS_THAN_N_CLUSTERS(2);
 
 	NOTICE("This Cluster hotplug test will repeat %d times\n",
-							STRESS_TEST_COUNT);
+	       STRESS_TEST_COUNT);
 
 	for (unsigned int i = 0; i < STRESS_TEST_COUNT; i++) {
 		/* Reset/Initialise the event variable */
@@ -209,9 +206,9 @@ test_result_t psci_cluster_hotplug_stress_test(void)
 		for_each_cpu(cpu_node) {
 			cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 			if (MPIDR_CLUSTER_ID(cpu_mpid) != lead_cluster) {
-				psci_ret = tftf_cpu_on(cpu_mpid,
-						(uintptr_t) test_cluster_booted,
-						       0);
+				psci_ret = tftf_cpu_on(
+					cpu_mpid,
+					(uintptr_t)test_cluster_booted, 0);
 				if (psci_ret != PSCI_E_SUCCESS)
 					return TEST_RESULT_FAIL;
 			}

@@ -5,7 +5,7 @@
  */
 
 #ifndef __SYNC_H__
-#define  __SYNC_H__
+#define __SYNC_H__
 
 typedef bool (*exception_handler_t)(void);
 void register_custom_sync_exception_handler(exception_handler_t handler);

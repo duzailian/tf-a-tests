@@ -55,16 +55,11 @@ const psci_function_t psci_functions[PSCI_NUM_CALLS] = {
 	DEFINE_PSCI_FUNC(PSCI_RESET2_AARCH64, false),
 };
 
-int32_t tftf_psci_cpu_on(u_register_t target_cpu,
-			 uintptr_t entry_point_address,
+int32_t tftf_psci_cpu_on(u_register_t target_cpu, uintptr_t entry_point_address,
 			 u_register_t context_id)
 {
-	smc_args args = {
-		SMC_PSCI_CPU_ON,
-		target_cpu,
-		entry_point_address,
-		context_id
-	};
+	smc_args args = {SMC_PSCI_CPU_ON, target_cpu, entry_point_address,
+			 context_id};
 	smc_ret_values ret_vals;
 
 	ret_vals = tftf_smc(&args);
@@ -74,7 +69,7 @@ int32_t tftf_psci_cpu_on(u_register_t target_cpu,
 
 int32_t tftf_psci_cpu_off(void)
 {
-	smc_args args = { SMC_PSCI_CPU_OFF };
+	smc_args args = {SMC_PSCI_CPU_OFF};
 	smc_ret_values ret_vals;
 
 	ret_vals = tftf_smc(&args);
@@ -83,10 +78,7 @@ int32_t tftf_psci_cpu_off(void)
 
 int32_t tftf_psci_set_suspend_mode(uint32_t mode)
 {
-	smc_args args = {
-		SMC_PSCI_SET_SUSPEND_MODE,
-		mode
-	};
+	smc_args args = {SMC_PSCI_SET_SUSPEND_MODE, mode};
 	smc_ret_values ret_vals;
 
 	ret_vals = tftf_smc(&args);
@@ -94,7 +86,7 @@ int32_t tftf_psci_set_suspend_mode(uint32_t mode)
 }
 
 u_register_t tftf_psci_stat_residency(u_register_t target_cpu,
-		uint32_t power_state)
+				      uint32_t power_state)
 {
 	smc_args args = {
 		SMC_PSCI_STAT_RESIDENCY,
@@ -107,8 +99,7 @@ u_register_t tftf_psci_stat_residency(u_register_t target_cpu,
 	return ret_vals.ret0;
 }
 
-u_register_t tftf_psci_stat_count(u_register_t target_cpu,
-		uint32_t power_state)
+u_register_t tftf_psci_stat_count(u_register_t target_cpu, uint32_t power_state)
 {
 	smc_args args = {
 		SMC_PSCI_STAT_COUNT,
@@ -126,11 +117,8 @@ int32_t tftf_psci_affinity_info(u_register_t target_affinity,
 {
 	smc_ret_values ret_vals;
 
-	smc_args args = {
-			   SMC_PSCI_AFFINITY_INFO,
-			   target_affinity,
-			   lowest_affinity_level
-			  };
+	smc_args args = {SMC_PSCI_AFFINITY_INFO, target_affinity,
+			 lowest_affinity_level};
 
 	ret_vals = tftf_smc(&args);
 	return ret_vals.ret0;
@@ -138,11 +126,7 @@ int32_t tftf_psci_affinity_info(u_register_t target_affinity,
 
 int32_t tftf_psci_node_hw_state(u_register_t target_cpu, uint32_t power_level)
 {
-	smc_args args = {
-		SMC_PSCI_CPU_HW_STATE,
-		target_cpu,
-		power_level
-	};
+	smc_args args = {SMC_PSCI_CPU_HW_STATE, target_cpu, power_level};
 	smc_ret_values ret;
 
 	ret = tftf_smc(&args);
@@ -151,10 +135,7 @@ int32_t tftf_psci_node_hw_state(u_register_t target_cpu, uint32_t power_level)
 
 int32_t tftf_get_psci_feature_info(uint32_t psci_func_id)
 {
-	smc_args args = {
-		SMC_PSCI_FEATURES,
-		psci_func_id
-	};
+	smc_args args = {SMC_PSCI_FEATURES, psci_func_id};
 	smc_ret_values ret;
 
 	ret = tftf_smc(&args);
@@ -162,7 +143,7 @@ int32_t tftf_get_psci_feature_info(uint32_t psci_func_id)
 }
 
 int tftf_psci_make_composite_state_id(uint32_t affinity_level,
-		uint32_t state_type, uint32_t *state_id)
+				      uint32_t state_type, uint32_t *state_id)
 {
 	unsigned int found_entry, i;
 	int ret = PSCI_E_SUCCESS;
@@ -174,8 +155,8 @@ int tftf_psci_make_composite_state_id(uint32_t affinity_level,
 	for (i = 0; i <= affinity_level; i++) {
 		state_prop = plat_get_state_prop(i);
 		if (!state_prop) {
-			*state_id |= psci_make_local_state_id(i,
-						PLAT_PSCI_DUMMY_STATE_ID);
+			*state_id |= psci_make_local_state_id(
+				i, PLAT_PSCI_DUMMY_STATE_ID);
 			ret = PSCI_E_INVALID_PARAMS;
 			continue;
 		}
@@ -183,16 +164,16 @@ int tftf_psci_make_composite_state_id(uint32_t affinity_level,
 
 		while (state_prop->state_ID) {
 			if (state_type == state_prop->is_pwrdown) {
-				*state_id |= psci_make_local_state_id(i,
-							state_prop->state_ID);
+				*state_id |= psci_make_local_state_id(
+					i, state_prop->state_ID);
 				found_entry = 1;
 				break;
 			}
 			state_prop++;
 		}
 		if (!found_entry) {
-			*state_id |= psci_make_local_state_id(i,
-						PLAT_PSCI_DUMMY_STATE_ID);
+			*state_id |= psci_make_local_state_id(
+				i, PLAT_PSCI_DUMMY_STATE_ID);
 			ret = PSCI_E_INVALID_PARAMS;
 		}
 	}
@@ -226,9 +207,8 @@ static unsigned int tftf_psci_get_pstate_format(void)
 }
 
 /* Make the power state in the original format */
-uint32_t tftf_make_psci_pstate(uint32_t affinity_level,
-					uint32_t state_type,
-					uint32_t state_id)
+uint32_t tftf_make_psci_pstate(uint32_t affinity_level, uint32_t state_type,
+			       uint32_t state_id)
 {
 	uint32_t power_state;
 
@@ -238,20 +218,19 @@ uint32_t tftf_make_psci_pstate(uint32_t affinity_level,
 
 	if (pstate_format == CPU_SUSPEND_FEAT_PSTATE_FORMAT_EXTENDED) {
 		assert(psci_state_id_ext_valid(state_id));
-		power_state = (state_type << PSTATE_TYPE_SHIFT_EXT)
-					  | (state_id << PSTATE_ID_SHIFT_EXT);
+		power_state = (state_type << PSTATE_TYPE_SHIFT_EXT) |
+			      (state_id << PSTATE_ID_SHIFT_EXT);
 	} else {
 		assert(psci_affinity_level_valid(affinity_level));
 		assert(psci_state_id_valid(state_id));
-		power_state = (affinity_level << PSTATE_AFF_LVL_SHIFT)
-					  | (state_type << PSTATE_TYPE_SHIFT);
+		power_state = (affinity_level << PSTATE_AFF_LVL_SHIFT) |
+			      (state_type << PSTATE_TYPE_SHIFT);
 		if (!is_state_id_null)
 			power_state |= (state_id << PSTATE_ID_SHIFT);
 	}
 
 	return power_state;
 }
-
 
 void tftf_detect_psci_pstate_format(void)
 {
@@ -281,8 +260,7 @@ void tftf_detect_psci_pstate_format(void)
 
 	/* Configure an SGI to wake-up from suspend  */
 	tftf_send_sgi(IRQ_NS_SGI_0,
-		platform_get_core_pos(read_mpidr_el1() & MPID_MASK));
-
+		      platform_get_core_pos(read_mpidr_el1() & MPID_MASK));
 
 	/*
 	 * Try to detect if the platform uses NULL State-ID encoding by sending
@@ -290,8 +268,8 @@ void tftf_detect_psci_pstate_format(void)
 	 * succeeds then the platform uses NULL State-ID encoding. Else it
 	 * uses the recommended encoding for State-ID.
 	 */
-	power_state = (PSTATE_AFF_LVL_0 << PSTATE_AFF_LVL_SHIFT)
-		  | (PSTATE_TYPE_STANDBY << PSTATE_TYPE_SHIFT);
+	power_state = (PSTATE_AFF_LVL_0 << PSTATE_AFF_LVL_SHIFT) |
+		      (PSTATE_TYPE_STANDBY << PSTATE_TYPE_SHIFT);
 
 	ret = tftf_cpu_suspend(power_state);
 
@@ -307,10 +285,10 @@ void tftf_detect_psci_pstate_format(void)
 	 */
 	if (ret == PSCI_E_SUCCESS) {
 		is_state_id_null = 1;
-		INFO("Original PSCI power state format with NULL State-ID detected\n");
+		INFO("Original PSCI power state format with NULL State-ID "
+		     "detected\n");
 	} else
 		INFO("Original PSCI power state format detected\n");
-
 
 	pstate_format_detected = 1;
 }
@@ -334,7 +312,7 @@ unsigned int tftf_is_psci_pstate_format_original(void)
 
 unsigned int tftf_get_psci_version(void)
 {
-	smc_args args = { SMC_PSCI_VERSION };
+	smc_args args = {SMC_PSCI_VERSION};
 	smc_ret_values ret;
 
 	ret = tftf_smc(&args);
@@ -344,10 +322,8 @@ unsigned int tftf_get_psci_version(void)
 
 int tftf_is_valid_psci_version(unsigned int version)
 {
-	if (version != PSCI_VERSION(1, 1) &&
-	    version != PSCI_VERSION(1, 0) &&
-	    version != PSCI_VERSION(0, 2) &&
-	    version != PSCI_VERSION(0, 1)) {
+	if (version != PSCI_VERSION(1, 1) && version != PSCI_VERSION(1, 0) &&
+	    version != PSCI_VERSION(0, 2) && version != PSCI_VERSION(0, 1)) {
 		return 0;
 	}
 	return 1;

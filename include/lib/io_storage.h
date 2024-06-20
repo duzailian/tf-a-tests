@@ -21,7 +21,6 @@ typedef enum {
 	IO_TYPE_MAX
 } io_type_t;
 
-
 /* Modes used when seeking data on a supported device */
 typedef enum {
 	IO_SEEK_INVALID,
@@ -31,10 +30,8 @@ typedef enum {
 	IO_SEEK_MAX
 } io_seek_mode_t;
 
-
 /* Connector type, providing a means of identifying a device to open */
 struct io_dev_connector;
-
 
 /* File specification - used to refer to data on a device supporting file-like
  * entities */
@@ -49,7 +46,6 @@ typedef struct io_uuid_spec {
 	const uuid_t uuid;
 } io_uuid_spec_t;
 
-
 /* Block specification - used to refer to data on a device supporting
  * block-like entities */
 typedef struct io_block_spec {
@@ -57,25 +53,20 @@ typedef struct io_block_spec {
 	size_t length;
 } io_block_spec_t;
 
-
 /* Access modes used when accessing data on a device */
 #define IO_MODE_INVALID (0)
-#define IO_MODE_RO	(1 << 0)
-#define IO_MODE_RW	(1 << 1)
-
+#define IO_MODE_RO (1 << 0)
+#define IO_MODE_RW (1 << 1)
 
 /* Return codes reported by 'io_*' APIs */
-#define IO_SUCCESS		(0)
-#define IO_FAIL			(-1)
-#define IO_NOT_SUPPORTED	(-2)
-#define IO_RESOURCES_EXHAUSTED	(-3)
-
+#define IO_SUCCESS (0)
+#define IO_FAIL (-1)
+#define IO_NOT_SUPPORTED (-2)
+#define IO_RESOURCES_EXHAUSTED (-3)
 
 /* Open a connection to a device */
 int io_dev_open(const struct io_dev_connector *dev_con,
-		const uintptr_t dev_spec,
-		uintptr_t *dev_handle);
-
+		const uintptr_t dev_spec, uintptr_t *dev_handle);
 
 /* Initialise a device explicitly - to permit lazy initialisation or
  * re-initialisation */
@@ -86,7 +77,6 @@ int io_dev_init(uintptr_t dev_handle, const uintptr_t init_params);
 /* Close a connection to a device */
 int io_dev_close(uintptr_t dev_handle);
 
-
 /* Synchronous operations */
 int io_open(uintptr_t dev_handle, const uintptr_t spec, uintptr_t *handle);
 
@@ -95,12 +85,11 @@ int io_seek(uintptr_t handle, io_seek_mode_t mode, ssize_t offset);
 int io_size(uintptr_t handle, size_t *length);
 
 int io_read(uintptr_t handle, uintptr_t buffer, size_t length,
-		size_t *length_read);
+	    size_t *length_read);
 
 int io_write(uintptr_t handle, const uintptr_t buffer, size_t length,
-		size_t *length_written);
+	     size_t *length_written);
 
 int io_close(uintptr_t handle);
-
 
 #endif /* __IO_H__ */

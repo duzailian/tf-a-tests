@@ -6,12 +6,15 @@
 
 #include <assert.h>
 #include <debug.h>
-#include <stdio.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include <tftf.h>
 
 static const char *test_result_strings[TEST_RESULT_MAX] = {
-	"Skipped", "Passed", "Failed", "Crashed",
+	"Skipped",
+	"Passed",
+	"Failed",
+	"Crashed",
 };
 
 static const char *test_result_to_string(test_result_t result)
@@ -51,9 +54,11 @@ void print_test_end(const test_case_t *test)
 void print_tests_summary(void)
 {
 	int total_tests = 0;
-	int tests_stats[TEST_RESULT_MAX] = { 0 };
+	int tests_stats[TEST_RESULT_MAX] = {0};
 
-	mp_printf("******************************* Summary *******************************\n");
+	mp_printf(
+		"******************************* Summary "
+		"*******************************\n");
 
 	/* Go through the list of test suites. */
 	for (int i = 0; testsuites[i].name != NULL; i++) {
@@ -69,7 +74,8 @@ void print_tests_summary(void)
 			char output[TESTCASE_OUTPUT_MAX_SIZE];
 
 			if (tftf_testcase_get_result(&testcases[j], &result,
-					output) != STATUS_SUCCESS) {
+						     output) !=
+			    STATUS_SUCCESS) {
 				mp_printf("Failed to get test result.\n");
 				continue;
 			}
@@ -94,8 +100,8 @@ void print_tests_summary(void)
 	mp_printf("=================================\n");
 
 	for (int i = TEST_RESULT_MIN; i < TEST_RESULT_MAX; i++) {
-		mp_printf("Tests %-8s: %d\n",
-			test_result_to_string(i), tests_stats[i]);
+		mp_printf("Tests %-8s: %d\n", test_result_to_string(i),
+			  tests_stats[i]);
 	}
 	mp_printf("%-14s: %d\n", "Total tests", total_tests);
 	mp_printf("=================================\n");

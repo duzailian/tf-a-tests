@@ -4,15 +4,14 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdbool.h>
-#include <stdio.h>
-
 #include <arch.h>
 #include <arch_features.h>
 #include <arch_helpers.h>
 #include <assert.h>
 #include <debug.h>
 #include <lib/extensions/sme.h>
+#include <stdbool.h>
+#include <stdio.h>
 
 /*
  * Function: sme_smstart

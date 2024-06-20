@@ -5,19 +5,19 @@
  *
  */
 
-#include <stdio.h>
-
 #include <arch_features.h>
 #include <debug.h>
 #include <fpu.h>
 #include <host_realm_helper.h>
 #include <host_shared_data.h>
 #include <pauth.h>
-#include "realm_def.h"
 #include <realm_rsi.h>
 #include <realm_tests.h>
+#include <stdio.h>
 #include <sync.h>
 #include <tftf_lib.h>
+
+#include "realm_def.h"
 
 static fpu_state_t rl_fpu_state_write;
 static fpu_state_t rl_fpu_state_read;
@@ -54,10 +54,10 @@ static bool realm_get_rsi_version(void)
 	}
 
 	realm_printf("RSI ABI version %u.%u (expected: %u.%u)\n",
-	RSI_ABI_VERSION_GET_MAJOR(version),
-	RSI_ABI_VERSION_GET_MINOR(version),
-	RSI_ABI_VERSION_GET_MAJOR(RSI_ABI_VERSION_VAL),
-	RSI_ABI_VERSION_GET_MINOR(RSI_ABI_VERSION_VAL));
+		     RSI_ABI_VERSION_GET_MAJOR(version),
+		     RSI_ABI_VERSION_GET_MINOR(version),
+		     RSI_ABI_VERSION_GET_MAJOR(RSI_ABI_VERSION_VAL),
+		     RSI_ABI_VERSION_GET_MINOR(RSI_ABI_VERSION_VAL));
 	return true;
 }
 
@@ -75,15 +75,16 @@ bool test_realm_set_ripas(void)
 		return false;
 	}
 
-	ret = rsi_ipa_state_set(base, top, RSI_RAM,
-		RSI_NO_CHANGE_DESTROYED, &new_base, &response);
+	ret = rsi_ipa_state_set(base, top, RSI_RAM, RSI_NO_CHANGE_DESTROYED,
+				&new_base, &response);
 	if (ret != RSI_SUCCESS || response != RSI_ACCEPT) {
 		return false;
 	}
 	while (new_base < top) {
 		realm_printf("new_base=0x%lx top =0x%lx\n", new_base, top);
 		ret = rsi_ipa_state_set(new_base, top, RSI_RAM,
-				RSI_NO_CHANGE_DESTROYED, &new_base, &response);
+					RSI_NO_CHANGE_DESTROYED, &new_base,
+					&response);
 		if (ret != RSI_SUCCESS || response != RSI_ACCEPT) {
 			realm_printf("rsi_ipa_state_set failed\n");
 			return false;
@@ -94,8 +95,10 @@ bool test_realm_set_ripas(void)
 	for (unsigned int i = 0U; (base + (PAGE_SIZE * i) < top); i++) {
 		ret = rsi_ipa_state_get(base + (PAGE_SIZE * i), &ripas);
 		if (ret != RSI_SUCCESS || ripas != RSI_RAM) {
-			realm_printf("rsi_ipa_state_get failed base=0x%lx, ripas=0x%x\n",
-					base + (PAGE_SIZE * i), ripas);
+			realm_printf(
+				"rsi_ipa_state_get failed base=0x%lx, "
+				"ripas=0x%x\n",
+				base + (PAGE_SIZE * i), ripas);
 			return false;
 		}
 	}
@@ -115,18 +118,21 @@ bool test_realm_reject_set_ripas(void)
 		return false;
 	}
 	ret = rsi_ipa_state_set(base, base + PAGE_SIZE, RSI_RAM,
-		RSI_NO_CHANGE_DESTROYED, &new_base, &response);
+				RSI_NO_CHANGE_DESTROYED, &new_base, &response);
 	if (ret == RSI_SUCCESS && response == RSI_REJECT) {
-		realm_printf("rsi_ipa_state_set passed response = %d\n", response);
+		realm_printf("rsi_ipa_state_set passed response = %d\n",
+			     response);
 		ret = rsi_ipa_state_get(base, &ripas);
 		if (ret == RSI_SUCCESS && ripas == RSI_EMPTY) {
 			return true;
 		} else {
-			realm_printf("rsi_ipa_state_get failed ripas = %d\n", ripas);
+			realm_printf("rsi_ipa_state_get failed ripas = %d\n",
+				     ripas);
 			return false;
 		}
 	}
-	realm_printf("rsi_ipa_state_set failed ret=0x%lx, response = %d\n", ret, response);
+	realm_printf("rsi_ipa_state_set failed ret=0x%lx, response = %d\n", ret,
+		     response);
 	return false;
 }
 
@@ -142,7 +148,6 @@ bool test_realm_dit_check_cmd(void)
 	}
 	return false;
 }
-
 
 static bool test_realm_instr_fetch_cmd(void)
 {
@@ -189,7 +194,8 @@ static bool realm_exception_handler(void)
 		realm_shared_data_set_my_realm_val(HOST_ARG2_INDEX, esr);
 		rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD);
 	}
-	realm_printf("Realm Abort fail incorrect FAR=0x%lx ESR+0x%lx\n", far, esr);
+	realm_printf("Realm Abort fail incorrect FAR=0x%lx ESR+0x%lx\n", far,
+		     esr);
 	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
 
 	/* Should not return. */
@@ -197,9 +203,10 @@ static bool realm_exception_handler(void)
 }
 
 /*
- * This is the entry function for Realm payload, it first requests the shared buffer
- * IPA address from Host using HOST_CALL/RSI, it reads the command to be executed,
- * performs the request, and returns to Host with the execution state SUCCESS/FAILED
+ * This is the entry function for Realm payload, it first requests the shared
+ * buffer IPA address from Host using HOST_CALL/RSI, it reads the command to be
+ * executed, performs the request, and returns to Host with the execution state
+ * SUCCESS/FAILED
  *
  * Host in NS world requests Realm to execute certain operations using command
  * depending on the test case the Host wants to perform.
@@ -223,10 +230,12 @@ void realm_payload_main(void)
 			test_succeed = true;
 			break;
 		case REALM_MULTIPLE_REC_PSCI_DENIED_CMD:
-			test_succeed = test_realm_multiple_rec_psci_denied_cmd();
+			test_succeed =
+				test_realm_multiple_rec_psci_denied_cmd();
 			break;
 		case REALM_MULTIPLE_REC_MULTIPLE_CPU_CMD:
-			test_succeed = test_realm_multiple_rec_multiple_cpu_cmd();
+			test_succeed =
+				test_realm_multiple_rec_multiple_cpu_cmd();
 			break;
 		case REALM_INSTR_FETCH_CMD:
 			test_succeed = test_realm_instr_fetch_cmd();

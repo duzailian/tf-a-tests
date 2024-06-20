@@ -52,8 +52,7 @@ typedef struct suspend_info {
  *    Return: Return code of the PSCI CPU_ON call
  *            (refer to the PSCI specification for details)
  */
-int32_t tftf_cpu_on(u_register_t target_cpu,
-		    uintptr_t entrypoint,
+int32_t tftf_cpu_on(u_register_t target_cpu, uintptr_t entrypoint,
 		    u_register_t context_id);
 
 /*
@@ -72,9 +71,8 @@ int32_t tftf_cpu_on(u_register_t target_cpu,
  *    Return: Return code of the PSCI CPU_ON call
  *            (refer to the PSCI specification for details)
  */
-int32_t tftf_try_cpu_on(u_register_t target_cpu,
-		    uintptr_t entrypoint,
-		    u_register_t context_id);
+int32_t tftf_try_cpu_on(u_register_t target_cpu, uintptr_t entrypoint,
+			u_register_t context_id);
 
 /*
  * Power down the calling core.
@@ -106,7 +104,6 @@ int32_t tftf_cpu_off(void);
  * entrypoint is in the control of the framework.
  */
 int tftf_suspend(const suspend_info_t *info);
-
 
 /* ----------------------------------------------------------------------------
  * The above APIs might not be suitable in all test scenarios.
@@ -175,7 +172,6 @@ static inline int tftf_cpu_suspend_save_sys_ctx(unsigned int pwr_state)
 
 	return tftf_suspend(&info);
 }
-
 
 static inline int tftf_system_suspend(void)
 {

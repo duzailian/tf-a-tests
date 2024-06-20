@@ -3,38 +3,36 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdlib.h>
-
-#include <assert.h>
 #include <arch_features.h>
+#include <assert.h>
 #include <debug.h>
-#include <test_helpers.h>
-#include <lib/extensions/fpu.h>
-#include <lib/extensions/sme.h>
-#include <lib/extensions/sve.h>
-
 #include <host_realm_helper.h>
 #include <host_realm_mem_layout.h>
 #include <host_realm_simd.h>
 #include <host_shared_data.h>
+#include <lib/extensions/fpu.h>
+#include <lib/extensions/sme.h>
+#include <lib/extensions/sve.h>
+#include <stdlib.h>
+#include <test_helpers.h>
 
-#define NS_SVE_OP_ARRAYSIZE		1024U
-#define SVE_TEST_ITERATIONS		50U
+#define NS_SVE_OP_ARRAYSIZE 1024U
+#define SVE_TEST_ITERATIONS 50U
 
 /* Min test iteration count for 'host_and_realm_check_simd' test */
-#define TEST_ITERATIONS_MIN	(16U)
+#define TEST_ITERATIONS_MIN (16U)
 
 /* Number of FPU configs: none */
-#define NUM_FPU_CONFIGS		(0U)
+#define NUM_FPU_CONFIGS (0U)
 
 /* Number of SVE configs: SVE_VL, SVE hint */
-#define NUM_SVE_CONFIGS		(2U)
+#define NUM_SVE_CONFIGS (2U)
 
 /* Number of SME configs: SVE_SVL, FEAT_FA64, Streaming mode */
-#define NUM_SME_CONFIGS		(3U)
+#define NUM_SME_CONFIGS (3U)
 
-#define NS_NORMAL_SVE			0x1U
-#define NS_STREAMING_SVE		0x2U
+#define NS_NORMAL_SVE 0x1U
+#define NS_STREAMING_SVE 0x2U
 
 typedef enum security_state {
 	NONSECURE_WORLD = 0U,
@@ -69,21 +67,21 @@ static fpu_cs_regs_t ns_fpu_cs_regs_read;
 static struct realm realm;
 
 /* Skip test if SVE is not supported in H/W or in RMI features */
-#define CHECK_SVE_SUPPORT_IN_HW_AND_IN_RMI(_reg0)				\
-	do {									\
-		SKIP_TEST_IF_SVE_NOT_SUPPORTED();				\
-										\
-		/* Get RMM support for SVE and its max SVE VL */		\
-		if (host_rmi_features(0UL, &_reg0) != REALM_SUCCESS) {		\
-			ERROR("Failed to get RMI feat_reg0\n");			\
-			return TEST_RESULT_FAIL;				\
-		}								\
-										\
-		/* SVE not supported in RMI features? */			\
-		if ((_reg0 & RMI_FEATURE_REGISTER_0_SVE_EN) == 0UL) {		\
-			ERROR("SVE not in RMI features, skipping\n");		\
-			return TEST_RESULT_SKIPPED;				\
-		}								\
+#define CHECK_SVE_SUPPORT_IN_HW_AND_IN_RMI(_reg0)                      \
+	do {                                                           \
+		SKIP_TEST_IF_SVE_NOT_SUPPORTED();                      \
+									\
+		/* Get RMM support for SVE and its max SVE VL */       \
+		if (host_rmi_features(0UL, &_reg0) != REALM_SUCCESS) { \
+			ERROR("Failed to get RMI feat_reg0\n");        \
+			return TEST_RESULT_FAIL;                       \
+		}                                                      \
+									\
+		/* SVE not supported in RMI features? */               \
+		if ((_reg0 & RMI_FEATURE_REGISTER_0_SVE_EN) == 0UL) {  \
+			ERROR("SVE not in RMI features, skipping\n");  \
+			return TEST_RESULT_SKIPPED;                    \
+		}                                                      \
 	} while (false)
 
 static test_result_t host_create_sve_realm_payload(bool sve_en, uint8_t sve_vq)
@@ -103,11 +101,11 @@ static test_result_t host_create_sve_realm_payload(bool sve_en, uint8_t sve_vq)
 	}
 
 	/* Initialise Realm payload */
-	if (!host_create_activate_realm_payload(&realm,
-				       (u_register_t)REALM_IMAGE_BASE,
-				       (u_register_t)PAGE_POOL_BASE,
-				       (u_register_t)PAGE_POOL_MAX_SIZE,
-				       feature_flag, sl, rec_flag, 1U)) {
+	if (!host_create_activate_realm_payload(
+		    &realm, (u_register_t)REALM_IMAGE_BASE,
+		    (u_register_t)PAGE_POOL_BASE,
+		    (u_register_t)PAGE_POOL_MAX_SIZE, feature_flag, sl,
+		    rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -145,8 +143,8 @@ test_result_t host_check_rmi_reports_proper_sve_vl(void)
 
 	if (rmi_sve_vq != ns_sve_vq) {
 		ERROR("RMI max SVE VL %u bits don't match NS max "
-		      "SVE VL %u bits\n", SVE_VQ_TO_BITS(rmi_sve_vq),
-		      SVE_VQ_TO_BITS(ns_sve_vq));
+		      "SVE VL %u bits\n",
+		      SVE_VQ_TO_BITS(rmi_sve_vq), SVE_VQ_TO_BITS(ns_sve_vq));
 		return TEST_RESULT_FAIL;
 	}
 
@@ -190,8 +188,8 @@ test_result_t host_sve_realm_cmd_rdvl(void)
 		rc = TEST_RESULT_SUCCESS;
 	} else {
 		ERROR("Realm created with max VL: %u bits, but Realm reported "
-		      "max VL as: %u bits\n", SVE_VQ_TO_BITS(sve_vq),
-		      SVE_VQ_TO_BITS(rl_max_sve_vq));
+		      "max VL as: %u bits\n",
+		      SVE_VQ_TO_BITS(sve_vq), SVE_VQ_TO_BITS(rl_max_sve_vq));
 		rc = TEST_RESULT_FAIL;
 	}
 
@@ -222,7 +220,8 @@ test_result_t host_sve_realm_test_invalid_vl(void)
 	 */
 	rc = host_create_sve_realm_payload(true, (sve_vq + 1));
 	if (rc == TEST_RESULT_SUCCESS) {
-		ERROR("Error: Realm created with invalid SVE VL %u\n", (sve_vq + 1));
+		ERROR("Error: Realm created with invalid SVE VL %u\n",
+		      (sve_vq + 1));
 		host_destroy_realm(&realm);
 		return TEST_RESULT_FAIL;
 	}
@@ -279,7 +278,8 @@ static test_result_t _host_sve_realm_check_id_registers(bool sve_en)
 			rc = TEST_RESULT_FAIL;
 		}
 		if (r_regs->id_aa64zfr0_el1 != 0UL) {
-			ERROR("ID_AA64ZFR0_EL1: Realm reported non-zero value\n");
+			ERROR("ID_AA64ZFR0_EL1: Realm reported non-zero "
+			      "value\n");
 			rc = TEST_RESULT_FAIL;
 		}
 	}
@@ -431,7 +431,6 @@ test_result_t host_sve_realm_check_config_register(void)
  */
 static bool callback_realm_do_sve(void)
 {
-
 	return !host_enter_realm_execute(&realm, REALM_SVE_OPS,
 					 RMI_EXIT_HOST_CALL, 0U);
 }
@@ -486,11 +485,9 @@ static test_result_t run_sve_vectors_operations(bool realm_sve_en,
 		}
 
 		/* Perform SVE operations with intermittent calls to Realm */
-		cb_err = sve_subtract_arrays_interleaved(ns_sve_op_1,
-							 ns_sve_op_1,
-							 ns_sve_op_2,
-							 NS_SVE_OP_ARRAYSIZE,
-							 realm_callback);
+		cb_err = sve_subtract_arrays_interleaved(
+			ns_sve_op_1, ns_sve_op_1, ns_sve_op_2,
+			NS_SVE_OP_ARRAYSIZE, realm_callback);
 		if (cb_err) {
 			ERROR("Callback to realm failed\n");
 			rc = TEST_RESULT_FAIL;
@@ -503,9 +500,10 @@ static test_result_t run_sve_vectors_operations(bool realm_sve_en,
 
 	for (i = 0U; i < NS_SVE_OP_ARRAYSIZE; i++) {
 		if (ns_sve_op_1[i] != (val - i - SVE_TEST_ITERATIONS)) {
-			ERROR("%s op failed at idx: %u, expected: 0x%x received:"
-			      " 0x%x\n", (ns_sve_mode == NS_NORMAL_SVE) ?
-			      "SVE" : "SVE", i,
+			ERROR("%s op failed at idx: %u, expected: 0x%x "
+			      "received:"
+			      " 0x%x\n",
+			      (ns_sve_mode == NS_NORMAL_SVE) ? "SVE" : "SVE", i,
 			      (val - i - SVE_TEST_ITERATIONS), ns_sve_op_1[i]);
 			rc = TEST_RESULT_FAIL;
 		}
@@ -558,8 +556,8 @@ test_result_t host_sve_realm_check_streaming_vectors_operations(void)
 	if (is_armv8_2_sve_present()) {
 		CHECK_SVE_SUPPORT_IN_HW_AND_IN_RMI(rmi_feat_reg0);
 		realm_sve_en = true;
-		realm_sve_vq = EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL,
-				       rmi_feat_reg0);
+		realm_sve_vq =
+			EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL, rmi_feat_reg0);
 	} else {
 		realm_sve_en = 0;
 		realm_sve_vq = 0;
@@ -710,7 +708,8 @@ static void ns_sve_write_rand(void)
 	}
 }
 
-/* Read SVE Z, P and FFR registers and compare it with the last written values */
+/* Read SVE Z, P and FFR registers and compare it with the last written values
+ */
 static test_result_t ns_sve_read_and_compare(void)
 {
 	test_result_t rc = TEST_RESULT_SUCCESS;
@@ -727,7 +726,8 @@ static test_result_t ns_sve_read_and_compare(void)
 	memset((void *)&ns_sve_p_regs_read, 0, sizeof(ns_sve_p_regs_read));
 	memset((void *)&ns_sve_ffr_regs_read, 0, sizeof(ns_sve_ffr_regs_read));
 
-	/* Read Z, P, FFR registers to compare it with the last written values */
+	/* Read Z, P, FFR registers to compare it with the last written values
+	 */
 	sve_z_regs_read(&ns_sve_z_regs_read);
 	sve_p_regs_read(&ns_sve_p_regs_read);
 	if (has_ffr) {
@@ -753,7 +753,8 @@ static test_result_t ns_sve_read_and_compare(void)
 					      &ns_sve_ffr_regs_read);
 		if (bitmap != 0) {
 			ERROR("SVE FFR regs compare failed "
-			      "(bitmap: 0x%016llx)\n", bitmap);
+			      "(bitmap: 0x%016llx)\n",
+			      bitmap);
 			rc = TEST_RESULT_FAIL;
 		}
 	}
@@ -812,8 +813,8 @@ static void ns_simd_print_cmd_config(bool cmd, simd_test_t type)
 			     tstr, cstr, (uint64_t)read_smcr_el2());
 		} else {
 			INFO("TFTF: NS [%s] %s. Config: smcr: 0x%llx, "
-			     "zcr: 0x%llx sve_hint: %d SM: off\n", tstr, cstr,
-			     (uint64_t)read_smcr_el2(),
+			     "zcr: 0x%llx sve_hint: %d SM: off\n",
+			     tstr, cstr, (uint64_t)read_smcr_el2(),
 			     (uint64_t)sve_read_zcr_elx(),
 			     tftf_smc_get_sve_hint());
 		}
@@ -1012,7 +1013,8 @@ static simd_test_t rl_simd_write_rand(bool rl_sve_en)
 		rl_fill_cmd = REALM_REQ_FPU_FILL_CMD;
 	}
 
-	rc = host_enter_realm_execute(&realm, rl_fill_cmd, RMI_EXIT_HOST_CALL, 0U);
+	rc = host_enter_realm_execute(&realm, rl_fill_cmd, RMI_EXIT_HOST_CALL,
+				      0U);
 	assert(rc);
 
 	return type;
@@ -1110,8 +1112,8 @@ test_result_t host_and_realm_check_simd(void)
 	}
 
 	if (num_simd_configs) {
-		test_iterations = TEST_ITERATIONS_MIN * num_simd_types *
-			num_simd_configs;
+		test_iterations =
+			TEST_ITERATIONS_MIN * num_simd_types * num_simd_configs;
 	} else {
 		test_iterations = TEST_ITERATIONS_MIN * num_simd_types;
 	}
@@ -1323,13 +1325,12 @@ test_result_t host_realm_check_sme_configs(void)
 		 * SVE support, so run SVE command else run FPU command
 		 */
 		if (sve_en) {
-			realm_rc = host_enter_realm_execute(&realm, REALM_SVE_RDVL,
-							    RMI_EXIT_HOST_CALL,
-							    0U);
+			realm_rc = host_enter_realm_execute(
+				&realm, REALM_SVE_RDVL, RMI_EXIT_HOST_CALL, 0U);
 		} else {
-			realm_rc = host_enter_realm_execute(&realm,
-							REALM_REQ_FPU_FILL_CMD,
-							RMI_EXIT_HOST_CALL, 0U);
+			realm_rc = host_enter_realm_execute(
+				&realm, REALM_REQ_FPU_FILL_CMD,
+				RMI_EXIT_HOST_CALL, 0U);
 		}
 
 		if (!realm_rc) {

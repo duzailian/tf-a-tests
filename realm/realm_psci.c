@@ -18,7 +18,7 @@ void realm_payload_main(void);
 
 void realm_cpu_off(void)
 {
-	smc_args args = { SMC_PSCI_CPU_OFF };
+	smc_args args = {SMC_PSCI_CPU_OFF};
 
 	tftf_smc(&args);
 }
@@ -27,7 +27,6 @@ u_register_t realm_cpu_on(u_register_t mpidr, uintptr_t ep, u_register_t cxt_id)
 {
 	smc_args args;
 	smc_ret_values ret_vals;
-
 
 	if (mpidr > MAX_REC_COUNT) {
 		return PSCI_E_INVALID_PARAMS;
@@ -48,7 +47,7 @@ u_register_t realm_cpu_on(u_register_t mpidr, uintptr_t ep, u_register_t cxt_id)
 }
 
 u_register_t realm_psci_affinity_info(u_register_t target_affinity,
-		uint32_t lowest_affinity_level)
+				      uint32_t lowest_affinity_level)
 {
 	smc_args args;
 	smc_ret_values ret_vals;
@@ -62,7 +61,6 @@ u_register_t realm_psci_affinity_info(u_register_t target_affinity,
 
 u_register_t realm_psci_features(uint32_t psci_func_id)
 {
-
 	smc_args args;
 	smc_ret_values ret_vals;
 

@@ -13,6 +13,7 @@
 #include <stdint.h>
 #include <utils_def.h>
 #include <xlat_tables_v2.h>
+
 #include "../xlat_tables_private.h"
 
 /*
@@ -86,9 +87,8 @@ unsigned long long tcr_physical_addr_size_bits(unsigned long long max_addr)
  * supported in ARMv8.2 onwards.
  */
 static const unsigned int pa_range_bits_arr[] = {
-	PARANGE_0000, PARANGE_0001, PARANGE_0010, PARANGE_0011, PARANGE_0100,
-	PARANGE_0101, PARANGE_0110
-};
+	PARANGE_0000, PARANGE_0001, PARANGE_0010, PARANGE_0011,
+	PARANGE_0100, PARANGE_0101, PARANGE_0110};
 
 unsigned long long xlat_arch_get_max_supported_pa(void)
 {
@@ -235,8 +235,7 @@ void setup_mmu_cfg(uint64_t *params, unsigned int flags,
 
 	virtual_addr_space_size = (uintptr_t)max_va + 1U;
 
-	assert(virtual_addr_space_size >=
-		xlat_get_min_virt_addr_space_size());
+	assert(virtual_addr_space_size >= xlat_get_min_virt_addr_space_size());
 	assert(virtual_addr_space_size <= MAX_VIRT_ADDR_SPACE_SIZE);
 	assert(IS_POWER_OF_TWO(virtual_addr_space_size));
 
@@ -254,12 +253,12 @@ void setup_mmu_cfg(uint64_t *params, unsigned int flags,
 	 */
 	if ((flags & XLAT_TABLE_NC) != 0U) {
 		/* Inner & outer non-cacheable non-shareable. */
-		tcr |= TCR_SH_NON_SHAREABLE |
-			TCR_RGN_OUTER_NC | TCR_RGN_INNER_NC;
+		tcr |= TCR_SH_NON_SHAREABLE | TCR_RGN_OUTER_NC |
+		       TCR_RGN_INNER_NC;
 	} else {
 		/* Inner & outer WBWA & shareable. */
-		tcr |= TCR_SH_INNER_SHAREABLE |
-			TCR_RGN_OUTER_WBA | TCR_RGN_INNER_WBA;
+		tcr |= TCR_SH_INNER_SHAREABLE | TCR_RGN_OUTER_WBA |
+		       TCR_RGN_INNER_WBA;
 	}
 
 	/*
@@ -282,7 +281,7 @@ void setup_mmu_cfg(uint64_t *params, unsigned int flags,
 	}
 
 	/* Set TTBR bits as well */
-	ttbr0 = (uint64_t) base_table;
+	ttbr0 = (uint64_t)base_table;
 
 	if (is_armv8_2_ttcnp_present()) {
 		/* Enable CnP bit so as to share page tables with all PEs. */

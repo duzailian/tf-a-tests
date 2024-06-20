@@ -4,12 +4,11 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdint.h>
-#include <stdio.h>
-
 #include <arch_helpers.h>
 #include <debug.h>
 #include <platform.h>
+#include <stdint.h>
+#include <stdio.h>
 #include <utils_def.h>
 
 /* We save r0-r12. */

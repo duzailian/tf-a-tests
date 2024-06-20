@@ -10,8 +10,10 @@
 #include <uuid_utils.h>
 
 /* Format string to print a UUID */
-static const char *uuid_str_fmt = "{ 0x%02x, 0x%02x, 0x%02x, 0x%02x, 0x%02x, "
-	"0x%02x, 0x%02x, 0x%02x, 0x%02x, 0x%02x, 0x%02x, 0x%02x, 0x%02x, 0x%02x, "
+static const char *uuid_str_fmt =
+	"{ 0x%02x, 0x%02x, 0x%02x, 0x%02x, 0x%02x, "
+	"0x%02x, 0x%02x, 0x%02x, 0x%02x, 0x%02x, 0x%02x, 0x%02x, 0x%02x, "
+	"0x%02x, "
 	"0x%02x, 0x%02x }";
 
 unsigned int is_uuid_null(const uuid_t *uuid)
@@ -26,9 +28,8 @@ char *uuid_to_str(const uuid_t *uuid, char *str)
 	assert(uuid != NULL);
 	assert(str != NULL);
 
-	snprintf(str, UUID_STR_SIZE, uuid_str_fmt,
-		 uuid->time_low[0], uuid->time_low[1],
-		 uuid->time_low[2], uuid->time_low[3],
+	snprintf(str, UUID_STR_SIZE, uuid_str_fmt, uuid->time_low[0],
+		 uuid->time_low[1], uuid->time_low[2], uuid->time_low[3],
 		 uuid->time_mid[0], uuid->time_mid[1],
 		 uuid->time_hi_and_version[0], uuid->time_hi_and_version[1],
 		 uuid->clock_seq_hi_and_reserved, uuid->clock_seq_low,
@@ -43,17 +44,14 @@ unsigned int uuid_equal(const uuid_t *uuid1, const uuid_t *uuid2)
 	return memcmp(uuid1, uuid2, sizeof(uuid_t)) == 0;
 }
 
-uuid_t *make_uuid_from_4words(uuid_t *uuid,
-			      uint32_t w0,
-			      uint32_t w1,
-			      uint32_t w2,
-			      uint32_t w3)
+uuid_t *make_uuid_from_4words(uuid_t *uuid, uint32_t w0, uint32_t w1,
+			      uint32_t w2, uint32_t w3)
 {
 	uint32_t *uuid32;
 
 	assert(uuid != NULL);
 
-	uuid32 = (uint32_t *) uuid;
+	uuid32 = (uint32_t *)uuid;
 	uuid32[0] = w0;
 	uuid32[1] = w1;
 	uuid32[2] = w2;

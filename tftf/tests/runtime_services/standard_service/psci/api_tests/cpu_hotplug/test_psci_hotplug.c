@@ -30,7 +30,6 @@ static test_result_t test_cpu_booted(void)
 	return TEST_RESULT_SUCCESS;
 }
 
-
 /*
  * @Test_Aim@ Test CPU hotplug support
  *
@@ -47,15 +46,12 @@ test_result_t test_psci_cpu_hotplug(void)
 
 	/* Power on all CPUs */
 	for_each_cpu(cpu_node) {
-
 		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
 		/* Skip lead CPU, it is already powered on */
 		if (cpu_mpid == lead_mpid)
 			continue;
 
-		psci_ret = tftf_cpu_on(cpu_mpid,
-				(uintptr_t) test_cpu_booted,
-				0);
+		psci_ret = tftf_cpu_on(cpu_mpid, (uintptr_t)test_cpu_booted, 0);
 		if (psci_ret != PSCI_E_SUCCESS)
 			ret = TEST_RESULT_FAIL;
 	}
@@ -134,13 +130,13 @@ test_result_t test_context_ids(void)
 
 		/* Pass as context ID something that the CPU can verify */
 		psci_ret = tftf_cpu_on(cpu_mpid,
-				       (uintptr_t) test_context_ids_non_lead_cpu,
+				       (uintptr_t)test_context_ids_non_lead_cpu,
 				       (u_register_t)(cpu_mpid + core_pos));
 
 		if (psci_ret != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
-				"Failed to power on CPU 0x%x (%d)\n",
-				cpu_mpid, psci_ret);
+				"Failed to power on CPU 0x%x (%d)\n", cpu_mpid,
+				psci_ret);
 			return TEST_RESULT_SKIPPED;
 		}
 	}

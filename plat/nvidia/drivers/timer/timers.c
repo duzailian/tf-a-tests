@@ -5,48 +5,47 @@
  */
 
 #include <assert.h>
-#include <stddef.h>
-#include <platform.h>
-
 #include <mmio.h>
-#include <timer.h>
+#include <platform.h>
+#include <stddef.h>
 #include <tftf_lib.h>
+#include <timer.h>
 #include <utils_def.h>
 
 /* timer granularity in ms */
-#define TEGRA_RTC_STEP_VALUE_MS			U(5)
+#define TEGRA_RTC_STEP_VALUE_MS U(5)
 
 /* set to 1 = busy every eight 32kHz clocks during copy of sec+msec to AHB */
-#define TEGRA_RTC_REG_BUSY			U(0x004)
-#define TEGRA_RTC_REG_SECONDS			U(0x008)
+#define TEGRA_RTC_REG_BUSY U(0x004)
+#define TEGRA_RTC_REG_SECONDS U(0x008)
 /* when msec is read, the seconds are buffered into shadow seconds. */
-#define TEGRA_RTC_REG_SHADOW_SECONDS		U(0x00c)
-#define TEGRA_RTC_REG_MILLI_SECONDS		U(0x010)
-#define TEGRA_RTC_REG_SECONDS_ALARM0		U(0x014)
-#define TEGRA_RTC_REG_SECONDS_ALARM1		U(0x018)
-#define TEGRA_RTC_REG_MILLI_SECONDS_ALARM0	U(0x01c)
-#define TEGRA_RTC_REG_MSEC_CDN_ALARM0		U(0x024)
-#define TEGRA_RTC_REG_INTR_MASK			U(0x028)
+#define TEGRA_RTC_REG_SHADOW_SECONDS U(0x00c)
+#define TEGRA_RTC_REG_MILLI_SECONDS U(0x010)
+#define TEGRA_RTC_REG_SECONDS_ALARM0 U(0x014)
+#define TEGRA_RTC_REG_SECONDS_ALARM1 U(0x018)
+#define TEGRA_RTC_REG_MILLI_SECONDS_ALARM0 U(0x01c)
+#define TEGRA_RTC_REG_MSEC_CDN_ALARM0 U(0x024)
+#define TEGRA_RTC_REG_INTR_MASK U(0x028)
 /* write 1 bits to clear status bits */
-#define TEGRA_RTC_REG_INTR_STATUS		U(0x02c)
+#define TEGRA_RTC_REG_INTR_STATUS U(0x02c)
 
 /*
  * bits in the TEGRA_RTC_REG_BUSY register
  * bit 0: 1 = busy, 0 = idle
  */
-#define TEGRA_RTC_REG_BUSY_BIT			BIT_32(0)
+#define TEGRA_RTC_REG_BUSY_BIT BIT_32(0)
 
 /* bits in INTR_MASK and INTR_STATUS */
-#define TEGRA_RTC_INTR_MSEC_CDN_ALARM		BIT_32(4)
-#define TEGRA_RTC_INTR_SEC_CDN_ALARM		BIT_32(3)
-#define TEGRA_RTC_INTR_MSEC_ALARM		BIT_32(2)
-#define TEGRA_RTC_INTR_SEC_ALARM1		BIT_32(1)
-#define TEGRA_RTC_INTR_SEC_ALARM0		BIT_32(0)
+#define TEGRA_RTC_INTR_MSEC_CDN_ALARM BIT_32(4)
+#define TEGRA_RTC_INTR_SEC_CDN_ALARM BIT_32(3)
+#define TEGRA_RTC_INTR_MSEC_ALARM BIT_32(2)
+#define TEGRA_RTC_INTR_SEC_ALARM1 BIT_32(1)
+#define TEGRA_RTC_INTR_SEC_ALARM0 BIT_32(0)
 
 static bool is_rtc_busy(void)
 {
 	uint32_t reg = mmio_read_32(TEGRA_RTC_BASE + TEGRA_RTC_REG_BUSY) &
-			TEGRA_RTC_REG_BUSY_BIT;
+		       TEGRA_RTC_REG_BUSY_BIT;
 
 	/* 1 = busy, 0 = idle */
 	return (reg == 1U);
@@ -122,7 +121,8 @@ static int program_timer(unsigned long time_out_ms)
 
 	/* program timeout value */
 	reg = timer_idle_read_32(TEGRA_RTC_REG_MILLI_SECONDS);
-	timer_idle_write_32(TEGRA_RTC_REG_MILLI_SECONDS_ALARM0, reg + time_out_ms);
+	timer_idle_write_32(TEGRA_RTC_REG_MILLI_SECONDS_ALARM0,
+			    reg + time_out_ms);
 
 	return 0;
 }
@@ -157,8 +157,7 @@ static const plat_timer_t tegra_timers = {
 	.cancel = cancel_timer,
 	.handler = handler_timer,
 	.timer_step_value = TEGRA_RTC_STEP_VALUE_MS,
-	.timer_irq = TEGRA_RTC_IRQ
-};
+	.timer_irq = TEGRA_RTC_IRQ};
 
 int plat_initialise_timer_ops(const plat_timer_t **timer_ops)
 {

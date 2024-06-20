@@ -4,7 +4,6 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 #include <assert.h>
-
 #include <ffa_endpoints.h>
 #include <ffa_helpers.h>
 #include <ffa_svc.h>
@@ -40,10 +39,7 @@ struct ffa_value ffa_service_call(struct ffa_value *args)
 struct ffa_value ffa_run(uint32_t dest_id, uint32_t vcpu_id)
 {
 	struct ffa_value args = {
-		FFA_RUN,
-		(dest_id << 16) | vcpu_id,
-		0, 0, 0, 0, 0, 0
-	};
+		FFA_RUN, (dest_id << 16) | vcpu_id, 0, 0, 0, 0, 0, 0};
 
 	return ffa_service_call(&args);
 }
@@ -66,10 +62,10 @@ struct ffa_value ffa_run(uint32_t dest_id, uint32_t vcpu_id)
  *     -BUSY: Message target is busy
  *     -ABORTED: Message target ran into an unexpected error and has aborted
  */
-struct ffa_value ffa_msg_send_direct_req64(ffa_id_t source_id,
-					   ffa_id_t dest_id, uint64_t arg0,
-					   uint64_t arg1, uint64_t arg2,
-					   uint64_t arg3, uint64_t arg4)
+struct ffa_value ffa_msg_send_direct_req64(ffa_id_t source_id, ffa_id_t dest_id,
+					   uint64_t arg0, uint64_t arg1,
+					   uint64_t arg2, uint64_t arg3,
+					   uint64_t arg4)
 {
 	struct ffa_value args = {
 		.fid = FFA_MSG_SEND_DIRECT_REQ_SMC64,
@@ -85,10 +81,10 @@ struct ffa_value ffa_msg_send_direct_req64(ffa_id_t source_id,
 	return ffa_service_call(&args);
 }
 
-struct ffa_value ffa_msg_send_direct_req32(ffa_id_t source_id,
-					   ffa_id_t dest_id, uint32_t arg0,
-					   uint32_t arg1, uint32_t arg2,
-					   uint32_t arg3, uint32_t arg4)
+struct ffa_value ffa_msg_send_direct_req32(ffa_id_t source_id, ffa_id_t dest_id,
+					   uint32_t arg0, uint32_t arg1,
+					   uint32_t arg2, uint32_t arg3,
+					   uint32_t arg4)
 {
 	struct ffa_value args = {
 		.fid = FFA_MSG_SEND_DIRECT_REQ_SMC32,
@@ -363,37 +359,28 @@ void ffa_hypervisor_retrieve_request_init(struct ffa_memory_region *region,
  */
 struct ffa_value ffa_version(uint32_t input_version)
 {
-	struct ffa_value args = {
-		.fid = FFA_VERSION,
-		.arg1 = input_version
-	};
+	struct ffa_value args = {.fid = FFA_VERSION, .arg1 = input_version};
 
 	return ffa_service_call(&args);
 }
 
 struct ffa_value ffa_id_get(void)
 {
-	struct ffa_value args = {
-		.fid = FFA_ID_GET
-	};
+	struct ffa_value args = {.fid = FFA_ID_GET};
 
 	return ffa_service_call(&args);
 }
 
 struct ffa_value ffa_spm_id_get(void)
 {
-	struct ffa_value args = {
-		.fid = FFA_SPM_ID_GET
-	};
+	struct ffa_value args = {.fid = FFA_SPM_ID_GET};
 
 	return ffa_service_call(&args);
 }
 
 struct ffa_value ffa_msg_wait(void)
 {
-	struct ffa_value args = {
-		.fid = FFA_MSG_WAIT
-	};
+	struct ffa_value args = {.fid = FFA_MSG_WAIT};
 
 	return ffa_service_call(&args);
 }
@@ -401,10 +388,7 @@ struct ffa_value ffa_msg_wait(void)
 struct ffa_value ffa_error(int32_t error_code)
 {
 	struct ffa_value args = {
-		.fid = FFA_ERROR,
-		.arg1 = 0,
-		.arg2 = error_code
-	};
+		.fid = FFA_ERROR, .arg1 = 0, .arg2 = error_code};
 
 	return ffa_service_call(&args);
 }
@@ -412,16 +396,14 @@ struct ffa_value ffa_error(int32_t error_code)
 /* Query the higher EL if the requested FF-A feature is implemented. */
 struct ffa_value ffa_features(uint32_t feature)
 {
-	struct ffa_value args = {
-		.fid = FFA_FEATURES,
-		.arg1 = feature
-	};
+	struct ffa_value args = {.fid = FFA_FEATURES, .arg1 = feature};
 
 	return ffa_service_call(&args);
 }
 
 /* Query the higher EL if the requested FF-A feature is implemented. */
-struct ffa_value ffa_features_with_input_property(uint32_t feature, uint32_t param)
+struct ffa_value ffa_features_with_input_property(uint32_t feature,
+						  uint32_t param)
 {
 	struct ffa_value args = {
 		.fid = FFA_FEATURES,
@@ -454,13 +436,11 @@ struct ffa_value ffa_partition_info_get_regs(const struct ffa_uuid uuid,
 /* Get information about VMs or SPs based on UUID */
 struct ffa_value ffa_partition_info_get(const struct ffa_uuid uuid)
 {
-	struct ffa_value args = {
-		.fid = FFA_PARTITION_INFO_GET,
-		.arg1 = uuid.uuid[0],
-		.arg2 = uuid.uuid[1],
-		.arg3 = uuid.uuid[2],
-		.arg4 = uuid.uuid[3]
-	};
+	struct ffa_value args = {.fid = FFA_PARTITION_INFO_GET,
+				 .arg1 = uuid.uuid[0],
+				 .arg2 = uuid.uuid[1],
+				 .arg3 = uuid.uuid[2],
+				 .arg4 = uuid.uuid[3]};
 
 	return ffa_service_call(&args);
 }
@@ -485,16 +465,14 @@ struct ffa_value ffa_rx_release(void)
 /* Map the RXTX buffer */
 struct ffa_value ffa_rxtx_map(uintptr_t send, uintptr_t recv, uint32_t pages)
 {
-	struct ffa_value args = {
-		.fid = FFA_RXTX_MAP_SMC64,
-		.arg1 = send,
-		.arg2 = recv,
-		.arg3 = pages,
-		.arg4 = FFA_PARAM_MBZ,
-		.arg5 = FFA_PARAM_MBZ,
-		.arg6 = FFA_PARAM_MBZ,
-		.arg7 = FFA_PARAM_MBZ
-	};
+	struct ffa_value args = {.fid = FFA_RXTX_MAP_SMC64,
+				 .arg1 = send,
+				 .arg2 = recv,
+				 .arg3 = pages,
+				 .arg4 = FFA_PARAM_MBZ,
+				 .arg5 = FFA_PARAM_MBZ,
+				 .arg6 = FFA_PARAM_MBZ,
+				 .arg7 = FFA_PARAM_MBZ};
 
 	return ffa_service_call(&args);
 }
@@ -535,16 +513,14 @@ struct ffa_value ffa_rxtx_unmap_with_id(uint32_t id)
  */
 struct ffa_value ffa_msg_send2_with_id(uint32_t flags, ffa_id_t sender)
 {
-	struct ffa_value args = {
-		.fid = FFA_MSG_SEND2,
-		.arg1 = sender << 16,
-		.arg2 = flags,
-		.arg3 = FFA_PARAM_MBZ,
-		.arg4 = FFA_PARAM_MBZ,
-		.arg5 = FFA_PARAM_MBZ,
-		.arg6 = FFA_PARAM_MBZ,
-		.arg7 = FFA_PARAM_MBZ
-	};
+	struct ffa_value args = {.fid = FFA_MSG_SEND2,
+				 .arg1 = sender << 16,
+				 .arg2 = flags,
+				 .arg3 = FFA_PARAM_MBZ,
+				 .arg4 = FFA_PARAM_MBZ,
+				 .arg5 = FFA_PARAM_MBZ,
+				 .arg6 = FFA_PARAM_MBZ,
+				 .arg7 = FFA_PARAM_MBZ};
 
 	return ffa_service_call(&args);
 }
@@ -558,13 +534,11 @@ struct ffa_value ffa_msg_send2(uint32_t flags)
 struct ffa_value ffa_mem_donate(uint32_t descriptor_length,
 				uint32_t fragment_length)
 {
-	struct ffa_value args = {
-		.fid = FFA_MEM_DONATE_SMC64,
-		.arg1 = descriptor_length,
-		.arg2 = fragment_length,
-		.arg3 = FFA_PARAM_MBZ,
-		.arg4 = FFA_PARAM_MBZ
-	};
+	struct ffa_value args = {.fid = FFA_MEM_DONATE_SMC64,
+				 .arg1 = descriptor_length,
+				 .arg2 = fragment_length,
+				 .arg3 = FFA_PARAM_MBZ,
+				 .arg4 = FFA_PARAM_MBZ};
 
 	return ffa_service_call(&args);
 }
@@ -573,13 +547,11 @@ struct ffa_value ffa_mem_donate(uint32_t descriptor_length,
 struct ffa_value ffa_mem_lend(uint32_t descriptor_length,
 			      uint32_t fragment_length)
 {
-	struct ffa_value args = {
-		.fid = FFA_MEM_LEND_SMC64,
-		.arg1 = descriptor_length,
-		.arg2 = fragment_length,
-		.arg3 = FFA_PARAM_MBZ,
-		.arg4 = FFA_PARAM_MBZ
-	};
+	struct ffa_value args = {.fid = FFA_MEM_LEND_SMC64,
+				 .arg1 = descriptor_length,
+				 .arg2 = fragment_length,
+				 .arg3 = FFA_PARAM_MBZ,
+				 .arg4 = FFA_PARAM_MBZ};
 
 	return ffa_service_call(&args);
 }
@@ -588,13 +560,11 @@ struct ffa_value ffa_mem_lend(uint32_t descriptor_length,
 struct ffa_value ffa_mem_share(uint32_t descriptor_length,
 			       uint32_t fragment_length)
 {
-	struct ffa_value args = {
-		.fid = FFA_MEM_SHARE_SMC64,
-		.arg1 = descriptor_length,
-		.arg2 = fragment_length,
-		.arg3 = FFA_PARAM_MBZ,
-		.arg4 = FFA_PARAM_MBZ
-	};
+	struct ffa_value args = {.fid = FFA_MEM_SHARE_SMC64,
+				 .arg1 = descriptor_length,
+				 .arg2 = fragment_length,
+				 .arg3 = FFA_PARAM_MBZ,
+				 .arg4 = FFA_PARAM_MBZ};
 
 	return ffa_service_call(&args);
 }
@@ -603,16 +573,14 @@ struct ffa_value ffa_mem_share(uint32_t descriptor_length,
 struct ffa_value ffa_mem_retrieve_req(uint32_t descriptor_length,
 				      uint32_t fragment_length)
 {
-	struct ffa_value args = {
-		.fid = FFA_MEM_RETRIEVE_REQ_SMC64,
-		.arg1 = descriptor_length,
-		.arg2 = fragment_length,
-		.arg3 = FFA_PARAM_MBZ,
-		.arg4 = FFA_PARAM_MBZ,
-		.arg5 = FFA_PARAM_MBZ,
-		.arg6 = FFA_PARAM_MBZ,
-		.arg7 = FFA_PARAM_MBZ
-	};
+	struct ffa_value args = {.fid = FFA_MEM_RETRIEVE_REQ_SMC64,
+				 .arg1 = descriptor_length,
+				 .arg2 = fragment_length,
+				 .arg3 = FFA_PARAM_MBZ,
+				 .arg4 = FFA_PARAM_MBZ,
+				 .arg5 = FFA_PARAM_MBZ,
+				 .arg6 = FFA_PARAM_MBZ,
+				 .arg7 = FFA_PARAM_MBZ};
 
 	return ffa_service_call(&args);
 }
@@ -630,12 +598,10 @@ struct ffa_value ffa_mem_relinquish(void)
 /* Reclaim exclusive access to owned memory region */
 struct ffa_value ffa_mem_reclaim(uint64_t handle, uint32_t flags)
 {
-	struct ffa_value args = {
-		.fid = FFA_MEM_RECLAIM,
-		.arg1 = (uint32_t) handle,
-		.arg2 = (uint32_t) (handle >> 32),
-		.arg3 = flags
-	};
+	struct ffa_value args = {.fid = FFA_MEM_RECLAIM,
+				 .arg1 = (uint32_t)handle,
+				 .arg2 = (uint32_t)(handle >> 32),
+				 .arg3 = flags};
 
 	return ffa_service_call(&args);
 }
@@ -723,8 +689,7 @@ struct ffa_value ffa_notification_bind(ffa_id_t sender, ffa_id_t receiver,
 }
 
 /** Unbind previously bound VM from notifications in bitmap */
-struct ffa_value ffa_notification_unbind(ffa_id_t sender,
-					 ffa_id_t receiver,
+struct ffa_value ffa_notification_unbind(ffa_id_t sender, ffa_id_t receiver,
 					 ffa_notification_bitmap_t bitmap)
 {
 	struct ffa_value args = {
@@ -745,16 +710,14 @@ struct ffa_value ffa_notification_set(ffa_id_t sender, ffa_id_t receiver,
 				      uint32_t flags,
 				      ffa_notification_bitmap_t bitmap)
 {
-	struct ffa_value args = {
-		.fid = FFA_NOTIFICATION_SET,
-		.arg1 = (sender << 16) | (receiver),
-		.arg2 = flags,
-		.arg3 = (uint32_t)(bitmap & 0xFFFFFFFFU),
-		.arg4 = (uint32_t)(bitmap >> 32),
-		.arg5 = FFA_PARAM_MBZ,
-		.arg6 = FFA_PARAM_MBZ,
-		.arg7 = FFA_PARAM_MBZ
-	};
+	struct ffa_value args = {.fid = FFA_NOTIFICATION_SET,
+				 .arg1 = (sender << 16) | (receiver),
+				 .arg2 = flags,
+				 .arg3 = (uint32_t)(bitmap & 0xFFFFFFFFU),
+				 .arg4 = (uint32_t)(bitmap >> 32),
+				 .arg5 = FFA_PARAM_MBZ,
+				 .arg6 = FFA_PARAM_MBZ,
+				 .arg7 = FFA_PARAM_MBZ};
 
 	return ffa_service_call(&args);
 }
@@ -762,32 +725,28 @@ struct ffa_value ffa_notification_set(ffa_id_t sender, ffa_id_t receiver,
 struct ffa_value ffa_notification_get(ffa_id_t receiver, uint32_t vcpu_id,
 				      uint32_t flags)
 {
-	struct ffa_value args = {
-		.fid = FFA_NOTIFICATION_GET,
-		.arg1 = (vcpu_id << 16) | (receiver),
-		.arg2 = flags,
-		.arg3 = FFA_PARAM_MBZ,
-		.arg4 = FFA_PARAM_MBZ,
-		.arg5 = FFA_PARAM_MBZ,
-		.arg6 = FFA_PARAM_MBZ,
-		.arg7 = FFA_PARAM_MBZ
-	};
+	struct ffa_value args = {.fid = FFA_NOTIFICATION_GET,
+				 .arg1 = (vcpu_id << 16) | (receiver),
+				 .arg2 = flags,
+				 .arg3 = FFA_PARAM_MBZ,
+				 .arg4 = FFA_PARAM_MBZ,
+				 .arg5 = FFA_PARAM_MBZ,
+				 .arg6 = FFA_PARAM_MBZ,
+				 .arg7 = FFA_PARAM_MBZ};
 
 	return ffa_service_call(&args);
 }
 
 struct ffa_value ffa_notification_info_get(void)
 {
-	struct ffa_value args = {
-		.fid = FFA_NOTIFICATION_INFO_GET_SMC64,
-		.arg1 = FFA_PARAM_MBZ,
-		.arg2 = FFA_PARAM_MBZ,
-		.arg3 = FFA_PARAM_MBZ,
-		.arg4 = FFA_PARAM_MBZ,
-		.arg5 = FFA_PARAM_MBZ,
-		.arg6 = FFA_PARAM_MBZ,
-		.arg7 = FFA_PARAM_MBZ
-	};
+	struct ffa_value args = {.fid = FFA_NOTIFICATION_INFO_GET_SMC64,
+				 .arg1 = FFA_PARAM_MBZ,
+				 .arg2 = FFA_PARAM_MBZ,
+				 .arg3 = FFA_PARAM_MBZ,
+				 .arg4 = FFA_PARAM_MBZ,
+				 .arg5 = FFA_PARAM_MBZ,
+				 .arg6 = FFA_PARAM_MBZ,
+				 .arg7 = FFA_PARAM_MBZ};
 
 	return ffa_service_call(&args);
 }
@@ -814,17 +773,16 @@ struct ffa_value ffa_console_log(const char *message, size_t char_count)
 	assert(char_count <= sizeof(uint64_t) * 6);
 
 	written += char_to_arg_helper(&message[written], char_count - written,
-			&args.arg2);
+				      &args.arg2);
 	written += char_to_arg_helper(&message[written], char_count - written,
-			&args.arg3);
+				      &args.arg3);
 	written += char_to_arg_helper(&message[written], char_count - written,
-			&args.arg4);
+				      &args.arg4);
 	written += char_to_arg_helper(&message[written], char_count - written,
-			&args.arg5);
+				      &args.arg5);
 	written += char_to_arg_helper(&message[written], char_count - written,
-			&args.arg6);
-	char_to_arg_helper(&message[written], char_count - written,
-			&args.arg7);
+				      &args.arg6);
+	char_to_arg_helper(&message[written], char_count - written, &args.arg7);
 
 	return ffa_service_call(&args);
 }
@@ -846,8 +804,9 @@ struct ffa_memory_access ffa_memory_access_init(
 	access.receiver_permissions.permissions.data_access = data_access;
 	access.receiver_permissions.permissions.instruction_access =
 		instruction_access;
-	access.impdef = impdef != NULL ? *impdef :
-		(struct ffa_memory_access_impdef){{0, 0}};
+	access.impdef = impdef != NULL
+				? *impdef
+				: (struct ffa_memory_access_impdef){{0, 0}};
 
 	return access;
 }
@@ -857,9 +816,9 @@ struct ffa_memory_access ffa_memory_access_init(
  * `FFA_RXTX_MAP` forwarding in the case when Hypervisor needs the SPMC to map a
  * VM's RXTX pair.
  */
-static void
-ffa_composite_memory_region_init(struct ffa_composite_memory_region *composite,
-				 void *address, uint32_t page_count)
+static void ffa_composite_memory_region_init(
+	struct ffa_composite_memory_region *composite, void *address,
+	uint32_t page_count)
 {
 	composite->page_count = page_count;
 	composite->constituent_count = 1;
@@ -918,9 +877,10 @@ void ffa_endpoint_rxtx_descriptor_init(
  * Mimics a forwarded FFA_RXTX_MAP call from a hypervisor.
  */
 struct ffa_value ffa_rxtx_map_forward(struct ffa_endpoint_rxtx_descriptor *desc,
-				ffa_id_t endpoint_id,
-				void *rx_address, void *tx_address)
+				      ffa_id_t endpoint_id, void *rx_address,
+				      void *tx_address)
 {
-	ffa_endpoint_rxtx_descriptor_init(desc, endpoint_id, rx_address, tx_address);
+	ffa_endpoint_rxtx_descriptor_init(desc, endpoint_id, rx_address,
+					  tx_address);
 	return ffa_rxtx_map(0, 0, 0);
 }

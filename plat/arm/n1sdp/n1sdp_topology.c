@@ -13,10 +13,10 @@ static const struct {
 	unsigned int cpu_id;
 } n1sdp_cores[] = {
 	/* N1SDP has 2 clusters with 2 cores each */
-	{ 0, 0 },
-	{ 0, 1 },
-	{ 1, 0 },
-	{ 1, 1 },
+	{0, 0},
+	{0, 1},
+	{1, 0},
+	{1, 1},
 };
 
 /*
@@ -31,8 +31,7 @@ const unsigned char n1sdp_pd_tree_desc[] = {
 	/* Number of children for the 1st node */
 	N1SDP_MAX_CPUS_PER_CLUSTER,
 	/* Number of children for the 2nd node */
-	N1SDP_MAX_CPUS_PER_CLUSTER
-};
+	N1SDP_MAX_CPUS_PER_CLUSTER};
 
 const unsigned char *tftf_plat_get_pwr_domain_tree_desc(void)
 {

@@ -8,13 +8,13 @@
 #include <debug.h>
 #include <drivers/arm/private_timer.h>
 #include <events.h>
-#include "fifo3d.h"
-#include "nfifo.h"
 #include <libfdt.h>
-
 #include <plat_topology.h>
 #include <power_management.h>
 #include <tftf_lib.h>
+
+#include "fifo3d.h"
+#include "nfifo.h"
 
 extern char _binary___dtb_start[];
 extern void runtestfunction(int funcid);
@@ -31,11 +31,11 @@ static struct memmod *mmod;
 #define FIRST_NODE_DEVTREE_OFFSET (8)
 
 #ifdef SMC_FUZZ_TMALLOC
-#define GENMALLOC(x)	malloc((x))
-#define GENFREE(x)	free((x))
+#define GENMALLOC(x) malloc((x))
+#define GENFREE(x) free((x))
 #else
-#define GENMALLOC(x)	smcmalloc((x), mmod)
-#define GENFREE(x)	smcfree((x), mmod)
+#define GENMALLOC(x) smcmalloc((x), mmod)
+#define GENFREE(x) smcfree((x), mmod)
 #endif
 
 /*
@@ -81,10 +81,7 @@ unsigned int lendconv(unsigned int val)
 /*
  * Function to read strings from device tree
  */
-void pullstringdt(void **dtb,
-		  void *dtb_beg,
-		  unsigned int offset,
-		  char *cset)
+void pullstringdt(void **dtb, void *dtb_beg, unsigned int offset, char *cset)
 {
 	int fistr;
 	int cntchr;
@@ -117,26 +114,26 @@ void pullstringdt(void **dtb,
  * Structure for Node information extracted from device tree
  */
 struct rand_smc_node {
-	int *biases;				 // Biases of the individual nodes
-	int *biasarray;				 // Array of biases across all nodes
-	char **snames;				 // String that is unique to the SMC call called in test
-	int *snameid;				 // ID that is unique to the SMC call called in test
-	struct rand_smc_node *treenodes;	 // Selection of nodes that are farther down in the tree
-						 // that reference further rand_smc_node objects
-	int *norcall;				// Specifies whether a particular node is a leaf node or tree node
-	int entries;				 // Number of nodes in object
-	int biasent;				 // Number that gives the total number of entries in biasarray
-						 // based on all biases of the nodes
-	char **nname;				 // Array of node names
+	int *biases;	 // Biases of the individual nodes
+	int *biasarray;	 // Array of biases across all nodes
+	char **snames;	 // String that is unique to the SMC call called in test
+	int *snameid;	 // ID that is unique to the SMC call called in test
+	struct rand_smc_node *
+		treenodes;  // Selection of nodes that are farther down in the
+			    // tree that reference further rand_smc_node objects
+	int *norcall;  // Specifies whether a particular node is a leaf node or
+		       // tree node
+	int entries;   // Number of nodes in object
+	int biasent;   // Number that gives the total number of entries in
+		      // biasarray based on all biases of the nodes
+	char **nname;  // Array of node names
 };
-
 
 /*
  * Create bias tree from given device tree description
  */
 
-struct rand_smc_node *createsmctree(int *casz,
-				    struct memmod *mmod)
+struct rand_smc_node *createsmctree(int *casz, struct memmod *mmod)
 {
 	void *dtb;
 	void *dtb_pn;
@@ -194,14 +191,15 @@ struct rand_smc_node *createsmctree(int *casz,
 		dtb += sizeof(unsigned int);
 
 		/*
-		 * Reading node name from device tree and pushing it into the raw data
-		 * Table of possible values reading from device tree binary file:
-		 * 1	New node found within current tree, possible leaf or tree variant
-		 * 2 	Node termination of current hiearchy.
-		 *     Could indicate end of tree or preparation for another branch
-		 * 3 	Leaf node indication where a bias with a function name should be
-		 *     found for the current node
-		 * 9  	End of device tree file and we end the read of the bias tree
+		 * Reading node name from device tree and pushing it into the
+		 * raw data Table of possible values reading from device tree
+		 * binary file: 1	New node found within current tree,
+		 * possible leaf or tree variant 2 	Node termination of
+		 * current hiearchy. Could indicate end of tree or preparation
+		 * for another branch
+		 * 3 	Leaf node indication where a bias with a function name
+		 * should be found for the current node 9  	End of device
+		 * tree file and we end the read of the bias tree
 		 */
 		if (fdt32_to_cpu(rval) == 1) {
 			pullstringdt(&dtb, dtb_beg, 0U, cset);
@@ -215,9 +213,10 @@ struct rand_smc_node *createsmctree(int *casz,
 				fnode = 1U;
 			} else {
 				if (!((fnode == 1U) && (bias_count == 1U))) {
-					printf("ERROR: Did not find bias or multiple bias ");
+					printf("ERROR: Did not find bias or "
+					       "multiple bias ");
 					printf("designations before %s %u %u\n",
-					cset, fnode, bias_count);
+					       cset, fnode, bias_count);
 				}
 				bias_count = 0U;
 			}
@@ -231,7 +230,8 @@ struct rand_smc_node *createsmctree(int *casz,
 			dtb += sizeof(struct propval);
 			pullstringdt(&dtb_pn, dtb_beg,
 				     (fdt32_to_cpu(fhd.off_dt_strings) +
-				      fdt32_to_cpu(pv.nameoff)), cset);
+				      fdt32_to_cpu(pv.nameoff)),
+				     cset);
 			if (strcmp(cset, "bias") == 0) {
 				rval = *((unsigned int *)dtb);
 				dtb += sizeof(unsigned int);
@@ -247,7 +247,8 @@ struct rand_smc_node *createsmctree(int *casz,
 				pullstringdt(&dtb, dtb_beg, 0, cset);
 				push_3dfifo_fname(&f3d, cset);
 				pushnme(cset, &nf, mmod);
-				push_3dfifo_fid(&f3d, searchnme(cset, &nf, mmod));
+				push_3dfifo_fid(&f3d,
+						searchnme(cset, &nf, mmod));
 				leafnode = 1;
 				if (bias_count == 0U) {
 					bintnode = 1U;
@@ -260,14 +261,15 @@ struct rand_smc_node *createsmctree(int *casz,
 		}
 
 		/*
-		 * Node termination and evaluate whether the bias tree requires addition.
-		 * The non tree nodes are added.
+		 * Node termination and evaluate whether the bias tree requires
+		 * addition. The non tree nodes are added.
 		 */
 		if (fdt32_to_cpu(rval) == 2) {
 			if ((fnode > 0U) || (bias_count > 0U)) {
 				printf("ERROR: early node termination... ");
-				printf("no bias or functionname field for leaf node, near %s %u\n",
-				nodename, fnode);
+				printf("no bias or functionname field for leaf "
+				       "node, near %s %u\n",
+				       nodename, fnode);
 			}
 			f3d.col--;
 			if (leafnode == 1) {
@@ -278,42 +280,86 @@ struct rand_smc_node *createsmctree(int *casz,
 				 */
 				tndarray =
 					GENMALLOC((cntndarray + 1) *
-						   sizeof(struct rand_smc_node));
+						  sizeof(struct rand_smc_node));
 				unsigned int treenodetrackmal = 0;
-				for (unsigned int j = 0U; (int)j < cntndarray; j++) {
-					tndarray[j].biases = GENMALLOC(ndarray[j].entries * sizeof(int));
-					tndarray[j].snames = GENMALLOC(ndarray[j].entries * sizeof(char *));
-					tndarray[j].snameid = GENMALLOC(ndarray[j].entries * sizeof(int));
-					tndarray[j].norcall = GENMALLOC(ndarray[j].entries * sizeof(int));
-					tndarray[j].nname = GENMALLOC(ndarray[j].entries * sizeof(char *));
-					tndarray[j].treenodes = GENMALLOC(ndarray[j].entries * sizeof(struct rand_smc_node));
-					tndarray[j].entries = ndarray[j].entries;
-					for (unsigned int i = 0U; (int)i < ndarray[j].entries; i++) {
-						tndarray[j].snames[i] = GENMALLOC(1 * sizeof(char[MAX_NAME_CHARS]));
-						strlcpy(tndarray[j].snames[i], ndarray[j].snames[i], MAX_NAME_CHARS);
-						tndarray[j].snameid[i] = ndarray[j].snameid[i];
-						tndarray[j].nname[i] = GENMALLOC(1 * sizeof(char[MAX_NAME_CHARS]));
-						strlcpy(tndarray[j].nname[i], ndarray[j].nname[i], MAX_NAME_CHARS);
-						tndarray[j].biases[i] = ndarray[j].biases[i];
-						tndarray[j].norcall[i] = ndarray[j].norcall[i];
-						if (tndarray[j].norcall[i] == 1) {
-							tndarray[j].treenodes[i] = tndarray[treenodetrackmal];
+				for (unsigned int j = 0U; (int)j < cntndarray;
+				     j++) {
+					tndarray[j].biases =
+						GENMALLOC(ndarray[j].entries *
+							  sizeof(int));
+					tndarray[j].snames =
+						GENMALLOC(ndarray[j].entries *
+							  sizeof(char *));
+					tndarray[j].snameid =
+						GENMALLOC(ndarray[j].entries *
+							  sizeof(int));
+					tndarray[j].norcall =
+						GENMALLOC(ndarray[j].entries *
+							  sizeof(int));
+					tndarray[j].nname =
+						GENMALLOC(ndarray[j].entries *
+							  sizeof(char *));
+					tndarray[j].treenodes = GENMALLOC(
+						ndarray[j].entries *
+						sizeof(struct rand_smc_node));
+					tndarray[j].entries =
+						ndarray[j].entries;
+					for (unsigned int i = 0U;
+					     (int)i < ndarray[j].entries; i++) {
+						tndarray[j]
+							.snames[i] = GENMALLOC(
+							1 *
+							sizeof(char[MAX_NAME_CHARS]));
+						strlcpy(tndarray[j].snames[i],
+							ndarray[j].snames[i],
+							MAX_NAME_CHARS);
+						tndarray[j].snameid[i] =
+							ndarray[j].snameid[i];
+						tndarray[j]
+							.nname[i] = GENMALLOC(
+							1 *
+							sizeof(char[MAX_NAME_CHARS]));
+						strlcpy(tndarray[j].nname[i],
+							ndarray[j].nname[i],
+							MAX_NAME_CHARS);
+						tndarray[j].biases[i] =
+							ndarray[j].biases[i];
+						tndarray[j].norcall[i] =
+							ndarray[j].norcall[i];
+						if (tndarray[j].norcall[i] ==
+						    1) {
+							tndarray[j].treenodes
+								[i] = tndarray
+								[treenodetrackmal];
 							treenodetrackmal++;
 						}
 					}
-					tndarray[j].biasent = ndarray[j].biasent;
-					tndarray[j].biasarray = GENMALLOC((tndarray[j].biasent) * sizeof(int));
-					for (unsigned int i = 0U; (int)i < ndarray[j].biasent; i++) {
-						tndarray[j].biasarray[i] = ndarray[j].biasarray[i];
+					tndarray[j].biasent =
+						ndarray[j].biasent;
+					tndarray[j].biasarray = GENMALLOC(
+						(tndarray[j].biasent) *
+						sizeof(int));
+					for (unsigned int i = 0U;
+					     (int)i < ndarray[j].biasent; i++) {
+						tndarray[j].biasarray[i] =
+							ndarray[j].biasarray[i];
 					}
 				}
-				tndarray[cntndarray].biases = GENMALLOC(f3d.row[f3d.col + 1] * sizeof(int));
-				tndarray[cntndarray].snames = GENMALLOC(f3d.row[f3d.col + 1] * sizeof(char *));
-				tndarray[cntndarray].snameid = GENMALLOC(f3d.row[f3d.col + 1] * sizeof(int));
-				tndarray[cntndarray].norcall = GENMALLOC(f3d.row[f3d.col + 1] * sizeof(int));
-				tndarray[cntndarray].nname = GENMALLOC(f3d.row[f3d.col + 1] * sizeof(char *));
-				tndarray[cntndarray].treenodes = GENMALLOC(f3d.row[f3d.col + 1] * sizeof(struct rand_smc_node));
-				tndarray[cntndarray].entries = f3d.row[f3d.col + 1];
+				tndarray[cntndarray].biases = GENMALLOC(
+					f3d.row[f3d.col + 1] * sizeof(int));
+				tndarray[cntndarray].snames = GENMALLOC(
+					f3d.row[f3d.col + 1] * sizeof(char *));
+				tndarray[cntndarray].snameid = GENMALLOC(
+					f3d.row[f3d.col + 1] * sizeof(int));
+				tndarray[cntndarray].norcall = GENMALLOC(
+					f3d.row[f3d.col + 1] * sizeof(int));
+				tndarray[cntndarray].nname = GENMALLOC(
+					f3d.row[f3d.col + 1] * sizeof(char *));
+				tndarray[cntndarray].treenodes =
+					GENMALLOC(f3d.row[f3d.col + 1] *
+						  sizeof(struct rand_smc_node));
+				tndarray[cntndarray].entries =
+					f3d.row[f3d.col + 1];
 
 				/*
 				 * Populate bias tree with former values in tree
@@ -321,30 +367,62 @@ struct rand_smc_node *createsmctree(int *casz,
 				int cntbias = 0;
 				int bias_count = 0;
 
-				for (unsigned int j = 0U; (int)j < f3d.row[f3d.col + 1]; j++) {
-					tndarray[cntndarray].snames[j] = GENMALLOC(1 * sizeof(char[MAX_NAME_CHARS]));
-					strlcpy(tndarray[cntndarray].snames[j], f3d.fnamefifo[f3d.col + 1][j], MAX_NAME_CHARS);
-					tndarray[cntndarray].snameid[j] = f3d.fidfifo[f3d.col + 1][j];
-					tndarray[cntndarray].nname[j] = GENMALLOC(1 * sizeof(char[MAX_NAME_CHARS]));
-					strlcpy(tndarray[cntndarray].nname[j], f3d.nnfifo[f3d.col + 1][j], MAX_NAME_CHARS);
-					tndarray[cntndarray].biases[j] = f3d.biasfifo[f3d.col + 1][j];
-					cntbias += tndarray[cntndarray].biases[j];
-					if (strcmp(tndarray[cntndarray].snames[j], "none") != 0) {
-						strlcpy(tndarray[cntndarray].snames[j], f3d.fnamefifo[f3d.col + 1][j], MAX_NAME_CHARS);
-						tndarray[cntndarray].norcall[j] = 0;
-						tndarray[cntndarray].treenodes[j] = nrnode;
+				for (unsigned int j = 0U;
+				     (int)j < f3d.row[f3d.col + 1]; j++) {
+					tndarray[cntndarray]
+						.snames[j] = GENMALLOC(
+						1 *
+						sizeof(char[MAX_NAME_CHARS]));
+					strlcpy(tndarray[cntndarray].snames[j],
+						f3d.fnamefifo[f3d.col + 1][j],
+						MAX_NAME_CHARS);
+					tndarray[cntndarray].snameid[j] =
+						f3d.fidfifo[f3d.col + 1][j];
+					tndarray[cntndarray]
+						.nname[j] = GENMALLOC(
+						1 *
+						sizeof(char[MAX_NAME_CHARS]));
+					strlcpy(tndarray[cntndarray].nname[j],
+						f3d.nnfifo[f3d.col + 1][j],
+						MAX_NAME_CHARS);
+					tndarray[cntndarray].biases[j] =
+						f3d.biasfifo[f3d.col + 1][j];
+					cntbias +=
+						tndarray[cntndarray].biases[j];
+					if (strcmp(tndarray[cntndarray]
+							   .snames[j],
+						   "none") != 0) {
+						strlcpy(tndarray[cntndarray]
+								.snames[j],
+							f3d.fnamefifo[f3d.col +
+								      1][j],
+							MAX_NAME_CHARS);
+						tndarray[cntndarray]
+							.norcall[j] = 0;
+						tndarray[cntndarray]
+							.treenodes[j] = nrnode;
 					} else {
-						tndarray[cntndarray].norcall[j] = 1;
-						tndarray[cntndarray].treenodes[j] = tndarray[treenodetrack];
+						tndarray[cntndarray]
+							.norcall[j] = 1;
+						tndarray[cntndarray]
+							.treenodes[j] =
+							tndarray[treenodetrack];
 						treenodetrack++;
 					}
 				}
 
 				tndarray[cntndarray].biasent = cntbias;
-				tndarray[cntndarray].biasarray = GENMALLOC((tndarray[cntndarray].biasent) * sizeof(int));
-				for (unsigned int j = 0U; j < tndarray[cntndarray].entries; j++) {
-					for (unsigned int i = 0U; i < tndarray[cntndarray].biases[j]; i++) {
-						tndarray[cntndarray].biasarray[bias_count] = j;
+				tndarray[cntndarray].biasarray = GENMALLOC(
+					(tndarray[cntndarray].biasent) *
+					sizeof(int));
+				for (unsigned int j = 0U;
+				     j < tndarray[cntndarray].entries; j++) {
+					for (unsigned int i = 0U;
+					     i < tndarray[cntndarray].biases[j];
+					     i++) {
+						tndarray[cntndarray]
+							.biasarray[bias_count] =
+							j;
 						bias_count++;
 					}
 				}
@@ -353,12 +431,16 @@ struct rand_smc_node *createsmctree(int *casz,
 				 * Free memory of old bias tree
 				 */
 				if (cntndarray > 0) {
-					for (unsigned int j = 0U; (int)j < cntndarray; j++) {
+					for (unsigned int j = 0U;
+					     (int)j < cntndarray; j++) {
 						for (unsigned int i = 0U;
-						     (int)i < ndarray[j].entries;
+						     (int)i <
+						     ndarray[j].entries;
 						     i++) {
-							GENFREE(ndarray[j].snames[i]);
-							GENFREE(ndarray[j].nname[i]);
+							GENFREE(ndarray[j].snames
+									[i]);
+							GENFREE(ndarray[j].nname
+									[i]);
 						}
 						GENFREE(ndarray[j].biases);
 						GENFREE(ndarray[j].norcall);
@@ -372,7 +454,8 @@ struct rand_smc_node *createsmctree(int *casz,
 				}
 
 				/*
-				 * Move pointers to new bias tree to current tree
+				 * Move pointers to new bias tree to current
+				 * tree
 				 */
 				ndarray = tndarray;
 				cntndarray++;
@@ -380,7 +463,8 @@ struct rand_smc_node *createsmctree(int *casz,
 				/*
 				 * Free raw data
 				 */
-				for (unsigned int j = 0U; (int)j < f3d.row[f3d.col + 1]; j++) {
+				for (unsigned int j = 0U;
+				     (int)j < f3d.row[f3d.col + 1]; j++) {
 					GENFREE(f3d.nnfifo[f3d.col + 1][j]);
 					GENFREE(f3d.fnamefifo[f3d.col + 1][j]);
 				}
@@ -397,7 +481,8 @@ struct rand_smc_node *createsmctree(int *casz,
 		 */
 		if (fdt32_to_cpu(rval) == 9) {
 			for (unsigned int i = 0U; (int)i < f3d.col; i++) {
-				for (unsigned int j = 0U; (int)j < f3d.row[i]; j++) {
+				for (unsigned int j = 0U; (int)j < f3d.row[i];
+				     j++) {
 					GENFREE(f3d.nnfifo[i][j]);
 					GENFREE(f3d.fnamefifo[i][j]);
 				}
@@ -429,7 +514,8 @@ test_result_t init_smc_fuzzing(void)
 	 */
 	tmod.memptr = (void *)tmod.memory;
 	tmod.memptrend = (void *)tmod.memory;
-	tmod.maxmemblk = ((TOTALMEMORYSIZE / BLKSPACEDIV) / sizeof(struct memblk));
+	tmod.maxmemblk =
+		((TOTALMEMORYSIZE / BLKSPACEDIV) / sizeof(struct memblk));
 	tmod.nmemblk = 1;
 	tmod.memptr->address = 0U;
 	tmod.memptr->size = TOTALMEMORYSIZE - (TOTALMEMORYSIZE / BLKSPACEDIV);
@@ -466,31 +552,32 @@ test_result_t smc_fuzzing_instance(uint32_t seed)
 	srand(seed);
 
 	/*
-	 * Code to traverse the bias tree and select function based on the biaes within
+	 * Code to traverse the bias tree and select function based on the biaes
+	 * within
 	 *
-	 * The algorithm starts with the first node to pull up the biasarray.  The
-	 * array is specified as a series of values that reflect the bias of the nodes
-	 * in question. So for instance if there are three nodes with a bias of 2,5,7
-	 * the biasarray would have the following constituency:
+	 * The algorithm starts with the first node to pull up the biasarray.
+	 * The array is specified as a series of values that reflect the bias of
+	 * the nodes in question. So for instance if there are three nodes with
+	 * a bias of 2,5,7 the biasarray would have the following constituency:
 	 *
 	 * 0,0,1,1,1,1,1,2,2,2,2,2,2,2.
 	 *
 	 * Mapping 0 as node 1, 1 as node 2, and 2 as node 3.
-	 * The biasent variable contains the count of the size of the biasarray which
-	 * provides the input for random selection.  This is subsequently applied as an
-	 * index to the biasarray.  The selection pulls up the node and then is checked
-	 * for whether it is a leaf or tree node using the norcall variable.
-	 * If it is a leaf then the bias tree traversal ends with an SMC call.
-	 * If it is a tree node then the process begins again with
-	 * another loop to continue the process of selection until an eventual leaf
-	 * node is found.
+	 * The biasent variable contains the count of the size of the biasarray
+	 * which provides the input for random selection.  This is subsequently
+	 * applied as an index to the biasarray.  The selection pulls up the
+	 * node and then is checked for whether it is a leaf or tree node using
+	 * the norcall variable. If it is a leaf then the bias tree traversal
+	 * ends with an SMC call. If it is a tree node then the process begins
+	 * again with another loop to continue the process of selection until an
+	 * eventual leaf node is found.
 	 */
 	for (unsigned int i = 0U; i < SMC_FUZZ_CALLS_PER_INSTANCE; i++) {
 		tlnode = &ndarray[cntndarray - 1];
 		int nd = 0;
 
 		while (nd == 0) {
-			int nch = rand()%tlnode->biasent;
+			int nch = rand() % tlnode->biasent;
 			int selent = tlnode->biasarray[nch];
 
 			if (tlnode->norcall[selent] == 0) {
@@ -572,10 +659,9 @@ test_result_t smc_fuzzer_execute(void)
 	 * Print out the smc fuzzer parameters so this test can be replicated.
 	 */
 	printf("SMC fuzz build parameters to recreate this test:\n");
-	printf("  SMC_FUZZ_INSTANCE_COUNT=%u\n",
-		SMC_FUZZ_INSTANCE_COUNT);
+	printf("  SMC_FUZZ_INSTANCE_COUNT=%u\n", SMC_FUZZ_INSTANCE_COUNT);
 	printf("  SMC_FUZZ_CALLS_PER_INSTANCE=%u\n",
-		SMC_FUZZ_CALLS_PER_INSTANCE);
+	       SMC_FUZZ_CALLS_PER_INSTANCE);
 	printf("  SMC_FUZZ_SEEDS=0x%x", seeds[0]);
 	for (i = 1U; i < SMC_FUZZ_INSTANCE_COUNT; i++) {
 		printf(",0x%x", seeds[i]);
@@ -604,15 +690,15 @@ test_result_t smc_fuzzing_top(void)
 			if (smc_fuzzer_execute() != TEST_RESULT_SUCCESS)
 				return TEST_RESULT_FAIL;
 		} else {
-			/* Power on other CPU to run through fuzzing instructions */
+			/* Power on other CPU to run through fuzzing
+			 * instructions */
 			ret = tftf_cpu_on(target_mpid,
-					(uintptr_t) smc_fuzzer_execute, 0);
+					  (uintptr_t)smc_fuzzer_execute, 0);
 			if (ret != PSCI_E_SUCCESS) {
 				ERROR("CPU ON failed for 0x%llx\n",
-						(unsigned long long) target_mpid);
+				      (unsigned long long)target_mpid);
 				return TEST_RESULT_FAIL;
 			}
-
 		}
 	}
 

@@ -47,10 +47,10 @@ static test_result_t sdei_event_check_pstate(void)
 	long long ret;
 
 	ret = sdei_event_register(0, sdei_check_pstate_entrypoint, EV_COOKIE,
-		SDEI_REGF_RM_PE, read_mpidr_el1());
+				  SDEI_REGF_RM_PE, read_mpidr_el1());
 	if (ret < 0) {
 		tftf_testcase_printf("SDEI event register failed: 0x%llx\n",
-			ret);
+				     ret);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -77,11 +77,12 @@ static test_result_t sdei_event_check_pstate(void)
 	u_register_t all_interrupts_masked = 0x3c0;
 
 	if (daif != all_interrupts_masked) {
-		tftf_testcase_printf("Interrupts were not correctly masked " \
-				     "during SDEI event signal\n" \
-				     "Expected DAIF: 0x%lx, " \
-				     "Actual DAIF: 0x%lx\n",
-				     all_interrupts_masked, daif);
+		tftf_testcase_printf(
+			"Interrupts were not correctly masked "
+			"during SDEI event signal\n"
+			"Expected DAIF: 0x%lx, "
+			"Actual DAIF: 0x%lx\n",
+			all_interrupts_masked, daif);
 		ret = -1;
 		goto err1;
 	}
@@ -89,11 +90,12 @@ static test_result_t sdei_event_check_pstate(void)
 	u_register_t use_sp_elx = 0x1;
 
 	if (sp != use_sp_elx) {
-		tftf_testcase_printf("The SPSel PSTATE Bit was not set " \
-				     "correctly during SDEI event signal\n" \
-				     "Expected SPSel: 0x%lx, " \
-				     "Actual SPSel: 0x%lx\n",
-				     use_sp_elx, sp);
+		tftf_testcase_printf(
+			"The SPSel PSTATE Bit was not set "
+			"correctly during SDEI event signal\n"
+			"Expected SPSel: 0x%lx, "
+			"Actual SPSel: 0x%lx\n",
+			use_sp_elx, sp);
 		ret = -1;
 		goto err1;
 	}
@@ -127,19 +129,22 @@ static test_result_t sdei_event_check_pstate(void)
 
 			ret = sdei_event_signal(read_mpidr_el1());
 			if (ret < 0) {
-				tftf_testcase_printf("SDEI event signal failed: " \
-						"0x%llx\n", ret);
+				tftf_testcase_printf(
+					"SDEI event signal failed: "
+					"0x%llx\n",
+					ret);
 				goto err2;
 			}
 			sdei_handler_done();
 			if (pan != expected_pan) {
-				tftf_testcase_printf("PAN PSTATE bit not maintained" \
-						"during SDEI event signal " \
-						"when the SPAN bit is unset and " \
-						"HCR_EL2.TGE != 1 \n" \
-						"Expected PAN: 0x%lx, " \
-						"Actual PAN: 0x%lx\n",
-						expected_pan, pan);
+				tftf_testcase_printf(
+					"PAN PSTATE bit not maintained"
+					"during SDEI event signal "
+					"when the SPAN bit is unset and "
+					"HCR_EL2.TGE != 1 \n"
+					"Expected PAN: 0x%lx, "
+					"Actual PAN: 0x%lx\n",
+					expected_pan, pan);
 				ret = -1;
 				goto err1;
 			}
@@ -149,23 +154,25 @@ static test_result_t sdei_event_check_pstate(void)
 			write_pan(expected_pan);
 			ret = sdei_event_signal(read_mpidr_el1());
 			if (ret < 0) {
-				tftf_testcase_printf("SDEI event signal failed: " \
-						"0x%llx\n", ret);
+				tftf_testcase_printf(
+					"SDEI event signal failed: "
+					"0x%llx\n",
+					ret);
 				goto err2;
 			}
 			sdei_handler_done();
 			if (pan != expected_pan) {
-				tftf_testcase_printf("PAN PSTATE bit not maintained" \
-						"during SDEI event signal " \
-						"when the SPAN bit is unset and " \
-						"HCR_EL2.TGE != 1 \n" \
-						"Expected PAN: 0x%lx, " \
-						"Actual PAN: 0x%lx\n",
-						expected_pan, pan);
+				tftf_testcase_printf(
+					"PAN PSTATE bit not maintained"
+					"during SDEI event signal "
+					"when the SPAN bit is unset and "
+					"HCR_EL2.TGE != 1 \n"
+					"Expected PAN: 0x%lx, "
+					"Actual PAN: 0x%lx\n",
+					expected_pan, pan);
 				ret = -1;
 				goto err1;
 			}
-
 		}
 
 		/*
@@ -178,16 +185,19 @@ static test_result_t sdei_event_check_pstate(void)
 
 		ret = sdei_event_signal(read_mpidr_el1());
 		if (ret < 0) {
-			tftf_testcase_printf("SDEI event signal failed: " \
-					     "0x%llx\n", ret);
+			tftf_testcase_printf(
+				"SDEI event signal failed: "
+				"0x%llx\n",
+				ret);
 			goto err2;
 		}
 		sdei_handler_done();
 		if (pan != PAN_BIT) {
-			tftf_testcase_printf("PAN PSTATE bit was not forced " \
-					"to 1 during SDEI event signal " \
-					"when the SPAN bit is unset and " \
-					"HCR_EL2.TGE = 1 \n");
+			tftf_testcase_printf(
+				"PAN PSTATE bit was not forced "
+				"to 1 during SDEI event signal "
+				"when the SPAN bit is unset and "
+				"HCR_EL2.TGE = 1 \n");
 			ret = -1;
 			goto err1;
 		}
@@ -209,17 +219,20 @@ static test_result_t sdei_event_check_pstate(void)
 		ret = sdei_event_signal(read_mpidr_el1());
 
 		if (ret < 0) {
-			tftf_testcase_printf("SDEI event signal failed: " \
-					     "0x%llx\n", ret);
+			tftf_testcase_printf(
+				"SDEI event signal failed: "
+				"0x%llx\n",
+				ret);
 			goto err2;
 		}
 		sdei_handler_done();
 		if (dit != expected_dit) {
-			tftf_testcase_printf("DIT PSTATE bit not maintained " \
-					     "during SDEI event signal\n" \
-					     "Expected DIT: 0x%lx, " \
-					     "Actual DIT: 0x%lx\n",
-					     expected_dit, dit);
+			tftf_testcase_printf(
+				"DIT PSTATE bit not maintained "
+				"during SDEI event signal\n"
+				"Expected DIT: 0x%lx, "
+				"Actual DIT: 0x%lx\n",
+				expected_dit, dit);
 			ret = -1;
 			goto err1;
 		}
@@ -229,17 +242,20 @@ static test_result_t sdei_event_check_pstate(void)
 		write_dit(expected_dit);
 		ret = sdei_event_signal(read_mpidr_el1());
 		if (ret < 0) {
-			tftf_testcase_printf("SDEI event signal failed: " \
-					     "0x%llx\n", ret);
+			tftf_testcase_printf(
+				"SDEI event signal failed: "
+				"0x%llx\n",
+				ret);
 			goto err2;
 		}
 		sdei_handler_done();
 		if (dit != expected_dit) {
-			tftf_testcase_printf("DIT PSTATE bit not maintained " \
-					     "during SDEI event signal\n" \
-					     "Expected DIT: 0x%lx, " \
-					     "Actual DIT: 0x%lx\n",
-					     expected_dit, dit);
+			tftf_testcase_printf(
+				"DIT PSTATE bit not maintained "
+				"during SDEI event signal\n"
+				"Expected DIT: 0x%lx, "
+				"Actual DIT: 0x%lx\n",
+				expected_dit, dit);
 			ret = -1;
 			goto err1;
 		}

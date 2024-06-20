@@ -32,9 +32,10 @@ test_result_t test_smc_tsp_std_fns_call(void)
 	std_svc_args.fid = SMC_TOS_CALL_COUNT;
 	ret = tftf_smc(&std_svc_args);
 	if (ret.ret0 != TSP_NUM_FID) {
-		tftf_testcase_printf("Wrong Call Count: expected %u,\n"
-				     " got %llu\n", TSP_NUM_FID,
-				     (unsigned long long)ret.ret0);
+		tftf_testcase_printf(
+			"Wrong Call Count: expected %u,\n"
+			" got %llu\n",
+			TSP_NUM_FID, (unsigned long long)ret.ret0);
 		return TEST_RESULT_FAIL;
 	}
 
@@ -42,12 +43,13 @@ test_result_t test_smc_tsp_std_fns_call(void)
 	std_svc_args.fid = SMC_TOS_REVISION;
 	ret = tftf_smc(&std_svc_args);
 	if ((ret.ret0 != TSP_REVISION_MAJOR) ||
-		 ret.ret1 != TSP_REVISION_MINOR) {
-		tftf_testcase_printf("Wrong Revision: expected {%u.%u}\n"
-				     "                     got {%llu.%llu}\n",
-				     TSP_REVISION_MAJOR, TSP_REVISION_MINOR,
-				     (unsigned long long)ret.ret0,
-				     (unsigned long long)ret.ret1);
+	    ret.ret1 != TSP_REVISION_MINOR) {
+		tftf_testcase_printf(
+			"Wrong Revision: expected {%u.%u}\n"
+			"                     got {%llu.%llu}\n",
+			TSP_REVISION_MAJOR, TSP_REVISION_MINOR,
+			(unsigned long long)ret.ret0,
+			(unsigned long long)ret.ret1);
 		return TEST_RESULT_FAIL;
 	}
 
