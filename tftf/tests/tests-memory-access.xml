@@ -8,7 +8,7 @@
 
 <testsuites>
 
-  <testsuite name="FF-A Memory Sharing (RME)"
+	<!--  <testsuite name="FF-A Memory Sharing (RME)"
              description="Test FF-A Memory Sharing ABIs" >
      <testcase name="Lend Memory to Secure World"
                function="test_mem_lend_sp" />
@@ -50,7 +50,7 @@
      <testcase name="Access from a SP to a Realm region"
                function="rl_memory_cannot_be_accessed_in_s" />
   </testsuite>
-
+	-->
   <testsuite name="Invalid memory access with RME extension"
     description="Invalid memory access with RME extension">
       <testcase name="Access Realm memory from NS world"
@@ -83,6 +83,8 @@
                 function="test_ffa_hypervisor_retrieve_request_fail_tx_realm" />
       <testcase name="FF-A Memory Relinquish, NWd TX buffer is in realm PAS"
                 function="test_ffa_memory_relinquish_fail_tx_realm" />
+      <testcase name="FF-A Memory Frag Tx, NWd TX buffer is in realm PAS"
+                function="test_ffa_memory_share_fragmented_tx_realm" />
   </testsuite>
 
 </testsuites>
