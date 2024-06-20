@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f84376b4_3b8d77fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-06-20T15:29:13Z",
+      "side": 1,
+      "message": "which test is failing? All tftf tests pass in CI\nhttps://ci.trustedfirmware.org/view/TF-A/job/tf-a-tftf-main/411/",
+      "revId": "97b7e4823b539363bd9f8be9bc0110b2af442058",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
