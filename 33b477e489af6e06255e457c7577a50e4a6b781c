@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4072df83_50dfec6d",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-06-20T21:13:06Z",
+      "side": 1,
+      "message": "No values to check?  No failure possible?",
+      "range": {
+        "startLine": 148,
+        "startChar": 1,
+        "endLine": 148,
+        "endChar": 17
+      },
+      "revId": "33b477e489af6e06255e457c7577a50e4a6b781c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
