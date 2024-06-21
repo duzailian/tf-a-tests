@@ -22,6 +22,30 @@
       },
       "revId": "33b477e489af6e06255e457c7577a50e4a6b781c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9331a54_f6447366",
+        "filename": "tftf/tests/extensions/fgt/test_fgt.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2024-06-21T17:21:16Z",
+      "side": 1,
+      "message": "this is a simple test to check for register presence. This test will pass if FGT2 is supported and if not it\u0027ll be skipped and hence doesn\u0027t have a failure case.",
+      "parentUuid": "4072df83_50dfec6d",
+      "range": {
+        "startLine": 148,
+        "startChar": 1,
+        "endLine": 148,
+        "endChar": 17
+      },
+      "revId": "33b477e489af6e06255e457c7577a50e4a6b781c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
