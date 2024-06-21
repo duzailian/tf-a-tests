@@ -52,6 +52,24 @@
       "parentUuid": "ee50b225_275e10a6",
       "revId": "97b7e4823b539363bd9f8be9bc0110b2af442058",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "edfd32a3_e2556233",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-06-21T08:11:04Z",
+      "side": 1,
+      "message": "Ah, I must have got confused somewhere. I\u0027ll abandon this patch.",
+      "parentUuid": "0947c65b_27baf060",
+      "revId": "97b7e4823b539363bd9f8be9bc0110b2af442058",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
