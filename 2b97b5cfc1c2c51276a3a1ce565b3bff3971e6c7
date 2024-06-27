@@ -16,6 +16,24 @@
       "message": "Could you provide a description of all refactorings?",
       "revId": "2b97b5cfc1c2c51276a3a1ce565b3bff3971e6c7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6c86469_9725c11a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-06-27T13:10:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f77c3250_c74a0516",
+      "revId": "2b97b5cfc1c2c51276a3a1ce565b3bff3971e6c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
