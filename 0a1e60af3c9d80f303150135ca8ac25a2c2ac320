@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38c1a06e_1d2f579a",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-06-27T12:25:32Z",
+      "side": 1,
+      "message": "nit: remove these blank lines.",
+      "revId": "0a1e60af3c9d80f303150135ca8ac25a2c2ac320",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
