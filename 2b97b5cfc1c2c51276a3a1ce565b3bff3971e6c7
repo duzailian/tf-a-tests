@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f77c3250_c74a0516",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-06-27T09:56:20Z",
+      "side": 1,
+      "message": "Could you provide a description of all refactorings?",
+      "revId": "2b97b5cfc1c2c51276a3a1ce565b3bff3971e6c7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
