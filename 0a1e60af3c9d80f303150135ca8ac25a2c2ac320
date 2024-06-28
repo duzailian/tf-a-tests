@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a06e3fd_f9c3ec8f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2024-06-28T19:56:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "90c7aef4_be29fe0d",
+      "range": {
+        "startLine": 9,
+        "startChar": 36,
+        "endLine": 9,
+        "endChar": 62
+      },
+      "revId": "0a1e60af3c9d80f303150135ca8ac25a2c2ac320",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38c1a06e_1d2f579a",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-06-27T12:25:32Z",
       "side": 1,
       "message": "nit: remove these blank lines.",
+      "revId": "0a1e60af3c9d80f303150135ca8ac25a2c2ac320",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca8d610a_3115c1df",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 614,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2024-06-28T19:56:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "38c1a06e_1d2f579a",
       "revId": "0a1e60af3c9d80f303150135ca8ac25a2c2ac320",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
