@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8a1abf5_40e707ad",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_smccc.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-07-03T20:29:45Z",
+      "side": 1,
+      "message": "2024?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "2a426e74d71bd82c360ac4bdd77c8c164b50ac16",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
