@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "01557e75_47c7ecb7",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_setup_and_discovery.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-03T20:36:51Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "21d2e6fb_eec5047f",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "33a7ea4c7e1b31569dbc00768e61784dc54df221",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7993c919_7ee2749e",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-07-03T20:29:01Z",
       "side": 1,
       "message": "2024?",
+      "range": {
+        "startLine": 4,
+        "startChar": 21,
+        "endLine": 4,
+        "endChar": 25
+      },
+      "revId": "33a7ea4c7e1b31569dbc00768e61784dc54df221",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d25a7a9_ae41566b",
+        "filename": "tftf/tests/tests-spm.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-03T20:36:51Z",
+      "side": 1,
+      "message": "No new feature or test is being added and the change is practically very simple. Hence, resolving the review comment to merge the patches as they are blocker for CI testing.",
+      "parentUuid": "7993c919_7ee2749e",
       "range": {
         "startLine": 4,
         "startChar": 21,
