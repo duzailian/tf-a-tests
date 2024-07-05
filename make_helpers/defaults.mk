@@ -55,3 +55,8 @@ ENABLE_REALM_PAYLOAD_TESTS	:= 0
 # Use the Firmware Handoff framework to receive configurations from preceding
 # bootloader.
 TRANSFER_LIST		:= 0
+
+# Whether the partiton manager is TF-A EL3 SPMC or Hafnium SPMC to know if only
+# a limited set of features are supported. Default valaue is 0 meaning we are
+# assuming existence of Hafnium SPMC which supports extensive FF-A feature set.
+EL3_SPMC		:= 0
