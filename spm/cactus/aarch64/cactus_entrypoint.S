@@ -35,9 +35,12 @@ secondary_cold_entry:
 	 */
 	mov	x20, x0
 
-	/* The SPMC passes the vCPU id in vMPIDR low bits. */
+	/*
+	 * The SPMC passes the vCPU id in vMPIDR low bits. Hence, keep the
+	 * lower 24 bits that hold Aff2/1/0 information and mask the rest.
+	 */
 	mrs	x0, mpidr_el1
-	bic	x0, x0, #0x80000000
+	and	x0, x0, #0xFFFFFF
 
 	/*
 	 * To maintain legacy, the SPMC passes the physical core id through x4.
