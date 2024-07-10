@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "878990d4_65a28617",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001369
+      },
+      "writtenOn": "2024-07-10T15:24:43Z",
+      "side": 1,
+      "message": "Related patchset in TF-A:\n    - https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/29804",
+      "revId": "03d8e0b6e748db50cc7f5febc0172a5d9262af69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
