@@ -16,6 +16,29 @@
       "message": "Related patchset in TF-A:\n    - https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/29804",
       "revId": "03d8e0b6e748db50cc7f5febc0172a5d9262af69",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4075e4c_87be8a62",
+        "filename": "include/lib/transfer_list.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2024-07-10T16:24:57Z",
+      "side": 1,
+      "message": "nit: duplicate tabs",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 40
+      },
+      "revId": "03d8e0b6e748db50cc7f5febc0172a5d9262af69",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
