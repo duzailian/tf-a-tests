@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da395d8c_a2151836",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 1287,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-11T18:51:55Z",
+      "side": 1,
+      "message": "I am curious what role is tftf playing at various call sites in this test? relayer/OS Kernel/VM/hypervisor?",
+      "revId": "e793b73b4aec85d6be0490a153346c33b38471c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3be4de51_4e988b3a",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-11T18:51:55Z",
+      "side": 1,
+      "message": "It would be easier to understand if you could use VM_ID(x) macro here.",
+      "range": {
+        "startLine": 1294,
+        "startChar": 51,
+        "endLine": 1294,
+        "endChar": 52
+      },
+      "revId": "e793b73b4aec85d6be0490a153346c33b38471c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a920e854_cbac5019",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 1315,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-11T18:51:55Z",
+      "side": 1,
+      "message": "Is there a need for it? Can you put a sanity check for the memory region retrieved by the VM?",
+      "range": {
+        "startLine": 1315,
+        "startChar": 27,
+        "endLine": 1315,
+        "endChar": 29
+      },
+      "revId": "e793b73b4aec85d6be0490a153346c33b38471c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e7cd662_27b46432",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 1315,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-11T18:51:55Z",
+      "side": 1,
+      "message": "Is the memory retrieve invoked on behalf of VM1?",
+      "revId": "e793b73b4aec85d6be0490a153346c33b38471c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bdefe10_f4d684dc",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 1322,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-11T18:51:55Z",
+      "side": 1,
+      "message": "can you use VM_ID macro?",
+      "range": {
+        "startLine": 1322,
+        "startChar": 40,
+        "endLine": 1322,
+        "endChar": 42
+      },
+      "revId": "e793b73b4aec85d6be0490a153346c33b38471c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
