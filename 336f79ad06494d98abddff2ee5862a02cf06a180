@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "861b2f25_be74ded6",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 1405,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-11T19:11:40Z",
+      "side": 1,
+      "message": "shouldn\u0027t this always be send buffer?",
+      "range": {
+        "startLine": 1405,
+        "startChar": 24,
+        "endLine": 1405,
+        "endChar": 35
+      },
+      "revId": "336f79ad06494d98abddff2ee5862a02cf06a180",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
