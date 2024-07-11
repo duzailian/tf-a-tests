@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23fd54f1_a7684e30",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 1455,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-11T20:42:33Z",
+      "side": 1,
+      "message": "Any specific reason why you chose SP2 and not SP1",
+      "range": {
+        "startLine": 1455,
+        "startChar": 51,
+        "endLine": 1455,
+        "endChar": 59
+      },
+      "revId": "14a9240d8f124052718a791530a265d6220e844b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "741fd6f9_85bc577c",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 1496,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-11T20:42:33Z",
+      "side": 1,
+      "message": "In what capacity is tftf invoking FFA_MEM_RELINQUISH? Is it the owner or borrower of the shared memory region? I would appreciate if you could provide a comment in the preceding line.",
+      "revId": "14a9240d8f124052718a791530a265d6220e844b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
