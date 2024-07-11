@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d0e6f3b_8cad9d93",
+        "filename": "tftf/tests/extensions/ls64/test_ls64.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-07-11T13:28:01Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "802f79c6_71ae3001",
+      "range": {
+        "startLine": 38,
+        "startChar": 39,
+        "endLine": 38,
+        "endChar": 49
+      },
+      "revId": "d86829df3579dab189a06ee1699c63ae26ace364",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "738c30a3_f58659c4",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7be170fd_acfc5f32",
+        "filename": "tftf/tests/extensions/ls64/test_ls64.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-07-11T13:28:01Z",
+      "side": 1,
+      "message": "Actually we have three variants so kept this check explicit, as check at line 31\nchecks for not supported only. \nBut since other two variants are backwards compatible, I could still remove this.\nAnything greater than 0, works fine.",
+      "parentUuid": "738c30a3_f58659c4",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 62
+      },
+      "revId": "d86829df3579dab189a06ee1699c63ae26ace364",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "833786b8_ea7fd3b4",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-07-11T12:46:12Z",
       "side": 1,
       "message": "VERBOSE?",
+      "range": {
+        "startLine": 58,
+        "startChar": 3,
+        "endLine": 58,
+        "endChar": 7
+      },
+      "revId": "d86829df3579dab189a06ee1699c63ae26ace364",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae2d992a_1cdbed82",
+        "filename": "tftf/tests/extensions/ls64/test_ls64.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-07-11T13:28:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "833786b8_ea7fd3b4",
       "range": {
         "startLine": 58,
         "startChar": 3,
