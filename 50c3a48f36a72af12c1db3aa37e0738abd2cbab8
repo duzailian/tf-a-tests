@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49aefecd_ffcf7d68",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-11T19:05:55Z",
+      "side": 1,
+      "message": "For my own understanding: this VM does not exist (in the NWd software stack) right? I have posted few other questions to better understand the test environment.",
+      "range": {
+        "startLine": 10,
+        "startChar": 15,
+        "endLine": 10,
+        "endChar": 17
+      },
+      "revId": "50c3a48f36a72af12c1db3aa37e0738abd2cbab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "acaf6d0d_7d5b9c50",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-11T19:05:55Z",
+      "side": 1,
+      "message": "TX?",
+      "range": {
+        "startLine": 10,
+        "startChar": 36,
+        "endLine": 10,
+        "endChar": 38
+      },
+      "revId": "50c3a48f36a72af12c1db3aa37e0738abd2cbab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c32c1cc6_5f92b197",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-11T19:05:55Z",
+      "side": 1,
+      "message": "nitpick: limit to 72 characters",
+      "revId": "50c3a48f36a72af12c1db3aa37e0738abd2cbab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "517010eb_198bcf0b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 1345,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-11T19:05:55Z",
+      "side": 1,
+      "message": "VM_ID",
+      "range": {
+        "startLine": 1345,
+        "startChar": 51,
+        "endLine": 1345,
+        "endChar": 52
+      },
+      "revId": "50c3a48f36a72af12c1db3aa37e0738abd2cbab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b831572c_ca37099d",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 1408,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-11T19:05:55Z",
+      "side": 1,
+      "message": "can you clarify who is relinquishing the memory? is it VM1 or tftf/hypervisor?",
+      "revId": "50c3a48f36a72af12c1db3aa37e0738abd2cbab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
