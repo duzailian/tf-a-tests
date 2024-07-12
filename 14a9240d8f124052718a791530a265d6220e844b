@@ -105,6 +105,24 @@
       "parentUuid": "741fd6f9_85bc577c",
       "revId": "14a9240d8f124052718a791530a265d6220e844b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19c1c47f_24ab5536",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 1496,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-12T17:10:56Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "ffc7126a_6447b650",
+      "revId": "14a9240d8f124052718a791530a265d6220e844b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
