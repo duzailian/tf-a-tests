@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cfa8eace_636ace28",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 1287,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-07-12T10:18:19Z",
+      "side": 1,
+      "message": "relayer.\nThere are no VMs. So it just \"pretends\" there are with the IDs provided. If IDs are consistently used, that just works.\nIn fact, this is the case for most (if not all) the spm tests in tftf.",
+      "parentUuid": "da395d8c_a2151836",
+      "revId": "e793b73b4aec85d6be0490a153346c33b38471c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3be4de51_4e988b3a",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
         "patchSetId": 17
@@ -31,6 +49,30 @@
       "writtenOn": "2024-07-11T18:51:55Z",
       "side": 1,
       "message": "It would be easier to understand if you could use VM_ID(x) macro here.",
+      "range": {
+        "startLine": 1294,
+        "startChar": 51,
+        "endLine": 1294,
+        "endChar": 52
+      },
+      "revId": "e793b73b4aec85d6be0490a153346c33b38471c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7dac5dc8_8c761403",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-07-12T10:18:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3be4de51_4e988b3a",
       "range": {
         "startLine": 1294,
         "startChar": 51,
@@ -81,6 +123,48 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe132d9c_b30fe722",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 1315,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-07-12T10:18:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e7cd662_27b46432",
+      "revId": "e793b73b4aec85d6be0490a153346c33b38471c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fdcd304_757643b2",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 1315,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-07-12T10:18:19Z",
+      "side": 1,
+      "message": "That type of coverage is in the Hafnium test suite.\nThe purpose of this is only about checking the access to the RXTX buffers from the SPMC, and the return FFA_ERROR(ABORTED) in the cases in which it handled GPF.",
+      "parentUuid": "a920e854_cbac5019",
+      "range": {
+        "startLine": 1315,
+        "startChar": 27,
+        "endLine": 1315,
+        "endChar": 29
+      },
+      "revId": "e793b73b4aec85d6be0490a153346c33b38471c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3bdefe10_f4d684dc",
@@ -94,6 +178,30 @@
       "writtenOn": "2024-07-11T18:51:55Z",
       "side": 1,
       "message": "can you use VM_ID macro?",
+      "range": {
+        "startLine": 1322,
+        "startChar": 40,
+        "endLine": 1322,
+        "endChar": 42
+      },
+      "revId": "e793b73b4aec85d6be0490a153346c33b38471c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9af75e6b_bc177dbf",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 1322,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-07-12T10:18:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3bdefe10_f4d684dc",
       "range": {
         "startLine": 1322,
         "startChar": 40,
