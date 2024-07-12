@@ -49,6 +49,54 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f7d04532_88fd1a9e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-07-12T10:24:04Z",
+      "side": 1,
+      "message": "It doesn\u0027t...\nBut this has been done in many other tests. Direct messaging tests, notifications, other memory sharing...\n\ntftf is mimicking the whole NWd software stack.",
+      "parentUuid": "49aefecd_ffcf7d68",
+      "range": {
+        "startLine": 10,
+        "startChar": 15,
+        "endLine": 10,
+        "endChar": 17
+      },
+      "revId": "50c3a48f36a72af12c1db3aa37e0738abd2cbab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb969366_c38d99c3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-07-12T10:24:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "acaf6d0d_7d5b9c50",
+      "range": {
+        "startLine": 10,
+        "startChar": 36,
+        "endLine": 10,
+        "endChar": 38
+      },
+      "revId": "50c3a48f36a72af12c1db3aa37e0738abd2cbab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c32c1cc6_5f92b197",
         "filename": "/COMMIT_MSG",
         "patchSetId": 18
@@ -60,6 +108,24 @@
       "writtenOn": "2024-07-11T19:05:55Z",
       "side": 1,
       "message": "nitpick: limit to 72 characters",
+      "revId": "50c3a48f36a72af12c1db3aa37e0738abd2cbab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c436b491_07995afb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-07-12T10:24:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c32c1cc6_5f92b197",
       "revId": "50c3a48f36a72af12c1db3aa37e0738abd2cbab8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -87,6 +153,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "401575cd_7051f458",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 1345,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-07-12T10:24:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "517010eb_198bcf0b",
+      "range": {
+        "startLine": 1345,
+        "startChar": 51,
+        "endLine": 1345,
+        "endChar": 52
+      },
+      "revId": "50c3a48f36a72af12c1db3aa37e0738abd2cbab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b831572c_ca37099d",
@@ -100,6 +190,24 @@
       "writtenOn": "2024-07-11T19:05:55Z",
       "side": 1,
       "message": "can you clarify who is relinquishing the memory? is it VM1 or tftf/hypervisor?",
+      "revId": "50c3a48f36a72af12c1db3aa37e0738abd2cbab8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "644616f1_d636a154",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 1408,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-07-12T10:24:04Z",
+      "side": 1,
+      "message": "tftf sits at NS-EL2.\nIn a system with VM + Hypervisor, here is the sequence of calls:\nVM -\u003e Hyp -\u003e SPMC. (ignoring spmd)\n\nTFTF replaces all the NWd software stack, and it sits where Hyp is. TFTF -\u003e SPMC\nFrom the SPMC\u0027s perspective the calls the same as in the previous case.",
+      "parentUuid": "b831572c_ca37099d",
       "revId": "50c3a48f36a72af12c1db3aa37e0738abd2cbab8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
