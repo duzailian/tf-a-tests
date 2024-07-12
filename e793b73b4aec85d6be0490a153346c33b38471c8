@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "31ba9253_de27e7df",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 1287,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-12T16:59:02Z",
+      "side": 1,
+      "message": "Okay. For benefit of everyone who might be looking into this test case in future, can you put it as a comment here?",
+      "parentUuid": "cfa8eace_636ace28",
+      "revId": "e793b73b4aec85d6be0490a153346c33b38471c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3be4de51_4e988b3a",
         "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
         "patchSetId": 17
@@ -155,6 +173,30 @@
       "side": 1,
       "message": "That type of coverage is in the Hafnium test suite.\nThe purpose of this is only about checking the access to the RXTX buffers from the SPMC, and the return FFA_ERROR(ABORTED) in the cases in which it handled GPF.",
       "parentUuid": "a920e854_cbac5019",
+      "range": {
+        "startLine": 1315,
+        "startChar": 27,
+        "endLine": 1315,
+        "endChar": 29
+      },
+      "revId": "e793b73b4aec85d6be0490a153346c33b38471c8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d0a5760_87e8d719",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 17
+      },
+      "lineNbr": 1315,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-12T16:59:02Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "9fdcd304_757643b2",
       "range": {
         "startLine": 1315,
         "startChar": 27,
