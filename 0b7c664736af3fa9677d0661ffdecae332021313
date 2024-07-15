@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e3f086c_f277474e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-07-15T14:45:43Z",
+      "side": 1,
+      "message": "Nit: Should this be capital to be consistent with description?",
+      "range": {
+        "startLine": 7,
+        "startChar": 33,
+        "endLine": 7,
+        "endChar": 35
+      },
+      "revId": "0b7c664736af3fa9677d0661ffdecae332021313",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
