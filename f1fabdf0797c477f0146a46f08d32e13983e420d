@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96b356e5_e3983a65",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-07-16T15:12:32Z",
+      "side": 1,
+      "message": "EL3 SPMC has one test currently spm-l3-boot-tests/nil,fvp-el3-spmc-tsp,nil:fvp-tsp.rootfs\n\nIs it desirable to move it into this new el3 spmc test suite for consistency?",
+      "revId": "f1fabdf0797c477f0146a46f08d32e13983e420d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
