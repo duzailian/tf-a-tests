@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37602003_2a9e3e0e",
+        "filename": "tftf/tests/extensions/ls64/test_ls64.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2024-07-17T20:05:56Z",
+      "side": 1,
+      "message": "nit: normal",
+      "range": {
+        "startLine": 49,
+        "startChar": 64,
+        "endLine": 49,
+        "endChar": 70
+      },
+      "revId": "e0316f03a62eb01d409adafe9b8137a9963f4ff7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
