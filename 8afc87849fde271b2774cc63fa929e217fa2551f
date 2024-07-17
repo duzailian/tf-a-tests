@@ -91,6 +91,29 @@
       },
       "revId": "8afc87849fde271b2774cc63fa929e217fa2551f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "477f36bd_a097898b",
+        "filename": "make_helpers/defaults.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-07-17T08:26:17Z",
+      "side": 1,
+      "message": "Would it be preferable to align to same build option as TF-A\u0027s (SPMC_AT_EL3) for consistency?",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 8
+      },
+      "revId": "8afc87849fde271b2774cc63fa929e217fa2551f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
