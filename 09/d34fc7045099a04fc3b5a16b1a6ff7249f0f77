@@ -1,0 +1,10 @@
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Owner-Review+1: Karl Meakin <karl.meakin@ARM.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Review+1: Soby Mathew <soby.mathew@arm.com>
+Allow-CI+2: Joao Alves <joao.alves@arm.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Thu, 18 Jul 2024 16:48:33 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/30027
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
