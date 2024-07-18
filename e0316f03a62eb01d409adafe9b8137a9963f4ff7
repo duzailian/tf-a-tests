@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3073e04_1af30f5b",
+        "filename": "plat/arm/fvp/fvp_def.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-07-18T16:48:39Z",
+      "side": 1,
+      "message": "Discussed offline.\nNaming has been improvised as insisted.",
+      "parentUuid": "87ccb13c_85709be8",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 20
+      },
+      "revId": "e0316f03a62eb01d409adafe9b8137a9963f4ff7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d4dc39e8_3caa2c95",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-07-18T08:05:05Z",
       "side": 1,
       "message": "Looks like we mapped bigger region: 0x1d000000 - 0x1d10000. Any specific reason for this?",
+      "range": {
+        "startLine": 44,
+        "startChar": 35,
+        "endLine": 44,
+        "endChar": 58
+      },
+      "revId": "e0316f03a62eb01d409adafe9b8137a9963f4ff7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0d9646b_578bcf58",
+        "filename": "tftf/tests/extensions/ls64/test_ls64.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-07-18T16:48:39Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "d4dc39e8_3caa2c95",
       "range": {
         "startLine": 44,
         "startChar": 35,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1013bc0f_5075069b",
+        "filename": "tftf/tests/extensions/ls64/test_ls64.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-07-18T16:48:39Z",
+      "side": 1,
+      "message": "Discussed offline.\nIts mostly based on fvp configurations.\nAs the primary aim of this test case is towards testing/verifying the execution of LD64B/ST64B instructions without any dependency from EL3, we are continuing with the existing implementation.",
+      "parentUuid": "254fb7db_85248be6",
+      "range": {
+        "startLine": 45,
+        "startChar": 39,
+        "endLine": 46,
+        "endChar": 26
+      },
+      "revId": "e0316f03a62eb01d409adafe9b8137a9963f4ff7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37602003_2a9e3e0e",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-07-17T20:05:56Z",
       "side": 1,
       "message": "nit: normal",
+      "range": {
+        "startLine": 49,
+        "startChar": 64,
+        "endLine": 49,
+        "endChar": 70
+      },
+      "revId": "e0316f03a62eb01d409adafe9b8137a9963f4ff7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7baa1291_004aa0db",
+        "filename": "tftf/tests/extensions/ls64/test_ls64.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-07-18T16:48:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37602003_2a9e3e0e",
       "range": {
         "startLine": 49,
         "startChar": 64,
