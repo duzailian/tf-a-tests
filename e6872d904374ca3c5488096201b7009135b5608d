@@ -46,6 +46,30 @@
       },
       "revId": "e6872d904374ca3c5488096201b7009135b5608d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1013848b_d7d70f89",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_simd.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-19T04:06:36Z",
+      "side": 1,
+      "message": "I understood that the operations that write to Z vectors also increment by `vl`, So it effectively fills the Z vectors as expected. Thanks!",
+      "parentUuid": "ebd2c9f0_22c92a63",
+      "range": {
+        "startLine": 96,
+        "startChar": 2,
+        "endLine": 96,
+        "endChar": 18
+      },
+      "revId": "e6872d904374ca3c5488096201b7009135b5608d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
