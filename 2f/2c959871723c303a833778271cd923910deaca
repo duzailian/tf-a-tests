@@ -1,0 +1,10 @@
+Allow-CI+2: Arvind Ram Prakash <arvind.ramprakash@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Owner-Review+1: jayanthchidanand-arm <jayanthdodderi.chidanand@arm.com>
+Maintainer-Review+1: Mark Dykes <mark.dykes@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Mon, 22 Jul 2024 18:08:11 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/29246
+Comments-Total: 4
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
