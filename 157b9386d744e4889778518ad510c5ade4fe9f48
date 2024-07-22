@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98857d16_21364d68",
+        "filename": "plat/arm/fvp/plat_setup.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2024-07-22T09:53:03Z",
+      "side": 1,
+      "message": "nit: formatting",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 2
+      },
+      "revId": "157b9386d744e4889778518ad510c5ade4fe9f48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4605d46b_64e6fafa",
+        "filename": "tftf/tests/extensions/ls64/ls64_operations.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2024-07-22T09:53:03Z",
+      "side": 1,
+      "message": "nit: 64 bytes",
+      "range": {
+        "startLine": 16,
+        "startChar": 21,
+        "endLine": 16,
+        "endChar": 28
+      },
+      "revId": "157b9386d744e4889778518ad510c5ade4fe9f48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3347862_c2c2fa06",
+        "filename": "tftf/tests/extensions/ls64/ls64_operations.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2024-07-22T09:53:03Z",
+      "side": 1,
+      "message": "typo: 8 64-bit",
+      "range": {
+        "startLine": 19,
+        "startChar": 56,
+        "endLine": 19,
+        "endChar": 63
+      },
+      "revId": "157b9386d744e4889778518ad510c5ade4fe9f48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea2baddd_a4cc5962",
+        "filename": "tftf/tests/extensions/ls64/ls64_operations.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2024-07-22T09:53:03Z",
+      "side": 1,
+      "message": "x8-x15? Also, should this below the next line?",
+      "range": {
+        "startLine": 20,
+        "startChar": 3,
+        "endLine": 20,
+        "endChar": 9
+      },
+      "revId": "157b9386d744e4889778518ad510c5ade4fe9f48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4bb655db_90fa3739",
+        "filename": "tftf/tests/extensions/ls64/ls64_operations.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2024-07-22T09:53:03Z",
+      "side": 1,
+      "message": "typo: 8 64-bit",
+      "range": {
+        "startLine": 21,
+        "startChar": 69,
+        "endLine": 21,
+        "endChar": 76
+      },
+      "revId": "157b9386d744e4889778518ad510c5ade4fe9f48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46db8e0d_b169fe4c",
+        "filename": "tftf/tests/extensions/ls64/ls64_operations.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2024-07-22T09:53:03Z",
+      "side": 1,
+      "message": "nit: 64-byte",
+      "range": {
+        "startLine": 22,
+        "startChar": 61,
+        "endLine": 22,
+        "endChar": 67
+      },
+      "revId": "157b9386d744e4889778518ad510c5ade4fe9f48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22c81e2b_fe38caa9",
+        "filename": "tftf/tests/extensions/ls64/ls64_operations.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2024-07-22T09:53:03Z",
+      "side": 1,
+      "message": "typo: 64-byte",
+      "range": {
+        "startLine": 30,
+        "startChar": 38,
+        "endLine": 30,
+        "endChar": 44
+      },
+      "revId": "157b9386d744e4889778518ad510c5ade4fe9f48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5abc79b1_d2fc961a",
+        "filename": "tftf/tests/extensions/ls64/ls64_operations.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2024-07-22T09:53:03Z",
+      "side": 1,
+      "message": "typo: 64-byte",
+      "range": {
+        "startLine": 35,
+        "startChar": 20,
+        "endLine": 35,
+        "endChar": 26
+      },
+      "revId": "157b9386d744e4889778518ad510c5ade4fe9f48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea5bd101_b317defe",
+        "filename": "tftf/tests/extensions/ls64/ls64_operations.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2024-07-22T09:53:03Z",
+      "side": 1,
+      "message": "typo: 64-bit",
+      "range": {
+        "startLine": 35,
+        "startChar": 79,
+        "endLine": 35,
+        "endChar": 84
+      },
+      "revId": "157b9386d744e4889778518ad510c5ade4fe9f48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57d03bbb_79bcf56f",
+        "filename": "tftf/tests/extensions/ls64/ls64_operations.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2024-07-22T09:53:03Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 38,
+        "startChar": 46,
+        "endLine": 38,
+        "endChar": 52
+      },
+      "revId": "157b9386d744e4889778518ad510c5ade4fe9f48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9393f9b_984b7262",
+        "filename": "tftf/tests/extensions/ls64/ls64_operations.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2024-07-22T09:53:03Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 39,
+        "startChar": 65,
+        "endLine": 39,
+        "endChar": 72
+      },
+      "revId": "157b9386d744e4889778518ad510c5ade4fe9f48",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
