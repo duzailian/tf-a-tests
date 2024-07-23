@@ -232,7 +232,8 @@ int64_t sdei_features(uint32_t feature)
 	return ret.ret0;
 }
 
-int64_t sdei_event_get_info(int32_t event, uint32_t info) {
+int64_t sdei_event_get_info(int32_t event, uint32_t info)
+{
 	smc_args args = { 0 };
 	smc_ret_values ret;
 

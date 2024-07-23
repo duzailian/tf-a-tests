@@ -7,7 +7,7 @@
 /dts-v1/;
 / {
 	candidates {
- 		bias = <1>;
+		bias = <1>;
 		sdei_pe_unmask_funcid {
 			bias = <30>;
 			functionname = "sdei_pe_unmask_funcid";

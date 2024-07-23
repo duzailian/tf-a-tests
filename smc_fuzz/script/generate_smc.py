@@ -103,7 +103,7 @@ for sline in smclist_lines:
 		srange = sinstr.group(1)
 		argrangename = smcname + "_args_"+ sinstr.group(1)
 		argnum = srange
-		argname = smcname + "_arg_" + argnum 
+		argname = smcname + "_arg_" + argnum
 		fieldnameargdef = smcname + "_arg_" + argnum + "_field"
 		arglst[smcname].append(argnum)
 		argnumfield[smcname][argname] = {}
