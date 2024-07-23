@@ -1,0 +1,6 @@
+smc: VEN_EL3_SVC_UUID_CALL
+        arg1=0
+smc: VEN_EL3_SVC_COUNT_CALL
+        arg1=0
+smc: VEN_EL3_SVC_VERSION_CALL
+        arg1=0
