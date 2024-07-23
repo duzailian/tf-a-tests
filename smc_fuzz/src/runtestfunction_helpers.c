@@ -6,6 +6,7 @@
 
 #include <sdei_fuzz_helper.h>
 #include <tsp_fuzz_helper.h>
+#include <vendor_fuzz_helper.h>
 #include "smcmalloc.h"
 
 int cntid = 0;
@@ -21,6 +22,7 @@ void runtestfunction(int funcid, struct memmod *mmod)
 
 	run_sdei_fuzz(funcid, mmod, inrange, cntid);
 	run_tsp_fuzz(funcid);
+	run_ven_el3_fuzz(funcid, mmod);
 
 	cntid++;
 }
