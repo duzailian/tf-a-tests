@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2018-2023, Arm Limited. All rights reserved.
+# Copyright (c) 2018-2024, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -135,7 +135,7 @@ include fwu/ns_bl2u/ns_bl2u.mk
 SECURE_PARTITIONS	:=
 
 # Only platform fvp supports cactus_mm
-ifeq (${ARCH}-${PLAT},aarch64-fvp)
+ifeq (${ARCH}-${PLAT},$(filter ${ARCH}-${PLAT},aarch64-fvp aarch64-rdv3))
 include spm/cactus_mm/cactus_mm.mk
 include realm/realm.mk
 endif
@@ -432,7 +432,7 @@ ns_bl1u ns_bl2u:
 	@exit 1
 endif
 
-ifneq (${ARCH}-${PLAT},aarch64-fvp)
+ifneq (${ARCH}-${PLAT},$(filter ${ARCH}-${PLAT},aarch64-fvp aarch64-rdv3))
 .PHONY: cactus_mm
 cactus_mm:
 	@echo "ERROR: $@ is supported only on AArch64 FVP."
@@ -440,7 +440,7 @@ cactus_mm:
 
 .PHONY: realm
 realm:
-	@echo "ERROR: $@ is supported only on AArch64 FVP."
+	@echo "ERROR: $@ is supported only on AArch64 FVP and RD-V3."
 	@exit 1
 
 endif
