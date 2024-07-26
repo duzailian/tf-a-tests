@@ -181,6 +181,13 @@ unsigned int tftf_get_parent_node_from_mpidr(unsigned int mpidr,
 unsigned int tftf_find_any_cpu_other_than(unsigned int exclude_mpid);
 
 /*
+ * Query the platform topology to find another CPU that is in a different
+ * cluster to the one specified as an argument.
+ * Return the MPID of this other CPU, or INVALID_MPID if none could be found.
+ */
+unsigned int tftf_find_any_cpu_in_other_cluster(unsigned int exclude_mpid);
+
+/*
  * Query the platform topology to find a random CPU other than the one specified
  * as an argument.
  * The difference between this function and tftf_find_any_cpu_other_than is

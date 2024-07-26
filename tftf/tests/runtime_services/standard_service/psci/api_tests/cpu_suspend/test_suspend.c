@@ -21,15 +21,20 @@
 
 /*
  * Desired affinity level, state type (standby or powerdown), and entry time for
- * each CPU in the next CPU_SUSPEND operation. We need these shared variables
- * because there is no way to pass arguments to non-lead CPUs...
+ * each CPU in the next CPU_SUSPEND operation. There are suspend flags so
+ * some CPUs can be left running. There is a flag to indicate when a suspend
+ * request should be denied. We need these shared variables because there is no
+ * way to pass arguments to non-lead CPUs...
  */
 static unsigned int test_aff_level[PLATFORM_CORE_COUNT];
 static unsigned int test_suspend_type[PLATFORM_CORE_COUNT];
 static unsigned int test_suspend_entry_time[PLATFORM_CORE_COUNT];
+static bool test_should_suspend[PLATFORM_CORE_COUNT];
+static bool test_should_deny;
 
 static event_t cpu_booted[PLATFORM_CORE_COUNT];
 static event_t cpu_ready[PLATFORM_CORE_COUNT];
+static event_t cpu_finished[PLATFORM_CORE_COUNT];
 
 /*
  * Variable used by the non-lead CPUs to tell the lead CPU they
@@ -56,7 +61,8 @@ static int requested_irq_handler(void *data)
 }
 
 static test_result_t test_init(unsigned int aff_level,
-			       unsigned int suspend_type)
+			       unsigned int suspend_type,
+			       bool should_deny)
 {
 	if (aff_level > MPIDR_MAX_AFFLVL)
 		return TEST_RESULT_SKIPPED;
@@ -64,12 +70,15 @@ static test_result_t test_init(unsigned int aff_level,
 	assert((suspend_type == PSTATE_TYPE_POWERDOWN) ||
 	       (suspend_type == PSTATE_TYPE_STANDBY));
 
+	test_should_deny = should_deny;
+
 	for (unsigned int i = 0; i < PLATFORM_CORE_COUNT; ++i) {
 		/* Export these variables for the non-lead CPUs */
 		test_aff_level[i] = aff_level;
 		test_suspend_type[i] = suspend_type;
 		test_suspend_entry_time[i] =
 			PLAT_SUSPEND_ENTRY_TIME * PLATFORM_CORE_COUNT;
+		test_should_suspend[i] = true;
 
 		/*
 		 * All testcases in this file use the same arrays so it needs to
@@ -77,6 +86,7 @@ static test_result_t test_init(unsigned int aff_level,
 		 */
 		tftf_init_event(&cpu_booted[i]);
 		tftf_init_event(&cpu_ready[i]);
+		tftf_init_event(&cpu_finished[i]);
 		tftf_init_event(&event_received_wake_irq[i]);
 		requested_irq_received[i] = 0;
 	}
@@ -156,6 +166,23 @@ static test_result_t suspend_non_lead_cpu(void)
 }
 
 /*
+ * Leave a non-load CPU running until the cpu_finished event is triggered.
+ */
+static test_result_t run_non_lead_cpu(void)
+{
+	unsigned int mpid = read_mpidr_el1();
+	unsigned int core_pos = platform_get_core_pos(mpid);
+
+	/* Signal to the lead CPU that the calling CPU has entered the test */
+	tftf_send_event(&cpu_booted[core_pos]);
+
+	/* Wait for signal from the lead CPU before suspending itself */
+	tftf_wait_for_event(&cpu_finished[core_pos]);
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
  * CPU suspend test to the desired affinity level and power state
  *
  * 1) Power on all cores
@@ -163,6 +190,8 @@ static test_result_t suspend_non_lead_cpu(void)
  * 3) Each core tries to enter suspend state
  *
  * The test is skipped if an error occurs during the bring-up of non-lead CPUs.
+ *
+ * Some cores can be left running be setting the test_should_suspend array.
  */
 static test_result_t test_psci_suspend(void)
 {
@@ -171,9 +200,10 @@ static test_result_t test_psci_suspend(void)
 	unsigned int core_pos;
 	unsigned int aff_level, suspend_type;
 	uint32_t power_state, stateid;
-	int rc, expected_return_val;
+	int rc, composite_state_rc, expected_return_val;
 	int aff_info;
 	u_register_t flags;
+	test_result_t (*entry_point)(void);
 
 	/*
 	 * Preparation step: Power on all cores.
@@ -184,9 +214,14 @@ static test_result_t test_psci_suspend(void)
 		if (target_mpid == lead_mpid)
 			continue;
 
-		rc = tftf_cpu_on(target_mpid,
-				 (uintptr_t) suspend_non_lead_cpu,
-				 0);
+		core_pos = platform_get_core_pos(target_mpid);
+		if (test_should_suspend[core_pos]) {
+			entry_point = suspend_non_lead_cpu;
+		} else {
+			entry_point = run_non_lead_cpu;
+		}
+
+		rc = tftf_cpu_on(target_mpid, (uintptr_t) entry_point, 0);
 		if (rc != PSCI_E_SUCCESS) {
 			tftf_testcase_printf(
 				"Failed to power on CPU 0x%x (%d)\n",
@@ -214,8 +249,10 @@ static test_result_t test_psci_suspend(void)
 			continue;
 
 		core_pos = platform_get_core_pos(target_mpid);
-		tftf_send_event(&cpu_ready[core_pos]);
-		waitms(PLAT_SUSPEND_ENTRY_TIME);
+		if (test_should_suspend[core_pos]) {
+			tftf_send_event(&cpu_ready[core_pos]);
+			waitms(PLAT_SUSPEND_ENTRY_TIME);
+		}
 	}
 
 	/* IRQs need to be disabled prior to programming the timer */
@@ -239,7 +276,7 @@ static test_result_t test_psci_suspend(void)
 	core_pos = platform_get_core_pos(lead_mpid);
 	aff_level = test_aff_level[core_pos];
 	suspend_type = test_suspend_type[core_pos];
-	expected_return_val = tftf_psci_make_composite_state_id(aff_level,
+	composite_state_rc = tftf_psci_make_composite_state_id(aff_level,
 								suspend_type,
 								&stateid);
 
@@ -274,7 +311,22 @@ static test_result_t test_psci_suspend(void)
 			continue;
 
 		core_pos = platform_get_core_pos(target_mpid);
-		tftf_wait_for_event(&event_received_wake_irq[core_pos]);
+		if (test_should_suspend[core_pos]) {
+			tftf_wait_for_event(&event_received_wake_irq[core_pos]);
+		}
+	}
+
+	/*
+	 * Signal to all non-lead CPUs that the test has finished.
+	 */
+	for_each_cpu(target_node) {
+		target_mpid = tftf_get_mpidr_from_node(target_node);
+		/* Skip lead CPU */
+		if (target_mpid == lead_mpid)
+			continue;
+
+		core_pos = platform_get_core_pos(target_mpid);
+		tftf_send_event(&cpu_finished[core_pos]);
 	}
 
 	/* Wait for all non-lead CPUs to power down */
@@ -290,6 +342,7 @@ static test_result_t test_psci_suspend(void)
 		} while (aff_info != PSCI_STATE_OFF);
 	}
 
+	expected_return_val = test_should_deny ? PSCI_E_DENIED : composite_state_rc;
 	if (rc == expected_return_val)
 		return TEST_RESULT_SUCCESS;
 
@@ -303,11 +356,12 @@ static test_result_t test_psci_suspend(void)
  * affinity level
  */
 static test_result_t test_psci_suspend_level(unsigned int aff_level,
-					     unsigned int suspend_type)
+					     unsigned int suspend_type,
+					     bool should_deny)
 {
 	int rc;
 
-	rc = test_init(aff_level, suspend_type);
+	rc = test_init(aff_level, suspend_type, should_deny);
 	if (rc != TEST_RESULT_SUCCESS)
 		return rc;
 
@@ -319,7 +373,9 @@ static test_result_t test_psci_suspend_level(unsigned int aff_level,
  */
 test_result_t test_psci_suspend_powerdown_level0(void)
 {
-	return test_psci_suspend_level(PSTATE_AFF_LVL_0, PSTATE_TYPE_POWERDOWN);
+	return test_psci_suspend_level(PSTATE_AFF_LVL_0,
+				       PSTATE_TYPE_POWERDOWN,
+				       false);
 }
 
 /*
@@ -327,7 +383,9 @@ test_result_t test_psci_suspend_powerdown_level0(void)
  */
 test_result_t test_psci_suspend_standby_level0(void)
 {
-	return test_psci_suspend_level(PSTATE_AFF_LVL_0, PSTATE_TYPE_STANDBY);
+	return test_psci_suspend_level(PSTATE_AFF_LVL_0,
+				       PSTATE_TYPE_STANDBY,
+				       false);
 }
 
 /*
@@ -335,7 +393,9 @@ test_result_t test_psci_suspend_standby_level0(void)
  */
 test_result_t test_psci_suspend_powerdown_level1(void)
 {
-	return test_psci_suspend_level(PSTATE_AFF_LVL_1, PSTATE_TYPE_POWERDOWN);
+	return test_psci_suspend_level(PSTATE_AFF_LVL_1,
+				       PSTATE_TYPE_POWERDOWN,
+				       false);
 }
 
 /*
@@ -343,7 +403,9 @@ test_result_t test_psci_suspend_powerdown_level1(void)
  */
 test_result_t test_psci_suspend_standby_level1(void)
 {
-	return test_psci_suspend_level(PSTATE_AFF_LVL_1, PSTATE_TYPE_STANDBY);
+	return test_psci_suspend_level(PSTATE_AFF_LVL_1,
+				       PSTATE_TYPE_STANDBY,
+				       false);
 }
 
 /*
@@ -351,7 +413,9 @@ test_result_t test_psci_suspend_standby_level1(void)
  */
 test_result_t test_psci_suspend_powerdown_level2(void)
 {
-	return test_psci_suspend_level(PSTATE_AFF_LVL_2, PSTATE_TYPE_POWERDOWN);
+	return test_psci_suspend_level(PSTATE_AFF_LVL_2,
+				       PSTATE_TYPE_POWERDOWN,
+				       false);
 }
 
 /*
@@ -359,7 +423,9 @@ test_result_t test_psci_suspend_powerdown_level2(void)
  */
 test_result_t test_psci_suspend_standby_level2(void)
 {
-	return test_psci_suspend_level(PSTATE_AFF_LVL_2, PSTATE_TYPE_STANDBY);
+	return test_psci_suspend_level(PSTATE_AFF_LVL_2,
+				       PSTATE_TYPE_STANDBY,
+				       false);
 }
 
 /*
@@ -367,7 +433,9 @@ test_result_t test_psci_suspend_standby_level2(void)
  */
 test_result_t test_psci_suspend_powerdown_level3(void)
 {
-	return test_psci_suspend_level(PSTATE_AFF_LVL_3, PSTATE_TYPE_POWERDOWN);
+	return test_psci_suspend_level(PSTATE_AFF_LVL_3,
+				       PSTATE_TYPE_POWERDOWN,
+				       false);
 }
 
 /*
@@ -375,7 +443,9 @@ test_result_t test_psci_suspend_powerdown_level3(void)
  */
 test_result_t test_psci_suspend_standby_level3(void)
 {
-	return test_psci_suspend_level(PSTATE_AFF_LVL_3, PSTATE_TYPE_STANDBY);
+	return test_psci_suspend_level(PSTATE_AFF_LVL_3,
+				       PSTATE_TYPE_STANDBY,
+				       false);
 }
 
 /*
@@ -390,7 +460,7 @@ static test_result_t test_psci_suspend_level0_osi(unsigned int suspend_type)
 	if (err != PSCI_E_SUCCESS)
 		return TEST_RESULT_FAIL;
 
-	rc = test_psci_suspend_level(PSTATE_AFF_LVL_0, suspend_type);
+	rc = test_psci_suspend_level(PSTATE_AFF_LVL_0, suspend_type, false);
 
 	err = tftf_psci_set_suspend_mode(PSCI_PLAT_COORD);
 	if (err != PSCI_E_SUCCESS)
@@ -431,7 +501,7 @@ static test_result_t test_psci_suspend_level1_osi(unsigned int suspend_type)
 	tftf_pwr_domain_node_t pd_node;
 	int err, rc;
 
-	err = test_init(PSTATE_AFF_LVL_1, suspend_type);
+	err = test_init(PSTATE_AFF_LVL_1, suspend_type, false);
 	if (err != TEST_RESULT_SUCCESS)
 		return err;
 
@@ -490,7 +560,8 @@ test_result_t test_psci_suspend_standby_level1_osi(void)
  * @Test_Aim@ Suspend to the specified suspend type targeted at affinity level 2
  * in OS-initiated mode
  */
-static test_result_t test_psci_suspend_level2_osi(unsigned int suspend_type)
+static test_result_t test_psci_suspend_level2_osi(unsigned int suspend_type,
+						  bool should_deny)
 {
 	unsigned int lead_mpid = read_mpidr_el1() & MPID_MASK;
 	unsigned int lead_lvl_1_node =
@@ -504,7 +575,9 @@ static test_result_t test_psci_suspend_level2_osi(unsigned int suspend_type)
 	tftf_pwr_domain_node_t lvl_1_pd_node, lvl_2_pd_node;
 	int err, rc;
 
-	err = test_init(PSTATE_AFF_LVL_2, suspend_type);
+	err = test_init(PSTATE_AFF_LVL_2,
+			suspend_type,
+			should_deny);
 	if (err != TEST_RESULT_SUCCESS)
 		return err;
 
@@ -562,12 +635,71 @@ static test_result_t test_psci_suspend_level2_osi(unsigned int suspend_type)
 }
 
 /*
+ * @Test_Aim@ Suspend to powerdown state targeted at affinity level 2, in
+ * OS-Initiated mode, with two CPUs left running, so the suspend call should be
+ * denied.
+ *
+ * This test was added to catch a specific bug. The bug made it so that the
+ * function only checked one power domain when suspending to affinity level 2.
+ * This meant that if there was a cpu running outside the power domain of the
+ * calling CPU, the suspend request would be allowed. But in this case, the
+ * request should be denied.
+ */
+test_result_t test_psci_suspend_invalid(void)
+{
+	unsigned int lead_mpid = read_mpidr_el1() & MPID_MASK;
+	unsigned int lead_core_pos = platform_get_core_pos(lead_mpid);
+	unsigned int running_mpid, running_core_pos;
+	int32_t err;
+	test_result_t rc;
+
+	/* This test requires at least two clusters. */
+	if (tftf_get_total_aff_count(MPIDR_AFFLVL1) < 2) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	/*
+	 * Non-lead CPUs should be suspended to level 2, and the lead CPU should
+	 * be suspended to level 0. This means only the request from the lead
+	 * CPU will be denied.
+	 */
+
+	rc = test_init(MPIDR_AFFLVL0, PSTATE_TYPE_POWERDOWN, true);
+	if (rc != TEST_RESULT_SUCCESS)
+		return rc;
+
+	test_aff_level[lead_core_pos] = MPIDR_AFFLVL2;
+
+	/*
+	 * Leave the calling CPU, and one CPU in a different cluster running.
+	 * See the comment above this function for the reason it has to be in a
+	 * different cluster.
+	 */
+	running_mpid = tftf_find_any_cpu_in_other_cluster(lead_mpid);
+	assert(running_mpid != INVALID_MPID);
+	running_core_pos = platform_get_core_pos(running_mpid);
+	test_should_suspend[running_core_pos] = false;
+
+	err = tftf_psci_set_suspend_mode(PSCI_OS_INIT);
+	if (err != PSCI_E_SUCCESS)
+		return TEST_RESULT_FAIL;
+
+	rc = test_psci_suspend();
+
+	err = tftf_psci_set_suspend_mode(PSCI_PLAT_COORD);
+	if (err != PSCI_E_SUCCESS)
+		return TEST_RESULT_FAIL;
+
+	return rc;
+}
+
+/*
  * @Test_Aim@ Suspend to powerdown state targeted at affinity level 2 in
  * OS-initiated mode
  */
 test_result_t test_psci_suspend_powerdown_level2_osi(void)
 {
-	return test_psci_suspend_level2_osi(PSTATE_TYPE_POWERDOWN);
+	return test_psci_suspend_level2_osi(PSTATE_TYPE_POWERDOWN, false);
 }
 
 /*
@@ -576,7 +708,7 @@ test_result_t test_psci_suspend_powerdown_level2_osi(void)
  */
 test_result_t test_psci_suspend_standby_level2_osi(void)
 {
-	return test_psci_suspend_level2_osi(PSTATE_TYPE_STANDBY);
+	return test_psci_suspend_level2_osi(PSTATE_TYPE_STANDBY, false);
 }
 
 /*
@@ -599,7 +731,7 @@ static test_result_t test_psci_suspend_level3_osi(unsigned int suspend_type)
 	tftf_pwr_domain_node_t lvl_1_pd_node, lvl_2_pd_node, lvl_3_pd_node;
 	int err, rc;
 
-	err = test_init(PSTATE_AFF_LVL_3, PSTATE_TYPE_POWERDOWN);
+	err = test_init(PSTATE_AFF_LVL_3, PSTATE_TYPE_POWERDOWN, false);
 	if (err != TEST_RESULT_SUCCESS)
 		return err;
 
