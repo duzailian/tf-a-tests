@@ -69,6 +69,30 @@
       },
       "revId": "b2330714483244e6b0b3ab0470965edcfc8bafed",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ffc20cdd_f409fa80",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_simd.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-07-26T15:44:58Z",
+      "side": 1,
+      "message": "To be fair that\u0027s not really the intent of the test (\"Check Streaming SVE is preserved on a normal/secure world switch\").\nAnd checking individual register settings is extensively covered by:\n\n\u003e Executing \u0027Check various SIMD state preserved across NS/RL/S switch\u0027\nINFO:    TFTF: create realm sve_en/sve_vq: 1/7\nINFO:    Realm start adr\u003d0x88146000\nINFO:    TFTF: RL [SVE] write random\nINFO:    TFTF: NS [FPU] write rand\nINFO:    TFTF: RL [SVE] read and compare\nINFO:    TFTF: RL [FPU] write random\nINFO:    TFTF: NS [FPU] read and compare\nINFO:    TFTF: NS [SVE] write rand. Config: zcr: 0x0, sve_hint: 1\nINFO:    TFTF: S  [FPU] read and compare\nINFO:    TFTF: S  [FPU] write random\nINFO:    TFTF: RL [FPU] read and compare\nINFO:    TFTF: RL [SVE] write random\nINFO:    TFTF: NS [SVE] read and compare. Config: zcr: 0x0, sve_hint: 1\nINFO:    TFTF: NS [SVE] write rand. Config: zcr: 0xb, sve_hint: 0\nINFO:    TFTF: S  [FPU] read and compare\nINFO:    TFTF: S  [FPU] write random\n\nResolving.",
+      "parentUuid": "dd423824_e410f48e",
+      "range": {
+        "startLine": 274,
+        "startChar": 0,
+        "endLine": 274,
+        "endChar": 27
+      },
+      "revId": "b2330714483244e6b0b3ab0470965edcfc8bafed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
