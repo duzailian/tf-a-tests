@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46d5f38a_de7aebc9",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_simd.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-29T19:05:11Z",
+      "side": 1,
+      "message": "Would it be possible to put an error message here?",
+      "revId": "74aaa2d05a64b99ede2f48f09661d976b9a5c60d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f98d397_e710f74b",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_simd.c",
+        "patchSetId": 22
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-29T19:05:11Z",
+      "side": 1,
+      "message": "These robust checks are only being performed in this test but not the other two tests(`test_sme_za` and `test_sme_streaming_sve_za`). Could the other two tests also be extended to perform these checks?",
+      "range": {
+        "startLine": 302,
+        "startChar": 0,
+        "endLine": 310,
+        "endChar": 2
+      },
+      "revId": "74aaa2d05a64b99ede2f48f09661d976b9a5c60d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
