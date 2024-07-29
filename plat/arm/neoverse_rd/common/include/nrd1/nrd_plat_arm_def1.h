@@ -108,8 +108,8 @@
  ******************************************************************************/
 
 /* TF-A reserves DRAM space 0xFF000000- 0xFFFFFFFF for TZC */
-#define DRAM_BASE			PLAT_ARM_DRAM1_BASE
-#define DRAM_SIZE			(PLAT_ARM_DRAM1_SIZE - 0x1000000UL)
+#define DRAM_BASE			NRD_CSS_DRAM1_BASE
+#define DRAM_SIZE			(NRD_CSS_DRAM1_SIZE - 0x1000000UL)
 
 /*******************************************************************************
  * Cache related config
