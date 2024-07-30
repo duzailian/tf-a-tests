@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ef3cd30_9f5b19c3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-07-30T21:07:47Z",
+      "side": 1,
+      "message": "can you use the macro PLAT_ARM_UART_BASE instead?",
+      "range": {
+        "startLine": 373,
+        "startChar": 11,
+        "endLine": 373,
+        "endChar": 21
+      },
+      "revId": "bcdfb58d2e9a112716946d0c3103e2640eff0852",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
