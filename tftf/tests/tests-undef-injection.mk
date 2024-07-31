@@ -5,3 +5,4 @@
 #
 
 TESTS_SOURCES	+=	tftf/tests/misc_tests/test_undef_injection.c
+TESTS_SOURCES	+=	tftf/tests/misc_tests/test_trbe_errata.c
