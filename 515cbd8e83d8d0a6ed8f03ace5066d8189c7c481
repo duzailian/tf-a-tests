@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7cd562b_366e5db4",
+        "filename": "tftf/tests/tests-el3-spmc.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-07-31T17:17:18Z",
+      "side": 1,
+      "message": "Are there other tests which could be good to add here ?\nFor feature parity\u0027s sake?",
+      "revId": "515cbd8e83d8d0a6ed8f03ace5066d8189c7c481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
