@@ -106,7 +106,8 @@ struct rsi_host_call {
 typedef enum {
 	RSI_EMPTY = 0U,
 	RSI_RAM,
-	RSI_DESTROYED
+	RSI_DESTROYED,
+	RSI_IO
 } rsi_ripas_type;
 
 typedef enum {
