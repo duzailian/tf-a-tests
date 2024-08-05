@@ -388,7 +388,7 @@ static inline bool is_feat_ls64_accdata_present(void)
 static inline bool is_feat_ras_present(void)
 {
 	return EXTRACT(ID_AA64PFR0_RAS, read_id_aa64pfr0_el1())
-		== ID_AA64PFR0_RAS_SUPPORTED;
+		>= ID_AA64PFR0_RAS_SUPPORTED;
 }
 
 static inline bool is_feat_rasv1p1_present(void)
@@ -448,6 +448,42 @@ static inline unsigned int get_feat_ls64_support(void)
 {
 	return ((read_id_aa64isar1_el1() >> ID_AA64ISAR1_LS64_SHIFT) &
 		ID_AA64ISAR1_LS64_MASK);
+}
+
+static inline bool is_feat_gcs_present(void)
+{
+	return EXTRACT(ID_AA64PFR1_GCS, read_id_aa64pfr1_el1())
+		>= ID_AA64PFR1_GCS_SUPPORTED;
+}
+
+static inline bool is_feat_tcr2_present(void)
+{
+	return EXTRACT(ID_AA64MMFR3_TCRX, read_id_aa64mmfr3_el1())
+		>= ID_AA64MMFR3_TCR2_SUPPORTED;
+}
+
+static inline bool is_feat_s1poe_present(void)
+{
+	return EXTRACT(ID_AA64MMFR3_S1POE, read_id_aa64mmfr3_el1())
+		>= ID_AA64MMFR3_S1POE_SUPPORTED;
+}
+
+static inline bool is_feat_s2poe_present(void)
+{
+	return EXTRACT(ID_AA64MMFR3_S2POE, read_id_aa64mmfr3_el1())
+		>= ID_AA64MMFR3_S2POE_SUPPORTED;
+}
+
+static inline bool is_feat_s1pie_present(void)
+{
+	return EXTRACT(ID_AA64MMFR3_S1PIE, read_id_aa64mmfr3_el1())
+		>= ID_AA64MMFR3_S1PIE_SUPPORTED;
+}
+
+static inline bool is_feat_mte2_present(void)
+{
+	return EXTRACT(ID_AA64PFR1_EL1_MTE, read_id_aa64pfr1_el1())
+		>= MTE_IMPLEMENTED_ELX;
 }
 
 #endif /* ARCH_FEATURES_H */
