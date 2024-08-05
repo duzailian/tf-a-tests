@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Copyright (c) 2024, Arm Limited. All rights reserved.
+
+  SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<testsuites>
+  <testsuite name="CPU Context Management" description="Validate CPU Context Entries">
+     <testcase name="Verify Integrity of EL1 context registers across context switch"
+               function="test_tsp_el1_ctx_regs_ctx_mgmt" />
+  </testsuite>
+</testsuites>
