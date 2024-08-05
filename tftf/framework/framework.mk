@@ -52,6 +52,7 @@ FRAMEWORK_SOURCES	+=	$(addprefix tftf/,			\
 FRAMEWORK_SOURCES	+=						\
 	lib/${ARCH}/cache_helpers.S					\
 	lib/${ARCH}/misc_helpers.S					\
+	lib/context_mgmt/el1_context.c					\
 	lib/delay/delay.c						\
 	lib/events/events.c						\
 	lib/extensions/amu/${ARCH}/amu.c				\

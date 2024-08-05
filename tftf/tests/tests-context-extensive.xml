@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Copyright (c) 2024, Arm Limited. All rights reserved.
+
+  SPDX-License-Identifier: BSD-3-Clause
+-->
+
+
+<!-- External references to all individual tests files. -->
+<!DOCTYPE testsuites [
+  <!ENTITY tests-cpu-context-mgmt SYSTEM "tests-cpu-context-mgmt.xml">
+]>
+
+<testsuites>
+
+  &tests-cpu-context-mgmt;
+</testsuites>
