@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6281da9_e55a16d7",
+        "filename": "plat/arm/neoverse_rd/common/include/nrd2/nrd_plat_arm_def2.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000774
+      },
+      "writtenOn": "2024-08-06T15:01:21Z",
+      "side": 1,
+      "message": "Linker related configs.",
+      "revId": "3fea049daf215a4cdaa544e7419cc8c6c0c2451d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
