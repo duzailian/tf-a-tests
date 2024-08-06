@@ -16,6 +16,23 @@
       "message": "Pushed a fix in patch https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/30387.\nBuild locally verified.",
       "revId": "99e4893ec0b03961d832b0ca81a9f5e71cdb81db",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff75335f_17f42b7f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000774
+      },
+      "writtenOn": "2024-08-06T16:40:50Z",
+      "side": 1,
+      "message": "Hi, this is the effort to get TFTF aligned with the same convention we have for TF-A for Neoverse Platforms.",
+      "revId": "99e4893ec0b03961d832b0ca81a9f5e71cdb81db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
