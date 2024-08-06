@@ -9,6 +9,7 @@
 #include <host_realm_helper.h>
 #include <host_realm_mem_layout.h>
 #include <lib/extensions/sve.h>
+#include <heap/page_alloc.h>
 
 #include "host_realm_simd_common.h"
 
@@ -36,11 +37,14 @@ test_result_t host_create_sve_realm_payload(struct realm *realm, bool sve_en,
 				INPLACE(FEATURE_SVE_VL, sve_vq);
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		return TEST_RESULT_FAIL;
+	}
+
 	/* Initialise Realm payload */
 	if (!host_create_activate_realm_payload(realm,
 				       (u_register_t)REALM_IMAGE_BASE,
-				       (u_register_t)PAGE_POOL_BASE,
-				       (u_register_t)PAGE_POOL_MAX_SIZE,
 				       feature_flag, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}

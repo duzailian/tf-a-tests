@@ -107,8 +107,6 @@ static bool host_enter_realm(struct realm *realm_ptr,
 
 bool host_prepare_realm_payload(struct realm *realm_ptr,
 			       u_register_t realm_payload_adr,
-			       u_register_t plat_mem_pool_adr,
-			       u_register_t realm_pages_size,
 			       u_register_t feature_flag,
 			       long sl,
 			       const u_register_t *rec_flag,
@@ -121,27 +119,6 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 		return false;
 	}
 
-	if (plat_mem_pool_adr  == 0UL ||
-			realm_pages_size == 0UL) {
-		ERROR("plat_mem_pool_size or "
-			"realm_pages_size is NULL\n");
-		return false;
-	}
-
-	if (plat_mem_pool_adr < PAGE_POOL_BASE ||
-	    plat_mem_pool_adr + realm_pages_size > NS_REALM_SHARED_MEM_BASE) {
-		ERROR("Invalid pool range\n");
-		return false;
-	}
-
-	INFO("Realm start adr=0x%lx\n", plat_mem_pool_adr);
-
-	/* Initialize  Host NS heap memory to be used in Realm creation*/
-	if (page_pool_init(plat_mem_pool_adr, realm_pages_size)
-		!= HEAP_INIT_SUCCESS) {
-		ERROR("%s() failed\n", "page_pool_init");
-		return false;
-	}
 	memset((char *)realm_ptr, 0U, sizeof(struct realm));
 
 	/* Read Realm Feature Reg 0 */
@@ -273,8 +250,6 @@ destroy_realm:
 
 bool host_create_realm_payload(struct realm *realm_ptr,
 			       u_register_t realm_payload_adr,
-			       u_register_t plat_mem_pool_adr,
-			       u_register_t realm_pages_size,
 			       u_register_t feature_flag,
 			       long sl,
 			       const u_register_t *rec_flag,
@@ -284,8 +259,6 @@ bool host_create_realm_payload(struct realm *realm_ptr,
 
 	ret = host_prepare_realm_payload(realm_ptr,
 			realm_payload_adr,
-			plat_mem_pool_adr,
-			realm_pages_size,
 			feature_flag,
 			sl,
 			rec_flag,
@@ -317,8 +290,6 @@ destroy_realm:
 
 bool host_create_activate_realm_payload(struct realm *realm_ptr,
 			u_register_t realm_payload_adr,
-			u_register_t plat_mem_pool_adr,
-			u_register_t realm_pages_size,
 			u_register_t feature_flag,
 			long sl,
 			const u_register_t *rec_flag,
@@ -329,8 +300,6 @@ bool host_create_activate_realm_payload(struct realm *realm_ptr,
 
 	ret = host_create_realm_payload(realm_ptr,
 			realm_payload_adr,
-			plat_mem_pool_adr,
-			realm_pages_size,
 			feature_flag,
 			sl,
 			rec_flag,

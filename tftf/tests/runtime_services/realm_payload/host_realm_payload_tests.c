@@ -48,10 +48,14 @@ test_result_t host_test_realm_create_enter(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	for (unsigned int i = 0U; i < 5U; i++) {
 		if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-				(u_register_t)PAGE_POOL_BASE,
-				(u_register_t)PAGE_POOL_MAX_SIZE,
 				feature_flag, sl, rec_flag, 1U)) {
 			return TEST_RESULT_FAIL;
 		}
@@ -71,6 +75,7 @@ test_result_t host_test_realm_create_enter(void)
 		}
 	}
 
+	page_pool_reset();
 	return host_cmp_result();
 }
 
@@ -92,9 +97,13 @@ test_result_t host_test_realm_rsi_version(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -112,6 +121,7 @@ test_result_t host_test_realm_rsi_version(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return host_cmp_result();
 }
 
@@ -138,10 +148,14 @@ test_result_t host_realm_enable_pauth(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	pauth_test_lib_fill_regs_and_template(pauth_keys_before);
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-				(u_register_t)PAGE_POOL_BASE,
-				(u_register_t)PAGE_POOL_MAX_SIZE,
 				feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -183,6 +197,7 @@ test_result_t host_realm_enable_pauth(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return host_cmp_result();
 #endif
 }
@@ -207,9 +222,14 @@ test_result_t host_realm_pauth_fault(void)
 	}
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-				(u_register_t)PAGE_POOL_BASE,
-				(u_register_t)PAGE_POOL_MAX_SIZE,
 				feature_flag, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -227,6 +247,7 @@ test_result_t host_realm_pauth_fault(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return host_cmp_result();
 #endif
 }
@@ -309,10 +330,14 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -341,6 +366,7 @@ test_exit:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return host_cmp_result();
 }
 
@@ -420,17 +446,19 @@ test_result_t host_test_multiple_realm_create_enter(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_activate_realm_payload(&realm1, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 
 
 	if (!host_create_activate_realm_payload(&realm2, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ret2 = host_destroy_realm(&realm1);
 		return TEST_RESULT_FAIL;
@@ -469,6 +497,7 @@ destroy_realms:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return TEST_RESULT_SUCCESS;
 }
 
@@ -502,9 +531,13 @@ test_result_t host_realm_set_ripas(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -576,6 +609,7 @@ destroy_realm:
 	}
 
 	page_free(base);
+	page_pool_reset();
 	return host_call_result;
 }
 
@@ -607,15 +641,19 @@ test_result_t host_realm_reject_set_ripas(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
 			NS_REALM_SHARED_MEM_SIZE)) {
-		return TEST_RESULT_FAIL;
+		goto destroy_realm;
 	}
 
 	base = (u_register_t)page_alloc(PAGE_SIZE);
@@ -653,6 +691,7 @@ destroy_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return host_call_result;
 }
 
@@ -685,9 +724,13 @@ test_result_t host_realm_abort_unassigned_destroyed(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -786,6 +829,7 @@ destroy_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return res;
 }
 
@@ -817,9 +861,13 @@ test_result_t host_realm_abort_unassigned_ram(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -899,6 +947,7 @@ destroy_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return res;
 }
 
@@ -932,9 +981,13 @@ test_result_t host_realm_abort_assigned_destroyed(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -1041,6 +1094,7 @@ destroy_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return res;
 }
 
@@ -1073,9 +1127,13 @@ test_result_t host_realm_sea_empty(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 4U)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -1188,6 +1246,7 @@ destroy_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return res;
 }
 
@@ -1221,9 +1280,13 @@ test_result_t host_realm_sea_unprotected(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -1310,6 +1373,7 @@ destroy_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return res;
 }
 
@@ -1332,9 +1396,13 @@ test_result_t host_realm_enable_dit(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -1369,6 +1437,7 @@ test_result_t host_realm_enable_dit(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return TEST_RESULT_SUCCESS;
 }
 
@@ -1508,6 +1577,7 @@ static test_result_t test_rtt_destroy_empty(struct realm *realm)
 		ERROR("Wrong state after host_rmi_rtt_destroy\n");
 		return TEST_RESULT_FAIL;
 	}
+
 	return TEST_RESULT_SUCCESS;
 }
 
@@ -1567,9 +1637,13 @@ test_result_t host_realm_pas_validation_new(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -1734,6 +1808,8 @@ destroy_realm:
 		__func__, ret1);
 		return TEST_RESULT_FAIL;
 	}
+
+	page_pool_reset();
 	return test_result;
 }
 
@@ -1758,9 +1834,13 @@ test_result_t host_realm_pas_validation_active(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		goto destroy_realm;
 	}
@@ -1809,9 +1889,14 @@ test_result_t host_realm_sea_adr_fault(void)
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
 	feature_flag = INPLACE(RMI_FEATURE_REGISTER_0_S2SZ, 0x2CU);
+
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, RTT_MIN_LEVEL, rec_flag, 4U)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -1932,6 +2017,7 @@ destroy_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return res;
 }
 
@@ -1962,9 +2048,13 @@ test_result_t host_test_rtt_fold_unfold_unassigned_empty(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
 		goto destroy_realm;
@@ -2094,6 +2184,7 @@ destroy_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return res;
 }
 
@@ -2125,9 +2216,13 @@ test_result_t host_test_rtt_fold_unfold_unassigned_ram(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
 		goto destroy_realm;
@@ -2276,6 +2371,7 @@ destroy_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return res;
 }
 
@@ -2306,9 +2402,13 @@ test_result_t host_test_rtt_fold_unfold_assigned_ns(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
 		goto destroy_realm;
@@ -2399,6 +2499,7 @@ destroy_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return res;
 }
 
@@ -2427,9 +2528,13 @@ test_result_t host_test_rtt_fold_unfold_assigned_empty(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
 		goto destroy_realm;
@@ -2517,6 +2622,7 @@ destroy_realm:
 		__func__, ret1);
 		return TEST_RESULT_FAIL;
 	}
+	page_pool_reset();
 	return res;
 }
 
@@ -2545,9 +2651,13 @@ test_result_t host_test_rtt_fold_unfold_assigned_ram(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
 		goto destroy_realm;
@@ -2579,7 +2689,7 @@ test_result_t host_test_rtt_fold_unfold_assigned_ram(void)
 	if (ret != RMI_SUCCESS || rtt.state != RMI_ASSIGNED ||
 			(rtt.ripas != RMI_RAM)) {
 		ERROR("wrong state after INIT_RIPAS\n");
-		return TEST_RESULT_FAIL;
+		goto undelegate_destroy;
 	}
 	host_realm_activate(&realm);
 
@@ -2638,5 +2748,6 @@ destroy_realm:
 		__func__, ret1);
 		return TEST_RESULT_FAIL;
 	}
+	page_pool_reset();
 	return res;
 }
