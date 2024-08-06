@@ -50,13 +50,7 @@ test_result_t host_test_realm_create_enter(void)
 
 	for (unsigned int i = 0U; i < 5U; i++) {
 		if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-				(u_register_t)PAGE_POOL_BASE,
-				(u_register_t)PAGE_POOL_MAX_SIZE,
 				feature_flag, sl, rec_flag, 1U)) {
-			return TEST_RESULT_FAIL;
-		}
-		if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-				NS_REALM_SHARED_MEM_SIZE)) {
 			return TEST_RESULT_FAIL;
 		}
 
@@ -93,13 +87,7 @@ test_result_t host_test_realm_rsi_version(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
-		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -140,14 +128,7 @@ test_result_t host_realm_enable_pauth(void)
 
 	pauth_test_lib_fill_regs_and_template(pauth_keys_before);
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-				(u_register_t)PAGE_POOL_BASE,
-				(u_register_t)PAGE_POOL_MAX_SIZE,
 				feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
-		return TEST_RESULT_FAIL;
-	}
-
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-				NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -207,14 +188,9 @@ test_result_t host_realm_pauth_fault(void)
 	}
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-				(u_register_t)PAGE_POOL_BASE,
-				(u_register_t)PAGE_POOL_MAX_SIZE,
 				feature_flag, sl, rec_flag, 1U)) {
-		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-				NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -309,15 +285,8 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
-
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
-		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -421,31 +390,15 @@ test_result_t host_test_multiple_realm_create_enter(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm1, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}
 
 
 	if (!host_create_activate_realm_payload(&realm2, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ret2 = host_destroy_realm(&realm1);
 		return TEST_RESULT_FAIL;
-	}
-
-	if (!host_create_shared_mem(&realm1, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
-		ret1 = false;
-		goto destroy_realms;
-	}
-
-	if (!host_create_shared_mem(&realm2, NS_REALM_SHARED_MEM_BASE +
-				NS_REALM_SHARED_MEM_SIZE, NS_REALM_SHARED_MEM_SIZE)) {
-		ret1 = false;
-		goto destroy_realms;
 	}
 
 	host_shared_data_set_host_val(&realm1, 0U, HOST_ARG1_INDEX, SLEEP_TIME_MS);
@@ -503,13 +456,7 @@ test_result_t host_realm_set_ripas(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
-		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -608,13 +555,7 @@ test_result_t host_realm_reject_set_ripas(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
-		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -686,14 +627,8 @@ test_result_t host_realm_abort_unassigned_destroyed(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
-		goto destroy_realm;
 	}
 
 	base = (u_register_t)page_alloc(PAGE_SIZE);
@@ -818,14 +753,8 @@ test_result_t host_realm_abort_unassigned_ram(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
-		goto destroy_realm;
 	}
 
 	/* This is dummy allocation to get a base address */
@@ -933,14 +862,8 @@ test_result_t host_realm_abort_assigned_destroyed(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
-		goto destroy_realm;
 	}
 
 	base = (u_register_t)page_alloc(PAGE_SIZE);
@@ -1045,153 +968,6 @@ destroy_realm:
 }
 
 /*
- * Test aims to generate SEA in Realm by accessing
- * PAGE with HIPAS=assigned/unassigned and RIPAS=EMPTY
- * Host creates and executes 4 recs to generate SEA
- * Rec exception handler runs and returns back ESR to Host
- * Host validates ESR
- * Rec0 generated IA unassigned empty
- * Rec1 generated DA unassigned empty
- * Rec2 generated IA for assigned empty
- * Rec3 generated DA for assigned empty
- */
-test_result_t host_realm_sea_empty(void)
-{
-	bool ret1, ret2;
-	test_result_t res = TEST_RESULT_FAIL;
-	u_register_t ret, base, esr;
-	struct realm realm;
-	struct rtt_entry rtt;
-	u_register_t feature_flag = 0UL;
-	long sl = RTT_MIN_LEVEL;
-	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE};
-
-	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
-
-	if (is_feat_52b_on_4k_2_supported() == true) {
-		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
-		sl = RTT_MIN_LEVEL_LPA2;
-	}
-
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
-			feature_flag, sl, rec_flag, 4U)) {
-		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
-		goto destroy_realm;
-	}
-
-	base = (u_register_t)page_alloc(PAGE_SIZE);
-
-	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (rtt.state != RMI_UNASSIGNED ||
-			(rtt.ripas != RMI_EMPTY)) {
-		ERROR("wrong initial state\n");
-		goto destroy_realm;
-	}
-	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
-	host_shared_data_set_host_val(&realm, 1U, HOST_ARG1_INDEX, base);
-	host_shared_data_set_host_val(&realm, 2U, HOST_ARG1_INDEX, base);
-	host_shared_data_set_host_val(&realm, 3U, HOST_ARG1_INDEX, base);
-
-	/* Rec0 expect IA due to SEA unassigned empty page */
-	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
-			RMI_EXIT_HOST_CALL, 0U);
-	if (!ret1) {
-		ERROR("Rec0 did not fault\n");
-		goto destroy_realm;
-	}
-
-	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 0U, HOST_ARG2_INDEX);
-	if (((esr & ISS_IFSC_MASK) != IFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_IABORT_CUR_EL)) {
-		ERROR("Rec0 incorrect ESR=0x%lx\n", esr);
-		goto destroy_realm;
-	}
-	INFO("Rec0 ESR=0x%lx\n", esr);
-
-	/* Rec1 expect DA due to SEA unassigned empty page */
-	ret1 = host_enter_realm_execute(&realm, REALM_DATA_ACCESS_CMD,
-			RMI_EXIT_HOST_CALL, 1U);
-	if (!ret1) {
-		ERROR("Rec1 did not fault\n");
-		goto destroy_realm;
-	}
-
-	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 1U, HOST_ARG2_INDEX);
-	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_DABORT_CUR_EL)) {
-		ERROR("Rec1 incorrect ESR=0x%lx\n", esr);
-		goto destroy_realm;
-	}
-	INFO("Rec1 ESR=0x%lx\n", esr);
-
-	/* DATA_CREATE_UNKNOWN */
-	ret = host_realm_delegate_map_protected_data(true, &realm, base, PAGE_SIZE, 0U);
-	if (ret != RMI_SUCCESS) {
-		ERROR("host_realm_delegate_map_protected_data failed\n");
-		goto destroy_realm;
-	}
-	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
-	if (rtt.state != RMI_ASSIGNED ||
-			(rtt.ripas != RMI_EMPTY)) {
-		ERROR("wrong state after DATA_CRATE_UNKNOWN\n");
-		goto undelegate_destroy;
-	}
-	INFO("state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
-			base, rtt.state, rtt.ripas);
-
-	/* Rec2 expect IA due to SEA assigned empty page */
-	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
-		RMI_EXIT_HOST_CALL, 2U);
-
-	if (!ret1) {
-		ERROR("Rec2 did not fault\n");
-		goto undelegate_destroy;
-	}
-
-	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 2U, HOST_ARG2_INDEX);
-	if (((esr & ISS_IFSC_MASK) != IFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_IABORT_CUR_EL)) {
-		ERROR("Rec2 incorrect ESR=0x%lx\n", esr);
-		goto destroy_realm;
-	}
-	INFO("Rec2 ESR=0x%lx\n", esr);
-
-	/* Rec3 expect DA due to SEA unassigned empty page */
-	ret1 = host_enter_realm_execute(&realm, REALM_DATA_ACCESS_CMD,
-			RMI_EXIT_HOST_CALL, 3U);
-	if (!ret1) {
-		ERROR("Rec3 did not fault\n");
-		goto undelegate_destroy;
-	}
-
-	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 3U, HOST_ARG2_INDEX);
-	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_DABORT_CUR_EL)) {
-		ERROR("Rec3 incorrect ESR=0x%lx\n", esr);
-	}
-	INFO("Rec3 ESR=0x%lx\n", esr);
-	res = TEST_RESULT_SUCCESS;
-
-undelegate_destroy:
-	ret = host_rmi_granule_undelegate(base);
-destroy_realm:
-	ret2 = host_destroy_realm(&realm);
-
-	if (!ret2) {
-		ERROR("%s(): destroy=%d\n",
-		__func__, ret2);
-		return TEST_RESULT_FAIL;
-	}
-
-	return res;
-}
-
-/*
  * Test aims to generate SEA in Realm by
  * executing instructions in unprotected IPA - Rec0
  * In Rec 1 , when HIPAS=UNASSIGNED_NS, we expect to get a Data abort.
@@ -1222,14 +998,8 @@ test_result_t host_realm_sea_unprotected(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
-		goto destroy_realm;
 	}
 
 	/* Can choose any unprotected IPA adr, TFTF_BASE chosen for convenience */
@@ -1333,13 +1103,7 @@ test_result_t host_realm_enable_dit(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
-		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -1508,6 +1272,7 @@ static test_result_t test_rtt_destroy_empty(struct realm *realm)
 		ERROR("Wrong state after host_rmi_rtt_destroy\n");
 		return TEST_RESULT_FAIL;
 	}
+
 	return TEST_RESULT_SUCCESS;
 }
 
@@ -1568,14 +1333,8 @@ test_result_t host_realm_pas_validation_new(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 2U)) {
 		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
-		goto destroy_realm;
 	}
 
 	INFO("Test 1\n");
@@ -1734,6 +1493,7 @@ destroy_realm:
 		__func__, ret1);
 		return TEST_RESULT_FAIL;
 	}
+
 	return test_result;
 }
 
@@ -1759,13 +1519,7 @@ test_result_t host_realm_pas_validation_active(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
-		goto destroy_realm;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -1809,15 +1563,10 @@ test_result_t host_realm_sea_adr_fault(void)
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
 	feature_flag = INPLACE(RMI_FEATURE_REGISTER_0_S2SZ, 0x2CU);
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, RTT_MIN_LEVEL, rec_flag, 4U)) {
 		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
-		goto destroy_realm;
 	}
 
 	/* Any Adr */
@@ -1963,14 +1712,8 @@ test_result_t host_test_rtt_fold_unfold_unassigned_empty(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
-		goto destroy_realm;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -2126,14 +1869,8 @@ test_result_t host_test_rtt_fold_unfold_unassigned_ram(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
-		goto destroy_realm;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -2307,14 +2044,8 @@ test_result_t host_test_rtt_fold_unfold_assigned_ns(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
-		goto destroy_realm;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -2428,14 +2159,8 @@ test_result_t host_test_rtt_fold_unfold_assigned_empty(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
-		goto destroy_realm;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -2443,7 +2168,8 @@ test_result_t host_test_rtt_fold_unfold_assigned_empty(void)
 	 * Any 2 MB range not mapped in RTT and which can be delegated,
 	 * using heap for second realm here.
 	 */
-	base = ALIGN_DOWN(PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE, RTT_L2_BLOCK_SIZE);
+	base = ALIGN_DOWN(PAGE_POOL_BASE + (PAGE_POOL_MAX_SIZE - RTT_L2_BLOCK_SIZE),
+			RTT_L2_BLOCK_SIZE);
 
 	for (unsigned int i = 0U; i < 512; i++) {
 		ret = host_realm_delegate_map_protected_data(true, &realm, base + (PAGE_SIZE * i),
@@ -2546,14 +2272,8 @@ test_result_t host_test_rtt_fold_unfold_assigned_ram(void)
 	}
 
 	if (!host_create_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm creation failed\n");
-		goto destroy_realm;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		goto destroy_realm;
 	}
 
@@ -2561,7 +2281,8 @@ test_result_t host_test_rtt_fold_unfold_assigned_ram(void)
 	 * Any 2 MB range not mapped in RTT and which can be delegated,
 	 * using heap for second realm here.
 	 */
-	base = ALIGN_DOWN(PAGE_POOL_BASE + (PAGE_POOL_MAX_SIZE), RTT_L2_BLOCK_SIZE);
+	base = ALIGN_DOWN(PAGE_POOL_BASE + (PAGE_POOL_MAX_SIZE - RTT_L2_BLOCK_SIZE),
+			RTT_L2_BLOCK_SIZE);
 
 	INFO("base=0x%lx\n", base);
 	for (unsigned int i = 0U; i < 512; i++) {
@@ -2579,7 +2300,7 @@ test_result_t host_test_rtt_fold_unfold_assigned_ram(void)
 	if (ret != RMI_SUCCESS || rtt.state != RMI_ASSIGNED ||
 			(rtt.ripas != RMI_RAM)) {
 		ERROR("wrong state after INIT_RIPAS\n");
-		return TEST_RESULT_FAIL;
+		goto undelegate_destroy;
 	}
 	host_realm_activate(&realm);
 

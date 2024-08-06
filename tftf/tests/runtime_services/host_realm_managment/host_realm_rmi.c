@@ -716,6 +716,8 @@ u_register_t host_realm_create(struct realm *realm)
 		return REALM_ERROR;
 	}
 
+	INFO("Realm start adr=0x%lx\n", realm->par_base);
+
 	/* Allocate and delegate RD */
 	realm->rd = (u_register_t)page_alloc(PAGE_SIZE);
 	if (realm->rd == HEAP_NULL_PTR) {

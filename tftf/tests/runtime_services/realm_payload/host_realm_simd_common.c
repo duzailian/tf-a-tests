@@ -9,6 +9,7 @@
 #include <host_realm_helper.h>
 #include <host_realm_mem_layout.h>
 #include <lib/extensions/sve.h>
+#include <heap/page_alloc.h>
 
 #include "host_realm_simd_common.h"
 
@@ -39,15 +40,7 @@ test_result_t host_create_sve_realm_payload(struct realm *realm, bool sve_en,
 	/* Initialise Realm payload */
 	if (!host_create_activate_realm_payload(realm,
 				       (u_register_t)REALM_IMAGE_BASE,
-				       (u_register_t)PAGE_POOL_BASE,
-				       (u_register_t)PAGE_POOL_MAX_SIZE,
 				       feature_flag, sl, rec_flag, 1U)) {
-		return TEST_RESULT_FAIL;
-	}
-
-	/* Create shared memory between Host and Realm */
-	if (!host_create_shared_mem(realm, NS_REALM_SHARED_MEM_BASE,
-				    NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 

@@ -5,6 +5,7 @@
  */
 
 #include <debug.h>
+#include <heap/page_alloc.h>
 #include <test_helpers.h>
 
 #include <host_realm_helper.h>
@@ -22,8 +23,6 @@ test_result_t host_test_realm_no_lpa2_invalid_sl(void)
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			0UL, RTT_MIN_LEVEL_LPA2, rec_flag, 1U)) {
 		return TEST_RESULT_SUCCESS;
 	}
@@ -42,8 +41,6 @@ test_result_t host_test_realm_no_lpa2_invalid_s2sz(void)
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			INPLACE(RMI_FEATURE_REGISTER_0_S2SZ, 50UL),
 			RTT_MIN_LEVEL, rec_flag, 1U)) {
 		return TEST_RESULT_SUCCESS;
@@ -70,8 +67,6 @@ test_result_t host_test_non_lpa2_realm_on_lpa2plat(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			INPLACE(RMI_FEATURE_REGISTER_0_S2SZ, 48UL),
 			RTT_MIN_LEVEL, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
@@ -105,13 +100,12 @@ test_result_t host_test_lpa2_realm_on_non_lpa2plat(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, RTT_MIN_LEVEL, rec_flag, 1U)) {
 		return TEST_RESULT_SUCCESS;
 	}
 
 	(void)host_destroy_realm(&realm);
+
 	return TEST_RESULT_FAIL;
 }
 
