@@ -9,6 +9,7 @@
 #include <host_realm_helper.h>
 #include <host_realm_mem_layout.h>
 #include <lib/extensions/sve.h>
+#include <heap/page_alloc.h>
 
 #include "host_realm_simd_common.h"
 
@@ -22,7 +23,7 @@ sve_z_regs_t ns_sve_z_regs_read;
 test_result_t host_create_sve_realm_payload(struct realm *realm, bool sve_en,
 					    uint8_t sve_vq)
 {
-	u_register_t feature_flag = 0UL;
+	u_register_t feature_flag = 0UL, realm_start_adr;
 	long sl = RTT_MIN_LEVEL;
 	u_register_t rec_flag[1] = {RMI_RUNNABLE};
 
@@ -36,11 +37,19 @@ test_result_t host_create_sve_realm_payload(struct realm *realm, bool sve_en,
 				INPLACE(FEATURE_SVE_VL, sve_vq);
 	}
 
+	/* Allocate memory for Realm Image from pool */
+	realm_start_adr = PAGE_POOL_BASE;
+
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE + REALM_MAX_LOAD_IMG_SIZE,
+			PAGE_POOL_MAX_SIZE - REALM_MAX_LOAD_IMG_SIZE) != HEAP_INIT_SUCCESS) {
+		return TEST_RESULT_FAIL;
+	}
+
 	/* Initialise Realm payload */
 	if (!host_create_activate_realm_payload(realm,
 				       (u_register_t)REALM_IMAGE_BASE,
-				       (u_register_t)PAGE_POOL_BASE,
-				       (u_register_t)PAGE_POOL_MAX_SIZE,
+				       realm_start_adr,
 				       feature_flag, sl, rec_flag, 1U)) {
 		return TEST_RESULT_FAIL;
 	}

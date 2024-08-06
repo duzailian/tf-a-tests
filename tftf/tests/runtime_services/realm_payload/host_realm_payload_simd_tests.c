@@ -8,6 +8,7 @@
 #include <assert.h>
 #include <arch_features.h>
 #include <debug.h>
+#include <heap/page_alloc.h>
 #include <test_helpers.h>
 #include <lib/extensions/fpu.h>
 #include <lib/extensions/sme.h>
@@ -130,6 +131,7 @@ rm_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return rc;
 }
 
@@ -157,6 +159,7 @@ test_result_t host_sve_realm_test_invalid_vl(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return TEST_RESULT_SUCCESS;
 }
 
@@ -216,6 +219,7 @@ static test_result_t _host_sve_realm_check_id_registers(bool sve_en)
 
 rm_realm:
 	host_destroy_realm(&realm);
+	page_pool_reset();
 	return rc;
 }
 
@@ -295,6 +299,7 @@ rm_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return rc;
 }
 
@@ -349,6 +354,7 @@ test_result_t host_sve_realm_check_config_register(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return rc;
 }
 
@@ -446,6 +452,7 @@ rm_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return rc;
 }
 
@@ -587,6 +594,7 @@ rm_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return rc;
 }
 
@@ -620,6 +628,7 @@ test_result_t host_non_sve_realm_check_undef_abort(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return rc;
 }
 
@@ -666,6 +675,7 @@ test_result_t host_realm_check_sme_id_registers(void)
 
 rm_realm:
 	host_destroy_realm(&realm);
+	page_pool_reset();
 	return rc;
 }
 
@@ -695,6 +705,7 @@ test_result_t host_realm_check_sme_undef_abort(void)
 	}
 
 	host_destroy_realm(&realm);
+	page_pool_reset();
 	return rc;
 }
 
@@ -805,5 +816,6 @@ test_result_t host_realm_check_sme_configs(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return rc;
 }
