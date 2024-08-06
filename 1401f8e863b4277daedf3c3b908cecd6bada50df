@@ -16,6 +16,24 @@
       "message": "nit: we are missing a section header here.",
       "revId": "1401f8e863b4277daedf3c3b908cecd6bada50df",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "63273520_e1fa9d1d",
+        "filename": "plat/arm/neoverse_rd/common/include/nrd1/nrd_plat_arm_def1.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001165
+      },
+      "writtenOn": "2024-08-06T15:07:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92cd2954_6386cfcc",
+      "revId": "1401f8e863b4277daedf3c3b908cecd6bada50df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
