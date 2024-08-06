@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57a2701b_99d8ca1a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001165
+      },
+      "writtenOn": "2024-08-06T10:33:07Z",
+      "side": 1,
+      "message": "Pushed a fix in patch https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/30387.\nBuild locally verified.",
+      "revId": "99e4893ec0b03961d832b0ca81a9f5e71cdb81db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
