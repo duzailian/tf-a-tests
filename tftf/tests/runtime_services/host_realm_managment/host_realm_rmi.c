@@ -37,6 +37,8 @@
 
 static bool rmi_cmp_result;
 static unsigned short vmid;
+static spinlock_t pool_lock;
+static unsigned int pool_counter;
 
 static smc_ret_values host_rmi_handler(smc_args *args, unsigned int in_reg)
 {
@@ -701,10 +703,26 @@ u_register_t host_realm_create(struct realm *realm)
 {
 	struct rmi_realm_params *params;
 	u_register_t ret;
+	unsigned int count;
 
 	realm->par_size = REALM_MAX_LOAD_IMG_SIZE;
 
 	realm->state = REALM_STATE_NULL;
+
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	spin_lock(&pool_lock);
+	count = pool_counter;
+	pool_counter++;
+	spin_unlock(&pool_lock);
+
+	if (count == 0U) {
+		if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE)
+			!= HEAP_INIT_SUCCESS) {
+			ERROR("%s() failed\n", "page_pool_init");
+			return REALM_ERROR;
+		}
+	}
+
 	/*
 	 * Allocate memory for PAR - Realm image. Granule delegation
 	 * of PAR will be performed during rtt creation.
@@ -713,8 +731,10 @@ u_register_t host_realm_create(struct realm *realm)
 	if (realm->par_base == HEAP_NULL_PTR) {
 		ERROR("page_alloc failed, base=0x%lx, size=0x%lx\n",
 			  realm->par_base, realm->par_size);
-		return REALM_ERROR;
+		goto pool_reset;
 	}
+
+	INFO("Realm start adr=0x%lx\n", realm->par_base);
 
 	/* Allocate and delegate RD */
 	realm->rd = (u_register_t)page_alloc(PAGE_SIZE);
@@ -832,6 +852,18 @@ err_free_rd:
 
 err_free_par:
 	page_free(realm->par_base);
+
+pool_reset:
+	/* Free test resources */
+	spin_lock(&pool_lock);
+	pool_counter--;
+	count = pool_counter;
+	spin_unlock(&pool_lock);
+
+	if (count == 0U) {
+		INFO("Reset pool\n");
+		page_pool_reset();
+	}
 
 	return REALM_ERROR;
 }
@@ -1093,12 +1125,23 @@ u_register_t host_realm_activate(struct realm *realm)
 u_register_t host_realm_destroy(struct realm *realm)
 {
 	u_register_t ret;
+	unsigned int count;
 	long rtt_start_level = realm->start_level;
 
 	if (realm->state == REALM_STATE_NULL) {
 		return REALM_SUCCESS;
 	}
 
+	/* Free test resources */
+	spin_lock(&pool_lock);
+	pool_counter--;
+	count = pool_counter;
+	spin_unlock(&pool_lock);
+
+	if (count == 0U) {
+		INFO("Reset pool\n");
+		page_pool_reset();
+	}
 	/* For each REC - Destroy, undelegate and free */
 	for (unsigned int i = 0U; i < realm->rec_count; i++) {
 		if (realm->rec[i] == 0U) {

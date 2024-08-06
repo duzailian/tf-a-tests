@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <drivers/arm/arm_gic.h>
 #include <debug.h>
+#include <heap/page_alloc.h>
 #include <platform.h>
 #include <plat_topology.h>
 #include <power_management.h>
@@ -43,13 +44,7 @@ test_result_t host_realm_multi_rec_single_cpu(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
-		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -106,13 +101,7 @@ test_result_t host_realm_multi_rec_psci_denied(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 3U)) {
-		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -254,13 +243,7 @@ test_result_t host_realm_multi_rec_exit_irq(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, rec_count)) {
-		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -360,13 +343,7 @@ test_result_t host_realm_multi_rec_multiple_cpu(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
-		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -500,23 +477,14 @@ test_result_t host_realm_multi_rec_multiple_cpu2(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	if (!host_create_activate_realm_payload(&realm2, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ret2 = host_destroy_realm(&realm);
 		return TEST_RESULT_FAIL;
-	}
-
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
-		goto destroy_realm;
 	}
 
 	/* Realm to request CPU_ON for rec 2 */
@@ -567,6 +535,7 @@ test_result_t host_realm_multi_rec_multiple_cpu2(void)
 		ERROR("Expected error\n");
 		goto destroy_realm;
 	}
+
 	ret3 = TEST_RESULT_SUCCESS;
 
 destroy_realm:
@@ -578,6 +547,7 @@ destroy_realm:
 		__func__, ret1, ret2);
 		return TEST_RESULT_FAIL;
 	}
+
 	return ret3;
 }
 
@@ -663,8 +633,6 @@ test_result_t host_realm_pmuv3_mul_rec(void)
 
 	/* Request more PMU counter than total, expect failure */
 	if (host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm create should have failed\n");
 		host_destroy_realm(&realm);
@@ -680,8 +648,6 @@ test_result_t host_realm_pmuv3_mul_rec(void)
 	}
 
 	ret1 = host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-				(u_register_t)PAGE_POOL_BASE,
-				(u_register_t)PAGE_POOL_MAX_SIZE,
 				feature_flag, sl, rec_flag, 1U);
 
 	if (!get_feat_hpmn0_supported()) {
@@ -708,15 +674,9 @@ test_result_t host_realm_pmuv3_mul_rec(void)
 
 	/* Prepare realm0, create recs for realm0 later */
 	if (!host_prepare_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
 		goto test_exit;
 		return TEST_RESULT_FAIL;
-	}
-	if (!host_create_shared_mem(&realm, NS_REALM_SHARED_MEM_BASE,
-			NS_REALM_SHARED_MEM_SIZE)) {
-		goto test_exit;
 	}
 
 	/* Second realm with less num of PMU counters */
@@ -728,13 +688,7 @@ test_result_t host_realm_pmuv3_mul_rec(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm1, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
 			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
-		goto test_exit2;
-	}
-	if (!host_create_shared_mem(&realm1, NS_REALM_SHARED_MEM_BASE + NS_REALM_SHARED_MEM_SIZE,
-			NS_REALM_SHARED_MEM_SIZE)) {
 		goto test_exit2;
 	}
 
