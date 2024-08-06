@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92cd2954_6386cfcc",
+        "filename": "plat/arm/neoverse_rd/common/include/nrd1/nrd_plat_arm_def1.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000774
+      },
+      "writtenOn": "2024-08-06T15:00:47Z",
+      "side": 1,
+      "message": "nit: we are missing a section header here.",
+      "revId": "1401f8e863b4277daedf3c3b908cecd6bada50df",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
