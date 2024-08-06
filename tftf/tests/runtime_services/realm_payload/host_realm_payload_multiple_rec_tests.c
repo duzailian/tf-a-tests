@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <drivers/arm/arm_gic.h>
 #include <debug.h>
+#include <heap/page_alloc.h>
 #include <platform.h>
 #include <plat_topology.h>
 #include <power_management.h>
@@ -32,7 +33,7 @@ test_result_t host_realm_multi_rec_single_cpu(void)
 	bool ret1, ret2;
 	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
 	RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE};
-	u_register_t feature_flag = 0U;
+	u_register_t feature_flag = 0U, realm_start_adr;
 	long sl = RTT_MIN_LEVEL;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
@@ -42,9 +43,17 @@ test_result_t host_realm_multi_rec_single_cpu(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Allocate memory for Realm Image from pool */
+	realm_start_adr = (u_register_t)page_alloc(REALM_MAX_LOAD_IMG_SIZE);
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
+			realm_start_adr,
 			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -70,6 +79,7 @@ test_result_t host_realm_multi_rec_single_cpu(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return TEST_RESULT_SUCCESS;
 }
 
@@ -93,7 +103,7 @@ test_result_t host_realm_multi_rec_psci_denied(void)
 	u_register_t exit_reason;
 	unsigned int rec_num;
 	struct rmi_rec_run *run;
-	u_register_t feature_flag = 0U;
+	u_register_t feature_flag = 0U, realm_start_adr;
 	long sl = RTT_MIN_LEVEL;
 	/* Create 3 rec Rec 0 and 2 are runnable, Rec 1 in not runnable */
 	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_NOT_RUNNABLE, RMI_RUNNABLE};
@@ -105,9 +115,17 @@ test_result_t host_realm_multi_rec_psci_denied(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Allocate memory for Realm Image from pool */
+	realm_start_adr = (u_register_t)page_alloc(REALM_MAX_LOAD_IMG_SIZE);
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
+			realm_start_adr,
 			feature_flag, sl, rec_flag, 3U)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -211,6 +229,7 @@ destroy_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return host_cmp_result();
 }
 
@@ -239,7 +258,7 @@ test_result_t host_realm_multi_rec_exit_irq(void)
 	unsigned int rec_count = MAX_REC_COUNT;
 	u_register_t other_mpidr, my_mpidr, ret;
 	int cpu_node;
-	u_register_t feature_flag = 0U;
+	u_register_t feature_flag = 0U, realm_start_adr;
 	long sl = RTT_MIN_LEVEL;
 	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
 		RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
@@ -253,9 +272,17 @@ test_result_t host_realm_multi_rec_exit_irq(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Allocate memory for Realm Image from pool */
+	realm_start_adr = (u_register_t)page_alloc(REALM_MAX_LOAD_IMG_SIZE);
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
+			realm_start_adr,
 			feature_flag, sl, rec_flag, rec_count)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -298,6 +325,7 @@ destroy_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return host_cmp_result();
 }
 
@@ -339,7 +367,7 @@ test_result_t host_realm_multi_rec_multiple_cpu(void)
 	bool ret1, ret2;
 	test_result_t ret3 = TEST_RESULT_FAIL;
 	int ret = RMI_ERROR_INPUT;
-	u_register_t rec_num;
+	u_register_t rec_num, realm_start_adr;
 	u_register_t other_mpidr, my_mpidr;
 	struct rmi_rec_run *run;
 	unsigned int host_call_result, i = 0U;
@@ -359,9 +387,17 @@ test_result_t host_realm_multi_rec_multiple_cpu(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, PAGE_POOL_MAX_SIZE) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Allocate memory for Realm Image from pool */
+	realm_start_adr = (u_register_t)page_alloc(REALM_MAX_LOAD_IMG_SIZE);
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
+			realm_start_adr,
 			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
@@ -465,6 +501,7 @@ destroy_realm:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return ret3;
 }
 
@@ -490,7 +527,7 @@ test_result_t host_realm_multi_rec_multiple_cpu2(void)
 	u_register_t rec_flag[] = {RMI_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE,
 		RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE, RMI_NOT_RUNNABLE,
 		RMI_NOT_RUNNABLE};
-	u_register_t exit_reason;
+	u_register_t exit_reason, realm_start_adr, realm_start_adr2;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
@@ -499,16 +536,24 @@ test_result_t host_realm_multi_rec_multiple_cpu2(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE, (2U * PAGE_POOL_MAX_SIZE)) != HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Allocate memory for Realm Image from pool */
+	realm_start_adr = (u_register_t)page_alloc(REALM_MAX_LOAD_IMG_SIZE);
+	realm_start_adr2 = (u_register_t)page_alloc(REALM_MAX_LOAD_IMG_SIZE);
+
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
+			realm_start_adr,
 			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	if (!host_create_activate_realm_payload(&realm2, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
+			realm_start_adr2,
 			feature_flag, sl, rec_flag, 1U)) {
 		ret2 = host_destroy_realm(&realm);
 		return TEST_RESULT_FAIL;
@@ -578,6 +623,8 @@ destroy_realm:
 		__func__, ret1, ret2);
 		return TEST_RESULT_FAIL;
 	}
+
+	page_pool_reset();
 	return ret3;
 }
 
@@ -626,7 +673,7 @@ static test_result_t cpu_on_handler_pmu(void)
 test_result_t host_realm_pmuv3_mul_rec(void)
 {
 	u_register_t feature_flag = 0U;
-	u_register_t rmm_feat_reg0;
+	u_register_t rmm_feat_reg0, realm_start_adr, realm_start_adr2;
 	u_register_t rec_flag[8U] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
 		RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE};
 	bool ret1 = 0U, ret2;
@@ -661,10 +708,21 @@ test_result_t host_realm_pmuv3_mul_rec(void)
 	feature_flag |= RMI_FEATURE_REGISTER_0_PMU_EN |
 			INPLACE(FEATURE_PMU_NUM_CTRS, num_cnts + 1U);
 
+	/* Allocate memory for Realm Image from pool */
+	realm_start_adr = PAGE_POOL_BASE;
+	realm_start_adr2 = PAGE_POOL_BASE + REALM_MAX_LOAD_IMG_SIZE;
+
+	/* Initialize  Host NS heap memory to be used in Realm creation*/
+	if (page_pool_init(PAGE_POOL_BASE + (2U * REALM_MAX_LOAD_IMG_SIZE),
+		(2U * PAGE_POOL_MAX_SIZE) - (2U * REALM_MAX_LOAD_IMG_SIZE))
+			!= HEAP_INIT_SUCCESS) {
+		ERROR("%s() failed\n", "page_pool_init");
+		return TEST_RESULT_FAIL;
+	}
+
 	/* Request more PMU counter than total, expect failure */
 	if (host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
+			realm_start_adr,
 			feature_flag, sl, rec_flag, 1U)) {
 		ERROR("Realm create should have failed\n");
 		host_destroy_realm(&realm);
@@ -680,8 +738,7 @@ test_result_t host_realm_pmuv3_mul_rec(void)
 	}
 
 	ret1 = host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-				(u_register_t)PAGE_POOL_BASE,
-				(u_register_t)PAGE_POOL_MAX_SIZE,
+				realm_start_adr,
 				feature_flag, sl, rec_flag, 1U);
 
 	if (!get_feat_hpmn0_supported()) {
@@ -708,8 +765,7 @@ test_result_t host_realm_pmuv3_mul_rec(void)
 
 	/* Prepare realm0, create recs for realm0 later */
 	if (!host_prepare_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
+			realm_start_adr,
 			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
 		goto test_exit;
 		return TEST_RESULT_FAIL;
@@ -728,8 +784,7 @@ test_result_t host_realm_pmuv3_mul_rec(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm1, (u_register_t)REALM_IMAGE_BASE,
-			(u_register_t)PAGE_POOL_BASE + PAGE_POOL_MAX_SIZE,
-			(u_register_t)PAGE_POOL_MAX_SIZE,
+			realm_start_adr2,
 			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
 		goto test_exit2;
 	}
@@ -840,5 +895,6 @@ test_exit:
 		return TEST_RESULT_FAIL;
 	}
 
+	page_pool_reset();
 	return TEST_RESULT_SUCCESS;
 }

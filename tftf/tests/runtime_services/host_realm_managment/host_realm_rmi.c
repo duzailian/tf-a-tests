@@ -702,19 +702,7 @@ u_register_t host_realm_create(struct realm *realm)
 	struct rmi_realm_params *params;
 	u_register_t ret;
 
-	realm->par_size = REALM_MAX_LOAD_IMG_SIZE;
-
 	realm->state = REALM_STATE_NULL;
-	/*
-	 * Allocate memory for PAR - Realm image. Granule delegation
-	 * of PAR will be performed during rtt creation.
-	 */
-	realm->par_base = (u_register_t)page_alloc(realm->par_size);
-	if (realm->par_base == HEAP_NULL_PTR) {
-		ERROR("page_alloc failed, base=0x%lx, size=0x%lx\n",
-			  realm->par_base, realm->par_size);
-		return REALM_ERROR;
-	}
 
 	/* Allocate and delegate RD */
 	realm->rd = (u_register_t)page_alloc(PAGE_SIZE);
