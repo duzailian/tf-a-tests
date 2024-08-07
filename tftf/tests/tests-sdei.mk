@@ -11,4 +11,5 @@ TESTS_SOURCES	+=								\
 		test_sdei_state.c 						\
 		test_sdei_rm_any.c 						\
 		test_sdei_pstate.c						\
+		test_sdei_bind_failure.c					\
 	)

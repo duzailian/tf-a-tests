@@ -16,6 +16,7 @@
      <testcase name="SDEI event signaling: one core signals all others" function="test_sdei_event_signal_all" />
      <testcase name="SDEI event routing all: SPI events routed to all CPUs" function="test_sdei_routing_any" />
      <testcase name="SDEI event handler pstate testing" function="test_sdei_event_check_pstate" />
+     <testcase name="Test binding many events" function="test_sdei_bind_failure" />
   </testsuite>
 
 </testsuites>
