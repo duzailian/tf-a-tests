@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "688106de_1cac8665",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-08-07T10:35:26Z",
+      "side": 1,
+      "message": "Tests results with TF-RMM patch https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/30399/1:\nhttps://jenkins.openci.aws.arm.com/view/RMM/job/rmm-ci-gateway-l2/6708/",
+      "revId": "ec099f6ec0385f5d8f84becc084d37d23f21d3cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
