@@ -59,6 +59,55 @@ static unsigned int check_if_affected(unsigned int mpid)
 	return ERRATA_NOT_APPLIES;
 }
 
+static test_result_t test_trbe(void)
+{
+	unsigned int mpid = read_mpidr_el1() & MPID_MASK;
+	unsigned int core_pos = platform_get_core_pos(mpid);
+
+	read_trblimitr_el1();
+
+	if (undef_injection_triggered == true &&
+	    check_if_affected(mpid) == ERRATA_APPLIES) {
+		test_result = TEST_RESULT_SUCCESS;
+		undef_injection_triggered = false;
+		tftf_testcase_printf("Undef injection triggered for core = %d "
+				     "when accessing TRB_LIMTR\n", core_pos);
+	} else if (undef_injection_triggered == false &&
+		   check_if_affected(mpid) != ERRATA_APPLIES) {
+		test_result = TEST_RESULT_SUCCESS;
+		tftf_testcase_printf("TRB_LIMITR register accessible for core "
+				     "= %d\n", core_pos);
+	} else {
+		test_result = TEST_RESULT_FAIL;
+	}
+
+	return test_result;
+}
+
+static test_result_t test_spe(void)
+{
+	unsigned int mpid = read_mpidr_el1() & MPID_MASK;
+	unsigned int core_pos = platform_get_core_pos(mpid);
+
+	read_pmscr_el1();
+
+	if (undef_injection_triggered == true && !is_feat_spe_supported()) {
+		test_result = TEST_RESULT_SUCCESS;
+		undef_injection_triggered = false;
+		tftf_testcase_printf("Undef injection triggered for core = %d "
+				     "when accessing PMSCR_EL1\n", core_pos);
+	} else if (undef_injection_triggered == false &&
+		   is_feat_spe_supported()) {
+		test_result = TEST_RESULT_SUCCESS;
+		tftf_testcase_printf("PMSCR_EL1 register accessible for core = "
+				     "%d\n", core_pos);
+	} else {
+		test_result = TEST_RESULT_FAIL;
+	}
+
+	return test_result;
+}
+
 /*
  * Non-lead cpu function that checks if trblimitr_el1 is accessible,
  * on affected cores this causes a undef injection and passes.In cores that
@@ -68,13 +117,26 @@ static test_result_t non_lead_cpu_fn(void)
 {
 	unsigned int mpid = read_mpidr_el1() & MPID_MASK;
 	unsigned int core_pos = platform_get_core_pos(mpid);
+	test_result_t result;
 
 	test_result = TEST_RESULT_SUCCESS;
 
 	/* Signal to the lead CPU that the calling CPU has entered the test */
 	tftf_send_event(&cpu_has_entered_test[core_pos]);
 
-	read_trblimitr_el1();
+	result = test_trbe();
+	if (result != TEST_RESULT_SUCCESS) {
+		tftf_testcase_printf("test_trbe_enabled failed with result "
+				     "%d\n", result);
+		test_result = result;
+	}
+
+	result = test_spe();
+	if (result != TEST_RESULT_SUCCESS) {
+		tftf_testcase_printf("test_spe_support failed with result %d\n",
+				     result);
+		test_result = result;
+	}
 
 	/* Ensure that EL3 still functional */
 	smc_args args;
@@ -86,19 +148,6 @@ static test_result_t non_lead_cpu_fn(void)
 	tftf_testcase_printf("SMCCC Version = %d.%d\n",
 			(int)((smc_ret.ret0 >> SMCCC_VERSION_MAJOR_SHIFT) & SMCCC_VERSION_MAJOR_MASK),
 			(int)((smc_ret.ret0 >> SMCCC_VERSION_MINOR_SHIFT) & SMCCC_VERSION_MINOR_MASK));
-
-	if (undef_injection_triggered == true &&
-	    check_if_affected(mpid) == ERRATA_APPLIES) {
-		test_result = TEST_RESULT_SUCCESS;
-		undef_injection_triggered = false;
-		tftf_testcase_printf("Undef injection triggered for core = %d\n", core_pos);
-	} else if(undef_injection_triggered == false &&
-		  check_if_affected(mpid) != ERRATA_APPLIES) {
-		test_result = TEST_RESULT_SUCCESS;
-		tftf_testcase_printf("TRB_LIMITR register accessible for core = %d\n", core_pos);
-	} else {
-		test_result = TEST_RESULT_FAIL;
-	}
 
 	return test_result;
 }
