@@ -33,6 +33,24 @@
       "message": "Are there other tests which could be good to add here ?\nFor feature parity\u0027s sake?",
       "revId": "515cbd8e83d8d0a6ed8f03ace5066d8189c7c481",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "28bd5bd2_3ec7c681",
+        "filename": "tftf/tests/tests-el3-spmc.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-08-12T18:11:35Z",
+      "side": 1,
+      "message": "I added few other tests to \"SIMD,SVE Registers context\"\n\nI attempted to add other tests but they were not running successfully either because the tests were written with Hafnium SPMC in mind or there could be bugs in EL3 SPMC source code. \n\nMaking those tests run with EL3 SPMC is going to be a significant effort. Since it is out of scope for the current exercise of SIMD context management, I think we can add it to backlog and we can decide on prioritising it for future sprints\n\nPlease let me know your opinion.",
+      "parentUuid": "f7cd562b_366e5db4",
+      "revId": "515cbd8e83d8d0a6ed8f03ace5066d8189c7c481",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
