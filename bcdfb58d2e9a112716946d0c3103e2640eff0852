@@ -46,6 +46,30 @@
       },
       "revId": "bcdfb58d2e9a112716946d0c3103e2640eff0852",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67195cb2_21a78c2f",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-08-13T11:07:31Z",
+      "side": 1,
+      "message": "Changed back to hardcoded as using PLAT_ARM_UART_BASE caused the tegra build test to fail. This seemed ok to me since we need it to match the manifest using a generic UART_BASE macro seemed risky. To avoid this I could parse the manifest from boot_info similar to what we can do in hafnium CI but this would be a fair bit of work as we currently don\u0027t do this anywhere. Let me know what you think?",
+      "parentUuid": "1bac66ff_edd4d8d0",
+      "range": {
+        "startLine": 373,
+        "startChar": 11,
+        "endLine": 373,
+        "endChar": 21
+      },
+      "revId": "bcdfb58d2e9a112716946d0c3103e2640eff0852",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
