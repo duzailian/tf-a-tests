@@ -70,6 +70,30 @@
       },
       "revId": "bcdfb58d2e9a112716946d0c3103e2640eff0852",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1a05562_1a5ef391",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-08-13T14:41:45Z",
+      "side": 1,
+      "message": "Okay, I agree parsing the manifest to get the base address is beyond the scope of this test. For now, I think we can go ahead and merge the patch.\nBut I am curious about the tegra build fail. I remember Olivier\u0027s patches in the past faced similar issues and he took the approach of guarding test with PLAT_FVP macros. Could you look into that? I will leave the comment open.",
+      "parentUuid": "67195cb2_21a78c2f",
+      "range": {
+        "startLine": 373,
+        "startChar": 11,
+        "endLine": 373,
+        "endChar": 21
+      },
+      "revId": "bcdfb58d2e9a112716946d0c3103e2640eff0852",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
