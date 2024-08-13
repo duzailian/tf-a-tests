@@ -1,0 +1,11 @@
+Allow-CI+2: Daniel Boulby <daniel.boulby@arm.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Verified+1: Joao Alves <joao.alves@arm.com>
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Tue, 13 Aug 2024 16:42:23 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/30121
+Comments-Total: 5
+Comments-Unresolved: 1
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
