@@ -1,20 +1,163 @@
 /*
- * Copyright (c) 2023, Arm Limited. All rights reserved.
+ * Copyright (c) 2024, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
-
 #include <arch.h>
 #include <arch_helpers.h>
-#include <arm_arch_svc.h>
-#include <assert.h>
-#include <debug.h>
-#include <smccc.h>
-#include <sync.h>
+#include <events.h>
+#include <plat_topology.h>
+#include <platform.h>
+#include <power_management.h>
+#include <psci.h>
+#include <test_helpers.h>
 #include <tftf_lib.h>
+#include <smccc.h>
 #include <platform_def.h>
+#include <sync.h>
+#include <arm_arch_svc.h>
 
+#define CORTEX_A520_MIDR	U(0x410FD800)
+#define CORTEX_X4_MIDR		U(0x410FD821)
+
+#define ERRATA_APPLIES 		1
+#define ERRATA_NOT_APPLIES 	0
+
+/* Extract the partnumber */
+#define EXTRACT_PARTNUM(x)     ((x >> MIDR_PN_SHIFT) & MIDR_PN_MASK)
+
+/* Extract revision and variant info */
+#define EXTRACT_REV_VAR(x)	(x & MIDR_REV_MASK) | ((x >> (MIDR_VAR_SHIFT - MIDR_REV_BITS)) \
+				& MIDR_VAR_MASK)
+
+#define RXPX_RANGE(x, y, z)	(((x >= y) && (x <= z)) ? true : false)
+
+static event_t cpu_has_entered_test[PLATFORM_CORE_COUNT];
+
+static volatile bool undef_injection_triggered;
+
+static unsigned int test_result;
+
+static bool trbe_trap_exception_handler(void)
+{
+	uint64_t esr_el2 = read_esr_el2();
+	if (EC_BITS(esr_el2) == EC_UNKNOWN) {
+		undef_injection_triggered = true;
+		return true;
+	}
+
+	return false;
+}
+
+static unsigned int check_if_affected(unsigned int mpid)
+{
+	long midr_val = read_midr();
+	long rev_var = EXTRACT_REV_VAR(midr_val);
+
+	if(EXTRACT_PARTNUM(read_midr()) == EXTRACT_PARTNUM(CORTEX_A520_MIDR)) {
+		if(RXPX_RANGE(rev_var, 0, 1)) {
+			return ERRATA_APPLIES;
+		}
+	} else if (EXTRACT_PARTNUM(read_midr()) == EXTRACT_PARTNUM(CORTEX_X4_MIDR)) {
+		if(RXPX_RANGE(rev_var, 0, 1)) {
+			return ERRATA_APPLIES;
+		}
+	}
+
+	return ERRATA_NOT_APPLIES;
+}
+
+
+/*
+ * Non-lead cpu function that checks if trblimitr_el1 is accessible,
+ * on affected cores this causes a undef injection and passes.In cores that
+ * are not affected test just passes. It fails in other cases.
+ */
+static test_result_t non_lead_cpu_fn(void)
+{
+	unsigned int mpid = read_mpidr_el1() & MPID_MASK;
+	unsigned int core_pos = platform_get_core_pos(mpid);
+
+	test_result = TEST_RESULT_SUCCESS;
+
+	/* Signal to the lead CPU that the calling CPU has entered the test */
+	tftf_send_event(&cpu_has_entered_test[core_pos]);
+
+	read_trblimitr_el1();
+
+	/* Ensure that EL3 still functional */
+	smc_args args;
+	smc_ret_values smc_ret;
+	memset(&args, 0, sizeof(args));
+	args.fid = SMCCC_VERSION;
+	smc_ret = tftf_smc(&args);
+
+	tftf_testcase_printf("SMCCC Version = %d.%d\n",
+			(int)((smc_ret.ret0 >> SMCCC_VERSION_MAJOR_SHIFT) & SMCCC_VERSION_MAJOR_MASK),
+			(int)((smc_ret.ret0 >> SMCCC_VERSION_MINOR_SHIFT) & SMCCC_VERSION_MINOR_MASK));
+
+	if (undef_injection_triggered == true &&
+	    check_if_affected(mpid) == ERRATA_APPLIES) {
+		test_result = TEST_RESULT_SUCCESS;
+		undef_injection_triggered = false;
+	} else if(undef_injection_triggered == false &&
+		  check_if_affected(mpid) != ERRATA_APPLIES) {
+		test_result = TEST_RESULT_SUCCESS;
+	} else {
+		test_result = TEST_RESULT_FAIL;
+	}
+
+	return test_result;
+}
+
+/* This function kicks off non-lead cpus and the non-lead cpu function
+ * checks if errata is applied or not using the test
+ */
 test_result_t test_asymmetric_features(void)
 {
-	return TEST_RESULT_SUCCESS;
+	unsigned int lead_mpid;
+	unsigned int cpu_mpid, cpu_node;
+	unsigned int core_pos;
+	int psci_ret;
+
+	undef_injection_triggered = false;
+
+	register_custom_sync_exception_handler(trbe_trap_exception_handler);
+
+	lead_mpid = read_mpidr_el1() & MPID_MASK;
+
+	SKIP_TEST_IF_LESS_THAN_N_CPUS(2);
+
+	/* Power on all CPUs */
+	for_each_cpu(cpu_node) {
+		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
+		/* Skip lead CPU as it is already powered on */
+		if (cpu_mpid == lead_mpid)
+			continue;
+
+		psci_ret = tftf_cpu_on(cpu_mpid, (uintptr_t) non_lead_cpu_fn, 0);
+		if (psci_ret != PSCI_E_SUCCESS) {
+			tftf_testcase_printf(
+					"Failed to power on CPU 0x%x (%d)\n",
+					cpu_mpid, psci_ret);
+			return TEST_RESULT_SKIPPED;
+		}
+	}
+
+	/* Wait for non-lead CPUs to enter the test */
+	for_each_cpu(cpu_node) {
+		cpu_mpid = tftf_get_mpidr_from_node(cpu_node);
+		/* Skip lead CPU */
+		if (cpu_mpid == lead_mpid)
+			continue;
+
+		core_pos = platform_get_core_pos(cpu_mpid);
+		tftf_wait_for_event(&cpu_has_entered_test[core_pos]);
+		if (test_result == TEST_RESULT_FAIL)
+			break;
+	}
+
+	unregister_custom_sync_exception_handler();
+
+	return test_result;
 }
