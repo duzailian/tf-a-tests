@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "970fc861_e92bb92c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-08-13T13:56:36Z",
+      "side": 1,
+      "message": "Failing test is currently spuriously failing in the CI.",
+      "revId": "3d8cd68cffa9709895f1758ea144046bf18b896a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
