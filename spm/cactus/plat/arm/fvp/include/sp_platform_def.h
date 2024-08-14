@@ -26,6 +26,14 @@
 #define PLAT_CACTUS_DEVICE_SIZE		DEVICE0_SIZE - \
 					(PLAT_CACTUS_DEVICE_BASE - DEVICE0_BASE)
 
+/*
+ * Map the device memory starting from UART2
+ * so UART0 can be lent by tftf in the device memory sharing tests.
+ */
+#define PLAT_CACTUS_DEVICE_BASE		PL011_UART2_BASE
+#define PLAT_CACTUS_DEVICE_SIZE		DEVICE0_SIZE - \
+					(PLAT_CACTUS_DEVICE_BASE - DEVICE0_BASE)
+
 /* Scratch memory used for SMMUv3 driver testing purposes in Cactus SP */
 #define PLAT_CACTUS_MEMCPY_BASE			ULL(0x7400000)
 #define PLAT_CACTUS_NS_MEMCPY_BASE		ULL(0x90000000)
