@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "036bd2d2_737b432c",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_bind_failure.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-08-15T16:36:57Z",
+      "side": 1,
+      "message": "could you define a macro instead of these numbers ?",
+      "range": {
+        "startLine": 29,
+        "startChar": 12,
+        "endLine": 29,
+        "endChar": 26
+      },
+      "revId": "fc994fea8ec3129db364c88be27782efb9b269a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea58ac4c_a7192674",
+        "filename": "tftf/tests/tests-sdei.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-08-15T16:36:57Z",
+      "side": 1,
+      "message": "nit:\nIf I understand it correct, you are trying to test binding multiple interrupts in the PPI range (16-31) and ensure its not failing at the 4th iteration.\n\ncould you please keep the testname bit elaborative?",
+      "range": {
+        "startLine": 19,
+        "startChar": 21,
+        "endLine": 19,
+        "endChar": 45
+      },
+      "revId": "fc994fea8ec3129db364c88be27782efb9b269a7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
