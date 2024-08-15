@@ -1,0 +1,9 @@
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Allow-CI+2: Daniel Boulby <daniel.boulby@arm.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Thu, 15 Aug 2024 21:02:33 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/30549
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
