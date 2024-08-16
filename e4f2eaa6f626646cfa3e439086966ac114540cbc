@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b692dd1_7b248a64",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2024-08-16T19:46:59Z",
+      "side": 1,
+      "message": "CI passed (https://ci.trustedfirmware.org/job/tf-a-gerrit-tforg-l2/2434/)",
+      "revId": "e4f2eaa6f626646cfa3e439086966ac114540cbc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
