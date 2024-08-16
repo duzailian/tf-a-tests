@@ -46,6 +46,30 @@
       },
       "revId": "8c2c0b5d89509613473ca7407de49e533505d22f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3915e234_311de478",
+        "filename": "tftf/tests/misc_tests/test_asymmetric_features.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2024-08-16T10:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "979b1b79_44e520fa",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "8c2c0b5d89509613473ca7407de49e533505d22f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
