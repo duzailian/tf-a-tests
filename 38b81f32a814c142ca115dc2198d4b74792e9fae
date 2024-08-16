@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ca886fb_1373cd1c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2024-08-16T11:07:25Z",
+      "side": 1,
+      "message": "This is duplicate patch of another patch",
+      "revId": "38b81f32a814c142ca115dc2198d4b74792e9fae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
