@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b0bfcc0_34d3e550",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-08-19T14:31:36Z",
+      "side": 1,
+      "message": "Propagated Verified+1 from the top patch.",
+      "revId": "2d20ac071513593961e7ddd9033eae70b36aaf83",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
