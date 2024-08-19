@@ -16,6 +16,23 @@
       "message": "Updated commit message. Rebased.",
       "revId": "b79a256cfe2419ccc8c48a78a89e7b7735330fe0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3116034d_0c6e8e35",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-08-19T14:31:55Z",
+      "side": 1,
+      "message": "Propagated Verified+1 from the top patch.",
+      "revId": "b79a256cfe2419ccc8c48a78a89e7b7735330fe0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
