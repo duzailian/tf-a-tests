@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4aebc3ec_36d529e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-08-19T14:05:47Z",
+      "side": 1,
+      "message": "Upgrading Rohit\u0027s vote to CoR+1.",
+      "revId": "61b321e9f8f3a3cd8398b65e5f733abc5577d1a4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
