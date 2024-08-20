@@ -1,0 +1,10 @@
+Maintainer-Review+1: Mark Dykes <mark.dykes@arm.com>
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Allow-CI+2: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Submitted-by: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-at: Tue, 20 Aug 2024 22:30:24 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/29830
+Comments-Total: 7
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
