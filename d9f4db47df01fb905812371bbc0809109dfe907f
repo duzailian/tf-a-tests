@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b3887b6_c99cd849",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_bind_failure.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-08-20T13:35:09Z",
+      "side": 1,
+      "message": "nit: ``MAX_EVENTS_IN_PPI_RANGE`` ?\n\nFurther, as per this it means maximum of 4events are allowed to be binded in this range. But later on at line 46, you reduce this by 1 and check whether the 4th event itself is failing for binding or not.\n\nSo does this mean, you can maximum bind only 3 events ? \nCorrect me if I am wrong.",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 39
+      },
+      "revId": "d9f4db47df01fb905812371bbc0809109dfe907f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ff42870_10f592b4",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_bind_failure.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-08-20T13:35:09Z",
+      "side": 1,
+      "message": "nit:\n``(MIN_PPI_ID + NUM_EVENTS_ALLOWED_IN_PPI_RANGE)``",
+      "range": {
+        "startLine": 36,
+        "startChar": 31,
+        "endLine": 36,
+        "endChar": 76
+      },
+      "revId": "d9f4db47df01fb905812371bbc0809109dfe907f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22aa6c9e_4841789a",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_bind_failure.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-08-20T13:35:09Z",
+      "side": 1,
+      "message": "nit:\nplease add braces around this whole expression.\n``(MIN_PPI_ID + NUM_EVENTS_ALLOWED_IN_PPI_RANGE - 1)``",
+      "range": {
+        "startLine": 46,
+        "startChar": 22,
+        "endLine": 46,
+        "endChar": 70
+      },
+      "revId": "d9f4db47df01fb905812371bbc0809109dfe907f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c797bacf_86675485",
+        "filename": "tftf/tests/tests-sdei.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-08-20T13:35:09Z",
+      "side": 1,
+      "message": "2024",
+      "range": {
+        "startLine": 2,
+        "startChar": 24,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "d9f4db47df01fb905812371bbc0809109dfe907f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c00d420_60545394",
+        "filename": "tftf/tests/tests-sdei.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-08-20T13:35:09Z",
+      "side": 1,
+      "message": "2024",
+      "range": {
+        "startLine": 4,
+        "startChar": 22,
+        "endLine": 4,
+        "endChar": 25
+      },
+      "revId": "d9f4db47df01fb905812371bbc0809109dfe907f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
