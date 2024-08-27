@@ -19,20 +19,24 @@
 
 static event_t cpu_has_entered_test[PLATFORM_CORE_COUNT];
 
-static volatile bool exception_triggered;
+static volatile bool exception_triggered[PLATFORM_CORE_COUNT];
 
 static unsigned int test_result;
 
 static bool exception_handler(void)
 {
+	unsigned int mpid = read_mpidr_el1() & MPID_MASK;
+	unsigned int core_pos = platform_get_core_pos(mpid);
+
 	uint64_t esr_el2 = read_esr_el2();
+
 	if (EC_BITS(esr_el2) == EC_UNKNOWN) {
 		/*
 		 * This may be an undef injection, or a trap to EL2 due to a
 		 * register not being present. Both cases have the same EC
 		 * value.
 		 */
-		exception_triggered = true;
+		exception_triggered[core_pos] = true;
 		return true;
 	}
 
@@ -46,15 +50,15 @@ static test_result_t test_trbe(void)
 	bool check_if_affected = is_trbe_errata_affected_core();
 
 	register_custom_sync_exception_handler(exception_handler);
-	exception_triggered = false;
+	exception_triggered[core_pos] = false;
 	read_trblimitr_el1();
 	unregister_custom_sync_exception_handler();
 
-	if (exception_triggered == true && check_if_affected == true) {
+	if (exception_triggered[core_pos] == true && check_if_affected == true) {
 		test_result = TEST_RESULT_SUCCESS;
 		tftf_testcase_printf("Exception triggered for core = %d "
 				     "when accessing TRB_LIMTR\n", core_pos);
-	} else if (exception_triggered == false && check_if_affected == false) {
+	} else if (exception_triggered[core_pos] == false && check_if_affected == false) {
 		test_result = TEST_RESULT_SUCCESS;
 		tftf_testcase_printf("TRB_LIMITR register accessible for core "
 				     "= %d\n", core_pos);
@@ -71,15 +75,15 @@ static test_result_t test_spe(void)
 	unsigned int core_pos = platform_get_core_pos(mpid);
 
 	register_custom_sync_exception_handler(exception_handler);
-	exception_triggered = false;
+	exception_triggered[core_pos] = false;
 	read_pmscr_el1();
 	unregister_custom_sync_exception_handler();
 
-	if (exception_triggered == true && !is_feat_spe_supported()) {
+	if (exception_triggered[core_pos] == true && !is_feat_spe_supported()) {
 		test_result = TEST_RESULT_SUCCESS;
 		tftf_testcase_printf("Exception triggered for core = %d "
 				     "when accessing PMSCR_EL1\n", core_pos);
-	} else if (exception_triggered == false &&
+	} else if (exception_triggered[core_pos] == false &&
 		   is_feat_spe_supported()) {
 		test_result = TEST_RESULT_SUCCESS;
 		tftf_testcase_printf("PMSCR_EL1 register accessible for core = "
