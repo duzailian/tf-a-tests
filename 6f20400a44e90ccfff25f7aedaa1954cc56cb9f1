@@ -16,6 +16,24 @@
       "message": "Thanks for this Pranjal. Can you +1 Verified if you\u0027ve tested it.",
       "revId": "6f20400a44e90ccfff25f7aedaa1954cc56cb9f1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5d2b103_ef66f2d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001353
+      },
+      "writtenOn": "2024-08-28T15:00:56Z",
+      "side": 1,
+      "message": "Don\u0027t have rights to vote `Verified +1`\nBut I\u0027ve tested this on QEMU with https://github.com/jenswi-linaro/tf-a-tests",
+      "parentUuid": "48a0be23_5a499f38",
+      "revId": "6f20400a44e90ccfff25f7aedaa1954cc56cb9f1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
