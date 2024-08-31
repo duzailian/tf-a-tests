@@ -1,0 +1,9 @@
+Verified+1: Paul Sokolovsky <paul.sokolovsky@linaro.org>
+Maintainer-Review+1: Paul Sokolovsky <paul.sokolovsky@linaro.org>
+Code-Owner-Review+1: Paul Sokolovsky <paul.sokolovsky@linaro.org>
+Submitted-by: Paul Sokolovsky <paul.sokolovsky@linaro.org>
+Submitted-at: Sat, 31 Aug 2024 14:30:28 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/30877
+Comments-Total: 1
+Project: TF-A/tf-a-tests
+Branch: refs/heads/lts-v2.10
