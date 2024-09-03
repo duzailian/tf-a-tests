@@ -82,6 +82,30 @@ static test_result_t test_spe(void)
 	return test_result;
 }
 
+static test_result_t test_tcr2(void)
+{
+	unsigned int mpid = read_mpidr_el1() & MPID_MASK;
+	unsigned int core_pos = platform_get_core_pos(mpid);
+
+	read_tcr2_el1();
+
+	if (undef_injection_triggered == true && !is_feat_tcr2_supported()) {
+		test_result = TEST_RESULT_SUCCESS;
+		undef_injection_triggered = false;
+		tftf_testcase_printf("Undef injection triggered for core = %d "
+				     "when accessing TCR2_EL1\n", core_pos);
+	} else if (undef_injection_triggered == false &&
+		   is_feat_tcr2_supported()) {
+		test_result = TEST_RESULT_SUCCESS;
+		tftf_testcase_printf("TCR2_EL1 register accessible for core = "
+				     "%d\n", core_pos);
+	} else {
+		test_result = TEST_RESULT_FAIL;
+	}
+
+	return test_result;
+}
+
 /*
  * Non-lead cpu function that checks if trblimitr_el1 is accessible,
  * on affected cores this causes a undef injection and passes.In cores that
@@ -108,6 +132,13 @@ static test_result_t non_lead_cpu_fn(void)
 	result = test_spe();
 	if (result != TEST_RESULT_SUCCESS) {
 		tftf_testcase_printf("test_spe_support failed with result %d\n",
+				     result);
+		test_result = result;
+	}
+
+	result = test_tcr2();
+	if (result != TEST_RESULT_SUCCESS) {
+		tftf_testcase_printf("test_tcr2_support failed with result %d\n",
 				     result);
 		test_result = result;
 	}
@@ -157,6 +188,13 @@ test_result_t test_asymmetric_features(void)
 	result = test_spe();
 	if (result != TEST_RESULT_SUCCESS) {
 		tftf_testcase_printf("test_spe_support failed with result %d\n",
+				     result);
+		test_result = result;
+	}
+
+	result = test_tcr2();
+	if (result != TEST_RESULT_SUCCESS) {
+		tftf_testcase_printf("test_tcr2_support failed with result %d\n",
 				     result);
 		test_result = result;
 	}
