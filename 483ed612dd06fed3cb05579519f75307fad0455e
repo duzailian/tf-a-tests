@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0e36add_f6946bd4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-09-05T07:42:20Z",
+      "side": 1,
+      "message": "**FEAT_TCR2** tested on TC2 platform here:\n**https://ci.trustedfirmware.org/job/tf-a-builder/4196787/**\n**https://ci.trustedfirmware.org/job/tf-a-builder/4196787/artifact/lava-uart2.log/*view*/**",
+      "revId": "483ed612dd06fed3cb05579519f75307fad0455e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
