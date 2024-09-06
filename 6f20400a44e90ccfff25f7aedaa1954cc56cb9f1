@@ -51,6 +51,23 @@
       "message": "LGTM. I just need to look more into the 2 failed tests reported by the CI before this can get merged.",
       "revId": "6f20400a44e90ccfff25f7aedaa1954cc56cb9f1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "babe0dbf_6a3ab73a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2024-09-06T12:22:23Z",
+      "side": 1,
+      "message": "The CI failures looked like temporary infrastructure-related issues to me so I reran them and this time they passed:\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/83211/",
+      "revId": "6f20400a44e90ccfff25f7aedaa1954cc56cb9f1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
