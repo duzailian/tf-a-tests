@@ -1,0 +1,13 @@
+Verified+1: Sandrine Afsa Bailleux <sandrine.afsa@arm.com>
+Code-Owner-Review+1: Okash Khawaja <okash.khawaja@gmail.com>
+Allow-CI+2: Olivier Deprez <olivier.deprez@arm.com>
+Code-Review+1: Andrew Walbran <qwandor@google.com>
+Maintainer-Review+1: Sandrine Afsa Bailleux <sandrine.afsa@arm.com>
+Code-Owner-Review+1: Andrew Walbran <qwandor@google.com>
+Code-Review+1: Okash Khawaja <okash.khawaja@gmail.com>
+Submitted-by: Sandrine Afsa Bailleux <sandrine.afsa@arm.com>
+Submitted-at: Fri, 06 Sep 2024 14:22:43 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/30774
+Comments-Total: 4
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
