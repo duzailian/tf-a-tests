@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Copyright (c) 2024, Arm Limited. All rights reserved.
+
+  SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<testsuites>
+  <testsuite name="Realm Device Assignment" description="Check Realm DA support">
+     <testcase name="Host DOE Discovery" function="host_doe_discovery_test" />
+     <testcase name="Host SPDM Get Version" function="host_spdm_version_test" />
+  </testsuite>
+</testsuites>
