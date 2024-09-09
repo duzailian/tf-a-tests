@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7de7232a_e843f0c4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-09T16:10:07Z",
+      "side": 1,
+      "message": "It is not clear what the problem was prior to this change and how this is solving the issue.\n\nThe pool creation logic was meant to be hidden inside the framework. So the macros and APIs are not very intuitive to the test case writer.",
+      "revId": "e714033662387c11e3bf9071b296a7e3af6a3e98",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
