@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "548bbb0d_498786d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000709
+      },
+      "writtenOn": "2024-09-09T09:08:37Z",
+      "side": 1,
+      "message": "https://linaro.atlassian.net/browse/TFC-646",
+      "revId": "589da05f655df39ba0af884fe9ca4eaba74b4aad",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
