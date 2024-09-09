@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "700a11bb_da299013",
+        "filename": "include/lib/pcie/pcie.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-09-09T13:31:29Z",
+      "side": 1,
+      "message": "Looks good overall. Functionally I verified these changes using DA patchset. \n\nCan we split this patch into two parts\n1. adding lib/pcie for DOE support\n   and adding plat/arm/fvp that defines pcie config space and fvp_pcie_cfg table\n2. The second patch can come in later. So that changes to spm/, tftf/tests/ can be moved to the second patch. This will also remove the need for adding spdm.h as part of DOE support.",
+      "revId": "09f31c9474ed292c9cd647e04c385516370375e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a750af59_48655cb4",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_da.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-09-09T13:31:29Z",
+      "side": 1,
+      "message": "These testcases are applicable to host and not to a realm. A realm won\u0027t see PCIe devices with DOE capabilities.\n\nIf a realm is reading PCIe config space, it shouldn\u0027t see DOE extended capability",
+      "revId": "09f31c9474ed292c9cd647e04c385516370375e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "749e5a0c_72bb250f",
+        "filename": "tftf/tests/tests-realm-da.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-09-09T13:31:29Z",
+      "side": 1,
+      "message": "Normally in TFTF we add test cases to verify EL3/EL2 functionality. But here the pcie doe support is added in NS-EL2 (TFTF) and we are adding testcases in TFTF. So these changes can be added in second patch and renamed to host_pcie_self_test?",
+      "revId": "09f31c9474ed292c9cd647e04c385516370375e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
