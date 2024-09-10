@@ -19,8 +19,20 @@ func realm_entrypoint
 	/* Save x0 - context_id */
 	mov	x20, x0
 	mrs	x0, mpidr_el1
-	mov_imm	x1, MPID_MASK
-	and	x0, x0, x1
+
+	/*
+	 * Calculate REC index from mpidr of MPIDR_EL1 register type:
+	 * Aff0[3:0] - Affinity level 0
+	 * Aff9[7:4] - RES0
+	 * Aff1[15:8] - Affinity level 1
+	 * Aff2[23:16] - Affinity level 2
+	 * Aff3[39:32] - Affinity level 3
+	 */
+	and	x1, x0, #MASK(MPIDR_EL1_AFF3)
+	and	x0, x0, #MPIDR_AFF20_MASK
+	orr	x1, x0, x1, lsr #(MPIDR_AFF3_SHIFT - 3 * MPIDR_AFFINITY_BITS)
+	and	x0, x0, #MASK(MPIDR_EL1_AFF0)
+	orr	x0, x0, x1, lsr #(MPIDR_EL1_AFF1_SHIFT - MPIDR_EL1_AFF0_WIDTH)
 
 	/* Setup the stack pointer */
 	bl	realm_setup_my_stack
