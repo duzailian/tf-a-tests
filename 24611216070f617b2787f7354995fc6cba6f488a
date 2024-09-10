@@ -50,6 +50,23 @@
       "message": "WIP",
       "revId": "24611216070f617b2787f7354995fc6cba6f488a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d45a6f31_986510f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-09-10T13:58:28Z",
+      "side": 1,
+      "message": "Could we abandon this change?",
+      "revId": "24611216070f617b2787f7354995fc6cba6f488a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
