@@ -24,4 +24,9 @@ TESTS_SOURCES	+=	$(addprefix tftf/tests/,			\
 	runtime_services/arm_arch_svc/smccc_arch_workaround_1.c		\
 	runtime_services/arm_arch_svc/smccc_arch_workaround_2.c		\
 	runtime_services/arm_arch_svc/smccc_arch_workaround_3.c		\
+<<<<<<< HEAD   (0e4f48 Merge "fix: cactus_mm is too verbose on some tests" into lts)
+=======
+	runtime_services/arm_arch_svc/smccc_feature_availability.c	\
+	runtime_services/arm_arch_svc/smccc_arch_workaround_4.c		\
+>>>>>>> CHANGE (43d421 test(security): add testcase for SMCCC_ARCH_WORKAROUND_4)
 )
