@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2a58dfa_ccc9e8d6",
+        "filename": "include/lib/spdm/spdm.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-09-11T13:48:10Z",
+      "side": 1,
+      "message": "This file can be removed and you can add the required typedefs like spdm_get_version_request_t/response in doe_helpers.c to avoid CI failure.",
+      "revId": "cc65802fc4eb3a111fd7ca1ee1cc494e790d2503",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7950600b_c03ea0cd",
+        "filename": "tftf/tests/doe_tests/doe_helpers.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-09-11T13:48:10Z",
+      "side": 1,
+      "message": "If the response is not valid, this can\u0027t be flagged as DOE error.",
+      "revId": "cc65802fc4eb3a111fd7ca1ee1cc494e790d2503",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
