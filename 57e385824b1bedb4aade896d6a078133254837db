@@ -74,6 +74,30 @@
       },
       "revId": "57e385824b1bedb4aade896d6a078133254837db",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c168cf3_34bde0cc",
+        "filename": "include/runtime_services/host_realm_managment/realm_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-09-11T16:10:59Z",
+      "side": 1,
+      "message": "The idea was to make REC_IDX(mpidr) \u0026 RMI_REC_MPIDR(idx) look like convertion functions which take input type parameter (mpidr, idx) and return value of type defined by the name of a macro.",
+      "parentUuid": "4315105d_cd0da8b5",
+      "range": {
+        "startLine": 105,
+        "startChar": 8,
+        "endLine": 105,
+        "endChar": 21
+      },
+      "revId": "57e385824b1bedb4aade896d6a078133254837db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
