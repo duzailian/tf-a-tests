@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "152dac3d_818711c2",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-09-11T11:16:13Z",
+      "side": 1,
+      "message": "I think this variable should stay in data section, we clear out bss section in cold boot path and this can cause race conditions",
+      "parentUuid": "47d42b79_e0c14131",
+      "range": {
+        "startLine": 87,
+        "startChar": 4,
+        "endLine": 87,
+        "endChar": 30
+      },
+      "revId": "d1e5b5f1f389e08024f95e9a1614e6f1e9983389",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ef4014a9_7fa2c27c",
         "filename": "realm/aarch64/realm_entrypoint.S",
         "patchSetId": 1
