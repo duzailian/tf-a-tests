@@ -93,6 +93,30 @@
       },
       "revId": "d1e5b5f1f389e08024f95e9a1614e6f1e9983389",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b8beb25_d3a5ef80",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-09-11T14:48:14Z",
+      "side": 1,
+      "message": "I was following TF-RMM @line #174:\nhttps://git.trustedfirmware.org/plugins/gitiles/TF-RMM/tf-rmm.git/+/refs/heads/main/runtime/core/aarch64/head.S:\n\n.align 3\ncold_boot_flag:\n\t.dword\t\t1\nendfunc rmm_entry",
+      "parentUuid": "ef4014a9_7fa2c27c",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 10
+      },
+      "revId": "d1e5b5f1f389e08024f95e9a1614e6f1e9983389",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
