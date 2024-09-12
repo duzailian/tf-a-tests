@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d264851e_82b38b85",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-09-12T13:18:38Z",
+      "side": 1,
+      "message": "LGTM.\nIn my understanding, altogether 2 issues resolved here:\n\n* Skipping the tests rather than passing as its tough to identify b/w \n  undef_injection and other EL2 TRAPS as both return same error. So its better to \n  skip, when hardware doesn\u0027t support feature.\n\n* Test should be validating software than hardware. So when the ID register \n  indicate \"no\" skipping the test is the best option.\n\n* Splitting the test for better maintenance of the overall test_suite. It also \n  gives better clarity on which feature test was skipped/passed/failed.\n\n@Arvind / @Manish P, kindly have a look and share your thoughts.",
+      "revId": "6e0aa30326defce750cafc529489e146e51de3c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
