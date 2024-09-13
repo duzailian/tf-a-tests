@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59c4caf9_de9d33a1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-13T16:19:29Z",
+      "side": 1,
+      "message": "The header file ordering has been fixed in last patch. Ignoring the static check errors for spdm.h as it is an imported file from libspdm project.",
+      "revId": "7e30acffe58ecaed6a9a7b50262e688e23e4a20c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
