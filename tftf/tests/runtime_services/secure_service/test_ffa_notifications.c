@@ -742,6 +742,7 @@ static test_result_t base_test_global_notifications_signal_sp(
 	 */
 	ids[0] = receiver;
 	lists_count = 1;
+	lists_sizes[0] = 1;
 
 	if (!notifications_info_get(ids, lists_count, lists_sizes,
 				    FFA_NOTIFICATIONS_INFO_GET_MAX_IDS,
@@ -825,6 +826,7 @@ test_result_t test_ffa_notifications_sp_signals_vm(void)
 	 */
 	ids[0] = receiver;
 	lists_count = 1;
+	lists_sizes[0] = 1;
 
 	if (!notifications_info_get(ids, lists_count, lists_sizes,
 				    FFA_NOTIFICATIONS_INFO_GET_MAX_IDS,
@@ -1038,7 +1040,7 @@ static test_result_t base_test_per_vcpu_notifications(ffa_id_t sender,
 	};
 	uint32_t exp_lists_count = 3;
 	uint32_t exp_lists_sizes[FFA_NOTIFICATIONS_INFO_GET_MAX_IDS] = {
-		3, 3, 2, 0, 0, 0, 0, 0, 0, 0,
+		4, 4, 3, 0, 0, 0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	};
 
@@ -1201,7 +1203,7 @@ test_result_t test_ffa_notifications_sp_signals_vm_per_vcpu(void)
 	};
 	uint32_t exp_lists_count = 3;
 	uint32_t exp_lists_sizes[FFA_NOTIFICATIONS_INFO_GET_MAX_IDS] = {
-		3, 3, 2, 0, 0, 0, 0, 0, 0, 0,
+		4, 4, 3, 0, 0, 0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	};
 
@@ -1296,6 +1298,7 @@ test_result_t test_ffa_notifications_sp_signals_sp_immediate_sri(void)
 
 	ids[0] = receiver;
 	lists_count = 1;
+	lists_sizes[0] = 1;
 
 	schedule_receiver_interrupt_init();
 
@@ -1378,6 +1381,7 @@ test_result_t test_ffa_notifications_sp_signals_sp_delayed_sri(void)
 
 	ids[0] = receiver;
 	lists_count = 1;
+	lists_sizes[0] = 1;
 
 	schedule_receiver_interrupt_init();
 
