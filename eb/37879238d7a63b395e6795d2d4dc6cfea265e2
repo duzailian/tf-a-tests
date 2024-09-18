@@ -1,0 +1,9 @@
+Maintainer-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Code-Owner-Review+1: Daniel Boulby <daniel.boulby@arm.com>
+Allow-CI+2: Joao Alves <joao.alves@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Submitted-by: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-at: Wed, 18 Sep 2024 10:50:20 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/29508
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
