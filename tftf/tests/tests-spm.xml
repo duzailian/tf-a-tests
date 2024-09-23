@@ -83,6 +83,9 @@
      <testcase name="MTE regs preserved across context switch"
            function="test_spm_mte_regs_ctxt_mgmt" />
 
+     <testcase name="EL2 regs preserved across context switch"
+           function="test_spm_el2_regs_ctxt_mgmt" />
+
   </testsuite>
 
   <testsuite name="FF-A Group0 interrupts"
