@@ -11,6 +11,7 @@
 #include <cactus_test_cmds.h>
 
 #include <spm_test_helpers.h>
+#include <lib/context_mgmt/aarch64/context_el2.h>
 
 #define ECHO_VAL ULL(0xabcddcba)
 #define GCR_VAL ULL(0x1ff)
@@ -73,6 +74,58 @@ test_result_t test_spm_mte_regs_ctxt_mgmt(void)
 
 	if (tfsre0_el1 != TFSRE0_VAL) {
 		ERROR("Expected vs actual value of tfsre0_el1: %llx, %llx\n", TFSRE0_VAL, tfsre0_el1);
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * This test aims to validate EL2 system registers are restored to previously saved
+ * values upon returning from context switch triggered by an FF-A direct
+ * message request to an SP.
+ */
+test_result_t test_spm_el2_regs_ctxt_mgmt(void)
+{
+	struct ffa_value ret;
+	el2_sysregs_t ctx_original = {0}, ctx_expected = {0}, ctx_actual = {0}, ctx_final = {0};
+
+	/* Check SPMC has ffa_version and expected FFA endpoints are deployed. */
+	CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
+
+	/* Save the original values of EL2 system registers. */
+	el2_save_registers(&ctx_original);
+
+	/* Corrupt the EL2 system registers and save the expected values. */
+	el2_restore_registers_with_mask(&ctx_original, REG_CORRUPTION_MASK);
+	el2_save_registers(&ctx_expected);
+
+	/* Send a message to SP1 through direct messaging. */
+	ret = cactus_echo_send_cmd(HYP_ID, SP_ID(1), ECHO_VAL1);
+
+	if (cactus_get_response(ret) != CACTUS_SUCCESS ||
+	    cactus_echo_get_val(ret) != ECHO_VAL1 ||
+		!is_ffa_direct_response(ret)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	/* Save the modified values of EL2 system registers after the FF-A command. */
+	el2_save_registers(&ctx_actual);
+
+	/* Restore the EL2 system registers to their original state. */
+	el2_restore_registers_with_mask(&ctx_original, 0);
+	el2_save_registers(&ctx_final);
+
+	if (memcmp(&ctx_original, &ctx_final, sizeof(el2_sysregs_t))) {
+		WARN("Could not fully restore original EL2 register state.\n\n");
+	}
+
+	if (memcmp(&ctx_expected, &ctx_actual, sizeof(el2_sysregs_t))) {
+		ERROR("Expected vs actual EL2 register contexts differ.\n\n");
+		INFO("Expected:\n");
+		el2_dump_register_context(&ctx_expected);
+		INFO("Actual:\n");
+		el2_dump_register_context(&ctx_actual);
 		return TEST_RESULT_FAIL;
 	}
 
