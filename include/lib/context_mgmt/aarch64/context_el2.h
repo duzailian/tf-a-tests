@@ -13,6 +13,19 @@
 #include <arch_helpers.h>
 #include <debug.h>
 
+/**
+ * Register mask for EL2 corruption test.
+ */
+#define REG_CORRUPTION_MASK	ULL(0xffffffffffffffff)
+
+/**
+ * Bit masks for sensitive fields of various registers.
+ */
+#define SCTLR_EL2_EE		ULL(0x2000000)
+#define TTBR1_EL2_ASID		ULL(0xffff000000000000)
+#define TCR2_EL2_POE		ULL(0x8)
+#define GCSCR_EL2_PCRSEL	ULL(0x1)
+
 /*******************************************************************************
  * EL2 Registers:
  * AArch64 EL2 system register context structure for preserving the
@@ -162,5 +175,14 @@ typedef struct el2_sysregs {
 } el2_sysregs_t;
 
 /******************************************************************************/
+
+/**
+ * --------------------------------------
+ * EL2 context accessor public functions.
+ * --------------------------------------
+ */
+void el2_save_registers(el2_sysregs_t *ctx);
+void el2_restore_registers_with_mask(el2_sysregs_t *ctx, uint64_t or_mask);
+void el2_dump_register_context(el2_sysregs_t *ctx);
 
 #endif /* CONTEXT_EL2_H */
