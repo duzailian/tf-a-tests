@@ -112,6 +112,29 @@
 #define ICV_PMR_EL1		S3_0_C4_C6_0
 
 /*******************************************************************************
+ * Definitions for EL2 system registers for save/restore routine
+ ******************************************************************************/
+#define CNTPOFF_EL2		S3_4_C14_C0_6
+#define HDFGRTR2_EL2		S3_4_C3_C1_0
+#define HDFGWTR2_EL2		S3_4_C3_C1_1
+#define HFGRTR2_EL2		S3_4_C3_C1_2
+#define HFGWTR2_EL2		S3_4_C3_C1_3
+#define HDFGRTR_EL2		S3_4_C3_C1_4
+#define HDFGWTR_EL2		S3_4_C3_C1_5
+#define HAFGRTR_EL2		S3_4_C3_C1_6
+#define HFGITR2_EL2		S3_4_C3_C1_7
+#define HFGITR_EL2		S3_4_C1_C1_6
+#define HFGRTR_EL2		S3_4_C1_C1_4
+#define HFGWTR_EL2		S3_4_C1_C1_5
+#define ICH_HCR_EL2		S3_4_C12_C11_0
+#define ICH_VMCR_EL2		S3_4_C12_C11_7
+#define VNCR_EL2		S3_4_C2_C2_0
+#define PMSCR_EL2		S3_4_C9_C9_0
+#define TFSR_EL2		S3_4_C5_C6_0
+#define CONTEXTIDR_EL2		S3_4_C13_C0_1
+#define TTBR1_EL2		S3_4_C2_C0_1
+
+/*******************************************************************************
  * Generic timer memory mapped registers & offsets
  ******************************************************************************/
 #define CNTCR_OFF			U(0x000)
@@ -383,6 +406,8 @@
 #define ID_AA64MMFR1_EL1_LO_WIDTH		U(4)
 #define ID_AA64MMFR1_EL1_LOR_NOT_SUPPORTED	ULL(0x0)
 #define ID_AA64MMFR1_EL1_LOR_SUPPORTED		ULL(0x1)
+#define ID_AA64MMFR1_EL1_VHE_SHIFT		ULL(8)
+#define ID_AA64MMFR1_EL1_VHE_MASK		ULL(0xf)
 
 
 /* ID_AA64MMFR2_EL1 definitions */
@@ -393,6 +418,28 @@
 
 #define ID_AA64MMFR2_EL1_CNP_SHIFT	U(0)
 #define ID_AA64MMFR2_EL1_CNP_MASK	ULL(0xf)
+
+#define ID_AA64MMFR2_EL1_NV_SHIFT	U(24)
+#define ID_AA64MMFR2_EL1_NV_MASK	ULL(0xf)
+#define NV2_IMPLEMENTED			ULL(0x2)
+
+/* ID_AA64MMFR3_EL1 definitions */
+#define ID_AA64MMFR3_EL1		S3_0_C0_C7_3
+
+#define ID_AA64MMFR3_EL1_S2POE_SHIFT	U(20)
+#define ID_AA64MMFR3_EL1_S2POE_MASK	ULL(0xf)
+
+#define ID_AA64MMFR3_EL1_S1POE_SHIFT	U(16)
+#define ID_AA64MMFR3_EL1_S1POE_MASK	ULL(0xf)
+
+#define ID_AA64MMFR3_EL1_S2PIE_SHIFT	U(12)
+#define ID_AA64MMFR3_EL1_S2PIE_MASK	ULL(0xf)
+
+#define ID_AA64MMFR3_EL1_S1PIE_SHIFT	U(8)
+#define ID_AA64MMFR3_EL1_S1PIE_MASK	ULL(0xf)
+
+#define ID_AA64MMFR3_EL1_TCRX_SHIFT	U(0)
+#define ID_AA64MMFR3_EL1_TCRX_MASK	ULL(0xf)
 
 /* ID_AA64PFR1_EL1 definitions */
 #define ID_AA64PFR1_EL1_SSBS_SHIFT	U(4)
@@ -419,6 +466,9 @@
 #define ID_AA64PFR1_CSV2_FRAC_WIDTH		U(4)
 #define ID_AA64PFR1_CSV2_1P1_SUPPORTED		ULL(0x1)
 #define ID_AA64PFR1_CSV2_1P2_SUPPORTED		ULL(0x2)
+
+#define ID_AA64PFR1_EL1_GCS_SHIFT		U(44)
+#define ID_AA64PFR1_EL1_GCS_MASK		ULL(0xf)
 
 #define MTE_UNIMPLEMENTED	ULL(0)
 #define MTE_IMPLEMENTED_EL0	ULL(1)	/* MTE is only implemented at EL0 */
@@ -1226,6 +1276,11 @@
 #define AMEVCNTVOFF1F_EL2	S3_4_C13_C11_7
 
 /*******************************************************************************
+ * Realm management extension register definitions
+ ******************************************************************************/
+#define SCXTNUM_EL2		S3_4_C13_C0_7
+
+/*******************************************************************************
  * RAS system registers
  ******************************************************************************/
 #define DISR_EL1		S3_0_C12_C1_1
@@ -1437,6 +1492,25 @@
 #define HFGWTR_EL2_FEAT_LOR_MASK		ULL(0xf80000)
 #define HFGWTR_EL2_FEAT_PAUTH_MASK		ULL(0x1f0)
 #define HFGWTR_EL2_NON_FEAT_DEPENDENT_MASK	ULL(0x7f2903380b)
+
+/*******************************************************************************
+ * FEAT_TCR2 - Extended Translation Control Registers
+ ******************************************************************************/
+#define TCR2_EL2				S3_4_C2_C0_3
+
+/*******************************************************************************
+ * Permission indirection and overlay Registers
+ ******************************************************************************/
+#define PIRE0_EL2				S3_4_C10_C2_2
+#define PIR_EL2					S3_4_C10_C2_3
+#define POR_EL2					S3_4_C10_C2_4
+#define S2PIR_EL2				S3_4_C10_C2_5
+
+/*******************************************************************************
+ * FEAT_GCS - Guarded Control Stack Registers
+ ******************************************************************************/
+#define GCSCR_EL2				S3_4_C2_C5_0
+#define GCSPR_EL2				S3_4_C2_C5_1
 
 
 #endif /* ARCH_H */
