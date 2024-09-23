@@ -28,6 +28,12 @@ static inline bool is_armv8_1_pan_present(void)
 		(id_aa64mmfr1_pan <= ID_AA64MMFR1_EL1_PAN3_SUPPORTED);
 }
 
+static inline bool is_armv8_1_vhe_present(void)
+{
+	return ((read_id_aa64mmfr1_el1() >> ID_AA64MMFR1_EL1_VHE_SHIFT) &
+		ID_AA64MMFR1_EL1_VHE_MASK) == 1U;
+}
+
 static inline bool is_armv8_2_pan2_present(void)
 {
 	u_register_t id_aa64mmfr1_pan =
@@ -54,6 +60,12 @@ static inline bool is_feat_fp_present(void)
 	u_register_t id_aa64pfr0_fp =
 		EXTRACT(ID_AA64PFR0_FP, read_id_aa64pfr0_el1());
 	return (id_aa64pfr0_fp == 0 || id_aa64pfr0_fp == 1);
+}
+
+static inline bool is_feat_tcr2_present(void)
+{
+	return ((read_id_aa64mmfr3_el1() >> ID_AA64MMFR3_EL1_TCRX_SHIFT) &
+		ID_AA64MMFR3_EL1_TCRX_MASK) == 1U;
 }
 
 static inline bool is_armv8_2_ttcnp_present(void)
@@ -114,10 +126,22 @@ static inline bool is_armv8_3_pauth_gpa_gpi_gpa3_present(void)
 		(read_id_aa64isar2_el1() & mask_id_aa64isar2)) != 0U;
 }
 
+static inline bool is_armv8_4_amuv1_present(void)
+{
+	return ((read_id_aa64pfr0_el1() >> ID_AA64PFR0_AMU_SHIFT) &
+		ID_AA64PFR0_AMU_MASK) == 1U;
+}
+
 static inline bool is_armv8_4_dit_present(void)
 {
 	return ((read_id_aa64pfr0_el1() >> ID_AA64PFR0_DIT_SHIFT) &
 		ID_AA64PFR0_DIT_MASK) == 1U;
+}
+
+static inline bool is_armv8_4_nv2_present(void)
+{
+	return ((read_id_aa64mmfr2_el1() >> ID_AA64MMFR2_EL1_NV_SHIFT) &
+		ID_AA64MMFR2_EL1_NV_MASK) == NV2_IMPLEMENTED;
 }
 
 static inline bool is_armv8_4_ttst_present(void)
@@ -148,6 +172,48 @@ static inline bool is_armv8_9_fgt2_present(void)
 {
 	return ((read_id_aa64mmfr0_el1() >> ID_AA64MMFR0_EL1_FGT_SHIFT) &
 		ID_AA64MMFR0_EL1_FGT_MASK) == ID_AA64MMFR0_EL1_FGT2_SUPPORTED;
+}
+
+static inline bool is_armv8_9_s1poe_present(void)
+{
+	return ((read_id_aa64mmfr3_el1() >> ID_AA64MMFR3_EL1_S1POE_SHIFT) &
+		ID_AA64MMFR3_EL1_S1POE_MASK) == 1U;
+}
+
+static inline bool is_armv8_9_s2poe_present(void)
+{
+	return ((read_id_aa64mmfr3_el1() >> ID_AA64MMFR3_EL1_S2POE_SHIFT) &
+		ID_AA64MMFR3_EL1_S2POE_MASK) == 1U;
+}
+
+__attribute__((always_inline))
+static inline bool is_armv8_9_sxpoe_present(void)
+{
+	return is_armv8_9_s1poe_present() || is_armv8_9_s2poe_present();
+}
+
+static inline bool is_armv8_9_s1pie_present(void)
+{
+	return ((read_id_aa64mmfr3_el1() >> ID_AA64MMFR3_EL1_S1PIE_SHIFT) &
+		ID_AA64MMFR3_EL1_S1PIE_MASK) == 1U;
+}
+
+static inline bool is_armv8_9_s2pie_present(void)
+{
+	return ((read_id_aa64mmfr3_el1() >> ID_AA64MMFR3_EL1_S2PIE_SHIFT) &
+		ID_AA64MMFR3_EL1_S2PIE_MASK) == 1U;
+}
+
+__attribute__((always_inline))
+static inline bool is_armv8_9_sxpie_present(void)
+{
+	return is_armv8_9_s1pie_present() || is_armv8_9_s2pie_present();
+}
+
+static inline bool is_armv9_4_gcs_present(void)
+{
+	return ((read_id_aa64pfr1_el1() >> ID_AA64PFR1_EL1_GCS_SHIFT) &
+		ID_AA64PFR1_EL1_GCS_MASK) == 1U;
 }
 
 static inline unsigned long int get_armv8_6_ecv_support(void)
@@ -388,7 +454,7 @@ static inline bool is_feat_ls64_accdata_present(void)
 static inline bool is_feat_ras_present(void)
 {
 	return EXTRACT(ID_AA64PFR0_RAS, read_id_aa64pfr0_el1())
-		== ID_AA64PFR0_RAS_SUPPORTED;
+		>= ID_AA64PFR0_RAS_SUPPORTED;
 }
 
 static inline bool is_feat_rasv1p1_present(void)
