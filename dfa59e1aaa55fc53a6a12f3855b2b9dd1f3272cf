@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f47a5b0_ba73eb87",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-09-24T15:28:50Z",
+      "side": 1,
+      "message": "With the changes made here, shouldn\u0027t the second argument of ffa_features_test_targets() function be made size_t instead of uint32_t?",
+      "revId": "dfa59e1aaa55fc53a6a12f3855b2b9dd1f3272cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
