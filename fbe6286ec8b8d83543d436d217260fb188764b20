@@ -16,6 +16,24 @@
       "message": "nitpick:\nfix: validate FFA_MSG_YIELD as supported by FFA_FEATURES",
       "revId": "fbe6286ec8b8d83543d436d217260fb188764b20",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44ce7835_e0f55425",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000957
+      },
+      "writtenOn": "2024-09-24T13:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b780134_a559b2fd",
+      "revId": "fbe6286ec8b8d83543d436d217260fb188764b20",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
