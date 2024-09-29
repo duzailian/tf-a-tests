@@ -63,6 +63,30 @@
       },
       "revId": "362dafcaa86a2f3b205b150533e2dab6678ad56f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4ae07ff_667e0159",
+        "filename": "tftf/tests/misc_tests/test_asymmetric_features.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-09-29T16:16:27Z",
+      "side": 1,
+      "message": "Its already taken care in the top patch in this series.\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/30980/2/tftf/tests/misc_tests/test_asymmetric_features.c#b204\nSo not making any changes again here. Hope thats fine as the entire series is related.",
+      "parentUuid": "c31c2e06_427b729d",
+      "range": {
+        "startLine": 195,
+        "startChar": 1,
+        "endLine": 195,
+        "endChar": 44
+      },
+      "revId": "362dafcaa86a2f3b205b150533e2dab6678ad56f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
