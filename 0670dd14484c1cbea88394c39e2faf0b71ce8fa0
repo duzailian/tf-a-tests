@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ce9b545_d4cb540b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-09-30T16:03:08Z",
+      "side": 1,
+      "message": "will wait for Shruti\u0027s +1 as well",
+      "revId": "0670dd14484c1cbea88394c39e2faf0b71ce8fa0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
