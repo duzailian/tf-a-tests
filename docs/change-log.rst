@@ -230,6 +230,11 @@ TFTF
       - Added platform support and platform specific cases.
       - Added Versal NET documentation.
 
+   - Versal2:
+
+      - Added platform support and platform specific cases.
+      - Added Versal2 documentation.
+
    - Xilinx:
       - Reorganized timer code into common path.
 
