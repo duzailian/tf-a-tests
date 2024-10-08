@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da961894_f4384020",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_context_mgmt.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-10-08T14:10:27Z",
+      "side": 1,
+      "message": "@Igor,\ncan we do it this way?\nStep 1: Read the EL2 registers and save it.\nStep 2: Take an SMC call to Secure World and return back.\nStep 3: Read the EL2 registers again and compare it with the data in Step 1.\n\nI am a bit confused why we need 4 different entries/copies here.\nctx_original \u003d {0}, ctx_expected \u003d {0}, ctx_actual \u003d {0}, ctx_final \u003d {0}\n\nLet me know your thoughts.\n\nThere is a relevant test case scenario here.\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/27433/2/tftf/tests/runtime_services/secure_service/test_spm_context_mgmt.c#30\n\nUltimately we wanted to check what happens during world switch and if there is a possibility, try and corrupt the data in secure world.\n\nI see you are trying to save --\u003e corrupt --\u003e again save ( till here in normal world itself) --\u003e SMC call --\u003e save and so on. We could keep it in a simplified manner.\n\nIf you still wanna write something into the registers, do it as:\n\nStep 1: Corrupt/Write data into the EL2 registers and then save it.\nStep 2: Take an SMC call to Secure World and return back.\nStep 3: Read the EL2 registers again and compare it with the data in Step 1.",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 35
+      },
+      "revId": "337a2d3d459c8f3125e691b0dbb46df9dafe06eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
