@@ -16,6 +16,23 @@
       "message": "Test results:\nhttps://jenkins.openci.aws.arm.com/view/RMM/job/rmm-ci-gateway-l2/7346/",
       "revId": "0db147aecaec8d10aff6103d038dc149710b25f7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b83e198_3ab44ed2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-10-09T10:39:14Z",
+      "side": 1,
+      "message": "will wait for ACk from Shruti",
+      "revId": "0db147aecaec8d10aff6103d038dc149710b25f7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
