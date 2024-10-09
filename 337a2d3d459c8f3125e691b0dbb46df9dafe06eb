@@ -22,6 +22,30 @@
       },
       "revId": "337a2d3d459c8f3125e691b0dbb46df9dafe06eb",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb748779_dc995d44",
+        "filename": "tftf/tests/runtime_services/secure_service/test_spm_context_mgmt.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-10-09T12:27:54Z",
+      "side": 1,
+      "message": "@Jayanth,\nThanks for your input. Commenting on one of your points, I am saving the existing EL2 registers as the first step, because I want to make sure that the corruption doesn\u0027t stay after the entire test finishes and affects other running tests.\n\nThat is probably not needed in the MTE test, because those system registers are not necessarily essential for the control flow.",
+      "parentUuid": "da961894_f4384020",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 35
+      },
+      "revId": "337a2d3d459c8f3125e691b0dbb46df9dafe06eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
