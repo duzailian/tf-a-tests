@@ -2525,3 +2525,92 @@ destroy_realm:
 	}
 	return res;
 }
+
+/*
+ * @Test_Aim@ Create realm with multiple REC
+ * Test attestation process for each REC
+ */
+test_result_t host_realm_test_attestation(void)
+{
+	bool ret1, ret2;
+	u_register_t rec_flag[MAX_REC_COUNT] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
+		RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,};
+	struct realm realm;
+	u_register_t feature_flag = 0U;
+	long sl = RTT_MIN_LEVEL;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
+
+	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+				feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	for (unsigned int i = 0U; i < MAX_REC_COUNT; i++) {
+		ret1 = host_enter_realm_execute(&realm, REALM_ATTESTATION,
+				RMI_EXIT_HOST_CALL, i);
+
+		if (!ret1) {
+			ERROR("Realm attestation test failed\n");
+			break;
+		}
+	}
+
+	ret2 = host_destroy_realm(&realm);
+
+	if (!ret1 || !ret2) {
+		ERROR("%s(): enter=%d destroy=%d\n",
+				__func__, ret1, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * @Test_Aim@ Create realm with multiple REC
+ * Test attestation fault for each REC
+ */
+test_result_t host_realm_test_attestation_fault(void)
+{
+	bool ret1, ret2;
+	u_register_t rec_flag[MAX_REC_COUNT] = {RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,
+		RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE, RMI_RUNNABLE,};
+	struct realm realm;
+	u_register_t feature_flag = 0U;
+	long sl = RTT_MIN_LEVEL;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
+
+	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+				feature_flag, sl, rec_flag, 1U)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	ret1 = host_enter_realm_execute(&realm, REALM_ATTESTATION_FAULT,
+				RMI_EXIT_HOST_CALL, 0U);
+
+	if (!ret1) {
+		ERROR("Realm attestation test failed\n");
+	}
+
+	ret2 = host_destroy_realm(&realm);
+
+	if (!ret1 || !ret2) {
+		ERROR("%s(): enter=%d destroy=%d\n",
+				__func__, ret1, ret2);
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
