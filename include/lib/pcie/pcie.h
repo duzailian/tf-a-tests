@@ -102,5 +102,6 @@ uint32_t pcie_find_capability(uint32_t bdf, uint32_t cid_type, uint32_t cid,
 				uint32_t *cid_offset);
 uint32_t pcie_read_cfg(uint32_t bdf, uint32_t offset);
 void pcie_write_cfg(uint32_t bdf, uint32_t offset, uint32_t data);
+int pcie_find_doe_device(uint32_t *bdf_ptr, uint32_t *cap_base_ptr);
 
 #endif /* PCIE_H */
