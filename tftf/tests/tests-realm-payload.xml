@@ -124,5 +124,8 @@
 	  function="host_test_non_lpa2_realm_on_lpa2plat" />
 	  <testcase name="Test Realm creation with LPA2 enabled but FEAT_LPA2 absent on platform"
 	  function="host_test_lpa2_realm_on_non_lpa2plat" />
+	  <!-- Invoke RMI calls related to PDEV management -->
+	  <testcase name="Invoke RMI PDEV calls "
+	  function="host_test_rmi_pdev_calls" />
   </testsuite>
 </testsuites>
