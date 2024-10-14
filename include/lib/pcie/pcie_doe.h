@@ -8,6 +8,8 @@
 #ifndef PCIE_DOE_H
 #define PCIE_DOE_H
 
+#include <stdbool.h>
+
 /* DOE Extended Capability */
 #define DOE_CAP_ID			0x002E
 
@@ -91,5 +93,7 @@ int pcie_doe_send_req(uint32_t header, uint32_t bdf, uint32_t doe_cap_base,
 			uint32_t *req_addr, uint32_t req_len);
 int pcie_doe_recv_resp(uint32_t bdf, uint32_t doe_cap_base,
 			uint32_t *resp_addr, uint32_t *resp_len);
-
+int pcie_doe_communicate(uint32_t bdf, uint32_t doe_cap_base, void *req_buf,
+			 size_t req_sz, void *rsp_buf, size_t *rsp_sz,
+			 bool is_sspdm);
 #endif /* PCIE_DOE_H */
