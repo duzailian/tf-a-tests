@@ -8,17 +8,12 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 #include <debug.h>
 #include <pcie.h>
 #include <pcie_doe.h>
 #include <tftf_lib.h>
-
-#if LOG_LEVEL >= LOG_LEVEL_INFO
-#define DOE_INFO(...)	mp_printf(__VA_ARGS__)
-#else
-#define DOE_INFO(...)
-#endif
 
 static int pcie_doe_wait_ready(uint32_t bdf, uint32_t doe_cap_base)
 {
@@ -65,9 +60,9 @@ void print_doe_disc(pcie_doe_disc_resp_t *data)
 	INFO("Vendor ID: 0x%x, ", data->vendor_id);
 
 	if (type >= ARRAY_SIZE(doe_object_type)) {
-		DOE_INFO("Unknown type: 0x%x\n", type);
+		INFO("Unknown type: 0x%x\n", type);
 	} else {
-		DOE_INFO("%s\n", doe_object_type[type]);
+		INFO("%s\n", doe_object_type[type]);
 	}
 }
 
@@ -77,16 +72,16 @@ static void print_doe_data(uint32_t idx, uint32_t data, bool last)
 
 	if (last) {
 		if ((j & 7) == 0) {
-			INFO(" %08x\n", data);
+			VERBOSE(" %08x\n", data);
 		} else {
-			DOE_INFO(" %08x\n", data);
+			VERBOSE(" %08x\n", data);
 		}
 	} else if ((j & 7) == 0) {
-		INFO(" %08x", data);
+		VERBOSE(" %08x", data);
 	} else if ((j & 7) == 7) {
-		DOE_INFO(" %08x\n", data);
+		VERBOSE(" %08x\n", data);
 	} else {
-		DOE_INFO(" %08x", data);
+		VERBOSE(" %08x", data);
 	}
 }
 
@@ -121,11 +116,11 @@ int pcie_doe_send_req(uint32_t header, uint32_t bdf, uint32_t doe_cap_base,
 	/* Calculated adjusted data length in DW */
 	doe_length = (rem_length == 0) ? send_length : (send_length + 1);
 
-	INFO(">%08x", header);
+	VERBOSE(">%08x", header);
 
 	pcie_write_cfg(bdf, doe_cap_base + DOE_WRITE_DATA_MAILBOX_REG,
 								header);
-	DOE_INFO(" %08x", doe_length + DOE_HEADER_LENGTH);
+	VERBOSE(" %08x", doe_length + DOE_HEADER_LENGTH);
 
 	pcie_write_cfg(bdf, doe_cap_base + DOE_WRITE_DATA_MAILBOX_REG,
 				doe_length + DOE_HEADER_LENGTH);
@@ -144,7 +139,7 @@ int pcie_doe_send_req(uint32_t header, uint32_t bdf, uint32_t doe_cap_base,
 		pcie_write_cfg(bdf, doe_cap_base + DOE_WRITE_DATA_MAILBOX_REG, value);
 
 	} else if (((i + DOE_HEADER_LENGTH) & 7) != 0) {
-		DOE_INFO("\n");
+		VERBOSE("\n");
 	}
 
 	/* Set Go bit */
@@ -178,7 +173,7 @@ int pcie_doe_recv_resp(uint32_t bdf, uint32_t doe_cap_base,
 	 * Vendor ID and Data Object Type
 	 */
 	value = pcie_read_cfg(bdf, doe_cap_base + DOE_READ_DATA_MAILBOX_REG);
-	INFO("<%08x", value);
+	VERBOSE("<%08x", value);
 
 	/* Indicate a successful transfer of the current data object DW */
 	pcie_write_cfg(bdf, doe_cap_base + DOE_READ_DATA_MAILBOX_REG, 0);
@@ -188,13 +183,13 @@ int pcie_doe_recv_resp(uint32_t bdf, uint32_t doe_cap_base,
 	 * Length in DW
 	 */
 	value = pcie_read_cfg(bdf, doe_cap_base + DOE_READ_DATA_MAILBOX_REG);
-	DOE_INFO(" %08x", value);
+	VERBOSE(" %08x", value);
 
 	pcie_write_cfg(bdf, doe_cap_base + DOE_READ_DATA_MAILBOX_REG, 0);
 
 	/* Check value */
 	if ((value & PCI_DOE_RESERVED_MASK) != 0) {
-		DOE_INFO("\n");
+		VERBOSE("\n");
 		ERROR("DOE Data Object Header 2 error\n");
 		return -EIO;
 	}
@@ -214,7 +209,7 @@ int pcie_doe_recv_resp(uint32_t bdf, uint32_t doe_cap_base,
 	}
 
 	if (((i + DOE_HEADER_LENGTH) & 7) != 0) {
-		DOE_INFO("\n");
+		VERBOSE("\n");
 	}
 
 	value = pcie_read_cfg(bdf, doe_cap_base + DOE_STATUS_REG);
@@ -224,4 +219,29 @@ int pcie_doe_recv_resp(uint32_t bdf, uint32_t doe_cap_base,
 	}
 
 	return 0;
+}
+
+int pcie_doe_communicate(uint32_t bdf, uint32_t doe_cap_base, void *req_buf,
+			 size_t req_sz, void *rsp_buf, size_t *rsp_sz,
+			 bool is_sspdm)
+{
+	int rc;
+	uint32_t header;
+
+	if (is_sspdm) {
+		header = DOE_HEADER_2;
+	} else {
+		header = DOE_HEADER_1;
+	}
+
+	rc = pcie_doe_send_req(header, bdf, doe_cap_base,
+			       (uint32_t *)req_buf, (uint32_t)req_sz);
+	if (rc != 0) {
+		ERROR("PCIe DOE %s failed %d\n", "Request", rc);
+		return rc;
+	}
+
+	rc = pcie_doe_recv_resp(bdf, doe_cap_base, (uint32_t *)rsp_buf,
+				(uint32_t *)rsp_sz);
+	return rc;
 }
