@@ -16,6 +16,25 @@ distribution. We have performed tests using Ubuntu 22.04 LTS (64-bit), but other
 distributions should also work fine, provided that the tools and libraries
 can be installed.
 
+Requirements
+------------
+
+======================== =====================
+        Program          Min supported version
+======================== =====================
+Mbed TLS                 3.6.0
+======================== =====================
+
+Mbed TLS
+^^^^^^^^
+
+Mbed TLS is required for testing Realm management framework capabilities related
+to Device Assignment.
+
+.. warning::
+    Versions greater than the ones specified are likely but not guaranteed to
+    work.
+
 Toolchain
 ---------
 
