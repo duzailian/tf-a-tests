@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d35c250b_0c7dad7f",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1000469
+      },
+      "writtenOn": "2024-10-16T13:23:14Z",
+      "side": 1,
+      "message": "Versal Gen 2",
+      "revId": "8ac41ab194b15eae9715b9dea926575521934a52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f54b8f19_5b418542",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1000469
+      },
+      "writtenOn": "2024-10-16T13:23:14Z",
+      "side": 1,
+      "message": "Versal Gen 2",
+      "revId": "8ac41ab194b15eae9715b9dea926575521934a52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec0c7dbc_af038085",
+        "filename": "docs/plat/xilinx-versal2.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000469
+      },
+      "writtenOn": "2024-10-16T13:23:14Z",
+      "side": 1,
+      "message": "Versal Gen 2",
+      "revId": "8ac41ab194b15eae9715b9dea926575521934a52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e59e761e_daf66602",
+        "filename": "docs/plat/xilinx-versal2.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000469
+      },
+      "writtenOn": "2024-10-16T13:23:14Z",
+      "side": 1,
+      "message": "Versal Gen 2",
+      "revId": "8ac41ab194b15eae9715b9dea926575521934a52",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
