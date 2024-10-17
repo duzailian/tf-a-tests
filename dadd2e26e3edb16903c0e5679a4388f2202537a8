@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "860c6c28_ecf586f4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-10-17T18:43:08Z",
+      "side": 1,
+      "message": "Based on https://ci.trustedfirmware.org/job/tf-a-gerrit-tforg-l2/2586/\ntc2 and mtk failure not related to the change.",
+      "revId": "dadd2e26e3edb16903c0e5679a4388f2202537a8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
