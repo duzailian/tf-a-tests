@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed0a8fc4_6951f63d",
+        "filename": "plat/arm/neoverse_rd/common/include/nrd3/nrd_css_def3.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1001165
+      },
+      "writtenOn": "2024-10-22T20:02:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98548ae7_2e9e214b",
+      "range": {
+        "startLine": 39,
+        "startChar": 31,
+        "endLine": 39,
+        "endChar": 32
+      },
+      "revId": "dd3d58172aa1069b954bedacb50224e45faf6121",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6b49a741_06b83b0f",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-10-22T08:02:42Z",
       "side": 1,
       "message": "the def*3* stands out a bit. Is there any meaning behind it?\n\nAnd these headers are fairly short and interdependent. Why not combine them?",
+      "range": {
+        "startLine": 18,
+        "startChar": 10,
+        "endLine": 18,
+        "endChar": 25
+      },
+      "revId": "dd3d58172aa1069b954bedacb50224e45faf6121",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea69c1d4_c13853fa",
+        "filename": "plat/arm/neoverse_rd/common/include/nrd3/nrd_plat_arm_def3.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001165
+      },
+      "writtenOn": "2024-10-22T20:02:54Z",
+      "side": 1,
+      "message": "def3 is for the 3rd gen of neoverse reference design. This is the naming convention which also applied to the headers of the previous generations (nrd1/nrd2). Headers are split like this for clearer separation of the type of definitions. This again aligns with the categorisation of headers in TFA.",
+      "parentUuid": "6b49a741_06b83b0f",
       "range": {
         "startLine": 18,
         "startChar": 10,
@@ -64,6 +112,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0952eca_b59601b1",
+        "filename": "plat/arm/neoverse_rd/common/include/nrd3/nrd_plat_arm_def3.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1001165
+      },
+      "writtenOn": "2024-10-22T20:02:54Z",
+      "side": 1,
+      "message": "These definitions previously shared a common include file. But a lot of these values have since diverged for different platforms, meaning it was very difficult to maintain. In the end, it was decided to split them into individual headers even with these duplications for easier maintenance. This also applies to older generations (nrd1/nrd2).",
+      "parentUuid": "9843aa0b_684759b1",
+      "revId": "dd3d58172aa1069b954bedacb50224e45faf6121",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f4457647_09abf4cd",
@@ -87,6 +153,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05ffc355_13a632f4",
+        "filename": "plat/arm/neoverse_rd/platform/rdv3/platform.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001165
+      },
+      "writtenOn": "2024-10-22T20:02:54Z",
+      "side": 1,
+      "message": "It\u0027s referenced right below. Used in the filter to see if this platform variant is supported. Currently only base configuration is supported but other variants will be added later, therefore this design.",
+      "parentUuid": "f4457647_09abf4cd",
+      "range": {
+        "startLine": 17,
+        "startChar": 9,
+        "endLine": 17,
+        "endChar": 29
+      },
+      "revId": "dd3d58172aa1069b954bedacb50224e45faf6121",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f6f33ce3_3783c377",
@@ -100,6 +190,24 @@
       "writtenOn": "2024-10-22T08:02:42Z",
       "side": 1,
       "message": "could you try with this patch stack: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/30980\n\nin theory, those aren\u0027t needed to be skipped",
+      "revId": "dd3d58172aa1069b954bedacb50224e45faf6121",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "653c68b7_d4e9084b",
+        "filename": "plat/arm/neoverse_rd/platform/rdv3/tests_to_skip.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001165
+      },
+      "writtenOn": "2024-10-22T20:02:54Z",
+      "side": 1,
+      "message": "We could create a follow up task to investigate whether this patch will allow us to remove these from the skip list. On our end, the first two CPU extensions tests have been skipped for all NRD platforms so far, and the third is not supported on RDV3. This is also due to a time limitation, so we are hoping to upstream the patch with its current coverage and revisit at a later time.",
+      "parentUuid": "f6f33ce3_3783c377",
       "revId": "dd3d58172aa1069b954bedacb50224e45faf6121",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
