@@ -16,6 +16,91 @@
       "message": "Based on https://ci.trustedfirmware.org/view/TF-A-LTS2.10/job/tf-a-lts2.10-ci-gateway/4383/",
       "revId": "e154bb4fa9801b76d5496b191d53193c9d109fc2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c55db522_244bb58e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001390
+      },
+      "writtenOn": "2024-10-22T23:56:40Z",
+      "side": 1,
+      "message": "LGTM with some optional thoughts.",
+      "revId": "e154bb4fa9801b76d5496b191d53193c9d109fc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18f73716_06cd0304",
+        "filename": "spm/cactus_mm/cactus_mm_service_loop.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1001390
+      },
+      "writtenOn": "2024-10-22T23:56:40Z",
+      "side": 1,
+      "message": "Optional: It probably doesn\u0027t matter, but I like to declare things `const` as often as I can, since it locks in the expected behavior both for the human reader and the compiler.",
+      "revId": "e154bb4fa9801b76d5496b191d53193c9d109fc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "882ae080_2cd20e14",
+        "filename": "spm/cactus_mm/cactus_mm_service_loop.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1001390
+      },
+      "writtenOn": "2024-10-22T23:56:40Z",
+      "side": 1,
+      "message": "You can remove these lines, since you do use the variables.",
+      "revId": "e154bb4fa9801b76d5496b191d53193c9d109fc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc082ccf_b150c3e6",
+        "filename": "spm/cactus_mm/cactus_mm_service_loop.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1001390
+      },
+      "writtenOn": "2024-10-22T23:56:40Z",
+      "side": 1,
+      "message": "Optional: With the specifically-sized types like `uint32_t`, `uint64_t`, and so on, I like to use the specific format specifiers defined in inttypes.h:\n\n```\nVERBOSE(\"Cactus:   Context address: 0x%\" PRIx64 \"\\n\", ctx_addr);\n```",
+      "revId": "e154bb4fa9801b76d5496b191d53193c9d109fc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abb27a35_adced69e",
+        "filename": "spm/cactus_mm/cactus_mm_service_loop.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1001390
+      },
+      "writtenOn": "2024-10-22T23:56:40Z",
+      "side": 1,
+      "message": "Same thing here.",
+      "revId": "e154bb4fa9801b76d5496b191d53193c9d109fc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
