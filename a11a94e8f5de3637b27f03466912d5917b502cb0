@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5089fe0f_ce0cb951",
+        "filename": "docs/plat/xilinx-versal2.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000811
+      },
+      "writtenOn": "2024-10-22T08:40:56Z",
+      "side": 1,
+      "message": "AMD",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 7
+      },
+      "revId": "a11a94e8f5de3637b27f03466912d5917b502cb0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
