@@ -16,6 +16,23 @@
       "message": "Based on https://ci.trustedfirmware.org/job/tf-a-gerrit-tforg-l2/2586/\ntc2 and mtk failure not related to the change.",
       "revId": "dadd2e26e3edb16903c0e5679a4388f2202537a8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01aefad9_3aea0e07",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-10-22T21:19:28Z",
+      "side": 1,
+      "message": "Based on CI+22 job from same topic https://ci.trustedfirmware.org/job/tf-a-gerrit-tforg-l2/2601/\n\nTC2 failures are not related to the patch as same failure exists on ci-main job for today https://ci.trustedfirmware.org/job/tf-a-main/1391/",
+      "revId": "dadd2e26e3edb16903c0e5679a4388f2202537a8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
