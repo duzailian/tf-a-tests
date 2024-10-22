@@ -16,6 +16,23 @@
       "message": "Based on https://ci.trustedfirmware.org/job/tf-a-lts2.8-ci-gateway/6551/",
       "revId": "760efcc69a58fb49bc4195c72f8d6b89e6aad59a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd803b88_d9fd3614",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001390
+      },
+      "writtenOn": "2024-10-22T23:58:31Z",
+      "side": 1,
+      "message": "Same optional comments as for https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/31730.",
+      "revId": "760efcc69a58fb49bc4195c72f8d6b89e6aad59a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
