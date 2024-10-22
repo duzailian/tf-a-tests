@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "169b63fd_a67168bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-10-22T15:43:39Z",
+      "side": 1,
+      "message": "Based on https://ci.trustedfirmware.org/view/TF-A-LTS2.10/job/tf-a-lts2.10-ci-gateway/4383/",
+      "revId": "e154bb4fa9801b76d5496b191d53193c9d109fc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
