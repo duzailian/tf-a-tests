@@ -16,6 +16,29 @@
       "message": "LGTM.\nIn my understanding, altogether 2 issues resolved here:\n\n* Skipping the tests rather than passing as its tough to identify b/w \n  undef_injection and other EL2 TRAPS as both return same error. So its better to \n  skip, when hardware doesn\u0027t support feature.\n\n* Test should be validating software than hardware. So when the ID register \n  indicate \"no\" skipping the test is the best option.\n\n* Splitting the test for better maintenance of the overall test_suite. It also \n  gives better clarity on which feature test was skipped/passed/failed.\n\n@Arvind / @Manish P, kindly have a look and share your thoughts.",
       "revId": "6e0aa30326defce750cafc529489e146e51de3c2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6e2bd0c_b7079879",
+        "filename": "tftf/tests/misc_tests/test_asymmetric_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-10-23T10:47:37Z",
+      "side": 1,
+      "message": "IIUC, if the test is not skipped on one of the CPUs during this iteration, the loop breaks. Should we also check the failure/success response from all CPUs, and if any CPU fails, mark the test as a failure otherwise success.\n\nI\u0027m considering a scenario where, for example, the test passes on the lead CPU but fails on a non-lead CPU. In this case, the loop would break after the first CPU, ignoring the failure from the other non-lead CPUs. IIUC, the current logic only returns the test result at line 234 based on the lead CPU\u0027s response, potentially overlooking failures from other CPUs.\n\nPossibly I\u0027m missing something.",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 227,
+        "endChar": 9
+      },
+      "revId": "6e0aa30326defce750cafc529489e146e51de3c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
