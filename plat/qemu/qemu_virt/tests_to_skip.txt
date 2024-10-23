@@ -8,8 +8,11 @@ PSCI CPU Suspend/CPU suspend to standby at level 2
 PSCI CPU Suspend in OSI mode
 CPU extensions/SVE support
 CPU extensions/Use FGT Registers
+CPU extensions/Use ECV Registers
 CPU extensions/SME support
 CPU extensions/PMUv3 event counter functional in NS
+CPU extensions/Access Pointer Authentication Registers
+CPU extensions/Check for Pointer Authentication key leakage from EL3
 EL3 power state parser validation/Create all power states and validate EL3 power state parsing
 Timer framework Validation/Target timer to a power down cpu
 Timer framework Validation/Test scenario where multiple CPUs call same timeout
@@ -18,3 +21,4 @@ PMU Leakage/Leak PMU CYCLE counter values from EL3 on PSCI suspend SMC
 CPU Hotplug/Invalid entry point
 Query runtime services/Query Vendor-Specific Service
 Query runtime services/Probe PMF Version
+Query runtime services/Unknown SMC
