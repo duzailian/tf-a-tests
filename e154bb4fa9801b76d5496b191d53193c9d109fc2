@@ -52,6 +52,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b0ba418_c2adab75",
+        "filename": "spm/cactus_mm/cactus_mm_service_loop.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-10-23T08:27:44Z",
+      "side": 1,
+      "message": "Hi Chris, in LTS branch do not modify patches from integration/master branch. Or rarely to correct merge or compilation errors. You can still propose a patch to correct what you\u0027ve seen in master branch, but then I\u0027m not sure this will be in our list of patches to take in LTS.",
+      "parentUuid": "18f73716_06cd0304",
+      "revId": "e154bb4fa9801b76d5496b191d53193c9d109fc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "882ae080_2cd20e14",
@@ -65,6 +83,24 @@
       "writtenOn": "2024-10-22T23:56:40Z",
       "side": 1,
       "message": "You can remove these lines, since you do use the variables.",
+      "revId": "e154bb4fa9801b76d5496b191d53193c9d109fc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82ea9d7a_d56a1b56",
+        "filename": "spm/cactus_mm/cactus_mm_service_loop.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-10-23T08:27:44Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "882ae080_2cd20e14",
       "revId": "e154bb4fa9801b76d5496b191d53193c9d109fc2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -86,6 +122,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d05304e3_16fa60ec",
+        "filename": "spm/cactus_mm/cactus_mm_service_loop.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-10-23T08:27:44Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "bc082ccf_b150c3e6",
+      "revId": "e154bb4fa9801b76d5496b191d53193c9d109fc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "abb27a35_adced69e",
@@ -99,6 +153,24 @@
       "writtenOn": "2024-10-22T23:56:40Z",
       "side": 1,
       "message": "Same thing here.",
+      "revId": "e154bb4fa9801b76d5496b191d53193c9d109fc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7cfdc9f_2861e75f",
+        "filename": "spm/cactus_mm/cactus_mm_service_loop.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2024-10-23T08:27:44Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "abb27a35_adced69e",
       "revId": "e154bb4fa9801b76d5496b191d53193c9d109fc2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
