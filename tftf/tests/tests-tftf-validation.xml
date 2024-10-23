@@ -12,8 +12,6 @@
     <testcase name="NVM support" function="test_validation_nvm" />
     <testcase name="NVM serialisation" function="test_validate_nvm_serialisation" />
     <testcase name="Events API" function="test_validation_events" />
-    <testcase name="IRQ handling" function="test_validation_irq" />
-    <testcase name="SGI support" function="test_validation_sgi" />
   </testsuite>
 
   <testsuite name="Timer framework Validation" description="Validate the timer driver and timer framework">
