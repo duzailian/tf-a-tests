@@ -1,0 +1,10 @@
+Code-Owner-Review+1: Chris Palmer <palmer@google.com>
+Verified+1: Govindraj Raja <govindraj.raja@arm.com>
+Code-Review+1: Govindraj Raja <govindraj.raja@arm.com>
+Maintainer-Review+1: Yann Gautier <yann.gautier@st.com>
+Submitted-by: Yann Gautier <yann.gautier@st.com>
+Submitted-at: Wed, 23 Oct 2024 10:27:48 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/31730
+Comments-Total: 10
+Project: TF-A/tf-a-tests
+Branch: refs/heads/lts-v2.10
