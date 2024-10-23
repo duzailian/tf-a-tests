@@ -63,6 +63,30 @@
       },
       "revId": "6e0aa30326defce750cafc529489e146e51de3c2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15ea502f_4af13b6d",
+        "filename": "tftf/tests/misc_tests/test_asymmetric_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-10-23T12:11:52Z",
+      "side": 1,
+      "message": "Yes, that is correct.\n\nHowever, my question is, in a scenario where the test is executed on CPU3 and CPU4, with the test passing on CPU3 and failing on CPU4, should we mark the overall result as a failure if the test fails on any CPU? Or should we only consider the result from the lead CPU, as it is currently implemented at line 234?\nIIUC above then is there any chance that the lead CPU skip this test? In that case the result is always SUCCESS right?",
+      "parentUuid": "a798b722_32e49ca4",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 227,
+        "endChar": 9
+      },
+      "revId": "6e0aa30326defce750cafc529489e146e51de3c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
