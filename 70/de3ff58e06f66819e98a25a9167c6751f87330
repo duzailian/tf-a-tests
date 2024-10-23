@@ -1,0 +1,10 @@
+Maintainer-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Code-Review+1: Arvind Ram Prakash <arvind.ramprakash@arm.com>
+Code-Owner-Review+1: jayanthchidanand-arm <jayanthdodderi.chidanand@arm.com>
+Verified+1: jayanthchidanand-arm <jayanthdodderi.chidanand@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Wed, 23 Oct 2024 22:49:07 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/30978
+Comments-Total: 1
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
