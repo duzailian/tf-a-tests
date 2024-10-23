@@ -39,6 +39,30 @@
       },
       "revId": "6e0aa30326defce750cafc529489e146e51de3c2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a798b722_32e49ca4",
+        "filename": "tftf/tests/misc_tests/test_asymmetric_features.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-10-23T11:52:12Z",
+      "side": 1,
+      "message": "Hi,\nLoops breaks, if any of the CPUs in the cluster has executed the test.\n```\nInitially, test_skipped[PLATFORM_CORE_COUNT] \u003d { 0, 0, 0, 0, 0, 0, 0,0} (#line 144)\n```\nThen we run tests on each CPU and this array gets updated for each CPU.\nLets say if CPU1, has executed the test, meaning feature is present in the hardware, in that case this array will be untouched. \nOn the other side, lets say CPU3, does,\u0027t support the feature, meaning test has to be skipped in for that CPU, so the array will be updated, set to true.\ntest_skipped[PLATFORM_CORE_COUNT] \u003d { 0, 0, 0, 1, 0, 0, 0,0} \n\nThis final array will be considred.\n\nIf the array reads 0, for all the CPUS, then feature is present in all the CPUs.\n\n\nSo to summarise,\n```\nif test_skipped[PLATFORM_CORE_COUNT] \u003d { 0, 0, 0, 1, 0, 0, 0,0} \n loop breaks as atleast there was one or even more CPUs which executed the test.\n \nif test_skipped[PLATFORM_CORE_COUNT] \u003d { 1,1,1,1,1,1,1,1} \n loop does not break as there was not even one CPU, which executed the test.\n```",
+      "parentUuid": "b6e2bd0c_b7079879",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 227,
+        "endChar": 9
+      },
+      "revId": "6e0aa30326defce750cafc529489e146e51de3c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
