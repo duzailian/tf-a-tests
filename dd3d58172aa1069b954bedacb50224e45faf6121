@@ -210,6 +210,24 @@
       "parentUuid": "f6f33ce3_3783c377",
       "revId": "dd3d58172aa1069b954bedacb50224e45faf6121",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ca8f740_5780e267",
+        "filename": "plat/arm/neoverse_rd/platform/rdv3/tests_to_skip.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-10-23T08:21:41Z",
+      "side": 1,
+      "message": "yes, would be good to revisit since these aren\u0027t expected to fail when the feature is not supported",
+      "parentUuid": "653c68b7_d4e9084b",
+      "revId": "dd3d58172aa1069b954bedacb50224e45faf6121",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
