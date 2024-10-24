@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a49c756_939af2d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-10-24T17:23:45Z",
+      "side": 1,
+      "message": "CI passed on the top patch:\nhttps://ci.trustedfirmware.org/job/tf-a-tftf-gerrit-tforg-l2/693/",
+      "revId": "78eac64dbf909b75a0d4409edfd4d5d703dc4350",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
