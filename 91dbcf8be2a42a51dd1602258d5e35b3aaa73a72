@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "030882ab_772b492f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000049
+      },
+      "writtenOn": "2024-10-24T11:58:49Z",
+      "side": 1,
+      "message": "So the change log is redone at each 6 monthly release and the next one v2.12 will be due in November. We should not update the v2.11 changelog as this new platform is not part of that.\n\nThe purpose of the changelog is to record changes to the repo since the last 6 month release.\n\nWhen the tree is frozen in November the changelog will be automatically generated with a v2.12 section from the commit messages since v2.11 and a draft changelog file patch will be produced that review comments can request changes to.\n\nSo please remove the changelog file change in this patch.\n\nThe rest of the changes to documentation is fine.",
+      "revId": "91dbcf8be2a42a51dd1602258d5e35b3aaa73a72",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
