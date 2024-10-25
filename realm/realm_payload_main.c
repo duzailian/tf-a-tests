@@ -21,6 +21,9 @@
 
 static fpu_state_t rl_fpu_state_write;
 static fpu_state_t rl_fpu_state_read;
+
+volatile u_register_t sync_exp_as_serr;
+
 /*
  * This function reads sleep time in ms from shared buffer and spins PE
  * in a loop for that time period.
@@ -200,6 +203,39 @@ static bool realm_exception_handler(void)
 	return false;
 }
 
+static bool realm_exception_handler_ease_bit(void)
+{
+	u_register_t ease_bit = realm_shared_data_get_my_host_val(HOST_ARG2_INDEX);
+
+	if ((ease_bit != 0UL) ^ (sync_exp_as_serr != 0UL)) {
+		realm_printf("Incorrect exception vector executed: %s - Vector: %s\n",
+			(ease_bit != 0UL) ? "SCTLR2_EL1.EASE = '1'" :
+					    "SCTLR2_EL1.EASE = '0'",
+			(sync_exp_as_serr != 0UL) ? "Serror" : "Synchronous");
+		rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
+	}
+
+	return realm_exception_handler();
+}
+
+static bool test_realm_sctlr2_ease_bit(void)
+{
+	u_register_t ease_bit = realm_shared_data_get_my_host_val(HOST_ARG2_INDEX);
+
+	unregister_custom_sync_exception_handler();
+	register_custom_sync_exception_handler(realm_exception_handler_ease_bit);
+
+	/* Reset the flag */
+	sync_exp_as_serr = 0UL;
+
+	if (ease_bit != 0UL) {
+		/* SCTLR2_EL1.EASE resets to 0 on Realm creation */
+		write_sctlr2_el1(read_sctlr2_el1() | SCTLR2_EASE_BIT);
+	}
+
+	return test_realm_instr_fetch_cmd();
+}
+
 /*
  * This is the entry function for Realm payload, it first requests the shared buffer
  * IPA address from Host using HOST_CALL/RSI, it reads the command to be executed,
@@ -214,6 +250,7 @@ void realm_payload_main(void)
 
 	register_custom_sync_exception_handler(realm_exception_handler);
 	realm_set_shared_structure((host_shared_data_t *)rsi_get_ns_buffer());
+
 	if (realm_get_my_shared_structure() != NULL) {
 		uint8_t cmd = realm_shared_data_get_my_realm_cmd();
 
@@ -231,6 +268,9 @@ void realm_payload_main(void)
 			break;
 		case REALM_MULTIPLE_REC_MULTIPLE_CPU_CMD:
 			test_succeed = test_realm_multiple_rec_multiple_cpu_cmd();
+			break;
+		case REALM_SCTLR2_EASE_TEST:
+			test_succeed = test_realm_sctlr2_ease_bit();
 			break;
 		case REALM_INSTR_FETCH_CMD:
 			test_succeed = test_realm_instr_fetch_cmd();
