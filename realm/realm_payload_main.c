@@ -16,11 +16,13 @@
 #include "realm_def.h"
 #include <realm_rsi.h>
 #include <realm_tests.h>
+#include <serror.h>
 #include <sync.h>
 #include <tftf_lib.h>
 
 static fpu_state_t rl_fpu_state_write;
 static fpu_state_t rl_fpu_state_read;
+
 /*
  * This function reads sleep time in ms from shared buffer and spins PE
  * in a loop for that time period.
@@ -200,6 +202,81 @@ static bool realm_exception_handler(void)
 	return false;
 }
 
+static bool realm_exception_handler_doublefault(void)
+{
+	u_register_t ease_bit;
+	static bool reentry = false;
+
+	rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD);
+
+	if (!reentry) {
+		/* Update SCTLR2_EL1.EASE bit upon re-entry to try again */
+		realm_printf("Updating SCTLR2_EL1.EASE bit\n");
+		ease_bit = realm_shared_data_get_my_host_val(HOST_ARG2_INDEX);
+		if (ease_bit != 0UL) {
+			write_sctlr2_el1(read_sctlr2_el1() | SCTLR2_EASE_BIT);
+		} else {
+			write_sctlr2_el1(read_sctlr2_el1() & ~SCTLR2_EASE_BIT);
+		}
+
+		reentry = true;
+
+		/* Retry to generate a new sync exception */
+		realm_printf("Returning from sync exp handler to try again\n");
+		return true;
+	}
+
+	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
+
+	/* Should not return */
+	return false;
+}
+
+static bool realm_serror_handler_doublefault(void)
+{
+	if ((read_sctlr2_el1() & SCTLR2_EASE_BIT) != 0UL) {
+		/*
+		 * If the sync exception should have been routed here,
+		 * carry on with its handler.
+		 */
+		return realm_exception_handler_doublefault();
+	}
+
+	/* This handler is not excpected to be executed if SCTLR2.EASE == '0' */
+	return false;
+}
+
+static bool realm_sync_handler_doublefault(void)
+{
+	if ((read_sctlr2_el1() & SCTLR2_EASE_BIT) == 0UL) {
+		/*
+		 * If the sync exception should have been routed here,
+		 * carry on with its handler.
+		 */
+		return realm_exception_handler_doublefault();
+	}
+
+	/* This handler is not expected to be executed if SCTLR2.EASE == '1' */
+	return false;
+}
+
+static bool test_realm_feat_doublefault2(void)
+{
+	u_register_t ease_bit = realm_shared_data_get_my_host_val(HOST_ARG2_INDEX);
+
+	unregister_custom_sync_exception_handler();
+	register_custom_sync_exception_handler(realm_sync_handler_doublefault);
+	register_custom_serror_handler(realm_serror_handler_doublefault);
+
+	if (ease_bit != 0UL) {
+		write_sctlr2_el1(read_sctlr2_el1() | SCTLR2_EASE_BIT);
+	} else {
+		write_sctlr2_el1(read_sctlr2_el1() & ~SCTLR2_EASE_BIT);
+	}
+
+	return test_realm_instr_fetch_cmd();
+}
+
 /*
  * This is the entry function for Realm payload, it first requests the shared buffer
  * IPA address from Host using HOST_CALL/RSI, it reads the command to be executed,
@@ -213,7 +290,12 @@ void realm_payload_main(void)
 	bool test_succeed = false;
 
 	register_custom_sync_exception_handler(realm_exception_handler);
+
+	/* No serror handler registered by default */
+	unregister_custom_serror_handler();
+
 	realm_set_shared_structure((host_shared_data_t *)rsi_get_ns_buffer());
+
 	if (realm_get_my_shared_structure() != NULL) {
 		uint8_t cmd = realm_shared_data_get_my_realm_cmd();
 
@@ -231,6 +313,9 @@ void realm_payload_main(void)
 			break;
 		case REALM_MULTIPLE_REC_MULTIPLE_CPU_CMD:
 			test_succeed = test_realm_multiple_rec_multiple_cpu_cmd();
+			break;
+		case REALM_FEAT_DOUBLEFAULT2_TEST:
+			test_succeed = test_realm_feat_doublefault2();
 			break;
 		case REALM_INSTR_FETCH_CMD:
 			test_succeed = test_realm_instr_fetch_cmd();
