@@ -61,8 +61,6 @@
 
 CASSERT(AMU_GROUP1_COUNTERS_MASK <= 0xffff, invalid_amu_group1_counters_mask);
 
-unsigned int amu_get_version(void);
-
 uint64_t amu_group0_cnt_read(unsigned int idx);
 #if __aarch64__
 uint64_t amu_group0_voffset_read(unsigned int idx);
