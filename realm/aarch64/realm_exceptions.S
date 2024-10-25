@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <arch.h>
 #include <asm_macros.S>
 
 	.globl	realm_vector
@@ -43,7 +44,9 @@ vector_entry fiq_spx
 	b	interrupt_vector_entry
 end_vector_entry fiq_spx
 
-unhandled_exception serr_spx
+vector_entry serr_spx
+	b	serr_exception_vector_entry
+end_vector_entry serr_spx
 
 	/*
 	 * Lower EL using AArch64 : 0x400 - 0x600.
@@ -103,18 +106,58 @@ unhandled_exception serr_a32
 func sync_exception_vector_entry
 	sub	sp, sp, #0x100
 	save_gp_regs
-	mov	x19, sp
-	bl	tftf_sync_exception_handler
-	cbnz	x0, 0f
-	mov	x0, x19
-	/* Save original stack pointer value on the stack */
-	add	x1, x0, #0x100
-	str	x1, [x0, #0xf8]
-	b	realm_print_exception
+
+	/* Clear the flag */
+	adrp	x19, sync_exp_as_serr
+	add	x19, x19, :lo12:sync_exp_as_serr
+	str	xzr, [x19]
+
+	/*
+	 * If SCLTR2_EL1.EASE == '1', sync_abort should have been
+	 * re-routed to the serr vector, so crash. Otherwise, continue
+	 * as normal.
+	 */
+	mrs	x19, SCTLR2_EL1
+	and	x19, x19, #SCTLR2_EASE_BIT
+	cbnz	x19, 0f
+
+	b	continue_sync_exception
+
 0:	restore_gp_regs
-	add	sp, sp, #0x100
-	eret
+	add	sp, sp, #100
+	b	crash_dump
 endfunc sync_exception_vector_entry
+
+func serr_exception_vector_entry
+	sub	sp, sp, #0x100
+	save_gp_regs
+
+	/*
+	 * If SCTLR2_EL1.EASE == '1', sync_abort have been re-routed here
+	 * so proccess it accordingly. Otherwise, just crash as expected.
+	 */
+	mrs	x19, SCTLR2_EL1
+	and	x19, x19, #SCTLR2_EASE_BIT
+	cbz	x19, 0f
+
+	/* Stores a value != 0 to mark the flag as valid */
+	adrp	x19, sync_exp_as_serr
+	add	x19, x19, :lo12:sync_exp_as_serr
+	/* Any value other than 0 will work */
+	str	x30, [x19]
+
+	b	continue_sync_exception
+
+0:	restore_gp_regs
+
+	/* Clear the flag */
+	adrp	x19, sync_exp_as_serr
+	add	x19, x19, :lo12:sync_exp_as_serr
+	str	xzr, [x19]
+
+	add	sp, sp, #100
+	b	crash_dump
+endfunc serr_exception_vector_entry
 
 func interrupt_vector_entry
 	sub	sp, sp, #0x100
@@ -138,3 +181,17 @@ func crash_dump
 	mov	x0, sp
 	b	realm_print_exception
 endfunc crash_dump
+
+func continue_sync_exception
+	mov	x19, sp
+	bl	tftf_sync_exception_handler
+	cbnz	x0, 0f
+	mov	x0, x19
+	/* Save original stack pointer value on the stack */
+	add	x1, x0, #0x100
+	str	x1, [x0, #0xf8]
+	b	realm_print_exception
+0:	restore_gp_regs
+	add	sp, sp, #0x100
+	eret
+endfunc continue_sync_exception
