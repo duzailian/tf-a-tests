@@ -168,13 +168,6 @@ static inline uint32_t arch_get_debug_version(void)
 		ID_AA64DFR0_DEBUG_SHIFT);
 }
 
-static inline bool get_armv9_0_trbe_support(void)
-{
-	return ((read_id_aa64dfr0_el1() >> ID_AA64DFR0_TRACEBUFFER_SHIFT) &
-		ID_AA64DFR0_TRACEBUFFER_MASK) ==
-		ID_AA64DFR0_TRACEBUFFER_SUPPORTED;
-}
-
 static inline bool get_armv8_4_trf_support(void)
 {
 	return ((read_id_aa64dfr0_el1() >> ID_AA64DFR0_TRACEFILT_SHIFT) &
@@ -388,13 +381,13 @@ static inline bool is_feat_ls64_accdata_present(void)
 static inline bool is_feat_ras_present(void)
 {
 	return EXTRACT(ID_AA64PFR0_RAS, read_id_aa64pfr0_el1())
-		== ID_AA64PFR0_RAS_SUPPORTED;
+		>= ID_AA64PFR0_RAS_SUPPORTED;
 }
 
 static inline bool is_feat_rasv1p1_present(void)
 {
 	return (EXTRACT(ID_AA64PFR0_RAS, read_id_aa64pfr0_el1())
-		== ID_AA64PFR0_RASV1P1_SUPPORTED)
+		>= ID_AA64PFR0_RASV1P1_SUPPORTED)
 		|| (is_feat_ras_present() &&
 			(EXTRACT(ID_AA64PFR1_RAS_FRAC, read_id_aa64pfr1_el1())
 				== ID_AA64PFR1_RASV1P1_SUPPORTED))
@@ -444,16 +437,89 @@ static inline bool is_feat_lor_present(void)
 		!= ID_AA64MMFR1_EL1_LOR_NOT_SUPPORTED;
 }
 
+static inline bool is_feat_d128_present(void)
+{
+	return EXTRACT(ID_AA64MMFR3_EL1_D128, read_id_aa64mmfr3_el1())
+			>= D128_IMPLEMENTED;
+}
+
+static inline bool is_feat_sctlr2_present(void)
+{
+	return EXTRACT(ID_AA64MMFR3_EL1_SCTLRX, read_id_aa64mmfr3_el1())
+			>= SCTLR2_IMPLEMENTED;
+}
+
+static inline bool is_feat_mpam_present(void)
+{
+	unsigned int ret = (unsigned int)((((read_id_aa64pfr0_el1() >>
+		ID_AA64PFR0_MPAM_SHIFT) & ID_AA64PFR0_MPAM_MASK) << 4) |
+		((read_id_aa64pfr1_el1() >> ID_AA64PFR1_MPAM_FRAC_SHIFT)
+			& ID_AA64PFR1_MPAM_FRAC_MASK));
+	return ret;
+}
+
+static inline _Bool is_feat_doublelock_present(void) {
+	return EXTRACT(
+		ID_AA64DFR0_DOUBLELOCK,
+		read_id_aa64dfr0_el1()
+	) == DOUBLELOCK_IMPLEMENTED;
+}
+
 static inline unsigned int get_feat_ls64_support(void)
 {
-	return ((read_id_aa64isar1_el1() >> ID_AA64ISAR1_LS64_SHIFT) &
-		ID_AA64ISAR1_LS64_MASK);
+	return EXTRACT(ID_AA64ISAR1_LS64, read_id_aa64isar1_el1())
+		>= ID_AA64ISAR1_LS64_ACCDATA_SUPPORTED;
+}
+
+static inline bool is_feat_s1pie_present(void)
+{
+	return EXTRACT(ID_AA64MMFR3_EL1_S1PIE, read_id_aa64mmfr3_el1())
+		>= S1PIE_IMPLEMENTED;
+}
+
+static inline bool is_feat_tcr2_present(void)
+{
+	return EXTRACT(ID_AA64MMFR3_EL1_TCRX, read_id_aa64mmfr3_el1())
+		>= TCR2_IMPLEMENTED;
+}
+
+static inline bool is_feat_gcs_present(void)
+{
+	return EXTRACT(ID_AA64PFR1_EL1_GCS, read_id_aa64pfr1_el1())
+		>= GCS_IMPLEMENTED;
+}
+
+static inline unsigned int amu_get_version(void)
+{
+	return (unsigned int)(read_id_aa64pfr0_el1() >> ID_AA64PFR0_AMU_SHIFT) &
+		ID_AA64PFR0_AMU_MASK;
+}
+
+static inline bool is_feat_amuv1_present(void)
+{
+	return amu_get_version() >= ID_AA64PFR0_AMU_V1;
+}
+
+static inline bool is_feat_amuv1p1_present(void)
+{
+	return amu_get_version() >= ID_AA64PFR0_AMU_V1P1;
+}
+
+static inline bool is_feat_mte2_present(void)
+{
+	return get_armv8_5_mte_support() >= MTE_IMPLEMENTED_ELX;
 }
 
 static inline bool is_feat_trbe_present(void)
 {
 	return EXTRACT(ID_AA64DFR0_TRACEBUFFER, read_id_aa64dfr0_el1())
 		>= ID_AA64DFR0_TRACEBUFFER_SUPPORTED;
+}
+
+static inline bool is_feat_trf_present(void)
+{
+	return EXTRACT(ID_AA64DFR0_TRACEFILT, read_id_aa64dfr0_el1())
+		>= ID_AA64DFR0_TRACEFILT_SUPPORTED;
 }
 
 #endif /* ARCH_FEATURES_H */

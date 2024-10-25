@@ -59,4 +59,11 @@ static inline unsigned int get_armv9_2_feat_rme_support(void)
 {
 	return 0;
 }
+
+static inline unsigned int amu_get_version(void)
+{
+	return (unsigned int)(read_id_pfr0() >> ID_PFR0_AMU_SHIFT) &
+		ID_PFR0_AMU_MASK;
+}
+
 #endif /* ARCH_FEATURES_H */
