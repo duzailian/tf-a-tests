@@ -2525,3 +2525,61 @@ destroy_realm:
 	}
 	return res;
 }
+
+/*
+ * Test aims to test that TF-RMM takes SCTLR2_EL1.EASE bit into account
+ * when injecting a SEA.
+ */
+test_result_t host_test_sctlr2_ease(void)
+{
+	bool ret;
+	u_register_t rec_flag[MAX_REC_COUNT];
+	u_register_t base;
+	struct realm realm;
+	struct rtt_entry rtt;
+	u_register_t feature_flag = 0UL;
+	long sl = RTT_MIN_LEVEL;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if ((is_feat_double_fault2_present() == false) ||
+	     (is_feat_sctlr2_present() == false)) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	if (is_feat_52b_on_4k_2_supported() == true) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
+
+	/* Only one REC is needed for this test */
+	for (unsigned int i = 0U; i < MAX_REC_COUNT; i++) {
+		rec_flag[i] = (i == 0U) ? RMI_RUNNABLE : RMI_NOT_RUNNABLE;
+	}
+
+	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+			feature_flag, sl, rec_flag, MAX_REC_COUNT)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	base = (u_register_t)page_alloc(PAGE_SIZE);
+
+	(void)host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
+	if (rtt.state != RMI_UNASSIGNED ||
+			(rtt.ripas != RMI_EMPTY)) {
+		ERROR("wrong initial state\n");
+		host_destroy_realm(&realm);
+		return TEST_RESULT_FAIL;
+	}
+
+	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, HOST_ARG2_INDEX, 1UL);
+
+	/* Rec0 expect IA due to SEA unassigned empty page */
+	ret = host_enter_realm_execute(&realm, REALM_SCTLR2_EASE_TEST,
+						RMI_EXIT_HOST_CALL, 0U);
+
+	host_destroy_realm(&realm);
+
+	return ret ? TEST_RESULT_SUCCESS : TEST_RESULT_FAIL;
+}

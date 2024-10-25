@@ -395,6 +395,10 @@
 #define ID_AA64MMFR2_EL1_CNP_SHIFT	U(0)
 #define ID_AA64MMFR2_EL1_CNP_MASK	ULL(0xf)
 
+/* ID_AA64MMFR3_EL1 definitions */
+#define ID_AA64MMFR3_EL1_SCTLRX_SHIFT	U(4)
+#define ID_AA64MMFR3_EL1_SCTLRX_WIDTH	ULL(0x4)
+
 /* ID_AA64PFR1_EL1 definitions */
 #define ID_AA64PFR1_EL1_SSBS_SHIFT	U(4)
 #define ID_AA64PFR1_EL1_SSBS_MASK	ULL(0xf)
@@ -432,6 +436,9 @@
 #define ID_AA64PFR1_EL1_SME_SUPPORTED		ULL(0x1)
 #define ID_AA64PFR1_EL1_SME2_SUPPORTED		ULL(0x2)
 
+#define ID_AA64PFR1_EL1_DF2_SHIFT		U(56)
+#define ID_AA64PFR1_EL1_DF2_WIDTH		U(4)
+
 #define ID_AA64PFR1_RAS_FRAC_MASK		ULL(0xf)
 #define ID_AA64PFR1_RAS_FRAC_SHIFT		U(12)
 #define ID_AA64PFR1_RAS_FRAC_WIDTH		U(4)
@@ -439,6 +446,9 @@
 
 #define ID_AA64PFR1_MPAM_FRAC_SHIFT   		U(16)
 #define ID_AA64PFR1_MPAM_FRAC_MASK    		ULL(0xf)
+
+#define ID_AA64PFR1_DF2_SHIFT			U(56)
+#define ID_AA64PFR1_DF2_WIDTH			ULL(0x4)
 
 /* ID_PFR1_EL1 definitions */
 #define ID_PFR1_VIRTEXT_SHIFT	U(12)
@@ -488,6 +498,15 @@
 #define SCTLR_EnIA_BIT		(ULL(1) << 31)
 #define SCTLR_DSSBS_BIT		(ULL(1) << 44)
 #define SCTLR_RESET_VAL		SCTLR_EL3_RES1
+
+/* SCTLR2_EL1 register definitions */
+#define SCTLR2_EL1		S3_0_C1_C0_3
+
+#define SCTLR2_NMEA_BIT		(UL(1) << 2)
+#define SCTLR2_EnADERR_BIT	(UL(1) << 3)
+#define SCTLR2_EnANERR_BIT	(UL(1) << 4)
+#define SCTLR2_EASE_BIT		(UL(1) << 5)
+#define SCTLR2_EnIDCP128_BIT	(UL(1) << 6)
 
 /* CPACR_El1 definitions */
 #define CPACR_EL1_FPEN(x)	((x) << 20)
