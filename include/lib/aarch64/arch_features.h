@@ -456,4 +456,10 @@ static inline bool is_feat_trbe_present(void)
 		>= ID_AA64DFR0_TRACEBUFFER_SUPPORTED;
 }
 
+static inline bool is_feat_double_fault2_present(void)
+{
+	return (EXTRACT(ID_AA64PFR1_EL1_DF2,
+		read_id_aa64pfr1_el1()) == 1UL);
+}
+
 #endif /* ARCH_FEATURES_H */
