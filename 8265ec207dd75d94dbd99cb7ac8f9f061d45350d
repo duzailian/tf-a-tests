@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f3deecd_9b87072f",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-10-28T10:58:19Z",
+      "side": 1,
+      "message": "/**?",
+      "range": {
+        "startLine": 337,
+        "startChar": 0,
+        "endLine": 337,
+        "endChar": 2
+      },
+      "revId": "8265ec207dd75d94dbd99cb7ac8f9f061d45350d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c651d26a_4f41a189",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-10-28T10:58:19Z",
+      "side": 1,
+      "message": "NIT: capitalise",
+      "range": {
+        "startLine": 404,
+        "startChar": 12,
+        "endLine": 404,
+        "endChar": 13
+      },
+      "revId": "8265ec207dd75d94dbd99cb7ac8f9f061d45350d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7653200_6277f701",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-10-28T10:58:19Z",
+      "side": 1,
+      "message": "Nit: Captilalise",
+      "range": {
+        "startLine": 485,
+        "startChar": 12,
+        "endLine": 485,
+        "endChar": 13
+      },
+      "revId": "8265ec207dd75d94dbd99cb7ac8f9f061d45350d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
