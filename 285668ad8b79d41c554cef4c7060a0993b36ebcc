@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3ef4a24_727e2420",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-10-28T09:44:52Z",
+      "side": 1,
+      "message": "Verified with FEAT_DoubleFault2 enabled and support for it on TF-RMM through https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l2/862/",
+      "revId": "285668ad8b79d41c554cef4c7060a0993b36ebcc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
