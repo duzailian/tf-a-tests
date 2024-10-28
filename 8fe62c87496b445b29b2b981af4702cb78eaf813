@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00e5ad35_04343f14",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-10-28T19:35:52Z",
+      "side": 1,
+      "message": "CI+2 Build with FEAT_DoubleAbort2 enabled and running TF-RMM available at https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l2/868/",
+      "revId": "8fe62c87496b445b29b2b981af4702cb78eaf813",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
