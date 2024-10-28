@@ -102,3 +102,16 @@ smc_ret_values tftf_smc(const smc_args *args)
 			      args->arg6,
 			      args->arg7);
 }
+
+void tftf_smc_no_retval_x8(const smc_args *args, smc_ret_values *ret)
+{
+	uint32_t fid = args->fid;
+
+	if (tftf_smc_get_sve_hint()) {
+		fid |= MASK(FUNCID_SVE_HINT);
+	} else {
+		fid &= ~MASK(FUNCID_SVE_HINT);
+	}
+
+	asm_tftf_smc64_no_retval_x8(args, ret);
+}

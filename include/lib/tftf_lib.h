@@ -141,7 +141,9 @@ void waitms(uint64_t ms);
 void waitus(uint64_t us);
 
 /*
- * SMC calls take a function identifier and up to 7 arguments.
+ * SMC calls take a function identifier and up to 7 arguments if using x8
+ * as an address pointing to a structure where return values are stored or
+ * up to 19 arguments if no such structure is used.
  * Additionally, few SMC calls that originate from EL2 leverage the seventh
  * argument explicitly. Given that TFTF runs in EL2, we need to be able to
  * specify it.
@@ -157,9 +159,21 @@ typedef struct {
 	u_register_t	arg5;
 	u_register_t	arg6;
 	u_register_t	arg7;
+	u_register_t	arg8;
+	u_register_t	arg9;
+	u_register_t	arg10;
+	u_register_t	arg11;
+	u_register_t	arg12;
+	u_register_t	arg13;
+	u_register_t	arg14;
+	u_register_t	arg15;
+	u_register_t	arg16;
+	u_register_t	arg17;
+	u_register_t	arg18;
+	u_register_t	arg19;
 } smc_args;
 
-/* SMC calls can return up to 8 register values */
+/* SMC calls can return up to 20 register values */
 typedef struct {
 	u_register_t	ret0;
 	u_register_t	ret1;
@@ -169,12 +183,30 @@ typedef struct {
 	u_register_t	ret5;
 	u_register_t	ret6;
 	u_register_t	ret7;
+	u_register_t	ret8;
+	u_register_t	ret9;
+	u_register_t	ret10;
+	u_register_t	ret11;
+	u_register_t	ret12;
+	u_register_t	ret13;
+	u_register_t	ret14;
+	u_register_t	ret15;
+	u_register_t	ret16;
+	u_register_t	ret17;
+	u_register_t	ret18;
+	u_register_t	ret19;
 } smc_ret_values;
 
 /*
- * Trigger an SMC call.
+ * Trigger an SMC call. Return values are stored in structure pointed by address
+ * stored in x8.
  */
 smc_ret_values tftf_smc(const smc_args *args);
+
+/*
+ * Trigger an SMC call. Return values are stored in structure pointed by 'ret'
+ */
+void tftf_smc_no_retval_x8(const smc_args *args, smc_ret_values *ret);
 
 /* Assembler routine to trigger a SMC call. */
 smc_ret_values asm_tftf_smc64(uint32_t fid, u_register_t arg1, u_register_t arg2,
@@ -182,6 +214,9 @@ smc_ret_values asm_tftf_smc64(uint32_t fid, u_register_t arg1, u_register_t arg2
 			      u_register_t arg5, u_register_t arg6,
 			      u_register_t arg7);
 
+/* Assembler routine to trigger a SMC call without smc_ret_values in x8. */
+u_register_t asm_tftf_smc64_no_retval_x8(const smc_args *args,
+					  smc_ret_values *ret);
 /*
  * Update the SVE hint for the current CPU. Any SMC call made through tftf_smc
  * will update the SVE hint bit in the SMC Function ID.
