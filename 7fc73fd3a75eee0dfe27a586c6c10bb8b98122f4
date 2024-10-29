@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3efffaca_50bf545c",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-10-29T12:43:04Z",
+      "side": 1,
+      "message": "Perhaps this should be changed to \u003d\u003d, because values other than 1 are \"reserved\", according to the documentation.",
+      "revId": "7fc73fd3a75eee0dfe27a586c6c10bb8b98122f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
