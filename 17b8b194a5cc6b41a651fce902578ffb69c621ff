@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69d014b1_8cd5b396",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-10-29T12:30:59Z",
+      "side": 1,
+      "message": "I think this should be \u003d\u003d. According to the documentation, \"All other values are reserved\" except 1.",
+      "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f1cb3c3_fd99c53b",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-10-29T12:30:59Z",
+      "side": 1,
+      "message": "I think this should be \u003d\u003d. According to the documentation, \"All other values are reserved\" except 1.",
+      "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3de2c077_d33165b5",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-10-29T12:30:59Z",
+      "side": 1,
+      "message": "I think this should be \u003d\u003d. According to the documentation, \"All other values are reserved\" except 1.",
+      "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b9e9a10a_71308990",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-10-29T12:30:59Z",
+      "side": 1,
+      "message": "I think this should be \u003d\u003d. According to the documentation, \"All other values are reserved\" except 1.",
+      "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60320424_d0a3195e",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-10-29T12:30:59Z",
+      "side": 1,
+      "message": "I think this should be \u003d\u003d. According to the documentation, \"All other values are reserved\" except 1.",
+      "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "00d92eeb_2f4a1825",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-10-29T12:30:59Z",
+      "side": 1,
+      "message": "I think this should be \u003d\u003d instead of \u003e\u003d, because MTE_IMPLEMENTED_ELX+1 (3) is FEAT_MTE3.",
+      "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
