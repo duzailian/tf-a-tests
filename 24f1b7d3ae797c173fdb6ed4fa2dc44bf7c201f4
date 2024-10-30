@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5dd70e9f_29604b74",
+        "filename": "spm/ivy/app/ivy_main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-10-30T14:48:27Z",
+      "side": 1,
+      "message": "Can you merge this with line 38\nNOTICE(\"Booting Ivy Secure Partition (ID: %x)\\n\", my_id);",
+      "range": {
+        "startLine": 41,
+        "startChar": 1,
+        "endLine": 41,
+        "endChar": 28
+      },
+      "revId": "24f1b7d3ae797c173fdb6ed4fa2dc44bf7c201f4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
