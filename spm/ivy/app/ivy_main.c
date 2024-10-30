@@ -23,6 +23,7 @@ void __dead2 ivy_main(void)
 	struct ffa_value ret;
 	ffa_id_t my_id;
 	struct mailbox_buffers mb;
+	bool ivy_shim = IVY_SHIM == 1;
 
 	set_putc_impl(FFA_SVC_SMC_CALL_AS_STDOUT);
 
@@ -37,7 +38,7 @@ void __dead2 ivy_main(void)
 	NOTICE("Booting Secure Partition (ID: %x)\n", my_id);
 	NOTICE("%s\n", build_message);
 	NOTICE("%s\n", version_string);
-
+	NOTICE("This is Ivy...\n");
 init:
 	VERBOSE("Mapping RXTX Regions\n");
 	CONFIGURE_AND_MAP_MAILBOX(mb, PAGE_SIZE, ret);
@@ -47,7 +48,7 @@ init:
 		panic();
 	}
 
-	ffa_tests(&mb, false);
+	ffa_tests(&mb, ivy_shim);
 
 	ret = ffa_msg_wait();
 
