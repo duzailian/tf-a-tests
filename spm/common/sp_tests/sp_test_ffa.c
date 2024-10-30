@@ -85,13 +85,17 @@ static void ffa_features_test(bool el1_partition)
 	/* Get common features between tftf and cactus. */
 	unsigned int test_target_size =
 		get_ffa_feature_test_target(&func_id_targets);
+	/* EL0 partitions don't support NPI. */
+	const unsigned int expected_ret_npi_feature = (el1_partition)
+							? FFA_SUCCESS_SMC32
+							: FFA_ERROR;
 	/* Specific to SPs. */
 	struct ffa_features_test feature_id_targets[] = {
 		{"FFA_FEATURE_MEI", FFA_FEATURE_MEI, FFA_SUCCESS_SMC32, 0,
 			FFA_VERSION_1_1},
 		{"FFA_FEATURE_SRI", FFA_FEATURE_SRI, FFA_ERROR, 0,
 			FFA_VERSION_1_1},
-		{"FFA_FEATURE_NPI", FFA_FEATURE_NPI, FFA_SUCCESS_SMC32, 0,
+		{"FFA_FEATURE_NPI", FFA_FEATURE_NPI, expected_ret_npi_feature, 0,
 			FFA_VERSION_1_1},
 		{"FFA_YIELD_32", FFA_MSG_YIELD, FFA_SUCCESS_SMC32,
 			FFA_VERSION_1_0},
@@ -101,12 +105,6 @@ static void ffa_features_test(bool el1_partition)
 	ffa_features_test_targets(func_id_targets, test_target_size);
 
 	/* Features are expected to be different to tftf. */
-
-	/* EL0 partitions don't support NPI. */
-	if (!el1_partition) {
-		feature_id_targets[2].expected_ret = FFA_ERROR;
-	}
-
 	ffa_features_test_targets(feature_id_targets,
 			ARRAY_SIZE(feature_id_targets));
 }
