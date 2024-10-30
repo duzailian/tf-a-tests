@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3b524172_54c4a197",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-10-30T15:04:26Z",
+      "side": 1,
+      "message": "I believe the variable makes the code a bit more readable.",
+      "parentUuid": "47caed69_ccd169f0",
+      "range": {
+        "startLine": 98,
+        "startChar": 39,
+        "endLine": 98,
+        "endChar": 63
+      },
+      "revId": "29356db53de1827e3649f24fc997eae0c63cd0e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7d5c7399_3df5f39d",
         "filename": "spm/ivy/app/ivy_main.c",
         "patchSetId": 3
@@ -37,6 +61,30 @@
       "writtenOn": "2024-10-30T15:01:13Z",
       "side": 1,
       "message": "Could this not just be the IVY_SHIM macro?",
+      "range": {
+        "startLine": 52,
+        "startChar": 16,
+        "endLine": 52,
+        "endChar": 24
+      },
+      "revId": "29356db53de1827e3649f24fc997eae0c63cd0e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db6149f1_ec3886ac",
+        "filename": "spm/ivy/app/ivy_main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-10-30T15:04:26Z",
+      "side": 1,
+      "message": "I used the ivy_shim boolean above.\nI prefer using explicit booleans, rather than a macro.\nThis is more misra compliant. which we loosely enforce in the tf-a-tests codebase.",
+      "parentUuid": "7d5c7399_3df5f39d",
       "range": {
         "startLine": 52,
         "startChar": 16,
