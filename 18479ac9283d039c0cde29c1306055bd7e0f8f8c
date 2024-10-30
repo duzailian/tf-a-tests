@@ -156,6 +156,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f83a0343_12cd1598",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2586,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-10-30T13:20:23Z",
+      "side": 1,
+      "message": "u_register_t rec_flag[] \u003d {RMI_RUNNABLE};",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "404dec99_eb6b3f94",
         "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
         "patchSetId": 4
