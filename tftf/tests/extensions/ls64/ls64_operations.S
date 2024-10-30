@@ -8,7 +8,6 @@
 
 #if __aarch64__
 
-        .arch armv8.7-a
 	.globl	ls64_store
 	.globl	ls64_load
 
@@ -27,7 +26,8 @@ func ls64_store
 	ldp	x10, x11, [x0, #16]
 	ldp	x12, x13, [x0, #32]
 	ldp	x14, x15, [x0, #48]
-	st64b	x8, [x1]		/* x1: Address where 64-byte data to be stored */
+	.inst	0xf83f9028		/* since ARMv8.7: st64b x8, [x1] */
+					/* x1: Address where 64-byte data to be stored */
 	ret
 endfunc ls64_store
 
@@ -41,7 +41,7 @@ endfunc ls64_store
  */
 
 func ls64_load
-	ld64b	x4, [x0]
+	.inst	0xf83fd004		/* since ARMv8.7: ld64b x4, [x0] */
 	stp	x4, x5, [x1, #0]	/* Base address of destination buffer */
 	stp	x6, x7, [x1, #16]
 	stp	x8, x9, [x1, #32]
