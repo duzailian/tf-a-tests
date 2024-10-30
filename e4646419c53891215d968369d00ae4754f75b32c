@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "48f2be30_f4776f18",
+        "filename": "include/lib/tftf_lib.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-10-30T13:24:29Z",
+      "side": 1,
+      "message": "nit: since the function to call the new variant is new, why not also a new struct? All of these won\u0027t be used on the old allocation, potentially just wasting space",
+      "revId": "e4646419c53891215d968369d00ae4754f75b32c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d08b5671_ae26e971",
         "filename": "lib/smc/aarch64/smc.c",
         "patchSetId": 1
