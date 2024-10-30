@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4cce583_7517d959",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-10-30T11:45:14Z",
+      "side": 1,
+      "message": "2024",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02274bc6_735e615a",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-10-30T11:45:14Z",
+      "side": 1,
+      "message": "const?\nEither use uppercase or lowecase in all hex numbers notations (see lines #20, 21 \u0026 22...).",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a68ea8f_86595d3e",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-10-30T11:45:14Z",
+      "side": 1,
+      "message": "%ul",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1aa066bd_37367557",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-10-30T11:45:14Z",
+      "side": 1,
+      "message": "\u003d 0 is obsolete",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b05e03a4_63ee920d",
+        "filename": "realm/realm_rsi.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-10-30T11:45:14Z",
+      "side": 1,
+      "message": "This looks a bit weird, would be more readable to define a local structure \u0026 pass its address.",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "052eb8b9_14653766",
+        "filename": "realm/realm_rsi.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-10-30T11:45:14Z",
+      "side": 1,
+      "message": "see the comment above",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c92412c0_47096080",
+        "filename": "realm/realm_rsi.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-10-30T11:45:14Z",
+      "side": 1,
+      "message": "add extra ()",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12262448_f5a1274e",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2558,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-10-30T11:45:14Z",
+      "side": 1,
+      "message": "remove empty line",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8fb8e2f4_085cf8ee",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2561,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-10-30T11:45:14Z",
+      "side": 1,
+      "message": "the same",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "404dec99_eb6b3f94",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2605,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-10-30T11:45:14Z",
+      "side": 1,
+      "message": "remove empty line",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
