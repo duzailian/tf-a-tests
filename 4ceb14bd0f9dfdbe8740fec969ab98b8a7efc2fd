@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31cc61d3_40109330",
+        "filename": "realm/aarch64/realm_exceptions.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-10-30T13:37:16Z",
+      "side": 1,
+      "message": "If SCLTR2_EL1.EASE is 1 but the exception ended up synchronous, this would mean a problem with hardware, no? Is there anything different tfa or tftf could have done to prevent this? If not, then this blurb is redundant as out of scope for us IMO.",
+      "revId": "4ceb14bd0f9dfdbe8740fec969ab98b8a7efc2fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fee8e909_1c49779c",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-10-30T13:37:16Z",
+      "side": 1,
+      "message": "I don\u0027t understand the test case, could you please explain, perhaps in the commit message? Is the test that the EASE bit reroutes the exceptions to the serror handler? Then isn\u0027t this redundant as per my other comment? Does RMM get involved in some way that exercises something new?",
+      "revId": "4ceb14bd0f9dfdbe8740fec969ab98b8a7efc2fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ae1716d_7f0115f1",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 2545,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-10-30T13:37:16Z",
+      "side": 1,
+      "message": "nit: why not a SKIP_TEST_IF_DOUBLE_FAUL2_NOT_SUPPORTED()? Follows convention with other features",
+      "revId": "4ceb14bd0f9dfdbe8740fec969ab98b8a7efc2fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
