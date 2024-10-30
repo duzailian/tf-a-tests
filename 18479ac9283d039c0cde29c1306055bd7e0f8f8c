@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "53f19220_8b75b068",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-10-30T14:50:10Z",
+      "side": 1,
+      "message": "do we not have an rng api that we can actually use? in regard to the other comment about verifyign signature, it might be worth starting to link mbedtls and do the crypto ops.",
+      "parentUuid": "02274bc6_735e615a",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0a68ea8f_86595d3e",
         "filename": "realm/realm_attestation.c",
         "patchSetId": 4
@@ -65,6 +83,23 @@
       "writtenOn": "2024-10-30T11:45:14Z",
       "side": 1,
       "message": "\u003d 0 is obsolete",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d584eafe_5406b6e3",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-10-30T14:50:10Z",
+      "side": 1,
+      "message": "comment here on why the test would fail/fault would be good.",
       "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -133,6 +168,23 @@
       "writtenOn": "2024-10-30T11:45:14Z",
       "side": 1,
       "message": "remove empty line",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a9dbe9f_673662dd",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2559,
+      "author": {
+        "id": 1000114
+      },
+      "writtenOn": "2024-10-30T14:50:10Z",
+      "side": 1,
+      "message": "is it worth actually checking the token for a signature? IIRC, we are providing a properly signed token as a response.\nWe could make the key to verify platform specific and verify somethign about the token. \nCan add as enhancement too, but something to think about since this has come up in other reviews.",
       "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
