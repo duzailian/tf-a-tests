@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47caed69_ccd169f0",
+        "filename": "spm/common/sp_tests/sp_test_ffa.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-10-30T15:01:13Z",
+      "side": 1,
+      "message": "Is the const unsigned int needed? Could you not just have the turnery here? If you prefer using a variable I\u0027m happy for you not to change it",
+      "range": {
+        "startLine": 98,
+        "startChar": 39,
+        "endLine": 98,
+        "endChar": 63
+      },
+      "revId": "29356db53de1827e3649f24fc997eae0c63cd0e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d5c7399_3df5f39d",
+        "filename": "spm/ivy/app/ivy_main.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-10-30T15:01:13Z",
+      "side": 1,
+      "message": "Could this not just be the IVY_SHIM macro?",
+      "range": {
+        "startLine": 52,
+        "startChar": 16,
+        "endLine": 52,
+        "endChar": 24
+      },
+      "revId": "29356db53de1827e3649f24fc997eae0c63cd0e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
