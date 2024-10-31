@@ -13,49 +13,39 @@
 
 #include <host_shared_data.h>
 
-#define SET_EXPECTED_BP_ADDR(n) {	  \
-	rand_addr = get_random_address(); \
-	WRITE_DBGBVR_EL1(n, rand_addr);	  \
-	expected_bp_addr[n] = rand_addr;  \
-}
+typedef struct {
+	long unsigned int (*read_dbgbcr_el1)(void);
+	long unsigned int (*read_dbgbvr_el1)(void);
+	long unsigned int (*read_dbgwcr_el1)(void);
+	long unsigned int (*read_dbgwvr_el1)(void);
+	void (*write_dbgbcr_el1)(long unsigned int);
+	void (*write_dbgbvr_el1)(long unsigned int);
+	void (*write_dbgwcr_el1)(long unsigned int);
+	void (*write_dbgwvr_el1)(long unsigned int);
+}realm_ctx_fnptr_t;
 
-#define SET_BP(n) {							  \
-	case (n):							  \
-	write_dbgbcr##n##_el1(rl_set_dbgbcr_el1(read_dbgbcr##n##_el1())); \
-	SET_EXPECTED_BP_ADDR(n);					  \
-}
+#define REALM_CTX_FNPTRS(n)									\
+	{read_dbgbcr##n##_el1, read_dbgbvr##n##_el1, read_dbgwcr##n##_el1, read_dbgwvr##n##_el1, \
+	write_dbgbcr##n##_el1, write_dbgbvr##n##_el1, write_dbgwcr##n##_el1, write_dbgwvr##n##_el1}
 
-#define CHECK_BP(n) {								\
-	case (n):								\
-	if (!rl_check_dbgbcr_el1(read_dbgbcr##n##_el1()) ||			\
-	    (EXTRACT(DBGBVR_EL1_VA, read_dbgbvr##n##_el1()) !=			\
-							expected_bp_addr[n])) { \
-		rc = false;							\
-		break;								\
-	}									\
-}
-
-#define SET_EXPECTED_WP_ADDR(n) {	  \
-	rand_addr = get_random_address(); \
-	WRITE_DBGWVR_EL1(n, rand_addr);	  \
-	expected_wp_addr[n] = rand_addr;  \
-}
-
-#define SET_WP(n) {							  \
-	case (n):							  \
-	write_dbgwcr##n##_el1(rl_set_dbgwcr_el1(read_dbgwcr##n##_el1())); \
-	SET_EXPECTED_WP_ADDR(n);					  \
-}
-
-#define CHECK_WP(n) {								\
-	case (n):								\
-	if (!rl_check_dbgwcr_el1(read_dbgwcr##n##_el1()) ||			\
-	    (EXTRACT(DBGWVR_EL1_VA, read_dbgwvr##n##_el1()) !=			\
-							expected_wp_addr[n])) {	\
-		rc = false;							\
-		break;								\
-	}									\
-}
+realm_ctx_fnptr_t realm_ctx_regs[MAX_BPS] = {
+	REALM_CTX_FNPTRS(0),
+	REALM_CTX_FNPTRS(1),
+	REALM_CTX_FNPTRS(2),
+	REALM_CTX_FNPTRS(3),
+	REALM_CTX_FNPTRS(4),
+	REALM_CTX_FNPTRS(5),
+	REALM_CTX_FNPTRS(6),
+	REALM_CTX_FNPTRS(7),
+	REALM_CTX_FNPTRS(8),
+	REALM_CTX_FNPTRS(9),
+	REALM_CTX_FNPTRS(10),
+	REALM_CTX_FNPTRS(11),
+	REALM_CTX_FNPTRS(12),
+	REALM_CTX_FNPTRS(13),
+	REALM_CTX_FNPTRS(14),
+	REALM_CTX_FNPTRS(15)
+};
 
 static u_register_t expected_bp_addr[MAX_BPS];
 static u_register_t expected_wp_addr[MAX_WPS];
@@ -132,7 +122,20 @@ bool test_realm_debug_num_bps_wps(void)
 	unsigned long num_bps_host, num_wps_host;
 
 	num_bps = EXTRACT(ID_AA64DFR0_BRPs, read_id_aa64dfr0_el1());
+	if (num_bps == (MAX_BPS - 1)) {
+		num_bps = EXTRACT(ID_AA64DFR1_BRPs, read_id_aa64dfr1_el1());
+		if (num_bps == 0UL) {
+			num_bps = MAX_BPS - 1;
+		}
+	}
+
 	num_wps = EXTRACT(ID_AA64DFR0_WRPs, read_id_aa64dfr0_el1());
+	if (num_wps == (MAX_WPS - 1)) {
+		num_wps = EXTRACT(ID_AA64DFR1_WRPs, read_id_aa64dfr1_el1());
+		if (num_wps == 0UL) {
+			num_wps = MAX_WPS - 1;
+		}
+	}
 
 	INFO("Num of bps extracted = %d and wps extracted = %d\n", num_bps, num_wps);
 
@@ -156,24 +159,13 @@ static void rl_set_bps(unsigned long num_bps)
 {
 	unsigned long rand_addr;
 
-	switch (num_bps) {
-	SET_BP(15);
-	SET_BP(14);
-	SET_BP(13);
-	SET_BP(12);
-	SET_BP(11);
-	SET_BP(10);
-	SET_BP(9);
-	SET_BP(8);
-	SET_BP(7);
-	SET_BP(6);
-	SET_BP(5);
-	SET_BP(4);
-	SET_BP(3);
-	SET_BP(2);
-	SET_BP(1);
-	default:
-	SET_BP(0);
+	for(int i = 0; i <= num_bps ; i++) {
+		realm_ctx_regs[i].write_dbgbcr_el1(rl_set_dbgbcr_el1(realm_ctx_regs[i].read_dbgbcr_el1()));
+		rand_addr = get_random_address();
+		realm_ctx_regs[i].write_dbgbvr_el1(INPLACE(DBGBVR_EL1_VA, rand_addr));
+		expected_bp_addr[i] = rand_addr;
+		printf("rand_addr = %lx and realm_ctx_regs[%d].read_dbgbvr_el1() = %lx\n",\
+		rand_addr, i, realm_ctx_regs[i].read_dbgbvr_el1());
 	}
 }
 
@@ -185,24 +177,13 @@ static void rl_set_wps(unsigned long num_wps)
 {
 	unsigned long rand_addr;
 
-	switch (num_wps) {
-	SET_WP(15);
-	SET_WP(14);
-	SET_WP(13);
-	SET_WP(12);
-	SET_WP(11);
-	SET_WP(10);
-	SET_WP(9);
-	SET_WP(8);
-	SET_WP(7);
-	SET_WP(6);
-	SET_WP(5);
-	SET_WP(4);
-	SET_WP(3);
-	SET_WP(2);
-	SET_WP(1);
-	default:
-	SET_WP(0);
+	for(int i = 0; i <= num_wps ; i++) {
+		realm_ctx_regs[i].write_dbgwcr_el1(rl_set_dbgwcr_el1(realm_ctx_regs[i].read_dbgwcr_el1()));
+		rand_addr = get_random_address();
+		realm_ctx_regs[i].write_dbgwvr_el1(INPLACE(DBGWVR_EL1_VA, rand_addr));
+		expected_wp_addr[i] = rand_addr;
+		printf("rand_addr = %lx and realm_ctx_regs[%d].read_dbgbvr_el1() = %lx\n", \
+		rand_addr, i, realm_ctx_regs[i].read_dbgwvr_el1());
 	}
 }
 
@@ -215,7 +196,20 @@ void test_realm_debug_fill_regs(void)
 	unsigned long num_bps, num_wps;
 
 	num_bps = EXTRACT(ID_AA64DFR0_BRPs, read_id_aa64dfr0_el1());
+	if (num_bps == (MAX_BPS-1)) {
+		num_bps = EXTRACT(ID_AA64DFR1_BRPs, read_id_aa64dfr1_el1());
+		if (num_bps == 0UL) {
+			num_bps = MAX_BPS - 1;
+		}
+	}
+
 	num_wps = EXTRACT(ID_AA64DFR0_WRPs, read_id_aa64dfr0_el1());
+	if (num_wps == (MAX_WPS-1)) {
+		num_wps = EXTRACT(ID_AA64DFR1_WRPs, read_id_aa64dfr1_el1());
+		if (num_wps == 0UL) {
+			num_wps = MAX_WPS - 1;
+		}
+	}
 
 	write_mdscr_el1(read_mdscr_el1() |
 			MDSCR_EL1_TDCC_BIT |
@@ -234,28 +228,17 @@ void test_realm_debug_fill_regs(void)
  */
 static bool rl_check_bps(unsigned long num_bps)
 {
-	bool rc = true;
-
-	switch (num_bps) {
-	CHECK_BP(15);
-	CHECK_BP(14);
-	CHECK_BP(13);
-	CHECK_BP(12);
-	CHECK_BP(11);
-	CHECK_BP(10);
-	CHECK_BP(9);
-	CHECK_BP(8);
-	CHECK_BP(7);
-	CHECK_BP(6);
-	CHECK_BP(5);
-	CHECK_BP(4);
-	CHECK_BP(3);
-	CHECK_BP(2);
-	CHECK_BP(1);
-	default:
-	CHECK_BP(0);
+	bool rc = false;
+	for(int i = 0; i <= num_bps; i++) {
+		printf(" i = %d\n", i);
+		if (!rl_check_dbgbcr_el1(realm_ctx_regs[i].read_dbgbcr_el1()) && \
+			(EXTRACT(DBGBVR_EL1_VA, realm_ctx_regs[i].read_dbgbvr_el1()) != \
+			expected_bp_addr[i])) {
+				rc = false;
+				break;
+			}
+		rc = true;
 	}
-
 	return rc;
 }
 
@@ -265,28 +248,17 @@ static bool rl_check_bps(unsigned long num_bps)
  */
 static bool rl_check_wps(unsigned long num_wps)
 {
-	bool rc = true;
-
-	switch (num_wps) {
-	CHECK_WP(15);
-	CHECK_WP(14);
-	CHECK_WP(13);
-	CHECK_WP(12);
-	CHECK_WP(11);
-	CHECK_WP(10);
-	CHECK_WP(9);
-	CHECK_WP(8);
-	CHECK_WP(7);
-	CHECK_WP(6);
-	CHECK_WP(5);
-	CHECK_WP(4);
-	CHECK_WP(3);
-	CHECK_WP(2);
-	CHECK_WP(1);
-	default:
-	CHECK_WP(0);
+	bool rc = false;
+	for(int i = 0; i <= num_wps; i++) {
+		printf(" i = %d\n", i);
+		if (!rl_check_dbgwcr_el1(realm_ctx_regs[i].read_dbgwcr_el1()) && \
+			(EXTRACT(DBGWVR_EL1_VA, realm_ctx_regs[i].read_dbgwvr_el1()) != \
+			expected_wp_addr[i])) {
+				rc = false;
+				break;
+			}
+		rc = true;
 	}
-
 	return rc;
 }
 
@@ -297,9 +269,21 @@ static bool rl_check_wps(unsigned long num_wps)
 bool test_realm_debug_cmp_regs(void)
 {
 	unsigned long num_bps, num_wps;
-
 	num_bps = EXTRACT(ID_AA64DFR0_BRPs, read_id_aa64dfr0_el1());
+	if (num_bps == (MAX_BPS - 1)) {
+		num_bps = EXTRACT(ID_AA64DFR1_BRPs, read_id_aa64dfr1_el1());
+		if (num_bps == 0UL) {
+			num_bps = MAX_BPS - 1;
+		}
+	}
+
 	num_wps = EXTRACT(ID_AA64DFR0_WRPs, read_id_aa64dfr0_el1());
+	if (num_wps == (MAX_WPS - 1)) {
+		num_wps = EXTRACT(ID_AA64DFR1_WRPs, read_id_aa64dfr1_el1());
+		if (num_wps == 0UL) {
+			num_wps = MAX_WPS - 1;
+		}
+	}
 
 	INFO("Realm: Read and compare\n");
 
