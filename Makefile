@@ -211,7 +211,7 @@ COMMON_LDFLAGS		:=
 
 ifeq (${DEBUG},1)
 COMMON_CFLAGS		+= 	-g -gdwarf-4
-COMMON_ASFLAGS		+= 	-g -Wa,--gdwarf-4
+COMMON_ASFLAGS		+= 	-g -Wa,--gdwarf-2
 endif
 
 # Set the compiler's target architecture profile based on ARM_ARCH_MINOR option
