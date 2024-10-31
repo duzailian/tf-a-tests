@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "98d9b123_33faaebd",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-10-31T20:00:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4cce583_7517d959",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "02274bc6_735e615a",
@@ -55,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "464b594e_4f2bcf7e",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-10-31T20:00:28Z",
+      "side": 1,
+      "message": "Hi Raghu, \n\nAs Soby indicated, we are considering verifying the signature as a future addition. We can also include random generated challenges when we do that.",
+      "parentUuid": "53f19220_8b75b068",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0a68ea8f_86595d3e",
         "filename": "realm/realm_attestation.c",
         "patchSetId": 4
@@ -66,6 +102,24 @@
       "writtenOn": "2024-10-30T11:45:14Z",
       "side": 1,
       "message": "%ul",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b49679c_ade31e28",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-10-31T20:00:28Z",
+      "side": 1,
+      "message": "I guess you meant %lu.\n\nDone.",
+      "parentUuid": "0a68ea8f_86595d3e",
       "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -87,6 +141,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6fd55c7_c38a3527",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-10-31T20:00:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa066bd_37367557",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d584eafe_5406b6e3",
@@ -100,6 +172,24 @@
       "writtenOn": "2024-10-30T14:50:10Z",
       "side": 1,
       "message": "comment here on why the test would fail/fault would be good.",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9d20d97_efce43a8",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-10-31T20:00:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d584eafe_5406b6e3",
       "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -123,6 +213,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9063807a_c264b02f",
+        "filename": "realm/realm_rsi.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-10-31T20:00:28Z",
+      "side": 1,
+      "message": "I can do that. However, all the other RSI calls use this approach, so I did it for consistency. Let me know what you prefer.",
+      "parentUuid": "b05e03a4_63ee920d",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "052eb8b9_14653766",
         "filename": "realm/realm_rsi.c",
         "patchSetId": 4
@@ -134,6 +242,24 @@
       "writtenOn": "2024-10-30T11:45:14Z",
       "side": 1,
       "message": "see the comment above",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a1bb409_2f3e6b81",
+        "filename": "realm/realm_rsi.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-10-31T20:00:28Z",
+      "side": 1,
+      "message": "Ditto.",
+      "parentUuid": "052eb8b9_14653766",
       "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -155,6 +281,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "17a764e5_38ec2f65",
+        "filename": "realm/realm_rsi.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-10-31T20:00:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c92412c0_47096080",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "12262448_f5a1274e",
@@ -168,6 +312,24 @@
       "writtenOn": "2024-10-30T11:45:14Z",
       "side": 1,
       "message": "remove empty line",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d020de8d_d09c1ec1",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2558,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-10-31T20:00:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12262448_f5a1274e",
       "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -224,6 +386,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae8fc261_6afcba0a",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2561,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-10-31T20:00:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8fb8e2f4_085cf8ee",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f83a0343_12cd1598",
@@ -241,6 +421,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a55d1e6f_d6c95ed0",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2586,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-10-31T20:00:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f83a0343_12cd1598",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "404dec99_eb6b3f94",
@@ -254,6 +452,24 @@
       "writtenOn": "2024-10-30T11:45:14Z",
       "side": 1,
       "message": "remove empty line",
+      "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c18b57f8_f7842dab",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2605,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-10-31T20:00:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "404dec99_eb6b3f94",
       "revId": "18479ac9283d039c0cde29c1306055bd7e0f8f8c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
