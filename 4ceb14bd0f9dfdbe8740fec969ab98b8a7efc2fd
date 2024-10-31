@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff5a4de8_efb34800",
+        "filename": "realm/aarch64/realm_exceptions.S",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-10-31T17:43:45Z",
+      "side": 1,
+      "message": "This is actually an injected exception. What we are testing here is that RMM is able to inject the exception to the right vector, as previously a bug prevented it to take into account the EASE bit, causing the exception to be injected into the sync handler when it had to be injected into the serr one.\n\n(see https://review.trustedfirmware.org/c/TF-RMM/tf-rmm/+/31771)",
+      "parentUuid": "31cc61d3_40109330",
+      "revId": "4ceb14bd0f9dfdbe8740fec969ab98b8a7efc2fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fee8e909_1c49779c",
@@ -35,6 +53,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "39c2dac4_c2da3a58",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-10-31T17:43:45Z",
+      "side": 1,
+      "message": "Yes, that is correct, when SCTLR2_EL1.EASE \u003d\u003d \u00271\u0027, sync exceptions are re-routed to the serror handler. Bear in mind that as this is an injected exception, what we are testing here is that RMM is injecting the exception to the right vector.\n\nI will update the patch description with more details about the test to avoid confusion",
+      "parentUuid": "fee8e909_1c49779c",
+      "revId": "4ceb14bd0f9dfdbe8740fec969ab98b8a7efc2fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4ae1716d_7f0115f1",
@@ -48,6 +84,24 @@
       "writtenOn": "2024-10-30T13:37:16Z",
       "side": 1,
       "message": "nit: why not a SKIP_TEST_IF_DOUBLE_FAUL2_NOT_SUPPORTED()? Follows convention with other features",
+      "revId": "4ceb14bd0f9dfdbe8740fec969ab98b8a7efc2fd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b53e63e_79462af4",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 2545,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-10-31T17:43:45Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "4ae1716d_7f0115f1",
       "revId": "4ceb14bd0f9dfdbe8740fec969ab98b8a7efc2fd",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
