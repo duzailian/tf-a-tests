@@ -17,49 +17,40 @@
 #include <host_realm_mem_layout.h>
 #include <host_shared_data.h>
 
-#define SET_EXPECTED_BP_ADDR(n) {	  \
-	rand_addr = get_random_address(); \
-	WRITE_DBGBVR_EL1(n, rand_addr);	  \
-	expected_bp_addr[n] = rand_addr;  \
-}
+typedef struct {
+	long unsigned int (*read_dbgbcr_el1)(void);
+	long unsigned int (*read_dbgbvr_el1)(void);
+	long unsigned int (*read_dbgwcr_el1)(void);
+	long unsigned int (*read_dbgwvr_el1)(void);
+	void (*write_dbgbcr_el1)(long unsigned int);
+	void (*write_dbgbvr_el1)(long unsigned int);
+	void (*write_dbgwcr_el1)(long unsigned int);
+	void (*write_dbgwvr_el1)(long unsigned int);
+}ctx_fnptr_t;
 
-#define SET_BP(n) {							  \
-	case (n):							  \
-	write_dbgbcr##n##_el1(ns_set_dbgbcr_el1(read_dbgbcr##n##_el1())); \
-	SET_EXPECTED_BP_ADDR(n);					  \
-}
+#define NS_DEBUG_FNPTRS(n)									\
+	{read_dbgbcr##n##_el1, read_dbgbvr##n##_el1, read_dbgwcr##n##_el1, read_dbgwvr##n##_el1, \
+	write_dbgbcr##n##_el1, write_dbgbvr##n##_el1, write_dbgwcr##n##_el1, write_dbgwvr##n##_el1}
 
-#define CHECK_BP(n) {								\
-	case (n):								\
-	if (!ns_check_dbgbcr_el1(read_dbgbcr##n##_el1()) ||			\
-	    (EXTRACT(DBGBVR_EL1_VA, read_dbgbvr##n##_el1()) !=			\
-							expected_bp_addr[n])) {	\
-		rc = TEST_RESULT_FAIL;						\
-		break;								\
-	}									\
-}
 
-#define SET_EXPECTED_WP_ADDR(n) {	  \
-	rand_addr = get_random_address(); \
-	WRITE_DBGWVR_EL1(n, rand_addr);	  \
-	expected_wp_addr[n] = rand_addr;  \
-}
-
-#define SET_WP(n) {							  \
-	case (n):							  \
-	write_dbgwcr##n##_el1(ns_set_dbgwcr_el1(read_dbgwcr##n##_el1())); \
-	SET_EXPECTED_WP_ADDR(n);					  \
-}
-
-#define CHECK_WP(n) {								\
-	case (n):								\
-	if (!ns_check_dbgwcr_el1(read_dbgwcr##n##_el1()) ||			\
-	    (EXTRACT(DBGWVR_EL1_VA, read_dbgwvr##n##_el1()) !=			\
-							expected_wp_addr[n])) {	\
-		rc = TEST_RESULT_FAIL;						\
-		break;								\
-	}									\
-}
+ctx_fnptr_t debug_regs[MAX_BPS] = {
+	NS_DEBUG_FNPTRS(0),
+	NS_DEBUG_FNPTRS(1),
+	NS_DEBUG_FNPTRS(2),
+	NS_DEBUG_FNPTRS(3),
+	NS_DEBUG_FNPTRS(4),
+	NS_DEBUG_FNPTRS(5),
+	NS_DEBUG_FNPTRS(6),
+	NS_DEBUG_FNPTRS(7),
+	NS_DEBUG_FNPTRS(8),
+	NS_DEBUG_FNPTRS(9),
+	NS_DEBUG_FNPTRS(10),
+	NS_DEBUG_FNPTRS(11),
+	NS_DEBUG_FNPTRS(12),
+	NS_DEBUG_FNPTRS(13),
+	NS_DEBUG_FNPTRS(14),
+	NS_DEBUG_FNPTRS(15)
+};
 
 /*
  * Set DBGBCRn_EL1 fields HMC, PMC, SSC and SSCE such that breakpoint n will
@@ -133,7 +124,6 @@ static bool ns_check_dbgwcr_el1(u_register_t reg)
 test_result_t host_test_realm_num_bps_wps(void)
 {
 	unsigned long num_bps, num_wps;
-	unsigned long num_bps_idreg1, num_wps_idreg1;
 	unsigned long debugver;
 	u_register_t feature_flag;
 	u_register_t rec_flag[1] = {RMI_RUNNABLE};
@@ -148,13 +138,27 @@ test_result_t host_test_realm_num_bps_wps(void)
 
 	INFO("DEBUGVER = %lu\n", debugver);
 
-	num_bps_idreg1 = EXTRACT(ID_AA64DFR1_BRPs, read_id_aa64dfr1_el1());
-	num_wps_idreg1 = EXTRACT(ID_AA64DFR1_WRPs, read_id_aa64dfr1_el1());
+	/* If BPs is 0xF, read DFR1 to find no of BPs supported by HW */
+	if (num_bps == MAX_BPS - 1UL) {
+		num_bps = EXTRACT(ID_AA64DFR1_BRPs, read_id_aa64dfr1_el1());
+		if (num_bps == 0UL) {
+			num_bps = MAX_BPS - 1UL;
+		}
+	}
+
+	/* If WPs is 0xF, read DFR1 to find no of BPs supported by HW */
+	num_wps = EXTRACT(ID_AA64DFR0_WRPs, read_id_aa64dfr0_el1());
+
+	if (num_wps == MAX_WPS - 1UL) {
+		num_wps = EXTRACT(ID_AA64DFR1_WRPs, read_id_aa64dfr1_el1());
+		if(num_wps == 0UL) {
+			num_wps = MAX_WPS - 1UL;
+		}
+	}
 
 	feature_flag = INPLACE(FEATURE_NUM_BPS, num_bps) |
 		       INPLACE(FEATURE_NUM_WPS, num_wps);
 
-	INFO("num of bps_idreg1 = %lu and num of wps_idreg1 = %lu\n", num_bps_idreg1, num_wps_idreg1);
 
 	if (!host_create_activate_realm_payload(&realm,
 					(u_register_t)REALM_IMAGE_BASE,
@@ -188,26 +192,24 @@ test_result_t host_test_realm_num_bps_wps(void)
 static void ns_set_bps(int num_bps, u_register_t expected_bp_addr[])
 {
 	unsigned int rand_addr;
+	for(int i = 0; i <= num_bps; i++) {
+		u_register_t value = debug_regs[i].read_dbgbcr_el1();
+		printf("i = %d, read dbgbcr register = %lx\n", i, value);
+		value = ns_set_dbgbcr_el1(debug_regs[i].read_dbgbcr_el1());
+		printf("i = %d, updated dbgbcr register = %lx\n", i, value);
+		debug_regs[i].write_dbgbcr_el1(value);
+		printf("i = %d, write to dbgbcr register = %lx\n", i, debug_regs[i].read_dbgbcr_el1());
+		rand_addr = get_random_address();
+		printf("i = %d, random address generated = %x\n", i, rand_addr);
+		printf("i = %d, read dbgbvr register = %lx\n", i, debug_regs[i].read_dbgbvr_el1());
+		debug_regs[i].write_dbgbvr_el1(INPLACE(DBGBVR_EL1_VA, rand_addr));
+		printf("i = %d, updated dbgbvr = %lx\n", i, debug_regs[i].read_dbgbvr_el1());
+		expected_bp_addr[i] = rand_addr;
+		printf("i = %d, expected_bp_addr[%d] = %lx\n", i, i, expected_bp_addr[i]);
+		printf("\n");
 
-	switch (num_bps) {
-	SET_BP(15);
-	SET_BP(14);
-	SET_BP(13);
-	SET_BP(12);
-	SET_BP(11);
-	SET_BP(10);
-	SET_BP(9);
-	SET_BP(8);
-	SET_BP(7);
-	SET_BP(6);
-	SET_BP(5);
-	SET_BP(4);
-	SET_BP(3);
-	SET_BP(2);
-	SET_BP(1);
-	default:
-	SET_BP(0);
 	}
+
 }
 
 /*
@@ -217,25 +219,21 @@ static void ns_set_bps(int num_bps, u_register_t expected_bp_addr[])
 static void ns_set_wps(int num_wps, u_register_t expected_wp_addr[])
 {
 	unsigned int rand_addr;
-
-	switch (num_wps) {
-	SET_WP(15);
-	SET_WP(14);
-	SET_WP(13);
-	SET_WP(12);
-	SET_WP(11);
-	SET_WP(10);
-	SET_WP(9);
-	SET_WP(8);
-	SET_WP(7);
-	SET_WP(6);
-	SET_WP(5);
-	SET_WP(4);
-	SET_WP(3);
-	SET_WP(2);
-	SET_WP(1);
-	default:
-	SET_WP(0);
+	for(int i = 0; i <= num_wps; i++) {
+		u_register_t value = debug_regs[i].read_dbgwcr_el1();
+		printf("i = %d, value = %lx\n", i, value);
+		value = ns_set_dbgwcr_el1(debug_regs[i].read_dbgwcr_el1());
+		printf("i = %d, updated value = %lx\n", i, value);
+		debug_regs[i].write_dbgwcr_el1(value);
+		printf("i = %d, updated dbgbcr = %lx\n", i, debug_regs[i].read_dbgbcr_el1());
+		rand_addr = get_random_address();
+		printf("i = %d, random address generated = %x\n", i, rand_addr);
+		printf("i = %d, read dbgwvr register = %lx\n", i, debug_regs[i].read_dbgwvr_el1());
+		debug_regs[i].write_dbgwvr_el1(INPLACE(DBGWVR_EL1_VA, rand_addr));
+		printf("i = %d, updated dbgbvr = %lx\n", i, debug_regs[i].read_dbgbvr_el1());
+		expected_wp_addr[i] = rand_addr;
+		printf("i = %d, expected_wp_addr[%d] = %lx\n", i, i, expected_wp_addr[i]);
+		printf("\n");
 	}
 }
 
@@ -245,28 +243,22 @@ static void ns_set_wps(int num_wps, u_register_t expected_wp_addr[])
  */
 static test_result_t ns_check_bps(int num_bps, u_register_t expected_bp_addr[])
 {
-	test_result_t rc = TEST_RESULT_SUCCESS;
+	test_result_t rc = TEST_RESULT_FAIL;
 
-	switch (num_bps) {
-	CHECK_BP(15);
-	CHECK_BP(14);
-	CHECK_BP(13);
-	CHECK_BP(12);
-	CHECK_BP(11);
-	CHECK_BP(10);
-	CHECK_BP(9);
-	CHECK_BP(8);
-	CHECK_BP(7);
-	CHECK_BP(6);
-	CHECK_BP(5);
-	CHECK_BP(4);
-	CHECK_BP(3);
-	CHECK_BP(2);
-	CHECK_BP(1);
-	default:
-	CHECK_BP(0);
+	if (num_bps != 0UL) {
+		for(int i = 0; i <= num_bps; i++) {
+			if (!ns_check_dbgbcr_el1(debug_regs[i].read_dbgbcr_el1()) && \
+				(EXTRACT(DBGBVR_EL1_VA, debug_regs[i].read_dbgbvr_el1()) != \
+				expected_bp_addr[i])) {
+				rc = TEST_RESULT_FAIL;
+				break;
+			}
+			printf("i = %d, debug_regs[i].read_dbgbvr_el1() = %lx\n", i, debug_regs[i].read_dbgbvr_el1());
+			printf("i = %d, expected_bp_addr[i] = %lx\n", i, expected_bp_addr[i]);
+			printf("\n");
+		}
+		rc = TEST_RESULT_SUCCESS;
 	}
-
 	return rc;
 }
 
@@ -276,28 +268,19 @@ static test_result_t ns_check_bps(int num_bps, u_register_t expected_bp_addr[])
  */
 static test_result_t ns_check_wps(int num_wps, u_register_t expected_wp_addr[])
 {
-	test_result_t rc = TEST_RESULT_SUCCESS;
+	test_result_t rc = TEST_RESULT_FAIL;
 
-	switch (num_wps) {
-	CHECK_WP(15);
-	CHECK_WP(14);
-	CHECK_WP(13);
-	CHECK_WP(12);
-	CHECK_WP(11);
-	CHECK_WP(10);
-	CHECK_WP(9);
-	CHECK_WP(8);
-	CHECK_WP(7);
-	CHECK_WP(6);
-	CHECK_WP(5);
-	CHECK_WP(4);
-	CHECK_WP(3);
-	CHECK_WP(2);
-	CHECK_WP(1);
-	default:
-	CHECK_WP(0);
+	if (num_wps != 0UL) {
+		for(int i = 0; i <= num_wps; i++) {
+			if (!ns_check_dbgwcr_el1(debug_regs[i].read_dbgwcr_el1()) && \
+				(EXTRACT(DBGWVR_EL1_VA, debug_regs[i].read_dbgwvr_el1()) != \
+				expected_wp_addr[i])) {
+				rc = TEST_RESULT_FAIL;
+				break;
+			}
+		}
+		rc = TEST_RESULT_SUCCESS;
 	}
-
 	return rc;
 }
 
@@ -319,8 +302,24 @@ test_result_t host_realm_test_debug_save_restore(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
+	/* If BPs is 0xF, read DFR1 to find no of BPs supported by HW */
 	num_bps = EXTRACT(ID_AA64DFR0_BRPs, read_id_aa64dfr0_el1());
+	if (num_bps == (MAX_BPS - 1UL)) {
+		num_bps = EXTRACT(ID_AA64DFR1_BRPs, read_id_aa64dfr1_el1());
+		if (num_bps == 0UL) {
+			num_bps = MAX_BPS - 1UL;
+		}
+	}
+
+	/* If WPs is 0xF, read DFR1 to find no of BPs supported by HW */
 	num_wps = EXTRACT(ID_AA64DFR0_WRPs, read_id_aa64dfr0_el1());
+
+	if (num_wps == MAX_WPS - 1UL) {
+		num_wps = EXTRACT(ID_AA64DFR1_WRPs, read_id_aa64dfr1_el1());
+		if(num_wps == 0UL) {
+			num_wps = MAX_WPS - 1UL;
+		}
+	}
 
 	feature_flag = INPLACE(FEATURE_NUM_BPS, num_bps) |
 		       INPLACE(FEATURE_NUM_WPS, num_wps);
