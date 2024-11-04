@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8841c90f_8e5d0152",
+        "filename": "include/lib/context_mgmt/context_el1.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-04T11:34:21Z",
+      "side": 1,
+      "message": "Modified.",
+      "parentUuid": "e0c341c1_aff9cfe5",
+      "range": {
+        "startLine": 134,
+        "startChar": 40,
+        "endLine": 137,
+        "endChar": 16
+      },
+      "revId": "6e0a7875ced4467b093e279cd7f638bb203a19da",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ea7ea20a_26a8619d",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e5d1cb6_f93619eb",
+        "filename": "tftf/tests/context_mgmt_tests/el1/test_tsp_el1_context_mgmt.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-04T11:34:21Z",
+      "side": 1,
+      "message": "Will switch to INFO/ERROR macros as applicable.\nHowever at few instances printf is essential as the logging macros wouldn\u0027t supoort\nadvanced format specifier options. In those cases printf is essential.\nHowever this will be required only when you want to print the register list in a well defined format like below. which looks neat and easier to follow up during error analysis.\n```\n+-----------------------+--------------------+\n| EL1 Context Registers |        Value       |\n+-----------------------+--------------------+\n|    spsr_el1           | 0x00000000ffff0000 |\n+-----------------------+--------------------+\n|    elr_el1            | 0x00000000ffff0000 |\n+-----------------------+--------------------+\n|    sctlr_el1          | 0x00000000fffd0800 |\n+-----------------------+--------------------+\n|    tcr_el1            | 0x00000000ffff0000 |\n+-----------------------+--------------------+\n|    cpacr_el1          | 0x0000000030330000 |\n\n```\nSo I would prefer to retain printfs in those cases.\nAt all other instances/success case, will stick to logging macros.",
+      "parentUuid": "ea7ea20a_26a8619d",
+      "range": {
+        "startLine": 75,
+        "startChar": 2,
+        "endLine": 75,
+        "endChar": 8
+      },
+      "revId": "6e0a7875ced4467b093e279cd7f638bb203a19da",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "02aa2fcc_eb0ded55",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-10-29T10:19:23Z",
       "side": 1,
       "message": "nit: convert to space",
+      "range": {
+        "startLine": 129,
+        "startChar": 6,
+        "endLine": 129,
+        "endChar": 7
+      },
+      "revId": "6e0a7875ced4467b093e279cd7f638bb203a19da",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2d84a60_5e55dc9d",
+        "filename": "tftf/tests/context_mgmt_tests/el1/test_tsp_el1_context_mgmt.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-04T11:34:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02aa2fcc_eb0ded55",
       "range": {
         "startLine": 129,
         "startChar": 6,

@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "340fe926_6a72bab3",
+        "filename": "lib/context_mgmt/aarch64/context_el1.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-04T11:34:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d234c1ab_05c05f9c",
+      "revId": "4b248989123a5c4060428302662fd1e9323f2e40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "02afc267_ee085909",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-10-29T10:57:21Z",
       "side": 1,
       "message": "Nit: is using a tab after \"#ifdef\" here suitable or not?",
+      "revId": "4b248989123a5c4060428302662fd1e9323f2e40",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d154119_daccc030",
+        "filename": "tftf/tests/context_mgmt_tests/el1/test_tsp_el1_context_mgmt.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-04T11:34:21Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "02afc267_ee085909",
       "revId": "4b248989123a5c4060428302662fd1e9323f2e40",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
