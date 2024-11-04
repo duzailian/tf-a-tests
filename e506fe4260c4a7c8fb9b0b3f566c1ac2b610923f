@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3cc70c50_df94622b",
+        "filename": "tftf/tests/tests-memory-access.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000467
+      },
+      "writtenOn": "2024-11-04T15:47:54Z",
+      "side": 1,
+      "message": "Nit: remove indentation",
+      "range": {
+        "startLine": 11,
+        "startChar": 2,
+        "endLine": 11,
+        "endChar": 5
+      },
+      "revId": "e506fe4260c4a7c8fb9b0b3f566c1ac2b610923f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
