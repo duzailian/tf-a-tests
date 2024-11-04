@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99d756a2_ccbca018",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 1759,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-11-04T18:58:43Z",
+      "side": 1,
+      "message": "Given the nature of the tests, this test and test_ffa_memory_share_fragmented_tx_realm` have a lot of commonality. Would it be possible to refactor by wrapping up common code?",
+      "revId": "380f2106863b5078c2c151ffe2b6f567d7615325",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
