@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b16dbeed_cc0a0594",
+        "filename": "tftf/tests/tests-memory-access.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-11-04T18:59:46Z",
+      "side": 1,
+      "message": "should this be added in top patch?\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/31841",
+      "revId": "e68ff1678753d1df80764564154d74661901238b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
