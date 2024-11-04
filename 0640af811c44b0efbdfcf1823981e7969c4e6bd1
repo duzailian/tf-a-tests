@@ -16,6 +16,23 @@
       "message": "Hi, adding you as reviewers as you were the last two to touch the affected file. PTAL and apologies in advance in case I\u0027m inadvertently breaking any part of the contributor\u0027s protocol. Thank you for your time and attention.",
       "revId": "0640af811c44b0efbdfcf1823981e7969c4e6bd1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "adfbf7ef_95c3ed55",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-04T17:27:46Z",
+      "side": 1,
+      "message": "LGTM. Will wait for Shruti\u0027s score.",
+      "revId": "0640af811c44b0efbdfcf1823981e7969c4e6bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
