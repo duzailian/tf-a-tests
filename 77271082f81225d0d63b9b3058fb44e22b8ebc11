@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33179d7b_2ded5c74",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-04T17:41:34Z",
+      "side": 1,
+      "message": "Patch as a whole LGTM.\n\nHowever, it needs feature enablement in the FVP as well.\nA corresponding CI patch to enable this feature is required.\n\nWhen tested on local-CI, this test gets skipped.\n\n```\n\u003e Executing \u0027LS64 support\u0027\n  TEST COMPLETE                                                 Passed\n\n\u003e Executing \u0027LS64-ACCDATA support\u0027\n  TEST COMPLETE                                                Skipped\nARMv8.7-ls64-accdata not supported\n\n```",
+      "revId": "77271082f81225d0d63b9b3058fb44e22b8ebc11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
