@@ -18,6 +18,41 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65794754_9cf06d50",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2024-11-04T18:05:44Z",
+      "side": 1,
+      "message": "Thanks Jayanth for having a look!",
+      "revId": "77271082f81225d0d63b9b3058fb44e22b8ebc11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ced0c158_3df342df",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2024-11-04T18:05:44Z",
+      "side": 1,
+      "message": "That\u0027s true, it\u0027s \"-C clusterx.arm_v8_7_accelerator_support_level\u003d3\" that will enable it. Will send a patch.",
+      "parentUuid": "33179d7b_2ded5c74",
+      "revId": "77271082f81225d0d63b9b3058fb44e22b8ebc11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "601b1cc8_105d5a22",
@@ -41,6 +76,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1005113a_abf369f6",
+        "filename": "tftf/tests/extensions/ls64/test_ls64.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2024-11-04T18:05:44Z",
+      "side": 1,
+      "message": "Argh, apologies, that\u0027s what happens if you do last minute patch reshuffles ...\nFixed.",
+      "parentUuid": "601b1cc8_105d5a22",
+      "range": {
+        "startLine": 90,
+        "startChar": 27,
+        "endLine": 90,
+        "endChar": 54
+      },
+      "revId": "77271082f81225d0d63b9b3058fb44e22b8ebc11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9581bbd3_baaa65d2",
@@ -54,6 +113,30 @@
       "writtenOn": "2024-11-04T17:43:09Z",
       "side": 1,
       "message": "nit: could be removed.",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 27
+      },
+      "revId": "77271082f81225d0d63b9b3058fb44e22b8ebc11",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3dfeea5d_4518d6bf",
+        "filename": "tftf/tests/extensions/ls64/test_ls64.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2024-11-04T18:05:44Z",
+      "side": 1,
+      "message": "I actually had this removeed, but this must have been lost in the rebase.",
+      "parentUuid": "9581bbd3_baaa65d2",
       "range": {
         "startLine": 97,
         "startChar": 0,
