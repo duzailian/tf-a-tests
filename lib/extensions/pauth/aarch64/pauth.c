@@ -170,8 +170,8 @@ void pauth_test_lib_test_intrs(void)
 {
 	/* Pointer authentication instructions */
 	__asm__ volatile (
-			"paciasp\n"
-			"autiasp\n"
-			"paciasp\n"
-			"xpaclri");
+			"hint #25\n"		// paciasp
+			"hint #29\n"		// autiasp
+			"hint #25\n"		// paciasp
+			"hint #7\n");		// xpaclri
 }
