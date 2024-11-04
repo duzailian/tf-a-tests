@@ -230,6 +230,8 @@ DEFINE_SYSOP_FUNC(isb)
 DEFINE_SYSOP_PARAM_FUNC(wfit)
 DEFINE_SYSOP_PARAM_FUNC(wfet)
 
+DEFINE_RENAME_SYSREG_RW_FUNCS(sys_accdata_el1, S3_0_C13_C0_5)
+
 static inline void enable_irq(void)
 {
 	/*
