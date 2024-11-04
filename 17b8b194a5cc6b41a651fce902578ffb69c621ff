@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd4c2d93_8368d7b3",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-04T12:32:33Z",
+      "side": 1,
+      "message": "Usually features are backwards compatible.\nThis implies that:\n```\n\nGCS\t  Meaning\n0b0000\t Guarded Control Stack is not implemented.\n\n0b0001\t Guarded Control Stack is implemented.\n\nIn future, when higher values get used it will follow the backwards compatibility rule. i.e\n\n0b0010  Same as 0b0001 and with some addition feature set.\n\n```\n\nAn comparable example here is : FEAT_PAN:\n\n```\n0b0000          PAN not supported.\n0b0001          PAN supported.\n0b0010          PAN supported and ATS1CPRP and ATS1CPWP instructions supported.\nAll other values are reserved.\nFEAT_PAN implements the functionality identified by the value 0b0001.\nFEAT_PAN2 implements the functionality added by the value 0b0010.\n```\nHere its again evident that PAN2 supports everything from PAN.\n\nHence we compare it \u003e\u003d, rather than \u003d\u003d which will be very specfic to version.\nWe already have this tested and working in our TF-A project. So nothing new been introduced here. I believe it should be fine here.",
+      "parentUuid": "69d014b1_8cd5b396",
+      "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5f1cb3c3_fd99c53b",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-10-29T12:30:59Z",
       "side": 1,
       "message": "I think this should be \u003d\u003d. According to the documentation, \"All other values are reserved\" except 1.",
+      "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa59e2ee_3512e419",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-04T12:32:33Z",
+      "side": 1,
+      "message": "Ditto",
+      "parentUuid": "5f1cb3c3_fd99c53b",
       "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -52,6 +88,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "192af95c_d054381d",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-04T12:32:33Z",
+      "side": 1,
+      "message": "Same here",
+      "parentUuid": "3de2c077_d33165b5",
+      "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b9e9a10a_71308990",
@@ -65,6 +119,24 @@
       "writtenOn": "2024-10-29T12:30:59Z",
       "side": 1,
       "message": "I think this should be \u003d\u003d. According to the documentation, \"All other values are reserved\" except 1.",
+      "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb45b15a_1d1ef528",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-04T12:32:33Z",
+      "side": 1,
+      "message": "Same here",
+      "parentUuid": "b9e9a10a_71308990",
       "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -86,6 +158,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "728ea727_43a760c5",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-04T12:32:33Z",
+      "side": 1,
+      "message": "Same here",
+      "parentUuid": "60320424_d0a3195e",
+      "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "00d92eeb_2f4a1825",
@@ -99,6 +189,24 @@
       "writtenOn": "2024-10-29T12:30:59Z",
       "side": 1,
       "message": "I think this should be \u003d\u003d instead of \u003e\u003d, because MTE_IMPLEMENTED_ELX+1 (3) is FEAT_MTE3.",
+      "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bfaa07f_576312cf",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-04T12:32:33Z",
+      "side": 1,
+      "message": "Same here",
+      "parentUuid": "00d92eeb_2f4a1825",
       "revId": "17b8b194a5cc6b41a651fce902578ffb69c621ff",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
