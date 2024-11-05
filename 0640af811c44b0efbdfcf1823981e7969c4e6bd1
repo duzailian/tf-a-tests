@@ -33,6 +33,23 @@
       "message": "LGTM. Will wait for Shruti\u0027s score.",
       "revId": "0640af811c44b0efbdfcf1823981e7969c4e6bd1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6a75da3_5822d491",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 913,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2024-11-05T20:17:43Z",
+      "side": 1,
+      "message": "This change is not required, we can re-use ret, if host_rmi_create_rtt_levels is successful we jump back to beginning of do-while loop (line 926),\nif it fails we return error",
+      "revId": "0640af811c44b0efbdfcf1823981e7969c4e6bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
