@@ -16,6 +16,24 @@
       "message": "Given the nature of the tests, this test and test_ffa_memory_share_fragmented_tx_realm` have a lot of commonality. Would it be possible to refactor by wrapping up common code?",
       "revId": "380f2106863b5078c2c151ffe2b6f567d7615325",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbf2dd71_4882e8e3",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 1759,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-11-05T10:16:39Z",
+      "side": 1,
+      "message": "The distinction in the timing of a delegation of either TX or RX buffer significantly changes the test sequence. Sharing the code would convolute the common function. And given how lengthy the tests are, I thought not having an extra abstraction, even though there is a bit of code repetition, would provide an easier sequence to understand.\n\nNote the differences:\n- TX is delegated to the realm during the transmission of the fragments.\n- The \u0027test_ffa_memory_share_fragmented_tx_realm\u0027 doesn\u0027t do any hypervisor retrieve request.\n- This test does a hypervisor retrieve request, during which the RX buffer PAS changes to Realm.\n- After any failed operation there is yet another equivalent that succeeds. i.e. after getting FFA_ERROR(FFA_ABORTED), there is another call similar to the one that failed, but which should succeed after reestablishing either RX/TX to its correct PAS.",
+      "parentUuid": "99d756a2_ccbca018",
+      "revId": "380f2106863b5078c2c151ffe2b6f567d7615325",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
