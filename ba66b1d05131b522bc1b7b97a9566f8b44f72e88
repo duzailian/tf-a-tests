@@ -48,6 +48,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad50c2b1_5400bd1b",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-05T17:01:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc84b8d5_8709236e",
+      "range": {
+        "startLine": 361,
+        "startChar": 7,
+        "endLine": 361,
+        "endChar": 43
+      },
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ddac8c3b_5f18e59b",
@@ -200,6 +224,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc59a85c_4fb3b143",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 2557,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-05T17:01:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d01d3b9b_b57488ff",
+      "range": {
+        "startLine": 2557,
+        "startChar": 31,
+        "endLine": 2557,
+        "endChar": 44
+      },
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "15efad93_e957b85e",
@@ -213,6 +261,24 @@
       "writtenOn": "2024-11-05T05:53:43Z",
       "side": 1,
       "message": "add a comment here why this is being done.",
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9564b159_599cbb44",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 2561,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-05T17:01:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15efad93_e957b85e",
       "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -254,6 +320,30 @@
       "side": 1,
       "message": "Acknowledged",
       "parentUuid": "2b297ee8_b5b59aa0",
+      "range": {
+        "startLine": 2572,
+        "startChar": 59,
+        "endLine": 2572,
+        "endChar": 63
+      },
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36fc44d3_1dc16fe7",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 2572,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-05T17:01:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb1a1990_9700a4ec",
       "range": {
         "startLine": 2572,
         "startChar": 59,
