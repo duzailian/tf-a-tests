@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bc84b8d5_8709236e",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-05T13:29:19Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "08b65b09_c0ccc2bc",
+      "range": {
+        "startLine": 361,
+        "startChar": 7,
+        "endLine": 361,
+        "endChar": 43
+      },
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ddac8c3b_5f18e59b",
         "filename": "realm/aarch64/realm_exceptions.S",
         "patchSetId": 10
@@ -37,6 +61,24 @@
       "writtenOn": "2024-11-05T05:53:43Z",
       "side": 1,
       "message": "I dont think we need to validate the hardware :). \n\nThis code will just call the right exception handler. The test can decide to pass or fail the test based on the exception handler invoked.",
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb205267_9e055665",
+        "filename": "realm/aarch64/realm_exceptions.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-05T13:29:19Z",
+      "side": 1,
+      "message": "We are not validating the hardware here. As this is an injected exception, RMM can route a sync exception to the sync exception vector rather than to the serror one even when SCTLR2_EL1.EASE \u003d\u003d \u00271\u0027 (which is the current behavior we are fixing in RMM) so we need to cater for this specific scenario too.",
+      "parentUuid": "ddac8c3b_5f18e59b",
       "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -60,6 +102,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2beebc6f_43c9f9de",
+        "filename": "realm/aarch64/realm_exceptions.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-05T13:29:19Z",
+      "side": 1,
+      "message": "I don\u0027t think I understand this comment. This is the serror exception handler. It checks the SCTLR2_EL1.EASE bit to ensure it has been called when it should (as this is an injected exception, it is possible that RMM calculates the wrong vector entry when injecting the exception, which is the point of this test) and either crashes or continues as a sync_exception. It also updates a flag so that the test function can validate if the exception was taken to the right vector.",
+      "parentUuid": "cd2f5ad4_0fcf09f7",
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8ad20115_09a467bf",
         "filename": "realm/realm_payload_main.c",
         "patchSetId": 10
@@ -77,6 +137,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "76893a1a_510d1045",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-05T13:29:19Z",
+      "side": 1,
+      "message": "I thought about that but I think it might be a more complicated solution, as it might involve changes to the rest of the tests (e.g. ensure that all the tests register a default serror handler).\n\nI think this solution offers a good trade-off: The modified serror and sync handlers on realm_exception.S work for the rest of the tests without the need to modify any of them and sync_exception_handler_ease_bit() will just validate that the exception was taken to the right vector before executing the default sync exception handler.\n\nIf the exception was taken on the serror vector, the sync exception handler will be executed as if it was taken on the sync one, as expected, without the need to have a separate handler for the serror one.",
+      "parentUuid": "8ad20115_09a467bf",
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "fa49af1e_2ec983ce",
         "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
         "patchSetId": 10
@@ -88,6 +166,30 @@
       "writtenOn": "2024-11-05T05:53:43Z",
       "side": 1,
       "message": "can pass 1 here if only 1 REC needed. Can simplify some code above.",
+      "range": {
+        "startLine": 2557,
+        "startChar": 31,
+        "endLine": 2557,
+        "endChar": 44
+      },
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d01d3b9b_b57488ff",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 2557,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-05T13:29:19Z",
+      "side": 1,
+      "message": "Acknowledged, missed this",
+      "parentUuid": "fa49af1e_2ec983ce",
       "range": {
         "startLine": 2557,
         "startChar": 31,
@@ -128,6 +230,30 @@
       "writtenOn": "2024-11-05T05:53:43Z",
       "side": 1,
       "message": "can test with 0 and 1.",
+      "range": {
+        "startLine": 2572,
+        "startChar": 59,
+        "endLine": 2572,
+        "endChar": 63
+      },
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb1a1990_9700a4ec",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 2572,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-05T13:29:19Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "2b297ee8_b5b59aa0",
       "range": {
         "startLine": 2572,
         "startChar": 59,
