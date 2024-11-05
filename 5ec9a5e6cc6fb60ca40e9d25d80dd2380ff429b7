@@ -67,6 +67,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5a56b328_6ef9e8d9",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2024-11-05T11:33:43Z",
+      "side": 1,
+      "message": "@Boyan: not quite sure what you mean, can you elaborate?\nI agree that this whole code is a bit blown up and probably more complicated than it needs to be, but it looks correct?\nNone of the FEAT_LS64* features are available when the bitfield is 0, that is what this macro checks.\nI have run this locally (BL33\u003dtftf.bin, then running the RevC FVP on my box), and it behaves as expected: it was skipped or passed, depending on the model parameters, tested multiple combinations.",
+      "parentUuid": "ab380bf8_7bf540e5",
+      "range": {
+        "startLine": 351,
+        "startChar": 30,
+        "endLine": 351,
+        "endChar": 32
+      },
+      "revId": "5ec9a5e6cc6fb60ca40e9d25d80dd2380ff429b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "69494e26_e4cc017d",
         "filename": "include/lib/aarch64/arch_helpers.h",
         "patchSetId": 2
@@ -78,6 +102,30 @@
       "writtenOn": "2024-11-05T09:23:11Z",
       "side": 1,
       "message": "nit: `#define SYS_ACCDATA_EL1 S3_0_C13_C0_5`?",
+      "range": {
+        "startLine": 233,
+        "startChar": 47,
+        "endLine": 233,
+        "endChar": 60
+      },
+      "revId": "5ec9a5e6cc6fb60ca40e9d25d80dd2380ff429b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcc8af1b_c9571e4b",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2024-11-05T11:33:43Z",
+      "side": 1,
+      "message": "Sure, can do that. Just want to point that I am not sure those typical definitions are actually useful, as this line now becomes a tautology, and the actual information is somewhere else.",
+      "parentUuid": "69494e26_e4cc017d",
       "range": {
         "startLine": 233,
         "startChar": 47,
