@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ab380bf8_7bf540e5",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-05T09:27:00Z",
+      "side": 1,
+      "message": "Tested the patch here : https://ci.trustedfirmware.org/job/tf-a-ci-gateway/88349/\n\n```\n\u003e Executing \u0027LS64 support\u0027\n  TEST COMPLETE                                                 Passed\n\n\u003e Executing \u0027LS64-ACCDATA support\u0027\n  TEST COMPLETE                                                 Passed\n\n```\n\nIts getting tested.",
+      "parentUuid": "48dabf7c_8d858074",
+      "range": {
+        "startLine": 351,
+        "startChar": 30,
+        "endLine": 351,
+        "endChar": 32
+      },
+      "revId": "5ec9a5e6cc6fb60ca40e9d25d80dd2380ff429b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "69494e26_e4cc017d",
         "filename": "include/lib/aarch64/arch_helpers.h",
         "patchSetId": 2
