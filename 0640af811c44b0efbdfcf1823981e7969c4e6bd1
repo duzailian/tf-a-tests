@@ -50,6 +50,24 @@
       "message": "This change is not required, we can re-use ret, if host_rmi_create_rtt_levels is successful we jump back to beginning of do-while loop (line 926),\nif it fails we return error",
       "revId": "0640af811c44b0efbdfcf1823981e7969c4e6bd1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c87dd486_9dbeb4a0",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 913,
+      "author": {
+        "id": 1001138
+      },
+      "writtenOn": "2024-11-05T20:33:56Z",
+      "side": 1,
+      "message": "With the code as it stands, if `host_rmi_create_rtt_levels` is successful, we jump to the end of the loop (continue) with `ret \u003d\u003d RMI_SUCCESS`, which causes the loop to terminate and the function to return `RMI_SUCCESS` without initialising the RIPAS.",
+      "parentUuid": "c6a75da3_5822d491",
+      "revId": "0640af811c44b0efbdfcf1823981e7969c4e6bd1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
