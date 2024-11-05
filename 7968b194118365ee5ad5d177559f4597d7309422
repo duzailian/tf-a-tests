@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68819f35_6753c628",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-05T05:00:26Z",
+      "side": 1,
+      "message": "minor comments.",
+      "revId": "7968b194118365ee5ad5d177559f4597d7309422",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1757b5ca_a22898bd",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-05T05:00:26Z",
+      "side": 1,
+      "message": "is it necessary to have a per-rec token buffer ?",
+      "range": {
+        "startLine": 30,
+        "startChar": 42,
+        "endLine": 30,
+        "endChar": 55
+      },
+      "revId": "7968b194118365ee5ad5d177559f4597d7309422",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ecccaee_9400094f",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-05T05:00:26Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "range": {
+        "startLine": 32,
+        "startChar": 37,
+        "endLine": 32,
+        "endChar": 50
+      },
+      "revId": "7968b194118365ee5ad5d177559f4597d7309422",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51af2644_d72a48fe",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 2560,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-05T05:00:26Z",
+      "side": 1,
+      "message": "This is related to the comment on per-rec allocation, since the REC is running to completion prior to the test being scheduled on another REC, we would be able to get away a single buffer\n\nIf we wanted to test multi-threaded REC execution, the TFTF would need to schedule the RECs on 2 different CPUs. Another way would be to cause the yield of the first REC execution and schedule another REC on the same CPU. These are advanced tests beyond the scope of current test case. Just mentioned this as I was thinking about it.",
+      "revId": "7968b194118365ee5ad5d177559f4597d7309422",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
