@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4a55842_b6d88dac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-11-06T19:44:13Z",
+      "side": 1,
+      "message": "Hi André, \n\nCould you please move this test patch to same topic as feature[1] and CI patch, we could test out all together with same topic, I see this is now not tested with feat patch from previous CI+2.\n\n[1]:\ntopic:\"ls64_accdata\"",
+      "revId": "0ee2fd3c3aeb3c7129defc0289d1b9831f272511",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
