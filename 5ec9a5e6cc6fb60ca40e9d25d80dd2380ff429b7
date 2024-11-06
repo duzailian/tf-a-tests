@@ -137,6 +137,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99b2d957_5dba2032",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-11-06T11:06:23Z",
+      "side": 1,
+      "message": "I am very sorry, we were indeed not looking at the same code. I had a different patch applied that I was reviewing that this is happening to and I didn\u0027t realise.\n\nBoth the current code and this patch are correct, again sorry for the confusion.",
+      "parentUuid": "57cd8d84_4446ee76",
+      "range": {
+        "startLine": 351,
+        "startChar": 30,
+        "endLine": 351,
+        "endChar": 32
+      },
+      "revId": "5ec9a5e6cc6fb60ca40e9d25d80dd2380ff429b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "69494e26_e4cc017d",
