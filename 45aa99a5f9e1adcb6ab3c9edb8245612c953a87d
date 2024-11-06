@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd9eee19_5f0e849d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-06T11:52:02Z",
+      "side": 1,
+      "message": "CI failures are unrelated.\nTriggering it again to double check if they pass on rebuild as the daily CI looks clean.",
+      "revId": "45aa99a5f9e1adcb6ab3c9edb8245612c953a87d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
