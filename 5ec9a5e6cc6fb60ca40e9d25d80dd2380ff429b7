@@ -91,6 +91,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b10fbc35_b64293fc",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-11-06T10:22:57Z",
+      "side": 1,
+      "message": "get_feat_ls64_support() returns an integer, but its implementation produces a boolean from comparing with ID_AA64ISAR1_LS64_ACCDATA_SUPPORTED.\n\nWhen I was running locally, it was skipped with accelerator_support_level\u003d1 as a result.\n\nI think the rest is correct, and with accelerator_support_level\u003d3 this won\u0027t show.",
+      "parentUuid": "5a56b328_6ef9e8d9",
+      "range": {
+        "startLine": 351,
+        "startChar": 30,
+        "endLine": 351,
+        "endChar": 32
+      },
+      "revId": "5ec9a5e6cc6fb60ca40e9d25d80dd2380ff429b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "69494e26_e4cc017d",
         "filename": "include/lib/aarch64/arch_helpers.h",
         "patchSetId": 2
@@ -126,6 +150,30 @@
       "side": 1,
       "message": "Sure, can do that. Just want to point that I am not sure those typical definitions are actually useful, as this line now becomes a tautology, and the actual information is somewhere else.",
       "parentUuid": "69494e26_e4cc017d",
+      "range": {
+        "startLine": 233,
+        "startChar": 47,
+        "endLine": 233,
+        "endChar": 60
+      },
+      "revId": "5ec9a5e6cc6fb60ca40e9d25d80dd2380ff429b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "899e4079_2112d550",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-11-06T10:22:57Z",
+      "side": 1,
+      "message": "you\u0027re probably right. The only place I can think of this being helpful is assembly, but that\u0027s rare.",
+      "parentUuid": "bcc8af1b_c9571e4b",
       "range": {
         "startLine": 233,
         "startChar": 47,
