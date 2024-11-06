@@ -109,6 +109,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "547a4aa5_c7f82e32",
+        "filename": "realm/aarch64/realm_exceptions.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-06T10:06:09Z",
+      "side": 1,
+      "message": "Ah, right. In that case, it should be be here that decision should be made. The test should be able to get the exception and be able to differentiate SError from Sync exception. \n\nThe code here can remain as previous.",
+      "parentUuid": "eb205267_9e055665",
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cd2f5ad4_0fcf09f7",
         "filename": "realm/aarch64/realm_exceptions.S",
         "patchSetId": 10
@@ -156,6 +174,23 @@
       "side": 1,
       "message": "Dismiss this comment, I got it by reading the next comment",
       "parentUuid": "2beebc6f_43c9f9de",
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9670018c_51baa0a4",
+        "filename": "realm/aarch64/realm_exceptions.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-06T10:06:09Z",
+      "side": 1,
+      "message": "the tests need a different handler to be invoked for Sync vs Serror.",
       "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
