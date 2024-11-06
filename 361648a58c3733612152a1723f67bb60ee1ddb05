@@ -3,6 +3,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4f5e2b80_7cdb48b2",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 2536,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-06T10:14:08Z",
+      "side": 1,
+      "message": "just 1 REC is needed.",
+      "range": {
+        "startLine": 2536,
+        "startChar": 23,
+        "endLine": 2536,
+        "endChar": 36
+      },
+      "revId": "361648a58c3733612152a1723f67bb60ee1ddb05",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ca108a6_0a35ce87",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 2552,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-06T10:14:08Z",
+      "side": 1,
+      "message": "just one REC is needed.",
+      "range": {
+        "startLine": 2552,
+        "startChar": 31,
+        "endLine": 2552,
+        "endChar": 44
+      },
+      "revId": "361648a58c3733612152a1723f67bb60ee1ddb05",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "96b1c377_31030b61",
         "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
         "patchSetId": 11
