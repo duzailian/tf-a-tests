@@ -125,6 +125,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5c71878_4a16b80c",
+        "filename": "realm/aarch64/realm_exceptions.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-06T19:30:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "547a4aa5_c7f82e32",
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cd2f5ad4_0fcf09f7",
@@ -195,6 +213,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7fe5d33_660f099e",
+        "filename": "realm/aarch64/realm_exceptions.S",
+        "patchSetId": 10
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-06T19:30:10Z",
+      "side": 1,
+      "message": "Done as per our discussion",
+      "parentUuid": "9670018c_51baa0a4",
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ad20115_09a467bf",
@@ -244,6 +280,24 @@
       "side": 1,
       "message": "we might need a separate SError handler mechanism in Realms anyway. The realms should not panic , the test should return FAIL/SUCCESS. So the vectors should not have any logic but rather call the respective handler unconditionally.\n\nAll tests will not need to be modified. See the tftf_sync_exception_handler() wherein the function will safely ignore if not handler is registered. We need a similar tftf_serror_exception_handler().",
       "parentUuid": "76893a1a_510d1045",
+      "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "095b2ba8_bd67f6c3",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-06T19:30:10Z",
+      "side": 1,
+      "message": "Done as per our discussion",
+      "parentUuid": "58a03143_a4c331d2",
       "revId": "ba66b1d05131b522bc1b7b97a9566f8b44f72e88",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },

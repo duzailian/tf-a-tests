@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "def03c8e_e5cc514a",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 2536,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-06T19:30:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f5e2b80_7cdb48b2",
+      "range": {
+        "startLine": 2536,
+        "startChar": 23,
+        "endLine": 2536,
+        "endChar": 36
+      },
+      "revId": "361648a58c3733612152a1723f67bb60ee1ddb05",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4ca108a6_0a35ce87",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a775a358_937da5e8",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 2552,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-06T19:30:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ca108a6_0a35ce87",
+      "range": {
+        "startLine": 2552,
+        "startChar": 31,
+        "endLine": 2552,
+        "endChar": 44
+      },
+      "revId": "361648a58c3733612152a1723f67bb60ee1ddb05",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "96b1c377_31030b61",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-11-06T10:13:00Z",
       "side": 1,
       "message": "we dont need this loop. The same realm can run both the tests without being destroyed.",
+      "range": {
+        "startLine": 2556,
+        "startChar": 0,
+        "endLine": 2556,
+        "endChar": 41
+      },
+      "revId": "361648a58c3733612152a1723f67bb60ee1ddb05",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbace46d_a1ef637f",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 2556,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-06T19:30:10Z",
+      "side": 1,
+      "message": "I couldn\u0027t reuse the original sync handler if I didn\u0027t destroy the realm (upon re-entry to the realm is was jumping back to it) so I had to write a new one specific for this test, which allowed me to not destroy the realm on each iteration.",
+      "parentUuid": "96b1c377_31030b61",
       "range": {
         "startLine": 2556,
         "startChar": 0,
