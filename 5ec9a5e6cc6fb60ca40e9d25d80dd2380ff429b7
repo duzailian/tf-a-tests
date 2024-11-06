@@ -115,6 +115,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "57cd8d84_4446ee76",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2024-11-06T10:58:52Z",
+      "side": 1,
+      "message": "I am confused, are we looking at the same code? get_feat_ls64_support() does the right thing, by returning the masked *field* (an integer), and we compare it here against a field value (0 in this case here, but still). is_feat_ls64_...() returns a boolean, but we are not using that anywhere. And I just tested this locally, it works as expected: Passed with \u003d3 and \u003d1, skipped with \u003d0 (for the basic test here, the ACCDATA test is different).\nSo what am I missing?",
+      "parentUuid": "b10fbc35_b64293fc",
+      "range": {
+        "startLine": 351,
+        "startChar": 30,
+        "endLine": 351,
+        "endChar": 32
+      },
+      "revId": "5ec9a5e6cc6fb60ca40e9d25d80dd2380ff429b7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "69494e26_e4cc017d",
         "filename": "include/lib/aarch64/arch_helpers.h",
         "patchSetId": 2
