@@ -34,6 +34,24 @@
       "parentUuid": "f7bcd009_de00fbd4",
       "revId": "eec4301bbb73a9f6d1b731d1d6d5a59a844a0ca9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eeff2700_f39032e9",
+        "filename": "smc_fuzz/include/arg_struct_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-11-06T21:02:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10d3cfa4_55400408",
+      "revId": "eec4301bbb73a9f6d1b731d1d6d5a59a844a0ca9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
