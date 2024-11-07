@@ -23,4 +23,7 @@
 #define BL31_X1 			0x4698fe4c6d08d447
 #define BL31_X2 			0x005abdcb5029959b
 
+#define RMM_X1				0x564bf212a662076c
+#define RMM_X2				0xd90636638fbacb92
+
 #endif /* LFA_H */
