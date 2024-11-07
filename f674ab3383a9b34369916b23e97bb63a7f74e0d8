@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94a426a5_1d97887b",
+        "filename": "smc_fuzz/script/generate_smc.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-11-07T15:27:15Z",
+      "side": 1,
+      "message": "copyright header missing?",
+      "revId": "f674ab3383a9b34369916b23e97bb63a7f74e0d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "713a4aa7_4632bf4e",
+        "filename": "tftf/tests/tests-smcfuzzing.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-11-07T15:27:15Z",
+      "side": 1,
+      "message": "2024?",
+      "range": {
+        "startLine": 2,
+        "startChar": 16,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "f674ab3383a9b34369916b23e97bb63a7f74e0d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
