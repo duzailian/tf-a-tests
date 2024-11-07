@@ -5,5 +5,5 @@
 #
 
 TESTS_SOURCES	+=	$(addprefix tftf/tests/runtime_services/lfa/,	\
-			test_lfa_simple.c				\
-)
+				test_lfa_simple.c			\
+				test_lfa_multi.c)
