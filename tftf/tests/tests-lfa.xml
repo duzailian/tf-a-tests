@@ -14,5 +14,6 @@
      <testcase name="Get Inventory" function="test_lfa_get_inventory" />
      <testcase name="Prime" function="test_lfa_prime" />
      <testcase name="Cancel" function="test_lfa_cancel" />
+     <testcase name="RMM Live Activation" function="test_lfa_activate_rmm" />
   </testsuite>
 </testsuites>
