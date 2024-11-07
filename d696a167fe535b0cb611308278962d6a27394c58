@@ -16,6 +16,24 @@
       "message": "It seems that this function and the one below, ``restore_el1_context_sysregs``, are performing similar tasks—one modifies the context, while the other restores it. Could we create a high-level API that takes a parameter to either restore or modify the context accordingly? For example:\n\n```\nvoid modify_el1_context_sysregs(const el1_ctx_regs_t *el1_ctx, bool modify_contex)\n\nwhere:\nmodify_contex \u003d 0 -\u003e restore\nmodify_contex \u003d 1 -\u003e modify/corrupt.\n```",
       "revId": "d696a167fe535b0cb611308278962d6a27394c58",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "448a04fc_3c301259",
+        "filename": "lib/context_mgmt/aarch64/context_el1.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-07T11:56:40Z",
+      "side": 1,
+      "message": "Yes this could be done.\nI intentionally separated this and make explicit APIS as they look good from the readability perspective in the main (test_tsp_el1_ctx_mgmt.c). But I agree with your part. Will modify this in the next patch.",
+      "parentUuid": "0dd69ec6_9d60db80",
+      "revId": "d696a167fe535b0cb611308278962d6a27394c58",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
