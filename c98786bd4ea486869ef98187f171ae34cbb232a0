@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb05c349_a5f7e242",
+        "filename": "smc_fuzz/script/generate_smc.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-11-07T21:23:19Z",
+      "side": 1,
+      "message": "nit: extra space",
+      "range": {
+        "startLine": 2,
+        "startChar": 1,
+        "endLine": 2,
+        "endChar": 2
+      },
+      "revId": "c98786bd4ea486869ef98187f171ae34cbb232a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbb9b79f_83a058fc",
+        "filename": "smc_fuzz/src/sdei_fuzz_helper.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-11-07T21:23:19Z",
+      "side": 1,
+      "message": "can be local? just used within `run_sdei_fuzz` ?",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 17
+      },
+      "revId": "c98786bd4ea486869ef98187f171ae34cbb232a0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
