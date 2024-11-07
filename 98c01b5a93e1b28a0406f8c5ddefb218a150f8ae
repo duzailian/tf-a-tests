@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4ad12d4_2bbbc6cd",
+        "filename": "lib/context_mgmt/aarch64/context_el2.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-07T17:08:15Z",
+      "side": 1,
+      "message": "Just similar to EL1 context,\nshall we have one common API here:\n\nas both these APIs are doing common task. Something like this:\n\n```\nvoid modify_el2_context_sysregs(const el2_sysregs_t *el2_ctx, const bool modify_option)\n{\n\tuint64_t mask;\n\tif (modify_option \u003d\u003d NS_CORRUPT_EL2_REGS)\n\t\tmask \u003d EL2_CTX_CORRUPT_MASK;\n\telse\n\t\tmask \u003d EL2_CTX_RESTORE_MASK;\n\n....\n\nand then do the common part. \n}\n\n```\n\nso that restore API could be removed.",
+      "range": {
+        "startLine": 536,
+        "startChar": 0,
+        "endLine": 562,
+        "endChar": 1
+      },
+      "revId": "98c01b5a93e1b28a0406f8c5ddefb218a150f8ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
