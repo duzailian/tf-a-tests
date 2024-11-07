@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8ace1ec_43c9c8ab",
+        "filename": "include/lib/context_mgmt/context_el1.h",
+        "patchSetId": 17
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-11-07T14:37:27Z",
+      "side": 1,
+      "message": "Nit: EL1 is mentioned twice here. Is this supposed to be like that?",
+      "revId": "2dbe793d78597321b65f243d2633ff95bb12ac01",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
