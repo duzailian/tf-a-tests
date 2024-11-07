@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe8df90e_44595062",
+        "filename": "smc_fuzz/dts/sdei_and_vendor.dts",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-11-07T15:31:46Z",
+      "side": 1,
+      "message": "2024?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "4238b2d2e2892c34bb0fbc71c7c5520b867b4a2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce7abf65_34135459",
+        "filename": "smc_fuzz/include/vendor_fuzz_helper.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-11-07T15:31:46Z",
+      "side": 1,
+      "message": "missing copyright?",
+      "revId": "4238b2d2e2892c34bb0fbc71c7c5520b867b4a2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa4246d5_e64338ea",
+        "filename": "smc_fuzz/src/vendor_fuzz_helper.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-11-07T15:31:46Z",
+      "side": 1,
+      "message": "missing copyright?",
+      "revId": "4238b2d2e2892c34bb0fbc71c7c5520b867b4a2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6221a1a_cd5d7eed",
+        "filename": "tftf/tests/tests-smcfuzzing.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-11-07T15:31:46Z",
+      "side": 1,
+      "message": "2024?",
+      "range": {
+        "startLine": 2,
+        "startChar": 16,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "4238b2d2e2892c34bb0fbc71c7c5520b867b4a2d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
