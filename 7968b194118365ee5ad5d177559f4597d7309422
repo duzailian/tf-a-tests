@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "287e8bd6_215cdbc7",
+        "filename": "realm/include/realm_rsi.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-11-07T16:55:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96f97e83_f685daef",
+      "revId": "7968b194118365ee5ad5d177559f4597d7309422",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e9aa0ab2_c6e4637b",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-11-05T20:33:43Z",
       "side": 1,
       "message": "same as above",
+      "revId": "7968b194118365ee5ad5d177559f4597d7309422",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a10c8b5c_56de53e9",
+        "filename": "realm/include/realm_rsi.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-11-07T16:55:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9aa0ab2_c6e4637b",
       "revId": "7968b194118365ee5ad5d177559f4597d7309422",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -77,6 +113,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a2242f96_8e4d948c",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-11-07T16:55:31Z",
+      "side": 1,
+      "message": "As the attestation process requires multiple context switches between the realm and RMM, I thought that it would be safe to have a per-REC buffer to prevent data corruption.\n\nFor this test, it is not strictly necessary to have a per-REC buffer as RECs are entered sequentially. I guess I can change it, but I still think we should keep them all as this should be the right way.\n\nLet me know your thoughts.",
+      "parentUuid": "1757b5ca_a22898bd",
+      "range": {
+        "startLine": 30,
+        "startChar": 42,
+        "endLine": 30,
+        "endChar": 55
+      },
+      "revId": "7968b194118365ee5ad5d177559f4597d7309422",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6ecccaee_9400094f",
         "filename": "realm/realm_attestation.c",
         "patchSetId": 6
@@ -88,6 +148,30 @@
       "writtenOn": "2024-11-05T05:00:26Z",
       "side": 1,
       "message": "same comment as above.",
+      "range": {
+        "startLine": 32,
+        "startChar": 37,
+        "endLine": 32,
+        "endChar": 50
+      },
+      "revId": "7968b194118365ee5ad5d177559f4597d7309422",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02b4866a_2147050a",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-11-07T16:55:31Z",
+      "side": 1,
+      "message": "Ditto.",
+      "parentUuid": "6ecccaee_9400094f",
       "range": {
         "startLine": 32,
         "startChar": 37,
