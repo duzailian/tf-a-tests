@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2021-2023, Arm Limited. All rights reserved.
+# Copyright (c) 2021-2024, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -25,6 +25,7 @@ TESTS_SOURCES	+=							\
 		host_realm_helper.c					\
 		host_shared_data.c					\
 		rmi_delegate_tests.c					\
+		rmi_dev_delegate_tests.c				\
 	)
 
 TESTS_SOURCES	+=							\
