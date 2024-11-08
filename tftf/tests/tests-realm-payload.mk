@@ -25,6 +25,7 @@ TESTS_SOURCES	+=							\
 		host_realm_helper.c					\
 		host_shared_data.c					\
 		rmi_delegate_tests.c					\
+		rmi_dev_delegate_tests.c				\
 	)
 
 TESTS_SOURCES	+=							\
