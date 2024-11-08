@@ -688,6 +688,16 @@ u_register_t host_rmi_granule_undelegate(u_register_t addr)
 	return host_rmi_handler(&(smc_args) {RMI_GRANULE_UNDELEGATE, addr}, 2U).ret0;
 }
 
+u_register_t host_rmi_granule_dev_delegate(u_register_t addr, u_register_t flags)
+{
+	return host_rmi_handler(&(smc_args) {RMI_GRANULE_DEV_DELEGATE, addr, flags}, 3U).ret0;
+}
+
+u_register_t host_rmi_granule_dev_undelegate(u_register_t addr)
+{
+	return host_rmi_handler(&(smc_args) {RMI_GRANULE_DEV_UNDELEGATE, addr}, 2U).ret0;
+}
+
 u_register_t host_rmi_version(u_register_t requested_ver)
 {
 	smc_ret_values ret;
