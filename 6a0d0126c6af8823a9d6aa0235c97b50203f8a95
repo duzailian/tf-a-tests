@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0094454e_261b4a95",
+        "filename": "include/runtime_services/sdei.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-11-08T16:08:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6eb3895e_697d017d",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "6a0d0126c6af8823a9d6aa0235c97b50203f8a95",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f97107e2_25e802cb",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-11-07T15:30:10Z",
       "side": 1,
       "message": "nit: this comment can be removed ?",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 8
+      },
+      "revId": "6a0d0126c6af8823a9d6aa0235c97b50203f8a95",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b45624e4_e4ad417f",
+        "filename": "include/runtime_services/sdei.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-11-08T16:08:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f97107e2_25e802cb",
       "range": {
         "startLine": 95,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "66ae4cfa_c7271ea9",
+        "filename": "lib/sdei/sdei.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-11-08T16:08:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "90c9d6d5_e7ce4d59",
+      "range": {
+        "startLine": 224,
+        "startChar": 0,
+        "endLine": 224,
+        "endChar": 8
+      },
+      "revId": "6a0d0126c6af8823a9d6aa0235c97b50203f8a95",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80157fa2_a436451f",
@@ -83,6 +155,24 @@
       "writtenOn": "2024-11-07T15:30:10Z",
       "side": 1,
       "message": "not sure of its usage do we need a copyright header?",
+      "revId": "6a0d0126c6af8823a9d6aa0235c97b50203f8a95",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ac296e0_2b1bea3b",
+        "filename": "smc_fuzz/combined_smc_calls.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-11-08T16:08:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80157fa2_a436451f",
       "revId": "6a0d0126c6af8823a9d6aa0235c97b50203f8a95",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -110,6 +200,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "75fa0b25_7d18cc27",
+        "filename": "smc_fuzz/dts/sdei.dts",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-11-08T16:08:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51ff00ac_29253dc3",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "6a0d0126c6af8823a9d6aa0235c97b50203f8a95",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "679acacf_1c3a5cdf",
@@ -123,6 +237,30 @@
       "writtenOn": "2024-11-07T15:30:10Z",
       "side": 1,
       "message": "can be a local?",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 16
+      },
+      "revId": "6a0d0126c6af8823a9d6aa0235c97b50203f8a95",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a37120a_36d6ae22",
+        "filename": "smc_fuzz/src/runtestfunction_helpers.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-11-08T16:08:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "679acacf_1c3a5cdf",
       "range": {
         "startLine": 11,
         "startChar": 11,
