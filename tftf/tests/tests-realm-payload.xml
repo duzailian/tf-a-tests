@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  Copyright (c) 2021-2024, Arm Limited. All rights reserved.
+  Copyright (c) 2021-2025, Arm Limited. All rights reserved.
 
   SPDX-License-Identifier: BSD-3-Clause
 -->
@@ -158,5 +158,12 @@
 	  <!-- Test case related to FEAT_BRBE -->
 	  <testcase name="Test if BRBE realted registers are preserved "
 	  function="host_realm_test_brbe_save_restore" />
+	  <!-- Test cases related to Dev Mem Map and Unmap -->
+	  <testcase name="Host Dev Mem Delegate and Undelegate"
+	  function="host_dev_mem_delegate_undelegate" />
+	  <testcase name="Multi CPU Realm payload Dev Mem Delegate and Undelegate"
+	  function="host_dev_mem_delundel_multi_cpu" />
+	  <testcase name="Testing Dev Mem delegation fails"
+	  function="host_fail_dev_mem_del" />
   </testsuite>
 </testsuites>
