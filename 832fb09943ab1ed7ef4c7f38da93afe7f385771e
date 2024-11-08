@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92840ab5_528fb89b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-08T11:43:15Z",
+      "side": 1,
+      "message": "Failed Test config rebuild here:\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/88711/",
+      "revId": "832fb09943ab1ed7ef4c7f38da93afe7f385771e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
