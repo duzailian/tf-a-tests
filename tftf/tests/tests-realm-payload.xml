@@ -68,6 +68,12 @@
 	  function="host_realm_delundel_multi_cpu" />
 	  <testcase name="Testing delegation fails"
 	  function="host_realm_fail_del" />
+	  <testcase name="Realm payload Dev Delegate and Undelegate"
+	  function="host_realm_dev_delegate_undelegate" />
+	  <testcase name="Multi CPU Realm payload Dev Delegate and Undelegate"
+	  function="host_realm_dev_delundel_multi_cpu" />
+	  <testcase name="Testing Dev delegation fails"
+	  function="host_realm_fail_dev_del" />
 	  <testcase name="PMUv3 cycle counter functional in Realm"
 	  function="host_realm_pmuv3_cycle_works" />
 	  <testcase name="PMUv3 event counter functional in Realm"
