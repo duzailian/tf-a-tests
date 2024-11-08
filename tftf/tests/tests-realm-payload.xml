@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  Copyright (c) 2021-2024, Arm Limited. All rights reserved.
+  Copyright (c) 2021-2025, Arm Limited. All rights reserved.
 
   SPDX-License-Identifier: BSD-3-Clause
 -->
@@ -68,6 +68,10 @@
 	  function="host_realm_delundel_multi_cpu" />
 	  <testcase name="Testing delegation fails"
 	  function="host_realm_fail_del" />
+	  <testcase name="Multi CPU Realm payload Dev Delegate and Undelegate"
+	  function="host_realm_dev_delundel_multi_cpu" />
+	  <testcase name="Testing Dev delegation fails"
+	  function="host_realm_fail_dev_del" />
 	  <testcase name="PMUv3 cycle counter functional in Realm"
 	  function="host_realm_pmuv3_cycle_works" />
 	  <testcase name="PMUv3 event counter functional in Realm"
@@ -158,5 +162,8 @@
 	  <!-- Test case related to FEAT_BRBE -->
 	  <testcase name="Test if BRBE realted registers are preserved "
 	  function="host_realm_test_brbe_save_restore" />
+	  <!-- Test cases related to Dev Mem Map and Unmap -->
+	  <testcase name="Host Dev Delegate and Undelegate"
+	  function="host_realm_dev_delegate_undelegate" />
   </testsuite>
 </testsuites>
