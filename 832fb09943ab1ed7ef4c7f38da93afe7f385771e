@@ -16,6 +16,121 @@
       "message": "Failed Test config rebuild here:\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/88711/",
       "revId": "832fb09943ab1ed7ef4c7f38da93afe7f385771e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7902f4d9_9268d0da",
+        "filename": "include/lib/context_mgmt/context_el2.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-08T12:07:33Z",
+      "side": 1,
+      "message": "nit: remove",
+      "range": {
+        "startLine": 203,
+        "startChar": 0,
+        "endLine": 204,
+        "endChar": 23
+      },
+      "revId": "832fb09943ab1ed7ef4c7f38da93afe7f385771e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69aeb545_56aac89a",
+        "filename": "include/lib/context_mgmt/context_el2.h",
+        "patchSetId": 24
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-08T12:07:33Z",
+      "side": 1,
+      "message": "remove this part:",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 210,
+        "endChar": 11
+      },
+      "revId": "832fb09943ab1ed7ef4c7f38da93afe7f385771e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76575a63_680a7e58",
+        "filename": "tftf/tests/context_mgmt_tests/el2/test_spm_el2_context_mgmt.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-08T12:07:33Z",
+      "side": 1,
+      "message": "reorder the file inclusions.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 29
+      },
+      "revId": "832fb09943ab1ed7ef4c7f38da93afe7f385771e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ae4fdf8_883cf944",
+        "filename": "tftf/tests/context_mgmt_tests/el2/test_spm_el2_context_mgmt.c",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-08T12:07:33Z",
+      "side": 1,
+      "message": "nit: test_spm_el2_regs_ctx_mgmt",
+      "range": {
+        "startLine": 25,
+        "startChar": 14,
+        "endLine": 25,
+        "endChar": 41
+      },
+      "revId": "832fb09943ab1ed7ef4c7f38da93afe7f385771e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25a35a12_0a175ea7",
+        "filename": "tftf/tests/tests-cpu-context-mgmt.xml",
+        "patchSetId": 24
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-08T12:07:33Z",
+      "side": 1,
+      "message": "nit: test_spm_el2_regs_ctx_mgmt",
+      "range": {
+        "startLine": 14,
+        "startChar": 46,
+        "endLine": 14,
+        "endChar": 56
+      },
+      "revId": "832fb09943ab1ed7ef4c7f38da93afe7f385771e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
