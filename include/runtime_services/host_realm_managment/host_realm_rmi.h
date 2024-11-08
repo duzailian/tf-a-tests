@@ -231,14 +231,14 @@
 #define RMI_RTT_SET_RIPAS		SMC64_RMI_FID(U(0x19))
 
 /*
- * FID: 0xC4000170
+ * arg0 == target dev granule address
  */
-#define SMC_RMI_GRANULE_DEV_DELEGATE		SMC64_RMI_FID(U(0x20))
+#define SMC_RMI_GRANULE_DEV_DELEGATE	SMC64_RMI_FID(U(0x20))
 
 /*
- * FID: 0xC4000171
+ * arg0 == target dev granule address
  */
-#define SMC_RMI_GRANULE_DEV_UNDELEGATE		SMC64_RMI_FID(U(0x21))
+#define SMC_RMI_GRANULE_DEV_UNDELEGATE	SMC64_RMI_FID(U(0x21))
 
 /*
  * FID: 0xC4000172
@@ -988,6 +988,8 @@ struct realm {
 u_register_t host_rmi_version(u_register_t req_ver);
 u_register_t host_rmi_granule_delegate(u_register_t addr);
 u_register_t host_rmi_granule_undelegate(u_register_t addr);
+u_register_t host_rmi_granule_dev_delegate(u_register_t addr);
+u_register_t host_rmi_granule_dev_undelegate(u_register_t addr);
 u_register_t host_rmi_realm_create(u_register_t rd, u_register_t params_ptr);
 u_register_t host_rmi_realm_destroy(u_register_t rd);
 u_register_t host_rmi_features(u_register_t index, u_register_t *features);
