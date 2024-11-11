@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c48fc944_9788b15d",
+        "filename": "include/lib/aarch64/arch_helpers.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-11T11:43:16Z",
+      "side": 1,
+      "message": "Looks like you need to add definitions for this as well:\n\n```\n#define VDISR_EL2           S3_X_X_X_X\n```\n\nA few of them have already been defined. But few are missing. Please check and add for the missing ones added below.",
+      "range": {
+        "startLine": 705,
+        "startChar": 41,
+        "endLine": 705,
+        "endChar": 50
+      },
+      "revId": "ac6b82f90be91d5ce6ecbda3b1f6f49ab7fe18fa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
