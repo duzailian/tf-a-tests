@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab71dadf_2197c6e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-11T12:46:43Z",
+      "side": 1,
+      "message": "LGTM.\nVerified registers encoding part as well.",
+      "revId": "e42561dbcd9d66d4de22d1b2bf48e124872b815c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
