@@ -159,6 +159,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4b087e2_52aeb436",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-11-11T22:18:12Z",
+      "side": 1,
+      "message": "Discussed offline. Switched to single REC for this test.\n\nDone.",
+      "parentUuid": "bd249c02_248b5e9f",
+      "range": {
+        "startLine": 30,
+        "startChar": 42,
+        "endLine": 30,
+        "endChar": 55
+      },
+      "revId": "7968b194118365ee5ad5d177559f4597d7309422",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6ecccaee_9400094f",
@@ -196,6 +220,30 @@
       "side": 1,
       "message": "Ditto.",
       "parentUuid": "6ecccaee_9400094f",
+      "range": {
+        "startLine": 32,
+        "startChar": 37,
+        "endLine": 32,
+        "endChar": 50
+      },
+      "revId": "7968b194118365ee5ad5d177559f4597d7309422",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59f18e6f_af844487",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-11-11T22:18:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02b4866a_2147050a",
       "range": {
         "startLine": 32,
         "startChar": 37,
