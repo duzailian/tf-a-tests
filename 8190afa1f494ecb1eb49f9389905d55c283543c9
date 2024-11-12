@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3446f52d_c9db3a2e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-12T13:10:29Z",
+      "side": 1,
+      "message": "All tests passing on CI+2 except for an unrelated test failing due to a known issue",
+      "revId": "8190afa1f494ecb1eb49f9389905d55c283543c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
