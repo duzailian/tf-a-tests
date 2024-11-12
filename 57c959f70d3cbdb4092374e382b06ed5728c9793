@@ -16,6 +16,199 @@
       "message": "The RMM-CI passed for the TFTF test.",
       "revId": "57c959f70d3cbdb4092374e382b06ed5728c9793",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38976b36_782000ac",
+        "filename": "realm/include/realm_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-12T10:28:50Z",
+      "side": 1,
+      "message": "rand64() is declared in include\\common\\test_helpers.h \u0026 defined in tftf\\tests\\common\\test_helpers.c\nIf you need to redeclare \u0026 redefine it for realms, shouldn\u0027t other name be used to avoid potential names clash?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 25
+      },
+      "revId": "57c959f70d3cbdb4092374e382b06ed5728c9793",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c16ea0df_a056f8a3",
+        "filename": "realm/realm.mk",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-12T10:28:50Z",
+      "side": 1,
+      "message": "Looks like the file names were in alphabetical order here.",
+      "revId": "57c959f70d3cbdb4092374e382b06ed5728c9793",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15fc5084_329395ea",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-12T10:28:50Z",
+      "side": 1,
+      "message": "Is \u0027\u003d 0\u0027 obsolete?",
+      "revId": "57c959f70d3cbdb4092374e382b06ed5728c9793",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b16e13bc_6c7f45f0",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-12T10:28:50Z",
+      "side": 1,
+      "message": "Is uint64_t for \u0027i\u0027 actually needed? Can unsigned int be used?",
+      "revId": "57c959f70d3cbdb4092374e382b06ed5728c9793",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f7049a3_5b202250",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-12T10:28:50Z",
+      "side": 1,
+      "message": "0UL",
+      "revId": "57c959f70d3cbdb4092374e382b06ed5728c9793",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13036479_2d0c4e7a",
+        "filename": "realm/realm_attestation.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-12T10:28:50Z",
+      "side": 1,
+      "message": "Print error message?",
+      "revId": "57c959f70d3cbdb4092374e382b06ed5728c9793",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12c86718_75dedec6",
+        "filename": "realm/realm_helpers.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-12T10:28:50Z",
+      "side": 1,
+      "message": "See my comment for declaration of this function.",
+      "revId": "57c959f70d3cbdb4092374e382b06ed5728c9793",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a4ec9f3_874c7976",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2530,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-12T10:28:50Z",
+      "side": 1,
+      "message": "Why \u0027multiple REC\u0027 \u0026 \u0027for each REC\u0027? Line #2549 creates realm with 1 REC \u0026 rec_flag has only 1 entry.",
+      "revId": "57c959f70d3cbdb4092374e382b06ed5728c9793",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9bf34a0_a26258dc",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2538,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-12T10:28:50Z",
+      "side": 1,
+      "message": "0UL",
+      "revId": "57c959f70d3cbdb4092374e382b06ed5728c9793",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "435051de_d1d12be9",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2571,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-12T10:28:50Z",
+      "side": 1,
+      "message": "See comment above",
+      "revId": "57c959f70d3cbdb4092374e382b06ed5728c9793",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0753d030_d91635dd",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2579,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-12T10:28:50Z",
+      "side": 1,
+      "message": "0UL",
+      "revId": "57c959f70d3cbdb4092374e382b06ed5728c9793",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
