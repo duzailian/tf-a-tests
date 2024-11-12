@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5dd788cf_85015428",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-11-12T18:30:50Z",
+      "side": 1,
+      "message": "nitpick: can you limit to 80 characters per line",
+      "revId": "01954a5bd6349f2f2f838799a9e7886e81a39229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e92bc9e7_950849af",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-11-12T18:30:50Z",
+      "side": 1,
+      "message": "can you define macros for these hardcoded values?",
+      "range": {
+        "startLine": 183,
+        "startChar": 33,
+        "endLine": 183,
+        "endChar": 55
+      },
+      "revId": "01954a5bd6349f2f2f838799a9e7886e81a39229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ac0f04c_b2d1bd50",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-11-12T18:30:50Z",
+      "side": 1,
+      "message": "Doesnt FVP support a maximum of 8 CPUs? That shall limit the vcpus to 8 too.",
+      "range": {
+        "startLine": 231,
+        "startChar": 26,
+        "endLine": 231,
+        "endChar": 28
+      },
+      "revId": "01954a5bd6349f2f2f838799a9e7886e81a39229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e948f035_efae313c",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-11-12T18:30:50Z",
+      "side": 1,
+      "message": "should the min value be 1?",
+      "range": {
+        "startLine": 231,
+        "startChar": 24,
+        "endLine": 231,
+        "endChar": 25
+      },
+      "revId": "01954a5bd6349f2f2f838799a9e7886e81a39229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c57e9a65_d10e12a7",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-11-12T18:30:50Z",
+      "side": 1,
+      "message": "a general comment which would help with readability throughout the patch:\n\ncan you separate variables declaration from their assignment/initialization?\n\nuint64_t max_vm_id;\nuint64_t vm_id[];\nstruct inputparameters ip;\nstruct ffa_value ret\nuint64_t gen_vm_id;\n\nmax_vm_id \u003d (1 \u003c\u003c 16) - 1;\nvm_id[] \u003d {0, max_vm_id};\n\t\t\nsetconstraint(FUZZER_CONSTRAINT_RANGE, vm_id, 2, \n                     FFA_NOTIFICATION_BITMAP_DESTROY_CALL_ARG1_VM_ID, mmod, \n                      FUZZER_CONSTRAINT_EXCMODE);\n\t\t\nip \u003d generate_args(FFA_NOTIFICATION_BITMAP_DESTROY_CALL, SMC_FUZZ_SANITY_LEVEL);\n\nret \u003d ffa_call_with_params(ip, FFA_NOTIFICATION_BITMAP_DESTROY);\n\ngen_vm_id \u003d get_generated_value(\n                   FFA_NOTIFICATION_BITMAP_DESTROY_CALL_ARG1_VM_ID, ip);",
+      "range": {
+        "startLine": 275,
+        "startChar": 0,
+        "endLine": 281,
+        "endChar": 96
+      },
+      "revId": "01954a5bd6349f2f2f838799a9e7886e81a39229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
