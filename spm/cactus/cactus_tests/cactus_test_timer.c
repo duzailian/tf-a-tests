@@ -7,6 +7,7 @@
 #include "cactus_message_loop.h"
 #include "cactus_test_cmds.h"
 #include "debug.h"
+#include <spm_helpers.h>
 
 uint32_t ms_to_ticks(uint64_t ms)
 {
@@ -18,6 +19,12 @@ CACTUS_CMD_HANDLER(set_virtual_timer, CACTUS_SET_ARCH_TIMER_CMD)
 	uint64_t deadline_ms = cactus_get_timer_deadline(*args);
 	uint64_t wait_time = cactus_get_timer_wait_time(*args);
 	uint32_t ticks = ms_to_ticks(deadline_ms);
+
+	/* Disable the arch timer at boot. */
+	write_cntp_ctl_el0(0);
+
+	/* Enable the arch timer virtual interrupt. */
+	spm_interrupt_enable(TIMER_VIRTUAL_INTID, true, 0);
 
 	write_cntp_ctl_el0(0);
 	write_cntp_tval_el0(ticks);
