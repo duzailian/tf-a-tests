@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63ccdfff_fa009c3a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2024-11-12T18:36:35Z",
+      "side": 1,
+      "message": "Did you run all static checks on this patch and fix all errors/warnings?",
+      "revId": "3a0495449a403c7810e4486059ddb588c90ab36c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
