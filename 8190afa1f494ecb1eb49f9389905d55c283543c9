@@ -39,6 +39,30 @@
       },
       "revId": "8190afa1f494ecb1eb49f9389905d55c283543c9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "303dbe6e_324b3077",
+        "filename": "lib/exceptions/aarch64/serror.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-12T14:43:30Z",
+      "side": 1,
+      "message": "Right, since there is not test to verify Async EA today, This is something that can be added later so as to get this in for the release  ?\n\nI think the change needs to be such that the test handler makes the decision to increment 4 bytes or not. There are various situations which is known only to the test and it is best for the test to take this decision.",
+      "parentUuid": "587d86d3_03c7df9c",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 2
+      },
+      "revId": "8190afa1f494ecb1eb49f9389905d55c283543c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
