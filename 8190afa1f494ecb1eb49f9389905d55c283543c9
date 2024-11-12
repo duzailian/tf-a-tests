@@ -87,6 +87,30 @@
       },
       "revId": "8190afa1f494ecb1eb49f9389905d55c283543c9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9e0ece8_84e10949",
+        "filename": "lib/exceptions/aarch64/serror.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-12T14:57:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4c4cf5f_700da291",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 2
+      },
+      "revId": "8190afa1f494ecb1eb49f9389905d55c283543c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
