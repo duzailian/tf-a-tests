@@ -16,6 +16,29 @@
       "message": "All tests passing on CI+2 except for an unrelated test failing due to a known issue",
       "revId": "8190afa1f494ecb1eb49f9389905d55c283543c9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "587d86d3_03c7df9c",
+        "filename": "lib/exceptions/aarch64/serror.c",
+        "patchSetId": 15
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2024-11-12T13:37:19Z",
+      "side": 1,
+      "message": "I understand that double fault handling, SEA can also trigger as SError. The original code was written to handle only asyn EAs but now you are changing the behaviour for both sync and async errors. This might fail if SError is due to async EA, though there is no tests yet to verify that.\n\nHowever, i have test code for handling EAs in TF-A, you need to do something similar here https://github.com/ARM-software/arm-trusted-firmware/blob/master/plat/arm/board/fvp/aarch64/fvp_ea.c#L40",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 2
+      },
+      "revId": "8190afa1f494ecb1eb49f9389905d55c283543c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
