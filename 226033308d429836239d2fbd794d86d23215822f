@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c7486bc_8d6d695a",
+        "filename": "include/lib/tftf_lib.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-12T10:54:55Z",
+      "side": 1,
+      "message": "Why is it 17 here \u0026 18 on line #210?",
+      "revId": "226033308d429836239d2fbd794d86d23215822f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "036e6b9e_01e2b2c2",
+        "filename": "lib/smc/aarch64/asm_smc.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-12T10:54:55Z",
+      "side": 1,
+      "message": "Could you explain #32 value?\nAfter line #69\nstr\tx0, [sp, #-16]!\nSP \u003d SP-16, why does line #89 set SP \u003d SP + 32?",
+      "revId": "226033308d429836239d2fbd794d86d23215822f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
