@@ -1,0 +1,10 @@
+Verified+1: Govindraj Raja <govindraj.raja@arm.com>
+Maintainer-Review+1: Govindraj Raja <govindraj.raja@arm.com>
+Allow-CI+2: Joao Alves <joao.alves@arm.com>
+Code-Owner-Review+1: Daniel Boulby <daniel.boulby@arm.com>
+Submitted-by: Govindraj Raja <govindraj.raja@arm.com>
+Submitted-at: Tue, 12 Nov 2024 16:59:17 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/33460
+Comments-Total: 6
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
