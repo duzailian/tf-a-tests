@@ -16,6 +16,24 @@
       "message": "Since original failure was covered in l2 jobs l3 was run in particular: https://ci.trustedfirmware.org/job/tf-a-ci-gateway/88992/ -",
       "revId": "891856dd39671e0f996a5ac5c21e7444c24c49eb",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea275a31_00a5c753",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-11-12T15:58:29Z",
+      "side": 1,
+      "message": "Since original failure was NOT covered in l2 jobs l3 was run in particular: https://ci.trustedfirmware.org/job/tf-a-ci-gateway/88992/ -",
+      "parentUuid": "405e0d25_db80eb3a",
+      "revId": "891856dd39671e0f996a5ac5c21e7444c24c49eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
