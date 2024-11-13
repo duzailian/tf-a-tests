@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5a8605e_2e2b802f",
+        "filename": "plat/qemu/qemu_virt/include/platform_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1001353
+      },
+      "writtenOn": "2024-11-13T07:38:50Z",
+      "side": 1,
+      "message": "Nit: Small cases in hex digits. Here and everywhere else. \nRef: https://review.trustedfirmware.org/plugins/gitiles/TF-A/tf-a-tests/+/refs/heads/master/plat/arm/fvp/fvp_def.h",
+      "range": {
+        "startLine": 47,
+        "startChar": 21,
+        "endLine": 47,
+        "endChar": 31
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb4b9168_e6b2c93c",
+        "filename": "plat/qemu/qemu_virt/include/platform_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1001353
+      },
+      "writtenOn": "2024-11-13T07:38:50Z",
+      "side": 1,
+      "message": "Let\u0027s add a `TODO / FIXME: Tune (if required)`",
+      "range": {
+        "startLine": 88,
+        "startChar": 70,
+        "endLine": 89,
+        "endChar": 18
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "edab4ba1_72066fc2",
+        "filename": "plat/qemu/qemu_virt/include/platform_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1001353
+      },
+      "writtenOn": "2024-11-13T07:38:50Z",
+      "side": 1,
+      "message": "Ack. Let\u0027s add as comments above the relevant tests in the `tests_to_skip.txt` file",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 69
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76e765a8_d1c9b1dd",
+        "filename": "plat/qemu/qemu_virt/include/platform_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1001353
+      },
+      "writtenOn": "2024-11-13T07:38:50Z",
+      "side": 1,
+      "message": "Shall we add a `TODO / FIXME` here?",
+      "range": {
+        "startLine": 116,
+        "startChar": 4,
+        "endLine": 116,
+        "endChar": 52
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8b12d36_04ce21be",
+        "filename": "plat/qemu/qemu_virt/qemu_timer.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1001353
+      },
+      "writtenOn": "2024-11-13T07:38:50Z",
+      "side": 1,
+      "message": "I believe this and all functions above this should be in a separate driver? In a file like drivers/qemu_virt/arm_gen_timer.c\n\nI see this is similar to what we do in drivers/arm/timer/private_timer.c , maybe it makes sense to add some of this functionality to the same file in a manner that it doesn\u0027t break the existing use-case of private_timer.c? Maybe expose different ops/API?",
+      "range": {
+        "startLine": 66,
+        "startChar": 11,
+        "endLine": 66,
+        "endChar": 24
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20cca6f9_ef45b91b",
+        "filename": "plat/qemu/qemu_virt/qemu_timer.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1001353
+      },
+      "writtenOn": "2024-11-13T07:38:50Z",
+      "side": 1,
+      "message": "Then we can just have the struct plat_timers_t being populated here along with the timer_ops. Juno does something similar: https://review.trustedfirmware.org/plugins/gitiles/TF-A/tf-a-tests/+/refs/heads/master/plat/arm/juno/juno_timers.c",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 41
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ac0934d_86b66731",
+        "filename": "plat/qemu/qemu_virt/tests_to_skip.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001353
+      },
+      "writtenOn": "2024-11-13T07:38:50Z",
+      "side": 1,
+      "message": "It\u0027s be nice if we can add rationale / TODOs for tests that we are skipping for e.g. https://review.trustedfirmware.org/plugins/gitiles/TF-A/tf-a-tests/+/refs/heads/master/plat/nvidia/tegra210/tests_to_skip.txt\n\nThat way, someone can pick up TODOs if they\u0027d like OR have a reason as to why can\u0027t that test be supported on this platform (QEMU).",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 22
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
