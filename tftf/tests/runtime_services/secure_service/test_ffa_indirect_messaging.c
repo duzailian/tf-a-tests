@@ -32,6 +32,11 @@ const char expected_msg[] = "Testing FF-A message.";
 static __aligned(PAGE_SIZE) uint8_t vm1_rx_buffer[PAGE_SIZE];
 static __aligned(PAGE_SIZE) uint8_t vm1_tx_buffer[PAGE_SIZE];
 
+static int schedule_receiver_interrupt_handler(void *data)
+{
+	return 0;
+}
+
 test_result_t test_ffa_indirect_message_sp_to_vm(void)
 {
 	struct ffa_value ret;
@@ -47,6 +52,9 @@ test_result_t test_ffa_indirect_message_sp_to_vm(void)
 	CHECK_SPMC_TESTING_SETUP(1, 2, expected_sp_uuids);
 
 	GET_TFTF_MAILBOX(mb);
+
+	tftf_irq_register_handler(FFA_SCHEDULE_RECEIVER_INTERRUPT_ID,
+				  schedule_receiver_interrupt_handler);
 
 	ret = ffa_rxtx_map_forward(mb.send, vm_id, vm1_rx_buffer,
 				   vm1_tx_buffer);
@@ -89,6 +97,11 @@ test_result_t test_ffa_indirect_message_sp_to_vm(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	ret = cactus_resume_after_managed_exit(HYP_ID, SPM_VM_ID_FIRST);
+	if (!is_ffa_direct_response(ret)) {
+		return TEST_RESULT_FAIL;
+	}
+
 	ret = ffa_notification_bitmap_destroy(vm_id);
 	if (!is_expected_ffa_return(ret, FFA_SUCCESS_SMC32)) {
 		return TEST_RESULT_FAIL;
@@ -98,6 +111,8 @@ test_result_t test_ffa_indirect_message_sp_to_vm(void)
 	if (!is_expected_ffa_return(ret, FFA_SUCCESS_SMC32)) {
 		return TEST_RESULT_FAIL;
 	}
+
+	tftf_irq_unregister_handler(FFA_SCHEDULE_RECEIVER_INTERRUPT_ID);
 
 	return TEST_RESULT_SUCCESS;
 }
