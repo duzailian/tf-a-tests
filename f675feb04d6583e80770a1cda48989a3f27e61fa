@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d512d5d3_9e7fb4b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000469
+      },
+      "writtenOn": "2024-11-14T10:12:37Z",
+      "side": 1,
+      "message": "Please merge it to 2.12. Change is easy and surprisingly hasn\u0027t been captured by CI.",
+      "revId": "f675feb04d6583e80770a1cda48989a3f27e61fa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
