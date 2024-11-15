@@ -18,10 +18,10 @@ typedef struct {
 	unsigned int end_bus_num;	/* Last bus number */
 } pcie_info_block_t;
 
-typedef struct {
+struct pcie_info_table{
 	unsigned int num_entries;	/* Number of entries */
 	pcie_info_block_t block[];
-} pcie_info_table_t;
+};
 
 typedef struct {
 	uint32_t bdf;

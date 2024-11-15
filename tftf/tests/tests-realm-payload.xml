@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  Copyright (c) 2021-2023, Arm Limited. All rights reserved.
+  Copyright (c) 2021-2024, Arm Limited. All rights reserved.
 
   SPDX-License-Identifier: BSD-3-Clause
 -->
@@ -124,5 +124,10 @@
 	  function="host_test_non_lpa2_realm_on_lpa2plat" />
 	  <testcase name="Test Realm creation with LPA2 enabled but FEAT_LPA2 absent on platform"
 	  function="host_test_lpa2_realm_on_non_lpa2plat" />
+	  <!-- Test case related to PCIE-DOE -->
+	  <testcase name="PCI DOE Discovery"
+	  function="doe_discovery_test" />
+	  <testcase name="SPDM Get Version"
+	  function="spdm_version_test" />
   </testsuite>
 </testsuites>
