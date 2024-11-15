@@ -16,6 +16,23 @@
       "message": "propagating the verified score as only code comments changed.",
       "revId": "93f62409f332931bfedfe552a269b3f328c62d1a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0df05cff_cb2eec38",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2024-11-15T15:48:09Z",
+      "side": 1,
+      "message": "Tf-main CI triggered here \nhttps://ci.trustedfirmware.org/view/TF-A/job/tf-a-main/1423/",
+      "revId": "93f62409f332931bfedfe552a269b3f328c62d1a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
