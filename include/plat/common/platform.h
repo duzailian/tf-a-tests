@@ -11,6 +11,7 @@
 #include <arch_helpers.h>
 #include <timer.h>
 #include <xlat_tables_v2.h>
+#include <pcie.h>
 
 #define PLAT_PSCI_DUMMY_STATE_ID		0xF
 
@@ -192,5 +193,10 @@ static inline uint32_t get_current_core_id(void)
 {
 	return platform_get_core_pos(read_mpidr_el1() & MPID_MASK);
 }
+
+/*
+ * Retrieve platform PCIE information.
+ */
+const pcie_info_table_t *plat_pcie_get_info_table(void);
 
 #endif /* __PLATFORM_H__ */

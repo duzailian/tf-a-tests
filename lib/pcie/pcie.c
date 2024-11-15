@@ -11,9 +11,8 @@
 #include <mmio.h>
 #include <pcie.h>
 #include <pcie_spec.h>
+#include <platform.h>
 #include <tftf_lib.h>
-
-#include <platform_pcie.h>
 
 #define PCIE_DEBUG	VERBOSE
 
@@ -540,7 +539,7 @@ void pcie_print_device_info(void)
 
 		while (tbl_index < bdf_tbl_ptr->num_entries) {
 			uint32_t seg_num, bus_num, dev_num, func_num;
-			uint32_t device_id, vendor_id, reg_value;
+			uint32_t device_id __unused, vendor_id __unused, reg_value;
 			uint32_t bdf, dev_ecam_base;
 
 			bdf = bdf_tbl_ptr->device[tbl_index++].bdf;
@@ -588,6 +587,11 @@ void pcie_create_info_table(void)
 	INFO("Creating PCIe info table\n");
 
 	g_pcie_info_table = plat_pcie_get_info_table();
+	if (g_pcie_info_table == NULL) {
+		ERROR("PCIE info not returned by platform\n");
+		panic();
+	}
+
 	g_pcie_bdf_table = pcie_bdf_table;
 
 	num_ecam = g_pcie_info_table->num_entries;
