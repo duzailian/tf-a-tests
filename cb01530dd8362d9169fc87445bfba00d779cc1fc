@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f3b6ace_60fc9055",
+        "filename": "plat/qemu/qemu_virt/include/platform_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000120
+      },
+      "writtenOn": "2024-11-15T08:40:56Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "a5a8605e_2e2b802f",
+      "range": {
+        "startLine": 47,
+        "startChar": 21,
+        "endLine": 47,
+        "endChar": 31
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fb4b9168_e6b2c93c",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-11-13T07:38:50Z",
       "side": 1,
       "message": "Let\u0027s add a `TODO / FIXME: Tune (if required)`",
+      "range": {
+        "startLine": 88,
+        "startChar": 70,
+        "endLine": 89,
+        "endChar": 18
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a64b74e2_10ceb1a5",
+        "filename": "plat/qemu/qemu_virt/include/platform_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000120
+      },
+      "writtenOn": "2024-11-15T08:40:56Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "fb4b9168_e6b2c93c",
       "range": {
         "startLine": 88,
         "startChar": 70,
@@ -72,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1eaaf5c7_65282a0f",
+        "filename": "plat/qemu/qemu_virt/include/platform_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000120
+      },
+      "writtenOn": "2024-11-15T08:40:56Z",
+      "side": 1,
+      "message": "This was only copied from FVP, I\u0027m not sure which tests are affected by this. Should I remove this part of the comment?",
+      "parentUuid": "edab4ba1_72066fc2",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 69
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "76e765a8_d1c9b1dd",
         "filename": "plat/qemu/qemu_virt/include/platform_def.h",
         "patchSetId": 3
@@ -83,6 +155,30 @@
       "writtenOn": "2024-11-13T07:38:50Z",
       "side": 1,
       "message": "Shall we add a `TODO / FIXME` here?",
+      "range": {
+        "startLine": 116,
+        "startChar": 4,
+        "endLine": 116,
+        "endChar": 52
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9a3e4ed_d2392dad",
+        "filename": "plat/qemu/qemu_virt/include/platform_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000120
+      },
+      "writtenOn": "2024-11-15T08:40:56Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "76e765a8_d1c9b1dd",
       "range": {
         "startLine": 116,
         "startChar": 4,
@@ -118,6 +214,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "56675f28_f938537d",
+        "filename": "plat/qemu/qemu_virt/qemu_timer.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000120
+      },
+      "writtenOn": "2024-11-15T08:40:56Z",
+      "side": 1,
+      "message": "OK, I\u0027ll move it to drivers/arm/timer/private_timer.c under a new API.",
+      "parentUuid": "b8b12d36_04ce21be",
+      "range": {
+        "startLine": 66,
+        "startChar": 11,
+        "endLine": 66,
+        "endChar": 24
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "20cca6f9_ef45b91b",
         "filename": "plat/qemu/qemu_virt/qemu_timer.c",
         "patchSetId": 3
@@ -129,6 +249,30 @@
       "writtenOn": "2024-11-13T07:38:50Z",
       "side": 1,
       "message": "Then we can just have the struct plat_timers_t being populated here along with the timer_ops. Juno does something similar: https://review.trustedfirmware.org/plugins/gitiles/TF-A/tf-a-tests/+/refs/heads/master/plat/arm/juno/juno_timers.c",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 41
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "352527fd_29b4c3d1",
+        "filename": "plat/qemu/qemu_virt/qemu_timer.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000120
+      },
+      "writtenOn": "2024-11-15T08:40:56Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "20cca6f9_ef45b91b",
       "range": {
         "startLine": 77,
         "startChar": 0,
@@ -152,6 +296,30 @@
       "writtenOn": "2024-11-13T07:38:50Z",
       "side": 1,
       "message": "It\u0027s be nice if we can add rationale / TODOs for tests that we are skipping for e.g. https://review.trustedfirmware.org/plugins/gitiles/TF-A/tf-a-tests/+/refs/heads/master/plat/nvidia/tegra210/tests_to_skip.txt\n\nThat way, someone can pick up TODOs if they\u0027d like OR have a reason as to why can\u0027t that test be supported on this platform (QEMU).",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 22
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b66e4d06_988ec49a",
+        "filename": "plat/qemu/qemu_virt/tests_to_skip.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000120
+      },
+      "writtenOn": "2024-11-15T08:40:56Z",
+      "side": 1,
+      "message": "I agree with that but don\u0027t have that information. I disabled all tests that didn\u0027t pass to have something to start with.",
+      "parentUuid": "0ac0934d_86b66731",
       "range": {
         "startLine": 1,
         "startChar": 0,
