@@ -11,13 +11,12 @@
 #include <mmio.h>
 #include <pcie.h>
 #include <pcie_spec.h>
+#include <platform.h>
 #include <tftf_lib.h>
-
-#include <platform_pcie.h>
 
 #define PCIE_DEBUG	VERBOSE
 
-const pcie_info_table_t *g_pcie_info_table;
+const struct pcie_info_table *g_pcie_info_table;
 pcie_device_bdf_table_t *g_pcie_bdf_table;
 
 pcie_device_bdf_table_t pcie_bdf_table[PCIE_DEVICE_BDF_TABLE_SZ];
@@ -462,11 +461,11 @@ void pcie_print_device_info(void)
 	uint32_t ecam_index = 0;
 	uint32_t ecam_base, ecam_start_bus, ecam_end_bus;
 	pcie_device_bdf_table_t *bdf_tbl_ptr = g_pcie_bdf_table;
-	uint32_t num_rciep = 0, num_rcec = 0;
-	uint32_t num_iep = 0, num_irp = 0;
-	uint32_t num_ep = 0, num_rp = 0;
-	uint32_t num_dp = 0, num_up = 0;
-	uint32_t num_pcie_pci = 0, num_pci_pcie = 0;
+	uint32_t num_rciep __unused = 0, num_rcec __unused = 0;
+	uint32_t num_iep __unused = 0, num_irp __unused = 0;
+	uint32_t num_ep __unused = 0, num_rp __unused = 0;
+	uint32_t num_dp __unused = 0, num_up __unused = 0;
+	uint32_t num_pcie_pci __unused = 0, num_pci_pcie __unused = 0;
 	uint32_t bdf_counter;
 
 	if (bdf_tbl_ptr->num_entries == 0) {
@@ -540,7 +539,7 @@ void pcie_print_device_info(void)
 
 		while (tbl_index < bdf_tbl_ptr->num_entries) {
 			uint32_t seg_num, bus_num, dev_num, func_num;
-			uint32_t device_id, vendor_id, reg_value;
+			uint32_t device_id __unused, vendor_id __unused, reg_value;
 			uint32_t bdf, dev_ecam_base;
 
 			bdf = bdf_tbl_ptr->device[tbl_index++].bdf;
@@ -588,12 +587,18 @@ void pcie_create_info_table(void)
 	INFO("Creating PCIe info table\n");
 
 	g_pcie_info_table = plat_pcie_get_info_table();
+	if (g_pcie_info_table == NULL) {
+		ERROR("PCIE info not returned by platform\n");
+		panic();
+	}
+
 	g_pcie_bdf_table = pcie_bdf_table;
 
 	num_ecam = g_pcie_info_table->num_entries;
 	INFO("Number of ECAM regions   : %u\n", num_ecam);
-	if (num_ecam == 0) {
-		return;
+	if ((num_ecam == 0) || (num_ecam > MAX_PCIE_INFO_ENTRIES)) {
+		ERROR("PCIE info entries invalid\n");
+		panic();
 	}
 	pcie_create_device_bdf_table();
 	pcie_print_device_info();

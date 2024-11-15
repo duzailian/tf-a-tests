@@ -193,4 +193,12 @@ static inline uint32_t get_current_core_id(void)
 	return platform_get_core_pos(read_mpidr_el1() & MPID_MASK);
 }
 
+/* Forward declaration */
+struct pcie_info_table;
+
+/*
+ * Retrieve platform PCIE information.
+ */
+const struct pcie_info_table *plat_pcie_get_info_table(void);
+
 #endif /* __PLATFORM_H__ */
