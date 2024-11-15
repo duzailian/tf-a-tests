@@ -44,4 +44,16 @@ TESTS_SOURCES	+=							\
 	$(addprefix lib/extensions/fpu/,				\
 		fpu.c							\
 	)
+
+TESTS_SOURCES	+=				\
+	$(addprefix tftf/tests/doe_tests/,	\
+		doe_helpers.c			\
+		test_doe.c			\
+	)
+
+TESTS_SOURCES	+=		\
+	$(addprefix lib/pcie/,	\
+		pcie.c		\
+		pcie_doe.c	\
+	)
 endif
