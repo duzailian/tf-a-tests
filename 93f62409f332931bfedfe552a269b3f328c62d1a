@@ -50,6 +50,24 @@
       "message": "Looks like there are some concerning failures from tf-amin job submitted:\nhttps://ci.trustedfirmware.org/view/TF-A/job/tf-a-main/1423/\n\nEven after re-submission[1] they fail consistently so needs a revisit -\n\n[1]:\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/89443/ \nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/89444/\n\nPlacing a \u0027MR-1\u0027 to avoid any accidental merges as we are in release cycle.",
       "revId": "93f62409f332931bfedfe552a269b3f328c62d1a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27c6dd74_ca2fe253",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-18T15:57:41Z",
+      "side": 1,
+      "message": "Thanks Govidraj,\n\nI don\u0027t know why I didn\u0027t see these fails before. I think it might be related to the changes I introduced to the serror handler, so I need to rethink the patch.",
+      "parentUuid": "85656899_ffcc8e3a",
+      "revId": "93f62409f332931bfedfe552a269b3f328c62d1a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
