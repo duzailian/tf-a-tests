@@ -16,6 +16,24 @@
       "message": "I don\u0027t see any changes for your \"Done\" comments for patch #10. Have you pushed a new patch?",
       "revId": "44e53d68db74c21992964807738e44fd3a92b78e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12f868be_2a715efc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2024-11-18T08:21:06Z",
+      "side": 1,
+      "message": "Hi Alexei, \n\nI pushed all my changes with patchset 10 and I can see them all here. Is there any cange in particular you don\u0027t see or all of them? Let me know if you still have issues visualizing the changes.",
+      "parentUuid": "b434ff80_bdb7138b",
+      "revId": "44e53d68db74c21992964807738e44fd3a92b78e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
