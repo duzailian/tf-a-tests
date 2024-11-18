@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18bd88f0_f3a36a10",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2024-11-18T12:20:27Z",
+      "side": 1,
+      "message": "I looked at older change logs, and to be consistent this could be changed to the actual name of the ABI.\n- FFA_MEM_RETRIEVE_REQ\n- FFA_MEM_FRAG_RX/TX\n- FFA_MEM_RELINQUISH\n\nThis is a nitpick... but could be done in such a way.",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 34,
+        "endChar": 0
+      },
+      "revId": "d0cd3571bb4beffddc1a9d710f63d636aac8e3db",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
