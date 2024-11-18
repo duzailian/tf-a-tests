@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8579b0d4_f4778695",
+        "filename": "tftf/tests/doe_tests/doe_helpers.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-18T11:00:11Z",
+      "side": 1,
+      "message": "Why is it needed now?",
+      "revId": "4ccf0d403996332a6e29eea380034a208bccacbf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d79c7c9_8fc84d17",
+        "filename": "tftf/tests/tests-realm-payload.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-18T11:00:11Z",
+      "side": 1,
+      "message": "2024?",
+      "revId": "4ccf0d403996332a6e29eea380034a208bccacbf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27ff9abb_c3610f07",
+        "filename": "tftf/tests/tests-realm-payload.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2024-11-18T11:00:11Z",
+      "side": 1,
+      "message": "2024?",
+      "revId": "4ccf0d403996332a6e29eea380034a208bccacbf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
