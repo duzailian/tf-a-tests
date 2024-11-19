@@ -1,0 +1,12 @@
+Allow-CI+1: Akshay Belsare <Akshay.Belsare@amd.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Review+1: Akshay Belsare <Akshay.Belsare@amd.com>
+Maintainer-Review+1: Govindraj Raja <govindraj.raja@arm.com>
+Verified+1: Govindraj Raja <govindraj.raja@arm.com>
+Code-Owner-Review+1: Michal Šimek <michal.simek@amd.com>
+Submitted-by: Govindraj Raja <govindraj.raja@arm.com>
+Submitted-at: Tue, 19 Nov 2024 15:50:10 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/33418
+Comments-Total: 1
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
