@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3750272c_e62f31aa",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-19T10:55:20Z",
+      "side": 1,
+      "message": "Ignore this. You have already covered this part above.",
+      "parentUuid": "a23c465d_719e7916",
+      "range": {
+        "startLine": 56,
+        "startChar": 3,
+        "endLine": 56,
+        "endChar": 72
+      },
+      "revId": "c115a160cfe9fb5aeacd2122e73210cb5db27ebe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5c5c8a13_f46f15c8",
