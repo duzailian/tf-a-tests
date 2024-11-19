@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a00d1ed4_7057a3ab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2024-11-19T09:42:04Z",
+      "side": 1,
+      "message": "Where do we find the rendered version of this change ?\nCan anyone please share it ?",
+      "revId": "c115a160cfe9fb5aeacd2122e73210cb5db27ebe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
