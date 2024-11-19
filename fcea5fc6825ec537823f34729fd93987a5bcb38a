@@ -68,6 +68,24 @@
       "parentUuid": "b047ff24_a3533c50",
       "revId": "fcea5fc6825ec537823f34729fd93987a5bcb38a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98d71f8e_67668460",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-19T10:11:36Z",
+      "side": 1,
+      "message": "Yes, had a discussion and rolled back the changes on my patch.",
+      "parentUuid": "54ef6791_c7a00736",
+      "revId": "fcea5fc6825ec537823f34729fd93987a5bcb38a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
