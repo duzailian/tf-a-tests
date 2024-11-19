@@ -90,6 +90,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "46e6c9dc_e7d925f5",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2024-11-19T13:48:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c5c8a13_f46f15c8",
+      "range": {
+        "startLine": 57,
+        "startChar": 6,
+        "endLine": 57,
+        "endChar": 66
+      },
+      "revId": "c115a160cfe9fb5aeacd2122e73210cb5db27ebe",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "263e16a8_f11d73db",
         "filename": "docs/change-log.rst",
         "patchSetId": 2
