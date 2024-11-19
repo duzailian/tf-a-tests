@@ -16,6 +16,23 @@
       "message": "RAS configs passed: https://ci.trustedfirmware.org/job/tf-a-ci-gateway/89491/ \nTriggering L2 run",
       "revId": "fcea5fc6825ec537823f34729fd93987a5bcb38a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33f10eb3_a5643eb6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-11-19T08:19:23Z",
+      "side": 1,
+      "message": "One failure passed after re-triggering it: https://ci.trustedfirmware.org/job/tf-a-ci-gateway/89531/ \n\nAlso, ran tf-a-main with this patch: https://ci.trustedfirmware.org/job/tf-a-main/1429/\n\nFailures in tf-a-main passed after re-triggering it:\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/89542/\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/89543/\n\nHence manually providing Verified+1.",
+      "revId": "fcea5fc6825ec537823f34729fd93987a5bcb38a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
