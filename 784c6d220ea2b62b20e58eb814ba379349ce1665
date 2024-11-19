@@ -16,6 +16,23 @@
       "message": "top patch verified.",
       "revId": "784c6d220ea2b62b20e58eb814ba379349ce1665",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dfcb77ba_2e8f1e56",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-11-19T14:49:45Z",
+      "side": 1,
+      "message": "based on - http://ci.trustedfirmware.org/job/tf-a-tftf-gerrit-tforg-l1/1253/",
+      "revId": "784c6d220ea2b62b20e58eb814ba379349ce1665",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
