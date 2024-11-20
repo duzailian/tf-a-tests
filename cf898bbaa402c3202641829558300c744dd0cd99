@@ -75,6 +75,30 @@
       },
       "revId": "cf898bbaa402c3202641829558300c744dd0cd99",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8f2deed_7e0a054b",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-11-20T22:26:22Z",
+      "side": 1,
+      "message": "It a minor, would like to go ahead as is to avoid resubmit and getting further votes, targetting ci-daily",
+      "parentUuid": "3321eb11_ac7af3dd",
+      "range": {
+        "startLine": 137,
+        "startChar": 6,
+        "endLine": 137,
+        "endChar": 69
+      },
+      "revId": "cf898bbaa402c3202641829558300c744dd0cd99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
