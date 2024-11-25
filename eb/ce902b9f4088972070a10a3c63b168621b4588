@@ -1,0 +1,10 @@
+Code-Review+1: Javier Almansa Sobrino <javier.almansasobrino@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Allow-CI+2: Soby Mathew <soby.mathew@arm.com>
+Code-Owner-Review+1: Shruti Gupta <shruti.gupta@arm.com>
+Maintainer-Review+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Mon, 25 Nov 2024 11:09:51 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/31248
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
