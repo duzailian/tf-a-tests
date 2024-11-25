@@ -35,6 +35,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b7879a2_41bcaff2",
+        "filename": "docs/porting/optional-mods.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-25T17:47:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7eeaf1df_17c2d035",
+      "revId": "d401d6d51b9520b2bb8d500d6938391d317ba069",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "644a8de6_5bfb3d3d",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-11-25T14:57:51Z",
       "side": 1,
       "message": "2024?",
+      "revId": "d401d6d51b9520b2bb8d500d6938391d317ba069",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18413293_1b04b626",
+        "filename": "include/plat/common/platform.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-25T17:47:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "644a8de6_5bfb3d3d",
       "revId": "d401d6d51b9520b2bb8d500d6938391d317ba069",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -69,6 +105,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b4c527a_2e3023b0",
+        "filename": "include/plat/common/platform.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-25T17:47:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "76edc71e_6f4d8364",
+      "revId": "d401d6d51b9520b2bb8d500d6938391d317ba069",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fbe0e4fd_c0cf09c6",
@@ -82,6 +136,24 @@
       "writtenOn": "2024-11-25T14:57:51Z",
       "side": 1,
       "message": "PCIe or PCI-e",
+      "revId": "d401d6d51b9520b2bb8d500d6938391d317ba069",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f41256a5_1a4ece52",
+        "filename": "lib/pcie/pcie.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-25T17:47:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fbe0e4fd_c0cf09c6",
       "revId": "d401d6d51b9520b2bb8d500d6938391d317ba069",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -103,6 +175,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "59db62d2_dbc31fca",
+        "filename": "lib/pcie/pcie.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-25T17:47:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2160e975_b64e7ffc",
+      "revId": "d401d6d51b9520b2bb8d500d6938391d317ba069",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d4495f70_40ba7b99",
@@ -120,6 +210,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3a9b337_6da877e5",
+        "filename": "plat/arm/fvp/platform.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-25T17:47:04Z",
+      "side": 1,
+      "message": "it doesn\u0027t follow alphabetical order already. I just changed the line I added.",
+      "parentUuid": "d4495f70_40ba7b99",
+      "revId": "d401d6d51b9520b2bb8d500d6938391d317ba069",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a4cbb066_1b2d4f1b",
@@ -133,6 +241,24 @@
       "writtenOn": "2024-11-25T14:57:51Z",
       "side": 1,
       "message": "2024?",
+      "revId": "d401d6d51b9520b2bb8d500d6938391d317ba069",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e64afe9e_3aa708ea",
+        "filename": "plat/common/plat_common.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-25T17:47:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4cbb066_1b2d4f1b",
       "revId": "d401d6d51b9520b2bb8d500d6938391d317ba069",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
