@@ -8,6 +8,7 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 #include <debug.h>
 #include <pcie.h>
@@ -75,6 +76,8 @@ static void print_doe_data(uint32_t idx, uint32_t data, bool last)
 {
 	uint32_t j = idx + DOE_HEADER_LENGTH;
 
+	/* todo: Enable for verbose mode */
+	return;
 	if (last) {
 		if ((j & 7) == 0) {
 			INFO(" %08x\n", data);
@@ -224,4 +227,29 @@ int pcie_doe_recv_resp(uint32_t bdf, uint32_t doe_cap_base,
 	}
 
 	return 0;
+}
+
+int pcie_doe_communicate(uint32_t bdf, uint32_t doe_cap_base, void *req_buf,
+			 size_t req_sz, void *rsp_buf, size_t *rsp_sz,
+			 bool is_sspdm)
+{
+	int rc;
+	uint32_t header;
+
+	if (is_sspdm) {
+		header = DOE_HEADER_2;
+	} else {
+		header = DOE_HEADER_1;
+	}
+
+	rc = pcie_doe_send_req(header, bdf, doe_cap_base,
+			       (uint32_t *)req_buf, (uint32_t)req_sz);
+	if (rc != 0) {
+		ERROR("PCIe DOE %s failed %d\n", "Request", rc);
+		return rc;
+	}
+
+	rc = pcie_doe_recv_resp(bdf, doe_cap_base, (uint32_t *)rsp_buf,
+				(uint32_t *)rsp_sz);
+	return rc;
 }
