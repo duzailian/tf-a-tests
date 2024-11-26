@@ -323,6 +323,27 @@ typedef test_result_t (*test_function_arg_t)(void *arg);
 	do {									\
 		if(!is_feat_fpmr_present()) {					\
 			tftf_testcase_printf("FEAT_FPMR not supported\n");	\
+
+#define SKIP_TEST_IF_SCTLR2_NOT_SUPPORTED()					\
+	do {									\
+		if (!is_feat_sctlr2_supported()) {				\
+			tftf_testcase_printf("FEAT_SCTLR2 not supported\n");	\
+			return TEST_RESULT_SKIPPED;				\
+		}								\
+	} while (false)
+
+#define SKIP_TEST_IF_THE_NOT_SUPPORTED()					\
+	do {									\
+		if (!is_feat_the_supported()) {					\
+			tftf_testcase_printf("FEAT_THE not supported\n");	\
+			return TEST_RESULT_SKIPPED;				\
+		}								\
+	} while (false)
+
+#define SKIP_TEST_IF_D128_NOT_SUPPORTED()					\
+	do {									\
+		if (!is_feat_d128_supported()) {				\
+			tftf_testcase_printf("FEAT_D128 not supported\n");	\
 			return TEST_RESULT_SKIPPED;				\
 		}								\
 	} while (false)

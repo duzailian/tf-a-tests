@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2024, Arm Limited. All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+
+#ifndef TEST_D128_H
+#define TEST_D128_H
+
+#define TTBR_REG_MASK_HIGH		0x0000000000FF0000
+#define TTBR_REG_MASK_LOW		0xFFFFFFFFFFFFFFF6
+#define TTBR_REG_MASK_FULL		(((uint128_t)TTBR_REG_MASK_HIGH) << 64U | TTBR_REG_MASK_LOW)
+
+#define VTTBR_REG_MASK_HIGH		0x0000000000FF0000
+#define VTTBR_REG_MASK_LOW		0x00FFFFFFFFFFFFF6
+#define VTTBR_REG_MASK_FULL		(((uint128_t)VTTBR_REG_MASK_HIGH) << 64U | VTTBR_REG_MASK_LOW)
+
+#endif /* TEST_D128_H */
