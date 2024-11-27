@@ -23,6 +23,7 @@
 #define CXT_ID_MAGIC 0x100
 static uint64_t is_secondary_cpu_booted;
 static spinlock_t lock;
+extern unsigned int plane_num;
 
 static void rec1_handler(u_register_t cxt_id)
 {
@@ -30,7 +31,7 @@ static void rec1_handler(u_register_t cxt_id)
 			read_mpidr_el1() & MPID_MASK, cxt_id);
 	if (cxt_id < CXT_ID_MAGIC || cxt_id > CXT_ID_MAGIC + MAX_REC_COUNT) {
 		realm_printf("Wrong cxt_id\n");
-		rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
+		rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD, plane_num);
 	}
 	spin_lock(&lock);
 	is_secondary_cpu_booted++;
@@ -40,7 +41,7 @@ static void rec1_handler(u_register_t cxt_id)
 
 static void rec2_handler(u_register_t cxt_id)
 {
-	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
+	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD, plane_num);
 }
 
 bool test_realm_multiple_rec_psci_denied_cmd(void)
@@ -54,7 +55,7 @@ bool test_realm_multiple_rec_psci_denied_cmd(void)
 	}
 
 	if (is_secondary_cpu_booted != 0U) {
-		rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
+		rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD, plane_num);
 	}
 
 	ret = realm_psci_affinity_info(1U, MPIDR_AFFLVL0);
@@ -95,7 +96,7 @@ bool test_realm_multiple_rec_multiple_cpu_cmd(void)
 	}
 
 	/* Exit to host to allow host to run all CPUs */
-	rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD);
+	rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD, plane_num);
 	/* wait for all CPUs to come up */
 	while (is_secondary_cpu_booted != rec_count - 1U) {
 		waitms(200);

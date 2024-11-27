@@ -73,14 +73,18 @@ pie_fixup:
 
 	/* Initialize architectural state */
 	bl	arch_init
+/*
 #if ENABLE_PAUTH
 	bl	pauth_init_enable
 #endif
+*/
+	bl	plane_init
 	/*
 	 * Update cold boot flag to indicate cold boot is done
 	 */
 	adr	x0, cold_boot_flag
 	str	xzr, [x0]
+
 loop:
 	/* And jump to the C entrypoint */
 	bl	realm_payload_main
@@ -89,9 +93,12 @@ loop:
 realm_warmboot_endpoint:
 	/* Initialize architectural state */
 	bl	arch_init
+/*
 #if ENABLE_PAUTH
 	bl	pauth_init_enable
 #endif
+*/
+	bl	plane_init
 	mov	x0, x20
 	b	realm_secondary_entrypoint
 endfunc realm_entrypoint
