@@ -8,6 +8,8 @@
 #ifndef REALM_HELPERS_H
 #define REALM_HELPERS_H
 
+#include <realm_rsi.h>
+
 /* Generate 64-bit random number */
 unsigned long long realm_rand64(void);
 bool realm_plane_enter(u_register_t plane_index, u_register_t perm_index,
