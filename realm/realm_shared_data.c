@@ -17,6 +17,7 @@
  **/
 
 static host_shared_data_t *guest_shared_data;
+extern bool is_plane0;
 
 /*
  * Set guest mapped shared buffer pointer
@@ -60,3 +61,54 @@ void realm_shared_data_set_my_realm_val(uint8_t index, u_register_t val)
 	guest_shared_data[REC_IDX(read_mpidr_el1())].realm_out_val[index] = val;
 }
 
+void realm_shared_data_set_plane_n_val(unsigned int plane_num, unsigned int rec_num,
+		uint8_t index, u_register_t val)
+{
+	static host_shared_data_t *guest_shared_data1;
+
+	assert(index < MAX_DATA_SIZE);
+	assert(plane_num < MAX_PLANE_COUNT);
+	assert(rec_num < MAX_REC_COUNT);
+	assert(is_plane0);
+
+	guest_shared_data1 = &guest_shared_data[plane_num];
+	guest_shared_data1[rec_num].realm_out_val[index] = val;
+}
+
+u_register_t realm_shared_data_get_plane_n_val(unsigned int plane_num,
+		unsigned int rec_num, uint8_t index)
+{
+	static host_shared_data_t *guest_shared_data1;
+
+	assert(plane_num < MAX_PLANE_COUNT);
+	assert(rec_num < MAX_REC_COUNT);
+	assert(is_plane0);
+
+	guest_shared_data1 = &guest_shared_data[plane_num];
+	return guest_shared_data1[rec_num].realm_out_val[index];
+}
+
+u_register_t realm_shared_data_get_plane_n_cmd(unsigned int plane_num,
+		unsigned int rec_num, uint8_t index)
+{
+	static host_shared_data_t *guest_shared_data1;
+
+	assert(plane_num < MAX_PLANE_COUNT);
+	assert(rec_num < MAX_REC_COUNT);
+	assert(is_plane0);
+
+	guest_shared_data1 = &guest_shared_data[plane_num];
+	return guest_shared_data1[rec_num].realm_cmd;
+}
+
+void realm_shared_data_set_plane_n_cmd(uint8_t cmd, unsigned int plane_num, unsigned int rec_num)
+{
+	static host_shared_data_t *guest_shared_data1;
+
+	assert(plane_num < MAX_PLANE_COUNT);
+	assert(rec_num < MAX_REC_COUNT);
+	assert(is_plane0);
+
+	guest_shared_data1 = &guest_shared_data[plane_num];
+	guest_shared_data1[rec_num].realm_cmd = cmd;
+}
