@@ -198,6 +198,24 @@
       "parentUuid": "4eb83d8f_14451ee1",
       "revId": "6ea06e502a51875986c603558b57c37054fdc675",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19d5bf0e_90f53f44",
+        "filename": "include/configs/tftf_mbedtls_config.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-11-27T12:57:16Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e47c239a_ad587f66",
+      "revId": "6ea06e502a51875986c603558b57c37054fdc675",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
