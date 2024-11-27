@@ -41,20 +41,84 @@ static void restore_plane_context(rsi_plane_run *run)
 	run->enter.pc = run->exit.elr;
 }
 
-/* return true to re-enter PlaneN, false to exit to P0 */
-static bool handle_plane_exit(u_register_t plane_index,
+u_register_t handle_plane_exit(u_register_t plane_index,
 		u_register_t perm_index,
 		rsi_plane_run *run)
 {
 	u_register_t ec = EC_BITS(run->exit.esr);
 
+	if (((run->exit.esr & ISS_FSC_MASK) >= FSC_L0_PERM_FAULT) &&
+		((run->exit.esr & ISS_FSC_MASK) <= FSC_L3_PERM_FAULT)) {
+
+		/* If Plane N exit is due to permission fault, change s2ap */
+		u_register_t base, new_base, response, ret;
+		u_register_t new_cookie = 0UL;
+
+		new_base = base = (run->exit.far & ~PAGE_SIZE_MASK);
+
+		VERBOSE("P0 set s2ap 0x%lx\n", base);
+		while (new_base != (base + PAGE_SIZE)) {
+
+			ret = rsi_mem_set_perm_index(new_base, base + PAGE_SIZE,
+				perm_index, new_cookie, &new_base,
+				&response, &new_cookie);
+
+			if (ret != RSI_SUCCESS || response == RSI_REJECT) {
+				ERROR("rsi_mem_set_perm_index failed 0x%lx\n", new_base);
+				return PSI_RETURN_TO_P0;
+			}
+		}
+
+		restore_plane_context(run);
+		return PSI_RETURN_TO_PN;
+	}
+
+	/* If Plane N exit is due to translation error, it is host mapping error, ABORT */
+	if ((run->exit.esr & ISS_FSC_MASK) == FSC_L3_TRANS_FAULT) {
+		ERROR("unexpected trans fault\n");
+		assert(true);
+		return PSI_RETURN_TO_P0;
+	}
+
 	/* Disallow SMC from Plane N */
 	if (ec == EC_AARCH64_SMC) {
 		restore_plane_context(run);
 		run->enter.gprs[0] = RSI_ERROR_STATE;
-		return true;
+		return PSI_RETURN_TO_PN;
 	}
-	return false;
+
+	/* Handle PSI HVC call from Plane N */
+	if (ec == EC_AARCH64_HVC) {
+		u_register_t hvc_id = run->exit.gprs[0];
+
+		restore_plane_context(run);
+		switch (hvc_id) {
+		case PSI_CALL_GET_SHARED_BUFF_CMD:
+			{
+				host_shared_data_t *guest_shared_data =
+					realm_get_my_shared_structure();
+
+				run->enter.gprs[0] = RSI_SUCCESS;
+				run->enter.gprs[1] =
+						(u_register_t)&guest_shared_data[plane_index];
+
+				return PSI_RETURN_TO_PN;
+			}
+		case PSI_CALL_GET_PLANE_ID_CMD:
+			run->enter.gprs[0] = RSI_SUCCESS;
+			run->enter.gprs[1] = plane_index;
+			return PSI_RETURN_TO_PN;
+		case PSI_CALL_EXIT_PRINT_CMD:
+			/* exit to host to flush buffer, then return to PN */
+			rsi_exit_to_host(HOST_CALL_EXIT_PRINT_CMD, plane_index);
+			run->enter.gprs[0] = RSI_SUCCESS;
+			return PSI_RETURN_TO_PN;
+		case PSI_P0_CALL:
+		default:
+			return PSI_RETURN_TO_P0;
+		}
+	}
+	return PSI_RETURN_TO_P0;
 }
 
 static bool plane_common_init(u_register_t plane_index,
@@ -92,7 +156,7 @@ bool realm_plane_enter(u_register_t plane_index,
 
 	run->enter.flags = flags;
 
-	while (ret1) {
+	while (true) {
 		ret = rsi_plane_enter(plane_index, (u_register_t)run);
 		if (ret != RSI_SUCCESS) {
 			ERROR("Plane %u enter failed ret= 0x%lx\n", plane_index, ret);
@@ -105,8 +169,11 @@ bool realm_plane_enter(u_register_t plane_index,
 				run->exit.hpfar,
 				run->exit.far);
 
-		ret1 = handle_plane_exit(plane_index, perm_index, run);
+		ret = handle_plane_exit(plane_index, perm_index, run);
+
+		if (ret != PSI_RETURN_TO_PN) {
+			return true;
+		}
 	}
-	return true;
 }
 
