@@ -11,8 +11,11 @@
 
 #include <arch_helpers.h>
 #include <host_shared_data.h>
+#include <realm_psi.h>
 #include <realm_rsi.h>
 
+extern bool is_plane0;
+extern u_register_t plane_num;
 /*
  * A printf formatted function used in the Realm world to log messages
  * in the shared buffer.
@@ -23,6 +26,7 @@ void realm_printf(const char *fmt, ...)
 	host_shared_data_t *guest_shared_data = realm_get_my_shared_structure();
 	char *log_buffer = (char *)guest_shared_data->log_buffer;
 	va_list args;
+	u_register_t ret;
 
 	va_start(args, fmt);
 	if (strnlen((const char *)log_buffer, MAX_BUF_SIZE) == MAX_BUF_SIZE) {
@@ -32,7 +36,15 @@ void realm_printf(const char *fmt, ...)
 			strnlen((const char *)log_buffer, MAX_BUF_SIZE),
 			MAX_BUF_SIZE, fmt, args);
 	va_end(args);
-	rsi_exit_to_host(HOST_CALL_EXIT_PRINT_CMD);
+	ret = rsi_exit_to_host(HOST_CALL_EXIT_PRINT_CMD, plane_num);
+
+	/*
+	 * Retry with PSI call for secondary planes
+	 * Note - RSI_HOST_CALL will fail if P0 sets trap_hc flag in plane_enter
+	 */
+	if ((ret != RSI_SUCCESS && !is_plane0)) {
+		realm_psi_exit_to_plane0(PSI_CALL_EXIT_PRINT_CMD);
+	}
 }
 
 void __attribute__((__noreturn__)) do_panic(const char *file, int line)
