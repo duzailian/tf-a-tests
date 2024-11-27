@@ -58,6 +58,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b38137c_8304400c",
+        "filename": "include/runtime_services/host_realm_managment/host_crypto_utils.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-11-27T12:40:52Z",
+      "side": 1,
+      "message": "\u003e Are these numbers as per NIST standard or customized one?\n\nno, this is a local define. This is used to convert MBEDTLS_ECP_DP_SECP256R1 or RSA algo type to the list restricted by RMM spec.",
+      "parentUuid": "f7b18b7b_820fe820",
+      "range": {
+        "startLine": 11,
+        "startChar": 8,
+        "endLine": 11,
+        "endChar": 43
+      },
+      "revId": "1e2d988011e1570bbd4e774352ed431b5910016e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f24ee70d_a3d4ca72",
@@ -75,6 +99,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c4c5a6d_50b27bc1",
+        "filename": "lib/pcie/pcie.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-11-27T12:40:52Z",
+      "side": 1,
+      "message": "\u003e This function will just return the first device found. An iterator style is better suited for this.\n\nThe current pdev flow uses the first device found. This can be later extended to use the required dev id or index. When testing more than one device this change can be done.",
+      "parentUuid": "f24ee70d_a3d4ca72",
+      "revId": "1e2d988011e1570bbd4e774352ed431b5910016e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "36dab11c_28e86ee4",
@@ -88,6 +130,30 @@
       "writtenOn": "2024-11-26T17:09:43Z",
       "side": 1,
       "message": "remove ?",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 8
+      },
+      "revId": "1e2d988011e1570bbd4e774352ed431b5910016e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c322135_effd22f9",
+        "filename": "lib/pcie/pcie_doe.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-11-27T12:40:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36dab11c_28e86ee4",
       "range": {
         "startLine": 79,
         "startChar": 0,
