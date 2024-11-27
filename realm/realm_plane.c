@@ -16,7 +16,7 @@
 #include <sync.h>
 
 bool is_plane0;
-u_register_t plane_id;
+extern unsigned int plane_num;
 
 void plane_init(void)
 {
@@ -25,10 +25,10 @@ void plane_init(void)
 	ret = rsi_get_version(RSI_ABI_VERSION_VAL);
 	if (ret == RSI_ERROR_STATE) {
 		is_plane0 = false;
-		plane_id = psi_get_plane_id();
+		plane_num = psi_get_plane_id();
 	} else {
 		is_plane0 = true;
-		plane_id = 0U;
+		plane_num = 0U;
 	}
 }
 
