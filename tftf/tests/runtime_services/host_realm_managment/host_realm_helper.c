@@ -45,14 +45,14 @@ const char *rmi_exit[] = {
  * The function handler to print the Realm logged buffer,
  * executed by the secondary core
  */
-void realm_print_handler(struct realm *realm_ptr, unsigned int rec_num)
+void realm_print_handler(struct realm *realm_ptr, unsigned int plane_num, unsigned int rec_num)
 {
 	size_t str_len = 0UL;
 	host_shared_data_t *host_shared_data;
 	char *log_buffer;
 
 	assert(realm_ptr != NULL);
-	host_shared_data = host_get_shared_structure(realm_ptr, 0U, rec_num);
+	host_shared_data = host_get_shared_structure(realm_ptr, plane_num, rec_num);
 	log_buffer = (char *)host_shared_data->log_buffer;
 	str_len = strlen((const char *)log_buffer);
 
@@ -63,7 +63,8 @@ void realm_print_handler(struct realm *realm_ptr, unsigned int rec_num)
 	if (str_len != 0UL) {
 		/* Avoid memory overflow */
 		log_buffer[MAX_BUF_SIZE - 1] = 0U;
-		mp_printf("[VMID %u][Rec %u]: %s", realm_ptr->vmid, rec_num, log_buffer);
+		mp_printf("[VMID %u][Rec %u]: %s", plane_num == 0U ? realm_ptr->vmid :
+				realm_ptr->aux_vmid[plane_num - 1U], rec_num, log_buffer);
 		(void)memset((char *)log_buffer, 0, MAX_BUF_SIZE);
 	}
 }
