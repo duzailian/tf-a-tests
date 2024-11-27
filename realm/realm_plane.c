@@ -85,17 +85,6 @@ static bool handle_plane_exit(u_register_t plane_index,
 
 		restore_plane_context(run);
 		switch (hvc_id) {
-		case PSI_CALL_GET_SHARED_BUFF_CMD:
-			{
-				host_shared_data_t *guest_shared_data =
-					realm_get_my_shared_structure();
-
-				run->enter.gprs[0] = RSI_SUCCESS;
-				run->enter.gprs[1] =
-						(u_register_t)&guest_shared_data[plane_index];
-
-				return true;
-			}
 		case PSI_CALL_GET_PLANE_ID_CMD:
 			run->enter.gprs[0] = RSI_SUCCESS;
 			run->enter.gprs[1] = plane_index;
