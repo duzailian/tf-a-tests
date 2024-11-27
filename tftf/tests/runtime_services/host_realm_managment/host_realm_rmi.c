@@ -1379,7 +1379,7 @@ u_register_t host_realm_map_ns_shared(struct realm *realm,
 					int8_t ulevel = RMI_RETURN_INDEX(ret);
 					long level = (long)ulevel;
 
-					ret = host_rmi_create_rtt_aux_levels(realm,
+					ret = host_realm_create_rtt_aux_levels(realm,
 							realm->ipa_ns_buffer +
 							(i * PAGE_SIZE),
 							level, 3, j + 1);
