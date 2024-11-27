@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3383c6d5_fbdb30fd",
+        "filename": "tftf/tests/tests-realm-payload.mk",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-11-27T11:21:45Z",
+      "side": 1,
+      "message": "If we include this unconditionally ``MBEDTLS_CONFIG_FILE`` is always defined right? then I\u0027m not sure how ``MBEDTLS_CONFIG_FILE`` checks been added in another source file will work.",
+      "range": {
+        "startLine": 62,
+        "startChar": 7,
+        "endLine": 62,
+        "endChar": 34
+      },
+      "revId": "9560a017aabe9e02a6e965a0d97ae6844e734bf7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
