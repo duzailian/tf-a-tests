@@ -63,7 +63,7 @@ test_result_t host_test_realm_create_enter(void)
 			return TEST_RESULT_FAIL;
 		}
 
-		host_shared_data_set_host_val(&realm, run_num, HOST_ARG1_INDEX, SLEEP_TIME_MS);
+		host_shared_data_set_host_val(&realm, 0U, run_num, HOST_ARG1_INDEX, SLEEP_TIME_MS);
 		ret1 = host_enter_realm_execute(&realm, REALM_SLEEP_CMD, RMI_EXIT_HOST_CALL,
 						run_num);
 		ret2 = host_destroy_realm(&realm);
@@ -421,7 +421,7 @@ test_result_t host_test_multiple_realm_create_enter(void)
 
 	for (unsigned int j = 0U; j < MAX_REC_COUNT; j++) {
 		for (unsigned int i = 0U; i < MAX_REALM_COUNT; i++) {
-			host_shared_data_set_host_val(&realm[i], run_rec[i], HOST_ARG1_INDEX,
+			host_shared_data_set_host_val(&realm[i], 0U, run_rec[i], HOST_ARG1_INDEX,
 							SLEEP_TIME_MS);
 			ret = host_enter_realm_execute(&realm[i], REALM_SLEEP_CMD,
 							RMI_EXIT_HOST_CALL, run_rec[i]);
@@ -481,11 +481,11 @@ test_result_t host_realm_set_ripas(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, 10U);
+	host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG1_INDEX, 10U);
 	ret1 = host_enter_realm_execute(&realm, REALM_SLEEP_CMD, RMI_EXIT_HOST_CALL, 0U);
 	base = (u_register_t)page_alloc(PAGE_SIZE * test_page_num);
-	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
-	host_shared_data_set_host_val(&realm, 0U, HOST_ARG2_INDEX,
+	host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG2_INDEX,
 			base + (PAGE_SIZE * test_page_num));
 
 	for (unsigned int i = 0U; i < test_page_num; i++) {
@@ -587,7 +587,7 @@ test_result_t host_realm_reject_set_ripas(void)
 		ERROR("host_realm_delegate_map_protected_data failede\n");
 		goto destroy_realm;
 	}
-	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG1_INDEX, base);
 	ret1 = host_enter_realm_execute(&realm, REALM_REJECT_SET_RIPAS_CMD,
 			RMI_EXIT_RIPAS_CHANGE, 0U);
 
@@ -673,8 +673,8 @@ test_result_t host_realm_abort_unassigned_destroyed(void)
 	}
 	INFO("Initial state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
 			base, rtt.state, rtt.ripas);
-	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
-	host_shared_data_set_host_val(&realm, 1U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, 1U, HOST_ARG1_INDEX, base);
 
 	ret = host_rmi_data_destroy(realm.rd, base, &data, &top);
 	if (ret != RMI_SUCCESS || data != base) {
@@ -803,8 +803,8 @@ test_result_t host_realm_abort_unassigned_ram(void)
 	}
 	INFO("Initial state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
 			base, rtt.state, rtt.ripas);
-	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
-	host_shared_data_set_host_val(&realm, 1U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, 1U, HOST_ARG1_INDEX, base);
 
 	/* Rec0 expect rec exit due to Instr Abort unassigned ram page */
 	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
@@ -905,8 +905,8 @@ test_result_t host_realm_abort_assigned_destroyed(void)
 	}
 	INFO("Initial state base = 0x%lx rtt.state=0x%lx rtt.ripas=0x%lx\n",
 			base, rtt.state, rtt.ripas);
-	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
-	host_shared_data_set_host_val(&realm, 1U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, 1U, HOST_ARG1_INDEX, base);
 
 	if (host_realm_activate(&realm) != REALM_SUCCESS) {
 		ERROR("%s() failed\n", "host_realm_activate");
@@ -1030,10 +1030,10 @@ test_result_t host_realm_sea_empty(void)
 		ERROR("wrong initial state\n");
 		goto destroy_realm;
 	}
-	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
-	host_shared_data_set_host_val(&realm, 1U, HOST_ARG1_INDEX, base);
-	host_shared_data_set_host_val(&realm, 2U, HOST_ARG1_INDEX, base);
-	host_shared_data_set_host_val(&realm, 3U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, 1U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, 2U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, 3U, HOST_ARG1_INDEX, base);
 
 	/* Rec0 expect IA due to SEA unassigned empty page */
 	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
@@ -1044,7 +1044,7 @@ test_result_t host_realm_sea_empty(void)
 	}
 
 	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 0U, HOST_ARG2_INDEX);
+	esr = host_shared_data_get_realm_val(&realm, 0U, 0U, HOST_ARG2_INDEX);
 	if (((esr & ISS_IFSC_MASK) != IFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_IABORT_CUR_EL)) {
 		ERROR("Rec0 incorrect ESR=0x%lx\n", esr);
 		goto destroy_realm;
@@ -1060,7 +1060,7 @@ test_result_t host_realm_sea_empty(void)
 	}
 
 	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 1U, HOST_ARG2_INDEX);
+	esr = host_shared_data_get_realm_val(&realm, 0U, 1U, HOST_ARG2_INDEX);
 	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_DABORT_CUR_EL)) {
 		ERROR("Rec1 incorrect ESR=0x%lx\n", esr);
 		goto destroy_realm;
@@ -1092,7 +1092,7 @@ test_result_t host_realm_sea_empty(void)
 	}
 
 	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 2U, HOST_ARG2_INDEX);
+	esr = host_shared_data_get_realm_val(&realm, 0U, 2U, HOST_ARG2_INDEX);
 	if (((esr & ISS_IFSC_MASK) != IFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_IABORT_CUR_EL)) {
 		ERROR("Rec2 incorrect ESR=0x%lx\n", esr);
 		goto destroy_realm;
@@ -1108,7 +1108,7 @@ test_result_t host_realm_sea_empty(void)
 	}
 
 	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 3U, HOST_ARG2_INDEX);
+	esr = host_shared_data_get_realm_val(&realm, 0U, 3U, HOST_ARG2_INDEX);
 	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_DABORT_CUR_EL)) {
 		ERROR("Rec3 incorrect ESR=0x%lx\n", esr);
 	}
@@ -1177,8 +1177,8 @@ test_result_t host_realm_sea_unprotected(void)
 	}
 
 	run = (struct rmi_rec_run *)realm.run[0];
-	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base_ipa);
-	host_shared_data_set_host_val(&realm, 1U, HOST_ARG1_INDEX, base_ipa);
+	host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG1_INDEX, base_ipa);
+	host_shared_data_set_host_val(&realm, 0U, 1U, HOST_ARG1_INDEX, base_ipa);
 
 	/* Rec0 expect SEA in realm due to IA unprotected IPA page */
 	ret1 = host_enter_realm_execute(&realm, REALM_INSTR_FETCH_CMD,
@@ -1189,7 +1189,7 @@ test_result_t host_realm_sea_unprotected(void)
 	}
 
 	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 0U, HOST_ARG2_INDEX);
+	esr = host_shared_data_get_realm_val(&realm, 0U, 0U, HOST_ARG2_INDEX);
 	if (((esr & ISS_IFSC_MASK) != IFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_IABORT_CUR_EL)) {
 		ERROR("Rec0 incorrect ESR=0x%lx\n", esr);
 		goto destroy_realm;
@@ -1225,7 +1225,7 @@ test_result_t host_realm_sea_unprotected(void)
 	}
 
 	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 1U, HOST_ARG2_INDEX);
+	esr = host_shared_data_get_realm_val(&realm, 0U, 1U, HOST_ARG2_INDEX);
 	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA) || (EC_BITS(esr) != EC_DABORT_CUR_EL)) {
 		ERROR("Rec1 incorrect ESR=0x%lx\n", esr);
 		goto destroy_realm;
@@ -1275,7 +1275,7 @@ test_result_t host_realm_enable_dit(void)
 	/* Enable FEAT_DIT on Host */
 	write_dit(DIT_BIT);
 	for (unsigned int i = 0; i < MAX_REC_COUNT; i++) {
-		host_shared_data_set_host_val(&realm, i, HOST_ARG1_INDEX, 10U);
+		host_shared_data_set_host_val(&realm, 0U, i, HOST_ARG1_INDEX, 10U);
 		ret1 = host_enter_realm_execute(&realm, REALM_DIT_CHECK_CMD,
 				RMI_EXIT_HOST_CALL, i);
 		if (!ret1) {
@@ -1739,8 +1739,8 @@ test_result_t host_realm_sea_adr_fault(void)
 	/* IPA outside Realm space */
 	base_ipa = base | (1UL << (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ,
 					realm.rmm_feat_reg0) + 1U));
-	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base_ipa);
-	host_shared_data_set_host_val(&realm, 1U, HOST_ARG1_INDEX, base_ipa);
+	host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG1_INDEX, base_ipa);
+	host_shared_data_set_host_val(&realm, 0U, 1U, HOST_ARG1_INDEX, base_ipa);
 
 	INFO("base_ipa=0x%lx\n", base_ipa);
 
@@ -1756,7 +1756,7 @@ test_result_t host_realm_sea_adr_fault(void)
 	}
 
 	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 0U, HOST_ARG2_INDEX);
+	esr = host_shared_data_get_realm_val(&realm, 0U, 0U, HOST_ARG2_INDEX);
 	if (((esr & ISS_DFSC_MASK) != DFSC_NO_WALK_SEA)
 			|| (EC_BITS(esr) != EC_DABORT_CUR_EL)
 			|| ((esr & (1UL << ESR_ISS_EABORT_EA_BIT)) == 0U)) {
@@ -1776,7 +1776,7 @@ test_result_t host_realm_sea_adr_fault(void)
 	}
 
 	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 1U, HOST_ARG2_INDEX);
+	esr = host_shared_data_get_realm_val(&realm, 0U, 1U, HOST_ARG2_INDEX);
 	if (((esr & ISS_DFSC_MASK) != IFSC_NO_WALK_SEA)
 			|| (EC_BITS(esr) != EC_IABORT_CUR_EL)
 			|| ((esr & (1UL << ESR_ISS_EABORT_EA_BIT)) == 0U)) {
@@ -1791,8 +1791,8 @@ test_result_t host_realm_sea_adr_fault(void)
 
 	INFO("base_ipa=0x%lx\n", base_ipa);
 
-	host_shared_data_set_host_val(&realm, 2U, HOST_ARG1_INDEX, base_ipa);
-	host_shared_data_set_host_val(&realm, 3U, HOST_ARG1_INDEX, base_ipa);
+	host_shared_data_set_host_val(&realm, 0U, 2U, HOST_ARG1_INDEX, base_ipa);
+	host_shared_data_set_host_val(&realm, 0U, 3U, HOST_ARG1_INDEX, base_ipa);
 
 	run = (struct rmi_rec_run *)realm.run[2];
 
@@ -1806,7 +1806,7 @@ test_result_t host_realm_sea_adr_fault(void)
 	}
 
 	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 2U, HOST_ARG2_INDEX);
+	esr = host_shared_data_get_realm_val(&realm, 0U, 2U, HOST_ARG2_INDEX);
 	if (((esr & ISS_DFSC_MASK) != DFSC_L0_ADR_SIZE_FAULT)
 			|| (EC_BITS(esr) != EC_DABORT_CUR_EL)
 			|| ((esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U)) {
@@ -1826,7 +1826,7 @@ test_result_t host_realm_sea_adr_fault(void)
 	}
 
 	/* get ESR set by Realm exception handler */
-	esr = host_shared_data_get_realm_val(&realm, 3U, HOST_ARG2_INDEX);
+	esr = host_shared_data_get_realm_val(&realm, 0U, 3U, HOST_ARG2_INDEX);
 	if (((esr & ISS_IFSC_MASK) != IFSC_L0_ADR_SIZE_FAULT)
 			|| (EC_BITS(esr) != EC_IABORT_CUR_EL)
 			|| ((esr & (1UL << ESR_ISS_EABORT_EA_BIT)) != 0U)) {
@@ -2573,10 +2573,10 @@ test_result_t host_test_feat_doublefault2(void)
 		return TEST_RESULT_FAIL;
 	}
 
-	host_shared_data_set_host_val(&realm, 0U, HOST_ARG1_INDEX, base);
+	host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG1_INDEX, base);
 
 	for (unsigned int i = 0U; i < 2U; i++) {
-		host_shared_data_set_host_val(&realm, 0U, HOST_ARG2_INDEX,
+		host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG2_INDEX,
 					      (unsigned long)i);
 
 		/* Rec0 expect IA due to SEA unassigned empty page */
