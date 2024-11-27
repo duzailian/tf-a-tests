@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "de632249_3ec7a01b",
+        "filename": "include/configs/tftf_mbedtls_config.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-11-27T12:40:15Z",
+      "side": 1,
+      "message": "\u003e Are we fine with v3.6.0 compatibility since we are using v3.6.2? I believe it is compatible, but just wanted to confirm?\n\nyes it is 3.6.2 compatible as well.",
+      "parentUuid": "5316ac19_37597408",
+      "revId": "6ea06e502a51875986c603558b57c37054fdc675",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "04854c52_085d83ea",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-11-27T08:34:16Z",
       "side": 1,
       "message": "I think the series is not using any PSA Crypto APIs so better omit this option.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 28
+      },
+      "revId": "6ea06e502a51875986c603558b57c37054fdc675",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e55d56e9_8739f66d",
+        "filename": "include/configs/tftf_mbedtls_config.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-11-27T12:40:15Z",
+      "side": 1,
+      "message": "\u003e I think the series is not using any PSA Crypto APIs so better omit this option.\n\nI will remove it now. But there will some patches later to compute hash using psa crypto calls. At that time this can be added back.",
+      "parentUuid": "04854c52_085d83ea",
       "range": {
         "startLine": 33,
         "startChar": 0,
@@ -58,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a05d789_494237d3",
+        "filename": "include/configs/tftf_mbedtls_config.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-11-27T12:40:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "caa07269_72df548f",
+      "revId": "6ea06e502a51875986c603558b57c37054fdc675",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a68d710c_99b24295",
@@ -81,6 +141,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f4be97b_ea229c6b",
+        "filename": "include/configs/tftf_mbedtls_config.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-11-27T12:40:15Z",
+      "side": 1,
+      "message": "Acknowledged\nRemoved MBEDTLS_PKCS1_V15 and verified the pdev testcases",
+      "parentUuid": "a68d710c_99b24295",
+      "range": {
+        "startLine": 111,
+        "startChar": 8,
+        "endLine": 111,
+        "endChar": 25
+      },
+      "revId": "6ea06e502a51875986c603558b57c37054fdc675",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4eb83d8f_14451ee1",
@@ -94,6 +178,24 @@
       "writtenOn": "2024-11-27T08:34:16Z",
       "side": 1,
       "message": "I didn’t review all the configurations in detail, but based on the next patch, it seems we’re primarily interested in options related to ASN1 and X509 parsing, rather than crypto operations like hash calculation, comparison, or signature verification. Is that correct?\n\nFor cryptographic operations, it’s better to use the PSA Crypto API from the start, as we’ll eventually transition to PSA Crypto anyway (since the legacy crypto API is set to be deprecated soon). Any plan to use Crypto operations in the subsequent patches?",
+      "revId": "6ea06e502a51875986c603558b57c37054fdc675",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e47c239a_ad587f66",
+        "filename": "include/configs/tftf_mbedtls_config.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2024-11-27T12:40:15Z",
+      "side": 1,
+      "message": "\u003e it seems we’re primarily interested in options related to ASN1 and X509 parsing, rather than crypto operations like hash calculation, comparison, or signature verification. Is that correct?\n\u003e \n\nyes, for the immediate patch that is next in the list only x509 certificate parsing is used. As I mentioned earlier there will followup patch in TFTF that uses psa hash functions, when Realm wants to compute or compare digest.\n\n\n\u003e For cryptographic operations, it’s better to use the PSA Crypto API from the start, as we’ll eventually transition to PSA Crypto anyway (since the legacy crypto API is set to be deprecated soon). Any plan to use Crypto operations in the subsequent patches?\n\nagree, when we use any crypto calls. we will adopt PSA apis.",
+      "parentUuid": "4eb83d8f_14451ee1",
       "revId": "6ea06e502a51875986c603558b57c37054fdc675",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
