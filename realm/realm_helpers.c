@@ -19,24 +19,14 @@ unsigned long long realm_rand64(void)
 /* This function will call the Host or P0 to request IPA of the NS shared buffer */
 u_register_t realm_get_ns_buffer(void)
 {
-	if (realm_is_plane0()) {
-		smc_ret_values res = {};
-		struct rsi_host_call host_cal __aligned(sizeof(struct rsi_host_call));
+	smc_ret_values res = {};
+	struct rsi_host_call host_cal __aligned(sizeof(struct rsi_host_call));
 
-		host_cal.imm = HOST_CALL_GET_SHARED_BUFF_CMD;
-		res = tftf_smc(&(smc_args) {RSI_HOST_CALL, (u_register_t)&host_cal,
-			0UL, 0UL, 0UL, 0UL, 0UL, 0UL});
-		if (res.ret0 != RSI_SUCCESS) {
-			return 0U;
-		}
-		return host_cal.gprs[0];
-	} else {
-		hvc_ret_values res = tftf_hvc(&(hvc_args) {PSI_CALL_GET_SHARED_BUFF_CMD, 0UL, 0UL,
-				0UL, 0UL, 0UL, 0UL, 0UL});
-
-		if (res.ret0 != RSI_SUCCESS) {
-			return 0U;
-		}
-		return res.ret1;
+	host_cal.imm = HOST_CALL_GET_SHARED_BUFF_CMD;
+	res = tftf_smc(&(smc_args) {RSI_HOST_CALL, (u_register_t)&host_cal,
+		0UL, 0UL, 0UL, 0UL, 0UL, 0UL});
+	if (res.ret0 != RSI_SUCCESS) {
+		return 0U;
 	}
+	return host_cal.gprs[0];
 }
