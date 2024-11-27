@@ -17,7 +17,6 @@
  **/
 
 static host_shared_data_t *guest_shared_data;
-extern bool is_plane0;
 
 /*
  * Set guest mapped shared buffer pointer
@@ -69,7 +68,7 @@ void realm_shared_data_set_plane_n_val(unsigned int plane_num, unsigned int rec_
 	assert(index < MAX_DATA_SIZE);
 	assert(plane_num < MAX_PLANE_COUNT);
 	assert(rec_num < MAX_REC_COUNT);
-	assert(is_plane0);
+	assert(realm_is_plane0());
 
 	guest_shared_data1 = &guest_shared_data[plane_num];
 	guest_shared_data1[rec_num].realm_out_val[index] = val;
@@ -82,7 +81,7 @@ u_register_t realm_shared_data_get_plane_n_val(unsigned int plane_num,
 
 	assert(plane_num < MAX_PLANE_COUNT);
 	assert(rec_num < MAX_REC_COUNT);
-	assert(is_plane0);
+	assert(realm_is_plane0());
 
 	guest_shared_data1 = &guest_shared_data[plane_num];
 	return guest_shared_data1[rec_num].realm_out_val[index];
@@ -95,7 +94,7 @@ u_register_t realm_shared_data_get_plane_n_cmd(unsigned int plane_num,
 
 	assert(plane_num < MAX_PLANE_COUNT);
 	assert(rec_num < MAX_REC_COUNT);
-	assert(is_plane0);
+	assert(realm_is_plane0());
 
 	guest_shared_data1 = &guest_shared_data[plane_num];
 	return guest_shared_data1[rec_num].realm_cmd;
@@ -107,7 +106,7 @@ void realm_shared_data_set_plane_n_cmd(uint8_t cmd, unsigned int plane_num, unsi
 
 	assert(plane_num < MAX_PLANE_COUNT);
 	assert(rec_num < MAX_REC_COUNT);
-	assert(is_plane0);
+	assert(realm_is_plane0());
 
 	guest_shared_data1 = &guest_shared_data[plane_num];
 	guest_shared_data1[rec_num].realm_cmd = cmd;
