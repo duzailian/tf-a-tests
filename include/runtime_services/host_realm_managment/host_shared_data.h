@@ -99,25 +99,34 @@ enum host_call_cmd {
 /*
  * Return shared buffer pointer mapped as host_shared_data_t structure
  */
-host_shared_data_t *host_get_shared_structure(struct realm *realm_ptr, unsigned int rec_num);
+host_shared_data_t *host_get_shared_structure(struct realm *realm_ptr,
+					      unsigned int plane_num,
+					      unsigned int rec_num);
 
 /*
  * Set data to be shared from Host to realm
  */
 void host_shared_data_set_host_val(struct realm *realm_ptr,
-		unsigned int rec_num, uint8_t index, u_register_t val);
+				   unsigned int plane_num,
+				   unsigned int rec_num,
+				   uint8_t index,
+				   u_register_t val);
 
 /*
  * Get data shared from realm to Host
  */
 u_register_t host_shared_data_get_realm_val(struct realm *realm_ptr,
-		unsigned int rec_num, uint8_t index);
+					    unsigned int plane_num,
+					    unsigned int rec_num,
+					    uint8_t index);
 
 /*
  * Set command to be send from Host to realm
  */
-void host_shared_data_set_realm_cmd(struct realm *realm_ptr, uint8_t cmd,
-		unsigned int rec_num);
+void host_shared_data_set_realm_cmd(struct realm *realm_ptr,
+				    uint8_t cmd,
+				    unsigned int plane_num,
+				    unsigned int rec_num);
 
 
 /****************************************
@@ -148,5 +157,24 @@ uint8_t realm_shared_data_get_my_realm_cmd(void);
  * Set data to be shared from my Rec to Host
  */
 void realm_shared_data_set_my_realm_val(uint8_t index, u_register_t val);
+
+/*
+ * Set data to be shared from Host/Plane0 to Planen
+ */
+void realm_shared_data_set_plane_n_val(unsigned int plane_num,
+		unsigned int rec_num, uint8_t index, u_register_t val);
+
+/*
+ * Get data shared from Host/Plane0 to Planen
+ */
+u_register_t realm_shared_data_get_plane_n_val(unsigned int plane_num,
+		unsigned int rec_num, uint8_t index);
+
+/*
+ * Set command to be send from Host/Plane0 to Planen
+ */
+void realm_shared_data_set_plane_n_cmd(uint8_t cmd,
+		 unsigned int plane_num,
+		unsigned int rec_num);
 
 #endif /* HOST_SHARED_DATA_H */
