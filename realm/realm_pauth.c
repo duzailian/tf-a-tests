@@ -16,13 +16,14 @@
 static volatile bool set_cmd_done[MAX_REC_COUNT];
 static uint128_t pauth_keys_before[MAX_REC_COUNT][NUM_KEYS];
 static uint128_t pauth_keys_after[MAX_REC_COUNT][NUM_KEYS];
+extern unsigned int plane_num;
 
 static bool exception_handler(void)
 {
 	/* Disable PAuth to avoid further PAuth faults. */
 	pauth_disable();
 
-	rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD);
+	rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD, plane_num);
 
 	/* Does not return. */
 	return false;
@@ -31,7 +32,7 @@ static bool exception_handler(void)
 void dummy_func(void)
 {
 	realm_printf("shouldn't reach here.\n");
-	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
+	rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD, plane_num);
 }
 
 bool test_realm_pauth_fault(void)
