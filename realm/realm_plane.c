@@ -11,10 +11,12 @@
 #include <debug.h>
 
 #include <host_realm_helper.h>
+#include <realm_psi.h>
 #include <realm_rsi.h>
 #include <sync.h>
 
 bool is_plane0;
+unsigned int plane_num;
 
 void plane_init(void)
 {
@@ -23,8 +25,10 @@ void plane_init(void)
 	ret = rsi_get_version(RSI_ABI_VERSION_VAL);
 	if (ret == RSI_ERROR_STATE) {
 		is_plane0 = false;
+		plane_num = (unsigned int)psi_get_plane_id();
 	} else {
 		is_plane0 = true;
+		plane_num = 0U;
 	}
 }
 
