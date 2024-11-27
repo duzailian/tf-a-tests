@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "641652c5_5a6d3644",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-11-27T08:15:08Z",
+      "side": 1,
+      "message": "I\u0027m fine with this change. However, it would be helpful to update the documentation accordingly [1] and specify the exact version of mbedTLS being used (with SHA it is not possible).\n\n\n[1]: https://trustedfirmware-a-tests.readthedocs.io/en/latest/getting_started/obtain.html",
+      "revId": "18a30e10e5debc1ffac93ea2e739f9c15d61c8e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
