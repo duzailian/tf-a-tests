@@ -1,0 +1,10 @@
+Allow-CI+1: Rohit Mathew <Rohit.Mathew@arm.com>
+Code-Owner-Review+1: Rohit Mathew <Rohit.Mathew@arm.com>
+Maintainer-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Submitted-by: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Submitted-at: Thu, 28 Nov 2024 17:22:35 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/32890
+Comments-Total: 19
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
