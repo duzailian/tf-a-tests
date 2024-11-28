@@ -94,6 +94,30 @@
       },
       "revId": "0f8184dd2f0c5c007cfdc7b8d5cffef9d4e98d77",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e755b1dd_fdae0917",
+        "filename": "lib/ext_mbedtls/mbedtls.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-28T15:21:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5700d4b5_646f52da",
+      "range": {
+        "startLine": 12,
+        "startChar": 59,
+        "endLine": 12,
+        "endChar": 86
+      },
+      "revId": "0f8184dd2f0c5c007cfdc7b8d5cffef9d4e98d77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
