@@ -5,9 +5,11 @@
  *
  */
 
+#include <assert.h>
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 #include <debug.h>
 #include <pcie.h>
@@ -75,6 +77,8 @@ static void print_doe_data(uint32_t idx, uint32_t data, bool last)
 {
 	uint32_t j = idx + DOE_HEADER_LENGTH;
 
+	/* todo: Enable for verbose mode */
+	return;
 	if (last) {
 		if ((j & 7) == 0) {
 			INFO(" %08x\n", data);
@@ -224,4 +228,56 @@ int pcie_doe_recv_resp(uint32_t bdf, uint32_t doe_cap_base,
 	}
 
 	return 0;
+}
+
+int pcie_doe_communicate(uint32_t header, uint32_t bdf, uint32_t doe_cap_base,
+			 void *req_buf, size_t req_sz, void *rsp_buf, size_t *rsp_sz)
+{
+	int rc;
+
+	assert(header == DOE_HEADER_0 || header == DOE_HEADER_1 || header == DOE_HEADER_2);
+
+	rc = pcie_doe_send_req(header, bdf, doe_cap_base,
+			       (uint32_t *)req_buf, (uint32_t)req_sz);
+	if (rc != 0) {
+		ERROR("PCIe DOE %s failed %d\n", "Request", rc);
+		return rc;
+	}
+
+	rc = pcie_doe_recv_resp(bdf, doe_cap_base, (uint32_t *)rsp_buf,
+				(uint32_t *)rsp_sz);
+	return rc;
+}
+
+int pcie_find_doe_device(uint32_t *bdf_ptr, uint32_t *cap_base_ptr)
+{
+	pcie_device_bdf_table_t	*bdf_table_ptr = pcie_get_bdf_table();
+	uint32_t num_bdf = bdf_table_ptr->num_entries;
+
+	INFO("PCI BDF table entries: %u\n", num_bdf);
+
+	/* If no entries in BDF table return error */
+	if (num_bdf == 0) {
+		ERROR("No BDFs entries found\n");
+		return -ENODEV;
+	}
+
+	INFO("PCI BDF table 0x%lx\n", (uintptr_t)bdf_table_ptr);
+
+	while (num_bdf-- != 0) {
+		uint32_t bdf = bdf_table_ptr->device[num_bdf].bdf;
+		uint32_t status, doe_cap_base;
+
+		/* Check for DOE capability */
+		status = pcie_find_capability(bdf, PCIE_ECAP, DOE_CAP_ID, &doe_cap_base);
+		if (status == PCIE_SUCCESS) {
+			INFO("PCIe DOE capability: bdf 0x%x cap_base 0x%x\n", bdf, doe_cap_base);
+			*bdf_ptr = bdf;
+			*cap_base_ptr = doe_cap_base;
+			return 0;
+		}
+	}
+
+	ERROR("No PCIe DOE capability found\n");
+	return -ENODEV;
 }
