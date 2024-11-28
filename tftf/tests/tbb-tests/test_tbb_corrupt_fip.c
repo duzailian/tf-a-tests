@@ -42,3 +42,4 @@ test_result_t test_tbb_tkey_cert_header(void)
 	return test_corrupt_boot_fip(image_offset);
 }
 
+
