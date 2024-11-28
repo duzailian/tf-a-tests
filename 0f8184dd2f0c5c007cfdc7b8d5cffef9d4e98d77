@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4743f0ff_dd155c89",
+        "filename": "lib/ext_mbedtls/mbedtls.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-11-28T08:40:45Z",
+      "side": 1,
+      "message": "I think it’s better not to rely on the folder name. For example, if someone wants to use a folder method instead of a submodule, the folder must be named mbedtls for this check to work. Rather than imposing this expectation, the check can be implemented as follows-\n\n``MBEDTLS_CHECK :\u003d $(shell find ${MBEDTLS_DIR}/include -name mbedtls``",
+      "range": {
+        "startLine": 12,
+        "startChar": 59,
+        "endLine": 12,
+        "endChar": 86
+      },
+      "revId": "0f8184dd2f0c5c007cfdc7b8d5cffef9d4e98d77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
