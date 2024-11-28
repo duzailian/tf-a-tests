@@ -70,6 +70,30 @@
       },
       "revId": "9560a017aabe9e02a6e965a0d97ae6844e734bf7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "750f52bf_e8d27486",
+        "filename": "tftf/tests/tests-realm-payload.mk",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-28T13:04:43Z",
+      "side": 1,
+      "message": "If the dir structure changes, the build will break. Not sure if a comment will add any new information.",
+      "parentUuid": "eebfe93c_a69d0026",
+      "range": {
+        "startLine": 62,
+        "startChar": 7,
+        "endLine": 62,
+        "endChar": 34
+      },
+      "revId": "9560a017aabe9e02a6e965a0d97ae6844e734bf7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
