@@ -16,4 +16,8 @@
      <testcase name="FWU AUTH Failure" function="test_fwu_auth" />
   </testsuite>
 
+   <testsuite name="fwu image test" description="Validate FWU AUTH Failure size bl2 scenario">
+     <testcase name="FWU imageSize Failure" function="test_fwu_image_size" />
+  </testsuite>
+
 </testsuites>

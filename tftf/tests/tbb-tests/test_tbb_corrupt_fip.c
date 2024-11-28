@@ -42,3 +42,12 @@ test_result_t test_tbb_tkey_cert_header(void)
 	return test_corrupt_boot_fip(image_offset);
 }
 
+//wip try this out
+test_result_t test_tbb_bl2(void)
+{
+	static const uuid_t bl2 = UUID_TRUSTED_UPDATE_FIRMWARE_BL2U;
+	unsigned int image_offset = find_offset_in_fip(&bl2);
+
+	TEST_ASSERT_SKIP(image_offset != 0);
+	return test_corrupt_boot_fip(image_offset);
+}
