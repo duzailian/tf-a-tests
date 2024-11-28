@@ -10,6 +10,7 @@
 
   <testsuite name="tbb corrupt trusted key header" description="The FIP is corrupted before update">
      <testcase name="tbb bad tkey cert header" function="test_tbb_tkey_cert_header" />
+     <testcase name="tbb bad tkey bl2" function="test_tbb_bl2" />
   </testsuite>
 
 </testsuites>
