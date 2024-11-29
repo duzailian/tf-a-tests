@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c258b0b0_81a3ffed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-11-29T10:59:49Z",
+      "side": 1,
+      "message": "The CI failure is due to Juno boards having issues on Open CI. The build for Juno is fine and the new functionality will not affect Juno testing.\n\nAlso previous versions of the patch had run successfully on Juno. Hence giving Verified +1.",
+      "revId": "cc8543823e6104d67e74892cd6d84c52f3cc4a14",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
