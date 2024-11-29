@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c96c8867_b0f37d70",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 1375,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-11-29T15:59:59Z",
+      "side": 1,
+      "message": "nit: \"retry\"",
+      "range": {
+        "startLine": 1375,
+        "startChar": 25,
+        "endLine": 1375,
+        "endChar": 29
+      },
+      "revId": "a5c863e162f0330cb450d85b8c54d233b4c2f487",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
