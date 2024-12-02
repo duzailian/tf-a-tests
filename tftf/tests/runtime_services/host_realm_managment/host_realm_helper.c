@@ -177,18 +177,16 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 
 	realm_ptr->rtt_tree_single = false;
 	if (num_aux_planes > 0U) {
-		if (EXTRACT(RMI_FEATURE_REGISTER_0_PLANE_RTT, feature_flag) >=
-							RMI_PLANE_RTT_SINGLE) {
-			ERROR("%s() failed\n", "S2POE not suported");
-			return false;
+		if ((EXTRACT(RMI_FEATURE_REGISTER_0_PLANE_RTT, feature_flag) ==
+					RMI_PLANE_RTT_SINGLE)) {
+			if ((EXTRACT(RMI_FEATURE_REGISTER_0_PLANE_RTT, realm_ptr->rmm_feat_reg0) ==
+						RMI_PLANE_RTT_AUX)) {
+				ERROR("%s() failed\n", "S2POE not suported");
+				return false;
+			} else {
+				realm_ptr->rtt_tree_single = true;
+			}
 		}
-
-		/*
-		 * @TODO: once S2POE is supported, this should be a parameter
-		 * so it can be tested with and without support for auxiliary
-		 * tables.
-		 */
-		realm_ptr->rtt_tree_single = false;
 	}
 
 	/* Disable PMU if not required */
