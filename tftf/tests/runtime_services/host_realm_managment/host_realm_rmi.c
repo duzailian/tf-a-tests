@@ -693,6 +693,15 @@ err:
 	return REALM_ERROR;
 }
 
+static u_register_t rtt_s2ap_set_pi_index(u_register_t s2tte, u_register_t pi_index)
+{
+	s2tte |= INPLACE(S2TTE_PI_INDEX_BIT0, pi_index & 1) |
+		INPLACE(S2TTE_PI_INDEX_BIT1, (pi_index >> 1) & 1) |
+		INPLACE(S2TTE_PI_INDEX_BIT2, (pi_index >> 2) & 1) |
+		INPLACE(S2TTE_PI_INDEX_BIT3, (pi_index >> 3) & 1);
+	return s2tte;
+}
+
 u_register_t host_realm_map_unprotected(struct realm *realm,
 					u_register_t ns_pa,
 					u_register_t map_size)
@@ -734,6 +743,11 @@ u_register_t host_realm_map_unprotected(struct realm *realm,
 	}
 
 	desc |= S2TTE_ATTR_FWB_WB_RW;
+
+	if (realm->rtt_tree_single) {
+		desc &= ~(S2TTE_PI_INDEX_MASK | S2TTE_AP_RW);
+		desc |= rtt_s2ap_set_pi_index(desc, RMI_PERM_S2AP_RW_IDX);
+	}
 
 	ret = host_rmi_rtt_mapunprotected(rd, map_addr, map_level, desc);
 
