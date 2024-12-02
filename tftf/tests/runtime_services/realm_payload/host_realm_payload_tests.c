@@ -50,6 +50,24 @@ bool are_planes_supported(void)
 	return false;
 }
 
+bool is_single_rtt_supported(void)
+{
+	u_register_t feature_flag;
+
+	/* Read Realm Feature Reg 0 */
+	if (host_rmi_features(0UL, &feature_flag) != REALM_SUCCESS) {
+		ERROR("%s() failed\n", "host_rmi_features");
+		return false;
+	}
+
+	INFO("tree pp =0x%llx\n", EXTRACT(RMI_FEATURE_REGISTER_0_PLANE_RTT, feature_flag));
+	if (EXTRACT(RMI_FEATURE_REGISTER_0_PLANE_RTT, feature_flag) != RMI_PLANE_RTT_AUX) {
+		return true;
+	}
+
+	return false;
+}
+
 /*
  * @Test_Aim@ Test realm payload creation with 3 Aux Planes, enter all Planes
  */
@@ -73,55 +91,70 @@ test_result_t host_test_realm_create_planes_enter(void)
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
 
-	for (unsigned int i = 0U; i < MAX_REC_COUNT; i++) {
-		rec_flag[i] = RMI_RUNNABLE;
-	}
+	for (unsigned int j = 0U; j <= 1U; j++) {
+		/* Test with S2POE enabled for second iteration */
+		if (j == 1U) {
+			if (is_feat_s2pie_present() &&
+					is_feat_s2poe_present() &&
+					is_single_rtt_supported()) {
 
-	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			feature_flag, sl, rec_flag, 1U, MAX_AUX_PLANE_COUNT)) {
-		return TEST_RESULT_FAIL;
-	}
+				/* use single RTT for all planes */
+				feature_flag |= INPLACE(RMI_FEATURE_REGISTER_0_PLANE_RTT,
+					RMI_PLANE_RTT_SINGLE);
+			} else {
+				INFO("s2poe not supported skipped test\n");
+				break;
+			}
+		}
 
-	/* CMD for Plane N */
-	for (unsigned int j = 1U; j <= MAX_AUX_PLANE_COUNT; j++) {
-		host_shared_data_set_realm_cmd(&realm, REALM_SLEEP_CMD, j, 0U);
-		host_shared_data_set_host_val(&realm, j, 0U,
+		for (unsigned int i = 0U; i < MAX_REC_COUNT; i++) {
+			rec_flag[i] = RMI_RUNNABLE;
+		}
+
+		if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
+				feature_flag, sl, rec_flag, 1U, MAX_AUX_PLANE_COUNT)) {
+			return TEST_RESULT_FAIL;
+		}
+
+		/* CMD for Plane N */
+		for (unsigned int j = 1U; j <= MAX_AUX_PLANE_COUNT; j++) {
+			host_shared_data_set_realm_cmd(&realm, REALM_SLEEP_CMD, j, 0U);
+			host_shared_data_set_host_val(&realm, j, 0U,
 				HOST_ARG1_INDEX, SLEEP_TIME_MS);
-	}
+		}
 
-	for (unsigned int j = 1U; j <= MAX_AUX_PLANE_COUNT; j++) {
-		run = (struct rmi_rec_run *)realm.run[0U];
-		/* Plane Index */
-		host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG1_INDEX, j);
+		for (unsigned int j = 1U; j <= MAX_AUX_PLANE_COUNT; j++) {
+			run = (struct rmi_rec_run *)realm.run[0U];
+			/* Plane Index */
+			host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG1_INDEX, j);
 
-		/* Plane entrypoint */
-		host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG2_INDEX,
+			/* Plane entrypoint */
+			host_shared_data_set_host_val(&realm, 0U, 0U, HOST_ARG2_INDEX,
 				realm.par_base + (j * realm.par_size));
 
-		/* Plane perm_index */
-		host_shared_data_set_host_val(&realm, 0U, 0U,
+			/* Plane perm_index */
+			host_shared_data_set_host_val(&realm, 0U, 0U,
 				HOST_ARG3_INDEX, PLANE_1_PERM_INDEX + j);
 
-		ret1 = host_enter_realm_execute(&realm, REALM_ENTER_PLANEN_CMD,
+			ret1 = host_enter_realm_execute(&realm, REALM_ENTER_PLANEN_CMD,
 				RMI_EXIT_HOST_CALL, 0U);
 
-
-		if (run->exit.exit_reason != RMI_EXIT_HOST_CALL) {
-			ERROR("Rec0 error exit=0x%lx ret1=%d HPFAR=0x%lx \
+			if (run->exit.exit_reason != RMI_EXIT_HOST_CALL) {
+				ERROR("Rec0 error exit=0x%lx ret1=%d HPFAR=0x%lx \
 					esr=0x%lx far=0x%lx\n",
 					run->exit.exit_reason, ret1,
 					run->exit.hpfar,
 					run->exit.esr, run->exit.far);
+			}
+		}
+		ret2 = host_destroy_realm(&realm);
+
+		if (!ret1 || !ret2) {
+			ERROR("%s(): enter=%d destroy=%d\n",
+			__func__, ret1, ret2);
+			return TEST_RESULT_FAIL;
 		}
 	}
-	ret2 = host_destroy_realm(&realm);
-
-	if (!ret1 || !ret2) {
-		ERROR("%s(): enter=%d destroy=%d\n",
-		__func__, ret1, ret2);
-		return TEST_RESULT_FAIL;
-	}
-
 	return host_cmp_result();
 }
 
