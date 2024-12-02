@@ -671,6 +671,26 @@ typedef enum {
 #define OA_50_51_MASK			MASK(OA_50_51)
 
 /*
+ * When FEAT_S2PIE is enabled PIINDEX is saved at following index
+ */
+#define S2TTE_PERM_PI_INDEX_BIT0_SHIFT	6
+#define S2TTE_PERM_PI_INDEX_BIT1_SHIFT	51
+#define S2TTE_PERM_PI_INDEX_BIT2_SHIFT	53
+#define S2TTE_PERM_PI_INDEX_BIT3_SHIFT	54
+#define S2TTE_PERM_PI_INDEX_MASK	((1UL << S2TTE_PERM_PI_INDEX_BIT0_SHIFT) | \
+					(1UL << S2TTE_PERM_PI_INDEX_BIT1_SHIFT) | \
+					(1UL << S2TTE_PERM_PI_INDEX_BIT2_SHIFT) | \
+					(1UL << S2TTE_PERM_PI_INDEX_BIT3_SHIFT))
+/*
+ * RmiUnprotectedS2AP type
+ * Encoding for S2AP base index value for UNPROTECTED IPA
+ */
+#define RMI_PERM_S2AP_NO_ACCESS_IDX		U(0)
+#define RMI_PERM_S2AP_RO_IDX			U(1)
+#define RMI_PERM_S2AP_WO_IDX			U(2)
+#define RMI_PERM_S2AP_RW_IDX			U(3)
+
+/*
  * The Realm attribute parameters are shared by the Host via
  * RMI_REALM_CREATE::params_ptr. The values can be observed or modified
  * either by the Host or by the Realm.
