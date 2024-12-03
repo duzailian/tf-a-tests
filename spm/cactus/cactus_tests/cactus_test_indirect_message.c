@@ -25,7 +25,8 @@ CACTUS_CMD_HANDLER(req_msg_send, CACTUS_REQ_MSG_SEND_CMD)
 		ffa_dir_msg_source(*args), receiver, sender, vm_id);
 
 	ret = send_indirect_message(sender, receiver, mb->send, message,
-				    ARRAY_SIZE(message), 0);
+				    ARRAY_SIZE(message),
+				    FFA_NOTIFICATIONS_FLAG_DELAY_SRI);
 
 	if (is_ffa_call_error(ret)) {
 		ERROR("Failed to send indirect message.\n");
