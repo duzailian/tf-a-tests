@@ -19,13 +19,15 @@ CACTUS_CMD_HANDLER(req_msg_send, CACTUS_REQ_MSG_SEND_CMD)
 	const ffa_id_t source = ffa_dir_msg_source(*args);
 	const ffa_id_t receiver = cactus_msg_send_receiver(*args);
 	const ffa_id_t sender = cactus_msg_send_sender(*args);
+	uint32_t flags = cactus_msg_send_flags(*args);
 	const char message[] = "Testing FF-A message.";
 
 	VERBOSE("%x requested to send indirect message to %x as %x(own %x)\n",
 		ffa_dir_msg_source(*args), receiver, sender, vm_id);
 
 	ret = send_indirect_message(sender, receiver, mb->send, message,
-				    ARRAY_SIZE(message), 0);
+				    ARRAY_SIZE(message),
+				    flags);
 
 	if (is_ffa_call_error(ret)) {
 		ERROR("Failed to send indirect message.\n");

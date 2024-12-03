@@ -161,7 +161,8 @@ test_result_t test_ffa_indirect_message_sp_to_vm_rx_realm_fail(void)
 
 	/* Request SP to send message. */
 	ret = cactus_req_ind_msg_send_cmd(
-			HYP_ID, sender, vm_id, sender, 0);
+			HYP_ID, sender, vm_id, sender,
+			FFA_NOTIFICATIONS_FLAG_DELAY_SRI);
 
 	if (!is_ffa_direct_response(ret) &&
 	    cactus_get_response(ret) != FFA_ERROR_ABORTED) {
@@ -189,7 +190,8 @@ test_result_t test_ffa_indirect_message_sp_to_vm_rx_realm_fail(void)
 	 * operation.
 	 */
 	ret = cactus_req_ind_msg_send_cmd(
-			HYP_ID, sender, vm_id, sender, 0);
+			HYP_ID, sender, vm_id, sender,
+			FFA_NOTIFICATIONS_FLAG_DELAY_SRI);
 
 	if (!is_ffa_direct_response(ret) &&
 	    cactus_get_response(ret) != CACTUS_SUCCESS) {
