@@ -20,5 +20,8 @@ u_register_t realm_get_ns_buffer(void);
 unsigned int realm_get_my_plane_num(void);
 bool realm_is_plane0(void);
 
+bool plane_common_init(u_register_t plane_index, u_register_t perm_index,
+		u_register_t base, rsi_plane_run *run);
+
 #endif /* REALM_HELPERS_H */
 
