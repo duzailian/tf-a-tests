@@ -59,6 +59,55 @@ static bool test_realm_enter_planen(void)
 	return realm_plane_enter(plane_index, perm_index, base, flags, &run);
 }
 
+static bool test_realm_enter_planen_reg_rw(void)
+{
+	u_register_t base, plane_index, perm_index, flags = 0U;
+	u_register_t reg1, reg2, reg3, reg4, ret;
+
+	if (is_plane0) {
+		plane_index = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
+		base = realm_shared_data_get_my_host_val(HOST_ARG2_INDEX);
+		perm_index = realm_shared_data_get_my_host_val(HOST_ARG3_INDEX);
+
+		realm_printf("Entering plane %ld, ep=0x%lx run=0x%lx\n", plane_index, base, &run);
+		ret = realm_plane_enter(plane_index, perm_index, base, flags, &run);
+		if (ret) {
+			/* get return value from plane1 */
+			reg1 = realm_shared_data_get_plane_n_val(plane_index,
+					REC_IDX(read_mpidr_el1()), HOST_ARG1_INDEX);
+
+			reg2 = realm_shared_data_get_plane_n_val(plane_index,
+					REC_IDX(read_mpidr_el1()), HOST_ARG2_INDEX);
+
+			realm_printf("P0 read 0x%lx 0x%lx\n", reg1, reg2);
+
+			/* reag pauth register for plane1 */
+			ret = rsi_plane_reg_read(plane_index, SYSREG_ID_apiakeylo_el1, &reg3);
+			if (ret != RSI_SUCCESS || reg1 != reg3) {
+				realm_printf("pauth register mismatch 0x%lx 0x%lx\n", reg1, reg3);
+				return false;
+			}
+
+			/* read sctlr register for plane1 */
+			ret = rsi_plane_reg_read(plane_index, SYSREG_ID_sctlr_el1, &reg4);
+			if (ret != RSI_SUCCESS || reg2 != reg4) {
+				realm_printf("sctlr register mismatch 0x%lx 0x%lx\n", reg2, reg4);
+				return false;
+			} else {
+				return true;
+			}
+		}
+		return false;
+	} else {
+		realm_printf("PN set 0x%lx 0x%lx\n", read_apiakeylo_el1(), read_sctlr_el1());
+
+		/* return pauth and sctlr back to p0 */
+		realm_shared_data_set_my_realm_val(HOST_ARG1_INDEX, read_apiakeylo_el1());
+		realm_shared_data_set_my_realm_val(HOST_ARG2_INDEX, read_sctlr_el1());
+		return true;
+	}
+}
+
 /*
  * This function requests RSI/ABI version from RMM.
  */
@@ -301,6 +350,9 @@ void realm_payload_main(void)
 			break;
 		case REALM_ENTER_PLANEN_CMD:
 			test_succeed = test_realm_enter_planen();
+			break;
+		case REALM_PLANEN_REG_RW_CMD:
+			test_succeed = test_realm_enter_planen_reg_rw();
 			break;
 		case REALM_MULTIPLE_REC_PSCI_DENIED_CMD:
 			test_succeed = test_realm_multiple_rec_psci_denied_cmd();
