@@ -269,6 +269,12 @@ typedef struct {
  */
 #define RSI_PLANE_REG_READ	SMC_RSI_FID(0x1EU)
 
+u_register_t rsi_plane_reg_read(u_register_t plane_index, u_register_t register_encoding,
+		u_register_t *value);
+
+u_register_t rsi_plane_reg_write(u_register_t plane_index, u_register_t register_encoding,
+		u_register_t value);
+
 /*
  * arg1 == plane index
  * arg2 == register encoding
@@ -354,6 +360,8 @@ u_register_t rsi_exit_to_host(enum host_call_cmd exit_code, u_register_t plane_n
 
 u_register_t rsi_realm_config(struct rsi_realm_config *s);
 u_register_t rsi_plane_enter(u_register_t plane_index, u_register_t run);
+bool plane_common_init(u_register_t plane_index, u_register_t perm_index,
+		u_register_t base, rsi_plane_run *run);
 bool realm_plane_enter(u_register_t plane_index, u_register_t perm_index,
 		u_register_t base, u_register_t flags, rsi_plane_run *run);
 
