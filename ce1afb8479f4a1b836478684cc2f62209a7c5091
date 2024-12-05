@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6d80ce5_3a0fe618",
+        "filename": "tftf/tests/extensions/the/test_the.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-12-05T16:42:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24cad48b_b0fe3781",
+      "revId": "ce1afb8479f4a1b836478684cc2f62209a7c5091",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "29f82f79_ab6dcae5",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-12-05T16:34:06Z",
       "side": 1,
       "message": "you can do both writes and do the smc after - it\u0027s more efficient\n\nsame thing in the other places",
+      "revId": "ce1afb8479f4a1b836478684cc2f62209a7c5091",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8d48c49_7b696e22",
+        "filename": "tftf/tests/extensions/the/test_the.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-12-05T16:42:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29f82f79_ab6dcae5",
       "revId": "ce1afb8479f4a1b836478684cc2f62209a7c5091",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
