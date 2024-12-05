@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f8c9f3c_e87f12e5",
+        "filename": "tftf/tests/extensions/the/test_the.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2024-12-05T21:59:54Z",
+      "side": 1,
+      "message": "IIUC You are using TSP service for switching to EL3 just for testing purpose but you are using TSP service, which requires a secure payload (SPD \u003d tspd probably). \n\nIs there a corresponding CI patch?",
+      "revId": "345e74a238091c5ecd2579ae0f8a70e30a4aaa84",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
