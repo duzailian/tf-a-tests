@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0a2c49e_a56ed10e",
+        "filename": "tftf/tests/extensions/d128/test_d128.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-05T14:09:28Z",
+      "side": 1,
+      "message": "I think testing the el1 registers is redundant. EL3 only has a single control so touching a single register is sufficient to test them all. Similar to FEAT_THE below, we don\u0027t trap the access but we should make sure they are context switched correctly",
+      "revId": "e7547b645b9f455bd2fb90b4b87f08382264deb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5eea560_89d5f145",
+        "filename": "tftf/tests/extensions/sctlr2/test_sctlr2.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-05T14:09:28Z",
+      "side": 1,
+      "message": "same comments as FEAT_THE",
+      "revId": "e7547b645b9f455bd2fb90b4b87f08382264deb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4de34f9c_cb1a9729",
+        "filename": "tftf/tests/extensions/the/test_the.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-05T14:09:28Z",
+      "side": 1,
+      "message": "this will always use the 64-bit accessors, no? It should choose the correct one. \n\nI\u0027m not 100% sure that testing it here for 64-bits and with FEAT_D128 for 128 bits is the best approach. If it all lives here, then it\u0027s a bit less code and easier to follow IMO",
+      "revId": "e7547b645b9f455bd2fb90b4b87f08382264deb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8da525e_2b709b1b",
+        "filename": "tftf/tests/extensions/the/test_the.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-05T14:09:28Z",
+      "side": 1,
+      "message": "EL3 can only control access and we don\u0027t implement trapping and handing in software. So you can get away with just reading the register, it\u0027s less code\n\nEL3 does have to context switch this across worlds, so this should check that the value was preserved across a call to secure world",
+      "revId": "e7547b645b9f455bd2fb90b4b87f08382264deb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
