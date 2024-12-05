@@ -302,7 +302,7 @@ void __dead2 cactus_main(bool primary_cold_boot,
 		cactus_print_boot_info(boot_info_header);
 	}
 
-	if (ffa_id == (SPM_VM_ID_FIRST + 2)) {
+	if (ffa_id == (SPM_VM_ID_FIRST + 2) || ffa_id == (SPM_VM_ID_FIRST + 4)) {
 		VERBOSE("Mapping RXTX Region\n");
 		CONFIGURE_AND_MAP_MAILBOX(mb, PAGE_SIZE, ret);
 		if (ffa_func_id(ret) != FFA_SUCCESS_SMC32) {
