@@ -54,6 +54,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "37182bfc_63201f84",
+        "filename": "tftf/tests/extensions/the/test_the.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-12-05T14:19:28Z",
+      "side": 1,
+      "message": "Yes, in case FEAT_D128 is enabled, then a partial test for these registers is done in this file, while the D128 test re-tests their full width.\n\nIf I put some of the D128 logic here, then people finding the main D128 test file may think that that\u0027s all there is to it, no? Please tell me your thoughts.",
+      "parentUuid": "4de34f9c_cb1a9729",
+      "revId": "e7547b645b9f455bd2fb90b4b87f08382264deb4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a8da525e_2b709b1b",
         "filename": "tftf/tests/extensions/the/test_the.c",
         "patchSetId": 1
