@@ -16,6 +16,23 @@
       "message": "Verified with https://ci.trustedfirmware.org/job/tf-a-ci-gateway/91003/",
       "revId": "425b45479fbe0b49d15ac1dfe8d8f1b532cd29e9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a57c1cb_1de0bf4c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2024-12-06T10:49:37Z",
+      "side": 1,
+      "message": "one unrelated Juno board failure (in maintenance)",
+      "revId": "425b45479fbe0b49d15ac1dfe8d8f1b532cd29e9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
