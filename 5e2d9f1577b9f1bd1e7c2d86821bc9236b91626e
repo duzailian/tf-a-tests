@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "de848ae8_d0ec58ed",
+        "filename": "smc_fuzz/script/generate_smc.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-12-06T15:59:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e90fe8a2_395fd500",
+      "range": {
+        "startLine": 129,
+        "startChar": 3,
+        "endLine": 130,
+        "endChar": 11
+      },
+      "revId": "5e2d9f1577b9f1bd1e7c2d86821bc9236b91626e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cdfae62f_772463d7",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-11-12T18:00:03Z",
       "side": 1,
       "message": "I am curious what does exit do? does it do a fast exit from the program and return a non-zero value? what would happen if you replace it with panic()",
+      "range": {
+        "startLine": 96,
+        "startChar": 2,
+        "endLine": 96,
+        "endChar": 10
+      },
+      "revId": "5e2d9f1577b9f1bd1e7c2d86821bc9236b91626e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d15b90f_696d8efd",
+        "filename": "smc_fuzz/src/constraint.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-12-06T15:59:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cdfae62f_772463d7",
       "range": {
         "startLine": 96,
         "startChar": 2,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f61b48a8_7e928727",
+        "filename": "smc_fuzz/src/constraint.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-12-06T15:59:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0bbc1eda_9ca51abf",
+      "range": {
+        "startLine": 571,
+        "startChar": 0,
+        "endLine": 621,
+        "endChar": 4
+      },
+      "revId": "5e2d9f1577b9f1bd1e7c2d86821bc9236b91626e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "185e4692_3ece1eac",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-11-12T18:00:03Z",
       "side": 1,
       "message": "I think a switch block would be easier to comprehend",
+      "range": {
+        "startLine": 628,
+        "startChar": 0,
+        "endLine": 746,
+        "endChar": 4
+      },
+      "revId": "5e2d9f1577b9f1bd1e7c2d86821bc9236b91626e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02b2f210_61090f6c",
+        "filename": "smc_fuzz/src/constraint.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-12-06T15:59:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "185e4692_3ece1eac",
       "range": {
         "startLine": 628,
         "startChar": 0,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "22403c74_7ce08651",
+        "filename": "smc_fuzz/src/constraint.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 980,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-12-06T15:59:25Z",
+      "side": 1,
+      "message": "Will look into thread safe implementation in a future patch",
+      "parentUuid": "198e0ea8_0efa0757",
+      "range": {
+        "startLine": 980,
+        "startChar": 2,
+        "endLine": 980,
+        "endChar": 8
+      },
+      "revId": "5e2d9f1577b9f1bd1e7c2d86821bc9236b91626e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2fbf289f_8d2cb840",
@@ -129,6 +249,24 @@
       "writtenOn": "2024-11-12T18:00:03Z",
       "side": 1,
       "message": "nitpick: can you move it to the top of the source file?",
+      "revId": "5e2d9f1577b9f1bd1e7c2d86821bc9236b91626e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe25d754_04749bb1",
+        "filename": "smc_fuzz/src/sdei_fuzz_helper.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-12-06T15:59:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2fbf289f_8d2cb840",
       "revId": "5e2d9f1577b9f1bd1e7c2d86821bc9236b91626e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
