@@ -16,6 +16,23 @@
       "message": "Tested this on CI(https://ci.trustedfirmware.org/job/tf-a-ci-gateway/89686/) and it passed",
       "revId": "1ab21e5e0f05680e5a30093fe6a7eff99fdcb150",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1eacf3ba_6f67d587",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2024-12-10T22:30:13Z",
+      "side": 1,
+      "message": "@Boyan please provide CoR",
+      "revId": "1ab21e5e0f05680e5a30093fe6a7eff99fdcb150",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
