@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "168b1540_c8ee7098",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-12-10T14:46:51Z",
+      "side": 1,
+      "message": "Another issue I have is that currently two out of three tests are failing:\n```\n\u003e Executing \u0027SCTLR2 support\u0027\n  TEST COMPLETE                                                 Passed\n\n\u003e Executing \u0027THE support\u0027\nNOTICE:  RCWMASK_EL1 unexpected value after context switch: 0x0:0xffec00000003fffe\n  TEST COMPLETE                                                 Failed\n\n\u003e Executing \u0027D128 support\u0027\nNOTICE:  TTBR0_EL1 unexpected value after context switch: 0x0:0xfffffffffffffff6\n  TEST COMPLETE                                                 Failed```\n\nI do not believe that this is an issue with the test, but possibly with the context management library implementation.",
+      "revId": "03b9a6ef91262aabe1d069a0e53c54314d6a1def",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
