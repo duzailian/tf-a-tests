@@ -52,6 +52,24 @@
       "parentUuid": "ceee599d_e9ef8708",
       "revId": "345e74a238091c5ecd2579ae0f8a70e30a4aaa84",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "174c90b5_47639e3a",
+        "filename": "tftf/tests/extensions/the/test_the.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-10T15:14:11Z",
+      "side": 1,
+      "message": "I\u0027d be leaning towards adding the tsp to the all config. We do want as much as possible exercised with it after all. You might find this patch useful: https://review.trustedfirmware.org/c/ci/tf-a-ci-scripts/+/33040",
+      "parentUuid": "d148c7a2_a8e04e81",
+      "revId": "345e74a238091c5ecd2579ae0f8a70e30a4aaa84",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }

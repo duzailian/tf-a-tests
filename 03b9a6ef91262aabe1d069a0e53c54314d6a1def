@@ -16,6 +16,58 @@
       "message": "Another issue I have is that currently two out of three tests are failing:\n```\n\u003e Executing \u0027SCTLR2 support\u0027\n  TEST COMPLETE                                                 Passed\n\n\u003e Executing \u0027THE support\u0027\nNOTICE:  RCWMASK_EL1 unexpected value after context switch: 0x0:0xffec00000003fffe\n  TEST COMPLETE                                                 Failed\n\n\u003e Executing \u0027D128 support\u0027\nNOTICE:  TTBR0_EL1 unexpected value after context switch: 0x0:0xfffffffffffffff6\n  TEST COMPLETE                                                 Failed```\n\nI do not believe that this is an issue with the test, but possibly with the context management library implementation.",
       "revId": "03b9a6ef91262aabe1d069a0e53c54314d6a1def",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46457657_e80ef6ab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-10T15:14:11Z",
+      "side": 1,
+      "message": "could you have a look at the underlying implementation please? Fixing it would be a precondition to this getting merged as otherwise the daily will fail",
+      "parentUuid": "168b1540_c8ee7098",
+      "revId": "03b9a6ef91262aabe1d069a0e53c54314d6a1def",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ec6222f_2a07d2bd",
+        "filename": "tftf/tests/extensions/d128/test_d128.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-10T15:14:11Z",
+      "side": 1,
+      "message": "please wrap the lines a little. We have a soft limit of 100 and these seem like they would wrap nicely to something a bit more readable.",
+      "revId": "03b9a6ef91262aabe1d069a0e53c54314d6a1def",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "93f94dc8_08e9a6d3",
+        "filename": "tftf/tests/extensions/the/test_the.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-10T15:14:11Z",
+      "side": 1,
+      "message": "in theory, uint128_t exists. Have you tried using it? The arithmetic would be simpler",
+      "revId": "03b9a6ef91262aabe1d069a0e53c54314d6a1def",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
