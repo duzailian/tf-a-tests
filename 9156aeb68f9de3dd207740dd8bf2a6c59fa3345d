@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb2abc63_1089cce0",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_1.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-12-13T20:09:54Z",
+      "side": 1,
+      "message": "2024?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "9156aeb68f9de3dd207740dd8bf2a6c59fa3345d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "453ed038_9a372f72",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_1.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-12-13T20:09:54Z",
+      "side": 1,
+      "message": "Should we keep this line?",
+      "range": {
+        "startLine": 3,
+        "startChar": 3,
+        "endLine": 3,
+        "endChar": 62
+      },
+      "revId": "9156aeb68f9de3dd207740dd8bf2a6c59fa3345d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1da9f021_3cec0b39",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_2.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-12-13T20:09:54Z",
+      "side": 1,
+      "message": "2024?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "9156aeb68f9de3dd207740dd8bf2a6c59fa3345d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c31fdf3d_02a63daf",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_3.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2024-12-13T20:09:54Z",
+      "side": 1,
+      "message": "2024?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "9156aeb68f9de3dd207740dd8bf2a6c59fa3345d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
