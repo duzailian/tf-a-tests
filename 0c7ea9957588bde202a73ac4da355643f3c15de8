@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b043802_145685a7",
+        "filename": "include/runtime_services/host_realm_managment/host_shared_data.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-12-13T18:26:38Z",
+      "side": 1,
+      "message": "nit: I wonder if it would make sense to change \"PLANEN\" by \"PLANE_N\". Somehow the former sounds weird to me.\n\nNot important, though. Just an opinion.",
+      "range": {
+        "startLine": 77,
+        "startChar": 1,
+        "endLine": 77,
+        "endChar": 23
+      },
+      "revId": "0c7ea9957588bde202a73ac4da355643f3c15de8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6dc1fed4_f3d8bb21",
+        "filename": "realm/realm_payload_main.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-12-13T18:26:38Z",
+      "side": 1,
+      "message": "Same comment as above",
+      "revId": "0c7ea9957588bde202a73ac4da355643f3c15de8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
