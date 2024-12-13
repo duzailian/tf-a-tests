@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73eeb796_a38a99da",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-12-13T18:19:53Z",
+      "side": 1,
+      "message": "I wonder if these two checks are needed, since RMM will do the same checks to report S2AP support",
+      "range": {
+        "startLine": 97,
+        "startChar": 1,
+        "endLine": 98,
+        "endChar": 31
+      },
+      "revId": "6cde9490b7476f1b43e05d210165b56a9248c916",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
