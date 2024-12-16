@@ -22,6 +22,30 @@
       },
       "revId": "196396d61ff8834d6d2114f98e67b884d97a852d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "880601d9_237ab193",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2024-12-16T20:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "28922e48_7364a4a2",
+      "range": {
+        "startLine": 535,
+        "startChar": 0,
+        "endLine": 539,
+        "endChar": 1
+      },
+      "revId": "196396d61ff8834d6d2114f98e67b884d97a852d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
