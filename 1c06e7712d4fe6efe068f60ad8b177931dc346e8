@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a46ee0e9_ae01d9e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-12-16T13:52:24Z",
+      "side": 1,
+      "message": "Can be merged when CI passes",
+      "revId": "1c06e7712d4fe6efe068f60ad8b177931dc346e8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "66959cc0_94a96c80",
@@ -14,6 +31,24 @@
       "writtenOn": "2024-12-16T13:49:24Z",
       "side": 1,
       "message": "I wonder we should add this zeroing for REC params structure as well as future proofing ?",
+      "revId": "1c06e7712d4fe6efe068f60ad8b177931dc346e8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8571a60e_0c91564a",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 775,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2024-12-16T13:52:24Z",
+      "side": 1,
+      "message": "rec_params are already zeroed. Ignore this.",
+      "parentUuid": "66959cc0_94a96c80",
       "revId": "1c06e7712d4fe6efe068f60ad8b177931dc346e8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
