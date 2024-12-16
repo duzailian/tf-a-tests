@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f4ba552_d5d95173",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-12-16T18:08:51Z",
+      "side": 1,
+      "message": "nit: exception",
+      "range": {
+        "startLine": 664,
+        "startChar": 22,
+        "endLine": 664,
+        "endChar": 30
+      },
+      "revId": "5b0668bceb4d26ed884bf5edd47ebb66d2326f33",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02d971ff_7af1144c",
+        "filename": "realm/realm_plane.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-12-16T18:08:51Z",
+      "side": 1,
+      "message": "nit: you can remove this line",
+      "range": {
+        "startLine": 117,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 2
+      },
+      "revId": "5b0668bceb4d26ed884bf5edd47ebb66d2326f33",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ad5bbef_096dc1a4",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1750,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-12-16T18:08:51Z",
+      "side": 1,
+      "message": "nit: for readability, I think it might be better to align all these lines to the second opening parenthesis above",
+      "range": {
+        "startLine": 1745,
+        "startChar": 1,
+        "endLine": 1750,
+        "endChar": 1
+      },
+      "revId": "5b0668bceb4d26ed884bf5edd47ebb66d2326f33",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e07d313_eed3e1f6",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 1787,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2024-12-16T18:08:51Z",
+      "side": 1,
+      "message": "nit: same comment as above",
+      "range": {
+        "startLine": 1786,
+        "startChar": 4,
+        "endLine": 1787,
+        "endChar": 35
+      },
+      "revId": "5b0668bceb4d26ed884bf5edd47ebb66d2326f33",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
