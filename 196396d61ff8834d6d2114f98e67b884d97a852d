@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "013588b9_0b503b0c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2024-12-16T20:48:42Z",
+      "side": 1,
+      "message": "Along with this patch in same topic we need to enable sctlr2, THE and D128 features in all config run",
+      "revId": "196396d61ff8834d6d2114f98e67b884d97a852d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28922e48_7364a4a2",
