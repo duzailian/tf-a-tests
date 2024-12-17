@@ -54,6 +54,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "390468e0_f3f02e73",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2024-12-17T13:19:56Z",
+      "side": 1,
+      "message": "With https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/34000 patch in TF-A this issue is no longer happening, tested locally.",
+      "parentUuid": "4c7335ed_9a2405c2",
+      "revId": "03b9a6ef91262aabe1d069a0e53c54314d6a1def",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ec6222f_2a07d2bd",
