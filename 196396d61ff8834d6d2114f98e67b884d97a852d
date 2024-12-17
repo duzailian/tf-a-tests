@@ -98,6 +98,80 @@
       },
       "revId": "196396d61ff8834d6d2114f98e67b884d97a852d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ac96ff8_42d71f72",
+        "filename": "tftf/tests/extensions/d128/test_d128.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-17T13:54:01Z",
+      "side": 1,
+      "message": "this one should also be written before the smc, otherwise the test is a NOP. The one for FEAT_THE is fine, if you could propagate the pattern here it would work I think",
+      "range": {
+        "startLine": 49,
+        "startChar": 1,
+        "endLine": 50,
+        "endChar": 32
+      },
+      "revId": "196396d61ff8834d6d2114f98e67b884d97a852d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34376b2b_5564384d",
+        "filename": "tftf/tests/extensions/d128/test_d128.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-17T13:54:01Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "196396d61ff8834d6d2114f98e67b884d97a852d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1396f1d2_7cd687d4",
+        "filename": "tftf/tests/extensions/d128/test_d128.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-17T13:54:01Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "196396d61ff8834d6d2114f98e67b884d97a852d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d712dbc2_1bbf54aa",
+        "filename": "tftf/tests/extensions/sctlr2/test_sctlr2.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-17T13:54:01Z",
+      "side": 1,
+      "message": "why the second write?",
+      "revId": "196396d61ff8834d6d2114f98e67b884d97a852d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
