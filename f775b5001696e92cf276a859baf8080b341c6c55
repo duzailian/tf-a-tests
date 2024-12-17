@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f50705c6_031861f9",
+        "filename": "include/lib/aarch32/arch_features.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-17T09:08:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d452c2cc_4eec808b",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "f775b5001696e92cf276a859baf8080b341c6c55",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "94a7f3f6_5b9fe04f",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-12-16T19:34:18Z",
       "side": 1,
       "message": "2024?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "f775b5001696e92cf276a859baf8080b341c6c55",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "731e10de_f3ddd187",
+        "filename": "include/lib/extensions/amu.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-17T09:08:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "94a7f3f6_5b9fe04f",
       "range": {
         "startLine": 2,
         "startChar": 22,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5986a517_e3e5a4ca",
+        "filename": "lib/extensions/amu/aarch32/amu.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-17T09:08:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f06b94b6_1e8d8e04",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "f775b5001696e92cf276a859baf8080b341c6c55",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6605a0d2_1aaec34c",
@@ -93,6 +165,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "07a51a75_b4f79455",
+        "filename": "lib/extensions/amu/aarch64/amu.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-17T09:08:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6605a0d2_1aaec34c",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "f775b5001696e92cf276a859baf8080b341c6c55",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c9f4a4f0_a856cfd0",
@@ -106,6 +202,30 @@
       "writtenOn": "2024-12-16T19:34:18Z",
       "side": 1,
       "message": "2024?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "f775b5001696e92cf276a859baf8080b341c6c55",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8f4ee77_0d12fe94",
+        "filename": "tftf/tests/extensions/amu/test_amu.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-17T09:08:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9f4a4f0_a856cfd0",
       "range": {
         "startLine": 2,
         "startChar": 22,
