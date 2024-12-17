@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "79dcbbff_23bc203c",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_1.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-17T09:05:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb2abc63_1089cce0",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "9156aeb68f9de3dd207740dd8bf2a6c59fa3345d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "453ed038_9a372f72",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-12-13T20:09:54Z",
       "side": 1,
       "message": "Should we keep this line?",
+      "range": {
+        "startLine": 3,
+        "startChar": 3,
+        "endLine": 3,
+        "endChar": 62
+      },
+      "revId": "9156aeb68f9de3dd207740dd8bf2a6c59fa3345d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac676929_87bd8c7d",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_1.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-17T09:05:17Z",
+      "side": 1,
+      "message": "I don\u0027t understand the copyright notices well enough so I\u0027m not equipped to say. I can drop it if you wish.",
+      "parentUuid": "453ed038_9a372f72",
       "range": {
         "startLine": 3,
         "startChar": 3,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a30ae0c3_b86578b5",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_2.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-17T09:05:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1da9f021_3cec0b39",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "9156aeb68f9de3dd207740dd8bf2a6c59fa3345d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c31fdf3d_02a63daf",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-12-13T20:09:54Z",
       "side": 1,
       "message": "2024?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "9156aeb68f9de3dd207740dd8bf2a6c59fa3345d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc13b039_8d69e29c",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_workaround_3.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2024-12-17T09:05:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c31fdf3d_02a63daf",
       "range": {
         "startLine": 2,
         "startChar": 17,
