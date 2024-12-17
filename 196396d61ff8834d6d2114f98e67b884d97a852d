@@ -196,6 +196,24 @@
       "message": "why the second write?",
       "revId": "196396d61ff8834d6d2114f98e67b884d97a852d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29630d33_4ad521c5",
+        "filename": "tftf/tests/extensions/sctlr2/test_sctlr2.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1001423
+      },
+      "writtenOn": "2024-12-17T19:44:36Z",
+      "side": 1,
+      "message": "This is the first write for SCTLR2_EL2. The prior one was for SCTLR2_EL1",
+      "parentUuid": "d712dbc2_1bbf54aa",
+      "revId": "196396d61ff8834d6d2114f98e67b884d97a852d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
