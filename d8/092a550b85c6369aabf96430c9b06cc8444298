@@ -1,0 +1,11 @@
+Code-Owner-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Allow-CI+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Maintainer-Review+1: Mark Dykes <mark.dykes@arm.com>
+Code-Review+1: Ryan Everett <ryan.everett@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Wed, 18 Dec 2024 20:17:47 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/34071
+Comments-Total: 4
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
