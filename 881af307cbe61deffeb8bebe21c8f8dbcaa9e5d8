@@ -33,6 +33,24 @@
       "message": "This should be `0x03060200`",
       "revId": "881af307cbe61deffeb8bebe21c8f8dbcaa9e5d8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06e150ed_ac96bb3b",
+        "filename": "include/configs/tftf_mbedtls_config.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2024-12-18T16:20:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f08ad40e_cb7982d0",
+      "revId": "881af307cbe61deffeb8bebe21c8f8dbcaa9e5d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
