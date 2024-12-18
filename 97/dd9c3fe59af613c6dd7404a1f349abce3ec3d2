@@ -1,0 +1,9 @@
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Owner-Review+1: Soby Mathew <soby.mathew@arm.com>
+Maintainer-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Allow-CI+1: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-by: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-at: Wed, 18 Dec 2024 14:08:36 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/34115
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
