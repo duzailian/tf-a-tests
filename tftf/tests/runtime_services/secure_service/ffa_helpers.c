@@ -12,7 +12,7 @@
 
 struct ffa_value ffa_service_call(struct ffa_value *args)
 {
-#if IMAGE_IVY
+#if IMAGE_IVY || IMAGE_IVY_DUP
 	ffa_svc(args);
 #else
 	ffa_smc(args);

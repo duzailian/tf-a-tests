@@ -144,6 +144,7 @@ endif
 ifeq (${ARCH}-${PLAT},$(filter ${ARCH}-${PLAT},aarch64-fvp aarch64-tc))
 include spm/cactus/cactus.mk
 include spm/ivy/ivy.mk
+include spm/ivy_dup/ivy_dup.mk
 endif
 
 ################################################################################
@@ -316,6 +317,7 @@ NS_BL2U_CFLAGS		+= -mbranch-protection=${BP_OPTION}
 CACTUS_MM_CFLAGS	+= -mbranch-protection=${BP_OPTION}
 CACTUS_CFLAGS		+= -mbranch-protection=${BP_OPTION}
 IVY_CFLAGS		+= -mbranch-protection=${BP_OPTION}
+IVY_DUP_CFLAGS		+= -mbranch-protection=${BP_OPTION}
 REALM_CFLAGS		+= -mbranch-protection=${BP_OPTION}
 endif
 
@@ -360,6 +362,12 @@ IVY_INCLUDES		+= ${PLAT_INCLUDES}
 IVY_CFLAGS		+= ${COMMON_CFLAGS} -fpie
 IVY_ASFLAGS		+= ${COMMON_ASFLAGS}
 IVY_LDFLAGS		+= ${COMMON_LDFLAGS} $(PIE_LDFLAGS)
+
+IVY_DUP_SOURCES		+= ${LIBC_SRCS}
+IVY_DUP_INCLUDES	+= ${PLAT_INCLUDES}
+IVY_DUP_CFLAGS		+= ${COMMON_CFLAGS} -fpie
+IVY_DUP_ASFLAGS		+= ${COMMON_ASFLAGS}
+IVY_DUP_LDFLAGS		+= ${COMMON_LDFLAGS} $(PIE_LDFLAGS)
 
 REALM_SOURCES		+= ${LIBC_SRCS}
 REALM_CFLAGS		+= ${COMMON_CFLAGS} -fpie
@@ -455,6 +463,12 @@ cactus:
 ivy:
 	@echo "ERROR: $@ is supported only on AArch64 FVP or TC."
 	@exit 1
+
+.PHONY: ivy_dup
+ivy_dup:
+	@echo "ERROR: $@ is supported only on AArch64 FVP"
+	@exit 1
+
 endif
 
 MAKE_DEP = -Wp,-MD,$(DEP) -MT $$@
@@ -598,6 +612,7 @@ ifeq (${ARCH}-${PLAT},aarch64-fvp)
   $(eval $(call MAKE_IMG,cactus_mm))
   $(eval $(call MAKE_IMG,cactus))
   $(eval $(call MAKE_IMG,ivy))
+  $(eval $(call MAKE_IMG,ivy_dup))
 endif
 
 .PHONY : tftf
@@ -620,6 +635,7 @@ endif
 ifeq (${ARCH}-${PLAT},aarch64-tc)
   $(eval $(call MAKE_IMG,cactus))
   $(eval $(call MAKE_IMG,ivy))
+  $(eval $(call MAKE_IMG,ivy_dup))
 endif
 
 SP_LAYOUT: ${BUILD_PLAT}
@@ -657,7 +673,7 @@ cscope:
 .SILENT: help
 help:
 	echo "usage: ${MAKE} PLAT=<${PLATFORMS}> \
-<all|tftf|ns_bl1u|ns_bl2u|cactus|ivy|el3_payload|distclean|clean|checkcodebase|checkpatch|help_tests>"
+<all|tftf|ns_bl1u|ns_bl2u|cactus|ivy|ivy_dup|el3_payload|distclean|clean|checkcodebase|checkpatch|help_tests>"
 	echo ""
 	echo "PLAT is used to specify which platform you wish to build."
 	echo "If no platform is specified, PLAT defaults to: ${DEFAULT_PLAT}"
@@ -671,6 +687,7 @@ help:
 	echo "  cactus         Build the Cactus image (FF-A S-EL1 test payload)."
 	echo "  cactus_mm      Build the Cactus-MM image (SPM-MM S-EL0 test payload)."
 	echo "  ivy            Build the Ivy image (FF-A S-EL0 test payload)."
+	echo "  ivy_dup        Build the Ivy_dup image (FF-A S-EL0 test payload)."
 	echo "  el3_payload    Build the EL3 test payload"
 	echo "  checkcodebase  Check the coding style of the entire source tree"
 	echo "  checkpatch     Check the coding style on changes in the current"
