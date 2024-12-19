@@ -22,7 +22,7 @@
 static uint32_t spm_version;
 
 static const struct ffa_uuid sp_uuids[] = {
-		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}, {IVY_UUID}, {EL3_SPMD_LP_UUID}
+		{PRIMARY_UUID}, {SECONDARY_UUID}, {TERTIARY_UUID}, {IVY_UUID}, {IVY_DUP_UUID}, {EL3_SPMD_LP_UUID}
 	};
 
 static const struct ffa_partition_info ffa_expected_partition_info[] = {
@@ -65,6 +65,15 @@ static const struct ffa_partition_info ffa_expected_partition_info[] = {
 			       FFA_PARTITION_DIRECT_REQ_RECV |
 			       FFA_PARTITION_DIRECT_REQ_SEND),
 		.uuid = {IVY_UUID}
+	},
+	/* Ivy_dup partition info */
+	{
+		.id = SP_ID(5),
+		.exec_context = IVY_DUP_EXEC_CTX_COUNT,
+		.properties = (FFA_PARTITION_AARCH64_EXEC |
+			       FFA_PARTITION_DIRECT_REQ_RECV |
+			       FFA_PARTITION_DIRECT_REQ_SEND),
+		.uuid = {IVY_DUP_UUID}
 	},
 	/* EL3 SPMD logical partition */
 	{
@@ -142,6 +151,8 @@ static void ffa_partition_info_get_regs_test(void)
 		return;
 	}
 
+	EXPECT(ffa_partition_info_regs_helper(sp_uuids[4],
+		&ffa_expected_partition_info[4], 1), true);
 	EXPECT(ffa_partition_info_regs_helper(sp_uuids[3],
 		&ffa_expected_partition_info[3], 1), true);
 	EXPECT(ffa_partition_info_regs_helper(sp_uuids[2],
@@ -160,7 +171,7 @@ static void ffa_partition_info_get_regs_test(void)
 	 * we assume they dont exist and skip further tests to avoid
 	 * failures on platforms without el3 spmd logical partitions.
 	 */
-	ret = ffa_partition_info_get_regs(sp_uuids[4], 0, 0);
+	ret = ffa_partition_info_get_regs(sp_uuids[5], 0, 0);
 	if ((ffa_func_id(ret) == FFA_ERROR) &&
 	    ((ffa_error_code(ret) == FFA_ERROR_NOT_SUPPORTED) ||
 	    (ffa_error_code(ret) == FFA_ERROR_INVALID_PARAMETER))) {
@@ -170,8 +181,8 @@ static void ffa_partition_info_get_regs_test(void)
 			ffa_expected_partition_info,
 			(ARRAY_SIZE(ffa_expected_partition_info) - 1)), true);
 	} else {
-		EXPECT(ffa_partition_info_regs_helper(sp_uuids[4],
-			&ffa_expected_partition_info[4], 1), true);
+		EXPECT(ffa_partition_info_regs_helper(sp_uuids[5],
+			&ffa_expected_partition_info[5], 1), true);
 		EXPECT(ffa_partition_info_regs_helper(NULL_UUID,
 			ffa_expected_partition_info,
 			ARRAY_SIZE(ffa_expected_partition_info)), true);

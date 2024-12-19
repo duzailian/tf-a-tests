@@ -29,6 +29,7 @@ for target in "$@"; do
 	case $target in
 		cactus) CACTUS_PRESENT=true ;;
 		ivy) IVY_PRESENT=true ;;
+		ivy_dup) IVY_DUP_PRESENT=true ;;
 		ivy_shim) IVY_SHIM_PRESENT=true ;;
 		*) echo "Invalid target $target"; exit 1 ;;
 	esac
@@ -82,7 +83,7 @@ if [ $IVY_PRESENT == "true" ]; then
 	"pm": "ivy-sel0.dts",
 	"physical-load-address": "0x7600000",
 	"owner": "Plat"
-}
+},
 EOF
 
 	PARTITION_ALREADY_PRESENT=true
@@ -96,12 +97,23 @@ cat >> "$GENERATED_JSON" << EOF
 	"pm": "ivy-sel1.dts",
 	"physical-load-address": "0x7600000",
 	"owner": "Plat"
-}
+},
 EOF
 
 	PARTITION_ALREADY_PRESENT=true
 else
 	echo -ne "\t},\n" >> "$GENERATED_JSON"
+fi
+
+if [ $IVY_DUP_PRESENT == "true" ]; then
+        cat >> "$GENERATED_JSON" << EOF
+"ivy_dup" : {
+        "image": "ivy_dup.bin",
+        "pm": "ivy_dup-sel0.dts",
+        "physical-load-address": "0x7700000",
+        "owner": "Plat"
+}
+EOF
 fi
 
 echo -e "\n}" >> "$GENERATED_JSON"
