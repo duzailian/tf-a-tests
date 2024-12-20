@@ -17,3 +17,4 @@ endif
 
 # List of FDTS to copy
 FDTS_CP_LIST		=  $(IVY_DTS)
+FDTS_CP_LIST		+= ${FVP_IVY_BASE}/fdts/ivy_dup-sel0.dts

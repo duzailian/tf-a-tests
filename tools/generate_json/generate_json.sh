@@ -82,6 +82,13 @@ if [ $IVY_PRESENT == "true" ]; then
 	"pm": "ivy-sel0.dts",
 	"physical-load-address": "0x7600000",
 	"owner": "Plat"
+},
+
+"ivy_dup" : {
+        "image": "ivy.bin",
+        "pm": "ivy_dup-sel0.dts",
+        "physical-load-address": "0x7700000",
+        "owner": "Plat"
 }
 EOF
 
@@ -98,7 +105,6 @@ cat >> "$GENERATED_JSON" << EOF
 	"owner": "Plat"
 }
 EOF
-
 	PARTITION_ALREADY_PRESENT=true
 else
 	echo -ne "\t},\n" >> "$GENERATED_JSON"
