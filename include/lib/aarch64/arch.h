@@ -600,6 +600,10 @@
 #define SCTLR_EnDA_BIT		(ULL(1) << 27)
 #define SCTLR_EnIB_BIT		(ULL(1) << 30)
 #define SCTLR_EnIA_BIT		(ULL(1) << 31)
+#define SCTLR_TCF_SHIFT		(U(40))
+#define SCTLR_TCF_MASK		(ULL(0x3))
+#define SCTRL_TCF_ASYNC		(ULL(0x2))
+#define SCTLR_ATA_BIT		(ULL(1) << 43)
 #define SCTLR_DSSBS_BIT		(ULL(1) << 44)
 #define SCTLR_RESET_VAL		SCTLR_EL3_RES1
 
@@ -967,6 +971,9 @@
 
 #define TCR_EPD0_BIT		(ULL(1) << 7)
 #define TCR_EPD1_BIT		(ULL(1) << 23)
+
+#define TCR_TBI_BIT		(ULL(1) << 20)
+#define TCR_TBID_BIT		(ULL(1) << 29)
 
 #define MODE_SP_SHIFT		U(0x0)
 #define MODE_SP_MASK		U(0x1)
