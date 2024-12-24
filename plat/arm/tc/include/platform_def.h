@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2021, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -114,7 +114,7 @@
 #define PLAT_PHY_ADDR_SPACE_SIZE	(1ull << 36)
 #define PLAT_VIRT_ADDR_SPACE_SIZE	(1ull << 36)
 
-#if IMAGE_CACTUS
+#if IMAGE_CACTUS || IMAGE_TFTF
 #define MAX_XLAT_TABLES			6
 #else
 #define MAX_XLAT_TABLES			5
