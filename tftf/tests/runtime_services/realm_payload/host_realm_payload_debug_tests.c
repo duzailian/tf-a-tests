@@ -4,18 +4,17 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-#include <stdlib.h>
 #include <limits.h>
+#include <stdlib.h>
 
 #include <arch_features.h>
 #include <arch_helpers.h>
 #include <debug.h>
-#include <lib/self_hosted_debug/self_hosted_debug_helpers.h>
-#include <test_helpers.h>
-
 #include <host_realm_helper.h>
 #include <host_realm_mem_layout.h>
 #include <host_shared_data.h>
+#include <lib/self_hosted_debug/self_hosted_debug_helpers.h>
+#include <test_helpers.h>
 
 typedef struct {
 	long unsigned int (*read_dbgbcr_el1)(void);
@@ -113,14 +112,17 @@ static bool ns_check_dbgwcr_el1(u_register_t reg)
 }
 
 /*
- * Verify that Realm has the same number of BPs/WPs as what the NS Host has
- * requested.
- *
- * Note that currently RMM assumes the NS Host will request the same number of
- * BPs/WPs as is available in the hardware. This test can be updated to check
- * different numbers of BPs/WPs once RMM is able to handle the NS Host
- * requesting fewer BPs/WPs than the hardware supports.
+ * Read ID_AA64DFR0_EL1 to determine the number of breakpoints
+ * and watchpoints supported by the hardware.
+ * BRPs [15:12] - no of BPs supported - 1
+ * WRPs [23:20] - no of WPs supported - 1
+ * The value 0b0000 is reserved. Implies that min BPs/WPs = 2
+ * If the above fields read 0b1111 => read ID_AA64DFR1_EL1.
+ * ID_AA64DFR1_EL1 indicates the no of BPs or WPs supported.
+ * BRPs [15:8] ->  no of BPs supported - 1
+ * WRPs [23:16] -> no of WPs supported - 1
  */
+
 test_result_t host_test_realm_num_bps_wps(void)
 {
 	unsigned long num_bps, num_wps;
@@ -138,7 +140,6 @@ test_result_t host_test_realm_num_bps_wps(void)
 	}
 
 	num_bps = EXTRACT(ID_AA64DFR0_BRPs, read_id_aa64dfr0_el1());
-	num_wps = EXTRACT(ID_AA64DFR0_WRPs, read_id_aa64dfr0_el1());
 
 	/* If BPs is 0xF, read DFR1 to find no of BPs supported by HW */
 	if (num_bps == MAX_BPS - 1UL) {
@@ -153,14 +154,95 @@ test_result_t host_test_realm_num_bps_wps(void)
 
 	if (num_wps == MAX_WPS - 1UL) {
 		num_wps = EXTRACT(ID_AA64DFR1_WRPs, read_id_aa64dfr1_el1());
-		if(num_wps == 0UL) {
+		if (num_wps == 0UL) {
 			num_wps = MAX_WPS - 1UL;
 		}
 	}
 
+	INFO("BPs and WPs supported in H/W is %ld and %ld\n", num_bps+1, num_wps+1);
+
 	feature_flag = INPLACE(RMI_FEATURE_REGISTER_0_NUM_BPS, num_bps) |
 		       INPLACE(RMI_FEATURE_REGISTER_0_NUM_WPS, num_wps);
 
+	if (!host_create_activate_realm_payload(&realm,
+				(u_register_t)REALM_IMAGE_BASE,
+				feature_flag, 0UL, sl, rec_flag, 1U, 0U)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	if (!host_create_shared_mem(&realm)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	host_shared_data_set_host_val(&realm, 0, 0, HOST_ARG1_INDEX, num_bps);
+	host_shared_data_set_host_val(&realm, 0, 0, HOST_ARG2_INDEX, num_wps);
+
+	realm_rc = host_enter_realm_execute(&realm,
+					    REALM_DEBUG_CHECK_NUM_BPS_WPS,
+					    RMI_EXIT_HOST_CALL,
+					    0);
+
+	if (!realm_rc || !host_destroy_realm(&realm)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * Verify that Realm created has the same number of BPs/WPs
+ * as what the NS Host has requested. This test case covers the
+ * scenario where the NS Host requests a realm to be created with
+ * BPs or WPs lesser than that supported by hardware.
+ * ID_AA64DFR0_BRPs - 0x0001 - 0x1111 (No of BPs - 1)
+ * ID_AA64DFR1_BRPs - max supported 64BPs
+ *
+ */
+test_result_t host_request_lesser_num_bps_wps(void)
+{
+	volatile unsigned long num_bps, num_wps;
+	u_register_t feature_flag = 0UL;
+	u_register_t rec_flag[1] = {RMI_RUNNABLE};
+	struct realm realm;
+	bool realm_rc;
+	long sl = RTT_MIN_LEVEL;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (is_feat_52b_on_4k_2_supported()) {
+		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
+
+	num_bps = EXTRACT(ID_AA64DFR0_BRPs, read_id_aa64dfr0_el1());
+
+	/* If BPs is 0xF, read DFR1 to find no of BPs supported by HW */
+	if (num_bps == MAX_BPS - 1UL) {
+		num_bps = EXTRACT(ID_AA64DFR1_BRPs, read_id_aa64dfr1_el1());
+		if (num_bps == 0UL) {
+			num_bps = MAX_BPS - 1UL;
+		}
+	}
+
+	/* If WPs is 0xF, read DFR1 to find no of BPs supported by HW */
+	num_wps = EXTRACT(ID_AA64DFR0_WRPs, read_id_aa64dfr0_el1());
+
+	if (num_wps == MAX_WPS - 1UL) {
+		num_wps = EXTRACT(ID_AA64DFR1_WRPs, read_id_aa64dfr1_el1());
+		if (num_wps == 0UL) {
+			num_wps = MAX_WPS - 1UL;
+		}
+	}
+	INFO("BPs and WPs supported in H/W is %ld and %ld\n", num_bps+1, num_wps+1);
+
+	num_wps = MIN_WPS_REQUESTED - 1;
+
+	num_bps = MIN_BPS_REQUESTED - 1;
+
+	INFO("BPs and WPs requested by NS host for realm is %ld and %ld\n", num_bps+1, num_wps+1);
+
+	feature_flag = INPLACE(RMI_FEATURE_REGISTER_0_NUM_BPS, num_bps) |
+		       INPLACE(RMI_FEATURE_REGISTER_0_NUM_WPS, num_wps);
 
 	if (!host_create_activate_realm_payload(&realm,
 					(u_register_t)REALM_IMAGE_BASE,
@@ -194,22 +276,12 @@ test_result_t host_test_realm_num_bps_wps(void)
 static void ns_set_bps(int num_bps, u_register_t expected_bp_addr[])
 {
 	unsigned int rand_addr;
-	for(int i = 0; i <= num_bps; i++) {
-		u_register_t value = debug_regs[i].read_dbgbcr_el1();
-		printf("i = %d, read dbgbcr register = %lx\n", i, value);
-		value = ns_set_dbgbcr_el1(debug_regs[i].read_dbgbcr_el1());
-		printf("i = %d, updated dbgbcr register = %lx\n", i, value);
+	for (int i = 0; i <= num_bps; i++) {
+		u_register_t value = ns_set_dbgbcr_el1(debug_regs[i].read_dbgbcr_el1());
 		debug_regs[i].write_dbgbcr_el1(value);
-		printf("i = %d, write to dbgbcr register = %lx\n", i, debug_regs[i].read_dbgbcr_el1());
 		rand_addr = get_random_address();
-		printf("i = %d, random address generated = %x\n", i, rand_addr);
-		printf("i = %d, read dbgbvr register = %lx\n", i, debug_regs[i].read_dbgbvr_el1());
 		debug_regs[i].write_dbgbvr_el1(INPLACE(DBGBVR_EL1_VA, rand_addr));
-		printf("i = %d, updated dbgbvr = %lx\n", i, debug_regs[i].read_dbgbvr_el1());
 		expected_bp_addr[i] = rand_addr;
-		printf("i = %d, expected_bp_addr[%d] = %lx\n", i, i, expected_bp_addr[i]);
-		printf("\n");
-
 	}
 
 }
@@ -221,21 +293,13 @@ static void ns_set_bps(int num_bps, u_register_t expected_bp_addr[])
 static void ns_set_wps(int num_wps, u_register_t expected_wp_addr[])
 {
 	unsigned int rand_addr;
-	for(int i = 0; i <= num_wps; i++) {
-		u_register_t value = debug_regs[i].read_dbgwcr_el1();
-		printf("i = %d, value = %lx\n", i, value);
-		value = ns_set_dbgwcr_el1(debug_regs[i].read_dbgwcr_el1());
-		printf("i = %d, updated value = %lx\n", i, value);
+
+	for (int i = 0; i <= num_wps; i++) {
+		u_register_t value = ns_set_dbgwcr_el1(debug_regs[i].read_dbgwcr_el1());
 		debug_regs[i].write_dbgwcr_el1(value);
-		printf("i = %d, updated dbgbcr = %lx\n", i, debug_regs[i].read_dbgbcr_el1());
 		rand_addr = get_random_address();
-		printf("i = %d, random address generated = %x\n", i, rand_addr);
-		printf("i = %d, read dbgwvr register = %lx\n", i, debug_regs[i].read_dbgwvr_el1());
 		debug_regs[i].write_dbgwvr_el1(INPLACE(DBGWVR_EL1_VA, rand_addr));
-		printf("i = %d, updated dbgbvr = %lx\n", i, debug_regs[i].read_dbgbvr_el1());
 		expected_wp_addr[i] = rand_addr;
-		printf("i = %d, expected_wp_addr[%d] = %lx\n", i, i, expected_wp_addr[i]);
-		printf("\n");
 	}
 }
 
@@ -248,16 +312,13 @@ static test_result_t ns_check_bps(int num_bps, u_register_t expected_bp_addr[])
 	test_result_t rc = TEST_RESULT_FAIL;
 
 	if (num_bps != 0UL) {
-		for(int i = 0; i <= num_bps; i++) {
+		for (int i = 0; i <= num_bps; i++) {
 			if (!ns_check_dbgbcr_el1(debug_regs[i].read_dbgbcr_el1()) && \
 				(EXTRACT(DBGBVR_EL1_VA, debug_regs[i].read_dbgbvr_el1()) != \
 				expected_bp_addr[i])) {
 				rc = TEST_RESULT_FAIL;
 				break;
 			}
-			printf("i = %d, debug_regs[i].read_dbgbvr_el1() = %lx\n", i, debug_regs[i].read_dbgbvr_el1());
-			printf("i = %d, expected_bp_addr[i] = %lx\n", i, expected_bp_addr[i]);
-			printf("\n");
 		}
 		rc = TEST_RESULT_SUCCESS;
 	}
@@ -273,7 +334,7 @@ static test_result_t ns_check_wps(int num_wps, u_register_t expected_wp_addr[])
 	test_result_t rc = TEST_RESULT_FAIL;
 
 	if (num_wps != 0UL) {
-		for(int i = 0; i <= num_wps; i++) {
+		for (int i = 0; i <= num_wps; i++) {
 			if (!ns_check_dbgwcr_el1(debug_regs[i].read_dbgwcr_el1()) && \
 				(EXTRACT(DBGWVR_EL1_VA, debug_regs[i].read_dbgwvr_el1()) != \
 				expected_wp_addr[i])) {
@@ -313,7 +374,7 @@ test_result_t host_realm_test_debug_save_restore(void)
 
 	/* If BPs is 0xF, read DFR1 to find no of BPs supported by HW */
 	num_bps = EXTRACT(ID_AA64DFR0_BRPs, read_id_aa64dfr0_el1());
-	if (num_bps == (MAX_BPS - 1UL)) {
+	if (num_bps == MAX_BPS - 1UL) {
 		num_bps = EXTRACT(ID_AA64DFR1_BRPs, read_id_aa64dfr1_el1());
 		if (num_bps == 0UL) {
 			num_bps = MAX_BPS - 1UL;
@@ -325,11 +386,12 @@ test_result_t host_realm_test_debug_save_restore(void)
 
 	if (num_wps == MAX_WPS - 1UL) {
 		num_wps = EXTRACT(ID_AA64DFR1_WRPs, read_id_aa64dfr1_el1());
-		if(num_wps == 0UL) {
+		if (num_wps == 0UL) {
 			num_wps = MAX_WPS - 1UL;
 		}
 	}
 
+	INFO("BPs and WPs supported in H/W is %ld and %ld\n", num_bps+1, num_wps+1);
 	feature_flag = INPLACE(RMI_FEATURE_REGISTER_0_NUM_BPS, num_bps) |
 		       INPLACE(RMI_FEATURE_REGISTER_0_NUM_WPS, num_wps);
 
@@ -348,7 +410,7 @@ test_result_t host_realm_test_debug_save_restore(void)
 			MDSCR_EL1_KDE_BIT |
 			MDSCR_EL1_MDE_BIT);
 
-	INFO("NS: Write random values\n");
+	INFO("NS HOST: Write random values to the BP and WP regs\n");
 
 	ns_set_bps(num_bps, expected_bp_addr);
 	ns_set_wps(num_wps, expected_wp_addr);
@@ -364,7 +426,7 @@ test_result_t host_realm_test_debug_save_restore(void)
 		goto destroy_realm;
 	}
 
-	INFO("NS: Read and compare\n");
+	INFO("NS HOST: Read and compare the values in BP and WP regs\n");
 
 	/*
 	 * Verify that the self-hosted debug registers have been saved and
