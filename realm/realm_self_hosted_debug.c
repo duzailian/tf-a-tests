@@ -138,12 +138,12 @@ bool test_realm_debug_num_bps_wps(void)
 		}
 	}
 
-	INFO("Num of bps extracted = %d and wps extracted = %d\n", num_bps, num_wps);
-
-	INFO("Realm: Verify number of BPs and WPs available\n");
+	INFO("Realm: BPs extracted = %d and WPs extracted = %d\n", num_bps+1, num_wps+1);
 
 	num_bps_host = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
 	num_wps_host = realm_shared_data_get_my_host_val(HOST_ARG2_INDEX);
+
+	INFO("Realm: BPs requested = %d and WPs requested = %d\n", num_bps_host+1, num_wps_host+1);
 
 	if ((num_bps != num_bps_host) || (num_wps != num_wps_host)) {
 		return false;
@@ -165,9 +165,11 @@ static void rl_set_bps(unsigned long num_bps)
 		rand_addr = get_random_address();
 		realm_ctx_regs[i].write_dbgbvr_el1(INPLACE(DBGBVR_EL1_VA, rand_addr));
 		expected_bp_addr[i] = rand_addr;
-		printf("rand_addr = %lx and realm_ctx_regs[%d].read_dbgbvr_el1() = %lx\n",\
-		rand_addr, i, realm_ctx_regs[i].read_dbgbvr_el1());
+		INFO("read_dbgbcr[%d] = %lx and read_dbgbvr[%d]= %lx\n", i, \
+		      realm_ctx_regs[i].read_dbgbvr_el1(),i, realm_ctx_regs[i].read_dbgbcr_el1());
+		printf("\n");
 	}
+
 }
 
 /*
@@ -183,8 +185,9 @@ static void rl_set_wps(unsigned long num_wps)
 		rand_addr = get_random_address();
 		realm_ctx_regs[i].write_dbgwvr_el1(INPLACE(DBGWVR_EL1_VA, rand_addr));
 		expected_wp_addr[i] = rand_addr;
-		printf("rand_addr = %lx and realm_ctx_regs[%d].read_dbgbvr_el1() = %lx\n", \
-		rand_addr, i, realm_ctx_regs[i].read_dbgwvr_el1());
+		INFO("read_dbgwcr[%d] = %lx and read_dbgwvr[%d]= %lx\n", i, \
+		      realm_ctx_regs[i].read_dbgwvr_el1(),i, realm_ctx_regs[i].read_dbgwcr_el1());
+		printf("\n");
 	}
 }
 
@@ -212,12 +215,14 @@ void test_realm_debug_fill_regs(void)
 		}
 	}
 
+	INFO("Num of bps extracted = %d and wps extracted = %d\n", num_bps+1, num_wps+1);
+
 	write_mdscr_el1(read_mdscr_el1() |
 			MDSCR_EL1_TDCC_BIT |
 			MDSCR_EL1_KDE_BIT |
 			MDSCR_EL1_MDE_BIT);
 
-	INFO("Realm: Write random values\n");
+	INFO("Realm: Write random values to BP and WP regs\n");
 
 	rl_set_bps(num_bps);
 	rl_set_wps(num_wps);
@@ -230,17 +235,20 @@ void test_realm_debug_fill_regs(void)
 static bool rl_check_bps(unsigned long num_bps)
 {
 	bool rc = false;
-	for(int i = 0; i <= num_bps; i++) {
-		printf(" i = %d\n", i);
-		if (!rl_check_dbgbcr_el1(realm_ctx_regs[i].read_dbgbcr_el1()) && \
-			(EXTRACT(DBGBVR_EL1_VA, realm_ctx_regs[i].read_dbgbvr_el1()) != \
-			expected_bp_addr[i])) {
+	if (num_bps != 0UL) {
+		for(int i = 0; i <= num_bps; i++) {
+			printf(" i = %d\n", i);
+			if (!rl_check_dbgbcr_el1(realm_ctx_regs[i].read_dbgbcr_el1())			\
+				&& (EXTRACT(DBGBVR_EL1_VA, realm_ctx_regs[i].read_dbgbvr_el1()) != 	\
+				expected_bp_addr[i])) {
 				rc = false;
 				break;
 			}
+			INFO("read_dbgbvr_el1[%d] = %lx\n", i, realm_ctx_regs[i].read_dbgbvr_el1());
+		}
 		rc = true;
 	}
-	return rc;
+        return rc;
 }
 
 /*
@@ -250,14 +258,17 @@ static bool rl_check_bps(unsigned long num_bps)
 static bool rl_check_wps(unsigned long num_wps)
 {
 	bool rc = false;
-	for(int i = 0; i <= num_wps; i++) {
-		printf(" i = %d\n", i);
-		if (!rl_check_dbgwcr_el1(realm_ctx_regs[i].read_dbgwcr_el1()) && \
-			(EXTRACT(DBGWVR_EL1_VA, realm_ctx_regs[i].read_dbgwvr_el1()) != \
-			expected_wp_addr[i])) {
+	if (num_wps != 0UL) {
+		for(int i = 0; i <= num_wps; i++) {
+			printf(" i = %d\n", i);
+			if (!rl_check_dbgwcr_el1(realm_ctx_regs[i].read_dbgwcr_el1()) && \
+				(EXTRACT(DBGWVR_EL1_VA, realm_ctx_regs[i].read_dbgwvr_el1()) != \
+				expected_wp_addr[i])) {
 				rc = false;
 				break;
 			}
+			INFO("read_dbgwvr_el1[%d] = %lx\n", i, realm_ctx_regs[i].read_dbgwvr_el1());
+		}
 		rc = true;
 	}
 	return rc;
@@ -285,6 +296,8 @@ bool test_realm_debug_cmp_regs(void)
 			num_wps = MAX_WPS - 1;
 		}
 	}
+
+	INFO("Num of bps extracted = %d and wps extracted = %d\n", num_bps+1, num_wps+1);
 
 	INFO("Realm: Read and compare\n");
 

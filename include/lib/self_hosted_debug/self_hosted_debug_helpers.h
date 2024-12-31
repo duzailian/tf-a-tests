@@ -7,8 +7,11 @@
 #ifndef SELF_HOSTED_DEBUG_HELPERS_H
 #define SELF_HOSTED_DEBUG_HELPERS_H
 
-#define MAX_BPS 16
-#define MAX_WPS 16
+#define MAX_BPS 		16UL
+#define MAX_WPS 		16UL
+
+#define MIN_BPS_REQUESTED	2UL
+#define MIN_WPS_REQUESTED	2UL
 
 #define WRITE_DBGBVR_EL1(n, addr) {			     \
 	write_dbgbvr##n##_el1(INPLACE(DBGBVR_EL1_VA, addr)); \
