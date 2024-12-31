@@ -4,12 +4,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <limits.h>
+#include <stdlib.h>
+
 #include <arch.h>
 #include <arch_features.h>
 #include <arch_helpers.h>
 #include <lib/self_hosted_debug/self_hosted_debug_helpers.h>
-#include <limits.h>
-#include <stdlib.h>
 
 unsigned int get_random_address(void)
 {
