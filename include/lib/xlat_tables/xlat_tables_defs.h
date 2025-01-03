@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2024, ARM Limited and Contributors. All rights reserved.
+ * Copyright (c) 2017-2025, ARM Limited and Contributors. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -145,6 +145,7 @@
 #define ATTR_NON_CACHEABLE_INDEX	ULL(0x2)
 #define ATTR_DEVICE_INDEX		ULL(0x1)
 #define ATTR_IWBWA_OWBWA_NTR_INDEX	ULL(0x0)
+#define ATTR_TAGGED_IWBWA_OWBWA_NTR_INDEX	ULL(0x3)
 #define LOWER_ATTRS(x)			(((x) & U(0xfff)) << 2)
 
 /* Normal Memory, Outer Write-Through non-transient, Inner Non-cacheable */
@@ -153,6 +154,8 @@
 #define ATTR_DEVICE			MAIR_DEV_nGnRE
 /* Normal Memory, Outer Write-Back non-transient, Inner Write-Back non-transient */
 #define ATTR_IWBWA_OWBWA_NTR		MAKE_MAIR_NORMAL_MEMORY(MAIR_NORM_WB_NTR_RWA, MAIR_NORM_WB_NTR_RWA)
+/* Tagged Normal Memory, Outer Write-Back non-transient, Inner Write-Back non-transient */
+#define ATTR_TAGGED_IWBWA_OWBRA_NTR	ULL(0xf0)
 #define MAIR_ATTR_SET(attr, index)	((attr) << ((index) << 3))
 #define ATTR_INDEX_MASK			U(0x3)
 #define ATTR_INDEX_GET(attr)		(((attr) >> 2) & ATTR_INDEX_MASK)

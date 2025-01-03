@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2020, ARM Limited and Contributors. All rights reserved.
+ * Copyright (c) 2017-2025, ARM Limited and Contributors. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -192,8 +192,10 @@ uint64_t xlat_desc(const xlat_ctx_t *ctx, uint32_t attr,
 			desc |= xlat_arch_regime_get_xn_desc(ctx->xlat_regime);
 		}
 
-		if (mem_type == MT_MEMORY) {
-			desc |= LOWER_ATTRS(ATTR_IWBWA_OWBWA_NTR_INDEX | ISH);
+		if ((mem_type == MT_MEMORY) || (mem_type == MT_TAGGED_MEMORY)) {
+			uint64_t index = (mem_type == MT_MEMORY) ? ATTR_IWBWA_OWBWA_NTR_INDEX :
+					ATTR_TAGGED_IWBWA_OWBWA_NTR_INDEX;
+			desc |= LOWER_ATTRS(index | ISH);
 #if ENABLE_BTI
 			/* Check if Branch Target Identification is implemented */
 			if (is_armv8_5_bti_present() &&
