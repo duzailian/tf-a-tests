@@ -225,6 +225,7 @@ void setup_mmu_cfg(uint64_t *params, unsigned int flags,
 	/* Set attributes in the right indices of the MAIR. */
 	mair = MAIR_ATTR_SET(ATTR_DEVICE, ATTR_DEVICE_INDEX);
 	mair |= MAIR_ATTR_SET(ATTR_IWBWA_OWBWA_NTR, ATTR_IWBWA_OWBWA_NTR_INDEX);
+	mair |= MAIR_ATTR_SET(ATTR_TAGGED_IWBWA_OWBRA_NTR, ATTR_TAGGED_IWBWA_OWBWA_NTR_INDEX);
 	mair |= MAIR_ATTR_SET(ATTR_NON_CACHEABLE, ATTR_NON_CACHEABLE_INDEX);
 
 	/*

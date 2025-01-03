@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2018, ARM Limited and Contributors. All rights reserved.
+ * Copyright (c) 2017-2025, ARM Limited and Contributors. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -80,6 +80,7 @@
 #define MT_DEVICE		U(0)
 #define MT_NON_CACHEABLE	U(1)
 #define MT_MEMORY		U(2)
+#define MT_TAGGED_MEMORY	U(3)
 /* Values up to 7 are reserved to add new memory types in the future */
 
 #define MT_RO			(U(0) << MT_PERM_SHIFT)
@@ -109,6 +110,7 @@
 #define MT_CODE			(MT_MEMORY | MT_RO | MT_EXECUTE)
 #define MT_RO_DATA		(MT_MEMORY | MT_RO | MT_EXECUTE_NEVER)
 #define MT_RW_DATA		(MT_MEMORY | MT_RW | MT_EXECUTE_NEVER)
+#define MT_TAGGED_RW_DATA	(MT_TAGGED_MEMORY | MT_RW | MT_EXECUTE_NEVER)
 
 /*
  * Structure for specifying a single region of memory.

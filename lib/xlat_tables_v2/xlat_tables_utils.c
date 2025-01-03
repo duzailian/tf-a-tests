@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2020, ARM Limited and Contributors. All rights reserved.
+ * Copyright (c) 2017-2025, ARM Limited and Contributors. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -54,6 +54,8 @@ static void xlat_desc_print(const xlat_ctx_t *ctx, uint64_t desc)
 
 	if (mem_type_index == ATTR_IWBWA_OWBWA_NTR_INDEX) {
 		printf("MEM");
+	} else if (mem_type_index == ATTR_TAGGED_IWBWA_OWBWA_NTR_INDEX) {
+		printf("TAG_MEM")
 	} else if (mem_type_index == ATTR_NON_CACHEABLE_INDEX) {
 		printf("NC");
 	} else {
@@ -381,6 +383,8 @@ static int xlat_get_mem_attributes_internal(const xlat_ctx_t *ctx,
 
 	if (attr_index == ATTR_IWBWA_OWBWA_NTR_INDEX) {
 		*attributes |= MT_MEMORY;
+	} else if (attr_index == ATTR_TAGGED_IWBWA_OWBWA_NTR_INDEX) {
+		*attributes |= MT_TAGGED_MEMORY;
 	} else if (attr_index == ATTR_NON_CACHEABLE_INDEX) {
 		*attributes |= MT_NON_CACHEABLE;
 	} else {
