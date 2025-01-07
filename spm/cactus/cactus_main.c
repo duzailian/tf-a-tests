@@ -217,7 +217,7 @@ static void cactus_plat_configure_mmu(unsigned int vm_id)
 			(SP_RX_TX_SIZE / 2),
 			MT_RW_DATA);
 
-	mmap_add(cactus_mmap);
+	if (vm_id != SP_ID(5)) mmap_add(cactus_mmap);
 	init_xlat_tables();
 }
 
@@ -229,6 +229,38 @@ static struct ffa_value register_secondary_entrypoint(void)
 	args.arg1 = (u_register_t)&secondary_cold_entry;
 
 	return ffa_service_call(&args);
+}
+
+void cactus_map_boot_info(struct ffa_boot_info_header *boot_info_header)
+{
+	struct ffa_boot_info_desc *boot_info_desc;
+
+	assert(boot_info_header != NULL);
+
+	boot_info_desc = boot_info_header->boot_info;
+	/*
+	 * TODO: Currently just validating that cactus can
+	 * access the boot info descriptors. In case we want to
+	 * use the boot info contents, we should check the
+	 * blob and remap if the size is bigger than one page.
+	 * Only then access the contents.
+	 */
+	mmap_add_dynamic_region(
+		(unsigned long long)boot_info_header,
+		(uintptr_t)boot_info_header,
+		PAGE_SIZE, MT_RO_DATA);
+
+/*	TODO failing on this line in Cactus Secondary -- cannot read contents
+ *	of boot_info_header->desc_count */
+	for (uint32_t i = 0; i < boot_info_header->desc_count; i++) {
+		/*
+		 * tODO; use size field.
+		*/
+		mmap_add_dynamic_region(
+				(unsigned long long)boot_info_desc[i].content,
+				(uintptr_t)boot_info_desc[i].content,
+				PAGE_SIZE, MT_RO_DATA);
+	}
 }
 
 void __dead2 cactus_main(bool primary_cold_boot,
@@ -262,17 +294,7 @@ void __dead2 cactus_main(bool primary_cold_boot,
 		sp_handler_spin_lock_init();
 
 		if (boot_info_header != NULL) {
-			/*
-			 * TODO: Currently just validating that cactus can
-			 * access the boot info descriptors. In case we want to
-			 * use the boot info contents, we should check the
-			 * blob and remap if the size is bigger than one page.
-			 * Only then access the contents.
-			 */
-			mmap_add_dynamic_region(
-				(unsigned long long)boot_info_header,
-				(uintptr_t)boot_info_header,
-				PAGE_SIZE, MT_RO_DATA);
+			cactus_map_boot_info(boot_info_header);
 		}
 	}
 
@@ -302,6 +324,8 @@ void __dead2 cactus_main(bool primary_cold_boot,
 		cactus_print_boot_info(boot_info_header);
 	}
 
+	cactus_print_memory_layout(ffa_id);
+
 	if (ffa_id == (SPM_VM_ID_FIRST + 2) || ffa_id == (SPM_VM_ID_FIRST + 4)) {
 		VERBOSE("Mapping RXTX Region\n");
 		CONFIGURE_AND_MAP_MAILBOX(mb, PAGE_SIZE, ret);
@@ -312,7 +336,6 @@ void __dead2 cactus_main(bool primary_cold_boot,
 		}
 	}
 
-	cactus_print_memory_layout(ffa_id);
 
 	ret = register_secondary_entrypoint();
 
