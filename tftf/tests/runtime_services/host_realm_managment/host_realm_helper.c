@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2023, Arm Limited. All rights reserved.
+ * Copyright (c) 2022-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  *
@@ -30,15 +30,14 @@ const char *rmi_exit[] = {
 	RMI_EXIT(SYNC),
 	RMI_EXIT(IRQ),
 	RMI_EXIT(FIQ),
-	RMI_EXIT(FIQ),
 	RMI_EXIT(PSCI),
 	RMI_EXIT(RIPAS_CHANGE),
 	RMI_EXIT(HOST_CALL),
 	RMI_EXIT(SERROR),
-	RMI_EXIT(IO),
-	RMI_EXIT(RTT_REQUEST),
 	RMI_EXIT(S2AP_CHANGE),
-	RMI_EXIT(VDEV_REQUEST)
+	RMI_EXIT(VDEV_REQUEST),
+	RMI_EXIT(VDEV_COMM),
+	RMI_EXIT(DEV_MEM_MAP)
 };
 
 /*
