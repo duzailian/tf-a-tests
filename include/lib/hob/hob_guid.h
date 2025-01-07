@@ -8,6 +8,7 @@
 #define HOB_GUID_H
 
 #include <lib/hob/efi_types.h>
+#include <stdint.h>
 
 /**
  * Guid used for creating StandaloneMm related information.
@@ -27,5 +28,15 @@
 {                                                                               \
 	0xba33f15d, 0x4000, 0x45c1, {0x8e, 0x88, 0xf9, 0x16, 0x92, 0xd4, 0x57, 0xe3}  \
 }
+
+#define MM_COMM_BUFFER_GUID							\
+{										\
+	0x6c2a2520, 0x0131, 0x4aee, {0xa7, 0x50, 0xcc, 0x38, 0x4a, 0xac, 0xe8, 0xc6} \
+}
+
+struct mm_comm_buffer_desc {
+	efi_physical_address_t physical_start;
+	uint64_t number_of_pages;
+};
 
 #endif /* HOB_GUID_H */
