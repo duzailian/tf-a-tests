@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f746e8db_20834f27",
+        "filename": "smc_fuzz/dts/sdei.dts",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-01-07T20:34:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a094ed3_b2de0819",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "721e53b1b3063ae3dcfcd9857823e68ab891bddc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5490799b_c1c8f8bf",
@@ -61,6 +85,30 @@
       "side": 1,
       "message": "Yes I agree, however since the user of the fuzzer has to set the constraints of the registers going into the SMC call I determined it was easier(more intuitive) to set the register directly as:\n\nx1 \u003d \u003csome value\u003e\n\nrather than:\n\nx[1] \u003d \u003csome value\u003e\n\nThis also more closely matches the tftf smc call model as it stands today.  If you feel that the second is better please let me know... I am open to persuasion...",
       "parentUuid": "5490799b_c1c8f8bf",
+      "range": {
+        "startLine": 548,
+        "startChar": 5,
+        "endLine": 548,
+        "endChar": 29
+      },
+      "revId": "721e53b1b3063ae3dcfcd9857823e68ab891bddc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3df06b5_3308a1c8",
+        "filename": "smc_fuzz/src/constraint.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-01-07T20:34:10Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "ef18ebc7_e8558041",
       "range": {
         "startLine": 548,
         "startChar": 5,
@@ -118,6 +166,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1ecb61a_51ace2b8",
+        "filename": "smc_fuzz/src/constraint.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-01-07T20:34:10Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "122075cd_4c9adea4",
+      "range": {
+        "startLine": 609,
+        "startChar": 6,
+        "endLine": 609,
+        "endChar": 15
+      },
+      "revId": "721e53b1b3063ae3dcfcd9857823e68ab891bddc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "60bdca19_333bd8b4",
@@ -155,6 +227,30 @@
       "side": 1,
       "message": "Same here...",
       "parentUuid": "60bdca19_333bd8b4",
+      "range": {
+        "startLine": 858,
+        "startChar": 0,
+        "endLine": 862,
+        "endChar": 2
+      },
+      "revId": "721e53b1b3063ae3dcfcd9857823e68ab891bddc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "036d6afa_153ff349",
+        "filename": "smc_fuzz/src/constraint.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-01-07T20:34:10Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e8658604_8baf02b0",
       "range": {
         "startLine": 858,
         "startChar": 0,
