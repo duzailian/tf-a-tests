@@ -6,6 +6,9 @@
 
 #include <stddef.h>
 #include <stdio.h>
+#include <stdint.h>
+#include <debug.h>
+#include <assert.h>
 #include <lib/hob/hob.h>
 #include <lib/hob/hob_guid.h>
 #include <lib/hob/mmram.h>
@@ -13,8 +16,89 @@
 
 #define ALIGN_UP(x, a)		((x + (a - 1)) & ~(a - 1))
 
-void tftf_dump_hob_generic_header(struct efi_hob_generic_header h)
+void dump_hob_generic_header(struct efi_hob_generic_header *h)
 {
-	printf("Hob Type: 0x%hu\n", h.hob_type);
-	printf("Hob Length: 0x%hu\n", h.hob_length);
+	assert(h != NULL);
+	INFO("Hob Type: 0x%x\n", h->hob_type);
+	INFO("Hob Length: 0x%x\n", h->hob_length);
+}
+
+void dump_efi_mmram_descriptor(struct efi_mmram_descriptor *m)
+{
+	INFO("Physical start: %llu\n", m->physical_start);
+	INFO("CPU start: %llu\n", m->cpu_start);
+	INFO("Physical size: %llu\n", m->physical_size);
+	INFO("Region state: %llu\n", m->region_state);
+}
+
+void dump_efi_hob_firmware_volume (struct efi_hob_firmware_volume *fv)
+{
+	dump_hob_generic_header(&fv->header);
+	INFO("Base_address %llu\n", fv->base_address);
+	INFO("Length %llu\n", fv->length);
+}
+
+static void dump_efi_guid(struct efi_guid guid)
+{
+	INFO("Time low: %x\n", guid.time_low);
+	INFO("Time mid: %x\n", guid.time_mid);
+	INFO("Time hi and version: %x\n", guid.time_hi_and_version);
+	for (int i = 0; i <8; i++) {
+		INFO("Clock_seq_and node_[%u]: %x\n", i,
+				guid.clock_seq_and_node[i]);
+	}
+}
+
+static void dump_guid_hob(struct efi_hob_guid_type *guid_hob)
+{
+	dump_hob_generic_header(&guid_hob->header);
+	dump_efi_guid(guid_hob->name);
+	//uint16_t guid_data_length = guid_hob->header.hob_length - (sizeof(struct efi_hob_generic_header) + sizeof(struct efi_guid));
+	//TODO print guid data according to type? or just have wrapper do that
+}
+
+void dump_hob_list(struct efi_hob_handoff_info_table *hob_list)
+{
+	uintptr_t next_hob_addr;
+	struct efi_hob_generic_header *next;
+
+	assert(hob_list != NULL);
+	dump_hob_generic_header(&hob_list->header);
+	INFO("Version: %u\n", hob_list->version);
+	INFO("Boot Mode: %u\n", hob_list->boot_mode);
+	INFO("EFI Memory Top: 0x%llx\n", hob_list->efi_memory_top);
+	INFO("EFI Memory Bottom: 0x%llx\n", hob_list->efi_memory_bottom);
+	INFO("EFI Free Memory Top: 0x%llx\n", hob_list->efi_free_memory_top);
+	INFO("EFI Free Memory Bottom: 0x%llx\n", hob_list->efi_free_memory_bottom);
+	INFO("EFI End of Hob List: 0x%llx\n", hob_list->efi_end_of_hob_list);
+
+	next_hob_addr = (uintptr_t)(hob_list) + (uintptr_t)hob_list->header.hob_length;
+	assert(next_hob_addr < (uintptr_t)hob_list->efi_end_of_hob_list);
+	next = (struct efi_hob_generic_header *)next_hob_addr;
+
+	while(next != NULL){
+		assert(next->hob_type != 0);
+		switch(next->hob_type){
+			case EFI_HOB_TYPE_GUID_EXTENSION:
+				dump_guid_hob((struct efi_hob_guid_type *)next);
+				break;
+			case EFI_HOB_TYPE_FV:
+				dump_efi_hob_firmware_volume((struct
+						efi_hob_firmware_volume *)next);
+				break;
+			default:
+				dump_hob_generic_header(next);
+		}
+
+		next_hob_addr = (uintptr_t)(next) + (uintptr_t)next->hob_length;
+
+		if (next_hob_addr >= (uintptr_t) hob_list->efi_end_of_hob_list){
+			next = NULL;
+		}else{
+			assert(next_hob_addr < (uintptr_t)hob_list->efi_end_of_hob_list);
+			next = (struct efi_hob_generic_header *)next_hob_addr;
+			dump_hob_generic_header(next);
+		}
+	}
+
 }
