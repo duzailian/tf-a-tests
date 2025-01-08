@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5582e285_ba31f071",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-08T12:19:30Z",
+      "side": 1,
+      "message": "would be good to add an assert that realm-\u003enum_aux_planes \u003c\u003d 3.",
+      "revId": "f5a32c2b26ba60b87ee499d5e6e553cb90fdc270",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3adb9046_b5b14d6a",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-08T12:19:30Z",
+      "side": 1,
+      "message": "This error case need to handle the free of `params`.",
+      "range": {
+        "startLine": 778,
+        "startChar": 7,
+        "endLine": 778,
+        "endChar": 24
+      },
+      "revId": "f5a32c2b26ba60b87ee499d5e6e553cb90fdc270",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1e4c906_8273eaa6",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-08T12:19:30Z",
+      "side": 1,
+      "message": "we are not free the primary vmid. This was an issue previously",
+      "revId": "f5a32c2b26ba60b87ee499d5e6e553cb90fdc270",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "636759a9_7eee9815",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-08T12:19:30Z",
+      "side": 1,
+      "message": "this doesn\u0027t  well, can be removed I think. Could print `j` and  `par_size` also in ERROR report",
+      "range": {
+        "startLine": 932,
+        "startChar": 22,
+        "endLine": 932,
+        "endChar": 28
+      },
+      "revId": "f5a32c2b26ba60b87ee499d5e6e553cb90fdc270",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be3a722c_efc781eb",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 1275,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-08T12:19:30Z",
+      "side": 1,
+      "message": "The primary VMID can also be freed ?",
+      "revId": "f5a32c2b26ba60b87ee499d5e6e553cb90fdc270",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
