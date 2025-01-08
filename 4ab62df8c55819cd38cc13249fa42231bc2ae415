@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f074f65_89feeb97",
+        "filename": "realm/include/realm_rsi.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-08T14:38:01Z",
+      "side": 1,
+      "message": "these are values from Arm ARM in which case they need to be in Arch.h under S2POE se section.",
+      "range": {
+        "startLine": 281,
+        "startChar": 3,
+        "endLine": 281,
+        "endChar": 13
+      },
+      "revId": "4ab62df8c55819cd38cc13249fa42231bc2ae415",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5579735_ec7fdaf7",
+        "filename": "realm/include/realm_rsi.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-08T14:38:01Z",
+      "side": 1,
+      "message": "need function documentation.\n\nIt would be good if realm_ APIs are in a separate header (like realm_helpers.h).",
+      "range": {
+        "startLine": 355,
+        "startChar": 0,
+        "endLine": 358,
+        "endChar": 61
+      },
+      "revId": "4ab62df8c55819cd38cc13249fa42231bc2ae415",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5080cf2b_e2c09ff1",
+        "filename": "realm/realm_plane.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-08T14:38:01Z",
+      "side": 1,
+      "message": "follow naming convention for public APIs.",
+      "range": {
+        "startLine": 19,
+        "startChar": 5,
+        "endLine": 19,
+        "endChar": 15
+      },
+      "revId": "4ab62df8c55819cd38cc13249fa42231bc2ae415",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
