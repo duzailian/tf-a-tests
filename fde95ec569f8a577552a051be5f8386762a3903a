@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f88fcdc3_08c87246",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 9
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-09T12:31:00Z",
+      "side": 1,
+      "message": "can be done after cold boot flag update.",
+      "range": {
+        "startLine": 79,
+        "startChar": 4,
+        "endLine": 79,
+        "endChar": 14
+      },
+      "revId": "fde95ec569f8a577552a051be5f8386762a3903a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d96d1457_4b54464a",
+        "filename": "realm/aarch64/realm_entrypoint.S",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-09T12:31:00Z",
+      "side": 1,
+      "message": "Is this needed in warm boot path as well ?\n\nwe would need to test PSCI_CPU_ON call from plane N and see if it behaves as expected.",
+      "revId": "fde95ec569f8a577552a051be5f8386762a3903a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64f9cb1d_c2f72fa5",
+        "filename": "realm/include/realm_psi.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-09T12:31:00Z",
+      "side": 1,
+      "message": "Could add a comment:\n\n/* Plane service interface */\n\nAnd some documentation on why this is needed and how it will be used.",
+      "revId": "fde95ec569f8a577552a051be5f8386762a3903a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5a45e51_102b011e",
+        "filename": "realm/include/realm_psi.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-09T12:31:00Z",
+      "side": 1,
+      "message": "Do we need args as well ?",
+      "revId": "fde95ec569f8a577552a051be5f8386762a3903a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "066d753c_42d6cabd",
+        "filename": "realm/include/realm_rsi.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-09T12:31:00Z",
+      "side": 1,
+      "message": "could add to realm_helper.h",
+      "revId": "fde95ec569f8a577552a051be5f8386762a3903a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
