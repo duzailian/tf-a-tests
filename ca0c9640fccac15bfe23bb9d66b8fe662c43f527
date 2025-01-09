@@ -3,6 +3,75 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d607c7a7_d70248f0",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-09T15:39:45Z",
+      "side": 1,
+      "message": "these are bit bit positions of index so this name is confusing. \n\nS2TTE_PERM_IDX_BIT0  can be a better name.",
+      "range": {
+        "startLine": 685,
+        "startChar": 22,
+        "endLine": 685,
+        "endChar": 29
+      },
+      "revId": "ca0c9640fccac15bfe23bb9d66b8fe662c43f527",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21616ab9_d3df319f",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 697,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-09T15:39:45Z",
+      "side": 1,
+      "message": "these are indexes, so the define can have IDX in the name like : \n\nRMI_PERM_S2AP_NO_ACCESS_IDX",
+      "range": {
+        "startLine": 697,
+        "startChar": 8,
+        "endLine": 697,
+        "endChar": 40
+      },
+      "revId": "ca0c9640fccac15bfe23bb9d66b8fe662c43f527",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43f1ab3b_994c08fc",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-09T15:39:45Z",
+      "side": 1,
+      "message": "this can be in the header.\npi_index can be perm_index",
+      "range": {
+        "startLine": 696,
+        "startChar": 20,
+        "endLine": 696,
+        "endChar": 41
+      },
+      "revId": "ca0c9640fccac15bfe23bb9d66b8fe662c43f527",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e8926b84_1593bc91",
         "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
         "patchSetId": 10
