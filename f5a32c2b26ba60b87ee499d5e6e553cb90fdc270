@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "48e4b9d0_5feb06bb",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-09T10:33:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5582e285_ba31f071",
+      "revId": "f5a32c2b26ba60b87ee499d5e6e553cb90fdc270",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3adb9046_b5b14d6a",
@@ -31,6 +49,30 @@
       "writtenOn": "2025-01-08T12:19:30Z",
       "side": 1,
       "message": "This error case need to handle the free of `params`.",
+      "range": {
+        "startLine": 778,
+        "startChar": 7,
+        "endLine": 778,
+        "endChar": 24
+      },
+      "revId": "f5a32c2b26ba60b87ee499d5e6e553cb90fdc270",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8385971_032242c0",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-09T10:33:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3adb9046_b5b14d6a",
       "range": {
         "startLine": 778,
         "startChar": 7,
@@ -58,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8cd7580d_8913b1d8",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-09T10:33:50Z",
+      "side": 1,
+      "message": "this will free all vmid",
+      "parentUuid": "d1e4c906_8273eaa6",
+      "revId": "f5a32c2b26ba60b87ee499d5e6e553cb90fdc270",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "636759a9_7eee9815",
@@ -81,6 +141,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "02754f61_7f15f160",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-09T10:33:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "636759a9_7eee9815",
+      "range": {
+        "startLine": 932,
+        "startChar": 22,
+        "endLine": 932,
+        "endChar": 28
+      },
+      "revId": "f5a32c2b26ba60b87ee499d5e6e553cb90fdc270",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be3a722c_efc781eb",
@@ -94,6 +178,24 @@
       "writtenOn": "2025-01-08T12:19:30Z",
       "side": 1,
       "message": "The primary VMID can also be freed ?",
+      "revId": "f5a32c2b26ba60b87ee499d5e6e553cb90fdc270",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "758c82cc_0d0d92f6",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 1275,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-09T10:33:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be3a722c_efc781eb",
       "revId": "f5a32c2b26ba60b87ee499d5e6e553cb90fdc270",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
