@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1df47fc6_49b72161",
+        "filename": "realm/realm_plane.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-10T11:46:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5d0e09f_b7a15c07",
+      "range": {
+        "startLine": 79,
+        "startChar": 2,
+        "endLine": 79,
+        "endChar": 15
+      },
+      "revId": "5a0f2bd6aa83d5799f533736012e1039d0f69cc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "32d4344c_07b0203f",
@@ -41,6 +65,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a330242f_0850f641",
+        "filename": "realm/realm_plane.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-10T11:46:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32d4344c_07b0203f",
+      "revId": "5a0f2bd6aa83d5799f533736012e1039d0f69cc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d312a896_d953d765",
@@ -54,6 +96,30 @@
       "writtenOn": "2025-01-09T14:55:23Z",
       "side": 1,
       "message": "the test should not assume anything specific to FVP . I guess test can query the RMM and program the values here ?",
+      "range": {
+        "startLine": 292,
+        "startChar": 0,
+        "endLine": 296,
+        "endChar": 4
+      },
+      "revId": "5a0f2bd6aa83d5799f533736012e1039d0f69cc4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ccfafdf8_a3c629e9",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-10T11:46:30Z",
+      "side": 1,
+      "message": "Acknowledged, pmu test also might need changes I will handle this in another patch",
+      "parentUuid": "d312a896_d953d765",
       "range": {
         "startLine": 292,
         "startChar": 0,
