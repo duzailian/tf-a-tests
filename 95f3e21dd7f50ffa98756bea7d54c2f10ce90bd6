@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff3a3ae2_4c3c09c8",
+        "filename": "realm/realm_debug.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-10T11:10:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "64568db3_aa8c6073",
+      "range": {
+        "startLine": 43,
+        "startChar": 38,
+        "endLine": 43,
+        "endChar": 41
+      },
+      "revId": "95f3e21dd7f50ffa98756bea7d54c2f10ce90bd6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c18a234_ec8869d2",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f16850e9_b274ecff",
+        "filename": "realm/realm_multiple_rec.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-10T11:10:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c18a234_ec8869d2",
+      "range": {
+        "startLine": 58,
+        "startChar": 2,
+        "endLine": 58,
+        "endChar": 18
+      },
+      "revId": "95f3e21dd7f50ffa98756bea7d54c2f10ce90bd6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93218e2f_9a94eab1",
@@ -60,6 +108,30 @@
       "writtenOn": "2025-01-09T12:31:00Z",
       "side": 1,
       "message": "it is a bit strange to have regular RSI calls defined in PSI. \n\nI think PSI should be exclusively hvc calls to Plane 0. \n\nPerhaps the caller would need to call the right API based on whether it is plane 0 or plane N.",
+      "range": {
+        "startLine": 15,
+        "startChar": 13,
+        "endLine": 15,
+        "endChar": 32
+      },
+      "revId": "95f3e21dd7f50ffa98756bea7d54c2f10ce90bd6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "151d592c_f356627b",
+        "filename": "realm/realm_psi.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-10T11:10:33Z",
+      "side": 1,
+      "message": "this is a general helper, moved it to common file",
+      "parentUuid": "93218e2f_9a94eab1",
       "range": {
         "startLine": 15,
         "startChar": 13,
