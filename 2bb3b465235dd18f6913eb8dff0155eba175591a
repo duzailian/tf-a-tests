@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "97b5ea11_7d4da85b",
+        "filename": "realm/realm_shared_data.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-10T11:33:15Z",
+      "side": 1,
+      "message": "Hmm, the design is still not clear. Need more explanation where the shared buffer are allocated and Each API can have suitable explanation as well. \n\n\nI think plane 0 needs to call this API and Plane N needs to call a PSI to get the pointer to the shared buffer. This way both can have different pointers.",
+      "parentUuid": "a2d8c3c8_ae91fcc5",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 26,
+        "endChar": 19
+      },
+      "revId": "2bb3b465235dd18f6913eb8dff0155eba175591a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8b8b6fbe_a81a4b19",
         "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
         "patchSetId": 7

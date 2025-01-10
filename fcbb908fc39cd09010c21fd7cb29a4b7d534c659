@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9a5253e_cfed641f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-10T11:33:15Z",
+      "side": 1,
+      "message": "e",
+      "revId": "fcbb908fc39cd09010c21fd7cb29a4b7d534c659",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5217e601_cd6b0b91",
+        "filename": "include/runtime_services/host_realm_managment/host_shared_data.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-10T11:33:15Z",
+      "side": 1,
+      "message": "Have N in caps.",
+      "range": {
+        "startLine": 162,
+        "startChar": 50,
+        "endLine": 162,
+        "endChar": 51
+      },
+      "revId": "fcbb908fc39cd09010c21fd7cb29a4b7d534c659",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65a51625_13364ec2",
+        "filename": "realm/realm_shared_data.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-10T11:33:15Z",
+      "side": 1,
+      "message": "Plane N could call the PSI equivalent for this. \n\nSo the new naming convention that needs to be introduced to making code easier to read is\n\nrealm_* API for Plane 0 or without planes \n\npsi_* API for plane N.",
+      "revId": "fcbb908fc39cd09010c21fd7cb29a4b7d534c659",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa35c64f_45e8098a",
+        "filename": "realm/realm_shared_data.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-10T11:33:15Z",
+      "side": 1,
+      "message": "assert(plane_num !\u003d 0) should be enough ? \n\nsame comments for below.",
+      "range": {
+        "startLine": 72,
+        "startChar": 8,
+        "endLine": 72,
+        "endChar": 17
+      },
+      "revId": "fcbb908fc39cd09010c21fd7cb29a4b7d534c659",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
