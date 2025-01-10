@@ -47,8 +47,8 @@ realm_ctx_fnptr_t realm_ctx_regs[MAX_BPS] = {
 	REALM_CTX_FNPTRS(15)
 };
 
-static u_register_t expected_bp_addr[MAX_BPS];
-static u_register_t expected_wp_addr[MAX_WPS];
+static u_register_t expected_bp_addr[MAX_BANKS][MAX_BPS];
+static u_register_t expected_wp_addr[MAX_BANKS][MAX_WPS];
 
 /*
  * Set DBGBCRn_EL1 fields HMC, PMC, SSC and SSCE such that breakpoint n will
@@ -138,11 +138,13 @@ bool test_realm_debug_num_bps_wps(void)
 	}
 
 	INFO("Realm: BPs extracted = %d and WPs extracted = %d\n", num_bps+1, num_wps+1);
+	printf("\n");
 
 	num_bps_host = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
 	num_wps_host = realm_shared_data_get_my_host_val(HOST_ARG2_INDEX);
 
 	INFO("Realm: BPs requested = %d and WPs requested = %d\n", num_bps_host+1, num_wps_host+1);
+	printf("\n");
 
 	if ((num_bps != num_bps_host) || (num_wps != num_wps_host)) {
 		return false;
@@ -158,16 +160,28 @@ bool test_realm_debug_num_bps_wps(void)
 static void rl_set_bps(unsigned long num_bps)
 {
 	unsigned long rand_addr;
+	uint8_t bp_count, iter, bank_count;
 
-	for(int i = 0; i <= num_bps ; i++) {
-		realm_ctx_regs[i].write_dbgbcr_el1(rl_set_dbgbcr_el1(realm_ctx_regs[i].read_dbgbcr_el1()));
-		rand_addr = get_random_address();
-		realm_ctx_regs[i].write_dbgbvr_el1(INPLACE(DBGBVR_EL1_VA, rand_addr));
-		expected_bp_addr[i] = rand_addr;
-		INFO("read_dbgbcr[%d] = %lx and read_dbgbvr[%d]= %lx\n", i, \
-		      realm_ctx_regs[i].read_dbgbvr_el1(),i, realm_ctx_regs[i].read_dbgbcr_el1());
-		printf("\n");
+	bp_count = num_bps;
+	bank_count = SELECT_BITS(num_bps);
+
+	for (uint8_t bank = 0U; bank <= bank_count; bank++) {
+
+		printf("Real set bps, bank = %d\n", bank);
+
+		write_mdselr_el1(INPLACE(MDSELR_EL1_BANK, bank));
+
+		iter = (bp_count >= MAX_BPS) ? ((bp_count -= MAX_BPS), (MAX_BPS - 1)) : bp_count;
+
+		for (int i = 0; i <= iter ; i++) {
+			realm_ctx_regs[i].write_dbgbcr_el1(rl_set_dbgbcr_el1(realm_ctx_regs[i].read_dbgbcr_el1()));
+			rand_addr = get_random_address();
+			realm_ctx_regs[i].write_dbgbvr_el1(INPLACE(DBGBVR_EL1_VA, rand_addr));
+			expected_bp_addr[bank][i] = rand_addr;
+		}
 	}
+	INFO("read_dbgbvr[%d]= %lx\n", iter, realm_ctx_regs[iter].read_dbgbvr_el1());
+	printf("\n");
 
 }
 
@@ -179,15 +193,28 @@ static void rl_set_wps(unsigned long num_wps)
 {
 	unsigned long rand_addr;
 
-	for(int i = 0; i <= num_wps ; i++) {
-		realm_ctx_regs[i].write_dbgwcr_el1(rl_set_dbgwcr_el1(realm_ctx_regs[i].read_dbgwcr_el1()));
-		rand_addr = get_random_address();
-		realm_ctx_regs[i].write_dbgwvr_el1(INPLACE(DBGWVR_EL1_VA, rand_addr));
-		expected_wp_addr[i] = rand_addr;
-		INFO("read_dbgwcr[%d] = %lx and read_dbgwvr[%d]= %lx\n", i, \
-		      realm_ctx_regs[i].read_dbgwvr_el1(),i, realm_ctx_regs[i].read_dbgwcr_el1());
-		printf("\n");
+	uint8_t wp_count, iter, bank_count;
+
+	wp_count = num_wps;
+	bank_count = SELECT_BITS(num_wps);
+
+	for (uint8_t bank = 0U; bank <= bank_count; bank++) {
+
+		printf("Real set wps, bank = %d\n", bank);
+
+		write_mdselr_el1(INPLACE(MDSELR_EL1_BANK, bank));
+
+		iter = (wp_count >= MAX_WPS) ? ((wp_count -= MAX_WPS), (MAX_WPS - 1)) : wp_count;
+
+		for(int i = 0; i <= iter; i++) {
+			realm_ctx_regs[i].write_dbgwcr_el1(rl_set_dbgwcr_el1(realm_ctx_regs[i].read_dbgwcr_el1()));
+			rand_addr = get_random_address();
+			realm_ctx_regs[i].write_dbgwvr_el1(INPLACE(DBGWVR_EL1_VA, rand_addr));
+			expected_wp_addr[bank][i] = rand_addr;
+		}
 	}
+	INFO("read_dbgwvr[%d] = %lx\n", iter, realm_ctx_regs[iter].read_dbgwvr_el1());
+	printf("\n");
 }
 
 /*
@@ -214,14 +241,21 @@ void test_realm_debug_fill_regs(void)
 		}
 	}
 
-	INFO("Num of bps extracted = %d and wps extracted = %d\n", num_bps+1, num_wps+1);
+	printf("\n");
+	INFO("Realm: Num of bps extracted = %d and wps extracted = %d\n", num_bps+1, num_wps+1);
+	printf("\n");
 
 	write_mdscr_el1(read_mdscr_el1() |
 			MDSCR_EL1_TDCC_BIT |
 			MDSCR_EL1_KDE_BIT |
-			MDSCR_EL1_MDE_BIT);
+			MDSCR_EL1_MDE_BIT |
+			MDSCR_EL1_EMBWE_BIT);
+
+	write_mdselr_el1(INPLACE(MDSELR_EL1_BANK, SELECT_BITS(num_bps)));
+
 
 	INFO("Realm: Write random values to BP and WP regs\n");
+	printf("\n");
 
 	rl_set_bps(num_bps);
 	rl_set_wps(num_wps);
@@ -234,19 +268,31 @@ void test_realm_debug_fill_regs(void)
 static bool rl_check_bps(unsigned long num_bps)
 {
 	bool rc = false;
-	if (num_bps != 0UL) {
-		for(int i = 0; i <= num_bps; i++) {
-			printf(" i = %d\n", i);
+	uint8_t bp_count, iter, bank_count;
+
+	bp_count = num_bps;
+	bank_count = SELECT_BITS(num_bps);
+
+	for (uint8_t bank = 0U; bank <= bank_count; bank++) {
+
+		printf("Real check bps, bank = %d\n", bank);
+
+		write_mdselr_el1(INPLACE(MDSELR_EL1_BANK, bank));
+
+		iter = (bp_count >= MAX_BPS) ? ((bp_count -= MAX_BPS), (MAX_BPS - 1)) : bp_count;
+
+		for(int i = 0; i <= iter; i++) {
 			if (!rl_check_dbgbcr_el1(realm_ctx_regs[i].read_dbgbcr_el1())			\
 				&& (EXTRACT(DBGBVR_EL1_VA, realm_ctx_regs[i].read_dbgbvr_el1()) != 	\
-				expected_bp_addr[i])) {
+				expected_bp_addr[bank][i])) {
 				rc = false;
 				break;
 			}
-			INFO("read_dbgbvr_el1[%d] = %lx\n", i, realm_ctx_regs[i].read_dbgbvr_el1());
 		}
 		rc = true;
 	}
+	INFO("read_dbgbvr_el1[%d] = %lx\n", iter, realm_ctx_regs[iter].read_dbgbvr_el1());
+	printf("\n");
         return rc;
 }
 
@@ -257,19 +303,31 @@ static bool rl_check_bps(unsigned long num_bps)
 static bool rl_check_wps(unsigned long num_wps)
 {
 	bool rc = false;
-	if (num_wps != 0UL) {
-		for(int i = 0; i <= num_wps; i++) {
-			printf(" i = %d\n", i);
+	uint8_t wp_count, iter, bank_count;
+
+	wp_count = num_wps;
+	bank_count = SELECT_BITS(num_wps);
+
+	for (uint8_t bank = 0U; bank <= bank_count; bank++) {
+
+		printf("Real check wps, bank = %d\n", bank);
+
+		write_mdselr_el1(INPLACE(MDSELR_EL1_BANK, bank));
+
+		iter = (wp_count >= MAX_WPS) ? ((wp_count -= MAX_WPS), (MAX_WPS - 1)) : wp_count;
+
+		for(int i = 0; i <= iter; i++) {
 			if (!rl_check_dbgwcr_el1(realm_ctx_regs[i].read_dbgwcr_el1()) && \
 				(EXTRACT(DBGWVR_EL1_VA, realm_ctx_regs[i].read_dbgwvr_el1()) != \
-				expected_wp_addr[i])) {
+				expected_wp_addr[bank][i])) {
 				rc = false;
 				break;
 			}
-			INFO("read_dbgwvr_el1[%d] = %lx\n", i, realm_ctx_regs[i].read_dbgwvr_el1());
 		}
 		rc = true;
 	}
+	INFO("read_dbgwvr_el1[%d] = %lx\n", iter, realm_ctx_regs[iter].read_dbgwvr_el1());
+	printf("\n");
 	return rc;
 }
 
@@ -297,8 +355,10 @@ bool test_realm_debug_cmp_regs(void)
 	}
 
 	INFO("Num of bps extracted = %d and wps extracted = %d\n", num_bps+1, num_wps+1);
+	printf("\n");
 
 	INFO("Realm: Read and compare\n");
+	printf("\n");
 
 	return (rl_check_bps(num_bps) && rl_check_wps(num_wps));
 }
