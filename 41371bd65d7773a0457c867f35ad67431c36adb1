@@ -16,6 +16,75 @@
       "message": "https://jenkins.openci.aws.arm.com/job/rmm-main/948/",
       "revId": "41371bd65d7773a0457c867f35ad67431c36adb1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6d204af_ade1fe52",
+        "filename": "realm/include/realm_helpers.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-10T16:32:46Z",
+      "side": 1,
+      "message": "nit: remove self",
+      "range": {
+        "startLine": 24,
+        "startChar": 16,
+        "endLine": 24,
+        "endChar": 21
+      },
+      "revId": "41371bd65d7773a0457c867f35ad67431c36adb1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b93e2592_3ba97ea9",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-10T16:32:46Z",
+      "side": 1,
+      "message": "this line is repeated, one of them needs to be removed.",
+      "range": {
+        "startLine": 292,
+        "startChar": 1,
+        "endLine": 292,
+        "endChar": 22
+      },
+      "revId": "41371bd65d7773a0457c867f35ad67431c36adb1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6646e6d7_a98122c5",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-10T16:32:46Z",
+      "side": 1,
+      "message": "Can we not use num_cnts directly ? Any reason for /2 ?",
+      "range": {
+        "startLine": 304,
+        "startChar": 34,
+        "endLine": 304,
+        "endChar": 47
+      },
+      "revId": "41371bd65d7773a0457c867f35ad67431c36adb1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
