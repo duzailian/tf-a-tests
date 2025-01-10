@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99cca3cc_4a5c200d",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 1575,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-10T12:02:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0c1b19c_a9e952bc",
+      "range": {
+        "startLine": 1575,
+        "startChar": 14,
+        "endLine": 1575,
+        "endChar": 23
+      },
+      "revId": "83332977f33b17a33d5e5427097bc1f103b6e84c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6bbb1819_f96e6c9e",
@@ -37,6 +61,24 @@
       "writtenOn": "2025-01-10T11:19:42Z",
       "side": 1,
       "message": "nit: add func doc",
+      "revId": "83332977f33b17a33d5e5427097bc1f103b6e84c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90ce3f7c_3efa34ce",
+        "filename": "realm/include/realm_helpers.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-10T12:02:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6bbb1819_f96e6c9e",
       "revId": "83332977f33b17a33d5e5427097bc1f103b6e84c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -58,6 +100,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a575c1d9_57cf84ed",
+        "filename": "realm/include/realm_rsi.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-10T12:02:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7dba6ec2_d5aa25db",
+      "revId": "83332977f33b17a33d5e5427097bc1f103b6e84c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d47565cd_fb1a31e7",
@@ -71,6 +131,30 @@
       "writtenOn": "2025-01-10T11:19:42Z",
       "side": 1,
       "message": "this is not declared in any header. Needs to be in same header as other public API of this.",
+      "range": {
+        "startLine": 19,
+        "startChar": 5,
+        "endLine": 19,
+        "endChar": 21
+      },
+      "revId": "83332977f33b17a33d5e5427097bc1f103b6e84c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9385a5d9_68e17f2f",
+        "filename": "realm/realm_plane.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-10T12:02:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d47565cd_fb1a31e7",
       "range": {
         "startLine": 19,
         "startChar": 5,
