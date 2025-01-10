@@ -161,7 +161,7 @@ test_result_t host_test_realm_num_bps_wps(void)
 
 	if (!host_create_activate_realm_payload(&realm,
 					(u_register_t)REALM_IMAGE_BASE,
-					feature_flag, RTT_MIN_LEVEL, rec_flag, 1U)) {
+					feature_flag, RTT_MIN_LEVEL, rec_flag, 1U, 0U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -235,7 +235,7 @@ test_result_t host_request_lesser_num_bps_wps(void)
 
 	if (!host_create_activate_realm_payload(&realm,
 					(u_register_t)REALM_IMAGE_BASE,
-					feature_flag, RTT_MIN_LEVEL, rec_flag, 1U, 0UL)) {
+					feature_flag, RTT_MIN_LEVEL, rec_flag, 1U, 0U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -262,21 +262,34 @@ test_result_t host_request_lesser_num_bps_wps(void)
  * Write random values to DBGBVRn_EL1 registers and set the values of
  * DBGBCRn_EL1 registers.
  */
-static void ns_set_bps(int num_bps, u_register_t expected_bp_addr[])
+static void ns_set_bps(int num_bps, u_register_t expected_bp_addr[][MAX_BPS])
 {
 	unsigned int rand_addr;
-	for(int i = 0; i <= num_bps; i++) {
-		u_register_t value = debug_regs[i].read_dbgbcr_el1();
-		value = ns_set_dbgbcr_el1(debug_regs[i].read_dbgbcr_el1());
-		debug_regs[i].write_dbgbcr_el1(value);
-		rand_addr = get_random_address();
-		debug_regs[i].write_dbgbvr_el1(INPLACE(DBGBVR_EL1_VA, rand_addr));
-		expected_bp_addr[i] = rand_addr;
-		INFO("read_dbgbcr[%d]= %lx, read_dbgbvr[%d]= %lx\n", i, \
-			debug_regs[i].read_dbgbcr_el1(), i, debug_regs[i].read_dbgbvr_el1());
-		printf("\n");
+	uint8_t iter, bp_count, bank_no;
 
+	bank_no = EXTRACT(MDSELR_EL1_BANK, read_mdselr_el1());
+	bp_count = num_bps;
+
+	for (uint8_t bank = 0U; bank <= bank_no; bank++) {
+
+		write_mdselr_el1(INPLACE(MDSELR_EL1_BANK, bank));
+
+		iter = (bp_count >= MAX_BPS) ? ((bp_count -= MAX_BPS), (MAX_BPS - 1)) : bp_count;
+
+		printf("NS set BPS: Bank No= %d\n", bank);
+
+		for(int i = 0; i <= iter; i++) {
+			u_register_t value = debug_regs[i].read_dbgbcr_el1();
+			value = ns_set_dbgbcr_el1(debug_regs[i].read_dbgbcr_el1());
+			debug_regs[i].write_dbgbcr_el1(value);
+			rand_addr = get_random_address();
+			debug_regs[i].write_dbgbvr_el1(INPLACE(DBGBVR_EL1_VA, rand_addr));
+			expected_bp_addr[bank][i] = rand_addr;
+
+		}
 	}
+	INFO("read_dbgbvr[%d]= %lx\n", iter, debug_regs[iter].read_dbgbvr_el1());
+	printf("\n");
 
 }
 
@@ -284,44 +297,69 @@ static void ns_set_bps(int num_bps, u_register_t expected_bp_addr[])
  * Write random values to DBGWVRn_EL1 registers and set the values of
  * DBGWCRn_EL1 registers.
  */
-static void ns_set_wps(int num_wps, u_register_t expected_wp_addr[])
+static void ns_set_wps(int num_wps, u_register_t expected_wp_addr[][MAX_WPS])
 {
 	unsigned int rand_addr;
 
-	for(int i = 0; i <= num_wps; i++) {
-		u_register_t value = debug_regs[i].read_dbgwcr_el1();
-		value = ns_set_dbgwcr_el1(debug_regs[i].read_dbgwcr_el1());
-		debug_regs[i].write_dbgwcr_el1(value);
-		rand_addr = get_random_address();
-		debug_regs[i].write_dbgwvr_el1(INPLACE(DBGWVR_EL1_VA, rand_addr));
-		expected_wp_addr[i] = rand_addr;
-		INFO("read_dbgwcr[%d]= %lx, read_dbgwvr[%d]= %lx\n", i, \
-			debug_regs[i].read_dbgwcr_el1(), i, debug_regs[i].read_dbgwvr_el1());
-		printf("\n");
+	uint8_t iter, wp_count, bank_no;
+
+	bank_no = EXTRACT(MDSELR_EL1_BANK, read_mdselr_el1());
+	wp_count = num_wps;
+
+	for (uint8_t bank = 0U; bank <= bank_no; bank++) {
+
+		write_mdselr_el1(INPLACE(MDSELR_EL1_BANK, bank));
+
+		iter = (wp_count >= MAX_WPS) ? ((wp_count -= MAX_WPS), (MAX_WPS - 1)) : wp_count;
+
+		printf("NS set WPS: Bank No= %d\n", bank);
+
+		for(int i = 0; i <= iter; i++) {
+			u_register_t value = debug_regs[i].read_dbgwcr_el1();
+			value = ns_set_dbgwcr_el1(debug_regs[i].read_dbgwcr_el1());
+			debug_regs[i].write_dbgwcr_el1(value);
+			rand_addr = get_random_address();
+			debug_regs[i].write_dbgwvr_el1(INPLACE(DBGWVR_EL1_VA, rand_addr));
+			expected_wp_addr[bank][i] = rand_addr;
+		}
 	}
+	INFO ("read_dbgwvr[%d]= %lx\n", iter, debug_regs[iter].read_dbgwvr_el1());
+	printf("\n");
 }
 
 /*
  * Verify that the values of DBGBCRn_EL1 and DBGBVRn_EL1 registers are the same
  * as what was written previously.
  */
-static test_result_t ns_check_bps(int num_bps, u_register_t expected_bp_addr[])
+static test_result_t ns_check_bps(int num_bps, u_register_t expected_bp_addr[][MAX_BPS])
 {
 	test_result_t rc = TEST_RESULT_FAIL;
 
-	if (num_bps != 0UL) {
-		for(int i = 0; i <= num_bps; i++) {
+	uint8_t iter, bp_count, bank_no;
+
+	bank_no = EXTRACT(MDSELR_EL1_BANK, read_mdselr_el1());
+	bp_count = num_bps;
+
+	for (uint8_t bank = 0U; bank <= bank_no; bank++) {
+
+		write_mdselr_el1(INPLACE(MDSELR_EL1_BANK, bank));
+
+		iter = (bp_count >= MAX_BPS) ? ((bp_count -= MAX_BPS), (MAX_BPS - 1)) : bp_count;
+
+		printf("NS check BPS: Bank No= %d\n", bank);
+
+		for(int i = 0; i <= iter; i++) {
 			if (!ns_check_dbgbcr_el1(debug_regs[i].read_dbgbcr_el1()) && \
 				(EXTRACT(DBGBVR_EL1_VA, debug_regs[i].read_dbgbvr_el1()) != \
-				expected_bp_addr[i])) {
+				expected_bp_addr[bank][i])) {
 				rc = TEST_RESULT_FAIL;
 				break;
 			}
-			INFO("read_dbgbvr_el1[%d] = %lx\n", i, debug_regs[i].read_dbgbvr_el1());
-			printf("\n");
 		}
-		rc = TEST_RESULT_SUCCESS;
+		rc = (bank == bank_no) ? TEST_RESULT_SUCCESS : TEST_RESULT_FAIL;
 	}
+	INFO("read_dbgbvr_el1[%d] = %lx\n", iter, debug_regs[iter].read_dbgbvr_el1());
+	printf("\n");
 	return rc;
 }
 
@@ -329,23 +367,35 @@ static test_result_t ns_check_bps(int num_bps, u_register_t expected_bp_addr[])
  * Verify that the values of DBGWCRn_EL1 and DBGWVRn_EL1 registers are the same
  * as what was written previously.
  */
-static test_result_t ns_check_wps(int num_wps, u_register_t expected_wp_addr[])
+static test_result_t ns_check_wps(int num_wps, u_register_t expected_wp_addr[][MAX_WPS])
 {
 	test_result_t rc = TEST_RESULT_FAIL;
 
-	if (num_wps != 0UL) {
-		for(int i = 0; i <= num_wps; i++) {
+	uint8_t iter, wp_count, bank_no;
+
+	bank_no = EXTRACT(MDSELR_EL1_BANK, read_mdselr_el1());
+	wp_count = num_wps;
+
+	for (uint8_t bank = 0U; bank <= bank_no; bank++) {
+
+		write_mdselr_el1(INPLACE(MDSELR_EL1_BANK, bank));
+
+		iter = (wp_count >= MAX_WPS) ? ((wp_count -= MAX_WPS), (MAX_WPS - 1)) : wp_count;
+
+		printf("NS check WPS: Bank No= %d\n", bank);
+
+		for(int i = 0; i <= iter; i++) {
 			if (!ns_check_dbgwcr_el1(debug_regs[i].read_dbgwcr_el1()) && \
 				(EXTRACT(DBGWVR_EL1_VA, debug_regs[i].read_dbgwvr_el1()) != \
-				expected_wp_addr[i])) {
+				expected_wp_addr[bank][i])) {
 				rc = TEST_RESULT_FAIL;
 				break;
 			}
-			INFO("read_dbgwvr_el1[%d] = %lx\n", i, debug_regs[i].read_dbgwvr_el1());
-			printf("\n");
 		}
-		rc = TEST_RESULT_SUCCESS;
+		rc = (bank == bank_no) ? TEST_RESULT_SUCCESS : TEST_RESULT_FAIL;
 	}
+	INFO("read_dbgwvr_el1[%d] = %lx\n", iter, debug_regs[iter].read_dbgwvr_el1());
+	printf("\n");
 	return rc;
 }
 
@@ -361,8 +411,8 @@ test_result_t host_realm_test_debug_save_restore(void)
 	u_register_t feature_flag;
 	u_register_t rec_flag[1] = {RMI_RUNNABLE};
 	struct realm realm;
-	u_register_t expected_bp_addr[MAX_BPS] = { 0 };
-	u_register_t expected_wp_addr[MAX_WPS] = { 0 };
+	u_register_t expected_bp_addr[MAX_BANKS][MAX_BPS] = { 0 };
+	u_register_t expected_wp_addr[MAX_BANKS][MAX_WPS] = { 0 };
 	test_result_t test_rc = TEST_RESULT_SUCCESS;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
@@ -388,6 +438,11 @@ test_result_t host_realm_test_debug_save_restore(void)
 
 	INFO("BP's and WP'supported in H/W is %ld and %ld\n", num_bps+1, num_wps+1);
 
+	num_bps = BPS_TRAP_TEST - 1;
+	num_wps = WPS_TRAP_TEST - 1;
+
+	INFO("BP's and WP's requested by host is %ld and %ld\n", num_bps+1, num_wps+1);
+
 	feature_flag = INPLACE(FEATURE_NUM_BPS, num_bps) |
 		       INPLACE(FEATURE_NUM_WPS, num_wps);
 
@@ -403,10 +458,14 @@ test_result_t host_realm_test_debug_save_restore(void)
 
 	write_mdscr_el1(read_mdscr_el1() |
 			MDSCR_EL1_TDCC_BIT |
-			MDSCR_EL1_KDE_BIT |
-			MDSCR_EL1_MDE_BIT);
+			MDSCR_EL1_KDE_BIT  |
+			MDSCR_EL1_MDE_BIT  |
+			MDSCR_EL1_EMBWE_BIT);
+
+	write_mdselr_el1(INPLACE(MDSELR_EL1_BANK, (SELECT_BITS(num_bps))));
 
 	INFO("NS HOST: Write random values to the BP and WP regs\n");
+	printf("\n");
 
 	ns_set_bps(num_bps, expected_bp_addr);
 	ns_set_wps(num_wps, expected_wp_addr);
@@ -423,6 +482,7 @@ test_result_t host_realm_test_debug_save_restore(void)
 	}
 
 	INFO("NS HOST: Read and compare the values in BP and WP regs\n");
+	printf("\n");
 
 	/*
 	 * Verify that the self-hosted debug registers have been saved and
@@ -450,3 +510,68 @@ destroy_realm:
 
 	return test_rc;
 }
+
+test_result_t host_realm_check_shd_undef_abort(void)
+{
+	volatile unsigned long num_bps, num_wps;
+	u_register_t feature_flag;
+	u_register_t rec_flag[1] = {RMI_RUNNABLE};
+	struct realm realm;
+	bool realm_rc;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	num_bps = EXTRACT(ID_AA64DFR0_BRPs, read_id_aa64dfr0_el1());
+
+	/* If BPs is 0xF, read DFR1 to find no of BPs supported by HW */
+	if (num_bps == MAX_BPS - 1UL) {
+		num_bps = EXTRACT(ID_AA64DFR1_BRPs, read_id_aa64dfr1_el1());
+		if (num_bps == 0UL) {
+			num_bps = MAX_BPS - 1UL;
+		}
+	}
+
+	/* If WPs is 0xF, read DFR1 to find no of BPs supported by HW */
+	num_wps = EXTRACT(ID_AA64DFR0_WRPs, read_id_aa64dfr0_el1());
+
+	if (num_wps == MAX_WPS - 1UL) {
+		num_wps = EXTRACT(ID_AA64DFR1_WRPs, read_id_aa64dfr1_el1());
+		if(num_wps == 0UL) {
+			num_wps = MAX_WPS - 1UL;
+		}
+	}
+
+	num_wps = MIN_WPS_REQUESTED - 1;
+
+	num_bps = MIN_BPS_REQUESTED - 1;
+
+	INFO("BP's and WP'supported requested by NS Host is %ld and %ld\n", num_bps+1, num_wps+1);
+
+	feature_flag = INPLACE(FEATURE_NUM_BPS, num_bps) |
+		       INPLACE(FEATURE_NUM_WPS, num_wps);
+
+	if (!host_create_activate_realm_payload(&realm,
+					(u_register_t)REALM_IMAGE_BASE,
+					feature_flag, RTT_MIN_LEVEL, rec_flag, 1U, 0U)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	if (!host_create_shared_mem(&realm)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	host_shared_data_set_host_val(&realm, 0, HOST_ARG1_INDEX, num_bps);
+	host_shared_data_set_host_val(&realm, 0, HOST_ARG2_INDEX, num_wps);
+
+	realm_rc = host_enter_realm_execute(&realm,
+					    REALM_DEBUG_CHECK_SHD_UNDEF_ABORT,
+					    RMI_EXIT_HOST_CALL,
+					    0);
+
+	if (!realm_rc || !host_destroy_realm(&realm)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
