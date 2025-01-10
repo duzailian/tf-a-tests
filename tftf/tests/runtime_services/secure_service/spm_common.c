@@ -22,8 +22,9 @@
 bool is_ffa_call_error(struct ffa_value ret)
 {
 	if (ffa_func_id(ret) == FFA_ERROR) {
-		VERBOSE("FF-A call returned error: %s\n",
-			ffa_error_name(ffa_error_code(ret)));
+		VERBOSE("FF-A call returned error: %s - %x\n",
+			ffa_error_name(ffa_error_code(ret)),
+			ffa_error_code(ret));
 		return true;
 	}
 	return false;
@@ -36,16 +37,18 @@ bool is_expected_ffa_error(struct ffa_value ret, int32_t expected_error)
 
 	received_func = ffa_func_id(ret);
 	if (received_func != FFA_ERROR) {
-		ERROR("Expected FFA_ERROR, got %s instead\n",
-		      ffa_func_name(received_func));
+		ERROR("Expected FFA_ERROR, got %s - %x instead\n",
+		      ffa_func_name(received_func), received_func);
 		return false;
 	}
 
 	received_error = ffa_error_code(ret);
 	if (received_error != expected_error) {
-		ERROR("Expected %s, got %s instead\n",
+		ERROR("Expected %s - %x, got %s - %x instead\n",
 		      ffa_error_name(expected_error),
-		      ffa_error_name(received_error));
+		      expected_error,
+		      ffa_error_name(received_error),
+		      received_error);
 		return false;
 	}
 
@@ -64,7 +67,10 @@ bool is_ffa_direct_response(struct ffa_value ret)
 		return true;
 	}
 
-	VERBOSE("%s is not FF-A response.\n", ffa_func_name(ffa_func_id(ret)));
+	VERBOSE("%s - %x is not FF-A response.\n",
+		ffa_func_name(ffa_func_id(ret)),
+		ffa_func_id(ret));
+
 	/* To log error in case it is FFA_ERROR*/
 	is_ffa_call_error(ret);
 
@@ -80,8 +86,9 @@ bool is_expected_ffa_return(struct ffa_value ret, uint32_t func_id)
 		return true;
 	}
 
-	VERBOSE("Expecting %s, FF-A return was %s\n", ffa_func_name(func_id),
-		ffa_func_name(ffa_func_id(ret)));
+	VERBOSE("Expecting %s - %x, FF-A return was %s - %x\n",
+		ffa_func_name(func_id), func_id,
+		ffa_func_name(ffa_func_id(ret)), ffa_func_id(ret));
 
 	return false;
 }
@@ -242,10 +249,12 @@ bool ffa_features_test_targets(const struct ffa_features_test *targets,
 				test_target->expected_ret : FFA_ERROR;
 
 		if (ffa_func_id(ffa_ret) != expected_ret) {
-			ERROR("Unexpected return: %s (expected %s)."
+			ERROR("Unexpected return: %s - %x (expected %s - %x)."
 			      " FFA_FEATURES test: %s.\n",
 			      ffa_func_name(ffa_func_id(ffa_ret)),
+			      ffa_func_id(ffa_ret),
 			      ffa_func_name(expected_ret),
+			      expected_ret,
 			      test_target->test_name);
 			ret = false;
 		}
@@ -253,10 +262,12 @@ bool ffa_features_test_targets(const struct ffa_features_test *targets,
 		if (expected_ret == FFA_ERROR) {
 			if (ffa_error_code(ffa_ret) !=
 			    FFA_ERROR_NOT_SUPPORTED) {
-				ERROR("Unexpected error code: %s (expected %s)."
+				ERROR("Unexpected error code: %s - %x (expected %s - %x)."
 				      " FFA_FEATURES test: %s.\n",
 				      ffa_error_name(ffa_error_code(ffa_ret)),
+				      ffa_error_code(ffa_ret),
 				      ffa_error_name(expected_ret),
+				      expected_ret,
 				      test_target->test_name);
 				ret = false;
 			}
