@@ -34,6 +34,7 @@ bool test_realm_mpam_undef_abort(void);
 bool test_realm_debug_num_bps_wps(void);
 void test_realm_debug_fill_regs(void);
 bool test_realm_debug_cmp_regs(void);
+bool test_realm_shd_undef_abort(void);
 
 #endif /* REALM_TESTS_H */
 
