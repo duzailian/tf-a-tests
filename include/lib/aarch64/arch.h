@@ -773,6 +773,10 @@
 #define MDCR_EL2_HPMN_MASK	ULL(0x1f)
 #define MDCR_EL2_RESET_VAL	U(0x0)
 
+/* MDSELR_EL1 definitions */
+#define MDSELR_EL1_BANK_SHIFT	U(4)
+#define MDSELR_EL1_BANK_WIDTH	U(2)
+
 /* HSTR_EL2 definitions */
 #define HSTR_EL2_RESET_VAL	U(0x0)
 #define HSTR_EL2_T_MASK		U(0xff)
@@ -781,6 +785,7 @@
 #define MDSCR_EL1_TDCC_BIT	(UL(1) << 12)
 #define MDSCR_EL1_KDE_BIT	(UL(1) << 13)
 #define MDSCR_EL1_MDE_BIT	(UL(1) << 15)
+#define MDSCR_EL1_EMBWE_BIT	(UL(1) << 32)
 
 /* CNTHP_CTL_EL2 definitions */
 #define CNTHP_CTL_ENABLE_BIT	(U(1) << 0)

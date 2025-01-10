@@ -693,6 +693,9 @@ void realm_payload_main(void)
 		case REALM_DEBUG_CMP_REGS:
 			test_succeed = test_realm_debug_cmp_regs();
 			break;
+		case REALM_DEBUG_CHECK_SHD_UNDEF_ABORT:
+			test_succeed = test_realm_shd_undef_abort();
+			break;
 		default:
 			realm_printf("%s() invalid cmd %u\n", __func__, cmd);
 			break;
