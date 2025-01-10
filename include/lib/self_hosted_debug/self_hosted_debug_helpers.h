@@ -12,6 +12,13 @@
 #define MIN_BPS_REQUESTED	2UL
 #define MIN_WPS_REQUESTED	2UL
 
+#define BPS_TRAP_TEST		16UL
+#define WPS_TRAP_TEST		55UL
+
+#define MAX_BANKS		U(4)
+
+#define SELECT_BITS(count)	(((count) / 16) % 4)
+
 #define WRITE_DBGBVR_EL1(n, addr) {			     \
 	write_dbgbvr##n##_el1(INPLACE(DBGBVR_EL1_VA, addr)); \
 }
