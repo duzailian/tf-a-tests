@@ -160,5 +160,8 @@
 	  function="host_request_lesser_num_bps_wps" />
 	  <testcase name="Check if self-hosted debug registers are preserved across NS/RL switch"
 	  function="host_realm_test_debug_save_restore" />
+	  <testcase name="Check if realm gets an abort when it tries to access a debug register"
+	  function="host_realm_check_shd_undef_abort" />
+
   </testsuite>
 </testsuites>
