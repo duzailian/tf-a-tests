@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "972e5f84_8aaa520e",
+        "filename": "include/runtime_services/host_realm_managment/host_shared_data.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-13T16:01:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5217e601_cd6b0b91",
+      "range": {
+        "startLine": 162,
+        "startChar": 50,
+        "endLine": 162,
+        "endChar": 51
+      },
+      "revId": "fcbb908fc39cd09010c21fd7cb29a4b7d534c659",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "65a51625_13364ec2",
@@ -58,6 +82,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e25015da_3a788fe2",
+        "filename": "realm/realm_shared_data.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-13T16:01:53Z",
+      "side": 1,
+      "message": "psi no longer needed",
+      "parentUuid": "65a51625_13364ec2",
+      "revId": "fcbb908fc39cd09010c21fd7cb29a4b7d534c659",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fa35c64f_45e8098a",
@@ -71,6 +113,30 @@
       "writtenOn": "2025-01-10T11:33:15Z",
       "side": 1,
       "message": "assert(plane_num !\u003d 0) should be enough ? \n\nsame comments for below.",
+      "range": {
+        "startLine": 72,
+        "startChar": 8,
+        "endLine": 72,
+        "endChar": 17
+      },
+      "revId": "fcbb908fc39cd09010c21fd7cb29a4b7d534c659",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6604b097_48594af4",
+        "filename": "realm/realm_shared_data.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-13T16:01:53Z",
+      "side": 1,
+      "message": "this is to allow only p0 to write to pn,\npn will be read only,\nelse pn can corrupt the buffer",
+      "parentUuid": "fa35c64f_45e8098a",
       "range": {
         "startLine": 72,
         "startChar": 8,
