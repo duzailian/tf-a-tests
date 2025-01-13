@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "98a94445_b6e44a73",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-13T17:55:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9568ada1_8412aca6",
+      "range": {
+        "startLine": 54,
+        "startChar": 60,
+        "endLine": 54,
+        "endChar": 76
+      },
+      "revId": "ccc77394e4211f3f60bfd37e9764f8ad70fb6352",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "09fe9e5d_ab9a84c0",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-01-09T15:08:21Z",
       "side": 1,
       "message": "Need some comments for par_size and design of IPA space for Realms.\n\n#define REALM_MAX_LOAD_IMG_SIZE\t\tU(0x100000)\n\nThis is for a single plane. So every Nth plane is placed beyond this AIU. \n\nI think REALM_ENTER_PLANE_N_CMD should provide the entry point as an argument within the framework and the test is not exposed to this detail.\n\nSame for Perm index for planes. This should be issued by Plane 0 implictly as part of creating S2AP for Plane N.",
+      "range": {
+        "startLine": 99,
+        "startChar": 21,
+        "endLine": 99,
+        "endChar": 41
+      },
+      "revId": "ccc77394e4211f3f60bfd37e9764f8ad70fb6352",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22ce9597_63c57816",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-13T17:55:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "09fe9e5d_ab9a84c0",
       "range": {
         "startLine": 99,
         "startChar": 21,
