@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2023, Arm Limited and Contributors. All rights reserved.
+ * Copyright (c) 2016-2025, Arm Limited and Contributors. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -183,5 +183,12 @@
 
 #define CONCAT(x, y)	x##y
 #define CONC(x, y)	CONCAT(x, y)
+
+#define HOURS		(10U * (__TIME__[0] - '0') + (__TIME__[1] - '0'))
+#define MINUTES		(10U * (__TIME__[4] - '0') + (__TIME__[5] - '0'))
+#define SECONDS		(10U * (__TIME__[6] - '0') + (__TIME__[7] - '0'))
+
+/* Compilation time in seconds */
+#define GET_TIME	(((HOURS * 60U + MINUTES) * 60U) + SECONDS)
 
 #endif /* UTILS_DEF_H */
