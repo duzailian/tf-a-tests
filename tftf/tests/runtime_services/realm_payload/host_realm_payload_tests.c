@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021-2024, Arm Limited. All rights reserved.
+ * Copyright (c) 2021-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -45,7 +45,7 @@ test_result_t host_test_realm_create_enter(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -91,7 +91,7 @@ test_result_t host_test_realm_rsi_version(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -130,7 +130,7 @@ test_result_t host_realm_enable_pauth(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -195,7 +195,7 @@ test_result_t host_realm_pauth_fault(void)
 	u_register_t feature_flag = 0U;
 	long sl = RTT_MIN_LEVEL;
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -299,9 +299,9 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 	host_set_pmu_state();
 
 	feature_flag = RMI_FEATURE_REGISTER_0_PMU_EN |
-			INPLACE(FEATURE_PMU_NUM_CTRS, num_cnts);
+			INPLACE(RMI_FEATURE_REGISTER_0_PMU_NUM_CTRS, num_cnts);
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag |= RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -312,9 +312,11 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 	}
 
 	ret1 = host_enter_realm_execute(&realm, cmd,
-					(cmd == REALM_PMU_INTERRUPT) ?
+					((cmd == REALM_PMU_CYCLE_INTERRUPT) ||
+					 (cmd == REALM_PMU_EVENT_INTERRUPT)) ?
 					RMI_EXIT_IRQ : RMI_EXIT_HOST_CALL, 0U);
-	if (!ret1 || (cmd != REALM_PMU_INTERRUPT)) {
+	if (!ret1 || ((cmd != REALM_PMU_CYCLE_INTERRUPT) &&
+		      (cmd != REALM_PMU_EVENT_INTERRUPT))) {
 		goto test_exit;
 	}
 
@@ -347,6 +349,11 @@ test_result_t host_realm_pmuv3_cycle_works(void)
  */
 test_result_t host_realm_pmuv3_event_works(void)
 {
+	if (GET_PMU_CNT == 0) {
+		tftf_testcase_printf("No event counters implemented\n");
+		return TEST_RESULT_SKIPPED;
+	}
+
 	return host_test_realm_pmuv3(REALM_PMU_EVENT);
 }
 
@@ -371,21 +378,42 @@ static int host_overflow_interrupt(void *data)
 }
 
 /*
- * Test PMU interrupt functionality in Realm
+ * Test PMU cycle counter interrupt functionality in Realm
  */
-test_result_t host_realm_pmuv3_overflow_interrupt(void)
+test_result_t host_realm_pmuv3_cycle_overflow_interrupt(void)
 {
 	/* Register PMU IRQ handler */
 	int ret = tftf_irq_register_handler(PMU_PPI, host_overflow_interrupt);
 
 	if (ret != 0) {
-		tftf_testcase_printf("Failed to %sregister IRQ handler\n",
-					"");
+		tftf_testcase_printf("Failed to %sregister IRQ handler\n", "");
 		return TEST_RESULT_FAIL;
 	}
 
 	tftf_irq_enable(PMU_PPI, GIC_HIGHEST_NS_PRIORITY);
-	return host_test_realm_pmuv3(REALM_PMU_INTERRUPT);
+	return host_test_realm_pmuv3(REALM_PMU_CYCLE_INTERRUPT);
+}
+
+/*
+ * Test PMU event counter interrupt functionality in Realm
+ */
+test_result_t host_realm_pmuv3_event_overflow_interrupt(void)
+{
+	if (GET_PMU_CNT == 0) {
+		tftf_testcase_printf("No event counters implemented\n");
+		return TEST_RESULT_SKIPPED;
+	}
+
+	/* Register PMU IRQ handler */
+	int ret = tftf_irq_register_handler(PMU_PPI, host_overflow_interrupt);
+
+	if (ret != 0) {
+		tftf_testcase_printf("Failed to %sregister IRQ handler\n", "");
+		return TEST_RESULT_FAIL;
+	}
+
+	tftf_irq_enable(PMU_PPI, GIC_HIGHEST_NS_PRIORITY);
+	return host_test_realm_pmuv3(REALM_PMU_EVENT_INTERRUPT);
 }
 
 /*
@@ -405,7 +433,7 @@ test_result_t host_test_multiple_realm_create_enter(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -479,7 +507,7 @@ test_result_t host_realm_set_ripas(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -578,7 +606,7 @@ test_result_t host_realm_reject_set_ripas(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -650,7 +678,7 @@ test_result_t host_realm_abort_unassigned_destroyed(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -776,7 +804,7 @@ test_result_t host_realm_abort_unassigned_ram(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -885,7 +913,7 @@ test_result_t host_realm_abort_assigned_destroyed(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -1020,7 +1048,7 @@ test_result_t host_realm_sea_empty(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -1162,7 +1190,7 @@ test_result_t host_realm_sea_unprotected(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -1266,7 +1294,7 @@ test_result_t host_realm_enable_dit(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -1500,7 +1528,7 @@ test_result_t host_realm_pas_validation_new(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -1686,7 +1714,7 @@ test_result_t host_realm_pas_validation_active(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -1879,7 +1907,7 @@ test_result_t host_test_rtt_fold_unfold_unassigned_empty(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -2036,7 +2064,7 @@ test_result_t host_test_rtt_fold_unfold_unassigned_ram(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -2211,7 +2239,7 @@ test_result_t host_test_rtt_fold_unfold_assigned_ns(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -2326,7 +2354,7 @@ test_result_t host_test_rtt_fold_unfold_assigned_empty(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -2439,7 +2467,7 @@ test_result_t host_test_rtt_fold_unfold_assigned_ram(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -2552,7 +2580,7 @@ test_result_t host_test_feat_doublefault2(void)
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 	SKIP_TEST_IF_DOUBLE_FAULT2_NOT_SUPPORTED();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -2615,7 +2643,7 @@ test_result_t host_realm_test_attestation(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
@@ -2656,7 +2684,7 @@ test_result_t host_realm_test_attestation_fault(void)
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
 
-	if (is_feat_52b_on_4k_2_supported() == true) {
+	if (is_feat_52b_on_4k_2_supported()) {
 		feature_flag = RMI_FEATURE_REGISTER_0_LPA2;
 		sl = RTT_MIN_LEVEL_LPA2;
 	}
