@@ -13,7 +13,6 @@
 
 #define PMU_EVT_INST_RETIRED	0x0008
 #define NOP_REPETITIONS		50
-#define MAX_COUNTERS		32
 
 static inline void read_all_counters(u_register_t *array, int impl_ev_ctrs)
 {
