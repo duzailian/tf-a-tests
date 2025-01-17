@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023, Arm Limited. All rights reserved.
+ * Copyright (c) 2023-2025, Arm Limited. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
@@ -8,6 +8,7 @@
 #include <arch_helpers.h>
 #include <assert.h>
 #include <debug.h>
+#include <realm_helpers.h>
 #include <stdlib.h>
 #include <sync.h>
 #include <lib/extensions/fpu.h>
@@ -33,8 +34,6 @@ static sve_ffr_regs_t rl_sve_ffr_regs_read;
 
 static fpu_cs_regs_t rl_fpu_cs_regs_write;
 static fpu_cs_regs_t rl_fpu_cs_regs_read;
-
-static int volatile realm_got_undef_abort;
 
 /* Returns the maximum supported VL. This test is called only by sve Realm */
 bool test_realm_sve_rdvl(void)
@@ -188,31 +187,17 @@ bool test_realm_sve_cmp_regs(void)
 	return rc;
 }
 
-static bool realm_sync_exception_handler(void)
-{
-	uint64_t esr_el1 = read_esr_el1();
-
-	if (EC_BITS(esr_el1) == EC_UNKNOWN) {
-		realm_printf("received undefined abort. "
-			     "esr_el1: 0x%llx elr_el1: 0x%llx\n",
-			     esr_el1, read_elr_el1());
-		realm_got_undef_abort++;
-	}
-
-	return true;
-}
-
 /* Check if Realm gets undefined abort when it accesses SVE functionality */
 bool test_realm_sve_undef_abort(void)
 {
-	realm_got_undef_abort = 0UL;
+	realm_reset_undef_abort_count();
 
 	/* install exception handler to catch undef abort */
 	register_custom_sync_exception_handler(&realm_sync_exception_handler);
 	(void)sve_rdvl_1();
 	unregister_custom_sync_exception_handler();
 
-	if (realm_got_undef_abort == 0UL) {
+	if (realm_get_undef_abort_count() == 0U) {
 		return false;
 	}
 
@@ -240,14 +225,14 @@ bool test_realm_sme_read_id_registers(void)
 /* Check if Realm gets undefined abort when it access SME functionality */
 bool test_realm_sme_undef_abort(void)
 {
-	realm_got_undef_abort = 0UL;
+	realm_reset_undef_abort_count();
 
 	/* install exception handler to catch undef abort */
 	register_custom_sync_exception_handler(&realm_sync_exception_handler);
 	(void)read_svcr();
 	unregister_custom_sync_exception_handler();
 
-	if (realm_got_undef_abort == 0UL) {
+	if (realm_get_undef_abort_count() == 0UL) {
 		return false;
 	}
 
