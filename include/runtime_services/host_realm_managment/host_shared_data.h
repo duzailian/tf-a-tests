@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2023, Arm Limited. All rights reserved.
+ * Copyright (c) 2022-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -44,6 +44,8 @@ typedef struct host_shared_data {
 enum realm_cmd {
 	REALM_SLEEP_CMD = 1U,
 	REALM_LOOP_CMD,
+	REALM_MPAM_ACCESS,
+	REALM_MPAM_PRESENT,
 	REALM_MULTIPLE_REC_PSCI_DENIED_CMD,
 	REALM_MULTIPLE_REC_MULTIPLE_CPU_CMD,
 	REALM_GET_RSI_VERSION,
