@@ -16,6 +16,23 @@
       "message": "https://ci.trustedfirmware.org/job/tf-a-ci-gateway/94077/",
       "revId": "c90371841ce8501779842b74e8ed8f68570a5305",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d6744d6_36c28eba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2025-01-20T18:30:22Z",
+      "side": 1,
+      "message": "https://ci.trustedfirmware.org/job/tf-a-ci-gateway/94712/",
+      "revId": "c90371841ce8501779842b74e8ed8f68570a5305",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
