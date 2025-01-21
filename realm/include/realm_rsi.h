@@ -263,6 +263,19 @@ typedef struct {
  */
 #define RSI_PLANE_ENTER		SMC_RSI_FID(0x13U)
 
+/* Whether to trap WFI execution by the Plane. */
+#define PLANE_ENTRY_FLAG_TRAP_WFI	(UL(1) << 0)
+
+/* Whether to trap WFE execution by the Plane. */
+#define PLANE_ENTRY_FLAG_TRAP_WFE	(UL(1) << 1)
+
+/* Whether to trap RSI_HOST_CALL execution by the Plane
+ * causes plane exit or rec exit */
+#define PLANE_ENTRY_FLAG_TRAP_HC	(UL(1) << 2)
+
+/* Whether to transfer GIC ownership to the Plane N */
+#define PLANE_ENTRY_FLAG_TRAP_GIC_OWNER	(UL(1) << 3)
+
 /*
  * arg1 == plane index
  * arg2 == register encoding
