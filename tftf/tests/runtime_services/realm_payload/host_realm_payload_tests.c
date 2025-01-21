@@ -414,14 +414,8 @@ static bool host_realm_handle_irq_exit(struct realm *realm_ptr,
 	if (run->exit.pmu_ovf_status == RMI_PMU_OVERFLOW_ACTIVE) {
 		unsigned int host_call_result;
 		u_register_t exit_reason, retrmm;
-		int ret;
 
 		tftf_irq_disable(PMU_PPI);
-		ret = tftf_irq_unregister_handler(PMU_PPI);
-		if (ret != 0) {
-			ERROR("Failed to %sregister IRQ handler\n", "un");
-			return false;
-		}
 
 		/* Inject PMU virtual interrupt */
 		run->entry.gicv3_lrs[0] =
@@ -433,6 +427,10 @@ static bool host_realm_handle_irq_exit(struct realm *realm_ptr,
 
 		retrmm = host_realm_rec_enter(realm_ptr, &exit_reason,
 						&host_call_result, rec_num);
+
+		/* Clear virtual interrupt */
+		run->entry.gicv3_lrs[0] = 0UL;
+
 		if ((retrmm == REALM_SUCCESS) &&
 		    (exit_reason == RMI_EXIT_HOST_CALL) &&
 		    (host_call_result == TEST_RESULT_SUCCESS)) {
@@ -446,9 +444,22 @@ static bool host_realm_handle_irq_exit(struct realm *realm_ptr,
 }
 
 /*
+ * IRQ handler for PMU_PPI #23.
+ * This handler should not be called, as RMM handles IRQs.
+ */
+static int host_overflow_interrupt(void *data)
+{
+	(void)data;
+
+	assert(false);
+	return -1;
+}
+
+/*
  * @Test_Aim@ Test realm PMU
  *
  * This function tests PMU functionality in Realm
+ * for primary and auxillary plane
  *
  * @cmd: PMU test number
  * @return test result
@@ -457,12 +468,25 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 {
 	struct realm realm;
 	u_register_t feature_flag, rmm_feat_reg0;
-	unsigned int num_cnts;
+	unsigned int num_cnts, num_aux_planes = 0U;
 	long sl = RTT_MIN_LEVEL;
 	u_register_t rec_flag[1] = {RMI_RUNNABLE};
 	bool ret1, ret2;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	/* Register PMU IRQ handler */
+	int ret = tftf_irq_register_handler(PMU_PPI, host_overflow_interrupt);
+
+	if (ret != 0) {
+		tftf_testcase_printf("Failed to %sregister IRQ handler\n",
+					"");
+		return TEST_RESULT_FAIL;
+	}
+
+	if (are_planes_supported()) {
+		num_aux_planes = 1U;
+	}
 
 	/* Get Max PMU counter implemented through RMI_FEATURES */
 	if (host_rmi_features(0UL, &rmm_feat_reg0) != REALM_SUCCESS) {
@@ -482,13 +506,47 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			feature_flag, sl, rec_flag, 1U, 0U)) {
+			feature_flag, sl, rec_flag, 1U, num_aux_planes)) {
 		return TEST_RESULT_FAIL;
 	}
+
+	/* Set args for entering Plane 1 */
+	host_realm_set_aux_plane_args(&realm, 1U);
+
+	/* CMD for Plane 1 */
+	host_shared_data_set_realm_cmd(&realm, cmd, 1U, 0U);
 
 	ret1 = host_enter_realm_execute(&realm, cmd,
 					(cmd == REALM_PMU_INTERRUPT) ?
 					RMI_EXIT_IRQ : RMI_EXIT_HOST_CALL, 0U);
+
+	if(!ret1) {
+		ERROR("P0 test failed\n");
+		goto test_exit;
+	}
+
+	if (cmd != REALM_PMU_INTERRUPT) {
+		goto test_plane_n;
+	}
+
+	ret1 = host_realm_handle_irq_exit(&realm, 0U);
+
+test_plane_n:
+	if (num_aux_planes == 0U) {
+		goto test_exit;
+	}
+
+	if (cmd == REALM_PMU_INTERRUPT) {
+		tftf_irq_enable(PMU_PPI, GIC_HIGHEST_NS_PRIORITY);
+	}
+
+	INFO("Running test on aux plane\n");
+
+	/* Enter P0, and then PN */
+	ret1 = host_enter_realm_execute(&realm, REALM_ENTER_PLANE_N_CMD,
+				(cmd == REALM_PMU_INTERRUPT) ?
+				RMI_EXIT_IRQ : RMI_EXIT_HOST_CALL, 0U);
+
 	if (!ret1 || (cmd != REALM_PMU_INTERRUPT)) {
 		goto test_exit;
 	}
@@ -496,6 +554,8 @@ static test_result_t host_test_realm_pmuv3(uint8_t cmd)
 	ret1 = host_realm_handle_irq_exit(&realm, 0U);
 
 test_exit:
+	tftf_irq_unregister_handler(PMU_PPI);
+
 	ret2 = host_destroy_realm(&realm);
 	if (!ret1 || !ret2) {
 		ERROR("%s() enter=%u destroy=%u\n", __func__, ret1, ret2);
@@ -534,29 +594,22 @@ test_result_t host_realm_pmuv3_rmm_preserves(void)
 }
 
 /*
- * IRQ handler for PMU_PPI #23.
- * This handler should not be called, as RMM handles IRQs.
- */
-static int host_overflow_interrupt(void *data)
-{
-	(void)data;
-
-	assert(false);
-	return -1;
-}
-
-/*
- * Test PMU interrupt functionality in Realm
+ * Test PMU cycle counter interrupt functionality in Realm
  */
 test_result_t host_realm_pmuv3_overflow_interrupt(void)
 {
-	/* Register PMU IRQ handler */
-	int ret = tftf_irq_register_handler(PMU_PPI, host_overflow_interrupt);
+	tftf_irq_enable(PMU_PPI, GIC_HIGHEST_NS_PRIORITY);
+	return host_test_realm_pmuv3(REALM_PMU_INTERRUPT);
+}
 
-	if (ret != 0) {
-		tftf_testcase_printf("Failed to %sregister IRQ handler\n",
-					"");
-		return TEST_RESULT_FAIL;
+/*
+ * Test PMU event counter interrupt functionality in Realm
+ */
+test_result_t host_realm_pmuv3_event_overflow_interrupt(void)
+{
+	if (GET_PMU_CNT == 0) {
+		tftf_testcase_printf("No event counters implemented\n");
+		return TEST_RESULT_SKIPPED;
 	}
 
 	tftf_irq_enable(PMU_PPI, GIC_HIGHEST_NS_PRIORITY);
