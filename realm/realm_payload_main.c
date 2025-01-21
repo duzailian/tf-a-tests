@@ -47,7 +47,7 @@ static void realm_loop_cmd(void)
 
 static bool test_realm_enter_plane_n(void)
 {
-	u_register_t base, plane_index, perm_index, flags = 0U;
+	u_register_t base, plane_index, perm_index, flags = PLANE_ENTRY_FLAG_TRAP_GIC_OWNER;
 	bool ret1;
 
 	plane_index = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
