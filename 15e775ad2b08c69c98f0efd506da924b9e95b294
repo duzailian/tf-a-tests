@@ -16,6 +16,24 @@
       "message": "I thought the point of the tf-a patch was to enable mpam? Why should this trap?",
       "revId": "15e775ad2b08c69c98f0efd506da924b9e95b294",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c2e4954_e7543cbf",
+        "filename": "realm/realm_mpam.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2025-01-22T10:43:48Z",
+      "side": 1,
+      "message": "Originally, any access from R-EL2 to MPAM registers was trapped into EL3. The patch on TF-A prevents this, so now RMM can access and configure MPAM.\n\nAs RMM hides MPAM to realms (EL1/0), we want that any access from a realm to its registers be trapped by RMM, which in turn will inject an undef abort back to the realm.\n\nThis test tests that, effectively, if a realm tries to access an MPAM register, RMM injects an undef abort to it",
+      "parentUuid": "0a5df28b_8bb5e807",
+      "revId": "15e775ad2b08c69c98f0efd506da924b9e95b294",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
