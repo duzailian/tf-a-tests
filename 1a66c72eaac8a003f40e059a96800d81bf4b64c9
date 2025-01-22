@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5aba7f1d_87cc480e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2025-01-22T09:52:26Z",
+      "side": 1,
+      "message": "Verified with FEAT_MPAM enabled through https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l2/999/",
+      "revId": "1a66c72eaac8a003f40e059a96800d81bf4b64c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
