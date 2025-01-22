@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2024, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -36,6 +36,9 @@ IMPORT_SYM(uintptr_t,		__RODATA_END__,		IMAGE_RODATA_END);
 
 #define IMAGE_RW_BASE		IMAGE_RODATA_END
 IMPORT_SYM(uintptr_t,		__TFTF_END__,		IMAGE_RW_END);
+
+IMPORT_SYM(uintptr_t,		__MTE_TAGGED_START,	IMAGE_TAGGED_RW_START)
+IMPORT_SYM(uintptr_t,		__MTE_TAGGED_END,	IMAGE_TAGGED_RW_END);
 
 IMPORT_SYM(uintptr_t,		__COHERENT_RAM_START__,	COHERENT_RAM_START);
 IMPORT_SYM(uintptr_t,		__COHERENT_RAM_END__,	COHERENT_RAM_END);
@@ -100,6 +103,11 @@ void tftf_plat_configure_mmu(void)
 			IMAGE_RW_END - IMAGE_RW_BASE, MT_RW_DATA | MT_NS);
 
 #if IMAGE_TFTF
+	/* Tagged RW data */
+	mmap_add_region(IMAGE_TAGGED_RW_START, IMAGE_TAGGED_RW_START,
+			IMAGE_TAGGED_RW_END - IMAGE_TAGGED_RW_START,
+			MT_TAGGED_RW_DATA | MT_NS);
+
 	mmap_add_region(COHERENT_RAM_START, COHERENT_RAM_START,
 			COHERENT_RAM_END - COHERENT_RAM_START,
 			MT_DEVICE | MT_RW | MT_NS);

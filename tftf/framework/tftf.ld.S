@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2022, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -100,6 +100,16 @@ SECTIONS
      */
     smcfuzz (NOLOAD) : {
         *(smcfuzz)
+    } >RAM
+
+    /*
+     * Separate MTE tagged memory into a separate section as a specific
+     * page attribute needs to be used for it when mapping
+     */
+    mte_tagged (NOLOAD) : ALIGN(PAGE_SIZE) {
+        __MTE_TAGGED_START = .;
+        *(mte_tagged)
+        __MTE_TAGGED_END = .;
     } >RAM
 
     /*
