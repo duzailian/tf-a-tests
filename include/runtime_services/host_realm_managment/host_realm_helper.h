@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2023, Arm Limited. All rights reserved.
+ * Copyright (c) 2022-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -58,5 +58,11 @@ bool host_ipa_is_ns(u_register_t addr, u_register_t rmm_feat_reg0);
  * using REALM_ENTER_PLANE_N_CMD
  */
 void host_realm_set_aux_plane_args(struct realm *realm_ptr, unsigned int plane_num);
+
+/* Handle REC exit due to VDEV request */
+void host_do_vdev_complete(u_register_t rec_ptr, unsigned long vdev_id);
+
+/* Handle REC exit due to VDEV communication */
+void host_do_vdev_communicate(u_register_t vdev_ptr, unsigned long vdev_action);
 
 #endif /* HOST_REALM_HELPER_H */
