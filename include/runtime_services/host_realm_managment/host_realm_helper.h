@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2023, Arm Limited. All rights reserved.
+ * Copyright (c) 2022-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -52,5 +52,11 @@ bool host_enter_realm_execute(struct realm *realm_ptr, uint8_t cmd,
 test_result_t host_cmp_result(void);
 void realm_print_handler(struct realm *realm_ptr, unsigned int rec_num);
 bool host_ipa_is_ns(u_register_t addr, u_register_t rmm_feat_reg0);
+
+/* Handle REC exit due to VDEV request */
+void host_do_vdev_complete(u_register_t rec_ptr, unsigned long vdev_id);
+
+/* Handle REC exit due to VDEV communication */
+void host_do_vdev_communicate(u_register_t vdev_ptr, unsigned long vdev_action);
 
 #endif /* HOST_REALM_HELPER_H */

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2023, Arm Limited. All rights reserved.
+ * Copyright (c) 2022-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -73,7 +73,8 @@ enum realm_cmd {
 	REALM_SME_UNDEF_ABORT,
 	REALM_FEAT_DOUBLEFAULT2_TEST,
 	REALM_ATTESTATION,
-	REALM_ATTESTATION_FAULT
+	REALM_ATTESTATION_FAULT,
+	REALM_DA_RSI_CALLS
 };
 
 /*
