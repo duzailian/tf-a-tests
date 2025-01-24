@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "774b7c46_d13651de",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-01-24T22:13:55Z",
+      "side": 1,
+      "message": "I was wondering if its possible to replace cactus-tertiary with cactus-stmm rather than adding stmm as a 5th partition. By itself, cactus-tertiary does not provide any significant value exclusively.",
+      "revId": "951ab8b5f7ddf68156f277843be86bd0adfa5aaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70920432_02d2bf29",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-01-24T22:13:55Z",
+      "side": 1,
+      "message": "can you put a comment in previous line explanining why the following piece of code is only applicable for Cactus-tertiary and cactus-stmm?",
+      "revId": "951ab8b5f7ddf68156f277843be86bd0adfa5aaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6fc11d02_94fc303b",
+        "filename": "tools/generate_json/generate_json.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-01-24T22:13:55Z",
+      "side": 1,
+      "message": "Is the default value of the `size` field 0x100000? If yes, do you need to specify it explicitly again?",
+      "revId": "951ab8b5f7ddf68156f277843be86bd0adfa5aaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
