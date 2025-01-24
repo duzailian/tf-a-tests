@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  Copyright (c) 2021-2024, Arm Limited. All rights reserved.
+  Copyright (c) 2021-2025, Arm Limited. All rights reserved.
 
   SPDX-License-Identifier: BSD-3-Clause
 -->
@@ -137,8 +137,8 @@
 	  function="doe_discovery_test" />
 	  <testcase name="SPDM Get Version"
 	  function="spdm_version_test" />
-	  <!-- Invoke RMI calls related to PDEV management -->
-	  <testcase name="Invoke RMI PDEV calls "
-	  function="host_test_rmi_pdev_calls" />
+	  <!-- Invoke RMI calls related to DA PDEV/VDEV management -->
+	  <testcase name="Invoke RMI DA ABIs "
+	  function="host_invoke_rmi_da_flow" />
   </testsuite>
 </testsuites>
