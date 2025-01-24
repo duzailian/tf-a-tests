@@ -15,20 +15,54 @@
 #include <host_shared_data.h>
 #include <psci.h>
 #include "realm_def.h"
+#include <realm_helpers.h>
+#include <realm_psi.h>
 #include <realm_rsi.h>
 #include <realm_tests.h>
 #include <realm_psci.h>
 #include <tftf_lib.h>
 
-#define CXT_ID_MAGIC 0x100
+#define CXT_ID_MAGIC	0x100
+#define P1_CXT_ID_MAGIC	0x200
+
 static uint64_t is_secondary_cpu_booted;
 static spinlock_t lock;
+static rsi_plane_run run[MAX_REC_COUNT] __aligned(PAGE_SIZE);
+
+static void plane0_rec1_handler(u_register_t cxt_id)
+{
+	uint64_t rec = 0U;
+
+	realm_printf("running on CPU = 0x%lx cxt_id= 0x%lx\n",
+			read_mpidr_el1() & MPID_MASK, cxt_id);
+	if (cxt_id < CXT_ID_MAGIC || cxt_id > CXT_ID_MAGIC + MAX_REC_COUNT) {
+		realm_printf("Wrong cxt_id\n");
+		rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
+	}
+	spin_lock(&lock);
+	rec = ++is_secondary_cpu_booted;
+	spin_unlock(&lock);
+
+	/* enter plane */
+	u_register_t base, plane_index, perm_index, flags = 0U;
+
+	plane_index = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
+	base = realm_shared_data_get_my_host_val(HOST_ARG2_INDEX);
+	perm_index = plane_index + 1U;
+
+	run[is_secondary_cpu_booted].enter.pc = base;
+	realm_printf("Entering plane %ld, ep=0x%lx run=0x%lx\n", plane_index, base, &run[rec]);
+	realm_plane_enter(plane_index, perm_index, base, flags, &run[rec]);
+
+	realm_cpu_off();
+}
 
 static void rec1_handler(u_register_t cxt_id)
 {
 	realm_printf("running on CPU = 0x%lx cxt_id= 0x%lx\n",
 			read_mpidr_el1() & MPID_MASK, cxt_id);
-	if (cxt_id < CXT_ID_MAGIC || cxt_id > CXT_ID_MAGIC + MAX_REC_COUNT) {
+
+	if (cxt_id < P1_CXT_ID_MAGIC || cxt_id > P1_CXT_ID_MAGIC + MAX_REC_COUNT) {
 		realm_printf("Wrong cxt_id\n");
 		rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
 	}
@@ -71,6 +105,84 @@ bool test_realm_multiple_rec_psci_denied_cmd(void)
 	return true;
 }
 
+bool test_realm_multiple_plane_multiple_rec_multiple_cpu_cmd(void)
+{
+	unsigned int i = 1U, rec_count;
+	u_register_t ret;
+	bool ret1;
+
+	realm_printf("Realm: running on CPU = 0x%lx\n", read_mpidr_el1() & MPID_MASK);
+	rec_count = realm_shared_data_get_my_host_val(HOST_ARG3_INDEX);
+
+	/* Check CPU_ON is supported */
+	ret = realm_psci_features(SMC_PSCI_CPU_ON);
+	if (ret != PSCI_E_SUCCESS) {
+		realm_printf("SMC_PSCI_CPU_ON not supported\n");
+		return false;
+	}
+
+	if (realm_is_plane0()) {
+		/* Plane 0 all rec */
+		u_register_t base, plane_index, perm_index, flags = 0U;
+
+		plane_index = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
+		base = realm_shared_data_get_my_host_val(HOST_ARG2_INDEX);
+		perm_index = plane_index + 1U;
+
+		plane_common_init(plane_index, perm_index, base, &run[0U]);
+
+		ret1 = realm_plane_enter(plane_index, perm_index, base, flags, &run[0U]);
+		while (ret1 && run->exit.gprs[0] == SMC_PSCI_CPU_ON_AARCH64) {
+			realm_printf("turn on cpu=0x%lx ctx=0x%lx\n",
+					run[0].exit.gprs[1], run[0U].exit.gprs[2]);
+
+			run[0].enter.gprs[0] = realm_cpu_on(run[0].exit.gprs[1],
+						(uintptr_t)plane0_rec1_handler,
+						CXT_ID_MAGIC + run[0].exit.gprs[1]);
+
+			/* re-enter plane1 to complete cpu on */
+			ret1 = realm_plane_enter(plane_index, perm_index, base, flags, &run[0U]);
+		}
+
+		/* wait for all CPUs to come up */
+		while (is_secondary_cpu_booted != rec_count - 1U) {
+			waitms(200);
+		}
+
+		/* wait for all CPUs to turn off */
+		while (i < rec_count) {
+			ret = realm_psci_affinity_info(i, MPIDR_AFFLVL0);
+			if (ret != PSCI_STATE_OFF) {
+				/* wait and query again */
+				realm_printf(" CPU %d is not off\n", i);
+				waitms(200);
+				continue;
+			}
+			i++;
+		}
+		realm_printf("All CPU are off\n");
+		return true;
+	} else {
+		/* Plane 1 Rec 0 */
+		for (unsigned int j = 1U; j < rec_count; j++) {
+			ret = realm_cpu_on(j, (uintptr_t)rec1_handler, P1_CXT_ID_MAGIC + j);
+			if (ret != PSCI_E_SUCCESS) {
+				realm_printf("SMC_PSCI_CPU_ON failed %d.\n", j);
+				return false;
+			}
+		}
+		/* Exit to Host to allow host to run all CPUs */
+		rsi_exit_to_host(HOST_CALL_EXIT_SUCCESS_CMD);
+
+		/* wait for all CPUs to come up */
+		while (is_secondary_cpu_booted != rec_count - 1U) {
+			waitms(200);
+		}
+		return true;
+	}
+	return true;
+}
+
 bool test_realm_multiple_rec_multiple_cpu_cmd(void)
 {
 	unsigned int i = 1U, rec_count;
@@ -87,7 +199,7 @@ bool test_realm_multiple_rec_multiple_cpu_cmd(void)
 	}
 
 	for (unsigned int j = 1U; j < rec_count; j++) {
-		ret = realm_cpu_on(j, (uintptr_t)rec1_handler, CXT_ID_MAGIC + j);
+		ret = realm_cpu_on(j, (uintptr_t)rec1_handler, P1_CXT_ID_MAGIC + j);
 		if (ret != PSCI_E_SUCCESS) {
 			realm_printf("SMC_PSCI_CPU_ON failed %d.\n", j);
 			return false;
