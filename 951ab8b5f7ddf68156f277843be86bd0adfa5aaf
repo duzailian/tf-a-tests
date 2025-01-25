@@ -37,6 +37,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "84124eed_eff7c3d1",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-01-25T00:57:33Z",
+      "side": 1,
+      "message": "nitpick: Using two different macros ie. SP_ID(x) and (SPM_VM_ID_FIRST + x) to identify a particular SP seems confusing. Could you simplify and use SP_ID(x) macro style throughout the code base?",
+      "range": {
+        "startLine": 305,
+        "startChar": 15,
+        "endLine": 305,
+        "endChar": 71
+      },
+      "revId": "951ab8b5f7ddf68156f277843be86bd0adfa5aaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6fc11d02_94fc303b",
         "filename": "tools/generate_json/generate_json.sh",
         "patchSetId": 4
