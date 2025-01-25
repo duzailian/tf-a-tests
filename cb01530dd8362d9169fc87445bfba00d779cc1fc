@@ -144,6 +144,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "925af0b3_94e71586",
+        "filename": "plat/qemu/qemu_virt/include/platform_def.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1001353
+      },
+      "writtenOn": "2025-01-25T17:44:27Z",
+      "side": 1,
+      "message": "I think let\u0027s remove it to avoid confusion?",
+      "parentUuid": "1eaaf5c7_65282a0f",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 69
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "76e765a8_d1c9b1dd",
         "filename": "plat/qemu/qemu_virt/include/platform_def.h",
         "patchSetId": 3
@@ -226,6 +250,30 @@
       "side": 1,
       "message": "OK, I\u0027ll move it to drivers/arm/timer/private_timer.c under a new API.",
       "parentUuid": "b8b12d36_04ce21be",
+      "range": {
+        "startLine": 66,
+        "startChar": 11,
+        "endLine": 66,
+        "endChar": 24
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80deb2d6_b2c01ca3",
+        "filename": "plat/qemu/qemu_virt/qemu_timer.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1001353
+      },
+      "writtenOn": "2025-01-25T17:44:27Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "56675f28_f938537d",
       "range": {
         "startLine": 66,
         "startChar": 11,
@@ -320,6 +368,30 @@
       "side": 1,
       "message": "I agree with that but don\u0027t have that information. I disabled all tests that didn\u0027t pass to have something to start with.",
       "parentUuid": "0ac0934d_86b66731",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 22
+      },
+      "revId": "cb01530dd8362d9169fc87445bfba00d779cc1fc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d577569b_63b71dab",
+        "filename": "plat/qemu/qemu_virt/tests_to_skip.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001353
+      },
+      "writtenOn": "2025-01-25T17:44:27Z",
+      "side": 1,
+      "message": "Alright. No worries",
+      "parentUuid": "b66e4d06_988ec49a",
       "range": {
         "startLine": 1,
         "startChar": 0,
