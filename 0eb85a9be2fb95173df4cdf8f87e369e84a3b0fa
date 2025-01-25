@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "352bdc2c_b674b778",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-01-25T13:07:30Z",
+      "side": 1,
+      "message": "Would you be able to add documentation for newly added support for HOB list and Cactus-stmm instance?",
+      "revId": "0eb85a9be2fb95173df4cdf8f87e369e84a3b0fa",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
