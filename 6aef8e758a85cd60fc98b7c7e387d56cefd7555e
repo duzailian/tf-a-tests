@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b0916a2_f7ea84fd",
+        "filename": "include/lib/hob/hob.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-01-25T00:36:06Z",
+      "side": 1,
+      "message": "Is this correct?",
+      "range": {
+        "startLine": 92,
+        "startChar": 1,
+        "endLine": 94,
+        "endChar": 4
+      },
+      "revId": "6aef8e758a85cd60fc98b7c7e387d56cefd7555e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
