@@ -50,6 +50,24 @@
       "message": "Curious why the package field is not specified for first SP? Is it to demonstrate support for legacy packaging technique (sp_pkg)?",
       "revId": "cd46f276f845a4628982e85dfc38054fc94aa5c3",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bbfa78a_f64c810c",
+        "filename": "tools/generate_json/generate_json.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2025-01-27T12:24:32Z",
+      "side": 1,
+      "message": "That is right.",
+      "parentUuid": "cd759b0e_b65c98c5",
+      "revId": "cd46f276f845a4628982e85dfc38054fc94aa5c3",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
