@@ -46,6 +46,30 @@
       },
       "revId": "6aef8e758a85cd60fc98b7c7e387d56cefd7555e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "066239c3_3022af7c",
+        "filename": "include/lib/hob/hob.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-01-27T18:21:53Z",
+      "side": 1,
+      "message": "I could be mistaken but am looking at https://github.com/tianocore/edk2/blob/6d2143f685087ac94d871a26af017248e57888df/MdePkg/Include/Pi/PiHob.h#L369\n\nThere is no mention of GUID data for efi_hob_firmware_volume data structure. I am wondering if I am missing something obvious.",
+      "parentUuid": "b0fb964a_070efa10",
+      "range": {
+        "startLine": 92,
+        "startChar": 1,
+        "endLine": 94,
+        "endChar": 4
+      },
+      "revId": "6aef8e758a85cd60fc98b7c7e387d56cefd7555e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
