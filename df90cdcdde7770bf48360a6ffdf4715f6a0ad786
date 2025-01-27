@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f2e19740_fd85922c",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/cpu_suspend/test_suspend.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-01-27T22:57:47Z",
+      "side": 1,
+      "message": "With the way the current implementation has been through, init function is common for all the tests and its a good place to modify/initialise this variable and utilise it at a later stage in test_psci_suspend() func.\nEither init this variable under all circumstances explicitly outside of test_init which would give a indication on using this global, or bring it under one api which itself is invoked for all tests, which is the case here.",
+      "parentUuid": "97bbf544_32070d7a",
+      "revId": "df90cdcdde7770bf48360a6ffdf4715f6a0ad786",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c1022eb6_04639ccc",
         "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/cpu_suspend/test_suspend.c",
         "patchSetId": 7
@@ -54,6 +72,24 @@
       "writtenOn": "2025-01-16T11:03:09Z",
       "side": 1,
       "message": "isn\u0027t this sentence backwards? Also, it would be a bit more correct to not say \"suspend the core to level 2\", rather just \"suspend to level 2\"",
+      "revId": "df90cdcdde7770bf48360a6ffdf4715f6a0ad786",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "043fd0f6_5f55fc66",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/cpu_suspend/test_suspend.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-01-27T22:57:47Z",
+      "side": 1,
+      "message": "IIRC, as per tree topology, nonlead cpus will be at the higher level (in this case level2) and lead cpus/cores present at lower level. I am not sure what exactly you wanted to modify here. Please rectify if this is wrong.",
+      "parentUuid": "fff74c24_d7454c1e",
       "revId": "df90cdcdde7770bf48360a6ffdf4715f6a0ad786",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
