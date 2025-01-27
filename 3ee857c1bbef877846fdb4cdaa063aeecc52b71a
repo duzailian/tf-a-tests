@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d4f4b24_e7bc4df7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-01-27T17:49:50Z",
+      "side": 1,
+      "message": "Hi are we intending to progress this change? If not for the short term, can you please consider abandoning? Thanks.",
+      "revId": "3ee857c1bbef877846fdb4cdaa063aeecc52b71a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
