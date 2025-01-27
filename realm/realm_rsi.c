@@ -1,6 +1,6 @@
 
 /*
- * Copyright (c) 2022-2024, Arm Limited. All rights reserved.
+ * Copyright (c) 2022-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  *
@@ -17,7 +17,7 @@ u_register_t rsi_get_version(u_register_t req_ver)
 	smc_ret_values res = {};
 
 	res = tftf_smc(&(smc_args)
-		{RSI_VERSION, req_ver, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL});
+		{SMC_RSI_VERSION, req_ver, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL});
 
 	if (res.ret0 == SMC_UNKNOWN) {
 		return SMC_UNKNOWN;
@@ -38,7 +38,7 @@ u_register_t rsi_get_ns_buffer(void)
 	struct rsi_host_call host_cal __aligned(sizeof(struct rsi_host_call));
 
 	host_cal.imm = HOST_CALL_GET_SHARED_BUFF_CMD;
-	res = tftf_smc(&(smc_args) {RSI_HOST_CALL, (u_register_t)&host_cal,
+	res = tftf_smc(&(smc_args) {SMC_RSI_HOST_CALL, (u_register_t)&host_cal,
 		0UL, 0UL, 0UL, 0UL, 0UL, 0UL});
 	if (res.ret0 != RSI_SUCCESS) {
 		return 0U;
@@ -53,7 +53,7 @@ void rsi_exit_to_host(enum host_call_cmd exit_code)
 
 	host_cal.imm = exit_code;
 	host_cal.gprs[0] = read_mpidr_el1();
-	tftf_smc(&(smc_args) {RSI_HOST_CALL, (u_register_t)&host_cal,
+	tftf_smc(&(smc_args) {SMC_RSI_HOST_CALL, (u_register_t)&host_cal,
 		0UL, 0UL, 0UL, 0UL, 0UL, 0UL});
 }
 
@@ -68,7 +68,7 @@ u_register_t rsi_ipa_state_set(u_register_t base,
 	smc_ret_values res = {};
 
 	res = tftf_smc(&(smc_args)
-			{RSI_IPA_STATE_SET, base, top, ripas, flag});
+			{SMC_RSI_IPA_STATE_SET, base, top, ripas, flag});
 	if (res.ret0 == RSI_SUCCESS) {
 		*new_base = res.ret1;
 		*response = res.ret2;
@@ -85,7 +85,7 @@ u_register_t rsi_ipa_state_get(u_register_t base,
 	smc_ret_values res = {};
 
 	res = tftf_smc(&(smc_args)
-			{RSI_IPA_STATE_GET, base, top});
+			{SMC_RSI_IPA_STATE_GET, base, top});
 	if (res.ret0 == RSI_SUCCESS) {
 		*out_top = res.ret1;
 		*ripas = res.ret2;
@@ -107,7 +107,7 @@ u_register_t rsi_attest_token_init(u_register_t challenge_0,
 	smc_ret_values_ext res = {};
 
 	tftf_smc_no_retval_x8(&(smc_args_ext) {
-		RSI_ATTEST_TOKEN_INIT,
+		SMC_RSI_ATTEST_TOKEN_INIT,
 		challenge_0,
 		challenge_1,
 		challenge_2,
@@ -135,7 +135,7 @@ u_register_t rsi_attest_token_continue(u_register_t buffer_addr,
 	smc_ret_values res = {};
 
 	res = tftf_smc(&(smc_args) {
-		RSI_ATTEST_TOKEN_CONTINUE,
+		SMC_RSI_ATTEST_TOKEN_CONTINUE,
 		buffer_addr,
 		offset,
 		buffer_size
@@ -152,7 +152,7 @@ u_register_t rsi_realm_config(struct rsi_realm_config *s)
 	smc_ret_values res = {};
 
 	res = tftf_smc(&(smc_args)
-			{RSI_REALM_CONFIG, (u_register_t)s});
+			{SMC_RSI_REALM_CONFIG, (u_register_t)s});
 	return res.ret0;
 }
 
@@ -163,7 +163,7 @@ u_register_t rsi_mem_get_perm_value(u_register_t plane_index,
 	smc_ret_values res = {};
 
 	res = tftf_smc(&(smc_args)
-			{RSI_MEM_GET_PERM_VALUE, plane_index, perm_index});
+			{SMC_RSI_MEM_GET_PERM_VALUE, plane_index, perm_index});
 	if (res.ret0 == RSI_SUCCESS) {
 		*perm = res.ret1;
 	}
@@ -177,7 +177,8 @@ u_register_t rsi_mem_set_perm_value(u_register_t plane_index,
 	smc_ret_values res = {};
 
 	res = tftf_smc(&(smc_args)
-			{RSI_MEM_SET_PERM_VALUE, plane_index, perm_index, perm});
+			{SMC_RSI_MEM_SET_PERM_VALUE, plane_index, perm_index,
+			 perm});
 	return res.ret0;
 }
 
@@ -192,7 +193,8 @@ u_register_t rsi_mem_set_perm_index(u_register_t base,
 	smc_ret_values res = {};
 
 	res = tftf_smc(&(smc_args)
-			{RSI_MEM_SET_PERM_INDEX, base, top, perm_index, cookie});
+			{SMC_RSI_MEM_SET_PERM_INDEX, base, top, perm_index,
+			 cookie});
 	if (res.ret0 == RSI_SUCCESS) {
 		*new_base = res.ret1;
 		*response = res.ret2;
@@ -207,6 +209,6 @@ u_register_t rsi_plane_enter(u_register_t plane_index,
 	smc_ret_values res = {};
 
 	res = tftf_smc(&(smc_args)
-			{RSI_PLANE_ENTER, plane_index, plane_run});
+			{SMC_RSI_PLANE_ENTER, plane_index, plane_run});
 	return res.ret0;
 }
