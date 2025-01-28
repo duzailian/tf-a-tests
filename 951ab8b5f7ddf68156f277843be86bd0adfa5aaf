@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "55a7315f_c347a7aa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-01-28T19:25:20Z",
+      "side": 1,
+      "message": "I think we could add the StMM regions and the ffa-boot info node from the StMM manifest to cactus tertiary and get rid of cactus-stmm partition\n\nI would prefer that over replacing cactus-tertiary as there may be existing tests that make use of cactus-tertiary and rely on its expected manifest attributes",
+      "parentUuid": "774b7c46_d13651de",
+      "revId": "951ab8b5f7ddf68156f277843be86bd0adfa5aaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "70920432_02d2bf29",
         "filename": "spm/cactus/cactus_main.c",
         "patchSetId": 4
@@ -54,6 +72,24 @@
         "endLine": 305,
         "endChar": 71
       },
+      "revId": "951ab8b5f7ddf68156f277843be86bd0adfa5aaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8b83d2e_72591b45",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-01-28T19:25:20Z",
+      "side": 1,
+      "message": "Truthfully, I am not sure",
+      "parentUuid": "70920432_02d2bf29",
       "revId": "951ab8b5f7ddf68156f277843be86bd0adfa5aaf",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
