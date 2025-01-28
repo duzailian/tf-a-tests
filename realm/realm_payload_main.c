@@ -557,6 +557,8 @@ void realm_payload_main(void)
 			break;
 		case REALM_WRITE_BRBCR_EL1:
 			test_succeed = test_realm_write_brbcr_el1_reg();
+		case REALM_DA_RSI_CALLS:
+			test_succeed = test_realm_da_rsi_calls();
 			break;
 		default:
 			realm_printf("%s() invalid cmd %u\n", __func__, cmd);
