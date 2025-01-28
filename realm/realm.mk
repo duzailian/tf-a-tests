@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2022-2023, Arm Limited. All rights reserved.
+# Copyright (c) 2022-2025, Arm Limited. All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -42,6 +42,7 @@ REALM_SOURCES:=								\
 	realm_shared_data.c						\
 	realm_simd.c							\
 	realm_mpam.c							\
+	realm_da.c							\
 	)
 
 REALM_SOURCES += lib/${ARCH}/cache_helpers.S				\
