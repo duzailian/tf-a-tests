@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0443b1d5_23aa4720",
+        "filename": "smc_fuzz/src/constraint.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-01-28T21:46:54Z",
+      "side": 1,
+      "message": "I think for every switch case, you have to put a break. If not, it will lead to fallthrough and might have unintended consequence.",
+      "range": {
+        "startLine": 547,
+        "startChar": 12,
+        "endLine": 549,
+        "endChar": 5
+      },
+      "revId": "22bbb964487bd59ccbae5858eb7974b8dbe375ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e04d10c_d4040fdf",
+        "filename": "smc_fuzz/src/constraint.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 943,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-01-28T21:46:54Z",
+      "side": 1,
+      "message": "can you use a switch block to achieve the same functionality?",
+      "range": {
+        "startLine": 858,
+        "startChar": 0,
+        "endLine": 943,
+        "endChar": 13
+      },
+      "revId": "22bbb964487bd59ccbae5858eb7974b8dbe375ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
