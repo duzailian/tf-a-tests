@@ -96,6 +96,48 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "89af0a1c_6a5d13c9",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-01-28T19:29:01Z",
+      "side": 1,
+      "message": "^ Sorry, that was a premature send! \n\nWhat I meant to say was I am not sure why tertiary maps its RXTX regions differently than secondary and cactus primary but I think that is why this applies only to tertiary (and also stmm)\n\nPrimary and secondary define rxbuffer and txbuffer regions in their manifests while tertiary does not. My guess is that primary and secondary are demonstrating some additional capability of being able to specify rxtx buffer location while tertiary is content to let framework place the buffers wherever?",
+      "parentUuid": "b8b83d2e_72591b45",
+      "revId": "951ab8b5f7ddf68156f277843be86bd0adfa5aaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b00c0206_b2e94d57",
+        "filename": "spm/cactus/cactus_main.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-01-28T19:29:01Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "84124eed_eff7c3d1",
+      "range": {
+        "startLine": 305,
+        "startChar": 15,
+        "endLine": 305,
+        "endChar": 71
+      },
+      "revId": "951ab8b5f7ddf68156f277843be86bd0adfa5aaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6fc11d02_94fc303b",
         "filename": "tools/generate_json/generate_json.sh",
         "patchSetId": 4
