@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7717876a_75ceb956",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/cpu_suspend/test_suspend.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-01-28T09:43:05Z",
+      "side": 1,
+      "message": "but it\u0027s already initialised outside test_init - it\u0027s an argument. So why not pass it as an argument to test_psci_suspend()? It gets propagated as a parameter up to its caller but no further. I don\u0027t understand what necessitates the switch and only makes it hard to follow IMO.",
+      "parentUuid": "f2e19740_fd85922c",
+      "revId": "df90cdcdde7770bf48360a6ffdf4715f6a0ad786",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c1022eb6_04639ccc",
         "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/cpu_suspend/test_suspend.c",
         "patchSetId": 7
@@ -90,6 +108,24 @@
       "side": 1,
       "message": "IIRC, as per tree topology, nonlead cpus will be at the higher level (in this case level2) and lead cpus/cores present at lower level. I am not sure what exactly you wanted to modify here. Please rectify if this is wrong.",
       "parentUuid": "fff74c24_d7454c1e",
+      "revId": "df90cdcdde7770bf48360a6ffdf4715f6a0ad786",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb671061_d0872ea7",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/cpu_suspend/test_suspend.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-01-28T09:43:05Z",
+      "side": 1,
+      "message": "That would be true in platform coordinated mode, but not OS coordinated which is what we use here. A core cannot be suspended higher than level 0 until all cores in the cluster have gone off. Only the last core can be suspended to level 2. And I believe that is what the code is showing, except that a single core will be left running so that level 2 request should be denied.",
+      "parentUuid": "043fd0f6_5f55fc66",
       "revId": "df90cdcdde7770bf48360a6ffdf4715f6a0ad786",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
