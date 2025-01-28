@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97068d1d_3e9ac9bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-01-28T10:06:59Z",
+      "side": 1,
+      "message": "Few build failures look genuine\n\n    00:00:52.529 drivers/arm/timer/private_timer.c: In function \u0027arm_gen_timer_program\u0027:\n    00:00:52.530 drivers/arm/timer/private_timer.c:89:9: error: implicit declaration of function \u0027write_cntp_cval_el0\u0027; did you mean \u0027write_cnthp_cval_el2\u0027? [-Werror\u003dimplicit-function-declaration]\n    00:00:52.530    89 |         write_cntp_cval_el0(count_val);\n    00:00:52.530       |         ^~~~~~~~~~~~~~~~~~~\n    00:00:52.530       |         write_cnthp_cval_el2\n    00:00:52.530 drivers/arm/timer/private_timer.c:92:20: error: implicit declaration of function \u0027read_cntp_ctl_el0\u0027; did you mean \u0027read_cnthp_ctl_el2\u0027? [-Werror\u003dimplicit-function-declaration]\n    00:00:52.530    92 |         cntp_ctl \u003d read_cntp_ctl_el0();\n    00:00:52.530       |                    ^~~~~~~~~~~~~~~~~\n    00:00:52.530       |                    read_cnthp_ctl_el2\n    00:00:52.530 drivers/arm/timer/private_timer.c:95:9: error: implicit declaration of function \u0027write_cntp_ctl_el0\u0027; did you mean \u0027write_cnthp_ctl_el2\u0027? [-Werror\u003dimplicit-function-declaration]\n    00:00:52.530    95 |         write_cntp_ctl_el0(cntp_ctl);\n    00:00:52.530       |         ^~~~~~~~~~~~~~~~~~\n    00:00:52.530       |         write_cnthp_ctl_el2\n    00:00:52.530 cc1: all warnings being treated as errors\n    00:00:52.530 make: *** [Makefile:594: build/fvp/debug/ns_bl1u/private_timer.o] Error 1\n    00:00:52.530 + echo",
+      "revId": "fa51b2db7e18af3e2e7cbd8c88581d5f4b4a30ba",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
