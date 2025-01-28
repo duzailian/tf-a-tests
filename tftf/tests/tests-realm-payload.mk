@@ -18,6 +18,7 @@ TESTS_SOURCES	+=							\
 		host_realm_lpa2_tests.c					\
 		host_realm_mpam_tests.c					\
 		host_realm_brbe_tests.c					\
+		host_realm_lfa.c					\
 	)
 
 TESTS_SOURCES	+=							\
@@ -59,6 +60,12 @@ TESTS_SOURCES	+=		\
 	$(addprefix lib/pcie/,	\
 		pcie.c		\
 		pcie_doe.c	\
+	)
+
+TESTS_SOURCES	+=		\
+	$(addprefix tftf/tests/runtime_services/lfa/,	\
+		test_lfa_simple.c \
+		test_lfa_multi.c \
 	)
 
 include lib/ext_mbedtls/mbedtls.mk

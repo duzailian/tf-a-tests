@@ -158,8 +158,10 @@
 	  <!-- Test case related to FEAT_BRBE -->
 	  <testcase name="Test if BRBE realted registers are preserved "
 	  function="host_realm_test_brbe_save_restore" />
-	 <!-- Test case for EL3-RMM IDE KM Interface -->
+	  <!-- Test case for EL3-RMM IDE KM Interface -->
 	  <testcase name="Test for Root Port Key management interface"
 	  function="host_realm_test_root_port_key_management" />
+	  <testcase name="Test Live Firmware Activation of RMM with Realm Payload"
+	  function="host_test_realm_rsi_version_with_lfa" />
   </testsuite>
 </testsuites>
