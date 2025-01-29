@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4b2824b_a6947398",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-01-29T14:06:28Z",
+      "side": 1,
+      "message": "these are mostly nit picks, LGTM as a whole",
+      "revId": "c599015e9b312d95f99c9cc85a8d8475b2fc758a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7d8f7b04_1b74261b",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/cpu_suspend/test_suspend.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-01-29T14:06:28Z",
+      "side": 1,
+      "message": "isn\u0027t this bit needed only in the test_should_suspend\u003d\u003dfalse case?",
+      "revId": "c599015e9b312d95f99c9cc85a8d8475b2fc758a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
