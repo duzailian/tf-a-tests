@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1be9f808_fe5ae057",
+        "filename": "smc_fuzz/src/runtestfunction_helpers.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-01-29T21:17:30Z",
+      "side": 1,
+      "message": "should this be squashed into previous change?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 18
+      },
+      "revId": "414690c5465af634cfa6b8a18f3a0a7192646e99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74ca0bc2_c6fea0e6",
+        "filename": "smc_fuzz/src/vendor_fuzz_helper.c",
+        "patchSetId": 16
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-01-29T21:17:30Z",
+      "side": 1,
+      "message": "This doesn\u0027t make sense, in first case of if statement, we print that the wrong version is reported.\n\nIn the else case, would expect that the right version is reported",
+      "range": {
+        "startLine": 112,
+        "startChar": 41,
+        "endLine": 112,
+        "endChar": 51
+      },
+      "revId": "414690c5465af634cfa6b8a18f3a0a7192646e99",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
