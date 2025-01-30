@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0140c124_5629b6e6",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/cpu_suspend/test_suspend.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-01-30T10:39:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cd8abb6d_dd62ff9d",
+      "range": {
+        "startLine": 574,
+        "startChar": 1,
+        "endLine": 575,
+        "endChar": 17
+      },
+      "revId": "db12b7773660145987c59d9ada27a61ee70142be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f890125c_3354ff55",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99d16102_530f3186",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/cpu_suspend/test_suspend.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-01-30T10:39:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f890125c_3354ff55",
+      "range": {
+        "startLine": 669,
+        "startChar": 4,
+        "endLine": 669,
+        "endChar": 16
+      },
+      "revId": "db12b7773660145987c59d9ada27a61ee70142be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1d557377_033be2d3",
@@ -60,6 +108,24 @@
       "writtenOn": "2025-01-29T14:06:28Z",
       "side": 1,
       "message": "this comment is mostly redundant. Can it be absorbed into the above one please?",
+      "revId": "db12b7773660145987c59d9ada27a61ee70142be",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aff16077_c3bdd0ac",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/cpu_suspend/test_suspend.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-01-30T10:39:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1d557377_033be2d3",
       "revId": "db12b7773660145987c59d9ada27a61ee70142be",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
