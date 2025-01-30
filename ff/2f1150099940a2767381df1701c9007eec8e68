@@ -1,0 +1,13 @@
+Allow-CI+2: Olivier Deprez <olivier.deprez@arm.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Owner-Review+1: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Review+1: Andrew Walbran <qwandor@google.com>
+Code-Review+1: Pranjal Shrivastava <praan@google.com>
+Verified+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Owner-Review+1: Pranjal Shrivastava <praan@google.com>
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Thu, 30 Jan 2025 13:48:39 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/31034
+Comments-Total: 4
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
