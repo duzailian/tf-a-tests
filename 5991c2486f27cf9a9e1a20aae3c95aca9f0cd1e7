@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff1f5adc_0b1fe6b9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2025-01-30T18:27:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8507d66_e05fdbd4",
+      "range": {
+        "startLine": 10,
+        "startChar": 3,
+        "endLine": 10,
+        "endChar": 54
+      },
+      "revId": "5991c2486f27cf9a9e1a20aae3c95aca9f0cd1e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cbb2b3d1_31cfef46",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-01-30T04:31:15Z",
       "side": 1,
       "message": "Include the following reference as well\n[2]: https://developer.arm.com/documentation/den0028/latest",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 96
+      },
+      "revId": "5991c2486f27cf9a9e1a20aae3c95aca9f0cd1e7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90f52b72_5563740d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2025-01-30T18:27:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbb2b3d1_31cfef46",
       "range": {
         "startLine": 14,
         "startChar": 0,
