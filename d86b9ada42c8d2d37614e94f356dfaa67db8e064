@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bdb3f62e_4686720a",
+        "filename": "spm/ivy/app/ivy_main.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-01-31T09:28:28Z",
+      "side": 1,
+      "message": "I\u0027d call it el1_partition to align with the ffa_features_test function signature?",
+      "range": {
+        "startLine": 26,
+        "startChar": 6,
+        "endLine": 26,
+        "endChar": 14
+      },
+      "revId": "d86b9ada42c8d2d37614e94f356dfaa67db8e064",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96bbb285_275c39b6",
+        "filename": "spm/ivy/app/ivy_main.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-01-31T09:28:28Z",
+      "side": 1,
+      "message": "nitpick: I would leave Secure Partition as the change makes it inconsistent with how cactus prints its banner:\nhttps://git.trustedfirmware.org/plugins/gitiles/TF-A/tf-a-tests/+/refs/heads/master/spm/cactus/cactus_main.c#304",
+      "range": {
+        "startLine": 38,
+        "startChar": 1,
+        "endLine": 39,
+        "endChar": 35
+      },
+      "revId": "d86b9ada42c8d2d37614e94f356dfaa67db8e064",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
