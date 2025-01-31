@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2fc4610_2e069cd6",
+        "filename": "smc_fuzz/include/constraint.h",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-01-31T16:25:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce494a89_7e4056fe",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 29
+      },
+      "revId": "22bbb964487bd59ccbae5858eb7974b8dbe375ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bc978320_cfbce0da",
@@ -37,6 +61,24 @@
       "writtenOn": "2025-01-29T21:00:17Z",
       "side": 1,
       "message": "Just a suggestion for readability - maybe separate this script out into functions, maybe one per file being generated\n\nThat way if there\u0027s an issue with a particular file or someone wants to make improvements to the fuzzing framework in the future, it\u0027s easier to separate out concerns",
+      "revId": "22bbb964487bd59ccbae5858eb7974b8dbe375ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94567190_02c55032",
+        "filename": "smc_fuzz/script/generate_smc.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-01-31T16:25:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc978320_cfbce0da",
       "revId": "22bbb964487bd59ccbae5858eb7974b8dbe375ca",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -158,6 +200,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "169ef96c_2e3ea0f7",
+        "filename": "smc_fuzz/src/sdei_fuzz_helper.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-01-31T16:25:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d9f216ce_5dc04f82",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 10
+      },
+      "revId": "22bbb964487bd59ccbae5858eb7974b8dbe375ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "20200234_033f0911",
@@ -181,6 +247,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f309bf6_b214ed13",
+        "filename": "smc_fuzz/src/sdei_fuzz_helper.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-01-31T16:25:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "20200234_033f0911",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 37
+      },
+      "revId": "22bbb964487bd59ccbae5858eb7974b8dbe375ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5675aa06_c57173d8",
@@ -194,6 +284,30 @@
       "writtenOn": "2025-01-29T21:00:17Z",
       "side": 1,
       "message": "if sdei_event_status is called before sdei_interrupt_bind, this value is not initialized. Should it be initialized with a default value?",
+      "range": {
+        "startLine": 70,
+        "startChar": 34,
+        "endLine": 70,
+        "endChar": 39
+      },
+      "revId": "22bbb964487bd59ccbae5858eb7974b8dbe375ca",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8823aabc_b9f8bb83",
+        "filename": "smc_fuzz/src/sdei_fuzz_helper.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-01-31T16:25:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5675aa06_c57173d8",
       "range": {
         "startLine": 70,
         "startChar": 34,
