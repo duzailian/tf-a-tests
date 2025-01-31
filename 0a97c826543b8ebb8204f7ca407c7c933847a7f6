@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d51d785d_06222809",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 23
+      },
+      "lineNbr": 1713,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-31T12:14:42Z",
+      "side": 1,
+      "message": "nit: this function has become complex, will need break down into small functions.",
+      "range": {
+        "startLine": 1713,
+        "startChar": 13,
+        "endLine": 1713,
+        "endChar": 33
+      },
+      "revId": "0a97c826543b8ebb8204f7ca407c7c933847a7f6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
