@@ -254,7 +254,7 @@ int32_t tftf_cpu_off(void)
 	tftf_prepare_cpu_off();
 	tftf_set_cpu_offline();
 
-	INFO("Powering off CPU:%lx\n", read_mpidr_el1());
+	//INFO("Powering off CPU:%lx\n", read_mpidr_el1());
 
 	/* Flush console before the last CPU is powered off. */
 	if (tftf_get_ref_cnt() == 0)
@@ -307,7 +307,7 @@ void __dead2 tftf_warm_boot_main(void)
 
 	enable_irq();
 
-	INFO("Booting CPU:%lx\n", read_mpidr_el1());
+	//INFO("Booting CPU:%lx\n", read_mpidr_el1());
 
 	tftf_set_cpu_online();
 
