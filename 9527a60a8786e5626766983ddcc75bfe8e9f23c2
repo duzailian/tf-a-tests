@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc17a2e8_bb1ca054",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-31T11:58:26Z",
+      "side": 1,
+      "message": "minor comments",
+      "revId": "9527a60a8786e5626766983ddcc75bfe8e9f23c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31155e1e_db48455a",
+        "filename": "realm/include/realm_helpers.h",
+        "patchSetId": 19
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-31T11:58:26Z",
+      "side": 1,
+      "message": "this function is an internal helper looks like. \n\nmay not be needed to be declared in this header.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 97
+      },
+      "revId": "9527a60a8786e5626766983ddcc75bfe8e9f23c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "100b1728_07ccbb33",
+        "filename": "realm/realm_helpers.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-31T11:58:26Z",
+      "side": 1,
+      "message": "this may not be needed",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "9527a60a8786e5626766983ddcc75bfe8e9f23c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62c85327_3bdbae2c",
+        "filename": "realm/realm_plane.c",
+        "patchSetId": 19
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-01-31T11:58:26Z",
+      "side": 1,
+      "message": "can be a static function ?",
+      "revId": "9527a60a8786e5626766983ddcc75bfe8e9f23c2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
