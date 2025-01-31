@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ee595a0_329ffaae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-01-31T17:58:41Z",
+      "side": 1,
+      "message": "https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-ci-gateway-l2/8620/",
+      "revId": "1e0be7f76b65a537d43dcb61457606f442ae9f7c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
