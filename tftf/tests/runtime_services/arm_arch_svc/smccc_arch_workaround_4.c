@@ -140,7 +140,9 @@ static test_result_t test_smccc_entrypoint(void)
 	/* Invoke the workaround to make sure nothing nasty happens */
 	memset(&args, 0, sizeof(args));
 	args.fid = SMCCC_ARCH_WORKAROUND_4;
-	tftf_smc(&args);
+	ret = tftf_smc(&args);
+
+	assert((int)ret.ret0 == SMC_ARCH_CALL_SUCCESS);
 	return TEST_RESULT_SUCCESS;
 }
 
