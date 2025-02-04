@@ -49,12 +49,12 @@ bool realm_sync_exception_handler(void)
 	uint64_t esr_el1 = read_esr_el1();
 
 	if (EC_BITS(esr_el1) == EC_UNKNOWN) {
+		printf("realm_got_undef_abort = %d\n", realm_got_undef_abort);
 		realm_printf("received undefined abort. "
 			     "ESR_EL1: 0x%llx ELR_EL1: 0x%llx\n",
 			     esr_el1, read_elr_el1());
 		realm_got_undef_abort++;
 	}
-
 	return true;
 }
 
