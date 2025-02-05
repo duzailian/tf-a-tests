@@ -16,6 +16,23 @@
       "message": "RMM CI results:\nhttps://jenkins.openci.aws.arm.com/view/RMM/job/rmm-ci-gateway-l2/8667/",
       "revId": "c398c8f7248e9aec29bbc41c94e41005d539863c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07f4c7d1_be7792a7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-02-05T10:54:44Z",
+      "side": 1,
+      "message": "relevant tests passed in CI.",
+      "revId": "c398c8f7248e9aec29bbc41c94e41005d539863c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
