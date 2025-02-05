@@ -59,6 +59,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9504e8c8_e3951752",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-02-05T00:00:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e92bc9e7_950849af",
+      "range": {
+        "startLine": 183,
+        "startChar": 33,
+        "endLine": 183,
+        "endChar": 55
+      },
+      "revId": "01954a5bd6349f2f2f838799a9e7886e81a39229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ac0f04c_b2d1bd50",
@@ -95,6 +119,54 @@
       "writtenOn": "2024-11-12T18:30:50Z",
       "side": 1,
       "message": "should the min value be 1?",
+      "range": {
+        "startLine": 231,
+        "startChar": 24,
+        "endLine": 231,
+        "endChar": 25
+      },
+      "revId": "01954a5bd6349f2f2f838799a9e7886e81a39229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3330d66d_87b2ebe1",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-02-05T00:00:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac0f04c_b2d1bd50",
+      "range": {
+        "startLine": 231,
+        "startChar": 26,
+        "endLine": 231,
+        "endChar": 28
+      },
+      "revId": "01954a5bd6349f2f2f838799a9e7886e81a39229",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "018836b5_62553491",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-02-05T00:00:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e948f035_efae313c",
       "range": {
         "startLine": 231,
         "startChar": 24,
