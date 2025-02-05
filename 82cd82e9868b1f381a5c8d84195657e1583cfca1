@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8daeb34f_792b10f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-02-05T13:18:51Z",
+      "side": 1,
+      "message": "Ci failures are related to rebase issue for SPM.",
+      "revId": "82cd82e9868b1f381a5c8d84195657e1583cfca1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
