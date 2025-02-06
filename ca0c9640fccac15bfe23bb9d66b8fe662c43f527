@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6ed1bff6_21d72d2a",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-02-06T14:34:28Z",
+      "side": 1,
+      "message": "spec calls this fields PIIndex, may we should keep it S2TTE_PERM_PI_INDEX_BIT0_SHIFT ?",
+      "parentUuid": "d607c7a7_d70248f0",
+      "range": {
+        "startLine": 685,
+        "startChar": 22,
+        "endLine": 685,
+        "endChar": 29
+      },
+      "revId": "ca0c9640fccac15bfe23bb9d66b8fe662c43f527",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "21616ab9_d3df319f",
         "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
         "patchSetId": 10
@@ -37,6 +61,30 @@
       "writtenOn": "2025-01-09T15:39:45Z",
       "side": 1,
       "message": "these are indexes, so the define can have IDX in the name like : \n\nRMI_PERM_S2AP_NO_ACCESS_IDX",
+      "range": {
+        "startLine": 697,
+        "startChar": 8,
+        "endLine": 697,
+        "endChar": 40
+      },
+      "revId": "ca0c9640fccac15bfe23bb9d66b8fe662c43f527",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62786bf8_74298a8a",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_rmi.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 697,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-02-06T14:34:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21616ab9_d3df319f",
       "range": {
         "startLine": 697,
         "startChar": 8,
@@ -131,6 +179,30 @@
       "writtenOn": "2025-01-09T15:11:12Z",
       "side": 1,
       "message": "S2POE enabled can be a new test  which will be skipped in S2POE is not supported.",
+      "range": {
+        "startLine": 93,
+        "startChar": 1,
+        "endLine": 95,
+        "endChar": 16
+      },
+      "revId": "ca0c9640fccac15bfe23bb9d66b8fe662c43f527",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68cd6f86_d5179f83",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-02-06T14:34:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8926b84_1593bc91",
       "range": {
         "startLine": 93,
         "startChar": 1,
