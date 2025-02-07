@@ -13,6 +13,8 @@
 #include <drivers/arm/arm_gic.h>
 #include <drivers/arm/gic_v3.h>
 #include <heap/page_alloc.h>
+#include <lib/context_mgmt/context_el1.h>
+#include <lib/context_mgmt/context_el2.h>
 #include <pauth.h>
 #include <test_helpers.h>
 
@@ -27,6 +29,10 @@ extern const char *rmi_exit[];
 
 static struct realm realm[MAX_REALM_COUNT];
 static struct pmu_registers pmu_state;
+static el1_ctx_regs_t el1_ctx_before = {0};
+static el1_ctx_regs_t el1_ctx_after = {0};
+static el2_sysregs_t el2_ctx_before = {0};
+static el2_sysregs_t el2_ctx_after = {0};
 
 #if ENABLE_PAUTH
 static uint128_t pauth_keys_before[NUM_KEYS];
@@ -124,6 +130,14 @@ test_result_t host_test_realm_create_planes_enter(void)
 		return TEST_RESULT_FAIL;
 	}
 
+	/* save EL1 registers */
+	save_el1_sysregs_context(&el1_ctx_before);
+	modify_el1_context_sysregs(&el1_ctx_before, NS_CORRUPT_EL1_REGS);
+	save_el1_sysregs_context(&el1_ctx_before);
+
+	/* save EL2 registers */
+	el2_save_registers(&el2_ctx_before);
+
 	/* CMD for Plane N */
 	for (unsigned int j = 1U; j <= MAX_AUX_PLANE_COUNT; j++) {
 		host_shared_data_set_realm_cmd(&realm, REALM_SLEEP_CMD, j, 0U);
@@ -147,6 +161,28 @@ test_result_t host_test_realm_create_planes_enter(void)
 					run->exit.esr, run->exit.far);
 		}
 	}
+
+	/* save EL1 registers */
+	save_el1_sysregs_context(&el1_ctx_after);
+
+	INFO("Comparing EL1 registers\n");
+	ret2 = compare_el1_contexts(&el1_ctx_before, &el1_ctx_after);
+	if (!ret2) {
+		ERROR("NS EL1 registers corrupted\n");
+		host_destroy_realm(&realm);
+		return TEST_RESULT_FAIL;
+	}
+
+	/* save EL2 registers */
+	el2_save_registers(&el2_ctx_after);
+
+	INFO("Comparing EL2 registers\n");
+	if (memcmp(&el2_ctx_before, &el2_ctx_after, sizeof(el2_sysregs_t))) {
+		ERROR("NS EL2 registers corrupted\n");
+		host_destroy_realm(&realm);
+		return TEST_RESULT_FAIL;
+	}
+
 	ret2 = host_destroy_realm(&realm);
 
 	if (!ret1 || !ret2) {
@@ -199,6 +235,12 @@ test_result_t host_test_realm_create_planes_enter_s2poe(void)
 			HOST_ARG1_INDEX, SLEEP_TIME_MS);
 	}
 
+	save_el1_sysregs_context(&el1_ctx_before);
+	modify_el1_context_sysregs(&el1_ctx_before, NS_CORRUPT_EL1_REGS);
+	save_el1_sysregs_context(&el1_ctx_before);
+
+	el2_save_registers(&el2_ctx_before);
+
 	for (unsigned int j = 1U; j <= MAX_AUX_PLANE_COUNT; j++) {
 		run = (struct rmi_rec_run *)realm.run[0U];
 
@@ -206,14 +248,43 @@ test_result_t host_test_realm_create_planes_enter_s2poe(void)
 		ret1 = host_enter_realm_execute(&realm, REALM_ENTER_PLANE_N_CMD,
 				RMI_EXIT_HOST_CALL, 0U);
 
-		if (run->exit.exit_reason != RMI_EXIT_HOST_CALL) {
+		if (!ret1) {
 			ERROR("Rec0 error exit=0x%lx ret1=%d HPFAR=0x%lx \
 				esr=0x%lx far=0x%lx\n",
 				run->exit.exit_reason, ret1,
 				run->exit.hpfar,
 				run->exit.esr, run->exit.far);
+			goto destroy_realm;
 		}
 	}
+
+	save_el1_sysregs_context(&el1_ctx_before);
+
+	INFO("Comparing EL1 registers\n");
+	ret1 = compare_el1_contexts(&el1_ctx_before, &el1_ctx_after);
+
+	if (!ret1) {
+		ERROR("NS EL1 registers corrupted\n");
+		goto destroy_realm;
+	}
+
+	el2_save_registers(&el2_ctx_after);
+
+	INFO("Comparing EL2 registers\n");
+	if (memcmp(&el2_ctx_before, &el2_ctx_after, sizeof(el2_sysregs_t))) {
+		ERROR("NS EL2 registers corrupted\n");
+		goto destroy_realm;
+	}
+
+	/* Test that realm cannot modify s2por_el1 */
+	ret1 = host_enter_realm_execute(&realm, REALM_S2POE_ACCESS,
+			RMI_EXIT_HOST_CALL, 0U);
+
+	if (!ret1) {
+		ERROR("NS EL1 registers corrupted\n");
+	}
+
+destroy_realm:
 	ret2 = host_destroy_realm(&realm);
 
 	if (!ret1 || !ret2) {
