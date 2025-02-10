@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abd360f3_85bc7194",
+        "filename": "smc_fuzz/ffa_smc_calls.txt",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-02-10T21:06:17Z",
+      "side": 1,
+      "message": "does it account for both 32 bit and 64 bit variant of this SMC function?",
+      "revId": "a94bb070eefd2fdfcc1e4d7ef79be825b5028bea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b78fa0bf_54b77437",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-02-10T21:06:17Z",
+      "side": 1,
+      "message": "can be simplified as:\n\n    return (start \u003c 4);",
+      "range": {
+        "startLine": 76,
+        "startChar": 3,
+        "endLine": 78,
+        "endChar": 3
+      },
+      "revId": "a94bb070eefd2fdfcc1e4d7ef79be825b5028bea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98e7b051_560a49f0",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-02-10T21:06:17Z",
+      "side": 1,
+      "message": "can you limit to 80 characters per line?",
+      "revId": "a94bb070eefd2fdfcc1e4d7ef79be825b5028bea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39b3a33f_5af7c9af",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-02-10T21:06:17Z",
+      "side": 1,
+      "message": "nitpick:\n} else if (",
+      "revId": "a94bb070eefd2fdfcc1e4d7ef79be825b5028bea",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
