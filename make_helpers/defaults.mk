@@ -59,3 +59,8 @@ TRANSFER_LIST		:= 0
 # This flag is required to match the feature set of Cactus SP that are
 # implemented in TF-A EL3 SPMC.
 SPMC_AT_EL3		:= 0
+
+# This flag controls if Cactus SP supports PSCI power management operations
+# received as framework messages from SPMC. This option can take either 0
+# (unsupported) or 1 (supported). Default value is 1.
+CACTUS_PWR_MGMT_SUPPORT	:= 1
