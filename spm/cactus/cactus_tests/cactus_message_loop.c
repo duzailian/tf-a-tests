@@ -105,7 +105,10 @@ struct ffa_value cactus_handle_framework_msg(struct ffa_value args)
 {
 	ffa_id_t source_id = ffa_dir_msg_source(args);
 	ffa_id_t destination_id = ffa_dir_msg_dest(args);
+
+#if SP_PWR_MGMT_SUPPORT == 1
 	uint32_t framework_msg = ffa_get_framework_msg(args);
+	uint32_t psci_function = args.arg3;
 
 	/*
 	 * As of now, Cactus supports receiving only PSCI power management
@@ -114,6 +117,13 @@ struct ffa_value cactus_handle_framework_msg(struct ffa_value args)
 	if (framework_msg != FFA_FRAMEWORK_MSG_PSCI_REQ) {
 		ERROR("Unsupported framework message received by SP:%x\n",
 					destination_id);
+		goto out;
+	}
+
+	/* Cactus only supports receiving CPU_OFF PSCI function as message. */
+	if (psci_function != SMC_PSCI_CPU_OFF) {
+		ERROR("Unsupported PSCI function(%x) received by SP:%x through "
+			"framework message\n", psci_function, destination_id);
 		goto out;
 	}
 
@@ -132,5 +142,7 @@ struct ffa_value cactus_handle_framework_msg(struct ffa_value args)
 	return ffa_framework_msg_send_direct_resp(destination_id, source_id,
 				FFA_FRAMEWORK_MSG_PSCI_RESP, PSCI_E_SUCCESS);
 out:
-	return cactus_error_resp(destination_id, source_id, CACTUS_ERROR_UNHANDLED);
+#endif
+	return ffa_framework_msg_send_direct_resp(destination_id, source_id,
+				FFA_FRAMEWORK_MSG_PSCI_RESP, PSCI_E_DENIED);
 }
