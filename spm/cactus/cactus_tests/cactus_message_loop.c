@@ -105,7 +105,10 @@ struct ffa_value cactus_handle_framework_msg(struct ffa_value args)
 {
 	ffa_id_t source_id = ffa_dir_msg_source(args);
 	ffa_id_t destination_id = ffa_dir_msg_dest(args);
+
+#if SP_PWR_MGMT_SUPPORT == 1
 	uint32_t framework_msg = ffa_get_framework_msg(args);
+	uint32_t psci_function = args.arg3;
 
 	/*
 	 * As of now, Cactus supports receiving only PSCI power management
@@ -139,6 +142,7 @@ struct ffa_value cactus_handle_framework_msg(struct ffa_value args)
 	return ffa_framework_msg_send_direct_resp(destination_id, source_id,
 				FFA_FRAMEWORK_MSG_PSCI_RESP, PSCI_E_SUCCESS);
 out:
+#endif
 	return ffa_framework_msg_send_direct_resp(destination_id, source_id,
 				FFA_FRAMEWORK_MSG_PSCI_RESP, PSCI_E_DENIED);
 }
