@@ -54,6 +54,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "85af2a07_590294fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-02-11T05:08:56Z",
+      "side": 1,
+      "message": "https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/35383/1?usp\u003drelated-change\n\nDone. Please review this change to move StMM information into cactus tertiary. If satisfied we could squash that change into this one instead of having it as a separate patch",
+      "parentUuid": "60fe93a5_a7103312",
+      "revId": "951ab8b5f7ddf68156f277843be86bd0adfa5aaf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "70920432_02d2bf29",
