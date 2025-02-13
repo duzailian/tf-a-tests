@@ -6,9 +6,12 @@
 
 #include <assert.h>
 
+#include <drivers/measured_boot/event_log/tcg.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
 #include <transfer_list.h>
+
+#include "event_log.h"
 
 extern u_register_t hw_config_base;
 extern u_register_t ns_tl;
@@ -56,6 +59,32 @@ test_result_t test_handoff_dtb_payload(void)
 
 	if ((dtb_ptr != hw_config_base) &&
 	    (*(uint32_t *)dtb_ptr != DTB_PREAMBLE)) {
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+test_result_t test_handoff_event_payload(void)
+{
+	tftf_testcase_printf("Validating event log from transfer list.");
+	struct transfer_list_header *tl = (struct transfer_list_header *)ns_tl;
+	struct transfer_list_entry *te =
+		transfer_list_find(tl, TL_TAG_TPM_EVLOG);
+	uint8_t *log_addr;
+	size_t log_size;
+
+	if (te == NULL) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	/* 4-bytes are reserved in TE data section. */
+	log_addr = (uint8_t *)transfer_list_entry_data(te) + U(4);
+	log_size = te->data_size - U(4);
+
+	/* Print TCG_EfiSpecIDEvent */
+
+	if (event_log_dump(log_addr, log_size) != 0) {
 		return TEST_RESULT_FAIL;
 	}
 
