@@ -743,7 +743,7 @@ u_register_t host_realm_map_unprotected(struct realm *realm,
 		desc = phys;
 	}
 
-	if (realm->rtt_tree_single) {
+	if (realm->rtt_s2ap_enc_indirect) {
 		desc |= S2TTE_MEMATTR_FWB_NORMAL_WB;
 		desc = rtt_s2ap_set_pi_index(desc, RMI_PERM_S2AP_RW_IDX);
 	} else {
@@ -940,7 +940,7 @@ static u_register_t host_realm_tear_down_rtt_range(struct realm *realm,
 				u_register_t level1;
 
 				/* Unmap from all Aux RTT */
-				if (!realm->rtt_tree_single) {
+				if (!realm->rtt_s2ap_enc_indirect) {
 					for (unsigned int tree_index = 1U;
 						tree_index <= realm->num_aux_planes;
 						tree_index++) {
@@ -1008,7 +1008,7 @@ static u_register_t host_realm_tear_down_rtt_range(struct realm *realm,
 			}
 
 			/* RTT_AUX_DESTROY */
-			if (!realm->rtt_tree_single) {
+			if (!realm->rtt_s2ap_enc_indirect) {
 				ret = host_realm_destroy_free_aux_rtt(realm, map_addr,
 						level);
 
@@ -1206,8 +1206,13 @@ u_register_t host_realm_create(struct realm *realm)
 	params->rtt_num_start = 1U;
 
 	if (!realm->rtt_tree_single) {
-		params->flags1 = RMI_REALM_FLAGS1_RTT_TREE_PP;
+		params->flags1 |= RMI_REALM_FLAGS1_RTT_TREE_PP;
 	}
+
+	if (realm->rtt_s2ap_enc_indirect) {
+		params->flags1 |= RMI_REALM_FLAGS1_RTT_S2AP_ENCODING_INDIRECT;
+	}
+
 	params->num_aux_planes = realm->num_aux_planes;
 
 	/* Allocate VMID for all planes */
@@ -1380,9 +1385,9 @@ u_register_t host_realm_map_ns_shared(struct realm *realm,
 	}
 
 	/* AUX MAP NS buffer for all RTTs */
-	if (!realm->rtt_tree_single) {
-		for (unsigned int i = 0U; i < ns_shared_mem_size / PAGE_SIZE; i++) {
-			for (unsigned int j = 0U; j < realm->num_aux_planes; j++) {
+	if (!realm->rtt_s2ap_enc_indirect) {
+		for (unsigned int j = 0U; j < realm->num_aux_planes; j++) {
+			for (unsigned int i = 0U; i < ns_shared_mem_size / PAGE_SIZE; i++) {
 				u_register_t fail_index, level_pri, state;
 
 				ret = host_rmi_rtt_aux_map_unprotected(realm->rd,
@@ -1877,7 +1882,7 @@ u_register_t host_realm_rec_enter(struct realm *realm,
 		     (((((run->exit.esr & ISS_FSC_MASK) >= FSC_L0_TRANS_FAULT) &&
 		     ((run->exit.esr & ISS_FSC_MASK) <= FSC_L3_TRANS_FAULT)) ||
 		     ((run->exit.esr & ISS_FSC_MASK) == FSC_L_MINUS1_TRANS_FAULT))) &&
-		     !realm->rtt_tree_single &&
+		     !realm->rtt_s2ap_enc_indirect &&
 		     (realm->num_aux_planes > 0U)) {
 
 			re_enter_rec = host_realm_handle_perm_fault(realm, run);
