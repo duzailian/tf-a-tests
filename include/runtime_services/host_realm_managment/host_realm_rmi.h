@@ -498,7 +498,8 @@
 #define RMI_REALM_FLAGS0_DA		BIT(3)
 
 /* RmiRealmFlags1 format */
-#define RMI_REALM_FLAGS1_RTT_TREE_PP	BIT(0)
+#define RMI_REALM_FLAGS1_RTT_TREE_PP			BIT(0)
+#define RMI_REALM_FLAGS1_RTT_S2AP_ENCODING_INDIRECT	BIT(1)
 
 /* RmiInterfaceVersion type */
 #define RMI_MAJOR_VERSION		0U
@@ -1140,6 +1141,7 @@ struct realm {
 	bool             payload_created;
 	bool             shared_mem_created;
 	bool             rtt_tree_single;
+	bool		 rtt_s2ap_enc_indirect;
 	unsigned short   vmid;
 	enum realm_state state;
 	long start_level;

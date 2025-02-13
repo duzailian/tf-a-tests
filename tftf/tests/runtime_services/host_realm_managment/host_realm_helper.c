@@ -122,6 +122,7 @@ static bool host_create_shared_mem(struct realm *realm_ptr)
 bool host_prepare_realm_payload(struct realm *realm_ptr,
 			       u_register_t realm_payload_adr,
 			       u_register_t feature_flag,
+			       u_register_t feature_flag1,
 			       long sl,
 			       const u_register_t *rec_flag,
 			       unsigned int rec_count,
@@ -160,6 +161,8 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 	}
 
 	realm_ptr->rtt_tree_single = false;
+	realm_ptr->rtt_s2ap_enc_indirect = false;
+
 	if (num_aux_planes > 0U) {
 		if ((EXTRACT(RMI_FEATURE_REGISTER_0_PLANE_RTT, feature_flag) ==
 					RMI_PLANE_RTT_SINGLE)) {
@@ -170,6 +173,16 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 			} else {
 				realm_ptr->rtt_tree_single = true;
 			}
+		}
+	}
+
+	if ((feature_flag1 & RMI_REALM_FLAGS1_RTT_S2AP_ENCODING_INDIRECT) != 0U) {
+		if ((EXTRACT(RMI_FEATURE_REGISTER_0_PLANE_RTT, realm_ptr->rmm_feat_reg0) ==
+					RMI_PLANE_RTT_AUX)) {
+			ERROR("%s() failed\n", "rtt_s2ap_enc_indirect not suported");
+			return false;
+		} else {
+			realm_ptr->rtt_s2ap_enc_indirect = true;
 		}
 	}
 
@@ -287,6 +300,7 @@ destroy_realm:
 bool host_create_realm_payload(struct realm *realm_ptr,
 			       u_register_t realm_payload_adr,
 			       u_register_t feature_flag,
+			       u_register_t feature_flag1,
 			       long sl,
 			       const u_register_t *rec_flag,
 			       unsigned int rec_count,
@@ -297,6 +311,7 @@ bool host_create_realm_payload(struct realm *realm_ptr,
 	ret = host_prepare_realm_payload(realm_ptr,
 			realm_payload_adr,
 			feature_flag,
+			feature_flag1,
 			sl,
 			rec_flag,
 			rec_count,
@@ -329,6 +344,7 @@ destroy_realm:
 bool host_create_activate_realm_payload(struct realm *realm_ptr,
 			u_register_t realm_payload_adr,
 			u_register_t feature_flag,
+			u_register_t feature_flag1,
 			long sl,
 			const u_register_t *rec_flag,
 			unsigned int rec_count,
@@ -340,6 +356,7 @@ bool host_create_activate_realm_payload(struct realm *realm_ptr,
 	ret = host_create_realm_payload(realm_ptr,
 			realm_payload_adr,
 			feature_flag,
+			feature_flag1,
 			sl,
 			rec_flag,
 			rec_count,
