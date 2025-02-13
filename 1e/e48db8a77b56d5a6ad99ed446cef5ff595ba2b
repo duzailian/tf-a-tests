@@ -1,0 +1,9 @@
+Maintainer-Review+1: Yann Gautier <yann.gautier@st.com>
+Allow-CI+2: Varun Wadekar <vwadekar@nvidia.com>
+Code-Owner-Review+1: Govindraj Raja <govindraj.raja@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Submitted-by: Yann Gautier <yann.gautier@st.com>
+Submitted-at: Thu, 13 Feb 2025 13:27:08 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/35134
+Project: TF-A/tf-a-tests
+Branch: refs/heads/lts-v2.8
