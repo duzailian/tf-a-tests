@@ -48,7 +48,7 @@ test_result_t host_realm_multi_rec_single_cpu(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			feature_flag, sl, rec_flag, MAX_REC_COUNT, 0U)) {
+			feature_flag, 0U, sl, rec_flag, MAX_REC_COUNT, 0U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -115,7 +115,7 @@ test_result_t host_realm_multi_rec_psci_denied(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			feature_flag, sl, rec_flag, 3U, 0U)) {
+			feature_flag, 0U, sl, rec_flag, 3U, 0U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -261,7 +261,7 @@ test_result_t host_realm_multi_rec_exit_irq(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			feature_flag, sl, rec_flag, rec_count, 0U)) {
+			feature_flag, 0U, sl, rec_flag, rec_count, 0U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -358,7 +358,7 @@ test_result_t host_realm_multi_planes_multi_rec_multiple_cpu(void)
 	u_register_t rec_flag[MAX_REC_COUNT] = {RMI_RUNNABLE};
 	u_register_t exit_reason;
 	unsigned int cpu_node, rec_count, num_aux_planes = 1U;
-	u_register_t feature_flag = 0U;
+	u_register_t feature_flag = 0U, feature_flag1 = 0U;
 	long sl = RTT_MIN_LEVEL;
 
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
@@ -375,12 +375,19 @@ test_result_t host_realm_multi_planes_multi_rec_multiple_cpu(void)
 		return TEST_RESULT_SKIPPED;
 	}
 
+	if (is_single_rtt_supported()) {
+		/* Use single RTT with S2AP Indirect */
+		feature_flag |= INPLACE(RMI_FEATURE_REGISTER_0_PLANE_RTT,
+				RMI_PLANE_RTT_SINGLE);
+		feature_flag1 = RMI_REALM_FLAGS1_RTT_S2AP_ENCODING_INDIRECT;
+	}
+
 	for (i = 1U; i < rec_count; i++) {
 		rec_flag[i] = RMI_NOT_RUNNABLE;
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			feature_flag, sl, rec_flag, rec_count, num_aux_planes)) {
+			feature_flag, feature_flag1, sl, rec_flag, rec_count, num_aux_planes)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -558,7 +565,7 @@ test_result_t host_realm_multi_rec_multiple_cpu(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			feature_flag, sl, rec_flag, rec_count, 0U)) {
+			feature_flag, 0U, sl, rec_flag, rec_count, 0U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -696,12 +703,12 @@ test_result_t host_realm_multi_rec_multiple_cpu2(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			feature_flag, sl, rec_flag, MAX_REC_COUNT, 0U)) {
+			feature_flag, 0UL, sl, rec_flag, MAX_REC_COUNT, 0U)) {
 		return TEST_RESULT_FAIL;
 	}
 
 	if (!host_create_activate_realm_payload(&realm2, (u_register_t)REALM_IMAGE_BASE,
-			feature_flag, sl, rec_flag, 1U, 0U)) {
+			feature_flag, 0U, sl, rec_flag, 1U, 0U)) {
 		ret2 = host_destroy_realm(&realm);
 		return TEST_RESULT_FAIL;
 	}
@@ -880,7 +887,7 @@ test_result_t host_realm_pmuv3_mul_rec(void)
 
 		/* Request more event counters than total, expect failure */
 		if (host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-							feature_flag, sl, rec_flag, 1U, 0U)) {
+							feature_flag, 0UL, sl, rec_flag, 1U, 0U)) {
 			ERROR("Realm create should have failed\n");
 			host_destroy_realm(&realm);
 			return TEST_RESULT_FAIL;
@@ -896,7 +903,7 @@ test_result_t host_realm_pmuv3_mul_rec(void)
 	}
 
 	ret1 = host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-						feature_flag, sl, rec_flag, 1U, 0U);
+						feature_flag, 0U, sl, rec_flag, 1U, 0U);
 	host_destroy_realm(&realm);
 
 	if (!get_feat_hpmn0_supported()) {
@@ -921,7 +928,7 @@ test_result_t host_realm_pmuv3_mul_rec(void)
 
 	/* Prepare realm, create recs later */
 	if (!host_prepare_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			feature_flag, sl, rec_flag, rec_count, 0U)) {
+			feature_flag, 0UL, sl, rec_flag, rec_count, 0U)) {
 		return TEST_RESULT_FAIL;
 	}
 
@@ -939,7 +946,7 @@ test_result_t host_realm_pmuv3_mul_rec(void)
 	}
 
 	ret1 = host_create_activate_realm_payload(&realm1, (u_register_t)REALM_IMAGE_BASE,
-					feature_flag, sl, rec_flag, rec_count, 0U);
+					feature_flag, 0U, sl, rec_flag, rec_count, 0U);
 	if (!ret1) {
 		goto test_exit;
 	}
