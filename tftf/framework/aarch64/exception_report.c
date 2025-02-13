@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019, Arm Limited. All rights reserved.
+ * Copyright (c) 2019-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -47,6 +47,13 @@ void __dead2 print_exception(const struct cpu_context *ctx)
 	       read_sysreg(elr), read_sysreg(far));
 	printf("  SCTLR=0x%lx  SPSR=0x%lx  DAIF=0x%lx\n",
 	       read_sysreg(sctlr), read_sysreg(spsr), read_daif());
+
+#if ENABLE_PAUTH
+	/* Remove PAC from ELR address to be more human readable. */
+	uintptr_t lr = read_sysreg(elr);
+	xpaci(lr);
+	printf("  ELR(no PAC)=0x%lx\n", lr);
+#endif
 
 	/* Dump general-purpose registers. */
 	printf("General-purpose registers:\n");
