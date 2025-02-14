@@ -25,6 +25,7 @@
 #pragma weak tftf_plat_reset
 #pragma weak plat_get_prot_regions
 #pragma weak plat_pcie_get_info_table
+#pragma weak plat_get_invalid_addr
 
 #if IMAGE_TFTF
 
@@ -153,4 +154,9 @@ const mem_region_t *plat_get_prot_regions(int *nelem)
 const struct pcie_info_table *plat_pcie_get_info_table(void)
 {
 	return NULL;
+}
+
+void *plat_get_invalid_addr(void)
+{
+	return (void *)0x0;
 }

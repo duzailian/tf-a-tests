@@ -201,4 +201,9 @@ struct pcie_info_table;
  */
 const struct pcie_info_table *plat_pcie_get_info_table(void);
 
+/*
+ * Retrieve invalid entry address.
+ */
+void *plat_get_invalid_addr(void);
+
 #endif /* __PLATFORM_H__ */
