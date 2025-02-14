@@ -59,3 +59,6 @@ TRANSFER_LIST		:= 0
 # This flag is required to match the feature set of Cactus SP that are
 # implemented in TF-A EL3 SPMC.
 SPMC_AT_EL3		:= 0
+
+# custom invalid entry address
+PLAT_INVALID_ADDR	?= 0

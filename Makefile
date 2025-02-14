@@ -199,6 +199,7 @@ $(eval $(call add_define,TFTF_DEFINES,ENABLE_REALM_PAYLOAD_TESTS))
 $(eval $(call add_define,TFTF_DEFINES,TRANSFER_LIST))
 $(eval $(call add_define,TFTF_DEFINES,PLAT_AMU_GROUP1_COUNTERS_MASK))
 $(eval $(call add_define,TFTF_DEFINES,SPMC_AT_EL3))
+$(eval $(call add_define,TFTF_DEFINES,PLAT_INVALID_ADDR))
 
 ################################################################################
 
