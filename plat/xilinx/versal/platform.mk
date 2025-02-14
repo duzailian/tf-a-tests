@@ -26,3 +26,6 @@ PLAT_TESTS_SKIP_LIST    := ${VERSAL_PATH}/tests_to_skip.txt
 ifeq ($(USE_NVM),1)
 $(error "Versal port of TFTF doesn't currently support USE_NVM=1")
 endif
+
+PLAT_INVALID_ADDR	:=	0x80000000
+$(eval $(call add_define,TFTF_DEFINES,PLAT_INVALID_ADDR))
