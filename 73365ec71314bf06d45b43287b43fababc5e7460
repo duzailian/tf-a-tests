@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa9e6f6e_e29a73bc",
+        "filename": "tftf/framework/aarch64/exception_report.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2025-02-14T12:29:51Z",
+      "side": 1,
+      "message": "LR is X30, shouldn\u0027t it go to \"for\" loop? Can we have similar format to TF-A dump?",
+      "revId": "73365ec71314bf06d45b43287b43fababc5e7460",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
