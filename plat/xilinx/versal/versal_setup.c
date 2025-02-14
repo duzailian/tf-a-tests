@@ -79,3 +79,8 @@ const mmap_region_t *tftf_platform_get_mmap(void)
 {
 	return mmap;
 }
+
+void *plat_get_invalid_addr(void)
+{
+	return (void *)PLAT_DDR_LOWMEM_MAX;
+}
