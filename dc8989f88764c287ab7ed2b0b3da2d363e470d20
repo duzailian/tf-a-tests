@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7398da8f_caa81562",
+        "filename": "make_helpers/defaults.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2025-02-17T07:57:28Z",
+      "side": 1,
+      "message": "Unlike in TF-A, we try to limit the number of build options to the strict minimum in TF-A Tests. FYI this is mentioned at the top of this documentation page: https://trustedfirmware-a-tests.readthedocs.io/en/latest/getting_started/build-options.html\n\nWith this in mind, it would be preferrable to replace this macro with a platform interface, say `plat_get_invalid_addr()`. On the versal platform, this could return `0x80000000` while for all other platforms this would return address 0.",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 22
+      },
+      "revId": "dc8989f88764c287ab7ed2b0b3da2d363e470d20",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
