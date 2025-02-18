@@ -1,0 +1,10 @@
+Code-Owner-Review+1: Bipin Ravi <bipin.ravi@arm.com>
+Allow-CI+2: Yann Gautier <yann.gautier@st.com>
+Verified+1: Govindraj Raja <govindraj.raja@arm.com>
+Maintainer-Review+1: Govindraj Raja <govindraj.raja@arm.com>
+Submitted-by: Govindraj Raja <govindraj.raja@arm.com>
+Submitted-at: Tue, 18 Feb 2025 23:36:42 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/35294
+Comments-Total: 1
+Project: TF-A/tf-a-tests
+Branch: refs/heads/lts-v2.12
