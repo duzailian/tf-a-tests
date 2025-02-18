@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ad31b3e_fe5131b2",
+        "filename": "lib/xlat_tables_v2/aarch32/xlat_tables_arch.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-02-18T16:16:20Z",
+      "side": 1,
+      "message": "nitpick: not required if no change made to this file.",
+      "revId": "d515db1516dba0fa4e415363fbbf4c87ededf5e4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
