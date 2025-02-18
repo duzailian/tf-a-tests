@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3934f8af_88a27178",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-02-18T22:06:47Z",
+      "side": 1,
+      "message": "Based on http://ci.trustedfirmware.org/job/tf-a-lts2.12-gerrit-tforg-l2/5/",
+      "revId": "ab800fffd328b690ce89647b4fa1c97fea677b67",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
