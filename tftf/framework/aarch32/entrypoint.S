@@ -16,6 +16,11 @@
  * ----------------------------------------------------------------------------
  */
 func tftf_entrypoint
+#if TRANSFER_LIST
+	mov	r5, r1
+	mov	r6, r2
+	mov	r7, r3
+#endif
 	bl	arch_init
 
 	/* --------------------------------------------------------------------
@@ -51,6 +56,18 @@ func tftf_entrypoint
 	ldr	r0, =__COHERENT_RAM_START__
 	ldr	r1, =__COHERENT_RAM_UNALIGNED_SIZE__
 	bl	zeromem
+
+	/* --------------------------------------------------------------------
+	 * Save transfer list and hw_config addresses passed in registers r0 to
+	 * r3 from the previous bootloader.
+	 * --------------------------------------------------------------------
+	 */
+#if TRANSFER_LIST
+	mov	r0, r5
+	mov	r1, r6
+	mov	r2, r7
+	bl	save_handoff_params
+#endif
 
 	/* --------------------------------------------------------------------
 	 * Give ourselves a small coherent stack to ease the pain of
@@ -172,3 +189,18 @@ panic:
 	/* Primary core MPID already saved */
 	b	panic
 endfunc save_primary_mpid
+
+/* ----------------------------------------------------------------------------
+ * Save transfer list and hw_config addresses passed in registers r0 to r3 from
+ * the previous bootloader.
+ * ----------------------------------------------------------------------------
+ */
+func save_handoff_params
+	ldr	r4, =ns_tl
+	str	r2, [r4]
+	ldr	r4, =tl_signature
+	str	r0, [r4]
+	ldr	r4, =hw_config_base
+	str	r1, [r4]
+	bx	lr
+endfunc save_handoff_params
