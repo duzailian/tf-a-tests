@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03c91d1e_096ceaaf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-02-19T14:26:57Z",
+      "side": 1,
+      "message": "Can you have a look at SPM tests failures? Thanks.\n\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/98107/\n\nhttps://ci.trustedfirmware.org/job/tf-a-ci-gateway/98072/",
+      "revId": "7730d8c30467032c7f767cb586f9a3a3d8806e8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
