@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bcf55930_d102c7e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2025-02-20T08:17:53Z",
+      "side": 1,
+      "message": "This is not really a bug fix. Well, maybe from the point of view of the versal platform but not generally speaking. I\u0027d prefer something like:\n\nfeat(plat): new interface to get an invalid entrypoint address",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "cedfbe20aedf83d1b4400134f28f9f957167b89b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f46374d_66d07b33",
+        "filename": "include/plat/common/platform.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2025-02-20T08:17:53Z",
+      "side": 1,
+      "message": "I think we need a more comprehensive comment here. We need to define what \"invalid\" means here. We also need to better define the scope of this platform interface... Is it limited to returning an invalid entry point address for CPU_ON \u0026 CPU_SUSPEND? I guess we can start with that and later broaden its scope if we need (we could consider adding a function argument to tell which kind of \"invalid\" address we want).\n\nSo I would suggest something like:\n\n---\nReturns an address which is known to be invalid as an entry point address parameter for the CPU_ON and CPU_SUSPEND calls on this platform. To qualify as invalid, the address must lie in a range that is known not to be available to the caller (TFTF in this case).\n\nMost platforms will typically use address 0 for that purpose.\nOn platforms where address 0 is actually a valid entry point address, this function can be implemented to return a different address.\n\n---",
+      "range": {
+        "startLine": 204,
+        "startChar": 0,
+        "endLine": 206,
+        "endChar": 3
+      },
+      "revId": "cedfbe20aedf83d1b4400134f28f9f957167b89b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5affe76_2d98edcc",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/cpu_hotplug/test_psci_hotplug_invalid.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000043
+      },
+      "writtenOn": "2025-02-20T08:17:53Z",
+      "side": 1,
+      "message": "I haven\u0027t actually tested it but I suspect this is gonna yield the address of the `plat_get_invalid_addr` function, which is not what we want here... To actually call `plat_get_invalid_addr()` and use the address it returns, we\u0027re missing some parentheses:\n```\npsci_ret \u003d tftf_psci_cpu_on(cpu_mpid, (uintptr_t) plat_get_invalid_addr(), 0);\n                                                                       ^^\n```",
+      "range": {
+        "startLine": 168,
+        "startChar": 4,
+        "endLine": 168,
+        "endChar": 37
+      },
+      "revId": "cedfbe20aedf83d1b4400134f28f9f957167b89b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
