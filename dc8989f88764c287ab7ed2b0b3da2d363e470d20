@@ -22,6 +22,30 @@
       },
       "revId": "dc8989f88764c287ab7ed2b0b3da2d363e470d20",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "763a5dd2_f71737ae",
+        "filename": "make_helpers/defaults.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1001325
+      },
+      "writtenOn": "2025-02-20T04:21:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7398da8f_caa81562",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 22
+      },
+      "revId": "dc8989f88764c287ab7ed2b0b3da2d363e470d20",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
