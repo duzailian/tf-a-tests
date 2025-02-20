@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fee46a3a_2e70b6f5",
+        "filename": "lib/hob/hob.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2025-02-20T14:45:11Z",
+      "side": 1,
+      "message": "Fix for line length guidelines.",
+      "range": {
+        "startLine": 59,
+        "startChar": 1,
+        "endLine": 78,
+        "endChar": 10
+      },
+      "revId": "2a194d1f33ef08ebeabf3b9ad4e190be6a1bfab0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
