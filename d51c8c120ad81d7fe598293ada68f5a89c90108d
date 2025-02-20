@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d939993_49e44081",
+        "filename": "lib/hob/hob.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-02-20T19:34:41Z",
+      "side": 1,
+      "message": "Can you run Allow-CI and fix any static check issues reported by CI?",
+      "revId": "d51c8c120ad81d7fe598293ada68f5a89c90108d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
