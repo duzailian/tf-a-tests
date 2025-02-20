@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30ea5f66_4650efce",
+        "filename": "plat/common/plat_common.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-02-20T11:38:55Z",
+      "side": 1,
+      "message": "nit: the function is called \"addr\", but it returns a pointer. Shouldn\u0027t it return a uintptr_t and then the cast is also not needed?",
+      "range": {
+        "startLine": 159,
+        "startChar": 0,
+        "endLine": 159,
+        "endChar": 6
+      },
+      "revId": "74beaf9b35f497e705c15b067b5117409744ab49",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
