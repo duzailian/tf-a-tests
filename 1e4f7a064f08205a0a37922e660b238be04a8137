@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "67cfe79f_d21e898f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-02-21T09:22:44Z",
+      "side": 1,
+      "message": "CI passed on the patch above, and we have a few reviews so I\u0027ll upgrade to CoR",
+      "revId": "1e4f7a064f08205a0a37922e660b238be04a8137",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
