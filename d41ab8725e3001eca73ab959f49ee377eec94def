@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f36e9602_e7996ce8",
+        "filename": "include/runtime_services/host_realm_managment/host_realm_helper.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-02-21T13:04:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2de23f5a_c0ec46f5",
+      "range": {
+        "startLine": 19,
+        "startChar": 15,
+        "endLine": 19,
+        "endChar": 27
+      },
+      "revId": "d41ab8725e3001eca73ab959f49ee377eec94def",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "287acec2_f533b226",
@@ -41,6 +65,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b06e6008_4fbefeeb",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 1010,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-02-21T13:04:34Z",
+      "side": 1,
+      "message": "num_aux_planes condition is handled inside host_realm_destroy_free_aux_rtt,",
+      "parentUuid": "287acec2_f533b226",
+      "revId": "d41ab8725e3001eca73ab959f49ee377eec94def",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "77b021f3_4f97d5c0",
@@ -54,6 +96,30 @@
       "writtenOn": "2025-02-18T14:42:44Z",
       "side": 1,
       "message": "I think if we make this the outer loop, or if we check that (num_aux_planes \u003e 0) in the if clause, we can save having to iterate over the current outer loop when not needed. Not very important though, as this is a test and performance here is not very critical.",
+      "range": {
+        "startLine": 1389,
+        "startChar": 1,
+        "endLine": 1389,
+        "endChar": 62
+      },
+      "revId": "d41ab8725e3001eca73ab959f49ee377eec94def",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4b126ea_a2124108",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 1389,
+      "author": {
+        "id": 1000798
+      },
+      "writtenOn": "2025-02-21T13:04:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77b021f3_4f97d5c0",
       "range": {
         "startLine": 1389,
         "startChar": 1,
