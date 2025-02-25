@@ -1,0 +1,11 @@
+Code-Review+1: Michal Šimek <michal.simek@amd.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Owner-Review+1: Akshay Belsare <Akshay.Belsare@amd.com>
+Maintainer-Review+1: Sandrine Afsa <sandrine.afsa@arm.com>
+Allow-CI+1: Michal Šimek <michal.simek@amd.com>
+Submitted-by: Sandrine Afsa <sandrine.afsa@arm.com>
+Submitted-at: Tue, 25 Feb 2025 13:48:58 +0100
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/35311
+Comments-Total: 2
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
