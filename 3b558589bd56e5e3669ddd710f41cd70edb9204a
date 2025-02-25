@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "912c3e2f_00e1e16a",
+        "filename": "spm/cactus/cactus_tests/cactus_message_loop.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-02-25T16:51:46Z",
+      "side": 1,
+      "message": "I see it defined in next change, but means current change doesn\u0027t build.",
+      "parentUuid": "1946af92_b26d44f5",
+      "range": {
+        "startLine": 121,
+        "startChar": 5,
+        "endLine": 121,
+        "endChar": 18
+      },
+      "revId": "3b558589bd56e5e3669ddd710f41cd70edb9204a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "76ab49b7_12061e65",
         "filename": "spm/cactus/cactus_tests/cactus_message_loop.c",
         "patchSetId": 3
@@ -83,6 +107,30 @@
       "writtenOn": "2025-02-25T16:49:15Z",
       "side": 1,
       "message": "you could use a ret local value and omit repetition of same pattern line 139 and 142",
+      "range": {
+        "startLine": 140,
+        "startChar": 33,
+        "endLine": 140,
+        "endChar": 47
+      },
+      "revId": "3b558589bd56e5e3669ddd710f41cd70edb9204a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "250acf2e_b64c5028",
+        "filename": "spm/cactus/cactus_tests/cactus_message_loop.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-02-25T16:51:46Z",
+      "side": 1,
+      "message": "Tbd if this can be accommodated with next change.",
+      "parentUuid": "6b8c8e60_a934402c",
       "range": {
         "startLine": 140,
         "startChar": 33,
