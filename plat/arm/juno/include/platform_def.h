@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2020, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -118,7 +118,7 @@
  * calculated using the current NS_BL1U RW debug size plus a little space
  * for growth.
  ******************************************************************************/
-#define NS_BL1U_RW_SIZE		(0x7000)
+#define NS_BL1U_RW_SIZE		(0x8000)
 #define NS_BL1U_RW_BASE		(NSRAM_BASE)
 #define NS_BL1U_RW_LIMIT	(NS_BL1U_RW_BASE + NS_BL1U_RW_SIZE)
 
