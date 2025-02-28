@@ -10,7 +10,7 @@
 #include <xlat_tables_v2.h>
 
 #define NS_IMAGE_OFFSET		TFTF_BASE
-#define NS_IMAGE_LIMIT		(NS_IMAGE_OFFSET + (32 << TWO_MB_SHIFT))
+#define NS_IMAGE_LIMIT		(NS_IMAGE_OFFSET + SZ_128M)
 
 static const mem_region_t juno_ram_ranges[] = {
 	{NS_IMAGE_LIMIT, 128 << TWO_MB_SHIFT},
