@@ -7,6 +7,7 @@
 #ifndef __JUNO_DEF_H__
 #define __JUNO_DEF_H__
 
+#include <common_def.h>
 #include <platform_def.h>
 
 /*******************************************************************************
