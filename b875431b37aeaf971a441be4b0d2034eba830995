@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65e4b8cb_6f43c58c",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 708,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2025-03-04T20:06:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66f11aa2_ed9b5040",
+      "range": {
+        "startLine": 708,
+        "startChar": 4,
+        "endLine": 708,
+        "endChar": 10
+      },
+      "revId": "b875431b37aeaf971a441be4b0d2034eba830995",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e8e555bf_ce286ca2",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00ab73d3_bd9b5830",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2025-03-04T20:06:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8e555bf_ce286ca2",
+      "range": {
+        "startLine": 720,
+        "startChar": 10,
+        "endLine": 720,
+        "endChar": 26
+      },
+      "revId": "b875431b37aeaf971a441be4b0d2034eba830995",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "973de28f_4ce10bcb",
@@ -60,6 +108,30 @@
       "writtenOn": "2025-03-04T17:56:54Z",
       "side": 1,
       "message": "maybe return `return_val`?",
+      "range": {
+        "startLine": 747,
+        "startChar": 9,
+        "endLine": 747,
+        "endChar": 25
+      },
+      "revId": "b875431b37aeaf971a441be4b0d2034eba830995",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f246e9a5_0b9442d9",
+        "filename": "tftf/tests/runtime_services/standard_service/errata_abi/api_tests/test_errata_abi_functionality.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2025-03-04T20:06:58Z",
+      "side": 1,
+      "message": "if code enters this if condition, it must always be TEST_RESULT_FAIL, and even though return_val would always have TEST_RESULT_FAIL at this point, having it as a variable seems to indicate that this could return a value something other than TEST_RESULT_FAIL(when it will never be anything other than TEST_RESULT_FAIL). So I feel it\u0027s best to leave it as TEST_RESULT_FAIL as it\u0027s more clearer. I can change it to return_val if you still feel return_val is the better alternative.",
+      "parentUuid": "973de28f_4ce10bcb",
       "range": {
         "startLine": 747,
         "startChar": 9,
