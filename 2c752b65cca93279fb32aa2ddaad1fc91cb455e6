@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5fc1c97_5d1a905b",
+        "filename": "plat/arm/corstone1000/corstone1000_mem_prot.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-03-04T16:43:32Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "2c752b65cca93279fb32aa2ddaad1fc91cb455e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7413772c_a18716b1",
+        "filename": "plat/arm/fvp/fvp_mem_prot.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-03-04T16:43:32Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "2c752b65cca93279fb32aa2ddaad1fc91cb455e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3544cc8_0f25bb12",
+        "filename": "plat/arm/juno/include/platform_def.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-03-04T16:43:32Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "2c752b65cca93279fb32aa2ddaad1fc91cb455e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f1f4fec_3d5cc768",
+        "filename": "plat/arm/juno/juno_def.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-03-04T16:43:32Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "2c752b65cca93279fb32aa2ddaad1fc91cb455e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9cc1d630_62e23f7a",
+        "filename": "plat/arm/juno/juno_mem_prot.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-03-04T16:43:32Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "2c752b65cca93279fb32aa2ddaad1fc91cb455e6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
