@@ -49,6 +49,7 @@ typedef struct em_cpu_errata {
 	int em_errata_id;
 	unsigned int rxpx_low;
 	unsigned int rxpx_high;
+	unsigned int split_wa;
 } em_cpu_errata_t;
 
 typedef struct em_cpu{
