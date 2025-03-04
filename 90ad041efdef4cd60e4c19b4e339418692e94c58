@@ -33,6 +33,24 @@
       "message": "this print can be removed and instead the error case can be printed \n\nie, \n\n\"brbcr_el2 values did not match. read \u003d xxx expected \u003d xxxx\"\n\nsimilarly for brbcr_el1 as well",
       "revId": "90ad041efdef4cd60e4c19b4e339418692e94c58",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18a7716f_edc7f835",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_brbe_tests.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2025-03-04T03:33:24Z",
+      "side": 1,
+      "message": "Acknowledged, thank you Soby!.",
+      "parentUuid": "d5018916_76872647",
+      "revId": "90ad041efdef4cd60e4c19b4e339418692e94c58",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
