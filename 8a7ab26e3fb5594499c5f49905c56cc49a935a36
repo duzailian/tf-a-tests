@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "153819a7_c24ed635",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-03-04T10:46:12Z",
+      "side": 1,
+      "message": "LGTM.",
+      "revId": "8a7ab26e3fb5594499c5f49905c56cc49a935a36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b4dc771d_ed979f0c",
@@ -14,6 +31,24 @@
       "writtenOn": "2025-03-04T10:00:16Z",
       "side": 1,
       "message": "would be better to put this before line #65.",
+      "revId": "8a7ab26e3fb5594499c5f49905c56cc49a935a36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a911e9d_c548813a",
+        "filename": "tftf/framework/aarch64/exception_report.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-03-04T10:46:12Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "b4dc771d_ed979f0c",
       "revId": "8a7ab26e3fb5594499c5f49905c56cc49a935a36",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
