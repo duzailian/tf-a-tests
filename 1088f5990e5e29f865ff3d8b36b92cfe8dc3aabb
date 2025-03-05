@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6b7d390_39d239e8",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-03-05T04:11:40Z",
+      "side": 1,
+      "message": "nit: The test also validates that s2por_el1 reg cannot be accessed in Realm.",
+      "revId": "1088f5990e5e29f865ff3d8b36b92cfe8dc3aabb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7006522d_cc943ab6",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-03-05T04:11:40Z",
+      "side": 1,
+      "message": "S2POR_EL1 reg access test failed.",
+      "range": {
+        "startLine": 310,
+        "startChar": 9,
+        "endLine": 310,
+        "endChar": 25
+      },
+      "revId": "1088f5990e5e29f865ff3d8b36b92cfe8dc3aabb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
