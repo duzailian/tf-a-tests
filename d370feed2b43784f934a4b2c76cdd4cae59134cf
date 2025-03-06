@@ -56,6 +56,30 @@
       },
       "revId": "d370feed2b43784f934a4b2c76cdd4cae59134cf",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d284bf3f_56263ac4",
+        "filename": "include/runtime_services/errata_abi.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2025-03-06T18:47:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95f01b03_a8577820",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "d370feed2b43784f934a4b2c76cdd4cae59134cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
