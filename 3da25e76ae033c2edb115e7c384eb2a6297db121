@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f085e36_9fb1bb3d",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 976,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-03-06T16:51:49Z",
+      "side": 1,
+      "message": "a comment here would be good to mention that when planes support it present but S2POE is not available, then we dont test multiple planes to keep test simple.",
+      "revId": "3da25e76ae033c2edb115e7c384eb2a6297db121",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3543140_37b30141",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 1013,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-03-06T16:51:49Z",
+      "side": 1,
+      "message": "some comments on the args being passed here will be good.",
+      "revId": "3da25e76ae033c2edb115e7c384eb2a6297db121",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e2c985d_07030e32",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 1016,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-03-06T16:51:49Z",
+      "side": 1,
+      "message": "comment here will be good. also plane 1 args can be setup later in the function.",
+      "revId": "3da25e76ae033c2edb115e7c384eb2a6297db121",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6e9e529_0902091b",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 1222,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-03-06T16:51:49Z",
+      "side": 1,
+      "message": "add some commetns on what the args are and what will happen",
+      "revId": "3da25e76ae033c2edb115e7c384eb2a6297db121",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
