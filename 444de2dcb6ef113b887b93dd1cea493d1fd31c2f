@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0fda63f_3a1fe6e1",
+        "filename": "realm/realm_brbe_tests.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2025-03-06T06:10:53Z",
+      "side": 1,
+      "message": "Yes, the test out has 2 undefined abort prints, one for the read and one for the write.",
+      "parentUuid": "6f644cf8_0df57820",
+      "revId": "444de2dcb6ef113b887b93dd1cea493d1fd31c2f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "98bd7823_9e9be176",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-03-05T04:00:25Z",
       "side": 1,
       "message": "need to test access to , some of them could be RO , so could just try reading them:\n\nBRBIDR0_EL1\nBRBCR_EL1.\nBRBFCR_EL1\nBRBINF\u003cn\u003e_EL1\nBRBINFINJ_EL1\nBRBSRC\u003cn\u003e_EL\nBRBSRCINJ_EL1\nBRBTGT\u003cn\u003e_EL\nBRBTGTINJ_EL1\nBRBTS_EL1.",
+      "revId": "444de2dcb6ef113b887b93dd1cea493d1fd31c2f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca82d16e_541ac910",
+        "filename": "realm/realm_brbe_tests.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000910
+      },
+      "writtenOn": "2025-03-06T06:10:53Z",
+      "side": 1,
+      "message": "Acknowledged, will need to add BRBSRC\u003cn\u003e_EL, BRBTGT\u003cn\u003e_EL and BRBINF\u003cn\u003e_EL1. \nWill check this and push another patch",
+      "parentUuid": "98bd7823_9e9be176",
       "revId": "444de2dcb6ef113b887b93dd1cea493d1fd31c2f",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
