@@ -33,6 +33,29 @@
       "message": "Updated CI patch and retested it(https://ci.trustedfirmware.org/job/tf-a-ci-gateway/100094/)",
       "revId": "d370feed2b43784f934a4b2c76cdd4cae59134cf",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95f01b03_a8577820",
+        "filename": "include/runtime_services/errata_abi.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-03-06T18:37:12Z",
+      "side": 1,
+      "message": "2925?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "d370feed2b43784f934a4b2c76cdd4cae59134cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
