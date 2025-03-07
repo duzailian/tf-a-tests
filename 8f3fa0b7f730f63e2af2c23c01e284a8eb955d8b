@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "956e9cb6_c8c2855e",
+        "filename": "smc_fuzz/include/sdei_fuzz_helper.h",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-03-07T21:59:20Z",
+      "side": 1,
+      "message": "Done. squashed into previous patch as it is connected to that change.",
+      "parentUuid": "d9e44473_557aa8a0",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 27
+      },
+      "revId": "8f3fa0b7f730f63e2af2c23c01e284a8eb955d8b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "02ac0810_0a83e6b1",
@@ -54,6 +78,30 @@
       "writtenOn": "2025-03-07T19:56:42Z",
       "side": 1,
       "message": "Can you add some comments to make this function easier to follow?",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 50
+      },
+      "revId": "8f3fa0b7f730f63e2af2c23c01e284a8eb955d8b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8207991_8379865f",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-03-07T21:59:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02ac0810_0a83e6b1",
       "range": {
         "startLine": 89,
         "startChar": 0,
@@ -87,6 +135,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5212b359_4279db87",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-03-07T21:59:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0726ca27_995c8536",
+      "range": {
+        "startLine": 91,
+        "startChar": 1,
+        "endLine": 91,
+        "endChar": 33
+      },
+      "revId": "8f3fa0b7f730f63e2af2c23c01e284a8eb955d8b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "26e9d8c9_4ffec375",
@@ -100,6 +172,30 @@
       "writtenOn": "2025-03-07T20:09:25Z",
       "side": 1,
       "message": "Are these failures not expected?   I realized that we probably will need the capability to pass the error condition back to TFTF to see a failures manifested properly.  That status is not returned and so all tests will pass.  I see other failures conditions here that would be useful to see as failures in the CI.  We can keep for now but will need a patch for both SDEI and FFA as a fix in the future.",
+      "range": {
+        "startLine": 127,
+        "startChar": 3,
+        "endLine": 127,
+        "endChar": 55
+      },
+      "revId": "8f3fa0b7f730f63e2af2c23c01e284a8eb955d8b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "36dd2ddc_d2b7bf45",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000619
+      },
+      "writtenOn": "2025-03-07T21:59:20Z",
+      "side": 1,
+      "message": "added a comment to clarify. \nI used this \"FAIL\" prefix to designate unexpected failures as there was no mechanism for reporting failures back to TFTF. As you say, can be updated in a further patch once such a mechanism is implemented",
+      "parentUuid": "26e9d8c9_4ffec375",
       "range": {
         "startLine": 127,
         "startChar": 3,
