@@ -16,6 +16,24 @@
       "message": "like in the tfa patch, I\u0027m not convinced this is right - if the register works, the bit needs to be set. Am I misreading the commit messages?",
       "revId": "027207c63184f1167d6de7d708182239ae27fc77",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d403265_7e8190af",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2025-03-10T11:34:12Z",
+      "side": 1,
+      "message": "Ah, just found that appendix in the SMCCC spec, which effectively says that the TERR bit set reports the usability of the various RAS registers (despite the inverted logic). So this line indeed needs to stay.\nAnd I guess the same applies to TRNDR.",
+      "parentUuid": "ba5c02e6_c49b9654",
+      "revId": "027207c63184f1167d6de7d708182239ae27fc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
