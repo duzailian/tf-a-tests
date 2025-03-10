@@ -204,6 +204,30 @@
       },
       "revId": "8f3fa0b7f730f63e2af2c23c01e284a8eb955d8b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "608688ab_66e4a685",
+        "filename": "smc_fuzz/src/ffa_fuzz_helper.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-03-10T15:49:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36dd2ddc_d2b7bf45",
+      "range": {
+        "startLine": 127,
+        "startChar": 3,
+        "endLine": 127,
+        "endChar": 55
+      },
+      "revId": "8f3fa0b7f730f63e2af2c23c01e284a8eb955d8b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
