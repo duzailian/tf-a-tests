@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba5c02e6_c49b9654",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-03-10T07:55:44Z",
+      "side": 1,
+      "message": "like in the tfa patch, I\u0027m not convinced this is right - if the register works, the bit needs to be set. Am I misreading the commit messages?",
+      "revId": "027207c63184f1167d6de7d708182239ae27fc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
