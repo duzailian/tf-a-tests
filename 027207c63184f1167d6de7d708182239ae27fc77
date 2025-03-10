@@ -34,6 +34,24 @@
       "parentUuid": "ba5c02e6_c49b9654",
       "revId": "027207c63184f1167d6de7d708182239ae27fc77",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "111fc929_b35b8bd0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2025-03-10T13:53:45Z",
+      "side": 1,
+      "message": "Having a closer look at TRNDR, it should connect the SCR_TRNDR_BIT to FEAT_RNG, not FEAT_RNG_TRAP. That would match the SMCCC spec saying that the bit set means access to the registers mentioned in the ARM ARM is working, and those registers are RNDR and RNDRRS. I will fix that.",
+      "parentUuid": "4d403265_7e8190af",
+      "revId": "027207c63184f1167d6de7d708182239ae27fc77",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
