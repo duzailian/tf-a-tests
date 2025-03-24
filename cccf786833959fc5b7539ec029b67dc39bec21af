@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5710d4e9_33467f0d",
+        "filename": "tftf/tests/runtime_services/secure_service/ffa_helpers.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2025-03-24T14:21:35Z",
+      "side": 1,
+      "message": "Can be dropped. Compiler will init to 0.",
+      "range": {
+        "startLine": 154,
+        "startChar": 2,
+        "endLine": 157,
+        "endChar": 12
+      },
+      "revId": "cccf786833959fc5b7539ec029b67dc39bec21af",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
