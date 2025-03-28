@@ -66,6 +66,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eebc1637_80dca0d1",
+        "filename": "include/drivers/auth/crypto_mod.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1001360
+      },
+      "writtenOn": "2025-03-28T20:16:04Z",
+      "side": 1,
+      "message": "nit: add space at end of this function",
+      "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bfc8e995_51ccfb94",
         "filename": "include/drivers/measured_boot/event_log/tcg.h",
         "patchSetId": 3
@@ -105,6 +122,63 @@
         "startChar": 7,
         "endLine": 25,
         "endChar": 8
+      },
+      "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df5b63fc_7f8ce23c",
+        "filename": "include/lib/event_log/tcg.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001360
+      },
+      "writtenOn": "2025-03-28T20:16:04Z",
+      "side": 1,
+      "message": "why does this file have such a large overlap with include/drivers/measured_boot/event_log/tcg.h?",
+      "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9095225f_6262e6ce",
+        "filename": "include/lib/transfer_list.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1001360
+      },
+      "writtenOn": "2025-03-28T20:16:04Z",
+      "side": 1,
+      "message": "perhaps add some spacing after 97? not sure how harsh the formatting rules for spacing are in TF-A...",
+      "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac98ce5b_ca32fe0e",
+        "filename": "lib/event_log/event_handoff.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001360
+      },
+      "writtenOn": "2025-03-28T20:16:04Z",
+      "side": 1,
+      "message": "is this supposed to be TE? TE is Transfer List Entry or just a reference to the function\u0027s pointer name?",
+      "range": {
+        "startLine": 29,
+        "startChar": 22,
+        "endLine": 29,
+        "endChar": 24
       },
       "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
@@ -192,6 +266,29 @@
       "writtenOn": "2025-03-28T19:30:36Z",
       "side": 1,
       "message": "assert ptr is not NULL ?",
+      "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "430eff12_5c080d29",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1001360
+      },
+      "writtenOn": "2025-03-28T20:16:04Z",
+      "side": 1,
+      "message": "From a brief read of the code this test case seems to validate that if the TL exists and is found, that the event log should be successfully dumped? Maybe add more description to the test case print statement?",
+      "range": {
+        "startLine": 70,
+        "startChar": 1,
+        "endLine": 70,
+        "endChar": 21
+      },
       "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
