@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b38bf6c_e39b9406",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-03-28T19:31:04Z",
+      "side": 1,
+      "message": "nit- please check license header and year across the patch",
+      "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0dfe5489_5d4b4831",
