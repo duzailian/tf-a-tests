@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c0c3adc0_fb929b29",
+        "filename": "tftf/framework/aarch32/entrypoint.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-03-28T19:13:08Z",
+      "side": 1,
+      "message": "First time looking up feels like we are overwriting r0,r1,r2, I would say in case were we dont use transfer list its should be #else part from line 31-56 ?\n\n```\n\n\t/* --------------------------------------------------------------------\n\t * Save transfer list and hw_config addresses passed in registers r0 to\n\t * r3 from the previous bootloader.\n\t * --------------------------------------------------------------------\n\t */\n#if TRANSFER_LIST\n\tmov\tr0, r1\n\tmov\tr1, r2\n\tmov\tr2, r3\n\tbl\tsave_handoff_params\n#else\n        bl\tarch_init\n\n\t/* --------------------------------------------------------------------\n\t * Invalidate the RW memory used by TFTF image.\n\t * This is done to safeguard against possible corruption of this\n\t * memory by dirty cache lines in a system cache as a result of use\n\t * by an earlier boot loader stage.\n\t * --------------------------------------------------------------------\n\t */\n\tldr\tr0, \u003d__DATA_START__\n\tldr\tr1, \u003d__DATA_END__\n\tsub\tr1, r1, r0\n\tbl\tinv_dcache_range\n\n\t/* --------------------------------------------------------------------\n\t * This code is expected to be executed only by the primary CPU.\n\t * Save the mpid for the first core that executes and if a secondary\n\t * CPU has lost its way make it spin forever.\n\t * --------------------------------------------------------------------\n\t */\n\tbl\tsave_primary_mpid\n\n\t/* --------------------------------------------------------------------\n\t * Zero out NOBITS sections. There are 2 of them:\n\t *   - the .bss section;\n\t *   - the coherent memory section.\n\t * --------------------------------------------------------------------\n\t */\n\tldr\tr0, \u003d__BSS_START__\n\tldr\tr1, \u003d__BSS_SIZE__\n\tbl\tzeromem\n\n\tldr\tr0, \u003d__COHERENT_RAM_START__\n\tldr\tr1, \u003d__COHERENT_RAM_UNALIGNED_SIZE__\n\tbl\tzeromem\n\n#endif\n\n\n```\n\nWould this have better readability?",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 6
+      },
+      "revId": "8d4bbdf3e2e74a476f9765a758f86fddc80d03b8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
