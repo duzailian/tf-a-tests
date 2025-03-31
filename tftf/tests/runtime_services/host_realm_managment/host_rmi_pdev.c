@@ -82,6 +82,7 @@ static int host_tdi_pdev_get_state(struct host_tdi *tdi, u_register_t *state)
 	u_register_t ret;
 
 	ret = host_rmi_pdev_get_state((u_register_t)tdi->pdev, state);
+
 	if (ret != RMI_SUCCESS) {
 		return -1;
 	}
@@ -615,3 +616,98 @@ test_result_t host_test_rmi_pdev_calls(void)
 
 	return TEST_RESULT_SUCCESS;
 }
+
+/*
+ * Test to verify the EL3-RMM IDE KM Interface.
+ * This test invokes RMI calls related to PDEV management like the
+ * PDEV create to be routed via BL31 and handled by the Test Realm Payload
+ * that inturn tests the implementation.
+ */
+
+static int host_trp_tdi_pdev_setup(struct host_tdi *tdi)
+{
+	u_register_t ret;
+	int i;
+
+	memset(tdi, 0, sizeof(struct host_tdi));
+
+	/* Allocate granule for PDEV and delegate */
+	tdi->pdev = page_alloc(PAGE_SIZE);
+	memset(tdi->pdev, 0, GRANULE_SIZE);
+	ret = host_rmi_granule_delegate((u_register_t)tdi->pdev);
+	if (ret != RMI_SUCCESS) {
+		ERROR("PDEV delegate failed 0x%lx\n", ret);
+		return -1;
+	}
+
+	/* Set flags as IO coherent device protected by end to end IDE. */
+	tdi->pdev_flags = INPLACE(RMI_PDEV_FLAGS_PROT_CONFIG,
+				  RMI_PDEV_IOCOH_E2E_IDE);
+
+	/* force pdev_aux_num to 1 */
+	tdi->pdev_aux_num = 1;
+
+	/* Allocate aux granules for PDEV and delegate */
+	INFO("PDEV create requires %u aux pages\n", tdi->pdev_aux_num);
+	for (i = 0; i < tdi->pdev_aux_num; i++) {
+		tdi->pdev_aux[i] = page_alloc(PAGE_SIZE);
+		ret = host_rmi_granule_delegate((u_register_t)tdi->pdev_aux[i]);
+		if (ret != RMI_SUCCESS) {
+			ERROR("Aux granule delegate failed 0x%lx\n", ret);
+			return -1;
+		}
+	}
+	return 0;
+}
+
+/* This function modifies and uses a simplified version of the
+ * existing host_test_rmi_pdev_calls to check the RMM-EL3 IDE KM
+ * interface implementation at EL3.
+ */
+test_result_t host_realm_test_root_port_key_management(void)
+{
+	uint32_t pdev_bdf, doe_cap_base;
+	struct host_tdi *tdi;
+	int ret, rc;
+
+	if (host_rmi_version(RMI_ABI_VERSION_VAL) != 0U) {
+		tftf_testcase_printf("RMM is not TRP\n");
+		return TEST_RESULT_SKIPPED;
+	}
+
+	SKIP_TEST_IF_DOE_NOT_SUPPORTED(pdev_bdf, doe_cap_base);
+
+	/* Initialize Host NS heap memory */
+	ret = page_pool_init((u_register_t)PAGE_POOL_BASE,
+				(u_register_t)PAGE_POOL_MAX_SIZE);
+	if (ret != HEAP_INIT_SUCCESS) {
+		ERROR("Failed to init heap pool %d\n", ret);
+		return TEST_RESULT_FAIL;
+	}
+
+	tdi = &g_tdi;
+
+	/* Allocate granules. Skip DA ABIs if host_pdev_setup fails */
+	rc = host_trp_tdi_pdev_setup(tdi);
+	if (rc == -1) {
+		INFO("host_pdev_setup failed. skipping DA ABIs...\n");
+		return TEST_RESULT_SKIPPED;
+	}
+
+	/* todo: move to tdi_pdev_setup */
+	tdi->bdf = pdev_bdf;
+	tdi->doe_cap_base = doe_cap_base;
+
+	printf("pdev_bdf = %x and doe_cap_base = %x\n", pdev_bdf, doe_cap_base);
+
+	/* Call rmi_pdev_create */
+	rc = host_tdi_pdev_create(tdi);
+	printf("rc = %d\n", rc);
+	if (rc != 0UL) {
+		ERROR("PDEV transition: NULL -> STATE_NEW failed\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
