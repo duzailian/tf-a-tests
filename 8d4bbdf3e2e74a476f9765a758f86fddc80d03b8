@@ -22,6 +22,30 @@
       },
       "revId": "8d4bbdf3e2e74a476f9765a758f86fddc80d03b8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5abe3e4c_fbe22691",
+        "filename": "tftf/framework/aarch32/entrypoint.S",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-04-01T09:27:08Z",
+      "side": 1,
+      "message": "This doesn’t look right to me. Do we really want to skip memory initialization only when firmware handoff is enabled?\n\nAlso, it’s worth noting that we can’t save the boot parameters too early—if we do, that information will be lost when .bss is zeroed. Otherwise, I\u0027m happy to hide this code behind the TRANSFER_LIST macro if you think it\u0027s unecessary to always have it compiled in.",
+      "parentUuid": "c0c3adc0_fb929b29",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 6
+      },
+      "revId": "8d4bbdf3e2e74a476f9765a758f86fddc80d03b8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
