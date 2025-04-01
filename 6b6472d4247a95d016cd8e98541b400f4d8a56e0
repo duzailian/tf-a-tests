@@ -22,6 +22,30 @@
       },
       "revId": "6b6472d4247a95d016cd8e98541b400f4d8a56e0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1c14690_0097aa1f",
+        "filename": "docs/getting_started/build-options.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-04-01T18:20:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6948cb4_a88960e1",
+      "range": {
+        "startLine": 158,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 72
+      },
+      "revId": "6b6472d4247a95d016cd8e98541b400f4d8a56e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
