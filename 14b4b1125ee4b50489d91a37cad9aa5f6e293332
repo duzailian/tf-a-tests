@@ -18,6 +18,23 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "40416af9_b6b27e89",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-04-01T09:44:53Z",
+      "side": 1,
+      "message": "Hi Govind and Abhi,\n\nThanks for your feedback on these patches. Apologies if it wasn’t clear in the original commit message, but most of the files in this commit are imported from TF-A. Specifically, the following files are carried over:\n\ninclude/common/sha_common_macros.h\ninclude/drivers/auth/crypto_mod.h\ninclude/drivers/measured_boot/event_log/tcg.h\ninclude/lib/event_log/event_log.h\ninclude/lib/event_log/tcg.h\nlib/event_log/event_handoff.c\nlib/event_log/event_log.c\nlib/event_log/event_log.mk\nlib/event_log/event_print.c\n\nThe changes here, along with those in [1], are intended to work together. The long-term goal is to allow the event log library to be imported cleanly as a submodule. For now, we’re copying the files manually to get things moving.\n\nIf it makes review easier, I’m happy to mark this as WIP while we go through the review process for those dependencies.\n\nLet me know what you prefer.\n\n[1] https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/36215/7",
+      "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0dfe5489_5d4b4831",
@@ -31,6 +48,30 @@
       "writtenOn": "2025-03-28T19:30:36Z",
       "side": 1,
       "message": "is this by accident or intentional? Are there any other contributors?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 63
+      },
+      "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f967126_c2c2109f",
+        "filename": "include/common/sha_common_macros.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-04-01T09:44:53Z",
+      "side": 1,
+      "message": "Sorry if this wasn\u0027t clear in the commit message. These files are copied from TF-A, hence the existing copyright headers and",
+      "parentUuid": "0dfe5489_5d4b4831",
       "range": {
         "startLine": 2,
         "startChar": 0,
@@ -306,6 +347,24 @@
       "writtenOn": "2025-03-28T19:30:36Z",
       "side": 1,
       "message": "not sure - just a minor check if its ok?\n\n```\n\tif (event_log_dump(NULL, UNINT_MAX) \u003d\u003d 0) {\n\t\treturn TEST_RESULT_FAIL;\n\t}\n```",
+      "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd3758cf_337c8a43",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-04-01T09:44:53Z",
+      "side": 1,
+      "message": "I think this is a good idea. Although I don\u0027t think it would work with current interface as asserts `log_addr !\u003d NULL`.",
+      "parentUuid": "02dc4e1c_22580367",
       "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
