@@ -100,6 +100,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7224d32_8c798aee",
+        "filename": "include/common/sha_common_macros.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-04-02T22:52:39Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "4f967126_c2c2109f",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 63
+      },
+      "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "93cd0ff8_84515f10",
@@ -401,6 +425,24 @@
       "side": 1,
       "message": "I think this is a good idea. Although I don\u0027t think it would work with current interface as asserts `log_addr !\u003d NULL`.",
       "parentUuid": "02dc4e1c_22580367",
+      "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05c64caf_eafb10f0",
+        "filename": "tftf/tests/misc_tests/test_firmware_handoff.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-04-02T22:52:39Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "fd3758cf_337c8a43",
       "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
