@@ -53,18 +53,15 @@ test_result_t test_pauth_leakage(void)
 /* Test execution of ARMv8.3-PAuth instructions */
 test_result_t test_pauth_instructions(void)
 {
+	u_register_t reg = 42;
+
 	SKIP_TEST_IF_AARCH32();
 #ifdef __aarch64__
 	SKIP_TEST_IF_PAUTH_NOT_SUPPORTED();
 
 #if ARM_ARCH_AT_LEAST(8, 3)
 	/* Pointer authentication instructions */
-	__asm__ volatile (
-		"paciasp\n"
-		"autiasp\n"
-		"paciasp\n"
-		"xpaclri"
-	);
+	__asm__ volatile ("pacdza %0\n" : "+r"(reg));
 	return TEST_RESULT_SUCCESS;
 #else
 	tftf_testcase_printf("Pointer Authentication instructions "
