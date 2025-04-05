@@ -35,10 +35,17 @@
 	}						\
 }
 
+#define CHECK_VALID_MECID(_mecid)					\
+	((~((1 << (EXTRACT(MECIDR_EL2_MECIDWidthm1,			\
+		read_mecidr_el2()) + 1)) - 1) & _mecid) == 0U)
+
+#define DEFAULT_MECID 	0
+
 static bool rmi_cmp_result;
 static unsigned short vmid;
 static spinlock_t pool_lock;
 static unsigned int pool_counter;
+static unsigned long max_mecid = DEFAULT_MECID;
 
 static smc_ret_values host_rmi_handler(smc_args *args, unsigned int in_reg)
 {
@@ -1221,6 +1228,13 @@ u_register_t host_realm_create(struct realm *realm)
 		realm->aux_vmid[i] = params->aux_vmid[i];
 	}
 
+	/* Assign a MECID to the realm */
+	params->mecid = max_mecid + 1;
+
+	assert(CHECK_VALID_MECID(params->mecid));
+
+	max_mecid = params->mecid;
+
 	/* Create Realm */
 	ret = host_rmi_realm_create(realm->rd, (u_register_t)params);
 	if (ret != RMI_SUCCESS) {
@@ -1699,6 +1713,9 @@ u_register_t host_realm_destroy(struct realm *realm)
 	for (unsigned int i = 0U; i <= realm->num_aux_planes; i++) {
 		vmid--;
 	}
+
+	/* Free MECID */
+	max_mecid--;
 
 	page_free(realm->rd);
 	page_free(realm->rtt_addr);
