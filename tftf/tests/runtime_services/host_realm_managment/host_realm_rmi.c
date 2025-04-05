@@ -35,10 +35,13 @@
 	}						\
 }
 
+#define DEFAULT_MECID	ULL(0)
+
 static bool rmi_cmp_result;
 static unsigned short vmid;
 static spinlock_t pool_lock;
 static unsigned int pool_counter;
+static unsigned long mecid_count;
 
 static smc_ret_values host_rmi_handler(smc_args *args, unsigned int in_reg)
 {
@@ -1221,6 +1224,17 @@ u_register_t host_realm_create(struct realm *realm)
 		realm->aux_vmid[i] = params->aux_vmid[i];
 	}
 
+	/* Assign a MECID to the realm */
+	/*
+	 * Check if FEAT_MEC is supported and RMM supports MECIDs other than the
+	 * default MECID (0) first.
+	 */
+	if (is_feat_mec_supported() && (realm->rmm_feat_reg1 > DEFAULT_MECID)) {
+		assert(mecid_count < realm->rmm_feat_reg1);
+
+		params->mecid = ++mecid_count;
+	}
+
 	/* Create Realm */
 	ret = host_rmi_realm_create(realm->rd, (u_register_t)params);
 	if (ret != RMI_SUCCESS) {
@@ -1698,6 +1712,15 @@ u_register_t host_realm_destroy(struct realm *realm)
 	/* Free VMID */
 	for (unsigned int i = 0U; i <= realm->num_aux_planes; i++) {
 		vmid--;
+	}
+
+	/* Free MECID */
+	/*
+	 * Check if FEAT_MEC is supported and RMM supports MECIDs other than the
+	 * default MECID (0) first.
+	 */
+	if (is_feat_mec_supported() && (realm->rmm_feat_reg1 > DEFAULT_MECID)) {
+		mecid_count--;
 	}
 
 	page_free(realm->rd);

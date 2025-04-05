@@ -143,6 +143,12 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 		return false;
 	}
 
+	/* Read Realm Feature Reg 1 */
+	if (host_rmi_features(1UL, &realm_ptr->rmm_feat_reg1) != REALM_SUCCESS) {
+		ERROR("%s() failed\n", "host_rmi_features");
+		return false;
+	}
+
 	/* Fail if IPA bits > implemented size */
 	if (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, feature_flag) >
 			EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, realm_ptr->rmm_feat_reg0)) {
