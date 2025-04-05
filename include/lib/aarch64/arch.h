@@ -1810,4 +1810,10 @@
 #define SYSREG_ID_apgakeyhi_el1			SYSREG_ESR(3, 0, 2,  3, 1)
 #define SYSREG_ID_mpamidr_el1			SYSREG_ESR(3, 0, 10, 4, 4)
 
+/* MEC Registers */
+#define MECIDR_EL2				S3_4_C10_C8_7
+
+#define MECIDR_EL2_MECIDWidthm1_SHIFT		U(0)
+#define MECIDR_EL2_MECIDWidthm1_WIDTH		U(4)
+
 #endif /* ARCH_H */
