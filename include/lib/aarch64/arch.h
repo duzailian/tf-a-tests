@@ -483,6 +483,11 @@
 #define ID_AA64MMFR3_EL1_TCRX_WIDTH		U(4)
 #define ID_AA64MMFR3_EL1_TCR2_SUPPORTED		ULL(0x1)
 
+#define ID_AA64MMFR3_EL1_MEC_SHIFT              U(28)
+#define ID_AA64MMFR3_EL1_MEC_MASK               ULL(0xf)
+#define ID_AA64MMFR3_EL1_MEC_WIDTH		U(4)
+#define ID_AA64MMFR3_EL1_MEC_SUPPORTED		ULL(0x1)
+
 /* ID_AA64PFR1_EL1 definitions */
 #define ID_AA64PFR1_EL1_DF2_SHIFT		U(56)
 #define ID_AA64PFR1_EL1_DF2_WIDTH		U(4)
@@ -1818,5 +1823,11 @@
 #define SYSREG_ID_apgakeylo_el1			SYSREG_ESR(3, 0, 2,  3, 0)
 #define SYSREG_ID_apgakeyhi_el1			SYSREG_ESR(3, 0, 2,  3, 1)
 #define SYSREG_ID_mpamidr_el1			SYSREG_ESR(3, 0, 10, 4, 4)
+
+/* MEC Registers */
+#define MECIDR_EL2				S3_4_C10_C8_7
+
+#define MECIDR_EL2_MECIDWidthm1_SHIFT		U(0)
+#define MECIDR_EL2_MECIDWidthm1_WIDTH		U(4)
 
 #endif /* ARCH_H */
