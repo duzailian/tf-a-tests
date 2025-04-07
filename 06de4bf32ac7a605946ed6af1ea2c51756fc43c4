@@ -22,6 +22,30 @@
       },
       "revId": "06de4bf32ac7a605946ed6af1ea2c51756fc43c4",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "082a5f9b_4025a655",
+        "filename": "tftf/tests/extensions/pauth/test_pauth.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2025-04-07T14:15:52Z",
+      "side": 1,
+      "message": "I am all for simpler instructions, but PACIA171615 is from the much later PAuth_LR extension, plus it clobbers x17, so we would need to add that to the clobber list, which I am not sure is much better.\nautia171615 is also later, and will probably fail and trigger an exception, in case that PAuth is activated for that page.\nI browsed through the ARM ARM, but couldn\u0027t find anything without side effects that would be simpler, but happy to be proven wrong.",
+      "parentUuid": "2b28824b_f78f4138",
+      "range": {
+        "startLine": 64,
+        "startChar": 40,
+        "endLine": 64,
+        "endChar": 43
+      },
+      "revId": "06de4bf32ac7a605946ed6af1ea2c51756fc43c4",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
