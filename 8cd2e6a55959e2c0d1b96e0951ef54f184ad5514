@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "618390fa_8e2ce7ce",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2025-04-08T22:09:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1e3f8c0_59ca99e6",
+      "revId": "8cd2e6a55959e2c0d1b96e0951ef54f184ad5514",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a872357b_8687cbbe",
@@ -31,6 +49,30 @@
       "writtenOn": "2025-04-08T15:44:32Z",
       "side": 1,
       "message": "might better to read feat_reg1 here and handle unavailability of SMC here.",
+      "range": {
+        "startLine": 1232,
+        "startChar": 33,
+        "endLine": 1232,
+        "endChar": 53
+      },
+      "revId": "8cd2e6a55959e2c0d1b96e0951ef54f184ad5514",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ca43b75_7e52920a",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2025-04-08T22:09:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a872357b_8687cbbe",
       "range": {
         "startLine": 1232,
         "startChar": 33,
