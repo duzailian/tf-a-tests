@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1e3f8c0_59ca99e6",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-04-08T15:44:32Z",
+      "side": 1,
+      "message": "This is only valid from RMMv1.1. hence we cannot return error from here.",
+      "revId": "8cd2e6a55959e2c0d1b96e0951ef54f184ad5514",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a872357b_8687cbbe",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_rmi.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-04-08T15:44:32Z",
+      "side": 1,
+      "message": "might better to read feat_reg1 here and handle unavailability of SMC here.",
+      "range": {
+        "startLine": 1232,
+        "startChar": 33,
+        "endLine": 1232,
+        "endChar": 53
+      },
+      "revId": "8cd2e6a55959e2c0d1b96e0951ef54f184ad5514",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
