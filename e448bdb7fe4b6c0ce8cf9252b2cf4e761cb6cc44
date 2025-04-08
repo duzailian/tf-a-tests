@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1825f4c8_7a21b4de",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-04-08T17:14:39Z",
+      "side": 1,
+      "message": "Overall LGTM.",
+      "revId": "e448bdb7fe4b6c0ce8cf9252b2cf4e761cb6cc44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e0e4fac_7d3446eb",
+        "filename": "tftf/framework/aarch32/entrypoint.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-04-08T17:14:39Z",
+      "side": 1,
+      "message": "nit:\ncan we use r1, r2 and r3 itself here instead or r0. Both from the readability and docs perspective looks good.\nAll of a sudden r0 in this block makes it a bit confusing.\nI agree that its a geenral register. But since handoff docs states (r0\u003dreserved and r1 to r3 are used) using them looks much better.\nLet me know your thoughs.",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 23
+      },
+      "revId": "e448bdb7fe4b6c0ce8cf9252b2cf4e761cb6cc44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
