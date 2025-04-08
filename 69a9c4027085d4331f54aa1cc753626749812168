@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f51f592c_a41f8c8e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2025-04-08T18:38:00Z",
+      "side": 1,
+      "message": "Adding VR+1 (Only fails related to deprecated platforms)\n\nhttps://ci.trustedfirmware.org/job/tf-a-main/1620/",
+      "revId": "69a9c4027085d4331f54aa1cc753626749812168",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
