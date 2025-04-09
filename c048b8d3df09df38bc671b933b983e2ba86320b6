@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0976b8e4_eeca062d",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_pdev.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-04-09T08:43:57Z",
+      "side": 1,
+      "message": "See comments below . can remove this.",
+      "revId": "c048b8d3df09df38bc671b933b983e2ba86320b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97b6c7b5_ef01bb12",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_pdev.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 665,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-04-09T08:43:57Z",
+      "side": 1,
+      "message": "```\n* This function invokes PDEV_CREATE on TRP and tries to test \n* the EL3 RMM-EL3 IDE KM interface. Will be skipped on TF-RMM.\n```",
+      "range": {
+        "startLine": 663,
+        "startChar": 3,
+        "endLine": 665,
+        "endChar": 35
+      },
+      "revId": "c048b8d3df09df38bc671b933b983e2ba86320b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f79f8f01_39e3ead8",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_pdev.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 678,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-04-09T08:43:57Z",
+      "side": 1,
+      "message": "can remove this.",
+      "range": {
+        "startLine": 677,
+        "startChar": 0,
+        "endLine": 678,
+        "endChar": 56
+      },
+      "revId": "c048b8d3df09df38bc671b933b983e2ba86320b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10a48b7e_11561759",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_pdev.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-04-09T08:43:57Z",
+      "side": 1,
+      "message": "Since these arguments will not be used by TRP, I think it is better to remove and keep it simple",
+      "range": {
+        "startLine": 688,
+        "startChar": 1,
+        "endLine": 702,
+        "endChar": 0
+      },
+      "revId": "c048b8d3df09df38bc671b933b983e2ba86320b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "915a1826_43e28a47",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_pdev.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 703,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-04-09T08:43:57Z",
+      "side": 1,
+      "message": "...with invalid pdev. Expect an error to be return from TRP */",
+      "range": {
+        "startLine": 703,
+        "startChar": 25,
+        "endLine": 703,
+        "endChar": 27
+      },
+      "revId": "c048b8d3df09df38bc671b933b983e2ba86320b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bf5e89e_27a631d2",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_pdev.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-04-09T08:43:57Z",
+      "side": 1,
+      "message": "\"RMI_PDEV_CREATE returned rc \u003d 0x%x\\n\"",
+      "range": {
+        "startLine": 705,
+        "startChar": 1,
+        "endLine": 705,
+        "endChar": 7
+      },
+      "revId": "c048b8d3df09df38bc671b933b983e2ba86320b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c6eaa52_4964e99c",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_pdev.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 709,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-04-09T08:43:57Z",
+      "side": 1,
+      "message": "This will error. No need to check. Test can always return success.",
+      "range": {
+        "startLine": 706,
+        "startChar": 1,
+        "endLine": 709,
+        "endChar": 2
+      },
+      "revId": "c048b8d3df09df38bc671b933b983e2ba86320b6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
