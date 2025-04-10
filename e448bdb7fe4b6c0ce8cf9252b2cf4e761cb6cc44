@@ -80,6 +80,30 @@
       },
       "revId": "e448bdb7fe4b6c0ce8cf9252b2cf4e761cb6cc44",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73b7c6ba_10d470b4",
+        "filename": "tftf/framework/aarch32/entrypoint.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-04-10T09:58:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a348fdda_9f3c7c70",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 23
+      },
+      "revId": "e448bdb7fe4b6c0ce8cf9252b2cf4e761cb6cc44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
