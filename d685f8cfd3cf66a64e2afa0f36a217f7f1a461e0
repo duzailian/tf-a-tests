@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70f4cc6e_47228fe6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-04-16T10:24:46Z",
+      "side": 1,
+      "message": "Propagating Verified+1 from top patch.",
+      "revId": "d685f8cfd3cf66a64e2afa0f36a217f7f1a461e0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
