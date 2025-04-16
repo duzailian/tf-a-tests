@@ -1,0 +1,9 @@
+Allow-CI+1: Rohit Mathew <Rohit.Mathew@arm.com>
+Code-Owner-Review+1: Rohit Mathew <Rohit.Mathew@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-by: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-at: Wed, 16 Apr 2025 12:26:34 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/37453
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
