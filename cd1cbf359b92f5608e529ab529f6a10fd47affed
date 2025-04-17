@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d58d217_de95fdfc",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-04-17T07:41:31Z",
+      "side": 1,
+      "message": "I believe you’re trying to get the location of image_size in the TOC header of BL2U from fwu_fip_base. However, the NVM driver is implemented with FLASH_BASE as the base address, so I think the write operation at line 91 may not work as expected.\n\nHave you tested whether image_size gets corrupted after line 91 is called?",
+      "revId": "cd1cbf359b92f5608e529ab529f6a10fd47affed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8527308c_c6d64b1f",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-04-17T07:41:31Z",
+      "side": 1,
+      "message": "Why we need this print?",
+      "range": {
+        "startLine": 68,
+        "startChar": 1,
+        "endLine": 68,
+        "endChar": 88
+      },
+      "revId": "cd1cbf359b92f5608e529ab529f6a10fd47affed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "810a689e_ba807ac3",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-04-17T07:41:31Z",
+      "side": 1,
+      "message": "ditto, ``bl2_entry_address`` is only used for this print which I believe is not needed.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 80
+      },
+      "revId": "cd1cbf359b92f5608e529ab529f6a10fd47affed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61c355aa_8ca10efe",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-04-17T07:41:31Z",
+      "side": 1,
+      "message": "Unintended tabs?",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 2
+      },
+      "revId": "cd1cbf359b92f5608e529ab529f6a10fd47affed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5ca4dcf_58beb37e",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-04-17T07:41:31Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 2
+      },
+      "revId": "cd1cbf359b92f5608e529ab529f6a10fd47affed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "909376d7_b0dbce1a",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-04-17T07:41:31Z",
+      "side": 1,
+      "message": "Better use /**/ commenting style in all places where-ever applicable.",
+      "range": {
+        "startLine": 96,
+        "startChar": 2,
+        "endLine": 96,
+        "endChar": 4
+      },
+      "revId": "cd1cbf359b92f5608e529ab529f6a10fd47affed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04dc1911_6c9d687d",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-04-17T07:41:31Z",
+      "side": 1,
+      "message": "Is this code added for just debugging? If so it is better to remove it in the final version.",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 89
+      },
+      "revId": "cd1cbf359b92f5608e529ab529f6a10fd47affed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc28a90d_41ab6ae9",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-04-17T07:41:31Z",
+      "side": 1,
+      "message": "Remove space",
+      "range": {
+        "startLine": 115,
+        "startChar": 23,
+        "endLine": 115,
+        "endChar": 24
+      },
+      "revId": "cd1cbf359b92f5608e529ab529f6a10fd47affed",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
