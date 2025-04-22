@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d68500f6_16d68ccb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-04-22T15:43:37Z",
+      "side": 1,
+      "message": "CI is failing due in infra issues.",
+      "revId": "6cd8b7d4a7d4d2177f5b51827e9d75321e2a9f90",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
