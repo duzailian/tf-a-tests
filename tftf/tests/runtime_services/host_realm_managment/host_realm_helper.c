@@ -151,8 +151,8 @@ bool host_prepare_realm_payload(struct realm *realm_ptr,
 	}
 
 	/*
-	 * Overwrite s2sz in feature flag if host passed a value
-	 * if host passes default 0 use default RMI_FEATURES instead
+	 * Overwrite s2sz in feature flag if host passed a value.
+	 * If host passes default 0, use default RMI_FEATURES instead
 	 */
 	if (EXTRACT(RMI_FEATURE_REGISTER_0_S2SZ, feature_flag) != 0U) {
 		realm_ptr->rmm_feat_reg0 &= ~MASK(RMI_FEATURE_REGISTER_0_S2SZ);

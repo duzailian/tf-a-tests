@@ -150,7 +150,10 @@ u_register_t handle_plane_exit(u_register_t plane_index,
 			ret = realm_exit_to_host_as_plane_n(HOST_CALL_EXIT_PRINT_CMD, plane_index);
 			run->enter.gprs[0] = ret;
 			return PSI_RETURN_TO_PN;
+		case PSI_CALL_EXIT_FAILED_CMD:
+			return PSI_CALL_EXIT_FAILED_CMD;
 		case PSI_P0_CALL:
+		case PSI_CALL_EXIT_SUCCESS_CMD:
 		default:
 			return PSI_RETURN_TO_P0;
 		}
@@ -208,7 +211,7 @@ bool realm_plane_enter(u_register_t plane_index,
 		ret = handle_plane_exit(plane_index, perm_index, run);
 
 		if (ret != PSI_RETURN_TO_PN) {
-			return true;
+			return (ret != PSI_CALL_EXIT_FAILED_CMD);
 		}
 	}
 }
