@@ -171,6 +171,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "229ef9d4_c1be8066",
+        "filename": "include/drivers/auth/crypto_mod.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-04-25T16:40:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e5a026c_37da8116",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eebc1637_80dca0d1",
@@ -243,6 +267,30 @@
       "side": 1,
       "message": "Do we need to update this if we are just copying the file over?",
       "parentUuid": "bfc8e995_51ccfb94",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "14b4b1125ee4b50489d91a37cad9aa5f6e293332",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26e55233_83b4c3e5",
+        "filename": "include/drivers/measured_boot/event_log/tcg.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-04-25T16:40:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c40d65c8_aee7126a",
       "range": {
         "startLine": 2,
         "startChar": 17,
