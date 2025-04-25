@@ -1,0 +1,10 @@
+Code-Owner-Review+1: Boyan Karatotev <boyan.karatotev@arm.com>
+Allow-CI+1: André Przywara <andre.przywara@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Maintainer-Review+1: Govindraj Raja <govindraj.raja@arm.com>
+Submitted-by: Govindraj Raja <govindraj.raja@arm.com>
+Submitted-at: Fri, 25 Apr 2025 16:17:16 +0200
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/36746
+Comments-Total: 3
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
