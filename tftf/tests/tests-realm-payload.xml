@@ -176,5 +176,8 @@
 	  <!-- Invoke DA workflow on PCIe off-chip device -->
 	  <testcase name="DA workflow on all PCIe off-chip devices"
 	  function="host_da_workflow_on_all_offchip_devices" />
+	  <!-- Test cases related to FEAT_MEC -->
+	  <testcase name="Test Realms with different MECIDs" function="host_realm_test_mecid" />
+	  <testcase name="Test Realms with the same MECID" function="host_realm_test_mecid_fault" />
   </testsuite>
 </testsuites>
