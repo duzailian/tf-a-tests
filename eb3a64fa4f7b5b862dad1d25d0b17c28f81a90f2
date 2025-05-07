@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfa5c39d_d1e71afd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2025-05-07T21:07:24Z",
+      "side": 1,
+      "message": "Do not merge until FEAT_MEC tf-rmm patches are merged. Otherwise, it will make the tests fail.",
+      "revId": "eb3a64fa4f7b5b862dad1d25d0b17c28f81a90f2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
