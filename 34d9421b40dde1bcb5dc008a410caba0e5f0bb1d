@@ -50,6 +50,29 @@
       "message": "Rendered version:\n\nhttps://ci-builds.trustedfirmware.org/static-files/rlfGItiN4MiVmdy59xzzKFcqmvK5HCUf3XZrpBZQkJAxNzQ2Nzg1NDY5Njc2OjIwOmpheWFudGhjaGlkYW5hbmQtYXJtOmpvYi90Zi1hLWJ1aWxkZXIvNTM2MTYwOS9hcnRpZmFjdA\u003d\u003d/artefacts/build/html/change-log.html",
       "revId": "34d9421b40dde1bcb5dc008a410caba0e5f0bb1d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bfa67296_cb2b21cd",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 2144,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-05-09T14:32:39Z",
+      "side": 1,
+      "message": "nit: please fix if possible",
+      "range": {
+        "startLine": 2144,
+        "startChar": 20,
+        "endLine": 2144,
+        "endChar": 24
+      },
+      "revId": "34d9421b40dde1bcb5dc008a410caba0e5f0bb1d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
