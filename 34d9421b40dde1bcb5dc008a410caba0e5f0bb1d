@@ -33,6 +33,23 @@
       "message": "Please review relevant sections.\nThanks!",
       "revId": "34d9421b40dde1bcb5dc008a410caba0e5f0bb1d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1daf0bfb_2c29a939",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-05-09T10:11:44Z",
+      "side": 1,
+      "message": "Rendered version:\n\nhttps://ci-builds.trustedfirmware.org/static-files/rlfGItiN4MiVmdy59xzzKFcqmvK5HCUf3XZrpBZQkJAxNzQ2Nzg1NDY5Njc2OjIwOmpheWFudGhjaGlkYW5hbmQtYXJtOmpvYi90Zi1hLWJ1aWxkZXIvNTM2MTYwOS9hcnRpZmFjdA\u003d\u003d/artefacts/build/html/change-log.html",
+      "revId": "34d9421b40dde1bcb5dc008a410caba0e5f0bb1d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
