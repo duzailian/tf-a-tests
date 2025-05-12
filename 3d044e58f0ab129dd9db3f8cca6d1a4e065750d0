@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "96b5b6c1_beda481c",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-05-12T13:47:26Z",
+      "side": 1,
+      "message": "nitpick: Added support for PPI timer interrupts.",
+      "parentUuid": "447ce17b_75b86753",
+      "revId": "3d044e58f0ab129dd9db3f8cca6d1a4e065750d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "848c38ed_a466f6f7",
         "filename": "docs/change-log.rst",
         "patchSetId": 5
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "No, we omit refactoring from the TF-A changelog, unless it\u0027s something major (e.g., API change). I\u0027ve removed trivial refactoring from the changelog.",
       "parentUuid": "d3a80747_78237589",
+      "revId": "3d044e58f0ab129dd9db3f8cca6d1a4e065750d0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4552592_65313b96",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-05-12T13:47:26Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "ff9dcd7b_63b2b311",
       "revId": "3d044e58f0ab129dd9db3f8cca6d1a4e065750d0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
