@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f260590_c60a2b2f",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-05-12T21:26:02Z",
+      "side": 1,
+      "message": "If the reboot is not successful, this should return fails right?",
+      "range": {
+        "startLine": 129,
+        "startChar": 1,
+        "endLine": 129,
+        "endChar": 28
+      },
+      "revId": "ea2a334ca396a35ac0639d124f71d44c414f9953",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}

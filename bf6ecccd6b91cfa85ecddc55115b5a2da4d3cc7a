@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fafdcb95_bfc19f38",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-05-12T21:26:02Z",
+      "side": 1,
+      "message": "I don\u0027t think we\u0027re doing anything useful here. Simply reading back what was flashed isn\u0027t really necessary. Corruption of the BL2 image and the BL2U image size entry are already verified in BL1—triggering firmware recovery and causing a panic in BL1 and control does not reach inside this loop right?",
+      "parentUuid": "8f96d36b_8f4f82cc",
+      "range": {
+        "startLine": 70,
+        "startChar": 1,
+        "endLine": 70,
+        "endChar": 24
+      },
+      "revId": "bf6ecccd6b91cfa85ecddc55115b5a2da4d3cc7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "61f94766_1c2f5e0d",
         "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
         "patchSetId": 5
