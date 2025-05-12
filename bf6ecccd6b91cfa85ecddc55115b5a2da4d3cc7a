@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae163c8e_ddf14bc3",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-12T16:00:58Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "7bfd99ed_d158bb48",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 1
+      },
+      "revId": "bf6ecccd6b91cfa85ecddc55115b5a2da4d3cc7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0408357f_4cfbc617",
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8f96d36b_8f4f82cc",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-12T16:00:58Z",
+      "side": 1,
+      "message": "The tftf_is_rebooted check is there to see if the fwu recovery was able to proceed.",
+      "parentUuid": "0408357f_4cfbc617",
+      "range": {
+        "startLine": 70,
+        "startChar": 1,
+        "endLine": 70,
+        "endChar": 24
+      },
+      "revId": "bf6ecccd6b91cfa85ecddc55115b5a2da4d3cc7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "61f94766_1c2f5e0d",
         "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
         "patchSetId": 5
@@ -60,6 +108,30 @@
       "writtenOn": "2025-05-12T14:27:34Z",
       "side": 1,
       "message": "There are extra tabs overall in this file, please remove those.",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 1
+      },
+      "revId": "bf6ecccd6b91cfa85ecddc55115b5a2da4d3cc7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1741cdd_2b731a79",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-12T16:00:58Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "61f94766_1c2f5e0d",
       "range": {
         "startLine": 71,
         "startChar": 0,
