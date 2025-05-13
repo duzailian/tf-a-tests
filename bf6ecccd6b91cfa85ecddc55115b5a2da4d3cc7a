@@ -119,6 +119,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc90fc02_5652aeff",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-13T12:43:48Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "fafdcb95_bfc19f38",
+      "range": {
+        "startLine": 70,
+        "startChar": 1,
+        "endLine": 70,
+        "endChar": 24
+      },
+      "revId": "bf6ecccd6b91cfa85ecddc55115b5a2da4d3cc7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "61f94766_1c2f5e0d",
