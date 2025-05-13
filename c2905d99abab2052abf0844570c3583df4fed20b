@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08ae2b97_e551290f",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2025-05-13T17:24:44Z",
+      "side": 1,
+      "message": "This is the pre-corrupted bl2 entry address correct?",
+      "range": {
+        "startLine": 72,
+        "startChar": 1,
+        "endLine": 72,
+        "endChar": 27
+      },
+      "revId": "c2905d99abab2052abf0844570c3583df4fed20b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4dfbc56_dfb2d5b6",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2025-05-13T17:24:44Z",
+      "side": 1,
+      "message": "Isn\u0027t this a duplicate of line numbers 93:96?",
+      "range": {
+        "startLine": 98,
+        "startChar": 1,
+        "endLine": 101,
+        "endChar": 1
+      },
+      "revId": "c2905d99abab2052abf0844570c3583df4fed20b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f9dc4f4_e2297819",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2025-05-13T17:24:44Z",
+      "side": 1,
+      "message": "Just a question about the test setup so I understand: Is it correct that the test should get stuck in the reboot and therefore will only hit this failure if the reboot does occur properly? So failure here means the intention of the test was not hit?",
+      "range": {
+        "startLine": 113,
+        "startChar": 1,
+        "endLine": 113,
+        "endChar": 25
+      },
+      "revId": "c2905d99abab2052abf0844570c3583df4fed20b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c06c548b_bd337716",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2025-05-13T17:24:44Z",
+      "side": 1,
+      "message": "Looks like this file can be dropped from the patch",
+      "revId": "c2905d99abab2052abf0844570c3583df4fed20b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
