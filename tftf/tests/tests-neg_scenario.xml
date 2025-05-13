@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Copyright (c) 2025, Arm Limited. All rights reserved.
+
+  SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<testsuites>
+
+  <testsuite name="neg scenario test" description="Validate FWU AUTH Failure size bl2 and bl2u scenario">
+     <testcase name="FWU imageSize Failure" function="test_fwu_image_size" />
+  </testsuite>
+
+</testsuites>
