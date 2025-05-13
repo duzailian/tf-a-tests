@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7a540e88_1c775ecb",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-13T19:25:17Z",
+      "side": 1,
+      "message": "Its the bl2 fiptoc entry address.",
+      "parentUuid": "08ae2b97_e551290f",
+      "range": {
+        "startLine": 72,
+        "startChar": 1,
+        "endLine": 72,
+        "endChar": 27
+      },
+      "revId": "c2905d99abab2052abf0844570c3583df4fed20b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b4dfbc56_dfb2d5b6",
         "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
         "patchSetId": 8
@@ -37,6 +61,30 @@
       "writtenOn": "2025-05-13T17:24:44Z",
       "side": 1,
       "message": "Isn\u0027t this a duplicate of line numbers 93:96?",
+      "range": {
+        "startLine": 98,
+        "startChar": 1,
+        "endLine": 101,
+        "endChar": 1
+      },
+      "revId": "c2905d99abab2052abf0844570c3583df4fed20b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f30582b9_55414f11",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-13T19:25:17Z",
+      "side": 1,
+      "message": "My mistake, removing duplicated lines",
+      "parentUuid": "b4dfbc56_dfb2d5b6",
       "range": {
         "startLine": 98,
         "startChar": 1,
@@ -72,6 +120,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ea7e554b_afdd536a",
+        "filename": "tftf/tests/fwu_tests/test_fwu_image_size.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-13T19:25:17Z",
+      "side": 1,
+      "message": "yes, relying on the fwu recovery mechanism if the test is able to reboot with bl2 and bl2u corrupted then It means the test failed",
+      "parentUuid": "7f9dc4f4_e2297819",
+      "range": {
+        "startLine": 113,
+        "startChar": 1,
+        "endLine": 113,
+        "endChar": 25
+      },
+      "revId": "c2905d99abab2052abf0844570c3583df4fed20b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c06c548b_bd337716",
         "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
         "patchSetId": 8
@@ -83,6 +155,24 @@
       "writtenOn": "2025-05-13T17:24:44Z",
       "side": 1,
       "message": "Looks like this file can be dropped from the patch",
+      "revId": "c2905d99abab2052abf0844570c3583df4fed20b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8f0256a_08442e02",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-13T19:25:17Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c06c548b_bd337716",
       "revId": "c2905d99abab2052abf0844570c3583df4fed20b",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
