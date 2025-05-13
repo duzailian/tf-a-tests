@@ -7,6 +7,9 @@
 TESTS_SOURCES	+=	$(addprefix tftf/tests/fwu_tests/,	\
 	test_fwu_auth.c						\
 	test_fwu_toc.c						\
+	test_fwu_image_size.c				\
 )
 
-TESTS_SOURCES	+=	plat/common/fwu_nvm_accessors.c
+TESTS_SOURCES	+=	plat/common/fwu_nvm_accessors.c \
+	plat/common/image_loader.c \
+	plat/arm/common/arm_fwu_io_storage.c
