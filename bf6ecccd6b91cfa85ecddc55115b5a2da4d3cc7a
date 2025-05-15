@@ -235,6 +235,30 @@
       },
       "revId": "bf6ecccd6b91cfa85ecddc55115b5a2da4d3cc7a",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0c43a09_94c42ff3",
+        "filename": "tftf/tests/tbb-tests/test_tbb_corrupt_fip.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2025-05-15T18:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4f32a0e_44904b90",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 32
+      },
+      "revId": "bf6ecccd6b91cfa85ecddc55115b5a2da4d3cc7a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
