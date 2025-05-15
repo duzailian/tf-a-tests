@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7aa91ecd_336b1acc",
+        "filename": "docs/change-log.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-05-15T10:18:32Z",
+      "side": 1,
+      "message": "can be ignored.",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 31
+      },
+      "revId": "cbc7d1be51fd1444bb083172c5f813a341731708",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
