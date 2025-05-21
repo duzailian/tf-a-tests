@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023-2024, Arm Limited. All rights reserved.
+ * Copyright (c) 2023-2025, Arm Limited. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
@@ -147,9 +147,15 @@ test_result_t host_sve_realm_test_invalid_vl(void)
 	sve_vq = EXTRACT(RMI_FEATURE_REGISTER_0_SVE_VL, rmi_feat_reg0);
 
 	/*
-	 * Pass a sve_vq that is greater than the value supported by RMM
-	 * and check whether creating Realm fails
+	 * If RMM supports MAX SVE VQ, we can't pass in an invalid sve_vq to
+	 * create a realm, so skip the test. Else pass a sve_vq that is greater
+	 * than the value supported by RMM and check whether creating Realm fails.
 	 */
+	if (sve_vq == SVE_VQ_ARCH_MAX) {
+		INFO("RMI supports arch max SVE VL %u, skipping\n", (sve_vq + 1));
+		return TEST_RESULT_SKIPPED;
+	}
+
 	rc = host_create_sve_realm_payload(&realm, true, (sve_vq + 1));
 	if (rc == TEST_RESULT_SUCCESS) {
 		ERROR("Error: Realm created with invalid SVE VL %u\n", (sve_vq + 1));
