@@ -1,0 +1,9 @@
+Maintainer-Review+1: Bipin Ravi <bipin.ravi@arm.com>
+Verified+1: Govindraj Raja <govindraj.raja@arm.com>
+Code-Owner-Review+1: Bipin Ravi <bipin.ravi@arm.com>
+Submitted-by: Bipin Ravi <bipin.ravi@arm.com>
+Submitted-at: Thu, 22 May 2025 17:21:04 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/38498
+Comments-Total: 1
+Project: TF-A/tf-a-tests
+Branch: refs/heads/lts-v2.8
