@@ -92,21 +92,21 @@ static bool test_realm_enter_plane_n_reg_rw(void)
 			realm_printf("P0 read 0x%lx 0x%lx\n", reg1, reg2);
 
 			/* read pauth register for plane1 */
-			ret = rsi_plane_reg_read(plane_index, SYSREG_ID_apiakeylo_el1, &reg3);
+			ret = rsi_plane_sysreg_read(plane_index, SYSREG_ID_apiakeylo_el1, &reg3);
 			if ((ret != RSI_SUCCESS) || (reg1 != reg3)) {
 				realm_printf("pauth register mismatch 0x%lx 0x%lx\n", reg1, reg3);
 				return false;
 			}
 
 			/* read sctlr register for plane1 */
-			ret = rsi_plane_reg_read(plane_index, SYSREG_ID_sctlr_el1, &reg4);
+			ret = rsi_plane_sysreg_read(plane_index, SYSREG_ID_sctlr_el1, &reg4);
 			if ((ret != RSI_SUCCESS) || (reg2 != reg4)) {
 				realm_printf("sctlr register mismatch 0x%lx 0x%lx\n", reg2, reg4);
 				return false;
 			}
 
 			/* write pauth register and verify it is same after exiting plane n */
-			ret = rsi_plane_reg_write(plane_index, SYSREG_ID_apibkeylo_el1, 0xABCD);
+			ret = rsi_plane_sysreg_write(plane_index, SYSREG_ID_apibkeylo_el1, 0xABCD);
 			if (ret != RSI_SUCCESS) {
 				realm_printf("pauth register write failed\n");
 				return false;
@@ -116,7 +116,7 @@ static bool test_realm_enter_plane_n_reg_rw(void)
 			ret = realm_plane_enter(plane_index, perm_index, base, flags, &run);
 			if (ret) {
 				/* read pauth register for plane1 */
-				ret = rsi_plane_reg_read(plane_index, SYSREG_ID_apibkeylo_el1,
+				ret = rsi_plane_sysreg_read(plane_index, SYSREG_ID_apibkeylo_el1,
 						&reg3);
 
 				if ((ret != RSI_SUCCESS) || (reg3 != 0xABCD)) {
@@ -126,7 +126,7 @@ static bool test_realm_enter_plane_n_reg_rw(void)
 			}
 
 			/* read sysreg not supported by rmm, expect error */
-			ret = rsi_plane_reg_read(plane_index, SYSREG_ID_mpamidr_el1, &reg3);
+			ret = rsi_plane_sysreg_read(plane_index, SYSREG_ID_mpamidr_el1, &reg3);
 			if (ret == RSI_SUCCESS) {
 				realm_printf("reg read should have failed\n");
 				return false;
