@@ -16,6 +16,24 @@
       "message": "Is this a new failure seen?\n\nI remember this testcase was added to pass sve_vl greater than arch supported as the RmiRealmParams.sve_vl is uint8. But the helper routine host_create_activate_realm_payload() accepts sve parameters in feature_flag. This limits to pass invalid sve_vl.",
       "revId": "5c84effab202865e0a90b2e6d4020a9cd445b94e",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3dc59860_ca09e45a",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_simd_tests.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2025-05-22T13:38:40Z",
+      "side": 1,
+      "message": "This check was removed by \nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/21369:\n\"This patch adds SVE tests for RMM EAC1.\nThe \u0027feature_flag\u0027 parameter passed to\n\u0027host_create_realm_payload()\u0027 function is modified\nto contain \u0027sve_vl\u0027, \u0027num_bps\u0027, \u0027num_wps\u0027 and\n\u0027pmu_num_ctrs entries\u0027. This allows to pass values\nwhich can exceed these fields in feature_register_0\nfor testing. It makes possible to pass\n\u0027Create SVE Realm with invalid VL\u0027 which was\nskipped originally, when SVE was configured with\nthe maximum supported vector length value.\"\n, but the latter patch\nhttps://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/34557\n\"removed all FEATURE_XXX macros for setting\nfeature_flag and replaces them with the corresponding\nRMI_FEATURE_REGISTER_0_XXX to match feature register 0.\"\nwhich made it impossible to pass sve_vl values \u003e 15.\nThe better solution would be to replace \u0027feature_flag\u0027 parameter passed to host_prepare_realm_payload() with a structure similar to RmiRealmParams.",
+      "parentUuid": "a4a86dd0_02f00096",
+      "revId": "5c84effab202865e0a90b2e6d4020a9cd445b94e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
