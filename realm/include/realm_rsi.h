@@ -624,12 +624,12 @@ typedef struct {
  * ret0 == status
  * ret1 = register value
  */
-#define RSI_PLANE_REG_READ	SMC_RSI_FID(0x1EU)
+#define RSI_PLANE_SYSREG_READ	SMC_RSI_FID(0x1EU)
 
-u_register_t rsi_plane_reg_read(u_register_t plane_index, u_register_t register_encoding,
+u_register_t rsi_plane_sysreg_read(u_register_t plane_index, u_register_t register_encoding,
 		u_register_t *value);
 
-u_register_t rsi_plane_reg_write(u_register_t plane_index, u_register_t register_encoding,
+u_register_t rsi_plane_sysreg_write(u_register_t plane_index, u_register_t register_encoding,
 		u_register_t value);
 
 /*
@@ -639,7 +639,7 @@ u_register_t rsi_plane_reg_write(u_register_t plane_index, u_register_t register
  *
  * ret0 == status
  */
-#define RSI_PLANE_REG_WRITE	SMC_RSI_FID(0x1FU)
+#define RSI_PLANE_SYSREG_WRITE	SMC_RSI_FID(0x1FU)
 
 /*
  * Function to set overlay permission value for a specified

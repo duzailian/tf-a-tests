@@ -218,7 +218,7 @@ u_register_t rsi_plane_enter(u_register_t plane_index,
 	return res.ret0;
 }
 
-u_register_t rsi_plane_reg_read(u_register_t plane_index,
+u_register_t rsi_plane_sysreg_read(u_register_t plane_index,
 				u_register_t register_encoding,
 				u_register_t *value)
 {
@@ -233,7 +233,7 @@ u_register_t rsi_plane_reg_read(u_register_t plane_index,
 	return res.ret0;
 }
 
-u_register_t rsi_plane_reg_write(u_register_t plane_index,
+u_register_t rsi_plane_sysreg_write(u_register_t plane_index,
 				 u_register_t register_encoding,
 				 u_register_t value)
 {
