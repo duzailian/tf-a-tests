@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4a86dd0_02f00096",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_simd_tests.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2025-05-22T11:14:42Z",
+      "side": 1,
+      "message": "Is this a new failure seen?\n\nI remember this testcase was added to pass sve_vl greater than arch supported as the RmiRealmParams.sve_vl is uint8. But the helper routine host_create_activate_realm_payload() accepts sve parameters in feature_flag. This limits to pass invalid sve_vl.",
+      "revId": "5c84effab202865e0a90b2e6d4020a9cd445b94e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
