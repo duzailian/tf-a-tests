@@ -218,14 +218,14 @@ u_register_t rsi_plane_enter(u_register_t plane_index,
 	return res.ret0;
 }
 
-u_register_t rsi_plane_reg_read(u_register_t plane_index,
+u_register_t rsi_plane_sysreg_read(u_register_t plane_index,
 				u_register_t register_encoding,
 				u_register_t *value)
 {
 	smc_ret_values res = {};
 
 	res = tftf_smc(&(smc_args)
-			{SMC_RSI_PLANE_REG_READ, plane_index,
+			{SMC_RSI_PLANE_SYSREG_READ, plane_index,
 			 register_encoding});
 	if (res.ret0 == RSI_SUCCESS) {
 		*value = res.ret1;
@@ -233,14 +233,14 @@ u_register_t rsi_plane_reg_read(u_register_t plane_index,
 	return res.ret0;
 }
 
-u_register_t rsi_plane_reg_write(u_register_t plane_index,
+u_register_t rsi_plane_sysreg_write(u_register_t plane_index,
 				 u_register_t register_encoding,
 				 u_register_t value)
 {
 	smc_ret_values res = {};
 
 	res = tftf_smc(&(smc_args)
-			{SMC_RSI_PLANE_REG_WRITE, plane_index,
+			{SMC_RSI_PLANE_SYSREG_WRITE, plane_index,
 			 register_encoding, value});
 	return res.ret0;
 }
