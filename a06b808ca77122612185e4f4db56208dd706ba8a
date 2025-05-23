@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e7c7379_cc95728c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2025-05-23T12:25:48Z",
+      "side": 1,
+      "message": "Verified there: https://ci.trustedfirmware.org/job/tf-a-lts2.12-gerrit-tforg-l2/33/ (the only failure is commitlint checker)",
+      "revId": "a06b808ca77122612185e4f4db56208dd706ba8a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
