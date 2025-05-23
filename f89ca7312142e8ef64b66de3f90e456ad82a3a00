@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb463f3f_e65d70f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2025-05-23T12:26:10Z",
+      "side": 1,
+      "message": "Apply V+1 from top patch",
+      "revId": "f89ca7312142e8ef64b66de3f90e456ad82a3a00",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
