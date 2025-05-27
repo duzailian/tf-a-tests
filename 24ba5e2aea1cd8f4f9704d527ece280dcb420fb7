@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a30d40f_62606e73",
+        "filename": "tftf/tests/neg_scenario_tests/test_fwu_image_size.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-27T16:25:55Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "3bac030d_1394bf57",
+      "range": {
+        "startLine": 85,
+        "startChar": 24,
+        "endLine": 85,
+        "endChar": 48
+      },
+      "revId": "24ba5e2aea1cd8f4f9704d527ece280dcb420fb7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a68e9d3a_7a5388c3",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-05-15T20:54:27Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 94,
+        "startChar": 23,
+        "endLine": 94,
+        "endChar": 49
+      },
+      "revId": "24ba5e2aea1cd8f4f9704d527ece280dcb420fb7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56e7f1a7_0b760114",
+        "filename": "tftf/tests/neg_scenario_tests/test_fwu_image_size.c",
+        "patchSetId": 11
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-27T16:25:55Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "a68e9d3a_7a5388c3",
       "range": {
         "startLine": 94,
         "startChar": 23,
@@ -87,6 +135,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69b2d7a7_e239ae46",
+        "filename": "tftf/tests/tests-fwu.mk",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-27T16:25:55Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "29a995ae_409f9811",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 37
+      },
+      "revId": "24ba5e2aea1cd8f4f9704d527ece280dcb420fb7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6e4939ef_31111405",
@@ -110,6 +182,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b73edab9_bc5b36a5",
+        "filename": "tftf/tests/tests-fwu.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-27T16:25:55Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "6e4939ef_31111405",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 14
+      },
+      "revId": "24ba5e2aea1cd8f4f9704d527ece280dcb420fb7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "28d0adb1_af8d4510",
@@ -123,6 +219,24 @@
       "writtenOn": "2025-05-15T20:54:27Z",
       "side": 1,
       "message": "put extra tabs here and below to align with previous line.",
+      "revId": "24ba5e2aea1cd8f4f9704d527ece280dcb420fb7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69ae4f8e_18e435ef",
+        "filename": "tftf/tests/tests-neg-scenario.mk",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-27T16:25:55Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "28d0adb1_af8d4510",
       "revId": "24ba5e2aea1cd8f4f9704d527ece280dcb420fb7",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
