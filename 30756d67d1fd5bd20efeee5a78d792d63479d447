@@ -16,6 +16,92 @@
       "message": "https://ci.trustedfirmware.org/job/tf-a-ci-gateway/106399/",
       "revId": "30756d67d1fd5bd20efeee5a78d792d63479d447",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb4cc75b_2f7d6d35",
+        "filename": "tftf/tests/neg_scenario_tests/test_fwu_image_size.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-05-28T09:03:29Z",
+      "side": 1,
+      "message": "Please align the second line with the start of the string literal in the first line to improve readability, like this:\n\n```\ntftf_testcase_printf(\"System didn\u0027t reboot properly (%d)\\n\",\n\t             (unsigned int)ret.ret0);\n```",
+      "range": {
+        "startLine": 105,
+        "startChar": 1,
+        "endLine": 105,
+        "endChar": 25
+      },
+      "revId": "30756d67d1fd5bd20efeee5a78d792d63479d447",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07a787e2_cfa402ce",
+        "filename": "tftf/tests/tests-neg_scenario.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-05-28T09:03:29Z",
+      "side": 1,
+      "message": "provide extra tabs to align this line with previous one.",
+      "revId": "30756d67d1fd5bd20efeee5a78d792d63479d447",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01e58542_9ae190d8",
+        "filename": "tftf/tests/tests-neg_scenario.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-05-28T09:03:29Z",
+      "side": 1,
+      "message": "remove extra tabs and similarly for below line.",
+      "range": {
+        "startLine": 12,
+        "startChar": 3,
+        "endLine": 12,
+        "endChar": 5
+      },
+      "revId": "30756d67d1fd5bd20efeee5a78d792d63479d447",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e04d5b3_3f754276",
+        "filename": "tftf/tests/tests-neg_scenario.xml",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-05-28T09:03:29Z",
+      "side": 1,
+      "message": "I think the sentence is not very clear, can you rephrase it as below:\n\n```\nValidate firmware update failure in a scenario where BL2 is corrupted, triggering a firmware update that fails due to a BL2U size corruption.\n```",
+      "range": {
+        "startLine": 11,
+        "startChar": 51,
+        "endLine": 11,
+        "endChar": 103
+      },
+      "revId": "30756d67d1fd5bd20efeee5a78d792d63479d447",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
