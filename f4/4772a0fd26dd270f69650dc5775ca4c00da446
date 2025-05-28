@@ -1,0 +1,10 @@
+Allow-CI+2: Govindraj Raja <govindraj.raja@arm.com>
+Verified+1: TrustedFirmware Code Review <ci@trustedfirmware.org>
+Code-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Code-Owner-Review+1: Sandrine Afsa <sandrine.afsa@arm.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-by: Sandrine Afsa <sandrine.afsa@arm.com>
+Submitted-at: Wed, 28 May 2025 07:34:41 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/38721
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
