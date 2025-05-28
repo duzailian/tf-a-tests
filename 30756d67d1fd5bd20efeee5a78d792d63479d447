@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1ca7cfc_b65af34c",
+        "filename": "tftf/tests/neg_scenario_tests/test_fwu_image_size.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-28T20:39:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb4cc75b_2f7d6d35",
+      "range": {
+        "startLine": 105,
+        "startChar": 1,
+        "endLine": 105,
+        "endChar": 25
+      },
+      "revId": "30756d67d1fd5bd20efeee5a78d792d63479d447",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "07a787e2_cfa402ce",
@@ -54,6 +78,24 @@
       "writtenOn": "2025-05-28T09:03:29Z",
       "side": 1,
       "message": "provide extra tabs to align this line with previous one.",
+      "revId": "30756d67d1fd5bd20efeee5a78d792d63479d447",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9392c441_f62fca03",
+        "filename": "tftf/tests/tests-neg_scenario.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-28T20:39:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07a787e2_cfa402ce",
       "revId": "30756d67d1fd5bd20efeee5a78d792d63479d447",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -81,6 +123,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b3f8f99_f3b74877",
+        "filename": "tftf/tests/tests-neg_scenario.mk",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-28T20:39:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "01e58542_9ae190d8",
+      "range": {
+        "startLine": 12,
+        "startChar": 3,
+        "endLine": 12,
+        "endChar": 5
+      },
+      "revId": "30756d67d1fd5bd20efeee5a78d792d63479d447",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0e04d5b3_3f754276",
@@ -94,6 +160,30 @@
       "writtenOn": "2025-05-28T09:03:29Z",
       "side": 1,
       "message": "I think the sentence is not very clear, can you rephrase it as below:\n\n```\nValidate firmware update failure in a scenario where BL2 is corrupted, triggering a firmware update that fails due to a BL2U size corruption.\n```",
+      "range": {
+        "startLine": 11,
+        "startChar": 51,
+        "endLine": 11,
+        "endChar": 103
+      },
+      "revId": "30756d67d1fd5bd20efeee5a78d792d63479d447",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95cde5fc_1fe2505d",
+        "filename": "tftf/tests/tests-neg_scenario.xml",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-05-28T20:39:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e04d5b3_3f754276",
       "range": {
         "startLine": 11,
         "startChar": 51,
