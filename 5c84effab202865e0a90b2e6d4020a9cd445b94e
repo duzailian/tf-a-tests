@@ -54,6 +54,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "adecb26e_2a6a8731",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_simd_tests.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2025-05-30T10:48:24Z",
+      "side": 1,
+      "message": "\u003e This check was removed by\n\n@Alexei,\nThanks for your reply. agree that the feat_register0 shouldn\u0027t be used to carry realm_params. I\u0027m fine with the proposed temporary workaround in this testcase until the helper routine to create_realm is fixed.",
+      "parentUuid": "2bc11086_71189dc6",
+      "revId": "5c84effab202865e0a90b2e6d4020a9cd445b94e",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "74a7819a_a4f1bd2a",
