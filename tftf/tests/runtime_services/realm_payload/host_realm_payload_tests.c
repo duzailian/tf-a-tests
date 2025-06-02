@@ -134,7 +134,8 @@ test_result_t host_test_realm_create_planes_enter_multiple_rtt(void)
 	}
 
 	if (!host_create_activate_realm_payload(&realm, (u_register_t)REALM_IMAGE_BASE,
-			feature_flag0, 0U, sl, rec_flag, 1U, MAX_AUX_PLANE_COUNT)) {
+			feature_flag0, RMI_REALM_FLAGS1_RTT_TREE_PP,
+			sl, rec_flag, 1U, MAX_AUX_PLANE_COUNT)) {
 		return TEST_RESULT_FAIL;
 	}
 
