@@ -7,9 +7,7 @@
 -->
 
 <testsuites>
-
-  <testsuite name="neg scenario test" description="Validate firmware update failure in a scenario where BL2 is corrupted, triggering a firmware update that fails due to a BL2U size corruption.">
-     <testcase name="FWU imageSize Failure" function="test_fwu_image_size" />
+  <testsuite name="neg scenario test-rotpk" description="Validate FWU AUTH Failure scenario" >
+    <testcase name="invalid rotpk" function="test_invalid_rotpk" />
   </testsuite>
-
 </testsuites>
