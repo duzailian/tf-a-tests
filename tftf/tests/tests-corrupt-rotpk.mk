@@ -5,9 +5,10 @@
 #
 
 TESTS_SOURCES	+=	$(addprefix tftf/tests/neg_scenario_tests/,	\
-					test_fwu_image_size.c \
+					test_invalid_rotpk.c \
+					neg_scenario_test_infra.c \
 )
 
-TESTS_SOURCES	+=	plat/common/fwu_nvm_accessors.c \
-					plat/common/image_loader.c \
-					plat/arm/common/arm_fwu_io_storage.c
+include lib/ext_mbedtls/mbedtls.mk
+
+
