@@ -3,11 +3,13 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <arm_arch_svc.h>
 #include <assert.h>
 #include <debug.h>
 #include <host_realm_helper.h>
 #include <host_realm_mem_layout.h>
 #include <host_shared_data.h>
+#include <smccc.h>
 #include <test_helpers.h>
 
 /*
@@ -27,7 +29,12 @@ test_result_t host_realm_test_brbe_save_restore(void)
 	static unsigned long brbcr_el1_saved;
 	test_result_t test_result = TEST_RESULT_SUCCESS;
 
+	u_register_t smc_ret;
+	smc_args args = {0};
+	smc_ret_values ret;
+
 	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+	SKIP_TEST_IF_SMCCC_FUNC_NOT_SUPPORTED(SMCCC_ARCH_FEATURE_AVAILABILITY);
 	SKIP_TEST_IF_BRBE_NOT_SUPPORTED();
 
 	if (is_feat_52b_on_4k_2_supported()) {
@@ -41,25 +48,41 @@ test_result_t host_realm_test_brbe_save_restore(void)
 	}
 
 	/*
-	 * Program BRBCR_EL2 to enable branch recording, now
-	 * since MDCR_EL3.SBRBE is set to 0b01 in EL3, accesses
-	 * to BRBCR_EL2 should not trap to EL3.
+	 * Check if FEAT_BRBE is supported in EL3
 	 */
 
-	INFO ("Enable Branch recording in NS-EL2\n");
+	INFO ("NS: Test for BRBE support in EL3\n");
 
-	/* SET BRBCR_EL2 */
-	unsigned long val = read_brbcr_el2();
-	val = val | BRBCR_EL2_INIT;
-	write_brbcr_el2(val);
+	args.fid = SMCCC_ARCH_FEATURE_AVAILABILITY | (SMC_64 << FUNCID_CC_SHIFT);
+	args.arg1 = MDCR_EL3_OPCODE;
+	ret = tftf_smc(&args);
 
-	/* SET BRBCR_EL1 */
-	unsigned long val_brbcr_el1 = read_brbcr_el1();
-	val_brbcr_el1 = BRBCR_EL1_INIT & (~MASK(BRBCR_EL1_CC));
-	write_brbcr_el1(val_brbcr_el1);
+	smc_ret = ret.ret1;
+	if (smc_ret & MDCR_SBRBE(1)) {
+		/*
+	 	* Program BRBCR_EL2 to enable branch recording, now
+	 	* since MDCR_EL3.SBRBE is set to 0b01 in EL3, accesses
+		 * to BRBCR_EL2 should not trap to EL3.
+	 	*/
 
-	brbcr_el2_saved = read_brbcr_el2();
-	brbcr_el1_saved	= read_brbcr_el1();
+		INFO ("Enable Branch recording in NS-EL2 since feature supported in EL3\n");
+
+		/* SET BRBCR_EL2 */
+		unsigned long val = read_brbcr_el2();
+		val = val | BRBCR_EL2_INIT;
+		write_brbcr_el2(val);
+
+		/* SET BRBCR_EL1 */
+		unsigned long val_brbcr_el1 = read_brbcr_el1();
+		val_brbcr_el1 = BRBCR_EL1_INIT & (~MASK(BRBCR_EL1_CC));
+		write_brbcr_el1(val_brbcr_el1);
+
+		brbcr_el2_saved = read_brbcr_el2();
+		brbcr_el1_saved	= read_brbcr_el1();
+	} else {
+
+		INFO ("NS: BRBE support not enabled in EL3\n");
+	}
 
 	/*
 	 * Enter Realm and try to access BRBCR_EL1 and enable
@@ -72,23 +95,25 @@ test_result_t host_realm_test_brbe_save_restore(void)
 		goto destroy_realm;
 	}
 
-	/*
-	 * Verify if EL3 has saved and restored the value in
-	 * BRBCR_EL2 register.
-	 */
-	INFO("NS Read and compare BRBCR_EL2\n");
-	if (read_brbcr_el2() != brbcr_el2_saved) {
-		test_result = TEST_RESULT_FAIL;
-		INFO("brbcr_el2 did not match, read = %lx\n and saved = %lx\n", read_brbcr_el2(), \
+	if (smc_ret & MDCR_SBRBE(1)) {
+		/*
+		 * Verify if EL3 has saved and restored the value in
+	 	* BRBCR_EL2 register.
+	 	*/
+		INFO("NS Read and compare BRBCR_EL2\n");
+		if (read_brbcr_el2() != brbcr_el2_saved) {
+			test_result = TEST_RESULT_FAIL;
+			INFO("brbcr_el2 did not match, read = %lx\n and saved = %lx\n", read_brbcr_el2(), \
 									brbcr_el2_saved);
-		goto destroy_realm;
-	}
+			goto destroy_realm;
+		}
 
-	if (read_brbcr_el1() != brbcr_el1_saved) {
-		test_result = TEST_RESULT_FAIL;
-		INFO("brbcr_el1 did not match, read = %lx\n and saved = %lx\n", read_brbcr_el1(), \
+		if (read_brbcr_el1() != brbcr_el1_saved) {
+			test_result = TEST_RESULT_FAIL;
+			INFO("brbcr_el1 did not match, read = %lx\n and saved = %lx\n", read_brbcr_el1(), \
 									brbcr_el1_saved);
-		goto destroy_realm;
+			goto destroy_realm;
+		}
 	}
 
 destroy_realm:

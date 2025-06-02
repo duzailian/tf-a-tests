@@ -17,6 +17,7 @@ bool test_realm_write_brbcr_el1_reg(void)
 	bool ret_result = false;
 	realm_reset_undef_abort_count();
 
+	INFO ("Realm: Access BRBE regs\n");
 	/* Install exception handler to catch undefined abort */
 	register_custom_sync_exception_handler(realm_sync_exception_handler);
 
