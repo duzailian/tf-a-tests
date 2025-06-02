@@ -26,6 +26,7 @@
 #define RMI_EXIT(id)	\
 	[RMI_EXIT_##id] = #id
 
+
 const char *rmi_exit[] = {
 	RMI_EXIT(SYNC),
 	RMI_EXIT(IRQ),
