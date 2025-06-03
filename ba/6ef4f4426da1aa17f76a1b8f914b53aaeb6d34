@@ -1,0 +1,10 @@
+Code-Owner-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Maintainer-Review+1: Lauren Wehrmeister <lauren.wehrmeister@arm.com>
+Allow-CI+1: Thaddeus Gonzalez-Serna <Thaddeus.Gonzalez-Serna@arm.com>
+Verified+1: ci-bot
+Submitted-by: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-at: Tue, 03 Jun 2025 21:36:21 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/36417
+Comments-Total: 75
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
