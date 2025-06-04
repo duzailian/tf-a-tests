@@ -560,6 +560,9 @@ void realm_payload_main(void)
 		case REALM_DA_RSI_CALLS:
 			test_succeed = test_realm_da_rsi_calls();
 			break;
+		case REALM_DEV_MEM_ACCESS:
+			test_succeed = test_realm_dev_mem_access();
+			break;
 		default:
 			realm_printf("%s() invalid cmd %u\n", __func__, cmd);
 			break;
