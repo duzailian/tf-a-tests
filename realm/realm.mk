@@ -31,6 +31,7 @@ REALM_SOURCES:=								\
 	realm_da.c							\
 	realm_da_helpers.c						\
 	realm_debug.c							\
+	realm_dev_mem.c							\
 	realm_exception_report.c					\
 	realm_helpers.c							\
 	realm_interrupt.c						\
