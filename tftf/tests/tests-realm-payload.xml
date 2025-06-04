@@ -172,5 +172,10 @@
 	  <!-- Invoke RMI calls related to DA PDEV/VDEV management -->
 	  <testcase name="Invoke RMI DA ABIs "
 	  function="host_invoke_rmi_da_flow" />
+	  <!-- Test cases related to Dev Mem Access -->
+	  <testcase name="Realm payload device memory block access"
+	  function="host_realm_dev_mem_block" />
+	  <testcase name="Realm payload device memory pages access"
+	  function="host_realm_dev_mem_pages" />
   </testsuite>
 </testsuites>
