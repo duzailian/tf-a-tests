@@ -3,17 +3,18 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <assert.h>
+#include <stdlib.h>
+
+#include <realm_da_helpers.h>
+#include <realm_rsi.h>
+
 #include <arch.h>
 #include <arch_features.h>
 #include <arch_helpers.h>
-#include <assert.h>
 #include <debug.h>
-#include <stdlib.h>
-#include <realm_rsi.h>
-#include <sync.h>
-
 #include <host_shared_data.h>
-#include <realm_da_helpers.h>
+#include <sync.h>
 
 /* Get inst id for a known Realm device id RDEV_ID */
 unsigned long realm_rdev_init(struct rdev *rdev, unsigned long rdev_id)
@@ -22,11 +23,10 @@ unsigned long realm_rdev_init(struct rdev *rdev, unsigned long rdev_id)
 	u_register_t rdev_inst_id;
 
 	memset(rdev, 0, sizeof(struct rdev));
-	realm_printf("In test_realm_da_rsi_calls\n");
 
 	rsi_rc = rsi_rdev_get_instance_id(rdev_id, &rdev_inst_id);
 	if (rsi_rc != RSI_SUCCESS) {
-		realm_printf("RSI_RDEV_GET_INSTANCE_ID failed: rdev_id: 0x%lx"
+		ERROR("RSI_RDEV_GET_INSTANCE_ID failed: rdev_id: 0x%lx"
 			     " rsi_rc: 0x%lx\n", rdev_id, rsi_rc);
 		return rsi_rc;
 	}
