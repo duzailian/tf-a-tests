@@ -3,17 +3,18 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+#include <assert.h>
+#include <stdlib.h>
+
+#include <realm_da_helpers.h>
+#include <realm_rsi.h>
+
 #include <arch.h>
 #include <arch_features.h>
 #include <arch_helpers.h>
-#include <assert.h>
 #include <debug.h>
-#include <stdlib.h>
-#include <realm_rsi.h>
-#include <sync.h>
-
 #include <host_shared_data.h>
-#include <realm_da_helpers.h>
+#include <sync.h>
 
 static struct rdev gbl_rdev;
 
