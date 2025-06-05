@@ -18,6 +18,23 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "56d0503b_6479258f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-06-05T20:22:22Z",
+      "side": 1,
+      "message": "The CI+1 failure are not related to the patch its been fixed on the repo and just needs rebase.",
+      "revId": "d5d19aec170e5eb931d1bf71ece212814181df1a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e1ce3448_0df0874a",
