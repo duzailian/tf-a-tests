@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "214d4374_41c9a3b7",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/rmi_dev_delegate_tests.c",
+        "patchSetId": 28
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-06-05T11:11:29Z",
+      "side": 1,
+      "message": "introduce a platform API to get dev granule , retrieve both pcie_dev_base and pcie_dev_size.\n\nThere can be a default weak implementation that will return error for non-FVP platforms.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 59
+      },
+      "revId": "147c9562f8014117e8a55b8de7500da0cfedbc8b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
