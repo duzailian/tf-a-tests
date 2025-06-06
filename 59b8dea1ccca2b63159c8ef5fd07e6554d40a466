@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1487a5d5_91f6a6cf",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_pdev.c",
+        "patchSetId": 18
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-06-06T13:41:47Z",
+      "side": 0,
+      "message": "we seem to have lost this bug fix when the files were moved.",
+      "range": {
+        "startLine": 413,
+        "startChar": 0,
+        "endLine": 416,
+        "endChar": 2
+      },
+      "revId": "59b8dea1ccca2b63159c8ef5fd07e6554d40a466",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
