@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b560cc8_a0d9b817",
+        "filename": "tftf/tests/tests-realm-payload.xml",
+        "patchSetId": 18
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-06-06T13:01:44Z",
+      "side": 1,
+      "message": "why is the order changed ?\n\nTests should not have any assumption of the order of execution.",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 174,
+        "endChar": 40
+      },
+      "revId": "a37547cf401fc9106f9afbe8eca62befffd7cc83",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
