@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d7d7d54_92214f27",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 31
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-06-09T12:35:32Z",
+      "side": 1,
+      "message": "hold this patch till TF-A changes are merged",
+      "revId": "e0f7fa99d9c42cee42faeff346184bf3415df993",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
