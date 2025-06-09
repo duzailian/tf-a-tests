@@ -16,6 +16,40 @@
       "message": "hold this patch till TF-A changes are merged",
       "revId": "e0f7fa99d9c42cee42faeff346184bf3415df993",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47eec9b2_03aed0bc",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/rmi_dev_delegate_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-06-09T12:47:21Z",
+      "side": 1,
+      "message": "also need to check for DA support.",
+      "revId": "e0f7fa99d9c42cee42faeff346184bf3415df993",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79ecda5b_dee73892",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/rmi_dev_delegate_tests.c",
+        "patchSetId": 31
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-06-09T12:47:21Z",
+      "side": 1,
+      "message": "Also need to check for DA support. Same comment for below.",
+      "revId": "e0f7fa99d9c42cee42faeff346184bf3415df993",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
