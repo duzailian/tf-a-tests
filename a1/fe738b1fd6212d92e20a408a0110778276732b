@@ -1,0 +1,10 @@
+Verified+1: ci-bot
+Code-Owner-Review+1: Soby Mathew <soby.mathew@arm.com>
+Allow-CI+2: Javier Almansa Sobrino <javier.almansasobrino@arm.com>
+Maintainer-Review+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Fri, 13 Jun 2025 10:53:51 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/37846
+Comments-Total: 4
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
