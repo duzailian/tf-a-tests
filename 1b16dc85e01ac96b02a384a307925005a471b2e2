@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d961b920_f2401ff6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 23
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-06-13T08:56:59Z",
+      "side": 1,
+      "message": "CI failures unrelated to this change, RMM testing the tests pass : https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-main/1154/",
+      "revId": "1b16dc85e01ac96b02a384a307925005a471b2e2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
