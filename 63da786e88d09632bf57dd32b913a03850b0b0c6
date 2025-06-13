@@ -33,6 +33,24 @@
       "message": "Is this loop needed ?",
       "revId": "63da786e88d09632bf57dd32b913a03850b0b0c6",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97407fe4_a56a1f57",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 3510,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2025-06-13T11:17:21Z",
+      "side": 1,
+      "message": "I think it is if we want to run the test on every available REC. I based this test on a previously existing similar one, so I kept the structure as similar as possible for consistency.",
+      "parentUuid": "6ac32c4a_07728e4a",
+      "revId": "63da786e88d09632bf57dd32b913a03850b0b0c6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
