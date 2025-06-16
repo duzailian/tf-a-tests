@@ -13,6 +13,7 @@ PLAT_SOURCES	:=	drivers/arm/gic/arm_gic.c			\
 			drivers/arm/gic/gic_v2v3_common.c               \
 			drivers/arm/gic/gic_v2.c                        \
 			drivers/arm/gic/gic_v3.c                        \
+			drivers/arm/gic/gic_v5.c		\
 			drivers/arm/pl011/${ARCH}/pl011_console.S       \
 			drivers/arm/timer/private_timer.c		\
 			drivers/console/console.c                       \
