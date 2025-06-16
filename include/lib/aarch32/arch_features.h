@@ -72,4 +72,10 @@ static inline bool is_feat_gic_supported(void)
 			>= GIC_IMPLEMENTED;
 }
 
+static inline bool is_feat_gcie_supported(void)
+{
+	/* v9 only, we can't have AArch32 in EL2 */
+	return 0;
+}
+
 #endif /* ARCH_FEATURES_H */
