@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020-2024, Arm Limited. All rights reserved.
+ * Copyright (c) 2020-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -583,4 +583,11 @@ static inline bool is_feat_doublelock_present(void)
 	return EXTRACT(ID_AA64DFR0_DOUBLELOCK, read_id_aa64dfr0_el1())
 			>= DOUBLELOCK_IMPLEMENTED;
 }
+
+static inline bool is_feat_gic_supported(void)
+{
+	return EXTRACT(ID_AA64PFR0_GIC, read_id_aa64pfr0_el1())
+			>= ID_AA64PFR0_GICV3_GICV4_SUPPORTED;
+}
+
 #endif /* ARCH_FEATURES_H */
