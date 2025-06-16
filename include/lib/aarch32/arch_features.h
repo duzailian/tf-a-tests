@@ -66,4 +66,10 @@ static inline unsigned int amu_get_version(void)
 		ID_PFR0_AMU_MASK;
 }
 
+static inline bool is_feat_gic_supported(void)
+{
+	return EXTRACT(ID_PFR1_GIC, read_id_pfr1())
+			>= GIC_IMPLEMENTED;
+}
+
 #endif /* ARCH_FEATURES_H */
