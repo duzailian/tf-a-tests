@@ -49,7 +49,7 @@
 #include <mmio.h>
 
 /* Helper to detect the GIC mode (GICv2 or GICv3) configured in the system */
-unsigned int is_gicv3_mode(void);
+bool is_gicv3_mode(void);
 
 /*******************************************************************************
  * Private GIC Distributor function prototypes for use by GIC drivers
