@@ -1248,6 +1248,32 @@ int tsm_connect_devices(unsigned int *count)
 	return rc;
 }
 
+int tsm_find_device(struct host_pdev **pdev)
+{
+	*pdev = NULL;
+	
+	for (unsigned int i = 0; i < gbl_host_pdev_count; i++) {
+		struct host_pdev *h_pdev = &gbl_host_pdevs[i];
+		int rc;
+
+		if (!is_host_pdev_independently_attested(h_pdev)) {
+			continue;
+		}
+
+		rc = tsm_connect_device(h_pdev);
+		if (rc == 0) {
+			*pdev = h_pdev;
+		} else {			
+			ERROR("tsm_connect_device: 0x%x failed\n",
+			      h_pdev->dev->bdf);
+		}
+	
+		return rc;				
+	}
+
+	return 0;
+}
+
 /* Iterate through all connected host_pdevs and disconnect from TSM */
 int tsm_disconnect_devices(void)
 {
@@ -1295,9 +1321,9 @@ struct host_pdev *get_host_pdev_by_type(uint8_t type)
 
 
 /*
- * Find all PCIe off-chip devices that confirms to TEE-IO standards
- * Devices that supports DOE, IDE, TDISP with RootPort that supports
- * RME DA are initlized in host_pdevs[]
+ * Find all PCIe off-chip devices that confirm to TEE-IO standards.
+ * Devices that support DOE, IDE, TDISP with RootPort supporting
+ * RME DA are initlized in host_pdevs[].
  */
 void host_pdevs_init(void)
 {

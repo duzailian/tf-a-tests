@@ -59,6 +59,8 @@
 #define DEV_OBJ_MEASUREMENTS		2U
 #define DEV_OBJ_INTERFACE_REPORT	3U
 
+#define NCOH_ADDR_RANGE_NUM		1U
+
 struct host_pdev {
 	/* PDEV related fields */
 	void *pdev;
@@ -85,6 +87,13 @@ struct host_pdev {
 
 	/* The PCIe device for this host_pdev */
 	pcie_dev_t *dev;
+
+	unsigned long ncoh_num_addr_range;
+	struct rmi_address_range ncoh_addr_range[NCOH_ADDR_RANGE_NUM];
+
+	/* PCIe details: bdf, DOE, Stream id, IO range */
+	uint32_t bdf;
+	uint32_t doe_cap_base;
 };
 
 struct host_vdev {
@@ -123,6 +132,7 @@ int tsm_connect_device(struct host_pdev *h_pdev);
 int tsm_disconnect_device(struct host_pdev *h_pdev);
 int tsm_connect_devices(unsigned int *count);
 int tsm_disconnect_devices(void);
+int tsm_find_device(struct host_pdev **pdev);
 
 void host_pdevs_init(void);
 struct host_pdev *get_host_pdev_by_type(uint8_t type);
