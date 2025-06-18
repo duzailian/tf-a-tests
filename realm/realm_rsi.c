@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2022-2025, Arm Limited. All rights reserved.
  *
@@ -365,5 +364,26 @@ u_register_t rsi_rdev_continue(u_register_t rdev_id, u_register_t rdev_inst_id)
 		       {SMC_RSI_RDEV_CONTINUE, rdev_id, rdev_inst_id, 0UL, 0UL,
 			0UL, 0UL, 0UL});
 
+	return res.ret0;
+}
+
+u_register_t rsi_rdev_vaildate_mapping(u_register_t rdev_id,
+					u_register_t rdev_inst_id,
+					u_register_t ipa_base,
+					u_register_t ipa_top,
+					u_register_t pa_base,
+					u_register_t flags,
+					u_register_t *new_ipa_base,
+					rsi_response_type *response)
+{
+	smc_ret_values res = {};
+
+	res = tftf_smc(&(smc_args)
+			{SMC_RSI_RDEV_VALIDATE_MAPPING, rdev_id, rdev_inst_id,
+			ipa_base, ipa_top, pa_base, flags});
+	if (res.ret0 == RSI_SUCCESS) {
+		*new_ipa_base = res.ret1;
+		*response = res.ret2;
+	}
 	return res.ret0;
 }

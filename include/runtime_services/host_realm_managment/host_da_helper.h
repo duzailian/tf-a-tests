@@ -24,6 +24,8 @@
 #define DEV_OBJ_MEASUREMENTS		2U
 #define DEV_OBJ_INTERFACE_REPORT	3U
 
+#define NCOH_ADDR_RANGE_NUM		1U
+
 struct host_pdev {
 	/* PDEV related fields */
 	void *pdev;
@@ -44,6 +46,9 @@ struct host_pdev {
 	void *public_key_metadata;
 	size_t public_key_metadata_len;
 	unsigned char public_key_sig_algo;
+
+	unsigned long ncoh_num_addr_range;
+	struct rmi_address_range ncoh_addr_range[NCOH_ADDR_RANGE_NUM];
 
 	/* PCIe details: bdf, DOE, Stream id, IO range */
 	uint32_t bdf;
