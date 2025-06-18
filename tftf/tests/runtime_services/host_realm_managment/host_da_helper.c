@@ -1295,9 +1295,9 @@ struct host_pdev *get_host_pdev_by_type(uint8_t type)
 
 
 /*
- * Find all PCIe off-chip devices that confirms to TEE-IO standards. Devices
+ * Find all PCIe off-chip devices that confirm to TEE-IO standards. Devices
  * that support DOE, IDE, TDISP with RootPort that support RME DA are initialized
- * in gbl_host_pdevs[]
+ * in gbl_host_pdevs[].
  */
 void host_pdevs_init(void)
 {

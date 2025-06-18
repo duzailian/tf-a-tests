@@ -410,14 +410,6 @@ typedef enum {
 #define RSI_FEATURE_REGISTER_0_ATS_WIDTH	UL(1)
 
 /*
- * RsiDevMemShared
- * Represents whether an device memory mapping is shared.
- * Width: 1 bit
- */
-#define RSI_DEV_MEM_MAPPING_PRIVATE		U(0)
-#define RSI_DEV_MEM_MAPPING_SHARED		U(1)
-
-/*
  * RsiDevMemCoherent
  * Represents whether a device memory location is within the system coherent
  * memory space.
@@ -427,16 +419,22 @@ typedef enum {
 #define RSI_DEV_MEM_COHERENT			U(1)
 
 /*
- * RsiRdevValidateIoFlags
- * Fieldset contains flags provided when requesting validation of an IO mapping.
+ * RsiDevMemOrdering
+ * Represents ordering properties of a device memory location.
+ * Width: 1 bit
+ */
+#define RSI_DEV_MEM_NOT_LIMITED_ORDER		U(0)
+#define RSI_DEV_MEM_LIMITED_ORDER		U(1)
+
+/*
+ * RsiDevMemFlags
+ * Fieldset contains flags which describe properties of a device memory mapping.
  * Width: 64 bits
  */
-/* RsiDevMemShared: Bits 0 to 1 */
-#define RSI_RDEV_VALIDATE_IO_FLAGS_SHARE_SHIFT	UL(0)
-#define RSI_RDEV_VALIDATE_IO_FLAGS_SHARE_WIDTH	UL(1)
-/* RsiDevMemCoherent: Bits 1 to 2 */
-#define RSI_RDEV_VALIDATE_IO_FLAGS_COH_SHIFT	UL(1)
-#define RSI_RDEV_VALIDATE_IO_FLAGS_COH_WIDTH	UL(1)
+#define RSI_DEV_MEM_FLAGS_COH_SHIFT		UL(0)
+#define RSI_DEV_MEM_FLAGS_COH_WIDTH		UL(1)
+#define RSI_DEV_MEM_FLAGS_LOR_SHIFT		UL(1)
+#define RSI_DEV_MEM_FLAGS_LOR_WIDTH		UL(1)
 
 /*
  * RsiDeviceState
@@ -738,4 +736,12 @@ u_register_t rsi_rdev_stop(u_register_t rdev_id, u_register_t rdev_inst_id);
 
 u_register_t rsi_rdev_continue(u_register_t rdev_id, u_register_t rdev_inst_id);
 
+u_register_t rsi_rdev_vaildate_mapping(u_register_t rdev_id,
+					u_register_t rdev_inst_id,
+					u_register_t ipa_base,
+					u_register_t ipa_top,
+					u_register_t pa_base,
+					u_register_t flags,
+					u_register_t *new_ipa_base,
+					rsi_response_type *response);
 #endif /* REALM_RSI_H */
