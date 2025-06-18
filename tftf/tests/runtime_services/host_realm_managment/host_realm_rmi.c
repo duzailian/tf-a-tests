@@ -2092,3 +2092,17 @@ u_register_t host_rmi_vdev_destroy(u_register_t rd_ptr, u_register_t pdev_ptr,
 	return host_rmi_handler(&(smc_args) {SMC_RMI_VDEV_DESTROY, rd_ptr,
 			pdev_ptr, vdev_ptr}, 4U).ret0;
 }
+
+u_register_t host_rmi_rtt_dev_mem_validate(u_register_t rd,
+					   u_register_t rec,
+					   u_register_t base,
+					   u_register_t top,
+					   u_register_t *out_top)
+{
+	smc_ret_values rets;
+
+	rets = host_rmi_handler(&(smc_args) {RMI_RTT_DEV_MEM_VALIDATE,
+				rd, rec, base, top}, 5U);
+	*out_top = rets.ret1;
+	return rets.ret0;
+}

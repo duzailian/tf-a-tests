@@ -188,5 +188,10 @@
 	  <!-- Invoke IDE refresh and reset on PDEV -->
 	  <testcase name="Invoke IDE refresh and reset on PDEV"
 	  function="host_pdev_invoke_ide_refresh_reset" />
+	  <!-- Test cases related to Device Memory Validation -->
+	  <testcase name="Realm payload device memory block validate"
+	  function="host_realm_dev_mem_block" />
+	  <testcase name="Realm payload device memory pages validate"
+	  function="host_realm_dev_mem_pages" />
   </testsuite>
 </testsuites>

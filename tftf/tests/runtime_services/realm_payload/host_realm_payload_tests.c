@@ -2866,7 +2866,7 @@ test_result_t host_test_rtt_fold_unfold_unassigned_empty(void)
 	ret = host_rmi_rtt_readentry(realm.rd, base, 3L, &rtt);
 	if (ret != RMI_SUCCESS || rtt.walk_level != 3L || rtt.state != RMI_UNASSIGNED
 			|| (rtt.ripas != RMI_EMPTY)) {
-		ERROR("host_rmi_create_rtt_levels failed ret=0x%lx\n", ret);
+		ERROR("host_rmi_rtt_readentry failed ret=0x%lx\n", ret);
 		goto destroy_realm;
 	}
 	INFO("rtt.state=0x%lx rtt.walk_level=0x%lx rtt.out_addr=0x%llx rtt.ripas=0x%lx\n",

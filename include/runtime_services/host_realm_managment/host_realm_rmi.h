@@ -252,6 +252,16 @@
 #define SMC_RMI_RTT_UNMAP_UNPROTECTED		SMC64_RMI_FID(U(0x12))
 
 /*
+ * FID: 0xC4000163
+ *
+ * arg0 == RD address
+ * arg1 == REC address
+ * arg2 == start address
+ * arg3 == end address
+ */
+#define RMI_RTT_DEV_MEM_VALIDATE		SMC64_RMI_FID(U(0x13))
+
+/*
  * FID: 0xC4000164
  *
  * arg0 == calling rec address
@@ -840,6 +850,9 @@ struct rmi_rec_params {
 
 /* Host response to RIPAS change request */
 #define REC_ENTRY_FLAG_RIPAS_RESPONSE_REJECT	(UL(1) << 4)
+
+/* Host response to device memory mapping validation request */
+#define REC_ENTRY_FLAG_DEV_MEM_RESPONSE		(UL(1) << 6)
 
 /*
  * Structure contains data passed from the Host to the RMM on REC entry
@@ -1483,4 +1496,7 @@ u_register_t host_rmi_vdev_abort(u_register_t vdev_ptr);
 u_register_t host_rmi_vdev_stop(u_register_t vdev_ptr);
 u_register_t host_rmi_vdev_destroy(u_register_t rd_ptr, u_register_t pdev_ptr,
 				   u_register_t vdev_ptr);
+u_register_t host_rmi_rtt_dev_mem_validate(u_register_t rd, u_register_t rec,
+					   u_register_t base, u_register_t top,
+					   u_register_t *out_top);
 #endif /* HOST_REALM_RMI_H */
