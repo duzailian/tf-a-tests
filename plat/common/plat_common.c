@@ -25,6 +25,7 @@
 #pragma weak tftf_plat_reset
 #pragma weak plat_get_prot_regions
 #pragma weak plat_pcie_get_info_table
+#pragma weak plat_pcie_get_bar_config
 #pragma weak plat_get_invalid_addr
 #pragma weak plat_get_dev_region
 
