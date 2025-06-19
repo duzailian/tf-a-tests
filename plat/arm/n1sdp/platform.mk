@@ -12,7 +12,7 @@ $(eval $(call add_define,NS_BL2U_DEFINES,N1SDP_MAX_PE_PER_CPU))
 
 PLAT_INCLUDES	+=	-Iplat/arm/n1sdp/include/
 
-PLAT_SOURCES	:=	drivers/arm/gic/arm_gic_v2v3.c		\
+PLAT_SOURCES	:=	drivers/arm/gic/arm_gic.c		\
 			drivers/arm/gic/gic_v2.c		\
 			drivers/arm/gic/gic_v3.c		\
 			drivers/arm/sp805/sp805.c		\

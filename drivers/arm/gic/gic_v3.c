@@ -9,7 +9,7 @@
 #include <assert.h>
 #include <debug.h>
 #include <drivers/arm/arm_gic.h>
-#include <drivers/arm/gic_common.h>
+#include <drivers/arm/gic_v2v3_common.h>
 #include <drivers/arm/gic_v3.h>
 #include <mmio.h>
 #include <platform.h>

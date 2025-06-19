@@ -21,7 +21,7 @@ $(eval $(call add_define,TFTF_DEFINES,TARGET_PLATFORM))
 
 PLAT_INCLUDES	+=	-Iplat/arm/tc/include/
 
-PLAT_SOURCES	:=	drivers/arm/gic/arm_gic_v2v3.c		\
+PLAT_SOURCES	:=	drivers/arm/gic/arm_gic.c		\
 			drivers/arm/gic/gic_v2.c		\
 			drivers/arm/gic/gic_v3.c		\
 			drivers/arm/sp805/sp805.c		\

@@ -8,7 +8,7 @@
 #include <arch_helpers.h>
 #include <assert.h>
 #include <drivers/arm/arm_gic.h>
-#include <drivers/arm/gic_common.h>
+#include <drivers/arm/gic_v2v3_common.h>
 #include <drivers/arm/gic_v2.h>
 #include <mmio.h>
 #include <platform.h>
