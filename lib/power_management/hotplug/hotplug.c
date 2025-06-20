@@ -16,7 +16,6 @@
 #include <platform_def.h>
 #include <power_management.h>
 #include <psci.h>
-#include <sgi.h>
 #include <spinlock.h>
 #include <stdint.h>
 #include <tftf.h>

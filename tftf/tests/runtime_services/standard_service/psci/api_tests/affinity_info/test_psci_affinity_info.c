@@ -14,7 +14,6 @@
 #include <platform.h>
 #include <power_management.h>
 #include <psci.h>
-#include <sgi.h>
 #include <test_helpers.h>
 #include <tftf_lib.h>
 

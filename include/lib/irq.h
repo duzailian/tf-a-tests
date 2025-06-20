@@ -59,6 +59,11 @@ void tftf_irq_setup(void);
 int tftf_irq_handler_dispatcher(void);
 
 /*
+ * Send an SGI to a given core.
+ */
+void tftf_send_sgi(unsigned int sgi_id, unsigned int core_pos);
+
+/*
  * Enable interrupt #irq_num for the calling core.
  */
 void tftf_irq_enable(unsigned int irq_num, uint8_t irq_priority);

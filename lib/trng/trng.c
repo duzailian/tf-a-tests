@@ -10,7 +10,6 @@
 #include <irq.h>
 #include <platform.h>
 #include <trng.h>
-#include <sgi.h>
 #include <tftf.h>
 #include <tftf_lib.h>
 

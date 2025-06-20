@@ -12,7 +12,6 @@
 #include <mmio.h>
 #include <platform.h>
 #include <platform_def.h>
-#include <sgi.h>
 #include <smccc.h>
 #include <std_svc.h>
 #include <stdlib.h>

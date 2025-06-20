@@ -80,16 +80,12 @@ the top level or under the ``tftf/`` directory):
    -  ``irq.h``
 
       IRQ handling support. Used to configure IRQs and register/unregister
-      handlers called upon reception of a specific IRQ.
+      handlers called upon reception of a specific IRQ. Also raises software
+      generated interrupts (SGI).
 
    -  ``power_management.h``
 
       Power management operations (CPU ON/OFF, CPU suspend, etc.).
-
-   -  ``sgi.h``
-
-      Software Generated Interrupt support. Used as an inter-CPU communication
-      mechanism.
 
    -  ``spinlock.h``
 

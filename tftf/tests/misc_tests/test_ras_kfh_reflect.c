@@ -12,7 +12,6 @@
 #include <platform.h>
 #include <psci.h>
 #include <serror.h>
-#include <sgi.h>
 #include <smccc.h>
 #include <tftf_lib.h>
 

@@ -18,7 +18,6 @@
 #include <platform_def.h>
 #include <power_management.h>
 #include <psci.h>
-#include <sgi.h>
 #include <spinlock.h>
 #include <string.h>
 #include <test_helpers.h>

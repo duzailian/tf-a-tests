@@ -14,7 +14,6 @@
 #include <platform.h>
 #include <platform_def.h>
 #include <power_management.h>
-#include <sgi.h>
 #include <spinlock.h>
 #include <stddef.h>
 #include <stdint.h>
