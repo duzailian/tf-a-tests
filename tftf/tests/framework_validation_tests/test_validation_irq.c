@@ -102,7 +102,7 @@ test_result_t test_validation_irq(void)
 	 * Wait for some time so that SGI interrupts the processor, Normally it
 	 * takes a small but finite time for the IRQ to be sent to processor
 	 */
-	waitms(500);
+	waitms(100);
 
 	if (counter != 2) {
 		tftf_testcase_printf(
