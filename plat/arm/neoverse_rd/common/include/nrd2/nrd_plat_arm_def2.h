@@ -76,14 +76,6 @@
 #define MAX_IO_DEVICES			U(1)
 #define MAX_IO_HANDLES			U(1)
 
-/*******************************************************************************
- * Non-Secure Software Generated Interupts IDs
- ******************************************************************************/
-
-/* Non-Secure Software Generated Interupts IDs */
-#define IRQ_NS_SGI_0			U(0)
-#define IRQ_NS_SGI_7			U(7)
-
 /* Maximum SPI */
 #define PLAT_MAX_SPI_OFFSET_ID	U(256)
 
