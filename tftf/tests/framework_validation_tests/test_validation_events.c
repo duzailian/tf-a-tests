@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -17,6 +17,8 @@ static event_t lead_cpu_event;
 static event_t cpu_has_entered_test[PLATFORM_CORE_COUNT];
 static event_t test_is_finished;
 
+volatile bool last_event_ready = false;
+
 static test_result_t non_lead_cpu_fn(void)
 {
 	unsigned int mpid = read_mpidr_el1() & MPID_MASK;
@@ -32,7 +34,7 @@ static test_result_t non_lead_cpu_fn(void)
 	 * Introduce a delay so that the lead CPU will send the event before the
 	 * non-lead CPUs wait for it.
 	 */
-	waitms(500);
+	while (!last_event_ready) {}
 	tftf_wait_for_event(&test_is_finished);
 
 	return TEST_RESULT_SUCCESS;
@@ -104,19 +106,19 @@ test_result_t test_validation_events(void)
 	}
 
 	/*
-	 * Introduce a delay so that the non-lead CPUs will wait for this event
-	 * before the lead CPU sends it.
+	 * Send the event to half of the CPUs. Some should already be waiting,
+	 * as they signalled entering the test.
 	 */
-	waitms(500);
-	/* Send the event to half of the CPUs */
 	cpus_count = PLATFORM_CORE_COUNT / 2;
 	tftf_send_event_to(&lead_cpu_event, cpus_count);
-	waitms(500);
 	/* Send the event to the other half of the CPUs */
 	tftf_send_event_to(&lead_cpu_event, PLATFORM_CORE_COUNT - cpus_count);
 
 	/* Signal termination of the test to all CPUs */
 	tftf_send_event_to_all(&test_is_finished);
+
+	/* Signal the last event has been sent so secondaries can wait() */
+	last_event_ready = true;
 
 	return TEST_RESULT_SUCCESS;
 }
