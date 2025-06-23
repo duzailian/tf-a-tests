@@ -98,6 +98,7 @@ void gicv5_intr_clear(unsigned int interrupt_id);
 void gicv5_end_of_interrupt(unsigned int raw_iar);
 void gicv5_setup(void);
 uint32_t gicv5_get_sgi_num(uint32_t index, unsigned int core_pos);
+irq_handler_t *gicv5_get_irq_handler(unsigned int interrupt_id);
 void gicv5_init(uintptr_t irs_base_addr);
 #else
 static inline bool is_gicv5_mode(void) { return false; }
