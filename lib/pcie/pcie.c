@@ -220,7 +220,7 @@ static bool pcie_is_onchip_peripheral(uint32_t bdf)
  *		   (1 << 0b1100) for iEP_EP, (1 << 0b1011) for iEP_RP,
  *		   (1 << PCIECR[7:4]) for any other device type.
  */
-static uint32_t pcie_device_port_type(uint32_t bdf)
+uint32_t pcie_device_port_type(uint32_t bdf)
 {
 	uint32_t pciecs_base, reg_value, dp_type;
 
@@ -442,7 +442,7 @@ static uint32_t pcie_function_header_type(uint32_t bdf)
  * @param  bdf   - Segment/Bus/Dev/Func in PCIE_CREATE_BDF format
  * @return ECAM address if success, else NULL address
  */
-static uintptr_t pcie_get_ecam_base(uint32_t bdf)
+uintptr_t pcie_get_ecam_base(uint32_t bdf)
 {
 	uint8_t ecam_index = 0, sec_bus = 0, sub_bus;
 	uint16_t seg_num = (uint16_t)PCIE_EXTRACT_BDF_SEG(bdf);
