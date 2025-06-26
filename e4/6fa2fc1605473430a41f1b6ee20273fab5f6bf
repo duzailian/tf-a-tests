@@ -1,0 +1,10 @@
+Allow-CI+1: Harrison Mutai <harrison.mutai@arm.com>
+Maintainer-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Verified+1: Harrison Mutai <harrison.mutai@arm.com>
+Code-Owner-Review+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Thu, 26 Jun 2025 10:01:00 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/39728
+Comments-Total: 1
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
