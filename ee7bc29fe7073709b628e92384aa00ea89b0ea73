@@ -1,0 +1,809 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92c977e6_20dd3c9e",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5922bd5_c05df321",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "gicv3_detected !\u003d 0",
+      "range": {
+        "startLine": 26,
+        "startChar": 5,
+        "endLine": 26,
+        "endChar": 19
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a0cd673_ce26aff0",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "gicv5_detected !\u003d 0",
+      "range": {
+        "startLine": 28,
+        "startChar": 10,
+        "endLine": 28,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cba989a0_27b83c96",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "Same",
+      "range": {
+        "startLine": 38,
+        "startChar": 10,
+        "endLine": 38,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "885d6ee1_a6484d95",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 49,
+        "startChar": 12,
+        "endLine": 49,
+        "endChar": 26
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c57b0f52_267c6e3a",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 61,
+        "startChar": 10,
+        "endLine": 61,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "242069b3_9e5f8f83",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 71,
+        "startChar": 10,
+        "endLine": 71,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17044210_5fcd325e",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 81,
+        "startChar": 10,
+        "endLine": 81,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bccfe442_59f6c2c2",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 91,
+        "startChar": 10,
+        "endLine": 91,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "adb8821d_d4b1dfbc",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 102,
+        "startChar": 12,
+        "endLine": 102,
+        "endChar": 26
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d323d22_c65951e6",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 114,
+        "startChar": 10,
+        "endLine": 114,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3227f64d_47a0b3d3",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 125,
+        "startChar": 10,
+        "endLine": 125,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8bdc6ed_7ceb1efc",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 137,
+        "startChar": 10,
+        "endLine": 137,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "851ba2d5_e6a9e6b7",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 147,
+        "startChar": 10,
+        "endLine": 147,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eabe7dd0_4b4fc7d1",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 157,
+        "startChar": 10,
+        "endLine": 157,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29d31690_99506a88",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 168,
+        "startChar": 10,
+        "endLine": 168,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52776b01_ab1f9722",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 179,
+        "startChar": 10,
+        "endLine": 179,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30615c91_eb1c2792",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 189,
+        "startChar": 10,
+        "endLine": 189,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d9cf54a5_674a6e74",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 202,
+        "startChar": 12,
+        "endLine": 202,
+        "endChar": 26
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4871446a_00ce1a86",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 215,
+        "startChar": 10,
+        "endLine": 215,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "06966cbc_68c85db7",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 225,
+        "startChar": 10,
+        "endLine": 225,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "777c28f0_fdd8da41",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 235,
+        "startChar": 10,
+        "endLine": 235,
+        "endChar": 24
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fbe75b42_511480e5",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 260,
+        "startChar": 5,
+        "endLine": 260,
+        "endChar": 19
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4de2a9dd_31125614",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 262,
+        "startChar": 12,
+        "endLine": 262,
+        "endChar": 26
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff5bfbd4_4931e51c",
+        "filename": "include/drivers/arm/arm_gic.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1849d83c_d9ed2fef",
+        "filename": "include/lib/aarch32/arch_features.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3620c44_e12dc6f2",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a05fa072_99f2d3a1",
+        "filename": "include/lib/irq.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "550fee10_ba4aa9ac",
+        "filename": "plat/amd/versal2/platform.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 16,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44f397c9_ccaa85bf",
+        "filename": "plat/arm/fvp/fvp_def.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35e014f9_76ea0e59",
+        "filename": "plat/arm/fvp/platform.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69b9bd2e_0bb2815e",
+        "filename": "plat/arm/n1sdp/platform.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 16,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b5b34c8_ccdb121e",
+        "filename": "plat/arm/neoverse_rd/common/nrd_common.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b82f0a9_477aea1f",
+        "filename": "plat/arm/tc/platform.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71ce191d_b2418b42",
+        "filename": "tftf/framework/main.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:43:56Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
