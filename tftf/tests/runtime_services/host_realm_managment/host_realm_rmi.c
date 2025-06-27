@@ -1992,6 +1992,12 @@ u_register_t host_rmi_pdev_set_pubkey(u_register_t pdev_ptr,
 					     pubkey_params_ptr}, 3U).ret0;
 }
 
+u_register_t host_rmi_pdev_abort(u_register_t pdev_ptr)
+{
+	return host_rmi_handler(&(smc_args) {SMC_RMI_PDEV_ABORT, pdev_ptr},
+				2U).ret0;
+}
+
 u_register_t host_rmi_pdev_stop(u_register_t pdev_ptr)
 {
 	return host_rmi_handler(&(smc_args) {SMC_RMI_PDEV_STOP, pdev_ptr},

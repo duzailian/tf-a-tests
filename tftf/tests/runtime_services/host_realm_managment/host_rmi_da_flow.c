@@ -134,6 +134,7 @@ test_result_t host_invoke_rmi_da_flow(void)
 		goto err_pdev_reclaim;
 	}
 
+	INFO("PDEV is READY\n");
 
 	/*
 	 * 3 Assign VDEV (the PCIe endpoint) from the Realm

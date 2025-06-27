@@ -162,6 +162,18 @@ static int host_pdev_set_pubkey(struct host_pdev *h_pdev)
 	return 0;
 }
 
+static int host_pdev_abort(struct host_pdev *h_pdev)
+{
+	u_register_t ret;
+
+	ret = host_rmi_pdev_abort((u_register_t)h_pdev->pdev);
+	if (ret != RMI_SUCCESS) {
+		return -1;
+	}
+
+	return 0;
+}
+
 static int host_pdev_stop(struct host_pdev *h_pdev)
 {
 	u_register_t ret;
@@ -614,6 +626,15 @@ int host_pdev_reclaim(struct host_pdev *h_pdev)
 {
 	u_register_t ret;
 	int rc, result = 0;
+
+	rc = host_pdev_abort(h_pdev);
+	/*
+	 * Abort can fail if PDEV_STATE is not NEW or HAS_KEY
+	 * or COMMUNICATING.
+	 */
+	if (rc != 0) {
+		INFO("PDEV_ABORT failed\n");
+	}
 
 	/* Move the device to STOPPING state */
 	rc = host_pdev_transition(h_pdev, RMI_PDEV_STATE_STOPPING);
