@@ -1,0 +1,487 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7832f0c_d65609b3",
+        "filename": "include/lib/irq.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "230765af_572d3182",
+        "filename": "lib/exceptions/irq.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c8c6cac_480888c2",
+        "filename": "lib/power_management/hotplug/hotplug.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef2a6520_c42eadb9",
+        "filename": "lib/power_management/suspend/tftf_suspend.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4821971e_baae816b",
+        "filename": "lib/psci/psci.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7dcf786_1a300158",
+        "filename": "lib/trng/trng.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "749d9f08_65e4e397",
+        "filename": "tftf/framework/main.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "068255b8_7468c4b0",
+        "filename": "tftf/framework/timer/timer_framework.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fb4685a_d0550e11",
+        "filename": "tftf/tests/framework_validation_tests/test_timer_framework.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "472eb2d2_f3de2168",
+        "filename": "tftf/tests/framework_validation_tests/test_validation_irq.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ce25dfb_f48aced4",
+        "filename": "tftf/tests/framework_validation_tests/test_validation_sgi.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83475468_2abf44cb",
+        "filename": "tftf/tests/misc_tests/test_pmu_leakage.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0b365f9_ee5456e3",
+        "filename": "tftf/tests/misc_tests/test_ras_kfh_reflect.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10981ec7_b35916cb",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/affinity_info/test_psci_affinity_info.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8732602_30916716",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/psci_stat/test_psci_stat.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c67cea24_642790ae",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/system_suspend/test_psci_system_suspend.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f032606f_f61a18de",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/validate_power_state/test_validate_power_state.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44624b7f_3db47fd3",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_on_off_suspend_stress.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4482cdd6_5e0323a4",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/system_tests/test_psci_system_suspend_stress.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99994bc7_94253436",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_preempted_std_smc.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "959718de_ae872268",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_normal_int_switch.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-06-27T19:54:29Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0fb9ac133ee0bdd1f90a782582ed5a7e9668506f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
