@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "690f3e42_49ee3ed0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-06-27T13:50:28Z",
+      "side": 1,
+      "message": "Revert since this is causing a CI failure",
+      "revId": "e4cd539f4a54e7b975cfadca14a0d0f664ea8b7b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
