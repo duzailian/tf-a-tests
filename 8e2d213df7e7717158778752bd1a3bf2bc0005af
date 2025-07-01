@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21e3b48c_97c269a8",
+        "filename": "include/runtime_services/host_realm_managment/host_da_helper.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-07-01T12:23:23Z",
+      "side": 1,
+      "message": "nit: this is already tested in the check above.",
+      "range": {
+        "startLine": 22,
+        "startChar": 2,
+        "endLine": 26,
+        "endChar": 3
+      },
+      "revId": "8e2d213df7e7717158778752bd1a3bf2bc0005af",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
