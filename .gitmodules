@@ -5,3 +5,7 @@
 	path = contrib/libtl
 	url = https://review.trustedfirmware.org/shared/transfer-list-library
 	shallow = true
+[submodule "libeventlog"]
+	path = ext/libeventlog
+	url = https://review.trustedfirmware.org/shared/libEventLog
+	shallow = true
