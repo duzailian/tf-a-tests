@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "14b7f39d_1684e383",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_da_flow.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2025-07-01T17:00:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2a6aa3d_d2f32943",
+      "range": {
+        "startLine": 138,
+        "startChar": 1,
+        "endLine": 142,
+        "endChar": 15
+      },
+      "revId": "784b9e1f2919cb76c403473fad87ae1ca0a74de7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3aa1d6d0_c8266e62",
@@ -47,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1880a37f_c046c9b9",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_da_flow.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2025-07-01T17:00:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aa1d6d0_c8266e62",
+      "range": {
+        "startLine": 191,
+        "startChar": 3,
+        "endLine": 193,
+        "endChar": 4
+      },
+      "revId": "784b9e1f2919cb76c403473fad87ae1ca0a74de7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "33928a02_675de920",
@@ -60,6 +108,30 @@
       "writtenOn": "2025-07-01T16:01:41Z",
       "side": 1,
       "message": "if (result !\u003d TEST_RESULT_SUCCESS) {\n     goto out_rm_realm;\n}",
+      "range": {
+        "startLine": 311,
+        "startChar": 1,
+        "endLine": 313,
+        "endChar": 2
+      },
+      "revId": "784b9e1f2919cb76c403473fad87ae1ca0a74de7",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a75bc1ce_e0aa3a9d",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_da_flow.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2025-07-01T17:00:35Z",
+      "side": 1,
+      "message": "In case of !TEST_RESULT_SKIPPED it gives the testcase to do disconnect and cleanup on the connected devices.",
+      "parentUuid": "33928a02_675de920",
       "range": {
         "startLine": 311,
         "startChar": 1,
