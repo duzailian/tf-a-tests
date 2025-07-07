@@ -7,6 +7,7 @@
 TESTS_SOURCES	+=	$(addprefix tftf/tests/fwu_tests/,	\
 	test_fwu_auth.c						\
 	test_fwu_toc.c						\
+	test_fwu_trial_run.c					\
 )
 
 TESTS_SOURCES	+=	plat/common/fwu_nvm_accessors.c
