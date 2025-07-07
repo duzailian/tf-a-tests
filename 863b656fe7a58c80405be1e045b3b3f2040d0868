@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a856fe5e_8bbc1aff",
+        "filename": "include/lib/aarch64/arch.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 1758,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-07-07T13:58:11Z",
+      "side": 1,
+      "message": "I am a bit confused, these changes are already part of previous patch. Would prefer the changes in this part is part of that patch.",
+      "revId": "863b656fe7a58c80405be1e045b3b3f2040d0868",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
