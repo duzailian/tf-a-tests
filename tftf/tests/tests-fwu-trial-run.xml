@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Copyright (c) 2018, Arm Limited. All rights reserved.
+
+  SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<testsuites>
+
+  <testsuite name="fwu trial run test" description="Validate FWU trial run scenario">
+     <testcase name="FWU TRIAL RUN" function="test_fwu_trial_run" />
+  </testsuite>
+
+</testsuites>
