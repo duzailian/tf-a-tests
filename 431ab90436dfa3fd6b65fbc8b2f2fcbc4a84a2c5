@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b271ad23_197b0bd2",
+        "filename": "lib/pcie/pcie_doe.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-07-07T12:22:05Z",
+      "side": 1,
+      "message": "would be useful to have an iterator as an argument to get the next DOE capable device rather than the first one found.",
+      "revId": "431ab90436dfa3fd6b65fbc8b2f2fcbc4a84a2c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
