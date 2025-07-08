@@ -33,6 +33,24 @@
       "message": "need to reflect error if tsm_connect_devices() fail. Add a check here.\n```\n\tif (result !\u003d TEST_RESULT_SUCCESS) {\n\t\treturn_error \u003d true;\n\t}\n```",
       "revId": "aee1127fcf104d3073cf0986ab2d45428c7f2170",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0f6e68b_c8bf2e58",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_da_flow.c",
+        "patchSetId": 6
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2025-07-08T15:31:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "764ff295_010d57d3",
+      "revId": "aee1127fcf104d3073cf0986ab2d45428c7f2170",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
