@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1528756a_0372e3de",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-07-09T08:12:25Z",
+      "side": 1,
+      "message": "nit: fvp",
+      "range": {
+        "startLine": 7,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 7
+      },
+      "revId": "a6f6360e62d90b96183a273c3dd564c91ec3efbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d25b6340_584ae250",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-07-09T08:12:25Z",
+      "side": 1,
+      "message": "Do we need to change the address of the buffer in Cactus-MM as well?",
+      "revId": "a6f6360e62d90b96183a273c3dd564c91ec3efbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
