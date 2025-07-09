@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "697fc218_d16991bb",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_da_flow.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-07-09T09:07:21Z",
+      "side": 1,
+      "message": "not needed, the success return below for error condition is sufficient.",
+      "range": {
+        "startLine": 210,
+        "startChar": 0,
+        "endLine": 211,
+        "endChar": 28
+      },
+      "revId": "559d49a2272b1a99fae1117ab678f9042336da81",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
