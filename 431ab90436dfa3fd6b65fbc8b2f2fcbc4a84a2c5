@@ -52,6 +52,24 @@
       "parentUuid": "76616897_6530370d",
       "revId": "431ab90436dfa3fd6b65fbc8b2f2fcbc4a84a2c5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e02fac1d_d1e6f741",
+        "filename": "lib/pcie/pcie_doe.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2025-07-09T09:17:30Z",
+      "side": 1,
+      "message": "This change just replaces pcie_find_capability with already enumerated pci device capabilities. this iterator is not required.",
+      "parentUuid": "a01a7f09_556d2506",
+      "revId": "431ab90436dfa3fd6b65fbc8b2f2fcbc4a84a2c5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
