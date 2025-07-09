@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "b0f9445a_f94a6422",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001369
+      },
+      "writtenOn": "2025-07-09T08:19:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1528756a_0372e3de",
+      "range": {
+        "startLine": 7,
+        "startChar": 5,
+        "endLine": 7,
+        "endChar": 7
+      },
+      "revId": "a6f6360e62d90b96183a273c3dd564c91ec3efbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "d25b6340_584ae250",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -37,6 +61,24 @@
       "writtenOn": "2025-07-09T08:12:25Z",
       "side": 1,
       "message": "Do we need to change the address of the buffer in Cactus-MM as well?",
+      "revId": "a6f6360e62d90b96183a273c3dd564c91ec3efbb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "961ae326_3b423ded",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001369
+      },
+      "writtenOn": "2025-07-09T08:19:02Z",
+      "side": 1,
+      "message": "No additional patch required since catctus-MM\u0027s ns-buffer defines following platform_def.h one:\n\nin cactus_mm/cactus_mm_main.c:\n   assert(boot_info-\u003esp_ns_comm_buf_base \u003d\u003d ARM_SECURE_SERVICE_BUFFER_BASE);",
+      "parentUuid": "d25b6340_584ae250",
       "revId": "a6f6360e62d90b96183a273c3dd564c91ec3efbb",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
