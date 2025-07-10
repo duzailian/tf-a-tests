@@ -76,7 +76,7 @@ test_result_t host_realm_dev_mem_map_unmap(void)
 	unsigned int num[NUM_INFO_TESTS];
 	unsigned int num_reg, offset, i, j;
 
-	SKIP_DA_TEST_IF_PREREQS_NOT_MET(rmi_features);
+	INIT_AND_SKIP_DA_TEST_IF_PREREQS_NOT_MET(rmi_features);
 
 	/* Initialise memory test structures */
 
