@@ -14,6 +14,7 @@ argfieldname = {}
 argstartbit = {}
 argendbit = {}
 argdefval = {}
+smcid = {}
 smcname = ""
 argnum = ""
 argname = ""
@@ -25,7 +26,28 @@ def readsmclist(smclist,seq):
 	for sline in smclist_lines:
 		lcon = 0
 		sl = sline.strip()
-		sinstr = re.search(r'^smc:\s*([a-zA-Z0-9_]+)$',sl)
+		sinstr = re.search(r'^smc:\s*([a-zA-Z0-9_]+)\s*0x([a-fA-F0-9]+)\s*$',sl)
+		if sinstr:
+			smcname = sinstr.group(1)
+			arglst[sinstr.group(1)] = []
+			argnumfield[sinstr.group(1)] = {}
+			argfieldname[sinstr.group(1)] = {}
+			argstartbit[sinstr.group(1)] = {}
+			argendbit[sinstr.group(1)] = {}
+			argdefval[sinstr.group(1)] = {}
+			smcid[sinstr.group(2)] = sinstr.group(1)
+			lcon = 1
+			argoccupy = {}
+			if not seq:
+				seq = seq + 1
+			else:
+				if seq != 2:
+					print("Error: out of sequence for smc call",end=" ")
+					print(smcname)
+					sys.exit()
+				else:
+					seq = 1
+		sinstr = re.search(r'^smc:\s*([a-zA-Z0-9_]+)\s*$',sl)
 		if sinstr:
 			smcname = sinstr.group(1)
 			arglst[sinstr.group(1)] = []
