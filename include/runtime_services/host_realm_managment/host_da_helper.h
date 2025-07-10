@@ -10,14 +10,20 @@
 #include <host_realm_rmi.h>
 #include <pcie.h>
 
+#define DEV_TYPE_INDEPENDENTLY_ATTESTED		(0)
+
 /*
+ * Init DA specific globals
  * Skip DA test if any of the below check is true
  *   RMM is TRP
  *   FEAT_RME not supported
  *   DA is not supported in RMI features
  */
-#define SKIP_DA_TEST_IF_PREREQS_NOT_MET(_reg0)					\
+#define INIT_AND_SKIP_DA_TEST_IF_PREREQS_NOT_MET(_reg0)				\
 	do {									\
+		/* Init host_pdevs global array */				\
+		host_pdevs_init();						\
+										\
 		SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();			\
 										\
 		/* Get feature register0 */					\
@@ -111,14 +117,15 @@ struct host_vdev {
 	size_t ifc_report_len;
 };
 
-void host_pdevs_init(void);
-bool is_host_pdev_independently_attested(struct host_pdev *h_pdev);
-int host_create_realm_with_feat_da(struct realm *realm);
-int host_pdev_create(struct host_pdev *h_pdev);
-int host_pdev_reclaim(struct host_pdev *h_pdev);
-int host_pdev_setup(struct host_pdev *h_pdev);
-int host_pdev_transition(struct host_pdev *h_pdev, unsigned char to_state);
+int tsm_connect_device(struct host_pdev *h_pdev);
+int tsm_disconnect_device(struct host_pdev *h_pdev);
+int tsm_connect_devices(unsigned int *count);
+int tsm_disconnect_devices(void);
 
+void host_pdevs_init(void);
+struct host_pdev *get_host_pdev_by_type(uint8_t type);
+
+int host_create_realm_with_feat_da(struct realm *realm);
 int host_assign_vdev_to_realm(struct realm *realm, struct host_vdev *h_vdev,
 			      unsigned long tdi_id, void *pdev_ptr);
 int host_unassign_vdev_from_realm(struct realm *realm, struct host_vdev *h_vdev);

@@ -9,15 +9,16 @@
 #include <arch_features.h>
 #include <debug.h>
 #include <heap/page_alloc.h>
+#include <host_crypto_utils.h>
 #include <host_da_helper.h>
 #include <host_realm_helper.h>
 #include <host_realm_mem_layout.h>
 #include <pcie_spec.h>
 #include <pcie_doe.h>
 
-extern int gbl_host_pdev_count;
-extern struct host_pdev gbl_host_pdevs[32];
-extern struct host_vdev gbl_host_vdev;
+int gbl_host_pdev_count;
+struct host_pdev gbl_host_pdevs[HOST_PDEV_MAX];
+struct host_vdev gbl_host_vdev;
 
 static const char * const pdev_state_str[] = {
 	"PDEV_STATE_NEW",
@@ -42,10 +43,10 @@ static struct host_vdev *find_host_vdev_from_id(unsigned long vdev_id)
 
 static struct host_pdev *find_host_pdev_from_pdev_ptr(unsigned long pdev_ptr)
 {
-	uint32_t i;
+	unsigned int i;
 	struct host_pdev *h_pdev;
 
-	for (i = 0; i < gbl_host_pdev_count; i++) {
+	for (i = 0U; i < gbl_host_pdev_count; i++) {
 		h_pdev = &gbl_host_pdevs[i];
 
 		if (h_pdev->pdev == (void *)pdev_ptr) {
@@ -117,11 +118,11 @@ static int host_vdev_get_state(struct host_vdev *h_vdev, u_register_t *state)
 	return 0;
 }
 
-int host_pdev_create(struct host_pdev *h_pdev)
+static int host_pdev_create(struct host_pdev *h_pdev)
 {
 	struct rmi_pdev_params *pdev_params;
 	u_register_t ret;
-	uint32_t i;
+	unsigned int i;
 
 	pdev_params = (struct rmi_pdev_params *)page_alloc(PAGE_SIZE);
 	memset(pdev_params, 0, GRANULE_SIZE);
@@ -133,12 +134,13 @@ int host_pdev_create(struct host_pdev *h_pdev)
 	pdev_params->hash_algo = h_pdev->pdev_hash_algo;
 	pdev_params->root_id = h_pdev->dev->rp_dev->bdf;
 	pdev_params->ecam_addr = h_pdev->dev->ecam_base;
-	for (i = 0; i < h_pdev->pdev_aux_num; i++) {
+	for (i = 0U; i < h_pdev->pdev_aux_num; i++) {
 		pdev_params->aux[i] = (uintptr_t)h_pdev->pdev_aux[i];
 	}
 
 	ret = host_rmi_pdev_create((u_register_t)h_pdev->pdev,
 				   (u_register_t)pdev_params);
+	page_free((u_register_t)pdev_params);
 	if (ret != RMI_SUCCESS) {
 		return -1;
 	}
@@ -449,8 +451,8 @@ static int host_dev_communicate(struct host_pdev *h_pdev,
 /*
  * Invoke RMI handler to transition PDEV state to 'to_state'
  */
-int host_pdev_transition(struct host_pdev *h_pdev,
-			 unsigned char to_state)
+static int host_pdev_transition(struct host_pdev *h_pdev,
+				unsigned char to_state)
 {
 	int rc;
 
@@ -497,10 +499,10 @@ int host_pdev_transition(struct host_pdev *h_pdev,
  * Allocate granules needed for a PDEV object like device communication data,
  * response buffer, PDEV AUX granules and memory required to store cert_chain
  */
-int host_pdev_setup(struct host_pdev *h_pdev)
+static int host_pdev_setup(struct host_pdev *h_pdev)
 {
 	u_register_t ret, count;
-	int i;
+	unsigned int i;
 
 	/* RCiEP devices not supported by RMM */
 	if (h_pdev->dev->dp_type == RCiEP) {
@@ -549,7 +551,7 @@ int host_pdev_setup(struct host_pdev *h_pdev)
 
 	/* Allocate aux granules for PDEV and delegate */
 	INFO("PDEV create requires %u aux pages\n", h_pdev->pdev_aux_num);
-	for (i = 0; i < h_pdev->pdev_aux_num; i++) {
+	for (i = 0U; i < h_pdev->pdev_aux_num; i++) {
 		void *pdev_aux = page_alloc(PAGE_SIZE);
 
 		if (pdev_aux == NULL) {
@@ -631,7 +633,7 @@ err_undelegate_pdev:
 /*
  * Stop PDEV and ternimate secure session and call PDEV destroy
  */
-int host_pdev_reclaim(struct host_pdev *h_pdev)
+static int host_pdev_reclaim(struct host_pdev *h_pdev)
 {
 	u_register_t ret;
 	int rc, result = 0;
@@ -674,6 +676,19 @@ int host_pdev_reclaim(struct host_pdev *h_pdev)
 		ERROR("PDEV undelegate failed 0x%lx\n", ret);
 		result = -1;
 	}
+
+	page_free((u_register_t)h_pdev->dev_comm_data->enter.req_addr);
+	page_free((u_register_t)h_pdev->dev_comm_data->enter.resp_addr);
+
+	page_free((u_register_t)h_pdev->dev_comm_data);
+	page_free((u_register_t)h_pdev->cert_chain);
+	page_free((u_register_t)h_pdev->public_key);
+	page_free((u_register_t)h_pdev->public_key_metadata);
+
+	h_pdev->dev_comm_data = NULL;
+	h_pdev->cert_chain = NULL;
+	h_pdev->public_key = NULL;
+	h_pdev->public_key_metadata = NULL;
 
 	return result;
 }
@@ -950,7 +965,7 @@ u_register_t host_dev_mem_map(struct realm *realm, u_register_t dev_pa,
 	return REALM_SUCCESS;
 }
 
-bool is_host_pdev_independently_attested(struct host_pdev *h_pdev)
+static bool is_host_pdev_independently_attested(struct host_pdev *h_pdev)
 {
 	assert(h_pdev);
 	assert(h_pdev->dev);
@@ -967,19 +982,264 @@ bool is_host_pdev_independently_attested(struct host_pdev *h_pdev)
 }
 
 /*
- * Find all PCIe off-chip devices that confimrs to TEE-IO standards
- * Devices that supports DOE, IDE, TDISP with RootPort that supports
- * RME DA are initlized in host_pdevs[]
+ * Returns true if all host_pdev state is clean like no granules, aux granules,
+ * memory are associated with the host_pdev.
+ */
+static bool is_host_pdevs_state_clean(void)
+{
+	unsigned int i, cnt;
+
+	for (i = 0U; i < gbl_host_pdev_count; i++) {
+		struct host_pdev *h_pdev = &gbl_host_pdevs[i];
+
+		if ((h_pdev->is_connected_to_tsm) ||
+		    (h_pdev->pdev != NULL) ||
+		    (h_pdev->dev_comm_data != NULL) ||
+		    (h_pdev->cert_chain != NULL) ||
+		    (h_pdev->public_key != NULL) ||
+		    (h_pdev->public_key_metadata != NULL) ||
+		    (h_pdev->dev == NULL)) {
+			return false;
+		}
+
+		for (cnt = 0U; cnt < PDEV_PARAM_AUX_GRANULES_MAX; cnt++) {
+			if (h_pdev->pdev_aux[cnt] != NULL) {
+				return false;
+			}
+		}
+	}
+
+	return true;
+}
+
+int tsm_disconnect_device(struct host_pdev *h_pdev)
+{
+	int rc;
+
+	assert(h_pdev);
+	assert(h_pdev->dev);
+	assert(h_pdev->is_connected_to_tsm);
+
+	INFO("===========================================\n");
+	INFO("Host: TSM disconnect device: (0x%x) %x:%x.%x\n",
+	     h_pdev->dev->bdf,
+	     PCIE_EXTRACT_BDF_BUS(h_pdev->dev->bdf),
+	     PCIE_EXTRACT_BDF_DEV(h_pdev->dev->bdf),
+	     PCIE_EXTRACT_BDF_FUNC(h_pdev->dev->bdf));
+	INFO("===========================================\n");
+
+	rc = host_pdev_reclaim(h_pdev);
+	if (rc != 0) {
+		return -1;
+	}
+
+	h_pdev->is_connected_to_tsm = false;
+
+	return 0;
+}
+
+/*
+ * This invokes various RMI calls related to PDEV, VDEV management that does
+ * PDEV create/communicate/set_key/abort/stop/destroy and assigns the device
+ * to a Realm using RMI VDEV ABIs
+ *
+ * 1. Create a Realm with DA feature enabled
+ * 2. Find a known PCIe endpoint and connect with TSM to get_cert and establish
+ *    secure session
+ */
+int tsm_connect_device(struct host_pdev *h_pdev)
+{
+	int rc;
+	uint8_t public_key_algo;
+
+	assert(h_pdev);
+	assert(h_pdev->dev);
+	assert(!h_pdev->is_connected_to_tsm);
+
+	INFO("======================================\n");
+	INFO("Host: TSM connect device: (0x%x) %x:%x.%x\n",
+	     h_pdev->dev->bdf,
+	     PCIE_EXTRACT_BDF_BUS(h_pdev->dev->bdf),
+	     PCIE_EXTRACT_BDF_DEV(h_pdev->dev->bdf),
+	     PCIE_EXTRACT_BDF_FUNC(h_pdev->dev->bdf));
+	INFO("======================================\n");
+
+	/* Allocate granules. Skip DA ABIs if host_pdev_setup fails */
+	rc = host_pdev_setup(h_pdev);
+	if (rc == -1) {
+		ERROR("host_pdev_setup failed.\n");
+		return -1;
+	}
+
+	/* Call rmi_pdev_create to transition PDEV to STATE_NEW */
+	rc = host_pdev_transition(h_pdev, RMI_PDEV_STATE_NEW);
+	if (rc != 0) {
+		ERROR("PDEV transition: NULL -> STATE_NEW failed\n");
+		goto err_pdev_reclaim;
+	}
+
+	/* Call rmi_pdev_communicate to transition PDEV to NEEDS_KEY */
+	rc = host_pdev_transition(h_pdev, RMI_PDEV_STATE_NEEDS_KEY);
+	if (rc != 0) {
+		ERROR("PDEV transition: PDEV_NEW -> PDEV_NEEDS_KEY failed\n");
+		goto err_pdev_reclaim;
+	}
+
+	/* Get public key. Verifying cert_chain not done by host but by Realm? */
+	rc = host_get_public_key_from_cert_chain(h_pdev->cert_chain,
+						 h_pdev->cert_chain_len,
+						 h_pdev->public_key,
+						 &h_pdev->public_key_len,
+						 h_pdev->public_key_metadata,
+						 &h_pdev->public_key_metadata_len,
+						 &public_key_algo);
+	if (rc != 0) {
+		ERROR("Get public key failed\n");
+		goto err_pdev_reclaim;
+	}
+
+	if (public_key_algo == PUBLIC_KEY_ALGO_ECDSA_ECC_NIST_P256) {
+		h_pdev->public_key_sig_algo = RMI_SIGNATURE_ALGORITHM_ECDSA_P256;
+	} else if (public_key_algo == PUBLIC_KEY_ALGO_ECDSA_ECC_NIST_P384) {
+		h_pdev->public_key_sig_algo = RMI_SIGNATURE_ALGORITHM_ECDSA_P384;
+	} else {
+		h_pdev->public_key_sig_algo = RMI_SIGNATURE_ALGORITHM_RSASSA_3072;
+	}
+	INFO("DEV public key len/sig_algo: %ld/%d\n", h_pdev->public_key_len,
+	     h_pdev->public_key_sig_algo);
+
+	/* Call rmi_pdev_set_key transition PDEV to HAS_KEY */
+	rc = host_pdev_transition(h_pdev, RMI_PDEV_STATE_HAS_KEY);
+	if (rc != 0) {
+		ERROR("PDEV transition: PDEV_NEEDS_KEY -> PDEV_HAS_KEY failed\n");
+		goto err_pdev_reclaim;
+	}
+
+	/* Call rmi_pdev_comminucate to transition PDEV to READY state */
+	rc = host_pdev_transition(h_pdev, RMI_PDEV_STATE_READY);
+	if (rc != 0) {
+		ERROR("PDEV transition: PDEV_HAS_KEY -> PDEV_READY failed\n");
+		goto err_pdev_reclaim;
+	}
+
+	h_pdev->is_connected_to_tsm = true;
+
+	return 0;
+
+err_pdev_reclaim:
+	(void)host_pdev_reclaim(h_pdev);
+
+	return -1;
+}
+
+/*
+ * Iterate through all host_pdevs and try to connect to TSM
+ * Returns:
+ *	0  - on success
+ *	-1 - on error
+ *
+ *	@count: number of devices connected with TSM
+*/
+int tsm_connect_devices(unsigned int *count)
+{
+	int rc = 0;
+	unsigned int i;
+	unsigned int count_ret = 0U;
+	struct host_pdev *h_pdev;
+
+	for (i = 0U; i < gbl_host_pdev_count; i++) {
+		h_pdev = &gbl_host_pdevs[i];
+
+		if (!is_host_pdev_independently_attested(h_pdev)) {
+			continue;
+		}
+
+		rc = tsm_connect_device(h_pdev);
+		if (rc != 0) {
+			ERROR("tsm_connect_device: 0x%x failed\n",
+			      h_pdev->dev->bdf);
+			rc = -1;
+			break;
+		}
+
+		count_ret++;
+	}
+
+	INFO("%u devices connected to TSM\n", count_ret);
+	*count = count_ret;
+
+	return rc;
+}
+
+/* Iterate through all connected host_pdevs and disconnect from TSM */
+int tsm_disconnect_devices(void)
+{
+	int rc;
+	unsigned int i;
+	struct host_pdev *h_pdev;
+	bool return_error = false;
+
+	for (i = 0U; i < gbl_host_pdev_count; i++) {
+		h_pdev = &gbl_host_pdevs[i];
+
+		if (h_pdev->is_connected_to_tsm) {
+			rc = tsm_disconnect_device(h_pdev);
+			if (rc != 0) {
+				/* Set error, continue with other devices */
+				return_error = true;
+			}
+		}
+	}
+
+	if (return_error) {
+		return -1;
+	}
+
+	return 0;
+}
+
+struct host_pdev *get_host_pdev_by_type(uint8_t type)
+{
+	unsigned int i;
+
+	if (type != DEV_TYPE_INDEPENDENTLY_ATTESTED) {
+		return NULL;
+	}
+
+	/* return the first host_pdev of 'type' */
+	for (i = 0U; i < gbl_host_pdev_count; i++) {
+		if (is_host_pdev_independently_attested(&gbl_host_pdevs[i])) {
+			return &gbl_host_pdevs[i];
+		}
+	}
+
+	return NULL;
+}
+
+
+/*
+ * Find all PCIe off-chip devices that confirms to TEE-IO standards. Devices
+ * that support DOE, IDE, TDISP with RootPort that support RME DA are initialized
+ * in gbl_host_pdevs[]
  */
 void host_pdevs_init(void)
 {
 	static bool gbl_host_pdevs_init_done;
 	pcie_device_bdf_table_t *bdf_table;
 	pcie_dev_t *dev;
-	uint32_t i;
-	uint32_t cnt = 0;
+	unsigned int i;
+	unsigned int cnt = 0U;
 
 	if (gbl_host_pdevs_init_done) {
+		/*
+		 * Check if the state of host_pdev is cleared and de-inited
+		 * properly by the last testcase.
+		 */
+		if (!is_host_pdevs_state_clean()) {
+			ERROR("gbl_host_pdevs state not clean\n");
+			assert(false);
+		}
+
 		return;
 	}
 
@@ -992,7 +1252,7 @@ void host_pdevs_init(void)
 		goto out_init;
 	}
 
-	for (i = 0; i < bdf_table->num_entries; i++) {
+	for (i = 0U; i < bdf_table->num_entries; i++) {
 		dev = &bdf_table->device[i];
 
 		if ((dev->dp_type != EP) && (dev->dp_type != RCiEP)) {
