@@ -1459,6 +1459,8 @@ u_register_t host_rmi_pdev_communicate(u_register_t pdev_ptr,
 u_register_t host_rmi_pdev_set_pubkey(u_register_t pdev_ptr,
 				      u_register_t pubkey_params_ptr);
 u_register_t host_rmi_pdev_stop(u_register_t pdev_ptr);
+u_register_t host_rmi_pdev_notify(u_register_t pdev_ptr, u_register_t event);
+u_register_t host_rmi_pdev_ide_reset(u_register_t pdev_ptr);
 u_register_t host_rmi_pdev_destroy(u_register_t pdev_ptr);
 
 u_register_t host_rmi_dev_mem_map(u_register_t rd, u_register_t map_addr,
