@@ -1998,6 +1998,18 @@ u_register_t host_rmi_pdev_stop(u_register_t pdev_ptr)
 				2U).ret0;
 }
 
+u_register_t host_rmi_pdev_notify(u_register_t pdev_ptr, u_register_t event)
+{
+	return host_rmi_handler(&(smc_args) {SMC_RMI_PDEV_NOTIFY, pdev_ptr,
+					     event}, 3U).ret0;
+}
+
+u_register_t host_rmi_pdev_ide_reset(u_register_t pdev_ptr)
+{
+	return host_rmi_handler(&(smc_args) {SMC_RMI_PDEV_IDE_RESET, pdev_ptr},
+				2U).ret0;
+}
+
 u_register_t host_rmi_pdev_destroy(u_register_t pdev_ptr)
 {
 	return host_rmi_handler(&(smc_args) {SMC_RMI_PDEV_DESTROY, pdev_ptr},
