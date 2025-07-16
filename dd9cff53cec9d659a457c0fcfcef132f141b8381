@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "951e5c19_b62822c4",
+        "filename": "include/common/test_helpers.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2025-07-16T23:05:11Z",
+      "side": 1,
+      "message": "I am not a big fan of using random numbers for tests as randomness removes the deterministic behavior of the test. Maybe trying more fixed values is a good idea (e.g.: default MECID (0), max MECID (retrieved in rmm_feat_reg1), and any number in between). Let me know what you think.",
+      "parentUuid": "824fc040_4ad37dd4",
+      "revId": "dd9cff53cec9d659a457c0fcfcef132f141b8381",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f9de140b_a0bd5631",
         "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
         "patchSetId": 7
@@ -31,6 +49,24 @@
       "writtenOn": "2025-05-15T08:59:44Z",
       "side": 1,
       "message": "If DEFAULT_MECID is always 0ULL, in that case: \n(realm_ptr-\u003ermm_feat_reg1 !\u003d DEFAULT_MECID)\n?",
+      "revId": "dd9cff53cec9d659a457c0fcfcef132f141b8381",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "164a4bb8_6428a149",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2025-07-16T23:05:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9de140b_a0bd5631",
       "revId": "dd9cff53cec9d659a457c0fcfcef132f141b8381",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -48,6 +84,24 @@
       "writtenOn": "2025-05-15T08:59:44Z",
       "side": 1,
       "message": "mecid is unsigned short, but realm_ptr-\u003ermm_feat_reg1 is unsigned long.\nAlso the values passed are:\n#define TEST_MECID1\tULL(1)\n#define TEST_MECID2\tULL(2)\n\nShould not false be returned instead of assertion \u0026 error reported?",
+      "revId": "dd9cff53cec9d659a457c0fcfcef132f141b8381",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7eed88b7_26d7af7f",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_realm_helper.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000750
+      },
+      "writtenOn": "2025-07-16T23:05:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a613f8d8_94cae307",
       "revId": "dd9cff53cec9d659a457c0fcfcef132f141b8381",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
