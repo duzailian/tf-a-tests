@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af3177c0_26383fe4",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-18T15:53:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "92c977e6_20dd3c9e",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b5922bd5_c05df321",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-06-27T19:43:56Z",
       "side": 1,
       "message": "gicv3_detected !\u003d 0",
+      "range": {
+        "startLine": 26,
+        "startChar": 5,
+        "endLine": 26,
+        "endChar": 19
+      },
+      "revId": "ee7bc29fe7073709b628e92384aa00ea89b0ea73",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14a46559_7cecbaaa",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-18T15:53:14Z",
+      "side": 1,
+      "message": "I\u0027d like to keep this file consistent, I touch it quite a bit anyway. The function is identical and I don\u0027t think we run MISRA on tftf?",
+      "parentUuid": "b5922bd5_c05df321",
       "range": {
         "startLine": 26,
         "startChar": 5,
