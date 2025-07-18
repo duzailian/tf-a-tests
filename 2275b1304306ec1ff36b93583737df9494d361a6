@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4597f390_fdf11e60",
+        "filename": "lib/power_management/suspend/aarch64/asm_tftf_suspend.S",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000340
+      },
+      "writtenOn": "2025-07-18T19:04:54Z",
+      "side": 1,
+      "message": "Since the ISB is gone shouldn\u0027t this comment be removed?",
+      "range": {
+        "startLine": 136,
+        "startChar": 1,
+        "endLine": 136,
+        "endChar": 57
+      },
+      "revId": "2275b1304306ec1ff36b93583737df9494d361a6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
