@@ -16,6 +16,24 @@
       "message": "Was it done in code only that SMCR will be saved after HCR but description of it anywhere :)",
       "revId": "aa22f41c438313fe23d42656c1dff8ca56d77524",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fbbc40ed_3d7e7cc3",
+        "filename": "lib/power_management/suspend/suspend_private.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-22T12:03:02Z",
+      "side": 1,
+      "message": "sorry, I don\u0027t understand the question. I\u0027ve just split the load and now this definition is required, I don\u0027t think anything changes",
+      "parentUuid": "73913937_f1be37ae",
+      "revId": "aa22f41c438313fe23d42656c1dff8ca56d77524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
