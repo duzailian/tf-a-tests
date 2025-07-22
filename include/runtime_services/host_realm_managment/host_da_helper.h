@@ -12,6 +12,8 @@
 
 #define DEV_TYPE_INDEPENDENTLY_ATTESTED		(0)
 
+#define PDEV_STATE_TRANSITION_MAX		(10)
+
 /*
  * Init DA specific globals
  * Skip DA test if any of the below check is true
@@ -124,6 +126,15 @@ int tsm_disconnect_devices(void);
 
 void host_pdevs_init(void);
 struct host_pdev *get_host_pdev_by_type(uint8_t type);
+
+/*
+ * Transition PDEV to sequence of states mentioned in 'pdev_states'. During
+ * state transition if any error is detected, this api will try to transition
+ * the PDEV to STOPPED state and cleanup the resources held by PDEV.
+ */
+int host_pdev_state_transition(struct host_pdev *h_pdev,
+			       unsigned char pdev_states[],
+			       size_t pdev_states_max);
 
 int host_create_realm_with_feat_da(struct realm *realm);
 int host_assign_vdev_to_realm(struct realm *realm, struct host_vdev *h_vdev,
