@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73913937_f1be37ae",
+        "filename": "lib/power_management/suspend/suspend_private.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2025-07-22T11:07:55Z",
+      "side": 1,
+      "message": "Was it done in code only that SMCR will be saved after HCR but description of it anywhere :)",
+      "revId": "aa22f41c438313fe23d42656c1dff8ca56d77524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
