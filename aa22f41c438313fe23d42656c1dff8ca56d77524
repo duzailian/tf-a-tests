@@ -34,6 +34,24 @@
       "parentUuid": "73913937_f1be37ae",
       "revId": "aa22f41c438313fe23d42656c1dff8ca56d77524",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27275fa6_20401e2e",
+        "filename": "lib/power_management/suspend/suspend_private.h",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-23T08:27:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fbbc40ed_3d7e7cc3",
+      "revId": "aa22f41c438313fe23d42656c1dff8ca56d77524",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
