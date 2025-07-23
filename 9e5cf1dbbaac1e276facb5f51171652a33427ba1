@@ -63,6 +63,30 @@
       },
       "revId": "9e5cf1dbbaac1e276facb5f51171652a33427ba1",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f12e08a_db0b9220",
+        "filename": "tftf/tests/runtime_services/arm_arch_svc/smccc_arch_soc_id.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-07-23T21:51:17Z",
+      "side": 1,
+      "message": "Ahh ok, so IIUC for aarch64 `get_soc_id_smc64_param` and `get_soc_id_param` would get us same results right?",
+      "parentUuid": "1eaad55c_1d4ba42c",
+      "range": {
+        "startLine": 146,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 3
+      },
+      "revId": "9e5cf1dbbaac1e276facb5f51171652a33427ba1",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
