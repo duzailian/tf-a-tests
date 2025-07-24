@@ -925,19 +925,15 @@ struct rmi_rec_exit {
 			unsigned long ripas_top;	/* 0x508 */
 			/* RIPAS value of pending RIPAS change */
 			unsigned char ripas_value;	/* 0x510 */
-			/*
-			 * Base PA of device memory region, if RIPAS change is
-			 * pending due to execution of
-			 * RSI_RDEV_VALIDATE_MAPPING
-			 */
-			unsigned long ripas_dev_pa; /* 0x518 */
+		   }, 0x500, 0x520);
+	SET_MEMBER_RMI(struct {
 			/* Base addr of target region for pending S2AP change */
 			unsigned long s2ap_base; /* 0x520 */
 			/* Top addr of target region for pending S2AP change */
 			unsigned long s2ap_top; /* 0x528 */
 			/* Virtual device ID */
 			unsigned long vdev_id; /* 0x530 */
-		   }, 0x500, 0x600);
+		   }, 0x520, 0x600);
 
 	/* Host call immediate value */
 	SET_MEMBER_RMI(unsigned int imm, 0x600, 0x608);
