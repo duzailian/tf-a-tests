@@ -127,3 +127,97 @@ destroy_realm1:
 
 	return TEST_RESULT_SUCCESS;
 }
+
+/*
+ * @Test_Aim@ Test minimum MECID assignment to Realms
+ * Test whether a realm accepts the minimum MECID
+ */
+test_result_t host_realm_test_min_mecid(void)
+{
+	bool ret1 = false, fail = false;
+	u_register_t rec_flag[] = {RMI_RUNNABLE};
+	struct realm realm1;
+	u_register_t feature_flag0 = 0UL;
+	unsigned long feat_reg1;
+	long sl = RTT_MIN_LEVEL;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!is_feat_mec_supported()) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	/* Only test when RMM v1.1 is supported */
+	if ((host_rmi_features(1UL, &feat_reg1) != 0UL) || (feat_reg1 == 0UL)) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	if (is_feat_52b_on_4k_2_supported()) {
+		feature_flag0 = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
+
+	if (!host_create_activate_realm_payload(&realm1, (u_register_t)REALM_IMAGE_BASE,
+				feature_flag0, 0U, sl, rec_flag, 1U, 0U, DEFAULT_MECID)) {
+		fail = true;
+		goto return_error;
+	}
+
+	ret1 = host_destroy_realm(&realm1);
+return_error:
+	if (fail || ret1) {
+		ERROR("%s(): fail=%d destroy1=%d\n",
+				__func__, fail, ret1);
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
+/*
+ * @Test_Aim@ Test maximum MECID assignment to Realms
+ * Test whether a realm accepts the maximum MECID
+ */
+test_result_t host_realm_test_max_mecid(void)
+{
+	bool ret1 = false, fail = false;
+	u_register_t rec_flag[] = {RMI_RUNNABLE};
+	struct realm realm1;
+	u_register_t feature_flag0 = 0UL;
+	unsigned long feat_reg1;
+	long sl = RTT_MIN_LEVEL;
+	unsigned short mecid;
+
+	SKIP_TEST_IF_RME_NOT_SUPPORTED_OR_RMM_IS_TRP();
+
+	if (!is_feat_mec_supported()) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	/* Only test when RMM v1.1 is supported */
+	if ((host_rmi_features(1UL, &feat_reg1) != 0UL) || (feat_reg1 == 0UL)) {
+		return TEST_RESULT_SKIPPED;
+	}
+
+	if (is_feat_52b_on_4k_2_supported()) {
+		feature_flag0 = RMI_FEATURE_REGISTER_0_LPA2;
+		sl = RTT_MIN_LEVEL_LPA2;
+	}
+
+	mecid = (unsigned short)feat_reg1;
+	if (!host_create_activate_realm_payload(&realm1, (u_register_t)REALM_IMAGE_BASE,
+				feature_flag0, 0U, sl, rec_flag, 1U, 0U, mecid)) {
+		fail = true;
+		goto return_error;
+	}
+
+	ret1 = host_destroy_realm(&realm1);
+return_error:
+	if (fail || ret1) {
+		ERROR("%s(): fail=%d destroy1=%d\n",
+				__func__, fail, ret1);
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
