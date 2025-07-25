@@ -639,6 +639,9 @@ void realm_payload_main(void)
 		case REALM_TEST_FEAT_TCR2:
 			test_succeed = test_realm_feat_tcr2();
 			break;
+		case REALM_MEC:
+			test_succeed = test_realm_mec();
+			break;
 		default:
 			realm_printf("%s() invalid cmd %u\n", __func__, cmd);
 			break;

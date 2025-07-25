@@ -34,6 +34,7 @@ REALM_SOURCES:=								\
 	realm_exception_report.c					\
 	realm_helpers.c							\
 	realm_interrupt.c						\
+	realm_mec.c							\
 	realm_mpam.c							\
 	realm_multiple_rec.c						\
 	realm_pauth.c							\
