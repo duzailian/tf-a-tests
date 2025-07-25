@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94497d68_8dfb0e0b",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 3838,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-07-25T15:26:35Z",
+      "side": 1,
+      "message": "could also execute the realm to do something trivial. This will ensure that the MEC is setup correctly.\n\nOther checks that can be done either in this test :\n\n1. Ensure 0 is a shared MECID by default\n\nThis can also be coupled with shared/pvt MECID tests if easier or new tests for them.",
+      "revId": "635bd74b54d8044c5a86d5b54790c89e28fa8865",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a234c62d_c9da60db",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_payload_tests.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 3887,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-07-25T15:26:35Z",
+      "side": 1,
+      "message": "execute the realm to ensure that the MEC programming is correct.",
+      "revId": "635bd74b54d8044c5a86d5b54790c89e28fa8865",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
