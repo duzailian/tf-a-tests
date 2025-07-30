@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9a64caa_eed11d27",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_da_helper.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 1220,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2025-07-30T15:43:04Z",
+      "side": 1,
+      "message": "Please add full stops(.), fix typos \"initlized\", \"supports\" -\u003e \"support\" and double usage of \"that supports\":\n\nFind all PCIe off-chip devices that confirm to TEE-IO standards.\nDevices that support DOE, IDE, TDISP with RootPort supporting\nRME DA are initialized in host_pdevs[].\n\n?",
+      "revId": "95b57c1c83c0c6589bce2d6408f441a7768bfe46",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
