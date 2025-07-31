@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a06097a9_ee67ac6d",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_da_helper.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1181,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2025-07-31T11:37:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb36c196_b382f3e1",
+      "revId": "ac475868f7e107c14234de24e9c55df4d57280d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c09da8f_1e0dd9ad",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-07-30T16:04:48Z",
       "side": 1,
       "message": "remove \u0027,\u0027",
+      "revId": "ac475868f7e107c14234de24e9c55df4d57280d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43afbca8_a05813b4",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_da_helper.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1185,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2025-07-31T11:37:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c09da8f_1e0dd9ad",
       "revId": "ac475868f7e107c14234de24e9c55df4d57280d8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
@@ -52,6 +88,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b129e079_c8365c60",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_da_helper.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 1245,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2025-07-31T11:37:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "470af07e_bd1f8ade",
+      "revId": "ac475868f7e107c14234de24e9c55df4d57280d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9a209ca4_f4e818ea",
@@ -69,6 +123,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fb6319a_d4f94e42",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_da_flow.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2025-07-31T11:37:40Z",
+      "side": 1,
+      "message": "Done\nFixed it in older patch https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/40562",
+      "parentUuid": "9a209ca4_f4e818ea",
+      "revId": "ac475868f7e107c14234de24e9c55df4d57280d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c98784df_bb63b05f",
@@ -82,6 +154,24 @@
       "writtenOn": "2025-07-30T16:00:20Z",
       "side": 1,
       "message": "through",
+      "revId": "ac475868f7e107c14234de24e9c55df4d57280d8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "424c799c_af3741d5",
+        "filename": "tftf/tests/runtime_services/host_realm_managment/host_rmi_da_flow.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000390
+      },
+      "writtenOn": "2025-07-31T11:37:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c98784df_bb63b05f",
       "revId": "ac475868f7e107c14234de24e9c55df4d57280d8",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
