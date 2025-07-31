@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a37c112_f7b6b3f4",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:57:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a95e7440_7c961912",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "7bd4deb5ade52f059873b54d37ccc47531fb6a04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9f0121fa_5153b204",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-06-27T20:03:18Z",
       "side": 1,
       "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "7bd4deb5ade52f059873b54d37ccc47531fb6a04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44a331e4_1853358a",
+        "filename": "drivers/arm/gic/gic_v2.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:57:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f0121fa_5153b204",
       "range": {
         "startLine": 2,
         "startChar": 17,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a347658_d2d50f81",
+        "filename": "drivers/arm/gic/gic_v2v3_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:57:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "adef04e7_4005c909",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "7bd4deb5ade52f059873b54d37ccc47531fb6a04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7fcd7647_14e860a1",
@@ -83,6 +155,30 @@
       "writtenOn": "2025-06-27T20:03:18Z",
       "side": 1,
       "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "7bd4deb5ade52f059873b54d37ccc47531fb6a04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ea51236_55a2a278",
+        "filename": "drivers/arm/gic/gic_v3.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:57:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7fcd7647_14e860a1",
       "range": {
         "startLine": 2,
         "startChar": 22,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d18192e_91a69f22",
+        "filename": "plat/arm/common/arm_common.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:57:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54186faf_892b5862",
+      "range": {
+        "startLine": 2,
+        "startChar": 16,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "7bd4deb5ade52f059873b54d37ccc47531fb6a04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "35e2ae52_4e0a1151",
@@ -129,6 +249,30 @@
       "writtenOn": "2025-06-27T20:03:18Z",
       "side": 1,
       "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "7bd4deb5ade52f059873b54d37ccc47531fb6a04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5abbbe2_4a43313e",
+        "filename": "plat/arm/fvp/platform.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:57:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35e2ae52_4e0a1151",
       "range": {
         "startLine": 2,
         "startChar": 21,
@@ -162,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ef7c3e0_43e5a725",
+        "filename": "plat/arm/n1sdp/platform.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:57:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a8a25b6b_d7c4aa6b",
+      "range": {
+        "startLine": 2,
+        "startChar": 16,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "7bd4deb5ade52f059873b54d37ccc47531fb6a04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1db333f5_2d8d9170",
@@ -175,6 +343,30 @@
       "writtenOn": "2025-06-27T20:03:18Z",
       "side": 1,
       "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "7bd4deb5ade52f059873b54d37ccc47531fb6a04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d57a8656_b0df71d2",
+        "filename": "plat/arm/neoverse_rd/common/nrd_common.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:57:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1db333f5_2d8d9170",
       "range": {
         "startLine": 2,
         "startChar": 21,
@@ -208,6 +400,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "89b52b42_def46d43",
+        "filename": "plat/arm/tc/platform.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:57:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40dc5ec0_1198c330",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "7bd4deb5ade52f059873b54d37ccc47531fb6a04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "27f1892c_02c810af",
@@ -225,6 +441,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "79488b38_875055b9",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_preempted_std_smc.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:57:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27f1892c_02c810af",
+      "revId": "7bd4deb5ade52f059873b54d37ccc47531fb6a04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "102f4356_a5d4e926",
@@ -238,6 +472,30 @@
       "writtenOn": "2025-06-27T20:03:18Z",
       "side": 1,
       "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "7bd4deb5ade52f059873b54d37ccc47531fb6a04",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7805524_142b1738",
+        "filename": "tftf/tests/runtime_services/trusted_os/tsp/test_irq_spurious_gicv2.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:57:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "102f4356_a5d4e926",
       "range": {
         "startLine": 2,
         "startChar": 17,
