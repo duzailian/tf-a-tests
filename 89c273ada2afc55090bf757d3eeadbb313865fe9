@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "73214e5f_91bcd70c",
+        "filename": "drivers/arm/gic/gic_v2v3_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7baf77e3_757e3fd0",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "89c273ada2afc55090bf757d3eeadbb313865fe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9f9ef941_b605446a",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-06-27T19:57:25Z",
       "side": 1,
       "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "89c273ada2afc55090bf757d3eeadbb313865fe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "675c0112_441657af",
+        "filename": "include/drivers/arm/gic_v2v3_common.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f9ef941_b605446a",
       "range": {
         "startLine": 2,
         "startChar": 22,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "92a50150_d4e25396",
+        "filename": "include/lib/aarch32/arch_features.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0949684e_fab8c3d2",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "89c273ada2afc55090bf757d3eeadbb313865fe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aa9383a0_bf609790",
@@ -83,6 +155,30 @@
       "writtenOn": "2025-06-27T19:57:25Z",
       "side": 1,
       "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "89c273ada2afc55090bf757d3eeadbb313865fe9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5275b6f_715ac29d",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa9383a0_bf609790",
       "range": {
         "startLine": 2,
         "startChar": 22,
