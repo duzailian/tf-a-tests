@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0df34249_986d9fb4",
+        "filename": "drivers/arm/gic/arm_gic.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fee1b709_1f5cdb49",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "0d2cbe59e996503f85c6970501276d03a43fcd44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b0b15f41_b56892b7",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-06-27T18:59:38Z",
       "side": 1,
       "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0d2cbe59e996503f85c6970501276d03a43fcd44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77173961_8f9b027c",
+        "filename": "drivers/arm/gic/gic_v2.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0b15f41_b56892b7",
       "range": {
         "startLine": 2,
         "startChar": 17,
@@ -70,6 +118,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "738b1567_ad4c0c6a",
+        "filename": "drivers/arm/gic/gic_v2v3_common.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "69277fd0_8d9ccac4",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "0d2cbe59e996503f85c6970501276d03a43fcd44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "16ea38d6_21f26534",
@@ -83,6 +155,30 @@
       "writtenOn": "2025-06-27T18:59:38Z",
       "side": 1,
       "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "0d2cbe59e996503f85c6970501276d03a43fcd44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05de30a7_e0f3ffdb",
+        "filename": "drivers/arm/gic/gic_v3.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "16ea38d6_21f26534",
       "range": {
         "startLine": 2,
         "startChar": 22,
@@ -116,6 +212,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "248c2cd1_0a317205",
+        "filename": "include/drivers/arm/arm_gic.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4abfbfae_d5fab150",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0d2cbe59e996503f85c6970501276d03a43fcd44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b4adc692_cf0f81ae",
@@ -129,6 +249,30 @@
       "writtenOn": "2025-06-27T18:59:38Z",
       "side": 1,
       "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "0d2cbe59e996503f85c6970501276d03a43fcd44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5809da7_82a30d64",
+        "filename": "include/drivers/arm/gic_v2v3_common.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b4adc692_cf0f81ae",
       "range": {
         "startLine": 2,
         "startChar": 22,
@@ -162,6 +306,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "25edbcbf_b4ba4d56",
+        "filename": "include/lib/irq.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f591b39e_04b6d1b5",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0d2cbe59e996503f85c6970501276d03a43fcd44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1fdaf4eb_b7fec745",
@@ -175,6 +343,30 @@
       "writtenOn": "2025-06-27T18:59:38Z",
       "side": 1,
       "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0d2cbe59e996503f85c6970501276d03a43fcd44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7638c1d3_2fedc8cf",
+        "filename": "lib/exceptions/irq.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1fdaf4eb_b7fec745",
       "range": {
         "startLine": 2,
         "startChar": 17,
@@ -208,6 +400,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "94fe0356_13c77067",
+        "filename": "tftf/framework/timer/timer_framework.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63bac072_a3b5dccc",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "0d2cbe59e996503f85c6970501276d03a43fcd44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e869928e_7a5984d4",
@@ -231,6 +447,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a457ad30_491851ef",
+        "filename": "tftf/tests/framework_validation_tests/test_timer_framework.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e869928e_7a5984d4",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0d2cbe59e996503f85c6970501276d03a43fcd44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bedc1693_fb339a75",
@@ -244,6 +484,30 @@
       "writtenOn": "2025-06-27T18:59:38Z",
       "side": 1,
       "message": "2025?",
+      "range": {
+        "startLine": 2,
+        "startChar": 17,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "0d2cbe59e996503f85c6970501276d03a43fcd44",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ee45f0f_39923497",
+        "filename": "tftf/tests/runtime_services/standard_service/sdei/system_tests/test_sdei_bind_failure.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-07-31T08:58:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bedc1693_fb339a75",
       "range": {
         "startLine": 2,
         "startChar": 17,
