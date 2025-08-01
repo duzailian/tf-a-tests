@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1c6a72d_fff0a040",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000105
+      },
+      "writtenOn": "2025-08-01T14:24:35Z",
+      "side": 1,
+      "message": "Static checks rerun:\nhttps://ci.trustedfirmware.org/job/tf-a-static-checks/890/",
+      "revId": "f7b38927ea81c01a4064f06bb1a4206e793dbafc",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
