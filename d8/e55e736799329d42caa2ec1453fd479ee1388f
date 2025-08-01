@@ -1,0 +1,9 @@
+Maintainer-Review+1: Mark Dykes <mark.dykes@arm.com>
+Code-Owner-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Verified+1: Manish Pandey <manish.pandey2@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Fri, 01 Aug 2025 17:13:00 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/40401
+Comments-Total: 6
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
