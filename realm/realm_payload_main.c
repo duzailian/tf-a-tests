@@ -131,6 +131,9 @@ static bool test_realm_enter_plane_n_reg_rw(void)
 				return false;
 			}
 
+			/* Restore PSTATE with the value on run->exit */
+			run.enter.pstate = run.exit.pstate;
+
 			/* enter plane n */
 			ret = realm_plane_enter(plane_index, perm_index, base, flags, &run);
 			if (ret) {
