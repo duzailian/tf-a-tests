@@ -48,6 +48,11 @@ static void plane0_recn_handler(u_register_t cxt_id)
 	/* enter plane */
 	u_register_t flags = 0U;
 
+	/* Setup the initial PSTATE for the plane */
+	run[rec].enter.pstate = ((SPSR_M3_0_EL1_SP_EL1 << SPSR_M3_0_SHIFT) |
+				 (SPSR_M_AARCH64 << SPSR_M_SHIFT) |
+				 (0xf << SPSR_DAIF_SHIFT));
+
 	/* Use Base adr, plane_index, perm_index programmed by P0 rec0 */
 	run[rec].enter.pc = base;
 	realm_printf("Entering plane %ld, ep=0x%lx rec=0x%lx\n", plane_index, base, rec);
@@ -146,6 +151,10 @@ bool test_realm_multiple_plane_multiple_rec_multiple_cpu_cmd(void)
 		plane_common_init(plane_index, perm_index, base, &run[0U]);
 
 		ret1 = realm_plane_enter(plane_index, perm_index, base, flags, &run[0U]);
+
+		/* Restore PSTATE on run->enter from run->exit */
+		run[0].enter.pstate = run[0].exit.pstate;
+
 		while (ret1 && run->exit.gprs[0] == SMC_PSCI_CPU_ON_AARCH64) {
 			realm_printf("Plane N requested CPU on Rec=0x%lx\n", run[0].exit.gprs[1]);
 
@@ -156,6 +165,10 @@ bool test_realm_multiple_plane_multiple_rec_multiple_cpu_cmd(void)
 
 			/* re-enter plane N 1 to complete cpu on */
 			ret1 = realm_plane_enter(plane_index, perm_index, base, flags, &run[0U]);
+
+			/* Restore PSTATE on run->enter from run->exit */
+			run[0].enter.pstate = run[0].exit.pstate;
+
 			if (!ret1) {
 				realm_printf("PlaneN CPU on complete failed\n");
 				rsi_exit_to_host(HOST_CALL_EXIT_FAILED_CMD);
