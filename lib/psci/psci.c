@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Arm Limited. All rights reserved.
+ * Copyright (c) 2018-2025, Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: BSD-3-Clause
  */
@@ -344,7 +344,9 @@ unsigned int tftf_get_psci_version(void)
 
 int tftf_is_valid_psci_version(unsigned int version)
 {
-	if (version != PSCI_VERSION(1, 1) &&
+	if (version != PSCI_VERSION(1, 3) &&
+	    version != PSCI_VERSION(1, 2) &&
+	    version != PSCI_VERSION(1, 1) &&
 	    version != PSCI_VERSION(1, 0) &&
 	    version != PSCI_VERSION(0, 2) &&
 	    version != PSCI_VERSION(0, 1)) {
