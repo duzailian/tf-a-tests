@@ -53,10 +53,10 @@ static int32_t is_soc_name_valid(char *soc_name)
 
 	for (i = 0; i < SMCCC_SOC_NAME_LEN; i++) {
 		char ch = soc_name[i];
+
 		if (ch == '\0') {
 			return 0;
-		}
-		else if(ch <= 0x20 && ch > 0x7F) {
+		} else if (ch <= 0x20 && ch > 0x7F) {
 			tftf_testcase_printf("Non-ASCII character detected\n");
 			return -1;
 		}
@@ -99,7 +99,7 @@ test_result_t test_smccc_arch_soc_id(void)
 		ret = get_soc_id_param(SMC_GET_SOC_REVISION);
 
 		if ((int)ret.ret0 == SMC_ARCH_CALL_INVAL_PARAM) {
-			tftf_testcase_printf("Invalid param passed to	\
+			tftf_testcase_printf("Invalid param passed to
 					SMCCC_ARCH_SOC_ID\n");
 			return TEST_RESULT_FAIL;
 		} else if ((int)ret.ret0 == SMC_ARCH_CALL_NOT_SUPPORTED) {
@@ -112,7 +112,7 @@ test_result_t test_smccc_arch_soc_id(void)
 		ret = get_soc_id_param(SMC_GET_SOC_VERSION);
 
 		if ((int)ret.ret0 == SMC_ARCH_CALL_INVAL_PARAM) {
-			tftf_testcase_printf("Invalid param passed to	\
+			tftf_testcase_printf("Invalid param passed to
 					SMCCC_ARCH_SOC_ID\n");
 			return TEST_RESULT_FAIL;
 		} else if ((int)ret.ret0 == SMC_ARCH_CALL_NOT_SUPPORTED) {
@@ -127,7 +127,7 @@ test_result_t test_smccc_arch_soc_id(void)
 		smc_ret_values_ext ext_ret = get_soc_id_smc64_param(SMC_GET_SOC_NAME);
 
 		if ((int)ext_ret.ret0 == SMC_ARCH_CALL_INVAL_PARAM) {
-			tftf_testcase_printf("Invalid param passed to	\
+			tftf_testcase_printf("Invalid param passed to
 					SMCCC_ARCH_SOC_ID\n");
 			return TEST_RESULT_FAIL;
 		} else if ((int)ext_ret.ret0 == SMC_ARCH_CALL_NOT_SUPPORTED) {
@@ -137,11 +137,10 @@ test_result_t test_smccc_arch_soc_id(void)
 
 		memcpy(&soc_name, &ext_ret.ret1, SMCCC_SOC_NAME_LEN);
 
-		if (is_soc_name_valid(soc_name) != 0) {
+		if (is_soc_name_valid(soc_name) != 0)
 			return TEST_RESULT_FAIL;
-		}
 
-		tftf_testcase_printf("SOC Name = %s\n",soc_name);
+		tftf_testcase_printf("SOC Name = %s\n", soc_name);
 #endif /* __aarch64__*/
 
 		/*
@@ -151,7 +150,7 @@ test_result_t test_smccc_arch_soc_id(void)
 		ret = get_soc_id_param(SMC_GET_SOC_NAME);
 
 		if ((int)ret.ret0 == SMC_ARCH_CALL_SUCCESS) {
-			tftf_testcase_printf("SoC Name should only be present \
+			tftf_testcase_printf("SoC Name should only be present
 					for SMC64 invocations\n");
 			return TEST_RESULT_FAIL;
 		}
