@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79556ea3_56532438",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-08-13T10:53:57Z",
+      "side": 1,
+      "message": "minor comments. Fixup static errors.",
+      "revId": "513c86f6215cf5c728ed5d7d91607f0f29574d2b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6364b88_b174a0fd",
+        "filename": "include/runtime_services/host_realm_managment/host_shared_data.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-08-13T10:53:57Z",
+      "side": 1,
+      "message": "can use the REALM_SLEEP_CMD , no need to define a new cmd",
+      "range": {
+        "startLine": 90,
+        "startChar": 1,
+        "endLine": 90,
+        "endChar": 10
+      },
+      "revId": "513c86f6215cf5c728ed5d7d91607f0f29574d2b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b04eb81_95ea2405",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_mec_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-08-13T10:53:57Z",
+      "side": 1,
+      "message": "correct the error log",
+      "range": {
+        "startLine": 55,
+        "startChar": 9,
+        "endLine": 55,
+        "endChar": 29
+      },
+      "revId": "513c86f6215cf5c728ed5d7d91607f0f29574d2b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7faaa516_a5264371",
+        "filename": "tftf/tests/runtime_services/realm_payload/host_realm_mec_tests.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000056
+      },
+      "writtenOn": "2025-08-13T10:53:57Z",
+      "side": 1,
+      "message": "correct the error log",
+      "range": {
+        "startLine": 68,
+        "startChar": 9,
+        "endLine": 68,
+        "endChar": 30
+      },
+      "revId": "513c86f6215cf5c728ed5d7d91607f0f29574d2b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
