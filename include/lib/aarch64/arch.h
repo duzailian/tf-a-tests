@@ -1431,6 +1431,13 @@
 #define MPAM2_EL2_TRAPMPAM0EL1		(ULL(1) << 49)
 #define MPAM2_EL2_TRAPMPAM1EL1		(ULL(1) << 48)
 
+#define MPAMBW2_EL2			S3_4_C10_C5_4
+#define MPAMBWCAP_EL2			S3_4_C10_C5_6
+#define MPAMBW1_EL1			S3_0_C10_C5_4
+#define MPAMBWSM_EL1			S3_0_C10_C5_7
+#define MPAMBWIDR_EL1			S3_0_C10_C4_5
+
+#define MPAMIDR_HAS_BW_CTRL		(ULL(1) << 56)
 #define MPAMIDR_HAS_HCR_BIT		(ULL(1) << 17)
 
 /*******************************************************************************
