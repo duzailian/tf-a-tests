@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "213ac279_33aac3c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-08-15T13:33:23Z",
+      "side": 1,
+      "message": "tf-a-main run: https://ci.trustedfirmware.org/job/tf-a-main/159/\n\nonly failure is the static checks which doesn\u0027t check tftf so unrelated.",
+      "revId": "d04d262675509d182c0f869f4b055e6909ff27b5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
