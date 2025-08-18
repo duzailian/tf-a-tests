@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78ccae10_a7e03fee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2025-08-18T20:47:58Z",
+      "side": 1,
+      "message": "File 10 and 11 in the patch stack might need to be considered for more comments for documentation.",
+      "revId": "e68044303fb6fcdb113901e9ef1da7b0ade88bc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f54f889c_06f51950",
+        "filename": "drivers/arm/pl011/aarch64/pl011_console.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2025-08-18T20:47:58Z",
+      "side": 1,
+      "message": "Any reasons x2 is included? Can the function use x2 and change the clobber list?\n\nAlso, can we document the arguments like the other functions in this file?\ne.g.\n\"\n * In : w0 - Character to be printed\n\t *      x1 - Console base address\n\t * Out : w0 - Input character or error code.\n\"",
+      "range": {
+        "startLine": 62,
+        "startChar": 19,
+        "endLine": 62,
+        "endChar": 26
+      },
+      "revId": "e68044303fb6fcdb113901e9ef1da7b0ade88bc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72598225_486ea5e5",
+        "filename": "drivers/arm/pl011/aarch64/pl011_console.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2025-08-18T20:47:58Z",
+      "side": 1,
+      "message": "Same as above, why x2? Also document the argument functionality",
+      "range": {
+        "startLine": 144,
+        "startChar": 22,
+        "endLine": 144,
+        "endChar": 25
+      },
+      "revId": "e68044303fb6fcdb113901e9ef1da7b0ade88bc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a11ad592_e4facae6",
+        "filename": "smc_fuzz/sdei_smc_calls.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000099
+      },
+      "writtenOn": "2025-08-18T20:47:58Z",
+      "side": 1,
+      "message": "Better to have some defines for these numbers",
+      "range": {
+        "startLine": 7,
+        "startChar": 28,
+        "endLine": 7,
+        "endChar": 38
+      },
+      "revId": "e68044303fb6fcdb113901e9ef1da7b0ade88bc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
