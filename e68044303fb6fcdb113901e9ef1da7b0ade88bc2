@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b214240_1c1390e3",
+        "filename": "drivers/arm/pl011/aarch64/pl011_console.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-08-20T18:42:51Z",
+      "side": 1,
+      "message": "The clobber list is accurate.  The console function is called at the end which uses all the listed registers.   I documented the arguments per your suggestion.",
+      "parentUuid": "f54f889c_06f51950",
+      "range": {
+        "startLine": 62,
+        "startChar": 19,
+        "endLine": 62,
+        "endChar": 26
+      },
+      "revId": "e68044303fb6fcdb113901e9ef1da7b0ade88bc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "72598225_486ea5e5",
@@ -54,6 +78,30 @@
       "writtenOn": "2025-08-18T20:47:58Z",
       "side": 1,
       "message": "Same as above, why x2? Also document the argument functionality",
+      "range": {
+        "startLine": 144,
+        "startChar": 22,
+        "endLine": 144,
+        "endChar": 25
+      },
+      "revId": "e68044303fb6fcdb113901e9ef1da7b0ade88bc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94a1960c_a6adbfc6",
+        "filename": "drivers/arm/pl011/aarch64/pl011_console.S",
+        "patchSetId": 4
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-08-20T18:42:51Z",
+      "side": 1,
+      "message": "Same as above.  I documented the arguments...",
+      "parentUuid": "72598225_486ea5e5",
       "range": {
         "startLine": 144,
         "startChar": 22,
@@ -81,6 +129,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2533a48f_f9cb89b3",
+        "filename": "lib/smc/aarch64/smc.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-08-20T18:42:51Z",
+      "side": 1,
+      "message": "This does not call actual SMC\u0027s.  It records the invocations for use by a scripting flow to determine the coverage of arguments.  This would be included only in fuzzing test cases...",
+      "parentUuid": "ab8c924c_ebed4635",
+      "revId": "e68044303fb6fcdb113901e9ef1da7b0ade88bc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a11ad592_e4facae6",
@@ -104,6 +170,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "644d4cf9_f62a3e7f",
+        "filename": "smc_fuzz/sdei_smc_calls.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-08-20T18:42:51Z",
+      "side": 1,
+      "message": "Done.  I had to change the script to accommodate the define directive...",
+      "parentUuid": "a11ad592_e4facae6",
+      "range": {
+        "startLine": 7,
+        "startChar": 28,
+        "endLine": 7,
+        "endChar": 38
+      },
+      "revId": "e68044303fb6fcdb113901e9ef1da7b0ade88bc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "23b73f76_ca5bfe96",
@@ -117,6 +207,24 @@
       "writtenOn": "2025-08-19T07:34:05Z",
       "side": 1,
       "message": "we usually have these be unconditional and use #if everywhere with the assumption that it will be 0 when unset",
+      "revId": "e68044303fb6fcdb113901e9ef1da7b0ade88bc2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "385a84b2_53b1692e",
+        "filename": "tftf/tests/tests-smcfuzzing.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-08-20T18:42:51Z",
+      "side": 1,
+      "message": "TFTF does not support the preprocessor directives in the same way as TF-A... It would be extra work to add the capability to support the same approach which would be better served in another patch.  Something to discuss further...",
+      "parentUuid": "23b73f76_ca5bfe96",
       "revId": "e68044303fb6fcdb113901e9ef1da7b0ade88bc2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
