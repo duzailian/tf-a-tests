@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Copyright (c) 2024, Arm Limited. All rights reserved.
+
+  SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<testsuites>
+  <testsuite name="Console getc" description="Testing the TF-A console_getc function">
+      <testcase name="Console getc" function="test_getc" />
+  </testsuite>
+</testsuites>
