@@ -12,8 +12,9 @@
   <testsuites>
 
     <testsuite name="AMD-Xilinx tests" description="AMD-Xilinx common platform tests" >
-      <testcase name="Read PM API Version" function="test_pmapi_version" />
-      <testcase name="Get Platform Chip ID" function="test_get_chipid" />
+      <testcase name="Read PM API Version" function="test_pm_api_version" />
+      <testcase name="Get Platform Chip ID" function="test_get_chip_id" />
+      <testcase name="Feature Check" function="test_feature_check" />
     </testsuite>
 
   </testsuites>
