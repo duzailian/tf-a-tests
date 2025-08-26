@@ -4,16 +4,14 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-# Path to library sources
-EVENT_LOG_SRC_DIR	:= lib/event_log/
+LIBEVLOG_PATH	?= contrib/libeventlog
 
-# Default log level to dump the event log (LOG_LEVEL_INFO)
-EVENT_LOG_LEVEL		?= 40
+EVENT_LOG_INCLUDES		+=	-I$(LIBEVLOG_PATH)/include \
+							-I$(LIBEVLOG_PATH)/include/private
 
-EVENT_LOG_SOURCES	:=	${EVENT_LOG_SRC_DIR}event_print.c
 
-INCLUDES		+=	-Iinclude/lib/event_log \
-				-Iinclude/drivers/auth
+EVENT_LOG_SOURCES	:=	$(LIBEVLOG_PATH)/src/event_print.c \
+						$(LIBEVLOG_PATH)/src/digest.c
 
 ifdef CRYPTO_SUPPORT
 # Measured Boot hash algorithm.
@@ -40,15 +38,5 @@ endif #MBOOT_EL_HASH_ALG
 $(eval $(call add_define,TFTF_DEFINES,TPM_ALG_ID))
 $(eval $(call add_define,TFTF_DEFINES,EVENT_LOG_LEVEL))
 $(eval $(call add_define,TFTF_DEFINES,TCG_DIGEST_SIZE))
-
-EVENT_LOG_SOURCES	:=	${EVENT_LOG_SRC_DIR}event_log.c
-
-INCLUDES		+=	-Iinclude/lib/event_log \
-				-Iinclude/drivers/auth
-
-ifeq (${TRANSFER_LIST}, 1)
-EVENT_LOG_SOURCES	+= ${EVENT_LOG_SRC_DIR}/event_handoff.c
-INCLUDES		+=	-Iinclude/lib
-endif
 
 endif
