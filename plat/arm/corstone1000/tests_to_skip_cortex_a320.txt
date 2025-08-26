@@ -1,0 +1,28 @@
+Realm payload tests
+Realm payload boot
+Realm payload multi CPU request
+Realm payload Delegate and Undelegate
+Multi CPU Realm payload Delegate and Undelegate
+Testing delegation fails
+Realm testing with SPM tests
+PSCI System Suspend Validation
+PSCI STAT/Stats test cases after system suspend
+IRQ support in TSP
+PSCI SYSTEM SUSPEND stress tests
+Timer framework Validation/Verify the timer interrupt generation
+CPU Hotplug/CPU hotplug
+PSCI CPU Suspend
+PSCI CPU Suspend in OSI mode
+PSCI STAT/for valid composite state CPU suspend
+FF-A Setup and Discovery/FF-A RXTX remap unmapped region success
+FF-A Memory Sharing/Normal World VM retrieve request into SPMC
+Boot requirement tests
+CPU extensions/AMUv1 valid counter values
+CPU extensions/AMUv1 suspend/resume
+CPU extensions/AMUv1 group 1 RAZ
+CPU extensions/Use FGT Registers
+CPU extensions/Use ECV Registers
+CPU extensions/Use trace buffer control Registers
+CPU extensions/Use trace buffer control Registers
+FF-A Setup and Discovery/Test FFA_FEATURES
+FF-A Direct messaging/MTE regs preserved across context switch
