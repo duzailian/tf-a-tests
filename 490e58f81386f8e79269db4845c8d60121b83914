@@ -46,6 +46,30 @@
       },
       "revId": "490e58f81386f8e79269db4845c8d60121b83914",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a107fd2a_97df12c0",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1000803
+      },
+      "writtenOn": "2025-08-27T14:48:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1dbf019a_d115af2c",
+      "range": {
+        "startLine": 263,
+        "startChar": 23,
+        "endLine": 264,
+        "endChar": 59
+      },
+      "revId": "490e58f81386f8e79269db4845c8d60121b83914",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
