@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4d2ef8e_1af73905",
+        "filename": "include/lib/event_log/event_handoff.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-08-28T12:25:58Z",
+      "side": 0,
+      "message": "nit: can we handoff related things in the separate patch?",
+      "revId": "e0b75ac177b9b3e7d703948387f429a665615c23",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
