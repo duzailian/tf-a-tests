@@ -61,7 +61,7 @@ int32_t tftf_psci_cpu_on(u_register_t target_cpu,
 {
 	smc_args args = {
 		SMC_PSCI_CPU_ON,
-		target_cpu,
+		psci_target_cpu_from_mpid(target_cpu),
 		entry_point_address,
 		context_id
 	};
@@ -98,7 +98,7 @@ u_register_t tftf_psci_stat_residency(u_register_t target_cpu,
 {
 	smc_args args = {
 		SMC_PSCI_STAT_RESIDENCY,
-		target_cpu,
+		psci_target_cpu_from_mpid(target_cpu),
 		power_state,
 	};
 	smc_ret_values ret_vals;
@@ -112,7 +112,7 @@ u_register_t tftf_psci_stat_count(u_register_t target_cpu,
 {
 	smc_args args = {
 		SMC_PSCI_STAT_COUNT,
-		target_cpu,
+		psci_target_cpu_from_mpid(target_cpu),
 		power_state,
 	};
 	smc_ret_values ret_vals;
@@ -128,7 +128,7 @@ int32_t tftf_psci_affinity_info(u_register_t target_affinity,
 
 	smc_args args = {
 			   SMC_PSCI_AFFINITY_INFO,
-			   target_affinity,
+			   psci_target_cpu_from_mpid(target_affinity),
 			   lowest_affinity_level
 			  };
 
@@ -140,7 +140,7 @@ int32_t tftf_psci_node_hw_state(u_register_t target_cpu, uint32_t power_level)
 {
 	smc_args args = {
 		SMC_PSCI_CPU_HW_STATE,
-		target_cpu,
+		psci_target_cpu_from_mpid(target_cpu),
 		power_level
 	};
 	smc_ret_values ret;
