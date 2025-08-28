@@ -18,6 +18,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c87b069b_1ce9bb00",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-08-28T14:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "124bb0a4_2da47373",
+      "revId": "691b8f0f9e6574c6e4658f152dd86dceaf65dd6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "adb3365b_b61f0769",
@@ -31,6 +49,30 @@
       "writtenOn": "2025-08-28T12:25:58Z",
       "side": 1,
       "message": "nit: remove extra tabs?",
+      "range": {
+        "startLine": 9,
+        "startChar": 19,
+        "endLine": 9,
+        "endChar": 20
+      },
+      "revId": "691b8f0f9e6574c6e4658f152dd86dceaf65dd6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1697a15c_1e8ff511",
+        "filename": "lib/event_log/event_log.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-08-28T14:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "adb3365b_b61f0769",
       "range": {
         "startLine": 9,
         "startChar": 19,
@@ -64,6 +106,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9926e620_7a5af700",
+        "filename": "lib/event_log/event_log.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-08-28T14:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a935a384_25b65bed",
+      "range": {
+        "startLine": 10,
+        "startChar": 3,
+        "endLine": 10,
+        "endChar": 7
+      },
+      "revId": "691b8f0f9e6574c6e4658f152dd86dceaf65dd6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2b387567_a2cf54fd",
@@ -87,6 +153,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "84c296b8_d2ed6861",
+        "filename": "lib/event_log/event_log.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-08-28T14:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b387567_a2cf54fd",
+      "range": {
+        "startLine": 14,
+        "startChar": 3,
+        "endLine": 14,
+        "endChar": 6
+      },
+      "revId": "691b8f0f9e6574c6e4658f152dd86dceaf65dd6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "63fc3922_8444485d",
@@ -100,6 +190,54 @@
       "writtenOn": "2025-08-28T12:25:58Z",
       "side": 1,
       "message": "As mentioned in other comment, it is better to put this change separately.",
+      "range": {
+        "startLine": 14,
+        "startChar": 3,
+        "endLine": 14,
+        "endChar": 19
+      },
+      "revId": "691b8f0f9e6574c6e4658f152dd86dceaf65dd6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28ab35be_bb5f0411",
+        "filename": "lib/libtl/libtl.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-08-28T14:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63fc3922_8444485d",
+      "range": {
+        "startLine": 14,
+        "startChar": 3,
+        "endLine": 14,
+        "endChar": 19
+      },
+      "revId": "691b8f0f9e6574c6e4658f152dd86dceaf65dd6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd5931ad_821ae195",
+        "filename": "lib/libtl/libtl.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-08-28T14:03:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63fc3922_8444485d",
       "range": {
         "startLine": 14,
         "startChar": 3,
