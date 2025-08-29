@@ -1,0 +1,11 @@
+Code-Review+1: Christophe Thiblot <christophe.thiblot@arm.com>
+Code-Owner-Review+1: Abdellatif El Khlifi <abdellatif.elkhlifi@arm.com>
+Code-Owner-Review+1: Christophe Thiblot <christophe.thiblot@arm.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Verified+1: ci-bot
+Submitted-by: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-at: Fri, 29 Aug 2025 11:30:56 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/40810
+Comments-Total: 3
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
