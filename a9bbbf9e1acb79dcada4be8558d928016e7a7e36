@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08939c92_9c90fcc5",
+        "filename": "tftf/tests/runtime_services/standard_service/psci/api_tests/cpu_suspend/test_suspend.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-08-29T06:39:15Z",
+      "side": 1,
+      "message": "wouldn\u0027t the call above fail anyway? In which case returning SKIP here would be sufficient?",
+      "range": {
+        "startLine": 475,
+        "startChar": 9,
+        "endLine": 475,
+        "endChar": 25
+      },
+      "revId": "a9bbbf9e1acb79dcada4be8558d928016e7a7e36",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
