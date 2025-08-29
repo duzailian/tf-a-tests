@@ -87,6 +87,30 @@
       },
       "revId": "490e58f81386f8e79269db4845c8d60121b83914",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab4d2a36_b2aef7fe",
+        "filename": "include/lib/aarch64/arch_features.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-08-29T06:44:12Z",
+      "side": 1,
+      "message": "no, extract is useful for extracting any kind of bitfield. Its main use case happens to be id regs but that is not a constraint. It fits perfectly.\n\nAlso you can do this branchless:\n\n`return is_feat_mpam_supported() \u0026\u0026 EXTRACT(MPAM_PE_CTRL...)`",
+      "parentUuid": "a107fd2a_97df12c0",
+      "range": {
+        "startLine": 263,
+        "startChar": 23,
+        "endLine": 264,
+        "endChar": 59
+      },
+      "revId": "490e58f81386f8e79269db4845c8d60121b83914",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
