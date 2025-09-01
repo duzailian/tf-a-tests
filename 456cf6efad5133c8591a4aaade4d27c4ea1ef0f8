@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "429e7075_6c7b766f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-09-01T09:54:18Z",
+      "side": 1,
+      "message": "Verified on TF patch.",
+      "revId": "456cf6efad5133c8591a4aaade4d27c4ea1ef0f8",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
