@@ -22,6 +22,30 @@
       },
       "revId": "dd389eb4a79ebd5328350b48c858bced390a9ee5",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96a0c49b_502c92c9",
+        "filename": "lib/event_log/event_log.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-09-01T16:08:48Z",
+      "side": 1,
+      "message": "Sorry I should have made it clear that this depends on the the recent set of patches. Those include a good chunk of refactoring of the headers and I would like to take all the patches together. I can place this in WIP in the mean time if that helps?",
+      "parentUuid": "565aead5_5e140ed0",
+      "range": {
+        "startLine": 14,
+        "startChar": 4,
+        "endLine": 14,
+        "endChar": 33
+      },
+      "revId": "dd389eb4a79ebd5328350b48c858bced390a9ee5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
