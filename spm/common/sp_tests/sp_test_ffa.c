@@ -15,10 +15,6 @@
 #include <spm_common.h>
 #include <lib/libc/string.h>
 
-/* FFA version test helpers */
-#define FFA_MAJOR 1U
-#define FFA_MINOR 2U
-
 static uint32_t spm_version;
 
 static const struct ffa_uuid sp_uuids[] = {
