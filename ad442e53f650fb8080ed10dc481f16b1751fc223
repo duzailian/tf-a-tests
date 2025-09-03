@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f898899b_10c9d19f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-09-03T11:46:27Z",
+      "side": 1,
+      "message": "nit: update copyright years. Seems like a major change.",
+      "revId": "ad442e53f650fb8080ed10dc481f16b1751fc223",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
