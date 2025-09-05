@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7ca35dd_39ba1a9c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2025-09-05T14:32:52Z",
+      "side": 1,
+      "message": "I would change this to feat(neg-boot) or something like that to be more descriptive",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 6
+      },
+      "revId": "adfb4b66030af64582506f898d3f1a15c28ccd80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58b0a2c8_f6f13b36",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2025-09-05T14:32:52Z",
+      "side": 1,
+      "message": "nit: \"scenario with corrupt\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 33,
+        "endLine": 9,
+        "endChar": 54
+      },
+      "revId": "adfb4b66030af64582506f898d3f1a15c28ccd80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91e4755e_a96c3e3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2025-09-05T14:32:52Z",
+      "side": 1,
+      "message": "Needs to be rebased",
+      "revId": "adfb4b66030af64582506f898d3f1a15c28ccd80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0097c567_8cca0a4c",
+        "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2025-09-05T14:32:52Z",
+      "side": 1,
+      "message": "Please format properly and add comments for each step in test for readability.",
+      "range": {
+        "startLine": 53,
+        "startChar": 14,
+        "endLine": 53,
+        "endChar": 32
+      },
+      "revId": "adfb4b66030af64582506f898d3f1a15c28ccd80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f737286d_fdfc23d4",
+        "filename": "tftf/tests/tests-neg_scenario.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000101
+      },
+      "writtenOn": "2025-09-05T14:32:52Z",
+      "side": 1,
+      "message": "Add to the test suite while keeping the older test",
+      "range": {
+        "startLine": 9,
+        "startChar": 1,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "adfb4b66030af64582506f898d3f1a15c28ccd80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
