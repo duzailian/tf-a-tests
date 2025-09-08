@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "562e9c82_b3b8efb6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-08T16:28:24Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e7ca35dd_39ba1a9c",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 6
+      },
+      "revId": "adfb4b66030af64582506f898d3f1a15c28ccd80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "58b0a2c8_f6f13b36",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-09-05T14:32:52Z",
       "side": 1,
       "message": "nit: \"scenario with corrupt\"",
+      "range": {
+        "startLine": 9,
+        "startChar": 33,
+        "endLine": 9,
+        "endChar": 54
+      },
+      "revId": "adfb4b66030af64582506f898d3f1a15c28ccd80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8cd38d29_260957a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-08T16:28:24Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "58b0a2c8_f6f13b36",
       "range": {
         "startLine": 9,
         "startChar": 33,
@@ -87,6 +135,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c9da2ef_f02a6caa",
+        "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-08T16:28:24Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "0097c567_8cca0a4c",
+      "range": {
+        "startLine": 53,
+        "startChar": 14,
+        "endLine": 53,
+        "endChar": 32
+      },
+      "revId": "adfb4b66030af64582506f898d3f1a15c28ccd80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f737286d_fdfc23d4",
@@ -100,6 +172,30 @@
       "writtenOn": "2025-09-05T14:32:52Z",
       "side": 1,
       "message": "Add to the test suite while keeping the older test",
+      "range": {
+        "startLine": 9,
+        "startChar": 1,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "adfb4b66030af64582506f898d3f1a15c28ccd80",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "80bef4d6_c7bcf4cc",
+        "filename": "tftf/tests/tests-neg_scenario.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-08T16:28:24Z",
+      "side": 1,
+      "message": "ok, will do",
+      "parentUuid": "f737286d_fdfc23d4",
       "range": {
         "startLine": 9,
         "startChar": 1,
