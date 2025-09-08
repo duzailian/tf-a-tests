@@ -17,10 +17,6 @@
 /* An invalid SMC function number. */
 #define INVALID_FN 0x666
 
-/* PSCI version returned by TF-A. */
-static const uint32_t psci_version = PSCI_VERSION(PSCI_MAJOR_VER,
-						  PSCI_MINOR_VER);
-
 /* UUID of the standard service in TF-A. */
 static const smc_ret_values std_svc_uuid = {
 	0x108d905b, 0x47e8f863, 0xfbc02dae, 0xe2f64156
@@ -198,10 +194,18 @@ test_result_t smc32_fast(void)
 	const smc_args args3
 		= { SMC_PSCI_VERSION, 0x44444444, 0x55555555, 0x66666666,
 		0x77777777, 0x88888888, 0x99999999, 0xaaaaaaaa };
-	const smc_ret_values ret3
-		= { psci_version, 0x44444444, 0x55555555, 0x66666666,
+	smc_ret_values ret3
+		= { 0x00000000, 0x44444444, 0x55555555, 0x66666666,
 		0x77777777, 0x88888888, 0x99999999, 0xaaaaaaaa };
-	FAIL_IF(!smc_check_eq(&args3, &ret3));
+
+	smc_ret_values ret = tftf_smc(&args3);
+	/*
+	 * Copy returned version over the expected value to ignore the first
+	 * register. This way the test can validate the rest of the registers,
+	 * regardless of the implemented PSCI version.
+	 */
+	ret3.ret0 = ret.ret0;
+	FAIL_IF(!smc_check_eq_common(&ret, &ret3));
 
 	return TEST_RESULT_SUCCESS;
 }
