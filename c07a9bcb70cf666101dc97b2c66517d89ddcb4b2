@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e6603f9_b7cc2e9c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000159
+      },
+      "writtenOn": "2025-09-10T10:46:53Z",
+      "side": 1,
+      "message": "Skips \u0027Query runtime services\u0027/{\u0027Query Standard Service\u0027, \u0027Query Vendor-Specific Service\u0027, \u0027Probe PMF Version\u0027} if the SMC calls return -1.",
+      "revId": "c07a9bcb70cf666101dc97b2c66517d89ddcb4b2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
