@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8a3a1dd_787e7b39",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000159
+      },
+      "writtenOn": "2025-09-10T10:40:45Z",
+      "side": 1,
+      "message": "Skips tests in test suite \u0027PSCI CPU Suspend in OSI mode\u0027 if OS mode is not supported.",
+      "revId": "6bda686247b0982a42ee3c3d7acfea4476cc3b3a",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
