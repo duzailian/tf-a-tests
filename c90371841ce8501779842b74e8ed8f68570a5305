@@ -97,6 +97,30 @@
       },
       "revId": "c90371841ce8501779842b74e8ed8f68570a5305",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cb26635_df128200",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2025-09-11T17:29:28Z",
+      "side": 1,
+      "message": "I opted by printing in hex,to be consistent with Hafnium tests thus far.",
+      "parentUuid": "50dda89c_b74d32a9",
+      "range": {
+        "startLine": 25,
+        "startChar": 37,
+        "endLine": 25,
+        "endChar": 44
+      },
+      "revId": "c90371841ce8501779842b74e8ed8f68570a5305",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
