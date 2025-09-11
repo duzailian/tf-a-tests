@@ -22,7 +22,7 @@
 bool is_ffa_call_error(struct ffa_value ret)
 {
 	if (ffa_func_id(ret) == FFA_ERROR) {
-		VERBOSE("FF-A call returned error: %s - %x\n",
+		VERBOSE("FF-A call returned error: %s - %#x\n",
 			ffa_error_name(ffa_error_code(ret)),
 			ffa_error_code(ret));
 		return true;
@@ -37,14 +37,14 @@ bool is_expected_ffa_error(struct ffa_value ret, int32_t expected_error)
 
 	received_func = ffa_func_id(ret);
 	if (received_func != FFA_ERROR) {
-		ERROR("Expected FFA_ERROR, got %s - %x instead\n",
+		ERROR("Expected FFA_ERROR, got %s - %#x instead\n",
 		      ffa_func_name(received_func), received_func);
 		return false;
 	}
 
 	received_error = ffa_error_code(ret);
 	if (received_error != expected_error) {
-		ERROR("Expected %s - %x, got %s - %x instead\n",
+		ERROR("Expected %s - %#x, got %s - %#x instead\n",
 		      ffa_error_name(expected_error), expected_error,
 		      ffa_error_name(received_error), received_error);
 		return false;
@@ -65,7 +65,7 @@ bool is_ffa_direct_response(struct ffa_value ret)
 		return true;
 	}
 
-	VERBOSE("%s - %x is not FF-A response.\n",
+	VERBOSE("%s - %#x is not FF-A response.\n",
 		ffa_func_name(ffa_func_id(ret)), ffa_func_id(ret));
 
 	/* To log error in case it is FFA_ERROR*/
@@ -83,7 +83,7 @@ bool is_expected_ffa_return(struct ffa_value ret, uint32_t func_id)
 		return true;
 	}
 
-	VERBOSE("Expecting %s - %x, FF-A return was %s - %x\n",
+	VERBOSE("Expecting %s - %#x, FF-A return was %s - %#x\n",
 		ffa_func_name(func_id), func_id,
 		ffa_func_name(ffa_func_id(ret)), ffa_func_id(ret));
 
@@ -99,8 +99,8 @@ bool is_expected_cactus_response(struct ffa_value ret, uint32_t expected_resp,
 
 	if (cactus_get_response(ret) != expected_resp ||
 	    (uint32_t)ret.arg4 != arg) {
-		VERBOSE("Expected response %x and %x; "
-			"Obtained %x and %x\n",
+		VERBOSE("Expected response %#x and %#x; "
+			"Obtained %#x and %#x\n",
 			expected_resp, arg, cactus_get_response(ret),
 			(int32_t)ret.arg4);
 		return false;
@@ -234,7 +234,7 @@ bool ffa_features_test_targets(const struct ffa_features_test *targets,
 				: FFA_ERROR;
 
 		if (ffa_func_id(ffa_ret) != expected_ret) {
-			ERROR("Unexpected return: %s - %x (expected %s - %x)."
+			ERROR("Unexpected return: %s - %#x (expected %s - %#x)."
 			      " FFA_FEATURES test: %s.\n",
 			      ffa_func_name(ffa_func_id(ffa_ret)),
 			      ffa_func_id(ffa_ret), ffa_func_name(expected_ret),
@@ -245,8 +245,8 @@ bool ffa_features_test_targets(const struct ffa_features_test *targets,
 		if (expected_ret == FFA_ERROR) {
 			if (ffa_error_code(ffa_ret) !=
 			    FFA_ERROR_NOT_SUPPORTED) {
-				ERROR("Unexpected error code: %s - %x "
-				      "(expected %s - %x)."
+				ERROR("Unexpected error code: %s - %#x "
+				      "(expected %s - %#x)."
 				      " FFA_FEATURES test: %s.\n",
 				      ffa_error_name(ffa_error_code(ffa_ret)),
 				      ffa_error_code(ffa_ret),
@@ -633,7 +633,7 @@ ffa_memory_handle_t memory_send(
 		*ret = ffa_mem_donate(total_length, fragment_length);
 		break;
 	default:
-		ERROR("%s: Invalid func id %x!\n", __func__, mem_func);
+		ERROR("%s: Invalid func id %#x!\n", __func__, mem_func);
 		return FFA_MEMORY_HANDLE_INVALID;
 	}
 
@@ -758,25 +758,25 @@ static bool ffa_compare_partition_info(
 		ffa_uuid_equal(uuid, NULL_UUID) ? expected->uuid : NULL_UUID;
 
 	if (info->id != expected->id) {
-		ERROR("Wrong ID. Expected %x, got %x\n", expected->id,
+		ERROR("Wrong ID. Expected %#x, got %#x\n", expected->id,
 		      info->id);
 		result = false;
 	}
 
 	if (info->exec_context != expected->exec_context) {
-		ERROR("Wrong context. Expected %x, got %x\n",
+		ERROR("Wrong context. Expected %#x, got %#x\n",
 		      expected->exec_context, info->exec_context);
 		result = false;
 	}
 	if (info->properties != expected->properties) {
-		ERROR("Wrong properties. Expected %x, got %x\n",
+		ERROR("Wrong properties. Expected %#x, got %#x\n",
 		      expected->properties, info->properties);
 		result = false;
 	}
 
 	if (!ffa_uuid_equal(info->uuid, expected_uuid)) {
-		ERROR("Wrong UUID. Expected %x %x %x %x, "
-		      "got %x %x %x %x\n",
+		ERROR("Wrong UUID. Expected %#x %#x %#x %#x, "
+		      "got %#x %#x %#x %#x\n",
 		      expected_uuid.uuid[0], expected_uuid.uuid[1],
 		      expected_uuid.uuid[2], expected_uuid.uuid[3],
 		      info->uuid.uuid[0], info->uuid.uuid[1],
@@ -1001,8 +1001,8 @@ bool receive_indirect_message(void *buffer, size_t buffer_size, void *recv,
 	}
 
 	if (receiver != header.receiver) {
-		ERROR("Header receiver: %x different than expected receiver: "
-		      "%x\n",
+		ERROR("Header receiver: %#x different than expected receiver: "
+		      "%#x\n",
 		      header.receiver, receiver);
 		return false;
 	}
