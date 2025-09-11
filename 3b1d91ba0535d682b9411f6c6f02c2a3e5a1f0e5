@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "55b9117b_f97fc11d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-09-11T15:18:31Z",
+      "side": 1,
+      "message": "Hi if you still need those changes can you please start by rebasing?\nOther option if no longer necessary, those changes can be abandoned (and restored when you can resume the work). Thanks.",
+      "revId": "3b1d91ba0535d682b9411f6c6f02c2a3e5a1f0e5",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
