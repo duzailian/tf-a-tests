@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "df816d48_30338bfd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-09-11T17:02:30Z",
+      "side": 1,
+      "message": "nit: copyright years are not updated in few files yet?",
+      "revId": "3c255f40592189df2bcf0d7861f5f3430d83f637",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
