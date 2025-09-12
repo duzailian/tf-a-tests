@@ -22,6 +22,30 @@
       },
       "revId": "f12ece770fcd156bcec028fdb461ad15f0d42c26",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aff884b2_1a388f0c",
+        "filename": "realm/realm_multiple_rec.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2025-09-12T13:30:25Z",
+      "side": 1,
+      "message": "This wasn\u0027t needed before because RMM wasn\u0027t catering for .pstate upon plane entry/exit",
+      "parentUuid": "b072db2e_64885369",
+      "range": {
+        "startLine": 155,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 43
+      },
+      "revId": "f12ece770fcd156bcec028fdb461ad15f0d42c26",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
