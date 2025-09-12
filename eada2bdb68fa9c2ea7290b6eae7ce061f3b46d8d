@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "90ef81e9_7a139f11",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2025-09-12T10:01:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b3dc3da_62a3398b",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "eada2bdb68fa9c2ea7290b6eae7ce061f3b46d8d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f5143351_4b6ebc80",
@@ -60,6 +84,24 @@
       "writtenOn": "2025-09-11T18:34:26Z",
       "side": 1,
       "message": "Just curious: did you use any script to format this file or did you make the changes manually (using `sed`)?",
+      "revId": "eada2bdb68fa9c2ea7290b6eae7ce061f3b46d8d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bf306a0_38fe0e44",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2025-09-12T10:01:08Z",
+      "side": 1,
+      "message": "I used the clang-format.\nI was trying to come up with a way to use it with TF-A-Tests/TF-A.\nSo far, could only think about doing it in the file first, and then doing my own changes.\nI copied the clang-format file from Hafnium.",
+      "parentUuid": "361ab445_afceee20",
       "revId": "eada2bdb68fa9c2ea7290b6eae7ce061f3b46d8d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
