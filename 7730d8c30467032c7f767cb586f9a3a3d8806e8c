@@ -33,6 +33,24 @@
       "message": "Needs rebase.",
       "revId": "7730d8c30467032c7f767cb586f9a3a3d8806e8c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e386532c_9c941c0d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001243
+      },
+      "writtenOn": "2025-09-12T09:50:01Z",
+      "side": 1,
+      "message": "I have now rebased and will try and spend a bit of time to get these merged (if TF-A folks feel like they would be useful). Please can you re-run the CI?",
+      "parentUuid": "0c83bcc5_34c7a281",
+      "revId": "7730d8c30467032c7f767cb586f9a3a3d8806e8c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
