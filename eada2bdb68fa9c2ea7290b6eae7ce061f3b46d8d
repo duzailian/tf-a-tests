@@ -121,6 +121,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d29e1b00_31db9cd6",
+        "filename": "include/runtime_services/spm_common.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-09-12T11:11:14Z",
+      "side": 1,
+      "message": "ok. Got it, from where it came in.\nI know we follow clang-format in Hafnium project. But in TF-A-Test they aren\u0027t following it.\nSo just a headsup that other files in TF-A-Tests aren\u0027t following clang format, but files related to SPM in TF-A-Tests, from now-onwards would stick on to clang-format. Hope I summarised it correctly.",
+      "parentUuid": "9422df7d_0f5e4b46",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 32
+      },
+      "revId": "eada2bdb68fa9c2ea7290b6eae7ce061f3b46d8d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "361ab445_afceee20",
         "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
         "patchSetId": 1
