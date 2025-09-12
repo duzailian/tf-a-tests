@@ -106,6 +106,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8acc7489_05d0d9aa",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-12T23:37:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2d96a461_37eca901",
+      "revId": "987e6d6323244da3ccd8f76161911fb31166f01d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e874057d_035ad0b5",
@@ -199,6 +217,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd2f28fb_9a9e2bc7",
+        "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-12T23:37:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a67c79f6_c56b970d",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 3
+      },
+      "revId": "987e6d6323244da3ccd8f76161911fb31166f01d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bb14fd40_24b7ccee",
@@ -248,6 +290,24 @@
       "side": 1,
       "message": "I removed temporarily so that I could run the rotpk test immediately, and debug faster",
       "parentUuid": "de334de3_4787735e",
+      "revId": "987e6d6323244da3ccd8f76161911fb31166f01d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddf5b28d_9d7a2e28",
+        "filename": "tftf/tests/tests-neg_scenario.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-12T23:37:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f1d6c5e_56ae06f4",
       "revId": "987e6d6323244da3ccd8f76161911fb31166f01d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
