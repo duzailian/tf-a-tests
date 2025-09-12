@@ -71,6 +71,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b3bc0bd_35dee11f",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-12T23:39:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10f5aeb3_3f13364a",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 8
+      },
+      "revId": "987e6d6323244da3ccd8f76161911fb31166f01d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e66ba416_323c1b64",
@@ -137,6 +161,30 @@
       "writtenOn": "2025-09-09T19:47:40Z",
       "side": 1,
       "message": "nit: should be tabs like the rest of the file",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 13
+      },
+      "revId": "987e6d6323244da3ccd8f76161911fb31166f01d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06e0a67a_9d80b635",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-12T23:39:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e874057d_035ad0b5",
       "range": {
         "startLine": 139,
         "startChar": 0,
@@ -236,6 +284,30 @@
         "startChar": 0,
         "endLine": 86,
         "endChar": 3
+      },
+      "revId": "987e6d6323244da3ccd8f76161911fb31166f01d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d351856_5d286535",
+        "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-12T23:39:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df00f17b_8ecb30d2",
+      "range": {
+        "startLine": 74,
+        "startChar": 2,
+        "endLine": 86,
+        "endChar": 2
       },
       "revId": "987e6d6323244da3ccd8f76161911fb31166f01d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
