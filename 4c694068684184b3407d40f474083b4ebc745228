@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01c4ae23_932a98b2",
+        "filename": "tftf/tests/runtime_services/secure_service/spm_common.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-09-12T10:21:34Z",
+      "side": 1,
+      "message": "JFYI:\nEven I am new to this format specifier syntax %#x, as I usually follow old conventional 0x%x method.\n%#x works well with unsigned integers. For signed integers behaviour is undefined and my thoughts are to cast them to unsigned at all places in this file where you print the int32_t varibales with %#x for safer side and avoid any runtime unusual output.\nlet me know ?",
+      "range": {
+        "startLine": 47,
+        "startChar": 37,
+        "endLine": 49,
+        "endChar": 56
+      },
+      "revId": "4c694068684184b3407d40f474083b4ebc745228",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
