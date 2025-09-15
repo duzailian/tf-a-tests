@@ -1,0 +1,10 @@
+Allow-CI+2: Javier Almansa Sobrino <javier.almansasobrino@arm.com>
+Verified+1: Soby Mathew <soby.mathew@arm.com>
+Maintainer-Review+1: Soby Mathew <soby.mathew@arm.com>
+Code-Owner-Review+1: Soby Mathew <soby.mathew@arm.com>
+Submitted-by: Soby Mathew <soby.mathew@arm.com>
+Submitted-at: Mon, 15 Sep 2025 12:07:44 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/38963
+Comments-Total: 4
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
