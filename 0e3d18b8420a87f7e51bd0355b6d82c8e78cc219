@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "643a2f31_159b2be6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-09-15T17:06:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bec79a65_bb57a9a3",
+      "range": {
+        "startLine": 9,
+        "startChar": 44,
+        "endLine": 9,
+        "endChar": 46
+      },
+      "revId": "0e3d18b8420a87f7e51bd0355b6d82c8e78cc219",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ef2b0b25_15404130",
@@ -43,6 +67,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e2f8a91a_e948f57a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-09-15T17:06:48Z",
+      "side": 1,
+      "message": "I genuinely have no clue. This was suggested to me by the models team without much explanation.",
+      "parentUuid": "ef2b0b25_15404130",
+      "revId": "0e3d18b8420a87f7e51bd0355b6d82c8e78cc219",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b8ddc409_4af510dc",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -54,6 +96,30 @@
       "writtenOn": "2025-09-15T16:53:53Z",
       "side": 1,
       "message": "Just curious: what is dmacs?",
+      "range": {
+        "startLine": 20,
+        "startChar": 42,
+        "endLine": 20,
+        "endChar": 46
+      },
+      "revId": "0e3d18b8420a87f7e51bd0355b6d82c8e78cc219",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1810a3d9_d52b9991",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-09-15T17:06:48Z",
+      "side": 1,
+      "message": "again, don\u0027t know, presumably whatever the d330x4 is. I could try to find out if it\u0027s important but I\u0027d have to speak to someone.",
+      "parentUuid": "b8ddc409_4af510dc",
       "range": {
         "startLine": 20,
         "startChar": 42,
