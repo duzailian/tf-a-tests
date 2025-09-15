@@ -83,6 +83,24 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a66490e_db746b14",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-09-15T18:57:26Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e2f8a91a_e948f57a",
+      "revId": "0e3d18b8420a87f7e51bd0355b6d82c8e78cc219",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b8ddc409_4af510dc",
@@ -120,6 +138,30 @@
       "side": 1,
       "message": "again, don\u0027t know, presumably whatever the d330x4 is. I could try to find out if it\u0027s important but I\u0027d have to speak to someone.",
       "parentUuid": "b8ddc409_4af510dc",
+      "range": {
+        "startLine": 20,
+        "startChar": 42,
+        "endLine": 20,
+        "endChar": 46
+      },
+      "revId": "0e3d18b8420a87f7e51bd0355b6d82c8e78cc219",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "464b2366_d4ea4a6d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-09-15T18:57:26Z",
+      "side": 1,
+      "message": "I dont want you to take too much of your time but if you have an open communication channel with models team, I would appreciate if you could find out and document it in the source files for the benefit of future developers who might end up in this mess again.",
+      "parentUuid": "1810a3d9_d52b9991",
       "range": {
         "startLine": 20,
         "startChar": 42,
