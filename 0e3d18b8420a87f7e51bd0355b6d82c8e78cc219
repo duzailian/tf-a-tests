@@ -1,6 +1,69 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "bec79a65_bb57a9a3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-09-15T16:53:53Z",
+      "side": 1,
+      "message": "or?",
+      "range": {
+        "startLine": 9,
+        "startChar": 44,
+        "endLine": 9,
+        "endChar": 46
+      },
+      "revId": "0e3d18b8420a87f7e51bd0355b6d82c8e78cc219",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef2b0b25_15404130",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-09-15T16:53:53Z",
+      "side": 1,
+      "message": "IS there a public block diagram which shows this peripheral? similar to\nhttps://developer.arm.com/documentation/100964/1121/Base-Platform/Base-Platform-RevC/Base-Platform-RevC-block-diagram",
+      "revId": "0e3d18b8420a87f7e51bd0355b6d82c8e78cc219",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8ddc409_4af510dc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000098
+      },
+      "writtenOn": "2025-09-15T16:53:53Z",
+      "side": 1,
+      "message": "Just curious: what is dmacs?",
+      "range": {
+        "startLine": 20,
+        "startChar": 42,
+        "endLine": 20,
+        "endChar": 46
+      },
+      "revId": "0e3d18b8420a87f7e51bd0355b6d82c8e78cc219",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "2a8d3ccd_41e168b1",
