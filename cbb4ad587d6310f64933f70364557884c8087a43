@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92dfd529_86601872",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-09-16T13:34:36Z",
+      "side": 1,
+      "message": "As a minimal check, can we assert the returned version is \u0027valid\u0027 by leveraging tftf_is_valid_psci_version ?",
+      "range": {
+        "startLine": 205,
+        "startChar": 4,
+        "endLine": 205,
+        "endChar": 47
+      },
+      "revId": "cbb4ad587d6310f64933f70364557884c8087a43",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
