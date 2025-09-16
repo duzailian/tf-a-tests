@@ -1,0 +1,9 @@
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Code-Owner-Review+1: Boyan Karatotev <boyan.karatotev@arm.com>
+Verified+1: Kis Imre <imre.kis@arm.com>
+Submitted-by: Mark Dykes <mark.dykes@arm.com>
+Submitted-at: Tue, 16 Sep 2025 20:58:16 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/41833
+Comments-Total: 3
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
