@@ -39,6 +39,29 @@
       "message": "Fixes the issue of getting stucked at \u0027CPU Hotplug\u0027 test suite.",
       "revId": "8eb6bff83f17b3a55869e06ca1040e7c4f42d749",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a80b77b_ac2dd3b7",
+        "filename": "include/runtime_services/psci.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-09-16T12:31:20Z",
+      "side": 1,
+      "message": "use ULL() macro",
+      "range": {
+        "startLine": 116,
+        "startChar": 29,
+        "endLine": 116,
+        "endChar": 47
+      },
+      "revId": "8eb6bff83f17b3a55869e06ca1040e7c4f42d749",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
