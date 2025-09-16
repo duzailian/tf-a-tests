@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfb439ed_38cf83e3",
+        "filename": "tftf/tests/tests-neg_scenario.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-09-16T15:29:33Z",
+      "side": 0,
+      "message": "we need to addback `test_fwu_image_size.c` ?",
+      "range": {
+        "startLine": 8,
+        "startChar": 4,
+        "endLine": 8,
+        "endChar": 23
+      },
+      "revId": "63ea05bd16fceb7048ee625cae12394a3be5f15b",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
