@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72756e56_0d3d8765",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-09-16T13:35:32Z",
+      "side": 1,
+      "message": "there\u0027s one open comment, should it be addressed one way or another?",
+      "revId": "b1467682a26053428c34eb363ba06391dcbf77eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
