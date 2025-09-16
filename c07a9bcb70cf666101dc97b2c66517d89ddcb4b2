@@ -41,6 +41,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "978f40ae_6f7bca5f",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000159
+      },
+      "writtenOn": "2025-09-16T16:31:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e937a804_524fb6b0",
+      "range": {
+        "startLine": 57,
+        "startChar": 3,
+        "endLine": 57,
+        "endChar": 9
+      },
+      "revId": "c07a9bcb70cf666101dc97b2c66517d89ddcb4b2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d9d96168_9963ea39",
@@ -60,6 +84,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "85f75c5f_6f763b38",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000159
+      },
+      "writtenOn": "2025-09-16T16:31:26Z",
+      "side": 1,
+      "message": "It seems like test cases use `tftf_testcase_printf` everywhere. The implementation seems different.",
+      "parentUuid": "d9d96168_9963ea39",
+      "revId": "c07a9bcb70cf666101dc97b2c66517d89ddcb4b2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "85a6eed2_7d1b7a9b",
         "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
         "patchSetId": 1
@@ -71,6 +113,24 @@
       "writtenOn": "2025-09-16T13:03:10Z",
       "side": 1,
       "message": "would we prefer a result where the test is marked as skipped instead of pass, for the case when the general service is not implemented?",
+      "revId": "c07a9bcb70cf666101dc97b2c66517d89ddcb4b2",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e436627_1333ef96",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000159
+      },
+      "writtenOn": "2025-09-16T16:31:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "85a6eed2_7d1b7a9b",
       "revId": "c07a9bcb70cf666101dc97b2c66517d89ddcb4b2",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
