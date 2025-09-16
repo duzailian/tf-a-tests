@@ -172,6 +172,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8deef13_1cec8e84",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-09-16T10:26:56Z",
+      "side": 1,
+      "message": "I received the following:\n\n```\nA DMAC is a DMA-Controller a DMA-330 (a.k.a. DMAC_PL_330, a.k.a. PL_330). It is an ancient (32b) device that has its own little instruction set and several concurrent threads of execution that can be used to move memory about.\n\nThe original DMAC cluster was put in so that it provides an easy work-load to program for the SMMU rather than a full PCIe device.\n\nThe block diagram is not quite right depending on your point of view. The PCIe Subsystem is above the SMMU – i.e. all accesses made by PCIe devices go through the SMMU.\n\nThe DMAC cluster is also above the same SMMU and so is (mostly) indistinguishable from the PCIe device traffic.\n```\n\nI think my original assumption was correct",
+      "parentUuid": "464b2366_d4ea4a6d",
+      "range": {
+        "startLine": 20,
+        "startChar": 42,
+        "endLine": 20,
+        "endChar": 46
+      },
+      "revId": "0e3d18b8420a87f7e51bd0355b6d82c8e78cc219",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "2a8d3ccd_41e168b1",
