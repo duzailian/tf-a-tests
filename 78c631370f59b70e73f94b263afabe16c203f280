@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cfce21f_d3a498ee",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-09-16T15:27:04Z",
+      "side": 1,
+      "message": "can be local to `get_pubKey_from_cert` why static global?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 27
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4c5c66a_29a42fc3",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-09-16T15:27:04Z",
+      "side": 1,
+      "message": "why static?",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 26,
+        "endChar": 7
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4b558925_2cf9f37b",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-09-16T15:27:04Z",
+      "side": 1,
+      "message": "same here?",
+      "range": {
+        "startLine": 19,
+        "startChar": 68,
+        "endLine": 19,
+        "endChar": 69
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f21ed40_2432f12a",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-09-16T15:27:04Z",
+      "side": 1,
+      "message": "nit: remove space? just *cert` ?",
+      "range": {
+        "startLine": 19,
+        "startChar": 32,
+        "endLine": 19,
+        "endChar": 36
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a86511d3_85b0a799",
+        "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-09-16T15:27:04Z",
+      "side": 1,
+      "message": "nit: remove extra tab",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 1
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
