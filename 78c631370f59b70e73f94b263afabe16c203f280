@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "94832cf9_2845e7dc",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-16T16:18:45Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "2cfce21f_d3a498ee",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 27
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a4c5c66a_29a42fc3",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-09-16T15:27:04Z",
       "side": 1,
       "message": "why static?",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 26,
+        "endChar": 7
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec4a9ece_5f7d7cd1",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-16T16:18:45Z",
+      "side": 1,
+      "message": "Following format that the array was set up in tfa. But seeing that static isnt required will remove",
+      "parentUuid": "a4c5c66a_29a42fc3",
       "range": {
         "startLine": 26,
         "startChar": 1,
@@ -111,6 +159,54 @@
         "startChar": 32,
         "endLine": 19,
         "endChar": 36
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93fdb0f1_2df81885",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-16T16:18:45Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "9f21ed40_2432f12a",
+      "range": {
+        "startLine": 19,
+        "startChar": 32,
+        "endLine": 19,
+        "endChar": 36
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74ca7be8_6fdb4251",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.h",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-16T16:18:45Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "4b558925_2cf9f37b",
+      "range": {
+        "startLine": 19,
+        "startChar": 68,
+        "endLine": 19,
+        "endChar": 69
       },
       "revId": "78c631370f59b70e73f94b263afabe16c203f280",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
@@ -198,6 +294,30 @@
       "writtenOn": "2025-09-16T15:27:04Z",
       "side": 1,
       "message": "nit: remove extra tab",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 1
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a817d841_82dfe751",
+        "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-16T16:18:45Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "a86511d3_85b0a799",
       "range": {
         "startLine": 75,
         "startChar": 0,
