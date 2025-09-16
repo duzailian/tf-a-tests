@@ -49,6 +49,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ec59e9ed_feee2814",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-09-16T15:35:52Z",
+      "side": 1,
+      "message": "nit: tab missing.",
+      "range": {
+        "startLine": 141,
+        "startChar": 0,
+        "endLine": 142,
+        "endChar": 13
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4b558925_2cf9f37b",
         "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.h",
         "patchSetId": 10
@@ -95,6 +118,75 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7f479a6c_61cb0141",
+        "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-09-16T15:35:52Z",
+      "side": 1,
+      "message": "Can you move declarations to the top of the function?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 33
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99dd182c_c995eb49",
+        "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-09-16T15:35:52Z",
+      "side": 1,
+      "message": "Handle error code returned from these functions.",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 73
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca9f801e_cf78a9e0",
+        "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-09-16T15:35:52Z",
+      "side": 1,
+      "message": "Can you move declarations to the top of the function?",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 0
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a86511d3_85b0a799",
         "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
         "patchSetId": 10
@@ -111,6 +203,29 @@
         "startChar": 0,
         "endLine": 75,
         "endChar": 1
+      },
+      "revId": "78c631370f59b70e73f94b263afabe16c203f280",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "145a1149_e8e1986d",
+        "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-09-16T15:35:52Z",
+      "side": 1,
+      "message": "ditto, handle the error code returned",
+      "range": {
+        "startLine": 77,
+        "startChar": 1,
+        "endLine": 77,
+        "endChar": 17
       },
       "revId": "78c631370f59b70e73f94b263afabe16c203f280",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
