@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a392be9_26ee65ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000159
+      },
+      "writtenOn": "2025-09-17T11:01:00Z",
+      "side": 1,
+      "message": "Changed the behavior to skip tests if the STD SMC is not supported.\nThis also means that we skip the `smc32_fast` test too, where the next test fixes the PSCI version issue.\nWe can either abandon the next patch or not skip the rest of the test case in `smc32_fast`. TBH it would be a bit misleading to continue the test, because then we cannot distinguish between \u0027Success with STD SMC support\u0027 or \u0027Success without STD SMC support\u0027 result.",
+      "revId": "ed15e6981aec5b2e7c1e4a6af14f1bde3f9e96c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
