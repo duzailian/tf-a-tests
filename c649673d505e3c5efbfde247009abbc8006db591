@@ -33,6 +33,24 @@
       "message": "Should there be either an error/panic process if none of the if statements are taken?  The assert below would trigger only in reference to a spurious interrupt which might lead to confusion...",
       "revId": "c649673d505e3c5efbfde247009abbc8006db591",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ea54606_fc8c34b4",
+        "filename": "drivers/arm/gic/gic_v2v3_common.c",
+        "patchSetId": 13
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1000883
+      },
+      "writtenOn": "2025-09-17T08:00:23Z",
+      "side": 1,
+      "message": "well the only expected behaviour if none of these are taken is that the interrupt is a spurious one, and the assert checks that that is the case. Anything else should and will result in a panic, as expected.",
+      "parentUuid": "e6348a49_8d14db9d",
+      "revId": "c649673d505e3c5efbfde247009abbc8006db591",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
