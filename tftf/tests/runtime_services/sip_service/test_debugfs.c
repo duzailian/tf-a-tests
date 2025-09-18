@@ -360,3 +360,45 @@ test_result_t test_debugfs(void)
 
 	return TEST_RESULT_SUCCESS;
 }
+
+/*
+ * @Test_Aim@ Verify that the I/O layer correctly handles out-of-bounds
+ * (OOB) access.
+ *
+ * This test ensures robustness of seek/read APIs against invalid
+ * offsets and prevents potential memory or file corruption due to invalid
+ * access.
+ */
+test_result_t test_oob_access(void)
+{
+	int ret, fd;
+
+	/* open bl2 */
+	fd = open("/fip/bl2.bin", O_READ);
+	if (fd < 0) {
+		tftf_testcase_printf("open failed fd=%d\n", fd);
+		return TEST_RESULT_FAIL;
+	}
+
+	/* rewind to negative offset */
+	ret = seek(fd, -1, KSEEK_SET);
+
+	/* Reading with out-of-bounds cursor position should fail */
+	ret = read(fd, read_buffer, 128);
+	if (ret != 0) {
+		tftf_testcase_printf("Out-of-bounds read(%d)\n", __LINE__);
+		return TEST_RESULT_FAIL;
+	}
+
+	/* reset cursor position to valid range */
+	ret = seek(fd, 0, KSEEK_SET);
+
+	/* Read 128 bytes from start */
+	ret = read(fd, read_buffer, 128);
+	if (ret != 128) {
+		tftf_testcase_printf("read failed(%d) ret=%d\n", __LINE__, ret);
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
