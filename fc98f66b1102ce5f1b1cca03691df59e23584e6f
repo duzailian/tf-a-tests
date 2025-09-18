@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5d1f9be_5fdc2df6",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.c",
+        "patchSetId": 12
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1000923
+      },
+      "writtenOn": "2025-09-18T15:05:18Z",
+      "side": 1,
+      "message": "nit: add tabs replace space by tabs ?",
+      "range": {
+        "startLine": 143,
+        "startChar": 0,
+        "endLine": 144,
+        "endChar": 13
+      },
+      "revId": "fc98f66b1102ce5f1b1cca03691df59e23584e6f",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
