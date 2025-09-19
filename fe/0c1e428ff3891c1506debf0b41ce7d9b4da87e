@@ -1,0 +1,11 @@
+Code-Owner-Review+1: Akshay Belsare <Akshay.Belsare@amd.com>
+Maintainer-Review+1: Joanna Farley <joanna.farley@arm.com>
+Code-Review+1: Love Kumar <love.kumar@amd.com>
+Code-Review+1: Maheedhar Bollapalli <maheedharsai.bollapalli@amd.com>
+Verified+1: ci-bot
+Allow-CI+1: Maheedhar Bollapalli <maheedharsai.bollapalli@amd.com>
+Submitted-by: Joanna Farley <joanna.farley@arm.com>
+Submitted-at: Fri, 19 Sep 2025 08:28:09 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/42562
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
