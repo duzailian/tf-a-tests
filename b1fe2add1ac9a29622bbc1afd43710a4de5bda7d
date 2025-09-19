@@ -16,6 +16,121 @@
       "message": "https://ci.trustedfirmware.org/job/tf-a-ci-gateway/11229/",
       "revId": "b1fe2add1ac9a29622bbc1afd43710a4de5bda7d",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9b4ea7d_edf334e4",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-09-19T08:23:55Z",
+      "side": 1,
+      "message": "Why this is unsigned int? It should be size_t right?",
+      "range": {
+        "startLine": 17,
+        "startChar": 37,
+        "endLine": 17,
+        "endChar": 58
+      },
+      "revId": "b1fe2add1ac9a29622bbc1afd43710a4de5bda7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43f7ba1f_e9501112",
+        "filename": "tftf/tests/neg_scenario_tests/neg_scenario_test_infra.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-09-19T08:23:55Z",
+      "side": 1,
+      "message": "Blank line before this",
+      "range": {
+        "startLine": 142,
+        "startChar": 0,
+        "endLine": 142,
+        "endChar": 10
+      },
+      "revId": "b1fe2add1ac9a29622bbc1afd43710a4de5bda7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2405ab0_9bdf898d",
+        "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-09-19T08:23:55Z",
+      "side": 1,
+      "message": "braces around \u0027\u0027if\u0027\u0027",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 0
+      },
+      "revId": "b1fe2add1ac9a29622bbc1afd43710a4de5bda7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "862c7343_c4c3f281",
+        "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-09-19T08:23:55Z",
+      "side": 1,
+      "message": "Blank line before this.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 13
+      },
+      "revId": "b1fe2add1ac9a29622bbc1afd43710a4de5bda7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2ccd036_2ce765cd",
+        "filename": "tftf/tests/neg_scenario_tests/test_invalid_rotpk.c",
+        "patchSetId": 14
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000328
+      },
+      "writtenOn": "2025-09-19T08:23:55Z",
+      "side": 1,
+      "message": "This function looks mostly correct. However, I recommend modifying it slightly - in a few places the return values from functions (e.g. io_read, io_write) are not captured or checked.\nOne of the arrays (cert_buffer) is allocated at runtime This is fine as long as cert-\u003esize stays within a safe stack limit. If there’s any risk of larger sizes, consider switching to a static buffer with a defined MAX_CERT_SIZE and check cert-\u003esize against it.\n\n```\ntest_result_t test_invalid_rotpk(void)\n{\n    smc_args args \u003d { SMC_PSCI_SYSTEM_RESET };\n    smc_ret_values ret \u003d (smc_ret_values){0};\n    const uuid_t trusted_cert \u003d UUID_TRUSTED_KEY_CERT;\n\n    io_handle_t handle;\n    fip_toc_entry_t *cert;\n    uintptr_t address;\n    size_t exp_len, len;\n    unsigned int img_len;\n    int rc;\n    void *paramOut \u003d NULL;\n\n    if (tftf_is_rebooted()) {\n        /* ROTPK is tampered, TF-A shouldn\u0027t reach here after reboot */\n        return TEST_RESULT_FAIL;\n    }\n\n    /* Locate Trusted Key certificate by UUID in FIP */\n    cert \u003d find_fiptoc_entry_t(PLAT_ARM_FIP_BASE, \u0026trusted_cert);\n    if (cert \u003d\u003d NULL) {\n        return TEST_RESULT_FAIL;\n    }\n\n    address \u003d (uintptr_t)cert-\u003eoffset_address;\n    exp_len \u003d cert-\u003esize;\n    if (exp_len \u003d\u003d 0U) {\n        return TEST_RESULT_FAIL;\n    }\n\n    /* Runtime-sized buffer on the stack */\n    uint8_t cert_buffer[exp_len];\n\n    /* Open NVM and read the certificate payload */\n    rc \u003d plat_get_nvm_handle(\u0026handle);\n    if (rc \u003c 0) {\n        return TEST_RESULT_FAIL;\n    }\n\n    rc \u003d io_seek(handle, IO_SEEK_SET, address);\n    if (rc \u003c 0) {\n        return TEST_RESULT_FAIL;\n    }\n\n    rc \u003d io_read(handle, (uintptr_t)cert_buffer, exp_len, \u0026len);\n    if (rc \u003c 0 || len !\u003d exp_len) {\n        return TEST_RESULT_FAIL;\n    }\n\n    rc \u003d get_pubKey_from_cert(cert_buffer, len, \u0026paramOut);\n    if (rc !\u003d 0) {\n        tftf_testcase_printf(\"get_pubKey_from_cert rc\u003d%d\\n\", rc);\n        return TEST_RESULT_FAIL;\n    }\n\n   /*\n    * Corrupt part of the certificate in storage.\n    * Simple overwrite: just clobber the first 32 bytes so parsing/verification fails.\n    */  \n    {\n        uint8_t junk[32] \u003d {0};\n\n        rc \u003d io_seek(handle, IO_SEEK_SET, address);\n        if (rc \u003c 0) {\n            return TEST_RESULT_FAIL;\n        }\n        \n        rc \u003d io_write(handle, (uintptr_t)junk, sizeof(junk), \u0026len);\n        if (rc \u003c 0 || len !\u003d sizeof(junk)) {\n            return TEST_RESULT_FAIL;\n        }\n    }\n\n    /* Reboot */\n    tftf_notify_reboot();\n    ret \u003d tftf_smc(\u0026args);\n\n    /* The PSCI SYSTEM_RESET call is not supposed to return */\n    tftf_testcase_printf(\"System didn\u0027t reboot properly (%u)\\n\",\n                         (unsigned int)ret.ret0);\n                         \n    return TEST_RESULT_FAIL;\n}\n\n\n```",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 0
+      },
+      "revId": "b1fe2add1ac9a29622bbc1afd43710a4de5bda7d",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
