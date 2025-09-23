@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32d7d43f_03036032",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-09-23T12:26:32Z",
+      "side": 1,
+      "message": "actually I wonder if we could achieve the same using smc_check_match using do_check[0]\u003dfalse?",
+      "range": {
+        "startLine": 216,
+        "startChar": 1,
+        "endLine": 218,
+        "endChar": 1
+      },
+      "revId": "ddeb7abda6e4b25c8b9c51020e17790a54a467ae",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
