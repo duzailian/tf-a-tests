@@ -33,6 +33,24 @@
       "message": "Is this ready for merge?  I see one indirect relation...",
       "revId": "b1467682a26053428c34eb363ba06391dcbf77eb",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "827b6c8a_11e177d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000159
+      },
+      "writtenOn": "2025-09-23T18:46:17Z",
+      "side": 1,
+      "message": "This patch is ready for merge.",
+      "parentUuid": "91544f21_af8a7dd4",
+      "revId": "b1467682a26053428c34eb363ba06391dcbf77eb",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
