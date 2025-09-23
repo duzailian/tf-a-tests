@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03c1e762_88f37927",
+        "filename": "tftf/tests/runtime_services/sip_service/test_debugfs.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-23T17:05:39Z",
+      "side": 1,
+      "message": "If expecting a fail here, should the test result be a fail? By having test_result_fail will the test end prematurely?",
+      "range": {
+        "startLine": 396,
+        "startChar": 2,
+        "endLine": 396,
+        "endChar": 26
+      },
+      "revId": "0f04afb8feca0e823abfe7f60dfba52f6e9925f6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "549b8991_36e40920",
+        "filename": "tftf/tests/runtime_services/sip_service/test_debugfs.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 1001067
+      },
+      "writtenOn": "2025-09-23T17:05:39Z",
+      "side": 1,
+      "message": "Will this point be reached?",
+      "range": {
+        "startLine": 399,
+        "startChar": 1,
+        "endLine": 401,
+        "endChar": 1
+      },
+      "revId": "0f04afb8feca0e823abfe7f60dfba52f6e9925f6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
