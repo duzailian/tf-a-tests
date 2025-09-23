@@ -22,6 +22,30 @@
       },
       "revId": "cbb4ad587d6310f64933f70364557884c8087a43",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed1c8571_6cda5e49",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000159
+      },
+      "writtenOn": "2025-09-23T19:25:37Z",
+      "side": 1,
+      "message": "I switched to `smc_check_match` and it does not export the returned values to the caller. It checks that the returned value is not zero.\n`test_psci_version` test case validates the PSCI version.",
+      "parentUuid": "92dfd529_86601872",
+      "range": {
+        "startLine": 205,
+        "startChar": 4,
+        "endLine": 205,
+        "endChar": 47
+      },
+      "revId": "cbb4ad587d6310f64933f70364557884c8087a43",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
