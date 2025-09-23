@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6c1a78e0_ee8f5801",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-09-23T12:27:50Z",
+      "side": 1,
+      "message": "or in other words, would we reorder subtests to execute those that we know would be always valid and move ones depending on optional std smc towards the tail of the test ?",
+      "parentUuid": "099c3590_de55ddb0",
+      "revId": "ed15e6981aec5b2e7c1e4a6af14f1bde3f9e96c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f5ac777e_66608f27",
         "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
         "patchSetId": 3
