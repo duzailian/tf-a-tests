@@ -16,6 +16,70 @@
       "message": "Changed the behavior to skip tests if the STD SMC is not supported.\nThis also means that we skip the `smc32_fast` test too, where the next test fixes the PSCI version issue.\nWe can either abandon the next patch or not skip the rest of the test case in `smc32_fast`. TBH it would be a bit misleading to continue the test, because then we cannot distinguish between \u0027Success with STD SMC support\u0027 or \u0027Success without STD SMC support\u0027 result.",
       "revId": "ed15e6981aec5b2e7c1e4a6af14f1bde3f9e96c9",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "099c3590_de55ddb0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-09-23T12:25:14Z",
+      "side": 1,
+      "message": "I guess you meant skip all tests following first test of smc32_fast, smc64_yielding, smc64_fast_caller32/smc64_fast_caller64, smc32_yielding ?\n\nIsn\u0027t there at least some value of negative invalid function id tests?",
+      "parentUuid": "2a392be9_26ee65ea",
+      "revId": "ed15e6981aec5b2e7c1e4a6af14f1bde3f9e96c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5ac777e_66608f27",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-09-23T12:25:14Z",
+      "side": 1,
+      "message": "skipped",
+      "range": {
+        "startLine": 82,
+        "startChar": 66,
+        "endLine": 82,
+        "endChar": 73
+      },
+      "revId": "ed15e6981aec5b2e7c1e4a6af14f1bde3f9e96c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "657d86ac_fafb155f",
+        "filename": "tftf/tests/runtime_services/generic/generic_smc.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000228
+      },
+      "writtenOn": "2025-09-23T12:25:14Z",
+      "side": 1,
+      "message": "return a test fail result",
+      "range": {
+        "startLine": 85,
+        "startChar": 3,
+        "endLine": 85,
+        "endChar": 44
+      },
+      "revId": "ed15e6981aec5b2e7c1e4a6af14f1bde3f9e96c9",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
