@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "94e1efaa_50436feb",
+        "filename": "tftf/tests/runtime_services/sip_service/test_debugfs.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-09-24T08:36:36Z",
+      "side": 1,
+      "message": "We want to return `TEST_RESULT_FAIL` here. My expectation is that the read at line 393 should return 0 (no bytes read), if that doesn\u0027t happen then we know the I/O layer tried to read from a negative offset. This is a condition for failing the test. \n\nIf no bytes are read then the test continues onto the next condition. Sorry if this isn\u0027t clear, let me know if you have suggestions for how it could be made clarified.",
+      "parentUuid": "03c1e762_88f37927",
+      "range": {
+        "startLine": 396,
+        "startChar": 2,
+        "endLine": 396,
+        "endChar": 26
+      },
+      "revId": "0f04afb8feca0e823abfe7f60dfba52f6e9925f6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "549b8991_36e40920",
         "filename": "tftf/tests/runtime_services/sip_service/test_debugfs.c",
         "patchSetId": 5
@@ -37,6 +61,30 @@
       "writtenOn": "2025-09-23T17:05:39Z",
       "side": 1,
       "message": "Will this point be reached?",
+      "range": {
+        "startLine": 399,
+        "startChar": 1,
+        "endLine": 401,
+        "endChar": 1
+      },
+      "revId": "0f04afb8feca0e823abfe7f60dfba52f6e9925f6",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58c9d433_de05af73",
+        "filename": "tftf/tests/runtime_services/sip_service/test_debugfs.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 1000744
+      },
+      "writtenOn": "2025-09-24T08:36:36Z",
+      "side": 1,
+      "message": "Yes - as long as no bytes are read at line 393. Otherwise the test should fail.",
+      "parentUuid": "549b8991_36e40920",
       "range": {
         "startLine": 399,
         "startChar": 1,
