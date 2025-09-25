@@ -1,0 +1,9 @@
+Code-Owner-Review+1: Govindraj Raja <govindraj.raja@arm.com>
+Maintainer-Review+1: Olivier Deprez <olivier.deprez@arm.com>
+Verified+1: Olivier Deprez <olivier.deprez@arm.com>
+Submitted-by: Govindraj Raja <govindraj.raja@arm.com>
+Submitted-at: Thu, 25 Sep 2025 14:28:37 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/42585
+Comments-Total: 18
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
