@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de0ec383_ae25deca",
+        "filename": "tftf/tests/tests-versal.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000124
+      },
+      "writtenOn": "2025-09-25T18:51:21Z",
+      "side": 1,
+      "message": "2025?",
+      "range": {
+        "startLine": 4,
+        "startChar": 21,
+        "endLine": 4,
+        "endChar": 25
+      },
+      "revId": "da12e599b56270561e4e253c366e7859c17c6f19",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
