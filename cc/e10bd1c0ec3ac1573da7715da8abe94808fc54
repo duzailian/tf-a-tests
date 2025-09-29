@@ -1,0 +1,11 @@
+Allow-CI+2: Madhukar Pappireddy <madhukar.pappireddy@arm.com>
+Code-Review+1: John Powell <john.powell@arm.com>
+Verified+1: ci-bot
+Maintainer-Review+1: Manish V Badarkhe <manish.badarkhe@arm.com>
+Code-Review+1: jayanthchidanand-arm <jayanthdodderi.chidanand@arm.com>
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Submitted-by: Manish V Badarkhe <manish.badarkhe@arm.com>
+Submitted-at: Mon, 29 Sep 2025 09:05:11 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/43354
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
