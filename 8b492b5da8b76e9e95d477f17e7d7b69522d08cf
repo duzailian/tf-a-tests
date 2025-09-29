@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "39684f39_da4b7b26",
+        "filename": "tftf/tests/tests-versal.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001023
+      },
+      "writtenOn": "2025-09-29T06:59:11Z",
+      "side": 1,
+      "message": "Resolved in patch-set 2",
+      "parentUuid": "e71b9ded_3abe50e0",
+      "range": {
+        "startLine": 2,
+        "startChar": 21,
+        "endLine": 2,
+        "endChar": 25
+      },
+      "revId": "8b492b5da8b76e9e95d477f17e7d7b69522d08cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c08f64e8_04831be3",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-09-25T18:47:13Z",
       "side": 1,
       "message": "2025?",
+      "range": {
+        "startLine": 4,
+        "startChar": 21,
+        "endLine": 4,
+        "endChar": 25
+      },
+      "revId": "8b492b5da8b76e9e95d477f17e7d7b69522d08cf",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bafd643b_5adc13a1",
+        "filename": "tftf/tests/tests-versal.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1001023
+      },
+      "writtenOn": "2025-09-29T06:59:11Z",
+      "side": 1,
+      "message": "Resolved in patch-set 2",
+      "parentUuid": "c08f64e8_04831be3",
       "range": {
         "startLine": 4,
         "startChar": 21,
