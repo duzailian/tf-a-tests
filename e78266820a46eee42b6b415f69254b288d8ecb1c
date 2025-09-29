@@ -22,6 +22,30 @@
       },
       "revId": "e78266820a46eee42b6b415f69254b288d8ecb1c",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ace81bd_c12f7d46",
+        "filename": "tftf/tests/tests-versal.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1001023
+      },
+      "writtenOn": "2025-09-29T06:58:13Z",
+      "side": 1,
+      "message": "Resolved in patch-set 2",
+      "parentUuid": "c0a5515b_b826aa52",
+      "range": {
+        "startLine": 4,
+        "startChar": 21,
+        "endLine": 4,
+        "endChar": 25
+      },
+      "revId": "e78266820a46eee42b6b415f69254b288d8ecb1c",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
