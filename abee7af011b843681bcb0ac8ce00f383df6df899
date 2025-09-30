@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50013f72_84cf427f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2025-09-30T09:15:50Z",
+      "side": 1,
+      "message": "Build passed with this job: https://ci.trustedfirmware.org/job/tf-a-lts2.10-gerrit-tforg-l2/34/",
+      "revId": "abee7af011b843681bcb0ac8ce00f383df6df899",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
