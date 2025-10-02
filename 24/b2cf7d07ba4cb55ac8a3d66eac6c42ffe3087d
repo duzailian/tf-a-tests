@@ -1,0 +1,10 @@
+Code-Owner-Review+1: Joao Alves <joao.alves@arm.com>
+Allow-CI+2: jayanthchidanand-arm <jayanthdodderi.chidanand@arm.com>
+Verified+1: Joao Alves <joao.alves@arm.com>
+Maintainer-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Submitted-by: Manish Pandey <manish.pandey2@arm.com>
+Submitted-at: Thu, 02 Oct 2025 15:07:42 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/41315
+Comments-Total: 1
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
