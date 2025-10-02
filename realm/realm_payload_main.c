@@ -45,24 +45,6 @@ static void realm_loop_cmd(void)
 	}
 }
 
-static bool test_realm_enter_plane_n(void)
-{
-	u_register_t base, plane_index, perm_index, flags = 0U;
-	bool ret1;
-
-	plane_index = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
-	base = realm_shared_data_get_my_host_val(HOST_ARG2_INDEX);
-	perm_index = plane_index + 1U;
-
-	ret1 = plane_common_init(plane_index, perm_index, base, &run);
-	if (!ret1) {
-		return ret1;
-	}
-
-	realm_printf("Entering plane %ld, ep=0x%lx run=0x%lx\n", plane_index, base, &run);
-	return realm_plane_enter(plane_index, perm_index, base, flags, &run);
-}
-
 static bool test_realm_enter_plane_n_reg_rw(void)
 {
 	u_register_t base, plane_index, perm_index, flags = 0U;
@@ -80,7 +62,7 @@ static bool test_realm_enter_plane_n_reg_rw(void)
 		}
 
 		realm_printf("Entering plane %ld, ep=0x%lx run=0x%lx\n", plane_index, base, &run);
-		ret = realm_plane_enter(plane_index, perm_index, base, flags, &run);
+		ret = realm_plane_enter(plane_index, perm_index, flags, &run);
 		if (ret) {
 			/* get return value from plane1 */
 			reg1 = realm_shared_data_get_plane_n_val(plane_index,
@@ -132,7 +114,7 @@ static bool test_realm_enter_plane_n_reg_rw(void)
 			}
 
 			/* enter plane n */
-			ret = realm_plane_enter(plane_index, perm_index, base, flags, &run);
+			ret = realm_plane_enter(plane_index, perm_index, flags, &run);
 			if (ret) {
 				/* read pauth register for plane1 */
 				ret = rsi_plane_sysreg_read(plane_index, SYSREG_ID_apibkeylo_el1,
@@ -324,7 +306,7 @@ static bool test_plane_exception_cmd(void)
 	}
 
 	realm_printf("Entering plane %ld, ep=0x%lx run=0x%lx\n", plane_index, base, &run);
-	ret1 = realm_plane_enter(plane_index, perm_index, base, flags, &run);
+	ret1 = realm_plane_enter(plane_index, perm_index, flags, &run);
 
 	realm_printf("Plane exit reason=0x%lx\n", run.exit.exit_reason);
 
@@ -384,7 +366,7 @@ static bool test_realm_plane_n_inst_fetch(void)
 {
 	u_register_t esr, far, test_ipa;
 
-	bool ret = test_realm_enter_plane_n();
+	bool ret = test_realm_enter_plane_n(&run, 0U);
 
 	if (!ret) {
 		ERROR("Failed to enter Plane N\n");
@@ -553,7 +535,7 @@ void realm_payload_main(void)
 			test_succeed = true;
 			break;
 		case REALM_ENTER_PLANE_N_CMD:
-			test_succeed = test_realm_enter_plane_n();
+			test_succeed = test_realm_enter_plane_n(&run, 0U);
 			break;
 		case REALM_PLANE_N_REG_RW_CMD:
 			test_succeed = test_realm_enter_plane_n_reg_rw();
@@ -658,6 +640,12 @@ void realm_payload_main(void)
 			break;
 		case REALM_SVE_UNDEF_ABORT:
 			test_succeed = test_realm_sve_undef_abort();
+			break;
+		case REALM_SVE_PLANE_N_ACCESS:
+			test_succeed = test_realm_sve_plane_n_access();
+			break;
+		case REALM_SVE_TEST_PLANE_N:
+			test_succeed = test_realm_sve_plane_n();
 			break;
 		case REALM_SME_ID_REGISTERS:
 			test_succeed = test_realm_sme_read_id_registers();

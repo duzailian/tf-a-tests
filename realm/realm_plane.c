@@ -193,7 +193,6 @@ bool plane_common_init(u_register_t plane_index,
 
 bool realm_plane_enter(u_register_t plane_index,
 		u_register_t perm_index,
-		u_register_t base,
 		u_register_t flags,
 		rsi_plane_run *run)
 {
@@ -226,3 +225,47 @@ bool realm_plane_enter(u_register_t plane_index,
 	}
 }
 
+bool test_realm_enter_plane_n_with_args(rsi_plane_run *run, u_register_t flags,
+					u_register_t plane_index, u_register_t base)
+{
+	bool ret1;
+	u_register_t perm_index = plane_index + 1U;
+
+	ret1 = plane_common_init(plane_index, perm_index, base, run);
+	if (!ret1) {
+		return ret1;
+	}
+
+	flags &= RSI_PLANE_ENTRY_FLAG_MASK;
+
+	realm_printf("Entering plane %ld, ep=0x%lx, run=0x%lx, flags=0x%lx\n",
+		     plane_index, base, run, flags);
+	return realm_plane_enter(plane_index, perm_index, flags, run);
+}
+
+bool test_realm_enter_plane_n(rsi_plane_run *run, u_register_t flags)
+{
+	u_register_t base, plane_index;
+
+	plane_index = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
+	base = realm_shared_data_get_my_host_val(HOST_ARG2_INDEX);
+
+	return test_realm_enter_plane_n_with_args(run, flags, plane_index, base);
+}
+
+bool test_realm_resume_plane_n(rsi_plane_run *run, u_register_t plane_index,
+				u_register_t flags)
+{
+	u_register_t perm_index = plane_index + 1U;
+
+	/* Restore PSTATE on the plane */
+	run->enter.pstate = run->exit.pstate;
+
+	restore_plane_context(run);
+
+	flags &= RSI_PLANE_ENTRY_FLAG_MASK;
+
+	realm_printf("Resuming plane %ld, ep=0x%lx, run=0x%lx, flags=0x%lx\n",
+		     plane_index, run->enter.pc, run, flags);
+	return realm_plane_enter(plane_index, perm_index, flags, run);
+}

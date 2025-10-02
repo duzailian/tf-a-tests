@@ -36,6 +36,8 @@ static sve_ffr_regs_t rl_sve_ffr_regs_read;
 static fpu_cs_regs_t rl_fpu_cs_regs_write;
 static fpu_cs_regs_t rl_fpu_cs_regs_read;
 
+static rsi_plane_run run __aligned(PAGE_SIZE);
+
 /* Returns the maximum supported VL. This test is called only by sve Realm */
 bool test_realm_sve_rdvl(void)
 {
@@ -230,4 +232,158 @@ bool test_realm_sme_undef_abort(void)
 	unregister_custom_sync_exception_handler();
 
 	return (realm_get_undef_abort_count() != 0U);
+}
+
+/*
+ * Helper function to try triggering a SVE exception by executing rdvl instruction.
+ */
+static u_register_t read_scaled_vector_length(void)
+{
+	u_register_t vl;
+
+	__asm__ volatile(
+		".arch_extension sve\n"
+		"rdvl %0, #1;"
+		".arch_extension nosve\n"
+		: "=r" (vl)
+	);
+
+	return vl;
+}
+
+/*
+ * Executes as many accesses to SVE registers as indicated by HOST_ARG1_INDEX.
+ *
+ * If the access causes a plane exit, Plane 0 receives the following return
+ * values:
+ *	- HOST_ARG1_INDEX: Number of attempted accesses to SVE registers.
+ *	- HOST_ARG2_INDEX: Number of completed accesses to SVE registers.
+ */
+bool test_realm_sve_plane_n_access(void)
+{
+	uint64_t iterations = realm_shared_data_get_my_host_val(HOST_ARG1_INDEX);
+	unsigned int n_access = 0U;
+
+	/* This should only be executed from Plane N */
+	assert(!realm_is_plane0());
+
+	realm_shared_data_set_my_realm_val(HOST_ARG1_INDEX, 0U);
+	realm_shared_data_set_my_realm_val(HOST_ARG2_INDEX, 0U);
+
+	for(; iterations > 0UL; iterations--) {
+		realm_shared_data_set_my_realm_val(HOST_ARG1_INDEX, ++n_access);
+		(void)read_scaled_vector_length();
+		realm_shared_data_set_my_realm_val(HOST_ARG2_INDEX, n_access);
+	}
+
+	return true;
+}
+
+/*
+ * Test that combines accesses to SVE registers from Plane 0 and Plane N,
+ * using different sequences of entries to Plane N with and without TRAP_SIMD
+ * flag enabled.
+ */
+bool test_realm_sve_plane_n(void)
+{
+	unsigned long attempted, success;
+
+	if (realm_shared_data_get_my_host_val(HOST_ARG3_INDEX) == 0UL) {
+		/* First SIMD access performed from P0 */
+		INFO("Executing first SIMD access from P0\n");
+		(void)read_scaled_vector_length();
+	} else {
+		INFO("Executing first SIMD access from PN\n");
+	}
+
+	/*
+	 * Enter Plane N with TRAP_SIMD disabled. Plane N will attempt
+	 * SIMD_TRAP_ATTEMPTS to access SIMD registers and no plane exit
+	 * should happen.
+	 */
+	if (!test_realm_enter_plane_n(&run, 0UL)) {
+		return false;
+	}
+
+	if ((run.exit.exit_reason != RSI_EXIT_SYNC) ||
+	    (EC_BITS(run.exit.esr) != EC_AARCH64_HVC)) {
+		ERROR("Invalid exit reason from PN: 0x%lu, EC: 0x%lu\n",
+			run.exit.exit_reason, EC_BITS(run.exit.esr));
+		return false;
+	}
+
+	attempted = realm_shared_data_get_plane_n_val(1U, REC_IDX(read_mpidr_el1()),
+						      HOST_ARG1_INDEX);
+	success = realm_shared_data_get_plane_n_val(1U, REC_IDX(read_mpidr_el1()),
+						    HOST_ARG2_INDEX);
+
+	if ((attempted < SIMD_TRAP_ATTEMPTS) || (success < SIMD_TRAP_ATTEMPTS)) {
+		ERROR("Attempted %u executions of rdvl instruction. %u succedded\n",
+		      attempted, success);
+		return false;
+	}
+
+	/* Try another access to the SIMD registers from Plane 0 */
+	(void)read_scaled_vector_length();
+
+	/*
+	 * Restart P1 again, this time with TRAP_SIMD enabled. That should
+	 * cause a plane exit when attempting SIMD instructions.
+	 */
+	if (!test_realm_enter_plane_n(&run, RSI_PLANE_ENTRY_FLAG_TRAP_SIMD)) {
+		return false;
+	}
+
+	if ((run.exit.exit_reason != RSI_EXIT_SYNC) ||
+	    (EC_BITS(run.exit.esr) != EC_AARCH64_SVE)) {
+		ERROR("Invalid exit reason from PN: 0x%lu, EC: 0x%lu\n",
+			run.exit.exit_reason, EC_BITS(run.exit.esr));
+		return false;
+	}
+
+	attempted = realm_shared_data_get_plane_n_val(1U, REC_IDX(read_mpidr_el1()),
+						      HOST_ARG1_INDEX);
+	success = realm_shared_data_get_plane_n_val(1U, REC_IDX(read_mpidr_el1()),
+						    HOST_ARG2_INDEX);
+
+	/*
+	 * Plane N should have exited after 1 attempt and the access should not
+	 * be completed yet.
+	 */
+	if ((attempted != 1U) || (success > 0U)) {
+		ERROR("Attempted %u executions of rdvl instruction. %u succedded\n",
+		      attempted, success);
+		return false;
+	}
+
+	/* Try another access to the SIMD registers from Plane 0 */
+	(void)read_scaled_vector_length();
+
+	/*
+	 * Resume Plane N with TRAP_SIMD disabled. No Plane exit should happen
+	 * due to SIMD access.
+	 */
+	if (!test_realm_resume_plane_n(&run, 1U, 0U)) {
+		return false;
+	}
+
+	if ((run.exit.exit_reason != RSI_EXIT_SYNC) ||
+	    (EC_BITS(run.exit.esr) != EC_AARCH64_HVC)) {
+		ERROR("Invalid exit reason from PN: 0x%lu, EC: 0x%lu\n",
+			run.exit.exit_reason, EC_BITS(run.exit.esr));
+		return false;
+	}
+
+	attempted = realm_shared_data_get_plane_n_val(1U, REC_IDX(read_mpidr_el1()),
+						      HOST_ARG1_INDEX);
+	success = realm_shared_data_get_plane_n_val(1U, REC_IDX(read_mpidr_el1()),
+						    HOST_ARG2_INDEX);
+
+	if ((attempted < SIMD_TRAP_ATTEMPTS) || (success < SIMD_TRAP_ATTEMPTS)) {
+		ERROR("Attempted %u executions of rdvl instruction. %u succedded\n",
+		      attempted, success);
+		return false;
+	}
+
+	return true;
 }
