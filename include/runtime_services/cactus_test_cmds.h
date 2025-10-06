@@ -710,4 +710,18 @@ static inline uint64_t cactus_get_timer_wait_time(struct ffa_value ret)
 	return (uint64_t)ret.arg5;
 }
 
+/**
+ * Command to request cactus to run smc fuzzing
+ *
+ * The command id is the hex representation of string "fuzz"
+ */
+#define CACTUS_FUZZ_CMD U(0x66757a7a)
+
+static inline struct ffa_value cactus_fuzz_send_cmd(
+	ffa_id_t source, ffa_id_t dest)
+{
+	return cactus_send_cmd(source, dest, CACTUS_FUZZ_CMD, 0, 0, 0,
+			       0);
+}
+
 #endif

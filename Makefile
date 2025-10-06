@@ -326,6 +326,8 @@ endif
 
 ifeq ($(SMC_FUZZING), 1)
 TFTF_EXTRA_OBJS += ${BUILD_PLAT}/smcf/dtb.o
+CACTUS_EXTRA_OBJS += ${BUILD_PLAT}/smcf/dtb.o
+IVY_EXTRA_OBJS += ${BUILD_PLAT}/smcf/dtb.o
 endif
 
 #####################################################################################

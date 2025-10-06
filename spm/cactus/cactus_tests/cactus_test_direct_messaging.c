@@ -9,6 +9,10 @@
 #include <debug.h>
 #include <ffa_helpers.h>
 
+#if SMC_FUZZING
+extern test_result_t smc_fuzzer_execute(void);
+#endif
+
 CACTUS_CMD_HANDLER(echo_cmd, CACTUS_ECHO_CMD)
 {
 	uint64_t echo_val = cactus_echo_get_val(*args);
@@ -126,3 +130,17 @@ CACTUS_CMD_HANDLER(ras_delegate_cmd, CACTUS_RAS_DELEGATE_CMD)
 				   ffa_dir_msg_source(*args),
 				   event_id);
 }
+
+#if SMC_FUZZING
+/*
+ * Run SMC fuzzing
+ */
+CACTUS_CMD_HANDLER(req_smc_fuzz, CACTUS_FUZZ_CMD)
+{
+
+	smc_fuzzer_execute();
+	return cactus_response(ffa_dir_msg_dest(*args),
+			       ffa_dir_msg_source(*args),
+			       CACTUS_SUCCESS);
+}
+#endif

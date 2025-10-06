@@ -43,4 +43,10 @@ extern uintptr_t __BSS_START__, __BSS_END__;
 #define IVY_BSS_START		((uintptr_t)&__BSS_START__)
 #define IVY_BSS_END		((uintptr_t)&__BSS_END__)
 
+#if SMC_FUZZING
+extern uintptr_t __SMCFUZZ_START__, __SMCFUZZ_END__;
+#define SMCFUZZ_SECTION_START	((uintptr_t)&__SMCFUZZ_START__)
+#define SMCFUZZ_SECTION_END	((uintptr_t)&__SMCFUZZ_END__)
+#endif
+
 #endif /* __IVY_H__ */

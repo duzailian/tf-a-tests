@@ -17,6 +17,11 @@
 #include <lib/xlat_tables/xlat_mmu_helpers.h>
 #include <lib/xlat_tables/xlat_tables_v2.h>
 
+#if SMC_FUZZING
+#include <tftf_lib.h>
+#include <smcmalloc.h>
+#endif
+
 #include <ffa_helpers.h>
 #include <plat_arm.h>
 #include <plat/common/platform.h>
@@ -35,6 +40,11 @@ extern const char build_message[];
 extern const char version_string[];
 
 extern void secondary_cold_entry(void);
+
+#if SMC_FUZZING
+extern test_result_t init_smc_fuzzing(void);
+extern test_result_t smc_fuzzer_execute(void);
+#endif
 
 /* Global ffa_id */
 ffa_id_t g_ffa_id;
@@ -241,6 +251,14 @@ static void cactus_plat_configure_mmu(unsigned int vm_id)
 			(SP_RX_TX_SIZE / 2),
 			MT_RW_DATA);
 
+#if SMC_FUZZING
+	//Added for smcfuzz
+	mmap_add_region(SMCFUZZ_SECTION_START,
+			SMCFUZZ_SECTION_START,
+			SMCFUZZ_SECTION_END - SMCFUZZ_SECTION_START,
+			MT_RW_DATA);
+#endif
+
 	mmap_add(cactus_mmap);
 	init_xlat_tables();
 }
@@ -337,7 +355,6 @@ void __dead2 cactus_main(bool primary_cold_boot,
 	}
 
 	set_putc_impl(FFA_SVC_SMC_CALL_AS_STDOUT);
-
 	/* Below string is monitored by CI expect script. */
 	NOTICE("Booting Secure Partition (ID: %x)\n%s\n%s\n",
 		ffa_id, build_message, version_string);
@@ -352,6 +369,12 @@ void __dead2 cactus_main(bool primary_cold_boot,
 
 	cactus_print_memory_layout(ffa_id);
 
+#if SMC_FUZZING
+	if(ffa_id == SP_ID(1)) {
+		init_smc_fuzzing();
+		smc_fuzzer_execute();
+	}
+#endif
 	/*
 	 * Cactus-tertiary makes use of FFA_RXTX_MAP API instead of specifying
 	 * `rx_tx-info` in its manifest, as done by the primary and secondary

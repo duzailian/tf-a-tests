@@ -7,6 +7,12 @@
 #include <assert.h>
 #include <debug.h>
 #include <errno.h>
+
+#if SMC_FUZZING
+#include <tftf_lib.h>
+#include <smcmalloc.h>
+#endif
+
 #include <ffa_helpers.h>
 #include <sp_debug.h>
 #include <sp_helpers.h>
@@ -17,6 +23,10 @@
 /* Host machine information injected by the build system in the ELF file. */
 extern const char build_message[];
 extern const char version_string[];
+
+#if SMC_FUZZING
+extern test_result_t smc_fuzzing_top(void);
+#endif
 
 void __dead2 ivy_main(void)
 {
@@ -47,6 +57,10 @@ init:
 		      ffa_error_name(ffa_error_code(ret)));
 		panic();
 	}
+
+#if SMC_FUZZING
+	smc_fuzzing_top();
+#endif
 
 	ffa_tests(&mb, el1_partition);
 

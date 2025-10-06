@@ -88,7 +88,7 @@ int64_t tftf_test_sdei_noarg(int64_t (*sdei_func)(void), char *funcstr)
 		int64_t ret = (*sdei_func)();
 
 		if (ret < 0) {
-			tftf_testcase_printf("%s failed: 0x%llx\n", funcstr, ret);
+			printf("%s failed: 0x%llx\n", funcstr, ret);
 		}
 
 		printf("%s return: %llx\n", funcstr, ret);
@@ -108,7 +108,7 @@ void tftf_test_sdei_singlearg(int64_t (*sdei_func)(uint64_t), char *funcstr)
 		int64_t ret = (*sdei_func)(bev);
 
 		if (ret < 0) {
-			tftf_testcase_printf("%s failed: 0x%llx\n", funcstr, ret);
+			printf("%s failed: 0x%llx\n", funcstr, ret);
 		}
 }
 
@@ -295,7 +295,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 			ret = sdei_version();
 
 			if (ret != MAKE_SDEI_VERSION(1, 0, 0)) {
-				tftf_testcase_printf("Unexpected SDEI version: 0x%llx\n", ret);
+				printf("Unexpected SDEI version: 0x%llx\n", ret);
 			}
 		}
 	} else if (funcid == sdei_pe_unmask_funcid) {
@@ -324,7 +324,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 		if (inrange) {
 			stbev = sdei_interrupt_bind(inp.x1, &intr_ctx);
 			if (stbev < 0) {
-				tftf_testcase_printf("sdei_interrupt_bind failed: 0x%llx %d\n", inp.x1, stbev);
+				printf("sdei_interrupt_bind failed: 0x%llx %d\n", inp.x1, stbev);
 			} else if (CONSTRAIN_EVENTS) {
 				bool duplicate = false;
 
@@ -373,7 +373,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 			ret = sdei_event_status(inp.x1);
 			if (ret < 0) {
 
-				tftf_testcase_printf("sdei_event_status failed: 0x%llx %d\n", ret, stbev);
+				printf("sdei_event_status failed: 0x%llx %d\n", ret, stbev);
 			} else {
 
 			}
@@ -389,7 +389,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 		if (inrange) {
 			ret = sdei_event_signal(inp.x2);
 			if (ret < 0) {
-				tftf_testcase_printf("sdei_event_signal failed: %lld\n", ret);
+				printf("sdei_event_signal failed: %lld\n", ret);
 			}
 		}
 	} else if (funcid == sdei_private_reset_funcid) {
@@ -429,7 +429,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 		if (inrange) {
 			ret = sdei_event_register(inp.x1, (int (*)(int,  uint64_t))(uintptr_t)inp.x2, inp.x3, inp.x4, inp.x5);
 			if (ret < 0) {
-				tftf_testcase_printf("sdei_event_register failed: 0x%llx\n", ret);
+				printf("sdei_event_register failed: 0x%llx\n", ret);
 			}
 		}
 
@@ -449,7 +449,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 		if (inrange) {
 			ret = sdei_event_enable(inp.x1);
 			if (ret < 0) {
-				tftf_testcase_printf("sdei_event_enable failed: 0x%llx\n", ret);
+				printf("sdei_event_enable failed: 0x%llx\n", ret);
 			}
 		}
 
@@ -468,7 +468,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 		if (inrange) {
 			ret = sdei_event_disable(inp.x1);
 			if (ret < 0) {
-				tftf_testcase_printf("sdei_event_disable failed: 0x%llx\n", ret);
+				printf("sdei_event_disable failed: 0x%llx\n", ret);
 			}
 		}
 
@@ -483,7 +483,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 		if (inrange) {
 			ret = sdei_features(inp.x1);
 			if (ret < 0) {
-				tftf_testcase_printf("sdei_features failed: 0x%llx\n", ret);
+				printf("sdei_features failed: 0x%llx\n", ret);
 			} else if ((ret >> 32) == 0) {
 				#ifdef SMC_FUZZER_DEBUG
 				printf("SUCCESS: sdei_features expected [63:32]\n");
@@ -508,7 +508,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 			ret = sdei_event_unregister(inp.x1);
 
 			if (ret < 0) {
-				tftf_testcase_printf("sdei_event_unregister failed: 0x%llx\n", ret);
+				printf("sdei_event_unregister failed: 0x%llx\n", ret);
 			}
 		}
 
@@ -524,7 +524,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 		if (inrange) {
 			ret = sdei_event_context(inp.x1);
 			if (ret < 0) {
-				tftf_testcase_printf("sdei_event_context failed: 0x%llx\n", ret);
+				printf("sdei_event_context failed: 0x%llx\n", ret);
 			}
 		}
 
@@ -541,7 +541,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 		if (inrange) {
 			ret = sdei_event_complete(inp.x1);
 			if (ret < 0) {
-				tftf_testcase_printf("sdei_event_complete failed: 0x%llx\n", ret);
+				printf("sdei_event_complete failed: 0x%llx\n", ret);
 			}
 		}
 
@@ -553,7 +553,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 		if (inrange) {
 			ret = sdei_event_complete_and_resume(inp.x1);
 			if (ret < 0) {
-				tftf_testcase_printf("sdei_event_complete_and_resume failed: 0x%llx\n", ret);
+				printf("sdei_event_complete_and_resume failed: 0x%llx\n", ret);
 			}
 		}
 
@@ -576,7 +576,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 		if (inrange) {
 			ret = sdei_event_get_info(inp.x1, inp.x2);
 			if (ret < 0) {
-				tftf_testcase_printf("sdei_event_get_info failed: 0x%llx\n", ret);
+				printf("sdei_event_get_info failed: 0x%llx\n", ret);
 			}
 		}
 	} else if (funcid == sdei_event_routing_set_funcid) {
@@ -598,7 +598,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 		if (inrange) {
 			ret = sdei_event_routing_set(inp.x1, inp.x2);
 			if (ret < 0) {
-				tftf_testcase_printf("sdei_event_routing_set failed: 0x%llx\n", ret);
+				printf("sdei_event_routing_set failed: 0x%llx\n", ret);
 			}
 		}
 
@@ -618,7 +618,7 @@ void run_sdei_fuzz(int funcid, struct memmod *mmod, bool inrange, int cntid)
 			ret = sdei_interrupt_release(inp.x1, &intr_ctx);
 			if (ret < 0) {
 
-				tftf_testcase_printf("sdei_interrupt_release failed: 0x%llx\n", ret);
+				printf("sdei_interrupt_release failed: 0x%llx\n", ret);
 			} else {
 				if (inp.x1 >= MIN_SPI_ID && inp.x1 <= MAX_SPI_ID) {
 					release_shared_slots(mmod, 1, false);

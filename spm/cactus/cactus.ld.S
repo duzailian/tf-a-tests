@@ -80,4 +80,15 @@ SECTIONS
         . = NEXT(PAGE_SIZE);
         __BSS_END__ = .;
     }
+
+#if SMC_FUZZING
+    smcfuzz (NOLOAD) : {
+        . = ALIGN(65536);
+        __SMCFUZZ_START__ = .;
+	*(smcfuzz)
+        . = NEXT(PAGE_SIZE);
+        __SMCFUZZ_END__ = .;
+    }
+#endif
+
 }

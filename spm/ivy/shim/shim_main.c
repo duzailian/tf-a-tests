@@ -84,6 +84,14 @@ static void shim_plat_configure_mmu(void)
 			IVY_BSS_END - IVY_BSS_START,
 			MT_RW_DATA | MT_USER);
 
+#if SMC_FUZZING
+	//Added for smcfuzz
+	mmap_add_region(SMCFUZZ_SECTION_START,
+			SMCFUZZ_SECTION_START,
+			SMCFUZZ_SECTION_END - SMCFUZZ_SECTION_START,
+			MT_RW_DATA | MT_USER);
+#endif
+
 	init_xlat_tables();
 }
 

@@ -20,7 +20,7 @@ void tftf_test_tsp_smc(uint64_t tsp_id, char *funcstr)
 		tsp_result = tftf_smc(&tsp_svc_params);
 
 		if (tsp_result.ret0) {
-			tftf_testcase_printf("TSP operation 0x%x failed, error:0x%x\n",
+			printf("TSP operation 0x%x failed, error:0x%x\n",
 					(unsigned int) fn_identifier,
 					(unsigned int) tsp_result.ret0);
 		}

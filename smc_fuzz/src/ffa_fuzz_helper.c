@@ -15,6 +15,21 @@
 
 #ifdef FFA_INCLUDE
 
+test_result_t test_cactus_fuzz_send_cmd(void)
+{
+	//CHECK_SPMC_TESTING_SETUP(1, 0, expected_sp_uuids);
+
+	struct ffa_value ret;
+	ret = cactus_fuzz_send_cmd(HYP_ID, SP_ID(1));
+
+	if (cactus_get_response(ret) != CACTUS_SUCCESS) {
+		printf("Fuzz Request Failed!\n");
+		return TEST_RESULT_FAIL;
+	}
+
+	return TEST_RESULT_SUCCESS;
+}
+
 #define PRIMARY_LO ffa_get_uuid_lo((struct ffa_uuid){PRIMARY_UUID})
 #define PRIMARY_HI ffa_get_uuid_hi((struct ffa_uuid){PRIMARY_UUID})
 #define SECONDARY_LO ffa_get_uuid_lo((struct ffa_uuid){SECONDARY_UUID})

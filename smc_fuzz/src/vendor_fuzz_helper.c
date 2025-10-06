@@ -60,9 +60,9 @@ void run_ven_el3_fuzz(int funcid, struct memmod *mmod)
 		ret.ret0, ret.ret1, ret.ret2, ret.ret3);
 
 		if (!uuid_equal(&ven_el3_svc_uuid, &armtf_ven_el3_svc_uuid)) {
-			tftf_testcase_printf("Wrong UUID: expected %s,\n",
+			printf("Wrong UUID: expected %s,\n",
 			uuid_to_str(&armtf_ven_el3_svc_uuid, uuid_str));
-			tftf_testcase_printf("		 got %s\n",
+			printf("		 got %s\n",
 			uuid_to_str(&ven_el3_svc_uuid, uuid_str));
 		} else {
 		#ifdef SMC_FUZZER_DEBUG
@@ -82,7 +82,7 @@ void run_ven_el3_fuzz(int funcid, struct memmod *mmod)
 		ret = tftf_smc(&ven_el3_svc_args);
 
 		if (ret.ret0 != SMC_UNKNOWN) {
-			tftf_testcase_printf("Querying Vendor-Specific el3 service call count"
+			printf("Querying Vendor-Specific el3 service call count"
 			" which is reserved failed\n");
 		} else {
 		#ifdef SMC_FUZZER_DEBUG
@@ -103,7 +103,7 @@ void run_ven_el3_fuzz(int funcid, struct memmod *mmod)
 
 		if ((ret.ret0 != VEN_EL3_SVC_VERSION_MAJOR) ||
 		(ret.ret1 != VEN_EL3_SVC_VERSION_MINOR)) {
-			tftf_testcase_printf(
+			printf(
 			"Vendor Specific El3 service reported wrong version: expected {%u.%u}, got {%llu.%llu}\n",
 			VEN_EL3_SVC_VERSION_MAJOR, VEN_EL3_SVC_VERSION_MINOR,
 			(unsigned long long)ret.ret0,

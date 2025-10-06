@@ -10,6 +10,7 @@
 
   <testsuite name="smcfuzzing" description="smcfuzzing test framework">
      <testcase name="SMC fuzzing top level function" function="smc_fuzzing_top" />
+    <testcase name="FF-A SMC fuzz request" function="test_cactus_fuzz_send_cmd" />
   </testsuite>
 
 </testsuites>
