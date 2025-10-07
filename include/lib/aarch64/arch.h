@@ -560,6 +560,20 @@
 #define GET_VIRT_EXT(id)	(((id) >> ID_PFR1_VIRTEXT_SHIFT) \
 				 & ID_PFR1_VIRTEXT_MASK)
 
+/* CLIDR_EL1 definitions */
+#define CLIDR_EL1			S3_1_C0_C0_1
+
+/* CCSIDR_EL1 definitions */
+#define CCSIDR_EL1			S3_1_C0_C0_0
+#define CCSIDR_EL1_LINESIZE_SHIFT	U(0)
+#define CCSIDR_EL1_LINESIZE_WIDTH	U(3)
+
+#define CCSIDR_EL1_WAYS_SHIFT		U(3)
+#define CCSIDR_EL1_WAYS_WIDTH		U(10)
+
+#define CCSIDR_EL1_SETS_SHIFT		U(13)
+#define CCSIDR_EL1_SETS_WIDTH		U(15)
+
 /* SCTLR definitions */
 #define SCTLR_EL2_RES1	((U(1) << 29) | (U(1) << 28) | (U(1) << 23) | \
 			 (U(1) << 22) | (U(1) << 18) | (U(1) << 16) | \
@@ -1620,6 +1634,7 @@
 #define BRBINF15_EL1		S2_1_C8_C15_0
 #define BRBSRC11_EL1		S2_1_C8_C11_1
 #define BRBTGT0_EL1		S2_1_C8_C0_2
+
 
 /*******************************************************************************
  * FEAT_TCR2 - Extended Translation Control Registers

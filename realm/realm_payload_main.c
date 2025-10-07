@@ -674,6 +674,9 @@ void realm_payload_main(void)
 		case REALM_WRITE_BRBCR_EL1:
 			test_succeed = test_realm_write_brbcr_el1_reg();
 			break;
+		case REALM_DC_OPS:
+			test_succeed = test_realm_dc_ops();
+			break;
 		case REALM_DA_RSI_CALLS:
 			test_succeed = test_realm_da_rsi_calls();
 			break;
