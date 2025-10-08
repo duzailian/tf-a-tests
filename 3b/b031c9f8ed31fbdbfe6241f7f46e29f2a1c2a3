@@ -1,0 +1,10 @@
+Verified+1: Mark Dykes <mark.dykes@arm.com>
+Code-Owner-Review+1: Govindraj Raja <govindraj.raja@arm.com>
+Maintainer-Review+1: Govindraj Raja <govindraj.raja@arm.com>
+Allow-CI+2: Mark Dykes <mark.dykes@arm.com>
+Submitted-by: Govindraj Raja <govindraj.raja@arm.com>
+Submitted-at: Wed, 08 Oct 2025 21:51:29 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/42183
+Comments-Total: 1
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
