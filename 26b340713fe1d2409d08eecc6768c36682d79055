@@ -97,6 +97,30 @@
       },
       "revId": "26b340713fe1d2409d08eecc6768c36682d79055",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "728ad7a0_44b31a00",
+        "filename": "tftf/tests/runtime_services/secure_service/test_ffa_memory_sharing.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 851,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2025-10-08T14:55:36Z",
+      "side": 1,
+      "message": "Well. In fact there is one already.\nI will use it.",
+      "parentUuid": "60ee1841_6ad29029",
+      "range": {
+        "startLine": 851,
+        "startChar": 14,
+        "endLine": 851,
+        "endChar": 15
+      },
+      "revId": "26b340713fe1d2409d08eecc6768c36682d79055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
