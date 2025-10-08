@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31a94681_ab12730d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000341
+      },
+      "writtenOn": "2025-10-08T12:52:27Z",
+      "side": 1,
+      "message": "Test new Hafnium patchset.",
+      "revId": "26b340713fe1d2409d08eecc6768c36682d79055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
