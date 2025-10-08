@@ -16,6 +16,23 @@
       "message": "Test new Hafnium patchset.",
       "revId": "26b340713fe1d2409d08eecc6768c36682d79055",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24931b58_ca80b9be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000660
+      },
+      "writtenOn": "2025-10-08T14:14:17Z",
+      "side": 1,
+      "message": "Let me test me on the spm-le boot test group and share the results here.",
+      "revId": "26b340713fe1d2409d08eecc6768c36682d79055",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
