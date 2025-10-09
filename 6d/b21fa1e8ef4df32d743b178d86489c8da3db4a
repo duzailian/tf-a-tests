@@ -1,0 +1,10 @@
+Maintainer-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Allow-CI+1: Manish Pandey <manish.pandey2@arm.com>
+Verified+1: ci-bot
+Code-Owner-Review+1: Govindraj Raja <govindraj.raja@arm.com>
+Code-Review+1: Sona Rebecca Mathew <SonaRebecca.Mathew@arm.com>
+Submitted-by: Govindraj Raja <govindraj.raja@arm.com>
+Submitted-at: Thu, 09 Oct 2025 17:14:48 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/43923
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
