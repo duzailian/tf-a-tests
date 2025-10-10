@@ -16,6 +16,23 @@
       "message": "TFTF + SIMD bugfix on planes: https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l2/1444/",
       "revId": "8fa2c30a3bdacd382518e2765c9881fcfec31736",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "677dd129_de7e7a96",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000298
+      },
+      "writtenOn": "2025-10-10T08:41:11Z",
+      "side": 1,
+      "message": "Verified on RMM with planes support through https://jenkins.openci.aws.arm.com/view/RMM/job/rmm-gerrit-tforg-l2/1444/",
+      "revId": "8fa2c30a3bdacd382518e2765c9881fcfec31736",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
