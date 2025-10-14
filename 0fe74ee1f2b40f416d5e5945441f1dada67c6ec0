@@ -16,6 +16,24 @@
       "message": "Do we have any policy on handling warnings? these warnings can go un-noticed. can we do something in CI to make it noticeable ?",
       "revId": "0fe74ee1f2b40f416d5e5945441f1dada67c6ec0",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e90778d5_e290fb43",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2025-10-14T12:28:39Z",
+      "side": 1,
+      "message": "Well, the test is fine, and the TF-A code is fine, so I think it\u0027s not something for the CI to moan about. It\u0027s just that new SPE versions *could* introduce something new that needs test coverage, but we should encounter this anyway during a new arch revision review process.\nI just added this patch since for me it broke the whole test run, even though there was nothing wrong. That\u0027s why I think a warning in the CI output should be enough, since it won\u0027t spoil other tests.",
+      "parentUuid": "958cf11e_3c0c5078",
+      "revId": "0fe74ee1f2b40f416d5e5945441f1dada67c6ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ]
 }
