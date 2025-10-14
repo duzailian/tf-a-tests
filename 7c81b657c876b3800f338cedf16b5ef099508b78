@@ -24,6 +24,30 @@
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1badded4_7bb04cef",
+        "filename": "tftf/tests/extensions/pfar/test_pfar.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2025-10-14T10:11:22Z",
+      "side": 1,
+      "message": "Yes, we can drop this, this was more an artefact of my testing.",
+      "parentUuid": "001dd223_be63664b",
+      "range": {
+        "startLine": 37,
+        "startChar": 1,
+        "endLine": 42,
+        "endChar": 2
+      },
+      "revId": "7c81b657c876b3800f338cedf16b5ef099508b78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8f8dd83e_2cb2657e",
@@ -37,6 +61,24 @@
       "writtenOn": "2025-10-14T09:10:02Z",
       "side": 1,
       "message": "excuse my ignorance on E2H\u003d\u003d1, but isn\u0027t tftf at EL1 a bit overkill? It\u0027s only tested in a single configuration and that\u0027s meant to be legacy, no? So we usually run at EL2 with an EL2 view of the world, so EL1 is a bit besides the point, no?",
+      "revId": "7c81b657c876b3800f338cedf16b5ef099508b78",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63eed5a2_b2430260",
+        "filename": "tftf/tests/extensions/pfar/test_pfar.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2025-10-14T10:11:22Z",
+      "side": 1,
+      "message": "Well, you tell me, but I saw quite some IS_IN_EL2() checks protecting EL2 system registers, so I assumed that we could run in EL1. For FVP or Arm Ltd. platforms running in EL2 is surely normal, but other platforms might not be so generous. So I figured that it doesn\u0027t take much to also test EL1 or deal with EL2 not being available. So I don\u0027t see the \"overkill\" aspect.\nAlso keep in mind that writing to EL1 sysregs is also to make sure they don\u0027t get corrupted as well over the smc, hence I used a different pattern.",
+      "parentUuid": "8f8dd83e_2cb2657e",
       "revId": "7c81b657c876b3800f338cedf16b5ef099508b78",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
