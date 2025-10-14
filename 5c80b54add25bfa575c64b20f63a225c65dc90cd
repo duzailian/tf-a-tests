@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b2c2e74_49f05bce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001325
+      },
+      "writtenOn": "2025-10-14T11:01:41Z",
+      "side": 1,
+      "message": "Applying Verified+1 from top patch.",
+      "revId": "5c80b54add25bfa575c64b20f63a225c65dc90cd",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
