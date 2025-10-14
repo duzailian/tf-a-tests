@@ -1,0 +1,9 @@
+Allow-CI+2: André Przywara <andre.przywara@arm.com>
+Verified+1: ci-bot
+Maintainer-Review+1: Manish Pandey <manish.pandey2@arm.com>
+Code-Owner-Review+1: Boyan Karatotev <boyan.karatotev@arm.com>
+Submitted-by: André Przywara <andre.przywara@arm.com>
+Submitted-at: Tue, 14 Oct 2025 16:29:22 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/44046
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
