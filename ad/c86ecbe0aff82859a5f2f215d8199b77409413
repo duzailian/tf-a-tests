@@ -1,0 +1,11 @@
+Maintainer-Review+1: Yann Gautier <yann.gautier@st.com>
+Code-Review+1: Maheedhar Bollapalli <maheedharsai.bollapalli@amd.com>
+Code-Owner-Review+1: Maheedhar Bollapalli <maheedharsai.bollapalli@amd.com>
+Code-Review+1: Love Kumar <love.kumar@amd.com>
+Verified+1: ci-bot
+Allow-CI+1: Maheedhar Bollapalli <maheedharsai.bollapalli@amd.com>
+Submitted-by: Yann Gautier <yann.gautier@st.com>
+Submitted-at: Tue, 14 Oct 2025 12:11:52 +0000
+Reviewed-on: https://review.trustedfirmware.org/c/TF-A/tf-a-tests/+/43823
+Project: TF-A/tf-a-tests
+Branch: refs/heads/master
