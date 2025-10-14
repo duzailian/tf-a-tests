@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "958cf11e_3c0c5078",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000102
+      },
+      "writtenOn": "2025-10-14T11:26:03Z",
+      "side": 1,
+      "message": "Do we have any policy on handling warnings? these warnings can go un-noticed. can we do something in CI to make it noticeable ?",
+      "revId": "0fe74ee1f2b40f416d5e5945441f1dada67c6ec0",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    }
+  ]
+}
