@@ -16,6 +16,24 @@
       "message": "I assume this change caused this failure in the daily CI:\n\n```\n2025-10-14T23:05:15.302167[TARGET]   \u003e Executing \u0027SMCCC_ARCH_FEATURE_AVAILABILITY test\u0027\n\n2025-10-14T23:05:15.303877[TARGET]     TEST COMPLETE                                                 Failed\n\n2025-10-14T23:05:15.303956[TARGET]   is_feat_aie_supported says feature is supported but SCR_AIEn_BIT was not set!\n\n2025-10-14T23:05:15.304449[TARGET]   \n```\n\nhttps://tuxapi-prod-storage-public-tfc.s3.amazonaws.com/ci/tests/344qHdkaUpueD2Id3M5mIGVwFQu/lava-logs.html?AWSAccessKeyId\u003dASIA4PEBGJPLIHY2LJSO\u0026Signature\u003dlsmms3xxwn5Lu1rAR7oEbO9E1eM%3D\u0026x-amz-security-token\u003dIQoJb3JpZ2luX2VjEMf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCHgS5kpX0tffegBLZkkoG3aKYT1nJaw9Yvb5ploaNefgIgd2vwI%2FBCCxrTg4yNyKK8Aa1aj7w7687IpSuIWIUE4pEqhAMIbxACGgw4NTcxMTY5MjA3OTAiDJj6LdPfivPsuzk5ZirhAjW8FLoju1%2BsBzNgjKy6ltUxq4CyHzveRdZOLYoo9wWWNPVw%2FWwM7IwNyYU0MM%2B7NcuKqR9Nk2DM%2B5Qfg0cb3KI8X3VxznMpc9RPgvePi82u2F2NpCG1mrb0HG5HXRlRTE4ALQ1aebXE928YifAljclMFhjGmek%2FO4d4aQp5NBSTuULBiJ56euN3KLl51uiEszv7bZpl60x398WLb8XoLicwiHewFjjVUYgLE77j3wxBPMpQDXUomvjslJenBwlVebwt%2BwGl62eibDpTOOCtu6V6v%2BfGiEpb%2FVMMwRABHvhrceqKAoIl70tHVTFq92zvroLu%2BwJahGmNA6x7XgApZIyCaEfRovNY7UtM%2FDrec4owRXIWGw5uHXwOhPo9l3WSZxRzGRWpHx0elAay9H%2Bu9Srr7hcFl0AG6D4sL3yXFa%2FDor7setOrF3c4cWRRp7SV%2FwHKEV8o55LDojudr0%2FQTyb0MJf6vMcGOp4BHIWCaBlNQtBFUmF4pj%2FHMcyYtpIyNLkEBiVJG%2FonieYzNr0%2B083DLhY%2FKhiMJVPYPVRYEkqjpU3d%2B82qslD%2BVdG%2BOEZTDRrws1yWbAXBifxud1LPmAJ2kOp6MLrqOQT3FiQufh47KJpUYFJ%2BUXSnTuKETOlwSkeSQ3d7Wh05KLjOxloJGMmblpm91EGaeAz%2BjJradN%2FH9T1I5hn4G%2BQ%3D\u0026Expires\u003d1760514547",
       "revId": "f02375764dad0e5f1531fbdb2a17370497b27858",
       "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9692c06a_97db2e3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000118
+      },
+      "writtenOn": "2025-10-15T09:32:18Z",
+      "side": 1,
+      "message": "Ah, sorry, the TFTF CI did not fail, so I thought it wouldn\u0027t be enabled in the FVP yet. There is https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/43813 to fix this, I guess. It mostly needs a Maintainer\u0027s Review, I guess.",
+      "parentUuid": "88367565_c76a5114",
+      "revId": "f02375764dad0e5f1531fbdb2a17370497b27858",
+      "serverId": "8f6f209b-db1a-4cbf-aa44-c8bc30e9bfda"
     }
   ],
   "submitRequirementResults": []
